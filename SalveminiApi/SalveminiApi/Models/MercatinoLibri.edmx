@@ -10,10 +10,11 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nome" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Seriale" Type="nvarchar" MaxLength="200" />
           <Property Name="Prezzo" Type="smallmoney" />
           <Property Name="idUtente" Type="int" Nullable="false" />
+          <Property Name="Creazione" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="BookUtenti">
           <Key>
@@ -25,6 +26,7 @@
           <Property Name="Telefono" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creazione" Type="datetime" Nullable="false" />
         </EntityType>
         <Association Name="FK_BookLibri_BookUtenti">
           <End Role="BookUtenti" Type="Self.BookUtenti" Multiplicity="1">
@@ -65,11 +67,12 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Seriale" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Prezzo" Type="Decimal" Precision="10" Scale="4" />
           <Property Name="idUtente" Type="Int32" Nullable="false" />
           <NavigationProperty Name="BookUtenti" Relationship="Mercatino_Model.FK_BookLibri_BookUtenti" FromRole="BookLibri" ToRole="BookUtenti" />
+          <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="BookUtenti">
           <Key>
@@ -82,6 +85,7 @@
           <NavigationProperty Name="BookLibri" Relationship="Mercatino_Model.FK_BookLibri_BookUtenti" FromRole="BookUtenti" ToRole="BookLibri" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <Association Name="FK_BookLibri_BookUtenti">
           <End Type="Mercatino_Model.BookUtenti" Role="BookUtenti" Multiplicity="1">
@@ -106,6 +110,7 @@
           <EntitySetMapping Name="BookLibri">
             <EntityTypeMapping TypeName="Mercatino_Model.BookLibri">
               <MappingFragment StoreEntitySet="BookLibri">
+                <ScalarProperty Name="Creazione" ColumnName="Creazione" />
                 <ScalarProperty Name="idUtente" ColumnName="idUtente" />
                 <ScalarProperty Name="Prezzo" ColumnName="Prezzo" />
                 <ScalarProperty Name="Seriale" ColumnName="Seriale" />
@@ -117,6 +122,7 @@
           <EntitySetMapping Name="BookUtenti">
             <EntityTypeMapping TypeName="Mercatino_Model.BookUtenti">
               <MappingFragment StoreEntitySet="BookUtenti">
+                <ScalarProperty Name="Creazione" ColumnName="Creazione" />
                 <ScalarProperty Name="Ip" ColumnName="Ip" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />

@@ -19,6 +19,7 @@ namespace SalveminiApi.Models
         public string Seriale { get; set; }
         public Nullable<decimal> Prezzo { get; set; }
         public int idUtente { get; set; }
+        public System.DateTime Creazione { get; set; }
     
         public virtual BookUtenti BookUtenti { get; set; }
     }

@@ -1,0 +1,102 @@
+﻿/*Fonts*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+.container {
+    text-align: center;
+}
+
+.ceneterdDiv {
+    background-color: white;
+    border-radius: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 1%;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.descLabel {
+    color: gray;
+    float: right;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 2%;
+}
+
+.titleLbl {
+    width: 100%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #802891;
+    font-size: 50px;
+    margin: 0;
+    float: right;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+
+.textInput {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    margin-bottom: 2%;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.7%;
+    background-color: #f7f7f7;
+    outline: none;
+    border: 1px solid #ebebeb;
+}
+
+    .textInput:focus {
+        border-color: #802891;
+    }
+
+.divider {
+    width: 90%;
+    height: 2px;
+    background-color: #e3e3e3;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.goButton {
+    background-color: #802891;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    outline: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: medium;
+}
+
+.lista {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    border: none;
+}
+
+.listNome {
+    text-align: center;
+    width: 100%;
+    word-wrap: hyphenate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: large;
+    font-family: 'Roboto', sans-serif;
+    color: gray;
+}
+

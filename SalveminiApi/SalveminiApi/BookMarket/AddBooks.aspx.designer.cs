@@ -10,7 +10,7 @@
 namespace SalveminiApi.BookMarket {
     
     
-    public partial class Login {
+    public partial class AddBooks {
         
         /// <summary>
         /// Controllo stile.
@@ -31,75 +31,84 @@ namespace SalveminiApi.BookMarket {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controllo descLabelR.
+        /// Controllo descLabel.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label descLabelR;
+        protected global::System.Web.UI.WebControls.Label descLabel;
         
         /// <summary>
-        /// Controllo NomeInput.
+        /// Controllo titleInput.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NomeInput;
+        protected global::System.Web.UI.WebControls.TextBox titleInput;
         
         /// <summary>
-        /// Controllo CognomeInput.
+        /// Controllo serialInput.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CognomeInput;
+        protected global::System.Web.UI.WebControls.TextBox serialInput;
         
         /// <summary>
-        /// Controllo CellInputR.
+        /// Controllo addBtn.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CellInputR;
+        protected global::System.Web.UI.WebControls.Button addBtn;
         
         /// <summary>
-        /// Controllo PasswordInputR.
+        /// Controllo nomeLbl.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PasswordInputR;
+        protected global::System.Web.UI.WebControls.Label nomeLbl;
         
         /// <summary>
-        /// Controllo descLabelA.
+        /// Controllo infoLbl.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label descLabelA;
+        protected global::System.Web.UI.WebControls.Label infoLbl;
         
         /// <summary>
-        /// Controllo CellInputA.
+        /// Controllo ScriptManager1.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CellInputA;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// Controllo PasswordInputA.
+        /// Controllo PannelloDinamico.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PasswordInputA;
+        protected global::System.Web.UI.UpdatePanel PannelloDinamico;
+        
+        /// <summary>
+        /// Controllo ListView1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView ListView1;
     }
 }
