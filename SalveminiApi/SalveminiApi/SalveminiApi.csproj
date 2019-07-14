@@ -203,6 +203,41 @@
     <Compile Include="BookMarket\AddBooks.aspx.designer.cs">
       <DependentUpon>AddBooks.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BookMarket\AdminCp.aspx.cs">
+      <DependentUpon>AdminCp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookMarket\AdminCp.aspx.designer.cs">
+      <DependentUpon>AdminCp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookMarket\AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookMarket\AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookMarket\CercaLibro.aspx.cs">
+      <DependentUpon>CercaLibro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookMarket\CercaLibro.aspx.designer.cs">
+      <DependentUpon>CercaLibro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookMarket\EditBook.aspx.cs">
+      <DependentUpon>EditBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookMarket\EditBook.aspx.designer.cs">
+      <DependentUpon>EditBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookMarket\LibriUtente.aspx.cs">
+      <DependentUpon>LibriUtente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookMarket\LibriUtente.aspx.designer.cs">
+      <DependentUpon>LibriUtente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BookMarket\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -210,11 +245,25 @@
     <Compile Include="BookMarket\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BookMarket\SearchUser.aspx.cs">
+      <DependentUpon>SearchUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookMarket\SearchUser.aspx.designer.cs">
+      <DependentUpon>SearchUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Utility.cs" />
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="Models\BookLibri.cs">
       <DependentUpon>MercatinoLibri.tt</DependentUpon>
     </Compile>
@@ -242,16 +291,25 @@
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="BookMarket\AddBooks.aspx" />
+    <Content Include="BookMarket\AdminCp.aspx" />
+    <Content Include="BookMarket\AdminLogin.aspx" />
+    <Content Include="BookMarket\CercaLibro.aspx" />
+    <Content Include="BookMarket\EditBook.aspx" />
+    <Content Include="BookMarket\LibriUtente.aspx" />
     <Content Include="BookMarket\Login.aspx" />
+    <Content Include="BookMarket\SearchUser.aspx" />
     <Content Include="Content\DesktopStyle.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\MobileStyle.css" />
+    <Content Include="Content\navigation.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="icons\responsivenav.svg" />
+    <Content Include="Images\logoBianco.png" />
     <Content Include="Models\MercatinoLibri.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MercatinoLibri.Context.cs</LastGenOutput>
@@ -294,13 +352,21 @@
       <DependentUpon>MercatinoLibri.edmx</DependentUpon>
     </Content>
     <Content Include="fonts\Montserrat-Regular.ttf" />
+    <Content Include="MasterPage.Master" />
+    <Content Include="icons\responsivenav.eot" />
+    <Content Include="icons\responsivenav.ttf" />
+    <Content Include="icons\responsivenav.woff" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\fastclick.js" />
+    <Content Include="Scripts\fixed-responsive-nav.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\responsive-nav.js" />
+    <Content Include="Scripts\scroll.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -351,6 +417,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -13,12 +13,6 @@ namespace SalveminiApi.BookMarket
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Detect mobile style
-            HttpBrowserCapabilities browser = Request.Browser;
-            if (browser.IsMobileDevice)
-                stile.Href = "~/Content/MobileStyle.css";
-
-         
         }
        
 
@@ -47,7 +41,7 @@ namespace SalveminiApi.BookMarket
                 //IP check
                 string pubIp = new System.Net.WebClient().DownloadString("https://api.ipify.org");
                 var alreadyIp = db.BookUtenti.Where(x => x.Ip == pubIp);
-                if (alreadyIp.Count() >= 1)
+                if (alreadyIp.Count() >= 10)
                 {
                     //Troppi con lo stesso ip
                     descLabelR.Text = "Hai raggiunto il numero massimo di account per questo indirizzo ip";

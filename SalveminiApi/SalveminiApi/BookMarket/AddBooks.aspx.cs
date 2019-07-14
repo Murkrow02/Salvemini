@@ -14,11 +14,6 @@ namespace SalveminiApi.BookMarket
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Detect mobile style
-            HttpBrowserCapabilities browser = Request.Browser;
-            if (browser.IsMobileDevice)
-                stile.Href = "~/Content/MobileStyle.css";
-
             try
             {
                 //User not found in cookies
@@ -52,7 +47,7 @@ namespace SalveminiApi.BookMarket
                 }
 
                 //Add info display
-                nomeLbl.Text = utente.Nome + " " + utente.Cognome;
+               nomeLbl.Text = utente.Nome + " " + utente.Cognome;
                 infoLbl.Text = "Hai aggiunto " + booksAdded.Count().ToString() + " libri, puoi aggiungerne ancora " + (50 - booksAdded.Count()).ToString();
             }
             catch
@@ -139,7 +134,10 @@ namespace SalveminiApi.BookMarket
 
         protected void logOut(object sender, EventArgs e)
         {
-
+            //Removes the cookie.
+            Response.Cookies["UserId"].Expires = DateTime.Now.AddDays(-1);
+            Response.Redirect("~/BookMarketLogin", false);
+            return;
         }
     }
 }
