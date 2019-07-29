@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.codex.salveminiapp">
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="27" />
+    <application android:label="SalveminiApp.Android">
+    </application>
+    <permission android:name="com.codex.salveminiapp.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="com.codex.salveminiapp.permission.C2D_MESSAGE" />
+    <receiver android:name="com.onesignal.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+        <intent-filter>
+            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            <category android:name="com.codex.salveminiapp" />
+        </intent-filter>
+    </receiver>
+</manifest>
