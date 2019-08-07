@@ -1,4 +1,4 @@
-﻿// Generazione del codice predefinita abilitata per il modello 'C:\Users\Marco\Desktop\salveminiapp-3.0\SalveminiApi\SalveminiApi\Models\MercatinoLibri.edmx'. 
+﻿// Generazione del codice predefinita abilitata per il modello 'C:\Users\Marco\Desktop\salveminiapp-3.0\SalveminiApi\SalveminiApi\Models\DatabaseModel.edmx'. 
 // Per abilitare la generazione del codice legacy, modificare il valore della proprietà della finestra di progettazione 'Strategia di generazione del codice
 // su 'Legacy ObjectContext'. Questa proprietà è disponibile nella finestra Proprietà quando il modello è
 // aperto nella finestra di progettazione.

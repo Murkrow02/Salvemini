@@ -13,10 +13,10 @@ namespace SalveminiApi.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SalveminiEntities : DbContext
+    public partial class DatabaseString : DbContext
     {
-        public SalveminiEntities()
-            : base("name=SalveminiEntities")
+        public DatabaseString()
+            : base("name=DatabaseString")
         {
         }
     
@@ -27,5 +27,6 @@ namespace SalveminiApi.Models
     
         public virtual DbSet<BookLibri> BookLibri { get; set; }
         public virtual DbSet<BookUtenti> BookUtenti { get; set; }
+        public virtual DbSet<Utenti> Utenti { get; set; }
     }
 }

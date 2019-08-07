@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Entities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BookLibri">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Seriale" Type="nvarchar" MaxLength="200" />
+          <Property Name="Prezzo" Type="smallmoney" />
+          <Property Name="idUtente" Type="int" Nullable="false" />
+          <Property Name="Creazione" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BookUtenti">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cognome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="Creazione" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Utenti">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Cognome" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Sesso" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="Classe" Type="int" Nullable="false" />
+          <Property Name="Corso" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Stato" Type="int" Nullable="false" />
+          <Property Name="Creazione" Type="datetime" Nullable="false" />
+          <Property Name="ArgoToken" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_BookLibri_BookUtenti">
+          <End Role="BookUtenti" Type="Self.BookUtenti" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BookLibri" Type="Self.BookLibri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BookUtenti">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="BookLibri">
+              <PropertyRef Name="idUtente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EntitiesStoreContainer">
+          <EntitySet Name="BookLibri" EntityType="Self.BookLibri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BookUtenti" EntityType="Self.BookUtenti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Utenti" EntityType="Self.Utenti" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BookLibri_BookUtenti" Association="Self.FK_BookLibri_BookUtenti">
+            <End Role="BookUtenti" EntitySet="BookUtenti" />
+            <End Role="BookLibri" EntitySet="BookLibri" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Entities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BookLibri">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Seriale" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Prezzo" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="idUtente" Type="Int32" Nullable="false" />
+          <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="BookUtenti" Relationship="Self.FK_BookLibri_BookUtenti" FromRole="BookLibri" ToRole="BookUtenti" />
+        </EntityType>
+        <EntityType Name="BookUtenti">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cognome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="BookLibri" Relationship="Self.FK_BookLibri_BookUtenti" FromRole="BookUtenti" ToRole="BookLibri" />
+        </EntityType>
+        <EntityType Name="Utenti">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cognome" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sesso" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Classe" Type="Int32" Nullable="false" />
+          <Property Name="Corso" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Stato" Type="Int32" Nullable="false" />
+          <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ArgoToken" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_BookLibri_BookUtenti">
+          <End Role="BookUtenti" Type="Self.BookUtenti" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BookLibri" Type="Self.BookLibri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BookUtenti">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="BookLibri">
+              <PropertyRef Name="idUtente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DatabaseString" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BookLibri" EntityType="Self.BookLibri" />
+          <EntitySet Name="BookUtenti" EntityType="Self.BookUtenti" />
+          <EntitySet Name="Utenti" EntityType="Self.Utenti" />
+          <AssociationSet Name="FK_BookLibri_BookUtenti" Association="Self.FK_BookLibri_BookUtenti">
+            <End Role="BookUtenti" EntitySet="BookUtenti" />
+            <End Role="BookLibri" EntitySet="BookLibri" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EntitiesStoreContainer" CdmEntityContainer="DatabaseString">
+          <EntitySetMapping Name="BookLibri">
+            <EntityTypeMapping TypeName="Entities.BookLibri">
+              <MappingFragment StoreEntitySet="BookLibri">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Seriale" ColumnName="Seriale" />
+                <ScalarProperty Name="Prezzo" ColumnName="Prezzo" />
+                <ScalarProperty Name="idUtente" ColumnName="idUtente" />
+                <ScalarProperty Name="Creazione" ColumnName="Creazione" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BookUtenti">
+            <EntityTypeMapping TypeName="Entities.BookUtenti">
+              <MappingFragment StoreEntitySet="BookUtenti">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Cognome" ColumnName="Cognome" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="Creazione" ColumnName="Creazione" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Utenti">
+            <EntityTypeMapping TypeName="Entities.Utenti">
+              <MappingFragment StoreEntitySet="Utenti">
+                <ScalarProperty Name="ArgoToken" ColumnName="ArgoToken" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Cognome" ColumnName="Cognome" />
+                <ScalarProperty Name="Sesso" ColumnName="Sesso" />
+                <ScalarProperty Name="Classe" ColumnName="Classe" />
+                <ScalarProperty Name="Corso" ColumnName="Corso" />
+                <ScalarProperty Name="Stato" ColumnName="Stato" />
+                <ScalarProperty Name="Creazione" ColumnName="Creazione" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Nessuno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

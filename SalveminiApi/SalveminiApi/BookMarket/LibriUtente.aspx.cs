@@ -10,7 +10,7 @@ namespace SalveminiApi.BookMarket
 {
     public partial class LibriUtente : System.Web.UI.Page
     {
-        SalveminiEntities db = new SalveminiEntities();
+        DatabaseString db = new DatabaseString();
 
         protected void Page_Load(object sender, EventArgs e)
         {
