@@ -28,5 +28,7 @@ namespace SalveminiApi.Models
         public virtual DbSet<BookLibri> BookLibri { get; set; }
         public virtual DbSet<BookUtenti> BookUtenti { get; set; }
         public virtual DbSet<Utenti> Utenti { get; set; }
+        public virtual DbSet<AppInfo> AppInfo { get; set; }
+        public virtual DbSet<Avvisi> Avvisi { get; set; }
     }
 }

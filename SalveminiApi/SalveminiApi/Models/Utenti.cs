@@ -14,6 +14,12 @@ namespace SalveminiApi.Models
     
     public partial class Utenti
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Utenti()
+        {
+            this.Avvisi = new HashSet<Avvisi>();
+        }
+    
         public int id { get; set; }
         public string Nome { get; set; }
         public string Cognome { get; set; }
@@ -23,5 +29,8 @@ namespace SalveminiApi.Models
         public int Stato { get; set; }
         public System.DateTime Creazione { get; set; }
         public string ArgoToken { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Avvisi> Avvisi { get; set; }
     }
 }
