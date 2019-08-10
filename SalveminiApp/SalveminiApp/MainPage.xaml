@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage Title="Home" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SalveminiApp" x:Class="SalveminiApp.MainPage">
+    <StackLayout Padding="20" Spacing="30">
+        <!--Pubblicità-->
+        <local:ShadowFrame Padding="0" x:Name="adsFrame" CornerRadius="20">
+            <Frame HasShadow="false" Padding="0" IsClippedToBounds="true" CornerRadius="20">
+                <Image Source="ad.jpg" />
+            </Frame>
+        </local:ShadowFrame>
+        <StackLayout Orientation="Horizontal" Spacing="10">
+            <!--Calendario-->
+            <local:ShadowFrame x:Name="todayFrame" Padding="10" CornerRadius="20" HorizontalOptions="Start">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Image x:Name="calendarImage" Source="calendar.png" />
+                        <Label Text="Oggi" FontSize="18" TextColor="{x:Static local:Styles.TextGray}" />
+                    </StackLayout>
+                    <Label Text="Oggi hai preso 7 di matematica" />
+                    <Label Text="Mostra Altro" VerticalOptions="EndAndExpand" FontSize="13" HorizontalOptions="EndAndExpand" TextColor="{x:Static local:Styles.TextGray}" />
+                </StackLayout>
+            </local:ShadowFrame>
+            <!--Bus e Treni-->
+            <local:ShadowFrame x:Name="trainFrame" Padding="10" CornerRadius="20" HorizontalOptions="EndAndExpand">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Image x:Name="trainImage" Source="train.png" />
+                        <Label Text="Bus e Treni" FontSize="18" TextColor="{x:Static local:Styles.TextGray}" />
+                    </StackLayout>
+                    <Label Text="Il prossimo treno per Napoli parte alle 12:45" />
+                    <Label Text="Mostra Altro" VerticalOptions="EndAndExpand" FontSize="13" HorizontalOptions="EndAndExpand" TextColor="{x:Static local:Styles.TextGray}" />
+                </StackLayout>
+            </local:ShadowFrame>
+        </StackLayout>
+        <StackLayout Spacing="0">
+            <!--Avvisi-->
+            <StackLayout Spacing="0">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="advice.png" x:Name="adviceImage" />
+                        <Label Text="Avvisi" TextColor="{x:Static local:Styles.TextGray}" FontSize="26" />
+                    </StackLayout>
+                    <ContentView Margin="-20, 0">
+                        <Grid>
+                            <ScrollView x:Name="avvisiScroll" Orientation="Horizontal" HorizontalOptions="FillAndExpand" HorizontalScrollBarVisibility="Never">
+                                <Label x:Name="avvisiLabel" Text="L’accesso al campo del Salvemini è ora consentito anche ai disabili per esempio Steven Aukings quel ritardato nel culo" MaxLines="1" />
+                            </ScrollView>
+                            <local:TransparentGradient HorizontalOptions="Start" Padding="20, 0" HasShadow="false" CornerRadius="0" />
+                            <local:TransparentGradient HorizontalOptions="End" Rotation="180" Padding="20, 0" HasShadow="false" CornerRadius="0" />
+                        </Grid>
+                    </ContentView>
+                </StackLayout>
+                <Button Text="Mostra tutti gli avvisi" BackgroundColor="White" HorizontalOptions="End" VerticalOptions="Start" TextColor="{x:Static local:Styles.TextGray}" />
+            </StackLayout>
+            <!--Orario-->
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="clock.png" x:Name="clockImage" />
+                    <Label Text="Orario" TextColor="{x:Static local:Styles.TextGray}" FontSize="26" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
