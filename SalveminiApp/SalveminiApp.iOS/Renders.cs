@@ -51,9 +51,10 @@ namespace SalveminiApp.iOS
         protected override void OnElementChanged(ElementChangedEventArgs<Frame> e)
         {
             base.OnElementChanged(e);
-            Layer.ShadowOffset = new CGSize(new CGPoint(0, 5));
-            Layer.ShadowOpacity = 0.25f;
+            Layer.ShadowOffset = new CGSize(new CGPoint(0, 8));
+            Layer.ShadowOpacity = 0.15f;
             Layer.ShadowRadius = 10f;
+
         }
     }
 

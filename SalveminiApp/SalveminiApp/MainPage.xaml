@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage Title="Home" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SalveminiApp" x:Class="SalveminiApp.MainPage">
-    <StackLayout Padding="20" Spacing="30">
+    <StackLayout Padding="20, 10" Spacing="30">
         <!--Pubblicità-->
         <local:ShadowFrame Padding="0" x:Name="adsFrame" CornerRadius="20">
             <Frame HasShadow="false" Padding="0" IsClippedToBounds="true" CornerRadius="20">
@@ -20,7 +20,7 @@
                 </StackLayout>
             </local:ShadowFrame>
             <!--Bus e Treni-->
-            <local:ShadowFrame x:Name="trainFrame" Padding="10" CornerRadius="20" HorizontalOptions="EndAndExpand">
+            <local:ShadowFrame BackgroundColor="White" x:Name="trainFrame" Padding="10" CornerRadius="20" HorizontalOptions="EndAndExpand">
                 <StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Image x:Name="trainImage" Source="train.png" />
