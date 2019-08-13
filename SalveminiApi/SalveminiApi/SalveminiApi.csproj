@@ -55,6 +55,9 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RestSharp, Version=106.6.10.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.6.10\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -198,7 +201,9 @@
     <Compile Include="Argo\Models\Assenze.cs" />
     <Compile Include="Argo\Models\AuthBlock.cs" />
     <Compile Include="Argo\Models\Compiti.cs" />
+    <Compile Include="Argo\Models\Oggi.cs" />
     <Compile Include="Argo\Models\Promemoria.cs" />
+    <Compile Include="Argo\Models\Scrutinio.cs" />
     <Compile Include="Argo\Models\Utente.cs" />
     <Compile Include="BookMarket\AddBooks.aspx.cs">
       <DependentUpon>AddBooks.aspx</DependentUpon>
@@ -258,6 +263,7 @@
     </Compile>
     <Compile Include="Controllers\ArgoController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\AvvisiController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -269,6 +275,9 @@
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ads.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AppInfo.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
@@ -301,6 +310,8 @@
     <Compile Include="Models\Utenti.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="OneSignalApi\NotificationModel.cs" />
+    <Compile Include="OneSignalApi\NotificationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\ArgoClient.cs" />
   </ItemGroup>
@@ -412,6 +423,11 @@
     <Content Include="Views\Argo\Details.cshtml" />
     <Content Include="Views\Argo\Edit.cshtml" />
     <Content Include="Views\Argo\Index.cshtml" />
+    <Content Include="Views\Avvisi\Create.cshtml" />
+    <Content Include="Views\Avvisi\Delete.cshtml" />
+    <Content Include="Views\Avvisi\Details.cshtml" />
+    <Content Include="Views\Avvisi\Edit.cshtml" />
+    <Content Include="Views\Avvisi\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

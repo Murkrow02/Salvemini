@@ -81,6 +81,7 @@ namespace UlysseApi.Controllers
                 newUser.Corso = utente.desCorso;
                 newUser.Creazione = Utility.italianTime();
                 newUser.ArgoToken = Token;
+                newUser.Stato = 0;
                 db.Utenti.Add(newUser);
                 db.SaveChanges();
                 returnList.Add(newUser);
