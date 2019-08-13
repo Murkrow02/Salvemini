@@ -1,19 +1,18 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace SalveminiApp.Helpers
+namespace SalveminiApp
 {
     public class Styles
     {
-        public static Color PrimaryColor = Color.FromHex("#ff3636");
+        //Primary Color (Purple)
+        public static Color PrimaryColor = Color.FromHex("#802891");
 
-        //Piscina
-        public static Color PrimaryPool = Color.FromHex("#4AA8E6");
+        //Light Gray for Text
+        public static Color TextGray = Color.FromHex("#858585");
 
-        //Palestra
-        public static Color PrimaryGym = Color.FromHex("#88EB64");
+        //Light Gray for Objects
+        public static Color ObjectGray = Color.FromHex("#ededed");
 
-        //Light Gray
-        public static Color LightGray = Color.FromHex("#858585");
     }
 }

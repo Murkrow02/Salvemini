@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xamarin.Forms;
+#if __IOS__
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+#endif
+
+namespace SalveminiApp.FirstAccess
+{
+    public partial class WelcomePage : ContentPage
+    {
+        public WelcomePage()
+        {
+            InitializeComponent();
+
+            //Initialize Interface
+            appIcon.WidthRequest = App.ScreenWidth / 4.5;
+
+            //Set Safearea
+#if __IOS__
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
+#endif
+
+            //Hide navigation bar
+            Xamarin.Forms.NavigationPage.SetHasNavigationBar(this, false);
+
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            //Animate Appearing
+            titleLayout.TranslationY = -200;
+            await Task.WhenAll(titleLayout.TranslateTo(0, 0, 1000, Easing.CubicOut), titleLayout.FadeTo(1, 1000));
+            await touchToContinueLabel.FadeTo(0.8, 800);
+        }
+
+        void Layout_Tapped(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new Login());
+        }
+    }
+}

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Com.OneSignal;
 using Foundation;
+using Lottie.Forms.iOS.Renderers;
 using UIKit;
 
 namespace SalveminiApp.iOS
@@ -23,8 +24,22 @@ namespace SalveminiApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            //Get Screen Size
+            App.ScreenHeight = (float)UIScreen.MainScreen.Bounds.Height;
+            App.ScreenWidth = (float)UIScreen.MainScreen.Bounds.Width;
+
+            //Register OneSignal License
+            OneSignal.Current.StartInit("a85553ca-c1fe-4d93-a02f-d30bf30e2a2a").EndInit();
+
+            //Initialize Processes
+            Syncfusion.XForms.iOS.TextInputLayout.SfTextInputLayoutRenderer.Init();
+            Syncfusion.XForms.iOS.PopupLayout.SfPopupLayoutRenderer.Init();
+            AnimationViewRenderer.Init();
+
             LoadApplication(new App());
 
+           
             return base.FinishedLaunching(app, options);
         }
     }

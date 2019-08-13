@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Padding="20, 0" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.FirstAccess.Login">
+    <!--Popup-->
+    <sfPopup:SfPopupLayout x:Name="popupLayout">
+        <sfPopup:SfPopupLayout.PopupView>
+            <sfPopup:PopupView ShowFooter="false" ShowHeader="false" AutoSizeMode="Height">
+                <sfPopup:PopupView.PopupStyle>
+                        <sfPopup:PopupStyle OverlayColor="Transparent">
+                        </sfPopup:PopupStyle>
+                    </sfPopup:PopupView.PopupStyle>
+                
+            </sfPopup:PopupView>
+        </sfPopup:SfPopupLayout.PopupView>
+    </sfPopup:SfPopupLayout>
+    <StackLayout Spacing="40">
+        <!--Title-->
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="Login" FontAttributes="Bold" TextColor="{x:Static local:Styles.PrimaryColor}" HorizontalOptions="Center" FontSize="40" />
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <Label HorizontalTextAlignment="Center" x:Name="loginInfoLabel" TextColor="{x:Static local:Styles.TextGray}" FontSize="Small" Text="Effettua il Login con il tuo account" />
+                <Image Source="argoLogo.png" x:Name="argoLogo" />
+            </StackLayout>
+        </StackLayout>
+        <!--Entries-->
+        <StackLayout Spacing="0" Padding="40, 0" VerticalOptions="StartAndExpand">
+            <inputLayout:SfTextInputLayout x:Name="usernameEntry" FocusedColor="{x:Static local:Styles.PrimaryColor}" Hint="Username" ContainerType="None">
+                <Entry x:Name="username" TextChanged="Username_TextChanged" />
+            </inputLayout:SfTextInputLayout>
+            <inputLayout:SfTextInputLayout x:Name="passwordEntry" EnablePasswordVisibilityToggle="true" FocusedColor="{x:Static local:Styles.PrimaryColor}" Hint="Password" ContainerType="None">
+                <Entry IsPassword="true" TextChanged="Password_TextChanged" x:Name="password" />
+            </inputLayout:SfTextInputLayout>
+            <Button Text="Serve aiuto?" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.PrimaryColor}" />
+        </StackLayout>
+        <!--Button-->
+        <StackLayout Spacing="50">
+            <ActivityIndicator x:Name="loading" VerticalOptions="EndAndExpand" Color="{x:Static local:Styles.PrimaryColor}" IsRunning="false" Scale="1.2" />
+            <Button x:Name="confirmButton" Clicked="Continue_Clicked" Text="Continua" Padding="10" BackgroundColor="{x:Static local:Styles.ObjectGray}" HorizontalOptions="Center" TextColor="Black" VerticalOptions="EndAndExpand" FontSize="Large" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

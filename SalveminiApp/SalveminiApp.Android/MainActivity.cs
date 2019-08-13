@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Com.OneSignal;
+using Lottie.Forms.Droid;
 
 namespace SalveminiApp.Droid
 {
@@ -14,16 +16,35 @@ namespace SalveminiApp.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            //Get Screen Size
+            var metrics = Resources.DisplayMetrics;
+            App.ScreenHeight = ConvertPixelsToDp(metrics.HeightPixels);
+            App.ScreenWidth = ConvertPixelsToDp(metrics.WidthPixels);
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
 
+            //Register OneSignal License
+            OneSignal.Current.StartInit("a85553ca-c1fe-4d93-a02f-d30bf30e2a2a").EndInit();
+
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            //Initialize Components
+            Syncfusion.XForms.Android.PopupLayout.SfPopupLayoutRenderer.Init();
+            Plugin.Iconize.Iconize.Init(Resource.Id.toolbar, Resource.Id.sliding_tabs);
+            AnimationViewRenderer.Init();
+
             LoadApplication(new App());
         }
 
+        private int ConvertPixelsToDp(float pixelValue)
+        {
+            var dp = (int)((pixelValue) / Resources.DisplayMetrics.Density);
+            return dp;
+        }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
