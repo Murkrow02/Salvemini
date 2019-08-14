@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Entities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Ads">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descrizione" Type="nvarchar" MaxLength="4000" />
+          <Property Name="Immagine" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Url" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Tipo" Type="int" Nullable="false" />
+        </EntityType>
         <!--Errori trovati durante la generazione:
 avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB_A41900_salvemini.dbo.AppInfo'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
         <EntityType Name="AppInfo">
@@ -91,6 +102,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="EntitiesStoreContainer">
+          <EntitySet Name="Ads" EntityType="Self.Ads" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Avvisi" EntityType="Self.Avvisi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BookLibri" EntityType="Self.BookLibri" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BookUtenti" EntityType="Self.BookUtenti" Schema="dbo" store:Type="Tables" />
@@ -181,6 +193,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
             <End Role="Utenti" EntitySet="Utenti" />
             <End Role="Avvisi" EntitySet="Avvisi" />
           </AssociationSet>
+          <EntitySet Name="Ads" EntityType="Entities.Ads" />
         </EntityContainer>
         <EntityType Name="AppInfo">
           <Key>
@@ -215,6 +228,17 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Ads">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Descrizione" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="Immagine" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Tipo" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -277,6 +301,18 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
                 <ScalarProperty Name="Immagini" ColumnName="Immagini" />
                 <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
                 <ScalarProperty Name="Titolo" ColumnName="Titolo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ads">
+            <EntityTypeMapping TypeName="Entities.Ads">
+              <MappingFragment StoreEntitySet="Ads">
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Immagine" ColumnName="Immagine" />
+                <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -30,5 +30,6 @@ namespace SalveminiApi.Models
         public virtual DbSet<Utenti> Utenti { get; set; }
         public virtual DbSet<AppInfo> AppInfo { get; set; }
         public virtual DbSet<Avvisi> Avvisi { get; set; }
+        public virtual DbSet<Ads> Ads { get; set; }
     }
 }
