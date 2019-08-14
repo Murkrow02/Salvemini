@@ -27,6 +27,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\OrariClassi\3FCAM.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -55,12 +56,15 @@
       <DependentUpon>WelcomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Index.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceOrari.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Orario.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
     <Folder Include="$(MSBuildThisFileDirectory)FirstAccess\" />
     <Folder Include="$(MSBuildThisFileDirectory)RestApi\" />
     <Folder Include="$(MSBuildThisFileDirectory)RestApi\Models\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\OrariClassi\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Helpers\Preferences.txt" />

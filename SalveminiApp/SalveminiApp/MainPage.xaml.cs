@@ -13,27 +13,51 @@ namespace SalveminiApp
     [DesignTimeVisible(true)]
     public partial class MainPage : ContentPage
     {
+        public List<RestApi.Models.Lezione> Orario = new List<RestApi.Models.Lezione>();
+
         public MainPage()
         {
             InitializeComponent();
 
             //Initialize interface
-            adsFrame.HeightRequest = App.ScreenHeight / 5.4;
+            adsFrame.HeightRequest = App.ScreenHeight / 14;
             todayFrame.WidthRequest = App.ScreenWidth / 2.6;
-            todayFrame.HeightRequest = App.ScreenHeight / 8.5;
             calendarImage.WidthRequest = todayFrame.WidthRequest / 9;
             trainFrame.WidthRequest = App.ScreenWidth / 2.6;
-            trainFrame.HeightRequest = App.ScreenHeight / 8.5;
             trainImage.WidthRequest = todayFrame.WidthRequest / 9;
             adviceImage.WidthRequest = App.ScreenWidth / 22;
             clockImage.WidthRequest = App.ScreenWidth / 22;
+            labelView.HeightRequest = App.ScreenHeight / 10;
+
+#if __IOS__
+            if (iOS.AppDelegate.HasNotch)
+            {
+                mainLayout.Spacing = 20;
+            }
+#endif
         }
 
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
 
+            Orario = await App.Orari.GetOrario("3FCAM", 1);
 
+            if (Orario != null)
+            {
+                orarioList.ItemsSource = Orario;
+            }
+
+            //Avvisi Label starts to flow
+            flowLabel();
+           
+
+
+
+        }
+
+        void flowLabel()
+        {
             var speed = ((double)avvisiLabel.Text.Length / 10) * 1000 + 6000;
             Point pointF = avvisiScroll.GetScrollPositionForElement(avvisiLabel, ScrollToPosition.End);
             pointF.X += App.ScreenWidth * 2;
@@ -62,9 +86,6 @@ namespace SalveminiApp
                 avvisiLabel.TranslationX = App.ScreenWidth;
                 return true;
             });
-
-
-
 
         }
     }

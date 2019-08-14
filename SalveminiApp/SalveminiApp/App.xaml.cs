@@ -14,6 +14,7 @@ namespace SalveminiApp
 
         //RestService Call
         public static RestApi.ItemManagerLogin Login { get; private set; }
+        public static RestApi.ItemManagerOrari Orari { get; private set; }
 
         public App()
         {
@@ -45,6 +46,7 @@ namespace SalveminiApp
         public static void refreshCalls()
         {
             Login = new RestApi.ItemManagerLogin(new RestApi.RestServiceLogin());
+            Orari = new RestApi.ItemManagerOrari(new RestApi.RestServiceOrari());
         }
 
         protected override void OnStart()
