@@ -13,7 +13,7 @@
             <asp:TextBox runat="server" class="textInput" placeholder="Cognome" ID="CognomeInput" MaxLength="49"></asp:TextBox>
             <asp:TextBox runat="server" class="textInput" placeholder="Cellulare" ID="CellInputR" MaxLength="49"></asp:TextBox>
             <asp:TextBox runat="server" class="textInput" placeholder="Password" ID="PasswordInputR" type="password" MaxLength="29"></asp:TextBox>
-            <asp:Button runat="server" Text="Registrati" OnClick="RegisterClick" class="goButton"/>
+            <asp:Button UseSubmitBehavior="false" runat="server" Text="Registrati" OnClick="RegisterClick" class="goButton"/>
         </div>
 
         <div class="divider"></div>
@@ -29,7 +29,7 @@
              </p>
             <asp:TextBox runat="server" class="textInput" placeholder="Cellulare" ID="CellInputA"></asp:TextBox>
             <asp:TextBox runat="server" class="textInput" placeholder="Password" ID="PasswordInputA" type="password"></asp:TextBox>
-            <asp:Button runat="server" Text="Accedi" OnClick="AccediClick" class="goButton" />
+            <asp:Button UseSubmitBehavior="false" runat="server" Text="Accedi" OnClick="AccediClick" class="goButton" />
         </div>
 </asp:Content>  
 

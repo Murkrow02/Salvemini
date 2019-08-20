@@ -8,8 +8,10 @@
     </script>
 
     <div class="ceneterdDiv">
+         <!--Back-->
+        <asp:Button runat="server" Text="Indietro" OnClick="back_Click" class="goButton" Style="margin-top: 69px" />
         <!--Title-->
-        <asp:Label Text="Cerca tra i libri" runat="server" CssClass="titleLbl" />
+        <asp:Label Text="Libri approvati" runat="server" CssClass="titleLbl" />
         <!--Search-->
         <asp:TextBox autocomplete="off" runat="server" ID="searchBar" CssClass="textInput" placeholder="Inserisci il codice o il nome del libro" OnTextChanged="searching" onkeyup="RefreshUpdatePanel();"></asp:TextBox>
         <!--List-->
@@ -25,7 +27,7 @@
                             <table cellpadding="2" cellspacing="0" border="1" class="lista">
                                 <tr>
                                     <th>Nome</th>
-                                    <th>Seriale</th>
+<%--                                    <th>Seriale</th>--%>
                                     <th>Prezzo</th>
                                     <th>Codice</th>
                                 </tr>
@@ -42,9 +44,9 @@
                     <td>
                         <asp:Label ID="lblName" runat="server" Text='<%# Eval("Nome")%>' CssClass="listNome" style="word-break: break-all;"></asp:Label>
                     </td>
-                    <td>
+                    <%--<td>
                         <asp:Label runat="server" Text='<%# Eval("Seriale")%>' CssClass="listNome"></asp:Label>
-                    </td>
+                    </td>--%>
                     <td style="width: 10%">
                         <asp:Label runat="server" Text='<%# String.Format("{0:#.00}", Eval("Prezzo"))%>'  CssClass="listNome"></asp:Label>
                     </td>

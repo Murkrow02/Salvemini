@@ -46,6 +46,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <Property Name="Prezzo" Type="smallmoney" />
           <Property Name="idUtente" Type="int" Nullable="false" />
           <Property Name="Creazione" Type="datetime" Nullable="false" />
+          <Property Name="Accettato" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="BookUtenti">
           <Key>
@@ -136,6 +137,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <Property Name="idUtente" Type="Int32" Nullable="false" />
           <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="BookUtenti" Relationship="Self.FK_BookLibri_BookUtenti" FromRole="BookLibri" ToRole="BookUtenti" />
+          <Property Name="Accettato" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="BookUtenti">
           <Key>
@@ -163,7 +165,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <Property Name="Stato" Type="Int32" Nullable="false" />
           <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ArgoToken" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Avvisi" Relationship="Entities.FK_Avvisi_Utenti" FromRole="Utenti" ToRole="Avvisi" />
+          <NavigationProperty Name="Avvisi" Relationship="Entities.FK_Avvisi_Utenti" FromRole="Utenti" ToRole="Avvisi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
         <Association Name="FK_BookLibri_BookUtenti">
           <End Role="BookUtenti" Type="Self.BookUtenti" Multiplicity="1">
@@ -248,6 +250,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <EntitySetMapping Name="BookLibri">
             <EntityTypeMapping TypeName="Entities.BookLibri">
               <MappingFragment StoreEntitySet="BookLibri">
+                <ScalarProperty Name="Accettato" ColumnName="Accettato" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Seriale" ColumnName="Seriale" />

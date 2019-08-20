@@ -8,6 +8,8 @@
     </script>
 
     <div class="ceneterdDiv">
+          <!--Back-->
+        <asp:Button runat="server" Text="Indietro" OnClick="back_Click" class="goButton" Style="margin-top: 69px" />
         <!--Title-->
         <asp:Label Text="Utenti" runat="server" CssClass="titleLbl" />
         <!--Search-->

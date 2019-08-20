@@ -265,6 +265,7 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\AvvisiController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\UtentiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

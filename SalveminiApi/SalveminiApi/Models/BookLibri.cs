@@ -20,6 +20,7 @@ namespace SalveminiApi.Models
         public Nullable<decimal> Prezzo { get; set; }
         public int idUtente { get; set; }
         public System.DateTime Creazione { get; set; }
+        public bool Accettato { get; set; }
     
         public virtual BookUtenti BookUtenti { get; set; }
     }

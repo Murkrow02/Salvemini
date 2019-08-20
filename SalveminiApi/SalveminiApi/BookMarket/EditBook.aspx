@@ -3,13 +3,15 @@
 
     
     <div class="ceneterdDiv" style="margin-top: 12%">
+           <!--Back-->
+        <asp:Button runat="server" Text="Indietro" OnClick="back_Click" class="goButton" Style="margin-top: 69px" />
         <p>
             <asp:Label class="titleLbl" runat="server">Modifica Libro</asp:Label>
         </p>
         <p>
             <asp:Label ID="errorLabel" CssClass="descLabel" runat="server" Visible="false" ForeColor="Red">Il libro non è stato aggiornato, assicurati di aver inserito un valore valido</asp:Label>
                          </p>
-        <asp:TextBox runat="server" placeholder="Prezzo" CssClass="textInput" ID="prezzoTxt" ></asp:TextBox>
+        <asp:TextBox runat="server" placeholder="Prezzo" CssClass="textInput" ID="prezzoTxt" autocomplete="off" ></asp:TextBox>
         <asp:Button Text="Vai" runat="server" CssClass="goButton" OnClick="editClick"/>
     </div>
 

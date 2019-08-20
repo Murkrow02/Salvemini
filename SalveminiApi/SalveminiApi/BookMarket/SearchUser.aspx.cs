@@ -61,5 +61,10 @@ namespace SalveminiApi.BookMarket
 
             }
         }
+
+        protected void back_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminCp.aspx", false);
+        }
     }
 }

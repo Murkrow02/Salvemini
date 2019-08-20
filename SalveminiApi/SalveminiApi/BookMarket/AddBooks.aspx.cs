@@ -16,39 +16,42 @@ namespace SalveminiApi.BookMarket
         {
             try
             {
-                //User not found in cookies
-                HttpCookie userCookie = Request.Cookies["UserId"];
-                if (userCookie == null)
+                if (!Page.IsPostBack)
                 {
-                    Response.Redirect("~/BookMarketLogin", false);
-                    return;
+                    //User not found in cookies
+                    HttpCookie userCookie = Request.Cookies["UserId"];
+                    if (userCookie == null)
+                    {
+                        Response.Redirect("~/BookMarketLogin", false);
+                        return;
+                    }
+
+                    //Find user
+                    var utente = db.BookUtenti.Find(Convert.ToInt32(Request.Cookies["UserId"].Value));
+
+                    //User not found
+                    if (utente == null)
+                    {
+                        Response.Redirect("~/BookMarketLogin", false);
+                        return;
+                    }
+
+                    //Ok
+                    //Find how many books
+                    var booksAdded = db.BookLibri.Where(x => x.idUtente == utente.id).ToList();
+
+
+                    if (!IsPostBack)
+                    {
+                        ListView1.DataSource = booksAdded;
+                        ListView1.DataBind();
+                        Session["booksList"] = booksAdded;
+                    }
+
+                    //Add info display
+                    nomeLbl.Text = utente.Nome + " " + utente.Cognome;
+                    infoLbl.Text = "Hai aggiunto " + booksAdded.Count().ToString() + " libri, puoi aggiungerne ancora " + (50 - booksAdded.Count()).ToString();
                 }
-
-                //Find user
-                var utente = db.BookUtenti.Find(Convert.ToInt32(Request.Cookies["UserId"].Value));
-
-                //User not found
-                if (utente == null)
-                {
-                    Response.Redirect("~/BookMarketLogin", false);
-                    return;
-                }
-
-                //Ok
-                //Find how many books
-                var booksAdded = db.BookLibri.Where(x => x.idUtente == utente.id).ToList();
-
-
-                if (!IsPostBack)
-                {
-                    ListView1.DataSource = booksAdded;
-                    ListView1.DataBind();
-                    Session["booksList"] = booksAdded;
-                }
-
-                //Add info display
-               nomeLbl.Text = utente.Nome + " " + utente.Cognome;
-                infoLbl.Text = "Hai aggiunto " + booksAdded.Count().ToString() + " libri, puoi aggiungerne ancora " + (50 - booksAdded.Count()).ToString();
             }
             catch
             {
@@ -56,21 +59,27 @@ namespace SalveminiApi.BookMarket
                 Response.Redirect("~/BookMarketLogin", false);
                 return;
             }
-
-
         }
+
+
+
+
 
         protected void Commands(object sender, ListViewCommandEventArgs e)
         {
             //Get books list
             List<BookLibri> libri = (List<BookLibri>)Session["booksList"];
-            
+
             switch (e.CommandName)
             {
                 case "remove":
                     //Get selected item and remove it from db
                     var libro = db.BookLibri.Find(libri[e.Item.DisplayIndex].id);
+
+                    //Controlla se non è stato accettato
+                    if(!libro.Accettato)
                     db.BookLibri.Remove(libro);
+
                     db.SaveChanges();
                     libri.Remove(libro);
                     ListView1.DataSource = libri;
@@ -117,6 +126,7 @@ namespace SalveminiApi.BookMarket
                 var book = new BookLibri();
                 book.Nome = titleInput.Text;
                 book.Creazione = Helpers.Utility.italianTime();
+                book.Accettato = false;
                 book.idUtente = Convert.ToInt32(userCookie.Value.ToString());
                 db.BookLibri.Add(book);
                 db.SaveChanges();
