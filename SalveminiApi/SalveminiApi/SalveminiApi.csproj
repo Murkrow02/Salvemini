@@ -240,6 +240,13 @@
     <Compile Include="BookMarket\EditBook.aspx.designer.cs">
       <DependentUpon>EditBook.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BookMarket\Fiodo.aspx.cs">
+      <DependentUpon>Fiodo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookMarket\Fiodo.aspx.designer.cs">
+      <DependentUpon>Fiodo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BookMarket\LibriUtente.aspx.cs">
       <DependentUpon>LibriUtente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -323,6 +330,7 @@
     <Content Include="BookMarket\AdminLogin.aspx" />
     <Content Include="BookMarket\CercaLibro.aspx" />
     <Content Include="BookMarket\EditBook.aspx" />
+    <Content Include="BookMarket\Fiodo.aspx" />
     <Content Include="BookMarket\LibriUtente.aspx" />
     <Content Include="BookMarket\Login.aspx" />
     <Content Include="BookMarket\SearchUser.aspx" />

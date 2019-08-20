@@ -31,4 +31,20 @@ namespace SalveminiApi.Argo.Models
         public List<Assenze> dati { get; set; }
 
     }
+
+
+    //POST
+    public class AssenzaModel
+    {
+
+        public string motivazione { get; set; }
+        public List<ListaAssenze> listaAssenze { get; set; }
+    }
+
+    public class ListaAssenze
+    {
+
+        public string datAssenza { get; set; }
+        public string binUid { get; set; }
+    }
 }
