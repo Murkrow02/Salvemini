@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -41,7 +42,12 @@ namespace SalveminiApi.BookMarket
             {
                 var libro = (BookLibri)Session["selectedBook"];
                 var findLibro = db.BookLibri.Find(libro.id);
-                findLibro.Prezzo = Convert.ToDecimal(prezzoTxt.Text.Trim().Replace(".",","));
+                var prezzo = prezzoTxt.Text.Trim().Replace(".",",");
+
+
+              var newprezzo =   decimal.Parse(prezzo, NumberStyles.AllowCurrencySymbol | NumberStyles.Number);
+
+                findLibro.Prezzo = newprezzo;
                 db.SaveChanges();
                 Response.Redirect("CercaLibro.aspx", false);
             }
