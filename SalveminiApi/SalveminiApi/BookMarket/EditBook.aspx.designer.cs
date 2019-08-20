@@ -13,6 +13,15 @@ namespace SalveminiApi.BookMarket {
     public partial class EditBook {
         
         /// <summary>
+        /// Controllo title.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label title;
+        
+        /// <summary>
         /// Controllo errorLabel.
         /// </summary>
         /// <remarks>

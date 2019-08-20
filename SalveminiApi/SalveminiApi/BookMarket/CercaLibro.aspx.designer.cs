@@ -22,24 +22,6 @@ namespace SalveminiApi.BookMarket {
         protected global::System.Web.UI.WebControls.TextBox searchBar;
         
         /// <summary>
-        /// Controllo ScriptManager1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
-        /// <summary>
-        /// Controllo PannelloDinamico.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel PannelloDinamico;
-        
-        /// <summary>
         /// Controllo ListView1.
         /// </summary>
         /// <remarks>

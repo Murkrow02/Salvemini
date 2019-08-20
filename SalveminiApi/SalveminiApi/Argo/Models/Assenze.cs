@@ -26,10 +26,9 @@ namespace SalveminiApi.Argo.Models
         
     }
 
-    public class assenzeList {
-      public  List<Assenze> dati { get; set; }
-        public int Assenze { get; set; }
-        public int Ritardi { get; set; }
-        public int Uscite { get; set; }
+   public class AssenzeList
+    {
+        public List<Assenze> dati { get; set; }
+
     }
 }

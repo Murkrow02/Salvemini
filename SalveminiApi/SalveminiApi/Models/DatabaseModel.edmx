@@ -133,7 +133,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Seriale" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Prezzo" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="Prezzo" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="idUtente" Type="Int32" Nullable="false" />
           <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="BookUtenti" Relationship="Self.FK_BookLibri_BookUtenti" FromRole="BookLibri" ToRole="BookUtenti" />

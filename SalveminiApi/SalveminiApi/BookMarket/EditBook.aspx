@@ -6,7 +6,7 @@
            <!--Back-->
         <asp:Button runat="server" Text="Indietro" OnClick="back_Click" class="goButton" Style="margin-top: 69px" />
         <p>
-            <asp:Label class="titleLbl" runat="server">Modifica Libro</asp:Label>
+            <asp:Label ID="title" class="titleLbl" runat="server">Modifica Libro</asp:Label>
         </p>
         <p>
             <asp:Label ID="errorLabel" CssClass="descLabel" runat="server" Visible="false" ForeColor="Red">Il libro non è stato aggiornato, assicurati di aver inserito un valore valido</asp:Label>

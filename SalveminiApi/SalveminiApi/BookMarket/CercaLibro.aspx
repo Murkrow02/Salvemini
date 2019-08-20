@@ -1,11 +1,6 @@
-﻿<%@ Page Title="Cerca Libro" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="CercaLibro.aspx.cs" Inherits="SalveminiApi.BookMarket.CercaLibro" %>
+﻿<%@ Page Title="Cerca Libro"  Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="CercaLibro.aspx.cs" Inherits="SalveminiApi.BookMarket.CercaLibro" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script>
-        function RefreshUpdatePanel() {
-            __doPostBack('<%= searchBar.ClientID %>', '');
-        };
-    </script>
 
     <div class="ceneterdDiv">
          <!--Back-->
@@ -14,10 +9,8 @@
         <asp:Label Text="Libri approvati" runat="server" CssClass="titleLbl" />
         <!--Search-->
         <asp:TextBox autocomplete="off" runat="server" ID="searchBar" CssClass="textInput" placeholder="Inserisci il codice o il nome del libro" OnTextChanged="searching" onkeyup="RefreshUpdatePanel();"></asp:TextBox>
+        <asp:Button runat="server" Text="Cerca" class="goButton" OnClick="searching"/>
         <!--List-->
-        <asp:ScriptManager ID="ScriptManager1" runat="server" />
-        <asp:UpdatePanel ChildrenAsTriggers="true" UpdateMode="Conditional" ID="PannelloDinamico" ClientIDMode="Static" runat="server">
-            <ContentTemplate>
                 <!--Scrollable listview-->
                 <div style="overflow-x: auto">
                     <asp:ListView ID="ListView1" runat="server" OnItemCommand="Commands"
@@ -61,11 +54,6 @@
 
                     </asp:ListView>
                 </div>
-            </ContentTemplate>
-            <Triggers>
-                <asp:AsyncPostBackTrigger ControlID="searchBar" EventName="TextChanged" />
-            </Triggers>
-        </asp:UpdatePanel>
     </div>
 
 </asp:Content>

@@ -22,17 +22,22 @@ namespace SalveminiApi.BookMarket
 
             try
             {
-                var libro = (BookLibri)Session["selectedBook"];
-                if (libro == null)
-                    throw new Exception();
-                //if(!IsPostBack)
+
+                if (!Page.IsPostBack)
+                {
+                    var libro = (BookLibri)Session["selectedBook"];
+                    if (libro == null)
+                        throw new Exception();
+                    title.Text = libro.Nome;
+                }
+            
                 //prezzoTxt.Text = libro.Prezzo?.ToString();
             }
             catch
             {
                 Response.Redirect("CercaLibro.aspx", false);
             }
-           
+
 
         }
 
@@ -41,13 +46,11 @@ namespace SalveminiApi.BookMarket
             try
             {
                 var libro = (BookLibri)Session["selectedBook"];
+                var prezzo = prezzoTxt.Text.Trim().Replace(",", ".");
+                var newprezzo = decimal.Parse(prezzo, NumberStyles.AllowCurrencySymbol | NumberStyles.Number, CultureInfo.InvariantCulture);
                 var findLibro = db.BookLibri.Find(libro.id);
-                var prezzo = prezzoTxt.Text.Trim().Replace(".",",");
-
-
-              var newprezzo =   decimal.Parse(prezzo, NumberStyles.AllowCurrencySymbol | NumberStyles.Number);
-
                 findLibro.Prezzo = newprezzo;
+                
                 db.SaveChanges();
                 Response.Redirect("CercaLibro.aspx", false);
             }
@@ -55,7 +58,7 @@ namespace SalveminiApi.BookMarket
             {
                 errorLabel.Visible = true;
             }
-            
+
         }
 
         protected void back_Click(object sender, EventArgs e)

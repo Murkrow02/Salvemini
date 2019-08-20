@@ -90,7 +90,7 @@ namespace SalveminiApi.Controllers
 
         [Route("assenze")]
         [HttpGet]
-        public async Task<assenzeList> getAssenze()
+        public async Task<List<Assenze>> getAssenze()
         {
             //Check Auth
             var authorize = new Helpers.Utility();
@@ -107,25 +107,27 @@ namespace SalveminiApi.Controllers
             var argoClient = argoUtils.ArgoClient(id, token);
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/assenze");
             var argoContent = await argoResponse.Content.ReadAsStringAsync();
-            var returnModel = JsonConvert.DeserializeObject<assenzeList>(argoContent);
+            var returnModel = JsonConvert.DeserializeObject<AssenzeList>(argoContent);
+            var returnList = new List<Assenze>();
 
-            //Conta assenze ecc.
-            foreach (Assenze assenza in returnModel.dati) {
-                switch (assenza.codEvento)
-                {
-                    case "A":
-                        returnModel.Assenze++;
-                        break;
-                    case "U":
-                        returnModel.Uscite++;
-                        break;
-                    case "I":
-                        returnModel.Ritardi++;
-                        break;
-                }
-            }
+            ////Conta assenze ecc.
+            //foreach (Assenze assenza in returnModel.dati) {
+            //    switch (assenza.codEvento)
+            //    {
+            //        case "A":
+            //            returnModel.Assenze++;
+            //            break;
+            //        case "U":
+            //            returnModel.Uscite++;
+            //            break;
+            //        case "I":
+            //            returnModel.Ritardi++;
+            //            break;
+            //    }
+            //}
+            returnList = returnModel.dati;
 
-            return returnModel;
+            return returnList;
         }
 
         [Route("scrutinio")]
