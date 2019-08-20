@@ -21,6 +21,9 @@ namespace SalveminiApp.iOS
         //
         // You have 17 seconds to return from this method, or iOS will terminate your application.
         //
+        public static bool HasNotch = false;
+
+
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
@@ -31,6 +34,27 @@ namespace SalveminiApp.iOS
 
             //Register OneSignal License
             OneSignal.Current.StartInit("a85553ca-c1fe-4d93-a02f-d30bf30e2a2a").EndInit();
+
+            //DETECT NOTCH
+            List<float> homeBarDevices = new List<float> { 370944, 304500 };
+            try
+            {
+                var deviceRes = (float)(App.ScreenWidth * App.ScreenHeight);
+                if (homeBarDevices.Contains(deviceRes))
+                {
+                    HasNotch = true;
+                }
+                else
+                {
+                    HasNotch = false;
+                }
+
+            }
+            catch
+            {
+                HasNotch = false;
+                Console.WriteLine("Error homebar");
+            }
 
             //Initialize Processes
             Syncfusion.XForms.iOS.TextInputLayout.SfTextInputLayoutRenderer.Init();

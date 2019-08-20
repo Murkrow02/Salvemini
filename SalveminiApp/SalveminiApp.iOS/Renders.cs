@@ -9,6 +9,7 @@ using CoreAnimation;
 [assembly: ExportRenderer(typeof(SalveminiApp.Helpers.CustomNavigationPage), typeof(CustomNavigationPage))]
 [assembly: ExportRenderer(typeof(SalveminiApp.ShadowFrame), typeof(ShadowFrame))]
 [assembly: ExportRenderer(typeof(SalveminiApp.TransparentGradient), typeof(TransparentGradient))]
+[assembly: ExportRenderer(typeof(SalveminiApp.GradientFrame), typeof(GradientFrame))]
 
 namespace SalveminiApp.iOS
 {
@@ -31,10 +32,6 @@ namespace SalveminiApp.iOS
             base.ViewDidLoad();
             NavigationBar.ShadowImage = new UIImage();
             NavigationBar.Translucent = false;
-            //this.NavigationBar.TitleTextAttributes = new UIStringAttributes()
-            //{
-            //    Font = UIFont.FromName("", 20)
-            //};
         }
 
         protected override void Dispose(bool disposing)
@@ -78,6 +75,33 @@ namespace SalveminiApp.iOS
             NativeView.Layer.BackgroundColor = UIColor.Clear.CGColor;
             NativeView.Layer.InsertSublayer(gl, 0);
             base.Draw(rect);
+        }
+    }
+
+    public class GradientFrame : FrameRenderer
+    {
+        public override void Draw(CGRect rect)
+        {
+            base.Draw(rect);
+            SalveminiApp.GradientFrame stack = (SalveminiApp.GradientFrame)this.Element;
+            CGColor startColor = stack.StartColor.ToCGColor();
+            CGColor endColor = stack.EndColor.ToCGColor();
+            #region for Vertical Gradient  
+            //var gradientLayer = new CAGradientLayer();     
+            #endregion
+            #region for Horizontal Gradient  
+            var gradientLayer = new CAGradientLayer()
+            {
+                StartPoint = new CGPoint(0, 0.5),
+                EndPoint = new CGPoint(1, 0.5)
+            };
+            #endregion
+            gradientLayer.Frame = rect;
+            gradientLayer.Colors = new CGColor[] {
+                startColor,
+                endColor
+            };
+            NativeView.Layer.InsertSublayer(gradientLayer, 0);
         }
     }
 }
