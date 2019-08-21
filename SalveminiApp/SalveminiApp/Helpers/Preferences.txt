@@ -1,2 +1,3 @@
 ﻿"Token" -> Token di Argo dell'utente <string>;
 "isFirstTime" -> Valore per capire se è la prima volta che si apre l'app <bool>;
+"UserId" -> Id dell'utente <int>;

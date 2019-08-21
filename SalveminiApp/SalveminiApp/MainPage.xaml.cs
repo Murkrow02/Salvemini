@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace SalveminiApp
 {
@@ -14,6 +15,7 @@ namespace SalveminiApp
     public partial class MainPage : ContentPage
     {
         public List<RestApi.Models.Lezione> Orario = new List<RestApi.Models.Lezione>();
+        public RestApi.Models.Index Index = new RestApi.Models.Index();
 
         public MainPage()
         {
@@ -41,6 +43,7 @@ namespace SalveminiApp
         {
             base.OnAppearing();
 
+            //Get timetables
             Orario = await App.Orari.GetOrario("3FCAM", 1);
 
             if (Orario != null)
@@ -48,9 +51,32 @@ namespace SalveminiApp
                 orarioList.ItemsSource = Orario;
             }
 
-            //Avvisi Label starts to flow
-            flowLabel();
+            //Check Internet
+            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+            {
+                Index = await App.Index.GetIndex();
+
+                //Fill Alert
+                if (Index.ultimoAvviso != null )
+                {
+                    //Get Alert Description
+                    string stringToDisplay = Index.ultimoAvviso.Descrizione;
+
+                    //Cut string if it is toooo long
+                    if (Index.ultimoAvviso.Descrizione.Length > 200)
+                    {
+                        stringToDisplay = stringToDisplay.Remove(201) + "...";
+                    }
+
+                    //Display string
+                    avvisiLabel.Text = stringToDisplay;
+                }
+
+            }
            
+            //Alerts Label starts to flow
+            flowLabel();
+
 
 
 

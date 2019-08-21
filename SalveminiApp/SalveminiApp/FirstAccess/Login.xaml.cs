@@ -123,6 +123,7 @@ namespace SalveminiApp.FirstAccess
                 Navigation.RemovePage(Navigation.NavigationStack[0]);
                 Preferences.Set("isFirstTime", false);
             }
+            App.refreshCalls();
         }
         void Username_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
@@ -151,6 +152,7 @@ namespace SalveminiApp.FirstAccess
         {
             Preferences.Set("UserId", UtentiLogin[1].id);
             Preferences.Set("Token", UtentiLogin[1].ArgoToken);
+            App.refreshCalls();
         }
 
     }

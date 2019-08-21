@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;fill:#E6E6E6;stroke:#B3B3B3;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:#E6E6E6;stroke:#B3B3B3;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#999999;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#C1272D;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st4{opacity:0.3;fill:none;stroke:#FFFFFF;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st5{fill:#FBC33B;stroke:#FBB03B;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st6{opacity:0.6;fill:none;stroke:#FFFFFF;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st7{fill:#FFC33B;stroke:#F8B732;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st8{fill:none;stroke:#F7931E;stroke-width:37;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st9{fill:#F7931E;stroke:#F7931E;stroke-width:11;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st10{opacity:0.6;fill:none;stroke:#FFFFFF;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st11{opacity:0.3;fill:none;stroke:#FFFFFF;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<g id="Voti">
+	<g id="Base">
+		<path class="st0" d="M832.21,75.25h82.84c6.6,0,12,4.98,12,11.06v341.38c0,6.08-5.4,11.06-12,11.06h-276.8
+			c-6.6,0-12-4.98-12-11.06V86.31c0-6.08,5.4-11.06,12-11.06h77.16"/>
+		<path class="st1" d="M900.02,438.75H653.29c-14.93,0-27.03-12.1-27.03-27.03V102.61c0-14.93,12.1-27.03,27.03-27.03h246.73
+			c14.93,0,27.03,12.1,27.03,27.03v309.11C927.06,426.65,914.95,438.75,900.02,438.75z"/>
+	</g>
+	<g id="Scritte">
+		<g id="O">
+			<circle class="st2" cx="678.75" cy="157.41" r="20"/>
+			<circle class="st2" cx="678.75" cy="226.96" r="20"/>
+			<circle class="st2" cx="678.75" cy="296.5" r="20"/>
+			<circle class="st2" cx="678.75" cy="366.05" r="20"/>
+		</g>
+		<line class="st2" x1="731.57" y1="160.81" x2="894.57" y2="160.81"/>
+		<line class="st2" x1="729.68" y1="231.93" x2="892.68" y2="231.93"/>
+		<line class="st2" x1="729.68" y1="296.5" x2="892.68" y2="296.5"/>
+		<line class="st2" x1="729.68" y1="366.05" x2="892.68" y2="366.05"/>
+		<polyline class="st3" points="663.36,141.29 680.63,160.81 707.31,121.78 		"/>
+		<polyline class="st3" points="663.36,212.42 680.63,231.93 707.31,192.9 		"/>
+		<line class="st4" x1="663.59" y1="209.05" x2="670.03" y2="215.79"/>
+		<line class="st4" x1="669.86" y1="141.8" x2="675.3" y2="148.33"/>
+	</g>
+	<g id="Maniglia">
+		<path class="st5" d="M816.72,95.61H729.6c-6.6,0-12-5.4-12-12V66.88c0-6.6,5.4-12,12-12h87.11c6.6,0,12,5.4,12,12v16.73
+			C828.72,90.21,823.32,95.61,816.72,95.61z"/>
+		<path class="st5" d="M747.19,53.64c2.86-14.23,13.35-24.79,25.85-24.79c12.86,0,23.6,11.17,26.08,26.03"/>
+		<polyline class="st6" points="731.1,69.02 731.1,81.34 773.16,82.12 		"/>
+		<path class="st6" d="M771.63,40.69c-2.11,0.09-4.05,1.32-5.46,2.89c-1.41,1.58-2.37,3.49-3.32,5.38"/>
+	</g>
+</g>
+<g id="Assenze">
+	<path class="st7" d="M228.57,70.57L47.29,391.01c-9.29,16.41,2.57,36.74,21.43,36.74h362.55c18.86,0,30.71-20.33,21.43-36.74
+		L271.43,70.57C262,53.91,238,53.91,228.57,70.57z"/>
+	<line class="st8" x1="250" y1="158.81" x2="250" y2="314.61"/>
+	<circle class="st9" cx="250" cy="365.62" r="16.81"/>
+	<line class="st10" x1="185.09" y1="205.58" x2="88.18" y2="385.47"/>
+	<line class="st10" x1="210.28" y1="158.81" x2="200.19" y2="177.31"/>
+	<line class="st11" x1="266.81" y1="193" x2="266.81" y2="321.9"/>
+	<circle class="st11" cx="266.75" cy="365.62" r="8.41"/>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+</g>
+</svg>

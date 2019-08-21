@@ -20,7 +20,13 @@ namespace SalveminiApp
         {
             BarTextColor = Styles.PrimaryColor,
             BarBackgroundColor = Color.White,
-            Title = "Home",
+            Title = "Home"
+        };
+        public static Helpers.CustomNavigationPage Argo = new Helpers.CustomNavigationPage(new ArgoPage())
+        {
+            BarTextColor = Styles.PrimaryColor,
+            BarBackgroundColor = Color.White,
+            Title = "Argo"
         };
 
         public TabPage()
@@ -32,7 +38,7 @@ namespace SalveminiApp
 
             //Add Children
             Children.Add(Home);
-
+            Children.Add(Argo);
         }
     }
 }
