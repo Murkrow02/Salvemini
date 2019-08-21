@@ -11,6 +11,8 @@ using Newtonsoft.Json;
 using SalveminiApi.Models;
 using SalveminiApi.Utility;
 using SalveminiApi.Argo.Models;
+using System.Net.Http;
+using System.Text;
 
 namespace SalveminiApi.Controllers
 {
@@ -37,6 +39,8 @@ namespace SalveminiApi.Controllers
             var argoUtils = new ArgoUtils();
             var argoClient = argoUtils.ArgoClient(id, token);
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/compiti");
+            if (!argoResponse.IsSuccessStatusCode)
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
             var argoContent = await argoResponse.Content.ReadAsStringAsync();
             var returnModel = JsonConvert.DeserializeObject<compitiList>(argoContent);
             return returnModel.dati;
@@ -60,6 +64,8 @@ namespace SalveminiApi.Controllers
             var argoUtils = new ArgoUtils();
             var argoClient = argoUtils.ArgoClient(id, token);
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/argomenti");
+            if (!argoResponse.IsSuccessStatusCode)
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
             var argoContent = await argoResponse.Content.ReadAsStringAsync();
             var returnModel = JsonConvert.DeserializeObject<argomentiList>(argoContent);
             return returnModel.dati;
@@ -83,6 +89,8 @@ namespace SalveminiApi.Controllers
             var argoUtils = new ArgoUtils();
             var argoClient = argoUtils.ArgoClient(id, token);
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/promemoria");
+            if (!argoResponse.IsSuccessStatusCode)
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
             var argoContent = await argoResponse.Content.ReadAsStringAsync();
             var returnModel = JsonConvert.DeserializeObject<promemoriaList>(argoContent);
             return returnModel.dati;
@@ -90,7 +98,7 @@ namespace SalveminiApi.Controllers
 
         [Route("assenze")]
         [HttpGet]
-        public async Task<assenzeList> getAssenze()
+        public async Task<List<Assenze>> getAssenze()
         {
             //Check Auth
             var authorize = new Helpers.Utility();
@@ -106,26 +114,43 @@ namespace SalveminiApi.Controllers
             var argoUtils = new ArgoUtils();
             var argoClient = argoUtils.ArgoClient(id, token);
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/assenze");
+            if (!argoResponse.IsSuccessStatusCode)
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
             var argoContent = await argoResponse.Content.ReadAsStringAsync();
-            var returnModel = JsonConvert.DeserializeObject<assenzeList>(argoContent);
+            var returnModel = JsonConvert.DeserializeObject<AssenzeList>(argoContent);
 
-            //Conta assenze ecc.
-            foreach (Assenze assenza in returnModel.dati) {
-                switch (assenza.codEvento)
-                {
-                    case "A":
-                        returnModel.Assenze++;
-                        break;
-                    case "U":
-                        returnModel.Uscite++;
-                        break;
-                    case "I":
-                        returnModel.Ritardi++;
-                        break;
-                }
-            }
+            var returnList = new List<Assenze>();
 
-            return returnModel;
+            returnList = returnModel.dati;
+
+            return returnList;
+        }
+
+        [Route("giustifica")]
+        [HttpPost]
+        public async Task<HttpResponseMessage> giustificaAssenza(AssenzaModel giustifica)
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+
+            //Get parameters from request
+            int id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
+            string token = Request.Headers.GetValues("x-auth-token").First();
+
+            //Posta modello
+            var argoUtils = new ArgoUtils();
+            var json = JsonConvert.SerializeObject(giustifica);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var argoClient = argoUtils.ArgoClient(id, token);
+            var argoResponse = await argoClient.PostAsync("https://www.portaleargo.it/famiglia/api/rest/giustifica", content);
+            if (!argoResponse.IsSuccessStatusCode)
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
+
+
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
         [Route("scrutinio")]
@@ -146,6 +171,8 @@ namespace SalveminiApi.Controllers
             var argoUtils = new ArgoUtils();
             var argoClient = argoUtils.ArgoClient(id, token);
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/votiscrutinio");
+            if (!argoResponse.IsSuccessStatusCode)
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
             var argoContent = await argoResponse.Content.ReadAsStringAsync();
             var returnModel = JsonConvert.DeserializeObject<List<Scrutinio>>(argoContent);
 
@@ -189,9 +216,9 @@ namespace SalveminiApi.Controllers
             try
             {
                 var response = await argoClient.GetAsync(uri);
-                if (response.IsSuccessStatusCode)
-                {
-                    var content = await response.Content.ReadAsStringAsync();
+                if (!response.IsSuccessStatusCode)
+                    throw new HttpResponseException(HttpStatusCode.Forbidden);
+                var content = await response.Content.ReadAsStringAsync();
                     Oggi = JsonConvert.DeserializeObject<Oggi>(content);
                     var Dates = Oggi.dati;
                     for (int i = Dates.Count - 1; i >= 0; i--)
@@ -226,7 +253,7 @@ namespace SalveminiApi.Controllers
                         Model.datAssenza = Dates[i].dati.datAssenza;
                         Oggis.Add(Model);
                     }
-                }
+                
             }
             catch (Exception ex)
             {

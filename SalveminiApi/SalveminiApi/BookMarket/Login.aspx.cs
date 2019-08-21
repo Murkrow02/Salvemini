@@ -13,6 +13,7 @@ namespace SalveminiApi.BookMarket
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
         }
        
 
@@ -38,16 +39,16 @@ namespace SalveminiApi.BookMarket
                     return;
                 }
 
-                //IP check
-                string pubIp = new System.Net.WebClient().DownloadString("https://api.ipify.org");
-                var alreadyIp = db.BookUtenti.Where(x => x.Ip == pubIp);
-                if (alreadyIp.Count() >= 10)
-                {
-                    //Troppi con lo stesso ip
-                    descLabelR.Text = "Hai raggiunto il numero massimo di account per questo indirizzo ip";
-                    descLabelR.ForeColor = Color.Red;
-                    return;
-                }
+                ////IP check
+                //string pubIp = new System.Net.WebClient().DownloadString("https://api.ipify.org");
+                //var alreadyIp = db.BookUtenti.Where(x => x.Ip == pubIp);
+                //if (alreadyIp.Count() >= 10)
+                //{
+                //    //Troppi con lo stesso ip
+                //    descLabelR.Text = "Hai raggiunto il numero massimo di account per questo indirizzo ip";
+                //    descLabelR.ForeColor = Color.Red;
+                //    return;
+                //}
 
                 //Cell check
                 var cellConf = db.BookUtenti.Where(x => x.Telefono == CellInputR.Text).ToList();
@@ -70,16 +71,29 @@ namespace SalveminiApi.BookMarket
                 newUser.Nome = NomeInput.Text.Trim();
                 newUser.Cognome = CognomeInput.Text.Trim();
                 newUser.Password = PasswordInputR.Text;
-                newUser.Ip = pubIp;
+                //newUser.Ip = pubIp;
                 newUser.Telefono = CellInputR.Text.Replace(" ", string.Empty);
                 newUser.Creazione = Helpers.Utility.italianTime();
                 db.BookUtenti.Add(newUser);
                 db.SaveChanges();
 
                 //Success
-                Request.Cookies.Add(new HttpCookie("UserId"));
-                Request.Cookies["UserId"].Value = newUser.id.ToString();
-                Request.Cookies["UserId"].Expires = DateTime.Now.AddDays(5);
+                //Clean the cookie
+                try
+                {
+                    HttpCookie old = Request.Cookies["UserId"];
+                    old.Expires = DateTime.Now.AddDays(-1);
+                }
+                catch
+                {
+
+                }
+
+                // Add the cookie.
+                HttpCookie userCookie = new HttpCookie("UserId");
+                userCookie.Value = newUser.id.ToString();
+                userCookie.Expires = DateTime.Now.AddDays(5);
+                Response.Cookies.Add(userCookie);
                 Response.Redirect("~/AggiungiLibro", false);
             }
             catch(Exception ex)
@@ -118,6 +132,16 @@ namespace SalveminiApi.BookMarket
                 descLabelA.ForeColor = Color.Gray;
 
                 //Success
+                //Clean the cookie
+                try
+                {
+                    HttpCookie old = Request.Cookies["UserId"];
+                    old.Expires = DateTime.Now.AddDays(-1);
+                }
+                catch
+                {
+
+                }
                 // Add the cookie.
                 HttpCookie userCookie = new HttpCookie("UserId");
                 userCookie.Value = utente[0].id.ToString();

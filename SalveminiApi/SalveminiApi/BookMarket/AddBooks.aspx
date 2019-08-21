@@ -9,8 +9,8 @@
         <p>
             <asp:Label ID="descLabel" CssClass="descLabel" runat="server">Puoi aggiungere fino a 50 libri!</asp:Label>
         </p>
-        <asp:TextBox runat="server" class="textInput" placeholder="Titolo del libro" ID="titleInput" MaxLength="199"></asp:TextBox>
-        <asp:TextBox runat="server" class="textInput" placeholder="Codice seriale (Facoltativo)" ID="serialInput" MaxLength="199"></asp:TextBox>
+        <asp:TextBox runat="server" class="textInput" placeholder="Titolo del libro" ID="titleInput" MaxLength="199" autocomplete="off"></asp:TextBox>
+<%--        <asp:TextBox runat="server" class="textInput" placeholder="Codice seriale (Facoltativo)" ID="serialInput" MaxLength="199"></asp:TextBox>--%>
         <asp:Button runat="server" Text="Aggiungi" class="goButton" OnClick="addBook" ID="addBtn" />
     </div>
     <!--Divider-->
@@ -23,6 +23,9 @@
         </p>
         <p>
             <asp:Label ID="infoLbl" CssClass="descLabel" runat="server" Style="margin-bottom: 1%" />
+        </p>
+         <p>
+            <asp:Label  Text="Sono riportati solo i libri ancora non approvati" CssClass="descLabel" runat="server" Style="margin-bottom: 1%" />
         </p>
         <!--Lista-->
         <asp:ScriptManager ID="ScriptManager1" runat="server" />
@@ -49,7 +52,8 @@
                                 <asp:Label ID="lblName" runat="server" Text='<%# Eval("Nome") %>' CssClass="listNome" style="word-break: break-all;"></asp:Label>
                             </td>
                             <td style="width: 15%">
-                                <asp:Button ID="btnRemove" runat="server" Text='Elimina' CommandName="remove" CssClass="goButton" Style="margin: 3px; width: 100%;" />
+                                <asp:Button ID="btnRemove" runat="server" Text='Elimina' CommandName="remove" CssClass="goButton" Style="margin: 3px; width: 100%;" Visible='<%# bool.Parse(Eval("Accettato").ToString()) == true ? false : true%>'/>
+                             <asp:Label runat="server" Text='Approvato' CssClass="listNome" style="word-break: break-all;" Visible='<%# bool.Parse(Eval("Accettato").ToString()) == true ? true : false%>'></asp:Label>
                             </td>
                         </ItemTemplate>
                     </asp:ListView>

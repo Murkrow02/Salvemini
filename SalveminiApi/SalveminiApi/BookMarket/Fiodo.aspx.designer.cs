@@ -10,24 +10,33 @@
 namespace SalveminiApi.BookMarket {
     
     
-    public partial class CercaLibro {
+    public partial class Fiodo {
         
         /// <summary>
-        /// Controllo searchBar.
+        /// Controllo form1.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox searchBar;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controllo ListView1.
+        /// Controllo prezzoPieno.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListView1;
+        protected global::System.Web.UI.WebControls.Label prezzoPieno;
+        
+        /// <summary>
+        /// Controllo soldiTotali.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label soldiTotali;
     }
 }

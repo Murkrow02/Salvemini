@@ -31,7 +31,7 @@
 
       <!--Header-->
         <header>
-            <asp:ImageButton runat="server" class="logo" data-scroll ImageUrl="~/Images/logoTmp.png"></asp:ImageButton>
+            <asp:ImageButton runat="server" class="logo" data-scroll ImageUrl="~/Images/logoBianco.png" UseSubmitBehavior="false"></asp:ImageButton>
             <nav class="nav-collapse">
                 <ul>
                     <li class="menu-item"><a href="#home" data-scroll>Home</a></li>

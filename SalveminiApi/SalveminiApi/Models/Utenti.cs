@@ -31,6 +31,6 @@ namespace SalveminiApi.Models
         public string ArgoToken { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Avvisi> Avvisi { get; set; }
+        public virtual ICollection<Avvisi> Avvisi { internal get; set; }
     }
 }

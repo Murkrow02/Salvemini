@@ -17,7 +17,7 @@ namespace SalveminiApi.BookMarket
                 Response.Redirect("AdminLogin.aspx", false);
             }
 
-            if (!IsPostBack)
+            if (!Page.IsPostBack)
             {
                 BindListView();
             }
@@ -25,7 +25,7 @@ namespace SalveminiApi.BookMarket
 
         private void BindListView()
         {
-            var libri = db.BookLibri.ToList();
+            var libri = db.BookLibri.Where(x=> x.Accettato == true).ToList();
 
             //Bind listview
             ListView1.DataSource = null;
@@ -44,7 +44,10 @@ namespace SalveminiApi.BookMarket
             }
 
             //Search by name and surname
-            var libri = db.BookLibri.Where(x => x.id.ToString().Contains(searchBar.Text) || x.Nome.ToLower().Contains(searchBar.Text.ToLower())).ToList();
+            var libri = db.BookLibri.Where(x => x.id.ToString() == searchBar.Text).ToList();
+            if (libri == null)
+                libri = libri.Where(x => x.Nome.ToLower().Contains(searchBar.Text.ToLower())).ToList();
+            libri = libri.Where(x => x.Accettato == true).ToList();
             ListView1.DataSource = null;
             ListView1.DataSource = libri;
             Session["idLibriList"] = libri;
@@ -64,6 +67,11 @@ namespace SalveminiApi.BookMarket
                     break;
 
             }
+        }
+
+        protected void back_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminCp.aspx", false);
         }
     }
 }
