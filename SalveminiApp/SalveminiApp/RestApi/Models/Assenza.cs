@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace SalveminiApp.RestApi.Models
 {
     public class Assenza
@@ -55,6 +57,14 @@ namespace SalveminiApp.RestApi.Models
             }
         }
 
+        public bool Giustificata
+        {
+            get
+            {
+                return datGiustificazione != null || flgDaGiustificare == false;
+            }
+        }
+
         public string StatusColor
         {
             get
@@ -104,5 +114,17 @@ namespace SalveminiApp.RestApi.Models
                 return codEvento == "U" || codEvento == "I";
             }
         }
+    }
+    public class AssenzaModel
+    {
+        public string motivazione { get; set; }
+        public List<ListaAssenze> listaAssenze { get; set; }
+    }
+
+    public class ListaAssenze
+    {
+
+        public string datAssenza { get; set; }
+        public string binUid { get; set; }
     }
 }

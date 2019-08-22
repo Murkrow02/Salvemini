@@ -40,6 +40,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\Popups\GiustificaAssenza.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -86,6 +90,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\Promemoria.xaml.cs">
       <DependentUpon>Promemoria.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Popups\GiustificaAssenza.xaml.cs">
+      <DependentUpon>GiustificaAssenza.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
@@ -94,6 +101,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)RestApi\Models\" />
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\OrariClassi\" />
     <Folder Include="$(MSBuildThisFileDirectory)ArgoPages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\Popups\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Helpers\Preferences.txt" />

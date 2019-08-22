@@ -9,7 +9,7 @@
                     <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" Source="info.svg" x:Name="infoImage" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" />
                 </StackLayout>
                 <Frame IsClippedToBounds="true" Padding="0" VerticalOptions="Start" HasShadow="false" CornerRadius="15">
-                    <ListView HasUnevenRows="true" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None" x:Name="assenzeList" VerticalOptions="Start">
+                    <ListView ItemSelected="Assenza_Selected" HasUnevenRows="true" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None" x:Name="assenzeList" VerticalOptions="Start">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>

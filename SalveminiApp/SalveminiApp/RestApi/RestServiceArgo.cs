@@ -26,6 +26,7 @@ namespace SalveminiApp.RestApi
             client.DefaultRequestHeaders.Add("x-auth-token", Preferences.Get("Token", ""));
         }
 
+        #region Assenze
         public async Task<List<Models.Assenza>> GetAssenze()
         {
             Assenze = new List<Models.Assenza>();
@@ -47,11 +48,32 @@ namespace SalveminiApp.RestApi
             }
             return Assenze;
         }
+
+        public async Task<bool> GiustificaAssenza(RestApi.Models.AssenzaModel item)
+        {
+
+            string uri = Costants.Uri("argo/giustifica");
+            try
+            {
+                var json = JsonConvert.SerializeObject(item);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await client.PostAsync(uri, content);
+
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                return false;
+            }
+        }
+        #endregion
     }
 
     public interface IRestServiceArgo
     {
         Task<List<Models.Assenza>> GetAssenze();
+        Task<bool> GiustificaAssenza(RestApi.Models.AssenzaModel item);
     }
 
     public class ItemManagerArgo
@@ -69,6 +91,10 @@ namespace SalveminiApp.RestApi
             return restServiceArgo.GetAssenze();
         }
 
+        public Task<bool> GiustificaAssenza(RestApi.Models.AssenzaModel item)
+        {
+            return restServiceArgo.GiustificaAssenza(item);
+        }
     }
 }
 

@@ -28,6 +28,9 @@ namespace SalveminiApp.iOS
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            //Init Popups
+            Rg.Plugins.Popup.Popup.Init();
+
             global::Xamarin.Forms.Forms.Init();
 
             //Get Screen Size

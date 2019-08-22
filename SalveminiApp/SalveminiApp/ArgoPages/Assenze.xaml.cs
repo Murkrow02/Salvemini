@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using System.Linq;
 using Xamarin.Essentials;
 using MonkeyCache.SQLite;
+using Rg.Plugins.Popup.Extensions;
 
 namespace SalveminiApp.ArgoPages
 {
@@ -18,7 +19,7 @@ namespace SalveminiApp.ArgoPages
             //Set Sizes
             shadowImage.WidthRequest = App.ScreenWidth * 1.5;
             shadowImage.HeightRequest = App.ScreenWidth * 1.5;
-            assenzeList.HeightRequest = App.ScreenHeight / 1.5;
+            assenzeList.HeightRequest = App.ScreenHeight / 1.8;
             buttonFrame.WidthRequest = App.ScreenWidth / 6;
             buttonFrame.HeightRequest = App.ScreenWidth / 6;
             buttonFrame.CornerRadius = (float)(App.ScreenWidth / 6) / 2;
@@ -33,6 +34,11 @@ namespace SalveminiApp.ArgoPages
                 loadInfo();
             }
 
+            //Messaging Centers
+            MessagingCenter.Subscribe<App>(this, "", (sender) =>
+           {
+               OnAppearing();
+           });
         }
 
         void loadInfo()
@@ -60,6 +66,18 @@ namespace SalveminiApp.ArgoPages
 
             //Fill Infos
             loadInfo();
+        }
+
+        void Assenza_Selected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null)
+                return;
+            assenzeList.SelectedItem = null;
+
+            if (!(e.SelectedItem as RestApi.Models.Assenza).Giustificata)
+            {
+                Navigation.PushPopupAsync(new Helpers.Popups.GiustificaAssenza(e.SelectedItem as RestApi.Models.Assenza));
+            }
         }
 
         void Close_Clicked(object sender, System.EventArgs e)

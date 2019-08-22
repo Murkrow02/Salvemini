@@ -5,10 +5,9 @@
         <sfPopup:SfPopupLayout.PopupView>
             <sfPopup:PopupView ShowFooter="false" ShowHeader="false" AutoSizeMode="Height">
                 <sfPopup:PopupView.PopupStyle>
-                        <sfPopup:PopupStyle OverlayColor="Transparent">
-                        </sfPopup:PopupStyle>
-                    </sfPopup:PopupView.PopupStyle>
-                
+                    <sfPopup:PopupStyle OverlayColor="Transparent">
+                    </sfPopup:PopupStyle>
+                </sfPopup:PopupView.PopupStyle>
             </sfPopup:PopupView>
         </sfPopup:SfPopupLayout.PopupView>
     </sfPopup:SfPopupLayout>
