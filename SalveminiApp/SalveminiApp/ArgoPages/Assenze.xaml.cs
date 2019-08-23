@@ -35,7 +35,7 @@ namespace SalveminiApp.ArgoPages
             }
 
             //Messaging Centers
-            MessagingCenter.Subscribe<App>(this, "", (sender) =>
+            MessagingCenter.Subscribe<App>(this, "ReloadAssenze", (sender) =>
            {
                OnAppearing();
            });
@@ -43,6 +43,7 @@ namespace SalveminiApp.ArgoPages
 
         void loadInfo()
         {
+            //Load Counters
             int assenzeCount = Assenzes.Count(x => x.codEvento == "A");
             assenzeLabel.Text = assenzeCount == 1 ? assenzeCount.ToString() + " Assenza" : assenzeCount.ToString() + " Assenze";
             int ritardiCount = Assenzes.Count(x => x.codEvento == "I");
@@ -70,18 +71,35 @@ namespace SalveminiApp.ArgoPages
 
         void Assenza_Selected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
+            //Deselect Animation
             if (e.SelectedItem == null)
                 return;
             assenzeList.SelectedItem = null;
 
+            //Push to giustifica if possible
             if (!(e.SelectedItem as RestApi.Models.Assenza).Giustificata)
             {
                 Navigation.PushPopupAsync(new Helpers.Popups.GiustificaAssenza(e.SelectedItem as RestApi.Models.Assenza));
             }
         }
 
+        void Info_Tapped(object sender, System.EventArgs e)
+        {
+            var infoLayout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Orientation = StackOrientation.Vertical, Spacing = 10 };
+            var giustificaLayout = new StackLayout { Orientation = StackOrientation.Horizontal };
+            giustificaLayout.Children.Add(new Frame { HasShadow = false, CornerRadius = (float)(App.ScreenWidth / 17) / 2, HeightRequest = App.ScreenWidth / 17, WidthRequest = App.ScreenWidth / 17, Padding = 0, BackgroundColor = Color.FromHex("#A9FA63"), HorizontalOptions = LayoutOptions.Start, VerticalOptions = LayoutOptions.Center });
+            giustificaLayout.Children.Add(new Label { Text = "Indica un’assenza giustificata", FontSize = 15, VerticalOptions = LayoutOptions.Center });
+            infoLayout.Children.Add(giustificaLayout);
+            var nonGiustificaLayout = new StackLayout { Orientation = StackOrientation.Horizontal };
+            nonGiustificaLayout.Children.Add(new Frame { HasShadow = false, CornerRadius = (float)(App.ScreenWidth / 17) / 2, HeightRequest = App.ScreenWidth / 17, WidthRequest = App.ScreenWidth / 17, Padding = 0, BackgroundColor = Color.FromHex("#FA6363"), HorizontalOptions = LayoutOptions.Start, VerticalOptions = LayoutOptions.Center });
+            nonGiustificaLayout.Children.Add(new Label { Text = "Indica un’assenza non giustificata", FontSize = 15, VerticalOptions = LayoutOptions.Center });
+            infoLayout.Children.Add(nonGiustificaLayout);
+            Navigation.PushPopupAsync(new Helpers.Popups.BindablePopup("Info Assenze", "Assenze.svg", infoLayout));
+        }
+
         void Close_Clicked(object sender, System.EventArgs e)
         {
+            //Close Page
             Navigation.PopModalAsync();
         }
     }

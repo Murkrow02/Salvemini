@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pages:PopupPage Padding="20, 0" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:local="clr-namespace:SalveminiApp" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.Helpers.Popups.GiustificaAssenza">
-    <Frame CornerRadius="20" VerticalOptions="Center" HorizontalOptions="Center">
+    <Frame CornerRadius="20" HasShadow="false" VerticalOptions="Center" HorizontalOptions="Center">
         <StackLayout Spacing="15">
             <StackLayout>
                 <StackLayout>

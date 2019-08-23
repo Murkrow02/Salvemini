@@ -194,6 +194,10 @@
     <BundleResource Include="Resources\AssenzeShadow.svg" />
     <BundleResource Include="Resources\PromemoriaShadow.svg" />
     <BundleResource Include="Resources\info.svg" />
+    <BundleResource Include="Resources\calendar.svg" />
+    <BundleResource Include="Resources\advice.svg" />
+    <BundleResource Include="Resources\train.svg" />
+    <BundleResource Include="Resources\clock.svg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OneSignalNotificationServiceExtension\OneSignalNotificationServiceExtension.csproj">

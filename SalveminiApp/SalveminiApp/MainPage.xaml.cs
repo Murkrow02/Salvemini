@@ -16,6 +16,7 @@ namespace SalveminiApp
     {
         public List<RestApi.Models.Lezione> Orario = new List<RestApi.Models.Lezione>();
         public RestApi.Models.Index Index = new RestApi.Models.Index();
+        public RestApi.Models.Treno NextTrain = new RestApi.Models.Treno();
 
         public MainPage()
         {
@@ -42,6 +43,16 @@ namespace SalveminiApp
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+
+            NextTrain = await App.Treni.GetNextTrain(Preferences.Get("savedStation", 0), Preferences.Get("savedDirection", true));
+
+            var nextTrainText = new FormattedString();
+            nextTrainText.Spans.Add(new Span { Text = "Il prossimo treno per ", FontAttributes = FontAttributes.None });
+            nextTrainText.Spans.Add(new Span { Text = NextTrain.DirectionString, FontAttributes = FontAttributes.Bold });
+            nextTrainText.Spans.Add(new Span { Text = " parte alle " + NextTrain.Partenza + " da ", FontAttributes = FontAttributes.None });
+            nextTrainText.Spans.Add(new Span { Text = Costants.Stazioni[NextTrain.Stazione], FontAttributes = FontAttributes.Bold });
+
+            nextTrainLabel.FormattedText = nextTrainText;
 
             //Get timetables
             Orario = await App.Orari.GetOrario("3FCAM", 1);

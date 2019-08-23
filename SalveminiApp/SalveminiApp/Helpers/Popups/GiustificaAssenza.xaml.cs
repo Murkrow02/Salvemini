@@ -29,11 +29,9 @@ namespace SalveminiApp.Helpers.Popups
             loadingIndicator.IsVisible = true;
 
             var giustificaModel = new RestApi.Models.AssenzaModel();
-            giustificaModel.listaAssenze = new List<RestApi.Models.ListaAssenze>() { new RestApi.Models.ListaAssenze { binUid = Assenza.binUid, datAssenza = Assenza.datAssenza } };
-            if (!string.IsNullOrEmpty(giustifica.Text))
-            {
-                giustificaModel.motivazione = giustifica.Text;
-            }
+            giustificaModel.listaAssenze = new List<RestApi.Models.ListaAssenze>() { new RestApi.Models.ListaAssenze { binUid = Assenza.binUid, datAssenza = Convert.ToDateTime(Assenza.datAssenza).ToString("dd/MM/yyyy") } };
+
+            giustificaModel.motivazione = !string.IsNullOrEmpty(giustifica.Text) ? giustifica.Text : "";
 
             bool success = await App.Argo.GiustificaAssenza(giustificaModel);
 

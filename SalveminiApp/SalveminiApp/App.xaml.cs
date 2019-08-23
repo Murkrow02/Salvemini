@@ -20,6 +20,7 @@ namespace SalveminiApp
         public static RestApi.ItemManagerOrari Orari { get; private set; }
         public static RestApi.ItemManagerIndex Index { get; private set; }
         public static RestApi.ItemManagerArgo Argo { get; private set; }
+        public static RestApi.ItemManagerTreni Treni { get; private set; }
 
         public App()
         {
@@ -58,6 +59,7 @@ namespace SalveminiApp
             Orari = new RestApi.ItemManagerOrari(new RestApi.RestServiceOrari());
             Index = new RestApi.ItemManagerIndex(new RestApi.RestServiceIndex());
             Argo = new RestApi.ItemManagerArgo(new RestApi.RestServiceArgo());
+            Treni = new RestApi.ItemManagerTreni(new RestApi.RestServiceTreni());
         }
 
         protected override void OnStart()

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace SalveminiApp.RestApi.Models
 {
@@ -20,6 +21,9 @@ namespace SalveminiApp.RestApi.Models
         public int numAnno { get; set; }
         public int prgAlunno { get; set; }
         public bool flgDaGiustificare { get; set; }
+        public bool SeparatorVisibility { get; set; } = true;
+        public Thickness CellPadding { get; set; } = new Thickness(10);
+
 
         public string Data
         {

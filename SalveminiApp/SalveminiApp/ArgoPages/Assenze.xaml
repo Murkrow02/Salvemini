@@ -6,17 +6,21 @@
             <StackLayout Spacing="20" Padding="20, 40" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
                 <StackLayout Orientation="Horizontal">
                     <Label HorizontalOptions="Start" TextColor="White" Text="Assenze" FontSize="40" FontAttributes="Bold" />
-                    <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" Source="info.svg" x:Name="infoImage" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" />
+                    <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" Source="info.svg" x:Name="infoImage" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand">
+                        <ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Info_Tapped" />
+                        </ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                    </ffimageloadingsvg:SvgCachedImage>
                 </StackLayout>
                 <Frame IsClippedToBounds="true" Padding="0" VerticalOptions="Start" HasShadow="false" CornerRadius="15">
                     <ListView ItemSelected="Assenza_Selected" HasUnevenRows="true" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None" x:Name="assenzeList" VerticalOptions="Start">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    <StackLayout Padding="10" Spacing="20">
+                                    <StackLayout Padding="{Binding CellPadding}" Spacing="30">
                                         <StackLayout>
                                             <StackLayout Orientation="Horizontal">
-                                                <Label VerticalTextAlignment="Center" HorizontalOptions="Start" VerticalOptions="Center" Text="{Binding Tipo}" FontSize="Large" FontAttributes="Bold" />
+                                                <Label VerticalTextAlignment="Center" HorizontalOptions="Start" VerticalOptions="End" Text="{Binding Tipo}" FontSize="Large" FontAttributes="Bold" />
                                                 <Frame HasShadow="false" VerticalOptions="Center" BackgroundColor="{x:Static local:Styles.ObjectGray}" CornerRadius="{Binding NumberRadius}" Padding="0" HeightRequest="{Binding NumberHeight}" IsVisible="{Binding NumberVisibility}" WidthRequest="{Binding NumberHeight}">
                                                     <Label FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding numOra}" />
                                                 </Frame>
@@ -27,7 +31,7 @@
                                                 <Label Text="{Binding Professore}" TextColor="{x:Static local:Styles.TextGray}" FontSize="Small" HorizontalOptions="EndAndExpand" />
                                             </StackLayout>
                                         </StackLayout>
-                                        <local:DashedBorderFrame Padding="0" Margin="-10, 0" HeightRequest="0.1" />
+                                        <local:DashedBorderFrame IsVisible="{Binding SeparatorVisibility}" Padding="0" Margin="-10" HeightRequest="0.1" />
                                     </StackLayout>
                                 </ViewCell>
                             </DataTemplate>

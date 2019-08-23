@@ -44,6 +44,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\Popups\BindablePopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\OrariTreni.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -93,6 +98,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Popups\GiustificaAssenza.xaml.cs">
       <DependentUpon>GiustificaAssenza.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Popups\BindablePopup.xaml.cs">
+      <DependentUpon>BindablePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Promemoria.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceTreni.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
