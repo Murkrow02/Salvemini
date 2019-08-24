@@ -71,7 +71,10 @@ namespace SalveminiApi.Controllers
 
             try
             {
+                returnModel.ArgoAuth = true;
                 var response = await argoClient.GetAsync(uri);
+                if (response.StatusCode == HttpStatusCode.Unauthorized)
+                     returnModel.ArgoAuth = false;
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();

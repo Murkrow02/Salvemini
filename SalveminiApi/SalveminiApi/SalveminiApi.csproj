@@ -205,6 +205,7 @@
     <Compile Include="Argo\Models\Promemoria.cs" />
     <Compile Include="Argo\Models\Scrutinio.cs" />
     <Compile Include="Argo\Models\Utente.cs" />
+    <Compile Include="Argo\Models\Voti.cs" />
     <Compile Include="BookMarket\AddBooks.aspx.cs">
       <DependentUpon>AddBooks.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

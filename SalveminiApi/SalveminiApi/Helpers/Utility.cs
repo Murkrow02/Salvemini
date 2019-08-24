@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Web;
@@ -18,7 +19,9 @@ namespace SalveminiApi.Helpers
             return italianDate;
         }
 
-       public bool authorized(HttpRequestMessage re)
+       
+
+        public bool authorized(HttpRequestMessage re)
         {
             string token;
             string id;
@@ -57,5 +60,15 @@ namespace SalveminiApi.Helpers
                 return false;
             }
         }
+        
     }
+
+    public static class Extensions {
+
+        public static ObservableCollection<T> ToObservableCollection<T>(this IEnumerable<T> col)
+        {
+            return new ObservableCollection<T>(col);
+        }
+    }
+
 }
