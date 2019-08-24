@@ -5,14 +5,35 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using CoreGraphics;
 using CoreAnimation;
+using Foundation;
 
 [assembly: ExportRenderer(typeof(SalveminiApp.Helpers.CustomNavigationPage), typeof(CustomNavigationPage))]
 [assembly: ExportRenderer(typeof(SalveminiApp.ShadowFrame), typeof(ShadowFrame))]
 [assembly: ExportRenderer(typeof(SalveminiApp.TransparentGradient), typeof(TransparentGradient))]
-[assembly: ExportRenderer(typeof(SalveminiApp.GradientFrame), typeof(GradientFrame))]
+[assembly: ExportRenderer(typeof(SalveminiApp.DashedBorderFrame), typeof(DashedBorderFrame))]
 
 namespace SalveminiApp.iOS
 {
+
+    public class DashedBorderFrame : FrameRenderer
+    {
+        public override void LayoutSubviews()
+        {
+            base.LayoutSubviews();
+
+            CAShapeLayer viewBorder = new CAShapeLayer();
+            viewBorder.StrokeColor = Color.FromHex("#BCBCBC").ToCGColor();
+            viewBorder.FillColor = null;
+            viewBorder.LineDashPattern = new NSNumber[] { new NSNumber(10), new NSNumber(10) };
+            viewBorder.Frame = NativeView.Bounds;
+            viewBorder.Path = UIBezierPath.FromRect(NativeView.Bounds).CGPath;
+            Layer.AddSublayer(viewBorder);
+
+            // If you don't want the shadow effect
+            Element.HasShadow = false;
+        }
+    }
+
     public class CustomNavigationPage : NavigationRenderer
     {
         protected override void OnElementChanged(VisualElementChangedEventArgs e)
@@ -78,30 +99,5 @@ namespace SalveminiApp.iOS
         }
     }
 
-    public class GradientFrame : FrameRenderer
-    {
-        public override void Draw(CGRect rect)
-        {
-            base.Draw(rect);
-            SalveminiApp.GradientFrame stack = (SalveminiApp.GradientFrame)this.Element;
-            CGColor startColor = stack.StartColor.ToCGColor();
-            CGColor endColor = stack.EndColor.ToCGColor();
-            #region for Vertical Gradient  
-            //var gradientLayer = new CAGradientLayer();     
-            #endregion
-            #region for Horizontal Gradient  
-            var gradientLayer = new CAGradientLayer()
-            {
-                StartPoint = new CGPoint(0, 0.5),
-                EndPoint = new CGPoint(1, 0.5)
-            };
-            #endregion
-            gradientLayer.Frame = rect;
-            gradientLayer.Colors = new CGColor[] {
-                startColor,
-                endColor
-            };
-            NativeView.Layer.InsertSublayer(gradientLayer, 0);
-        }
-    }
+
 }

@@ -1,8 +1,11 @@
 ﻿using System;
+using System.IO;
 using Com.OneSignal;
+using MonkeyCache.SQLite;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
 
 namespace SalveminiApp
 {
@@ -15,6 +18,9 @@ namespace SalveminiApp
         //RestService Call
         public static RestApi.ItemManagerLogin Login { get; private set; }
         public static RestApi.ItemManagerOrari Orari { get; private set; }
+        public static RestApi.ItemManagerIndex Index { get; private set; }
+        public static RestApi.ItemManagerArgo Argo { get; private set; }
+        public static RestApi.ItemManagerTreni Treni { get; private set; }
 
         public App()
         {
@@ -22,6 +28,10 @@ namespace SalveminiApp
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTMwMTY3QDMxMzcyZTMyMmUzMEVkVmVDYmhQM1JMS1g5alVuZSs1SVlVbGEvdktLZVc3a1l1MU5DNGpVTzQ9");
 
             InitializeComponent();
+
+
+            //Cache Folder
+            Barrel.ApplicationId = "com.codex.SalveminiApp";
 
             //Set MainPage
             if (Preferences.Get("isFirstTime", true))
@@ -47,6 +57,9 @@ namespace SalveminiApp
         {
             Login = new RestApi.ItemManagerLogin(new RestApi.RestServiceLogin());
             Orari = new RestApi.ItemManagerOrari(new RestApi.RestServiceOrari());
+            Index = new RestApi.ItemManagerIndex(new RestApi.RestServiceIndex());
+            Argo = new RestApi.ItemManagerArgo(new RestApi.RestServiceArgo());
+            Treni = new RestApi.ItemManagerTreni(new RestApi.RestServiceTreni());
         }
 
         protected override void OnStart()

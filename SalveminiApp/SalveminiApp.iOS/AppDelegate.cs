@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Com.OneSignal;
+using FFImageLoading.Forms.Platform;
+using FFImageLoading.Svg.Forms;
 using Foundation;
 using Lottie.Forms.iOS.Renderers;
 using UIKit;
@@ -26,6 +28,9 @@ namespace SalveminiApp.iOS
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            //Init Popups
+            Rg.Plugins.Popup.Popup.Init();
+
             global::Xamarin.Forms.Forms.Init();
 
             //Get Screen Size
@@ -57,6 +62,8 @@ namespace SalveminiApp.iOS
             }
 
             //Initialize Processes
+            CachedImageRenderer.Init();
+            var ignore = typeof(SvgCachedImage);
             Syncfusion.XForms.iOS.TextInputLayout.SfTextInputLayoutRenderer.Init();
             Syncfusion.XForms.iOS.PopupLayout.SfPopupLayoutRenderer.Init();
             AnimationViewRenderer.Init();

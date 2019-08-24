@@ -28,6 +28,27 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\OrariClassi\3FCAM.txt" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ArgoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ArgoPages\Assenze.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ArgoPages\Promemoria.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\Popups\GiustificaAssenza.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\Popups\BindablePopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\OrariTreni.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -58,6 +79,30 @@
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Index.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceOrari.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Orario.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceIndex.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Avviso.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Argo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Ad.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Treno.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ArgoPage.xaml.cs">
+      <DependentUpon>ArgoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\Assenze.xaml.cs">
+      <DependentUpon>Assenze.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Assenza.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceArgo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\Promemoria.xaml.cs">
+      <DependentUpon>Promemoria.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Popups\GiustificaAssenza.xaml.cs">
+      <DependentUpon>GiustificaAssenza.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Popups\BindablePopup.xaml.cs">
+      <DependentUpon>BindablePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Promemoria.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceTreni.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
@@ -65,6 +110,8 @@
     <Folder Include="$(MSBuildThisFileDirectory)RestApi\" />
     <Folder Include="$(MSBuildThisFileDirectory)RestApi\Models\" />
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\OrariClassi\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ArgoPages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\Popups\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Helpers\Preferences.txt" />

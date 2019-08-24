@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage Title="Home" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SalveminiApp" x:Class="SalveminiApp.MainPage">
+<ContentPage Title="Home" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SalveminiApp" x:Class="SalveminiApp.MainPage">
     <StackLayout Padding="20, 10, 20, 0" x:Name="mainLayout" Spacing="15">
         <!--Pubblicità-->
         <local:ShadowFrame Padding="0" x:Name="adsFrame" CornerRadius="20">
@@ -26,7 +26,7 @@
                         <Image x:Name="trainImage" Source="train.png" />
                         <Label Text="Bus e Treni" FontSize="18" TextColor="{x:Static local:Styles.TextGray}" />
                     </StackLayout>
-                    <Label Text="Il prossimo treno per Napoli parte alle 12:45" />
+                    <Label x:Name="nextTrainLabel" />
                     <Label Text="Mostra Altro" VerticalOptions="EndAndExpand" FontSize="13" HorizontalOptions="EndAndExpand" TextColor="{x:Static local:Styles.TextGray}" />
                 </StackLayout>
             </local:ShadowFrame>
