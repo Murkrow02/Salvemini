@@ -49,6 +49,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\OrariTreni.txt" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -103,6 +107,11 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Promemoria.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceTreni.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Response.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SecondHome.xaml.cs">
+      <DependentUpon>SecondHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Voti.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

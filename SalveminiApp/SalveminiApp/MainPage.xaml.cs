@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using Plugin.Toast;
 
 namespace SalveminiApp
 {
@@ -60,6 +61,7 @@ namespace SalveminiApp
             if (Orario != null)
             {
                 orarioList.ItemsSource = Orario;
+                timeTablesDay.Text = Costants.Giorni[Enum.GetName(typeof(DayOfWeek), Orario[0].Giorno)];
             }
 
             //Check Internet
@@ -68,7 +70,7 @@ namespace SalveminiApp
                 Index = await App.Index.GetIndex();
 
                 //Fill Alert
-                if (Index.ultimoAvviso != null )
+                if (Index.ultimoAvviso != null)
                 {
                     //Get Alert Description
                     string stringToDisplay = Index.ultimoAvviso.Descrizione;
@@ -83,13 +85,17 @@ namespace SalveminiApp
                     avvisiLabel.Text = stringToDisplay;
                 }
 
+                if (!Index.ArgoAuth)
+                {
+                    //UserDialogs.Instance.Toast(Costants.Toast("Le credenziali sono cambiate", Styles.PrimaryColor, Color.White, ToastPosition.Bottom));
+                }
             }
-           
-            //Alerts Label starts to flow
-            flowLabel();
 
-
-
+            if (!string.IsNullOrEmpty(avvisiLabel.Text))
+            {
+                //Alerts' Label starts to flow
+                flowLabel();
+            }
 
         }
 

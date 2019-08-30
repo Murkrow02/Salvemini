@@ -55,12 +55,20 @@ namespace SalveminiApp.ArgoPages
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-
+           
             //Api Call
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                Assenzes = await App.Argo.GetAssenze();
+                var response = await App.Argo.GetAssenze();
 
+                if (!string.IsNullOrEmpty(response.Message))
+                {
+
+                }
+                else
+                {
+                    Assenzes = response.Data as List<RestApi.Models.Assenza>;
+                }
                 //Fill List
                 assenzeList.ItemsSource = Assenzes;
             }

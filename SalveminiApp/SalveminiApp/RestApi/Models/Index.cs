@@ -9,5 +9,6 @@ namespace SalveminiApp.RestApi.Models
         public Avvisi ultimoAvviso { get; set; }
         public List<WholeModel> Oggi { get; set; }
         public List<Ad> Ads { get; set; }
+        public bool ArgoAuth { get; set; }
     }
 }

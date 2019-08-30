@@ -55,7 +55,10 @@
             <StackLayout x:Name="orarioLayout" VerticalOptions="Start">
                 <StackLayout Orientation="Horizontal">
                     <Image Source="clock.png" x:Name="clockImage" />
-                    <Label Text="Orario" TextColor="{x:Static local:Styles.TextGray}" FontSize="Large" />
+                    <StackLayout Orientation="Horizontal" Spacing="1">
+                        <Label Text="Orario - " TextColor="{x:Static local:Styles.TextGray}" VerticalTextAlignment="Center" FontSize="Large" />
+                        <Label x:Name="timeTablesDay" VerticalTextAlignment="Center" FontAttributes="Bold" />
+                    </StackLayout>
                 </StackLayout>
                 <ListView SeparatorVisibility="None" VerticalOptions="End" Footer=" " x:Name="orarioList" HasUnevenRows="true">
                     <ListView.ItemTemplate>

@@ -20,9 +20,10 @@ namespace SalveminiApp.RestApi
             client.Timeout = TimeSpan.FromSeconds(10);
         }
 
-        public async Task<List<Models.Utente>> Login(Models.LoginForm loginData)
+        public async Task<Models.ResponseModel> Login(Models.LoginForm loginData)
         {
             UtentiLogin = new List<Models.Utente>();
+            Models.ResponseModel Data = new Models.ResponseModel();
             var uri = Costants.Uri("login");
 
             try
@@ -31,23 +32,38 @@ namespace SalveminiApp.RestApi
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 var response = await client.PostAsync(uri, content);
 
-                if (response.IsSuccessStatusCode)
+                switch (response.StatusCode)
                 {
-                    var responseContent = await response.Content.ReadAsStringAsync();
-                    UtentiLogin = JsonConvert.DeserializeObject<List<Models.Utente>>(responseContent);
+                    case HttpStatusCode.OK:
+                        var responseContent = await response.Content.ReadAsStringAsync();
+                        UtentiLogin = JsonConvert.DeserializeObject<List<Models.Utente>>(responseContent);
+                        Data.Data = UtentiLogin;
+                        break;
+                    case HttpStatusCode.Unauthorized:
+                        Data.Message = "Username o password non corretti";
+                        break;
+                    case HttpStatusCode.NotAcceptable:
+                        Data.Message = "I server di ARGO non sono al momento disponibili";
+                        break;
+                    case HttpStatusCode.Forbidden:
+                        Data.Message = "Si è verificato un errore nella connessione ad ARGO";
+                        break;
+                    case HttpStatusCode.InternalServerError:
+                        Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+                        break;
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(@"              ERROR {0}", ex.Message);
             }
-            return UtentiLogin;
+            return Data;
         }
     }
 
     public interface IRestServiceLogin
     {
-        Task<List<Models.Utente>> Login(Models.LoginForm loginData);
+        Task<Models.ResponseModel> Login(Models.LoginForm loginData);
     }
 
     public class ItemManagerLogin
@@ -60,7 +76,7 @@ namespace SalveminiApp.RestApi
             restServiceLogin = serviceLogin;
         }
 
-        public Task<List<Models.Utente>> Login(Models.LoginForm loginData)
+        public Task<Models.ResponseModel> Login(Models.LoginForm loginData)
         {
             return restServiceLogin.Login(loginData);
         }

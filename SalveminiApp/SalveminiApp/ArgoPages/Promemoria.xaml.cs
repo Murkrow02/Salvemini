@@ -34,10 +34,20 @@ namespace SalveminiApp.ArgoPages
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+
             //Api Call
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                Promemorias = await App.Argo.GetPromemoria();
+                var datas = await App.Argo.GetPromemoria();
+
+                if (string.IsNullOrEmpty(datas.Message))
+                {
+                    Promemorias = datas.Data as List<RestApi.Models.Promemoria>;
+                }
+                else
+                {
+
+                }
 
                 //Fill List
                 promemoriaList.ItemsSource = Promemorias;

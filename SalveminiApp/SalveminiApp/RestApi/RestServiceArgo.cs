@@ -20,6 +20,7 @@ namespace SalveminiApp.RestApi
         HttpClient client;
         public List<Models.Assenza> Assenze { get; private set; }
         public List<Models.Promemoria> Promemoria { get; private set; }
+        public List<Models.Pentagono> Medie { get; private set; }
 
         public RestServiceArgo()
         {
@@ -30,38 +31,49 @@ namespace SalveminiApp.RestApi
         }
 
        
-        public async Task<List<Models.Assenza>> GetAssenze()
+        public async Task<Models.ResponseModel> GetAssenze()
         {
             Assenze = new List<Models.Assenza>();
+            Models.ResponseModel Data = new Models.ResponseModel();
             var uri = Costants.Uri("argo/assenze");
             try
             {
                 var response = await client.GetAsync(uri);
-                if (response.IsSuccessStatusCode)
+
+                switch (response.StatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
-                    Assenze = JsonConvert.DeserializeObject<List<Models.Assenza>>(content);
-                    Assenze[Assenze.Count - 1].SeparatorVisibility = false;
-                    if (Assenze.Count > 1)
-                    {
-                        Assenze[Assenze.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
-                        Assenze[0].CellPadding = new Thickness(10, 20, 10, 10);
-                    }
-
-
+                    case HttpStatusCode.OK:
+                        var content = await response.Content.ReadAsStringAsync();
+                        Assenze = JsonConvert.DeserializeObject<List<Models.Assenza>>(content);
+                        Assenze[Assenze.Count - 1].SeparatorVisibility = false;
+                        if (Assenze.Count > 1)
+                        {
+                            Assenze[Assenze.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
+                            Assenze[0].CellPadding = new Thickness(10, 20, 10, 10);
+                        }
+                        Data.Data = Assenze;
+                        break;
+                    case HttpStatusCode.Forbidden:
+                        Data.Message = "Si è verificato un errore nella connessione ad ARGO";
+                        break;
+                    case HttpStatusCode.InternalServerError:
+                        Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+                        break;
                 }
+
                 Barrel.Current.Add("Assenze", Assenze, TimeSpan.FromDays(7));
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
             }
-            return Assenze;
+            return Data;
         }
 
-        public async Task<bool> GiustificaAssenza(RestApi.Models.AssenzaModel item)
+        public async Task<Models.ResponseModel> GiustificaAssenza(RestApi.Models.AssenzaModel item)
         {
-
+            Models.ResponseModel Data = new Models.ResponseModel();
             string uri = Costants.Uri("argo/giustifica");
             try
             {
@@ -69,50 +81,107 @@ namespace SalveminiApp.RestApi
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 var response = await client.PostAsync(uri, content);
 
-                return response.IsSuccessStatusCode;
+                switch(response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                    Data.Data = response.IsSuccessStatusCode;
+                    break;
+                    case HttpStatusCode.Forbidden:
+                        Data.Message = "Si è verificato un errore nella connessione ad ARGO";
+                    break;
+                    case HttpStatusCode.InternalServerError:
+                        Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+                    break;
+                }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(@"              ERROR {0}", ex.Message);
-                return false;
+                Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
             }
+            return Data;
         }
 
-        public async Task<List<Models.Promemoria>> GetPromemoria()
+        public async Task<Models.ResponseModel> GetPromemoria()
         {
+            Models.ResponseModel Data = new Models.ResponseModel();
             Promemoria = new List<Models.Promemoria>();
             var uri = Costants.Uri("argo/promemoria");
             try
             {
                 var response = await client.GetAsync(uri);
-                if (response.IsSuccessStatusCode)
+                switch (response.StatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
-                    Promemoria = JsonConvert.DeserializeObject<List<Models.Promemoria>>(content);
-                    Promemoria[Promemoria.Count - 1].SeparatorVisibility = false;
-                    Promemoria[0].CellPadding = new Thickness(10, 20, 10, 10);
-                    if (Promemoria.Count > 1)
-                    {
-                        Promemoria[Promemoria.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
-                    }
-
-
+                    case HttpStatusCode.OK:
+                        var content = await response.Content.ReadAsStringAsync();
+                        Promemoria = JsonConvert.DeserializeObject<List<Models.Promemoria>>(content);
+                        Promemoria[Promemoria.Count - 1].SeparatorVisibility = false;
+                        Promemoria[0].CellPadding = new Thickness(10, 20, 10, 10);
+                        if (Promemoria.Count > 1)
+                        {
+                            Promemoria[Promemoria.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
+                        }
+                        Data.Data = Promemoria;
+                        break;
+                    case HttpStatusCode.Forbidden:
+                        Data.Message = "Si è verificato un errore nella connessione ad ARGO";
+                        break;
+                    case HttpStatusCode.InternalServerError:
+                        Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+                        break;
                 }
                 Barrel.Current.Add("Promemoria", Promemoria, TimeSpan.FromDays(7));
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
             }
-            return Promemoria;
+            return Data;
         }
+
+        public async Task<Models.ResponseModel> GetPentagono()
+        {
+            Models.ResponseModel Data = new Models.ResponseModel();
+            Medie = new List<Models.Pentagono>();
+
+            var uri = Costants.Uri("argo/pentagono");
+
+            try
+            {
+                var response = await client.GetAsync(uri);
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                        var content = await response.Content.ReadAsStringAsync();
+                        Medie = JsonConvert.DeserializeObject<List<Models.Pentagono>>(content);
+                        Data.Data = Medie;
+                        break;
+                    case HttpStatusCode.Forbidden:
+                        Data.Message = "Si è verificato un errore nella connessione ad ARGO";
+                        break;
+                    case HttpStatusCode.InternalServerError:
+                        Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+                        break;
+                }
+                Barrel.Current.Add("Medie", Medie, TimeSpan.FromDays(7));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+            }
+            return Data;
+        }
+
     }
 
     public interface IRestServiceArgo
     {
-        Task<List<Models.Assenza>> GetAssenze();
-        Task<bool> GiustificaAssenza(Models.AssenzaModel item);
-        Task<List<Models.Promemoria>> GetPromemoria();
+        Task<Models.ResponseModel> GetAssenze();
+        Task<Models.ResponseModel> GiustificaAssenza(RestApi.Models.AssenzaModel item);
+        Task<Models.ResponseModel> GetPromemoria();
+        Task<Models.ResponseModel> GetPentagono();
     }
 
     public class ItemManagerArgo
@@ -125,19 +194,24 @@ namespace SalveminiApp.RestApi
             restServiceArgo = serviceArgo;
         }
 
-        public Task<List<Models.Assenza>> GetAssenze()
+        public Task<Models.ResponseModel> GetAssenze()
         {
             return restServiceArgo.GetAssenze();
         }
 
-        public Task<bool> GiustificaAssenza(Models.AssenzaModel item)
+        public Task<Models.ResponseModel> GiustificaAssenza(RestApi.Models.AssenzaModel item)
         {
             return restServiceArgo.GiustificaAssenza(item);
         }
 
-        public Task<List<Models.Promemoria>> GetPromemoria()
+        public Task<Models.ResponseModel> GetPromemoria()
         {
             return restServiceArgo.GetPromemoria();
+        }
+
+        public Task<Models.ResponseModel> GetPentagono()
+        {
+            return restServiceArgo.GetPentagono();
         }
     }
 }

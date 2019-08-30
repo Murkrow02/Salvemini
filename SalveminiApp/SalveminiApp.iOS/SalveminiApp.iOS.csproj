@@ -176,6 +176,12 @@
     <PackageReference Include="PluginsPopup">
       <Version>1.1.1</Version>
     </PackageReference>
+    <PackageReference Include="Plugin.Toast">
+      <Version>2.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfChart">
+      <Version>17.1.0.40</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\argoLogo.png" />
@@ -198,6 +204,7 @@
     <BundleResource Include="Resources\advice.svg" />
     <BundleResource Include="Resources\train.svg" />
     <BundleResource Include="Resources\clock.svg" />
+    <BundleResource Include="Resources\SalveminiCard.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OneSignalNotificationServiceExtension\OneSignalNotificationServiceExtension.csproj">

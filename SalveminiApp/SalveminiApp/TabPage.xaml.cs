@@ -16,7 +16,8 @@ namespace SalveminiApp
     public partial class TabPage : TabbedPage
     {
         //Home
-        public static Helpers.CustomNavigationPage Home = new Helpers.CustomNavigationPage(new MainPage())
+        public static CarouselPage CarouselHome = new CarouselPage();
+        public static Helpers.CustomNavigationPage Home = new Helpers.CustomNavigationPage(CarouselHome)
         {
             BarTextColor = Styles.PrimaryColor,
             BarBackgroundColor = Color.White,
@@ -33,8 +34,14 @@ namespace SalveminiApp
         {
             InitializeComponent();
 
+            //Init Carousel
+            CarouselHome.Children.Add(new MainPage());
+            CarouselHome.Children.Add(new SecondHome());
+            CarouselHome.Title = "Home";
+
             //Initialize Bar
             BarTextColor = Styles.PrimaryColor;
+
 
             //Add Children
             Children.Add(Home);

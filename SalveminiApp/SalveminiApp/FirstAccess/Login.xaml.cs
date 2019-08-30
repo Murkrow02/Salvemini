@@ -63,7 +63,18 @@ namespace SalveminiApp.FirstAccess
             form.Password = password.Text;
 
             //Api Call
-            UtentiLogin = await App.Login.Login(form);
+            var Response = await App.Login.Login(form);
+
+            if (!string.IsNullOrEmpty(Response.Message))
+            {
+                usernameEntry.ErrorText = Response.Message;
+                usernameEntry.HasError = true;
+            }
+            else
+            {
+                UtentiLogin = Response.Data as List<RestApi.Models.Utente>;
+            }
+
             if (UtentiLogin != null && UtentiLogin.Count > 0)
             {
                 //Success
@@ -96,12 +107,6 @@ namespace SalveminiApp.FirstAccess
                 {
                     success1();
                 }
-            }
-            else
-            {
-                //Error Occurred
-                usernameEntry.HasError = true;
-                usernameEntry.ErrorText = "Si è verificato un errore";
             }
 
             //End Loading

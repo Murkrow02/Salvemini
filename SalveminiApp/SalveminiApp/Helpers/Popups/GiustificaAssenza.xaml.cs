@@ -33,16 +33,16 @@ namespace SalveminiApp.Helpers.Popups
 
             giustificaModel.motivazione = !string.IsNullOrEmpty(giustifica.Text) ? giustifica.Text : "";
 
-            bool success = await App.Argo.GiustificaAssenza(giustificaModel);
+            var success = await App.Argo.GiustificaAssenza(giustificaModel);
 
-            if (success)
+            if (string.IsNullOrEmpty(success.Message))
             {
                 MessagingCenter.Send((App)Application.Current, "ReloadAssenze");
                 await Navigation.PopPopupAsync();
             }
             else
             {
-                giustificaEntry.ErrorText = "Si è verificato un errore";
+                giustificaEntry.ErrorText = success.Message;
             }
 
             loadingIndicator.IsVisible = false;

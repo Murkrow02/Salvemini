@@ -7,6 +7,7 @@ using FFImageLoading.Svg.Forms;
 using Foundation;
 using Lottie.Forms.iOS.Renderers;
 using UIKit;
+using Xamarin.Forms;
 
 namespace SalveminiApp.iOS
 {
@@ -66,6 +67,7 @@ namespace SalveminiApp.iOS
             var ignore = typeof(SvgCachedImage);
             Syncfusion.XForms.iOS.TextInputLayout.SfTextInputLayoutRenderer.Init();
             Syncfusion.XForms.iOS.PopupLayout.SfPopupLayoutRenderer.Init();
+            Syncfusion.SfChart.XForms.iOS.Renderers.SfChartRenderer.Init();
             AnimationViewRenderer.Init();
 
             LoadApplication(new App());

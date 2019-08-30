@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace SalveminiApp
 {
@@ -66,5 +67,18 @@ namespace SalveminiApp
             {31, "Napoli Piazza Garibaldi"},
             {32, "Napoli Porta Nolana"},
         };
+
+        public static Dictionary<string, string> Giorni = new Dictionary<string, string>
+        {
+            {"Sunday", "Domenica"},
+            {"Monday", "Lunedì"},
+            {"Tuesday", "Martedì"},
+            {"Wednesday", "Mercoledì"},
+            {"Thursday", "Giovedì"},
+            {"Friday", "Venerdì"},
+            {"Saturday", "Sabato"},
+        };
+
+
     }
 }
