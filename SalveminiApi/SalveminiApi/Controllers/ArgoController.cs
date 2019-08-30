@@ -13,6 +13,8 @@ using SalveminiApi.Utility;
 using SalveminiApi.Argo.Models;
 using System.Net.Http;
 using System.Text;
+using SalveminiApi.Helpers;
+using System.Collections.ObjectModel;
 
 namespace SalveminiApi.Controllers
 {
@@ -126,6 +128,39 @@ namespace SalveminiApi.Controllers
             return returnList;
         }
 
+        [Route("newAssenze")]
+        [HttpGet]
+        public async Task<bool> newAssenze()
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+
+            //Get parameters from request
+            int id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
+            string token = Request.Headers.GetValues("x-auth-token").First();
+
+            //Prendi modello
+            var argoUtils = new ArgoUtils();
+            var argoClient = argoUtils.ArgoClient(id, token);
+            var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/assenze");
+            if (!argoResponse.IsSuccessStatusCode)
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
+            var argoContent = await argoResponse.Content.ReadAsStringAsync();
+            var returnModel = JsonConvert.DeserializeObject<AssenzeList>(argoContent);
+
+            //Trova assenza non giustificata
+            var daGiustificare = returnModel.dati.Where(x => x.flgDaGiustificare == true || x.datGiustificazione == null).ToList();
+            if (daGiustificare.Count > 0)
+            {
+                return true;
+            }
+            return false;
+
+        }
+
         [Route("giustifica")]
         [HttpPost]
         public async Task<HttpResponseMessage> giustificaAssenza(AssenzaModel giustifica)
@@ -152,6 +187,156 @@ namespace SalveminiApi.Controllers
 
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
+
+        [Route("voti")]
+        [HttpGet]
+        public async Task<List<GroupedVoti>> getVoti()
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+
+            //Get parameters from request
+            int id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
+            string token = Request.Headers.GetValues("x-auth-token").First();
+
+            //Prendi modello
+            var argoUtils = new ArgoUtils();
+            var argoClient = argoUtils.ArgoClient(id, token);
+            var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/votigiornalieri");
+            if (!argoResponse.IsSuccessStatusCode)
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
+            var argoContent = await argoResponse.Content.ReadAsStringAsync();
+            var returnModel = JsonConvert.DeserializeObject<VotiList>(argoContent);
+            var votiList = new List<Voti>();
+            votiList = returnModel.dati;
+
+            //Raggruppa per materia
+            var groupedVoti = new List<GroupedVoti>();
+            var votiGrouped = votiList.GroupBy(x => x.Materia).ToList();
+            var groupedCollection = new List<GroupedVoti>();
+            
+            for (int i = 0; i < votiGrouped.Count(); i++)
+            {
+                var groupedMateria = new GroupedVoti();
+                var listaVoti = new List<Voti>();
+
+                foreach (var voto in votiGrouped[i])
+                {
+                    listaVoti.Add(voto);
+                    groupedMateria.Materia = voto.Materia;
+                }
+                groupedMateria.Voti = listaVoti;
+
+                //Calcola media
+                int count = 0;
+                double media = 0.0;
+                foreach (var voto in votiGrouped[i])
+                {
+
+                    //Controlla se è una giustifica
+                    if (voto.decValore == null) {
+                        voto.codVoto = "G";
+                        continue;
+                    }
+
+                    //Aggiungi alla media
+                    media += Convert.ToDouble(voto.decValore);
+                    count++;
+                }
+
+                //Controlla se ci sono voti
+                if (count > 0)
+                    groupedMateria.Media = media / count;
+                else
+                    groupedMateria.Media = 0;
+
+
+                groupedCollection.Add(groupedMateria);
+
+            }
+
+
+            return groupedCollection;
+        }
+
+        [Route("pentagono")]
+        [HttpGet]
+        public async Task<List<Pentagono>> getPentagono()
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+
+            //Get parameters from request
+            int id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
+            string token = Request.Headers.GetValues("x-auth-token").First();
+
+            //Prendi modello
+            var argoUtils = new ArgoUtils();
+            var argoClient = argoUtils.ArgoClient(id, token);
+            var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/votigiornalieri");
+            if (!argoResponse.IsSuccessStatusCode)
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
+            var argoContent = await argoResponse.Content.ReadAsStringAsync();
+            var returnModel = JsonConvert.DeserializeObject<VotiList>(argoContent);
+            var votiList = new List<Voti>();
+            votiList = returnModel.dati;
+
+            //Raggruppa per materia
+            var groupedVoti = new List<GroupedVoti>();
+            var votiGrouped = votiList.GroupBy(x => x.Materia).ToList();
+            var groupedCollection = new List<Pentagono>();
+
+            for (int i = 0; i < votiGrouped.Count(); i++)
+            {
+                var groupedMateria = new Pentagono();
+                var listaVoti = new List<Voti>();
+
+                foreach (var voto in votiGrouped[i])
+                {
+                    listaVoti.Add(voto);
+                    groupedMateria.Materia = voto.Materia;
+                }
+
+
+                //Calcola media
+                int count = 0;
+                double media = 0.0;
+                foreach (var voto in votiGrouped[i])
+                {
+
+                    //Controlla se è una giustifica
+                    if (voto.decValore == null)
+                    {
+                        voto.codVoto = "G";
+                        continue;
+                    }
+
+                    //Aggiungi alla media
+                    media += Convert.ToDouble(voto.decValore);
+                    count++;
+                }
+
+                //Controlla se ci sono voti
+                if (count > 0)
+                    groupedMateria.Media = media / count;
+                else
+                    groupedMateria.Media = 0;
+
+
+                groupedCollection.Add(groupedMateria);
+
+            }
+
+
+            return groupedCollection;
+        }
+
 
         [Route("scrutinio")]
         [HttpGet]
@@ -207,7 +392,7 @@ namespace SalveminiApi.Controllers
             //Prendi modello
             var argoUtils = new ArgoUtils();
             var argoClient = argoUtils.ArgoClient(id, token);
-           
+
             //Codice copiato dalla salveminiapp vecchia, non si capisce un cazzo (ritorna cosa è successo in classe)
             var Oggi = new Oggi();
             List<WholeModel> Oggis = new List<WholeModel>();
@@ -219,41 +404,41 @@ namespace SalveminiApi.Controllers
                 if (!response.IsSuccessStatusCode)
                     throw new HttpResponseException(HttpStatusCode.Forbidden);
                 var content = await response.Content.ReadAsStringAsync();
-                    Oggi = JsonConvert.DeserializeObject<Oggi>(content);
-                    var Dates = Oggi.dati;
-                    for (int i = Dates.Count - 1; i >= 0; i--)
-                    {
-                        var Model = new WholeModel();
-                        Model.binUid = Dates[i].dati.binUid;
-                        Model.codEvento = Dates[i].dati.codEvento;
-                        Model.codMin = Dates[i].codMin;
-                        Model.codVoto = Dates[i].dati.codVoto;
-                        Model.datGiorno = Dates[i].dati.datGiorno;
-                        Model.datGiustificazione = Dates[i].dati.datGiustificazione;
-                        Model.decValore = Dates[i].dati.decValore;
-                        Model.desAnnotazioni = Dates[i].dati.desAnnotazioni;
-                        Model.desArgomento = Dates[i].dati.desArgomento;
-                        Model.desAssenza = Dates[i].dati.desAssenza;
-                        Model.desCompiti = Dates[i].dati.desCompiti;
-                        Model.desMateria = Dates[i].dati.desMateria;
-                        Model.desMittente = Dates[i].dati.desMittente;
-                        Model.docente = Dates[i].dati.docente;
-                        Model.flgDaGiustificare = Dates[i].dati.flgDaGiustificare;
-                        Model.giorno = Dates[i].giorno;
-                        Model.giustificataDa = Dates[i].dati.giustificataDa;
-                        Model.numAnno = Dates[i].numAnno;
-                        Model.ordine = Dates[i].ordine;
-                        Model.prgAlunno = Dates[i].prgAlunno;
-                        Model.prgClasse = Dates[i].dati.prgClasse;
-                        Model.prgMateria = Dates[i].dati.prgMateria;
-                        Model.prgScheda = Dates[i].prgScheda;
-                        Model.prgScuola = Dates[i].prgScuola;
-                        Model.registrataDa = Dates[i].dati.registrataDa;
-                        Model.tipo = Dates[i].tipo;
-                        Model.datAssenza = Dates[i].dati.datAssenza;
-                        Oggis.Add(Model);
-                    }
-                
+                Oggi = JsonConvert.DeserializeObject<Oggi>(content);
+                var Dates = Oggi.dati;
+                for (int i = Dates.Count - 1; i >= 0; i--)
+                {
+                    var Model = new WholeModel();
+                    Model.binUid = Dates[i].dati.binUid;
+                    Model.codEvento = Dates[i].dati.codEvento;
+                    Model.codMin = Dates[i].codMin;
+                    Model.codVoto = Dates[i].dati.codVoto;
+                    Model.datGiorno = Dates[i].dati.datGiorno;
+                    Model.datGiustificazione = Dates[i].dati.datGiustificazione;
+                    Model.decValore = Dates[i].dati.decValore;
+                    Model.desAnnotazioni = Dates[i].dati.desAnnotazioni;
+                    Model.desArgomento = Dates[i].dati.desArgomento;
+                    Model.desAssenza = Dates[i].dati.desAssenza;
+                    Model.desCompiti = Dates[i].dati.desCompiti;
+                    Model.desMateria = Dates[i].dati.desMateria;
+                    Model.desMittente = Dates[i].dati.desMittente;
+                    Model.docente = Dates[i].dati.docente;
+                    Model.flgDaGiustificare = Dates[i].dati.flgDaGiustificare;
+                    Model.giorno = Dates[i].giorno;
+                    Model.giustificataDa = Dates[i].dati.giustificataDa;
+                    Model.numAnno = Dates[i].numAnno;
+                    Model.ordine = Dates[i].ordine;
+                    Model.prgAlunno = Dates[i].prgAlunno;
+                    Model.prgClasse = Dates[i].dati.prgClasse;
+                    Model.prgMateria = Dates[i].dati.prgMateria;
+                    Model.prgScheda = Dates[i].prgScheda;
+                    Model.prgScuola = Dates[i].prgScuola;
+                    Model.registrataDa = Dates[i].dati.registrataDa;
+                    Model.tipo = Dates[i].tipo;
+                    Model.datAssenza = Dates[i].dati.datAssenza;
+                    Oggis.Add(Model);
+                }
+
             }
             catch (Exception ex)
             {
@@ -262,7 +447,7 @@ namespace SalveminiApi.Controllers
             return Oggis;
         }
 
-        
+
 
 
 
@@ -275,5 +460,9 @@ namespace SalveminiApi.Controllers
             }
             base.Dispose(disposing);
         }
+
+       
     }
+
+    
 }

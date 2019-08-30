@@ -21,10 +21,13 @@ namespace SalveminiApi.BookMarket
                 foreach(BookLibri libro in prezzati)
                 {
                     soldi += libro.Prezzo.Value;
+
+                
                 }
                 prezzoPieno.Text = "Totale " + soldi.ToString() + "€";
                 soldiTotali.Text = "In cassa " + ((soldi/2) + prezzati.Count) + "€";
 
+               
             }
         }
     }
