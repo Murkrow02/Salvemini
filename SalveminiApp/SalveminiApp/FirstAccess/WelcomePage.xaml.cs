@@ -37,9 +37,10 @@ namespace SalveminiApp.FirstAccess
             await touchToContinueLabel.FadeTo(0.8, 800);
         }
 
-        void Layout_Tapped(object sender, System.EventArgs e)
+       async void Layout_Tapped(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new Login());
+            await this.FadeTo(0,300, Easing.CubicIn);
+           await Navigation.PushAsync(new Login(),false);
         }
     }
 }

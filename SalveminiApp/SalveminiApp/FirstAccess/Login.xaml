@@ -1,39 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage Padding="20, 0" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.FirstAccess.Login">
+<ContentPage Padding="20, 0"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:local="clr-namespace:SalveminiApp"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SalveminiApp.FirstAccess.Login">
+
     <!--Popup-->
-    <sfPopup:SfPopupLayout x:Name="popupLayout">
+    <!--<sfPopup:SfPopupLayout x:Name="popupLayout">
         <sfPopup:SfPopupLayout.PopupView>
-            <sfPopup:PopupView ShowFooter="false" ShowHeader="false" AutoSizeMode="Height">
+            <sfPopup:PopupView ShowFooter="false"
+                               ShowHeader="false"
+                               AutoSizeMode="Height">
                 <sfPopup:PopupView.PopupStyle>
                     <sfPopup:PopupStyle OverlayColor="Transparent">
                     </sfPopup:PopupStyle>
                 </sfPopup:PopupView.PopupStyle>
             </sfPopup:PopupView>
         </sfPopup:SfPopupLayout.PopupView>
-    </sfPopup:SfPopupLayout>
-    <StackLayout Spacing="40">
+    </sfPopup:SfPopupLayout>-->
+
+    <ScrollView>
+         <StackLayout Spacing="0">
+
         <!--Title-->
         <StackLayout VerticalOptions="CenterAndExpand">
-            <Label Text="Login" FontAttributes="Bold" TextColor="{x:Static local:Styles.PrimaryColor}" HorizontalOptions="Center" FontSize="40" />
-            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                <Label HorizontalTextAlignment="Center" x:Name="loginInfoLabel" TextColor="{x:Static local:Styles.TextGray}" FontSize="Small" Text="Effettua il Login con il tuo account" />
-                <Image Source="argoLogo.png" x:Name="argoLogo" />
+            <Label Text="Login"
+                   FontAttributes="Bold"
+                   TextColor="{x:Static local:Styles.PrimaryColor}"
+                   HorizontalOptions="Center"
+                   FontSize="40" />
+            <StackLayout HorizontalOptions="Center"
+                         Orientation="Horizontal">
+                <Label HorizontalTextAlignment="Center"
+                       x:Name="loginInfoLabel"
+                       TextColor="{x:Static local:Styles.TextGray}"
+                       FontSize="Small"
+                       Text="Effettua il Login con il tuo account" />
+                <Image Source="argoLogo.png"
+                       x:Name="argoLogo" />
             </StackLayout>
         </StackLayout>
+
         <!--Entries-->
-        <StackLayout Spacing="0" Padding="40, 0" VerticalOptions="StartAndExpand">
-            <inputLayout:SfTextInputLayout x:Name="usernameEntry" FocusedColor="{x:Static local:Styles.PrimaryColor}" Hint="Username" ContainerType="None">
-                <Entry x:Name="username" TextChanged="Username_TextChanged" />
+        <StackLayout Spacing="0"
+                     Padding="45, 0"
+                     VerticalOptions="StartAndExpand">
+            <inputLayout:SfTextInputLayout  x:Name="usernameEntry"
+                                            FocusedColor="{x:Static local:Styles.PrimaryColor}"
+                                            Hint="Username"
+                                             ContainerType="Outlined" OutlineCornerRadius="12" >
+                <Entry x:Name="username"
+                       MaxLength="100"
+                       IsSpellCheckEnabled="False"
+                       TextChanged="Username_TextChanged" />
+
             </inputLayout:SfTextInputLayout>
-            <inputLayout:SfTextInputLayout x:Name="passwordEntry" EnablePasswordVisibilityToggle="true" FocusedColor="{x:Static local:Styles.PrimaryColor}" Hint="Password" ContainerType="None">
-                <Entry IsPassword="true" TextChanged="Password_TextChanged" x:Name="password" />
+            <inputLayout:SfTextInputLayout x:Name="passwordEntry"
+                                           EnablePasswordVisibilityToggle="true"
+                                           FocusedColor="{x:Static local:Styles.PrimaryColor}"
+                                           Hint="Password"
+                                           ContainerType="Outlined" OutlineCornerRadius="12" >
+                <Entry IsPassword="true"
+                       TextChanged="Password_TextChanged"
+                       x:Name="password"
+                       MaxLength="200" />
             </inputLayout:SfTextInputLayout>
-            <Button Text="Serve aiuto?" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.PrimaryColor}" />
+
+             <!--Button-->
+        <StackLayout Spacing="0" VerticalOptions="Start" Margin="0,-10,0,0">
+            <ActivityIndicator x:Name="loading"
+                               VerticalOptions="EndAndExpand"
+                               Color="{x:Static local:Styles.ObjectGray}"
+                               IsRunning="false"
+                               Scale="1.2" />
+            <Button x:Name="confirmButton"
+                    Clicked="Continue_Clicked"
+                    Text="Continua"
+                    Padding="10"
+                    BackgroundColor="{x:Static local:Styles.PrimaryColor}"
+                    TextColor="white"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="EndAndExpand"
+                    FontSize="Large"
+                    CornerRadius="12"
+                    Margin="0"/>
         </StackLayout>
-        <!--Button-->
-        <StackLayout Spacing="50">
-            <ActivityIndicator x:Name="loading" VerticalOptions="EndAndExpand" Color="{x:Static local:Styles.PrimaryColor}" IsRunning="false" Scale="1.2" />
-            <Button x:Name="confirmButton" Clicked="Continue_Clicked" Text="Continua" Padding="10" BackgroundColor="{x:Static local:Styles.ObjectGray}" HorizontalOptions="Center" TextColor="Black" VerticalOptions="EndAndExpand" FontSize="Large" />
+            <!--Help buttons-->
+            <StackLayout Spacing="-5" Margin="0,15,0,0" VerticalOptions="End"> 
+                <Button Text="Ho dimenticato la password"
+                    BackgroundColor="Transparent"
+                        Clicked="forgotPwd_clicked"
+                    TextColor="{x:Static local:Styles.PrimaryColor}"/>
+
+            <Button Text="Non riesco ad accedere"
+                    BackgroundColor="Transparent"
+                    Clicked="help_clicked"
+                    TextColor="{x:Static local:Styles.PrimaryColor}" />
+            </StackLayout>
+            
         </StackLayout>
+       
     </StackLayout>
+    </ScrollView>
+   
 </ContentPage>

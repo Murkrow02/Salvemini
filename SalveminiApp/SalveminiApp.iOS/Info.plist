@@ -49,5 +49,9 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
+	<key>Custom Property</key>
+	<string></string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 </dict>
 </plist>

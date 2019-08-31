@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using MonkeyCache.SQLite;
+using UIKit;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace SalveminiApp.ArgoPages
 {
@@ -13,6 +15,13 @@ namespace SalveminiApp.ArgoPages
         public Promemoria()
         {
             InitializeComponent();
+
+#if __IOS__
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
+
+            UIApplication.SharedApplication.StatusBarHidden = true;
+
+#endif
 
             //Set Sizes
             shadowImage.WidthRequest = App.ScreenWidth * 1.5;
@@ -35,6 +44,9 @@ namespace SalveminiApp.ArgoPages
         {
             base.OnAppearing();
 
+            //Start loading
+            promemoriaList.IsRefreshing = true;
+
             //Api Call
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
@@ -51,6 +63,8 @@ namespace SalveminiApp.ArgoPages
 
                 //Fill List
                 promemoriaList.ItemsSource = Promemorias;
+                promemoriaList.IsRefreshing = false;
+
             }
 
         }

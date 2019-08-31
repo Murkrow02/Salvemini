@@ -55,6 +55,9 @@ namespace SalveminiApp.ArgoPages
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+
+            //Start loading
+            assenzeList.IsRefreshing = true;
            
             //Api Call
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
@@ -75,6 +78,7 @@ namespace SalveminiApp.ArgoPages
 
             //Fill Infos
             loadInfo();
+            assenzeList.IsRefreshing = false;
         }
 
         void Assenza_Selected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)

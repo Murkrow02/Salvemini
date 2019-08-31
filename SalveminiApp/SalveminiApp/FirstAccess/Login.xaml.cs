@@ -17,6 +17,10 @@ namespace SalveminiApp.FirstAccess
         public Login()
         {
             InitializeComponent();
+            this.Opacity = 0;
+            //Disable keyboard autocapitalize
+            username.Keyboard = Keyboard.Create(KeyboardFlags.None);
+
 
             //Set Safe Area
 #if __IOS__
@@ -27,6 +31,12 @@ namespace SalveminiApp.FirstAccess
 
             //Initialize Interface
             argoLogo.HeightRequest = loginInfoLabel.FontSize;
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await this.FadeTo(1,300, Easing.CubicIn);
         }
 
         async void Continue_Clicked(object sender, System.EventArgs e)
@@ -80,28 +90,28 @@ namespace SalveminiApp.FirstAccess
                 //Success
                 if (UtentiLogin.Count > 1)
                 {
-                    popupLayout.PopupView.ContentTemplate = new DataTemplate(() =>
-                    {
-                        var mainLayout = new StackLayout { Padding = new Thickness(20, 10) };
-                        var firstUserLayout = new StackLayout { Orientation = StackOrientation.Horizontal };
-                        var firstUserName = new Label { Text = UtentiLogin[0].Nome, VerticalOptions = LayoutOptions.Center, VerticalTextAlignment = TextAlignment.Center, FontSize = 20, HorizontalOptions = LayoutOptions.Start };
-                        var firstUserButton = new IconButton { Text = "fas-arrow-right", TextColor = Styles.PrimaryColor, FontSize = 20, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.EndAndExpand };
-                        firstUserButton.Clicked += FirstUserButton_Clicked;
-                        firstUserLayout.Children.Add(firstUserName);
-                        firstUserLayout.Children.Add(firstUserButton);
-                        var secondUserLayout = new StackLayout { Orientation = StackOrientation.Horizontal };
-                        var secondUserName = new Label { Text = UtentiLogin[1].Nome, VerticalOptions = LayoutOptions.Center, VerticalTextAlignment = TextAlignment.Center, FontSize = 20, HorizontalOptions = LayoutOptions.Start };
-                        var secondUserButton = new IconButton { Text = "fas-arrow-right", TextColor = Styles.PrimaryColor, FontSize = 20, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.EndAndExpand };
-                        secondUserButton.Clicked += SecondUserButton_Clicked;
-                        secondUserLayout.Children.Add(firstUserName);
-                        secondUserLayout.Children.Add(firstUserButton);
-                        var titleLabel = new Label { Text = "Seleziona un account", TextColor = Styles.TextGray, HorizontalOptions = LayoutOptions.Center };
-                        mainLayout.Children.Add(titleLabel);
-                        mainLayout.Children.Add(firstUserLayout);
-                        mainLayout.Children.Add(secondUserLayout);
-                        return mainLayout;
-                    });
-                    popupLayout.ShowRelativeToView(confirmButton, RelativePosition.AlignTopLeft, App.ScreenWidth / 2, -15);
+                    //popupLayout.PopupView.ContentTemplate = new DataTemplate(() =>
+                    //
+                    //    var mainLayout = new StackLayout { Padding = new Thickness(20, 10) };
+                    //    var firstUserLayout = new StackLayout { Orientation = StackOrientation.Horizontal };
+                    //    var firstUserName = new Label { Text = UtentiLogin[0].Nome, VerticalOptions = LayoutOptions.Center, VerticalTextAlignment = TextAlignment.Center, FontSize = 20, HorizontalOptions = LayoutOptions.Start };
+                    //    var firstUserButton = new IconButton { Text = "fas-arrow-right", TextColor = Styles.PrimaryColor, FontSize = 20, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.EndAndExpand };
+                    //    firstUserButton.Clicked += FirstUserButton_Clicked;
+                    //    firstUserLayout.Children.Add(firstUserName);
+                    //    firstUserLayout.Children.Add(firstUserButton);
+                    //    var secondUserLayout = new StackLayout { Orientation = StackOrientation.Horizontal };
+                    //    var secondUserName = new Label { Text = UtentiLogin[1].Nome, VerticalOptions = LayoutOptions.Center, VerticalTextAlignment = TextAlignment.Center, FontSize = 20, HorizontalOptions = LayoutOptions.Start };
+                    //    var secondUserButton = new IconButton { Text = "fas-arrow-right", TextColor = Styles.PrimaryColor, FontSize = 20, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.EndAndExpand };
+                    //    secondUserButton.Clicked += SecondUserButton_Clicked;
+                    //    secondUserLayout.Children.Add(firstUserName);
+                    //    secondUserLayout.Children.Add(firstUserButton);
+                    //    var titleLabel = new Label { Text = "Seleziona un account", TextColor = Styles.TextGray, HorizontalOptions = LayoutOptions.Center };
+                    //    mainLayout.Children.Add(titleLabel);
+                    //    mainLayout.Children.Add(firstUserLayout);
+                    //    mainLayout.Children.Add(secondUserLayout);
+                    //    return mainLayout;
+                    //});
+                    //popupLayout.ShowRelativeToView(confirmButton, RelativePosition.AlignTopLeft, App.ScreenWidth / 2, -15);
                 }
                 else
                 {
@@ -158,6 +168,31 @@ namespace SalveminiApp.FirstAccess
             Preferences.Set("UserId", UtentiLogin[1].id);
             Preferences.Set("Token", UtentiLogin[1].ArgoToken);
             App.refreshCalls();
+        }
+
+         void forgotPwd_clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                Device.OpenUri(new Uri("https://www.portaleargo.it/argoweb/famiglia/common/login_form2.jsp"));
+
+            }
+            catch
+            {
+                DisplayAlert("Attenzione", "Non è stato possibile aprire il browser","Ok");
+            }
+        }
+
+        void help_clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                Device.OpenUri(new Uri("mailto:support@codexdevelopment.net"));
+            }
+            catch
+            {
+                DisplayAlert("Attenzione", "Non è stato possibile inviare una mail, puoi inviarla manualmente a support@codexdevelopment.net", "Ok");
+            }
         }
 
     }
