@@ -53,6 +53,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\CountDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -112,6 +116,9 @@
       <DependentUpon>SecondHome.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Voti.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\CountDown.xaml.cs">
+      <DependentUpon>CountDown.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

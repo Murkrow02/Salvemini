@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns:local="clr-namespace:SalveminiApp" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondHome">
+<ContentPage xmlns:local="clr-namespace:SalveminiApp" xmlns:countdown="clr-namespace:SalveminiApp.Helpers" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondHome">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Spacing="15"> 
+            <!--CountDown-->
+            <Label Text="Mancano" TextColor="Black" FontAttributes="Bold" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"  HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
+            <countdown:CountDown/>
             <!--SalveminiCard-->
             <StackLayout Spacing="10">
                 <Frame BackgroundColor="#DBDBDB" HasShadow="false" HeightRequest="1" Padding="20, 0" Margin="60, 0, 0, 0" />
@@ -14,7 +17,7 @@
             <!--Grafico Medie-->
             <chart:SfChart VerticalOptions="Start" x:Name="chart">
                 <chart:SfChart.Title>
-                    <chart:ChartTitle Text="Grafico Materie" FontAttributes="Bold" FontSize="Large" />
+                    <chart:ChartTitle Text="Grafico Materie" FontAttributes="Bold" FontSize="25" />
                 </chart:SfChart.Title>
                 <chart:SfChart.PrimaryAxis>
                     <chart:CategoryAxis>
@@ -24,7 +27,7 @@
                     <chart:NumericalAxis Minimum="0" Maximum="10">
                     </chart:NumericalAxis>
                 </chart:SfChart.SecondaryAxis>
-                <chart:PolarSeries EnableTooltip="true" x:Name="radarChart" Color="{x:Static local:Styles.PrimaryColor}" StrokeColor="#BE76CC" StrokeWidth="5" DrawType="Area" XBindingPath="Materia" YBindingPath="Media" >
+                <chart:PolarSeries EnableTooltip="true" x:Name="radarChart" Color="{x:Static local:Styles.PrimaryColor}" StrokeColor="#BE76CC" StrokeWidth="2" DrawType="Line" XBindingPath="Materia" YBindingPath="Media" >
                    <chart:PolarSeries.DataMarker>
                         <chart:ChartDataMarker ShowLabel="False" />
                     </chart:PolarSeries.DataMarker>

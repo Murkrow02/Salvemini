@@ -205,6 +205,9 @@
     <BundleResource Include="Resources\train.svg" />
     <BundleResource Include="Resources\clock.svg" />
     <BundleResource Include="Resources\SalveminiCard.png" />
+    <BundleResource Include="Lotties\animArrow.json" />
+    <BundleResource Include="Resources\tabBarHome%402x.png" />
+    <BundleResource Include="Resources\tabBarArgo%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OneSignalNotificationServiceExtension\OneSignalNotificationServiceExtension.csproj">

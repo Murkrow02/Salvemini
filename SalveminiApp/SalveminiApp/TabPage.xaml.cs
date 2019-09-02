@@ -21,13 +21,15 @@ namespace SalveminiApp
         {
             BarTextColor = Styles.PrimaryColor,
             BarBackgroundColor = Color.White,
-            Title = "Home"
+            Title = "Home",
+            Icon = "tabBarHome.png"
         };
         public static Helpers.CustomNavigationPage Argo = new Helpers.CustomNavigationPage(new ArgoPage())
         {
             BarTextColor = Styles.PrimaryColor,
             BarBackgroundColor = Color.White,
-            Title = "Argo"
+            Title = "Argo",
+            Icon= "tabBarArgo.png"
         };
 
         public TabPage()

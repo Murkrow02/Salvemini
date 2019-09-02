@@ -32,6 +32,7 @@ namespace SalveminiApp
             adviceImage.WidthRequest = App.ScreenWidth / 22;
             clockImage.WidthRequest = App.ScreenWidth / 22;
             labelView.HeightRequest = App.ScreenHeight / 10;
+            tipBottom.TranslationY = App.ScreenHeight/3;
 
 #if __IOS__
             if (iOS.AppDelegate.HasNotch)
@@ -96,6 +97,9 @@ namespace SalveminiApp
                 //Alerts' Label starts to flow
                 flowLabel();
             }
+
+            //Show tip at bottom
+           await tipBottom.TranslateTo(0,0,1000,Easing.SpringOut);
 
         }
 

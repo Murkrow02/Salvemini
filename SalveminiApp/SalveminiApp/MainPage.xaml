@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage Title="Home" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SalveminiApp" x:Class="SalveminiApp.MainPage">
-    <StackLayout Padding="20, 10, 20, 0" x:Name="mainLayout" Spacing="15">
+    <AbsoluteLayout>
+         <StackLayout Padding="20, 10, 20, 0" x:Name="mainLayout" Spacing="15" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
         <!--Pubblicità-->
         <local:ShadowFrame Padding="0" x:Name="adsFrame" CornerRadius="20">
             <Frame HasShadow="false" Padding="0" IsClippedToBounds="true" CornerRadius="20">
@@ -51,6 +52,7 @@
                 </StackLayout>
                 <Button Text="Mostra tutti gli avvisi" BackgroundColor="White" HorizontalOptions="End" VerticalOptions="Start" TextColor="{x:Static local:Styles.TextGray}" />
             </StackLayout>
+
             <!--Orario-->
             <StackLayout x:Name="orarioLayout" VerticalOptions="Start">
                 <StackLayout Orientation="Horizontal">
@@ -63,7 +65,7 @@
                 <ListView SeparatorVisibility="None" VerticalOptions="End" Footer=" " x:Name="orarioList" HasUnevenRows="true">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
+                            <ViewCell IsEnabled="False">
                                 <StackLayout Orientation="Horizontal">
                                     <StackLayout Padding="0, 10">
                                         <Label FontSize="Small" HorizontalOptions="Start" Text="{Binding oraLezione}" TextColor="{x:Static local:Styles.TextGray}" VerticalOptions="Start" />
@@ -79,4 +81,18 @@
             </StackLayout>
         </StackLayout>
     </StackLayout>
+
+        <!--TipBottom-->
+        <ContentView AbsoluteLayout.LayoutBounds=".9,.97,.8,.1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent">
+            <local:ShadowFrame x:Name="tipBottom" Padding="10" CornerRadius="10" HorizontalOptions="End" VerticalOptions="Center">
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="End" Orientation="Horizontal">
+                                <Label Text="Scorri per vedere altro" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Gray"/>
+                                        <lottie:AnimationView Rotation="90" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" x:Name="animationView" Animation="Lotties/animArrow.json" WidthRequest="30" HeightRequest="30" Loop="true" AutoPlay="true" />
+
+                </StackLayout>
+        </local:ShadowFrame>
+        </ContentView >
+        
+    </AbsoluteLayout>
+   
 </ContentPage>
