@@ -51,7 +51,7 @@ namespace SalveminiApp.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            NavigationBar.ShadowImage = new UIImage();
+            //NavigationBar.ShadowImage = new UIImage();
             NavigationBar.Translucent = false;
         }
 
