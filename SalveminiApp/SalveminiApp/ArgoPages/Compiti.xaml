@@ -5,6 +5,7 @@
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SalveminiApp.ArgoPages.Compiti">
@@ -38,21 +39,33 @@
                                         TextColor="White"
                                         FontSize="Large"
                                         VerticalOptions="FillAndExpand"
-                                        HorizontalOptions="End"/>
+                                        HorizontalOptions="End" />
                     <iconize:IconButton Text="fas-sort"
                                         TextColor="White"
                                         FontSize="Large"
                                         VerticalOptions="FillAndExpand"
-                                        HorizontalOptions="End"/>
+                                        HorizontalOptions="End" />
 
                 </StackLayout>
 
                 <!--SearchBar-->
-                <Entry Placeholder="Cerca compiti"
-                           PlaceholderColor="White"
-                           BackgroundColor="#119A46"
-                      
-                       />
+                <Frame BackgroundColor="#119A46"
+                       HasShadow="False"
+                       CornerRadius="16"
+                       Padding="0">
+                    <StackLayout Orientation="Horizontal">
+                    <iconize:IconLabel  VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalOptions="Start" Text="fas-search" TextColor="White"/>
+                        <inputLayout:SfTextInputLayout Margin="0" Padding="5"  ContainerType="Outlined"
+                                                        Hint="Cerca compiti"
+                                                        UnfocusedColor="White"
+                                                        FocusedStrokeWidth="0"
+                                                        UnfocusedStrokeWidth="0"
+                                                        BackgroundColor="Transparent"
+                                                        ContainerBackgroundColor="Red" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+
+                    </StackLayout>
+
+                </Frame>
 
                 <!--Lista-->
                 <Frame IsClippedToBounds="true"
@@ -77,8 +90,9 @@
                                        HorizontalOptions="CenterAndExpand"
                                        VerticalOptions="FillAndExpand" />
                                 <iconize:IconButton Text="fas-history"
-                                                   FontSize="22"
-                                                   HorizontalOptions="End" x:Name="clockButton"/>
+                                                    FontSize="22"
+                                                    HorizontalOptions="End"
+                                                    x:Name="clockButton" />
                             </StackLayout>
                         </ListView.Header>
                         <ListView.ItemTemplate>

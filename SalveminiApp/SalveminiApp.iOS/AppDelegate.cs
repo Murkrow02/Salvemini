@@ -64,6 +64,7 @@ namespace SalveminiApp.iOS
 
             //Initialize Processes
             CachedImageRenderer.Init();
+            Forms9Patch.iOS.Settings.Initialize(this);
             var ignore = typeof(SvgCachedImage);
             Syncfusion.XForms.iOS.TextInputLayout.SfTextInputLayoutRenderer.Init();
             Syncfusion.XForms.iOS.PopupLayout.SfPopupLayoutRenderer.Init();
