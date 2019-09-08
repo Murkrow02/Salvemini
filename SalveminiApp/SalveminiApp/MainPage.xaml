@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage Title="Home" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SalveminiApp" x:Class="SalveminiApp.MainPage">
+    <!--ToolbarItems-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="settings" Clicked="PushToSettings" Priority="0" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+
     <AbsoluteLayout>
          <StackLayout Padding="20, 10, 20, 0" x:Name="mainLayout" Spacing="15" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
         <!--Pubblicità-->

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns:local="clr-namespace:SalveminiApp"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SalveminiApp.ArgoPages.Compiti">
+    <yummy:PancakeView BackgroundGradientAngle="135"
+                       BackgroundGradientStartColor="#21db18"
+                       BackgroundGradientEndColor="#97dd8d"
+                       CornerRadius="0"
+                       VerticalOptions="FillAndExpand"
+                       HorizontalOptions="FillAndExpand">
+        <AbsoluteLayout>
+            <ffimageloadingsvg:SvgCachedImage Source="PromemoriaShadow.svg"
+                                              x:Name="shadowImage"
+                                              BackgroundColor="Transparent"
+                                              AbsoluteLayout.LayoutFlags="PositionProportional"
+                                              AbsoluteLayout.LayoutBounds="1.5, -0.1" />
+            <StackLayout Padding="20, 40"
+                         VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand"
+                         AbsoluteLayout.LayoutFlags="All"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+
+                <!--Title and filters-->
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="FillAndExpand">
+                    <Label TextColor="White"
+                           Text="Compiti"
+                           FontSize="40"
+                           HorizontalOptions="StartAndExpand"
+                           FontAttributes="Bold" />
+                    <iconize:IconButton Text="fas-filter"
+                                        TextColor="White"
+                                        FontSize="Large"
+                                        VerticalOptions="FillAndExpand"
+                                        HorizontalOptions="End"/>
+                    <iconize:IconButton Text="fas-sort"
+                                        TextColor="White"
+                                        FontSize="Large"
+                                        VerticalOptions="FillAndExpand"
+                                        HorizontalOptions="End"/>
+
+                </StackLayout>
+
+                <!--SearchBar-->
+                <Entry Placeholder="Cerca compiti"
+                           PlaceholderColor="White"
+                           BackgroundColor="#119A46"
+                      
+                       />
+
+                <!--Lista-->
+                <Frame IsClippedToBounds="true"
+                       Padding="0"
+                       VerticalOptions="Start"
+                       HasShadow="false"
+                       CornerRadius="15">
+                    <ListView SelectionMode="None"
+                              HasUnevenRows="true"
+                              HorizontalScrollBarVisibility="Never"
+                              SeparatorVisibility="None"
+                              x:Name="compitiList"
+                              VerticalOptions="Start">
+                        <ListView.Header>
+                            <StackLayout HorizontalOptions="FillAndExpand"
+                                         Orientation="Horizontal"
+                                         Padding="10">
+                                <Label Text="Assegnati oggi"
+                                       FontSize="22"
+                                       TextColor="{x:Static local:Styles.TextGray}"
+                                       HorizontalTextAlignment="Center"
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="FillAndExpand" />
+                                <iconize:IconButton Text="fas-history"
+                                                   FontSize="22"
+                                                   HorizontalOptions="End" x:Name="clockButton"/>
+                            </StackLayout>
+                        </ListView.Header>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Padding="{Binding CellPadding}"
+                                                 Spacing="30">
+                                        <StackLayout>
+                                            <Label HorizontalOptions="Start"
+                                                   FontAttributes="Bold"
+                                                   Text="{Binding desAnnotazioni}"
+                                                   FontSize="Large" />
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding Data}"
+                                                       TextColor="{x:Static local:Styles.TextGray}"
+                                                       FontSize="Small"
+                                                       HorizontalOptions="Start" />
+                                                <Label Text="{Binding desMittente}"
+                                                       TextColor="{x:Static local:Styles.TextGray}"
+                                                       FontSize="Small"
+                                                       HorizontalOptions="EndAndExpand" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <local:DashedBorderFrame IsVisible="{Binding SeparatorVisibility}"
+                                                                 Padding="0"
+                                                                 Margin="-10"
+                                                                 HeightRequest="0.1" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
+
+                <!--Chiudi-->
+                <Frame VerticalOptions="EndAndExpand"
+                       HasShadow="false"
+                       HorizontalOptions="Center"
+                       x:Name="buttonFrame"
+                       Padding="0">
+                    <iconize:IconButton Clicked="Close_Clicked"
+                                        Text="fas-times"
+                                        FontSize="30"
+                                        TextColor="#21db18" />
+                </Frame>
+            </StackLayout>
+        </AbsoluteLayout>
+    </yummy:PancakeView>
+</ContentPage>

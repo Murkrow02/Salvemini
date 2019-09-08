@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage Title="Argo" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.ArgoPage">
     <StackLayout Padding="20, 10" Spacing="15">
+         <!--Compiti-->
+        <Grid>
+            <AbsoluteLayout>
+                 <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout>
+                <Label Text="Label to fill space" TextColor="White" Opacity="0"/>
+                <yummy:PancakeView x:Name="compitiFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#97dd8d" BackgroundGradientEndColor="#21db18" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                    <Label TextColor="White" VerticalOptions="Center" Text="Compiti" FontAttributes="Bold" FontSize="30" />
+                </yummy:PancakeView>
+            </StackLayout>
+            </StackLayout>
+                <Button AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Clicked="Compiti_Tapped"/>
+            </AbsoluteLayout>
+                       <ffimageloadingsvg:SvgCachedImage HorizontalOptions="EndAndExpand" Source="Compiti.svg" x:Name="compitiIcon" BackgroundColor="Transparent" />
+        </Grid>
         <!--Assenze-->
         <Grid>
             <AbsoluteLayout>
                  <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
                 <StackLayout>
                 <Label Text="Label to fill space" TextColor="White" Opacity="0"/>
-                <yummy:PancakeView x:Name="assenzeFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#F46A05" BackgroundGradientEndColor="#FFBF96" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                <yummy:PancakeView x:Name="assenzeFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#FFBF96" BackgroundGradientEndColor="#F46A05" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
                     <Label TextColor="White" VerticalOptions="Center" Text="Assenze" FontAttributes="Bold" FontSize="30" />
                 </yummy:PancakeView>
             </StackLayout>
@@ -15,8 +30,6 @@
                 <Button AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Clicked="Assenze_Tapped"/>
             </AbsoluteLayout>
                        <ffimageloadingsvg:SvgCachedImage HorizontalOptions="EndAndExpand" Source="Assenze.svg" x:Name="assenzeIcon" BackgroundColor="Transparent" />
-
-            
         </Grid>
         <!--Promemoria-->
         <Grid>
@@ -25,7 +38,7 @@
             </Grid.GestureRecognizers>
             <StackLayout>
                 <Label Text="Label to fill space" TextColor="White" Opacity="0"/>
-                <yummy:PancakeView x:Name="promemoriaFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#D91C23" BackgroundGradientEndColor="#FF5281" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                <yummy:PancakeView x:Name="promemoriaFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#FF5281" BackgroundGradientEndColor="#D91C23" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
                     <Label TextColor="White" VerticalOptions="Center" Text="Promemoria" FontAttributes="Bold" FontSize="30" />
                 </yummy:PancakeView>
             </StackLayout>

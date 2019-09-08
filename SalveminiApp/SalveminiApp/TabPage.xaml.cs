@@ -22,14 +22,21 @@ namespace SalveminiApp
             BarTextColor = Styles.PrimaryColor,
             BarBackgroundColor = Color.White,
             Title = "Home",
-            Icon = "tabBarHome.png"
+            IconImageSource = "tabBarHome.png"
         };
         public static Helpers.CustomNavigationPage Argo = new Helpers.CustomNavigationPage(new ArgoPage())
         {
             BarTextColor = Styles.PrimaryColor,
             BarBackgroundColor = Color.White,
             Title = "Argo",
-            Icon= "tabBarArgo.png"
+            IconImageSource = "tabBarArgo.png"
+        };
+        public static Helpers.CustomNavigationPage User = new Helpers.CustomNavigationPage(new UserPage())
+        {
+            BarTextColor = Styles.PrimaryColor,
+            BarBackgroundColor = Color.White,
+            Title = "Profilo",
+            IconImageSource = "tabBarProfile.png"
         };
 
         public TabPage()
@@ -48,6 +55,17 @@ namespace SalveminiApp
             //Add Children
             Children.Add(Home);
             Children.Add(Argo);
+            Children.Add(User);
+
+
+#if __IOS__
+            SelectedTabColor = Styles.PrimaryColor;
+#endif
+#if __ANDROID__
+            BarTextColor = Color.White;
+            BarBackgroundColor = Styles.PrimaryColor;
+            SelectedTabColor = Color.White;
+#endif
         }
     }
 }

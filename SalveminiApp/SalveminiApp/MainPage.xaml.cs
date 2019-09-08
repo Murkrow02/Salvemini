@@ -135,5 +135,11 @@ namespace SalveminiApp
             });
 
         }
+
+        void PushToSettings(object sender, System.EventArgs e)
+        {
+            Navigation.PushModalAsync(new SecondaryViews.Settings());
+        }
+
     }
 }
