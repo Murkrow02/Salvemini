@@ -52,6 +52,6 @@
 	<key>Custom Property</key>
 	<string></string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<true/>
+	<false/>
 </dict>
 </plist>

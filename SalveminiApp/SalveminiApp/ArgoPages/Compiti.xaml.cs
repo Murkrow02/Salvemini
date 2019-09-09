@@ -18,7 +18,7 @@ namespace SalveminiApp.ArgoPages
             //Set Sizes
             shadowImage.WidthRequest = App.ScreenWidth * 1.5;
             shadowImage.HeightRequest = App.ScreenWidth * 1.5;
-            compitiList.HeightRequest = App.ScreenHeight / 1.3;
+            //compitiList.HeightRequest = App.ScreenHeight / 1.5;
             buttonFrame.WidthRequest = App.ScreenWidth / 6;
             buttonFrame.HeightRequest = App.ScreenWidth / 6;
             buttonFrame.CornerRadius = (float)(App.ScreenWidth / 6) / 2;
@@ -34,23 +34,14 @@ namespace SalveminiApp.ArgoPages
         {
             base.OnAppearing();
 
-            //Tips
-            BubblePopup oggiPopOver = new BubblePopup(clockButton);
-
-            oggiPopOver.Target = clockButton;
-            oggiPopOver.BackgroundColor = Color.FromHex("#49D882");
-            oggiPopOver.Content = new Xamarin.Forms.Label { Text = "Clicca per visualizzare" + Environment.NewLine + "tutti i voti" , TextColor = Color.White, HorizontalTextAlignment= TextAlignment.Center};
-            oggiPopOver.PointerDirection = PointerDirection.Up;
-            oggiPopOver.PreferredPointerDirection = PointerDirection.Up;
-            oggiPopOver.PointerLength = 10;
-            oggiPopOver.PointerTipRadius = 10;
-            oggiPopOver.HasShadow = false;
-            oggiPopOver.IsVisible = true;
-            oggiPopOver.IsAnimationEnabled = true;
-            oggiPopOver.Animation = new Rg.Plugins.Popup.Animations.ScaleAnimation();
-            oggiPopOver.BorderRadius = 10;
+            //Tips (falli vedere solo la prima volta)
+            var firstPopUp = new Helpers.PopOvers().compitiPopOver;
+            firstPopUp.Content = new Xamarin.Forms.Label { Text = "Clicca per visualizzare" + Environment.NewLine + "tutti i voti", TextColor = Color.White, HorizontalTextAlignment = TextAlignment.Center };
+            firstPopUp.IsVisible = true;
+            firstPopUp.Target = clockButton;
+            firstPopUp.BackgroundColor = Color.FromHex("#00D10D");
         }
 
-
+       
     }
 }

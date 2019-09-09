@@ -140,6 +140,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\Compiti.xaml.cs">
       <DependentUpon>Compiti.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\PopOvers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

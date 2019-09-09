@@ -7,7 +7,7 @@
                  <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
                 <StackLayout>
                 <Label Text="Label to fill space" TextColor="White" Opacity="0"/>
-                <yummy:PancakeView x:Name="compitiFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#97dd8d" BackgroundGradientEndColor="#21db18" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                <yummy:PancakeView x:Name="compitiFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#54D991" BackgroundGradientEndColor="#0DC637" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
                     <Label TextColor="White" VerticalOptions="Center" Text="Compiti" FontAttributes="Bold" FontSize="30" />
                 </yummy:PancakeView>
             </StackLayout>
