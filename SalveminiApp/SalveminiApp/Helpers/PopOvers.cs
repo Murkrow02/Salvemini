@@ -6,18 +6,16 @@ namespace SalveminiApp.Helpers
 {
     public class PopOvers
     {
-       public BubblePopup compitiPopOver = new BubblePopup(null);
+       public BubblePopup defaultPopOver = new BubblePopup(null);
 
         public PopOvers()
         {
-            compitiPopOver.PointerDirection = PointerDirection.Up;
-            compitiPopOver.PreferredPointerDirection = PointerDirection.Up;
-            compitiPopOver.PointerLength = 10;
-            compitiPopOver.PointerTipRadius = 3;
-            compitiPopOver.HasShadow = false;
-            compitiPopOver.IsAnimationEnabled = true;
-            compitiPopOver.Animation = new Rg.Plugins.Popup.Animations.ScaleAnimation();
-            compitiPopOver.BorderRadius = 10;
+            defaultPopOver.PointerLength = 10;
+            defaultPopOver.PointerTipRadius = 3;
+            defaultPopOver.HasShadow = false;
+            defaultPopOver.IsAnimationEnabled = true;
+            defaultPopOver.Animation = new Rg.Plugins.Popup.Animations.ScaleAnimation();
+            defaultPopOver.BorderRadius = 10;
         }
 
            

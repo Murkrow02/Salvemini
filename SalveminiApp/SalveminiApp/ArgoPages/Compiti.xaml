@@ -9,6 +9,7 @@
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SalveminiApp.ArgoPages.Compiti">
+
     <yummy:PancakeView BackgroundGradientAngle="135"
                        BackgroundGradientStartColor="#0DC637"
                        BackgroundGradientEndColor="#54D991"
@@ -161,5 +162,5 @@
             </StackLayout>
         </AbsoluteLayout>
     </yummy:PancakeView>
-    
+
 </ContentPage>

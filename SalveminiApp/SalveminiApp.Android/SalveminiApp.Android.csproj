@@ -121,6 +121,10 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\argoLogo.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\AppIcon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Icon.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

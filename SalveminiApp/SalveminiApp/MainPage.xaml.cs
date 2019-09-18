@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using Plugin.Toast;
+using Rg.Plugins.Popup.Extensions;
 
 namespace SalveminiApp
 {
@@ -138,7 +139,7 @@ namespace SalveminiApp
 
         void PushToSettings(object sender, System.EventArgs e)
         {
-            Navigation.PushModalAsync(new SecondaryViews.Settings());
+            Navigation.PushPopupAsync(new SecondaryViews.SettingsPanel());
         }
 
     }

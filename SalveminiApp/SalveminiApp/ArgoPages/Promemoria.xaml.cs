@@ -18,9 +18,7 @@ namespace SalveminiApp.ArgoPages
 
 #if __IOS__
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
-
             UIApplication.SharedApplication.StatusBarHidden = true;
-
 #endif
 
             //Set Sizes

@@ -1,5 +1,55 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Settings">
-    <ContentPage.Content>
-    </ContentPage.Content>
-</ContentPage>
+<pages:PopupPage CloseWhenBackgroundIsClicked="false" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" BackgroundClicked="Handle_BackgroundClicked" xmlns:local="clr-namespace:SalveminiApp" xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SettingsPanel">
+    <Frame BackgroundColor="{x:Static local:Styles.PrimaryColor}" CornerRadius="0" HorizontalOptions="End" x:Name="frameBackground">
+        <StackLayout Spacing="0" x:Name="mainLayout">
+            <Label FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" TextColor="White" FontSize="25" Text="Impostazioni" />
+            <TableView BackgroundColor="Transparent" Intent="Form">
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <iconize:IconLabel Margin="10, 0, 0, 0" Text="far-user" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="White" FontSize="Large"/>
+                            <Label Text="Account" Margin="10, 6" TextColor="White" VerticalOptions="Center" HorizontalOptions="Start"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell >
+                        <StackLayout Orientation="Horizontal">
+                            <iconize:IconLabel Margin="10, 0, 0, 0" Text="far-bell" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="White" FontSize="Large"/>
+                            <Label Text="Notifiche" Margin="10, 6" TextColor="White" VerticalOptions="Center" HorizontalOptions="Start"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                         <StackLayout Orientation="Horizontal">
+                            <iconize:IconLabel Margin="10, 0, 0, 0" Text="fas-exchange-alt" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="White" FontSize="Large"/>
+                            <Label Text="Archivio" Margin="10, 6" TextColor="White" VerticalOptions="Center" HorizontalOptions="Start"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Tapped="Contact_Clicked">
+                        <StackLayout Orientation="Horizontal">
+                            <iconize:IconLabel Margin="10, 0, 0, 0" Text="fas-question" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="White" FontSize="Large"/>
+                            <Label Text="Contatti" Margin="10, 6" TextColor="White" VerticalOptions="Center" HorizontalOptions="Start"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Tapped="Share_Tapped">
+                        <StackLayout Orientation="Horizontal">
+                            <iconize:IconLabel Margin="10, 0, 0, 0" Text="fas-link" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="White" FontSize="Large"/>
+                            <Label Text="Condividi" Margin="10, 6" TextColor="White" VerticalOptions="Center" HorizontalOptions="Start"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell Tapped="Info_Tapped">
+                        <StackLayout Orientation="Horizontal">
+                            <iconize:IconLabel Margin="13, 0, 0, 0" Text="fas-info" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="White" FontSize="Large"/>
+                            <Label Text="Info" Margin="10, 6" TextColor="White" VerticalOptions="Center" HorizontalOptions="Start"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection />
+                <TableSection>
+                    <ViewCell Tapped="Logout_Tapped">
+                        <Label Text="Logout" x:Name="logoutLbl" Margin="10, 6" TextColor="White" VerticalOptions="Center" HorizontalOptions="Start" />
+                    </ViewCell>
+                </TableSection>
+            </TableView>
+            <Label Text="Codex Development 2020 ©" FontSize="Small" TextColor="White" HorizontalTextAlignment="Center"/>
+        </StackLayout>
+    </Frame>
+</pages:PopupPage>

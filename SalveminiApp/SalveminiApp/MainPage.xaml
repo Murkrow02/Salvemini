@@ -10,7 +10,7 @@
         <!--Pubblicità-->
         <local:ShadowFrame Padding="0" x:Name="adsFrame" CornerRadius="20">
             <Frame HasShadow="false" Padding="0" IsClippedToBounds="true" CornerRadius="20">
-                <Image Source="ad.jpg" />
+                <Image Source="ad.png" />
             </Frame>
         </local:ShadowFrame>
         <StackLayout Orientation="Horizontal" Spacing="10">

@@ -5,6 +5,10 @@ using System.Linq;
 using Xamarin.Essentials;
 using MonkeyCache.SQLite;
 using Rg.Plugins.Popup.Extensions;
+#if __IOS__
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using UIKit;
+#endif
 
 namespace SalveminiApp.ArgoPages
 {
@@ -16,6 +20,10 @@ namespace SalveminiApp.ArgoPages
         {
             InitializeComponent();
 
+#if __IOS__
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
+            UIApplication.SharedApplication.StatusBarHidden = true;
+#endif
             //Set Sizes
             shadowImage.WidthRequest = App.ScreenWidth * 1.5;
             shadowImage.HeightRequest = App.ScreenWidth * 1.5;

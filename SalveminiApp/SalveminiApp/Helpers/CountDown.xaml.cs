@@ -118,15 +118,17 @@ namespace SalveminiApp.Helpers
                         d2.TranslationY = 10;
                         await Task.WhenAll(d2.TranslateTo(0, 0, speedCicle), d2.FadeTo(1, speedCicle));
                     }
-                    if (d1val != data[0].ToString())
-                    {
-                        await Task.WhenAll(d1.TranslateTo(0, -10, speedCicle), d1.FadeTo(0, speedCicle));
-                        d1.Text = data[0].ToString();
-                        d1val = data[0].ToString();
-                        d1.TranslationY = 10;
-                        await Task.WhenAll(d1.TranslateTo(0, 0, speedCicle), d1.FadeTo(1, speedCicle));
-                    }
 
+                //TEST TOGLI COMMENTO QUANDO FAI FUNZIONE VERA
+                //if (d1val != data[0].ToString())
+                //{
+                //    await Task.WhenAll(d1.TranslateTo(0, -10, speedCicle), d1.FadeTo(0, speedCicle));
+                //    d1.Text = data[0].ToString();
+                //    d1val = data[0].ToString();
+                //    d1.TranslationY = 10;
+                //    await Task.WhenAll(d1.TranslateTo(0, 0, speedCicle), d1.FadeTo(1, speedCicle));
+                //}
+                d1.Text = "1";
 
                     await Task.Delay(200);
                 }

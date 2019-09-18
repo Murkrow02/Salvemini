@@ -4,7 +4,10 @@ using Forms9Patch;
 using Rg.Plugins.Popup;
 using Xamarin.Forms;
 using Rg.Plugins.Popup.Extensions;
-
+#if __IOS__
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using UIKit;
+#endif
 
 namespace SalveminiApp.ArgoPages
 {
@@ -14,7 +17,10 @@ namespace SalveminiApp.ArgoPages
         public Compiti()
         {
             InitializeComponent();
-
+#if __IOS__
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
+            UIApplication.SharedApplication.StatusBarHidden = true;
+#endif
             //Set Sizes
             shadowImage.WidthRequest = App.ScreenWidth * 1.5;
             shadowImage.HeightRequest = App.ScreenWidth * 1.5;
@@ -35,13 +41,22 @@ namespace SalveminiApp.ArgoPages
             base.OnAppearing();
 
             //Tips (falli vedere solo la prima volta)
-            var firstPopUp = new Helpers.PopOvers().compitiPopOver;
+            var firstPopUp = new Helpers.PopOvers().defaultPopOver;
             firstPopUp.Content = new Xamarin.Forms.Label { Text = "Clicca per visualizzare" + Environment.NewLine + "tutti i voti", TextColor = Color.White, HorizontalTextAlignment = TextAlignment.Center };
             firstPopUp.IsVisible = true;
+            firstPopUp.PointerDirection = PointerDirection.Up;
+            firstPopUp.PreferredPointerDirection = PointerDirection.Up;
             firstPopUp.Target = clockButton;
             firstPopUp.BackgroundColor = Color.FromHex("#00D10D");
+            firstPopUp.Disappearing += Second_PoUp;
         }
 
-       
+        private void Second_PoUp(object sender, EventArgs e)
+        {
+           
+        }
+
+
+
     }
 }

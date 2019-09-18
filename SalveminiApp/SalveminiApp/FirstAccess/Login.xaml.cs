@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Essentials;
 using Syncfusion.XForms.PopupLayout;
 using Plugin.Iconize;
+using Forms9Patch;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 #endif
@@ -13,6 +14,7 @@ namespace SalveminiApp.FirstAccess
     public partial class Login : ContentPage
     {
         public List<RestApi.Models.Utente> UtentiLogin = new List<RestApi.Models.Utente>();
+        
 
         public Login()
         {
@@ -37,6 +39,15 @@ namespace SalveminiApp.FirstAccess
         {
             base.OnAppearing();
             await this.FadeTo(1,300, Easing.CubicIn);
+
+            //PopOvers
+            var firstPopUp = new Helpers.PopOvers().defaultPopOver;
+            firstPopUp.Content = new Xamarin.Forms.Label { Text = "Utilizza le stesse credenziali" + Environment.NewLine + "che usi nell'app DidUp Famiglia", TextColor = Color.White, HorizontalTextAlignment = TextAlignment.Center };
+            firstPopUp.IsVisible = true;
+            firstPopUp.PointerDirection = PointerDirection.Down;
+            firstPopUp.PreferredPointerDirection = PointerDirection.Down;
+            firstPopUp.Target = usernameEntry;
+            firstPopUp.BackgroundColor = Styles.PrimaryColor;
         }
 
         async void Continue_Clicked(object sender, System.EventArgs e)
@@ -50,9 +61,11 @@ namespace SalveminiApp.FirstAccess
                 usernameEntry.ErrorText = "Inserisci il tuo Username";
                 usernameEntry.HasError = true;
                 confirmButton.IsEnabled = true;
+                entryStack.Spacing = 8;
                 return;
             }
             usernameEntry.HasError = false;
+            entryStack.Spacing = 0;
 
             //Password Check
             if (string.IsNullOrEmpty(password.Text))
@@ -66,6 +79,7 @@ namespace SalveminiApp.FirstAccess
 
             //Start Loading
             loading.IsRunning = true;
+            loading.IsVisible = true;
 
             //Create LoginForms
             var form = new RestApi.Models.LoginForm();
@@ -79,6 +93,7 @@ namespace SalveminiApp.FirstAccess
             {
                 usernameEntry.ErrorText = Response.Message;
                 usernameEntry.HasError = true;
+                entryStack.Spacing = 8;
             }
             else
             {
@@ -121,6 +136,7 @@ namespace SalveminiApp.FirstAccess
 
             //End Loading
             loading.IsRunning = false;
+            loading.IsVisible = false;
 
             //Re-enable button at end of task
             confirmButton.IsEnabled = true;
@@ -130,13 +146,17 @@ namespace SalveminiApp.FirstAccess
         {
             Preferences.Set("UserId", UtentiLogin[0].id);
             Preferences.Set("Token", UtentiLogin[0].ArgoToken);
+
             if (Preferences.Get("isFirstTime", true))
             {
                 Navigation.PushModalAsync(new TabPage());
-
                 //Remove Pages behind MainPage
                 Navigation.RemovePage(Navigation.NavigationStack[0]);
                 Preferences.Set("isFirstTime", false);
+            }
+            else
+            {
+                Navigation.PopModalAsync();
             }
             App.refreshCalls();
         }
