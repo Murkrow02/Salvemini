@@ -52,6 +52,7 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -200,13 +201,6 @@
     <BundleResource Include="Resources\Icon.png" />
     <BundleResource Include="Resources\logoBianco.png" />
     <BundleResource Include="Resources\ad.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\OneSignalNotificationServiceExtension\OneSignalNotificationServiceExtension.csproj">
-      <IsAppExtension>true</IsAppExtension>
-      <Project>{9D34DCD6-4C56-4D9F-A4DE-4122DBE7B1C4}</Project>
-      <Name>OneSignalNotificationServiceExtension</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lotties\" />
