@@ -101,7 +101,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Orario.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceIndex.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Avviso.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Argo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Ad.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Treno.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ArgoPage.xaml.cs">
@@ -110,7 +109,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\Assenze.xaml.cs">
       <DependentUpon>Assenze.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Assenza.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceArgo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\Promemoria.xaml.cs">
       <DependentUpon>Promemoria.xaml</DependentUpon>
@@ -121,13 +119,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Popups\BindablePopup.xaml.cs">
       <DependentUpon>BindablePopup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Promemoria.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceTreni.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Response.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SecondHome.xaml.cs">
       <DependentUpon>SecondHome.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Voti.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\CountDown.xaml.cs">
       <DependentUpon>CountDown.xaml</DependentUpon>
     </Compile>
@@ -142,6 +138,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\SettingsPanel.xaml.cs">
       <DependentUpon>SettingsPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Argo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Assenza.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Compiti.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Promemoria.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Voti.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
@@ -152,6 +153,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)ArgoPages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\Popups\" />
     <Folder Include="$(MSBuildThisFileDirectory)SecondaryViews\" />
+    <Folder Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Helpers\Preferences.txt" />

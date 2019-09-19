@@ -40,9 +40,13 @@
                                         TextColor="White"
                                         FontSize="Large"
                                         VerticalOptions="FillAndExpand"
-                                        HorizontalOptions="End" />
+                                        HorizontalOptions="End"
+                                         x:Name="filterBtn"
+                                        Clicked="filterSubject"/>
                     <iconize:IconButton Text="fas-sort"
                                         TextColor="White"
+                                        x:Name="sortBtn"
+                                        Clicked="ShowOrder"
                                         FontSize="Large"
                                         VerticalOptions="FillAndExpand"
                                         HorizontalOptions="End" />
@@ -75,47 +79,46 @@
                                                        ContainerBackgroundColor="Transparent"
                                                        HorizontalOptions="FillAndExpand"
                                                        VerticalOptions="FillAndExpand">
-                            <Entry x:Name="username"
+                            <Entry x:Name="searchBar"
                                    MaxLength="100"
                                    Placeholder="Cerca"
-                                   TextColor="White"
+                                   TextColor="White"  IsTextPredictionEnabled="False"
                                    PlaceholderColor="White"
-                                   IsSpellCheckEnabled="False"></Entry>
+                                   IsSpellCheckEnabled="False" TextChanged="Search"></Entry>
                         </inputLayout:SfTextInputLayout>
 
                     </StackLayout>
                 </Frame>
 
-
+                
                 <!--Lista-->
                 <Frame IsClippedToBounds="true"
                        Padding="0"
-                       VerticalOptions="FillAndExpand"
+                       VerticalOptions="Fill"
                        HasShadow="false"
                        CornerRadius="15">
+                    <StackLayout Spacing="0">
+                      <Grid Padding="6,0" BackgroundColor="#fcfcfc" >
+                                <Label Margin="0" Text="Assegnati oggi"
+                                       FontSize="22"
+                                       TextColor="{x:Static local:Styles.TextGray}"
+                                       HorizontalTextAlignment="Center"
+                                       HorizontalOptions="CenterAndExpand"
+                                       x:Name="clockLabel"
+                                       VerticalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center" />
+                                <iconize:IconButton Margin="0" Text="fas-history"
+                                                    FontSize="22"
+                                                    HorizontalOptions="End"
+                                                    x:Name="clockButton"
+                                                    TextColor="#333333" Clicked="ShowAll"/>
+                            </Grid>
                     <ListView SelectionMode="None"
                               HasUnevenRows="true"
                               HorizontalScrollBarVisibility="Never"
                               SeparatorVisibility="None"
                               x:Name="compitiList"
                               VerticalOptions="Start">
-                        <ListView.Header>
-
-                            <Grid Padding="8">
-                                <Label Text="Assegnati oggi"
-                                       FontSize="22"
-                                       TextColor="{x:Static local:Styles.TextGray}"
-                                       HorizontalTextAlignment="Center"
-                                       HorizontalOptions="CenterAndExpand"
-                                       VerticalOptions="FillAndExpand"
-                                       VerticalTextAlignment="Center" />
-                                <iconize:IconButton Text="fas-history"
-                                                    FontSize="22"
-                                                    HorizontalOptions="End"
-                                                    x:Name="clockButton"
-                                                    TextColor="#333333" />
-                            </Grid>
-                        </ListView.Header>
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -124,14 +127,17 @@
                                         <StackLayout>
                                             <Label HorizontalOptions="Start"
                                                    FontAttributes="Bold"
-                                                   Text="{Binding desAnnotazioni}"
+                                                   Text="{Binding Materia}"
+                                                   FontSize="Large" />
+                                              <Label HorizontalOptions="Start"
+                                                   Text="{Binding desCompiti}"
                                                    FontSize="Large" />
                                             <StackLayout Orientation="Horizontal">
                                                 <Label Text="{Binding Data}"
                                                        TextColor="{x:Static local:Styles.TextGray}"
                                                        FontSize="Small"
                                                        HorizontalOptions="Start" />
-                                                <Label Text="{Binding desMittente}"
+                                                <Label Text="{Binding docente}"
                                                        TextColor="{x:Static local:Styles.TextGray}"
                                                        FontSize="Small"
                                                        HorizontalOptions="EndAndExpand" />
@@ -146,6 +152,7 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+                        </StackLayout>
                 </Frame>
 
                 <!--Chiudi-->

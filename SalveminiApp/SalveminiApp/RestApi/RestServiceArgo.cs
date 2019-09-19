@@ -21,6 +21,7 @@ namespace SalveminiApp.RestApi
         public List<Models.Assenza> Assenze { get; private set; }
         public List<Models.Promemoria> Promemoria { get; private set; }
         public List<Models.Pentagono> Medie { get; private set; }
+        public List<Models.Compiti> Compiti { get; private set; }
 
         public RestServiceArgo()
         {
@@ -140,6 +141,44 @@ namespace SalveminiApp.RestApi
             return Data;
         }
 
+        public async Task<Models.ResponseModel> GetCompiti()
+        {
+            Models.ResponseModel Data = new Models.ResponseModel();
+            Compiti = new List<Models.Compiti>();
+            var uri = Costants.Uri("argo/compiti");
+            try
+            {
+                var response = await client.GetAsync(uri);
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                        var content = await response.Content.ReadAsStringAsync();
+                        Compiti = JsonConvert.DeserializeObject<List<Models.Compiti>>(content);
+                        Compiti[Compiti.Count - 1].SeparatorVisibility = false;
+                        Compiti[0].CellPadding = new Thickness(10, 20, 10, 10);
+                        if (Compiti.Count > 1)
+                        {
+                            Compiti[Compiti.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
+                        }
+                        Data.Data = Compiti;
+                        break;
+                    case HttpStatusCode.Forbidden:
+                        Data.Message = "Si è verificato un errore nella connessione ad ARGO";
+                        break;
+                    case HttpStatusCode.InternalServerError:
+                        Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+                        break;
+                }
+                Barrel.Current.Add("Compiti", Compiti, TimeSpan.FromDays(7));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+            }
+            return Data;
+        }
+
         public async Task<Models.ResponseModel> GetPentagono()
         {
             Models.ResponseModel Data = new Models.ResponseModel();
@@ -182,6 +221,7 @@ namespace SalveminiApp.RestApi
         Task<Models.ResponseModel> GiustificaAssenza(RestApi.Models.AssenzaModel item);
         Task<Models.ResponseModel> GetPromemoria();
         Task<Models.ResponseModel> GetPentagono();
+        Task<Models.ResponseModel> GetCompiti();
     }
 
     public class ItemManagerArgo
@@ -197,6 +237,11 @@ namespace SalveminiApp.RestApi
         public Task<Models.ResponseModel> GetAssenze()
         {
             return restServiceArgo.GetAssenze();
+        }
+
+        public Task<Models.ResponseModel> GetCompiti()
+        {
+            return restServiceArgo.GetCompiti();
         }
 
         public Task<Models.ResponseModel> GiustificaAssenza(RestApi.Models.AssenzaModel item)
