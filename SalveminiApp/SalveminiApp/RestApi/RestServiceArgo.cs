@@ -12,6 +12,7 @@ using System.Reflection;
 using System.Linq;
 using MonkeyCache.SQLite;
 using Xamarin.Forms;
+using System.Collections.ObjectModel;
 
 namespace SalveminiApp.RestApi
 {
@@ -22,6 +23,8 @@ namespace SalveminiApp.RestApi
         public List<Models.Promemoria> Promemoria { get; private set; }
         public List<Models.Pentagono> Medie { get; private set; }
         public List<Models.Compiti> Compiti { get; private set; }
+        public List<Models.GroupedVoti> Voti { get; private set; }
+
 
         public RestServiceArgo()
         {
@@ -31,7 +34,7 @@ namespace SalveminiApp.RestApi
             client.DefaultRequestHeaders.Add("x-auth-token", Preferences.Get("Token", ""));
         }
 
-       
+
         public async Task<Models.ResponseModel> GetAssenze()
         {
             Assenze = new List<Models.Assenza>();
@@ -82,17 +85,17 @@ namespace SalveminiApp.RestApi
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 var response = await client.PostAsync(uri, content);
 
-                switch(response.StatusCode)
+                switch (response.StatusCode)
                 {
                     case HttpStatusCode.OK:
-                    Data.Data = response.IsSuccessStatusCode;
-                    break;
+                        Data.Data = response.IsSuccessStatusCode;
+                        break;
                     case HttpStatusCode.Forbidden:
                         Data.Message = "Si è verificato un errore nella connessione ad ARGO";
-                    break;
+                        break;
                     case HttpStatusCode.InternalServerError:
                         Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
-                    break;
+                        break;
                 }
             }
             catch (Exception ex)
@@ -212,6 +215,59 @@ namespace SalveminiApp.RestApi
             }
             return Data;
         }
+        
+        public async Task<Models.ResponseModel> GetVoti()
+        {
+            Models.ResponseModel Data = new Models.ResponseModel();
+            Voti = new List<Models.GroupedVoti>();
+
+            var uri = Costants.Uri("argo/voti");
+            
+            try
+            {
+                var response = await client.GetAsync(uri);
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                        var content = await response.Content.ReadAsStringAsync();
+                        Voti = JsonConvert.DeserializeObject<List<Models.GroupedVoti>>(content);
+                        Voti = new List<Models.GroupedVoti> { new Models.GroupedVoti { Materia = "Matematica", Media = 8 }, new Models.GroupedVoti { Materia = "Letteratura", Media = 4 } };
+                        Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "7", datGiorno = "10-09-2019", decValore = 7, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
+                        Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 9, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
+                        Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 1, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
+                        Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 6.3, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
+                        Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 3, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
+                        Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 10, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
+                        Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "5.5", datGiorno = "10-09-2019", decValore = 5.5, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDKcdjnnvjfbnidfnbvmdfomvodfmvodmfvodfmvodfmovmdfomvodfmvofdmvodfmvodfmvofdmvodfmvofdmvofdmvodfmvodfmvofdmvodf", desProva = "Compito", docente = "Raffaella Celotto" });
+
+                        Voti[1].Add(new Models.Voti { Materia = "Letteratura", codVoto = "4", datGiorno = "10-09-2019", decValore = 4, desMateria = "Letteratura", codVotoPratico = "4", desProva = "Compito", docente = "Leyla Romano" });
+                        for (int i = 0; i < Voti.Count; i++)
+                        {
+                            Voti[i][Voti[i].Count - 1].SeparatorVisibility = false;
+                        }
+
+
+
+                        Data.Data = Voti.ToObservableCollection();
+
+                        
+                        break;
+                    case HttpStatusCode.Forbidden:
+                        Data.Message = "Si è verificato un errore nella connessione ad ARGO";
+                        break;
+                    case HttpStatusCode.InternalServerError:
+                        Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+                        break;
+                }
+                Barrel.Current.Add("Voti", Voti, TimeSpan.FromDays(7));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+            }
+            return Data;
+        }
 
     }
 
@@ -222,6 +278,7 @@ namespace SalveminiApp.RestApi
         Task<Models.ResponseModel> GetPromemoria();
         Task<Models.ResponseModel> GetPentagono();
         Task<Models.ResponseModel> GetCompiti();
+        Task<Models.ResponseModel> GetVoti();
     }
 
     public class ItemManagerArgo
@@ -257,6 +314,11 @@ namespace SalveminiApp.RestApi
         public Task<Models.ResponseModel> GetPentagono()
         {
             return restServiceArgo.GetPentagono();
+        }
+
+        public Task<Models.ResponseModel> GetVoti()
+        {
+            return restServiceArgo.GetVoti();
         }
     }
 }

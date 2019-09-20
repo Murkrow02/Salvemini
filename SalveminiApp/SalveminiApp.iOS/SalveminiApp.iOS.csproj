@@ -176,6 +176,9 @@
     <PackageReference Include="Forms9Patch">
       <Version>1.8.0.5</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.Expander">
+      <Version>17.1.0.49</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\argoLogo.png" />
@@ -207,6 +210,7 @@
     <BundleResource Include="Resources\Icon.png" />
     <BundleResource Include="Resources\logoBianco.png" />
     <BundleResource Include="Resources\ad.png" />
+    <BundleResource Include="Resources\VotiShadow.svg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lotties\" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Drawing;
 
 namespace SalveminiApp
@@ -80,5 +81,13 @@ namespace SalveminiApp
         };
 
 
+    }
+
+    public static class Extensions
+    {
+        public static ObservableCollection<T> ToObservableCollection<T>(this IEnumerable<T> col)
+        {
+            return new ObservableCollection<T>(col);
+        }
     }
 }

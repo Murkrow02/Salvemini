@@ -15,6 +15,7 @@ namespace SalveminiApp
             assenzeIcon.WidthRequest = App.ScreenWidth / 3.8;
             compitiIcon.WidthRequest = App.ScreenWidth / 3.8;
             promemoriaIcon.WidthRequest = App.ScreenWidth / 3.8;
+            votiIcon.WidthRequest = App.ScreenWidth / 3.8;
         }
 
         void Assenze_Tapped(object sender, System.EventArgs e)
@@ -25,6 +26,11 @@ namespace SalveminiApp
         void Promemoria_Tapped(object sender, System.EventArgs e)
         {
             Navigation.PushModalAsync(new ArgoPages.Promemoria());
+        }
+
+        void Voti_Tapped(object sender, System.EventArgs e)
+        {
+            Navigation.PushModalAsync(new ArgoPages.Voti());
         }
 
         void Compiti_Tapped(object sender, System.EventArgs e)

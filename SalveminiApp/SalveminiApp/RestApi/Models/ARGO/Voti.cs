@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace SalveminiApp.RestApi.Models
 {
@@ -16,13 +18,46 @@ namespace SalveminiApp.RestApi.Models
         public int prgMateria { get; set; }
         public double? decValore { get; set; }
         public string Materia { get; set; }
-    }
 
-    public class GroupedVoti
+        public string Data
+        {
+            get
+            {
+                return Convert.ToDateTime(datGiorno).ToString("dddd, dd MMMM yyyy");
+            }
+        }
+
+        public Color markColor
+        {
+            get
+            {
+                return decValore < 6 ? Color.FromHex("#E37070") : Styles.TextColor;
+            }
+        }
+
+        public bool dotsVisibility
+        {
+            get
+            {
+                return !string.IsNullOrEmpty(desCommento);
+            }
+        }
+        public bool SeparatorVisibility { get; set; } = true;
+		public Thickness CellPadding { get; set; } = new Thickness(10);
+	}
+
+    public class GroupedVoti : ObservableCollection<Voti>
     {
         public string Materia { get; set; }
         public double Media { get; set; }
-        public List<Voti> Voti { get; set; }
+
+        public bool chartButtonVisibility
+        {
+            get
+            {
+                return Count > 1;
+            }
+        }
     }
 
     public class VotiList

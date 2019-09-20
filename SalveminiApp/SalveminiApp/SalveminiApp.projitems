@@ -69,6 +69,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ArgoPages\Voti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -143,6 +147,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Compiti.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Promemoria.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Voti.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\Voti.xaml.cs">
+      <DependentUpon>Voti.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

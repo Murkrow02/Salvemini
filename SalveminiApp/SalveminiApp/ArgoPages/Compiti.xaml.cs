@@ -46,7 +46,7 @@ namespace SalveminiApp.ArgoPages
 
             //Tips (falli vedere solo la prima volta)
             var firstPopUp = new Helpers.PopOvers().defaultPopOver;
-            firstPopUp.Content = new Xamarin.Forms.Label { Text = "Clicca per visualizzare" + Environment.NewLine + "tutti i voti", TextColor = Color.White, HorizontalTextAlignment = TextAlignment.Center };
+            firstPopUp.Content = new Xamarin.Forms.Label { Text = "Clicca per visualizzare" + Environment.NewLine + "tutti i compiti", TextColor = Color.White, HorizontalTextAlignment = TextAlignment.Center };
             firstPopUp.IsVisible = true;
             firstPopUp.PointerDirection = PointerDirection.Up;
             firstPopUp.PreferredPointerDirection = PointerDirection.Up;
@@ -82,7 +82,7 @@ namespace SalveminiApp.ArgoPages
         private void Second_PoUp(object sender, EventArgs e)
         {
             var secondPopUp = new Helpers.PopOvers().defaultPopOver;
-            secondPopUp.Content = new Xamarin.Forms.Label { Text = "Clicca per ordinare" + Environment.NewLine + "dai più vecchi ai più nuvi" + Environment.NewLine + "e viceversa", TextColor = Color.White, HorizontalTextAlignment = TextAlignment.Center };
+            secondPopUp.Content = new Xamarin.Forms.Label { Text = "Clicca per ordinare" + Environment.NewLine + "dai più vecchi ai più nuovi" + Environment.NewLine + "e viceversa", TextColor = Color.White, HorizontalTextAlignment = TextAlignment.Center };
             secondPopUp.IsVisible = true;
             secondPopUp.PointerDirection = PointerDirection.Up;
             secondPopUp.PreferredPointerDirection = PointerDirection.Up;
@@ -136,7 +136,10 @@ namespace SalveminiApp.ArgoPages
             var materie = new List<string>();
             foreach (RestApi.Models.Compiti compito in Compitis)
             {
-                materie.Add(compito.Materia);
+                if (!materie.Contains(compito.Materia))
+                {
+                    materie.Add(compito.Materia);
+                }
             }
 
              var scelta = await DisplayActionSheet("Filtra per materia", "Annulla", "Tutti", materie.ToArray());

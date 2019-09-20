@@ -66,6 +66,7 @@ namespace SalveminiApp.iOS
             CachedImageRenderer.Init();
             Forms9Patch.iOS.Settings.Initialize(this);
             var ignore = typeof(SvgCachedImage);
+            Syncfusion.SfChart.XForms.iOS.Renderers.SfChartRenderer.Init();
             Syncfusion.XForms.iOS.TextInputLayout.SfTextInputLayoutRenderer.Init();
             Syncfusion.XForms.iOS.PopupLayout.SfPopupLayoutRenderer.Init();
             Syncfusion.SfChart.XForms.iOS.Renderers.SfChartRenderer.Init();

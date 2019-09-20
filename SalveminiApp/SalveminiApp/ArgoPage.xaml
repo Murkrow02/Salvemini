@@ -16,6 +16,21 @@
             </AbsoluteLayout>
                        <ffimageloadingsvg:SvgCachedImage HorizontalOptions="EndAndExpand" Source="Compiti.svg" x:Name="compitiIcon" BackgroundColor="Transparent" />
         </Grid>
+         <!--Compiti-->
+        <Grid>
+            <AbsoluteLayout>
+                 <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout>
+                <Label Text="Label to fill space" TextColor="White" Opacity="0"/>
+                <yummy:PancakeView x:Name="votiFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#0846EF" BackgroundGradientEndColor="#54B5D9" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                    <Label TextColor="White" VerticalOptions="Center" Text="Voti" FontAttributes="Bold" FontSize="30" />
+                </yummy:PancakeView>
+            </StackLayout>
+            </StackLayout>
+                <Button AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Clicked="Voti_Tapped"/>
+            </AbsoluteLayout>
+                       <ffimageloadingsvg:SvgCachedImage HorizontalOptions="EndAndExpand" Source="Compiti.svg" x:Name="votiIcon" BackgroundColor="Transparent" />
+        </Grid>
         <!--Assenze-->
         <Grid>
             <AbsoluteLayout>
