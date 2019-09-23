@@ -23,7 +23,9 @@ namespace SalveminiApp.RestApi
         public List<Models.Promemoria> Promemoria { get; private set; }
         public List<Models.Pentagono> Medie { get; private set; }
         public List<Models.Compiti> Compiti { get; private set; }
+        public List<Models.Argomenti> Argomenti { get; private set; }
         public List<Models.GroupedVoti> Voti { get; private set; }
+        public Models.ScrutinioGrouped VotiScrutinio { get; private set; }
 
 
         public RestServiceArgo()
@@ -182,6 +184,44 @@ namespace SalveminiApp.RestApi
             return Data;
         }
 
+        public async Task<Models.ResponseModel> GetArgomenti()
+        {
+            Models.ResponseModel Data = new Models.ResponseModel();
+            Argomenti = new List<Models.Argomenti>();
+            var uri = Costants.Uri("argo/argomenti");
+            try
+            {
+                var response = await client.GetAsync(uri);
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                        var content = await response.Content.ReadAsStringAsync();
+                        Argomenti = JsonConvert.DeserializeObject<List<Models.Argomenti>>(content);
+                        Argomenti[Argomenti.Count - 1].SeparatorVisibility = false;
+                        Argomenti[0].CellPadding = new Thickness(10, 20, 10, 10);
+                        if (Argomenti.Count > 1)
+                        {
+                            Argomenti[Argomenti.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
+                        }
+                        Data.Data = Argomenti;
+                        break;
+                    case HttpStatusCode.Forbidden:
+                        Data.Message = "Si è verificato un errore nella connessione ad ARGO";
+                        break;
+                    case HttpStatusCode.InternalServerError:
+                        Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+                        break;
+                }
+                Barrel.Current.Add("Argomenti", Argomenti, TimeSpan.FromDays(7));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+            }
+            return Data;
+        }
+
         public async Task<Models.ResponseModel> GetPentagono()
         {
             Models.ResponseModel Data = new Models.ResponseModel();
@@ -269,6 +309,70 @@ namespace SalveminiApp.RestApi
             return Data;
         }
 
+        public async Task<Models.ResponseModel> GetVotiScrutinio()
+        {
+            Models.ResponseModel Data = new Models.ResponseModel();
+            VotiScrutinio = new Models.ScrutinioGrouped();
+
+            var uri = Costants.Uri("argo/scrutinio");
+
+            try
+            {
+                var response = await client.GetAsync(uri);
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                        var content = await response.Content.ReadAsStringAsync();
+                        VotiScrutinio = JsonConvert.DeserializeObject<Models.ScrutinioGrouped>(content);
+
+
+                        var voto = new Models.Scrutinio { assenze = 2, desMateria = "Matematica", Voto = "10" };
+                        var voti = new List<Models.Scrutinio>();
+                        voti.Add(voto);
+                        VotiScrutinio.Primo = voti;
+
+                        var voto2 = new Models.Scrutinio { assenze = 1, desMateria = "Italiano", Voto = "5" };
+                        var voti2 = new List<Models.Scrutinio>();
+                        voti2.Add(voto2);
+                        VotiScrutinio.Secondo = voti2;
+
+                        VotiScrutinio.Primo[VotiScrutinio.Primo.Count - 1].SeparatorVisibility = false;
+                        VotiScrutinio.Primo[0].CellPadding = new Thickness(10, 20, 10, 10);
+                        if (VotiScrutinio.Primo.Count > 1)
+                        {
+                            VotiScrutinio.Primo[VotiScrutinio.Primo.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
+                        }
+
+                        //VotiScrutinio.Secondo[VotiScrutinio.Secondo.Count - 1].SeparatorVisibility = false;
+                        //VotiScrutinio.Secondo[0].CellPadding = new Thickness(10, 20, 10, 10);
+                        //Data.Data = Argomenti;
+                        //if (VotiScrutinio.Secondo.Count > 1)
+                        //{
+                        //    VotiScrutinio.Secondo[VotiScrutinio.Secondo.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
+                        //}
+
+
+                        Data.Data = VotiScrutinio;
+
+
+                        break;
+                    case HttpStatusCode.Forbidden:
+                        Data.Message = "Si è verificato un errore nella connessione ad ARGO";
+                        break;
+                    case HttpStatusCode.InternalServerError:
+                        Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+                        break;
+                }
+                Barrel.Current.Add("VotiScrutinio", VotiScrutinio, TimeSpan.FromDays(7));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+            }
+            return Data;
+        }
+
     }
 
     public interface IRestServiceArgo
@@ -278,7 +382,10 @@ namespace SalveminiApp.RestApi
         Task<Models.ResponseModel> GetPromemoria();
         Task<Models.ResponseModel> GetPentagono();
         Task<Models.ResponseModel> GetCompiti();
+        Task<Models.ResponseModel> GetArgomenti();
         Task<Models.ResponseModel> GetVoti();
+        Task<Models.ResponseModel> GetVotiScrutinio();
+
     }
 
     public class ItemManagerArgo
@@ -301,6 +408,11 @@ namespace SalveminiApp.RestApi
             return restServiceArgo.GetCompiti();
         }
 
+        public Task<Models.ResponseModel> GetArgomenti()
+        {
+            return restServiceArgo.GetArgomenti();
+        }
+
         public Task<Models.ResponseModel> GiustificaAssenza(RestApi.Models.AssenzaModel item)
         {
             return restServiceArgo.GiustificaAssenza(item);
@@ -319,6 +431,10 @@ namespace SalveminiApp.RestApi
         public Task<Models.ResponseModel> GetVoti()
         {
             return restServiceArgo.GetVoti();
+        }
+        public Task<Models.ResponseModel> GetVotiScrutinio()
+        {
+            return restServiceArgo.GetVotiScrutinio();
         }
     }
 }

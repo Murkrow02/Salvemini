@@ -211,6 +211,12 @@
     <BundleResource Include="Resources\logoBianco.png" />
     <BundleResource Include="Resources\ad.png" />
     <BundleResource Include="Resources\VotiShadow.svg" />
+    <BundleResource Include="Resources\Voti.svg" />
+    <BundleResource Include="Resources\Argomenti.svg" />
+    <BundleResource Include="Resources\VotiScru.svg" />
+    <BundleResource Include="Resources\ArgomentiShadow.svg" />
+    <BundleResource Include="Resources\CompitiShadow.svg" />
+    <BundleResource Include="Resources\VotiScruShadow.svg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lotties\" />

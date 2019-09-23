@@ -61,7 +61,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ArgoPages\Compiti.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ArgoPages\CompitiArgomenti.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -70,6 +70,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ArgoPages\Voti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ArgoPages\VotiScrutinio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -134,8 +138,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)UserPage.xaml.cs">
       <DependentUpon>UserPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\Compiti.xaml.cs">
-      <DependentUpon>Compiti.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\CompitiArgomenti.xaml.cs">
+      <DependentUpon>CompitiArgomenti.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\PopOvers.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\GetStorageInfo.cs" />
@@ -150,6 +154,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\Voti.xaml.cs">
       <DependentUpon>Voti.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Argomenti.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\VotiScrutinio.xaml.cs">
+      <DependentUpon>VotiScrutinio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\VotiScrutinio.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
