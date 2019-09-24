@@ -857,5 +857,220 @@
     "Partenza": "22:01",
     "Importanza":"D",
     "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "06:10",
+    "Importanza":"D",
+    "Direzione":true
+  },
+   {
+    "Stazione": 4,
+    "Partenza": "06:34",
+    "Importanza":"D",
+    "Direzione":true
+  },
+   {
+    "Stazione": 4,
+    "Partenza": "06:57",
+    "Importanza":"DD",
+    "Direzione":true,
+    "Variazioni":"FES"
+  },
+   {
+    "Stazione": 4,
+    "Partenza": "06:57",
+    "Importanza":"DD",
+    "Direzione":true,
+    "Variazioni":"FER"
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "07:30",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "07:47",
+    "Importanza":"D",
+    "Direzione":true,
+    "Variazioni":"FER"
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "08:04",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "08:34",
+    "Importanza":"DD",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "09:00",
+    "Importanza":"D",
+    "Direzione":true,
+    "Variazioni":"FER"
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "09:16",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "09:46",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "10:46",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "11:16",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "11:46",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "12:16",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "12:46",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "13:16",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "13:34",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "14:04",
+    "Importanza":"DD",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "14:30",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "15:04",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "15:34",
+    "Importanza":"DD",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "16:16",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "16:46",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "17:16",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "17:34",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "18:04",
+    "Importanza":"DD",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "18:30",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "19:04",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "19:34",
+    "Importanza":"DD",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "20:00",
+    "Importanza":"D",
+    "Direzione":true,
+    "Variazioni":"FER"
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "20:16",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "20:46",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "21:16",
+    "Importanza":"D",
+    "Direzione":true
+  },
+  {
+    "Stazione": 4,
+    "Partenza": "22:04",
+    "Importanza":"D",
+    "Direzione":true
   }
 ]

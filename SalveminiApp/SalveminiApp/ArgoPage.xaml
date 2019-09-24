@@ -1,100 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage Title="Argo" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.ArgoPage">
     <ScrollView>
-    <StackLayout Padding="20, 10" Spacing="15">
-           <!--Argomenti-->
-        <Grid>
-            <AbsoluteLayout>
-                 <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
-                <StackLayout>
-                <Label Text="Label to fill space" TextColor="White" Opacity="0"/>
-                <yummy:PancakeView x:Name="argomentiFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#FFEA4B" BackgroundGradientEndColor="#FFC400" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
-                    <Label TextColor="White" VerticalOptions="Center" Text="Argomenti" FontAttributes="Bold" FontSize="30" />
-                </yummy:PancakeView>
-            </StackLayout>
-            </StackLayout>
-                <Button AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Clicked="Argomenti_Tapped"/>
-            </AbsoluteLayout>
-                       <ffimageloadingsvg:SvgCachedImage HorizontalOptions="EndAndExpand" Source="Argomenti.svg" x:Name="argoIcon" BackgroundColor="Transparent" />
-        </Grid>
-        <!--Compiti-->
-        <Grid>
-            <AbsoluteLayout>
-                 <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
-                <StackLayout>
-                <Label Text="Label to fill space" TextColor="White" Opacity="0"/>
-                <yummy:PancakeView x:Name="compitiFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#54D991" BackgroundGradientEndColor="#0DC637" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
-                    <Label TextColor="White" VerticalOptions="Center" Text="Compiti" FontAttributes="Bold" FontSize="30" />
-                </yummy:PancakeView>
-            </StackLayout>
-            </StackLayout>
-                <Button AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Clicked="Compiti_Tapped"/>
-            </AbsoluteLayout>
-                       <ffimageloadingsvg:SvgCachedImage HorizontalOptions="EndAndExpand" Source="Compiti.svg" x:Name="compitiIcon" BackgroundColor="Transparent" />
-        </Grid>
-         <!--Voti-->
-        <Grid>
-            <AbsoluteLayout>
-                 <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
-                <StackLayout>
-                <Label Text="Label to fill space" TextColor="White" Opacity="0"/>
-                <yummy:PancakeView x:Name="votiFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#54B5D9" BackgroundGradientEndColor="#0846EF" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
-                    <Label TextColor="White" VerticalOptions="Center" Text="Voti" FontAttributes="Bold" FontSize="30" />
-                </yummy:PancakeView>
-            </StackLayout>
-            </StackLayout>
-                <Button AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Clicked="Voti_Tapped"/>
-            </AbsoluteLayout>
-                       <ffimageloadingsvg:SvgCachedImage HorizontalOptions="EndAndExpand" Source="Voti.svg" x:Name="votiIcon" BackgroundColor="Transparent" />
-        </Grid>
-        <!--Assenze-->
-        <Grid>
-            <AbsoluteLayout>
-                 <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
-                <StackLayout>
-                <Label Text="Label to fill space" TextColor="White" Opacity="0"/>
-                <yummy:PancakeView x:Name="assenzeFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#FFBF96" BackgroundGradientEndColor="#F46A05" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
-                    <Label TextColor="White" VerticalOptions="Center" Text="Assenze" FontAttributes="Bold" FontSize="30" />
-                </yummy:PancakeView>
-            </StackLayout>
-            </StackLayout>
-                <Button AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Clicked="Assenze_Tapped"/>
-            </AbsoluteLayout>
-                       <ffimageloadingsvg:SvgCachedImage HorizontalOptions="EndAndExpand" Source="Assenze.svg" x:Name="assenzeIcon" BackgroundColor="Transparent" />
-        </Grid>
+        <StackLayout Padding="20, 10" Spacing="15">
+            <!--Argomenti-->
+            <Grid>
+                <AbsoluteLayout>
+                    <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                        <StackLayout>
+                            <Label Text="Label to fill space" TextColor="White" Opacity="0" />
+                            <yummy:PancakeView x:Name="argomentiFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#FFEA4B" BackgroundGradientEndColor="#FFC400" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                                <Label TextColor="White" VerticalOptions="Center" Text="Argomenti" FontAttributes="Bold" FontSize="30" />
+                            </yummy:PancakeView>
+                        </StackLayout>
+                    </StackLayout>
+                    <Button AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Clicked="Argomenti_Tapped" />
+                </AbsoluteLayout>
+                <ffimageloadingsvg:SvgCachedImage HorizontalOptions="EndAndExpand" Source="Argomenti.svg" x:Name="argoIcon" BackgroundColor="Transparent" />
+            </Grid>
+            <!--Compiti-->
+            <Grid>
+                <AbsoluteLayout>
+                    <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                        <StackLayout>
+                            <Label Text="Label to fill space" TextColor="White" Opacity="0" />
+                            <yummy:PancakeView x:Name="compitiFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#54D991" BackgroundGradientEndColor="#0DC637" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                                <Label TextColor="White" VerticalOptions="Center" Text="Compiti" FontAttributes="Bold" FontSize="30" />
+                            </yummy:PancakeView>
+                        </StackLayout>
+                    </StackLayout>
+                    <Button AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Clicked="Compiti_Tapped" />
+                </AbsoluteLayout>
+                <ffimageloadingsvg:SvgCachedImage HorizontalOptions="EndAndExpand" Source="Compiti.svg" x:Name="compitiIcon" BackgroundColor="Transparent" />
+            </Grid>
+            <!--Voti-->
+            <Grid>
+                <AbsoluteLayout>
+                    <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                        <StackLayout>
+                            <Label Text="Label to fill space" TextColor="White" Opacity="0" />
+                            <yummy:PancakeView x:Name="votiFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#54B5D9" BackgroundGradientEndColor="#0846EF" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                                <Label TextColor="White" VerticalOptions="Center" Text="Voti" FontAttributes="Bold" FontSize="30" />
+                            </yummy:PancakeView>
+                        </StackLayout>
+                    </StackLayout>
+                    <Button AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Clicked="Voti_Tapped" />
+                </AbsoluteLayout>
+                <ffimageloadingsvg:SvgCachedImage HorizontalOptions="EndAndExpand" Source="Voti.svg" x:Name="votiIcon" BackgroundColor="Transparent" />
+            </Grid>
+            <!--Assenze-->
+            <Grid>
+                <AbsoluteLayout>
+                    <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                        <StackLayout>
+                            <Label Text="Label to fill space" TextColor="White" Opacity="0" />
+                            <yummy:PancakeView x:Name="assenzeFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#FFBF96" BackgroundGradientEndColor="#F46A05" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                                <Label TextColor="White" VerticalOptions="Center" Text="Assenze" FontAttributes="Bold" FontSize="30" />
+                            </yummy:PancakeView>
+                        </StackLayout>
+                    </StackLayout>
+                    <Button AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Clicked="Assenze_Tapped" />
+                </AbsoluteLayout>
+                <ffimageloadingsvg:SvgCachedImage HorizontalOptions="EndAndExpand" Source="Assenze.svg" x:Name="assenzeIcon" BackgroundColor="Transparent" />
+            </Grid>
 
-        <!--Promemoria-->
+            <!--Promemoria-->
 
-         <Grid>
-            <AbsoluteLayout>
-                 <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
-                <StackLayout>
-                <Label Text="Label to fill space" TextColor="White" Opacity="0"/>
-                <yummy:PancakeView x:Name="promemoriaFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#FF5281" BackgroundGradientEndColor="#D91C23" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
-                    <Label TextColor="White" VerticalOptions="Center" Text="Promemoria" FontAttributes="Bold" FontSize="30" />
-                </yummy:PancakeView>
-            </StackLayout>
-            </StackLayout>
-                <Button AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Clicked="Promemoria_Tapped"/>
-            </AbsoluteLayout>
-                       <ffimageloadingsvg:SvgCachedImage HorizontalOptions="EndAndExpand" Source="Promemoria.svg" x:Name="promemoriaIcon" BackgroundColor="Transparent" />
-        </Grid>
+            <Grid>
+                <AbsoluteLayout>
+                    <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                        <StackLayout>
+                            <Label Text="Label to fill space" TextColor="White" Opacity="0" />
+                            <yummy:PancakeView x:Name="promemoriaFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#FF5281" BackgroundGradientEndColor="#D91C23" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                                <Label TextColor="White" VerticalOptions="Center" Text="Promemoria" FontAttributes="Bold" FontSize="30" />
+                            </yummy:PancakeView>
+                        </StackLayout>
+                    </StackLayout>
+                    <Button AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Clicked="Promemoria_Tapped" />
+                </AbsoluteLayout>
+                <ffimageloadingsvg:SvgCachedImage HorizontalOptions="EndAndExpand" Source="Promemoria.svg" x:Name="promemoriaIcon" BackgroundColor="Transparent" />
+            </Grid>
 
-           <!--Voti Scrutinio-->
-        <Grid>
-            <AbsoluteLayout>
-                 <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
-                <StackLayout>
-                <Label Text="Label to fill space" TextColor="White" Opacity="0"/>
-                <yummy:PancakeView x:Name="votiScruFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#54B5D9" BackgroundGradientEndColor="#0846EF" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
-                    <Label TextColor="White" VerticalOptions="Center" Text="Voti scrutinio" FontAttributes="Bold" FontSize="30" />
-                </yummy:PancakeView>
-            </StackLayout>
-            </StackLayout>
-                <Button AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Clicked="VotiScru_Tapped"/>
-            </AbsoluteLayout>
-                       <ffimageloadingsvg:SvgCachedImage HorizontalOptions="EndAndExpand" Source="VotiScru.svg" x:Name="votiScruIcon" BackgroundColor="Transparent" />
-        </Grid>
-    </StackLayout>
-        </ScrollView>
+            <!--Voti Scrutinio-->
+            <Grid>
+                <AbsoluteLayout>
+                    <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                        <StackLayout>
+                            <Label Text="Label to fill space" TextColor="White" Opacity="0" />
+                            <yummy:PancakeView x:Name="votiScruFrame" BackgroundGradientAngle="135" BackgroundGradientStartColor="#54B5D9" BackgroundGradientEndColor="#0846EF" CornerRadius="20" Padding="10, 25" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                                <Label TextColor="White" VerticalOptions="Center" Text="Voti scrutinio" FontAttributes="Bold" FontSize="30" />
+                            </yummy:PancakeView>
+                        </StackLayout>
+                    </StackLayout>
+                    <Button AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Clicked="VotiScru_Tapped" />
+                </AbsoluteLayout>
+                <ffimageloadingsvg:SvgCachedImage HorizontalOptions="EndAndExpand" Source="VotiScru.svg" x:Name="votiScruIcon" BackgroundColor="Transparent" />
+            </Grid>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
