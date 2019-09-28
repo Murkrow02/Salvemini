@@ -52,7 +52,7 @@ namespace SalveminiApp.RestApi
                 Trains = JsonConvert.DeserializeObject<List<Models.Treno>>(text);
 
                 //Filter by station and direction
-                Trains = Trains.Where(x => x.Direzione == true && x.Stazione == 0).OrderBy(x => x.LeaveTime).ToList();
+                Trains = Trains.Where(x => x.Direzione == direzione && x.Stazione == stazione).OrderBy(x => x.LeaveTime).ToList();
 
                 //Check if there are more trains
                 if (Trains[Trains.Count - 1].LeaveTime > new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0))
@@ -87,11 +87,49 @@ namespace SalveminiApp.RestApi
             }
             return NextTrain;
         }
+
+        public async Task<List<Models.Treno>> GetTrains(int stazione, bool direzione)
+        {
+            Trains = new List<Models.Treno>();
+            try
+            {
+                var assembly = typeof(RestServiceOrari).GetTypeInfo().Assembly;
+                var manifest = assembly.GetManifestResourceNames();
+
+#if __ANDROID__
+                Stream stream = assembly.GetManifestResourceStream("SalveminiApp.Droid.Helpers.OrariTreni.txt");
+
+#endif
+#if __IOS__
+                Stream stream = assembly.GetManifestResourceStream("SalveminiApp.iOS.Helpers.OrariTreni.txt");
+#endif
+
+                string text;
+
+                using (var reader = new System.IO.StreamReader(stream))
+                {
+                    text = reader.ReadToEnd();
+                }
+
+                //GetTrains
+                Trains = JsonConvert.DeserializeObject<List<Models.Treno>>(text);
+
+                Trains = Trains.Where(x => x.Stazione == stazione && x.Direzione == direzione).ToList();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+
+            }
+            return Trains;
+        }
     }
 
     public interface IRestServiceTreni
     {
         Task<Models.Treno> GetNextTrain(int stazione, bool direzione);
+
+        Task<List<Models.Treno>> GetTrains(int stazione, bool direzione);
     }
 
     public class ItemManagerTreni
@@ -109,5 +147,9 @@ namespace SalveminiApp.RestApi
             return restServiceTreni.GetNextTrain(stazione, direzione);
         }
 
+        public Task<List<Models.Treno>> GetTrains(int stazione, bool direzione)
+        {
+            return restServiceTreni.GetTrains(stazione, direzione);
+        }
     }
 }

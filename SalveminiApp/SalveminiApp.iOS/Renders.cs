@@ -33,7 +33,7 @@ namespace SalveminiApp.iOS
             Element.HasShadow = false;
         }
     }
-
+    
     public class CustomNavigationPage : NavigationRenderer
     {
         protected override void OnElementChanged(VisualElementChangedEventArgs e)
@@ -53,6 +53,7 @@ namespace SalveminiApp.iOS
             base.ViewDidLoad();
             //NavigationBar.ShadowImage = new UIImage();
             NavigationBar.Translucent = false;
+           
         }
 
         protected override void Dispose(bool disposing)

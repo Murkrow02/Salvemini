@@ -142,5 +142,10 @@ namespace SalveminiApp
             Navigation.PushPopupAsync(new SecondaryViews.SettingsPanel());
         }
 
+        void busTrains_Tapped(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new SecondaryViews.BusAndTrains());
+        }
+
     }
 }

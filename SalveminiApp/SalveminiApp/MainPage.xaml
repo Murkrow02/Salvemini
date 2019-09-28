@@ -27,6 +27,9 @@
             </local:ShadowFrame>
             <!--Bus e Treni-->
             <local:ShadowFrame BackgroundColor="White" x:Name="trainFrame" Padding="10" CornerRadius="20" HorizontalOptions="EndAndExpand">
+                <local:ShadowFrame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="busTrains_Tapped"/>
+                </local:ShadowFrame.GestureRecognizers>
                 <StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Image x:Name="trainImage" Source="train.png" />

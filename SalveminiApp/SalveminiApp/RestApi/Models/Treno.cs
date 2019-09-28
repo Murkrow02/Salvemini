@@ -33,5 +33,28 @@ namespace SalveminiApp.RestApi.Models
                 return new DateTime(1, 1, 1, Convert.ToInt32(a[0]), Convert.ToInt32(a[1]), 0);
             }
         }
+
+        public bool DDVisibility
+        {
+            get
+            {
+                return Importanza == "DD";
+            }
+        }
+
+        public string FullVariazioni
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(Variazioni))
+                {
+                    return Variazioni == "FER" ? "Feriale" : "Festivo";
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
     }
 }

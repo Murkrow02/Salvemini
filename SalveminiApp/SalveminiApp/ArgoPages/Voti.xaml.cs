@@ -20,10 +20,10 @@ namespace SalveminiApp.ArgoPages
         public Voti()
         {
             InitializeComponent();
-
 #if __IOS__
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
             UIApplication.SharedApplication.StatusBarHidden = true;
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FullScreen);
 #endif
             //Set Sizes
             shadowImage.WidthRequest = App.ScreenWidth * 1.5;
