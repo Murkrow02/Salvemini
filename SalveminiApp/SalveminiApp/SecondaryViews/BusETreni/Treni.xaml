@@ -9,17 +9,16 @@
                     <iconize:IconButton x:Name="starButton" Clicked="Starred_Clicked" Text="far-star" TextColor="White" FontAttributes="Bold" HorizontalOptions="End" FontSize="30" />
                     <iconize:IconButton Text="far-compass" TextColor="White" FontAttributes="Bold" HorizontalOptions="End" FontSize="30" />
                 </StackLayout>
-                <StackLayout Spacing="10" Margin="0, 0, 30 ,0">
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                        <Label HorizontalOptions="End" Text="Da:" TextColor="White" FontSize="25" FontAttributes="Bold" VerticalOptions="Center" />
-                        <Frame x:Name="stationFrame" HorizontalOptions="End" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, -1">
+                <StackLayout Spacing="10" Margin=" 30 ,0">
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Label HorizontalOptions="Start" Text="Da:" TextColor="White" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
+                        <Frame x:Name="stationFrame" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, -1">
                             <Picker Unfocused="picker_Unfocused" SelectedIndexChanged="Station_Selected" x:Name="stationPicker" HeightRequest="50" TitleColor="#EAEAEA" FontAttributes="Bold" HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
                         </Frame>
                     </StackLayout>
-                    <Frame HasShadow="False" HorizontalOptions="End" Margin="0, 0, 20, 0" Padding="8, 22" CornerRadius="8" />
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                        <Label HorizontalOptions="Start" Text="Verso:" TextColor="White" FontSize="25" FontAttributes="Bold" VerticalOptions="Center" />
-                        <Frame x:Name="directonFrame" HorizontalOptions="End" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, -1">
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Label HorizontalOptions="Start" Text="Verso:" TextColor="White" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
+                        <Frame x:Name="directonFrame" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, -1">
                             <Picker Unfocused="picker_Unfocused" SelectedIndexChanged="Direction_Selected" x:Name="directionPicker" HeightRequest="50" TitleColor="#EAEAEA" FontAttributes="Bold" HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
                         </Frame>
                     </StackLayout>

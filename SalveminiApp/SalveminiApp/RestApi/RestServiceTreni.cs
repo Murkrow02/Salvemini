@@ -54,6 +54,9 @@ namespace SalveminiApp.RestApi
                 //Filter by station and direction
                 Trains = Trains.Where(x => x.Direzione == direzione && x.Stazione == stazione).OrderBy(x => x.LeaveTime).ToList();
 
+                //Remove Campania Express
+                Trains = Trains.Where(x => x.Importanza != "EXP").ToList();
+
                 //Check if there are more trains
                 if (Trains[Trains.Count - 1].LeaveTime > new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0))
                 {

@@ -23,8 +23,8 @@ namespace SalveminiApp.SecondaryViews.BusETreni
             stationPicker.ItemsSource = Stazioni;
             directionPicker.ItemsSource = new List<string> { Costants.Stazioni[0], Costants.Stazioni[Costants.Stazioni.Count - 1] };
 
-            stationFrame.WidthRequest = App.ScreenWidth / 1.8;
-            directonFrame.WidthRequest = App.ScreenWidth / 1.8;
+            //stationFrame.WidthRequest = App.ScreenWidth / 1.8;
+            //directonFrame.WidthRequest = App.ScreenWidth / 1.8;
 
 
         }
