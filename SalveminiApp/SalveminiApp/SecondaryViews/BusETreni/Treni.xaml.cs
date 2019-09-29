@@ -26,7 +26,6 @@ namespace SalveminiApp.SecondaryViews.BusETreni
             //stationFrame.WidthRequest = App.ScreenWidth / 1.8;
             //directonFrame.WidthRequest = App.ScreenWidth / 1.8;
 
-
         }
 
         private void picker_Unfocused(object sender, FocusEventArgs e)

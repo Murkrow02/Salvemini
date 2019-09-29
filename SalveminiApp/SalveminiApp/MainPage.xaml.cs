@@ -136,10 +136,11 @@ namespace SalveminiApp
             });
 
         }
-
+        TrainKit.Data.VoiceShortcutDataManager VoiceShortcutDataManager;
         void PushToSettings(object sender, System.EventArgs e)
         {
-            Navigation.PushPopupAsync(new SecondaryViews.SettingsPanel());
+            var shortcut = VoiceShortcutDataManager.VoiceShortcutForOrder();
+          //  Navigation.PushPopupAsync(new SecondaryViews.SettingsPanel());
         }
 
         void busTrains_Tapped(object sender, System.EventArgs e)

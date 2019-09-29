@@ -28,8 +28,8 @@
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
     <CodesignKey>iPhone Developer: Marco Coppola (94823TJK2J)</CodesignKey>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -220,6 +220,26 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lotties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SalveminiAppIntent\SalveminiAppIntent.csproj">
+      <IsAppExtension>true</IsAppExtension>
+      <Project>{64E26C65-AF5D-4E61-961D-F186E0DE3249}</Project>
+      <Name>SalveminiAppIntent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SalveminiAppIntentUI\SalveminiAppIntentUI.csproj">
+      <IsAppExtension>true</IsAppExtension>
+      <Project>{35B463FF-A55B-4D4B-B0EB-C0ABA72C8390}</Project>
+      <Name>SalveminiAppIntentUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrainKit\TrainKit.csproj">
+      <Project>{AD0C360A-48EA-48AC-A38F-0B5B298CB5DC}</Project>
+      <Name>TrainKit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrainIntentBinding\TrainIntentBinding.csproj">
+      <Project>{36E0872E-DBBA-4FBD-9D91-228775C55BBD}</Project>
+      <Name>TrainIntentBinding</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\SalveminiApp\SalveminiApp.projitems" Label="Shared" />

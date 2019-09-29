@@ -5,6 +5,7 @@ using Com.OneSignal;
 using FFImageLoading.Forms.Platform;
 using FFImageLoading.Svg.Forms;
 using Foundation;
+using Intents;
 using Lottie.Forms.iOS.Renderers;
 using UIKit;
 using Xamarin.Forms;
@@ -77,5 +78,48 @@ namespace SalveminiApp.iOS
            
             return base.FinishedLaunching(app, options);
         }
+
+        public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
+        {
+            var intent = userActivity.GetInteraction()?.Intent as TrainIntent;
+            if (!(intent is null))
+            {
+                HandleIntent(intent);
+                return true;
+            }
+            //else if (userActivity.ActivityType == TrainKit.Support.NSUserDefaultsHelper.ViewMenuActivityType)
+            //{
+            //    HandleUserActivity();
+            //    return true;
+            //}
+            return false;
+        }
+
+        
+
+
+        void HandleIntent(TrainIntent intent)
+        {
+            var handler = new TrainKit.TrainIntentHandler();
+            handler.HandleTrain(intent, (response) => {
+                if (response.Code != TrainIntentResponseCode.Success)
+                {
+                    Console.WriteLine("Quantity must be greater than 0 to add to order");
+                }
+            });
+        }
+
+        //void HandleUserActivity()
+        //{
+        //    var rootViewController = Window?.RootViewController as UINavigationController;
+        //    var orderHistoryViewController = rootViewController?.ViewControllers?.FirstOrDefault() as OrderHistoryTableViewController;
+        //    if (orderHistoryViewController is null)
+        //    {
+        //        Console.WriteLine("Failed to access OrderHistoryTableViewController.");
+        //        return;
+        //    }
+        //    var segue = OrderHistoryTableViewController.SegueIdentifiers.SoupMenu;
+        //    orderHistoryViewController.PerformSegue(segue, null);
+        //}
     }
 }
