@@ -25,11 +25,11 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>8.0</string>
+	<string>10.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>SalveminiApp</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.codex.SalveminiApp</string>
+	<string>com.codex.salveminiapp</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>

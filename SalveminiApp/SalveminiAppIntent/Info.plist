@@ -7,7 +7,7 @@
 	<key>CFBundleName</key>
 	<string>SalveminiAppIntent</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.codex.SalveminiApp.SalveminiAppIntent</string>
+	<string>com.codex.salveminiapp.salveminiappntent</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -19,7 +19,7 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>MinimumOSVersion</key>
-	<string>13.0</string>
+	<string>12.0</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
