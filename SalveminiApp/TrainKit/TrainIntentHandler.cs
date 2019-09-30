@@ -20,6 +20,7 @@ namespace TrainKit
             // final validation of the intent parameters and to verify that any 
             // needed services are available. You might confirm that you can 
             // communicate with your company’s server.
+          
             completion(new TrainIntentResponse(TrainIntentResponseCode.Ready, null));
         }
 

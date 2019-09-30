@@ -87,11 +87,11 @@ namespace SalveminiApp.iOS
                 HandleIntent(intent);
                 return true;
             }
-            //else if (userActivity.ActivityType == TrainKit.Support.NSUserDefaultsHelper.ViewMenuActivityType)
-            //{
-            //    HandleUserActivity();
-            //    return true;
-            //}
+            else if (userActivity.ActivityType == TrainKit.Support.NSUserActivityHelper.ViewMenuActivityType)
+            {
+                HandleUserActivity();
+                return true;
+            }
             return false;
         }
 
@@ -109,17 +109,17 @@ namespace SalveminiApp.iOS
             });
         }
 
-        //void HandleUserActivity()
-        //{
-        //    var rootViewController = Window?.RootViewController as UINavigationController;
-        //    var orderHistoryViewController = rootViewController?.ViewControllers?.FirstOrDefault() as OrderHistoryTableViewController;
-        //    if (orderHistoryViewController is null)
-        //    {
-        //        Console.WriteLine("Failed to access OrderHistoryTableViewController.");
-        //        return;
-        //    }
-        //    var segue = OrderHistoryTableViewController.SegueIdentifiers.SoupMenu;
-        //    orderHistoryViewController.PerformSegue(segue, null);
-        //}
+        void HandleUserActivity()
+        {
+            var rootViewController = Window?.RootViewController as UINavigationController;
+            //var orderHistoryViewController = rootViewController?.ViewControllers?.FirstOrDefault() as OrderHistoryTableViewController;
+            //if (orderHistoryViewController is null)
+            //{
+            //    Console.WriteLine("Failed to access OrderHistoryTableViewController.");
+            //    return;
+            //}
+            //var segue = OrderHistoryTableViewController.SegueIdentifiers.SoupMenu;
+            //orderHistoryViewController.PerformSegue(segue, null);
+        }
     }
 }

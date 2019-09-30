@@ -31,7 +31,7 @@ namespace SalveminiApp
 
 
             //Cache Folder
-            Barrel.ApplicationId = "com.codex.SalveminiApp";
+            Barrel.ApplicationId = "com.codex.salveminiapp";
 
             //Set MainPage
             if (Preferences.Get("isFirstTime", true))

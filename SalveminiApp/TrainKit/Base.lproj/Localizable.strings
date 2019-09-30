@@ -1,10 +1,10 @@
-"IyTJSJ" = "Prossimo treno Circumvesuviana";
+"TITLE" = "Prossimo treno Circumvesuviana";
 
-"LNTqGs" = "Train";
+"TRAIN" = "Train";
 
-"Zx1gPi" = "Ora";
+"HOUR" = "Ora";
 
-"e0mvBr" = "Il prossimo treno per ${citta} arriverà alle ore ${ora}";
+"ANSWER" = "Il prossimo treno per ${citta} arriverà alle ore ${ora}";
 
-"j8iApY" = "citta";
+"CITY" = "citta";
 

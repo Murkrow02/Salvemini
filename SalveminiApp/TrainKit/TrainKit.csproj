@@ -50,6 +50,16 @@
     <Compile Include="TrainIntentHandler.cs" />
     <Compile Include="Data\VoiceShortcutDataManager.cs" />
     <Compile Include="Support\NSUserDefaultsHelper.cs" />
+    <Compile Include="Support\NSUserActivityHelper.cs" />
+    <Compile Include="Support\NSBundleHelper.cs" />
+    <Compile Include="Data\Train.cs" />
+    <Compile Include="Support\ILocalizable.cs" />
+    <Compile Include="Data\MenuItem.cs" />
+    <Compile Include="Support\NSNumberFormatterHelper.cs" />
+    <Compile Include="Data\MenuItemOption.cs" />
+    <Compile Include="Data\SoupMenuManager.cs" />
+    <Compile Include="Data\DataManager.cs" />
+    <Compile Include="Data\SoupOrderDataManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TrainIntentBinding\TrainIntentBinding.csproj">
