@@ -7,6 +7,7 @@ using TrainKit.Data;
 using UIKit;
 using SalveminiApp;
 using CoreFoundation;
+using Xamarin.Essentials;
 
 namespace SalveminiAppIntentUI
 {
@@ -28,8 +29,9 @@ namespace SalveminiAppIntentUI
         public async override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            
 
+            var defaults = new NSUserDefaults("group.com.codex.SalveminiApp");
+            var stazione = defaults.IntForKey("savedStation");
             var NextTrain = await Treni.GetNextTrain(0, true);
 
             if (NextTrain != null)
@@ -43,6 +45,10 @@ namespace SalveminiAppIntentUI
                 a.Append(new NSAttributedString("Sorrento", new UIStringAttributes { Font = UIFont.BoldSystemFontOfSize(15) }));
 
                 osgu.AttributedText = a;
+            }
+            else
+            {
+                osgu.Text = "Errore nel caricamento del treno";
             }
             // Do any required interface initialization here.
         }

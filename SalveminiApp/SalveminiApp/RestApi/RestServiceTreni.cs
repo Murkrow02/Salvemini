@@ -10,6 +10,8 @@ using System.Net;
 using System.IO;
 using System.Reflection;
 using System.Linq;
+using Foundation;
+using System.Json;
 
 namespace SalveminiApp.RestApi
 {
@@ -18,11 +20,42 @@ namespace SalveminiApp.RestApi
         HttpClient client;
         public Models.Treno NextTrain { get; private set; }
         public List<Models.Treno> Trains { get; private set; }
+        public string TreniUpdate { get; private set; }
+
         public RestServiceTreni()
         {
             client = new HttpClient();
             client.Timeout = TimeSpan.FromSeconds(10);
+            client.DefaultRequestHeaders.Add("x-user-id", Preferences.Get("UserId", 0).ToString());
+            client.DefaultRequestHeaders.Add("x-auth-token", Preferences.Get("Token", ""));
         }
+
+        public async Task<bool> GetTrainJson()
+        {
+           
+            try
+            {
+
+                var filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "OrariTreni.txt");
+                using (var client2 = new WebClient())
+                {
+                   client2.DownloadFile("http://www.mysalvemini.me/Orari/OrariTreni.txt", filename);
+                }
+                //var content = await response.Content.ReadAsStringAsync();
+                //var assembly = typeof(RestServiceTreni).GetTypeInfo().Assembly;
+                //var manifest = assembly.GetManifestResourceNames();
+
+                //File.WriteAllText(filename, content);
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                return false;
+            }
+        }
+
 
         public async Task<Models.Treno> GetNextTrain(int stazione, bool direzione)
         {
@@ -30,23 +63,30 @@ namespace SalveminiApp.RestApi
             Trains = new List<Models.Treno>();
             try
             {
-                var assembly = typeof(RestServiceOrari).GetTypeInfo().Assembly;
+                var assembly = typeof(RestServiceTreni).GetTypeInfo().Assembly;
                 var manifest = assembly.GetManifestResourceNames();
 
-#if __ANDROID__
-                Stream stream = assembly.GetManifestResourceStream("SalveminiApp.Droid.Helpers.OrariTreni.txt");
+                var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                var filename = Path.Combine(documents, "OrariTreni.txt");
+                bool doesExist = File.Exists(filename);
 
-#endif
-#if __IOS__
-                Stream stream = assembly.GetManifestResourceStream("SalveminiApp.iOS.Helpers.OrariTreni.txt");
-#endif
+                if (!doesExist)
+                {
+                    return null;
+                }
 
                 string text;
 
-                using (var reader = new System.IO.StreamReader(stream))
-                {
-                    text = reader.ReadToEnd();
-                }
+               
+
+
+
+                text = File.ReadAllText(filename);
+
+
+                
+
+
 
                 //GetTrains
                 Trains = JsonConvert.DeserializeObject<List<Models.Treno>>(text);
@@ -99,20 +139,18 @@ namespace SalveminiApp.RestApi
                 var assembly = typeof(RestServiceOrari).GetTypeInfo().Assembly;
                 var manifest = assembly.GetManifestResourceNames();
 
-#if __ANDROID__
-                Stream stream = assembly.GetManifestResourceStream("SalveminiApp.Droid.Helpers.OrariTreni.txt");
+                var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                var filename = Path.Combine(documents, "OrariTreni.txt");
+                bool doesExist = File.Exists(filename);
+                if (!doesExist)
+                {
+                    return null;
+                }
 
-#endif
-#if __IOS__
-                Stream stream = assembly.GetManifestResourceStream("SalveminiApp.iOS.Helpers.OrariTreni.txt");
-#endif
-
+                
                 string text;
 
-                using (var reader = new System.IO.StreamReader(stream))
-                {
-                    text = reader.ReadToEnd();
-                }
+                text = File.ReadAllText(filename);
 
                 //GetTrains
                 Trains = JsonConvert.DeserializeObject<List<Models.Treno>>(text);
@@ -133,6 +171,8 @@ namespace SalveminiApp.RestApi
         Task<Models.Treno> GetNextTrain(int stazione, bool direzione);
 
         Task<List<Models.Treno>> GetTrains(int stazione, bool direzione);
+
+        Task<bool> GetTrainJson();
     }
 
     public class ItemManagerTreni
@@ -153,6 +193,11 @@ namespace SalveminiApp.RestApi
         public Task<List<Models.Treno>> GetTrains(int stazione, bool direzione)
         {
             return restServiceTreni.GetTrains(stazione, direzione);
+        }
+
+        public Task<bool> GetTrainJson()
+        {
+            return restServiceTreni.GetTrainJson();
         }
     }
 }

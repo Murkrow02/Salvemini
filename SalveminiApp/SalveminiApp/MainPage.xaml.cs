@@ -43,10 +43,8 @@ namespace SalveminiApp
 #endif
         }
 
-        protected async override void OnAppearing()
+        public async void getNextTrain()
         {
-            base.OnAppearing();
-
             NextTrain = await App.Treni.GetNextTrain(Preferences.Get("savedStation", 0), Preferences.Get("savedDirection", true));
 
             var nextTrainText = new FormattedString();
@@ -56,6 +54,16 @@ namespace SalveminiApp
             nextTrainText.Spans.Add(new Span { Text = Costants.Stazioni[NextTrain.Stazione], FontAttributes = FontAttributes.Bold });
 
             nextTrainLabel.FormattedText = nextTrainText;
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (Preferences.Get("orariTreniVersion", 0) > 0)
+            {
+                getNextTrain();
+            }
 
             //Get timetables
             Orario = await App.Orari.GetOrario("3FCAM", 1);
@@ -85,6 +93,16 @@ namespace SalveminiApp
 
                     //Display string
                     avvisiLabel.Text = stringToDisplay;
+                }
+
+                if (Index.OrariTreniVersion > Preferences.Get("orariTreniVersion", 0))
+                {
+                    bool successTreni = await App.Treni.GetTrainJson();
+                    if (successTreni)
+                    {
+                        Preferences.Set("orariTreniVersion", Index.OrariTreniVersion);
+                        getNextTrain();
+                    }
                 }
 
                 if (!Index.ArgoAuth)
