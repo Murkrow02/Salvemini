@@ -22,7 +22,12 @@ namespace SalveminiApp.SecondaryViews.BusETreni
             InitializeComponent();
             stationPicker.ItemsSource = Stazioni;
             directionPicker.ItemsSource = new List<string> { Costants.Stazioni[0], Costants.Stazioni[Costants.Stazioni.Count - 1] };
-
+#if __IOS__
+            if (iOS.AppDelegate.HasNotch)
+            {
+                mainLayout.Padding = new Thickness(20, 50);
+            }
+#endif
             //stationFrame.WidthRequest = App.ScreenWidth / 1.8;
             //directonFrame.WidthRequest = App.ScreenWidth / 1.8;
 

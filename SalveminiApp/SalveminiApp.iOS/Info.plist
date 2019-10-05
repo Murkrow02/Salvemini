@@ -5,6 +5,7 @@
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>TrainIntent</string>
+		<string>com.codex.SalveminiApp.viewMenu</string>
 	</array>
 	<key>UIDeviceFamily</key>
 	<array>

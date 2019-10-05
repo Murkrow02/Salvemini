@@ -9,53 +9,21 @@ using System.Collections.Generic;
 using System.Net;
 using System.IO;
 using System.Reflection;
-using System.Linq;
 using Foundation;
-using System.Json;
+using System.Linq;
 
-namespace SalveminiApp.RestApi
+namespace SalveminiAppIntentUI.RestApi
 {
     public class RestServiceTreni : IRestServiceTreni
     {
         HttpClient client;
         public Models.Treno NextTrain { get; private set; }
         public List<Models.Treno> Trains { get; private set; }
-        public string TreniUpdate { get; private set; }
-
         public RestServiceTreni()
         {
             client = new HttpClient();
             client.Timeout = TimeSpan.FromSeconds(10);
-            client.DefaultRequestHeaders.Add("x-user-id", Preferences.Get("UserId", 0).ToString());
-            client.DefaultRequestHeaders.Add("x-auth-token", Preferences.Get("Token", ""));
         }
-
-        public async Task<bool> GetTrainJson()
-        {
-           
-            try
-            {
-
-                var filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "OrariTreni.txt");
-                using (var client2 = new WebClient())
-                {
-                   client2.DownloadFile("http://www.mysalvemini.me/Orari/OrariTreni.txt", filename);
-                }
-                //var content = await response.Content.ReadAsStringAsync();
-                //var assembly = typeof(RestServiceTreni).GetTypeInfo().Assembly;
-                //var manifest = assembly.GetManifestResourceNames();
-
-                //File.WriteAllText(filename, content);
-                return true;
-
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(@"              ERROR {0}", ex.Message);
-                return false;
-            }
-        }
-
 
         public async Task<Models.Treno> GetNextTrain(int stazione, bool direzione)
         {
@@ -63,11 +31,19 @@ namespace SalveminiApp.RestApi
             Trains = new List<Models.Treno>();
             try
             {
+                var filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "OrariTreni.txt");
+                if (Connectivity.NetworkAccess == Xamarin.Essentials.NetworkAccess.Internet)
+                {
+                   
+                    using (var client2 = new WebClient())
+                    {
+                        client2.DownloadFile("http://www.mysalvemini.me/Orari/OrariTreni.txt", filename);
+                    }
+                }
+
                 var assembly = typeof(RestServiceTreni).GetTypeInfo().Assembly;
                 var manifest = assembly.GetManifestResourceNames();
 
-                var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                var filename = Path.Combine(documents, "OrariTreni.txt");
                 bool doesExist = File.Exists(filename);
 
                 if (!doesExist)
@@ -77,20 +53,10 @@ namespace SalveminiApp.RestApi
 
                 string text;
 
-               
-
-
-
                 text = File.ReadAllText(filename);
-
-
-                
-
-
-
                 //GetTrains
                 Trains = JsonConvert.DeserializeObject<List<Models.Treno>>(text);
-
+               
                 //Filter by station and direction
                 Trains = Trains.Where(x => x.Direzione == direzione && x.Stazione == stazione).OrderBy(x => x.LeaveTime).ToList();
 
@@ -130,55 +96,17 @@ namespace SalveminiApp.RestApi
             }
             return NextTrain;
         }
-
-        public async Task<List<Models.Treno>> GetTrains(int stazione, bool direzione)
-        {
-            Trains = new List<Models.Treno>();
-            try
-            {
-                var assembly = typeof(RestServiceOrari).GetTypeInfo().Assembly;
-                var manifest = assembly.GetManifestResourceNames();
-
-                var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                var filename = Path.Combine(documents, "OrariTreni.txt");
-                bool doesExist = File.Exists(filename);
-                if (!doesExist)
-                {
-                    return null;
-                }
-
-                
-                string text;
-
-                text = File.ReadAllText(filename);
-
-                //GetTrains
-                Trains = JsonConvert.DeserializeObject<List<Models.Treno>>(text);
-
-                Trains = Trains.Where(x => x.Stazione == stazione && x.Direzione == direzione).ToList();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(@"              ERROR {0}", ex.Message);
-
-            }
-            return Trains;
-        }
+        
     }
 
     public interface IRestServiceTreni
     {
         Task<Models.Treno> GetNextTrain(int stazione, bool direzione);
-
-        Task<List<Models.Treno>> GetTrains(int stazione, bool direzione);
-
-        Task<bool> GetTrainJson();
     }
 
     public class ItemManagerTreni
     {
         IRestServiceTreni restServiceTreni;
-
 
         public ItemManagerTreni(IRestServiceTreni serviceTreni)
         {
@@ -188,16 +116,6 @@ namespace SalveminiApp.RestApi
         public Task<Models.Treno> GetNextTrain(int stazione, bool direzione)
         {
             return restServiceTreni.GetNextTrain(stazione, direzione);
-        }
-
-        public Task<List<Models.Treno>> GetTrains(int stazione, bool direzione)
-        {
-            return restServiceTreni.GetTrains(stazione, direzione);
-        }
-
-        public Task<bool> GetTrainJson()
-        {
-            return restServiceTreni.GetTrainJson();
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace SalveminiApp.RestApi.Models
+namespace SalveminiAppIntentUI.RestApi.Models
 {
     public class Treno
     {
@@ -34,23 +34,10 @@ namespace SalveminiApp.RestApi.Models
             }
         }
 
-        public bool DDVisibility
-        {
-            get
-            {
-                return Importanza == "DD";
-            }
-        }
-
         public string FullVariazioni
         {
             get
             {
-                if (Importanza == "EXP")
-                {
-                    return "Express";
-                }
-
                 if (!string.IsNullOrEmpty(Variazioni))
                 {
                     return Variazioni == "FER" ? "Feriale" : "Festivo";
@@ -61,15 +48,5 @@ namespace SalveminiApp.RestApi.Models
                 }
             }
         }
-
-        public Xamarin.Forms.Color VariazioniColor
-        {
-            get
-            {
-                return Importanza == "EXP" ? Xamarin.Forms.Color.Red : Xamarin.Forms.Color.FromHex("#D3D3D3");
-            }
-        }
     }
-
-    
 }
