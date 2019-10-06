@@ -15,6 +15,9 @@
                     <Label Text="Vantaggi SalveminiCard" HorizontalOptions="EndAndExpand" VerticalOptions="Center" TextColor="{x:Static local:Styles.TextGray}" />
                 </StackLayout>
                 <Frame BackgroundColor="#DBDBDB" HasShadow="false" HeightRequest="1" Padding="20, 0" Margin="60, 0, 0, 0" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Card_Tapped"/>
+                </StackLayout.GestureRecognizers>
             </StackLayout>
             <!--Grafico Medie-->
             <chart:SfChart VerticalOptions="Start" x:Name="chart">

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Crea avviso" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.AreaVip.CreaAvviso">
+    <ScrollView>
+        <StackLayout Padding="25,20,25,0">
+               <!--Notifica-->
+            <StackLayout Orientation="Horizontal">
+                <Label HorizontalOptions="FillAndExpand" Text="Invia notifica" FontSize="Title" TextColor="{x:Static local:Styles.TextColor}"/>
+                <Switch HorizontalOptions="End" IsToggled="True" x:Name="pushSwitch"/>
+            </StackLayout>
+            <!--Titolo-->
+            <inputLayout:SfTextInputLayout  x:Name="titoloEntry" FocusedColor="{x:Static local:Styles.VipPrimary}" Hint="Titolo" ContainerType="Outlined" OutlineCornerRadius="12">
+                <Entry x:Name="title" MaxLength="30"  />
+            </inputLayout:SfTextInputLayout>
+            <!--Descrizione-->
+            <inputLayout:SfTextInputLayout  x:Name="descEntry" IsHintAlwaysFloated="True" FocusedColor="{x:Static local:Styles.VipPrimary}" Hint="Descrizione" ContainerType="Outlined" OutlineCornerRadius="12">
+                <Editor HeightRequest="200" x:Name="desc" MaxLength="3000" />
+            </inputLayout:SfTextInputLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

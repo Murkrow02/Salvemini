@@ -43,5 +43,10 @@ namespace SalveminiApp
             radarChart.ItemsSource = Medie;
 
         }
-    }
+
+        void Card_Tapped(object sender, System.EventArgs e)
+        {
+            Navigation.PushModalAsync(new SecondaryViews.SalveminiCard());
+        }
+        }
 }

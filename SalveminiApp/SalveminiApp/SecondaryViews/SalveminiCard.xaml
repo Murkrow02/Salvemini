@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.SalveminiCard">
+ <StackLayout Padding="25,0">
+        <iconize:IconButton Text="fas-times" FontSize="30" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="EndAndExpand" Margin="-10,0" Clicked="closePage"/>
+        <!--Card image-->
+        <Image Source="SalveminiCard.png" Margin="0,20" RotationY="15" x:Name="card"/>
+        <Label Text="Offerte" FontSize="35" />
+        <!--Lista-->
+        <ListView Footer="" x:Name="offersList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <local:ShadowFrame HasShadow="True" Padding="8" CornerRadius="12">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Logo}" HeightRequest="60" />
+                                <Label HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" FontSize="Small" Text="{Binding Name}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                        </local:ShadowFrame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
