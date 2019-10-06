@@ -11,6 +11,7 @@ using UIKit;
 #endif
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using MonkeyCache.SQLite;
 
 namespace SalveminiApp.ArgoPages
 {
@@ -29,10 +30,17 @@ namespace SalveminiApp.ArgoPages
             //Set Sizes
             shadowImage.WidthRequest = App.ScreenWidth * 1.5;
             shadowImage.HeightRequest = App.ScreenWidth * 1.5;
-            votiList.HeightRequest = App.ScreenHeight / 1.5;
+            votiList.HeightRequest = App.ScreenHeight / 1.7;
             buttonFrame.WidthRequest = App.ScreenWidth / 6;
             buttonFrame.HeightRequest = App.ScreenWidth / 6;
             buttonFrame.CornerRadius = (float)(App.ScreenWidth / 6) / 2;
+
+            //Cache
+            if (Barrel.Current.Exists("VotiScrutinio"))
+            {
+                Votis = Barrel.Current.Get<RestApi.Models.ScrutinioGrouped>("VotiScrutinio");
+                votiList.ItemsSource = Votis.Primo;
+            }
         }
 
         protected async override void OnAppearing()
@@ -40,6 +48,7 @@ namespace SalveminiApp.ArgoPages
             base.OnAppearing();
 
             votiList.IsRefreshing = true;
+
             //Api Call
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
@@ -61,10 +70,8 @@ namespace SalveminiApp.ArgoPages
                     votiList.ItemsSource = Votis.Primo;
                     votiList.IsRefreshing = false;
                 }
-               
             }
             votiList.IsRefreshing = false;
-
         }
 
         //Close modal
@@ -74,22 +81,20 @@ namespace SalveminiApp.ArgoPages
         }
 
         void firstQuad_Clicked(object sender, System.EventArgs e) {
-            quad1.TextColor = Color.FromHex("5DB2D9");
-            quad1.BackgroundColor = Color.White;
+            quad1.TextColor = Color.White;
+            quad1.BackgroundColor = Color.FromHex("5DB2D9");
+            quad2.TextColor = Color.FromHex("5DB2D9");
+            quad2.BackgroundColor = Color.White;
             votiList.ItemsSource = Votis.Primo;
-
-            quad2.TextColor = Color.White;
-            quad2.BackgroundColor = Color.FromHex("5DB2D9");
         }
 
         void secondQuad_Clicked(object sender, System.EventArgs e)
         {
-            quad2.TextColor = Color.FromHex("5DB2D9");
-            quad2.BackgroundColor = Color.White;
+            quad2.TextColor = Color.White;
+            quad2.BackgroundColor = Color.FromHex("5DB2D9");
+            quad1.TextColor = Color.FromHex("5DB2D9");
+            quad1.BackgroundColor = Color.White;
             votiList.ItemsSource = Votis.Secondo;
-
-            quad1.TextColor = Color.White;
-            quad1.BackgroundColor = Color.FromHex("5DB2D9");
         }
     }
 }

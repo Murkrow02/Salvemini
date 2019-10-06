@@ -72,10 +72,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ArgoPages\VotiScrutinio.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\BusAndTrains.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -85,6 +81,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)FirstAccess\OrariTrasporti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ArgoPages\VotiScrutinio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -166,9 +166,6 @@
       <DependentUpon>Voti.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Argomenti.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\VotiScrutinio.xaml.cs">
-      <DependentUpon>VotiScrutinio.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\VotiScrutinio.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\BusAndTrains.xaml.cs">
       <DependentUpon>BusAndTrains.xaml</DependentUpon>
@@ -179,6 +176,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)FirstAccess\OrariTrasporti.xaml.cs">
       <DependentUpon>OrariTrasporti.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\VotiScrutinio.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

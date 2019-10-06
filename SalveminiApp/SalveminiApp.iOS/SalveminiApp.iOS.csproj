@@ -25,7 +25,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>x86_64</MtouchArch>
-    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
     <CodesignKey>iPhone Developer</CodesignKey>
@@ -222,8 +222,8 @@
     <BundleResource Include="Resources\VotiScru.svg" />
     <BundleResource Include="Resources\ArgomentiShadow.svg" />
     <BundleResource Include="Resources\CompitiShadow.svg" />
-    <BundleResource Include="Resources\VotiScruShadow.svg" />
     <BundleResource Include="Resources\trasportiSmall.png" />
+    <BundleResource Include="Resources\scrutinioShadow.svg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lotties\" />

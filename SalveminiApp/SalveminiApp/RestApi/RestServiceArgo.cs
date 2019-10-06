@@ -325,35 +325,22 @@ namespace SalveminiApp.RestApi
                         var content = await response.Content.ReadAsStringAsync();
                         VotiScrutinio = JsonConvert.DeserializeObject<Models.ScrutinioGrouped>(content);
 
-
-                        var voto = new Models.Scrutinio { assenze = 2, desMateria = "Matematica", Voto = "10" };
                         var voti = new List<Models.Scrutinio>();
-                        voti.Add(voto);
+                        //{ new Models.Scrutinio { assenze = 2, desMateria = "Matematica", Voto = "10" }, new Models.Scrutinio { assenze = 5, desMateria = "Italiano", Voto = "8" } };
                         VotiScrutinio.Primo = voti;
 
-                        var voto2 = new Models.Scrutinio { assenze = 1, desMateria = "Italiano", Voto = "5" };
-                        var voti2 = new List<Models.Scrutinio>();
-                        voti2.Add(voto2);
+                        var voti2 = new List<Models.Scrutinio> { new Models.Scrutinio { assenze = 1, desMateria = "Italiano", Voto = "5" } };
                         VotiScrutinio.Secondo = voti2;
-
-                        VotiScrutinio.Primo[VotiScrutinio.Primo.Count - 1].SeparatorVisibility = false;
-                        VotiScrutinio.Primo[0].CellPadding = new Thickness(10, 20, 10, 10);
-                        if (VotiScrutinio.Primo.Count > 1)
+                        if (voti.ElementAtOrDefault(VotiScrutinio.Primo.Count - 1) != null)
                         {
-                            VotiScrutinio.Primo[VotiScrutinio.Primo.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
+                            VotiScrutinio.Primo[VotiScrutinio.Primo.Count - 1].SeparatorVisibility = false;
+                        }
+                        if (voti2.ElementAtOrDefault(VotiScrutinio.Secondo.Count - 1) != null)
+                        {
+                            VotiScrutinio.Secondo[VotiScrutinio.Secondo.Count - 1].SeparatorVisibility = false;
                         }
 
-                        //VotiScrutinio.Secondo[VotiScrutinio.Secondo.Count - 1].SeparatorVisibility = false;
-                        //VotiScrutinio.Secondo[0].CellPadding = new Thickness(10, 20, 10, 10);
-                        //Data.Data = Argomenti;
-                        //if (VotiScrutinio.Secondo.Count > 1)
-                        //{
-                        //    VotiScrutinio.Secondo[VotiScrutinio.Secondo.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
-                        //}
-
-
                         Data.Data = VotiScrutinio;
-
 
                         break;
                     case HttpStatusCode.Forbidden:
