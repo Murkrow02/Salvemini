@@ -64,12 +64,12 @@ namespace SalveminiApp.ArgoPages
             {
 
                 clockLabel.Text = "Spiegati oggi";
-                gradient.BackgroundGradientStartColor = Color.FromHex("FFC400");
-                gradient.BackgroundGradientEndColor = Color.FromHex("FFEA4B");
+                gradient.BackgroundGradientStartColor = Color.FromHex("F46A05");
+                gradient.BackgroundGradientEndColor = Color.FromHex("FFBF96");
                 TitleLbl.Text = "Argomenti";
                 shadowImage.Source = "ArgomentiShadow.svg";
-                searchFrame.BackgroundColor = Color.FromHex("ffd500");
-                xClose.TextColor = Color.FromHex("FFC400");
+                searchFrame.BackgroundColor = Color.FromHex("FFBF96");
+                xClose.TextColor = Color.FromHex("F46A05");
                 if (Barrel.Current.Exists("Argomenti"))
                 {
                     Argomentis = Barrel.Current.Get<List<RestApi.Models.Argomenti>>("Argomenti");

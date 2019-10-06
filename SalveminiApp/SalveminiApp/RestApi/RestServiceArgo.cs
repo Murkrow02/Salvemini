@@ -51,11 +51,14 @@ namespace SalveminiApp.RestApi
                     case HttpStatusCode.OK:
                         var content = await response.Content.ReadAsStringAsync();
                         Assenze = JsonConvert.DeserializeObject<List<Models.Assenza>>(content);
-                        Assenze[Assenze.Count - 1].SeparatorVisibility = false;
-                        if (Assenze.Count > 1)
+                        if (Assenze.Count > 0)
                         {
-                            Assenze[Assenze.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
-                            Assenze[0].CellPadding = new Thickness(10, 20, 10, 10);
+                            Assenze[Assenze.Count - 1].SeparatorVisibility = false;
+                            if (Assenze.Count > 1)
+                            {
+                                Assenze[Assenze.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
+                                Assenze[0].CellPadding = new Thickness(10, 20, 10, 10);
+                            }
                         }
                         Data.Data = Assenze;
                         break;
@@ -121,12 +124,16 @@ namespace SalveminiApp.RestApi
                     case HttpStatusCode.OK:
                         var content = await response.Content.ReadAsStringAsync();
                         Promemoria = JsonConvert.DeserializeObject<List<Models.Promemoria>>(content);
-                        Promemoria[Promemoria.Count - 1].SeparatorVisibility = false;
-                        Promemoria[0].CellPadding = new Thickness(10, 20, 10, 10);
-                        if (Promemoria.Count > 1)
+                        if (Promemoria.Count > 0)
                         {
-                            Promemoria[Promemoria.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
+                            Promemoria[Promemoria.Count - 1].SeparatorVisibility = false;
+                            Promemoria[0].CellPadding = new Thickness(10, 20, 10, 10);
+                            if (Promemoria.Count > 1)
+                            {
+                                Promemoria[Promemoria.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
+                            }
                         }
+                        
                         Data.Data = Promemoria;
                         break;
                     case HttpStatusCode.Forbidden:
@@ -159,11 +166,14 @@ namespace SalveminiApp.RestApi
                     case HttpStatusCode.OK:
                         var content = await response.Content.ReadAsStringAsync();
                         Compiti = JsonConvert.DeserializeObject<List<Models.Compiti>>(content);
-                        Compiti[Compiti.Count - 1].SeparatorVisibility = false;
-                        Compiti[0].CellPadding = new Thickness(10, 20, 10, 10);
-                        if (Compiti.Count > 1)
+                        if (Compiti.Count > 0)
                         {
-                            Compiti[Compiti.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
+                            Compiti[Compiti.Count - 1].SeparatorVisibility = false;
+                            Compiti[0].CellPadding = new Thickness(10, 20, 10, 10);
+                            if (Compiti.Count > 1)
+                            {
+                                Compiti[Compiti.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
+                            }
                         }
                         Data.Data = Compiti;
                         break;
@@ -197,11 +207,14 @@ namespace SalveminiApp.RestApi
                     case HttpStatusCode.OK:
                         var content = await response.Content.ReadAsStringAsync();
                         Argomenti = JsonConvert.DeserializeObject<List<Models.Argomenti>>(content);
-                        Argomenti[Argomenti.Count - 1].SeparatorVisibility = false;
-                        Argomenti[0].CellPadding = new Thickness(10, 20, 10, 10);
-                        if (Argomenti.Count > 1)
+                        if (Argomenti.Count > 0)
                         {
-                            Argomenti[Argomenti.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
+                            Argomenti[Argomenti.Count - 1].SeparatorVisibility = false;
+                            Argomenti[0].CellPadding = new Thickness(10, 20, 10, 10);
+                            if (Argomenti.Count > 1)
+                            {
+                                Argomenti[Argomenti.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
+                            }
                         }
                         Data.Data = Argomenti;
                         break;
@@ -271,22 +284,23 @@ namespace SalveminiApp.RestApi
                     case HttpStatusCode.OK:
                         var content = await response.Content.ReadAsStringAsync();
                         Voti = JsonConvert.DeserializeObject<List<Models.GroupedVoti>>(content);
-                        Voti = new List<Models.GroupedVoti> { new Models.GroupedVoti { Materia = "Matematica", Media = 8 }, new Models.GroupedVoti { Materia = "Letteratura", Media = 4 } };
-                        Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "7", datGiorno = "10-09-2019", decValore = 7, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
-                        Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 9, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
-                        Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 1, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
-                        Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 6.3, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
-                        Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 3, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
-                        Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 10, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
-                        Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "5.5", datGiorno = "10-09-2019", decValore = 5.5, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDKcdjnnvjfbnidfnbvmdfomvodfmvodmfvodfmvodfmovmdfomvodfmvofdmvodfmvodfmvofdmvodfmvofdmvofdmvodfmvodfmvofdmvodf", desProva = "Compito", docente = "Raffaella Celotto" });
+                        //Voti = new List<Models.GroupedVoti> { new Models.GroupedVoti { Materia = "Matematica", Media = 8 }, new Models.GroupedVoti { Materia = "Letteratura", Media = 4 } };
+                        //Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "7", datGiorno = "10-09-2019", decValore = 7, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
+                        //Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 9, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
+                        //Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 1, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
+                        //Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 6.3, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
+                        //Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 3, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
+                        //Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 10, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
+                        //Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "5.5", datGiorno = "10-09-2019", decValore = 5.5, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDKcdjnnvjfbnidfnbvmdfomvodfmvodmfvodfmvodfmovmdfomvodfmvofdmvodfmvodfmvofdmvodfmvofdmvofdmvodfmvodfmvofdmvodf", desProva = "Compito", docente = "Raffaella Celotto" });
+                        //Voti[1].Add(new Models.Voti { Materia = "Letteratura", codVoto = "4", datGiorno = "10-09-2019", decValore = 4, desMateria = "Letteratura", codVotoPratico = "4", desProva = "Compito", docente = "Leyla Romano" });
 
-                        Voti[1].Add(new Models.Voti { Materia = "Letteratura", codVoto = "4", datGiorno = "10-09-2019", decValore = 4, desMateria = "Letteratura", codVotoPratico = "4", desProva = "Compito", docente = "Leyla Romano" });
                         for (int i = 0; i < Voti.Count; i++)
                         {
-                            Voti[i][Voti[i].Count - 1].SeparatorVisibility = false;
+                            if (Voti[i].Count > 0)
+                            {
+                                Voti[i][Voti[i].Count - 1].SeparatorVisibility = false;
+                            }
                         }
-
-
 
                         Data.Data = Voti.ToObservableCollection();
 
@@ -299,7 +313,7 @@ namespace SalveminiApp.RestApi
                         Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
                         break;
                 }
-                Barrel.Current.Add("Voti", Voti, TimeSpan.FromDays(7));
+                Barrel.Current.Add("Voti", Voti.ToObservableCollection(), TimeSpan.FromDays(7));
             }
             catch (Exception ex)
             {
@@ -325,17 +339,17 @@ namespace SalveminiApp.RestApi
                         var content = await response.Content.ReadAsStringAsync();
                         VotiScrutinio = JsonConvert.DeserializeObject<Models.ScrutinioGrouped>(content);
 
-                        var voti = new List<Models.Scrutinio>();
-                        //{ new Models.Scrutinio { assenze = 2, desMateria = "Matematica", Voto = "10" }, new Models.Scrutinio { assenze = 5, desMateria = "Italiano", Voto = "8" } };
-                        VotiScrutinio.Primo = voti;
+                        //var voti = new List<Models.Scrutinio>();
+                        ////{ new Models.Scrutinio { assenze = 2, desMateria = "Matematica", Voto = "10" }, new Models.Scrutinio { assenze = 5, desMateria = "Italiano", Voto = "8" } };
+                        //VotiScrutinio.Primo = voti;
 
-                        var voti2 = new List<Models.Scrutinio> { new Models.Scrutinio { assenze = 1, desMateria = "Italiano", Voto = "5" } };
-                        VotiScrutinio.Secondo = voti2;
-                        if (voti.ElementAtOrDefault(VotiScrutinio.Primo.Count - 1) != null)
+                        //var voti2 = new List<Models.Scrutinio> { new Models.Scrutinio { assenze = 1, desMateria = "Italiano", Voto = "5" } };
+                        //VotiScrutinio.Secondo = voti2;
+                        if (VotiScrutinio.Primo.ElementAtOrDefault(VotiScrutinio.Primo.Count - 1) != null)
                         {
                             VotiScrutinio.Primo[VotiScrutinio.Primo.Count - 1].SeparatorVisibility = false;
                         }
-                        if (voti2.ElementAtOrDefault(VotiScrutinio.Secondo.Count - 1) != null)
+                        if (VotiScrutinio.Secondo.ElementAtOrDefault(VotiScrutinio.Secondo.Count - 1) != null)
                         {
                             VotiScrutinio.Secondo[VotiScrutinio.Secondo.Count - 1].SeparatorVisibility = false;
                         }

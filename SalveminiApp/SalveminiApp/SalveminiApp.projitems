@@ -176,7 +176,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)FirstAccess\OrariTrasporti.xaml.cs">
       <DependentUpon>OrariTrasporti.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)RestApi\VotiScrutinio.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\VotiScrutinio.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
