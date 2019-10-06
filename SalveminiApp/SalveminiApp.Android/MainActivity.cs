@@ -7,6 +7,7 @@ using Android.Widget;
 using Android.OS;
 using Com.OneSignal;
 using Lottie.Forms.Droid;
+using SegmentedControl.FormsPlugin.Android;
 
 namespace SalveminiApp.Droid
 {
