@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfParse", "PdfParse\PdfParse.csproj", "{F257A8E1-0D10-4461-8B0C-923C00160D47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F257A8E1-0D10-4461-8B0C-923C00160D47}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{F257A8E1-0D10-4461-8B0C-923C00160D47}.Debug|anycpu.Build.0 = Debug|anycpu
+		{F257A8E1-0D10-4461-8B0C-923C00160D47}.Release|anycpu.ActiveCfg = Release|anycpu
+		{F257A8E1-0D10-4461-8B0C-923C00160D47}.Release|anycpu.Build.0 = Release|anycpu
+	EndGlobalSection
+EndGlobal

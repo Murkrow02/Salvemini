@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Rg.Plugins.Popup.Extensions;
 using Xamarin.Essentials;
 using System.Linq;
+using MonkeyCache.SQLite;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using UIKit;
@@ -15,6 +16,7 @@ namespace SalveminiApp.ArgoPages
 {
     public partial class CompitiArgomenti : ContentPage
     {
+
         public List<RestApi.Models.Compiti> Compitis = new List<RestApi.Models.Compiti>();
         public List<RestApi.Models.Argomenti> Argomentis = new List<RestApi.Models.Argomenti>();
         public bool showingAll = false;
@@ -36,17 +38,59 @@ namespace SalveminiApp.ArgoPages
                 shadowImage.Source = "CompitiShadow.svg";
                 searchFrame.BackgroundColor = Color.FromHex("119A46");
                 xClose.TextColor = Color.FromHex("21db18");
+                if (Barrel.Current.Exists("Compiti"))
+                {
+                    Compitis = Barrel.Current.Get<List<RestApi.Models.Compiti>>("Compiti");
+                    var today = Compitis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    if (today.Count > 0)
+                    {
+                        lista.IsVisible = true;
+                        lista.ItemsSource = today;
+                        emptyLayout.IsVisible = false;
+                        filterBtn.IsEnabled = true;
+                        sortBtn.IsEnabled = true;
+                    }
+                    else
+                    {
+                        lista.ItemsSource = today;
+                        placeholderLabel.Text = "Oggi non è stato assegnato niente";
+                        emptyLayout.IsVisible = true;
+                        filterBtn.IsEnabled = false;
+                        sortBtn.IsEnabled = false;
+                    }
+                }
             }
             else
             {
+
                 clockLabel.Text = "Spiegati oggi";
-                gradient.BackgroundGradientStartColor = Color.FromHex("FFC400");
-                gradient.BackgroundGradientEndColor = Color.FromHex("FFEA4B");
+                gradient.BackgroundGradientStartColor = Color.FromHex("F46A05");
+                gradient.BackgroundGradientEndColor = Color.FromHex("FFBF96");
                 TitleLbl.Text = "Argomenti";
                 shadowImage.Source = "ArgomentiShadow.svg";
-                searchFrame.BackgroundColor = Color.FromHex("ffd500");
-                xClose.TextColor = Color.FromHex("FFC400");
-
+                searchFrame.BackgroundColor = Color.FromHex("FFBF96");
+                xClose.TextColor = Color.FromHex("F46A05");
+                if (Barrel.Current.Exists("Argomenti"))
+                {
+                    Argomentis = Barrel.Current.Get<List<RestApi.Models.Argomenti>>("Argomenti");
+                    var today = Argomentis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    if (today.Count > 0)
+                    {
+                        lista.IsVisible = true;
+                        lista.ItemsSource = today;
+                        emptyLayout.IsVisible = false;
+                        filterBtn.IsEnabled = true;
+                        sortBtn.IsEnabled = true;
+                    }
+                    else
+                    {
+                        lista.ItemsSource = today;
+                        placeholderLabel.Text = "Oggi non è stato spiegato niente";
+                        emptyLayout.IsVisible = true;
+                        filterBtn.IsEnabled = false;
+                        sortBtn.IsEnabled = false;
+                    }
+                }
             }
 
             //Hide status bar
@@ -57,7 +101,7 @@ namespace SalveminiApp.ArgoPages
             //Set Sizes
             shadowImage.WidthRequest = App.ScreenWidth * 1.5;
             shadowImage.HeightRequest = App.ScreenWidth * 1.5;
-            lista.HeightRequest = App.ScreenHeight / 1.55;
+            listFrame.HeightRequest = App.ScreenHeight / 1.5;
             buttonFrame.WidthRequest = App.ScreenWidth / 6;
             buttonFrame.HeightRequest = App.ScreenWidth / 6;
             buttonFrame.CornerRadius = (float)(App.ScreenWidth / 6) / 2;
@@ -115,7 +159,24 @@ namespace SalveminiApp.ArgoPages
                     }
 
                     //Fill List
-                    lista.ItemsSource = Compitis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    var today = Compitis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    if (today.Count > 0)
+                    {
+                        lista.IsVisible = true;
+                        lista.ItemsSource = today;
+                        emptyLayout.IsVisible = false;
+                        filterBtn.IsEnabled = true;
+                        sortBtn.IsEnabled = true;
+                    }
+                    else
+                    {
+                        lista.ItemsSource = today;
+                        placeholderLabel.Text = "Oggi non è stato assegnato niente";
+                        emptyLayout.IsVisible = true;
+                        filterBtn.IsEnabled = false;
+                        sortBtn.IsEnabled = false;
+                    }
+
                     lista.IsRefreshing = false;
                 }
 
@@ -151,7 +212,25 @@ namespace SalveminiApp.ArgoPages
                     }
 
                     //Fill List
-                    lista.ItemsSource = Argomentis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    var today = Argomentis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    if (today.Count > 0)
+                    {
+                        lista.IsVisible = true;
+                        lista.ItemsSource = today;
+                        emptyLayout.IsVisible = false;
+                        filterBtn.IsEnabled = true;
+                        sortBtn.IsEnabled = true;
+
+                    }
+                    else
+                    {
+                        lista.ItemsSource = today;
+                        placeholderLabel.Text = "Oggi non è stato spiegato niente";
+                        emptyLayout.IsVisible = true;
+                        filterBtn.IsEnabled = false;
+                        sortBtn.IsEnabled = false;
+                    }
+
                     lista.IsRefreshing = false;
                 }
 
@@ -190,26 +269,55 @@ namespace SalveminiApp.ArgoPages
                 Preferences.Set("firstTimeCompiti", true);
             else
                 Preferences.Set("firstTimeArgomenti", true);
-
         }
 
         private void ShowAll(object sender, EventArgs e)
         {
             clockButton.Rotation = 0.1;
-            clockButton.RotateTo(-360, 800, Easing.CubicIn);
+            clockButton.RotateTo(-360, 700, Easing.CubicIn);
 
             if (type == "compiti")
             {
                 if (showingAll)
                 {
-                    lista.ItemsSource = Compitis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    var today = Compitis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    if (today.Count > 0)
+                    {
+                        lista.IsVisible = true;
+                        lista.ItemsSource = today;
+                        emptyLayout.IsVisible = false;
+                        filterBtn.IsEnabled = true;
+                        sortBtn.IsEnabled = true;
+                    }
+                    else
+                    {
+                        lista.ItemsSource = today;
+                        placeholderLabel.Text = "Oggi non è stato assegnato niente";
+                        emptyLayout.IsVisible = true;
+                        filterBtn.IsEnabled = false;
+                        sortBtn.IsEnabled = false;
+                    }
                     showingAll = false;
                     clockLabel.Text = "Assegnati oggi";
                 }
                 else
                 {
                     clockLabel.Text = "Tutti";
-                    lista.ItemsSource = Compitis;
+                    if (Compitis.Count > 0)
+                    {
+                        lista.IsVisible = true;
+                        lista.ItemsSource = Compitis;
+                        emptyLayout.IsVisible = false;
+                        filterBtn.IsEnabled = true;
+                        sortBtn.IsEnabled = true;
+                    }
+                    else
+                    {
+                        lista.ItemsSource = Compitis;
+                        emptyLayout.IsVisible = true;
+                        filterBtn.IsEnabled = false;
+                        sortBtn.IsEnabled = false;
+                    }
                     showingAll = true;
                 }
             }
@@ -217,14 +325,45 @@ namespace SalveminiApp.ArgoPages
             {
                 if (showingAll)
                 {
-                    lista.ItemsSource = Argomentis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    var today = Argomentis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    if (today.Count > 0)
+                    {
+                        lista.IsVisible = true;
+                        lista.ItemsSource = today;
+                        emptyLayout.IsVisible = false;
+                        filterBtn.IsEnabled = true;
+                        sortBtn.IsEnabled = true;
+
+                    }
+                    else
+                    {
+                        lista.ItemsSource = today;
+                        emptyLayout.IsVisible = true;
+                        filterBtn.IsEnabled = false;
+                        sortBtn.IsEnabled = false;
+                    }
                     showingAll = false;
                     clockLabel.Text = "Spiegati oggi";
                 }
                 else
                 {
                     clockLabel.Text = "Tutti";
-                    lista.ItemsSource = Argomentis;
+                    if (Argomentis.Count > 0)
+                    {
+                        lista.IsVisible = true;
+                        lista.ItemsSource = Argomentis;
+                        emptyLayout.IsVisible = false;
+                        filterBtn.IsEnabled = true;
+                        sortBtn.IsEnabled = true;
+                    }
+                    else
+                    {
+                        lista.ItemsSource = Argomentis;
+                        placeholderLabel.Text = "Oggi non è stato spiegato niente";
+                        emptyLayout.IsVisible = true;
+                        filterBtn.IsEnabled = false;
+                        sortBtn.IsEnabled = false;
+                    }
                     showingAll = true;
                 }
             }
@@ -269,7 +408,16 @@ namespace SalveminiApp.ArgoPages
 
             if (type == "compiti")
             {
-                foreach (RestApi.Models.Compiti compito in Compitis)
+                var listForSubjects = new List<RestApi.Models.Compiti>();
+                if (showingAll)
+                {
+                    listForSubjects = Compitis;
+                }
+                else
+                {
+                    listForSubjects = Compitis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                }
+                foreach (RestApi.Models.Compiti compito in listForSubjects)
                 {
                     if (!materie.Contains(compito.Materia))
                     {
@@ -281,7 +429,15 @@ namespace SalveminiApp.ArgoPages
 
                 if (scelta == "Tutti")
                 {
-                    clockLabel.Text = "Tutti";
+                    if (showingAll)
+                    {
+                        clockLabel.Text = "Tutti";
+                    }
+                    else
+                    {
+                        clockLabel.Text = "Assegnati oggi";
+                    }
+
                     lista.ItemsSource = Compitis;
                     return;
                 }
@@ -294,7 +450,16 @@ namespace SalveminiApp.ArgoPages
             }
             else
             {
-                foreach (RestApi.Models.Argomenti argomento in Argomentis)
+                var listForSubjects = new List<RestApi.Models.Argomenti>();
+                if (showingAll)
+                {
+                    listForSubjects = Argomentis;
+                }
+                else
+                {
+                    listForSubjects = Argomentis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                }
+                foreach (RestApi.Models.Argomenti argomento in listForSubjects)
                 {
                     if (!materie.Contains(argomento.Materia))
                     {
@@ -306,7 +471,14 @@ namespace SalveminiApp.ArgoPages
 
                 if (scelta == "Tutti")
                 {
-                    clockLabel.Text = "Tutti";
+                    if (showingAll)
+                    {
+                        clockLabel.Text = "Tutti";
+                    }
+                    else
+                    {
+                        clockLabel.Text = "Spiegati oggi";
+                    }
                     lista.ItemsSource = Argomentis;
                     return;
                 }
@@ -324,23 +496,23 @@ namespace SalveminiApp.ArgoPages
         {
             if (type == "compiti")
             {
-                if (string.IsNullOrEmpty(e.OldTextValue))
+                if (string.IsNullOrEmpty(e.NewTextValue))
                     lista.ItemsSource = Compitis;
                 else
                 {
-                    lista.ItemsSource = Compitis.Where(x => x.Contenuto.ToLower().Contains(e.OldTextValue.ToLower()) || x.Materia.ToLower().Contains(e.OldTextValue.ToLower())).ToList();
+                    lista.ItemsSource = Compitis.Where(x => x.Contenuto.ToLower().Contains(e.NewTextValue.ToLower()) || x.Materia.ToLower().Contains(e.NewTextValue.ToLower())).ToList();
                 }
             }
             else
             {
-                if (string.IsNullOrEmpty(e.OldTextValue))
+                if (string.IsNullOrEmpty(e.NewTextValue))
                     lista.ItemsSource = Argomentis;
                 else
                 {
-                    lista.ItemsSource = Argomentis.Where(x => x.Contenuto.ToLower().Contains(e.OldTextValue.ToLower()) || x.Materia.ToLower().Contains(e.OldTextValue.ToLower())).ToList();
+                    lista.ItemsSource = Argomentis.Where(x => x.Contenuto.ToLower().Contains(e.NewTextValue.ToLower()) || x.Materia.ToLower().Contains(e.NewTextValue.ToLower())).ToList();
                 }
             }
-               
+
         }
 
 

@@ -1,0 +1,659 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3DAB210F2340DECE00EA8348 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB210E2340DECE00EA8348 /* AppDelegate.m */; };
+		3DAB21122340DECE00EA8348 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB21112340DECE00EA8348 /* SceneDelegate.m */; };
+		3DAB21152340DECE00EA8348 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB21142340DECE00EA8348 /* ViewController.m */; };
+		3DAB21182340DECE00EA8348 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DAB21162340DECE00EA8348 /* Main.storyboard */; };
+		3DAB211A2340DED100EA8348 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DAB21192340DED100EA8348 /* Assets.xcassets */; };
+		3DAB211D2340DED100EA8348 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DAB211B2340DED100EA8348 /* LaunchScreen.storyboard */; };
+		3DAB21202340DED100EA8348 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB211F2340DED100EA8348 /* main.m */; };
+		3DAB212E2340DFDD00EA8348 /* IntentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB212D2340DFDD00EA8348 /* IntentHandler.m */; };
+		3DAB21372340DFDE00EA8348 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAB21362340DFDE00EA8348 /* IntentsUI.framework */; };
+		3DAB213B2340DFDE00EA8348 /* IntentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB213A2340DFDE00EA8348 /* IntentViewController.m */; };
+		3DAB213E2340DFDE00EA8348 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DAB213C2340DFDE00EA8348 /* MainInterface.storyboard */; };
+		3DAB21422340DFDE00EA8348 /* IntentUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3DAB21342340DFDE00EA8348 /* IntentUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3DAB21452340DFDE00EA8348 /* Intent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3DAB212A2340DFDD00EA8348 /* Intent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3DAB216E2340F51700EA8348 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB21722340F51700EA8348 /* Intents.intentdefinition */; };
+		3DAB216F2340F51700EA8348 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB21722340F51700EA8348 /* Intents.intentdefinition */; };
+		3DAB21702340F51700EA8348 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB21722340F51700EA8348 /* Intents.intentdefinition */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3DAB21402340DFDE00EA8348 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DAB21022340DECE00EA8348 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DAB21332340DFDE00EA8348;
+			remoteInfo = IntentUI;
+		};
+		3DAB21432340DFDE00EA8348 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DAB21022340DECE00EA8348 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DAB21292340DFDD00EA8348;
+			remoteInfo = Intent;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3DAB214C2340DFDE00EA8348 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3DAB21452340DFDE00EA8348 /* Intent.appex in Embed App Extensions */,
+				3DAB21422340DFDE00EA8348 /* IntentUI.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3DAB210A2340DECE00EA8348 /* SalveminiSiri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SalveminiSiri.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DAB210D2340DECE00EA8348 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3DAB210E2340DECE00EA8348 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3DAB21102340DECE00EA8348 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		3DAB21112340DECE00EA8348 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		3DAB21132340DECE00EA8348 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3DAB21142340DECE00EA8348 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3DAB21172340DECE00EA8348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3DAB21192340DED100EA8348 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3DAB211C2340DED100EA8348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3DAB211E2340DED100EA8348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DAB211F2340DED100EA8348 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3DAB212A2340DFDD00EA8348 /* Intent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Intent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DAB212C2340DFDD00EA8348 /* IntentHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntentHandler.h; sourceTree = "<group>"; };
+		3DAB212D2340DFDD00EA8348 /* IntentHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntentHandler.m; sourceTree = "<group>"; };
+		3DAB212F2340DFDD00EA8348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DAB21342340DFDE00EA8348 /* IntentUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DAB21362340DFDE00EA8348 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		3DAB21392340DFDE00EA8348 /* IntentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntentViewController.h; sourceTree = "<group>"; };
+		3DAB213A2340DFDE00EA8348 /* IntentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntentViewController.m; sourceTree = "<group>"; };
+		3DAB213D2340DFDE00EA8348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		3DAB213F2340DFDE00EA8348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DAB21712340F51700EA8348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/Intents.intentdefinition; sourceTree = "<group>"; };
+		3DAB21742340F51E00EA8348 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Intents.strings; sourceTree = "<group>"; };
+		3DAB21752340F55200EA8348 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
+		3DAB21762340F55300EA8348 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		3DAB21772340F55300EA8348 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Intents.strings; sourceTree = "<group>"; };
+		3DAB21782340F55300EA8348 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/MainInterface.strings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3DAB21072340DECE00EA8348 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DAB21272340DFDD00EA8348 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DAB21312340DFDE00EA8348 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DAB21372340DFDE00EA8348 /* IntentsUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DAB21012340DECE00EA8348 = {
+			isa = PBXGroup;
+			children = (
+				3DAB210C2340DECE00EA8348 /* SalveminiSiri */,
+				3DAB212B2340DFDD00EA8348 /* Intent */,
+				3DAB21382340DFDE00EA8348 /* IntentUI */,
+				3DAB21352340DFDE00EA8348 /* Frameworks */,
+				3DAB210B2340DECE00EA8348 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DAB210B2340DECE00EA8348 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DAB210A2340DECE00EA8348 /* SalveminiSiri.app */,
+				3DAB212A2340DFDD00EA8348 /* Intent.appex */,
+				3DAB21342340DFDE00EA8348 /* IntentUI.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DAB210C2340DECE00EA8348 /* SalveminiSiri */ = {
+			isa = PBXGroup;
+			children = (
+				3DAB210D2340DECE00EA8348 /* AppDelegate.h */,
+				3DAB210E2340DECE00EA8348 /* AppDelegate.m */,
+				3DAB21102340DECE00EA8348 /* SceneDelegate.h */,
+				3DAB21112340DECE00EA8348 /* SceneDelegate.m */,
+				3DAB21132340DECE00EA8348 /* ViewController.h */,
+				3DAB21142340DECE00EA8348 /* ViewController.m */,
+				3DAB21162340DECE00EA8348 /* Main.storyboard */,
+				3DAB21192340DED100EA8348 /* Assets.xcassets */,
+				3DAB211B2340DED100EA8348 /* LaunchScreen.storyboard */,
+				3DAB211E2340DED100EA8348 /* Info.plist */,
+				3DAB211F2340DED100EA8348 /* main.m */,
+				3DAB21722340F51700EA8348 /* Intents.intentdefinition */,
+			);
+			path = SalveminiSiri;
+			sourceTree = "<group>";
+		};
+		3DAB212B2340DFDD00EA8348 /* Intent */ = {
+			isa = PBXGroup;
+			children = (
+				3DAB212C2340DFDD00EA8348 /* IntentHandler.h */,
+				3DAB212D2340DFDD00EA8348 /* IntentHandler.m */,
+				3DAB212F2340DFDD00EA8348 /* Info.plist */,
+			);
+			path = Intent;
+			sourceTree = "<group>";
+		};
+		3DAB21352340DFDE00EA8348 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DAB21362340DFDE00EA8348 /* IntentsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DAB21382340DFDE00EA8348 /* IntentUI */ = {
+			isa = PBXGroup;
+			children = (
+				3DAB21392340DFDE00EA8348 /* IntentViewController.h */,
+				3DAB213A2340DFDE00EA8348 /* IntentViewController.m */,
+				3DAB213C2340DFDE00EA8348 /* MainInterface.storyboard */,
+				3DAB213F2340DFDE00EA8348 /* Info.plist */,
+			);
+			path = IntentUI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3DAB21092340DECE00EA8348 /* SalveminiSiri */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DAB21232340DED100EA8348 /* Build configuration list for PBXNativeTarget "SalveminiSiri" */;
+			buildPhases = (
+				3DAB21062340DECE00EA8348 /* Sources */,
+				3DAB21072340DECE00EA8348 /* Frameworks */,
+				3DAB21082340DECE00EA8348 /* Resources */,
+				3DAB214C2340DFDE00EA8348 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DAB21412340DFDE00EA8348 /* PBXTargetDependency */,
+				3DAB21442340DFDE00EA8348 /* PBXTargetDependency */,
+			);
+			name = SalveminiSiri;
+			productName = SalveminiSiri;
+			productReference = 3DAB210A2340DECE00EA8348 /* SalveminiSiri.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3DAB21292340DFDD00EA8348 /* Intent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DAB21492340DFDE00EA8348 /* Build configuration list for PBXNativeTarget "Intent" */;
+			buildPhases = (
+				3DAB21262340DFDD00EA8348 /* Sources */,
+				3DAB21272340DFDD00EA8348 /* Frameworks */,
+				3DAB21282340DFDD00EA8348 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Intent;
+			productName = Intent;
+			productReference = 3DAB212A2340DFDD00EA8348 /* Intent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		3DAB21332340DFDE00EA8348 /* IntentUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DAB21462340DFDE00EA8348 /* Build configuration list for PBXNativeTarget "IntentUI" */;
+			buildPhases = (
+				3DAB21302340DFDE00EA8348 /* Sources */,
+				3DAB21312340DFDE00EA8348 /* Frameworks */,
+				3DAB21322340DFDE00EA8348 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IntentUI;
+			productName = IntentUI;
+			productReference = 3DAB21342340DFDE00EA8348 /* IntentUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DAB21022340DECE00EA8348 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = Codex;
+				TargetAttributes = {
+					3DAB21092340DECE00EA8348 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					3DAB21292340DFDD00EA8348 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					3DAB21332340DFDE00EA8348 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = 3DAB21052340DECE00EA8348 /* Build configuration list for PBXProject "SalveminiSiri" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				it,
+			);
+			mainGroup = 3DAB21012340DECE00EA8348;
+			productRefGroup = 3DAB210B2340DECE00EA8348 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3DAB21092340DECE00EA8348 /* SalveminiSiri */,
+				3DAB21292340DFDD00EA8348 /* Intent */,
+				3DAB21332340DFDE00EA8348 /* IntentUI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3DAB21082340DECE00EA8348 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DAB211D2340DED100EA8348 /* LaunchScreen.storyboard in Resources */,
+				3DAB211A2340DED100EA8348 /* Assets.xcassets in Resources */,
+				3DAB21182340DECE00EA8348 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DAB21282340DFDD00EA8348 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DAB21322340DFDE00EA8348 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DAB213E2340DFDE00EA8348 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3DAB21062340DECE00EA8348 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DAB21152340DECE00EA8348 /* ViewController.m in Sources */,
+				3DAB210F2340DECE00EA8348 /* AppDelegate.m in Sources */,
+				3DAB21202340DED100EA8348 /* main.m in Sources */,
+				3DAB216E2340F51700EA8348 /* Intents.intentdefinition in Sources */,
+				3DAB21122340DECE00EA8348 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DAB21262340DFDD00EA8348 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DAB216F2340F51700EA8348 /* Intents.intentdefinition in Sources */,
+				3DAB212E2340DFDD00EA8348 /* IntentHandler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DAB21302340DFDE00EA8348 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DAB21702340F51700EA8348 /* Intents.intentdefinition in Sources */,
+				3DAB213B2340DFDE00EA8348 /* IntentViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3DAB21412340DFDE00EA8348 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DAB21332340DFDE00EA8348 /* IntentUI */;
+			targetProxy = 3DAB21402340DFDE00EA8348 /* PBXContainerItemProxy */;
+		};
+		3DAB21442340DFDE00EA8348 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DAB21292340DFDD00EA8348 /* Intent */;
+			targetProxy = 3DAB21432340DFDE00EA8348 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3DAB21162340DECE00EA8348 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DAB21172340DECE00EA8348 /* Base */,
+				3DAB21752340F55200EA8348 /* it */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3DAB211B2340DED100EA8348 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DAB211C2340DED100EA8348 /* Base */,
+				3DAB21762340F55300EA8348 /* it */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3DAB213C2340DFDE00EA8348 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DAB213D2340DFDE00EA8348 /* Base */,
+				3DAB21782340F55300EA8348 /* it */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		3DAB21722340F51700EA8348 /* Intents.intentdefinition */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DAB21712340F51700EA8348 /* Base */,
+				3DAB21742340F51E00EA8348 /* en */,
+				3DAB21772340F55300EA8348 /* it */,
+			);
+			name = Intents.intentdefinition;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3DAB21212340DED100EA8348 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3DAB21222340DED100EA8348 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3DAB21242340DED100EA8348 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PJ966WX7HG;
+				INFOPLIST_FILE = SalveminiSiri/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Codex.SalveminiSiri;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3DAB21252340DED100EA8348 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PJ966WX7HG;
+				INFOPLIST_FILE = SalveminiSiri/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Codex.SalveminiSiri;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3DAB21472340DFDE00EA8348 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PJ966WX7HG;
+				INFOPLIST_FILE = IntentUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Codex.SalveminiSiri.IntentUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3DAB21482340DFDE00EA8348 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PJ966WX7HG;
+				INFOPLIST_FILE = IntentUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Codex.SalveminiSiri.IntentUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3DAB214A2340DFDE00EA8348 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PJ966WX7HG;
+				INFOPLIST_FILE = Intent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Codex.SalveminiSiri.Intent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3DAB214B2340DFDE00EA8348 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PJ966WX7HG;
+				INFOPLIST_FILE = Intent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Codex.SalveminiSiri.Intent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DAB21052340DECE00EA8348 /* Build configuration list for PBXProject "SalveminiSiri" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DAB21212340DED100EA8348 /* Debug */,
+				3DAB21222340DED100EA8348 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DAB21232340DED100EA8348 /* Build configuration list for PBXNativeTarget "SalveminiSiri" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DAB21242340DED100EA8348 /* Debug */,
+				3DAB21252340DED100EA8348 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DAB21462340DFDE00EA8348 /* Build configuration list for PBXNativeTarget "IntentUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DAB21472340DFDE00EA8348 /* Debug */,
+				3DAB21482340DFDE00EA8348 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DAB21492340DFDE00EA8348 /* Build configuration list for PBXNativeTarget "Intent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DAB214A2340DFDE00EA8348 /* Debug */,
+				3DAB214B2340DFDE00EA8348 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3DAB21022340DECE00EA8348 /* Project object */;
+}

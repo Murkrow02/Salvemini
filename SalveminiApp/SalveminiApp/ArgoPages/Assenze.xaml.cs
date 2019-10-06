@@ -39,6 +39,7 @@ namespace SalveminiApp.ArgoPages
             {
                 Assenzes = Barrel.Current.Get<List<RestApi.Models.Assenza>>("Assenze");
                 assenzeList.ItemsSource = Assenzes;
+                emptyLayout.IsVisible = Assenzes.Count <= 0;
                 loadInfo();
             }
 
@@ -66,7 +67,7 @@ namespace SalveminiApp.ArgoPages
 
             //Start loading
             assenzeList.IsRefreshing = true;
-           
+
             //Api Call
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
@@ -82,6 +83,8 @@ namespace SalveminiApp.ArgoPages
                 }
                 //Fill List
                 assenzeList.ItemsSource = Assenzes;
+                emptyLayout.IsVisible = Assenzes.Count <= 0;
+
             }
 
             //Fill Infos

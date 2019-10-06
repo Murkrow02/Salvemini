@@ -1,114 +1,52 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:local="clr-namespace:SalveminiApp"
-             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
-             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
-             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SalveminiApp.ArgoPages.VotiScrutinio">
-    <yummy:PancakeView BackgroundGradientAngle="135"
-                       BackgroundGradientStartColor="#0846EF"
-                       BackgroundGradientEndColor="#54B5D9"
-                       CornerRadius="0"
-                       VerticalOptions="FillAndExpand"
-                       HorizontalOptions="FillAndExpand">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.ArgoPages.VotiScrutinio">
+    <yummy:PancakeView BackgroundGradientAngle="135" BackgroundGradientStartColor="#0846EF" BackgroundGradientEndColor="#54B5D9" CornerRadius="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <AbsoluteLayout>
-            <ffimageloadingsvg:SvgCachedImage Source="VotiScruShadow.svg"
-                                              x:Name="shadowImage"
-                                              BackgroundColor="Transparent"
-                                              AbsoluteLayout.LayoutFlags="PositionProportional"
-                                              AbsoluteLayout.LayoutBounds="1.5, -0.1" />
-            <StackLayout Spacing="20"
-                         Padding="20, 40"
-                         VerticalOptions="FillAndExpand"
-                         HorizontalOptions="FillAndExpand"
-                         AbsoluteLayout.LayoutFlags="All"
-                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
-                <Label HorizontalOptions="Start"
-                       TextColor="White"
-                       Text="Voti Scrutinio"
-                       FontSize="40"
-                       FontAttributes="Bold" />
-
-
-                
-                       
-               
+            <ffimageloadingsvg:SvgCachedImage Opacity="0.7" Source="scrutinioShadow.svg" x:Name="shadowImage" BackgroundColor="Transparent" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1.5, -0.1" />
+            <StackLayout Spacing="20" Padding="20, 40" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+                <Label HorizontalOptions="Start" TextColor="White" Text="Voti Scrutinio" FontSize="40" FontAttributes="Bold" />
                 <!--Lista-->
-                <Frame IsClippedToBounds="true"
-                       Padding="0"
-                       VerticalOptions="Fill"
-                       HasShadow="false"
-                       CornerRadius="15">
+                <Frame IsClippedToBounds="true" Padding="0" VerticalOptions="Fill" HasShadow="false" CornerRadius="15">
                     <StackLayout Spacing="0">
                         <!--Header-->
-                <Frame HasShadow="False" Padding="0,0,0,3" BackgroundColor="#5DB2D9" CornerRadius="0" IsClippedToBounds="True">
-                     <StackLayout Orientation="Horizontal">
-                         <Button x:Name="quad1" TextColor="#5DB2D9" BackgroundColor="white" Text="1° Quadrimestre" HorizontalOptions="FillAndExpand" CornerRadius="0" Clicked="firstQuad_Clicked"/>
-                                                  <Button x:Name="quad2" HorizontalOptions="FillAndExpand" Text="2° Quadrimestre" TextColor="white" CornerRadius="0" Clicked="secondQuad_Clicked"/>
-                        </StackLayout>
-                </Frame>
-                     
-                    <ListView SelectionMode="None"
-                              HasUnevenRows="true"
-                              HorizontalScrollBarVisibility="Never"
-                              SeparatorVisibility="None"
-                              x:Name="votiList"
-                              VerticalOptions="Start">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <StackLayout Padding="{Binding CellPadding}"
-                                                 Spacing="30">
-                                            <StackLayout Orientation="Horizontal">
-                                                                                        <StackLayout HorizontalOptions="FillAndExpand">
-
-                                                 <Label HorizontalOptions="Start"
-                                                   FontAttributes="Bold"
-                                                   Text="{Binding desMateria}"
-                                                   FontSize="Large" />
-                                         
-                                                <Label Text="{Binding assenze}"
-                                                       TextColor="{x:Static local:Styles.TextGray}"
-                                                       FontSize="Small"
-                                                       HorizontalOptions="Start" />
+                        <Frame HasShadow="False" Padding="0,0,0,3" BackgroundColor="#5DB2D9" CornerRadius="0" IsClippedToBounds="True">
+                            <StackLayout Orientation="Horizontal">
+                                <Button x:Name="quad1" TextColor="White" BackgroundColor="#5DB2D9" Text="1° Quadrimestre" HorizontalOptions="FillAndExpand" CornerRadius="0" Clicked="firstQuad_Clicked" />
+                                <Button x:Name="quad2" HorizontalOptions="FillAndExpand" Text="2° Quadrimestre" TextColor="#5DB2D9" BackgroundColor="White" CornerRadius="0" Clicked="secondQuad_Clicked" />
+                            </StackLayout>
+                        </Frame>
+                        <Grid>
+                            <ListView SelectionMode="None" HasUnevenRows="true" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None" x:Name="votiList" VerticalOptions="Start">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout Padding="{Binding CellPadding}" Spacing="30">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <StackLayout HorizontalOptions="FillAndExpand">
+                                                        <Label HorizontalOptions="Start" FontAttributes="Bold" Text="{Binding desMateria}" FontSize="Large" />
+                                                        <Label Text="{Binding FullAssenze}" TextColor="{x:Static local:Styles.TextGray}" FontSize="Small" HorizontalOptions="Start" />
+                                                    </StackLayout>
+                                                    <Label Text="{Binding Voto}" TextColor="{x:Static local:Styles.TextColor}" FontSize="25" HorizontalOptions="End" HorizontalTextAlignment="Center" VerticalOptions="Center" FontAttributes="Bold" VerticalTextAlignment="Center" />
+                                                </StackLayout>
+                                                <local:DashedBorderFrame IsVisible="{Binding SeparatorVisibility}" Padding="0" Margin="-10" HeightRequest="0.1" />
                                             </StackLayout>
-                                           
-                                             <Label Text="{Binding Voto}"
-                                                    TextColor="{x:Static local:Styles.TextColor}" FontSize="Large"
-                                                    HorizontalOptions="End" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"/>
-                                           
-                                        </StackLayout>
-                                        <local:DashedBorderFrame IsVisible="{Binding SeparatorVisibility}"
-                                                                 Padding="0"
-                                                                 Margin="-10"
-                                                                 HeightRequest="0.1" />
-                                    </StackLayout>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                        </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                            <StackLayout IsVisible="false" x:Name="emptyLayout" VerticalOptions="Center">
+                                <iconize:IconLabel Text="fas-graduation-cap" VerticalOptions="Center" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" FontSize="40" />
+                                <Label HorizontalTextAlignment="Center" x:Name="placeholderLabel" VerticalOptions="Center" Margin="20, 0" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" />
+                            </StackLayout>
+                        </Grid>
+
+                    </StackLayout>
                 </Frame>
-
-
                 <StackLayout>
-                    <Label x:Name="fullMediaLabel"
-                           TextColor="White"
-                           FontAttributes="None"
-                           FontSize="Large" />
+                    <Label x:Name="fullMediaLabel" TextColor="White" FontAttributes="None" FontSize="Large" />
                 </StackLayout>
-                <Frame VerticalOptions="EndAndExpand"
-                       HasShadow="false"
-                       HorizontalOptions="Center"
-                       x:Name="buttonFrame"
-                       Padding="0">
-                    <iconize:IconButton Clicked="Close_Clicked"
-                                        Text="fas-times"
-                                        FontSize="30"
-                                        TextColor="#0846EF" />
+                <Frame VerticalOptions="EndAndExpand" HasShadow="false" HorizontalOptions="Center" x:Name="buttonFrame" Padding="0">
+                    <iconize:IconButton Clicked="Close_Clicked" Text="fas-times" FontSize="30" TextColor="#0846EF" />
                 </Frame>
             </StackLayout>
         </AbsoluteLayout>

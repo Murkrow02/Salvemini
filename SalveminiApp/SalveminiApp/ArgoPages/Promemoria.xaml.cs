@@ -34,6 +34,7 @@ namespace SalveminiApp.ArgoPages
             {
                 Promemorias = Barrel.Current.Get<List<RestApi.Models.Promemoria>>("Promemoria");
                 promemoriaList.ItemsSource = Promemorias;
+                emptyLayout.IsVisible = Promemorias.Count <= 0;
             }
 
         }
@@ -61,6 +62,7 @@ namespace SalveminiApp.ArgoPages
 
                 //Fill List
                 promemoriaList.ItemsSource = Promemorias;
+                emptyLayout.IsVisible = Promemorias.Count <= 0;
                 promemoriaList.IsRefreshing = false;
 
             }

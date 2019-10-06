@@ -10,6 +10,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using UIKit;
 #endif
 using Xamarin.Forms;
+using MonkeyCache.SQLite;
 
 namespace SalveminiApp.ArgoPages
 {
@@ -32,6 +33,15 @@ namespace SalveminiApp.ArgoPages
             buttonFrame.WidthRequest = App.ScreenWidth / 6;
             buttonFrame.HeightRequest = App.ScreenWidth / 6;
             buttonFrame.CornerRadius = (float)(App.ScreenWidth / 6) / 2;
+
+            if (Barrel.Current.Exists("Voti"))
+            {
+                GroupedVoti = Barrel.Current.Get<ObservableCollection<RestApi.Models.GroupedVoti>>("Voti");
+                votiList.ItemsSource = GroupedVoti;
+                emptyLayout.IsVisible = GroupedVoti.Count <= 0;
+                fullMediaLabel.IsVisible = GroupedVoti.Count > 0;
+            }
+
         }
 
         protected async override void OnAppearing()
@@ -47,6 +57,8 @@ namespace SalveminiApp.ArgoPages
                 GroupedVoti = response.Data as ObservableCollection<RestApi.Models.GroupedVoti>;
 
                 votiList.ItemsSource = GroupedVoti;
+                emptyLayout.IsVisible = GroupedVoti.Count <= 0;
+                fullMediaLabel.IsVisible = GroupedVoti.Count > 0;
 
                 //Calculate Total media
                 List<double> medie = new List<double>();
