@@ -95,6 +95,7 @@ namespace SalveminiApp
                     avvisiLabel.Text = stringToDisplay;
                 }
 
+                //Update orari
                 if (Index.OrariTreniVersion > Preferences.Get("orariTreniVersion", 0))
                 {
                     bool successTreni = await App.Treni.GetTrainJson();
@@ -154,11 +155,9 @@ namespace SalveminiApp
             });
 
         }
-        TrainKit.Data.VoiceShortcutDataManager VoiceShortcutDataManager;
         void PushToSettings(object sender, System.EventArgs e)
         {
-            var shortcut = VoiceShortcutDataManager.VoiceShortcutForOrder();
-          //  Navigation.PushPopupAsync(new SecondaryViews.SettingsPanel());
+            Navigation.PushPopupAsync(new SecondaryViews.SettingsPanel());
         }
 
         void busTrains_Tapped(object sender, System.EventArgs e)

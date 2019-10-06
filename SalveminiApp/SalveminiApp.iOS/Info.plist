@@ -28,7 +28,7 @@
 	<key>MinimumOSVersion</key>
 	<string>10.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>SalveminiApp</string>
+	<string>Salvemini</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.codex.salveminiapp</string>
 	<key>CFBundleVersion</key>

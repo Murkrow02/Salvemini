@@ -8,7 +8,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SalveminiApp.FirstAccess.Login">
     <!--Popup-->
-    <!--<sfPopup:SfPopupLayout x:Name="popupLayout">
+    <sfPopup:SfPopupLayout x:Name="popupLayout">
         <sfPopup:SfPopupLayout.PopupView>
             <sfPopup:PopupView ShowFooter="false"
                                ShowHeader="false"
@@ -19,7 +19,7 @@
                 </sfPopup:PopupView.PopupStyle>
             </sfPopup:PopupView>
         </sfPopup:SfPopupLayout.PopupView>
-    </sfPopup:SfPopupLayout>-->
+    </sfPopup:SfPopupLayout>
 
     <ScrollView>
         <StackLayout Spacing="0">

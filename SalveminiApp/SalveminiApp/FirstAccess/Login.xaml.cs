@@ -105,34 +105,36 @@ namespace SalveminiApp.FirstAccess
                 //Success
                 if (UtentiLogin.Count > 1)
                 {
-                    //popupLayout.PopupView.ContentTemplate = new DataTemplate(() =>
-                    //
-                    //    var mainLayout = new StackLayout { Padding = new Thickness(20, 10) };
-                    //    var firstUserLayout = new StackLayout { Orientation = StackOrientation.Horizontal };
-                    //    var firstUserName = new Label { Text = UtentiLogin[0].Nome, VerticalOptions = LayoutOptions.Center, VerticalTextAlignment = TextAlignment.Center, FontSize = 20, HorizontalOptions = LayoutOptions.Start };
-                    //    var firstUserButton = new IconButton { Text = "fas-arrow-right", TextColor = Styles.PrimaryColor, FontSize = 20, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.EndAndExpand };
-                    //    firstUserButton.Clicked += FirstUserButton_Clicked;
-                    //    firstUserLayout.Children.Add(firstUserName);
-                    //    firstUserLayout.Children.Add(firstUserButton);
-                    //    var secondUserLayout = new StackLayout { Orientation = StackOrientation.Horizontal };
-                    //    var secondUserName = new Label { Text = UtentiLogin[1].Nome, VerticalOptions = LayoutOptions.Center, VerticalTextAlignment = TextAlignment.Center, FontSize = 20, HorizontalOptions = LayoutOptions.Start };
-                    //    var secondUserButton = new IconButton { Text = "fas-arrow-right", TextColor = Styles.PrimaryColor, FontSize = 20, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.EndAndExpand };
-                    //    secondUserButton.Clicked += SecondUserButton_Clicked;
-                    //    secondUserLayout.Children.Add(firstUserName);
-                    //    secondUserLayout.Children.Add(firstUserButton);
-                    //    var titleLabel = new Label { Text = "Seleziona un account", TextColor = Styles.TextGray, HorizontalOptions = LayoutOptions.Center };
-                    //    mainLayout.Children.Add(titleLabel);
-                    //    mainLayout.Children.Add(firstUserLayout);
-                    //    mainLayout.Children.Add(secondUserLayout);
-                    //    return mainLayout;
-                    //});
-                    //popupLayout.ShowRelativeToView(confirmButton, RelativePosition.AlignTopLeft, App.ScreenWidth / 2, -15);
+                    popupLayout.PopupView.ContentTemplate = new DataTemplate(() =>
+
+                    {
+                        var mainLayout = new Xamarin.Forms.StackLayout { Padding = new Thickness(20, 10) };
+                        var firstUserLayout = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal };
+                        var firstUserName = new Xamarin.Forms.Label { Text = UtentiLogin[0].Nome, VerticalOptions = LayoutOptions.Center, VerticalTextAlignment = TextAlignment.Center, FontSize = 20, HorizontalOptions = LayoutOptions.Start };
+                        var firstUserButton = new IconButton { Text = "fas-arrow-right", TextColor = Styles.PrimaryColor, FontSize = 20, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.EndAndExpand };
+                        firstUserButton.Clicked += FirstUserButton_Clicked;
+                        firstUserLayout.Children.Add(firstUserName);
+                        firstUserLayout.Children.Add(firstUserButton);
+                        var secondUserLayout = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal };
+                        var secondUserName = new Xamarin.Forms.Label { Text = UtentiLogin[1].Nome, VerticalOptions = LayoutOptions.Center, VerticalTextAlignment = TextAlignment.Center, FontSize = 20, HorizontalOptions = LayoutOptions.Start };
+                        var secondUserButton = new IconButton { Text = "fas-arrow-right", TextColor = Styles.PrimaryColor, FontSize = 20, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.EndAndExpand };
+                        secondUserButton.Clicked += SecondUserButton_Clicked;
+                        secondUserLayout.Children.Add(firstUserName);
+                        secondUserLayout.Children.Add(firstUserButton);
+                        var titleLabel = new Xamarin.Forms.Label { Text = "Seleziona un account", TextColor = Styles.TextGray, HorizontalOptions = LayoutOptions.Center };
+                        mainLayout.Children.Add(titleLabel);
+                        mainLayout.Children.Add(firstUserLayout);
+                        mainLayout.Children.Add(secondUserLayout);
+                        return mainLayout;
+                    });
+                    popupLayout.ShowRelativeToView(confirmButton, RelativePosition.AlignTopLeft, App.ScreenWidth / 2, -15);
                 }
                 else
                 {
                     success1();
                 }
             }
+
 
             //End Loading
             loading.IsRunning = false;
@@ -149,10 +151,10 @@ namespace SalveminiApp.FirstAccess
 
             if (Preferences.Get("isFirstTime", true))
             {
-                Navigation.PushModalAsync(new TabPage());
+                Navigation.PushModalAsync(new OrariTrasporti());
                 //Remove Pages behind MainPage
-                Navigation.RemovePage(Navigation.NavigationStack[0]);
-                Preferences.Set("isFirstTime", false);
+                //Navigation.RemovePage(Navigation.NavigationStack[0]);
+                //Preferences.Set("isFirstTime", false);
             }
             else
             {

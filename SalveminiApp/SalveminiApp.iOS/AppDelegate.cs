@@ -7,6 +7,7 @@ using FFImageLoading.Svg.Forms;
 using Foundation;
 using Intents;
 using Lottie.Forms.iOS.Renderers;
+using Plugin.Segmented.Control.iOS;
 using UIKit;
 using Xamarin.Forms;
 
@@ -71,6 +72,7 @@ namespace SalveminiApp.iOS
             Syncfusion.XForms.iOS.TextInputLayout.SfTextInputLayoutRenderer.Init();
             Syncfusion.XForms.iOS.PopupLayout.SfPopupLayoutRenderer.Init();
             Syncfusion.SfChart.XForms.iOS.Renderers.SfChartRenderer.Init();
+            SegmentedControlRenderer.Initialize();
             AnimationViewRenderer.Init();
 
             LoadApplication(new App());
