@@ -11,5 +11,10 @@ namespace SalveminiApp.AreaVip
         {
             InitializeComponent();
         }
+
+        void Crea_Clicked(object sender, System.EventArgs e)
+        {
+        }
+
     }
 }

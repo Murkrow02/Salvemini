@@ -200,6 +200,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AreaVip\CreaAvviso.xaml.cs">
       <DependentUpon>CreaAvviso.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ImagesToUpload.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

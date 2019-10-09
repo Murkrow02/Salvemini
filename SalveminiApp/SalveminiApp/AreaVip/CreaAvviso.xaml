@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage Title="Crea avviso" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.AreaVip.CreaAvviso">
+<ContentPage Title="Crea avviso" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.AreaVip.CreaAvviso">
     <ScrollView>
         <StackLayout Padding="25,20,25,0">
                <!--Notifica-->
@@ -15,6 +15,10 @@
             <inputLayout:SfTextInputLayout  x:Name="descEntry" IsHintAlwaysFloated="True" FocusedColor="{x:Static local:Styles.VipPrimary}" Hint="Descrizione" ContainerType="Outlined" OutlineCornerRadius="12">
                 <Editor HeightRequest="200" x:Name="desc" MaxLength="3000" />
             </inputLayout:SfTextInputLayout>
+            <!--Allegati-->
+                            <Label HorizontalOptions="FillAndExpand" Text="Allegati" FontSize="Title" TextColor="{x:Static local:Styles.TextColor}"/>
+            <Button Text="Aggiungi" TextColor="{x:Static local:Styles.Apple}" BackgroundColor="Transparent" HorizontalOptions="Start"/>
+            <Button Text="Crea" Clicked="Crea_Clicked" BackgroundColor="{x:Static local:Styles.VipPrimary}" TextColor="White" CornerRadius="10" FontSize="Large"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>
