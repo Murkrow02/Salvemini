@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace SalveminiApp.RestApi.Models
 {
     public class Avvisi
@@ -10,5 +12,24 @@ namespace SalveminiApp.RestApi.Models
         public int idCreatore { get; set; }
         public DateTime Creazione { get; set; }
         public bool SendNotification { get; set; }
+
+        public List<string> FullImmagini
+        {
+            get
+            {
+                var lista = new List<string>();
+
+                if (!string.IsNullOrEmpty(Immagini))
+                {
+                    foreach (string image in Immagini.Split(","))
+                    {
+
+                        lista.Add(Costants.Uri("images/avvisi/").ToString() + image);
+                    }
+                }
+                
+                return lista;
+            }
+        }
     }
 }

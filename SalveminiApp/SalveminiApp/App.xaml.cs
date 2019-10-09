@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using Com.OneSignal;
+using DLToolkit.Forms.Controls;
 using MonkeyCache.SQLite;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -21,6 +22,7 @@ namespace SalveminiApp
         public static RestApi.ItemManagerIndex Index { get; private set; }
         public static RestApi.ItemManagerArgo Argo { get; private set; }
         public static RestApi.ItemManagerTreni Treni { get; private set; }
+        public static RestApi.AvvisiManager Avvisi { get; private set; }
 
         public App()
         {
@@ -29,6 +31,8 @@ namespace SalveminiApp
 
             InitializeComponent();
 
+            //Initialize FlowListView
+            FlowListView.Init();
 
             //Cache Folder
             Barrel.ApplicationId = "com.codex.salveminiapp";
@@ -43,7 +47,7 @@ namespace SalveminiApp
                 MainPage = new TabPage();
             }
 
-            MainPage = new NavigationPage(new AreaVip.VipMenu());
+           
 
             //Register OneSignal License
             OneSignal.Current.StartInit("a85553ca-c1fe-4d93-a02f-d30bf30e2a2a").EndInit();
@@ -62,6 +66,7 @@ namespace SalveminiApp
             Index = new RestApi.ItemManagerIndex(new RestApi.RestServiceIndex());
             Argo = new RestApi.ItemManagerArgo(new RestApi.RestServiceArgo());
             Treni = new RestApi.ItemManagerTreni(new RestApi.RestServiceTreni());
+            Avvisi = new RestApi.AvvisiManager(new RestApi.RestServiceAvvisi());
         }
 
         protected override void OnStart()

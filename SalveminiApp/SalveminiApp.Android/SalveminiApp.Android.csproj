@@ -90,6 +90,24 @@
     <PackageReference Include="PluginsPopup">
       <Version>1.1.1</Version>
     </PackageReference>
+    <PackageReference Include="DLToolkit.Forms.Controls.FlowListView">
+      <Version>2.0.11</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <Version>28.0.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Compat">
+      <Version>28.0.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Core.UI">
+      <Version>28.0.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v17.Leanback">
+      <Version>28.0.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfCarousel">
+      <Version>17.2.0.49</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
