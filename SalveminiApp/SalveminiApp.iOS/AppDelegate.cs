@@ -8,6 +8,7 @@ using Foundation;
 using Intents;
 using Lottie.Forms.iOS.Renderers;
 using Plugin.Segmented.Control.iOS;
+using Syncfusion.SfCarousel.XForms.iOS;
 using UIKit;
 using Xamarin.Forms;
 
@@ -74,7 +75,7 @@ namespace SalveminiApp.iOS
             Syncfusion.SfChart.XForms.iOS.Renderers.SfChartRenderer.Init();
             SegmentedControlRenderer.Initialize();
             AnimationViewRenderer.Init();
-
+            new SfCarouselRenderer();
             LoadApplication(new App());
 
            
