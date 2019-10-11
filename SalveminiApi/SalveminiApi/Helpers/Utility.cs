@@ -19,7 +19,30 @@ namespace SalveminiApi.Helpers
             return italianDate;
         }
 
-       
+       public static void addToAnalytics(string valore)
+        {
+            DatabaseString db2 = new DatabaseString();
+
+            try
+            {
+                var data = Helpers.Utility.italianTime();
+                var esiste = db2.Analytics.Where(x => x.Giorno.Year == data.Year && x.Giorno.Month == data.Month && x.Giorno.Day == data.Day && x.Tipo == valore).ToList();
+                if (esiste.Count < 1)
+                {
+                    var accesso = new Analytics { Giorno = data, Tipo = valore, Valore = 1 };
+                    db2.Analytics.Add(accesso);
+                }
+                else
+                {
+                    esiste[0].Valore = esiste[0].Valore + 1;
+                }
+                db2.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                //Fa niente
+            }
+        }
 
         public bool authorized(HttpRequestMessage re)
         {

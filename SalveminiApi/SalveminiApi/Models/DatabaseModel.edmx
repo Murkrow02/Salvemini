@@ -16,6 +16,15 @@
           <Property Name="Url" Type="nvarchar" MaxLength="2000" />
           <Property Name="Tipo" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="Analytics">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tipo" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Giorno" Type="date" Nullable="false" />
+          <Property Name="Valore" Type="int" Nullable="false" />
+        </EntityType>
         <!--Errori trovati durante la generazione:
 avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB_A41900_salvemini.dbo.AppInfo'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
         <EntityType Name="AppInfo">
@@ -43,7 +52,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nome" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Seriale" Type="nvarchar" MaxLength="200" />
-          <Property Name="Prezzo" Type="smallmoney" />
+          <Property Name="Prezzo" Type="decimal" Precision="10" Scale="2" />
           <Property Name="idUtente" Type="int" Nullable="false" />
           <Property Name="Creazione" Type="datetime" Nullable="false" />
           <Property Name="Accettato" Type="bit" Nullable="false" />
@@ -59,6 +68,16 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <Property Name="Password" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Ip" Type="nvarchar" MaxLength="50" />
           <Property Name="Creazione" Type="datetime" Nullable="false" />
+          <Property Name="IG" Type="bit" />
+        </EntityType>
+        <EntityType Name="SalveminiCard">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Descrizione" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Immagine" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="Utenti">
           <Key>
@@ -104,9 +123,11 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
         </Association>
         <EntityContainer Name="EntitiesStoreContainer">
           <EntitySet Name="Ads" EntityType="Self.Ads" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Analytics" EntityType="Self.Analytics" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Avvisi" EntityType="Self.Avvisi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BookLibri" EntityType="Self.BookLibri" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BookUtenti" EntityType="Self.BookUtenti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SalveminiCard" EntityType="Self.SalveminiCard" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Utenti" EntityType="Self.Utenti" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AppInfo" EntityType="Self.AppInfo" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -151,6 +172,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="BookLibri" Relationship="Self.FK_BookLibri_BookUtenti" FromRole="BookUtenti" ToRole="BookLibri" />
+          <Property Name="IG" Type="Boolean" />
         </EntityType>
         <EntityType Name="Utenti">
           <Key>
@@ -196,6 +218,8 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
             <End Role="Avvisi" EntitySet="Avvisi" />
           </AssociationSet>
           <EntitySet Name="Ads" EntityType="Entities.Ads" />
+          <EntitySet Name="Analytics" EntityType="Entities.Analytics" />
+          <EntitySet Name="SalveminiCard" EntityType="Entities.SalveminiCard" />
         </EntityContainer>
         <EntityType Name="AppInfo">
           <Key>
@@ -214,7 +238,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <Property Name="idCreatore" Type="Int32" Nullable="false" />
           <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="SendNotification" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Utenti" Relationship="Entities.FK_Avvisi_Utenti" FromRole="Avvisi" ToRole="Utenti" />
+          <NavigationProperty Name="Utenti" Relationship="Entities.FK_Avvisi_Utenti" FromRole="Avvisi" ToRole="Utenti" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
         <Association Name="FK_Avvisi_Utenti">
           <End Type="Entities.Utenti" Role="Utenti" Multiplicity="1">
@@ -241,6 +265,24 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <Property Name="Url" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
           <Property Name="Tipo" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="Analytics">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Giorno" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Valore" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SalveminiCard">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Descrizione" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Immagine" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -263,6 +305,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <EntitySetMapping Name="BookUtenti">
             <EntityTypeMapping TypeName="Entities.BookUtenti">
               <MappingFragment StoreEntitySet="BookUtenti">
+                <ScalarProperty Name="IG" ColumnName="IG" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Cognome" ColumnName="Cognome" />
@@ -313,6 +356,26 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
               <MappingFragment StoreEntitySet="Ads">
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
                 <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Immagine" ColumnName="Immagine" />
+                <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Analytics">
+            <EntityTypeMapping TypeName="Entities.Analytics">
+              <MappingFragment StoreEntitySet="Analytics">
+                <ScalarProperty Name="Valore" ColumnName="Valore" />
+                <ScalarProperty Name="Giorno" ColumnName="Giorno" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalveminiCard">
+            <EntityTypeMapping TypeName="Entities.SalveminiCard">
+              <MappingFragment StoreEntitySet="SalveminiCard">
                 <ScalarProperty Name="Immagine" ColumnName="Immagine" />
                 <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />

@@ -13,6 +13,8 @@
         <EntityTypeShape EntityType="Entities.Avvisi" Width="1.5" PointX="3" PointY="4.25" />
         <AssociationConnector Association="Entities.FK_Avvisi_Utenti" />
         <EntityTypeShape EntityType="Entities.Ads" Width="1.5" PointX="9.625" PointY="1" />
+        <EntityTypeShape EntityType="Entities.Analytics" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Entities.SalveminiCard" Width="1.5" PointX="5.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

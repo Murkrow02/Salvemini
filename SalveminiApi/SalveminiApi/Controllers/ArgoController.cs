@@ -228,7 +228,11 @@ namespace SalveminiApi.Controllers
                     listaVoti.Add(voto);
                     groupedMateria.Materia = voto.Materia;
                 }
-                groupedMateria.Voti = listaVoti;
+
+                foreach (var voto in listaVoti)
+                {
+                    groupedMateria.Add(voto);
+                }
 
                 //Calcola media
                 int count = 0;

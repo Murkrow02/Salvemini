@@ -57,6 +57,7 @@ namespace SalveminiApi.Controllers
                 return new HttpResponseMessage(HttpStatusCode.Unauthorized);
 
             //Aggiungi avviso al database
+            avviso.Creazione = Helpers.Utility.italianTime();
             db.Avvisi.Add(avviso);
             try
             {

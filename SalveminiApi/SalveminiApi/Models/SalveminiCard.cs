@@ -12,16 +12,11 @@ namespace SalveminiApi.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Avvisi
+    public partial class SalveminiCard
     {
         public int id { get; set; }
-        public string Titolo { get; set; }
+        public string Nome { get; set; }
         public string Descrizione { get; set; }
-        public string Immagini { get; set; }
-        public int idCreatore { get; set; }
-        public System.DateTime Creazione { get; set; }
-        public bool SendNotification { get; set; }
-    
-        public virtual Utenti Utenti { internal get; set; }
+        public string Immagine { get; set; }
     }
 }
