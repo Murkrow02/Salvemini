@@ -57,11 +57,11 @@ namespace SalveminiApi.Argo.Models
 
     }
 
-    public class GroupedVoti
+    public class GroupedVoti: ObservableCollection<Voti>
     {
         public string Materia { get; set; }
         public double Media { get; set; }
-        public List<Voti> Voti { get; set; }
+
     }
 
     public class VotiList

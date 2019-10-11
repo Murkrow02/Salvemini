@@ -27,6 +27,7 @@ namespace SalveminiApi.Models
         public string Password { get; set; }
         public string Ip { get; set; }
         public System.DateTime Creazione { get; set; }
+        public Nullable<bool> IG { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BookLibri> BookLibri { get; set; }

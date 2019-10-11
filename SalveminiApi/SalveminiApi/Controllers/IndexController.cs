@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -35,17 +36,16 @@ namespace SalveminiApi.Controllers
             var id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
             string token = Request.Headers.GetValues("x-auth-token").First();
 
+            //Aggiungi ad analytics
+            Helpers.Utility.addToAnalytics("Accessi");
 
-            //Prendi versione dell'app
-            try
-            {
-                returnModel.AppVersion = db.AppInfo.ToList()[0].Versione;
-            }
-            catch
-            {
-                //Prendi valore alto così non dice di aggiornare su app
-                returnModel.AppVersion = 1000;
-            }
+            //Versioni
+            returnModel.AppVersion = 1.0M;
+            returnModel.OrariTreniVersion = 1;
+            returnModel.OrariBusVersion = 1;
+            returnModel.OrariScuolaVersion = 1;
+            returnModel.OrariAliVersion = 1;
+
 
             //Prendi ultimo avviso
             try
@@ -144,6 +144,8 @@ namespace SalveminiApi.Controllers
 
             return returnModel;
         }
+
+     
 
         protected override void Dispose(bool disposing)
         {

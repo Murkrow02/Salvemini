@@ -269,10 +269,14 @@
     <Compile Include="BookMarket\SearchUser.aspx.designer.cs">
       <DependentUpon>SearchUser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AnalyticsController.cs" />
     <Compile Include="Controllers\ArgoController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\AvvisiController.cs" />
+    <Compile Include="Controllers\DownloadOrariController.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\SalveminiCardController.cs" />
     <Compile Include="Controllers\UtentiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -286,6 +290,9 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Models\Ads.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Analytics.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AppInfo.cs">
@@ -316,6 +323,9 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\IndexModel.cs" />
+    <Compile Include="Models\SalveminiCard.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Utenti.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -346,6 +356,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="icons\responsivenav.svg" />
+    <Content Include="Images\avvisi\1.png" />
+    <Content Include="Images\avvisi\2.png" />
+    <Content Include="Images\avvisi\3.png" />
+    <Content Include="Images\avvisi\4.png" />
     <Content Include="Images\logoBianco.png" />
     <Content Include="Models\DatabaseModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -357,6 +371,7 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
       <LastGenOutput>DatabaseModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Orari\OrariTreni.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -438,10 +453,16 @@
     <Content Include="Views\Avvisi\Details.cshtml" />
     <Content Include="Views\Avvisi\Edit.cshtml" />
     <Content Include="Views\Avvisi\Index.cshtml" />
+    <Content Include="Views\DownloadOrari\Create.cshtml" />
+    <Content Include="Views\DownloadOrari\Delete.cshtml" />
+    <Content Include="Views\DownloadOrari\Details.cshtml" />
+    <Content Include="Views\DownloadOrari\Edit.cshtml" />
+    <Content Include="Views\DownloadOrari\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Auth\" />
+    <Folder Include="Views\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

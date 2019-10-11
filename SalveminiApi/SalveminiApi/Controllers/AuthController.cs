@@ -31,7 +31,7 @@ namespace UlysseApi.Controllers
             client.DefaultRequestHeaders.Add("x-produttore-software", "ARGO Software s.r.l. - Ragusa");
             client.DefaultRequestHeaders.Add("x-pwd", authBlock.password);
             client.DefaultRequestHeaders.Add("x-user-id", authBlock.username);
-            client.DefaultRequestHeaders.Add("x-version", "2.0.12");
+            client.DefaultRequestHeaders.Add("x-version", "2.1.0");
             client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36");
             var response = await client.GetAsync("https://www.portaleargo.it/famiglia/api/rest/login");
 
