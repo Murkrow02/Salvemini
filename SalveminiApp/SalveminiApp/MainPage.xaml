@@ -3,6 +3,7 @@
     <!--ToolbarItems-->
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="settings" Clicked="PushToSettings" Priority="0" Order="Primary"/>
+                <ToolbarItem Text="Vip" Clicked="PushToVip" Priority="0" Order="Primary"/>
     </ContentPage.ToolbarItems>
 
     <AbsoluteLayout>

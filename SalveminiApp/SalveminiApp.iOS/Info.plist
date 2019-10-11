@@ -58,5 +58,13 @@
 	<string></string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>Salvemini ha bisogno di accedere alla fotocamera per aggiungere una foto</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Salvemini ha bisogno di accedere alla tua galleria per aggiungere una foto</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Salvemini ha bisogno di accedere al microfono per registrare un video</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Salvemini ha bisogno di accedere alla tua galleria per salvare la foto</string>
 </dict>
 </plist>

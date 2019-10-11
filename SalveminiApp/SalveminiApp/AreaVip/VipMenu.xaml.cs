@@ -20,10 +20,12 @@ namespace SalveminiApp.AreaVip
 
         void statistiche_Tapped(object sender, System.EventArgs e)
         {
+            Navigation.PushAsync(new Analytics());
         }
 
         void utenti_Tapped(object sender, System.EventArgs e)
         {
+            Navigation.PushAsync(new UtentiList());
         }
     }
 }

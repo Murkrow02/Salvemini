@@ -160,6 +160,11 @@ namespace SalveminiApp
             Navigation.PushPopupAsync(new SecondaryViews.SettingsPanel());
         }
 
+        void PushToVip(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new AreaVip.VipMenu());
+        }
+
         void busTrains_Tapped(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new SecondaryViews.BusAndTrains());

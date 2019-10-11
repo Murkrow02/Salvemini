@@ -104,6 +104,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)AreaVip\Analytics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)AreaVip\UtentiList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -208,6 +216,16 @@
       <DependentUpon>Avvisi.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceAvvisi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ImagesToUpload.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceImmagini.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Analytics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AreaVip\Analytics.xaml.cs">
+      <DependentUpon>Analytics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceAnalytics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AreaVip\UtentiList.xaml.cs">
+      <DependentUpon>UtentiList.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

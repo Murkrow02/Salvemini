@@ -26,6 +26,2009 @@ namespace SalveminiApp.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Acr.UserDialogs.Resource.Animation.abc_fade_in = global::SalveminiApp.Droid.Resource.Animation.abc_fade_in;
+			global::Acr.UserDialogs.Resource.Animation.abc_fade_out = global::SalveminiApp.Droid.Resource.Animation.abc_fade_out;
+			global::Acr.UserDialogs.Resource.Animation.abc_grow_fade_in_from_bottom = global::SalveminiApp.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::Acr.UserDialogs.Resource.Animation.abc_popup_enter = global::SalveminiApp.Droid.Resource.Animation.abc_popup_enter;
+			global::Acr.UserDialogs.Resource.Animation.abc_popup_exit = global::SalveminiApp.Droid.Resource.Animation.abc_popup_exit;
+			global::Acr.UserDialogs.Resource.Animation.abc_shrink_fade_out_from_bottom = global::SalveminiApp.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::Acr.UserDialogs.Resource.Animation.abc_slide_in_bottom = global::SalveminiApp.Droid.Resource.Animation.abc_slide_in_bottom;
+			global::Acr.UserDialogs.Resource.Animation.abc_slide_in_top = global::SalveminiApp.Droid.Resource.Animation.abc_slide_in_top;
+			global::Acr.UserDialogs.Resource.Animation.abc_slide_out_bottom = global::SalveminiApp.Droid.Resource.Animation.abc_slide_out_bottom;
+			global::Acr.UserDialogs.Resource.Animation.abc_slide_out_top = global::SalveminiApp.Droid.Resource.Animation.abc_slide_out_top;
+			global::Acr.UserDialogs.Resource.Animation.design_bottom_sheet_slide_in = global::SalveminiApp.Droid.Resource.Animation.design_bottom_sheet_slide_in;
+			global::Acr.UserDialogs.Resource.Animation.design_bottom_sheet_slide_out = global::SalveminiApp.Droid.Resource.Animation.design_bottom_sheet_slide_out;
+			global::Acr.UserDialogs.Resource.Animation.design_snackbar_in = global::SalveminiApp.Droid.Resource.Animation.design_snackbar_in;
+			global::Acr.UserDialogs.Resource.Animation.design_snackbar_out = global::SalveminiApp.Droid.Resource.Animation.design_snackbar_out;
+			global::Acr.UserDialogs.Resource.Animation.tooltip_enter = global::SalveminiApp.Droid.Resource.Animation.tooltip_enter;
+			global::Acr.UserDialogs.Resource.Animation.tooltip_exit = global::SalveminiApp.Droid.Resource.Animation.tooltip_exit;
+			global::Acr.UserDialogs.Resource.Animator.design_appbar_state_list_animator = global::SalveminiApp.Droid.Resource.Animator.design_appbar_state_list_animator;
+			global::Acr.UserDialogs.Resource.Attribute.actionBarDivider = global::SalveminiApp.Droid.Resource.Attribute.actionBarDivider;
+			global::Acr.UserDialogs.Resource.Attribute.actionBarItemBackground = global::SalveminiApp.Droid.Resource.Attribute.actionBarItemBackground;
+			global::Acr.UserDialogs.Resource.Attribute.actionBarPopupTheme = global::SalveminiApp.Droid.Resource.Attribute.actionBarPopupTheme;
+			global::Acr.UserDialogs.Resource.Attribute.actionBarSize = global::SalveminiApp.Droid.Resource.Attribute.actionBarSize;
+			global::Acr.UserDialogs.Resource.Attribute.actionBarSplitStyle = global::SalveminiApp.Droid.Resource.Attribute.actionBarSplitStyle;
+			global::Acr.UserDialogs.Resource.Attribute.actionBarStyle = global::SalveminiApp.Droid.Resource.Attribute.actionBarStyle;
+			global::Acr.UserDialogs.Resource.Attribute.actionBarTabBarStyle = global::SalveminiApp.Droid.Resource.Attribute.actionBarTabBarStyle;
+			global::Acr.UserDialogs.Resource.Attribute.actionBarTabStyle = global::SalveminiApp.Droid.Resource.Attribute.actionBarTabStyle;
+			global::Acr.UserDialogs.Resource.Attribute.actionBarTabTextStyle = global::SalveminiApp.Droid.Resource.Attribute.actionBarTabTextStyle;
+			global::Acr.UserDialogs.Resource.Attribute.actionBarTheme = global::SalveminiApp.Droid.Resource.Attribute.actionBarTheme;
+			global::Acr.UserDialogs.Resource.Attribute.actionBarWidgetTheme = global::SalveminiApp.Droid.Resource.Attribute.actionBarWidgetTheme;
+			global::Acr.UserDialogs.Resource.Attribute.actionButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.actionButtonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.actionDropDownStyle = global::SalveminiApp.Droid.Resource.Attribute.actionDropDownStyle;
+			global::Acr.UserDialogs.Resource.Attribute.actionLayout = global::SalveminiApp.Droid.Resource.Attribute.actionLayout;
+			global::Acr.UserDialogs.Resource.Attribute.actionMenuTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.actionMenuTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.actionMenuTextColor = global::SalveminiApp.Droid.Resource.Attribute.actionMenuTextColor;
+			global::Acr.UserDialogs.Resource.Attribute.actionModeBackground = global::SalveminiApp.Droid.Resource.Attribute.actionModeBackground;
+			global::Acr.UserDialogs.Resource.Attribute.actionModeCloseButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.actionModeCloseDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeCloseDrawable;
+			global::Acr.UserDialogs.Resource.Attribute.actionModeCopyDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeCopyDrawable;
+			global::Acr.UserDialogs.Resource.Attribute.actionModeCutDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeCutDrawable;
+			global::Acr.UserDialogs.Resource.Attribute.actionModeFindDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeFindDrawable;
+			global::Acr.UserDialogs.Resource.Attribute.actionModePasteDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModePasteDrawable;
+			global::Acr.UserDialogs.Resource.Attribute.actionModePopupWindowStyle = global::SalveminiApp.Droid.Resource.Attribute.actionModePopupWindowStyle;
+			global::Acr.UserDialogs.Resource.Attribute.actionModeSelectAllDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeSelectAllDrawable;
+			global::Acr.UserDialogs.Resource.Attribute.actionModeShareDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeShareDrawable;
+			global::Acr.UserDialogs.Resource.Attribute.actionModeSplitBackground = global::SalveminiApp.Droid.Resource.Attribute.actionModeSplitBackground;
+			global::Acr.UserDialogs.Resource.Attribute.actionModeStyle = global::SalveminiApp.Droid.Resource.Attribute.actionModeStyle;
+			global::Acr.UserDialogs.Resource.Attribute.actionModeWebSearchDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeWebSearchDrawable;
+			global::Acr.UserDialogs.Resource.Attribute.actionOverflowButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.actionOverflowButtonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.actionOverflowMenuStyle = global::SalveminiApp.Droid.Resource.Attribute.actionOverflowMenuStyle;
+			global::Acr.UserDialogs.Resource.Attribute.actionProviderClass = global::SalveminiApp.Droid.Resource.Attribute.actionProviderClass;
+			global::Acr.UserDialogs.Resource.Attribute.actionViewClass = global::SalveminiApp.Droid.Resource.Attribute.actionViewClass;
+			global::Acr.UserDialogs.Resource.Attribute.activityChooserViewStyle = global::SalveminiApp.Droid.Resource.Attribute.activityChooserViewStyle;
+			global::Acr.UserDialogs.Resource.Attribute.ahBarColor = global::SalveminiApp.Droid.Resource.Attribute.ahBarColor;
+			global::Acr.UserDialogs.Resource.Attribute.ahBarLength = global::SalveminiApp.Droid.Resource.Attribute.ahBarLength;
+			global::Acr.UserDialogs.Resource.Attribute.ahBarWidth = global::SalveminiApp.Droid.Resource.Attribute.ahBarWidth;
+			global::Acr.UserDialogs.Resource.Attribute.ahCircleColor = global::SalveminiApp.Droid.Resource.Attribute.ahCircleColor;
+			global::Acr.UserDialogs.Resource.Attribute.ahDelayMillis = global::SalveminiApp.Droid.Resource.Attribute.ahDelayMillis;
+			global::Acr.UserDialogs.Resource.Attribute.ahRadius = global::SalveminiApp.Droid.Resource.Attribute.ahRadius;
+			global::Acr.UserDialogs.Resource.Attribute.ahRimColor = global::SalveminiApp.Droid.Resource.Attribute.ahRimColor;
+			global::Acr.UserDialogs.Resource.Attribute.ahRimWidth = global::SalveminiApp.Droid.Resource.Attribute.ahRimWidth;
+			global::Acr.UserDialogs.Resource.Attribute.ahSpinSpeed = global::SalveminiApp.Droid.Resource.Attribute.ahSpinSpeed;
+			global::Acr.UserDialogs.Resource.Attribute.ahText = global::SalveminiApp.Droid.Resource.Attribute.ahText;
+			global::Acr.UserDialogs.Resource.Attribute.ahTextColor = global::SalveminiApp.Droid.Resource.Attribute.ahTextColor;
+			global::Acr.UserDialogs.Resource.Attribute.ahTextSize = global::SalveminiApp.Droid.Resource.Attribute.ahTextSize;
+			global::Acr.UserDialogs.Resource.Attribute.alertDialogButtonGroupStyle = global::SalveminiApp.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::Acr.UserDialogs.Resource.Attribute.alertDialogCenterButtons = global::SalveminiApp.Droid.Resource.Attribute.alertDialogCenterButtons;
+			global::Acr.UserDialogs.Resource.Attribute.alertDialogStyle = global::SalveminiApp.Droid.Resource.Attribute.alertDialogStyle;
+			global::Acr.UserDialogs.Resource.Attribute.alertDialogTheme = global::SalveminiApp.Droid.Resource.Attribute.alertDialogTheme;
+			global::Acr.UserDialogs.Resource.Attribute.allowStacking = global::SalveminiApp.Droid.Resource.Attribute.allowStacking;
+			global::Acr.UserDialogs.Resource.Attribute.alpha = global::SalveminiApp.Droid.Resource.Attribute.alpha;
+			global::Acr.UserDialogs.Resource.Attribute.alphabeticModifiers = global::SalveminiApp.Droid.Resource.Attribute.alphabeticModifiers;
+			global::Acr.UserDialogs.Resource.Attribute.arrowHeadLength = global::SalveminiApp.Droid.Resource.Attribute.arrowHeadLength;
+			global::Acr.UserDialogs.Resource.Attribute.arrowShaftLength = global::SalveminiApp.Droid.Resource.Attribute.arrowShaftLength;
+			global::Acr.UserDialogs.Resource.Attribute.autoCompleteTextViewStyle = global::SalveminiApp.Droid.Resource.Attribute.autoCompleteTextViewStyle;
+			global::Acr.UserDialogs.Resource.Attribute.autoSizeMaxTextSize = global::SalveminiApp.Droid.Resource.Attribute.autoSizeMaxTextSize;
+			global::Acr.UserDialogs.Resource.Attribute.autoSizeMinTextSize = global::SalveminiApp.Droid.Resource.Attribute.autoSizeMinTextSize;
+			global::Acr.UserDialogs.Resource.Attribute.autoSizePresetSizes = global::SalveminiApp.Droid.Resource.Attribute.autoSizePresetSizes;
+			global::Acr.UserDialogs.Resource.Attribute.autoSizeStepGranularity = global::SalveminiApp.Droid.Resource.Attribute.autoSizeStepGranularity;
+			global::Acr.UserDialogs.Resource.Attribute.autoSizeTextType = global::SalveminiApp.Droid.Resource.Attribute.autoSizeTextType;
+			global::Acr.UserDialogs.Resource.Attribute.background = global::SalveminiApp.Droid.Resource.Attribute.background;
+			global::Acr.UserDialogs.Resource.Attribute.backgroundSplit = global::SalveminiApp.Droid.Resource.Attribute.backgroundSplit;
+			global::Acr.UserDialogs.Resource.Attribute.backgroundStacked = global::SalveminiApp.Droid.Resource.Attribute.backgroundStacked;
+			global::Acr.UserDialogs.Resource.Attribute.backgroundTint = global::SalveminiApp.Droid.Resource.Attribute.backgroundTint;
+			global::Acr.UserDialogs.Resource.Attribute.backgroundTintMode = global::SalveminiApp.Droid.Resource.Attribute.backgroundTintMode;
+			global::Acr.UserDialogs.Resource.Attribute.barLength = global::SalveminiApp.Droid.Resource.Attribute.barLength;
+			global::Acr.UserDialogs.Resource.Attribute.behavior_autoHide = global::SalveminiApp.Droid.Resource.Attribute.behavior_autoHide;
+			global::Acr.UserDialogs.Resource.Attribute.behavior_hideable = global::SalveminiApp.Droid.Resource.Attribute.behavior_hideable;
+			global::Acr.UserDialogs.Resource.Attribute.behavior_overlapTop = global::SalveminiApp.Droid.Resource.Attribute.behavior_overlapTop;
+			global::Acr.UserDialogs.Resource.Attribute.behavior_peekHeight = global::SalveminiApp.Droid.Resource.Attribute.behavior_peekHeight;
+			global::Acr.UserDialogs.Resource.Attribute.behavior_skipCollapsed = global::SalveminiApp.Droid.Resource.Attribute.behavior_skipCollapsed;
+			global::Acr.UserDialogs.Resource.Attribute.borderlessButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.borderlessButtonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.borderWidth = global::SalveminiApp.Droid.Resource.Attribute.borderWidth;
+			global::Acr.UserDialogs.Resource.Attribute.bottomSheetDialogTheme = global::SalveminiApp.Droid.Resource.Attribute.bottomSheetDialogTheme;
+			global::Acr.UserDialogs.Resource.Attribute.bottomSheetStyle = global::SalveminiApp.Droid.Resource.Attribute.bottomSheetStyle;
+			global::Acr.UserDialogs.Resource.Attribute.buttonBarButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.buttonBarButtonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.buttonBarNegativeButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.buttonBarNeutralButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.buttonBarPositiveButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.buttonBarStyle = global::SalveminiApp.Droid.Resource.Attribute.buttonBarStyle;
+			global::Acr.UserDialogs.Resource.Attribute.buttonGravity = global::SalveminiApp.Droid.Resource.Attribute.buttonGravity;
+			global::Acr.UserDialogs.Resource.Attribute.buttonPanelSideLayout = global::SalveminiApp.Droid.Resource.Attribute.buttonPanelSideLayout;
+			global::Acr.UserDialogs.Resource.Attribute.buttonStyle = global::SalveminiApp.Droid.Resource.Attribute.buttonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.buttonStyleSmall = global::SalveminiApp.Droid.Resource.Attribute.buttonStyleSmall;
+			global::Acr.UserDialogs.Resource.Attribute.buttonTint = global::SalveminiApp.Droid.Resource.Attribute.buttonTint;
+			global::Acr.UserDialogs.Resource.Attribute.buttonTintMode = global::SalveminiApp.Droid.Resource.Attribute.buttonTintMode;
+			global::Acr.UserDialogs.Resource.Attribute.checkboxStyle = global::SalveminiApp.Droid.Resource.Attribute.checkboxStyle;
+			global::Acr.UserDialogs.Resource.Attribute.checkedTextViewStyle = global::SalveminiApp.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::Acr.UserDialogs.Resource.Attribute.closeIcon = global::SalveminiApp.Droid.Resource.Attribute.closeIcon;
+			global::Acr.UserDialogs.Resource.Attribute.closeItemLayout = global::SalveminiApp.Droid.Resource.Attribute.closeItemLayout;
+			global::Acr.UserDialogs.Resource.Attribute.collapseContentDescription = global::SalveminiApp.Droid.Resource.Attribute.collapseContentDescription;
+			global::Acr.UserDialogs.Resource.Attribute.collapsedTitleGravity = global::SalveminiApp.Droid.Resource.Attribute.collapsedTitleGravity;
+			global::Acr.UserDialogs.Resource.Attribute.collapsedTitleTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.collapsedTitleTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.collapseIcon = global::SalveminiApp.Droid.Resource.Attribute.collapseIcon;
+			global::Acr.UserDialogs.Resource.Attribute.color = global::SalveminiApp.Droid.Resource.Attribute.color;
+			global::Acr.UserDialogs.Resource.Attribute.colorAccent = global::SalveminiApp.Droid.Resource.Attribute.colorAccent;
+			global::Acr.UserDialogs.Resource.Attribute.colorBackgroundFloating = global::SalveminiApp.Droid.Resource.Attribute.colorBackgroundFloating;
+			global::Acr.UserDialogs.Resource.Attribute.colorButtonNormal = global::SalveminiApp.Droid.Resource.Attribute.colorButtonNormal;
+			global::Acr.UserDialogs.Resource.Attribute.colorControlActivated = global::SalveminiApp.Droid.Resource.Attribute.colorControlActivated;
+			global::Acr.UserDialogs.Resource.Attribute.colorControlHighlight = global::SalveminiApp.Droid.Resource.Attribute.colorControlHighlight;
+			global::Acr.UserDialogs.Resource.Attribute.colorControlNormal = global::SalveminiApp.Droid.Resource.Attribute.colorControlNormal;
+			global::Acr.UserDialogs.Resource.Attribute.colorError = global::SalveminiApp.Droid.Resource.Attribute.colorError;
+			global::Acr.UserDialogs.Resource.Attribute.colorPrimary = global::SalveminiApp.Droid.Resource.Attribute.colorPrimary;
+			global::Acr.UserDialogs.Resource.Attribute.colorPrimaryDark = global::SalveminiApp.Droid.Resource.Attribute.colorPrimaryDark;
+			global::Acr.UserDialogs.Resource.Attribute.colorSwitchThumbNormal = global::SalveminiApp.Droid.Resource.Attribute.colorSwitchThumbNormal;
+			global::Acr.UserDialogs.Resource.Attribute.commitIcon = global::SalveminiApp.Droid.Resource.Attribute.commitIcon;
+			global::Acr.UserDialogs.Resource.Attribute.contentDescription = global::SalveminiApp.Droid.Resource.Attribute.contentDescription;
+			global::Acr.UserDialogs.Resource.Attribute.contentInsetEnd = global::SalveminiApp.Droid.Resource.Attribute.contentInsetEnd;
+			global::Acr.UserDialogs.Resource.Attribute.contentInsetEndWithActions = global::SalveminiApp.Droid.Resource.Attribute.contentInsetEndWithActions;
+			global::Acr.UserDialogs.Resource.Attribute.contentInsetLeft = global::SalveminiApp.Droid.Resource.Attribute.contentInsetLeft;
+			global::Acr.UserDialogs.Resource.Attribute.contentInsetRight = global::SalveminiApp.Droid.Resource.Attribute.contentInsetRight;
+			global::Acr.UserDialogs.Resource.Attribute.contentInsetStart = global::SalveminiApp.Droid.Resource.Attribute.contentInsetStart;
+			global::Acr.UserDialogs.Resource.Attribute.contentInsetStartWithNavigation = global::SalveminiApp.Droid.Resource.Attribute.contentInsetStartWithNavigation;
+			global::Acr.UserDialogs.Resource.Attribute.contentScrim = global::SalveminiApp.Droid.Resource.Attribute.contentScrim;
+			global::Acr.UserDialogs.Resource.Attribute.controlBackground = global::SalveminiApp.Droid.Resource.Attribute.controlBackground;
+			global::Acr.UserDialogs.Resource.Attribute.counterEnabled = global::SalveminiApp.Droid.Resource.Attribute.counterEnabled;
+			global::Acr.UserDialogs.Resource.Attribute.counterMaxLength = global::SalveminiApp.Droid.Resource.Attribute.counterMaxLength;
+			global::Acr.UserDialogs.Resource.Attribute.counterOverflowTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.counterOverflowTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.counterTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.counterTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.customNavigationLayout = global::SalveminiApp.Droid.Resource.Attribute.customNavigationLayout;
+			global::Acr.UserDialogs.Resource.Attribute.defaultQueryHint = global::SalveminiApp.Droid.Resource.Attribute.defaultQueryHint;
+			global::Acr.UserDialogs.Resource.Attribute.dialogPreferredPadding = global::SalveminiApp.Droid.Resource.Attribute.dialogPreferredPadding;
+			global::Acr.UserDialogs.Resource.Attribute.dialogTheme = global::SalveminiApp.Droid.Resource.Attribute.dialogTheme;
+			global::Acr.UserDialogs.Resource.Attribute.displayOptions = global::SalveminiApp.Droid.Resource.Attribute.displayOptions;
+			global::Acr.UserDialogs.Resource.Attribute.divider = global::SalveminiApp.Droid.Resource.Attribute.divider;
+			global::Acr.UserDialogs.Resource.Attribute.dividerHorizontal = global::SalveminiApp.Droid.Resource.Attribute.dividerHorizontal;
+			global::Acr.UserDialogs.Resource.Attribute.dividerPadding = global::SalveminiApp.Droid.Resource.Attribute.dividerPadding;
+			global::Acr.UserDialogs.Resource.Attribute.dividerVertical = global::SalveminiApp.Droid.Resource.Attribute.dividerVertical;
+			global::Acr.UserDialogs.Resource.Attribute.drawableSize = global::SalveminiApp.Droid.Resource.Attribute.drawableSize;
+			global::Acr.UserDialogs.Resource.Attribute.drawerArrowStyle = global::SalveminiApp.Droid.Resource.Attribute.drawerArrowStyle;
+			global::Acr.UserDialogs.Resource.Attribute.dropdownListPreferredItemHeight = global::SalveminiApp.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::Acr.UserDialogs.Resource.Attribute.dropDownListViewStyle = global::SalveminiApp.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::Acr.UserDialogs.Resource.Attribute.editTextBackground = global::SalveminiApp.Droid.Resource.Attribute.editTextBackground;
+			global::Acr.UserDialogs.Resource.Attribute.editTextColor = global::SalveminiApp.Droid.Resource.Attribute.editTextColor;
+			global::Acr.UserDialogs.Resource.Attribute.editTextStyle = global::SalveminiApp.Droid.Resource.Attribute.editTextStyle;
+			global::Acr.UserDialogs.Resource.Attribute.elevation = global::SalveminiApp.Droid.Resource.Attribute.elevation;
+			global::Acr.UserDialogs.Resource.Attribute.errorEnabled = global::SalveminiApp.Droid.Resource.Attribute.errorEnabled;
+			global::Acr.UserDialogs.Resource.Attribute.errorTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.errorTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.expandActivityOverflowButtonDrawable = global::SalveminiApp.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::Acr.UserDialogs.Resource.Attribute.expanded = global::SalveminiApp.Droid.Resource.Attribute.expanded;
+			global::Acr.UserDialogs.Resource.Attribute.expandedTitleGravity = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleGravity;
+			global::Acr.UserDialogs.Resource.Attribute.expandedTitleMargin = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleMargin;
+			global::Acr.UserDialogs.Resource.Attribute.expandedTitleMarginBottom = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleMarginBottom;
+			global::Acr.UserDialogs.Resource.Attribute.expandedTitleMarginEnd = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleMarginEnd;
+			global::Acr.UserDialogs.Resource.Attribute.expandedTitleMarginStart = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleMarginStart;
+			global::Acr.UserDialogs.Resource.Attribute.expandedTitleMarginTop = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleMarginTop;
+			global::Acr.UserDialogs.Resource.Attribute.expandedTitleTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.fabSize = global::SalveminiApp.Droid.Resource.Attribute.fabSize;
+			global::Acr.UserDialogs.Resource.Attribute.fastScrollEnabled = global::SalveminiApp.Droid.Resource.Attribute.fastScrollEnabled;
+			global::Acr.UserDialogs.Resource.Attribute.fastScrollHorizontalThumbDrawable = global::SalveminiApp.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable;
+			global::Acr.UserDialogs.Resource.Attribute.fastScrollHorizontalTrackDrawable = global::SalveminiApp.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable;
+			global::Acr.UserDialogs.Resource.Attribute.fastScrollVerticalThumbDrawable = global::SalveminiApp.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable;
+			global::Acr.UserDialogs.Resource.Attribute.fastScrollVerticalTrackDrawable = global::SalveminiApp.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable;
+			global::Acr.UserDialogs.Resource.Attribute.font = global::SalveminiApp.Droid.Resource.Attribute.font;
+			global::Acr.UserDialogs.Resource.Attribute.fontFamily = global::SalveminiApp.Droid.Resource.Attribute.fontFamily;
+			global::Acr.UserDialogs.Resource.Attribute.fontProviderAuthority = global::SalveminiApp.Droid.Resource.Attribute.fontProviderAuthority;
+			global::Acr.UserDialogs.Resource.Attribute.fontProviderCerts = global::SalveminiApp.Droid.Resource.Attribute.fontProviderCerts;
+			global::Acr.UserDialogs.Resource.Attribute.fontProviderFetchStrategy = global::SalveminiApp.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::Acr.UserDialogs.Resource.Attribute.fontProviderFetchTimeout = global::SalveminiApp.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::Acr.UserDialogs.Resource.Attribute.fontProviderPackage = global::SalveminiApp.Droid.Resource.Attribute.fontProviderPackage;
+			global::Acr.UserDialogs.Resource.Attribute.fontProviderQuery = global::SalveminiApp.Droid.Resource.Attribute.fontProviderQuery;
+			global::Acr.UserDialogs.Resource.Attribute.fontStyle = global::SalveminiApp.Droid.Resource.Attribute.fontStyle;
+			global::Acr.UserDialogs.Resource.Attribute.fontWeight = global::SalveminiApp.Droid.Resource.Attribute.fontWeight;
+			global::Acr.UserDialogs.Resource.Attribute.foregroundInsidePadding = global::SalveminiApp.Droid.Resource.Attribute.foregroundInsidePadding;
+			global::Acr.UserDialogs.Resource.Attribute.gapBetweenBars = global::SalveminiApp.Droid.Resource.Attribute.gapBetweenBars;
+			global::Acr.UserDialogs.Resource.Attribute.goIcon = global::SalveminiApp.Droid.Resource.Attribute.goIcon;
+			global::Acr.UserDialogs.Resource.Attribute.headerLayout = global::SalveminiApp.Droid.Resource.Attribute.headerLayout;
+			global::Acr.UserDialogs.Resource.Attribute.height = global::SalveminiApp.Droid.Resource.Attribute.height;
+			global::Acr.UserDialogs.Resource.Attribute.hideOnContentScroll = global::SalveminiApp.Droid.Resource.Attribute.hideOnContentScroll;
+			global::Acr.UserDialogs.Resource.Attribute.hintAnimationEnabled = global::SalveminiApp.Droid.Resource.Attribute.hintAnimationEnabled;
+			global::Acr.UserDialogs.Resource.Attribute.hintEnabled = global::SalveminiApp.Droid.Resource.Attribute.hintEnabled;
+			global::Acr.UserDialogs.Resource.Attribute.hintTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.hintTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.homeAsUpIndicator = global::SalveminiApp.Droid.Resource.Attribute.homeAsUpIndicator;
+			global::Acr.UserDialogs.Resource.Attribute.homeLayout = global::SalveminiApp.Droid.Resource.Attribute.homeLayout;
+			global::Acr.UserDialogs.Resource.Attribute.icon = global::SalveminiApp.Droid.Resource.Attribute.icon;
+			global::Acr.UserDialogs.Resource.Attribute.iconifiedByDefault = global::SalveminiApp.Droid.Resource.Attribute.iconifiedByDefault;
+			global::Acr.UserDialogs.Resource.Attribute.iconTint = global::SalveminiApp.Droid.Resource.Attribute.iconTint;
+			global::Acr.UserDialogs.Resource.Attribute.iconTintMode = global::SalveminiApp.Droid.Resource.Attribute.iconTintMode;
+			global::Acr.UserDialogs.Resource.Attribute.imageButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.imageButtonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.indeterminateProgressStyle = global::SalveminiApp.Droid.Resource.Attribute.indeterminateProgressStyle;
+			global::Acr.UserDialogs.Resource.Attribute.initialActivityCount = global::SalveminiApp.Droid.Resource.Attribute.initialActivityCount;
+			global::Acr.UserDialogs.Resource.Attribute.insetForeground = global::SalveminiApp.Droid.Resource.Attribute.insetForeground;
+			global::Acr.UserDialogs.Resource.Attribute.isLightTheme = global::SalveminiApp.Droid.Resource.Attribute.isLightTheme;
+			global::Acr.UserDialogs.Resource.Attribute.itemBackground = global::SalveminiApp.Droid.Resource.Attribute.itemBackground;
+			global::Acr.UserDialogs.Resource.Attribute.itemIconTint = global::SalveminiApp.Droid.Resource.Attribute.itemIconTint;
+			global::Acr.UserDialogs.Resource.Attribute.itemPadding = global::SalveminiApp.Droid.Resource.Attribute.itemPadding;
+			global::Acr.UserDialogs.Resource.Attribute.itemTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.itemTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.itemTextColor = global::SalveminiApp.Droid.Resource.Attribute.itemTextColor;
+			global::Acr.UserDialogs.Resource.Attribute.keylines = global::SalveminiApp.Droid.Resource.Attribute.keylines;
+			global::Acr.UserDialogs.Resource.Attribute.layout = global::SalveminiApp.Droid.Resource.Attribute.layout;
+			global::Acr.UserDialogs.Resource.Attribute.layoutManager = global::SalveminiApp.Droid.Resource.Attribute.layoutManager;
+			global::Acr.UserDialogs.Resource.Attribute.layout_anchor = global::SalveminiApp.Droid.Resource.Attribute.layout_anchor;
+			global::Acr.UserDialogs.Resource.Attribute.layout_anchorGravity = global::SalveminiApp.Droid.Resource.Attribute.layout_anchorGravity;
+			global::Acr.UserDialogs.Resource.Attribute.layout_behavior = global::SalveminiApp.Droid.Resource.Attribute.layout_behavior;
+			global::Acr.UserDialogs.Resource.Attribute.layout_collapseMode = global::SalveminiApp.Droid.Resource.Attribute.layout_collapseMode;
+			global::Acr.UserDialogs.Resource.Attribute.layout_collapseParallaxMultiplier = global::SalveminiApp.Droid.Resource.Attribute.layout_collapseParallaxMultiplier;
+			global::Acr.UserDialogs.Resource.Attribute.layout_dodgeInsetEdges = global::SalveminiApp.Droid.Resource.Attribute.layout_dodgeInsetEdges;
+			global::Acr.UserDialogs.Resource.Attribute.layout_insetEdge = global::SalveminiApp.Droid.Resource.Attribute.layout_insetEdge;
+			global::Acr.UserDialogs.Resource.Attribute.layout_keyline = global::SalveminiApp.Droid.Resource.Attribute.layout_keyline;
+			global::Acr.UserDialogs.Resource.Attribute.layout_scrollFlags = global::SalveminiApp.Droid.Resource.Attribute.layout_scrollFlags;
+			global::Acr.UserDialogs.Resource.Attribute.layout_scrollInterpolator = global::SalveminiApp.Droid.Resource.Attribute.layout_scrollInterpolator;
+			global::Acr.UserDialogs.Resource.Attribute.listChoiceBackgroundIndicator = global::SalveminiApp.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::Acr.UserDialogs.Resource.Attribute.listDividerAlertDialog = global::SalveminiApp.Droid.Resource.Attribute.listDividerAlertDialog;
+			global::Acr.UserDialogs.Resource.Attribute.listItemLayout = global::SalveminiApp.Droid.Resource.Attribute.listItemLayout;
+			global::Acr.UserDialogs.Resource.Attribute.listLayout = global::SalveminiApp.Droid.Resource.Attribute.listLayout;
+			global::Acr.UserDialogs.Resource.Attribute.listMenuViewStyle = global::SalveminiApp.Droid.Resource.Attribute.listMenuViewStyle;
+			global::Acr.UserDialogs.Resource.Attribute.listPopupWindowStyle = global::SalveminiApp.Droid.Resource.Attribute.listPopupWindowStyle;
+			global::Acr.UserDialogs.Resource.Attribute.listPreferredItemHeight = global::SalveminiApp.Droid.Resource.Attribute.listPreferredItemHeight;
+			global::Acr.UserDialogs.Resource.Attribute.listPreferredItemHeightLarge = global::SalveminiApp.Droid.Resource.Attribute.listPreferredItemHeightLarge;
+			global::Acr.UserDialogs.Resource.Attribute.listPreferredItemHeightSmall = global::SalveminiApp.Droid.Resource.Attribute.listPreferredItemHeightSmall;
+			global::Acr.UserDialogs.Resource.Attribute.listPreferredItemPaddingLeft = global::SalveminiApp.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::Acr.UserDialogs.Resource.Attribute.listPreferredItemPaddingRight = global::SalveminiApp.Droid.Resource.Attribute.listPreferredItemPaddingRight;
+			global::Acr.UserDialogs.Resource.Attribute.logo = global::SalveminiApp.Droid.Resource.Attribute.logo;
+			global::Acr.UserDialogs.Resource.Attribute.logoDescription = global::SalveminiApp.Droid.Resource.Attribute.logoDescription;
+			global::Acr.UserDialogs.Resource.Attribute.maxActionInlineWidth = global::SalveminiApp.Droid.Resource.Attribute.maxActionInlineWidth;
+			global::Acr.UserDialogs.Resource.Attribute.maxButtonHeight = global::SalveminiApp.Droid.Resource.Attribute.maxButtonHeight;
+			global::Acr.UserDialogs.Resource.Attribute.measureWithLargestChild = global::SalveminiApp.Droid.Resource.Attribute.measureWithLargestChild;
+			global::Acr.UserDialogs.Resource.Attribute.menu = global::SalveminiApp.Droid.Resource.Attribute.menu;
+			global::Acr.UserDialogs.Resource.Attribute.multiChoiceItemLayout = global::SalveminiApp.Droid.Resource.Attribute.multiChoiceItemLayout;
+			global::Acr.UserDialogs.Resource.Attribute.navigationContentDescription = global::SalveminiApp.Droid.Resource.Attribute.navigationContentDescription;
+			global::Acr.UserDialogs.Resource.Attribute.navigationIcon = global::SalveminiApp.Droid.Resource.Attribute.navigationIcon;
+			global::Acr.UserDialogs.Resource.Attribute.navigationMode = global::SalveminiApp.Droid.Resource.Attribute.navigationMode;
+			global::Acr.UserDialogs.Resource.Attribute.numericModifiers = global::SalveminiApp.Droid.Resource.Attribute.numericModifiers;
+			global::Acr.UserDialogs.Resource.Attribute.overlapAnchor = global::SalveminiApp.Droid.Resource.Attribute.overlapAnchor;
+			global::Acr.UserDialogs.Resource.Attribute.paddingBottomNoButtons = global::SalveminiApp.Droid.Resource.Attribute.paddingBottomNoButtons;
+			global::Acr.UserDialogs.Resource.Attribute.paddingEnd = global::SalveminiApp.Droid.Resource.Attribute.paddingEnd;
+			global::Acr.UserDialogs.Resource.Attribute.paddingStart = global::SalveminiApp.Droid.Resource.Attribute.paddingStart;
+			global::Acr.UserDialogs.Resource.Attribute.paddingTopNoTitle = global::SalveminiApp.Droid.Resource.Attribute.paddingTopNoTitle;
+			global::Acr.UserDialogs.Resource.Attribute.panelBackground = global::SalveminiApp.Droid.Resource.Attribute.panelBackground;
+			global::Acr.UserDialogs.Resource.Attribute.panelMenuListTheme = global::SalveminiApp.Droid.Resource.Attribute.panelMenuListTheme;
+			global::Acr.UserDialogs.Resource.Attribute.panelMenuListWidth = global::SalveminiApp.Droid.Resource.Attribute.panelMenuListWidth;
+			global::Acr.UserDialogs.Resource.Attribute.passwordToggleContentDescription = global::SalveminiApp.Droid.Resource.Attribute.passwordToggleContentDescription;
+			global::Acr.UserDialogs.Resource.Attribute.passwordToggleDrawable = global::SalveminiApp.Droid.Resource.Attribute.passwordToggleDrawable;
+			global::Acr.UserDialogs.Resource.Attribute.passwordToggleEnabled = global::SalveminiApp.Droid.Resource.Attribute.passwordToggleEnabled;
+			global::Acr.UserDialogs.Resource.Attribute.passwordToggleTint = global::SalveminiApp.Droid.Resource.Attribute.passwordToggleTint;
+			global::Acr.UserDialogs.Resource.Attribute.passwordToggleTintMode = global::SalveminiApp.Droid.Resource.Attribute.passwordToggleTintMode;
+			global::Acr.UserDialogs.Resource.Attribute.popupMenuStyle = global::SalveminiApp.Droid.Resource.Attribute.popupMenuStyle;
+			global::Acr.UserDialogs.Resource.Attribute.popupTheme = global::SalveminiApp.Droid.Resource.Attribute.popupTheme;
+			global::Acr.UserDialogs.Resource.Attribute.popupWindowStyle = global::SalveminiApp.Droid.Resource.Attribute.popupWindowStyle;
+			global::Acr.UserDialogs.Resource.Attribute.preserveIconSpacing = global::SalveminiApp.Droid.Resource.Attribute.preserveIconSpacing;
+			global::Acr.UserDialogs.Resource.Attribute.pressedTranslationZ = global::SalveminiApp.Droid.Resource.Attribute.pressedTranslationZ;
+			global::Acr.UserDialogs.Resource.Attribute.progressBarPadding = global::SalveminiApp.Droid.Resource.Attribute.progressBarPadding;
+			global::Acr.UserDialogs.Resource.Attribute.progressBarStyle = global::SalveminiApp.Droid.Resource.Attribute.progressBarStyle;
+			global::Acr.UserDialogs.Resource.Attribute.queryBackground = global::SalveminiApp.Droid.Resource.Attribute.queryBackground;
+			global::Acr.UserDialogs.Resource.Attribute.queryHint = global::SalveminiApp.Droid.Resource.Attribute.queryHint;
+			global::Acr.UserDialogs.Resource.Attribute.radioButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.radioButtonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.ratingBarStyle = global::SalveminiApp.Droid.Resource.Attribute.ratingBarStyle;
+			global::Acr.UserDialogs.Resource.Attribute.ratingBarStyleIndicator = global::SalveminiApp.Droid.Resource.Attribute.ratingBarStyleIndicator;
+			global::Acr.UserDialogs.Resource.Attribute.ratingBarStyleSmall = global::SalveminiApp.Droid.Resource.Attribute.ratingBarStyleSmall;
+			global::Acr.UserDialogs.Resource.Attribute.reverseLayout = global::SalveminiApp.Droid.Resource.Attribute.reverseLayout;
+			global::Acr.UserDialogs.Resource.Attribute.rippleColor = global::SalveminiApp.Droid.Resource.Attribute.rippleColor;
+			global::Acr.UserDialogs.Resource.Attribute.scrimAnimationDuration = global::SalveminiApp.Droid.Resource.Attribute.scrimAnimationDuration;
+			global::Acr.UserDialogs.Resource.Attribute.scrimVisibleHeightTrigger = global::SalveminiApp.Droid.Resource.Attribute.scrimVisibleHeightTrigger;
+			global::Acr.UserDialogs.Resource.Attribute.searchHintIcon = global::SalveminiApp.Droid.Resource.Attribute.searchHintIcon;
+			global::Acr.UserDialogs.Resource.Attribute.searchIcon = global::SalveminiApp.Droid.Resource.Attribute.searchIcon;
+			global::Acr.UserDialogs.Resource.Attribute.searchViewStyle = global::SalveminiApp.Droid.Resource.Attribute.searchViewStyle;
+			global::Acr.UserDialogs.Resource.Attribute.seekBarStyle = global::SalveminiApp.Droid.Resource.Attribute.seekBarStyle;
+			global::Acr.UserDialogs.Resource.Attribute.selectableItemBackground = global::SalveminiApp.Droid.Resource.Attribute.selectableItemBackground;
+			global::Acr.UserDialogs.Resource.Attribute.selectableItemBackgroundBorderless = global::SalveminiApp.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::Acr.UserDialogs.Resource.Attribute.showAsAction = global::SalveminiApp.Droid.Resource.Attribute.showAsAction;
+			global::Acr.UserDialogs.Resource.Attribute.showDividers = global::SalveminiApp.Droid.Resource.Attribute.showDividers;
+			global::Acr.UserDialogs.Resource.Attribute.showText = global::SalveminiApp.Droid.Resource.Attribute.showText;
+			global::Acr.UserDialogs.Resource.Attribute.showTitle = global::SalveminiApp.Droid.Resource.Attribute.showTitle;
+			global::Acr.UserDialogs.Resource.Attribute.singleChoiceItemLayout = global::SalveminiApp.Droid.Resource.Attribute.singleChoiceItemLayout;
+			global::Acr.UserDialogs.Resource.Attribute.spanCount = global::SalveminiApp.Droid.Resource.Attribute.spanCount;
+			global::Acr.UserDialogs.Resource.Attribute.spinBars = global::SalveminiApp.Droid.Resource.Attribute.spinBars;
+			global::Acr.UserDialogs.Resource.Attribute.spinnerDropDownItemStyle = global::SalveminiApp.Droid.Resource.Attribute.spinnerDropDownItemStyle;
+			global::Acr.UserDialogs.Resource.Attribute.spinnerStyle = global::SalveminiApp.Droid.Resource.Attribute.spinnerStyle;
+			global::Acr.UserDialogs.Resource.Attribute.splitTrack = global::SalveminiApp.Droid.Resource.Attribute.splitTrack;
+			global::Acr.UserDialogs.Resource.Attribute.srcCompat = global::SalveminiApp.Droid.Resource.Attribute.srcCompat;
+			global::Acr.UserDialogs.Resource.Attribute.stackFromEnd = global::SalveminiApp.Droid.Resource.Attribute.stackFromEnd;
+			global::Acr.UserDialogs.Resource.Attribute.state_above_anchor = global::SalveminiApp.Droid.Resource.Attribute.state_above_anchor;
+			global::Acr.UserDialogs.Resource.Attribute.state_collapsed = global::SalveminiApp.Droid.Resource.Attribute.state_collapsed;
+			global::Acr.UserDialogs.Resource.Attribute.state_collapsible = global::SalveminiApp.Droid.Resource.Attribute.state_collapsible;
+			global::Acr.UserDialogs.Resource.Attribute.statusBarBackground = global::SalveminiApp.Droid.Resource.Attribute.statusBarBackground;
+			global::Acr.UserDialogs.Resource.Attribute.statusBarScrim = global::SalveminiApp.Droid.Resource.Attribute.statusBarScrim;
+			global::Acr.UserDialogs.Resource.Attribute.subMenuArrow = global::SalveminiApp.Droid.Resource.Attribute.subMenuArrow;
+			global::Acr.UserDialogs.Resource.Attribute.submitBackground = global::SalveminiApp.Droid.Resource.Attribute.submitBackground;
+			global::Acr.UserDialogs.Resource.Attribute.subtitle = global::SalveminiApp.Droid.Resource.Attribute.subtitle;
+			global::Acr.UserDialogs.Resource.Attribute.subtitleTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.subtitleTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.subtitleTextColor = global::SalveminiApp.Droid.Resource.Attribute.subtitleTextColor;
+			global::Acr.UserDialogs.Resource.Attribute.subtitleTextStyle = global::SalveminiApp.Droid.Resource.Attribute.subtitleTextStyle;
+			global::Acr.UserDialogs.Resource.Attribute.suggestionRowLayout = global::SalveminiApp.Droid.Resource.Attribute.suggestionRowLayout;
+			global::Acr.UserDialogs.Resource.Attribute.switchMinWidth = global::SalveminiApp.Droid.Resource.Attribute.switchMinWidth;
+			global::Acr.UserDialogs.Resource.Attribute.switchPadding = global::SalveminiApp.Droid.Resource.Attribute.switchPadding;
+			global::Acr.UserDialogs.Resource.Attribute.switchStyle = global::SalveminiApp.Droid.Resource.Attribute.switchStyle;
+			global::Acr.UserDialogs.Resource.Attribute.switchTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.switchTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.tabBackground = global::SalveminiApp.Droid.Resource.Attribute.tabBackground;
+			global::Acr.UserDialogs.Resource.Attribute.tabContentStart = global::SalveminiApp.Droid.Resource.Attribute.tabContentStart;
+			global::Acr.UserDialogs.Resource.Attribute.tabGravity = global::SalveminiApp.Droid.Resource.Attribute.tabGravity;
+			global::Acr.UserDialogs.Resource.Attribute.tabIndicatorColor = global::SalveminiApp.Droid.Resource.Attribute.tabIndicatorColor;
+			global::Acr.UserDialogs.Resource.Attribute.tabIndicatorHeight = global::SalveminiApp.Droid.Resource.Attribute.tabIndicatorHeight;
+			global::Acr.UserDialogs.Resource.Attribute.tabMaxWidth = global::SalveminiApp.Droid.Resource.Attribute.tabMaxWidth;
+			global::Acr.UserDialogs.Resource.Attribute.tabMinWidth = global::SalveminiApp.Droid.Resource.Attribute.tabMinWidth;
+			global::Acr.UserDialogs.Resource.Attribute.tabMode = global::SalveminiApp.Droid.Resource.Attribute.tabMode;
+			global::Acr.UserDialogs.Resource.Attribute.tabPadding = global::SalveminiApp.Droid.Resource.Attribute.tabPadding;
+			global::Acr.UserDialogs.Resource.Attribute.tabPaddingBottom = global::SalveminiApp.Droid.Resource.Attribute.tabPaddingBottom;
+			global::Acr.UserDialogs.Resource.Attribute.tabPaddingEnd = global::SalveminiApp.Droid.Resource.Attribute.tabPaddingEnd;
+			global::Acr.UserDialogs.Resource.Attribute.tabPaddingStart = global::SalveminiApp.Droid.Resource.Attribute.tabPaddingStart;
+			global::Acr.UserDialogs.Resource.Attribute.tabPaddingTop = global::SalveminiApp.Droid.Resource.Attribute.tabPaddingTop;
+			global::Acr.UserDialogs.Resource.Attribute.tabSelectedTextColor = global::SalveminiApp.Droid.Resource.Attribute.tabSelectedTextColor;
+			global::Acr.UserDialogs.Resource.Attribute.tabTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.tabTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.tabTextColor = global::SalveminiApp.Droid.Resource.Attribute.tabTextColor;
+			global::Acr.UserDialogs.Resource.Attribute.textAllCaps = global::SalveminiApp.Droid.Resource.Attribute.textAllCaps;
+			global::Acr.UserDialogs.Resource.Attribute.textAppearanceLargePopupMenu = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::Acr.UserDialogs.Resource.Attribute.textAppearanceListItem = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceListItem;
+			global::Acr.UserDialogs.Resource.Attribute.textAppearanceListItemSecondary = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceListItemSecondary;
+			global::Acr.UserDialogs.Resource.Attribute.textAppearanceListItemSmall = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceListItemSmall;
+			global::Acr.UserDialogs.Resource.Attribute.textAppearancePopupMenuHeader = global::SalveminiApp.Droid.Resource.Attribute.textAppearancePopupMenuHeader;
+			global::Acr.UserDialogs.Resource.Attribute.textAppearanceSearchResultSubtitle = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::Acr.UserDialogs.Resource.Attribute.textAppearanceSearchResultTitle = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::Acr.UserDialogs.Resource.Attribute.textAppearanceSmallPopupMenu = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::Acr.UserDialogs.Resource.Attribute.textColorAlertDialogListItem = global::SalveminiApp.Droid.Resource.Attribute.textColorAlertDialogListItem;
+			global::Acr.UserDialogs.Resource.Attribute.textColorError = global::SalveminiApp.Droid.Resource.Attribute.textColorError;
+			global::Acr.UserDialogs.Resource.Attribute.textColorSearchUrl = global::SalveminiApp.Droid.Resource.Attribute.textColorSearchUrl;
+			global::Acr.UserDialogs.Resource.Attribute.theme = global::SalveminiApp.Droid.Resource.Attribute.theme;
+			global::Acr.UserDialogs.Resource.Attribute.thickness = global::SalveminiApp.Droid.Resource.Attribute.thickness;
+			global::Acr.UserDialogs.Resource.Attribute.thumbTextPadding = global::SalveminiApp.Droid.Resource.Attribute.thumbTextPadding;
+			global::Acr.UserDialogs.Resource.Attribute.thumbTint = global::SalveminiApp.Droid.Resource.Attribute.thumbTint;
+			global::Acr.UserDialogs.Resource.Attribute.thumbTintMode = global::SalveminiApp.Droid.Resource.Attribute.thumbTintMode;
+			global::Acr.UserDialogs.Resource.Attribute.tickMark = global::SalveminiApp.Droid.Resource.Attribute.tickMark;
+			global::Acr.UserDialogs.Resource.Attribute.tickMarkTint = global::SalveminiApp.Droid.Resource.Attribute.tickMarkTint;
+			global::Acr.UserDialogs.Resource.Attribute.tickMarkTintMode = global::SalveminiApp.Droid.Resource.Attribute.tickMarkTintMode;
+			global::Acr.UserDialogs.Resource.Attribute.tint = global::SalveminiApp.Droid.Resource.Attribute.tint;
+			global::Acr.UserDialogs.Resource.Attribute.tintMode = global::SalveminiApp.Droid.Resource.Attribute.tintMode;
+			global::Acr.UserDialogs.Resource.Attribute.title = global::SalveminiApp.Droid.Resource.Attribute.title;
+			global::Acr.UserDialogs.Resource.Attribute.titleEnabled = global::SalveminiApp.Droid.Resource.Attribute.titleEnabled;
+			global::Acr.UserDialogs.Resource.Attribute.titleMargin = global::SalveminiApp.Droid.Resource.Attribute.titleMargin;
+			global::Acr.UserDialogs.Resource.Attribute.titleMarginBottom = global::SalveminiApp.Droid.Resource.Attribute.titleMarginBottom;
+			global::Acr.UserDialogs.Resource.Attribute.titleMarginEnd = global::SalveminiApp.Droid.Resource.Attribute.titleMarginEnd;
+			global::Acr.UserDialogs.Resource.Attribute.titleMargins = global::SalveminiApp.Droid.Resource.Attribute.titleMargins;
+			global::Acr.UserDialogs.Resource.Attribute.titleMarginStart = global::SalveminiApp.Droid.Resource.Attribute.titleMarginStart;
+			global::Acr.UserDialogs.Resource.Attribute.titleMarginTop = global::SalveminiApp.Droid.Resource.Attribute.titleMarginTop;
+			global::Acr.UserDialogs.Resource.Attribute.titleTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.titleTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.titleTextColor = global::SalveminiApp.Droid.Resource.Attribute.titleTextColor;
+			global::Acr.UserDialogs.Resource.Attribute.titleTextStyle = global::SalveminiApp.Droid.Resource.Attribute.titleTextStyle;
+			global::Acr.UserDialogs.Resource.Attribute.toolbarId = global::SalveminiApp.Droid.Resource.Attribute.toolbarId;
+			global::Acr.UserDialogs.Resource.Attribute.toolbarNavigationButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.toolbarStyle = global::SalveminiApp.Droid.Resource.Attribute.toolbarStyle;
+			global::Acr.UserDialogs.Resource.Attribute.tooltipForegroundColor = global::SalveminiApp.Droid.Resource.Attribute.tooltipForegroundColor;
+			global::Acr.UserDialogs.Resource.Attribute.tooltipFrameBackground = global::SalveminiApp.Droid.Resource.Attribute.tooltipFrameBackground;
+			global::Acr.UserDialogs.Resource.Attribute.tooltipText = global::SalveminiApp.Droid.Resource.Attribute.tooltipText;
+			global::Acr.UserDialogs.Resource.Attribute.track = global::SalveminiApp.Droid.Resource.Attribute.track;
+			global::Acr.UserDialogs.Resource.Attribute.trackTint = global::SalveminiApp.Droid.Resource.Attribute.trackTint;
+			global::Acr.UserDialogs.Resource.Attribute.trackTintMode = global::SalveminiApp.Droid.Resource.Attribute.trackTintMode;
+			global::Acr.UserDialogs.Resource.Attribute.useCompatPadding = global::SalveminiApp.Droid.Resource.Attribute.useCompatPadding;
+			global::Acr.UserDialogs.Resource.Attribute.voiceIcon = global::SalveminiApp.Droid.Resource.Attribute.voiceIcon;
+			global::Acr.UserDialogs.Resource.Attribute.windowActionBar = global::SalveminiApp.Droid.Resource.Attribute.windowActionBar;
+			global::Acr.UserDialogs.Resource.Attribute.windowActionBarOverlay = global::SalveminiApp.Droid.Resource.Attribute.windowActionBarOverlay;
+			global::Acr.UserDialogs.Resource.Attribute.windowActionModeOverlay = global::SalveminiApp.Droid.Resource.Attribute.windowActionModeOverlay;
+			global::Acr.UserDialogs.Resource.Attribute.windowFixedHeightMajor = global::SalveminiApp.Droid.Resource.Attribute.windowFixedHeightMajor;
+			global::Acr.UserDialogs.Resource.Attribute.windowFixedHeightMinor = global::SalveminiApp.Droid.Resource.Attribute.windowFixedHeightMinor;
+			global::Acr.UserDialogs.Resource.Attribute.windowFixedWidthMajor = global::SalveminiApp.Droid.Resource.Attribute.windowFixedWidthMajor;
+			global::Acr.UserDialogs.Resource.Attribute.windowFixedWidthMinor = global::SalveminiApp.Droid.Resource.Attribute.windowFixedWidthMinor;
+			global::Acr.UserDialogs.Resource.Attribute.windowMinWidthMajor = global::SalveminiApp.Droid.Resource.Attribute.windowMinWidthMajor;
+			global::Acr.UserDialogs.Resource.Attribute.windowMinWidthMinor = global::SalveminiApp.Droid.Resource.Attribute.windowMinWidthMinor;
+			global::Acr.UserDialogs.Resource.Attribute.windowNoTitle = global::SalveminiApp.Droid.Resource.Attribute.windowNoTitle;
+			global::Acr.UserDialogs.Resource.Boolean.abc_action_bar_embed_tabs = global::SalveminiApp.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::Acr.UserDialogs.Resource.Boolean.abc_allow_stacked_button_bar = global::SalveminiApp.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::Acr.UserDialogs.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::SalveminiApp.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::Acr.UserDialogs.Resource.Boolean.abc_config_closeDialogWhenTouchOutside = global::SalveminiApp.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside;
+			global::Acr.UserDialogs.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent = global::SalveminiApp.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent;
+			global::Acr.UserDialogs.Resource.Color.abc_background_cache_hint_selector_material_dark = global::SalveminiApp.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::Acr.UserDialogs.Resource.Color.abc_background_cache_hint_selector_material_light = global::SalveminiApp.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::Acr.UserDialogs.Resource.Color.abc_btn_colored_borderless_text_material = global::SalveminiApp.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
+			global::Acr.UserDialogs.Resource.Color.abc_btn_colored_text_material = global::SalveminiApp.Droid.Resource.Color.abc_btn_colored_text_material;
+			global::Acr.UserDialogs.Resource.Color.abc_color_highlight_material = global::SalveminiApp.Droid.Resource.Color.abc_color_highlight_material;
+			global::Acr.UserDialogs.Resource.Color.abc_hint_foreground_material_dark = global::SalveminiApp.Droid.Resource.Color.abc_hint_foreground_material_dark;
+			global::Acr.UserDialogs.Resource.Color.abc_hint_foreground_material_light = global::SalveminiApp.Droid.Resource.Color.abc_hint_foreground_material_light;
+			global::Acr.UserDialogs.Resource.Color.abc_input_method_navigation_guard = global::SalveminiApp.Droid.Resource.Color.abc_input_method_navigation_guard;
+			global::Acr.UserDialogs.Resource.Color.abc_primary_text_disable_only_material_dark = global::SalveminiApp.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::Acr.UserDialogs.Resource.Color.abc_primary_text_disable_only_material_light = global::SalveminiApp.Droid.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::Acr.UserDialogs.Resource.Color.abc_primary_text_material_dark = global::SalveminiApp.Droid.Resource.Color.abc_primary_text_material_dark;
+			global::Acr.UserDialogs.Resource.Color.abc_primary_text_material_light = global::SalveminiApp.Droid.Resource.Color.abc_primary_text_material_light;
+			global::Acr.UserDialogs.Resource.Color.abc_search_url_text = global::SalveminiApp.Droid.Resource.Color.abc_search_url_text;
+			global::Acr.UserDialogs.Resource.Color.abc_search_url_text_normal = global::SalveminiApp.Droid.Resource.Color.abc_search_url_text_normal;
+			global::Acr.UserDialogs.Resource.Color.abc_search_url_text_pressed = global::SalveminiApp.Droid.Resource.Color.abc_search_url_text_pressed;
+			global::Acr.UserDialogs.Resource.Color.abc_search_url_text_selected = global::SalveminiApp.Droid.Resource.Color.abc_search_url_text_selected;
+			global::Acr.UserDialogs.Resource.Color.abc_secondary_text_material_dark = global::SalveminiApp.Droid.Resource.Color.abc_secondary_text_material_dark;
+			global::Acr.UserDialogs.Resource.Color.abc_secondary_text_material_light = global::SalveminiApp.Droid.Resource.Color.abc_secondary_text_material_light;
+			global::Acr.UserDialogs.Resource.Color.abc_tint_btn_checkable = global::SalveminiApp.Droid.Resource.Color.abc_tint_btn_checkable;
+			global::Acr.UserDialogs.Resource.Color.abc_tint_default = global::SalveminiApp.Droid.Resource.Color.abc_tint_default;
+			global::Acr.UserDialogs.Resource.Color.abc_tint_edittext = global::SalveminiApp.Droid.Resource.Color.abc_tint_edittext;
+			global::Acr.UserDialogs.Resource.Color.abc_tint_seek_thumb = global::SalveminiApp.Droid.Resource.Color.abc_tint_seek_thumb;
+			global::Acr.UserDialogs.Resource.Color.abc_tint_spinner = global::SalveminiApp.Droid.Resource.Color.abc_tint_spinner;
+			global::Acr.UserDialogs.Resource.Color.abc_tint_switch_track = global::SalveminiApp.Droid.Resource.Color.abc_tint_switch_track;
+			global::Acr.UserDialogs.Resource.Color.accent_material_dark = global::SalveminiApp.Droid.Resource.Color.accent_material_dark;
+			global::Acr.UserDialogs.Resource.Color.accent_material_light = global::SalveminiApp.Droid.Resource.Color.accent_material_light;
+			global::Acr.UserDialogs.Resource.Color.background_floating_material_dark = global::SalveminiApp.Droid.Resource.Color.background_floating_material_dark;
+			global::Acr.UserDialogs.Resource.Color.background_floating_material_light = global::SalveminiApp.Droid.Resource.Color.background_floating_material_light;
+			global::Acr.UserDialogs.Resource.Color.background_material_dark = global::SalveminiApp.Droid.Resource.Color.background_material_dark;
+			global::Acr.UserDialogs.Resource.Color.background_material_light = global::SalveminiApp.Droid.Resource.Color.background_material_light;
+			global::Acr.UserDialogs.Resource.Color.bright_foreground_disabled_material_dark = global::SalveminiApp.Droid.Resource.Color.bright_foreground_disabled_material_dark;
+			global::Acr.UserDialogs.Resource.Color.bright_foreground_disabled_material_light = global::SalveminiApp.Droid.Resource.Color.bright_foreground_disabled_material_light;
+			global::Acr.UserDialogs.Resource.Color.bright_foreground_inverse_material_dark = global::SalveminiApp.Droid.Resource.Color.bright_foreground_inverse_material_dark;
+			global::Acr.UserDialogs.Resource.Color.bright_foreground_inverse_material_light = global::SalveminiApp.Droid.Resource.Color.bright_foreground_inverse_material_light;
+			global::Acr.UserDialogs.Resource.Color.bright_foreground_material_dark = global::SalveminiApp.Droid.Resource.Color.bright_foreground_material_dark;
+			global::Acr.UserDialogs.Resource.Color.bright_foreground_material_light = global::SalveminiApp.Droid.Resource.Color.bright_foreground_material_light;
+			global::Acr.UserDialogs.Resource.Color.button_material_dark = global::SalveminiApp.Droid.Resource.Color.button_material_dark;
+			global::Acr.UserDialogs.Resource.Color.button_material_light = global::SalveminiApp.Droid.Resource.Color.button_material_light;
+			global::Acr.UserDialogs.Resource.Color.design_bottom_navigation_shadow_color = global::SalveminiApp.Droid.Resource.Color.design_bottom_navigation_shadow_color;
+			global::Acr.UserDialogs.Resource.Color.design_error = global::SalveminiApp.Droid.Resource.Color.design_error;
+			global::Acr.UserDialogs.Resource.Color.design_fab_shadow_end_color = global::SalveminiApp.Droid.Resource.Color.design_fab_shadow_end_color;
+			global::Acr.UserDialogs.Resource.Color.design_fab_shadow_mid_color = global::SalveminiApp.Droid.Resource.Color.design_fab_shadow_mid_color;
+			global::Acr.UserDialogs.Resource.Color.design_fab_shadow_start_color = global::SalveminiApp.Droid.Resource.Color.design_fab_shadow_start_color;
+			global::Acr.UserDialogs.Resource.Color.design_fab_stroke_end_inner_color = global::SalveminiApp.Droid.Resource.Color.design_fab_stroke_end_inner_color;
+			global::Acr.UserDialogs.Resource.Color.design_fab_stroke_end_outer_color = global::SalveminiApp.Droid.Resource.Color.design_fab_stroke_end_outer_color;
+			global::Acr.UserDialogs.Resource.Color.design_fab_stroke_top_inner_color = global::SalveminiApp.Droid.Resource.Color.design_fab_stroke_top_inner_color;
+			global::Acr.UserDialogs.Resource.Color.design_fab_stroke_top_outer_color = global::SalveminiApp.Droid.Resource.Color.design_fab_stroke_top_outer_color;
+			global::Acr.UserDialogs.Resource.Color.design_snackbar_background_color = global::SalveminiApp.Droid.Resource.Color.design_snackbar_background_color;
+			global::Acr.UserDialogs.Resource.Color.design_tint_password_toggle = global::SalveminiApp.Droid.Resource.Color.design_tint_password_toggle;
+			global::Acr.UserDialogs.Resource.Color.dim_foreground_disabled_material_dark = global::SalveminiApp.Droid.Resource.Color.dim_foreground_disabled_material_dark;
+			global::Acr.UserDialogs.Resource.Color.dim_foreground_disabled_material_light = global::SalveminiApp.Droid.Resource.Color.dim_foreground_disabled_material_light;
+			global::Acr.UserDialogs.Resource.Color.dim_foreground_material_dark = global::SalveminiApp.Droid.Resource.Color.dim_foreground_material_dark;
+			global::Acr.UserDialogs.Resource.Color.dim_foreground_material_light = global::SalveminiApp.Droid.Resource.Color.dim_foreground_material_light;
+			global::Acr.UserDialogs.Resource.Color.error_color_material = global::SalveminiApp.Droid.Resource.Color.error_color_material;
+			global::Acr.UserDialogs.Resource.Color.foreground_material_dark = global::SalveminiApp.Droid.Resource.Color.foreground_material_dark;
+			global::Acr.UserDialogs.Resource.Color.foreground_material_light = global::SalveminiApp.Droid.Resource.Color.foreground_material_light;
+			global::Acr.UserDialogs.Resource.Color.highlighted_text_material_dark = global::SalveminiApp.Droid.Resource.Color.highlighted_text_material_dark;
+			global::Acr.UserDialogs.Resource.Color.highlighted_text_material_light = global::SalveminiApp.Droid.Resource.Color.highlighted_text_material_light;
+			global::Acr.UserDialogs.Resource.Color.material_blue_grey_800 = global::SalveminiApp.Droid.Resource.Color.material_blue_grey_800;
+			global::Acr.UserDialogs.Resource.Color.material_blue_grey_900 = global::SalveminiApp.Droid.Resource.Color.material_blue_grey_900;
+			global::Acr.UserDialogs.Resource.Color.material_blue_grey_950 = global::SalveminiApp.Droid.Resource.Color.material_blue_grey_950;
+			global::Acr.UserDialogs.Resource.Color.material_deep_teal_200 = global::SalveminiApp.Droid.Resource.Color.material_deep_teal_200;
+			global::Acr.UserDialogs.Resource.Color.material_deep_teal_500 = global::SalveminiApp.Droid.Resource.Color.material_deep_teal_500;
+			global::Acr.UserDialogs.Resource.Color.material_grey_100 = global::SalveminiApp.Droid.Resource.Color.material_grey_100;
+			global::Acr.UserDialogs.Resource.Color.material_grey_300 = global::SalveminiApp.Droid.Resource.Color.material_grey_300;
+			global::Acr.UserDialogs.Resource.Color.material_grey_50 = global::SalveminiApp.Droid.Resource.Color.material_grey_50;
+			global::Acr.UserDialogs.Resource.Color.material_grey_600 = global::SalveminiApp.Droid.Resource.Color.material_grey_600;
+			global::Acr.UserDialogs.Resource.Color.material_grey_800 = global::SalveminiApp.Droid.Resource.Color.material_grey_800;
+			global::Acr.UserDialogs.Resource.Color.material_grey_850 = global::SalveminiApp.Droid.Resource.Color.material_grey_850;
+			global::Acr.UserDialogs.Resource.Color.material_grey_900 = global::SalveminiApp.Droid.Resource.Color.material_grey_900;
+			global::Acr.UserDialogs.Resource.Color.notification_action_color_filter = global::SalveminiApp.Droid.Resource.Color.notification_action_color_filter;
+			global::Acr.UserDialogs.Resource.Color.notification_icon_bg_color = global::SalveminiApp.Droid.Resource.Color.notification_icon_bg_color;
+			global::Acr.UserDialogs.Resource.Color.notification_material_background_media_default_color = global::SalveminiApp.Droid.Resource.Color.notification_material_background_media_default_color;
+			global::Acr.UserDialogs.Resource.Color.primary_dark_material_dark = global::SalveminiApp.Droid.Resource.Color.primary_dark_material_dark;
+			global::Acr.UserDialogs.Resource.Color.primary_dark_material_light = global::SalveminiApp.Droid.Resource.Color.primary_dark_material_light;
+			global::Acr.UserDialogs.Resource.Color.primary_material_dark = global::SalveminiApp.Droid.Resource.Color.primary_material_dark;
+			global::Acr.UserDialogs.Resource.Color.primary_material_light = global::SalveminiApp.Droid.Resource.Color.primary_material_light;
+			global::Acr.UserDialogs.Resource.Color.primary_text_default_material_dark = global::SalveminiApp.Droid.Resource.Color.primary_text_default_material_dark;
+			global::Acr.UserDialogs.Resource.Color.primary_text_default_material_light = global::SalveminiApp.Droid.Resource.Color.primary_text_default_material_light;
+			global::Acr.UserDialogs.Resource.Color.primary_text_disabled_material_dark = global::SalveminiApp.Droid.Resource.Color.primary_text_disabled_material_dark;
+			global::Acr.UserDialogs.Resource.Color.primary_text_disabled_material_light = global::SalveminiApp.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::Acr.UserDialogs.Resource.Color.ripple_material_dark = global::SalveminiApp.Droid.Resource.Color.ripple_material_dark;
+			global::Acr.UserDialogs.Resource.Color.ripple_material_light = global::SalveminiApp.Droid.Resource.Color.ripple_material_light;
+			global::Acr.UserDialogs.Resource.Color.secondary_text_default_material_dark = global::SalveminiApp.Droid.Resource.Color.secondary_text_default_material_dark;
+			global::Acr.UserDialogs.Resource.Color.secondary_text_default_material_light = global::SalveminiApp.Droid.Resource.Color.secondary_text_default_material_light;
+			global::Acr.UserDialogs.Resource.Color.secondary_text_disabled_material_dark = global::SalveminiApp.Droid.Resource.Color.secondary_text_disabled_material_dark;
+			global::Acr.UserDialogs.Resource.Color.secondary_text_disabled_material_light = global::SalveminiApp.Droid.Resource.Color.secondary_text_disabled_material_light;
+			global::Acr.UserDialogs.Resource.Color.switch_thumb_disabled_material_dark = global::SalveminiApp.Droid.Resource.Color.switch_thumb_disabled_material_dark;
+			global::Acr.UserDialogs.Resource.Color.switch_thumb_disabled_material_light = global::SalveminiApp.Droid.Resource.Color.switch_thumb_disabled_material_light;
+			global::Acr.UserDialogs.Resource.Color.switch_thumb_material_dark = global::SalveminiApp.Droid.Resource.Color.switch_thumb_material_dark;
+			global::Acr.UserDialogs.Resource.Color.switch_thumb_material_light = global::SalveminiApp.Droid.Resource.Color.switch_thumb_material_light;
+			global::Acr.UserDialogs.Resource.Color.switch_thumb_normal_material_dark = global::SalveminiApp.Droid.Resource.Color.switch_thumb_normal_material_dark;
+			global::Acr.UserDialogs.Resource.Color.switch_thumb_normal_material_light = global::SalveminiApp.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::Acr.UserDialogs.Resource.Color.tooltip_background_dark = global::SalveminiApp.Droid.Resource.Color.tooltip_background_dark;
+			global::Acr.UserDialogs.Resource.Color.tooltip_background_light = global::SalveminiApp.Droid.Resource.Color.tooltip_background_light;
+			global::Acr.UserDialogs.Resource.Dimension.abc_action_bar_content_inset_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav;
+			global::Acr.UserDialogs.Resource.Dimension.abc_action_bar_default_height_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_default_height_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_action_bar_default_padding_end_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_action_bar_default_padding_start_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_action_bar_elevation_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_elevation_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_action_bar_progress_bar_size = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_progress_bar_size;
+			global::Acr.UserDialogs.Resource.Dimension.abc_action_bar_stacked_max_height = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::Acr.UserDialogs.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::Acr.UserDialogs.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_action_button_min_height_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_button_min_height_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_action_button_min_width_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_button_min_width_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_action_button_min_width_overflow_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_alert_dialog_button_bar_height = global::SalveminiApp.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::Acr.UserDialogs.Resource.Dimension.abc_button_inset_horizontal_material = global::SalveminiApp.Droid.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_button_inset_vertical_material = global::SalveminiApp.Droid.Resource.Dimension.abc_button_inset_vertical_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_button_padding_horizontal_material = global::SalveminiApp.Droid.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_button_padding_vertical_material = global::SalveminiApp.Droid.Resource.Dimension.abc_button_padding_vertical_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::SalveminiApp.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width;
+			global::Acr.UserDialogs.Resource.Dimension.abc_config_prefDialogWidth = global::SalveminiApp.Droid.Resource.Dimension.abc_config_prefDialogWidth;
+			global::Acr.UserDialogs.Resource.Dimension.abc_control_corner_material = global::SalveminiApp.Droid.Resource.Dimension.abc_control_corner_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_control_inset_material = global::SalveminiApp.Droid.Resource.Dimension.abc_control_inset_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_control_padding_material = global::SalveminiApp.Droid.Resource.Dimension.abc_control_padding_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_dialog_fixed_height_major = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::Acr.UserDialogs.Resource.Dimension.abc_dialog_fixed_height_minor = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::Acr.UserDialogs.Resource.Dimension.abc_dialog_fixed_width_major = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::Acr.UserDialogs.Resource.Dimension.abc_dialog_fixed_width_minor = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::Acr.UserDialogs.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
+			global::Acr.UserDialogs.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title;
+			global::Acr.UserDialogs.Resource.Dimension.abc_dialog_min_width_major = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_min_width_major;
+			global::Acr.UserDialogs.Resource.Dimension.abc_dialog_min_width_minor = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_min_width_minor;
+			global::Acr.UserDialogs.Resource.Dimension.abc_dialog_padding_material = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_padding_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_dialog_padding_top_material = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_padding_top_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_dialog_title_divider_material = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_title_divider_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_disabled_alpha_material_dark = global::SalveminiApp.Droid.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::Acr.UserDialogs.Resource.Dimension.abc_disabled_alpha_material_light = global::SalveminiApp.Droid.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::Acr.UserDialogs.Resource.Dimension.abc_dropdownitem_icon_width = global::SalveminiApp.Droid.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::Acr.UserDialogs.Resource.Dimension.abc_dropdownitem_text_padding_left = global::SalveminiApp.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::Acr.UserDialogs.Resource.Dimension.abc_dropdownitem_text_padding_right = global::SalveminiApp.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::Acr.UserDialogs.Resource.Dimension.abc_edit_text_inset_bottom_material = global::SalveminiApp.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::SalveminiApp.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_edit_text_inset_top_material = global::SalveminiApp.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_floating_window_z = global::SalveminiApp.Droid.Resource.Dimension.abc_floating_window_z;
+			global::Acr.UserDialogs.Resource.Dimension.abc_list_item_padding_horizontal_material = global::SalveminiApp.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_panel_menu_list_width = global::SalveminiApp.Droid.Resource.Dimension.abc_panel_menu_list_width;
+			global::Acr.UserDialogs.Resource.Dimension.abc_progress_bar_height_material = global::SalveminiApp.Droid.Resource.Dimension.abc_progress_bar_height_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_search_view_preferred_height = global::SalveminiApp.Droid.Resource.Dimension.abc_search_view_preferred_height;
+			global::Acr.UserDialogs.Resource.Dimension.abc_search_view_preferred_width = global::SalveminiApp.Droid.Resource.Dimension.abc_search_view_preferred_width;
+			global::Acr.UserDialogs.Resource.Dimension.abc_seekbar_track_background_height_material = global::SalveminiApp.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_seekbar_track_progress_height_material = global::SalveminiApp.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_select_dialog_padding_start_material = global::SalveminiApp.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_switch_padding = global::SalveminiApp.Droid.Resource.Dimension.abc_switch_padding;
+			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_body_1_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_body_1_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_body_2_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_body_2_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_button_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_button_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_caption_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_caption_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_display_1_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_display_1_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_display_2_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_display_2_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_display_3_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_display_3_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_display_4_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_display_4_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_headline_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_headline_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_large_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_large_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_medium_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_medium_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_menu_header_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_menu_header_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_menu_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_menu_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_small_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_small_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_subhead_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_subhead_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_title_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_title_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_title_material_toolbar = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::Acr.UserDialogs.Resource.Dimension.compat_button_inset_horizontal_material = global::SalveminiApp.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Acr.UserDialogs.Resource.Dimension.compat_button_inset_vertical_material = global::SalveminiApp.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Acr.UserDialogs.Resource.Dimension.compat_button_padding_horizontal_material = global::SalveminiApp.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Acr.UserDialogs.Resource.Dimension.compat_button_padding_vertical_material = global::SalveminiApp.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Acr.UserDialogs.Resource.Dimension.compat_control_corner_material = global::SalveminiApp.Droid.Resource.Dimension.compat_control_corner_material;
+			global::Acr.UserDialogs.Resource.Dimension.design_appbar_elevation = global::SalveminiApp.Droid.Resource.Dimension.design_appbar_elevation;
+			global::Acr.UserDialogs.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width;
+			global::Acr.UserDialogs.Resource.Dimension.design_bottom_navigation_active_text_size = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_active_text_size;
+			global::Acr.UserDialogs.Resource.Dimension.design_bottom_navigation_elevation = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_elevation;
+			global::Acr.UserDialogs.Resource.Dimension.design_bottom_navigation_height = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_height;
+			global::Acr.UserDialogs.Resource.Dimension.design_bottom_navigation_item_max_width = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_item_max_width;
+			global::Acr.UserDialogs.Resource.Dimension.design_bottom_navigation_item_min_width = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_item_min_width;
+			global::Acr.UserDialogs.Resource.Dimension.design_bottom_navigation_margin = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_margin;
+			global::Acr.UserDialogs.Resource.Dimension.design_bottom_navigation_shadow_height = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_shadow_height;
+			global::Acr.UserDialogs.Resource.Dimension.design_bottom_navigation_text_size = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_text_size;
+			global::Acr.UserDialogs.Resource.Dimension.design_bottom_sheet_modal_elevation = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation;
+			global::Acr.UserDialogs.Resource.Dimension.design_bottom_sheet_peek_height_min = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min;
+			global::Acr.UserDialogs.Resource.Dimension.design_fab_border_width = global::SalveminiApp.Droid.Resource.Dimension.design_fab_border_width;
+			global::Acr.UserDialogs.Resource.Dimension.design_fab_elevation = global::SalveminiApp.Droid.Resource.Dimension.design_fab_elevation;
+			global::Acr.UserDialogs.Resource.Dimension.design_fab_image_size = global::SalveminiApp.Droid.Resource.Dimension.design_fab_image_size;
+			global::Acr.UserDialogs.Resource.Dimension.design_fab_size_mini = global::SalveminiApp.Droid.Resource.Dimension.design_fab_size_mini;
+			global::Acr.UserDialogs.Resource.Dimension.design_fab_size_normal = global::SalveminiApp.Droid.Resource.Dimension.design_fab_size_normal;
+			global::Acr.UserDialogs.Resource.Dimension.design_fab_translation_z_pressed = global::SalveminiApp.Droid.Resource.Dimension.design_fab_translation_z_pressed;
+			global::Acr.UserDialogs.Resource.Dimension.design_navigation_elevation = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_elevation;
+			global::Acr.UserDialogs.Resource.Dimension.design_navigation_icon_padding = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_icon_padding;
+			global::Acr.UserDialogs.Resource.Dimension.design_navigation_icon_size = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_icon_size;
+			global::Acr.UserDialogs.Resource.Dimension.design_navigation_max_width = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_max_width;
+			global::Acr.UserDialogs.Resource.Dimension.design_navigation_padding_bottom = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_padding_bottom;
+			global::Acr.UserDialogs.Resource.Dimension.design_navigation_separator_vertical_padding = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_separator_vertical_padding;
+			global::Acr.UserDialogs.Resource.Dimension.design_snackbar_action_inline_max_width = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::Acr.UserDialogs.Resource.Dimension.design_snackbar_background_corner_radius = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_background_corner_radius;
+			global::Acr.UserDialogs.Resource.Dimension.design_snackbar_elevation = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_elevation;
+			global::Acr.UserDialogs.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
+			global::Acr.UserDialogs.Resource.Dimension.design_snackbar_max_width = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_max_width;
+			global::Acr.UserDialogs.Resource.Dimension.design_snackbar_min_width = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_min_width;
+			global::Acr.UserDialogs.Resource.Dimension.design_snackbar_padding_horizontal = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_padding_horizontal;
+			global::Acr.UserDialogs.Resource.Dimension.design_snackbar_padding_vertical = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_padding_vertical;
+			global::Acr.UserDialogs.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines;
+			global::Acr.UserDialogs.Resource.Dimension.design_snackbar_text_size = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_text_size;
+			global::Acr.UserDialogs.Resource.Dimension.design_tab_max_width = global::SalveminiApp.Droid.Resource.Dimension.design_tab_max_width;
+			global::Acr.UserDialogs.Resource.Dimension.design_tab_scrollable_min_width = global::SalveminiApp.Droid.Resource.Dimension.design_tab_scrollable_min_width;
+			global::Acr.UserDialogs.Resource.Dimension.design_tab_text_size = global::SalveminiApp.Droid.Resource.Dimension.design_tab_text_size;
+			global::Acr.UserDialogs.Resource.Dimension.design_tab_text_size_2line = global::SalveminiApp.Droid.Resource.Dimension.design_tab_text_size_2line;
+			global::Acr.UserDialogs.Resource.Dimension.disabled_alpha_material_dark = global::SalveminiApp.Droid.Resource.Dimension.disabled_alpha_material_dark;
+			global::Acr.UserDialogs.Resource.Dimension.disabled_alpha_material_light = global::SalveminiApp.Droid.Resource.Dimension.disabled_alpha_material_light;
+			global::Acr.UserDialogs.Resource.Dimension.fastscroll_default_thickness = global::SalveminiApp.Droid.Resource.Dimension.fastscroll_default_thickness;
+			global::Acr.UserDialogs.Resource.Dimension.fastscroll_margin = global::SalveminiApp.Droid.Resource.Dimension.fastscroll_margin;
+			global::Acr.UserDialogs.Resource.Dimension.fastscroll_minimum_range = global::SalveminiApp.Droid.Resource.Dimension.fastscroll_minimum_range;
+			global::Acr.UserDialogs.Resource.Dimension.highlight_alpha_material_colored = global::SalveminiApp.Droid.Resource.Dimension.highlight_alpha_material_colored;
+			global::Acr.UserDialogs.Resource.Dimension.highlight_alpha_material_dark = global::SalveminiApp.Droid.Resource.Dimension.highlight_alpha_material_dark;
+			global::Acr.UserDialogs.Resource.Dimension.highlight_alpha_material_light = global::SalveminiApp.Droid.Resource.Dimension.highlight_alpha_material_light;
+			global::Acr.UserDialogs.Resource.Dimension.hint_alpha_material_dark = global::SalveminiApp.Droid.Resource.Dimension.hint_alpha_material_dark;
+			global::Acr.UserDialogs.Resource.Dimension.hint_alpha_material_light = global::SalveminiApp.Droid.Resource.Dimension.hint_alpha_material_light;
+			global::Acr.UserDialogs.Resource.Dimension.hint_pressed_alpha_material_dark = global::SalveminiApp.Droid.Resource.Dimension.hint_pressed_alpha_material_dark;
+			global::Acr.UserDialogs.Resource.Dimension.hint_pressed_alpha_material_light = global::SalveminiApp.Droid.Resource.Dimension.hint_pressed_alpha_material_light;
+			global::Acr.UserDialogs.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::SalveminiApp.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::Acr.UserDialogs.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::SalveminiApp.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::Acr.UserDialogs.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::SalveminiApp.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::Acr.UserDialogs.Resource.Dimension.notification_action_icon_size = global::SalveminiApp.Droid.Resource.Dimension.notification_action_icon_size;
+			global::Acr.UserDialogs.Resource.Dimension.notification_action_text_size = global::SalveminiApp.Droid.Resource.Dimension.notification_action_text_size;
+			global::Acr.UserDialogs.Resource.Dimension.notification_big_circle_margin = global::SalveminiApp.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::Acr.UserDialogs.Resource.Dimension.notification_content_margin_start = global::SalveminiApp.Droid.Resource.Dimension.notification_content_margin_start;
+			global::Acr.UserDialogs.Resource.Dimension.notification_large_icon_height = global::SalveminiApp.Droid.Resource.Dimension.notification_large_icon_height;
+			global::Acr.UserDialogs.Resource.Dimension.notification_large_icon_width = global::SalveminiApp.Droid.Resource.Dimension.notification_large_icon_width;
+			global::Acr.UserDialogs.Resource.Dimension.notification_main_column_padding_top = global::SalveminiApp.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::Acr.UserDialogs.Resource.Dimension.notification_media_narrow_margin = global::SalveminiApp.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::Acr.UserDialogs.Resource.Dimension.notification_right_icon_size = global::SalveminiApp.Droid.Resource.Dimension.notification_right_icon_size;
+			global::Acr.UserDialogs.Resource.Dimension.notification_right_side_padding_top = global::SalveminiApp.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::Acr.UserDialogs.Resource.Dimension.notification_small_icon_background_padding = global::SalveminiApp.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::Acr.UserDialogs.Resource.Dimension.notification_small_icon_size_as_large = global::SalveminiApp.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Acr.UserDialogs.Resource.Dimension.notification_subtext_size = global::SalveminiApp.Droid.Resource.Dimension.notification_subtext_size;
+			global::Acr.UserDialogs.Resource.Dimension.notification_top_pad = global::SalveminiApp.Droid.Resource.Dimension.notification_top_pad;
+			global::Acr.UserDialogs.Resource.Dimension.notification_top_pad_large_text = global::SalveminiApp.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::Acr.UserDialogs.Resource.Dimension.tooltip_corner_radius = global::SalveminiApp.Droid.Resource.Dimension.tooltip_corner_radius;
+			global::Acr.UserDialogs.Resource.Dimension.tooltip_horizontal_padding = global::SalveminiApp.Droid.Resource.Dimension.tooltip_horizontal_padding;
+			global::Acr.UserDialogs.Resource.Dimension.tooltip_margin = global::SalveminiApp.Droid.Resource.Dimension.tooltip_margin;
+			global::Acr.UserDialogs.Resource.Dimension.tooltip_precise_anchor_extra_offset = global::SalveminiApp.Droid.Resource.Dimension.tooltip_precise_anchor_extra_offset;
+			global::Acr.UserDialogs.Resource.Dimension.tooltip_precise_anchor_threshold = global::SalveminiApp.Droid.Resource.Dimension.tooltip_precise_anchor_threshold;
+			global::Acr.UserDialogs.Resource.Dimension.tooltip_vertical_padding = global::SalveminiApp.Droid.Resource.Dimension.tooltip_vertical_padding;
+			global::Acr.UserDialogs.Resource.Dimension.tooltip_y_offset_non_touch = global::SalveminiApp.Droid.Resource.Dimension.tooltip_y_offset_non_touch;
+			global::Acr.UserDialogs.Resource.Dimension.tooltip_y_offset_touch = global::SalveminiApp.Droid.Resource.Dimension.tooltip_y_offset_touch;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_action_bar_item_background_material = global::SalveminiApp.Droid.Resource.Drawable.abc_action_bar_item_background_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_btn_borderless_material = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_borderless_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_btn_check_material = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_check_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::Acr.UserDialogs.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::Acr.UserDialogs.Resource.Drawable.abc_btn_colored_material = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_colored_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_btn_default_mtrl_shape = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::Acr.UserDialogs.Resource.Drawable.abc_btn_radio_material = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_radio_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::Acr.UserDialogs.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::Acr.UserDialogs.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::Acr.UserDialogs.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::Acr.UserDialogs.Resource.Drawable.abc_cab_background_internal_bg = global::SalveminiApp.Droid.Resource.Drawable.abc_cab_background_internal_bg;
+			global::Acr.UserDialogs.Resource.Drawable.abc_cab_background_top_material = global::SalveminiApp.Droid.Resource.Drawable.abc_cab_background_top_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_control_background_material = global::SalveminiApp.Droid.Resource.Drawable.abc_control_background_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_dialog_material_background = global::SalveminiApp.Droid.Resource.Drawable.abc_dialog_material_background;
+			global::Acr.UserDialogs.Resource.Drawable.abc_edit_text_material = global::SalveminiApp.Droid.Resource.Drawable.abc_edit_text_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_ab_back_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_ab_back_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_clear_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_clear_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_go_search_api_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_go_search_api_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_menu_overflow_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_menu_overflow_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_search_api_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_search_api_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_star_black_16dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_star_black_16dp;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_star_black_36dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_star_black_36dp;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_star_black_48dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_star_black_48dp;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_star_half_black_16dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_star_half_black_36dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_star_half_black_48dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_star_half_black_48dp;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ic_voice_search_api_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_voice_search_api_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_item_background_holo_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_item_background_holo_dark;
+			global::Acr.UserDialogs.Resource.Drawable.abc_item_background_holo_light = global::SalveminiApp.Droid.Resource.Drawable.abc_item_background_holo_light;
+			global::Acr.UserDialogs.Resource.Drawable.abc_list_divider_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_list_focused_holo = global::SalveminiApp.Droid.Resource.Drawable.abc_list_focused_holo;
+			global::Acr.UserDialogs.Resource.Drawable.abc_list_longpressed_holo = global::SalveminiApp.Droid.Resource.Drawable.abc_list_longpressed_holo;
+			global::Acr.UserDialogs.Resource.Drawable.abc_list_pressed_holo_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::Acr.UserDialogs.Resource.Drawable.abc_list_pressed_holo_light = global::SalveminiApp.Droid.Resource.Drawable.abc_list_pressed_holo_light;
+			global::Acr.UserDialogs.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::Acr.UserDialogs.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::SalveminiApp.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::Acr.UserDialogs.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::Acr.UserDialogs.Resource.Drawable.abc_list_selector_disabled_holo_light = global::SalveminiApp.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::Acr.UserDialogs.Resource.Drawable.abc_list_selector_holo_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_list_selector_holo_dark;
+			global::Acr.UserDialogs.Resource.Drawable.abc_list_selector_holo_light = global::SalveminiApp.Droid.Resource.Drawable.abc_list_selector_holo_light;
+			global::Acr.UserDialogs.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::SalveminiApp.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::Acr.UserDialogs.Resource.Drawable.abc_popup_background_mtrl_mult = global::SalveminiApp.Droid.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ratingbar_indicator_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ratingbar_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ratingbar_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_ratingbar_small_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ratingbar_small_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::SalveminiApp.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::Acr.UserDialogs.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::SalveminiApp.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::Acr.UserDialogs.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_seekbar_thumb_material = global::SalveminiApp.Droid.Resource.Drawable.abc_seekbar_thumb_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_seekbar_tick_mark_material = global::SalveminiApp.Droid.Resource.Drawable.abc_seekbar_tick_mark_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_seekbar_track_material = global::SalveminiApp.Droid.Resource.Drawable.abc_seekbar_track_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_spinner_textfield_background_material = global::SalveminiApp.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_switch_thumb_material = global::SalveminiApp.Droid.Resource.Drawable.abc_switch_thumb_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_switch_track_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_tab_indicator_material = global::SalveminiApp.Droid.Resource.Drawable.abc_tab_indicator_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::Acr.UserDialogs.Resource.Drawable.abc_textfield_search_material = global::SalveminiApp.Droid.Resource.Drawable.abc_textfield_search_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_text_cursor_material = global::SalveminiApp.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_text_select_handle_left_mtrl_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark;
+			global::Acr.UserDialogs.Resource.Drawable.abc_text_select_handle_left_mtrl_light = global::SalveminiApp.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light;
+			global::Acr.UserDialogs.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark;
+			global::Acr.UserDialogs.Resource.Drawable.abc_text_select_handle_middle_mtrl_light = global::SalveminiApp.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light;
+			global::Acr.UserDialogs.Resource.Drawable.abc_text_select_handle_right_mtrl_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark;
+			global::Acr.UserDialogs.Resource.Drawable.abc_text_select_handle_right_mtrl_light = global::SalveminiApp.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light;
+			global::Acr.UserDialogs.Resource.Drawable.abc_vector_test = global::SalveminiApp.Droid.Resource.Drawable.abc_vector_test;
+			global::Acr.UserDialogs.Resource.Drawable.avd_hide_password = global::SalveminiApp.Droid.Resource.Drawable.avd_hide_password;
+			global::Acr.UserDialogs.Resource.Drawable.avd_show_password = global::SalveminiApp.Droid.Resource.Drawable.avd_show_password;
+			global::Acr.UserDialogs.Resource.Drawable.design_bottom_navigation_item_background = global::SalveminiApp.Droid.Resource.Drawable.design_bottom_navigation_item_background;
+			global::Acr.UserDialogs.Resource.Drawable.design_fab_background = global::SalveminiApp.Droid.Resource.Drawable.design_fab_background;
+			global::Acr.UserDialogs.Resource.Drawable.design_ic_visibility = global::SalveminiApp.Droid.Resource.Drawable.design_ic_visibility;
+			global::Acr.UserDialogs.Resource.Drawable.design_ic_visibility_off = global::SalveminiApp.Droid.Resource.Drawable.design_ic_visibility_off;
+			global::Acr.UserDialogs.Resource.Drawable.design_password_eye = global::SalveminiApp.Droid.Resource.Drawable.design_password_eye;
+			global::Acr.UserDialogs.Resource.Drawable.design_snackbar_background = global::SalveminiApp.Droid.Resource.Drawable.design_snackbar_background;
+			global::Acr.UserDialogs.Resource.Drawable.ic_errorstatus = global::SalveminiApp.Droid.Resource.Drawable.ic_errorstatus;
+			global::Acr.UserDialogs.Resource.Drawable.ic_successstatus = global::SalveminiApp.Droid.Resource.Drawable.ic_successstatus;
+			global::Acr.UserDialogs.Resource.Drawable.navigation_empty_icon = global::SalveminiApp.Droid.Resource.Drawable.navigation_empty_icon;
+			global::Acr.UserDialogs.Resource.Drawable.notification_action_background = global::SalveminiApp.Droid.Resource.Drawable.notification_action_background;
+			global::Acr.UserDialogs.Resource.Drawable.notification_bg = global::SalveminiApp.Droid.Resource.Drawable.notification_bg;
+			global::Acr.UserDialogs.Resource.Drawable.notification_bg_low = global::SalveminiApp.Droid.Resource.Drawable.notification_bg_low;
+			global::Acr.UserDialogs.Resource.Drawable.notification_bg_low_normal = global::SalveminiApp.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::Acr.UserDialogs.Resource.Drawable.notification_bg_low_pressed = global::SalveminiApp.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::Acr.UserDialogs.Resource.Drawable.notification_bg_normal = global::SalveminiApp.Droid.Resource.Drawable.notification_bg_normal;
+			global::Acr.UserDialogs.Resource.Drawable.notification_bg_normal_pressed = global::SalveminiApp.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::Acr.UserDialogs.Resource.Drawable.notification_icon_background = global::SalveminiApp.Droid.Resource.Drawable.notification_icon_background;
+			global::Acr.UserDialogs.Resource.Drawable.notification_template_icon_bg = global::SalveminiApp.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::Acr.UserDialogs.Resource.Drawable.notification_template_icon_low_bg = global::SalveminiApp.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::Acr.UserDialogs.Resource.Drawable.notification_tile_bg = global::SalveminiApp.Droid.Resource.Drawable.notification_tile_bg;
+			global::Acr.UserDialogs.Resource.Drawable.notify_panel_notification_icon_bg = global::SalveminiApp.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Acr.UserDialogs.Resource.Drawable.roundedbg = global::SalveminiApp.Droid.Resource.Drawable.roundedbg;
+			global::Acr.UserDialogs.Resource.Drawable.roundedbgdark = global::SalveminiApp.Droid.Resource.Drawable.roundedbgdark;
+			global::Acr.UserDialogs.Resource.Drawable.tooltip_frame_dark = global::SalveminiApp.Droid.Resource.Drawable.tooltip_frame_dark;
+			global::Acr.UserDialogs.Resource.Drawable.tooltip_frame_light = global::SalveminiApp.Droid.Resource.Drawable.tooltip_frame_light;
+			global::Acr.UserDialogs.Resource.Id.action0 = global::SalveminiApp.Droid.Resource.Id.action0;
+			global::Acr.UserDialogs.Resource.Id.actions = global::SalveminiApp.Droid.Resource.Id.actions;
+			global::Acr.UserDialogs.Resource.Id.action_bar = global::SalveminiApp.Droid.Resource.Id.action_bar;
+			global::Acr.UserDialogs.Resource.Id.action_bar_activity_content = global::SalveminiApp.Droid.Resource.Id.action_bar_activity_content;
+			global::Acr.UserDialogs.Resource.Id.action_bar_container = global::SalveminiApp.Droid.Resource.Id.action_bar_container;
+			global::Acr.UserDialogs.Resource.Id.action_bar_root = global::SalveminiApp.Droid.Resource.Id.action_bar_root;
+			global::Acr.UserDialogs.Resource.Id.action_bar_spinner = global::SalveminiApp.Droid.Resource.Id.action_bar_spinner;
+			global::Acr.UserDialogs.Resource.Id.action_bar_subtitle = global::SalveminiApp.Droid.Resource.Id.action_bar_subtitle;
+			global::Acr.UserDialogs.Resource.Id.action_bar_title = global::SalveminiApp.Droid.Resource.Id.action_bar_title;
+			global::Acr.UserDialogs.Resource.Id.action_container = global::SalveminiApp.Droid.Resource.Id.action_container;
+			global::Acr.UserDialogs.Resource.Id.action_context_bar = global::SalveminiApp.Droid.Resource.Id.action_context_bar;
+			global::Acr.UserDialogs.Resource.Id.action_divider = global::SalveminiApp.Droid.Resource.Id.action_divider;
+			global::Acr.UserDialogs.Resource.Id.action_image = global::SalveminiApp.Droid.Resource.Id.action_image;
+			global::Acr.UserDialogs.Resource.Id.action_menu_divider = global::SalveminiApp.Droid.Resource.Id.action_menu_divider;
+			global::Acr.UserDialogs.Resource.Id.action_menu_presenter = global::SalveminiApp.Droid.Resource.Id.action_menu_presenter;
+			global::Acr.UserDialogs.Resource.Id.action_mode_bar_stub = global::SalveminiApp.Droid.Resource.Id.action_mode_bar_stub;
+			global::Acr.UserDialogs.Resource.Id.action_mode_close_button = global::SalveminiApp.Droid.Resource.Id.action_mode_close_button;
+			global::Acr.UserDialogs.Resource.Id.action_text = global::SalveminiApp.Droid.Resource.Id.action_text;
+			global::Acr.UserDialogs.Resource.Id.activity_chooser_view_content = global::SalveminiApp.Droid.Resource.Id.activity_chooser_view_content;
+			global::Acr.UserDialogs.Resource.Id.add = global::SalveminiApp.Droid.Resource.Id.add;
+			global::Acr.UserDialogs.Resource.Id.alertTitle = global::SalveminiApp.Droid.Resource.Id.alertTitle;
+			global::Acr.UserDialogs.Resource.Id.all = global::SalveminiApp.Droid.Resource.Id.all;
+			global::Acr.UserDialogs.Resource.Id.ALT = global::SalveminiApp.Droid.Resource.Id.ALT;
+			global::Acr.UserDialogs.Resource.Id.always = global::SalveminiApp.Droid.Resource.Id.always;
+			global::Acr.UserDialogs.Resource.Id.async = global::SalveminiApp.Droid.Resource.Id.async;
+			global::Acr.UserDialogs.Resource.Id.auto = global::SalveminiApp.Droid.Resource.Id.auto;
+			global::Acr.UserDialogs.Resource.Id.beginning = global::SalveminiApp.Droid.Resource.Id.beginning;
+			global::Acr.UserDialogs.Resource.Id.blocking = global::SalveminiApp.Droid.Resource.Id.blocking;
+			global::Acr.UserDialogs.Resource.Id.bottom = global::SalveminiApp.Droid.Resource.Id.bottom;
+			global::Acr.UserDialogs.Resource.Id.buttonPanel = global::SalveminiApp.Droid.Resource.Id.buttonPanel;
+			global::Acr.UserDialogs.Resource.Id.cancel_action = global::SalveminiApp.Droid.Resource.Id.cancel_action;
+			global::Acr.UserDialogs.Resource.Id.center = global::SalveminiApp.Droid.Resource.Id.center;
+			global::Acr.UserDialogs.Resource.Id.center_horizontal = global::SalveminiApp.Droid.Resource.Id.center_horizontal;
+			global::Acr.UserDialogs.Resource.Id.center_vertical = global::SalveminiApp.Droid.Resource.Id.center_vertical;
+			global::Acr.UserDialogs.Resource.Id.checkbox = global::SalveminiApp.Droid.Resource.Id.checkbox;
+			global::Acr.UserDialogs.Resource.Id.chronometer = global::SalveminiApp.Droid.Resource.Id.chronometer;
+			global::Acr.UserDialogs.Resource.Id.clip_horizontal = global::SalveminiApp.Droid.Resource.Id.clip_horizontal;
+			global::Acr.UserDialogs.Resource.Id.clip_vertical = global::SalveminiApp.Droid.Resource.Id.clip_vertical;
+			global::Acr.UserDialogs.Resource.Id.collapseActionView = global::SalveminiApp.Droid.Resource.Id.collapseActionView;
+			global::Acr.UserDialogs.Resource.Id.container = global::SalveminiApp.Droid.Resource.Id.container;
+			global::Acr.UserDialogs.Resource.Id.contentPanel = global::SalveminiApp.Droid.Resource.Id.contentPanel;
+			global::Acr.UserDialogs.Resource.Id.coordinator = global::SalveminiApp.Droid.Resource.Id.coordinator;
+			global::Acr.UserDialogs.Resource.Id.CTRL = global::SalveminiApp.Droid.Resource.Id.CTRL;
+			global::Acr.UserDialogs.Resource.Id.custom = global::SalveminiApp.Droid.Resource.Id.custom;
+			global::Acr.UserDialogs.Resource.Id.customPanel = global::SalveminiApp.Droid.Resource.Id.customPanel;
+			global::Acr.UserDialogs.Resource.Id.decor_content_parent = global::SalveminiApp.Droid.Resource.Id.decor_content_parent;
+			global::Acr.UserDialogs.Resource.Id.default_activity_button = global::SalveminiApp.Droid.Resource.Id.default_activity_button;
+			global::Acr.UserDialogs.Resource.Id.design_bottom_sheet = global::SalveminiApp.Droid.Resource.Id.design_bottom_sheet;
+			global::Acr.UserDialogs.Resource.Id.design_menu_item_action_area_stub = global::SalveminiApp.Droid.Resource.Id.design_menu_item_action_area_stub;
+			global::Acr.UserDialogs.Resource.Id.design_menu_item_text = global::SalveminiApp.Droid.Resource.Id.design_menu_item_text;
+			global::Acr.UserDialogs.Resource.Id.design_navigation_view = global::SalveminiApp.Droid.Resource.Id.design_navigation_view;
+			global::Acr.UserDialogs.Resource.Id.disableHome = global::SalveminiApp.Droid.Resource.Id.disableHome;
+			global::Acr.UserDialogs.Resource.Id.edit_query = global::SalveminiApp.Droid.Resource.Id.edit_query;
+			global::Acr.UserDialogs.Resource.Id.end = global::SalveminiApp.Droid.Resource.Id.end;
+			global::Acr.UserDialogs.Resource.Id.end_padder = global::SalveminiApp.Droid.Resource.Id.end_padder;
+			global::Acr.UserDialogs.Resource.Id.enterAlways = global::SalveminiApp.Droid.Resource.Id.enterAlways;
+			global::Acr.UserDialogs.Resource.Id.enterAlwaysCollapsed = global::SalveminiApp.Droid.Resource.Id.enterAlwaysCollapsed;
+			global::Acr.UserDialogs.Resource.Id.exitUntilCollapsed = global::SalveminiApp.Droid.Resource.Id.exitUntilCollapsed;
+			global::Acr.UserDialogs.Resource.Id.expanded_menu = global::SalveminiApp.Droid.Resource.Id.expanded_menu;
+			global::Acr.UserDialogs.Resource.Id.expand_activities_button = global::SalveminiApp.Droid.Resource.Id.expand_activities_button;
+			global::Acr.UserDialogs.Resource.Id.fill = global::SalveminiApp.Droid.Resource.Id.fill;
+			global::Acr.UserDialogs.Resource.Id.fill_horizontal = global::SalveminiApp.Droid.Resource.Id.fill_horizontal;
+			global::Acr.UserDialogs.Resource.Id.fill_vertical = global::SalveminiApp.Droid.Resource.Id.fill_vertical;
+			global::Acr.UserDialogs.Resource.Id.@fixed = global::SalveminiApp.Droid.Resource.Id.@fixed;
+			global::Acr.UserDialogs.Resource.Id.forever = global::SalveminiApp.Droid.Resource.Id.forever;
+			global::Acr.UserDialogs.Resource.Id.FUNCTION = global::SalveminiApp.Droid.Resource.Id.FUNCTION;
+			global::Acr.UserDialogs.Resource.Id.ghost_view = global::SalveminiApp.Droid.Resource.Id.ghost_view;
+			global::Acr.UserDialogs.Resource.Id.home = global::SalveminiApp.Droid.Resource.Id.home;
+			global::Acr.UserDialogs.Resource.Id.homeAsUp = global::SalveminiApp.Droid.Resource.Id.homeAsUp;
+			global::Acr.UserDialogs.Resource.Id.icon = global::SalveminiApp.Droid.Resource.Id.icon;
+			global::Acr.UserDialogs.Resource.Id.icon_group = global::SalveminiApp.Droid.Resource.Id.icon_group;
+			global::Acr.UserDialogs.Resource.Id.ifRoom = global::SalveminiApp.Droid.Resource.Id.ifRoom;
+			global::Acr.UserDialogs.Resource.Id.image = global::SalveminiApp.Droid.Resource.Id.image;
+			global::Acr.UserDialogs.Resource.Id.info = global::SalveminiApp.Droid.Resource.Id.info;
+			global::Acr.UserDialogs.Resource.Id.italic = global::SalveminiApp.Droid.Resource.Id.italic;
+			global::Acr.UserDialogs.Resource.Id.item_touch_helper_previous_elevation = global::SalveminiApp.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::Acr.UserDialogs.Resource.Id.largeLabel = global::SalveminiApp.Droid.Resource.Id.largeLabel;
+			global::Acr.UserDialogs.Resource.Id.left = global::SalveminiApp.Droid.Resource.Id.left;
+			global::Acr.UserDialogs.Resource.Id.line1 = global::SalveminiApp.Droid.Resource.Id.line1;
+			global::Acr.UserDialogs.Resource.Id.line3 = global::SalveminiApp.Droid.Resource.Id.line3;
+			global::Acr.UserDialogs.Resource.Id.listMode = global::SalveminiApp.Droid.Resource.Id.listMode;
+			global::Acr.UserDialogs.Resource.Id.list_item = global::SalveminiApp.Droid.Resource.Id.list_item;
+			global::Acr.UserDialogs.Resource.Id.loadingImage = global::SalveminiApp.Droid.Resource.Id.loadingImage;
+			global::Acr.UserDialogs.Resource.Id.loadingProgressBar = global::SalveminiApp.Droid.Resource.Id.loadingProgressBar;
+			global::Acr.UserDialogs.Resource.Id.loadingProgressWheel = global::SalveminiApp.Droid.Resource.Id.loadingProgressWheel;
+			global::Acr.UserDialogs.Resource.Id.masked = global::SalveminiApp.Droid.Resource.Id.masked;
+			global::Acr.UserDialogs.Resource.Id.media_actions = global::SalveminiApp.Droid.Resource.Id.media_actions;
+			global::Acr.UserDialogs.Resource.Id.message = global::SalveminiApp.Droid.Resource.Id.message;
+			global::Acr.UserDialogs.Resource.Id.META = global::SalveminiApp.Droid.Resource.Id.META;
+			global::Acr.UserDialogs.Resource.Id.middle = global::SalveminiApp.Droid.Resource.Id.middle;
+			global::Acr.UserDialogs.Resource.Id.mini = global::SalveminiApp.Droid.Resource.Id.mini;
+			global::Acr.UserDialogs.Resource.Id.multiply = global::SalveminiApp.Droid.Resource.Id.multiply;
+			global::Acr.UserDialogs.Resource.Id.navigation_header_container = global::SalveminiApp.Droid.Resource.Id.navigation_header_container;
+			global::Acr.UserDialogs.Resource.Id.never = global::SalveminiApp.Droid.Resource.Id.never;
+			global::Acr.UserDialogs.Resource.Id.none = global::SalveminiApp.Droid.Resource.Id.none;
+			global::Acr.UserDialogs.Resource.Id.normal = global::SalveminiApp.Droid.Resource.Id.normal;
+			global::Acr.UserDialogs.Resource.Id.notification_background = global::SalveminiApp.Droid.Resource.Id.notification_background;
+			global::Acr.UserDialogs.Resource.Id.notification_main_column = global::SalveminiApp.Droid.Resource.Id.notification_main_column;
+			global::Acr.UserDialogs.Resource.Id.notification_main_column_container = global::SalveminiApp.Droid.Resource.Id.notification_main_column_container;
+			global::Acr.UserDialogs.Resource.Id.parallax = global::SalveminiApp.Droid.Resource.Id.parallax;
+			global::Acr.UserDialogs.Resource.Id.parentPanel = global::SalveminiApp.Droid.Resource.Id.parentPanel;
+			global::Acr.UserDialogs.Resource.Id.parent_matrix = global::SalveminiApp.Droid.Resource.Id.parent_matrix;
+			global::Acr.UserDialogs.Resource.Id.pin = global::SalveminiApp.Droid.Resource.Id.pin;
+			global::Acr.UserDialogs.Resource.Id.progress_circular = global::SalveminiApp.Droid.Resource.Id.progress_circular;
+			global::Acr.UserDialogs.Resource.Id.progress_horizontal = global::SalveminiApp.Droid.Resource.Id.progress_horizontal;
+			global::Acr.UserDialogs.Resource.Id.radio = global::SalveminiApp.Droid.Resource.Id.radio;
+			global::Acr.UserDialogs.Resource.Id.right = global::SalveminiApp.Droid.Resource.Id.right;
+			global::Acr.UserDialogs.Resource.Id.right_icon = global::SalveminiApp.Droid.Resource.Id.right_icon;
+			global::Acr.UserDialogs.Resource.Id.right_side = global::SalveminiApp.Droid.Resource.Id.right_side;
+			global::Acr.UserDialogs.Resource.Id.save_image_matrix = global::SalveminiApp.Droid.Resource.Id.save_image_matrix;
+			global::Acr.UserDialogs.Resource.Id.save_non_transition_alpha = global::SalveminiApp.Droid.Resource.Id.save_non_transition_alpha;
+			global::Acr.UserDialogs.Resource.Id.save_scale_type = global::SalveminiApp.Droid.Resource.Id.save_scale_type;
+			global::Acr.UserDialogs.Resource.Id.screen = global::SalveminiApp.Droid.Resource.Id.screen;
+			global::Acr.UserDialogs.Resource.Id.scroll = global::SalveminiApp.Droid.Resource.Id.scroll;
+			global::Acr.UserDialogs.Resource.Id.scrollable = global::SalveminiApp.Droid.Resource.Id.scrollable;
+			global::Acr.UserDialogs.Resource.Id.scrollIndicatorDown = global::SalveminiApp.Droid.Resource.Id.scrollIndicatorDown;
+			global::Acr.UserDialogs.Resource.Id.scrollIndicatorUp = global::SalveminiApp.Droid.Resource.Id.scrollIndicatorUp;
+			global::Acr.UserDialogs.Resource.Id.scrollView = global::SalveminiApp.Droid.Resource.Id.scrollView;
+			global::Acr.UserDialogs.Resource.Id.search_badge = global::SalveminiApp.Droid.Resource.Id.search_badge;
+			global::Acr.UserDialogs.Resource.Id.search_bar = global::SalveminiApp.Droid.Resource.Id.search_bar;
+			global::Acr.UserDialogs.Resource.Id.search_button = global::SalveminiApp.Droid.Resource.Id.search_button;
+			global::Acr.UserDialogs.Resource.Id.search_close_btn = global::SalveminiApp.Droid.Resource.Id.search_close_btn;
+			global::Acr.UserDialogs.Resource.Id.search_edit_frame = global::SalveminiApp.Droid.Resource.Id.search_edit_frame;
+			global::Acr.UserDialogs.Resource.Id.search_go_btn = global::SalveminiApp.Droid.Resource.Id.search_go_btn;
+			global::Acr.UserDialogs.Resource.Id.search_mag_icon = global::SalveminiApp.Droid.Resource.Id.search_mag_icon;
+			global::Acr.UserDialogs.Resource.Id.search_plate = global::SalveminiApp.Droid.Resource.Id.search_plate;
+			global::Acr.UserDialogs.Resource.Id.search_src_text = global::SalveminiApp.Droid.Resource.Id.search_src_text;
+			global::Acr.UserDialogs.Resource.Id.search_voice_btn = global::SalveminiApp.Droid.Resource.Id.search_voice_btn;
+			global::Acr.UserDialogs.Resource.Id.select_dialog_listview = global::SalveminiApp.Droid.Resource.Id.select_dialog_listview;
+			global::Acr.UserDialogs.Resource.Id.SHIFT = global::SalveminiApp.Droid.Resource.Id.SHIFT;
+			global::Acr.UserDialogs.Resource.Id.shortcut = global::SalveminiApp.Droid.Resource.Id.shortcut;
+			global::Acr.UserDialogs.Resource.Id.showCustom = global::SalveminiApp.Droid.Resource.Id.showCustom;
+			global::Acr.UserDialogs.Resource.Id.showHome = global::SalveminiApp.Droid.Resource.Id.showHome;
+			global::Acr.UserDialogs.Resource.Id.showTitle = global::SalveminiApp.Droid.Resource.Id.showTitle;
+			global::Acr.UserDialogs.Resource.Id.smallLabel = global::SalveminiApp.Droid.Resource.Id.smallLabel;
+			global::Acr.UserDialogs.Resource.Id.snackbar_action = global::SalveminiApp.Droid.Resource.Id.snackbar_action;
+			global::Acr.UserDialogs.Resource.Id.snackbar_text = global::SalveminiApp.Droid.Resource.Id.snackbar_text;
+			global::Acr.UserDialogs.Resource.Id.snap = global::SalveminiApp.Droid.Resource.Id.snap;
+			global::Acr.UserDialogs.Resource.Id.spacer = global::SalveminiApp.Droid.Resource.Id.spacer;
+			global::Acr.UserDialogs.Resource.Id.split_action_bar = global::SalveminiApp.Droid.Resource.Id.split_action_bar;
+			global::Acr.UserDialogs.Resource.Id.src_atop = global::SalveminiApp.Droid.Resource.Id.src_atop;
+			global::Acr.UserDialogs.Resource.Id.src_in = global::SalveminiApp.Droid.Resource.Id.src_in;
+			global::Acr.UserDialogs.Resource.Id.src_over = global::SalveminiApp.Droid.Resource.Id.src_over;
+			global::Acr.UserDialogs.Resource.Id.start = global::SalveminiApp.Droid.Resource.Id.start;
+			global::Acr.UserDialogs.Resource.Id.status_bar_latest_event_content = global::SalveminiApp.Droid.Resource.Id.status_bar_latest_event_content;
+			global::Acr.UserDialogs.Resource.Id.submenuarrow = global::SalveminiApp.Droid.Resource.Id.submenuarrow;
+			global::Acr.UserDialogs.Resource.Id.submit_area = global::SalveminiApp.Droid.Resource.Id.submit_area;
+			global::Acr.UserDialogs.Resource.Id.SYM = global::SalveminiApp.Droid.Resource.Id.SYM;
+			global::Acr.UserDialogs.Resource.Id.tabMode = global::SalveminiApp.Droid.Resource.Id.tabMode;
+			global::Acr.UserDialogs.Resource.Id.tag_transition_group = global::SalveminiApp.Droid.Resource.Id.tag_transition_group;
+			global::Acr.UserDialogs.Resource.Id.text = global::SalveminiApp.Droid.Resource.Id.text;
+			global::Acr.UserDialogs.Resource.Id.text2 = global::SalveminiApp.Droid.Resource.Id.text2;
+			global::Acr.UserDialogs.Resource.Id.textinput_counter = global::SalveminiApp.Droid.Resource.Id.textinput_counter;
+			global::Acr.UserDialogs.Resource.Id.textinput_error = global::SalveminiApp.Droid.Resource.Id.textinput_error;
+			global::Acr.UserDialogs.Resource.Id.textSpacerNoButtons = global::SalveminiApp.Droid.Resource.Id.textSpacerNoButtons;
+			global::Acr.UserDialogs.Resource.Id.textSpacerNoTitle = global::SalveminiApp.Droid.Resource.Id.textSpacerNoTitle;
+			global::Acr.UserDialogs.Resource.Id.textViewStatus = global::SalveminiApp.Droid.Resource.Id.textViewStatus;
+			global::Acr.UserDialogs.Resource.Id.text_input_password_toggle = global::SalveminiApp.Droid.Resource.Id.text_input_password_toggle;
+			global::Acr.UserDialogs.Resource.Id.time = global::SalveminiApp.Droid.Resource.Id.time;
+			global::Acr.UserDialogs.Resource.Id.title = global::SalveminiApp.Droid.Resource.Id.title;
+			global::Acr.UserDialogs.Resource.Id.titleDividerNoCustom = global::SalveminiApp.Droid.Resource.Id.titleDividerNoCustom;
+			global::Acr.UserDialogs.Resource.Id.title_template = global::SalveminiApp.Droid.Resource.Id.title_template;
+			global::Acr.UserDialogs.Resource.Id.top = global::SalveminiApp.Droid.Resource.Id.top;
+			global::Acr.UserDialogs.Resource.Id.topPanel = global::SalveminiApp.Droid.Resource.Id.topPanel;
+			global::Acr.UserDialogs.Resource.Id.touch_outside = global::SalveminiApp.Droid.Resource.Id.touch_outside;
+			global::Acr.UserDialogs.Resource.Id.transition_current_scene = global::SalveminiApp.Droid.Resource.Id.transition_current_scene;
+			global::Acr.UserDialogs.Resource.Id.transition_layout_save = global::SalveminiApp.Droid.Resource.Id.transition_layout_save;
+			global::Acr.UserDialogs.Resource.Id.transition_position = global::SalveminiApp.Droid.Resource.Id.transition_position;
+			global::Acr.UserDialogs.Resource.Id.transition_scene_layoutid_cache = global::SalveminiApp.Droid.Resource.Id.transition_scene_layoutid_cache;
+			global::Acr.UserDialogs.Resource.Id.transition_transform = global::SalveminiApp.Droid.Resource.Id.transition_transform;
+			global::Acr.UserDialogs.Resource.Id.uniform = global::SalveminiApp.Droid.Resource.Id.uniform;
+			global::Acr.UserDialogs.Resource.Id.up = global::SalveminiApp.Droid.Resource.Id.up;
+			global::Acr.UserDialogs.Resource.Id.useLogo = global::SalveminiApp.Droid.Resource.Id.useLogo;
+			global::Acr.UserDialogs.Resource.Id.view_offset_helper = global::SalveminiApp.Droid.Resource.Id.view_offset_helper;
+			global::Acr.UserDialogs.Resource.Id.visible = global::SalveminiApp.Droid.Resource.Id.visible;
+			global::Acr.UserDialogs.Resource.Id.withText = global::SalveminiApp.Droid.Resource.Id.withText;
+			global::Acr.UserDialogs.Resource.Id.wrap_content = global::SalveminiApp.Droid.Resource.Id.wrap_content;
+			global::Acr.UserDialogs.Resource.Integer.abc_config_activityDefaultDur = global::SalveminiApp.Droid.Resource.Integer.abc_config_activityDefaultDur;
+			global::Acr.UserDialogs.Resource.Integer.abc_config_activityShortDur = global::SalveminiApp.Droid.Resource.Integer.abc_config_activityShortDur;
+			global::Acr.UserDialogs.Resource.Integer.app_bar_elevation_anim_duration = global::SalveminiApp.Droid.Resource.Integer.app_bar_elevation_anim_duration;
+			global::Acr.UserDialogs.Resource.Integer.bottom_sheet_slide_duration = global::SalveminiApp.Droid.Resource.Integer.bottom_sheet_slide_duration;
+			global::Acr.UserDialogs.Resource.Integer.cancel_button_image_alpha = global::SalveminiApp.Droid.Resource.Integer.cancel_button_image_alpha;
+			global::Acr.UserDialogs.Resource.Integer.config_tooltipAnimTime = global::SalveminiApp.Droid.Resource.Integer.config_tooltipAnimTime;
+			global::Acr.UserDialogs.Resource.Integer.design_snackbar_text_max_lines = global::SalveminiApp.Droid.Resource.Integer.design_snackbar_text_max_lines;
+			global::Acr.UserDialogs.Resource.Integer.hide_password_duration = global::SalveminiApp.Droid.Resource.Integer.hide_password_duration;
+			global::Acr.UserDialogs.Resource.Integer.show_password_duration = global::SalveminiApp.Droid.Resource.Integer.show_password_duration;
+			global::Acr.UserDialogs.Resource.Integer.status_bar_notification_info_maxnum = global::SalveminiApp.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Acr.UserDialogs.Resource.Layout.abc_action_bar_title_item = global::SalveminiApp.Droid.Resource.Layout.abc_action_bar_title_item;
+			global::Acr.UserDialogs.Resource.Layout.abc_action_bar_up_container = global::SalveminiApp.Droid.Resource.Layout.abc_action_bar_up_container;
+			global::Acr.UserDialogs.Resource.Layout.abc_action_menu_item_layout = global::SalveminiApp.Droid.Resource.Layout.abc_action_menu_item_layout;
+			global::Acr.UserDialogs.Resource.Layout.abc_action_menu_layout = global::SalveminiApp.Droid.Resource.Layout.abc_action_menu_layout;
+			global::Acr.UserDialogs.Resource.Layout.abc_action_mode_bar = global::SalveminiApp.Droid.Resource.Layout.abc_action_mode_bar;
+			global::Acr.UserDialogs.Resource.Layout.abc_action_mode_close_item_material = global::SalveminiApp.Droid.Resource.Layout.abc_action_mode_close_item_material;
+			global::Acr.UserDialogs.Resource.Layout.abc_activity_chooser_view = global::SalveminiApp.Droid.Resource.Layout.abc_activity_chooser_view;
+			global::Acr.UserDialogs.Resource.Layout.abc_activity_chooser_view_list_item = global::SalveminiApp.Droid.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::Acr.UserDialogs.Resource.Layout.abc_alert_dialog_button_bar_material = global::SalveminiApp.Droid.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::Acr.UserDialogs.Resource.Layout.abc_alert_dialog_material = global::SalveminiApp.Droid.Resource.Layout.abc_alert_dialog_material;
+			global::Acr.UserDialogs.Resource.Layout.abc_alert_dialog_title_material = global::SalveminiApp.Droid.Resource.Layout.abc_alert_dialog_title_material;
+			global::Acr.UserDialogs.Resource.Layout.abc_dialog_title_material = global::SalveminiApp.Droid.Resource.Layout.abc_dialog_title_material;
+			global::Acr.UserDialogs.Resource.Layout.abc_expanded_menu_layout = global::SalveminiApp.Droid.Resource.Layout.abc_expanded_menu_layout;
+			global::Acr.UserDialogs.Resource.Layout.abc_list_menu_item_checkbox = global::SalveminiApp.Droid.Resource.Layout.abc_list_menu_item_checkbox;
+			global::Acr.UserDialogs.Resource.Layout.abc_list_menu_item_icon = global::SalveminiApp.Droid.Resource.Layout.abc_list_menu_item_icon;
+			global::Acr.UserDialogs.Resource.Layout.abc_list_menu_item_layout = global::SalveminiApp.Droid.Resource.Layout.abc_list_menu_item_layout;
+			global::Acr.UserDialogs.Resource.Layout.abc_list_menu_item_radio = global::SalveminiApp.Droid.Resource.Layout.abc_list_menu_item_radio;
+			global::Acr.UserDialogs.Resource.Layout.abc_popup_menu_header_item_layout = global::SalveminiApp.Droid.Resource.Layout.abc_popup_menu_header_item_layout;
+			global::Acr.UserDialogs.Resource.Layout.abc_popup_menu_item_layout = global::SalveminiApp.Droid.Resource.Layout.abc_popup_menu_item_layout;
+			global::Acr.UserDialogs.Resource.Layout.abc_screen_content_include = global::SalveminiApp.Droid.Resource.Layout.abc_screen_content_include;
+			global::Acr.UserDialogs.Resource.Layout.abc_screen_simple = global::SalveminiApp.Droid.Resource.Layout.abc_screen_simple;
+			global::Acr.UserDialogs.Resource.Layout.abc_screen_simple_overlay_action_mode = global::SalveminiApp.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::Acr.UserDialogs.Resource.Layout.abc_screen_toolbar = global::SalveminiApp.Droid.Resource.Layout.abc_screen_toolbar;
+			global::Acr.UserDialogs.Resource.Layout.abc_search_dropdown_item_icons_2line = global::SalveminiApp.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::Acr.UserDialogs.Resource.Layout.abc_search_view = global::SalveminiApp.Droid.Resource.Layout.abc_search_view;
+			global::Acr.UserDialogs.Resource.Layout.abc_select_dialog_material = global::SalveminiApp.Droid.Resource.Layout.abc_select_dialog_material;
+			global::Acr.UserDialogs.Resource.Layout.design_bottom_navigation_item = global::SalveminiApp.Droid.Resource.Layout.design_bottom_navigation_item;
+			global::Acr.UserDialogs.Resource.Layout.design_bottom_sheet_dialog = global::SalveminiApp.Droid.Resource.Layout.design_bottom_sheet_dialog;
+			global::Acr.UserDialogs.Resource.Layout.design_layout_snackbar = global::SalveminiApp.Droid.Resource.Layout.design_layout_snackbar;
+			global::Acr.UserDialogs.Resource.Layout.design_layout_snackbar_include = global::SalveminiApp.Droid.Resource.Layout.design_layout_snackbar_include;
+			global::Acr.UserDialogs.Resource.Layout.design_layout_tab_icon = global::SalveminiApp.Droid.Resource.Layout.design_layout_tab_icon;
+			global::Acr.UserDialogs.Resource.Layout.design_layout_tab_text = global::SalveminiApp.Droid.Resource.Layout.design_layout_tab_text;
+			global::Acr.UserDialogs.Resource.Layout.design_menu_item_action_area = global::SalveminiApp.Droid.Resource.Layout.design_menu_item_action_area;
+			global::Acr.UserDialogs.Resource.Layout.design_navigation_item = global::SalveminiApp.Droid.Resource.Layout.design_navigation_item;
+			global::Acr.UserDialogs.Resource.Layout.design_navigation_item_header = global::SalveminiApp.Droid.Resource.Layout.design_navigation_item_header;
+			global::Acr.UserDialogs.Resource.Layout.design_navigation_item_separator = global::SalveminiApp.Droid.Resource.Layout.design_navigation_item_separator;
+			global::Acr.UserDialogs.Resource.Layout.design_navigation_item_subheader = global::SalveminiApp.Droid.Resource.Layout.design_navigation_item_subheader;
+			global::Acr.UserDialogs.Resource.Layout.design_navigation_menu = global::SalveminiApp.Droid.Resource.Layout.design_navigation_menu;
+			global::Acr.UserDialogs.Resource.Layout.design_navigation_menu_item = global::SalveminiApp.Droid.Resource.Layout.design_navigation_menu_item;
+			global::Acr.UserDialogs.Resource.Layout.design_text_input_password_icon = global::SalveminiApp.Droid.Resource.Layout.design_text_input_password_icon;
+			global::Acr.UserDialogs.Resource.Layout.loading = global::SalveminiApp.Droid.Resource.Layout.loading;
+			global::Acr.UserDialogs.Resource.Layout.loadingimage = global::SalveminiApp.Droid.Resource.Layout.loadingimage;
+			global::Acr.UserDialogs.Resource.Layout.loadingprogress = global::SalveminiApp.Droid.Resource.Layout.loadingprogress;
+			global::Acr.UserDialogs.Resource.Layout.notification_action = global::SalveminiApp.Droid.Resource.Layout.notification_action;
+			global::Acr.UserDialogs.Resource.Layout.notification_action_tombstone = global::SalveminiApp.Droid.Resource.Layout.notification_action_tombstone;
+			global::Acr.UserDialogs.Resource.Layout.notification_media_action = global::SalveminiApp.Droid.Resource.Layout.notification_media_action;
+			global::Acr.UserDialogs.Resource.Layout.notification_media_cancel_action = global::SalveminiApp.Droid.Resource.Layout.notification_media_cancel_action;
+			global::Acr.UserDialogs.Resource.Layout.notification_template_big_media = global::SalveminiApp.Droid.Resource.Layout.notification_template_big_media;
+			global::Acr.UserDialogs.Resource.Layout.notification_template_big_media_custom = global::SalveminiApp.Droid.Resource.Layout.notification_template_big_media_custom;
+			global::Acr.UserDialogs.Resource.Layout.notification_template_big_media_narrow = global::SalveminiApp.Droid.Resource.Layout.notification_template_big_media_narrow;
+			global::Acr.UserDialogs.Resource.Layout.notification_template_big_media_narrow_custom = global::SalveminiApp.Droid.Resource.Layout.notification_template_big_media_narrow_custom;
+			global::Acr.UserDialogs.Resource.Layout.notification_template_custom_big = global::SalveminiApp.Droid.Resource.Layout.notification_template_custom_big;
+			global::Acr.UserDialogs.Resource.Layout.notification_template_icon_group = global::SalveminiApp.Droid.Resource.Layout.notification_template_icon_group;
+			global::Acr.UserDialogs.Resource.Layout.notification_template_lines_media = global::SalveminiApp.Droid.Resource.Layout.notification_template_lines_media;
+			global::Acr.UserDialogs.Resource.Layout.notification_template_media = global::SalveminiApp.Droid.Resource.Layout.notification_template_media;
+			global::Acr.UserDialogs.Resource.Layout.notification_template_media_custom = global::SalveminiApp.Droid.Resource.Layout.notification_template_media_custom;
+			global::Acr.UserDialogs.Resource.Layout.notification_template_part_chronometer = global::SalveminiApp.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::Acr.UserDialogs.Resource.Layout.notification_template_part_time = global::SalveminiApp.Droid.Resource.Layout.notification_template_part_time;
+			global::Acr.UserDialogs.Resource.Layout.select_dialog_item_material = global::SalveminiApp.Droid.Resource.Layout.select_dialog_item_material;
+			global::Acr.UserDialogs.Resource.Layout.select_dialog_multichoice_material = global::SalveminiApp.Droid.Resource.Layout.select_dialog_multichoice_material;
+			global::Acr.UserDialogs.Resource.Layout.select_dialog_singlechoice_material = global::SalveminiApp.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::Acr.UserDialogs.Resource.Layout.support_simple_spinner_dropdown_item = global::SalveminiApp.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::Acr.UserDialogs.Resource.Layout.tooltip = global::SalveminiApp.Droid.Resource.Layout.tooltip;
+			global::Acr.UserDialogs.Resource.String.abc_action_bar_home_description = global::SalveminiApp.Droid.Resource.String.abc_action_bar_home_description;
+			global::Acr.UserDialogs.Resource.String.abc_action_bar_up_description = global::SalveminiApp.Droid.Resource.String.abc_action_bar_up_description;
+			global::Acr.UserDialogs.Resource.String.abc_action_menu_overflow_description = global::SalveminiApp.Droid.Resource.String.abc_action_menu_overflow_description;
+			global::Acr.UserDialogs.Resource.String.abc_action_mode_done = global::SalveminiApp.Droid.Resource.String.abc_action_mode_done;
+			global::Acr.UserDialogs.Resource.String.abc_activitychooserview_choose_application = global::SalveminiApp.Droid.Resource.String.abc_activitychooserview_choose_application;
+			global::Acr.UserDialogs.Resource.String.abc_activity_chooser_view_see_all = global::SalveminiApp.Droid.Resource.String.abc_activity_chooser_view_see_all;
+			global::Acr.UserDialogs.Resource.String.abc_capital_off = global::SalveminiApp.Droid.Resource.String.abc_capital_off;
+			global::Acr.UserDialogs.Resource.String.abc_capital_on = global::SalveminiApp.Droid.Resource.String.abc_capital_on;
+			global::Acr.UserDialogs.Resource.String.abc_font_family_body_1_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_body_1_material;
+			global::Acr.UserDialogs.Resource.String.abc_font_family_body_2_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_body_2_material;
+			global::Acr.UserDialogs.Resource.String.abc_font_family_button_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_button_material;
+			global::Acr.UserDialogs.Resource.String.abc_font_family_caption_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_caption_material;
+			global::Acr.UserDialogs.Resource.String.abc_font_family_display_1_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_display_1_material;
+			global::Acr.UserDialogs.Resource.String.abc_font_family_display_2_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_display_2_material;
+			global::Acr.UserDialogs.Resource.String.abc_font_family_display_3_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_display_3_material;
+			global::Acr.UserDialogs.Resource.String.abc_font_family_display_4_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_display_4_material;
+			global::Acr.UserDialogs.Resource.String.abc_font_family_headline_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_headline_material;
+			global::Acr.UserDialogs.Resource.String.abc_font_family_menu_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_menu_material;
+			global::Acr.UserDialogs.Resource.String.abc_font_family_subhead_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_subhead_material;
+			global::Acr.UserDialogs.Resource.String.abc_font_family_title_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_title_material;
+			global::Acr.UserDialogs.Resource.String.abc_searchview_description_clear = global::SalveminiApp.Droid.Resource.String.abc_searchview_description_clear;
+			global::Acr.UserDialogs.Resource.String.abc_searchview_description_query = global::SalveminiApp.Droid.Resource.String.abc_searchview_description_query;
+			global::Acr.UserDialogs.Resource.String.abc_searchview_description_search = global::SalveminiApp.Droid.Resource.String.abc_searchview_description_search;
+			global::Acr.UserDialogs.Resource.String.abc_searchview_description_submit = global::SalveminiApp.Droid.Resource.String.abc_searchview_description_submit;
+			global::Acr.UserDialogs.Resource.String.abc_searchview_description_voice = global::SalveminiApp.Droid.Resource.String.abc_searchview_description_voice;
+			global::Acr.UserDialogs.Resource.String.abc_search_hint = global::SalveminiApp.Droid.Resource.String.abc_search_hint;
+			global::Acr.UserDialogs.Resource.String.abc_shareactionprovider_share_with = global::SalveminiApp.Droid.Resource.String.abc_shareactionprovider_share_with;
+			global::Acr.UserDialogs.Resource.String.abc_shareactionprovider_share_with_application = global::SalveminiApp.Droid.Resource.String.abc_shareactionprovider_share_with_application;
+			global::Acr.UserDialogs.Resource.String.abc_toolbar_collapse_description = global::SalveminiApp.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::Acr.UserDialogs.Resource.String.appbar_scrolling_view_behavior = global::SalveminiApp.Droid.Resource.String.appbar_scrolling_view_behavior;
+			global::Acr.UserDialogs.Resource.String.bottom_sheet_behavior = global::SalveminiApp.Droid.Resource.String.bottom_sheet_behavior;
+			global::Acr.UserDialogs.Resource.String.character_counter_pattern = global::SalveminiApp.Droid.Resource.String.character_counter_pattern;
+			global::Acr.UserDialogs.Resource.String.library_name = global::SalveminiApp.Droid.Resource.String.library_name;
+			global::Acr.UserDialogs.Resource.String.password_toggle_content_description = global::SalveminiApp.Droid.Resource.String.password_toggle_content_description;
+			global::Acr.UserDialogs.Resource.String.path_password_eye = global::SalveminiApp.Droid.Resource.String.path_password_eye;
+			global::Acr.UserDialogs.Resource.String.path_password_eye_mask_strike_through = global::SalveminiApp.Droid.Resource.String.path_password_eye_mask_strike_through;
+			global::Acr.UserDialogs.Resource.String.path_password_eye_mask_visible = global::SalveminiApp.Droid.Resource.String.path_password_eye_mask_visible;
+			global::Acr.UserDialogs.Resource.String.path_password_strike_through = global::SalveminiApp.Droid.Resource.String.path_password_strike_through;
+			global::Acr.UserDialogs.Resource.String.search_menu_title = global::SalveminiApp.Droid.Resource.String.search_menu_title;
+			global::Acr.UserDialogs.Resource.String.status_bar_notification_info_overflow = global::SalveminiApp.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::Acr.UserDialogs.Resource.Style.AlertDialog_AppCompat = global::SalveminiApp.Droid.Resource.Style.AlertDialog_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.AlertDialog_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.Animation_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Animation_AppCompat_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Animation_AppCompat_DropDownUp = global::SalveminiApp.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::Acr.UserDialogs.Resource.Style.Animation_AppCompat_Tooltip = global::SalveminiApp.Droid.Resource.Style.Animation_AppCompat_Tooltip;
+			global::Acr.UserDialogs.Resource.Style.Animation_Design_BottomSheetDialog = global::SalveminiApp.Droid.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::Acr.UserDialogs.Resource.Style.Base_AlertDialog_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_AlertDialog_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Base_AlertDialog_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.Base_Animation_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::SalveminiApp.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::Acr.UserDialogs.Resource.Style.Base_Animation_AppCompat_Tooltip = global::SalveminiApp.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip;
+			global::Acr.UserDialogs.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Base_DialogWindowTitle_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Button = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Large = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Small = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Title = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Tooltip = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Tooltip;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Acr.UserDialogs.Resource.Style.Base_ThemeOverlay_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::Acr.UserDialogs.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::Acr.UserDialogs.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Acr.UserDialogs.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Acr.UserDialogs.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.Base_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::Acr.UserDialogs.Resource.Style.Base_Theme_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::Acr.UserDialogs.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::Acr.UserDialogs.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::Acr.UserDialogs.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::Acr.UserDialogs.Resource.Style.Base_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::Acr.UserDialogs.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::Acr.UserDialogs.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::Acr.UserDialogs.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::Acr.UserDialogs.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Acr.UserDialogs.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Base_V11_Theme_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView = global::SalveminiApp.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView;
+			global::Acr.UserDialogs.Resource.Style.Base_V12_Widget_AppCompat_EditText = global::SalveminiApp.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText;
+			global::Acr.UserDialogs.Resource.Style.Base_V14_Widget_Design_AppBarLayout = global::SalveminiApp.Droid.Resource.Style.Base_V14_Widget_Design_AppBarLayout;
+			global::Acr.UserDialogs.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Base_V21_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_V21_Theme_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Base_V21_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Base_V21_Widget_Design_AppBarLayout = global::SalveminiApp.Droid.Resource.Style.Base_V21_Widget_Design_AppBarLayout;
+			global::Acr.UserDialogs.Resource.Style.Base_V22_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_V22_Theme_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Base_V22_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.Base_V23_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_V23_Theme_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Base_V23_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.Base_V26_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_V26_Theme_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Base_V26_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.Base_V26_Widget_AppCompat_Toolbar = global::SalveminiApp.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar;
+			global::Acr.UserDialogs.Resource.Style.Base_V26_Widget_Design_AppBarLayout = global::SalveminiApp.Droid.Resource.Style.Base_V26_Widget_Design_AppBarLayout;
+			global::Acr.UserDialogs.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Base_V7_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_V7_Theme_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Base_V7_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::SalveminiApp.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::Acr.UserDialogs.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::SalveminiApp.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::Acr.UserDialogs.Resource.Style.Base_V7_Widget_AppCompat_Toolbar = global::SalveminiApp.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ActionBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ActionButton = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ActionMode = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Button = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Button;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Button_Small = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_EditText = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ImageButton = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ListView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_RatingBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_SearchView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_SeekBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Spinner = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Toolbar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_Design_AppBarLayout = global::SalveminiApp.Droid.Resource.Style.Base_Widget_Design_AppBarLayout;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_Design_TabLayout = global::SalveminiApp.Droid.Resource.Style.Base_Widget_Design_TabLayout;
+			global::Acr.UserDialogs.Resource.Style.Platform_AppCompat = global::SalveminiApp.Droid.Resource.Style.Platform_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Platform_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Platform_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.Platform_ThemeOverlay_AppCompat = global::SalveminiApp.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::SalveminiApp.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::Acr.UserDialogs.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.Platform_V11_AppCompat = global::SalveminiApp.Droid.Resource.Style.Platform_V11_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Platform_V11_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Platform_V11_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.Platform_V14_AppCompat = global::SalveminiApp.Droid.Resource.Style.Platform_V14_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Platform_V14_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Platform_V14_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.Platform_V21_AppCompat = global::SalveminiApp.Droid.Resource.Style.Platform_V21_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Platform_V21_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Platform_V21_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.Platform_V25_AppCompat = global::SalveminiApp.Droid.Resource.Style.Platform_V25_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Platform_V25_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Platform_V25_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.Platform_Widget_AppCompat_Spinner = global::SalveminiApp.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::Acr.UserDialogs.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::Acr.UserDialogs.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::Acr.UserDialogs.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::Acr.UserDialogs.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::Acr.UserDialogs.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::Acr.UserDialogs.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::Acr.UserDialogs.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::Acr.UserDialogs.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::Acr.UserDialogs.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::Acr.UserDialogs.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::Acr.UserDialogs.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::Acr.UserDialogs.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::SalveminiApp.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::Acr.UserDialogs.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::SalveminiApp.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Body1 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Body2 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Button = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Button;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Caption = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Display1 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Display2 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Display3 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Display4 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Headline = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Large = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Large;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Medium = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Menu = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Small = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Small;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Subhead = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Title;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Tooltip = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Tooltip;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Compat_Notification = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Compat_Notification_Info = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Compat_Notification_Media = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Media;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Compat_Notification_Time = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Compat_Notification_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Design_Counter = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_Counter;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Design_Counter_Overflow = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Design_Error = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_Error;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Design_Hint = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_Hint;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Design_Snackbar_Message = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Design_Tab = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_Tab;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_AppCompat = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_AppCompat_Dark = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_CompactMenu = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_DayNight = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_Light_Dialog = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_NoActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::Acr.UserDialogs.Resource.Style.Theme_Design = global::SalveminiApp.Droid.Resource.Style.Theme_Design;
+			global::Acr.UserDialogs.Resource.Style.Theme_Design_BottomSheetDialog = global::SalveminiApp.Droid.Resource.Style.Theme_Design_BottomSheetDialog;
+			global::Acr.UserDialogs.Resource.Style.Theme_Design_Light = global::SalveminiApp.Droid.Resource.Style.Theme_Design_Light;
+			global::Acr.UserDialogs.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::SalveminiApp.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog;
+			global::Acr.UserDialogs.Resource.Style.Theme_Design_Light_NoActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_Design_Light_NoActionBar;
+			global::Acr.UserDialogs.Resource.Style.Theme_Design_NoActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_Design_NoActionBar;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ActionBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionBar;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ActionButton = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionButton;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ActionMode = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionMode;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ActivityChooserView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Button = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Button;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ButtonBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Button_Borderless = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Button_Colored = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Button_Small = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Button_Small;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_EditText = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_EditText;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ImageButton = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ImageButton;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_ActionBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_ActionButton = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_SearchView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ListMenuView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ListMenuView;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ListPopupWindow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ListView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ListView;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ListView_DropDown = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ListView_Menu = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_PopupMenu = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_PopupWindow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ProgressBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_RatingBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_RatingBar;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_RatingBar_Small = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_SearchView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_SearchView;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_SeekBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_SeekBar;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Spinner = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Spinner;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Toolbar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Toolbar;
+			global::Acr.UserDialogs.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Acr.UserDialogs.Resource.Style.Widget_Compat_NotificationActionContainer = global::SalveminiApp.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Acr.UserDialogs.Resource.Style.Widget_Compat_NotificationActionText = global::SalveminiApp.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Acr.UserDialogs.Resource.Style.Widget_Design_AppBarLayout = global::SalveminiApp.Droid.Resource.Style.Widget_Design_AppBarLayout;
+			global::Acr.UserDialogs.Resource.Style.Widget_Design_BottomNavigationView = global::SalveminiApp.Droid.Resource.Style.Widget_Design_BottomNavigationView;
+			global::Acr.UserDialogs.Resource.Style.Widget_Design_BottomSheet_Modal = global::SalveminiApp.Droid.Resource.Style.Widget_Design_BottomSheet_Modal;
+			global::Acr.UserDialogs.Resource.Style.Widget_Design_CollapsingToolbar = global::SalveminiApp.Droid.Resource.Style.Widget_Design_CollapsingToolbar;
+			global::Acr.UserDialogs.Resource.Style.Widget_Design_CoordinatorLayout = global::SalveminiApp.Droid.Resource.Style.Widget_Design_CoordinatorLayout;
+			global::Acr.UserDialogs.Resource.Style.Widget_Design_FloatingActionButton = global::SalveminiApp.Droid.Resource.Style.Widget_Design_FloatingActionButton;
+			global::Acr.UserDialogs.Resource.Style.Widget_Design_NavigationView = global::SalveminiApp.Droid.Resource.Style.Widget_Design_NavigationView;
+			global::Acr.UserDialogs.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::SalveminiApp.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
+			global::Acr.UserDialogs.Resource.Style.Widget_Design_Snackbar = global::SalveminiApp.Droid.Resource.Style.Widget_Design_Snackbar;
+			global::Acr.UserDialogs.Resource.Style.Widget_Design_TabLayout = global::SalveminiApp.Droid.Resource.Style.Widget_Design_TabLayout;
+			global::Acr.UserDialogs.Resource.Style.Widget_Design_TextInputLayout = global::SalveminiApp.Droid.Resource.Style.Widget_Design_TextInputLayout;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar = global::SalveminiApp.Droid.Resource.Styleable.ActionBar;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBarLayout = global::SalveminiApp.Droid.Resource.Styleable.ActionBarLayout;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::SalveminiApp.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_background = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_background;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_backgroundSplit = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_backgroundSplit;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_backgroundStacked = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_backgroundStacked;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_contentInsetEnd = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_contentInsetLeft = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_contentInsetRight = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_contentInsetRight;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_contentInsetStart = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_contentInsetStart;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_customNavigationLayout = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_displayOptions = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_displayOptions;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_divider = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_divider;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_elevation = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_height = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_height;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_hideOnContentScroll = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_homeAsUpIndicator = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_homeLayout = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_homeLayout;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_icon = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_icon;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_itemPadding = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_itemPadding;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_logo = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_logo;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_navigationMode = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_navigationMode;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_popupTheme = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_popupTheme;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_progressBarPadding = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_progressBarPadding;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_progressBarStyle = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_progressBarStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_subtitle = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_subtitle;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_subtitleTextStyle = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_title = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_title;
+			global::Acr.UserDialogs.Resource.Styleable.ActionBar_titleTextStyle = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_titleTextStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ActionMenuItemView = global::SalveminiApp.Droid.Resource.Styleable.ActionMenuItemView;
+			global::Acr.UserDialogs.Resource.Styleable.ActionMenuItemView_android_minWidth = global::SalveminiApp.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::Acr.UserDialogs.Resource.Styleable.ActionMenuView = global::SalveminiApp.Droid.Resource.Styleable.ActionMenuView;
+			global::Acr.UserDialogs.Resource.Styleable.ActionMode = global::SalveminiApp.Droid.Resource.Styleable.ActionMode;
+			global::Acr.UserDialogs.Resource.Styleable.ActionMode_background = global::SalveminiApp.Droid.Resource.Styleable.ActionMode_background;
+			global::Acr.UserDialogs.Resource.Styleable.ActionMode_backgroundSplit = global::SalveminiApp.Droid.Resource.Styleable.ActionMode_backgroundSplit;
+			global::Acr.UserDialogs.Resource.Styleable.ActionMode_closeItemLayout = global::SalveminiApp.Droid.Resource.Styleable.ActionMode_closeItemLayout;
+			global::Acr.UserDialogs.Resource.Styleable.ActionMode_height = global::SalveminiApp.Droid.Resource.Styleable.ActionMode_height;
+			global::Acr.UserDialogs.Resource.Styleable.ActionMode_subtitleTextStyle = global::SalveminiApp.Droid.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ActionMode_titleTextStyle = global::SalveminiApp.Droid.Resource.Styleable.ActionMode_titleTextStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ActivityChooserView = global::SalveminiApp.Droid.Resource.Styleable.ActivityChooserView;
+			global::Acr.UserDialogs.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::SalveminiApp.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::Acr.UserDialogs.Resource.Styleable.ActivityChooserView_initialActivityCount = global::SalveminiApp.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::Acr.UserDialogs.Resource.Styleable.AlertDialog = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog;
+			global::Acr.UserDialogs.Resource.Styleable.AlertDialog_android_layout = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_android_layout;
+			global::Acr.UserDialogs.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::Acr.UserDialogs.Resource.Styleable.AlertDialog_listItemLayout = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_listItemLayout;
+			global::Acr.UserDialogs.Resource.Styleable.AlertDialog_listLayout = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_listLayout;
+			global::Acr.UserDialogs.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::Acr.UserDialogs.Resource.Styleable.AlertDialog_showTitle = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_showTitle;
+			global::Acr.UserDialogs.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::Acr.UserDialogs.Resource.Styleable.AppBarLayout = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout;
+			global::Acr.UserDialogs.Resource.Styleable.AppBarLayoutStates = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayoutStates;
+			global::Acr.UserDialogs.Resource.Styleable.AppBarLayoutStates_state_collapsed = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed;
+			global::Acr.UserDialogs.Resource.Styleable.AppBarLayoutStates_state_collapsible = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible;
+			global::Acr.UserDialogs.Resource.Styleable.AppBarLayout_android_background = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_android_background;
+			global::Acr.UserDialogs.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster;
+			global::Acr.UserDialogs.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus;
+			global::Acr.UserDialogs.Resource.Styleable.AppBarLayout_elevation = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.AppBarLayout_expanded = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_expanded;
+			global::Acr.UserDialogs.Resource.Styleable.AppBarLayout_Layout = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_Layout;
+			global::Acr.UserDialogs.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
+			global::Acr.UserDialogs.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatImageView = global::SalveminiApp.Droid.Resource.Styleable.AppCompatImageView;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatImageView_android_src = global::SalveminiApp.Droid.Resource.Styleable.AppCompatImageView_android_src;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatImageView_srcCompat = global::SalveminiApp.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatImageView_tint = global::SalveminiApp.Droid.Resource.Styleable.AppCompatImageView_tint;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatImageView_tintMode = global::SalveminiApp.Droid.Resource.Styleable.AppCompatImageView_tintMode;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatSeekBar = global::SalveminiApp.Droid.Resource.Styleable.AppCompatSeekBar;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatSeekBar_android_thumb = global::SalveminiApp.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatSeekBar_tickMark = global::SalveminiApp.Droid.Resource.Styleable.AppCompatSeekBar_tickMark;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::SalveminiApp.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::SalveminiApp.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTextHelper = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTextView = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTextView_android_textAppearance = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTextView_fontFamily = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTextView_textAllCaps = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionBarDivider = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionBarSize = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionBarStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionBarTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_buttonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_checkboxStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_colorAccent = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_colorControlActivated = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_colorControlNormal = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_colorError = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorError;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_colorPrimary = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_controlBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_dialogTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_dividerVertical = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_editTextBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_editTextColor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_editTextStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_panelBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_searchViewStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_seekBarStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_spinnerStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_switchStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_toolbarStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_tooltipForegroundColor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_tooltipForegroundColor;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_tooltipFrameBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_tooltipFrameBackground;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_windowActionBar = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_windowNoTitle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::Acr.UserDialogs.Resource.Styleable.BottomNavigationView = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView;
+			global::Acr.UserDialogs.Resource.Styleable.BottomNavigationView_elevation = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.BottomNavigationView_itemBackground = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_itemBackground;
+			global::Acr.UserDialogs.Resource.Styleable.BottomNavigationView_itemIconTint = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_itemIconTint;
+			global::Acr.UserDialogs.Resource.Styleable.BottomNavigationView_itemTextColor = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_itemTextColor;
+			global::Acr.UserDialogs.Resource.Styleable.BottomNavigationView_menu = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_menu;
+			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout = global::SalveminiApp.Droid.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::SalveminiApp.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
+			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::SalveminiApp.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::SalveminiApp.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::Acr.UserDialogs.Resource.Styleable.ButtonBarLayout = global::SalveminiApp.Droid.Resource.Styleable.ButtonBarLayout;
+			global::Acr.UserDialogs.Resource.Styleable.ButtonBarLayout_allowStacking = global::SalveminiApp.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_Layout = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_title = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_title;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
+			global::Acr.UserDialogs.Resource.Styleable.ColorStateListItem = global::SalveminiApp.Droid.Resource.Styleable.ColorStateListItem;
+			global::Acr.UserDialogs.Resource.Styleable.ColorStateListItem_alpha = global::SalveminiApp.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::Acr.UserDialogs.Resource.Styleable.ColorStateListItem_android_alpha = global::SalveminiApp.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Acr.UserDialogs.Resource.Styleable.ColorStateListItem_android_color = global::SalveminiApp.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::Acr.UserDialogs.Resource.Styleable.CompoundButton = global::SalveminiApp.Droid.Resource.Styleable.CompoundButton;
+			global::Acr.UserDialogs.Resource.Styleable.CompoundButton_android_button = global::SalveminiApp.Droid.Resource.Styleable.CompoundButton_android_button;
+			global::Acr.UserDialogs.Resource.Styleable.CompoundButton_buttonTint = global::SalveminiApp.Droid.Resource.Styleable.CompoundButton_buttonTint;
+			global::Acr.UserDialogs.Resource.Styleable.CompoundButton_buttonTintMode = global::SalveminiApp.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::Acr.UserDialogs.Resource.Styleable.CoordinatorLayout = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout;
+			global::Acr.UserDialogs.Resource.Styleable.CoordinatorLayout_keylines = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::Acr.UserDialogs.Resource.Styleable.CoordinatorLayout_Layout = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout;
+			global::Acr.UserDialogs.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::Acr.UserDialogs.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::Acr.UserDialogs.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::Acr.UserDialogs.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::Acr.UserDialogs.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::Acr.UserDialogs.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::Acr.UserDialogs.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::Acr.UserDialogs.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::Acr.UserDialogs.Resource.Styleable.DesignTheme = global::SalveminiApp.Droid.Resource.Styleable.DesignTheme;
+			global::Acr.UserDialogs.Resource.Styleable.DesignTheme_bottomSheetDialogTheme = global::SalveminiApp.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme;
+			global::Acr.UserDialogs.Resource.Styleable.DesignTheme_bottomSheetStyle = global::SalveminiApp.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle;
+			global::Acr.UserDialogs.Resource.Styleable.DesignTheme_textColorError = global::SalveminiApp.Droid.Resource.Styleable.DesignTheme_textColorError;
+			global::Acr.UserDialogs.Resource.Styleable.DrawerArrowToggle = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle;
+			global::Acr.UserDialogs.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::Acr.UserDialogs.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::Acr.UserDialogs.Resource.Styleable.DrawerArrowToggle_barLength = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::Acr.UserDialogs.Resource.Styleable.DrawerArrowToggle_color = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_color;
+			global::Acr.UserDialogs.Resource.Styleable.DrawerArrowToggle_drawableSize = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::Acr.UserDialogs.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::Acr.UserDialogs.Resource.Styleable.DrawerArrowToggle_spinBars = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::Acr.UserDialogs.Resource.Styleable.DrawerArrowToggle_thickness = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton;
+			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_backgroundTint = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
+			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
+			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout;
+			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_borderWidth = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
+			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_elevation = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_fabSize = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_fabSize;
+			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
+			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_rippleColor = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_useCompatPadding = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding;
+			global::Acr.UserDialogs.Resource.Styleable.FontFamily = global::SalveminiApp.Droid.Resource.Styleable.FontFamily;
+			global::Acr.UserDialogs.Resource.Styleable.FontFamilyFont = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont;
+			global::Acr.UserDialogs.Resource.Styleable.FontFamilyFont_android_font = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::Acr.UserDialogs.Resource.Styleable.FontFamilyFont_android_fontStyle = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Acr.UserDialogs.Resource.Styleable.FontFamilyFont_android_fontWeight = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Acr.UserDialogs.Resource.Styleable.FontFamilyFont_font = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::Acr.UserDialogs.Resource.Styleable.FontFamilyFont_fontStyle = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Acr.UserDialogs.Resource.Styleable.FontFamilyFont_fontWeight = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Acr.UserDialogs.Resource.Styleable.FontFamily_fontProviderAuthority = global::SalveminiApp.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Acr.UserDialogs.Resource.Styleable.FontFamily_fontProviderCerts = global::SalveminiApp.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Acr.UserDialogs.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::SalveminiApp.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Acr.UserDialogs.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::SalveminiApp.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Acr.UserDialogs.Resource.Styleable.FontFamily_fontProviderPackage = global::SalveminiApp.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Acr.UserDialogs.Resource.Styleable.FontFamily_fontProviderQuery = global::SalveminiApp.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Acr.UserDialogs.Resource.Styleable.ForegroundLinearLayout = global::SalveminiApp.Droid.Resource.Styleable.ForegroundLinearLayout;
+			global::Acr.UserDialogs.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::SalveminiApp.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground;
+			global::Acr.UserDialogs.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::SalveminiApp.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
+			global::Acr.UserDialogs.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::SalveminiApp.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat;
+			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_android_gravity = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_android_orientation = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_divider = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_divider;
+			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_Layout = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_showDividers = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::Acr.UserDialogs.Resource.Styleable.ListPopupWindow = global::SalveminiApp.Droid.Resource.Styleable.ListPopupWindow;
+			global::Acr.UserDialogs.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::SalveminiApp.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::Acr.UserDialogs.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::SalveminiApp.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::Acr.UserDialogs.Resource.Styleable.MenuGroup = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup;
+			global::Acr.UserDialogs.Resource.Styleable.MenuGroup_android_checkableBehavior = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::Acr.UserDialogs.Resource.Styleable.MenuGroup_android_enabled = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup_android_enabled;
+			global::Acr.UserDialogs.Resource.Styleable.MenuGroup_android_id = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup_android_id;
+			global::Acr.UserDialogs.Resource.Styleable.MenuGroup_android_menuCategory = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::Acr.UserDialogs.Resource.Styleable.MenuGroup_android_orderInCategory = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::Acr.UserDialogs.Resource.Styleable.MenuGroup_android_visible = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup_android_visible;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem = global::SalveminiApp.Droid.Resource.Styleable.MenuItem;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_actionLayout = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_actionLayout;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_actionProviderClass = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_actionProviderClass;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_actionViewClass = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_actionViewClass;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_alphabeticModifiers = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_alphabeticModifiers;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_android_checkable = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_checkable;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_android_checked = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_checked;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_android_enabled = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_enabled;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_android_icon = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_icon;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_android_id = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_id;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_android_menuCategory = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_menuCategory;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_android_numericShortcut = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_android_onClick = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_onClick;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_android_orderInCategory = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_android_title = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_title;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_android_titleCondensed = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_android_visible = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_visible;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_contentDescription = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_contentDescription;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_iconTint = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_iconTint;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_iconTintMode = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_iconTintMode;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_numericModifiers = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_numericModifiers;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_showAsAction = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_showAsAction;
+			global::Acr.UserDialogs.Resource.Styleable.MenuItem_tooltipText = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_tooltipText;
+			global::Acr.UserDialogs.Resource.Styleable.MenuView = global::SalveminiApp.Droid.Resource.Styleable.MenuView;
+			global::Acr.UserDialogs.Resource.Styleable.MenuView_android_headerBackground = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_headerBackground;
+			global::Acr.UserDialogs.Resource.Styleable.MenuView_android_horizontalDivider = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::Acr.UserDialogs.Resource.Styleable.MenuView_android_itemBackground = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_itemBackground;
+			global::Acr.UserDialogs.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::Acr.UserDialogs.Resource.Styleable.MenuView_android_itemTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.MenuView_android_verticalDivider = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_verticalDivider;
+			global::Acr.UserDialogs.Resource.Styleable.MenuView_android_windowAnimationStyle = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::Acr.UserDialogs.Resource.Styleable.MenuView_preserveIconSpacing = global::SalveminiApp.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::Acr.UserDialogs.Resource.Styleable.MenuView_subMenuArrow = global::SalveminiApp.Droid.Resource.Styleable.MenuView_subMenuArrow;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView = global::SalveminiApp.Droid.Resource.Styleable.NavigationView;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_android_background = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_android_background;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_android_maxWidth = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_android_maxWidth;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_elevation = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_headerLayout = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_headerLayout;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemBackground = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_itemBackground;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemIconTint = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_itemIconTint;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_itemTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemTextColor = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_itemTextColor;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_menu = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_menu;
+			global::Acr.UserDialogs.Resource.Styleable.PopupWindow = global::SalveminiApp.Droid.Resource.Styleable.PopupWindow;
+			global::Acr.UserDialogs.Resource.Styleable.PopupWindowBackgroundState = global::SalveminiApp.Droid.Resource.Styleable.PopupWindowBackgroundState;
+			global::Acr.UserDialogs.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::SalveminiApp.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::Acr.UserDialogs.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::SalveminiApp.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
+			global::Acr.UserDialogs.Resource.Styleable.PopupWindow_android_popupBackground = global::SalveminiApp.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::Acr.UserDialogs.Resource.Styleable.PopupWindow_overlapAnchor = global::SalveminiApp.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::Acr.UserDialogs.Resource.Styleable.ProgressWheel = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel;
+			global::Acr.UserDialogs.Resource.Styleable.ProgressWheel_ahBarColor = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahBarColor;
+			global::Acr.UserDialogs.Resource.Styleable.ProgressWheel_ahBarLength = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahBarLength;
+			global::Acr.UserDialogs.Resource.Styleable.ProgressWheel_ahBarWidth = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahBarWidth;
+			global::Acr.UserDialogs.Resource.Styleable.ProgressWheel_ahCircleColor = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahCircleColor;
+			global::Acr.UserDialogs.Resource.Styleable.ProgressWheel_ahDelayMillis = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahDelayMillis;
+			global::Acr.UserDialogs.Resource.Styleable.ProgressWheel_ahRadius = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahRadius;
+			global::Acr.UserDialogs.Resource.Styleable.ProgressWheel_ahRimColor = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahRimColor;
+			global::Acr.UserDialogs.Resource.Styleable.ProgressWheel_ahRimWidth = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahRimWidth;
+			global::Acr.UserDialogs.Resource.Styleable.ProgressWheel_ahSpinSpeed = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahSpinSpeed;
+			global::Acr.UserDialogs.Resource.Styleable.ProgressWheel_ahText = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahText;
+			global::Acr.UserDialogs.Resource.Styleable.ProgressWheel_ahTextColor = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
+			global::Acr.UserDialogs.Resource.Styleable.ProgressWheel_ahTextSize = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
+			global::Acr.UserDialogs.Resource.Styleable.RecycleListView = global::SalveminiApp.Droid.Resource.Styleable.RecycleListView;
+			global::Acr.UserDialogs.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::SalveminiApp.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
+			global::Acr.UserDialogs.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::SalveminiApp.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
+			global::Acr.UserDialogs.Resource.Styleable.RecyclerView = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView;
+			global::Acr.UserDialogs.Resource.Styleable.RecyclerView_android_descendantFocusability = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
+			global::Acr.UserDialogs.Resource.Styleable.RecyclerView_android_orientation = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_android_orientation;
+			global::Acr.UserDialogs.Resource.Styleable.RecyclerView_fastScrollEnabled = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled;
+			global::Acr.UserDialogs.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable;
+			global::Acr.UserDialogs.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable;
+			global::Acr.UserDialogs.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable;
+			global::Acr.UserDialogs.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable;
+			global::Acr.UserDialogs.Resource.Styleable.RecyclerView_layoutManager = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_layoutManager;
+			global::Acr.UserDialogs.Resource.Styleable.RecyclerView_reverseLayout = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_reverseLayout;
+			global::Acr.UserDialogs.Resource.Styleable.RecyclerView_spanCount = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_spanCount;
+			global::Acr.UserDialogs.Resource.Styleable.RecyclerView_stackFromEnd = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::Acr.UserDialogs.Resource.Styleable.ScrimInsetsFrameLayout = global::SalveminiApp.Droid.Resource.Styleable.ScrimInsetsFrameLayout;
+			global::Acr.UserDialogs.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::SalveminiApp.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
+			global::Acr.UserDialogs.Resource.Styleable.ScrollingViewBehavior_Layout = global::SalveminiApp.Droid.Resource.Styleable.ScrollingViewBehavior_Layout;
+			global::Acr.UserDialogs.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::SalveminiApp.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
+			global::Acr.UserDialogs.Resource.Styleable.SearchView = global::SalveminiApp.Droid.Resource.Styleable.SearchView;
+			global::Acr.UserDialogs.Resource.Styleable.SearchView_android_focusable = global::SalveminiApp.Droid.Resource.Styleable.SearchView_android_focusable;
+			global::Acr.UserDialogs.Resource.Styleable.SearchView_android_imeOptions = global::SalveminiApp.Droid.Resource.Styleable.SearchView_android_imeOptions;
+			global::Acr.UserDialogs.Resource.Styleable.SearchView_android_inputType = global::SalveminiApp.Droid.Resource.Styleable.SearchView_android_inputType;
+			global::Acr.UserDialogs.Resource.Styleable.SearchView_android_maxWidth = global::SalveminiApp.Droid.Resource.Styleable.SearchView_android_maxWidth;
+			global::Acr.UserDialogs.Resource.Styleable.SearchView_closeIcon = global::SalveminiApp.Droid.Resource.Styleable.SearchView_closeIcon;
+			global::Acr.UserDialogs.Resource.Styleable.SearchView_commitIcon = global::SalveminiApp.Droid.Resource.Styleable.SearchView_commitIcon;
+			global::Acr.UserDialogs.Resource.Styleable.SearchView_defaultQueryHint = global::SalveminiApp.Droid.Resource.Styleable.SearchView_defaultQueryHint;
+			global::Acr.UserDialogs.Resource.Styleable.SearchView_goIcon = global::SalveminiApp.Droid.Resource.Styleable.SearchView_goIcon;
+			global::Acr.UserDialogs.Resource.Styleable.SearchView_iconifiedByDefault = global::SalveminiApp.Droid.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::Acr.UserDialogs.Resource.Styleable.SearchView_layout = global::SalveminiApp.Droid.Resource.Styleable.SearchView_layout;
+			global::Acr.UserDialogs.Resource.Styleable.SearchView_queryBackground = global::SalveminiApp.Droid.Resource.Styleable.SearchView_queryBackground;
+			global::Acr.UserDialogs.Resource.Styleable.SearchView_queryHint = global::SalveminiApp.Droid.Resource.Styleable.SearchView_queryHint;
+			global::Acr.UserDialogs.Resource.Styleable.SearchView_searchHintIcon = global::SalveminiApp.Droid.Resource.Styleable.SearchView_searchHintIcon;
+			global::Acr.UserDialogs.Resource.Styleable.SearchView_searchIcon = global::SalveminiApp.Droid.Resource.Styleable.SearchView_searchIcon;
+			global::Acr.UserDialogs.Resource.Styleable.SearchView_submitBackground = global::SalveminiApp.Droid.Resource.Styleable.SearchView_submitBackground;
+			global::Acr.UserDialogs.Resource.Styleable.SearchView_suggestionRowLayout = global::SalveminiApp.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::Acr.UserDialogs.Resource.Styleable.SearchView_voiceIcon = global::SalveminiApp.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::Acr.UserDialogs.Resource.Styleable.SnackbarLayout = global::SalveminiApp.Droid.Resource.Styleable.SnackbarLayout;
+			global::Acr.UserDialogs.Resource.Styleable.SnackbarLayout_android_maxWidth = global::SalveminiApp.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::Acr.UserDialogs.Resource.Styleable.SnackbarLayout_elevation = global::SalveminiApp.Droid.Resource.Styleable.SnackbarLayout_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::SalveminiApp.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
+			global::Acr.UserDialogs.Resource.Styleable.Spinner = global::SalveminiApp.Droid.Resource.Styleable.Spinner;
+			global::Acr.UserDialogs.Resource.Styleable.Spinner_android_dropDownWidth = global::SalveminiApp.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::Acr.UserDialogs.Resource.Styleable.Spinner_android_entries = global::SalveminiApp.Droid.Resource.Styleable.Spinner_android_entries;
+			global::Acr.UserDialogs.Resource.Styleable.Spinner_android_popupBackground = global::SalveminiApp.Droid.Resource.Styleable.Spinner_android_popupBackground;
+			global::Acr.UserDialogs.Resource.Styleable.Spinner_android_prompt = global::SalveminiApp.Droid.Resource.Styleable.Spinner_android_prompt;
+			global::Acr.UserDialogs.Resource.Styleable.Spinner_popupTheme = global::SalveminiApp.Droid.Resource.Styleable.Spinner_popupTheme;
+			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat;
+			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_android_textOff = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_android_textOff;
+			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_android_textOn = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_android_textOn;
+			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_android_thumb = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_android_thumb;
+			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_showText = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_showText;
+			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_splitTrack = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_splitTrack;
+			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_switchMinWidth = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_switchPadding = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_switchPadding;
+			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_switchTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_thumbTextPadding = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_thumbTint = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_thumbTint;
+			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_thumbTintMode = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_thumbTintMode;
+			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_track = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_track;
+			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_trackTint = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_trackTint;
+			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_trackTintMode = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::Acr.UserDialogs.Resource.Styleable.TabItem = global::SalveminiApp.Droid.Resource.Styleable.TabItem;
+			global::Acr.UserDialogs.Resource.Styleable.TabItem_android_icon = global::SalveminiApp.Droid.Resource.Styleable.TabItem_android_icon;
+			global::Acr.UserDialogs.Resource.Styleable.TabItem_android_layout = global::SalveminiApp.Droid.Resource.Styleable.TabItem_android_layout;
+			global::Acr.UserDialogs.Resource.Styleable.TabItem_android_text = global::SalveminiApp.Droid.Resource.Styleable.TabItem_android_text;
+			global::Acr.UserDialogs.Resource.Styleable.TabLayout = global::SalveminiApp.Droid.Resource.Styleable.TabLayout;
+			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabBackground = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabBackground;
+			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabContentStart = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabContentStart;
+			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabGravity = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabGravity;
+			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabIndicatorColor = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabIndicatorColor;
+			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabIndicatorHeight = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight;
+			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabMaxWidth = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabMaxWidth;
+			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabMinWidth = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabMinWidth;
+			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabMode = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabMode;
+			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabPadding = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabPadding;
+			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabPaddingBottom = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabPaddingBottom;
+			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabPaddingEnd = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabPaddingEnd;
+			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabPaddingStart = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabPaddingStart;
+			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabPaddingTop = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabPaddingTop;
+			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabSelectedTextColor = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor;
+			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabTextColor = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabTextColor;
+			global::Acr.UserDialogs.Resource.Styleable.TextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.TextAppearance_android_fontFamily = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_fontFamily;
+			global::Acr.UserDialogs.Resource.Styleable.TextAppearance_android_shadowColor = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::Acr.UserDialogs.Resource.Styleable.TextAppearance_android_shadowDx = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::Acr.UserDialogs.Resource.Styleable.TextAppearance_android_shadowDy = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::Acr.UserDialogs.Resource.Styleable.TextAppearance_android_shadowRadius = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::Acr.UserDialogs.Resource.Styleable.TextAppearance_android_textColor = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_textColor;
+			global::Acr.UserDialogs.Resource.Styleable.TextAppearance_android_textColorHint = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_textColorHint;
+			global::Acr.UserDialogs.Resource.Styleable.TextAppearance_android_textColorLink = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::Acr.UserDialogs.Resource.Styleable.TextAppearance_android_textSize = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_textSize;
+			global::Acr.UserDialogs.Resource.Styleable.TextAppearance_android_textStyle = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_textStyle;
+			global::Acr.UserDialogs.Resource.Styleable.TextAppearance_android_typeface = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_typeface;
+			global::Acr.UserDialogs.Resource.Styleable.TextAppearance_fontFamily = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_fontFamily;
+			global::Acr.UserDialogs.Resource.Styleable.TextAppearance_textAllCaps = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_textAllCaps;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_android_hint = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_android_hint;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_android_textColorHint = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_counterEnabled = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_counterEnabled;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_counterMaxLength = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_counterMaxLength;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_counterTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_errorEnabled = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_errorTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_hintEnabled = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_hintEnabled;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_hintTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_passwordToggleTint = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar = global::SalveminiApp.Droid.Resource.Styleable.Toolbar;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_android_gravity = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_android_gravity;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_android_minHeight = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_android_minHeight;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_buttonGravity = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_buttonGravity;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_collapseContentDescription = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_collapseIcon = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_collapseIcon;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_contentInsetEnd = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_contentInsetLeft = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_contentInsetRight = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_contentInsetRight;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_contentInsetStart = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_contentInsetStart;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_logo = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_logo;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_logoDescription = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_logoDescription;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_maxButtonHeight = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_navigationContentDescription = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_navigationIcon = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_navigationIcon;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_popupTheme = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_popupTheme;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_subtitle = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_subtitle;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_subtitleTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_subtitleTextColor = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_title = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_title;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_titleMargin = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleMargin;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_titleMarginBottom = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_titleMarginEnd = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_titleMargins = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleMargins;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_titleMarginStart = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleMarginStart;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_titleMarginTop = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleMarginTop;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_titleTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.Toolbar_titleTextColor = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::Acr.UserDialogs.Resource.Styleable.View = global::SalveminiApp.Droid.Resource.Styleable.View;
+			global::Acr.UserDialogs.Resource.Styleable.ViewBackgroundHelper = global::SalveminiApp.Droid.Resource.Styleable.ViewBackgroundHelper;
+			global::Acr.UserDialogs.Resource.Styleable.ViewBackgroundHelper_android_background = global::SalveminiApp.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::Acr.UserDialogs.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::SalveminiApp.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::Acr.UserDialogs.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::SalveminiApp.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::Acr.UserDialogs.Resource.Styleable.ViewStubCompat = global::SalveminiApp.Droid.Resource.Styleable.ViewStubCompat;
+			global::Acr.UserDialogs.Resource.Styleable.ViewStubCompat_android_id = global::SalveminiApp.Droid.Resource.Styleable.ViewStubCompat_android_id;
+			global::Acr.UserDialogs.Resource.Styleable.ViewStubCompat_android_inflatedId = global::SalveminiApp.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::Acr.UserDialogs.Resource.Styleable.ViewStubCompat_android_layout = global::SalveminiApp.Droid.Resource.Styleable.ViewStubCompat_android_layout;
+			global::Acr.UserDialogs.Resource.Styleable.View_android_focusable = global::SalveminiApp.Droid.Resource.Styleable.View_android_focusable;
+			global::Acr.UserDialogs.Resource.Styleable.View_android_theme = global::SalveminiApp.Droid.Resource.Styleable.View_android_theme;
+			global::Acr.UserDialogs.Resource.Styleable.View_paddingEnd = global::SalveminiApp.Droid.Resource.Styleable.View_paddingEnd;
+			global::Acr.UserDialogs.Resource.Styleable.View_paddingStart = global::SalveminiApp.Droid.Resource.Styleable.View_paddingStart;
+			global::Acr.UserDialogs.Resource.Styleable.View_theme = global::SalveminiApp.Droid.Resource.Styleable.View_theme;
+			global::AndroidHUD.Resource.Attribute.ahBarColor = global::SalveminiApp.Droid.Resource.Attribute.ahBarColor;
+			global::AndroidHUD.Resource.Attribute.ahBarLength = global::SalveminiApp.Droid.Resource.Attribute.ahBarLength;
+			global::AndroidHUD.Resource.Attribute.ahBarWidth = global::SalveminiApp.Droid.Resource.Attribute.ahBarWidth;
+			global::AndroidHUD.Resource.Attribute.ahCircleColor = global::SalveminiApp.Droid.Resource.Attribute.ahCircleColor;
+			global::AndroidHUD.Resource.Attribute.ahDelayMillis = global::SalveminiApp.Droid.Resource.Attribute.ahDelayMillis;
+			global::AndroidHUD.Resource.Attribute.ahRadius = global::SalveminiApp.Droid.Resource.Attribute.ahRadius;
+			global::AndroidHUD.Resource.Attribute.ahRimColor = global::SalveminiApp.Droid.Resource.Attribute.ahRimColor;
+			global::AndroidHUD.Resource.Attribute.ahRimWidth = global::SalveminiApp.Droid.Resource.Attribute.ahRimWidth;
+			global::AndroidHUD.Resource.Attribute.ahSpinSpeed = global::SalveminiApp.Droid.Resource.Attribute.ahSpinSpeed;
+			global::AndroidHUD.Resource.Attribute.ahText = global::SalveminiApp.Droid.Resource.Attribute.ahText;
+			global::AndroidHUD.Resource.Attribute.ahTextColor = global::SalveminiApp.Droid.Resource.Attribute.ahTextColor;
+			global::AndroidHUD.Resource.Attribute.ahTextSize = global::SalveminiApp.Droid.Resource.Attribute.ahTextSize;
+			global::AndroidHUD.Resource.Drawable.ic_errorstatus = global::SalveminiApp.Droid.Resource.Drawable.ic_errorstatus;
+			global::AndroidHUD.Resource.Drawable.ic_successstatus = global::SalveminiApp.Droid.Resource.Drawable.ic_successstatus;
+			global::AndroidHUD.Resource.Drawable.roundedbg = global::SalveminiApp.Droid.Resource.Drawable.roundedbg;
+			global::AndroidHUD.Resource.Drawable.roundedbgdark = global::SalveminiApp.Droid.Resource.Drawable.roundedbgdark;
+			global::AndroidHUD.Resource.Id.loadingImage = global::SalveminiApp.Droid.Resource.Id.loadingImage;
+			global::AndroidHUD.Resource.Id.loadingProgressBar = global::SalveminiApp.Droid.Resource.Id.loadingProgressBar;
+			global::AndroidHUD.Resource.Id.loadingProgressWheel = global::SalveminiApp.Droid.Resource.Id.loadingProgressWheel;
+			global::AndroidHUD.Resource.Id.textViewStatus = global::SalveminiApp.Droid.Resource.Id.textViewStatus;
+			global::AndroidHUD.Resource.Layout.loading = global::SalveminiApp.Droid.Resource.Layout.loading;
+			global::AndroidHUD.Resource.Layout.loadingimage = global::SalveminiApp.Droid.Resource.Layout.loadingimage;
+			global::AndroidHUD.Resource.Layout.loadingprogress = global::SalveminiApp.Droid.Resource.Layout.loadingprogress;
+			global::AndroidHUD.Resource.String.library_name = global::SalveminiApp.Droid.Resource.String.library_name;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarColor = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahBarColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarLength = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahBarLength;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarWidth = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahBarWidth;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahCircleColor = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahCircleColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahDelayMillis = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahDelayMillis;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRadius = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahRadius;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRimColor = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahRimColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRimWidth = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahRimWidth;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahSpinSpeed = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahSpinSpeed;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahText;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::SalveminiApp.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
 			global::Syncfusion.XForms.Android.Core.Resource.Drawable.input_layout_drop_down_icon = global::SalveminiApp.Droid.Resource.Drawable.input_layout_drop_down_icon;
 			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglecollapseicon = global::SalveminiApp.Droid.Resource.Drawable.inputlayout_togglecollapseicon;
 			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglevisibleicon = global::SalveminiApp.Droid.Resource.Drawable.inputlayout_togglevisibleicon;
@@ -3505,1651 +5508,1687 @@ namespace SalveminiApp.Droid
 			public const int activityChooserViewStyle = 2130903074;
 			
 			// aapt resource value: 0x7F030023
-			public const int alertDialogButtonGroupStyle = 2130903075;
+			public const int ahBarColor = 2130903075;
 			
 			// aapt resource value: 0x7F030024
-			public const int alertDialogCenterButtons = 2130903076;
+			public const int ahBarLength = 2130903076;
 			
 			// aapt resource value: 0x7F030025
-			public const int alertDialogStyle = 2130903077;
+			public const int ahBarWidth = 2130903077;
 			
 			// aapt resource value: 0x7F030026
-			public const int alertDialogTheme = 2130903078;
+			public const int ahCircleColor = 2130903078;
 			
 			// aapt resource value: 0x7F030027
-			public const int allowStacking = 2130903079;
+			public const int ahDelayMillis = 2130903079;
 			
 			// aapt resource value: 0x7F030028
-			public const int alpha = 2130903080;
+			public const int ahRadius = 2130903080;
 			
 			// aapt resource value: 0x7F030029
-			public const int alphabeticModifiers = 2130903081;
+			public const int ahRimColor = 2130903081;
 			
 			// aapt resource value: 0x7F03002A
-			public const int arrowBgColor = 2130903082;
+			public const int ahRimWidth = 2130903082;
 			
 			// aapt resource value: 0x7F03002B
-			public const int arrowColor = 2130903083;
+			public const int ahSpinSpeed = 2130903083;
 			
 			// aapt resource value: 0x7F03002C
-			public const int arrowHeadLength = 2130903084;
+			public const int ahText = 2130903084;
 			
 			// aapt resource value: 0x7F03002D
-			public const int arrowRadius = 2130903085;
+			public const int ahTextColor = 2130903085;
 			
 			// aapt resource value: 0x7F03002E
-			public const int arrowShaftLength = 2130903086;
+			public const int ahTextSize = 2130903086;
 			
 			// aapt resource value: 0x7F03002F
-			public const int autoCompleteTextViewStyle = 2130903087;
+			public const int alertDialogButtonGroupStyle = 2130903087;
 			
 			// aapt resource value: 0x7F030030
-			public const int autoSizeMaxTextSize = 2130903088;
+			public const int alertDialogCenterButtons = 2130903088;
 			
 			// aapt resource value: 0x7F030031
-			public const int autoSizeMinTextSize = 2130903089;
+			public const int alertDialogStyle = 2130903089;
 			
 			// aapt resource value: 0x7F030032
-			public const int autoSizePresetSizes = 2130903090;
+			public const int alertDialogTheme = 2130903090;
 			
 			// aapt resource value: 0x7F030033
-			public const int autoSizeStepGranularity = 2130903091;
+			public const int allowStacking = 2130903091;
 			
 			// aapt resource value: 0x7F030034
-			public const int autoSizeTextType = 2130903092;
+			public const int alpha = 2130903092;
 			
 			// aapt resource value: 0x7F030035
-			public const int background = 2130903093;
+			public const int alphabeticModifiers = 2130903093;
 			
 			// aapt resource value: 0x7F030036
-			public const int backgroundSplit = 2130903094;
+			public const int arrowBgColor = 2130903094;
 			
 			// aapt resource value: 0x7F030037
-			public const int backgroundStacked = 2130903095;
+			public const int arrowColor = 2130903095;
 			
 			// aapt resource value: 0x7F030038
-			public const int backgroundTint = 2130903096;
+			public const int arrowHeadLength = 2130903096;
 			
 			// aapt resource value: 0x7F030039
-			public const int backgroundTintMode = 2130903097;
+			public const int arrowRadius = 2130903097;
 			
 			// aapt resource value: 0x7F03003A
-			public const int barLength = 2130903098;
+			public const int arrowShaftLength = 2130903098;
 			
 			// aapt resource value: 0x7F03003B
-			public const int baseCardViewStyle = 2130903099;
+			public const int autoCompleteTextViewStyle = 2130903099;
 			
 			// aapt resource value: 0x7F03003C
-			public const int behavior_autoHide = 2130903100;
+			public const int autoSizeMaxTextSize = 2130903100;
 			
 			// aapt resource value: 0x7F03003D
-			public const int behavior_hideable = 2130903101;
+			public const int autoSizeMinTextSize = 2130903101;
 			
 			// aapt resource value: 0x7F03003E
-			public const int behavior_overlapTop = 2130903102;
+			public const int autoSizePresetSizes = 2130903102;
 			
 			// aapt resource value: 0x7F03003F
-			public const int behavior_peekHeight = 2130903103;
+			public const int autoSizeStepGranularity = 2130903103;
 			
 			// aapt resource value: 0x7F030040
-			public const int behavior_skipCollapsed = 2130903104;
+			public const int autoSizeTextType = 2130903104;
 			
 			// aapt resource value: 0x7F030041
-			public const int borderlessButtonStyle = 2130903105;
+			public const int background = 2130903105;
 			
 			// aapt resource value: 0x7F030042
-			public const int borderWidth = 2130903106;
+			public const int backgroundSplit = 2130903106;
 			
 			// aapt resource value: 0x7F030043
-			public const int bottomSheetDialogTheme = 2130903107;
+			public const int backgroundStacked = 2130903107;
 			
 			// aapt resource value: 0x7F030044
-			public const int bottomSheetStyle = 2130903108;
+			public const int backgroundTint = 2130903108;
 			
 			// aapt resource value: 0x7F030045
-			public const int browsePaddingBottom = 2130903109;
+			public const int backgroundTintMode = 2130903109;
 			
 			// aapt resource value: 0x7F030046
-			public const int browsePaddingEnd = 2130903110;
+			public const int barLength = 2130903110;
 			
 			// aapt resource value: 0x7F030047
-			public const int browsePaddingStart = 2130903111;
+			public const int baseCardViewStyle = 2130903111;
 			
 			// aapt resource value: 0x7F030048
-			public const int browsePaddingTop = 2130903112;
+			public const int behavior_autoHide = 2130903112;
 			
 			// aapt resource value: 0x7F030049
-			public const int browseRowsFadingEdgeLength = 2130903113;
+			public const int behavior_hideable = 2130903113;
 			
 			// aapt resource value: 0x7F03004A
-			public const int browseRowsMarginStart = 2130903114;
+			public const int behavior_overlapTop = 2130903114;
 			
 			// aapt resource value: 0x7F03004B
-			public const int browseRowsMarginTop = 2130903115;
+			public const int behavior_peekHeight = 2130903115;
 			
 			// aapt resource value: 0x7F03004C
-			public const int browseTitleIconStyle = 2130903116;
+			public const int behavior_skipCollapsed = 2130903116;
 			
 			// aapt resource value: 0x7F03004D
-			public const int browseTitleTextStyle = 2130903117;
+			public const int borderlessButtonStyle = 2130903117;
 			
 			// aapt resource value: 0x7F03004E
-			public const int browseTitleViewLayout = 2130903118;
+			public const int borderWidth = 2130903118;
 			
 			// aapt resource value: 0x7F03004F
-			public const int browseTitleViewStyle = 2130903119;
+			public const int bottomSheetDialogTheme = 2130903119;
 			
 			// aapt resource value: 0x7F030050
-			public const int buttonBarButtonStyle = 2130903120;
+			public const int bottomSheetStyle = 2130903120;
 			
 			// aapt resource value: 0x7F030051
-			public const int buttonBarNegativeButtonStyle = 2130903121;
+			public const int browsePaddingBottom = 2130903121;
 			
 			// aapt resource value: 0x7F030052
-			public const int buttonBarNeutralButtonStyle = 2130903122;
+			public const int browsePaddingEnd = 2130903122;
 			
 			// aapt resource value: 0x7F030053
-			public const int buttonBarPositiveButtonStyle = 2130903123;
+			public const int browsePaddingStart = 2130903123;
 			
 			// aapt resource value: 0x7F030054
-			public const int buttonBarStyle = 2130903124;
+			public const int browsePaddingTop = 2130903124;
 			
 			// aapt resource value: 0x7F030055
-			public const int buttonGravity = 2130903125;
+			public const int browseRowsFadingEdgeLength = 2130903125;
 			
 			// aapt resource value: 0x7F030056
-			public const int buttonPanelSideLayout = 2130903126;
+			public const int browseRowsMarginStart = 2130903126;
 			
 			// aapt resource value: 0x7F030057
-			public const int buttonSize = 2130903127;
+			public const int browseRowsMarginTop = 2130903127;
 			
 			// aapt resource value: 0x7F030058
-			public const int buttonStyle = 2130903128;
+			public const int browseTitleIconStyle = 2130903128;
 			
 			// aapt resource value: 0x7F030059
-			public const int buttonStyleSmall = 2130903129;
+			public const int browseTitleTextStyle = 2130903129;
 			
 			// aapt resource value: 0x7F03005A
-			public const int buttonTint = 2130903130;
+			public const int browseTitleViewLayout = 2130903130;
 			
 			// aapt resource value: 0x7F03005B
-			public const int buttonTintMode = 2130903131;
+			public const int browseTitleViewStyle = 2130903131;
 			
 			// aapt resource value: 0x7F03005C
-			public const int cardBackground = 2130903132;
+			public const int buttonBarButtonStyle = 2130903132;
 			
 			// aapt resource value: 0x7F03005D
-			public const int cardBackgroundColor = 2130903133;
+			public const int buttonBarNegativeButtonStyle = 2130903133;
 			
 			// aapt resource value: 0x7F03005E
-			public const int cardCornerRadius = 2130903134;
+			public const int buttonBarNeutralButtonStyle = 2130903134;
 			
 			// aapt resource value: 0x7F03005F
-			public const int cardElevation = 2130903135;
+			public const int buttonBarPositiveButtonStyle = 2130903135;
 			
 			// aapt resource value: 0x7F030060
-			public const int cardForeground = 2130903136;
+			public const int buttonBarStyle = 2130903136;
 			
 			// aapt resource value: 0x7F030061
-			public const int cardMaxElevation = 2130903137;
+			public const int buttonGravity = 2130903137;
 			
 			// aapt resource value: 0x7F030062
-			public const int cardPreventCornerOverlap = 2130903138;
+			public const int buttonPanelSideLayout = 2130903138;
 			
 			// aapt resource value: 0x7F030063
-			public const int cardType = 2130903139;
+			public const int buttonSize = 2130903139;
 			
 			// aapt resource value: 0x7F030064
-			public const int cardUseCompatPadding = 2130903140;
+			public const int buttonStyle = 2130903140;
 			
 			// aapt resource value: 0x7F030065
-			public const int carouselAllowLoadMore = 2130903141;
+			public const int buttonStyleSmall = 2130903141;
 			
 			// aapt resource value: 0x7F030066
-			public const int carouselDuration = 2130903142;
+			public const int buttonTint = 2130903142;
 			
 			// aapt resource value: 0x7F030067
-			public const int carouselEnableVirtualization = 2130903143;
+			public const int buttonTintMode = 2130903143;
 			
 			// aapt resource value: 0x7F030068
-			public const int carouselItemHeight = 2130903144;
+			public const int cardBackground = 2130903144;
 			
 			// aapt resource value: 0x7F030069
-			public const int carouselItemSpacing = 2130903145;
+			public const int cardBackgroundColor = 2130903145;
 			
 			// aapt resource value: 0x7F03006A
-			public const int carouselItemWidth = 2130903146;
+			public const int cardCornerRadius = 2130903146;
 			
 			// aapt resource value: 0x7F03006B
-			public const int carouselLoadMoreItemsCount = 2130903147;
+			public const int cardElevation = 2130903147;
 			
 			// aapt resource value: 0x7F03006C
-			public const int carouselOffset = 2130903148;
+			public const int cardForeground = 2130903148;
 			
 			// aapt resource value: 0x7F03006D
-			public const int carouselRotationAngle = 2130903149;
+			public const int cardMaxElevation = 2130903149;
 			
 			// aapt resource value: 0x7F03006E
-			public const int carouselScaleOffset = 2130903150;
+			public const int cardPreventCornerOverlap = 2130903150;
 			
 			// aapt resource value: 0x7F03006F
-			public const int carouselSelectedIndex = 2130903151;
+			public const int cardType = 2130903151;
 			
 			// aapt resource value: 0x7F030070
-			public const int carouselSelectedItemOffset = 2130903152;
+			public const int cardUseCompatPadding = 2130903152;
 			
 			// aapt resource value: 0x7F030071
-			public const int carouselViewMode = 2130903153;
+			public const int carouselAllowLoadMore = 2130903153;
 			
 			// aapt resource value: 0x7F030072
-			public const int checkboxStyle = 2130903154;
+			public const int carouselDuration = 2130903154;
 			
 			// aapt resource value: 0x7F030073
-			public const int checkedTextViewStyle = 2130903155;
+			public const int carouselEnableVirtualization = 2130903155;
 			
 			// aapt resource value: 0x7F030074
-			public const int circleCrop = 2130903156;
+			public const int carouselItemHeight = 2130903156;
 			
 			// aapt resource value: 0x7F030075
-			public const int closed_captioning = 2130903157;
+			public const int carouselItemSpacing = 2130903157;
 			
 			// aapt resource value: 0x7F030076
-			public const int closeIcon = 2130903158;
+			public const int carouselItemWidth = 2130903158;
 			
 			// aapt resource value: 0x7F030077
-			public const int closeItemLayout = 2130903159;
+			public const int carouselLoadMoreItemsCount = 2130903159;
 			
 			// aapt resource value: 0x7F030078
-			public const int collapseContentDescription = 2130903160;
+			public const int carouselOffset = 2130903160;
 			
 			// aapt resource value: 0x7F030079
-			public const int collapsedTitleGravity = 2130903161;
+			public const int carouselRotationAngle = 2130903161;
 			
 			// aapt resource value: 0x7F03007A
-			public const int collapsedTitleTextAppearance = 2130903162;
+			public const int carouselScaleOffset = 2130903162;
 			
 			// aapt resource value: 0x7F03007B
-			public const int collapseIcon = 2130903163;
+			public const int carouselSelectedIndex = 2130903163;
 			
 			// aapt resource value: 0x7F03007C
-			public const int color = 2130903164;
+			public const int carouselSelectedItemOffset = 2130903164;
 			
 			// aapt resource value: 0x7F03007D
-			public const int colorAccent = 2130903165;
+			public const int carouselViewMode = 2130903165;
 			
 			// aapt resource value: 0x7F03007E
-			public const int colorBackgroundFloating = 2130903166;
+			public const int checkboxStyle = 2130903166;
 			
 			// aapt resource value: 0x7F03007F
-			public const int colorButtonNormal = 2130903167;
+			public const int checkedTextViewStyle = 2130903167;
 			
 			// aapt resource value: 0x7F030080
-			public const int colorControlActivated = 2130903168;
+			public const int circleCrop = 2130903168;
 			
 			// aapt resource value: 0x7F030081
-			public const int colorControlHighlight = 2130903169;
+			public const int closed_captioning = 2130903169;
 			
 			// aapt resource value: 0x7F030082
-			public const int colorControlNormal = 2130903170;
+			public const int closeIcon = 2130903170;
 			
 			// aapt resource value: 0x7F030083
-			public const int colorError = 2130903171;
+			public const int closeItemLayout = 2130903171;
 			
 			// aapt resource value: 0x7F030084
-			public const int colorPrimary = 2130903172;
+			public const int collapseContentDescription = 2130903172;
 			
 			// aapt resource value: 0x7F030085
-			public const int colorPrimaryDark = 2130903173;
+			public const int collapsedTitleGravity = 2130903173;
 			
 			// aapt resource value: 0x7F030086
-			public const int colorScheme = 2130903174;
+			public const int collapsedTitleTextAppearance = 2130903174;
 			
 			// aapt resource value: 0x7F030087
-			public const int colorSwitchThumbNormal = 2130903175;
+			public const int collapseIcon = 2130903175;
 			
 			// aapt resource value: 0x7F030088
-			public const int columnWidth = 2130903176;
+			public const int color = 2130903176;
 			
 			// aapt resource value: 0x7F030089
-			public const int commitIcon = 2130903177;
+			public const int colorAccent = 2130903177;
 			
 			// aapt resource value: 0x7F03008A
-			public const int contentDescription = 2130903178;
+			public const int colorBackgroundFloating = 2130903178;
 			
 			// aapt resource value: 0x7F03008B
-			public const int contentInsetEnd = 2130903179;
+			public const int colorButtonNormal = 2130903179;
 			
 			// aapt resource value: 0x7F03008C
-			public const int contentInsetEndWithActions = 2130903180;
+			public const int colorControlActivated = 2130903180;
 			
 			// aapt resource value: 0x7F03008D
-			public const int contentInsetLeft = 2130903181;
+			public const int colorControlHighlight = 2130903181;
 			
 			// aapt resource value: 0x7F03008E
-			public const int contentInsetRight = 2130903182;
+			public const int colorControlNormal = 2130903182;
 			
 			// aapt resource value: 0x7F03008F
-			public const int contentInsetStart = 2130903183;
+			public const int colorError = 2130903183;
 			
 			// aapt resource value: 0x7F030090
-			public const int contentInsetStartWithNavigation = 2130903184;
+			public const int colorPrimary = 2130903184;
 			
 			// aapt resource value: 0x7F030091
-			public const int contentPadding = 2130903185;
+			public const int colorPrimaryDark = 2130903185;
 			
 			// aapt resource value: 0x7F030092
-			public const int contentPaddingBottom = 2130903186;
+			public const int colorScheme = 2130903186;
 			
 			// aapt resource value: 0x7F030093
-			public const int contentPaddingLeft = 2130903187;
+			public const int colorSwitchThumbNormal = 2130903187;
 			
 			// aapt resource value: 0x7F030094
-			public const int contentPaddingRight = 2130903188;
+			public const int columnWidth = 2130903188;
 			
 			// aapt resource value: 0x7F030095
-			public const int contentPaddingTop = 2130903189;
+			public const int commitIcon = 2130903189;
 			
 			// aapt resource value: 0x7F030096
-			public const int contentScrim = 2130903190;
+			public const int contentDescription = 2130903190;
 			
 			// aapt resource value: 0x7F030097
-			public const int controlBackground = 2130903191;
+			public const int contentInsetEnd = 2130903191;
 			
 			// aapt resource value: 0x7F030098
-			public const int counterEnabled = 2130903192;
+			public const int contentInsetEndWithActions = 2130903192;
 			
 			// aapt resource value: 0x7F030099
-			public const int counterMaxLength = 2130903193;
+			public const int contentInsetLeft = 2130903193;
 			
 			// aapt resource value: 0x7F03009A
-			public const int counterOverflowTextAppearance = 2130903194;
+			public const int contentInsetRight = 2130903194;
 			
 			// aapt resource value: 0x7F03009B
-			public const int counterTextAppearance = 2130903195;
+			public const int contentInsetStart = 2130903195;
 			
 			// aapt resource value: 0x7F03009C
-			public const int customNavigationLayout = 2130903196;
+			public const int contentInsetStartWithNavigation = 2130903196;
 			
 			// aapt resource value: 0x7F03009D
-			public const int datePickerFormat = 2130903197;
+			public const int contentPadding = 2130903197;
 			
 			// aapt resource value: 0x7F03009E
-			public const int defaultBrandColor = 2130903198;
+			public const int contentPaddingBottom = 2130903198;
 			
 			// aapt resource value: 0x7F03009F
-			public const int defaultBrandColorDark = 2130903199;
+			public const int contentPaddingLeft = 2130903199;
 			
 			// aapt resource value: 0x7F0300A0
-			public const int defaultQueryHint = 2130903200;
+			public const int contentPaddingRight = 2130903200;
 			
 			// aapt resource value: 0x7F0300A1
-			public const int defaultSearchBrightColor = 2130903201;
+			public const int contentPaddingTop = 2130903201;
 			
 			// aapt resource value: 0x7F0300A2
-			public const int defaultSearchColor = 2130903202;
+			public const int contentScrim = 2130903202;
 			
 			// aapt resource value: 0x7F0300A3
-			public const int defaultSearchIcon = 2130903203;
+			public const int controlBackground = 2130903203;
 			
 			// aapt resource value: 0x7F0300A4
-			public const int defaultSearchIconColor = 2130903204;
+			public const int counterEnabled = 2130903204;
 			
 			// aapt resource value: 0x7F0300A5
-			public const int defaultSectionHeaderColor = 2130903205;
+			public const int counterMaxLength = 2130903205;
 			
 			// aapt resource value: 0x7F0300A6
-			public const int detailsActionButtonStyle = 2130903206;
+			public const int counterOverflowTextAppearance = 2130903206;
 			
 			// aapt resource value: 0x7F0300A7
-			public const int detailsDescriptionBodyStyle = 2130903207;
+			public const int counterTextAppearance = 2130903207;
 			
 			// aapt resource value: 0x7F0300A8
-			public const int detailsDescriptionSubtitleStyle = 2130903208;
+			public const int customNavigationLayout = 2130903208;
 			
 			// aapt resource value: 0x7F0300A9
-			public const int detailsDescriptionTitleStyle = 2130903209;
+			public const int datePickerFormat = 2130903209;
 			
 			// aapt resource value: 0x7F0300AA
-			public const int dialogPreferredPadding = 2130903210;
+			public const int defaultBrandColor = 2130903210;
 			
 			// aapt resource value: 0x7F0300AB
-			public const int dialogTheme = 2130903211;
+			public const int defaultBrandColorDark = 2130903211;
 			
 			// aapt resource value: 0x7F0300AC
-			public const int displayOptions = 2130903212;
+			public const int defaultQueryHint = 2130903212;
 			
 			// aapt resource value: 0x7F0300AD
-			public const int divider = 2130903213;
+			public const int defaultSearchBrightColor = 2130903213;
 			
 			// aapt resource value: 0x7F0300AE
-			public const int dividerHorizontal = 2130903214;
+			public const int defaultSearchColor = 2130903214;
 			
 			// aapt resource value: 0x7F0300AF
-			public const int dividerPadding = 2130903215;
+			public const int defaultSearchIcon = 2130903215;
 			
 			// aapt resource value: 0x7F0300B0
-			public const int dividerVertical = 2130903216;
+			public const int defaultSearchIconColor = 2130903216;
 			
 			// aapt resource value: 0x7F0300B1
-			public const int dotBgColor = 2130903217;
+			public const int defaultSectionHeaderColor = 2130903217;
 			
 			// aapt resource value: 0x7F0300B2
-			public const int dotToArrowGap = 2130903218;
+			public const int detailsActionButtonStyle = 2130903218;
 			
 			// aapt resource value: 0x7F0300B3
-			public const int dotToDotGap = 2130903219;
+			public const int detailsDescriptionBodyStyle = 2130903219;
 			
 			// aapt resource value: 0x7F0300B4
-			public const int drawableSize = 2130903220;
+			public const int detailsDescriptionSubtitleStyle = 2130903220;
 			
 			// aapt resource value: 0x7F0300B5
-			public const int drawerArrowStyle = 2130903221;
+			public const int detailsDescriptionTitleStyle = 2130903221;
 			
 			// aapt resource value: 0x7F0300B6
-			public const int dropdownListPreferredItemHeight = 2130903222;
+			public const int dialogPreferredPadding = 2130903222;
 			
 			// aapt resource value: 0x7F0300B7
-			public const int dropDownListViewStyle = 2130903223;
+			public const int dialogTheme = 2130903223;
 			
 			// aapt resource value: 0x7F0300B8
-			public const int editTextBackground = 2130903224;
+			public const int displayOptions = 2130903224;
 			
 			// aapt resource value: 0x7F0300B9
-			public const int editTextColor = 2130903225;
+			public const int divider = 2130903225;
 			
 			// aapt resource value: 0x7F0300BA
-			public const int editTextStyle = 2130903226;
+			public const int dividerHorizontal = 2130903226;
 			
 			// aapt resource value: 0x7F0300BB
-			public const int elevation = 2130903227;
+			public const int dividerPadding = 2130903227;
 			
 			// aapt resource value: 0x7F0300BC
-			public const int errorEnabled = 2130903228;
+			public const int dividerVertical = 2130903228;
 			
 			// aapt resource value: 0x7F0300BD
-			public const int errorMessageStyle = 2130903229;
+			public const int dotBgColor = 2130903229;
 			
 			// aapt resource value: 0x7F0300BE
-			public const int errorTextAppearance = 2130903230;
+			public const int dotToArrowGap = 2130903230;
 			
 			// aapt resource value: 0x7F0300BF
-			public const int expandActivityOverflowButtonDrawable = 2130903231;
+			public const int dotToDotGap = 2130903231;
 			
 			// aapt resource value: 0x7F0300C0
-			public const int expanded = 2130903232;
+			public const int drawableSize = 2130903232;
 			
 			// aapt resource value: 0x7F0300C1
-			public const int expandedTitleGravity = 2130903233;
+			public const int drawerArrowStyle = 2130903233;
 			
 			// aapt resource value: 0x7F0300C2
-			public const int expandedTitleMargin = 2130903234;
+			public const int dropdownListPreferredItemHeight = 2130903234;
 			
 			// aapt resource value: 0x7F0300C3
-			public const int expandedTitleMarginBottom = 2130903235;
+			public const int dropDownListViewStyle = 2130903235;
 			
 			// aapt resource value: 0x7F0300C4
-			public const int expandedTitleMarginEnd = 2130903236;
+			public const int editTextBackground = 2130903236;
 			
 			// aapt resource value: 0x7F0300C5
-			public const int expandedTitleMarginStart = 2130903237;
+			public const int editTextColor = 2130903237;
 			
 			// aapt resource value: 0x7F0300C6
-			public const int expandedTitleMarginTop = 2130903238;
+			public const int editTextStyle = 2130903238;
 			
 			// aapt resource value: 0x7F0300C7
-			public const int expandedTitleTextAppearance = 2130903239;
+			public const int elevation = 2130903239;
 			
 			// aapt resource value: 0x7F0300C8
-			public const int externalRouteEnabledDrawable = 2130903240;
+			public const int errorEnabled = 2130903240;
 			
 			// aapt resource value: 0x7F0300C9
-			public const int extraVisibility = 2130903241;
+			public const int errorMessageStyle = 2130903241;
 			
 			// aapt resource value: 0x7F0300CA
-			public const int fabSize = 2130903242;
+			public const int errorTextAppearance = 2130903242;
 			
 			// aapt resource value: 0x7F0300CB
-			public const int fastScrollEnabled = 2130903243;
+			public const int expandActivityOverflowButtonDrawable = 2130903243;
 			
 			// aapt resource value: 0x7F0300CC
-			public const int fastScrollHorizontalThumbDrawable = 2130903244;
+			public const int expanded = 2130903244;
 			
 			// aapt resource value: 0x7F0300CD
-			public const int fastScrollHorizontalTrackDrawable = 2130903245;
+			public const int expandedTitleGravity = 2130903245;
 			
 			// aapt resource value: 0x7F0300CE
-			public const int fastScrollVerticalThumbDrawable = 2130903246;
+			public const int expandedTitleMargin = 2130903246;
 			
 			// aapt resource value: 0x7F0300CF
-			public const int fastScrollVerticalTrackDrawable = 2130903247;
+			public const int expandedTitleMarginBottom = 2130903247;
 			
 			// aapt resource value: 0x7F0300D0
-			public const int fast_forward = 2130903248;
+			public const int expandedTitleMarginEnd = 2130903248;
 			
 			// aapt resource value: 0x7F0300D1
-			public const int focusOutEnd = 2130903249;
+			public const int expandedTitleMarginStart = 2130903249;
 			
 			// aapt resource value: 0x7F0300D2
-			public const int focusOutFront = 2130903250;
+			public const int expandedTitleMarginTop = 2130903250;
 			
 			// aapt resource value: 0x7F0300D3
-			public const int focusOutSideEnd = 2130903251;
+			public const int expandedTitleTextAppearance = 2130903251;
 			
 			// aapt resource value: 0x7F0300D4
-			public const int focusOutSideStart = 2130903252;
+			public const int externalRouteEnabledDrawable = 2130903252;
 			
 			// aapt resource value: 0x7F0300D5
-			public const int font = 2130903253;
+			public const int extraVisibility = 2130903253;
 			
 			// aapt resource value: 0x7F0300D6
-			public const int fontFamily = 2130903254;
+			public const int fabSize = 2130903254;
 			
 			// aapt resource value: 0x7F0300D7
-			public const int fontProviderAuthority = 2130903255;
+			public const int fastScrollEnabled = 2130903255;
 			
 			// aapt resource value: 0x7F0300D8
-			public const int fontProviderCerts = 2130903256;
+			public const int fastScrollHorizontalThumbDrawable = 2130903256;
 			
 			// aapt resource value: 0x7F0300D9
-			public const int fontProviderFetchStrategy = 2130903257;
+			public const int fastScrollHorizontalTrackDrawable = 2130903257;
 			
 			// aapt resource value: 0x7F0300DA
-			public const int fontProviderFetchTimeout = 2130903258;
+			public const int fastScrollVerticalThumbDrawable = 2130903258;
 			
 			// aapt resource value: 0x7F0300DB
-			public const int fontProviderPackage = 2130903259;
+			public const int fastScrollVerticalTrackDrawable = 2130903259;
 			
 			// aapt resource value: 0x7F0300DC
-			public const int fontProviderQuery = 2130903260;
+			public const int fast_forward = 2130903260;
 			
 			// aapt resource value: 0x7F0300DD
-			public const int fontStyle = 2130903261;
+			public const int focusOutEnd = 2130903261;
 			
 			// aapt resource value: 0x7F0300DE
-			public const int fontWeight = 2130903262;
+			public const int focusOutFront = 2130903262;
 			
 			// aapt resource value: 0x7F0300DF
-			public const int foregroundInsidePadding = 2130903263;
+			public const int focusOutSideEnd = 2130903263;
 			
 			// aapt resource value: 0x7F0300E0
-			public const int gapBetweenBars = 2130903264;
+			public const int focusOutSideStart = 2130903264;
 			
 			// aapt resource value: 0x7F0300E1
-			public const int goIcon = 2130903265;
+			public const int font = 2130903265;
 			
 			// aapt resource value: 0x7F0300E2
-			public const int guidanceBreadcrumbStyle = 2130903266;
+			public const int fontFamily = 2130903266;
 			
 			// aapt resource value: 0x7F0300E3
-			public const int guidanceContainerStyle = 2130903267;
+			public const int fontProviderAuthority = 2130903267;
 			
 			// aapt resource value: 0x7F0300E4
-			public const int guidanceDescriptionStyle = 2130903268;
+			public const int fontProviderCerts = 2130903268;
 			
 			// aapt resource value: 0x7F0300E5
-			public const int guidanceEntryAnimation = 2130903269;
+			public const int fontProviderFetchStrategy = 2130903269;
 			
 			// aapt resource value: 0x7F0300E6
-			public const int guidanceIconStyle = 2130903270;
+			public const int fontProviderFetchTimeout = 2130903270;
 			
 			// aapt resource value: 0x7F0300E7
-			public const int guidanceTitleStyle = 2130903271;
+			public const int fontProviderPackage = 2130903271;
 			
 			// aapt resource value: 0x7F0300E8
-			public const int guidedActionCheckedAnimation = 2130903272;
+			public const int fontProviderQuery = 2130903272;
 			
 			// aapt resource value: 0x7F0300E9
-			public const int guidedActionContentWidth = 2130903273;
+			public const int fontStyle = 2130903273;
 			
 			// aapt resource value: 0x7F0300EA
-			public const int guidedActionContentWidthNoIcon = 2130903274;
+			public const int fontWeight = 2130903274;
 			
 			// aapt resource value: 0x7F0300EB
-			public const int guidedActionContentWidthWeight = 2130903275;
+			public const int foregroundInsidePadding = 2130903275;
 			
 			// aapt resource value: 0x7F0300EC
-			public const int guidedActionContentWidthWeightTwoPanels = 2130903276;
+			public const int gapBetweenBars = 2130903276;
 			
 			// aapt resource value: 0x7F0300ED
-			public const int guidedActionDescriptionMinLines = 2130903277;
+			public const int goIcon = 2130903277;
 			
 			// aapt resource value: 0x7F0300EE
-			public const int guidedActionDisabledChevronAlpha = 2130903278;
+			public const int guidanceBreadcrumbStyle = 2130903278;
 			
 			// aapt resource value: 0x7F0300EF
-			public const int guidedActionEnabledChevronAlpha = 2130903279;
+			public const int guidanceContainerStyle = 2130903279;
 			
 			// aapt resource value: 0x7F0300F0
-			public const int guidedActionItemCheckmarkStyle = 2130903280;
+			public const int guidanceDescriptionStyle = 2130903280;
 			
 			// aapt resource value: 0x7F0300F1
-			public const int guidedActionItemChevronStyle = 2130903281;
+			public const int guidanceEntryAnimation = 2130903281;
 			
 			// aapt resource value: 0x7F0300F2
-			public const int guidedActionItemContainerStyle = 2130903282;
+			public const int guidanceIconStyle = 2130903282;
 			
 			// aapt resource value: 0x7F0300F3
-			public const int guidedActionItemContentStyle = 2130903283;
+			public const int guidanceTitleStyle = 2130903283;
 			
 			// aapt resource value: 0x7F0300F4
-			public const int guidedActionItemDescriptionStyle = 2130903284;
+			public const int guidedActionCheckedAnimation = 2130903284;
 			
 			// aapt resource value: 0x7F0300F5
-			public const int guidedActionItemIconStyle = 2130903285;
+			public const int guidedActionContentWidth = 2130903285;
 			
 			// aapt resource value: 0x7F0300F6
-			public const int guidedActionItemTitleStyle = 2130903286;
+			public const int guidedActionContentWidthNoIcon = 2130903286;
 			
 			// aapt resource value: 0x7F0300F7
-			public const int guidedActionPressedAnimation = 2130903287;
+			public const int guidedActionContentWidthWeight = 2130903287;
 			
 			// aapt resource value: 0x7F0300F8
-			public const int guidedActionsBackground = 2130903288;
+			public const int guidedActionContentWidthWeightTwoPanels = 2130903288;
 			
 			// aapt resource value: 0x7F0300F9
-			public const int guidedActionsBackgroundDark = 2130903289;
+			public const int guidedActionDescriptionMinLines = 2130903289;
 			
 			// aapt resource value: 0x7F0300FA
-			public const int guidedActionsContainerStyle = 2130903290;
+			public const int guidedActionDisabledChevronAlpha = 2130903290;
 			
 			// aapt resource value: 0x7F0300FB
-			public const int guidedActionsElevation = 2130903291;
+			public const int guidedActionEnabledChevronAlpha = 2130903291;
 			
 			// aapt resource value: 0x7F0300FC
-			public const int guidedActionsEntryAnimation = 2130903292;
+			public const int guidedActionItemCheckmarkStyle = 2130903292;
 			
 			// aapt resource value: 0x7F0300FD
-			public const int guidedActionsListStyle = 2130903293;
+			public const int guidedActionItemChevronStyle = 2130903293;
 			
 			// aapt resource value: 0x7F0300FE
-			public const int guidedActionsSelectorDrawable = 2130903294;
+			public const int guidedActionItemContainerStyle = 2130903294;
 			
 			// aapt resource value: 0x7F0300FF
-			public const int guidedActionsSelectorHideAnimation = 2130903295;
+			public const int guidedActionItemContentStyle = 2130903295;
 			
 			// aapt resource value: 0x7F030100
-			public const int guidedActionsSelectorShowAnimation = 2130903296;
+			public const int guidedActionItemDescriptionStyle = 2130903296;
 			
 			// aapt resource value: 0x7F030101
-			public const int guidedActionsSelectorStyle = 2130903297;
+			public const int guidedActionItemIconStyle = 2130903297;
 			
 			// aapt resource value: 0x7F030102
-			public const int guidedActionTitleMaxLines = 2130903298;
+			public const int guidedActionItemTitleStyle = 2130903298;
 			
 			// aapt resource value: 0x7F030103
-			public const int guidedActionTitleMinLines = 2130903299;
+			public const int guidedActionPressedAnimation = 2130903299;
 			
 			// aapt resource value: 0x7F030104
-			public const int guidedActionUncheckedAnimation = 2130903300;
+			public const int guidedActionsBackground = 2130903300;
 			
 			// aapt resource value: 0x7F030105
-			public const int guidedActionUnpressedAnimation = 2130903301;
+			public const int guidedActionsBackgroundDark = 2130903301;
 			
 			// aapt resource value: 0x7F030106
-			public const int guidedActionVerticalPadding = 2130903302;
+			public const int guidedActionsContainerStyle = 2130903302;
 			
 			// aapt resource value: 0x7F030107
-			public const int guidedButtonActionsListStyle = 2130903303;
+			public const int guidedActionsElevation = 2130903303;
 			
 			// aapt resource value: 0x7F030108
-			public const int guidedButtonActionsWidthWeight = 2130903304;
+			public const int guidedActionsEntryAnimation = 2130903304;
 			
 			// aapt resource value: 0x7F030109
-			public const int guidedStepBackground = 2130903305;
+			public const int guidedActionsListStyle = 2130903305;
 			
 			// aapt resource value: 0x7F03010A
-			public const int guidedStepEntryAnimation = 2130903306;
+			public const int guidedActionsSelectorDrawable = 2130903306;
 			
 			// aapt resource value: 0x7F03010B
-			public const int guidedStepExitAnimation = 2130903307;
+			public const int guidedActionsSelectorHideAnimation = 2130903307;
 			
 			// aapt resource value: 0x7F03010C
-			public const int guidedStepHeightWeight = 2130903308;
+			public const int guidedActionsSelectorShowAnimation = 2130903308;
 			
 			// aapt resource value: 0x7F03010D
-			public const int guidedStepImeAppearingAnimation = 2130903309;
+			public const int guidedActionsSelectorStyle = 2130903309;
 			
 			// aapt resource value: 0x7F03010E
-			public const int guidedStepImeDisappearingAnimation = 2130903310;
+			public const int guidedActionTitleMaxLines = 2130903310;
 			
 			// aapt resource value: 0x7F03010F
-			public const int guidedStepKeyline = 2130903311;
+			public const int guidedActionTitleMinLines = 2130903311;
 			
 			// aapt resource value: 0x7F030110
-			public const int guidedStepReentryAnimation = 2130903312;
+			public const int guidedActionUncheckedAnimation = 2130903312;
 			
 			// aapt resource value: 0x7F030111
-			public const int guidedStepReturnAnimation = 2130903313;
+			public const int guidedActionUnpressedAnimation = 2130903313;
 			
 			// aapt resource value: 0x7F030112
-			public const int guidedStepTheme = 2130903314;
+			public const int guidedActionVerticalPadding = 2130903314;
 			
 			// aapt resource value: 0x7F030113
-			public const int guidedStepThemeFlag = 2130903315;
+			public const int guidedButtonActionsListStyle = 2130903315;
 			
 			// aapt resource value: 0x7F030114
-			public const int guidedSubActionsListStyle = 2130903316;
+			public const int guidedButtonActionsWidthWeight = 2130903316;
 			
 			// aapt resource value: 0x7F030115
-			public const int headerLayout = 2130903317;
+			public const int guidedStepBackground = 2130903317;
 			
 			// aapt resource value: 0x7F030116
-			public const int headerStyle = 2130903318;
+			public const int guidedStepEntryAnimation = 2130903318;
 			
 			// aapt resource value: 0x7F030117
-			public const int headersVerticalGridStyle = 2130903319;
+			public const int guidedStepExitAnimation = 2130903319;
 			
 			// aapt resource value: 0x7F030118
-			public const int height = 2130903320;
+			public const int guidedStepHeightWeight = 2130903320;
 			
 			// aapt resource value: 0x7F030119
-			public const int hideOnContentScroll = 2130903321;
+			public const int guidedStepImeAppearingAnimation = 2130903321;
 			
 			// aapt resource value: 0x7F03011A
-			public const int high_quality = 2130903322;
+			public const int guidedStepImeDisappearingAnimation = 2130903322;
 			
 			// aapt resource value: 0x7F03011B
-			public const int hintAnimationEnabled = 2130903323;
+			public const int guidedStepKeyline = 2130903323;
 			
 			// aapt resource value: 0x7F03011C
-			public const int hintEnabled = 2130903324;
+			public const int guidedStepReentryAnimation = 2130903324;
 			
 			// aapt resource value: 0x7F03011D
-			public const int hintTextAppearance = 2130903325;
+			public const int guidedStepReturnAnimation = 2130903325;
 			
 			// aapt resource value: 0x7F03011E
-			public const int homeAsUpIndicator = 2130903326;
+			public const int guidedStepTheme = 2130903326;
 			
 			// aapt resource value: 0x7F03011F
-			public const int homeLayout = 2130903327;
+			public const int guidedStepThemeFlag = 2130903327;
 			
 			// aapt resource value: 0x7F030120
-			public const int horizontalMargin = 2130903328;
+			public const int guidedSubActionsListStyle = 2130903328;
 			
 			// aapt resource value: 0x7F030121
-			public const int icon = 2130903329;
+			public const int headerLayout = 2130903329;
 			
 			// aapt resource value: 0x7F030122
-			public const int iconifiedByDefault = 2130903330;
+			public const int headerStyle = 2130903330;
 			
 			// aapt resource value: 0x7F030123
-			public const int iconTint = 2130903331;
+			public const int headersVerticalGridStyle = 2130903331;
 			
 			// aapt resource value: 0x7F030124
-			public const int iconTintMode = 2130903332;
+			public const int height = 2130903332;
 			
 			// aapt resource value: 0x7F030125
-			public const int imageAspectRatio = 2130903333;
+			public const int hideOnContentScroll = 2130903333;
 			
 			// aapt resource value: 0x7F030126
-			public const int imageAspectRatioAdjust = 2130903334;
+			public const int high_quality = 2130903334;
 			
 			// aapt resource value: 0x7F030127
-			public const int imageButtonStyle = 2130903335;
+			public const int hintAnimationEnabled = 2130903335;
 			
 			// aapt resource value: 0x7F030128
-			public const int imageCardViewBadgeStyle = 2130903336;
+			public const int hintEnabled = 2130903336;
 			
 			// aapt resource value: 0x7F030129
-			public const int imageCardViewContentStyle = 2130903337;
+			public const int hintTextAppearance = 2130903337;
 			
 			// aapt resource value: 0x7F03012A
-			public const int imageCardViewImageStyle = 2130903338;
+			public const int homeAsUpIndicator = 2130903338;
 			
 			// aapt resource value: 0x7F03012B
-			public const int imageCardViewInfoAreaStyle = 2130903339;
+			public const int homeLayout = 2130903339;
 			
 			// aapt resource value: 0x7F03012C
-			public const int imageCardViewStyle = 2130903340;
+			public const int horizontalMargin = 2130903340;
 			
 			// aapt resource value: 0x7F03012D
-			public const int imageCardViewTitleStyle = 2130903341;
+			public const int icon = 2130903341;
 			
 			// aapt resource value: 0x7F03012E
-			public const int indeterminateProgressStyle = 2130903342;
+			public const int iconifiedByDefault = 2130903342;
 			
 			// aapt resource value: 0x7F03012F
-			public const int infoAreaBackground = 2130903343;
+			public const int iconTint = 2130903343;
 			
 			// aapt resource value: 0x7F030130
-			public const int infoVisibility = 2130903344;
+			public const int iconTintMode = 2130903344;
 			
 			// aapt resource value: 0x7F030131
-			public const int initialActivityCount = 2130903345;
+			public const int imageAspectRatio = 2130903345;
 			
 			// aapt resource value: 0x7F030132
-			public const int insetForeground = 2130903346;
+			public const int imageAspectRatioAdjust = 2130903346;
 			
 			// aapt resource value: 0x7F030133
-			public const int is24HourFormat = 2130903347;
+			public const int imageButtonStyle = 2130903347;
 			
 			// aapt resource value: 0x7F030134
-			public const int isLightTheme = 2130903348;
+			public const int imageCardViewBadgeStyle = 2130903348;
 			
 			// aapt resource value: 0x7F030135
-			public const int itemBackground = 2130903349;
+			public const int imageCardViewContentStyle = 2130903349;
 			
 			// aapt resource value: 0x7F030136
-			public const int itemIconTint = 2130903350;
+			public const int imageCardViewImageStyle = 2130903350;
 			
 			// aapt resource value: 0x7F030137
-			public const int itemPadding = 2130903351;
+			public const int imageCardViewInfoAreaStyle = 2130903351;
 			
 			// aapt resource value: 0x7F030138
-			public const int itemsVerticalGridStyle = 2130903352;
+			public const int imageCardViewStyle = 2130903352;
 			
 			// aapt resource value: 0x7F030139
-			public const int itemTextAppearance = 2130903353;
+			public const int imageCardViewTitleStyle = 2130903353;
 			
 			// aapt resource value: 0x7F03013A
-			public const int itemTextColor = 2130903354;
+			public const int indeterminateProgressStyle = 2130903354;
 			
 			// aapt resource value: 0x7F03013B
-			public const int keylines = 2130903355;
+			public const int infoAreaBackground = 2130903355;
 			
 			// aapt resource value: 0x7F03013C
-			public const int layout = 2130903356;
+			public const int infoVisibility = 2130903356;
 			
 			// aapt resource value: 0x7F03013D
-			public const int layoutManager = 2130903357;
+			public const int initialActivityCount = 2130903357;
 			
 			// aapt resource value: 0x7F03013E
-			public const int layout_anchor = 2130903358;
+			public const int insetForeground = 2130903358;
 			
 			// aapt resource value: 0x7F03013F
-			public const int layout_anchorGravity = 2130903359;
+			public const int is24HourFormat = 2130903359;
 			
 			// aapt resource value: 0x7F030140
-			public const int layout_behavior = 2130903360;
+			public const int isLightTheme = 2130903360;
 			
 			// aapt resource value: 0x7F030141
-			public const int layout_collapseMode = 2130903361;
+			public const int itemBackground = 2130903361;
 			
 			// aapt resource value: 0x7F030142
-			public const int layout_collapseParallaxMultiplier = 2130903362;
+			public const int itemIconTint = 2130903362;
 			
 			// aapt resource value: 0x7F030143
-			public const int layout_dodgeInsetEdges = 2130903363;
+			public const int itemPadding = 2130903363;
 			
 			// aapt resource value: 0x7F030144
-			public const int layout_insetEdge = 2130903364;
+			public const int itemsVerticalGridStyle = 2130903364;
 			
 			// aapt resource value: 0x7F030145
-			public const int layout_keyline = 2130903365;
+			public const int itemTextAppearance = 2130903365;
 			
 			// aapt resource value: 0x7F030146
-			public const int layout_scrollFlags = 2130903366;
+			public const int itemTextColor = 2130903366;
 			
 			// aapt resource value: 0x7F030147
-			public const int layout_scrollInterpolator = 2130903367;
+			public const int keylines = 2130903367;
 			
 			// aapt resource value: 0x7F030148
-			public const int layout_viewType = 2130903368;
+			public const int layout = 2130903368;
 			
 			// aapt resource value: 0x7F030149
-			public const int lbDotRadius = 2130903369;
+			public const int layoutManager = 2130903369;
 			
 			// aapt resource value: 0x7F03014A
-			public const int lbImageCardViewType = 2130903370;
+			public const int layout_anchor = 2130903370;
 			
 			// aapt resource value: 0x7F03014B
-			public const int lb_slideEdge = 2130903371;
+			public const int layout_anchorGravity = 2130903371;
 			
 			// aapt resource value: 0x7F03014C
-			public const int listChoiceBackgroundIndicator = 2130903372;
+			public const int layout_behavior = 2130903372;
 			
 			// aapt resource value: 0x7F03014D
-			public const int listDividerAlertDialog = 2130903373;
+			public const int layout_collapseMode = 2130903373;
 			
 			// aapt resource value: 0x7F03014E
-			public const int listItemLayout = 2130903374;
+			public const int layout_collapseParallaxMultiplier = 2130903374;
 			
 			// aapt resource value: 0x7F03014F
-			public const int listLayout = 2130903375;
+			public const int layout_dodgeInsetEdges = 2130903375;
 			
 			// aapt resource value: 0x7F030150
-			public const int listMenuViewStyle = 2130903376;
+			public const int layout_insetEdge = 2130903376;
 			
 			// aapt resource value: 0x7F030151
-			public const int listPopupWindowStyle = 2130903377;
+			public const int layout_keyline = 2130903377;
 			
 			// aapt resource value: 0x7F030152
-			public const int listPreferredItemHeight = 2130903378;
+			public const int layout_scrollFlags = 2130903378;
 			
 			// aapt resource value: 0x7F030153
-			public const int listPreferredItemHeightLarge = 2130903379;
+			public const int layout_scrollInterpolator = 2130903379;
 			
 			// aapt resource value: 0x7F030154
-			public const int listPreferredItemHeightSmall = 2130903380;
+			public const int layout_viewType = 2130903380;
 			
 			// aapt resource value: 0x7F030155
-			public const int listPreferredItemPaddingLeft = 2130903381;
+			public const int lbDotRadius = 2130903381;
 			
 			// aapt resource value: 0x7F030156
-			public const int listPreferredItemPaddingRight = 2130903382;
+			public const int lbImageCardViewType = 2130903382;
 			
 			// aapt resource value: 0x7F030157
-			public const int logo = 2130903383;
+			public const int lb_slideEdge = 2130903383;
 			
 			// aapt resource value: 0x7F030158
-			public const int logoDescription = 2130903384;
+			public const int listChoiceBackgroundIndicator = 2130903384;
 			
 			// aapt resource value: 0x7F030159
-			public const int lottie_autoPlay = 2130903385;
+			public const int listDividerAlertDialog = 2130903385;
 			
 			// aapt resource value: 0x7F03015A
-			public const int lottie_cacheStrategy = 2130903386;
+			public const int listItemLayout = 2130903386;
 			
 			// aapt resource value: 0x7F03015B
-			public const int lottie_colorFilter = 2130903387;
+			public const int listLayout = 2130903387;
 			
 			// aapt resource value: 0x7F03015C
-			public const int lottie_enableMergePathsForKitKatAndAbove = 2130903388;
+			public const int listMenuViewStyle = 2130903388;
 			
 			// aapt resource value: 0x7F03015D
-			public const int lottie_fileName = 2130903389;
+			public const int listPopupWindowStyle = 2130903389;
 			
 			// aapt resource value: 0x7F03015E
-			public const int lottie_imageAssetsFolder = 2130903390;
+			public const int listPreferredItemHeight = 2130903390;
 			
 			// aapt resource value: 0x7F03015F
-			public const int lottie_loop = 2130903391;
+			public const int listPreferredItemHeightLarge = 2130903391;
 			
 			// aapt resource value: 0x7F030160
-			public const int lottie_progress = 2130903392;
+			public const int listPreferredItemHeightSmall = 2130903392;
 			
 			// aapt resource value: 0x7F030161
-			public const int lottie_rawRes = 2130903393;
+			public const int listPreferredItemPaddingLeft = 2130903393;
 			
 			// aapt resource value: 0x7F030162
-			public const int lottie_repeatCount = 2130903394;
+			public const int listPreferredItemPaddingRight = 2130903394;
 			
 			// aapt resource value: 0x7F030163
-			public const int lottie_repeatMode = 2130903395;
+			public const int logo = 2130903395;
 			
 			// aapt resource value: 0x7F030164
-			public const int lottie_scale = 2130903396;
+			public const int logoDescription = 2130903396;
 			
 			// aapt resource value: 0x7F030165
-			public const int lottie_url = 2130903397;
+			public const int lottie_autoPlay = 2130903397;
 			
 			// aapt resource value: 0x7F030166
-			public const int maintainLineSpacing = 2130903398;
+			public const int lottie_cacheStrategy = 2130903398;
 			
 			// aapt resource value: 0x7F030167
-			public const int maxActionInlineWidth = 2130903399;
+			public const int lottie_colorFilter = 2130903399;
 			
 			// aapt resource value: 0x7F030168
-			public const int maxButtonHeight = 2130903400;
+			public const int lottie_enableMergePathsForKitKatAndAbove = 2130903400;
 			
 			// aapt resource value: 0x7F030169
-			public const int measureWithLargestChild = 2130903401;
+			public const int lottie_fileName = 2130903401;
 			
 			// aapt resource value: 0x7F03016A
-			public const int mediaRouteAudioTrackDrawable = 2130903402;
+			public const int lottie_imageAssetsFolder = 2130903402;
 			
 			// aapt resource value: 0x7F03016B
-			public const int mediaRouteButtonStyle = 2130903403;
+			public const int lottie_loop = 2130903403;
 			
 			// aapt resource value: 0x7F03016C
-			public const int mediaRouteButtonTint = 2130903404;
+			public const int lottie_progress = 2130903404;
 			
 			// aapt resource value: 0x7F03016D
-			public const int mediaRouteCloseDrawable = 2130903405;
+			public const int lottie_rawRes = 2130903405;
 			
 			// aapt resource value: 0x7F03016E
-			public const int mediaRouteControlPanelThemeOverlay = 2130903406;
+			public const int lottie_repeatCount = 2130903406;
 			
 			// aapt resource value: 0x7F03016F
-			public const int mediaRouteDefaultIconDrawable = 2130903407;
+			public const int lottie_repeatMode = 2130903407;
 			
 			// aapt resource value: 0x7F030170
-			public const int mediaRoutePauseDrawable = 2130903408;
+			public const int lottie_scale = 2130903408;
 			
 			// aapt resource value: 0x7F030171
-			public const int mediaRoutePlayDrawable = 2130903409;
+			public const int lottie_url = 2130903409;
 			
 			// aapt resource value: 0x7F030172
-			public const int mediaRouteSpeakerGroupIconDrawable = 2130903410;
+			public const int maintainLineSpacing = 2130903410;
 			
 			// aapt resource value: 0x7F030173
-			public const int mediaRouteSpeakerIconDrawable = 2130903411;
+			public const int maxActionInlineWidth = 2130903411;
 			
 			// aapt resource value: 0x7F030174
-			public const int mediaRouteStopDrawable = 2130903412;
+			public const int maxButtonHeight = 2130903412;
 			
 			// aapt resource value: 0x7F030175
-			public const int mediaRouteTheme = 2130903413;
+			public const int measureWithLargestChild = 2130903413;
 			
 			// aapt resource value: 0x7F030176
-			public const int mediaRouteTvIconDrawable = 2130903414;
+			public const int mediaRouteAudioTrackDrawable = 2130903414;
 			
 			// aapt resource value: 0x7F030177
-			public const int menu = 2130903415;
+			public const int mediaRouteButtonStyle = 2130903415;
 			
 			// aapt resource value: 0x7F030178
-			public const int multiChoiceItemLayout = 2130903416;
+			public const int mediaRouteButtonTint = 2130903416;
 			
 			// aapt resource value: 0x7F030179
-			public const int navigationContentDescription = 2130903417;
+			public const int mediaRouteCloseDrawable = 2130903417;
 			
 			// aapt resource value: 0x7F03017A
-			public const int navigationIcon = 2130903418;
+			public const int mediaRouteControlPanelThemeOverlay = 2130903418;
 			
 			// aapt resource value: 0x7F03017B
-			public const int navigationMode = 2130903419;
+			public const int mediaRouteDefaultIconDrawable = 2130903419;
 			
 			// aapt resource value: 0x7F03017C
-			public const int numberOfColumns = 2130903420;
+			public const int mediaRoutePauseDrawable = 2130903420;
 			
 			// aapt resource value: 0x7F03017D
-			public const int numberOfRows = 2130903421;
+			public const int mediaRoutePlayDrawable = 2130903421;
 			
 			// aapt resource value: 0x7F03017E
-			public const int numericModifiers = 2130903422;
+			public const int mediaRouteSpeakerGroupIconDrawable = 2130903422;
 			
 			// aapt resource value: 0x7F03017F
-			public const int onboardingDescriptionStyle = 2130903423;
+			public const int mediaRouteSpeakerIconDrawable = 2130903423;
 			
 			// aapt resource value: 0x7F030180
-			public const int onboardingHeaderStyle = 2130903424;
+			public const int mediaRouteStopDrawable = 2130903424;
 			
 			// aapt resource value: 0x7F030181
-			public const int onboardingLogoStyle = 2130903425;
+			public const int mediaRouteTheme = 2130903425;
 			
 			// aapt resource value: 0x7F030182
-			public const int onboardingMainIconStyle = 2130903426;
+			public const int mediaRouteTvIconDrawable = 2130903426;
 			
 			// aapt resource value: 0x7F030183
-			public const int onboardingNavigatorContainerStyle = 2130903427;
+			public const int menu = 2130903427;
 			
 			// aapt resource value: 0x7F030184
-			public const int onboardingPageIndicatorStyle = 2130903428;
+			public const int multiChoiceItemLayout = 2130903428;
 			
 			// aapt resource value: 0x7F030185
-			public const int onboardingStartButtonStyle = 2130903429;
+			public const int navigationContentDescription = 2130903429;
 			
 			// aapt resource value: 0x7F030186
-			public const int onboardingTheme = 2130903430;
+			public const int navigationIcon = 2130903430;
 			
 			// aapt resource value: 0x7F030187
-			public const int onboardingTitleStyle = 2130903431;
+			public const int navigationMode = 2130903431;
 			
 			// aapt resource value: 0x7F030188
-			public const int overlapAnchor = 2130903432;
+			public const int numberOfColumns = 2130903432;
 			
 			// aapt resource value: 0x7F030189
-			public const int overlayDimActiveLevel = 2130903433;
+			public const int numberOfRows = 2130903433;
 			
 			// aapt resource value: 0x7F03018A
-			public const int overlayDimDimmedLevel = 2130903434;
+			public const int numericModifiers = 2130903434;
 			
 			// aapt resource value: 0x7F03018B
-			public const int overlayDimMaskColor = 2130903435;
+			public const int onboardingDescriptionStyle = 2130903435;
 			
 			// aapt resource value: 0x7F03018C
-			public const int paddingBottomNoButtons = 2130903436;
+			public const int onboardingHeaderStyle = 2130903436;
 			
 			// aapt resource value: 0x7F03018D
-			public const int paddingEnd = 2130903437;
+			public const int onboardingLogoStyle = 2130903437;
 			
 			// aapt resource value: 0x7F03018E
-			public const int paddingStart = 2130903438;
+			public const int onboardingMainIconStyle = 2130903438;
 			
 			// aapt resource value: 0x7F03018F
-			public const int paddingTopNoTitle = 2130903439;
+			public const int onboardingNavigatorContainerStyle = 2130903439;
 			
 			// aapt resource value: 0x7F030190
-			public const int panelBackground = 2130903440;
+			public const int onboardingPageIndicatorStyle = 2130903440;
 			
 			// aapt resource value: 0x7F030191
-			public const int panelMenuListTheme = 2130903441;
+			public const int onboardingStartButtonStyle = 2130903441;
 			
 			// aapt resource value: 0x7F030192
-			public const int panelMenuListWidth = 2130903442;
+			public const int onboardingTheme = 2130903442;
 			
 			// aapt resource value: 0x7F030193
-			public const int passwordToggleContentDescription = 2130903443;
+			public const int onboardingTitleStyle = 2130903443;
 			
 			// aapt resource value: 0x7F030194
-			public const int passwordToggleDrawable = 2130903444;
+			public const int overlapAnchor = 2130903444;
 			
 			// aapt resource value: 0x7F030195
-			public const int passwordToggleEnabled = 2130903445;
+			public const int overlayDimActiveLevel = 2130903445;
 			
 			// aapt resource value: 0x7F030196
-			public const int passwordToggleTint = 2130903446;
+			public const int overlayDimDimmedLevel = 2130903446;
 			
 			// aapt resource value: 0x7F030197
-			public const int passwordToggleTintMode = 2130903447;
+			public const int overlayDimMaskColor = 2130903447;
 			
 			// aapt resource value: 0x7F030198
-			public const int pause = 2130903448;
+			public const int paddingBottomNoButtons = 2130903448;
 			
 			// aapt resource value: 0x7F030199
-			public const int picture_in_picture = 2130903449;
+			public const int paddingEnd = 2130903449;
 			
 			// aapt resource value: 0x7F03019A
-			public const int play = 2130903450;
+			public const int paddingStart = 2130903450;
 			
 			// aapt resource value: 0x7F03019B
-			public const int playbackControlButtonLabelStyle = 2130903451;
+			public const int paddingTopNoTitle = 2130903451;
 			
 			// aapt resource value: 0x7F03019C
-			public const int playbackControlsActionIcons = 2130903452;
+			public const int panelBackground = 2130903452;
 			
 			// aapt resource value: 0x7F03019D
-			public const int playbackControlsButtonStyle = 2130903453;
+			public const int panelMenuListTheme = 2130903453;
 			
 			// aapt resource value: 0x7F03019E
-			public const int playbackControlsIconHighlightColor = 2130903454;
+			public const int panelMenuListWidth = 2130903454;
 			
 			// aapt resource value: 0x7F03019F
-			public const int playbackControlsTimeStyle = 2130903455;
+			public const int passwordToggleContentDescription = 2130903455;
 			
 			// aapt resource value: 0x7F0301A0
-			public const int playbackMediaItemDetailsStyle = 2130903456;
+			public const int passwordToggleDrawable = 2130903456;
 			
 			// aapt resource value: 0x7F0301A1
-			public const int playbackMediaItemDurationStyle = 2130903457;
+			public const int passwordToggleEnabled = 2130903457;
 			
 			// aapt resource value: 0x7F0301A2
-			public const int playbackMediaItemNameStyle = 2130903458;
+			public const int passwordToggleTint = 2130903458;
 			
 			// aapt resource value: 0x7F0301A3
-			public const int playbackMediaItemNumberStyle = 2130903459;
+			public const int passwordToggleTintMode = 2130903459;
 			
 			// aapt resource value: 0x7F0301A4
-			public const int playbackMediaItemNumberViewFlipperLayout = 2130903460;
+			public const int pause = 2130903460;
 			
 			// aapt resource value: 0x7F0301A5
-			public const int playbackMediaItemNumberViewFlipperStyle = 2130903461;
+			public const int picture_in_picture = 2130903461;
 			
 			// aapt resource value: 0x7F0301A6
-			public const int playbackMediaItemPaddingStart = 2130903462;
+			public const int play = 2130903462;
 			
 			// aapt resource value: 0x7F0301A7
-			public const int playbackMediaItemRowStyle = 2130903463;
+			public const int playbackControlButtonLabelStyle = 2130903463;
 			
 			// aapt resource value: 0x7F0301A8
-			public const int playbackMediaItemSeparatorStyle = 2130903464;
+			public const int playbackControlsActionIcons = 2130903464;
 			
 			// aapt resource value: 0x7F0301A9
-			public const int playbackMediaListHeaderStyle = 2130903465;
+			public const int playbackControlsButtonStyle = 2130903465;
 			
 			// aapt resource value: 0x7F0301AA
-			public const int playbackMediaListHeaderTitleStyle = 2130903466;
+			public const int playbackControlsIconHighlightColor = 2130903466;
 			
 			// aapt resource value: 0x7F0301AB
-			public const int playbackPaddingEnd = 2130903467;
+			public const int playbackControlsTimeStyle = 2130903467;
 			
 			// aapt resource value: 0x7F0301AC
-			public const int playbackPaddingStart = 2130903468;
+			public const int playbackMediaItemDetailsStyle = 2130903468;
 			
 			// aapt resource value: 0x7F0301AD
-			public const int playbackProgressPrimaryColor = 2130903469;
+			public const int playbackMediaItemDurationStyle = 2130903469;
 			
 			// aapt resource value: 0x7F0301AE
-			public const int popupMenuStyle = 2130903470;
+			public const int playbackMediaItemNameStyle = 2130903470;
 			
 			// aapt resource value: 0x7F0301AF
-			public const int popupTheme = 2130903471;
+			public const int playbackMediaItemNumberStyle = 2130903471;
 			
 			// aapt resource value: 0x7F0301B0
-			public const int popupWindowStyle = 2130903472;
+			public const int playbackMediaItemNumberViewFlipperLayout = 2130903472;
 			
 			// aapt resource value: 0x7F0301B1
-			public const int preserveIconSpacing = 2130903473;
+			public const int playbackMediaItemNumberViewFlipperStyle = 2130903473;
 			
 			// aapt resource value: 0x7F0301B2
-			public const int pressedTranslationZ = 2130903474;
+			public const int playbackMediaItemPaddingStart = 2130903474;
 			
 			// aapt resource value: 0x7F0301B3
-			public const int progressBarPadding = 2130903475;
+			public const int playbackMediaItemRowStyle = 2130903475;
 			
 			// aapt resource value: 0x7F0301B4
-			public const int progressBarStyle = 2130903476;
+			public const int playbackMediaItemSeparatorStyle = 2130903476;
 			
 			// aapt resource value: 0x7F0301B5
-			public const int queryBackground = 2130903477;
+			public const int playbackMediaListHeaderStyle = 2130903477;
 			
 			// aapt resource value: 0x7F0301B6
-			public const int queryHint = 2130903478;
+			public const int playbackMediaListHeaderTitleStyle = 2130903478;
 			
 			// aapt resource value: 0x7F0301B7
-			public const int radioButtonStyle = 2130903479;
+			public const int playbackPaddingEnd = 2130903479;
 			
 			// aapt resource value: 0x7F0301B8
-			public const int ratingBarStyle = 2130903480;
+			public const int playbackPaddingStart = 2130903480;
 			
 			// aapt resource value: 0x7F0301B9
-			public const int ratingBarStyleIndicator = 2130903481;
+			public const int playbackProgressPrimaryColor = 2130903481;
 			
 			// aapt resource value: 0x7F0301BA
-			public const int ratingBarStyleSmall = 2130903482;
+			public const int popupMenuStyle = 2130903482;
 			
 			// aapt resource value: 0x7F0301BB
-			public const int repeat = 2130903483;
+			public const int popupTheme = 2130903483;
 			
 			// aapt resource value: 0x7F0301BC
-			public const int repeat_one = 2130903484;
+			public const int popupWindowStyle = 2130903484;
 			
 			// aapt resource value: 0x7F0301BD
-			public const int resizedPaddingAdjustmentBottom = 2130903485;
+			public const int preserveIconSpacing = 2130903485;
 			
 			// aapt resource value: 0x7F0301BE
-			public const int resizedPaddingAdjustmentTop = 2130903486;
+			public const int pressedTranslationZ = 2130903486;
 			
 			// aapt resource value: 0x7F0301BF
-			public const int resizedTextSize = 2130903487;
+			public const int progressBarPadding = 2130903487;
 			
 			// aapt resource value: 0x7F0301C0
-			public const int resizeTrigger = 2130903488;
+			public const int progressBarStyle = 2130903488;
 			
 			// aapt resource value: 0x7F0301C1
-			public const int reverseLayout = 2130903489;
+			public const int queryBackground = 2130903489;
 			
 			// aapt resource value: 0x7F0301C2
-			public const int rewind = 2130903490;
+			public const int queryHint = 2130903490;
 			
 			// aapt resource value: 0x7F0301C3
-			public const int rippleColor = 2130903491;
+			public const int radioButtonStyle = 2130903491;
 			
 			// aapt resource value: 0x7F0301C4
-			public const int rowHeaderDescriptionStyle = 2130903492;
+			public const int ratingBarStyle = 2130903492;
 			
 			// aapt resource value: 0x7F0301C5
-			public const int rowHeaderDockStyle = 2130903493;
+			public const int ratingBarStyleIndicator = 2130903493;
 			
 			// aapt resource value: 0x7F0301C6
-			public const int rowHeaderStyle = 2130903494;
+			public const int ratingBarStyleSmall = 2130903494;
 			
 			// aapt resource value: 0x7F0301C7
-			public const int rowHeight = 2130903495;
+			public const int repeat = 2130903495;
 			
 			// aapt resource value: 0x7F0301C8
-			public const int rowHorizontalGridStyle = 2130903496;
+			public const int repeat_one = 2130903496;
 			
 			// aapt resource value: 0x7F0301C9
-			public const int rowHoverCardDescriptionStyle = 2130903497;
+			public const int resizedPaddingAdjustmentBottom = 2130903497;
 			
 			// aapt resource value: 0x7F0301CA
-			public const int rowHoverCardTitleStyle = 2130903498;
+			public const int resizedPaddingAdjustmentTop = 2130903498;
 			
 			// aapt resource value: 0x7F0301CB
-			public const int rowsVerticalGridStyle = 2130903499;
+			public const int resizedTextSize = 2130903499;
 			
 			// aapt resource value: 0x7F0301CC
-			public const int scopeUris = 2130903500;
+			public const int resizeTrigger = 2130903500;
 			
 			// aapt resource value: 0x7F0301CD
-			public const int scrimAnimationDuration = 2130903501;
+			public const int reverseLayout = 2130903501;
 			
 			// aapt resource value: 0x7F0301CE
-			public const int scrimVisibleHeightTrigger = 2130903502;
+			public const int rewind = 2130903502;
 			
 			// aapt resource value: 0x7F0301CF
-			public const int searchHintIcon = 2130903503;
+			public const int rippleColor = 2130903503;
 			
 			// aapt resource value: 0x7F0301D0
-			public const int searchIcon = 2130903504;
+			public const int rowHeaderDescriptionStyle = 2130903504;
 			
 			// aapt resource value: 0x7F0301D1
-			public const int searchOrbBrightColor = 2130903505;
+			public const int rowHeaderDockStyle = 2130903505;
 			
 			// aapt resource value: 0x7F0301D2
-			public const int searchOrbColor = 2130903506;
+			public const int rowHeaderStyle = 2130903506;
 			
 			// aapt resource value: 0x7F0301D3
-			public const int searchOrbIcon = 2130903507;
+			public const int rowHeight = 2130903507;
 			
 			// aapt resource value: 0x7F0301D4
-			public const int searchOrbIconColor = 2130903508;
+			public const int rowHorizontalGridStyle = 2130903508;
 			
 			// aapt resource value: 0x7F0301D5
-			public const int searchOrbViewStyle = 2130903509;
+			public const int rowHoverCardDescriptionStyle = 2130903509;
 			
 			// aapt resource value: 0x7F0301D6
-			public const int searchViewStyle = 2130903510;
+			public const int rowHoverCardTitleStyle = 2130903510;
 			
 			// aapt resource value: 0x7F0301D7
-			public const int sectionHeaderStyle = 2130903511;
+			public const int rowsVerticalGridStyle = 2130903511;
 			
 			// aapt resource value: 0x7F0301D8
-			public const int seekBarStyle = 2130903512;
+			public const int scopeUris = 2130903512;
 			
 			// aapt resource value: 0x7F0301D9
-			public const int selectableItemBackground = 2130903513;
+			public const int scrimAnimationDuration = 2130903513;
 			
 			// aapt resource value: 0x7F0301DA
-			public const int selectableItemBackgroundBorderless = 2130903514;
+			public const int scrimVisibleHeightTrigger = 2130903514;
 			
 			// aapt resource value: 0x7F0301DB
-			public const int selectedAnimationDelay = 2130903515;
+			public const int searchHintIcon = 2130903515;
 			
 			// aapt resource value: 0x7F0301DC
-			public const int selectedAnimationDuration = 2130903516;
+			public const int searchIcon = 2130903516;
 			
 			// aapt resource value: 0x7F0301DD
-			public const int showAsAction = 2130903517;
+			public const int searchOrbBrightColor = 2130903517;
 			
 			// aapt resource value: 0x7F0301DE
-			public const int showDividers = 2130903518;
+			public const int searchOrbColor = 2130903518;
 			
 			// aapt resource value: 0x7F0301DF
-			public const int showText = 2130903519;
+			public const int searchOrbIcon = 2130903519;
 			
 			// aapt resource value: 0x7F0301E0
-			public const int showTitle = 2130903520;
+			public const int searchOrbIconColor = 2130903520;
 			
 			// aapt resource value: 0x7F0301E1
-			public const int shuffle = 2130903521;
+			public const int searchOrbViewStyle = 2130903521;
 			
 			// aapt resource value: 0x7F0301E2
-			public const int singleChoiceItemLayout = 2130903522;
+			public const int searchViewStyle = 2130903522;
 			
 			// aapt resource value: 0x7F0301E3
-			public const int skip_next = 2130903523;
+			public const int sectionHeaderStyle = 2130903523;
 			
 			// aapt resource value: 0x7F0301E4
-			public const int skip_previous = 2130903524;
+			public const int seekBarStyle = 2130903524;
 			
 			// aapt resource value: 0x7F0301E5
-			public const int spanCount = 2130903525;
+			public const int selectableItemBackground = 2130903525;
 			
 			// aapt resource value: 0x7F0301E6
-			public const int spinBars = 2130903526;
+			public const int selectableItemBackgroundBorderless = 2130903526;
 			
 			// aapt resource value: 0x7F0301E7
-			public const int spinnerDropDownItemStyle = 2130903527;
+			public const int selectedAnimationDelay = 2130903527;
 			
 			// aapt resource value: 0x7F0301E8
-			public const int spinnerStyle = 2130903528;
+			public const int selectedAnimationDuration = 2130903528;
 			
 			// aapt resource value: 0x7F0301E9
-			public const int splitTrack = 2130903529;
+			public const int showAsAction = 2130903529;
 			
 			// aapt resource value: 0x7F0301EA
-			public const int srcCompat = 2130903530;
+			public const int showDividers = 2130903530;
 			
 			// aapt resource value: 0x7F0301EB
-			public const int stackFromEnd = 2130903531;
+			public const int showText = 2130903531;
 			
 			// aapt resource value: 0x7F0301EC
-			public const int state_above_anchor = 2130903532;
+			public const int showTitle = 2130903532;
 			
 			// aapt resource value: 0x7F0301ED
-			public const int state_collapsed = 2130903533;
+			public const int shuffle = 2130903533;
 			
 			// aapt resource value: 0x7F0301EE
-			public const int state_collapsible = 2130903534;
+			public const int singleChoiceItemLayout = 2130903534;
 			
 			// aapt resource value: 0x7F0301EF
-			public const int statusBarBackground = 2130903535;
+			public const int skip_next = 2130903535;
 			
 			// aapt resource value: 0x7F0301F0
-			public const int statusBarScrim = 2130903536;
+			public const int skip_previous = 2130903536;
 			
 			// aapt resource value: 0x7F0301F1
-			public const int subMenuArrow = 2130903537;
+			public const int spanCount = 2130903537;
 			
 			// aapt resource value: 0x7F0301F2
-			public const int submitBackground = 2130903538;
+			public const int spinBars = 2130903538;
 			
 			// aapt resource value: 0x7F0301F3
-			public const int subtitle = 2130903539;
+			public const int spinnerDropDownItemStyle = 2130903539;
 			
 			// aapt resource value: 0x7F0301F4
-			public const int subtitleTextAppearance = 2130903540;
+			public const int spinnerStyle = 2130903540;
 			
 			// aapt resource value: 0x7F0301F5
-			public const int subtitleTextColor = 2130903541;
+			public const int splitTrack = 2130903541;
 			
 			// aapt resource value: 0x7F0301F6
-			public const int subtitleTextStyle = 2130903542;
+			public const int srcCompat = 2130903542;
 			
 			// aapt resource value: 0x7F0301F7
-			public const int suggestionRowLayout = 2130903543;
+			public const int stackFromEnd = 2130903543;
 			
 			// aapt resource value: 0x7F0301F8
-			public const int switchMinWidth = 2130903544;
+			public const int state_above_anchor = 2130903544;
 			
 			// aapt resource value: 0x7F0301F9
-			public const int switchPadding = 2130903545;
+			public const int state_collapsed = 2130903545;
 			
 			// aapt resource value: 0x7F0301FA
-			public const int switchStyle = 2130903546;
+			public const int state_collapsible = 2130903546;
 			
 			// aapt resource value: 0x7F0301FB
-			public const int switchTextAppearance = 2130903547;
+			public const int statusBarBackground = 2130903547;
 			
 			// aapt resource value: 0x7F0301FC
-			public const int tabBackground = 2130903548;
+			public const int statusBarScrim = 2130903548;
 			
 			// aapt resource value: 0x7F0301FD
-			public const int tabContentStart = 2130903549;
+			public const int subMenuArrow = 2130903549;
 			
 			// aapt resource value: 0x7F0301FE
-			public const int tabGravity = 2130903550;
+			public const int submitBackground = 2130903550;
 			
 			// aapt resource value: 0x7F0301FF
-			public const int tabIndicatorColor = 2130903551;
+			public const int subtitle = 2130903551;
 			
 			// aapt resource value: 0x7F030200
-			public const int tabIndicatorHeight = 2130903552;
+			public const int subtitleTextAppearance = 2130903552;
 			
 			// aapt resource value: 0x7F030201
-			public const int tabMaxWidth = 2130903553;
+			public const int subtitleTextColor = 2130903553;
 			
 			// aapt resource value: 0x7F030202
-			public const int tabMinWidth = 2130903554;
+			public const int subtitleTextStyle = 2130903554;
 			
 			// aapt resource value: 0x7F030203
-			public const int tabMode = 2130903555;
+			public const int suggestionRowLayout = 2130903555;
 			
 			// aapt resource value: 0x7F030204
-			public const int tabPadding = 2130903556;
+			public const int switchMinWidth = 2130903556;
 			
 			// aapt resource value: 0x7F030205
-			public const int tabPaddingBottom = 2130903557;
+			public const int switchPadding = 2130903557;
 			
 			// aapt resource value: 0x7F030206
-			public const int tabPaddingEnd = 2130903558;
+			public const int switchStyle = 2130903558;
 			
 			// aapt resource value: 0x7F030207
-			public const int tabPaddingStart = 2130903559;
+			public const int switchTextAppearance = 2130903559;
 			
 			// aapt resource value: 0x7F030208
-			public const int tabPaddingTop = 2130903560;
+			public const int tabBackground = 2130903560;
 			
 			// aapt resource value: 0x7F030209
-			public const int tabSelectedTextColor = 2130903561;
+			public const int tabContentStart = 2130903561;
 			
 			// aapt resource value: 0x7F03020A
-			public const int tabTextAppearance = 2130903562;
+			public const int tabGravity = 2130903562;
 			
 			// aapt resource value: 0x7F03020B
-			public const int tabTextColor = 2130903563;
+			public const int tabIndicatorColor = 2130903563;
 			
 			// aapt resource value: 0x7F03020C
-			public const int textAllCaps = 2130903564;
+			public const int tabIndicatorHeight = 2130903564;
 			
 			// aapt resource value: 0x7F03020D
-			public const int textAppearanceLargePopupMenu = 2130903565;
+			public const int tabMaxWidth = 2130903565;
 			
 			// aapt resource value: 0x7F03020E
-			public const int textAppearanceListItem = 2130903566;
+			public const int tabMinWidth = 2130903566;
 			
 			// aapt resource value: 0x7F03020F
-			public const int textAppearanceListItemSecondary = 2130903567;
+			public const int tabMode = 2130903567;
 			
 			// aapt resource value: 0x7F030210
-			public const int textAppearanceListItemSmall = 2130903568;
+			public const int tabPadding = 2130903568;
 			
 			// aapt resource value: 0x7F030211
-			public const int textAppearancePopupMenuHeader = 2130903569;
+			public const int tabPaddingBottom = 2130903569;
 			
 			// aapt resource value: 0x7F030212
-			public const int textAppearanceSearchResultSubtitle = 2130903570;
+			public const int tabPaddingEnd = 2130903570;
 			
 			// aapt resource value: 0x7F030213
-			public const int textAppearanceSearchResultTitle = 2130903571;
+			public const int tabPaddingStart = 2130903571;
 			
 			// aapt resource value: 0x7F030214
-			public const int textAppearanceSmallPopupMenu = 2130903572;
+			public const int tabPaddingTop = 2130903572;
 			
 			// aapt resource value: 0x7F030215
-			public const int textColorAlertDialogListItem = 2130903573;
+			public const int tabSelectedTextColor = 2130903573;
 			
 			// aapt resource value: 0x7F030216
-			public const int textColorError = 2130903574;
+			public const int tabTextAppearance = 2130903574;
 			
 			// aapt resource value: 0x7F030217
-			public const int textColorSearchUrl = 2130903575;
+			public const int tabTextColor = 2130903575;
 			
 			// aapt resource value: 0x7F030218
-			public const int theme = 2130903576;
+			public const int textAllCaps = 2130903576;
 			
 			// aapt resource value: 0x7F030219
-			public const int thickness = 2130903577;
+			public const int textAppearanceLargePopupMenu = 2130903577;
 			
 			// aapt resource value: 0x7F03021A
-			public const int thumbTextPadding = 2130903578;
+			public const int textAppearanceListItem = 2130903578;
 			
 			// aapt resource value: 0x7F03021B
-			public const int thumbTint = 2130903579;
+			public const int textAppearanceListItemSecondary = 2130903579;
 			
 			// aapt resource value: 0x7F03021C
-			public const int thumbTintMode = 2130903580;
+			public const int textAppearanceListItemSmall = 2130903580;
 			
 			// aapt resource value: 0x7F03021D
-			public const int thumb_down = 2130903581;
+			public const int textAppearancePopupMenuHeader = 2130903581;
 			
 			// aapt resource value: 0x7F03021E
-			public const int thumb_down_outline = 2130903582;
+			public const int textAppearanceSearchResultSubtitle = 2130903582;
 			
 			// aapt resource value: 0x7F03021F
-			public const int thumb_up = 2130903583;
+			public const int textAppearanceSearchResultTitle = 2130903583;
 			
 			// aapt resource value: 0x7F030220
-			public const int thumb_up_outline = 2130903584;
+			public const int textAppearanceSmallPopupMenu = 2130903584;
 			
 			// aapt resource value: 0x7F030221
-			public const int tickMark = 2130903585;
+			public const int textColorAlertDialogListItem = 2130903585;
 			
 			// aapt resource value: 0x7F030222
-			public const int tickMarkTint = 2130903586;
+			public const int textColorError = 2130903586;
 			
 			// aapt resource value: 0x7F030223
-			public const int tickMarkTintMode = 2130903587;
+			public const int textColorSearchUrl = 2130903587;
 			
 			// aapt resource value: 0x7F030224
-			public const int tint = 2130903588;
+			public const int theme = 2130903588;
 			
 			// aapt resource value: 0x7F030225
-			public const int tintMode = 2130903589;
+			public const int thickness = 2130903589;
 			
 			// aapt resource value: 0x7F030226
-			public const int title = 2130903590;
+			public const int thumbTextPadding = 2130903590;
 			
 			// aapt resource value: 0x7F030227
-			public const int titleEnabled = 2130903591;
+			public const int thumbTint = 2130903591;
 			
 			// aapt resource value: 0x7F030228
-			public const int titleMargin = 2130903592;
+			public const int thumbTintMode = 2130903592;
 			
 			// aapt resource value: 0x7F030229
-			public const int titleMarginBottom = 2130903593;
+			public const int thumb_down = 2130903593;
 			
 			// aapt resource value: 0x7F03022A
-			public const int titleMarginEnd = 2130903594;
+			public const int thumb_down_outline = 2130903594;
 			
 			// aapt resource value: 0x7F03022B
-			public const int titleMargins = 2130903595;
+			public const int thumb_up = 2130903595;
 			
 			// aapt resource value: 0x7F03022C
-			public const int titleMarginStart = 2130903596;
+			public const int thumb_up_outline = 2130903596;
 			
 			// aapt resource value: 0x7F03022D
-			public const int titleMarginTop = 2130903597;
+			public const int tickMark = 2130903597;
 			
 			// aapt resource value: 0x7F03022E
-			public const int titleTextAppearance = 2130903598;
+			public const int tickMarkTint = 2130903598;
 			
 			// aapt resource value: 0x7F03022F
-			public const int titleTextColor = 2130903599;
+			public const int tickMarkTintMode = 2130903599;
 			
 			// aapt resource value: 0x7F030230
-			public const int titleTextStyle = 2130903600;
+			public const int tint = 2130903600;
 			
 			// aapt resource value: 0x7F030231
-			public const int toolbarId = 2130903601;
+			public const int tintMode = 2130903601;
 			
 			// aapt resource value: 0x7F030232
-			public const int toolbarNavigationButtonStyle = 2130903602;
+			public const int title = 2130903602;
 			
 			// aapt resource value: 0x7F030233
-			public const int toolbarStyle = 2130903603;
+			public const int titleEnabled = 2130903603;
 			
 			// aapt resource value: 0x7F030234
-			public const int tooltipForegroundColor = 2130903604;
+			public const int titleMargin = 2130903604;
 			
 			// aapt resource value: 0x7F030235
-			public const int tooltipFrameBackground = 2130903605;
+			public const int titleMarginBottom = 2130903605;
 			
 			// aapt resource value: 0x7F030236
-			public const int tooltipText = 2130903606;
+			public const int titleMarginEnd = 2130903606;
 			
 			// aapt resource value: 0x7F030237
-			public const int track = 2130903607;
+			public const int titleMargins = 2130903607;
 			
 			// aapt resource value: 0x7F030238
-			public const int trackTint = 2130903608;
+			public const int titleMarginStart = 2130903608;
 			
 			// aapt resource value: 0x7F030239
-			public const int trackTintMode = 2130903609;
+			public const int titleMarginTop = 2130903609;
 			
 			// aapt resource value: 0x7F03023A
-			public const int useCompatPadding = 2130903610;
+			public const int titleTextAppearance = 2130903610;
 			
 			// aapt resource value: 0x7F03023B
-			public const int useCurrentTime = 2130903611;
+			public const int titleTextColor = 2130903611;
 			
 			// aapt resource value: 0x7F03023C
-			public const int verticalMargin = 2130903612;
+			public const int titleTextStyle = 2130903612;
 			
 			// aapt resource value: 0x7F03023D
-			public const int voiceIcon = 2130903613;
+			public const int toolbarId = 2130903613;
 			
 			// aapt resource value: 0x7F03023E
-			public const int windowActionBar = 2130903614;
+			public const int toolbarNavigationButtonStyle = 2130903614;
 			
 			// aapt resource value: 0x7F03023F
-			public const int windowActionBarOverlay = 2130903615;
+			public const int toolbarStyle = 2130903615;
 			
 			// aapt resource value: 0x7F030240
-			public const int windowActionModeOverlay = 2130903616;
+			public const int tooltipForegroundColor = 2130903616;
 			
 			// aapt resource value: 0x7F030241
-			public const int windowFixedHeightMajor = 2130903617;
+			public const int tooltipFrameBackground = 2130903617;
 			
 			// aapt resource value: 0x7F030242
-			public const int windowFixedHeightMinor = 2130903618;
+			public const int tooltipText = 2130903618;
 			
 			// aapt resource value: 0x7F030243
-			public const int windowFixedWidthMajor = 2130903619;
+			public const int track = 2130903619;
 			
 			// aapt resource value: 0x7F030244
-			public const int windowFixedWidthMinor = 2130903620;
+			public const int trackTint = 2130903620;
 			
 			// aapt resource value: 0x7F030245
-			public const int windowMinWidthMajor = 2130903621;
+			public const int trackTintMode = 2130903621;
 			
 			// aapt resource value: 0x7F030246
-			public const int windowMinWidthMinor = 2130903622;
+			public const int useCompatPadding = 2130903622;
 			
 			// aapt resource value: 0x7F030247
-			public const int windowNoTitle = 2130903623;
+			public const int useCurrentTime = 2130903623;
+			
+			// aapt resource value: 0x7F030248
+			public const int verticalMargin = 2130903624;
+			
+			// aapt resource value: 0x7F030249
+			public const int voiceIcon = 2130903625;
+			
+			// aapt resource value: 0x7F03024A
+			public const int windowActionBar = 2130903626;
+			
+			// aapt resource value: 0x7F03024B
+			public const int windowActionBarOverlay = 2130903627;
+			
+			// aapt resource value: 0x7F03024C
+			public const int windowActionModeOverlay = 2130903628;
+			
+			// aapt resource value: 0x7F03024D
+			public const int windowFixedHeightMajor = 2130903629;
+			
+			// aapt resource value: 0x7F03024E
+			public const int windowFixedHeightMinor = 2130903630;
+			
+			// aapt resource value: 0x7F03024F
+			public const int windowFixedWidthMajor = 2130903631;
+			
+			// aapt resource value: 0x7F030250
+			public const int windowFixedWidthMinor = 2130903632;
+			
+			// aapt resource value: 0x7F030251
+			public const int windowMinWidthMajor = 2130903633;
+			
+			// aapt resource value: 0x7F030252
+			public const int windowMinWidthMinor = 2130903634;
+			
+			// aapt resource value: 0x7F030253
+			public const int windowNoTitle = 2130903635;
 			
 			static Attribute()
 			{
@@ -7283,802 +9322,814 @@ namespace SalveminiApp.Droid
 			public const int ic_dialog_close_light = 2131165302;
 			
 			// aapt resource value: 0x7F070077
-			public const int ic_group_collapse_00 = 2131165303;
+			public const int ic_errorstatus = 2131165303;
 			
 			// aapt resource value: 0x7F070078
-			public const int ic_group_collapse_01 = 2131165304;
+			public const int ic_group_collapse_00 = 2131165304;
 			
 			// aapt resource value: 0x7F070079
-			public const int ic_group_collapse_02 = 2131165305;
+			public const int ic_group_collapse_01 = 2131165305;
 			
 			// aapt resource value: 0x7F07007A
-			public const int ic_group_collapse_03 = 2131165306;
+			public const int ic_group_collapse_02 = 2131165306;
 			
 			// aapt resource value: 0x7F07007B
-			public const int ic_group_collapse_04 = 2131165307;
+			public const int ic_group_collapse_03 = 2131165307;
 			
 			// aapt resource value: 0x7F07007C
-			public const int ic_group_collapse_05 = 2131165308;
+			public const int ic_group_collapse_04 = 2131165308;
 			
 			// aapt resource value: 0x7F07007D
-			public const int ic_group_collapse_06 = 2131165309;
+			public const int ic_group_collapse_05 = 2131165309;
 			
 			// aapt resource value: 0x7F07007E
-			public const int ic_group_collapse_07 = 2131165310;
+			public const int ic_group_collapse_06 = 2131165310;
 			
 			// aapt resource value: 0x7F07007F
-			public const int ic_group_collapse_08 = 2131165311;
+			public const int ic_group_collapse_07 = 2131165311;
 			
 			// aapt resource value: 0x7F070080
-			public const int ic_group_collapse_09 = 2131165312;
+			public const int ic_group_collapse_08 = 2131165312;
 			
 			// aapt resource value: 0x7F070081
-			public const int ic_group_collapse_10 = 2131165313;
+			public const int ic_group_collapse_09 = 2131165313;
 			
 			// aapt resource value: 0x7F070082
-			public const int ic_group_collapse_11 = 2131165314;
+			public const int ic_group_collapse_10 = 2131165314;
 			
 			// aapt resource value: 0x7F070083
-			public const int ic_group_collapse_12 = 2131165315;
+			public const int ic_group_collapse_11 = 2131165315;
 			
 			// aapt resource value: 0x7F070084
-			public const int ic_group_collapse_13 = 2131165316;
+			public const int ic_group_collapse_12 = 2131165316;
 			
 			// aapt resource value: 0x7F070085
-			public const int ic_group_collapse_14 = 2131165317;
+			public const int ic_group_collapse_13 = 2131165317;
 			
 			// aapt resource value: 0x7F070086
-			public const int ic_group_collapse_15 = 2131165318;
+			public const int ic_group_collapse_14 = 2131165318;
 			
 			// aapt resource value: 0x7F070087
-			public const int ic_group_expand_00 = 2131165319;
+			public const int ic_group_collapse_15 = 2131165319;
 			
 			// aapt resource value: 0x7F070088
-			public const int ic_group_expand_01 = 2131165320;
+			public const int ic_group_expand_00 = 2131165320;
 			
 			// aapt resource value: 0x7F070089
-			public const int ic_group_expand_02 = 2131165321;
+			public const int ic_group_expand_01 = 2131165321;
 			
 			// aapt resource value: 0x7F07008A
-			public const int ic_group_expand_03 = 2131165322;
+			public const int ic_group_expand_02 = 2131165322;
 			
 			// aapt resource value: 0x7F07008B
-			public const int ic_group_expand_04 = 2131165323;
+			public const int ic_group_expand_03 = 2131165323;
 			
 			// aapt resource value: 0x7F07008C
-			public const int ic_group_expand_05 = 2131165324;
+			public const int ic_group_expand_04 = 2131165324;
 			
 			// aapt resource value: 0x7F07008D
-			public const int ic_group_expand_06 = 2131165325;
+			public const int ic_group_expand_05 = 2131165325;
 			
 			// aapt resource value: 0x7F07008E
-			public const int ic_group_expand_07 = 2131165326;
+			public const int ic_group_expand_06 = 2131165326;
 			
 			// aapt resource value: 0x7F07008F
-			public const int ic_group_expand_08 = 2131165327;
+			public const int ic_group_expand_07 = 2131165327;
 			
 			// aapt resource value: 0x7F070090
-			public const int ic_group_expand_09 = 2131165328;
+			public const int ic_group_expand_08 = 2131165328;
 			
 			// aapt resource value: 0x7F070091
-			public const int ic_group_expand_10 = 2131165329;
+			public const int ic_group_expand_09 = 2131165329;
 			
 			// aapt resource value: 0x7F070092
-			public const int ic_group_expand_11 = 2131165330;
+			public const int ic_group_expand_10 = 2131165330;
 			
 			// aapt resource value: 0x7F070093
-			public const int ic_group_expand_12 = 2131165331;
+			public const int ic_group_expand_11 = 2131165331;
 			
 			// aapt resource value: 0x7F070094
-			public const int ic_group_expand_13 = 2131165332;
+			public const int ic_group_expand_12 = 2131165332;
 			
 			// aapt resource value: 0x7F070095
-			public const int ic_group_expand_14 = 2131165333;
+			public const int ic_group_expand_13 = 2131165333;
 			
 			// aapt resource value: 0x7F070096
-			public const int ic_group_expand_15 = 2131165334;
+			public const int ic_group_expand_14 = 2131165334;
 			
 			// aapt resource value: 0x7F070097
-			public const int ic_media_pause_dark = 2131165335;
+			public const int ic_group_expand_15 = 2131165335;
 			
 			// aapt resource value: 0x7F070098
-			public const int ic_media_pause_light = 2131165336;
+			public const int ic_media_pause_dark = 2131165336;
 			
 			// aapt resource value: 0x7F070099
-			public const int ic_media_play_dark = 2131165337;
+			public const int ic_media_pause_light = 2131165337;
 			
 			// aapt resource value: 0x7F07009A
-			public const int ic_media_play_light = 2131165338;
+			public const int ic_media_play_dark = 2131165338;
 			
 			// aapt resource value: 0x7F07009B
-			public const int ic_media_stop_dark = 2131165339;
+			public const int ic_media_play_light = 2131165339;
 			
 			// aapt resource value: 0x7F07009C
-			public const int ic_media_stop_light = 2131165340;
+			public const int ic_media_stop_dark = 2131165340;
 			
 			// aapt resource value: 0x7F07009D
-			public const int ic_mr_button_connected_00_dark = 2131165341;
+			public const int ic_media_stop_light = 2131165341;
 			
 			// aapt resource value: 0x7F07009E
-			public const int ic_mr_button_connected_00_light = 2131165342;
+			public const int ic_mr_button_connected_00_dark = 2131165342;
 			
 			// aapt resource value: 0x7F07009F
-			public const int ic_mr_button_connected_01_dark = 2131165343;
+			public const int ic_mr_button_connected_00_light = 2131165343;
 			
 			// aapt resource value: 0x7F0700A0
-			public const int ic_mr_button_connected_01_light = 2131165344;
+			public const int ic_mr_button_connected_01_dark = 2131165344;
 			
 			// aapt resource value: 0x7F0700A1
-			public const int ic_mr_button_connected_02_dark = 2131165345;
+			public const int ic_mr_button_connected_01_light = 2131165345;
 			
 			// aapt resource value: 0x7F0700A2
-			public const int ic_mr_button_connected_02_light = 2131165346;
+			public const int ic_mr_button_connected_02_dark = 2131165346;
 			
 			// aapt resource value: 0x7F0700A3
-			public const int ic_mr_button_connected_03_dark = 2131165347;
+			public const int ic_mr_button_connected_02_light = 2131165347;
 			
 			// aapt resource value: 0x7F0700A4
-			public const int ic_mr_button_connected_03_light = 2131165348;
+			public const int ic_mr_button_connected_03_dark = 2131165348;
 			
 			// aapt resource value: 0x7F0700A5
-			public const int ic_mr_button_connected_04_dark = 2131165349;
+			public const int ic_mr_button_connected_03_light = 2131165349;
 			
 			// aapt resource value: 0x7F0700A6
-			public const int ic_mr_button_connected_04_light = 2131165350;
+			public const int ic_mr_button_connected_04_dark = 2131165350;
 			
 			// aapt resource value: 0x7F0700A7
-			public const int ic_mr_button_connected_05_dark = 2131165351;
+			public const int ic_mr_button_connected_04_light = 2131165351;
 			
 			// aapt resource value: 0x7F0700A8
-			public const int ic_mr_button_connected_05_light = 2131165352;
+			public const int ic_mr_button_connected_05_dark = 2131165352;
 			
 			// aapt resource value: 0x7F0700A9
-			public const int ic_mr_button_connected_06_dark = 2131165353;
+			public const int ic_mr_button_connected_05_light = 2131165353;
 			
 			// aapt resource value: 0x7F0700AA
-			public const int ic_mr_button_connected_06_light = 2131165354;
+			public const int ic_mr_button_connected_06_dark = 2131165354;
 			
 			// aapt resource value: 0x7F0700AB
-			public const int ic_mr_button_connected_07_dark = 2131165355;
+			public const int ic_mr_button_connected_06_light = 2131165355;
 			
 			// aapt resource value: 0x7F0700AC
-			public const int ic_mr_button_connected_07_light = 2131165356;
+			public const int ic_mr_button_connected_07_dark = 2131165356;
 			
 			// aapt resource value: 0x7F0700AD
-			public const int ic_mr_button_connected_08_dark = 2131165357;
+			public const int ic_mr_button_connected_07_light = 2131165357;
 			
 			// aapt resource value: 0x7F0700AE
-			public const int ic_mr_button_connected_08_light = 2131165358;
+			public const int ic_mr_button_connected_08_dark = 2131165358;
 			
 			// aapt resource value: 0x7F0700AF
-			public const int ic_mr_button_connected_09_dark = 2131165359;
+			public const int ic_mr_button_connected_08_light = 2131165359;
 			
 			// aapt resource value: 0x7F0700B0
-			public const int ic_mr_button_connected_09_light = 2131165360;
+			public const int ic_mr_button_connected_09_dark = 2131165360;
 			
 			// aapt resource value: 0x7F0700B1
-			public const int ic_mr_button_connected_10_dark = 2131165361;
+			public const int ic_mr_button_connected_09_light = 2131165361;
 			
 			// aapt resource value: 0x7F0700B2
-			public const int ic_mr_button_connected_10_light = 2131165362;
+			public const int ic_mr_button_connected_10_dark = 2131165362;
 			
 			// aapt resource value: 0x7F0700B3
-			public const int ic_mr_button_connected_11_dark = 2131165363;
+			public const int ic_mr_button_connected_10_light = 2131165363;
 			
 			// aapt resource value: 0x7F0700B4
-			public const int ic_mr_button_connected_11_light = 2131165364;
+			public const int ic_mr_button_connected_11_dark = 2131165364;
 			
 			// aapt resource value: 0x7F0700B5
-			public const int ic_mr_button_connected_12_dark = 2131165365;
+			public const int ic_mr_button_connected_11_light = 2131165365;
 			
 			// aapt resource value: 0x7F0700B6
-			public const int ic_mr_button_connected_12_light = 2131165366;
+			public const int ic_mr_button_connected_12_dark = 2131165366;
 			
 			// aapt resource value: 0x7F0700B7
-			public const int ic_mr_button_connected_13_dark = 2131165367;
+			public const int ic_mr_button_connected_12_light = 2131165367;
 			
 			// aapt resource value: 0x7F0700B8
-			public const int ic_mr_button_connected_13_light = 2131165368;
+			public const int ic_mr_button_connected_13_dark = 2131165368;
 			
 			// aapt resource value: 0x7F0700B9
-			public const int ic_mr_button_connected_14_dark = 2131165369;
+			public const int ic_mr_button_connected_13_light = 2131165369;
 			
 			// aapt resource value: 0x7F0700BA
-			public const int ic_mr_button_connected_14_light = 2131165370;
+			public const int ic_mr_button_connected_14_dark = 2131165370;
 			
 			// aapt resource value: 0x7F0700BB
-			public const int ic_mr_button_connected_15_dark = 2131165371;
+			public const int ic_mr_button_connected_14_light = 2131165371;
 			
 			// aapt resource value: 0x7F0700BC
-			public const int ic_mr_button_connected_15_light = 2131165372;
+			public const int ic_mr_button_connected_15_dark = 2131165372;
 			
 			// aapt resource value: 0x7F0700BD
-			public const int ic_mr_button_connected_16_dark = 2131165373;
+			public const int ic_mr_button_connected_15_light = 2131165373;
 			
 			// aapt resource value: 0x7F0700BE
-			public const int ic_mr_button_connected_16_light = 2131165374;
+			public const int ic_mr_button_connected_16_dark = 2131165374;
 			
 			// aapt resource value: 0x7F0700BF
-			public const int ic_mr_button_connected_17_dark = 2131165375;
+			public const int ic_mr_button_connected_16_light = 2131165375;
 			
 			// aapt resource value: 0x7F0700C0
-			public const int ic_mr_button_connected_17_light = 2131165376;
+			public const int ic_mr_button_connected_17_dark = 2131165376;
 			
 			// aapt resource value: 0x7F0700C1
-			public const int ic_mr_button_connected_18_dark = 2131165377;
+			public const int ic_mr_button_connected_17_light = 2131165377;
 			
 			// aapt resource value: 0x7F0700C2
-			public const int ic_mr_button_connected_18_light = 2131165378;
+			public const int ic_mr_button_connected_18_dark = 2131165378;
 			
 			// aapt resource value: 0x7F0700C3
-			public const int ic_mr_button_connected_19_dark = 2131165379;
+			public const int ic_mr_button_connected_18_light = 2131165379;
 			
 			// aapt resource value: 0x7F0700C4
-			public const int ic_mr_button_connected_19_light = 2131165380;
+			public const int ic_mr_button_connected_19_dark = 2131165380;
 			
 			// aapt resource value: 0x7F0700C5
-			public const int ic_mr_button_connected_20_dark = 2131165381;
+			public const int ic_mr_button_connected_19_light = 2131165381;
 			
 			// aapt resource value: 0x7F0700C6
-			public const int ic_mr_button_connected_20_light = 2131165382;
+			public const int ic_mr_button_connected_20_dark = 2131165382;
 			
 			// aapt resource value: 0x7F0700C7
-			public const int ic_mr_button_connected_21_dark = 2131165383;
+			public const int ic_mr_button_connected_20_light = 2131165383;
 			
 			// aapt resource value: 0x7F0700C8
-			public const int ic_mr_button_connected_21_light = 2131165384;
+			public const int ic_mr_button_connected_21_dark = 2131165384;
 			
 			// aapt resource value: 0x7F0700C9
-			public const int ic_mr_button_connected_22_dark = 2131165385;
+			public const int ic_mr_button_connected_21_light = 2131165385;
 			
 			// aapt resource value: 0x7F0700CA
-			public const int ic_mr_button_connected_22_light = 2131165386;
+			public const int ic_mr_button_connected_22_dark = 2131165386;
 			
 			// aapt resource value: 0x7F0700CB
-			public const int ic_mr_button_connected_23_dark = 2131165387;
+			public const int ic_mr_button_connected_22_light = 2131165387;
 			
 			// aapt resource value: 0x7F0700CC
-			public const int ic_mr_button_connected_23_light = 2131165388;
+			public const int ic_mr_button_connected_23_dark = 2131165388;
 			
 			// aapt resource value: 0x7F0700CD
-			public const int ic_mr_button_connected_24_dark = 2131165389;
+			public const int ic_mr_button_connected_23_light = 2131165389;
 			
 			// aapt resource value: 0x7F0700CE
-			public const int ic_mr_button_connected_24_light = 2131165390;
+			public const int ic_mr_button_connected_24_dark = 2131165390;
 			
 			// aapt resource value: 0x7F0700CF
-			public const int ic_mr_button_connected_25_dark = 2131165391;
+			public const int ic_mr_button_connected_24_light = 2131165391;
 			
 			// aapt resource value: 0x7F0700D0
-			public const int ic_mr_button_connected_25_light = 2131165392;
+			public const int ic_mr_button_connected_25_dark = 2131165392;
 			
 			// aapt resource value: 0x7F0700D1
-			public const int ic_mr_button_connected_26_dark = 2131165393;
+			public const int ic_mr_button_connected_25_light = 2131165393;
 			
 			// aapt resource value: 0x7F0700D2
-			public const int ic_mr_button_connected_26_light = 2131165394;
+			public const int ic_mr_button_connected_26_dark = 2131165394;
 			
 			// aapt resource value: 0x7F0700D3
-			public const int ic_mr_button_connected_27_dark = 2131165395;
+			public const int ic_mr_button_connected_26_light = 2131165395;
 			
 			// aapt resource value: 0x7F0700D4
-			public const int ic_mr_button_connected_27_light = 2131165396;
+			public const int ic_mr_button_connected_27_dark = 2131165396;
 			
 			// aapt resource value: 0x7F0700D5
-			public const int ic_mr_button_connected_28_dark = 2131165397;
+			public const int ic_mr_button_connected_27_light = 2131165397;
 			
 			// aapt resource value: 0x7F0700D6
-			public const int ic_mr_button_connected_28_light = 2131165398;
+			public const int ic_mr_button_connected_28_dark = 2131165398;
 			
 			// aapt resource value: 0x7F0700D7
-			public const int ic_mr_button_connected_29_dark = 2131165399;
+			public const int ic_mr_button_connected_28_light = 2131165399;
 			
 			// aapt resource value: 0x7F0700D8
-			public const int ic_mr_button_connected_29_light = 2131165400;
+			public const int ic_mr_button_connected_29_dark = 2131165400;
 			
 			// aapt resource value: 0x7F0700D9
-			public const int ic_mr_button_connected_30_dark = 2131165401;
+			public const int ic_mr_button_connected_29_light = 2131165401;
 			
 			// aapt resource value: 0x7F0700DA
-			public const int ic_mr_button_connected_30_light = 2131165402;
+			public const int ic_mr_button_connected_30_dark = 2131165402;
 			
 			// aapt resource value: 0x7F0700DB
-			public const int ic_mr_button_connecting_00_dark = 2131165403;
+			public const int ic_mr_button_connected_30_light = 2131165403;
 			
 			// aapt resource value: 0x7F0700DC
-			public const int ic_mr_button_connecting_00_light = 2131165404;
+			public const int ic_mr_button_connecting_00_dark = 2131165404;
 			
 			// aapt resource value: 0x7F0700DD
-			public const int ic_mr_button_connecting_01_dark = 2131165405;
+			public const int ic_mr_button_connecting_00_light = 2131165405;
 			
 			// aapt resource value: 0x7F0700DE
-			public const int ic_mr_button_connecting_01_light = 2131165406;
+			public const int ic_mr_button_connecting_01_dark = 2131165406;
 			
 			// aapt resource value: 0x7F0700DF
-			public const int ic_mr_button_connecting_02_dark = 2131165407;
+			public const int ic_mr_button_connecting_01_light = 2131165407;
 			
 			// aapt resource value: 0x7F0700E0
-			public const int ic_mr_button_connecting_02_light = 2131165408;
+			public const int ic_mr_button_connecting_02_dark = 2131165408;
 			
 			// aapt resource value: 0x7F0700E1
-			public const int ic_mr_button_connecting_03_dark = 2131165409;
+			public const int ic_mr_button_connecting_02_light = 2131165409;
 			
 			// aapt resource value: 0x7F0700E2
-			public const int ic_mr_button_connecting_03_light = 2131165410;
+			public const int ic_mr_button_connecting_03_dark = 2131165410;
 			
 			// aapt resource value: 0x7F0700E3
-			public const int ic_mr_button_connecting_04_dark = 2131165411;
+			public const int ic_mr_button_connecting_03_light = 2131165411;
 			
 			// aapt resource value: 0x7F0700E4
-			public const int ic_mr_button_connecting_04_light = 2131165412;
+			public const int ic_mr_button_connecting_04_dark = 2131165412;
 			
 			// aapt resource value: 0x7F0700E5
-			public const int ic_mr_button_connecting_05_dark = 2131165413;
+			public const int ic_mr_button_connecting_04_light = 2131165413;
 			
 			// aapt resource value: 0x7F0700E6
-			public const int ic_mr_button_connecting_05_light = 2131165414;
+			public const int ic_mr_button_connecting_05_dark = 2131165414;
 			
 			// aapt resource value: 0x7F0700E7
-			public const int ic_mr_button_connecting_06_dark = 2131165415;
+			public const int ic_mr_button_connecting_05_light = 2131165415;
 			
 			// aapt resource value: 0x7F0700E8
-			public const int ic_mr_button_connecting_06_light = 2131165416;
+			public const int ic_mr_button_connecting_06_dark = 2131165416;
 			
 			// aapt resource value: 0x7F0700E9
-			public const int ic_mr_button_connecting_07_dark = 2131165417;
+			public const int ic_mr_button_connecting_06_light = 2131165417;
 			
 			// aapt resource value: 0x7F0700EA
-			public const int ic_mr_button_connecting_07_light = 2131165418;
+			public const int ic_mr_button_connecting_07_dark = 2131165418;
 			
 			// aapt resource value: 0x7F0700EB
-			public const int ic_mr_button_connecting_08_dark = 2131165419;
+			public const int ic_mr_button_connecting_07_light = 2131165419;
 			
 			// aapt resource value: 0x7F0700EC
-			public const int ic_mr_button_connecting_08_light = 2131165420;
+			public const int ic_mr_button_connecting_08_dark = 2131165420;
 			
 			// aapt resource value: 0x7F0700ED
-			public const int ic_mr_button_connecting_09_dark = 2131165421;
+			public const int ic_mr_button_connecting_08_light = 2131165421;
 			
 			// aapt resource value: 0x7F0700EE
-			public const int ic_mr_button_connecting_09_light = 2131165422;
+			public const int ic_mr_button_connecting_09_dark = 2131165422;
 			
 			// aapt resource value: 0x7F0700EF
-			public const int ic_mr_button_connecting_10_dark = 2131165423;
+			public const int ic_mr_button_connecting_09_light = 2131165423;
 			
 			// aapt resource value: 0x7F0700F0
-			public const int ic_mr_button_connecting_10_light = 2131165424;
+			public const int ic_mr_button_connecting_10_dark = 2131165424;
 			
 			// aapt resource value: 0x7F0700F1
-			public const int ic_mr_button_connecting_11_dark = 2131165425;
+			public const int ic_mr_button_connecting_10_light = 2131165425;
 			
 			// aapt resource value: 0x7F0700F2
-			public const int ic_mr_button_connecting_11_light = 2131165426;
+			public const int ic_mr_button_connecting_11_dark = 2131165426;
 			
 			// aapt resource value: 0x7F0700F3
-			public const int ic_mr_button_connecting_12_dark = 2131165427;
+			public const int ic_mr_button_connecting_11_light = 2131165427;
 			
 			// aapt resource value: 0x7F0700F4
-			public const int ic_mr_button_connecting_12_light = 2131165428;
+			public const int ic_mr_button_connecting_12_dark = 2131165428;
 			
 			// aapt resource value: 0x7F0700F5
-			public const int ic_mr_button_connecting_13_dark = 2131165429;
+			public const int ic_mr_button_connecting_12_light = 2131165429;
 			
 			// aapt resource value: 0x7F0700F6
-			public const int ic_mr_button_connecting_13_light = 2131165430;
+			public const int ic_mr_button_connecting_13_dark = 2131165430;
 			
 			// aapt resource value: 0x7F0700F7
-			public const int ic_mr_button_connecting_14_dark = 2131165431;
+			public const int ic_mr_button_connecting_13_light = 2131165431;
 			
 			// aapt resource value: 0x7F0700F8
-			public const int ic_mr_button_connecting_14_light = 2131165432;
+			public const int ic_mr_button_connecting_14_dark = 2131165432;
 			
 			// aapt resource value: 0x7F0700F9
-			public const int ic_mr_button_connecting_15_dark = 2131165433;
+			public const int ic_mr_button_connecting_14_light = 2131165433;
 			
 			// aapt resource value: 0x7F0700FA
-			public const int ic_mr_button_connecting_15_light = 2131165434;
+			public const int ic_mr_button_connecting_15_dark = 2131165434;
 			
 			// aapt resource value: 0x7F0700FB
-			public const int ic_mr_button_connecting_16_dark = 2131165435;
+			public const int ic_mr_button_connecting_15_light = 2131165435;
 			
 			// aapt resource value: 0x7F0700FC
-			public const int ic_mr_button_connecting_16_light = 2131165436;
+			public const int ic_mr_button_connecting_16_dark = 2131165436;
 			
 			// aapt resource value: 0x7F0700FD
-			public const int ic_mr_button_connecting_17_dark = 2131165437;
+			public const int ic_mr_button_connecting_16_light = 2131165437;
 			
 			// aapt resource value: 0x7F0700FE
-			public const int ic_mr_button_connecting_17_light = 2131165438;
+			public const int ic_mr_button_connecting_17_dark = 2131165438;
 			
 			// aapt resource value: 0x7F0700FF
-			public const int ic_mr_button_connecting_18_dark = 2131165439;
+			public const int ic_mr_button_connecting_17_light = 2131165439;
 			
 			// aapt resource value: 0x7F070100
-			public const int ic_mr_button_connecting_18_light = 2131165440;
+			public const int ic_mr_button_connecting_18_dark = 2131165440;
 			
 			// aapt resource value: 0x7F070101
-			public const int ic_mr_button_connecting_19_dark = 2131165441;
+			public const int ic_mr_button_connecting_18_light = 2131165441;
 			
 			// aapt resource value: 0x7F070102
-			public const int ic_mr_button_connecting_19_light = 2131165442;
+			public const int ic_mr_button_connecting_19_dark = 2131165442;
 			
 			// aapt resource value: 0x7F070103
-			public const int ic_mr_button_connecting_20_dark = 2131165443;
+			public const int ic_mr_button_connecting_19_light = 2131165443;
 			
 			// aapt resource value: 0x7F070104
-			public const int ic_mr_button_connecting_20_light = 2131165444;
+			public const int ic_mr_button_connecting_20_dark = 2131165444;
 			
 			// aapt resource value: 0x7F070105
-			public const int ic_mr_button_connecting_21_dark = 2131165445;
+			public const int ic_mr_button_connecting_20_light = 2131165445;
 			
 			// aapt resource value: 0x7F070106
-			public const int ic_mr_button_connecting_21_light = 2131165446;
+			public const int ic_mr_button_connecting_21_dark = 2131165446;
 			
 			// aapt resource value: 0x7F070107
-			public const int ic_mr_button_connecting_22_dark = 2131165447;
+			public const int ic_mr_button_connecting_21_light = 2131165447;
 			
 			// aapt resource value: 0x7F070108
-			public const int ic_mr_button_connecting_22_light = 2131165448;
+			public const int ic_mr_button_connecting_22_dark = 2131165448;
 			
 			// aapt resource value: 0x7F070109
-			public const int ic_mr_button_connecting_23_dark = 2131165449;
+			public const int ic_mr_button_connecting_22_light = 2131165449;
 			
 			// aapt resource value: 0x7F07010A
-			public const int ic_mr_button_connecting_23_light = 2131165450;
+			public const int ic_mr_button_connecting_23_dark = 2131165450;
 			
 			// aapt resource value: 0x7F07010B
-			public const int ic_mr_button_connecting_24_dark = 2131165451;
+			public const int ic_mr_button_connecting_23_light = 2131165451;
 			
 			// aapt resource value: 0x7F07010C
-			public const int ic_mr_button_connecting_24_light = 2131165452;
+			public const int ic_mr_button_connecting_24_dark = 2131165452;
 			
 			// aapt resource value: 0x7F07010D
-			public const int ic_mr_button_connecting_25_dark = 2131165453;
+			public const int ic_mr_button_connecting_24_light = 2131165453;
 			
 			// aapt resource value: 0x7F07010E
-			public const int ic_mr_button_connecting_25_light = 2131165454;
+			public const int ic_mr_button_connecting_25_dark = 2131165454;
 			
 			// aapt resource value: 0x7F07010F
-			public const int ic_mr_button_connecting_26_dark = 2131165455;
+			public const int ic_mr_button_connecting_25_light = 2131165455;
 			
 			// aapt resource value: 0x7F070110
-			public const int ic_mr_button_connecting_26_light = 2131165456;
+			public const int ic_mr_button_connecting_26_dark = 2131165456;
 			
 			// aapt resource value: 0x7F070111
-			public const int ic_mr_button_connecting_27_dark = 2131165457;
+			public const int ic_mr_button_connecting_26_light = 2131165457;
 			
 			// aapt resource value: 0x7F070112
-			public const int ic_mr_button_connecting_27_light = 2131165458;
+			public const int ic_mr_button_connecting_27_dark = 2131165458;
 			
 			// aapt resource value: 0x7F070113
-			public const int ic_mr_button_connecting_28_dark = 2131165459;
+			public const int ic_mr_button_connecting_27_light = 2131165459;
 			
 			// aapt resource value: 0x7F070114
-			public const int ic_mr_button_connecting_28_light = 2131165460;
+			public const int ic_mr_button_connecting_28_dark = 2131165460;
 			
 			// aapt resource value: 0x7F070115
-			public const int ic_mr_button_connecting_29_dark = 2131165461;
+			public const int ic_mr_button_connecting_28_light = 2131165461;
 			
 			// aapt resource value: 0x7F070116
-			public const int ic_mr_button_connecting_29_light = 2131165462;
+			public const int ic_mr_button_connecting_29_dark = 2131165462;
 			
 			// aapt resource value: 0x7F070117
-			public const int ic_mr_button_connecting_30_dark = 2131165463;
+			public const int ic_mr_button_connecting_29_light = 2131165463;
 			
 			// aapt resource value: 0x7F070118
-			public const int ic_mr_button_connecting_30_light = 2131165464;
+			public const int ic_mr_button_connecting_30_dark = 2131165464;
 			
 			// aapt resource value: 0x7F070119
-			public const int ic_mr_button_disabled_dark = 2131165465;
+			public const int ic_mr_button_connecting_30_light = 2131165465;
 			
 			// aapt resource value: 0x7F07011A
-			public const int ic_mr_button_disabled_light = 2131165466;
+			public const int ic_mr_button_disabled_dark = 2131165466;
 			
 			// aapt resource value: 0x7F07011B
-			public const int ic_mr_button_disconnected_dark = 2131165467;
+			public const int ic_mr_button_disabled_light = 2131165467;
 			
 			// aapt resource value: 0x7F07011C
-			public const int ic_mr_button_disconnected_light = 2131165468;
+			public const int ic_mr_button_disconnected_dark = 2131165468;
 			
 			// aapt resource value: 0x7F07011D
-			public const int ic_mr_button_grey = 2131165469;
+			public const int ic_mr_button_disconnected_light = 2131165469;
 			
 			// aapt resource value: 0x7F07011E
-			public const int ic_os_notification_fallback_white_24dp = 2131165470;
+			public const int ic_mr_button_grey = 2131165470;
 			
 			// aapt resource value: 0x7F07011F
-			public const int ic_vol_type_speaker_dark = 2131165471;
+			public const int ic_os_notification_fallback_white_24dp = 2131165471;
 			
 			// aapt resource value: 0x7F070120
-			public const int ic_vol_type_speaker_group_dark = 2131165472;
+			public const int ic_successstatus = 2131165472;
 			
 			// aapt resource value: 0x7F070121
-			public const int ic_vol_type_speaker_group_light = 2131165473;
+			public const int ic_vol_type_speaker_dark = 2131165473;
 			
 			// aapt resource value: 0x7F070122
-			public const int ic_vol_type_speaker_light = 2131165474;
+			public const int ic_vol_type_speaker_group_dark = 2131165474;
 			
 			// aapt resource value: 0x7F070123
-			public const int ic_vol_type_tv_dark = 2131165475;
+			public const int ic_vol_type_speaker_group_light = 2131165475;
 			
 			// aapt resource value: 0x7F070124
-			public const int ic_vol_type_tv_light = 2131165476;
+			public const int ic_vol_type_speaker_light = 2131165476;
 			
 			// aapt resource value: 0x7F070125
-			public const int inputlayout_togglecollapseicon = 2131165477;
+			public const int ic_vol_type_tv_dark = 2131165477;
 			
 			// aapt resource value: 0x7F070126
-			public const int inputlayout_togglevisibleicon = 2131165478;
+			public const int ic_vol_type_tv_light = 2131165478;
 			
 			// aapt resource value: 0x7F070127
-			public const int input_layout_drop_down_icon = 2131165479;
+			public const int inputlayout_togglecollapseicon = 2131165479;
 			
 			// aapt resource value: 0x7F070128
-			public const int lb_action_bg = 2131165480;
+			public const int inputlayout_togglevisibleicon = 2131165480;
 			
 			// aapt resource value: 0x7F070129
-			public const int lb_action_bg_focused = 2131165481;
+			public const int input_layout_drop_down_icon = 2131165481;
 			
 			// aapt resource value: 0x7F07012A
-			public const int lb_background = 2131165482;
+			public const int lb_action_bg = 2131165482;
 			
 			// aapt resource value: 0x7F07012B
-			public const int lb_card_foreground = 2131165483;
+			public const int lb_action_bg_focused = 2131165483;
 			
 			// aapt resource value: 0x7F07012C
-			public const int lb_card_shadow_focused = 2131165484;
+			public const int lb_background = 2131165484;
 			
 			// aapt resource value: 0x7F07012D
-			public const int lb_card_shadow_normal = 2131165485;
+			public const int lb_card_foreground = 2131165485;
 			
 			// aapt resource value: 0x7F07012E
-			public const int lb_control_button_primary = 2131165486;
+			public const int lb_card_shadow_focused = 2131165486;
 			
 			// aapt resource value: 0x7F07012F
-			public const int lb_control_button_secondary = 2131165487;
+			public const int lb_card_shadow_normal = 2131165487;
 			
 			// aapt resource value: 0x7F070130
-			public const int lb_headers_right_fading = 2131165488;
+			public const int lb_control_button_primary = 2131165488;
 			
 			// aapt resource value: 0x7F070131
-			public const int lb_ic_actions_right_arrow = 2131165489;
+			public const int lb_control_button_secondary = 2131165489;
 			
 			// aapt resource value: 0x7F070132
-			public const int lb_ic_cc = 2131165490;
+			public const int lb_headers_right_fading = 2131165490;
 			
 			// aapt resource value: 0x7F070133
-			public const int lb_ic_fast_forward = 2131165491;
+			public const int lb_ic_actions_right_arrow = 2131165491;
 			
 			// aapt resource value: 0x7F070134
-			public const int lb_ic_fast_rewind = 2131165492;
+			public const int lb_ic_cc = 2131165492;
 			
 			// aapt resource value: 0x7F070135
-			public const int lb_ic_guidedactions_item_chevron = 2131165493;
+			public const int lb_ic_fast_forward = 2131165493;
 			
 			// aapt resource value: 0x7F070136
-			public const int lb_ic_hq = 2131165494;
+			public const int lb_ic_fast_rewind = 2131165494;
 			
 			// aapt resource value: 0x7F070137
-			public const int lb_ic_in_app_search = 2131165495;
+			public const int lb_ic_guidedactions_item_chevron = 2131165495;
 			
 			// aapt resource value: 0x7F070138
-			public const int lb_ic_loop = 2131165496;
+			public const int lb_ic_hq = 2131165496;
 			
 			// aapt resource value: 0x7F070139
-			public const int lb_ic_loop_one = 2131165497;
+			public const int lb_ic_in_app_search = 2131165497;
 			
 			// aapt resource value: 0x7F07013A
-			public const int lb_ic_more = 2131165498;
+			public const int lb_ic_loop = 2131165498;
 			
 			// aapt resource value: 0x7F07013B
-			public const int lb_ic_nav_arrow = 2131165499;
+			public const int lb_ic_loop_one = 2131165499;
 			
 			// aapt resource value: 0x7F07013C
-			public const int lb_ic_pause = 2131165500;
+			public const int lb_ic_more = 2131165500;
 			
 			// aapt resource value: 0x7F07013D
-			public const int lb_ic_pip = 2131165501;
+			public const int lb_ic_nav_arrow = 2131165501;
 			
 			// aapt resource value: 0x7F07013E
-			public const int lb_ic_play = 2131165502;
+			public const int lb_ic_pause = 2131165502;
 			
 			// aapt resource value: 0x7F07013F
-			public const int lb_ic_playback_loop = 2131165503;
+			public const int lb_ic_pip = 2131165503;
 			
 			// aapt resource value: 0x7F070140
-			public const int lb_ic_play_fit = 2131165504;
+			public const int lb_ic_play = 2131165504;
 			
 			// aapt resource value: 0x7F070141
-			public const int lb_ic_replay = 2131165505;
+			public const int lb_ic_playback_loop = 2131165505;
 			
 			// aapt resource value: 0x7F070142
-			public const int lb_ic_sad_cloud = 2131165506;
+			public const int lb_ic_play_fit = 2131165506;
 			
 			// aapt resource value: 0x7F070143
-			public const int lb_ic_search_mic = 2131165507;
+			public const int lb_ic_replay = 2131165507;
 			
 			// aapt resource value: 0x7F070144
-			public const int lb_ic_search_mic_out = 2131165508;
+			public const int lb_ic_sad_cloud = 2131165508;
 			
 			// aapt resource value: 0x7F070145
-			public const int lb_ic_shuffle = 2131165509;
+			public const int lb_ic_search_mic = 2131165509;
 			
 			// aapt resource value: 0x7F070146
-			public const int lb_ic_skip_next = 2131165510;
+			public const int lb_ic_search_mic_out = 2131165510;
 			
 			// aapt resource value: 0x7F070147
-			public const int lb_ic_skip_previous = 2131165511;
+			public const int lb_ic_shuffle = 2131165511;
 			
 			// aapt resource value: 0x7F070148
-			public const int lb_ic_stop = 2131165512;
+			public const int lb_ic_skip_next = 2131165512;
 			
 			// aapt resource value: 0x7F070149
-			public const int lb_ic_thumb_down = 2131165513;
+			public const int lb_ic_skip_previous = 2131165513;
 			
 			// aapt resource value: 0x7F07014A
-			public const int lb_ic_thumb_down_outline = 2131165514;
+			public const int lb_ic_stop = 2131165514;
 			
 			// aapt resource value: 0x7F07014B
-			public const int lb_ic_thumb_up = 2131165515;
+			public const int lb_ic_thumb_down = 2131165515;
 			
 			// aapt resource value: 0x7F07014C
-			public const int lb_ic_thumb_up_outline = 2131165516;
+			public const int lb_ic_thumb_down_outline = 2131165516;
 			
 			// aapt resource value: 0x7F07014D
-			public const int lb_in_app_search_bg = 2131165517;
+			public const int lb_ic_thumb_up = 2131165517;
 			
 			// aapt resource value: 0x7F07014E
-			public const int lb_in_app_search_shadow_focused = 2131165518;
+			public const int lb_ic_thumb_up_outline = 2131165518;
 			
 			// aapt resource value: 0x7F07014F
-			public const int lb_in_app_search_shadow_normal = 2131165519;
+			public const int lb_in_app_search_bg = 2131165519;
 			
 			// aapt resource value: 0x7F070150
-			public const int lb_onboarding_start_button_background = 2131165520;
+			public const int lb_in_app_search_shadow_focused = 2131165520;
 			
 			// aapt resource value: 0x7F070151
-			public const int lb_playback_now_playing_bar = 2131165521;
+			public const int lb_in_app_search_shadow_normal = 2131165521;
 			
 			// aapt resource value: 0x7F070152
-			public const int lb_playback_progress_bar = 2131165522;
+			public const int lb_onboarding_start_button_background = 2131165522;
 			
 			// aapt resource value: 0x7F070153
-			public const int lb_search_orb = 2131165523;
+			public const int lb_playback_now_playing_bar = 2131165523;
 			
 			// aapt resource value: 0x7F070154
-			public const int lb_selectable_item_rounded_rect = 2131165524;
+			public const int lb_playback_progress_bar = 2131165524;
 			
 			// aapt resource value: 0x7F070155
-			public const int lb_speech_orb = 2131165525;
+			public const int lb_search_orb = 2131165525;
 			
 			// aapt resource value: 0x7F070156
-			public const int lb_text_dot_one = 2131165526;
+			public const int lb_selectable_item_rounded_rect = 2131165526;
 			
 			// aapt resource value: 0x7F070157
-			public const int lb_text_dot_one_small = 2131165527;
+			public const int lb_speech_orb = 2131165527;
 			
 			// aapt resource value: 0x7F070158
-			public const int lb_text_dot_two = 2131165528;
+			public const int lb_text_dot_one = 2131165528;
 			
 			// aapt resource value: 0x7F070159
-			public const int lb_text_dot_two_small = 2131165529;
+			public const int lb_text_dot_one_small = 2131165529;
 			
 			// aapt resource value: 0x7F07015A
-			public const int mr_button_connected_dark = 2131165530;
+			public const int lb_text_dot_two = 2131165530;
 			
 			// aapt resource value: 0x7F07015B
-			public const int mr_button_connected_light = 2131165531;
+			public const int lb_text_dot_two_small = 2131165531;
 			
 			// aapt resource value: 0x7F07015C
-			public const int mr_button_connecting_dark = 2131165532;
+			public const int mr_button_connected_dark = 2131165532;
 			
 			// aapt resource value: 0x7F07015D
-			public const int mr_button_connecting_light = 2131165533;
+			public const int mr_button_connected_light = 2131165533;
 			
 			// aapt resource value: 0x7F07015E
-			public const int mr_button_dark = 2131165534;
+			public const int mr_button_connecting_dark = 2131165534;
 			
 			// aapt resource value: 0x7F07015F
-			public const int mr_button_light = 2131165535;
+			public const int mr_button_connecting_light = 2131165535;
 			
 			// aapt resource value: 0x7F070160
-			public const int mr_dialog_close_dark = 2131165536;
+			public const int mr_button_dark = 2131165536;
 			
 			// aapt resource value: 0x7F070161
-			public const int mr_dialog_close_light = 2131165537;
+			public const int mr_button_light = 2131165537;
 			
 			// aapt resource value: 0x7F070162
-			public const int mr_dialog_material_background_dark = 2131165538;
+			public const int mr_dialog_close_dark = 2131165538;
 			
 			// aapt resource value: 0x7F070163
-			public const int mr_dialog_material_background_light = 2131165539;
+			public const int mr_dialog_close_light = 2131165539;
 			
 			// aapt resource value: 0x7F070164
-			public const int mr_group_collapse = 2131165540;
+			public const int mr_dialog_material_background_dark = 2131165540;
 			
 			// aapt resource value: 0x7F070165
-			public const int mr_group_expand = 2131165541;
+			public const int mr_dialog_material_background_light = 2131165541;
 			
 			// aapt resource value: 0x7F070166
-			public const int mr_media_pause_dark = 2131165542;
+			public const int mr_group_collapse = 2131165542;
 			
 			// aapt resource value: 0x7F070167
-			public const int mr_media_pause_light = 2131165543;
+			public const int mr_group_expand = 2131165543;
 			
 			// aapt resource value: 0x7F070168
-			public const int mr_media_play_dark = 2131165544;
+			public const int mr_media_pause_dark = 2131165544;
 			
 			// aapt resource value: 0x7F070169
-			public const int mr_media_play_light = 2131165545;
+			public const int mr_media_pause_light = 2131165545;
 			
 			// aapt resource value: 0x7F07016A
-			public const int mr_media_stop_dark = 2131165546;
+			public const int mr_media_play_dark = 2131165546;
 			
 			// aapt resource value: 0x7F07016B
-			public const int mr_media_stop_light = 2131165547;
+			public const int mr_media_play_light = 2131165547;
 			
 			// aapt resource value: 0x7F07016C
-			public const int mr_vol_type_audiotrack_dark = 2131165548;
+			public const int mr_media_stop_dark = 2131165548;
 			
 			// aapt resource value: 0x7F07016D
-			public const int mr_vol_type_audiotrack_light = 2131165549;
+			public const int mr_media_stop_light = 2131165549;
 			
 			// aapt resource value: 0x7F07016E
-			public const int navigation_empty_icon = 2131165550;
+			public const int mr_vol_type_audiotrack_dark = 2131165550;
 			
 			// aapt resource value: 0x7F07016F
-			public const int notification_action_background = 2131165551;
+			public const int mr_vol_type_audiotrack_light = 2131165551;
 			
 			// aapt resource value: 0x7F070170
-			public const int notification_bg = 2131165552;
+			public const int navigation_empty_icon = 2131165552;
 			
 			// aapt resource value: 0x7F070171
-			public const int notification_bg_low = 2131165553;
+			public const int notification_action_background = 2131165553;
 			
 			// aapt resource value: 0x7F070172
-			public const int notification_bg_low_normal = 2131165554;
+			public const int notification_bg = 2131165554;
 			
 			// aapt resource value: 0x7F070173
-			public const int notification_bg_low_pressed = 2131165555;
+			public const int notification_bg_low = 2131165555;
 			
 			// aapt resource value: 0x7F070174
-			public const int notification_bg_normal = 2131165556;
+			public const int notification_bg_low_normal = 2131165556;
 			
 			// aapt resource value: 0x7F070175
-			public const int notification_bg_normal_pressed = 2131165557;
+			public const int notification_bg_low_pressed = 2131165557;
 			
 			// aapt resource value: 0x7F070176
-			public const int notification_icon_background = 2131165558;
+			public const int notification_bg_normal = 2131165558;
 			
 			// aapt resource value: 0x7F070177
-			public const int notification_template_icon_bg = 2131165559;
+			public const int notification_bg_normal_pressed = 2131165559;
 			
 			// aapt resource value: 0x7F070178
-			public const int notification_template_icon_low_bg = 2131165560;
+			public const int notification_icon_background = 2131165560;
 			
 			// aapt resource value: 0x7F070179
-			public const int notification_tile_bg = 2131165561;
+			public const int notification_template_icon_bg = 2131165561;
 			
 			// aapt resource value: 0x7F07017A
-			public const int notify_panel_notification_icon_bg = 2131165562;
+			public const int notification_template_icon_low_bg = 2131165562;
 			
 			// aapt resource value: 0x7F07017B
-			public const int popup_forms_android_close_icon = 2131165563;
+			public const int notification_tile_bg = 2131165563;
 			
 			// aapt resource value: 0x7F07017C
-			public const int popup_forms_android_shadow = 2131165564;
+			public const int notify_panel_notification_icon_bg = 2131165564;
 			
 			// aapt resource value: 0x7F07017D
-			public const int popup_forms_dark_theme_close_icon = 2131165565;
+			public const int popup_forms_android_close_icon = 2131165565;
 			
 			// aapt resource value: 0x7F07017E
-			public const int popup_forms_light_theme_close_icon = 2131165566;
+			public const int popup_forms_android_shadow = 2131165566;
 			
 			// aapt resource value: 0x7F07017F
-			public const int tooltip_frame_dark = 2131165567;
+			public const int popup_forms_dark_theme_close_icon = 2131165567;
 			
 			// aapt resource value: 0x7F070180
-			public const int tooltip_frame_light = 2131165568;
+			public const int popup_forms_light_theme_close_icon = 2131165568;
+			
+			// aapt resource value: 0x7F070181
+			public const int roundedbg = 2131165569;
+			
+			// aapt resource value: 0x7F070182
+			public const int roundedbgdark = 2131165570;
+			
+			// aapt resource value: 0x7F070183
+			public const int tooltip_frame_dark = 2131165571;
+			
+			// aapt resource value: 0x7F070184
+			public const int tooltip_frame_light = 2131165572;
 			
 			static Drawable()
 			{
@@ -8187,10 +10238,10 @@ namespace SalveminiApp.Droid
 			public const int always = 2131230750;
 			
 			// aapt resource value: 0x7F08001F
-			public const int application_name = 2131230751;
+			public const int APPLICATION_NAME = 2131230751;
 			
 			// aapt resource value: 0x7F080020
-			public const int APPLICATION_NAME = 2131230752;
+			public const int application_name = 2131230752;
 			
 			// aapt resource value: 0x7F080021
 			public const int APP_NAME = 2131230753;
@@ -8763,559 +10814,571 @@ namespace SalveminiApp.Droid
 			public const int list_item = 2131230942;
 			
 			// aapt resource value: 0x7F0800DF
-			public const int logo = 2131230943;
+			public const int loadingImage = 2131230943;
 			
 			// aapt resource value: 0x7F0800E0
-			public const int lottie_layer_name = 2131230944;
+			public const int loadingProgressBar = 2131230944;
 			
 			// aapt resource value: 0x7F0800E1
-			public const int main = 2131230945;
+			public const int loadingProgressWheel = 2131230945;
 			
 			// aapt resource value: 0x7F0800E2
-			public const int mainOnly = 2131230946;
+			public const int logo = 2131230946;
 			
 			// aapt resource value: 0x7F0800E3
-			public const int main_appbar = 2131230947;
+			public const int lottie_layer_name = 2131230947;
 			
 			// aapt resource value: 0x7F0800E4
-			public const int main_icon = 2131230948;
+			public const int main = 2131230948;
 			
 			// aapt resource value: 0x7F0800E5
-			public const int main_image = 2131230949;
+			public const int mainOnly = 2131230949;
 			
 			// aapt resource value: 0x7F0800E6
-			public const int main_tablayout = 2131230950;
+			public const int main_appbar = 2131230950;
 			
 			// aapt resource value: 0x7F0800E7
-			public const int main_toolbar = 2131230951;
+			public const int main_icon = 2131230951;
 			
 			// aapt resource value: 0x7F0800E8
-			public const int main_viewpager = 2131230952;
+			public const int main_image = 2131230952;
 			
 			// aapt resource value: 0x7F0800E9
-			public const int masked = 2131230953;
+			public const int main_tablayout = 2131230953;
 			
 			// aapt resource value: 0x7F0800EA
-			public const int maxLines = 2131230954;
+			public const int main_toolbar = 2131230954;
 			
 			// aapt resource value: 0x7F0800EB
-			public const int mediaItemActionsContainer = 2131230955;
+			public const int main_viewpager = 2131230955;
 			
 			// aapt resource value: 0x7F0800EC
-			public const int mediaItemDetails = 2131230956;
+			public const int masked = 2131230956;
 			
 			// aapt resource value: 0x7F0800ED
-			public const int mediaItemDuration = 2131230957;
+			public const int maxLines = 2131230957;
 			
 			// aapt resource value: 0x7F0800EE
-			public const int mediaItemName = 2131230958;
+			public const int mediaItemActionsContainer = 2131230958;
 			
 			// aapt resource value: 0x7F0800EF
-			public const int mediaItemNumberViewFlipper = 2131230959;
+			public const int mediaItemDetails = 2131230959;
 			
 			// aapt resource value: 0x7F0800F0
-			public const int mediaItemRow = 2131230960;
+			public const int mediaItemDuration = 2131230960;
 			
 			// aapt resource value: 0x7F0800F1
-			public const int mediaListHeader = 2131230961;
+			public const int mediaItemName = 2131230961;
 			
 			// aapt resource value: 0x7F0800F2
-			public const int mediaRowSelector = 2131230962;
+			public const int mediaItemNumberViewFlipper = 2131230962;
 			
 			// aapt resource value: 0x7F0800F3
-			public const int mediaRowSeparator = 2131230963;
+			public const int mediaItemRow = 2131230963;
 			
 			// aapt resource value: 0x7F0800F4
-			public const int media_actions = 2131230964;
+			public const int mediaListHeader = 2131230964;
 			
 			// aapt resource value: 0x7F0800F5
-			public const int message = 2131230965;
+			public const int mediaRowSelector = 2131230965;
 			
 			// aapt resource value: 0x7F0800F6
-			public const int META = 2131230966;
+			public const int mediaRowSeparator = 2131230966;
 			
 			// aapt resource value: 0x7F0800F7
-			public const int middle = 2131230967;
+			public const int media_actions = 2131230967;
 			
 			// aapt resource value: 0x7F0800F8
-			public const int mini = 2131230968;
+			public const int message = 2131230968;
 			
 			// aapt resource value: 0x7F0800F9
-			public const int more_actions_dock = 2131230969;
+			public const int META = 2131230969;
 			
 			// aapt resource value: 0x7F0800FA
-			public const int mr_art = 2131230970;
+			public const int middle = 2131230970;
 			
 			// aapt resource value: 0x7F0800FB
-			public const int mr_chooser_list = 2131230971;
+			public const int mini = 2131230971;
 			
 			// aapt resource value: 0x7F0800FC
-			public const int mr_chooser_route_desc = 2131230972;
+			public const int more_actions_dock = 2131230972;
 			
 			// aapt resource value: 0x7F0800FD
-			public const int mr_chooser_route_icon = 2131230973;
+			public const int mr_art = 2131230973;
 			
 			// aapt resource value: 0x7F0800FE
-			public const int mr_chooser_route_name = 2131230974;
+			public const int mr_chooser_list = 2131230974;
 			
 			// aapt resource value: 0x7F0800FF
-			public const int mr_chooser_title = 2131230975;
+			public const int mr_chooser_route_desc = 2131230975;
 			
 			// aapt resource value: 0x7F080100
-			public const int mr_close = 2131230976;
+			public const int mr_chooser_route_icon = 2131230976;
 			
 			// aapt resource value: 0x7F080101
-			public const int mr_control_divider = 2131230977;
+			public const int mr_chooser_route_name = 2131230977;
 			
 			// aapt resource value: 0x7F080102
-			public const int mr_control_playback_ctrl = 2131230978;
+			public const int mr_chooser_title = 2131230978;
 			
 			// aapt resource value: 0x7F080103
-			public const int mr_control_subtitle = 2131230979;
+			public const int mr_close = 2131230979;
 			
 			// aapt resource value: 0x7F080104
-			public const int mr_control_title = 2131230980;
+			public const int mr_control_divider = 2131230980;
 			
 			// aapt resource value: 0x7F080105
-			public const int mr_control_title_container = 2131230981;
+			public const int mr_control_playback_ctrl = 2131230981;
 			
 			// aapt resource value: 0x7F080106
-			public const int mr_custom_control = 2131230982;
+			public const int mr_control_subtitle = 2131230982;
 			
 			// aapt resource value: 0x7F080107
-			public const int mr_default_control = 2131230983;
+			public const int mr_control_title = 2131230983;
 			
 			// aapt resource value: 0x7F080108
-			public const int mr_dialog_area = 2131230984;
+			public const int mr_control_title_container = 2131230984;
 			
 			// aapt resource value: 0x7F080109
-			public const int mr_expandable_area = 2131230985;
+			public const int mr_custom_control = 2131230985;
 			
 			// aapt resource value: 0x7F08010A
-			public const int mr_group_expand_collapse = 2131230986;
+			public const int mr_default_control = 2131230986;
 			
 			// aapt resource value: 0x7F08010B
-			public const int mr_media_main_control = 2131230987;
+			public const int mr_dialog_area = 2131230987;
 			
 			// aapt resource value: 0x7F08010C
-			public const int mr_name = 2131230988;
+			public const int mr_expandable_area = 2131230988;
 			
 			// aapt resource value: 0x7F08010D
-			public const int mr_playback_control = 2131230989;
+			public const int mr_group_expand_collapse = 2131230989;
 			
 			// aapt resource value: 0x7F08010E
-			public const int mr_title_bar = 2131230990;
+			public const int mr_media_main_control = 2131230990;
 			
 			// aapt resource value: 0x7F08010F
-			public const int mr_volume_control = 2131230991;
+			public const int mr_name = 2131230991;
 			
 			// aapt resource value: 0x7F080110
-			public const int mr_volume_group_list = 2131230992;
+			public const int mr_playback_control = 2131230992;
 			
 			// aapt resource value: 0x7F080111
-			public const int mr_volume_item_icon = 2131230993;
+			public const int mr_title_bar = 2131230993;
 			
 			// aapt resource value: 0x7F080112
-			public const int mr_volume_slider = 2131230994;
+			public const int mr_volume_control = 2131230994;
 			
 			// aapt resource value: 0x7F080113
-			public const int multiply = 2131230995;
+			public const int mr_volume_group_list = 2131230995;
 			
 			// aapt resource value: 0x7F080114
-			public const int navigation_header_container = 2131230996;
+			public const int mr_volume_item_icon = 2131230996;
 			
 			// aapt resource value: 0x7F080115
-			public const int navigator_container = 2131230997;
+			public const int mr_volume_slider = 2131230997;
 			
 			// aapt resource value: 0x7F080116
-			public const int never = 2131230998;
+			public const int multiply = 2131230998;
 			
 			// aapt resource value: 0x7F080117
-			public const int none = 2131230999;
+			public const int navigation_header_container = 2131230999;
 			
 			// aapt resource value: 0x7F080118
-			public const int normal = 2131231000;
+			public const int navigator_container = 2131231000;
 			
 			// aapt resource value: 0x7F080119
-			public const int notification_background = 2131231001;
+			public const int never = 2131231001;
 			
 			// aapt resource value: 0x7F08011A
-			public const int notification_main_column = 2131231002;
+			public const int none = 2131231002;
 			
 			// aapt resource value: 0x7F08011B
-			public const int notification_main_column_container = 2131231003;
+			public const int normal = 2131231003;
 			
 			// aapt resource value: 0x7F08011C
-			public const int onboarding_fragment_root = 2131231004;
+			public const int notification_background = 2131231004;
 			
 			// aapt resource value: 0x7F08011D
-			public const int os_bgimage_notif_bgimage = 2131231005;
+			public const int notification_main_column = 2131231005;
 			
 			// aapt resource value: 0x7F08011E
-			public const int os_bgimage_notif_bgimage_align_layout = 2131231006;
+			public const int notification_main_column_container = 2131231006;
 			
 			// aapt resource value: 0x7F08011F
-			public const int os_bgimage_notif_bgimage_right_aligned = 2131231007;
+			public const int onboarding_fragment_root = 2131231007;
 			
 			// aapt resource value: 0x7F080120
-			public const int os_bgimage_notif_body = 2131231008;
+			public const int os_bgimage_notif_bgimage = 2131231008;
 			
 			// aapt resource value: 0x7F080121
-			public const int os_bgimage_notif_title = 2131231009;
+			public const int os_bgimage_notif_bgimage_align_layout = 2131231009;
 			
 			// aapt resource value: 0x7F080122
-			public const int page_container = 2131231010;
+			public const int os_bgimage_notif_bgimage_right_aligned = 2131231010;
 			
 			// aapt resource value: 0x7F080123
-			public const int page_indicator = 2131231011;
+			public const int os_bgimage_notif_body = 2131231011;
 			
 			// aapt resource value: 0x7F080124
-			public const int parallax = 2131231012;
+			public const int os_bgimage_notif_title = 2131231012;
 			
 			// aapt resource value: 0x7F080125
-			public const int parentPanel = 2131231013;
+			public const int page_container = 2131231013;
 			
 			// aapt resource value: 0x7F080126
-			public const int parent_matrix = 2131231014;
+			public const int page_indicator = 2131231014;
 			
 			// aapt resource value: 0x7F080127
-			public const int paused = 2131231015;
+			public const int parallax = 2131231015;
 			
 			// aapt resource value: 0x7F080128
-			public const int picker = 2131231016;
+			public const int parentPanel = 2131231016;
 			
 			// aapt resource value: 0x7F080129
-			public const int pin = 2131231017;
+			public const int parent_matrix = 2131231017;
 			
 			// aapt resource value: 0x7F08012A
-			public const int playback_controls_dock = 2131231018;
+			public const int paused = 2131231018;
 			
 			// aapt resource value: 0x7F08012B
-			public const int playback_fragment_background = 2131231019;
+			public const int picker = 2131231019;
 			
 			// aapt resource value: 0x7F08012C
-			public const int playback_fragment_root = 2131231020;
+			public const int pin = 2131231020;
 			
 			// aapt resource value: 0x7F08012D
-			public const int playback_progress = 2131231021;
+			public const int playback_controls_dock = 2131231021;
 			
 			// aapt resource value: 0x7F08012E
-			public const int playing = 2131231022;
+			public const int playback_fragment_background = 2131231022;
 			
 			// aapt resource value: 0x7F08012F
-			public const int progress_circular = 2131231023;
+			public const int playback_fragment_root = 2131231023;
 			
 			// aapt resource value: 0x7F080130
-			public const int progress_horizontal = 2131231024;
+			public const int playback_progress = 2131231024;
 			
 			// aapt resource value: 0x7F080131
-			public const int radio = 2131231025;
+			public const int playing = 2131231025;
 			
 			// aapt resource value: 0x7F080132
-			public const int restart = 2131231026;
+			public const int progress_circular = 2131231026;
 			
 			// aapt resource value: 0x7F080133
-			public const int reverse = 2131231027;
+			public const int progress_horizontal = 2131231027;
 			
 			// aapt resource value: 0x7F080134
-			public const int right = 2131231028;
+			public const int radio = 2131231028;
 			
 			// aapt resource value: 0x7F080135
-			public const int right_icon = 2131231029;
+			public const int restart = 2131231029;
 			
 			// aapt resource value: 0x7F080136
-			public const int right_side = 2131231030;
+			public const int reverse = 2131231030;
 			
 			// aapt resource value: 0x7F080137
-			public const int row_content = 2131231031;
+			public const int right = 2131231031;
 			
 			// aapt resource value: 0x7F080138
-			public const int row_header = 2131231032;
+			public const int right_icon = 2131231032;
 			
 			// aapt resource value: 0x7F080139
-			public const int row_header_description = 2131231033;
+			public const int right_side = 2131231033;
 			
 			// aapt resource value: 0x7F08013A
-			public const int save_image_matrix = 2131231034;
+			public const int row_content = 2131231034;
 			
 			// aapt resource value: 0x7F08013B
-			public const int save_non_transition_alpha = 2131231035;
+			public const int row_header = 2131231035;
 			
 			// aapt resource value: 0x7F08013C
-			public const int save_scale_type = 2131231036;
+			public const int row_header_description = 2131231036;
 			
 			// aapt resource value: 0x7F08013D
-			public const int scale_frame = 2131231037;
+			public const int save_image_matrix = 2131231037;
 			
 			// aapt resource value: 0x7F08013E
-			public const int screen = 2131231038;
+			public const int save_non_transition_alpha = 2131231038;
 			
 			// aapt resource value: 0x7F08013F
-			public const int scroll = 2131231039;
+			public const int save_scale_type = 2131231039;
 			
 			// aapt resource value: 0x7F080140
-			public const int scrollable = 2131231040;
+			public const int scale_frame = 2131231040;
 			
 			// aapt resource value: 0x7F080141
-			public const int scrollIndicatorDown = 2131231041;
+			public const int screen = 2131231041;
 			
 			// aapt resource value: 0x7F080142
-			public const int scrollIndicatorUp = 2131231042;
+			public const int scroll = 2131231042;
 			
 			// aapt resource value: 0x7F080143
-			public const int scrollView = 2131231043;
+			public const int scrollable = 2131231043;
 			
 			// aapt resource value: 0x7F080144
-			public const int search_badge = 2131231044;
+			public const int scrollIndicatorDown = 2131231044;
 			
 			// aapt resource value: 0x7F080145
-			public const int search_bar = 2131231045;
+			public const int scrollIndicatorUp = 2131231045;
 			
 			// aapt resource value: 0x7F080146
-			public const int search_button = 2131231046;
+			public const int scrollView = 2131231046;
 			
 			// aapt resource value: 0x7F080147
-			public const int search_close_btn = 2131231047;
+			public const int search_badge = 2131231047;
 			
 			// aapt resource value: 0x7F080148
-			public const int SEARCH_CONTEXT = 2131231048;
+			public const int search_bar = 2131231048;
 			
 			// aapt resource value: 0x7F080149
-			public const int search_context = 2131231049;
+			public const int search_button = 2131231049;
 			
 			// aapt resource value: 0x7F08014A
-			public const int search_edit_frame = 2131231050;
+			public const int search_close_btn = 2131231050;
 			
 			// aapt resource value: 0x7F08014B
-			public const int search_go_btn = 2131231051;
+			public const int SEARCH_CONTEXT = 2131231051;
 			
 			// aapt resource value: 0x7F08014C
-			public const int search_mag_icon = 2131231052;
+			public const int search_context = 2131231052;
 			
 			// aapt resource value: 0x7F08014D
-			public const int search_orb = 2131231053;
+			public const int search_edit_frame = 2131231053;
 			
 			// aapt resource value: 0x7F08014E
-			public const int search_plate = 2131231054;
+			public const int search_go_btn = 2131231054;
 			
 			// aapt resource value: 0x7F08014F
-			public const int search_src_text = 2131231055;
+			public const int search_mag_icon = 2131231055;
 			
 			// aapt resource value: 0x7F080150
-			public const int search_voice_btn = 2131231056;
+			public const int search_orb = 2131231056;
 			
 			// aapt resource value: 0x7F080151
-			public const int secondary_controls_dock = 2131231057;
+			public const int search_plate = 2131231057;
 			
 			// aapt resource value: 0x7F080152
-			public const int selected = 2131231058;
+			public const int search_src_text = 2131231058;
 			
 			// aapt resource value: 0x7F080153
-			public const int select_dialog_listview = 2131231059;
+			public const int search_voice_btn = 2131231059;
 			
 			// aapt resource value: 0x7F080154
-			public const int separate_time = 2131231060;
+			public const int secondary_controls_dock = 2131231060;
 			
 			// aapt resource value: 0x7F080155
-			public const int separator = 2131231061;
+			public const int selected = 2131231061;
 			
 			// aapt resource value: 0x7F080156
-			public const int shellcontent_appbar = 2131231062;
+			public const int select_dialog_listview = 2131231062;
 			
 			// aapt resource value: 0x7F080157
-			public const int shellcontent_toolbar = 2131231063;
+			public const int separate_time = 2131231063;
 			
 			// aapt resource value: 0x7F080158
-			public const int SHIFT = 2131231064;
+			public const int separator = 2131231064;
 			
 			// aapt resource value: 0x7F080159
-			public const int shortcut = 2131231065;
+			public const int shellcontent_appbar = 2131231065;
 			
 			// aapt resource value: 0x7F08015A
-			public const int showCustom = 2131231066;
+			public const int shellcontent_toolbar = 2131231066;
 			
 			// aapt resource value: 0x7F08015B
-			public const int showHome = 2131231067;
+			public const int SHIFT = 2131231067;
 			
 			// aapt resource value: 0x7F08015C
-			public const int showTitle = 2131231068;
+			public const int shortcut = 2131231068;
 			
 			// aapt resource value: 0x7F08015D
-			public const int sliding_tabs = 2131231069;
+			public const int showCustom = 2131231069;
 			
 			// aapt resource value: 0x7F08015E
-			public const int smallLabel = 2131231070;
+			public const int showHome = 2131231070;
 			
 			// aapt resource value: 0x7F08015F
-			public const int snackbar_action = 2131231071;
+			public const int showTitle = 2131231071;
 			
 			// aapt resource value: 0x7F080160
-			public const int snackbar_text = 2131231072;
+			public const int sliding_tabs = 2131231072;
 			
 			// aapt resource value: 0x7F080161
-			public const int snap = 2131231073;
+			public const int smallLabel = 2131231073;
 			
 			// aapt resource value: 0x7F080162
-			public const int spacer = 2131231074;
+			public const int snackbar_action = 2131231074;
 			
 			// aapt resource value: 0x7F080163
-			public const int split_action_bar = 2131231075;
+			public const int snackbar_text = 2131231075;
 			
 			// aapt resource value: 0x7F080164
-			public const int src_atop = 2131231076;
+			public const int snap = 2131231076;
 			
 			// aapt resource value: 0x7F080165
-			public const int src_in = 2131231077;
+			public const int spacer = 2131231077;
 			
 			// aapt resource value: 0x7F080166
-			public const int src_over = 2131231078;
+			public const int split_action_bar = 2131231078;
 			
 			// aapt resource value: 0x7F080167
-			public const int standard = 2131231079;
+			public const int src_atop = 2131231079;
 			
 			// aapt resource value: 0x7F080168
-			public const int start = 2131231080;
+			public const int src_in = 2131231080;
 			
 			// aapt resource value: 0x7F080169
-			public const int status_bar_latest_event_content = 2131231081;
+			public const int src_over = 2131231081;
 			
 			// aapt resource value: 0x7F08016A
-			public const int strong = 2131231082;
+			public const int standard = 2131231082;
 			
 			// aapt resource value: 0x7F08016B
-			public const int submenuarrow = 2131231083;
+			public const int start = 2131231083;
 			
 			// aapt resource value: 0x7F08016C
-			public const int submit_area = 2131231084;
+			public const int status_bar_latest_event_content = 2131231084;
 			
 			// aapt resource value: 0x7F08016D
-			public const int SYM = 2131231085;
+			public const int strong = 2131231085;
 			
 			// aapt resource value: 0x7F08016E
-			public const int tabMode = 2131231086;
+			public const int submenuarrow = 2131231086;
 			
 			// aapt resource value: 0x7F08016F
-			public const int tag_transition_group = 2131231087;
+			public const int submit_area = 2131231087;
 			
 			// aapt resource value: 0x7F080170
-			public const int text = 2131231088;
+			public const int SYM = 2131231088;
 			
 			// aapt resource value: 0x7F080171
-			public const int text2 = 2131231089;
+			public const int tabMode = 2131231089;
 			
 			// aapt resource value: 0x7F080172
-			public const int textinput_counter = 2131231090;
+			public const int tag_transition_group = 2131231090;
 			
 			// aapt resource value: 0x7F080173
-			public const int textinput_error = 2131231091;
+			public const int text = 2131231091;
 			
 			// aapt resource value: 0x7F080174
-			public const int textSpacerNoButtons = 2131231092;
+			public const int text2 = 2131231092;
 			
 			// aapt resource value: 0x7F080175
-			public const int textSpacerNoTitle = 2131231093;
+			public const int textinput_counter = 2131231093;
 			
 			// aapt resource value: 0x7F080176
-			public const int text_input_password_toggle = 2131231094;
+			public const int textinput_error = 2131231094;
 			
 			// aapt resource value: 0x7F080177
-			public const int thumbs_row = 2131231095;
+			public const int textSpacerNoButtons = 2131231095;
 			
 			// aapt resource value: 0x7F080178
-			public const int time = 2131231096;
+			public const int textSpacerNoTitle = 2131231096;
 			
 			// aapt resource value: 0x7F080179
-			public const int Title = 2131231097;
+			public const int textViewStatus = 2131231097;
 			
 			// aapt resource value: 0x7F08017A
-			public const int title = 2131231098;
+			public const int text_input_password_toggle = 2131231098;
 			
 			// aapt resource value: 0x7F08017B
-			public const int titleDividerNoCustom = 2131231099;
+			public const int thumbs_row = 2131231099;
 			
 			// aapt resource value: 0x7F08017C
-			public const int title_badge = 2131231100;
+			public const int time = 2131231100;
 			
 			// aapt resource value: 0x7F08017D
-			public const int title_orb = 2131231101;
+			public const int Title = 2131231101;
 			
 			// aapt resource value: 0x7F08017E
-			public const int title_template = 2131231102;
+			public const int title = 2131231102;
 			
 			// aapt resource value: 0x7F08017F
-			public const int title_text = 2131231103;
+			public const int titleDividerNoCustom = 2131231103;
 			
 			// aapt resource value: 0x7F080180
-			public const int toolbar = 2131231104;
+			public const int title_badge = 2131231104;
 			
 			// aapt resource value: 0x7F080181
-			public const int top = 2131231105;
+			public const int title_orb = 2131231105;
 			
 			// aapt resource value: 0x7F080182
-			public const int topPanel = 2131231106;
+			public const int title_template = 2131231106;
 			
 			// aapt resource value: 0x7F080183
-			public const int total_time = 2131231107;
+			public const int title_text = 2131231107;
 			
 			// aapt resource value: 0x7F080184
-			public const int touch_outside = 2131231108;
+			public const int toolbar = 2131231108;
 			
 			// aapt resource value: 0x7F080185
-			public const int transitionPosition = 2131231109;
+			public const int top = 2131231109;
 			
 			// aapt resource value: 0x7F080186
-			public const int transition_current_scene = 2131231110;
+			public const int topPanel = 2131231110;
 			
 			// aapt resource value: 0x7F080187
-			public const int transition_layout_save = 2131231111;
+			public const int total_time = 2131231111;
 			
 			// aapt resource value: 0x7F080188
-			public const int transition_position = 2131231112;
+			public const int touch_outside = 2131231112;
 			
 			// aapt resource value: 0x7F080189
-			public const int transition_scene_layoutid_cache = 2131231113;
+			public const int transitionPosition = 2131231113;
 			
 			// aapt resource value: 0x7F08018A
-			public const int transition_transform = 2131231114;
+			public const int transition_current_scene = 2131231114;
 			
 			// aapt resource value: 0x7F08018B
-			public const int transport_row = 2131231115;
+			public const int transition_layout_save = 2131231115;
 			
 			// aapt resource value: 0x7F08018C
-			public const int uniform = 2131231116;
+			public const int transition_position = 2131231116;
 			
 			// aapt resource value: 0x7F08018D
-			public const int up = 2131231117;
+			public const int transition_scene_layoutid_cache = 2131231117;
 			
 			// aapt resource value: 0x7F08018E
-			public const int useLogo = 2131231118;
+			public const int transition_transform = 2131231118;
 			
 			// aapt resource value: 0x7F08018F
-			public const int video_surface = 2131231119;
+			public const int transport_row = 2131231119;
 			
 			// aapt resource value: 0x7F080190
-			public const int video_surface_container = 2131231120;
+			public const int uniform = 2131231120;
 			
 			// aapt resource value: 0x7F080191
-			public const int view_offset_helper = 2131231121;
+			public const int up = 2131231121;
 			
 			// aapt resource value: 0x7F080192
-			public const int visible = 2131231122;
+			public const int useLogo = 2131231122;
 			
 			// aapt resource value: 0x7F080193
-			public const int volume_item_container = 2131231123;
+			public const int video_surface = 2131231123;
 			
 			// aapt resource value: 0x7F080194
-			public const int weak = 2131231124;
+			public const int video_surface_container = 2131231124;
 			
 			// aapt resource value: 0x7F080195
-			public const int wide = 2131231125;
+			public const int view_offset_helper = 2131231125;
 			
 			// aapt resource value: 0x7F080196
-			public const int withText = 2131231126;
+			public const int visible = 2131231126;
 			
 			// aapt resource value: 0x7F080197
-			public const int wrap_content = 2131231127;
+			public const int volume_item_container = 2131231127;
+			
+			// aapt resource value: 0x7F080198
+			public const int weak = 2131231128;
+			
+			// aapt resource value: 0x7F080199
+			public const int wide = 2131231129;
+			
+			// aapt resource value: 0x7F08019A
+			public const int withText = 2131231130;
+			
+			// aapt resource value: 0x7F08019B
+			public const int wrap_content = 2131231131;
 			
 			static Id()
 			{
@@ -9810,100 +11873,109 @@ namespace SalveminiApp.Droid
 			public const int lb_video_surface = 2131427428;
 			
 			// aapt resource value: 0x7F0B0065
-			public const int mr_chooser_dialog = 2131427429;
+			public const int loading = 2131427429;
 			
 			// aapt resource value: 0x7F0B0066
-			public const int mr_chooser_list_item = 2131427430;
+			public const int loadingimage = 2131427430;
 			
 			// aapt resource value: 0x7F0B0067
-			public const int mr_controller_material_dialog_b = 2131427431;
+			public const int loadingprogress = 2131427431;
 			
 			// aapt resource value: 0x7F0B0068
-			public const int mr_controller_volume_item = 2131427432;
+			public const int mr_chooser_dialog = 2131427432;
 			
 			// aapt resource value: 0x7F0B0069
-			public const int mr_playback_control = 2131427433;
+			public const int mr_chooser_list_item = 2131427433;
 			
 			// aapt resource value: 0x7F0B006A
-			public const int mr_volume_control = 2131427434;
+			public const int mr_controller_material_dialog_b = 2131427434;
 			
 			// aapt resource value: 0x7F0B006B
-			public const int notification_action = 2131427435;
+			public const int mr_controller_volume_item = 2131427435;
 			
 			// aapt resource value: 0x7F0B006C
-			public const int notification_action_tombstone = 2131427436;
+			public const int mr_playback_control = 2131427436;
 			
 			// aapt resource value: 0x7F0B006D
-			public const int notification_media_action = 2131427437;
+			public const int mr_volume_control = 2131427437;
 			
 			// aapt resource value: 0x7F0B006E
-			public const int notification_media_cancel_action = 2131427438;
+			public const int notification_action = 2131427438;
 			
 			// aapt resource value: 0x7F0B006F
-			public const int notification_template_big_media = 2131427439;
+			public const int notification_action_tombstone = 2131427439;
 			
 			// aapt resource value: 0x7F0B0070
-			public const int notification_template_big_media_custom = 2131427440;
+			public const int notification_media_action = 2131427440;
 			
 			// aapt resource value: 0x7F0B0071
-			public const int notification_template_big_media_narrow = 2131427441;
+			public const int notification_media_cancel_action = 2131427441;
 			
 			// aapt resource value: 0x7F0B0072
-			public const int notification_template_big_media_narrow_custom = 2131427442;
+			public const int notification_template_big_media = 2131427442;
 			
 			// aapt resource value: 0x7F0B0073
-			public const int notification_template_custom_big = 2131427443;
+			public const int notification_template_big_media_custom = 2131427443;
 			
 			// aapt resource value: 0x7F0B0074
-			public const int notification_template_icon_group = 2131427444;
+			public const int notification_template_big_media_narrow = 2131427444;
 			
 			// aapt resource value: 0x7F0B0075
-			public const int notification_template_lines_media = 2131427445;
+			public const int notification_template_big_media_narrow_custom = 2131427445;
 			
 			// aapt resource value: 0x7F0B0076
-			public const int notification_template_media = 2131427446;
+			public const int notification_template_custom_big = 2131427446;
 			
 			// aapt resource value: 0x7F0B0077
-			public const int notification_template_media_custom = 2131427447;
+			public const int notification_template_icon_group = 2131427447;
 			
 			// aapt resource value: 0x7F0B0078
-			public const int notification_template_part_chronometer = 2131427448;
+			public const int notification_template_lines_media = 2131427448;
 			
 			// aapt resource value: 0x7F0B0079
-			public const int notification_template_part_time = 2131427449;
+			public const int notification_template_media = 2131427449;
 			
 			// aapt resource value: 0x7F0B007A
-			public const int onesignal_bgimage_notif_layout = 2131427450;
+			public const int notification_template_media_custom = 2131427450;
 			
 			// aapt resource value: 0x7F0B007B
-			public const int RootLayout = 2131427451;
+			public const int notification_template_part_chronometer = 2131427451;
 			
 			// aapt resource value: 0x7F0B007C
-			public const int select_dialog_item_material = 2131427452;
+			public const int notification_template_part_time = 2131427452;
 			
 			// aapt resource value: 0x7F0B007D
-			public const int select_dialog_multichoice_material = 2131427453;
+			public const int onesignal_bgimage_notif_layout = 2131427453;
 			
 			// aapt resource value: 0x7F0B007E
-			public const int select_dialog_singlechoice_material = 2131427454;
+			public const int RootLayout = 2131427454;
 			
 			// aapt resource value: 0x7F0B007F
-			public const int ShellContent = 2131427455;
+			public const int select_dialog_item_material = 2131427455;
 			
 			// aapt resource value: 0x7F0B0080
-			public const int support_simple_spinner_dropdown_item = 2131427456;
+			public const int select_dialog_multichoice_material = 2131427456;
 			
 			// aapt resource value: 0x7F0B0081
-			public const int Tabbar = 2131427457;
+			public const int select_dialog_singlechoice_material = 2131427457;
 			
 			// aapt resource value: 0x7F0B0082
-			public const int Toolbar = 2131427458;
+			public const int ShellContent = 2131427458;
 			
 			// aapt resource value: 0x7F0B0083
-			public const int tooltip = 2131427459;
+			public const int support_simple_spinner_dropdown_item = 2131427459;
 			
 			// aapt resource value: 0x7F0B0084
-			public const int video_surface_fragment = 2131427460;
+			public const int Tabbar = 2131427460;
+			
+			// aapt resource value: 0x7F0B0085
+			public const int Toolbar = 2131427461;
+			
+			// aapt resource value: 0x7F0B0086
+			public const int tooltip = 2131427462;
+			
+			// aapt resource value: 0x7F0B0087
+			public const int video_surface_fragment = 2131427463;
 			
 			static Layout()
 			{
@@ -11932,37 +14004,37 @@ namespace SalveminiApp.Droid
 		public partial class Styleable
 		{
 			
-			// aapt resource value: { 0x7F030035,0x7F030036,0x7F030037,0x7F03008B,0x7F03008C,0x7F03008D,0x7F03008E,0x7F03008F,0x7F030090,0x7F03009C,0x7F0300AC,0x7F0300AD,0x7F0300BB,0x7F030118,0x7F030119,0x7F03011E,0x7F03011F,0x7F030121,0x7F03012E,0x7F030137,0x7F030157,0x7F03017B,0x7F0301AF,0x7F0301B3,0x7F0301B4,0x7F0301F3,0x7F0301F6,0x7F030226,0x7F030230 }
+			// aapt resource value: { 0x7F030041,0x7F030042,0x7F030043,0x7F030097,0x7F030098,0x7F030099,0x7F03009A,0x7F03009B,0x7F03009C,0x7F0300A8,0x7F0300B8,0x7F0300B9,0x7F0300C7,0x7F030124,0x7F030125,0x7F03012A,0x7F03012B,0x7F03012D,0x7F03013A,0x7F030143,0x7F030163,0x7F030187,0x7F0301BB,0x7F0301BF,0x7F0301C0,0x7F0301FF,0x7F030202,0x7F030232,0x7F03023C }
 			public static int[] ActionBar = new int[] {
-					2130903093,
-					2130903094,
-					2130903095,
-					2130903179,
-					2130903180,
-					2130903181,
-					2130903182,
-					2130903183,
-					2130903184,
+					2130903105,
+					2130903106,
+					2130903107,
+					2130903191,
+					2130903192,
+					2130903193,
+					2130903194,
+					2130903195,
 					2130903196,
-					2130903212,
-					2130903213,
-					2130903227,
-					2130903320,
-					2130903321,
-					2130903326,
-					2130903327,
-					2130903329,
-					2130903342,
-					2130903351,
-					2130903383,
-					2130903419,
-					2130903471,
-					2130903475,
-					2130903476,
-					2130903539,
-					2130903542,
-					2130903590,
-					2130903600};
+					2130903208,
+					2130903224,
+					2130903225,
+					2130903239,
+					2130903332,
+					2130903333,
+					2130903338,
+					2130903339,
+					2130903341,
+					2130903354,
+					2130903363,
+					2130903395,
+					2130903431,
+					2130903483,
+					2130903487,
+					2130903488,
+					2130903551,
+					2130903554,
+					2130903602,
+					2130903612};
 			
 			// aapt resource value: { 0x10100B3 }
 			public static int[] ActionBarLayout = new int[] {
@@ -12068,14 +14140,14 @@ namespace SalveminiApp.Droid
 			// aapt resource value: {  }
 			public static int[] ActionMenuView = new int[0];
 			
-			// aapt resource value: { 0x7F030035,0x7F030036,0x7F030077,0x7F030118,0x7F0301F6,0x7F030230 }
+			// aapt resource value: { 0x7F030041,0x7F030042,0x7F030083,0x7F030124,0x7F030202,0x7F03023C }
 			public static int[] ActionMode = new int[] {
-					2130903093,
-					2130903094,
-					2130903159,
-					2130903320,
-					2130903542,
-					2130903600};
+					2130903105,
+					2130903106,
+					2130903171,
+					2130903332,
+					2130903554,
+					2130903612};
 			
 			// aapt resource value: 0
 			public const int ActionMode_background = 0;
@@ -12095,10 +14167,10 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 5
 			public const int ActionMode_titleTextStyle = 5;
 			
-			// aapt resource value: { 0x7F0300BF,0x7F030131 }
+			// aapt resource value: { 0x7F0300CB,0x7F03013D }
 			public static int[] ActivityChooserView = new int[] {
-					2130903231,
-					2130903345};
+					2130903243,
+					2130903357};
 			
 			// aapt resource value: 0
 			public const int ActivityChooserView_expandActivityOverflowButtonDrawable = 0;
@@ -12106,15 +14178,15 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int ActivityChooserView_initialActivityCount = 1;
 			
-			// aapt resource value: { 0x10100F2,0x7F030056,0x7F03014E,0x7F03014F,0x7F030178,0x7F0301E0,0x7F0301E2 }
+			// aapt resource value: { 0x10100F2,0x7F030062,0x7F03015A,0x7F03015B,0x7F030184,0x7F0301EC,0x7F0301EE }
 			public static int[] AlertDialog = new int[] {
 					16842994,
-					2130903126,
-					2130903374,
-					2130903375,
-					2130903416,
-					2130903520,
-					2130903522};
+					2130903138,
+					2130903386,
+					2130903387,
+					2130903428,
+					2130903532,
+					2130903534};
 			
 			// aapt resource value: 0
 			public const int AlertDialog_android_layout = 0;
@@ -12137,18 +14209,18 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 6
 			public const int AlertDialog_singleChoiceItemLayout = 6;
 			
-			// aapt resource value: { 0x10100D4,0x1010540,0x101048F,0x7F0300BB,0x7F0300C0 }
+			// aapt resource value: { 0x10100D4,0x1010540,0x101048F,0x7F0300C7,0x7F0300CC }
 			public static int[] AppBarLayout = new int[] {
 					16842964,
 					16844096,
 					16843919,
-					2130903227,
-					2130903232};
+					2130903239,
+					2130903244};
 			
-			// aapt resource value: { 0x7F0301ED,0x7F0301EE }
+			// aapt resource value: { 0x7F0301F9,0x7F0301FA }
 			public static int[] AppBarLayoutStates = new int[] {
-					2130903533,
-					2130903534};
+					2130903545,
+					2130903546};
 			
 			// aapt resource value: 0
 			public const int AppBarLayoutStates_state_collapsed = 0;
@@ -12171,10 +14243,10 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 4
 			public const int AppBarLayout_expanded = 4;
 			
-			// aapt resource value: { 0x7F030146,0x7F030147 }
+			// aapt resource value: { 0x7F030152,0x7F030153 }
 			public static int[] AppBarLayout_Layout = new int[] {
-					2130903366,
-					2130903367};
+					2130903378,
+					2130903379};
 			
 			// aapt resource value: 0
 			public const int AppBarLayout_Layout_layout_scrollFlags = 0;
@@ -12182,12 +14254,12 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int AppBarLayout_Layout_layout_scrollInterpolator = 1;
 			
-			// aapt resource value: { 0x1010119,0x7F0301EA,0x7F030224,0x7F030225 }
+			// aapt resource value: { 0x1010119,0x7F0301F6,0x7F030230,0x7F030231 }
 			public static int[] AppCompatImageView = new int[] {
 					16843033,
-					2130903530,
-					2130903588,
-					2130903589};
+					2130903542,
+					2130903600,
+					2130903601};
 			
 			// aapt resource value: 0
 			public const int AppCompatImageView_android_src = 0;
@@ -12201,12 +14273,12 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 3
 			public const int AppCompatImageView_tintMode = 3;
 			
-			// aapt resource value: { 0x1010142,0x7F030221,0x7F030222,0x7F030223 }
+			// aapt resource value: { 0x1010142,0x7F03022D,0x7F03022E,0x7F03022F }
 			public static int[] AppCompatSeekBar = new int[] {
 					16843074,
-					2130903585,
-					2130903586,
-					2130903587};
+					2130903597,
+					2130903598,
+					2130903599};
 			
 			// aapt resource value: 0
 			public const int AppCompatSeekBar_android_thumb = 0;
@@ -12251,16 +14323,16 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 6
 			public const int AppCompatTextHelper_android_textAppearance = 6;
 			
-			// aapt resource value: { 0x1010034,0x7F030030,0x7F030031,0x7F030032,0x7F030033,0x7F030034,0x7F0300D6,0x7F03020C }
+			// aapt resource value: { 0x1010034,0x7F03003C,0x7F03003D,0x7F03003E,0x7F03003F,0x7F030040,0x7F0300E2,0x7F030218 }
 			public static int[] AppCompatTextView = new int[] {
 					16842804,
-					2130903088,
-					2130903089,
-					2130903090,
-					2130903091,
-					2130903092,
-					2130903254,
-					2130903564};
+					2130903100,
+					2130903101,
+					2130903102,
+					2130903103,
+					2130903104,
+					2130903266,
+					2130903576};
 			
 			// aapt resource value: 0
 			public const int AppCompatTextView_android_textAppearance = 0;
@@ -12286,7 +14358,7 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 7
 			public const int AppCompatTextView_textAllCaps = 7;
 			
-			// aapt resource value: { 0x7F030000,0x7F030001,0x7F030002,0x7F030003,0x7F030004,0x7F030005,0x7F030006,0x7F030007,0x7F030008,0x7F030009,0x7F03000A,0x7F03000B,0x7F03000C,0x7F03000E,0x7F03000F,0x7F030010,0x7F030011,0x7F030012,0x7F030013,0x7F030014,0x7F030015,0x7F030016,0x7F030017,0x7F030018,0x7F030019,0x7F03001A,0x7F03001B,0x7F03001C,0x7F03001D,0x7F03001E,0x7F030022,0x7F030023,0x7F030024,0x7F030025,0x7F030026,0x10100AE,0x1010057,0x7F03002F,0x7F030041,0x7F030050,0x7F030051,0x7F030052,0x7F030053,0x7F030054,0x7F030058,0x7F030059,0x7F030072,0x7F030073,0x7F03007D,0x7F03007E,0x7F03007F,0x7F030080,0x7F030081,0x7F030082,0x7F030083,0x7F030084,0x7F030085,0x7F030087,0x7F030097,0x7F0300AA,0x7F0300AB,0x7F0300AE,0x7F0300B0,0x7F0300B6,0x7F0300B7,0x7F0300B8,0x7F0300B9,0x7F0300BA,0x7F03011E,0x7F030127,0x7F03014C,0x7F03014D,0x7F030150,0x7F030151,0x7F030152,0x7F030153,0x7F030154,0x7F030155,0x7F030156,0x7F030190,0x7F030191,0x7F030192,0x7F0301AE,0x7F0301B0,0x7F0301B7,0x7F0301B8,0x7F0301B9,0x7F0301BA,0x7F0301D6,0x7F0301D8,0x7F0301D9,0x7F0301DA,0x7F0301E7,0x7F0301E8,0x7F0301FA,0x7F03020D,0x7F03020E,0x7F03020F,0x7F030210,0x7F030211,0x7F030212,0x7F030213,0x7F030214,0x7F030215,0x7F030217,0x7F030232,0x7F030233,0x7F030234,0x7F030235,0x7F03023E,0x7F03023F,0x7F030240,0x7F030241,0x7F030242,0x7F030243,0x7F030244,0x7F030245,0x7F030246,0x7F030247 }
+			// aapt resource value: { 0x7F030000,0x7F030001,0x7F030002,0x7F030003,0x7F030004,0x7F030005,0x7F030006,0x7F030007,0x7F030008,0x7F030009,0x7F03000A,0x7F03000B,0x7F03000C,0x7F03000E,0x7F03000F,0x7F030010,0x7F030011,0x7F030012,0x7F030013,0x7F030014,0x7F030015,0x7F030016,0x7F030017,0x7F030018,0x7F030019,0x7F03001A,0x7F03001B,0x7F03001C,0x7F03001D,0x7F03001E,0x7F030022,0x7F03002F,0x7F030030,0x7F030031,0x7F030032,0x10100AE,0x1010057,0x7F03003B,0x7F03004D,0x7F03005C,0x7F03005D,0x7F03005E,0x7F03005F,0x7F030060,0x7F030064,0x7F030065,0x7F03007E,0x7F03007F,0x7F030089,0x7F03008A,0x7F03008B,0x7F03008C,0x7F03008D,0x7F03008E,0x7F03008F,0x7F030090,0x7F030091,0x7F030093,0x7F0300A3,0x7F0300B6,0x7F0300B7,0x7F0300BA,0x7F0300BC,0x7F0300C2,0x7F0300C3,0x7F0300C4,0x7F0300C5,0x7F0300C6,0x7F03012A,0x7F030133,0x7F030158,0x7F030159,0x7F03015C,0x7F03015D,0x7F03015E,0x7F03015F,0x7F030160,0x7F030161,0x7F030162,0x7F03019C,0x7F03019D,0x7F03019E,0x7F0301BA,0x7F0301BC,0x7F0301C3,0x7F0301C4,0x7F0301C5,0x7F0301C6,0x7F0301E2,0x7F0301E4,0x7F0301E5,0x7F0301E6,0x7F0301F3,0x7F0301F4,0x7F030206,0x7F030219,0x7F03021A,0x7F03021B,0x7F03021C,0x7F03021D,0x7F03021E,0x7F03021F,0x7F030220,0x7F030221,0x7F030223,0x7F03023E,0x7F03023F,0x7F030240,0x7F030241,0x7F03024A,0x7F03024B,0x7F03024C,0x7F03024D,0x7F03024E,0x7F03024F,0x7F030250,0x7F030251,0x7F030252,0x7F030253 }
 			public static int[] AppCompatTheme = new int[] {
 					2130903040,
 					2130903041,
@@ -12319,94 +14391,94 @@ namespace SalveminiApp.Droid
 					2130903069,
 					2130903070,
 					2130903074,
-					2130903075,
-					2130903076,
-					2130903077,
-					2130903078,
+					2130903087,
+					2130903088,
+					2130903089,
+					2130903090,
 					16842926,
 					16842839,
-					2130903087,
-					2130903105,
-					2130903120,
-					2130903121,
-					2130903122,
-					2130903123,
-					2130903124,
-					2130903128,
-					2130903129,
-					2130903154,
-					2130903155,
-					2130903165,
+					2130903099,
+					2130903117,
+					2130903132,
+					2130903133,
+					2130903134,
+					2130903135,
+					2130903136,
+					2130903140,
+					2130903141,
 					2130903166,
 					2130903167,
-					2130903168,
-					2130903169,
-					2130903170,
-					2130903171,
-					2130903172,
-					2130903173,
-					2130903175,
-					2130903191,
-					2130903210,
-					2130903211,
-					2130903214,
-					2130903216,
+					2130903177,
+					2130903178,
+					2130903179,
+					2130903180,
+					2130903181,
+					2130903182,
+					2130903183,
+					2130903184,
+					2130903185,
+					2130903187,
+					2130903203,
 					2130903222,
 					2130903223,
-					2130903224,
-					2130903225,
 					2130903226,
-					2130903326,
-					2130903335,
-					2130903372,
-					2130903373,
-					2130903376,
-					2130903377,
-					2130903378,
-					2130903379,
-					2130903380,
-					2130903381,
-					2130903382,
-					2130903440,
-					2130903441,
-					2130903442,
-					2130903470,
-					2130903472,
-					2130903479,
-					2130903480,
-					2130903481,
+					2130903228,
+					2130903234,
+					2130903235,
+					2130903236,
+					2130903237,
+					2130903238,
+					2130903338,
+					2130903347,
+					2130903384,
+					2130903385,
+					2130903388,
+					2130903389,
+					2130903390,
+					2130903391,
+					2130903392,
+					2130903393,
+					2130903394,
+					2130903452,
+					2130903453,
+					2130903454,
 					2130903482,
-					2130903510,
-					2130903512,
-					2130903513,
-					2130903514,
-					2130903527,
-					2130903528,
-					2130903546,
-					2130903565,
-					2130903566,
-					2130903567,
-					2130903568,
-					2130903569,
-					2130903570,
-					2130903571,
-					2130903572,
-					2130903573,
-					2130903575,
-					2130903602,
-					2130903603,
-					2130903604,
-					2130903605,
+					2130903484,
+					2130903491,
+					2130903492,
+					2130903493,
+					2130903494,
+					2130903522,
+					2130903524,
+					2130903525,
+					2130903526,
+					2130903539,
+					2130903540,
+					2130903558,
+					2130903577,
+					2130903578,
+					2130903579,
+					2130903580,
+					2130903581,
+					2130903582,
+					2130903583,
+					2130903584,
+					2130903585,
+					2130903587,
 					2130903614,
 					2130903615,
 					2130903616,
 					2130903617,
-					2130903618,
-					2130903619,
-					2130903620,
-					2130903621,
-					2130903622,
-					2130903623};
+					2130903626,
+					2130903627,
+					2130903628,
+					2130903629,
+					2130903630,
+					2130903631,
+					2130903632,
+					2130903633,
+					2130903634,
+					2130903635};
 			
 			// aapt resource value: 0
 			public const int AppCompatTheme_actionBarDivider = 0;
@@ -12765,13 +14837,13 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 118
 			public const int AppCompatTheme_windowNoTitle = 118;
 			
-			// aapt resource value: { 0x7F0300BB,0x7F030135,0x7F030136,0x7F03013A,0x7F030177 }
+			// aapt resource value: { 0x7F0300C7,0x7F030141,0x7F030142,0x7F030146,0x7F030183 }
 			public static int[] BottomNavigationView = new int[] {
-					2130903227,
-					2130903349,
-					2130903350,
-					2130903354,
-					2130903415};
+					2130903239,
+					2130903361,
+					2130903362,
+					2130903366,
+					2130903427};
 			
 			// aapt resource value: 0
 			public const int BottomNavigationView_elevation = 0;
@@ -12788,11 +14860,11 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 4
 			public const int BottomNavigationView_menu = 4;
 			
-			// aapt resource value: { 0x7F03003D,0x7F03003F,0x7F030040 }
+			// aapt resource value: { 0x7F030049,0x7F03004B,0x7F03004C }
 			public static int[] BottomSheetBehavior_Layout = new int[] {
-					2130903101,
-					2130903103,
-					2130903104};
+					2130903113,
+					2130903115,
+					2130903116};
 			
 			// aapt resource value: 0
 			public const int BottomSheetBehavior_Layout_behavior_hideable = 0;
@@ -12803,28 +14875,28 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int BottomSheetBehavior_Layout_behavior_skipCollapsed = 2;
 			
-			// aapt resource value: { 0x7F030027 }
+			// aapt resource value: { 0x7F030033 }
 			public static int[] ButtonBarLayout = new int[] {
-					2130903079};
+					2130903091};
 			
 			// aapt resource value: 0
 			public const int ButtonBarLayout_allowStacking = 0;
 			
-			// aapt resource value: { 0x1010140,0x101013F,0x7F03005D,0x7F03005E,0x7F03005F,0x7F030061,0x7F030062,0x7F030064,0x7F030091,0x7F030092,0x7F030093,0x7F030094,0x7F030095 }
+			// aapt resource value: { 0x1010140,0x101013F,0x7F030069,0x7F03006A,0x7F03006B,0x7F03006D,0x7F03006E,0x7F030070,0x7F03009D,0x7F03009E,0x7F03009F,0x7F0300A0,0x7F0300A1 }
 			public static int[] CardView = new int[] {
 					16843072,
 					16843071,
-					2130903133,
-					2130903134,
-					2130903135,
-					2130903137,
-					2130903138,
-					2130903140,
-					2130903185,
-					2130903186,
-					2130903187,
-					2130903188,
-					2130903189};
+					2130903145,
+					2130903146,
+					2130903147,
+					2130903149,
+					2130903150,
+					2130903152,
+					2130903197,
+					2130903198,
+					2130903199,
+					2130903200,
+					2130903201};
 			
 			// aapt resource value: 0
 			public const int CardView_android_minHeight = 0;
@@ -12865,24 +14937,24 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 12
 			public const int CardView_contentPaddingTop = 12;
 			
-			// aapt resource value: { 0x7F030079,0x7F03007A,0x7F030096,0x7F0300C1,0x7F0300C2,0x7F0300C3,0x7F0300C4,0x7F0300C5,0x7F0300C6,0x7F0300C7,0x7F0301CD,0x7F0301CE,0x7F0301F0,0x7F030226,0x7F030227,0x7F030231 }
+			// aapt resource value: { 0x7F030085,0x7F030086,0x7F0300A2,0x7F0300CD,0x7F0300CE,0x7F0300CF,0x7F0300D0,0x7F0300D1,0x7F0300D2,0x7F0300D3,0x7F0301D9,0x7F0301DA,0x7F0301FC,0x7F030232,0x7F030233,0x7F03023D }
 			public static int[] CollapsingToolbarLayout = new int[] {
-					2130903161,
-					2130903162,
-					2130903190,
-					2130903233,
-					2130903234,
-					2130903235,
-					2130903236,
-					2130903237,
-					2130903238,
-					2130903239,
-					2130903501,
-					2130903502,
-					2130903536,
-					2130903590,
-					2130903591,
-					2130903601};
+					2130903173,
+					2130903174,
+					2130903202,
+					2130903245,
+					2130903246,
+					2130903247,
+					2130903248,
+					2130903249,
+					2130903250,
+					2130903251,
+					2130903513,
+					2130903514,
+					2130903548,
+					2130903602,
+					2130903603,
+					2130903613};
 			
 			// aapt resource value: 0
 			public const int CollapsingToolbarLayout_collapsedTitleGravity = 0;
@@ -12914,10 +14986,10 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 9
 			public const int CollapsingToolbarLayout_expandedTitleTextAppearance = 9;
 			
-			// aapt resource value: { 0x7F030141,0x7F030142 }
+			// aapt resource value: { 0x7F03014D,0x7F03014E }
 			public static int[] CollapsingToolbarLayout_Layout = new int[] {
-					2130903361,
-					2130903362};
+					2130903373,
+					2130903374};
 			
 			// aapt resource value: 0
 			public const int CollapsingToolbarLayout_Layout_layout_collapseMode = 0;
@@ -12943,9 +15015,9 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 15
 			public const int CollapsingToolbarLayout_toolbarId = 15;
 			
-			// aapt resource value: { 0x7F030028,0x101031F,0x10101A5 }
+			// aapt resource value: { 0x7F030034,0x101031F,0x10101A5 }
 			public static int[] ColorStateListItem = new int[] {
-					2130903080,
+					2130903092,
 					16843551,
 					16843173};
 			
@@ -12958,11 +15030,11 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int ColorStateListItem_android_color = 2;
 			
-			// aapt resource value: { 0x1010107,0x7F03005A,0x7F03005B }
+			// aapt resource value: { 0x1010107,0x7F030066,0x7F030067 }
 			public static int[] CompoundButton = new int[] {
 					16843015,
-					2130903130,
-					2130903131};
+					2130903142,
+					2130903143};
 			
 			// aapt resource value: 0
 			public const int CompoundButton_android_button = 0;
@@ -12973,23 +15045,23 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int CompoundButton_buttonTintMode = 2;
 			
-			// aapt resource value: { 0x7F03013B,0x7F0301EF }
+			// aapt resource value: { 0x7F030147,0x7F0301FB }
 			public static int[] CoordinatorLayout = new int[] {
-					2130903355,
-					2130903535};
+					2130903367,
+					2130903547};
 			
 			// aapt resource value: 0
 			public const int CoordinatorLayout_keylines = 0;
 			
-			// aapt resource value: { 0x10100B3,0x7F03013E,0x7F03013F,0x7F030140,0x7F030143,0x7F030144,0x7F030145 }
+			// aapt resource value: { 0x10100B3,0x7F03014A,0x7F03014B,0x7F03014C,0x7F03014F,0x7F030150,0x7F030151 }
 			public static int[] CoordinatorLayout_Layout = new int[] {
 					16842931,
-					2130903358,
-					2130903359,
-					2130903360,
-					2130903363,
-					2130903364,
-					2130903365};
+					2130903370,
+					2130903371,
+					2130903372,
+					2130903375,
+					2130903376,
+					2130903377};
 			
 			// aapt resource value: 0
 			public const int CoordinatorLayout_Layout_android_layout_gravity = 0;
@@ -13015,11 +15087,11 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int CoordinatorLayout_statusBarBackground = 1;
 			
-			// aapt resource value: { 0x7F030043,0x7F030044,0x7F030216 }
+			// aapt resource value: { 0x7F03004F,0x7F030050,0x7F030222 }
 			public static int[] DesignTheme = new int[] {
-					2130903107,
-					2130903108,
-					2130903574};
+					2130903119,
+					2130903120,
+					2130903586};
 			
 			// aapt resource value: 0
 			public const int DesignTheme_bottomSheetDialogTheme = 0;
@@ -13030,16 +15102,16 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int DesignTheme_textColorError = 2;
 			
-			// aapt resource value: { 0x7F03002C,0x7F03002E,0x7F03003A,0x7F03007C,0x7F0300B4,0x7F0300E0,0x7F0301E6,0x7F030219 }
+			// aapt resource value: { 0x7F030038,0x7F03003A,0x7F030046,0x7F030088,0x7F0300C0,0x7F0300EC,0x7F0301F2,0x7F030225 }
 			public static int[] DrawerArrowToggle = new int[] {
-					2130903084,
-					2130903086,
+					2130903096,
 					2130903098,
-					2130903164,
-					2130903220,
-					2130903264,
-					2130903526,
-					2130903577};
+					2130903110,
+					2130903176,
+					2130903232,
+					2130903276,
+					2130903538,
+					2130903589};
 			
 			// aapt resource value: 0
 			public const int DrawerArrowToggle_arrowHeadLength = 0;
@@ -13065,16 +15137,16 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 7
 			public const int DrawerArrowToggle_thickness = 7;
 			
-			// aapt resource value: { 0x7F030038,0x7F030039,0x7F030042,0x7F0300BB,0x7F0300CA,0x7F0301B2,0x7F0301C3,0x7F03023A }
+			// aapt resource value: { 0x7F030044,0x7F030045,0x7F03004E,0x7F0300C7,0x7F0300D6,0x7F0301BE,0x7F0301CF,0x7F030246 }
 			public static int[] FloatingActionButton = new int[] {
-					2130903096,
-					2130903097,
-					2130903106,
-					2130903227,
-					2130903242,
-					2130903474,
-					2130903491,
-					2130903610};
+					2130903108,
+					2130903109,
+					2130903118,
+					2130903239,
+					2130903254,
+					2130903486,
+					2130903503,
+					2130903622};
 			
 			// aapt resource value: 0
 			public const int FloatingActionButton_backgroundTint = 0;
@@ -13082,9 +15154,9 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int FloatingActionButton_backgroundTintMode = 1;
 			
-			// aapt resource value: { 0x7F03003C }
+			// aapt resource value: { 0x7F030048 }
 			public static int[] FloatingActionButton_Behavior_Layout = new int[] {
-					2130903100};
+					2130903112};
 			
 			// aapt resource value: 0
 			public const int FloatingActionButton_Behavior_Layout_behavior_autoHide = 0;
@@ -13107,23 +15179,23 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 7
 			public const int FloatingActionButton_useCompatPadding = 7;
 			
-			// aapt resource value: { 0x7F0300D7,0x7F0300D8,0x7F0300D9,0x7F0300DA,0x7F0300DB,0x7F0300DC }
+			// aapt resource value: { 0x7F0300E3,0x7F0300E4,0x7F0300E5,0x7F0300E6,0x7F0300E7,0x7F0300E8 }
 			public static int[] FontFamily = new int[] {
-					2130903255,
-					2130903256,
-					2130903257,
-					2130903258,
-					2130903259,
-					2130903260};
+					2130903267,
+					2130903268,
+					2130903269,
+					2130903270,
+					2130903271,
+					2130903272};
 			
-			// aapt resource value: { 0x1010532,0x101053F,0x1010533,0x7F0300D5,0x7F0300DD,0x7F0300DE }
+			// aapt resource value: { 0x1010532,0x101053F,0x1010533,0x7F0300E1,0x7F0300E9,0x7F0300EA }
 			public static int[] FontFamilyFont = new int[] {
 					16844082,
 					16844095,
 					16844083,
-					2130903253,
-					2130903261,
-					2130903262};
+					2130903265,
+					2130903273,
+					2130903274};
 			
 			// aapt resource value: 0
 			public const int FontFamilyFont_android_font = 0;
@@ -13161,11 +15233,11 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 5
 			public const int FontFamily_fontProviderQuery = 5;
 			
-			// aapt resource value: { 0x1010109,0x1010200,0x7F0300DF }
+			// aapt resource value: { 0x1010109,0x1010200,0x7F0300EB }
 			public static int[] ForegroundLinearLayout = new int[] {
 					16843017,
 					16843264,
-					2130903263};
+					2130903275};
 			
 			// aapt resource value: 0
 			public const int ForegroundLinearLayout_android_foreground = 0;
@@ -13176,16 +15248,16 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int ForegroundLinearLayout_foregroundInsidePadding = 2;
 			
-			// aapt resource value: { 0x7F030021,0x7F03005C,0x7F030060,0x7F030063,0x7F0300C9,0x7F030130,0x7F0301DB,0x7F0301DC }
+			// aapt resource value: { 0x7F030021,0x7F030068,0x7F03006C,0x7F03006F,0x7F0300D5,0x7F03013C,0x7F0301E7,0x7F0301E8 }
 			public static int[] lbBaseCardView = new int[] {
 					2130903073,
-					2130903132,
-					2130903136,
-					2130903139,
-					2130903241,
-					2130903344,
-					2130903515,
-					2130903516};
+					2130903144,
+					2130903148,
+					2130903151,
+					2130903253,
+					2130903356,
+					2130903527,
+					2130903528};
 			
 			// aapt resource value: 0
 			public const int lbBaseCardView_activatedAnimationDuration = 0;
@@ -13205,9 +15277,9 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 5
 			public const int lbBaseCardView_infoVisibility = 5;
 			
-			// aapt resource value: { 0x7F030148 }
+			// aapt resource value: { 0x7F030154 }
 			public static int[] lbBaseCardView_Layout = new int[] {
-					2130903368};
+					2130903380};
 			
 			// aapt resource value: 0
 			public const int lbBaseCardView_Layout_layout_viewType = 0;
@@ -13218,17 +15290,17 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 7
 			public const int lbBaseCardView_selectedAnimationDuration = 7;
 			
-			// aapt resource value: { 0x10100AF,0x1010114,0x1010115,0x7F0300D1,0x7F0300D2,0x7F0300D3,0x7F0300D4,0x7F030120,0x7F03023C }
+			// aapt resource value: { 0x10100AF,0x1010114,0x1010115,0x7F0300DD,0x7F0300DE,0x7F0300DF,0x7F0300E0,0x7F03012C,0x7F030248 }
 			public static int[] lbBaseGridView = new int[] {
 					16842927,
 					16843028,
 					16843029,
-					2130903249,
-					2130903250,
-					2130903251,
-					2130903252,
-					2130903328,
-					2130903612};
+					2130903261,
+					2130903262,
+					2130903263,
+					2130903264,
+					2130903340,
+					2130903624};
 			
 			// aapt resource value: 0
 			public const int lbBaseGridView_android_gravity = 0;
@@ -13257,11 +15329,11 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 8
 			public const int lbBaseGridView_verticalMargin = 8;
 			
-			// aapt resource value: { 0x1010340,0x101033F,0x7F03009D }
+			// aapt resource value: { 0x1010340,0x101033F,0x7F0300A9 }
 			public static int[] lbDatePicker = new int[] {
 					16843584,
 					16843583,
-					2130903197};
+					2130903209};
 			
 			// aapt resource value: 0
 			public const int lbDatePicker_android_maxDate = 0;
@@ -13272,10 +15344,10 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int lbDatePicker_datePickerFormat = 2;
 			
-			// aapt resource value: { 0x7F03017D,0x7F0301C7 }
+			// aapt resource value: { 0x7F030189,0x7F0301D3 }
 			public static int[] lbHorizontalGridView = new int[] {
-					2130903421,
-					2130903495};
+					2130903433,
+					2130903507};
 			
 			// aapt resource value: 0
 			public const int lbHorizontalGridView_numberOfRows = 0;
@@ -13283,10 +15355,10 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int lbHorizontalGridView_rowHeight = 1;
 			
-			// aapt resource value: { 0x7F03012F,0x7F03014A }
+			// aapt resource value: { 0x7F03013B,0x7F030156 }
 			public static int[] lbImageCardView = new int[] {
-					2130903343,
-					2130903370};
+					2130903355,
+					2130903382};
 			
 			// aapt resource value: 0
 			public const int lbImageCardView_infoAreaBackground = 0;
@@ -13294,24 +15366,24 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int lbImageCardView_lbImageCardViewType = 1;
 			
-			// aapt resource value: { 0x7F030075,0x7F0300D0,0x7F03011A,0x7F030198,0x7F030199,0x7F03019A,0x7F0301BB,0x7F0301BC,0x7F0301C2,0x7F0301E1,0x7F0301E3,0x7F0301E4,0x7F03021D,0x7F03021E,0x7F03021F,0x7F030220 }
+			// aapt resource value: { 0x7F030081,0x7F0300DC,0x7F030126,0x7F0301A4,0x7F0301A5,0x7F0301A6,0x7F0301C7,0x7F0301C8,0x7F0301CE,0x7F0301ED,0x7F0301EF,0x7F0301F0,0x7F030229,0x7F03022A,0x7F03022B,0x7F03022C }
 			public static int[] lbPlaybackControlsActionIcons = new int[] {
-					2130903157,
-					2130903248,
-					2130903322,
-					2130903448,
-					2130903449,
-					2130903450,
-					2130903483,
-					2130903484,
-					2130903490,
-					2130903521,
-					2130903523,
-					2130903524,
-					2130903581,
-					2130903582,
-					2130903583,
-					2130903584};
+					2130903169,
+					2130903260,
+					2130903334,
+					2130903460,
+					2130903461,
+					2130903462,
+					2130903495,
+					2130903496,
+					2130903502,
+					2130903533,
+					2130903535,
+					2130903536,
+					2130903593,
+					2130903594,
+					2130903595,
+					2130903596};
 			
 			// aapt resource value: 0
 			public const int lbPlaybackControlsActionIcons_closed_captioning = 0;
@@ -13361,13 +15433,13 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 15
 			public const int lbPlaybackControlsActionIcons_thumb_up_outline = 15;
 			
-			// aapt resource value: { 0x7F030166,0x7F0301BD,0x7F0301BE,0x7F0301BF,0x7F0301C0 }
+			// aapt resource value: { 0x7F030172,0x7F0301C9,0x7F0301CA,0x7F0301CB,0x7F0301CC }
 			public static int[] lbResizingTextView = new int[] {
-					2130903398,
-					2130903485,
-					2130903486,
-					2130903487,
-					2130903488};
+					2130903410,
+					2130903497,
+					2130903498,
+					2130903499,
+					2130903500};
 			
 			// aapt resource value: 0
 			public const int lbResizingTextView_maintainLineSpacing = 0;
@@ -13384,12 +15456,12 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 4
 			public const int lbResizingTextView_resizeTrigger = 4;
 			
-			// aapt resource value: { 0x7F0301D1,0x7F0301D2,0x7F0301D3,0x7F0301D4 }
+			// aapt resource value: { 0x7F0301DD,0x7F0301DE,0x7F0301DF,0x7F0301E0 }
 			public static int[] lbSearchOrbView = new int[] {
-					2130903505,
-					2130903506,
-					2130903507,
-					2130903508};
+					2130903517,
+					2130903518,
+					2130903519,
+					2130903520};
 			
 			// aapt resource value: 0
 			public const int lbSearchOrbView_searchOrbBrightColor = 0;
@@ -13403,12 +15475,12 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 3
 			public const int lbSearchOrbView_searchOrbIconColor = 3;
 			
-			// aapt resource value: { 0x1010198,0x1010141,0x10103E2,0x7F03014B }
+			// aapt resource value: { 0x1010198,0x1010141,0x10103E2,0x7F030157 }
 			public static int[] lbSlide = new int[] {
 					16843160,
 					16843073,
 					16843746,
-					2130903371};
+					2130903383};
 			
 			// aapt resource value: 0
 			public const int lbSlide_android_duration = 0;
@@ -13422,10 +15494,10 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 3
 			public const int lbSlide_lb_slideEdge = 3;
 			
-			// aapt resource value: { 0x7F030133,0x7F03023B }
+			// aapt resource value: { 0x7F03013F,0x7F030247 }
 			public static int[] lbTimePicker = new int[] {
-					2130903347,
-					2130903611};
+					2130903359,
+					2130903623};
 			
 			// aapt resource value: 0
 			public const int lbTimePicker_is24HourFormat = 0;
@@ -13433,10 +15505,10 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int lbTimePicker_useCurrentTime = 1;
 			
-			// aapt resource value: { 0x7F030088,0x7F03017C }
+			// aapt resource value: { 0x7F030094,0x7F030188 }
 			public static int[] lbVerticalGridView = new int[] {
-					2130903176,
-					2130903420};
+					2130903188,
+					2130903432};
 			
 			// aapt resource value: 0
 			public const int lbVerticalGridView_columnWidth = 0;
@@ -13444,20 +15516,8 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int lbVerticalGridView_numberOfColumns = 1;
 			
-			// aapt resource value: { 0x7F0300E2,0x7F0300E3,0x7F0300E4,0x7F0300E5,0x7F0300E6,0x7F0300E7,0x7F0300E8,0x7F0300E9,0x7F0300EA,0x7F0300EB,0x7F0300EC,0x7F0300ED,0x7F0300EE,0x7F0300EF,0x7F0300F0,0x7F0300F1,0x7F0300F2,0x7F0300F3,0x7F0300F4,0x7F0300F5,0x7F0300F6,0x7F0300F7,0x7F0300F8,0x7F0300F9,0x7F0300FA,0x7F0300FB,0x7F0300FC,0x7F0300FD,0x7F0300FE,0x7F0300FF,0x7F030100,0x7F030101,0x7F030102,0x7F030103,0x7F030104,0x7F030105,0x7F030106,0x7F030107,0x7F030108,0x7F030109,0x7F03010A,0x7F03010B,0x7F03010C,0x7F03010D,0x7F03010E,0x7F03010F,0x7F030110,0x7F030111,0x7F030112,0x7F030113,0x7F030114 }
+			// aapt resource value: { 0x7F0300EE,0x7F0300EF,0x7F0300F0,0x7F0300F1,0x7F0300F2,0x7F0300F3,0x7F0300F4,0x7F0300F5,0x7F0300F6,0x7F0300F7,0x7F0300F8,0x7F0300F9,0x7F0300FA,0x7F0300FB,0x7F0300FC,0x7F0300FD,0x7F0300FE,0x7F0300FF,0x7F030100,0x7F030101,0x7F030102,0x7F030103,0x7F030104,0x7F030105,0x7F030106,0x7F030107,0x7F030108,0x7F030109,0x7F03010A,0x7F03010B,0x7F03010C,0x7F03010D,0x7F03010E,0x7F03010F,0x7F030110,0x7F030111,0x7F030112,0x7F030113,0x7F030114,0x7F030115,0x7F030116,0x7F030117,0x7F030118,0x7F030119,0x7F03011A,0x7F03011B,0x7F03011C,0x7F03011D,0x7F03011E,0x7F03011F,0x7F030120 }
 			public static int[] LeanbackGuidedStepTheme = new int[] {
-					2130903266,
-					2130903267,
-					2130903268,
-					2130903269,
-					2130903270,
-					2130903271,
-					2130903272,
-					2130903273,
-					2130903274,
-					2130903275,
-					2130903276,
-					2130903277,
 					2130903278,
 					2130903279,
 					2130903280,
@@ -13496,7 +15556,19 @@ namespace SalveminiApp.Droid
 					2130903313,
 					2130903314,
 					2130903315,
-					2130903316};
+					2130903316,
+					2130903317,
+					2130903318,
+					2130903319,
+					2130903320,
+					2130903321,
+					2130903322,
+					2130903323,
+					2130903324,
+					2130903325,
+					2130903326,
+					2130903327,
+					2130903328};
 			
 			// aapt resource value: 0
 			public const int LeanbackGuidedStepTheme_guidanceBreadcrumbStyle = 0;
@@ -13651,17 +15723,17 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 50
 			public const int LeanbackGuidedStepTheme_guidedSubActionsListStyle = 50;
 			
-			// aapt resource value: { 0x7F03017F,0x7F030180,0x7F030181,0x7F030182,0x7F030183,0x7F030184,0x7F030185,0x7F030186,0x7F030187 }
+			// aapt resource value: { 0x7F03018B,0x7F03018C,0x7F03018D,0x7F03018E,0x7F03018F,0x7F030190,0x7F030191,0x7F030192,0x7F030193 }
 			public static int[] LeanbackOnboardingTheme = new int[] {
-					2130903423,
-					2130903424,
-					2130903425,
-					2130903426,
-					2130903427,
-					2130903428,
-					2130903429,
-					2130903430,
-					2130903431};
+					2130903435,
+					2130903436,
+					2130903437,
+					2130903438,
+					2130903439,
+					2130903440,
+					2130903441,
+					2130903442,
+					2130903443};
 			
 			// aapt resource value: 0
 			public const int LeanbackOnboardingTheme_onboardingDescriptionStyle = 0;
@@ -13690,56 +15762,44 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 8
 			public const int LeanbackOnboardingTheme_onboardingTitleStyle = 8;
 			
-			// aapt resource value: { 0x7F03003B,0x7F030045,0x7F030046,0x7F030047,0x7F030048,0x7F030049,0x7F03004A,0x7F03004B,0x7F03004C,0x7F03004D,0x7F03004E,0x7F03004F,0x7F03009E,0x7F03009F,0x7F0300A1,0x7F0300A2,0x7F0300A3,0x7F0300A4,0x7F0300A5,0x7F0300A6,0x7F0300A7,0x7F0300A8,0x7F0300A9,0x7F0300BD,0x7F030116,0x7F030117,0x7F030128,0x7F030129,0x7F03012A,0x7F03012B,0x7F03012C,0x7F03012D,0x7F030138,0x7F030189,0x7F03018A,0x7F03018B,0x7F03019B,0x7F03019C,0x7F03019D,0x7F03019E,0x7F03019F,0x7F0301A0,0x7F0301A1,0x7F0301A2,0x7F0301A3,0x7F0301A4,0x7F0301A5,0x7F0301A6,0x7F0301A7,0x7F0301A8,0x7F0301A9,0x7F0301AA,0x7F0301AB,0x7F0301AC,0x7F0301AD,0x7F0301C4,0x7F0301C5,0x7F0301C6,0x7F0301C8,0x7F0301C9,0x7F0301CA,0x7F0301CB,0x7F0301D5,0x7F0301D7 }
+			// aapt resource value: { 0x7F030047,0x7F030051,0x7F030052,0x7F030053,0x7F030054,0x7F030055,0x7F030056,0x7F030057,0x7F030058,0x7F030059,0x7F03005A,0x7F03005B,0x7F0300AA,0x7F0300AB,0x7F0300AD,0x7F0300AE,0x7F0300AF,0x7F0300B0,0x7F0300B1,0x7F0300B2,0x7F0300B3,0x7F0300B4,0x7F0300B5,0x7F0300C9,0x7F030122,0x7F030123,0x7F030134,0x7F030135,0x7F030136,0x7F030137,0x7F030138,0x7F030139,0x7F030144,0x7F030195,0x7F030196,0x7F030197,0x7F0301A7,0x7F0301A8,0x7F0301A9,0x7F0301AA,0x7F0301AB,0x7F0301AC,0x7F0301AD,0x7F0301AE,0x7F0301AF,0x7F0301B0,0x7F0301B1,0x7F0301B2,0x7F0301B3,0x7F0301B4,0x7F0301B5,0x7F0301B6,0x7F0301B7,0x7F0301B8,0x7F0301B9,0x7F0301D0,0x7F0301D1,0x7F0301D2,0x7F0301D4,0x7F0301D5,0x7F0301D6,0x7F0301D7,0x7F0301E1,0x7F0301E3 }
 			public static int[] LeanbackTheme = new int[] {
-					2130903099,
-					2130903109,
-					2130903110,
 					2130903111,
-					2130903112,
-					2130903113,
-					2130903114,
-					2130903115,
-					2130903116,
-					2130903117,
-					2130903118,
-					2130903119,
-					2130903198,
-					2130903199,
-					2130903201,
-					2130903202,
-					2130903203,
-					2130903204,
-					2130903205,
-					2130903206,
-					2130903207,
-					2130903208,
-					2130903209,
-					2130903229,
-					2130903318,
-					2130903319,
-					2130903336,
-					2130903337,
-					2130903338,
-					2130903339,
-					2130903340,
-					2130903341,
+					2130903121,
+					2130903122,
+					2130903123,
+					2130903124,
+					2130903125,
+					2130903126,
+					2130903127,
+					2130903128,
+					2130903129,
+					2130903130,
+					2130903131,
+					2130903210,
+					2130903211,
+					2130903213,
+					2130903214,
+					2130903215,
+					2130903216,
+					2130903217,
+					2130903218,
+					2130903219,
+					2130903220,
+					2130903221,
+					2130903241,
+					2130903330,
+					2130903331,
+					2130903348,
+					2130903349,
+					2130903350,
+					2130903351,
 					2130903352,
-					2130903433,
-					2130903434,
-					2130903435,
-					2130903451,
-					2130903452,
-					2130903453,
-					2130903454,
-					2130903455,
-					2130903456,
-					2130903457,
-					2130903458,
-					2130903459,
-					2130903460,
-					2130903461,
-					2130903462,
+					2130903353,
+					2130903364,
+					2130903445,
+					2130903446,
+					2130903447,
 					2130903463,
 					2130903464,
 					2130903465,
@@ -13747,15 +15807,27 @@ namespace SalveminiApp.Droid
 					2130903467,
 					2130903468,
 					2130903469,
-					2130903492,
-					2130903493,
-					2130903494,
-					2130903496,
-					2130903497,
-					2130903498,
-					2130903499,
+					2130903470,
+					2130903471,
+					2130903472,
+					2130903473,
+					2130903474,
+					2130903475,
+					2130903476,
+					2130903477,
+					2130903478,
+					2130903479,
+					2130903480,
+					2130903481,
+					2130903504,
+					2130903505,
+					2130903506,
+					2130903508,
 					2130903509,
-					2130903511};
+					2130903510,
+					2130903511,
+					2130903521,
+					2130903523};
 			
 			// aapt resource value: 0
 			public const int LeanbackTheme_baseCardViewStyle = 0;
@@ -13949,17 +16021,17 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 63
 			public const int LeanbackTheme_sectionHeaderStyle = 63;
 			
-			// aapt resource value: { 0x1010126,0x1010127,0x10100AF,0x10100C4,0x1010128,0x7F0300AD,0x7F0300AF,0x7F030169,0x7F0301DE }
+			// aapt resource value: { 0x1010126,0x1010127,0x10100AF,0x10100C4,0x1010128,0x7F0300B9,0x7F0300BB,0x7F030175,0x7F0301EA }
 			public static int[] LinearLayoutCompat = new int[] {
 					16843046,
 					16843047,
 					16842927,
 					16842948,
 					16843048,
-					2130903213,
-					2130903215,
-					2130903401,
-					2130903518};
+					2130903225,
+					2130903227,
+					2130903413,
+					2130903530};
 			
 			// aapt resource value: 0
 			public const int LinearLayoutCompat_android_baselineAligned = 0;
@@ -14018,11 +16090,11 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int ListPopupWindow_android_dropDownVerticalOffset = 1;
 			
-			// aapt resource value: { 0x7F030074,0x7F030125,0x7F030126 }
+			// aapt resource value: { 0x7F030080,0x7F030131,0x7F030132 }
 			public static int[] LoadingImageView = new int[] {
-					2130903156,
-					2130903333,
-					2130903334};
+					2130903168,
+					2130903345,
+					2130903346};
 			
 			// aapt resource value: 0
 			public const int LoadingImageView_circleCrop = 0;
@@ -14033,21 +16105,21 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int LoadingImageView_imageAspectRatioAdjust = 2;
 			
-			// aapt resource value: { 0x7F030159,0x7F03015A,0x7F03015B,0x7F03015C,0x7F03015D,0x7F03015E,0x7F03015F,0x7F030160,0x7F030161,0x7F030162,0x7F030163,0x7F030164,0x7F030165 }
+			// aapt resource value: { 0x7F030165,0x7F030166,0x7F030167,0x7F030168,0x7F030169,0x7F03016A,0x7F03016B,0x7F03016C,0x7F03016D,0x7F03016E,0x7F03016F,0x7F030170,0x7F030171 }
 			public static int[] LottieAnimationView = new int[] {
-					2130903385,
-					2130903386,
-					2130903387,
-					2130903388,
-					2130903389,
-					2130903390,
-					2130903391,
-					2130903392,
-					2130903393,
-					2130903394,
-					2130903395,
-					2130903396,
-					2130903397};
+					2130903397,
+					2130903398,
+					2130903399,
+					2130903400,
+					2130903401,
+					2130903402,
+					2130903403,
+					2130903404,
+					2130903405,
+					2130903406,
+					2130903407,
+					2130903408,
+					2130903409};
 			
 			// aapt resource value: 0
 			public const int LottieAnimationView_lottie_autoPlay = 0;
@@ -14088,12 +16160,12 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 12
 			public const int LottieAnimationView_lottie_url = 12;
 			
-			// aapt resource value: { 0x1010140,0x101013F,0x7F0300C8,0x7F03016C }
+			// aapt resource value: { 0x1010140,0x101013F,0x7F0300D4,0x7F030178 }
 			public static int[] MediaRouteButton = new int[] {
 					16843072,
 					16843071,
-					2130903240,
-					2130903404};
+					2130903252,
+					2130903416};
 			
 			// aapt resource value: 0
 			public const int MediaRouteButton_android_minHeight = 0;
@@ -14134,12 +16206,12 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 5
 			public const int MenuGroup_android_visible = 5;
 			
-			// aapt resource value: { 0x7F03000D,0x7F03001F,0x7F030020,0x7F030029,0x10101E3,0x10101E5,0x1010106,0x101000E,0x1010002,0x10100D0,0x10101DE,0x10101E4,0x101026F,0x10101DF,0x10101E1,0x10101E2,0x1010194,0x7F03008A,0x7F030123,0x7F030124,0x7F03017E,0x7F0301DD,0x7F030236 }
+			// aapt resource value: { 0x7F03000D,0x7F03001F,0x7F030020,0x7F030035,0x10101E3,0x10101E5,0x1010106,0x101000E,0x1010002,0x10100D0,0x10101DE,0x10101E4,0x101026F,0x10101DF,0x10101E1,0x10101E2,0x1010194,0x7F030096,0x7F03012F,0x7F030130,0x7F03018A,0x7F0301E9,0x7F030242 }
 			public static int[] MenuItem = new int[] {
 					2130903053,
 					2130903071,
 					2130903072,
-					2130903081,
+					2130903093,
 					16843235,
 					16843237,
 					16843014,
@@ -14153,12 +16225,12 @@ namespace SalveminiApp.Droid
 					16843233,
 					16843234,
 					16843156,
-					2130903178,
-					2130903331,
-					2130903332,
-					2130903422,
-					2130903517,
-					2130903606};
+					2130903190,
+					2130903343,
+					2130903344,
+					2130903434,
+					2130903529,
+					2130903618};
 			
 			// aapt resource value: 0
 			public const int MenuItem_actionLayout = 0;
@@ -14229,7 +16301,7 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 22
 			public const int MenuItem_tooltipText = 22;
 			
-			// aapt resource value: { 0x101012F,0x101012D,0x1010130,0x1010131,0x101012C,0x101012E,0x10100AE,0x7F0301B1,0x7F0301F1 }
+			// aapt resource value: { 0x101012F,0x101012D,0x1010130,0x1010131,0x101012C,0x101012E,0x10100AE,0x7F0301BD,0x7F0301FD }
 			public static int[] MenuView = new int[] {
 					16843055,
 					16843053,
@@ -14238,8 +16310,8 @@ namespace SalveminiApp.Droid
 					16843052,
 					16843054,
 					16842926,
-					2130903473,
-					2130903537};
+					2130903485,
+					2130903549};
 			
 			// aapt resource value: 0
 			public const int MenuView_android_headerBackground = 0;
@@ -14268,18 +16340,18 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 8
 			public const int MenuView_subMenuArrow = 8;
 			
-			// aapt resource value: { 0x10100D4,0x10100DD,0x101011F,0x7F0300BB,0x7F030115,0x7F030135,0x7F030136,0x7F030139,0x7F03013A,0x7F030177 }
+			// aapt resource value: { 0x10100D4,0x10100DD,0x101011F,0x7F0300C7,0x7F030121,0x7F030141,0x7F030142,0x7F030145,0x7F030146,0x7F030183 }
 			public static int[] NavigationView = new int[] {
 					16842964,
 					16842973,
 					16843039,
-					2130903227,
-					2130903317,
-					2130903349,
-					2130903350,
-					2130903353,
-					2130903354,
-					2130903415};
+					2130903239,
+					2130903329,
+					2130903361,
+					2130903362,
+					2130903365,
+					2130903366,
+					2130903427};
 			
 			// aapt resource value: 0
 			public const int NavigationView_android_background = 0;
@@ -14311,15 +16383,15 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 9
 			public const int NavigationView_menu = 9;
 			
-			// aapt resource value: { 0x7F03002A,0x7F03002B,0x7F03002D,0x7F0300B1,0x7F0300B2,0x7F0300B3,0x7F030149 }
+			// aapt resource value: { 0x7F030036,0x7F030037,0x7F030039,0x7F0300BD,0x7F0300BE,0x7F0300BF,0x7F030155 }
 			public static int[] PagingIndicator = new int[] {
-					2130903082,
-					2130903083,
-					2130903085,
-					2130903217,
-					2130903218,
-					2130903219,
-					2130903369};
+					2130903094,
+					2130903095,
+					2130903097,
+					2130903229,
+					2130903230,
+					2130903231,
+					2130903381};
 			
 			// aapt resource value: 0
 			public const int PagingIndicator_arrowBgColor = 0;
@@ -14342,15 +16414,15 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 6
 			public const int PagingIndicator_lbDotRadius = 6;
 			
-			// aapt resource value: { 0x10102C9,0x1010176,0x7F030188 }
+			// aapt resource value: { 0x10102C9,0x1010176,0x7F030194 }
 			public static int[] PopupWindow = new int[] {
 					16843465,
 					16843126,
-					2130903432};
+					2130903444};
 			
-			// aapt resource value: { 0x7F0301EC }
+			// aapt resource value: { 0x7F0301F8 }
 			public static int[] PopupWindowBackgroundState = new int[] {
-					2130903532};
+					2130903544};
 			
 			// aapt resource value: 0
 			public const int PopupWindowBackgroundState_state_above_anchor = 0;
@@ -14364,10 +16436,61 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int PopupWindow_overlapAnchor = 2;
 			
-			// aapt resource value: { 0x7F03018C,0x7F03018F }
+			// aapt resource value: { 0x7F030023,0x7F030024,0x7F030025,0x7F030026,0x7F030027,0x7F030028,0x7F030029,0x7F03002A,0x7F03002B,0x7F03002C,0x7F03002D,0x7F03002E }
+			public static int[] ProgressWheel = new int[] {
+					2130903075,
+					2130903076,
+					2130903077,
+					2130903078,
+					2130903079,
+					2130903080,
+					2130903081,
+					2130903082,
+					2130903083,
+					2130903084,
+					2130903085,
+					2130903086};
+			
+			// aapt resource value: 0
+			public const int ProgressWheel_ahBarColor = 0;
+			
+			// aapt resource value: 1
+			public const int ProgressWheel_ahBarLength = 1;
+			
+			// aapt resource value: 2
+			public const int ProgressWheel_ahBarWidth = 2;
+			
+			// aapt resource value: 3
+			public const int ProgressWheel_ahCircleColor = 3;
+			
+			// aapt resource value: 4
+			public const int ProgressWheel_ahDelayMillis = 4;
+			
+			// aapt resource value: 5
+			public const int ProgressWheel_ahRadius = 5;
+			
+			// aapt resource value: 6
+			public const int ProgressWheel_ahRimColor = 6;
+			
+			// aapt resource value: 7
+			public const int ProgressWheel_ahRimWidth = 7;
+			
+			// aapt resource value: 8
+			public const int ProgressWheel_ahSpinSpeed = 8;
+			
+			// aapt resource value: 9
+			public const int ProgressWheel_ahText = 9;
+			
+			// aapt resource value: 10
+			public const int ProgressWheel_ahTextColor = 10;
+			
+			// aapt resource value: 11
+			public const int ProgressWheel_ahTextSize = 11;
+			
+			// aapt resource value: { 0x7F030198,0x7F03019B }
 			public static int[] RecycleListView = new int[] {
-					2130903436,
-					2130903439};
+					2130903448,
+					2130903451};
 			
 			// aapt resource value: 0
 			public const int RecycleListView_paddingBottomNoButtons = 0;
@@ -14375,19 +16498,19 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int RecycleListView_paddingTopNoTitle = 1;
 			
-			// aapt resource value: { 0x10100F1,0x10100C4,0x7F0300CB,0x7F0300CC,0x7F0300CD,0x7F0300CE,0x7F0300CF,0x7F03013D,0x7F0301C1,0x7F0301E5,0x7F0301EB }
+			// aapt resource value: { 0x10100F1,0x10100C4,0x7F0300D7,0x7F0300D8,0x7F0300D9,0x7F0300DA,0x7F0300DB,0x7F030149,0x7F0301CD,0x7F0301F1,0x7F0301F7 }
 			public static int[] RecyclerView = new int[] {
 					16842993,
 					16842948,
-					2130903243,
-					2130903244,
-					2130903245,
-					2130903246,
-					2130903247,
-					2130903357,
-					2130903489,
-					2130903525,
-					2130903531};
+					2130903255,
+					2130903256,
+					2130903257,
+					2130903258,
+					2130903259,
+					2130903369,
+					2130903501,
+					2130903537,
+					2130903543};
 			
 			// aapt resource value: 0
 			public const int RecyclerView_android_descendantFocusability = 0;
@@ -14422,39 +16545,39 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 10
 			public const int RecyclerView_stackFromEnd = 10;
 			
-			// aapt resource value: { 0x7F030132 }
+			// aapt resource value: { 0x7F03013E }
 			public static int[] ScrimInsetsFrameLayout = new int[] {
-					2130903346};
+					2130903358};
 			
 			// aapt resource value: 0
 			public const int ScrimInsetsFrameLayout_insetForeground = 0;
 			
-			// aapt resource value: { 0x7F03003E }
+			// aapt resource value: { 0x7F03004A }
 			public static int[] ScrollingViewBehavior_Layout = new int[] {
-					2130903102};
+					2130903114};
 			
 			// aapt resource value: 0
 			public const int ScrollingViewBehavior_Layout_behavior_overlapTop = 0;
 			
-			// aapt resource value: { 0x10100DA,0x1010264,0x1010220,0x101011F,0x7F030076,0x7F030089,0x7F0300A0,0x7F0300E1,0x7F030122,0x7F03013C,0x7F0301B5,0x7F0301B6,0x7F0301CF,0x7F0301D0,0x7F0301F2,0x7F0301F7,0x7F03023D }
+			// aapt resource value: { 0x10100DA,0x1010264,0x1010220,0x101011F,0x7F030082,0x7F030095,0x7F0300AC,0x7F0300ED,0x7F03012E,0x7F030148,0x7F0301C1,0x7F0301C2,0x7F0301DB,0x7F0301DC,0x7F0301FE,0x7F030203,0x7F030249 }
 			public static int[] SearchView = new int[] {
 					16842970,
 					16843364,
 					16843296,
 					16843039,
-					2130903158,
-					2130903177,
-					2130903200,
-					2130903265,
-					2130903330,
-					2130903356,
-					2130903477,
-					2130903478,
-					2130903503,
-					2130903504,
-					2130903538,
-					2130903543,
-					2130903613};
+					2130903170,
+					2130903189,
+					2130903212,
+					2130903277,
+					2130903342,
+					2130903368,
+					2130903489,
+					2130903490,
+					2130903515,
+					2130903516,
+					2130903550,
+					2130903555,
+					2130903625};
 			
 			// aapt resource value: 0
 			public const int SearchView_android_focusable = 0;
@@ -14507,21 +16630,21 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 16
 			public const int SearchView_voiceIcon = 16;
 			
-			// aapt resource value: { 0x7F030065,0x7F030066,0x7F030067,0x7F030068,0x7F030069,0x7F03006A,0x7F03006B,0x7F03006C,0x7F03006D,0x7F03006E,0x7F03006F,0x7F030070,0x7F030071 }
+			// aapt resource value: { 0x7F030071,0x7F030072,0x7F030073,0x7F030074,0x7F030075,0x7F030076,0x7F030077,0x7F030078,0x7F030079,0x7F03007A,0x7F03007B,0x7F03007C,0x7F03007D }
 			public static int[] SfCarousel = new int[] {
-					2130903141,
-					2130903142,
-					2130903143,
-					2130903144,
-					2130903145,
-					2130903146,
-					2130903147,
-					2130903148,
-					2130903149,
-					2130903150,
-					2130903151,
-					2130903152,
-					2130903153};
+					2130903153,
+					2130903154,
+					2130903155,
+					2130903156,
+					2130903157,
+					2130903158,
+					2130903159,
+					2130903160,
+					2130903161,
+					2130903162,
+					2130903163,
+					2130903164,
+					2130903165};
 			
 			// aapt resource value: 0
 			public const int SfCarousel_carouselAllowLoadMore = 0;
@@ -14562,11 +16685,11 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 12
 			public const int SfCarousel_carouselViewMode = 12;
 			
-			// aapt resource value: { 0x7F030057,0x7F030086,0x7F0301CC }
+			// aapt resource value: { 0x7F030063,0x7F030092,0x7F0301D8 }
 			public static int[] SignInButton = new int[] {
-					2130903127,
-					2130903174,
-					2130903500};
+					2130903139,
+					2130903186,
+					2130903512};
 			
 			// aapt resource value: 0
 			public const int SignInButton_buttonSize = 0;
@@ -14577,11 +16700,11 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int SignInButton_scopeUris = 2;
 			
-			// aapt resource value: { 0x101011F,0x7F0300BB,0x7F030167 }
+			// aapt resource value: { 0x101011F,0x7F0300C7,0x7F030173 }
 			public static int[] SnackbarLayout = new int[] {
 					16843039,
-					2130903227,
-					2130903399};
+					2130903239,
+					2130903411};
 			
 			// aapt resource value: 0
 			public const int SnackbarLayout_android_maxWidth = 0;
@@ -14592,13 +16715,13 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int SnackbarLayout_maxActionInlineWidth = 2;
 			
-			// aapt resource value: { 0x1010262,0x10100B2,0x1010176,0x101017B,0x7F0301AF }
+			// aapt resource value: { 0x1010262,0x10100B2,0x1010176,0x101017B,0x7F0301BB }
 			public static int[] Spinner = new int[] {
 					16843362,
 					16842930,
 					16843126,
 					16843131,
-					2130903471};
+					2130903483};
 			
 			// aapt resource value: 0
 			public const int Spinner_android_dropDownWidth = 0;
@@ -14615,22 +16738,22 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 4
 			public const int Spinner_popupTheme = 4;
 			
-			// aapt resource value: { 0x1010125,0x1010124,0x1010142,0x7F0301DF,0x7F0301E9,0x7F0301F8,0x7F0301F9,0x7F0301FB,0x7F03021A,0x7F03021B,0x7F03021C,0x7F030237,0x7F030238,0x7F030239 }
+			// aapt resource value: { 0x1010125,0x1010124,0x1010142,0x7F0301EB,0x7F0301F5,0x7F030204,0x7F030205,0x7F030207,0x7F030226,0x7F030227,0x7F030228,0x7F030243,0x7F030244,0x7F030245 }
 			public static int[] SwitchCompat = new int[] {
 					16843045,
 					16843044,
 					16843074,
-					2130903519,
-					2130903529,
-					2130903544,
-					2130903545,
-					2130903547,
-					2130903578,
-					2130903579,
-					2130903580,
-					2130903607,
-					2130903608,
-					2130903609};
+					2130903531,
+					2130903541,
+					2130903556,
+					2130903557,
+					2130903559,
+					2130903590,
+					2130903591,
+					2130903592,
+					2130903619,
+					2130903620,
+					2130903621};
 			
 			// aapt resource value: 0
 			public const int SwitchCompat_android_textOff = 0;
@@ -14689,24 +16812,24 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int TabItem_android_text = 2;
 			
-			// aapt resource value: { 0x7F0301FC,0x7F0301FD,0x7F0301FE,0x7F0301FF,0x7F030200,0x7F030201,0x7F030202,0x7F030203,0x7F030204,0x7F030205,0x7F030206,0x7F030207,0x7F030208,0x7F030209,0x7F03020A,0x7F03020B }
+			// aapt resource value: { 0x7F030208,0x7F030209,0x7F03020A,0x7F03020B,0x7F03020C,0x7F03020D,0x7F03020E,0x7F03020F,0x7F030210,0x7F030211,0x7F030212,0x7F030213,0x7F030214,0x7F030215,0x7F030216,0x7F030217 }
 			public static int[] TabLayout = new int[] {
-					2130903548,
-					2130903549,
-					2130903550,
-					2130903551,
-					2130903552,
-					2130903553,
-					2130903554,
-					2130903555,
-					2130903556,
-					2130903557,
-					2130903558,
-					2130903559,
 					2130903560,
 					2130903561,
 					2130903562,
-					2130903563};
+					2130903563,
+					2130903564,
+					2130903565,
+					2130903566,
+					2130903567,
+					2130903568,
+					2130903569,
+					2130903570,
+					2130903571,
+					2130903572,
+					2130903573,
+					2130903574,
+					2130903575};
 			
 			// aapt resource value: 0
 			public const int TabLayout_tabBackground = 0;
@@ -14756,7 +16879,7 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 15
 			public const int TabLayout_tabTextColor = 15;
 			
-			// aapt resource value: { 0x10103AC,0x1010161,0x1010162,0x1010163,0x1010164,0x1010098,0x101009A,0x101009B,0x1010095,0x1010097,0x1010096,0x7F0300D6,0x7F03020C }
+			// aapt resource value: { 0x10103AC,0x1010161,0x1010162,0x1010163,0x1010164,0x1010098,0x101009A,0x101009B,0x1010095,0x1010097,0x1010096,0x7F0300E2,0x7F030218 }
 			public static int[] TextAppearance = new int[] {
 					16843692,
 					16843105,
@@ -14769,8 +16892,8 @@ namespace SalveminiApp.Droid
 					16842901,
 					16842903,
 					16842902,
-					2130903254,
-					2130903564};
+					2130903266,
+					2130903576};
 			
 			// aapt resource value: 0
 			public const int TextAppearance_android_fontFamily = 0;
@@ -14811,24 +16934,24 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 12
 			public const int TextAppearance_textAllCaps = 12;
 			
-			// aapt resource value: { 0x1010150,0x101009A,0x7F030098,0x7F030099,0x7F03009A,0x7F03009B,0x7F0300BC,0x7F0300BE,0x7F03011B,0x7F03011C,0x7F03011D,0x7F030193,0x7F030194,0x7F030195,0x7F030196,0x7F030197 }
+			// aapt resource value: { 0x1010150,0x101009A,0x7F0300A4,0x7F0300A5,0x7F0300A6,0x7F0300A7,0x7F0300C8,0x7F0300CA,0x7F030127,0x7F030128,0x7F030129,0x7F03019F,0x7F0301A0,0x7F0301A1,0x7F0301A2,0x7F0301A3 }
 			public static int[] TextInputLayout = new int[] {
 					16843088,
 					16842906,
-					2130903192,
-					2130903193,
-					2130903194,
-					2130903195,
-					2130903228,
-					2130903230,
-					2130903323,
-					2130903324,
-					2130903325,
-					2130903443,
-					2130903444,
-					2130903445,
-					2130903446,
-					2130903447};
+					2130903204,
+					2130903205,
+					2130903206,
+					2130903207,
+					2130903240,
+					2130903242,
+					2130903335,
+					2130903336,
+					2130903337,
+					2130903455,
+					2130903456,
+					2130903457,
+					2130903458,
+					2130903459};
 			
 			// aapt resource value: 0
 			public const int TextInputLayout_android_hint = 0;
@@ -14878,37 +17001,37 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 15
 			public const int TextInputLayout_passwordToggleTintMode = 15;
 			
-			// aapt resource value: { 0x10100AF,0x1010140,0x7F030055,0x7F030078,0x7F03007B,0x7F03008B,0x7F03008C,0x7F03008D,0x7F03008E,0x7F03008F,0x7F030090,0x7F030157,0x7F030158,0x7F030168,0x7F030179,0x7F03017A,0x7F0301AF,0x7F0301F3,0x7F0301F4,0x7F0301F5,0x7F030226,0x7F030228,0x7F030229,0x7F03022A,0x7F03022B,0x7F03022C,0x7F03022D,0x7F03022E,0x7F03022F }
+			// aapt resource value: { 0x10100AF,0x1010140,0x7F030061,0x7F030084,0x7F030087,0x7F030097,0x7F030098,0x7F030099,0x7F03009A,0x7F03009B,0x7F03009C,0x7F030163,0x7F030164,0x7F030174,0x7F030185,0x7F030186,0x7F0301BB,0x7F0301FF,0x7F030200,0x7F030201,0x7F030232,0x7F030234,0x7F030235,0x7F030236,0x7F030237,0x7F030238,0x7F030239,0x7F03023A,0x7F03023B }
 			public static int[] Toolbar = new int[] {
 					16842927,
 					16843072,
-					2130903125,
-					2130903160,
-					2130903163,
-					2130903179,
-					2130903180,
-					2130903181,
-					2130903182,
-					2130903183,
-					2130903184,
-					2130903383,
-					2130903384,
-					2130903400,
-					2130903417,
-					2130903418,
-					2130903471,
-					2130903539,
-					2130903540,
-					2130903541,
-					2130903590,
-					2130903592,
-					2130903593,
-					2130903594,
-					2130903595,
-					2130903596,
-					2130903597,
-					2130903598,
-					2130903599};
+					2130903137,
+					2130903172,
+					2130903175,
+					2130903191,
+					2130903192,
+					2130903193,
+					2130903194,
+					2130903195,
+					2130903196,
+					2130903395,
+					2130903396,
+					2130903412,
+					2130903429,
+					2130903430,
+					2130903483,
+					2130903551,
+					2130903552,
+					2130903553,
+					2130903602,
+					2130903604,
+					2130903605,
+					2130903606,
+					2130903607,
+					2130903608,
+					2130903609,
+					2130903610,
+					2130903611};
 			
 			// aapt resource value: 0
 			public const int Toolbar_android_gravity = 0;
@@ -14997,19 +17120,19 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 28
 			public const int Toolbar_titleTextColor = 28;
 			
-			// aapt resource value: { 0x10100DA,0x1010000,0x7F03018D,0x7F03018E,0x7F030218 }
+			// aapt resource value: { 0x10100DA,0x1010000,0x7F030199,0x7F03019A,0x7F030224 }
 			public static int[] View = new int[] {
 					16842970,
 					16842752,
-					2130903437,
-					2130903438,
-					2130903576};
+					2130903449,
+					2130903450,
+					2130903588};
 			
-			// aapt resource value: { 0x10100D4,0x7F030038,0x7F030039 }
+			// aapt resource value: { 0x10100D4,0x7F030044,0x7F030045 }
 			public static int[] ViewBackgroundHelper = new int[] {
 					16842964,
-					2130903096,
-					2130903097};
+					2130903108,
+					2130903109};
 			
 			// aapt resource value: 0
 			public const int ViewBackgroundHelper_android_background = 0;
@@ -15123,6 +17246,22 @@ namespace SalveminiApp.Droid
 			}
 			
 			private Transition()
+			{
+			}
+		}
+		
+		public partial class Xml
+		{
+			
+			// aapt resource value: 0x7F120000
+			public const int file_paths = 2131886080;
+			
+			static Xml()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Xml()
 			{
 			}
 		}

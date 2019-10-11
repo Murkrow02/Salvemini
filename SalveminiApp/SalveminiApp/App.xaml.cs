@@ -23,6 +23,9 @@ namespace SalveminiApp
         public static RestApi.ItemManagerArgo Argo { get; private set; }
         public static RestApi.ItemManagerTreni Treni { get; private set; }
         public static RestApi.AvvisiManager Avvisi { get; private set; }
+        public static RestApi.ImageManager Immagini { get; private set; }
+        public static RestApi.AnalytiscManager Analytics { get; private set; }
+
 
         public App()
         {
@@ -47,7 +50,7 @@ namespace SalveminiApp
                 MainPage = new TabPage();
             }
 
-           
+            //MainPage = new NavigationPage(new AreaVip.VipMenu());
 
             //Register OneSignal License
             OneSignal.Current.StartInit("a85553ca-c1fe-4d93-a02f-d30bf30e2a2a").EndInit();
@@ -67,6 +70,10 @@ namespace SalveminiApp
             Argo = new RestApi.ItemManagerArgo(new RestApi.RestServiceArgo());
             Treni = new RestApi.ItemManagerTreni(new RestApi.RestServiceTreni());
             Avvisi = new RestApi.AvvisiManager(new RestApi.RestServiceAvvisi());
+            Immagini = new RestApi.ImageManager(new RestApi.RestServiceImmagini());
+            Analytics = new RestApi.AnalytiscManager(new RestApi.RestServiceAnalytics());
+
+
         }
 
         protected override void OnStart()

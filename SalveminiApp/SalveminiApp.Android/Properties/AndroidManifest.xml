@@ -8,6 +8,9 @@
 				<category android:name="AndroidManifest.xml" />
 			</intent-filter>
 		</receiver>
+		<provider android:name="android.support.v4.content.FileProvider" android:authorities="${applicationId}.fileprovider" android:exported="false" android:grantUriPermissions="true">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
+		</provider>
 	</application>
 	<permission android:name="AndroidManifest.xml.permission.C2D_MESSAGE" android:protectionLevel="signature" />
 	<uses-permission android:name="AndroidManifest.xml.permission.C2D_MESSAGE" />

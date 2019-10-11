@@ -8,6 +8,7 @@ using Android.OS;
 using Com.OneSignal;
 using Lottie.Forms.Droid;
 using SegmentedControl.FormsPlugin.Android;
+using Plugin.CurrentActivity;
 
 namespace SalveminiApp.Droid
 {
@@ -38,6 +39,8 @@ namespace SalveminiApp.Droid
             //Initialize Components
             Syncfusion.XForms.Android.PopupLayout.SfPopupLayoutRenderer.Init();
             Plugin.Iconize.Iconize.Init(Resource.Id.toolbar, Resource.Id.sliding_tabs);
+            UserDialogs.Init(this);
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
             AnimationViewRenderer.Init();
 
             LoadApplication(new App());
