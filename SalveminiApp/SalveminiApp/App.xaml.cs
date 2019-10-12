@@ -27,6 +27,8 @@ namespace SalveminiApp
         public static RestApi.AnalytiscManager Analytics { get; private set; }
         public static RestApi.ItemManagerUtenti Utenti { get; private set; }
         public static RestApi.ItemManagerCard Card { get; private set; }
+        public static RestApi.SondaggiManager Sondaggi { get; private set; }
+
 
         public App()
         {
@@ -75,6 +77,7 @@ namespace SalveminiApp
             Analytics = new RestApi.AnalytiscManager(new RestApi.RestServiceAnalytics());
             Utenti = new RestApi.ItemManagerUtenti(new RestApi.RestServiceUtenti());
             Card = new RestApi.ItemManagerCard(new RestApi.RestServiceCard());
+            Sondaggi = new RestApi.SondaggiManager(new RestApi.RestServiceSondaggi());
 
         }
 
