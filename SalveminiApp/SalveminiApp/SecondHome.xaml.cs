@@ -40,7 +40,17 @@ namespace SalveminiApp
                 Medie = dates.Data as List<RestApi.Models.Pentagono>;
             }
 
-            radarChart.ItemsSource = Medie;
+            if (Medie.Count >= 3)
+            {
+                chart.IsVisible = true;
+                noSubjectsLayout.IsVisible = false;
+                radarChart.ItemsSource = Medie;
+            }
+            else
+            {
+                chart.IsVisible = false;
+                noSubjectsLayout.IsVisible = true;
+            }
 
         }
 

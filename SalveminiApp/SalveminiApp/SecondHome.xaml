@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns:local="clr-namespace:SalveminiApp" xmlns:countdown="clr-namespace:SalveminiApp.Helpers" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondHome">
+<ContentPage xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:local="clr-namespace:SalveminiApp" xmlns:countdown="clr-namespace:SalveminiApp.Helpers" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondHome">
     <ContentPage.Content>
         <StackLayout Spacing="25"> 
             <!--CountDown-->
@@ -20,7 +20,8 @@
                 </StackLayout.GestureRecognizers>
             </StackLayout>
             <!--Grafico Medie-->
-            <chart:SfChart VerticalOptions="Start" x:Name="chart">
+            <StackLayout>
+                <chart:SfChart VerticalOptions="Start" x:Name="chart">
                 <chart:SfChart.Title>
                     <chart:ChartTitle Text="Grafico Materie" FontAttributes="Bold" FontSize="25" TextColor="{x:Static local:Styles.TextGray}"/>
                 </chart:SfChart.Title>
@@ -32,12 +33,17 @@
                     <chart:NumericalAxis Minimum="0" Maximum="10">
                     </chart:NumericalAxis>
                 </chart:SfChart.SecondaryAxis>
-                <chart:PolarSeries EnableTooltip="true" x:Name="radarChart" Color="{x:Static local:Styles.PrimaryColor}" StrokeColor="#BE76CC" StrokeWidth="2" DrawType="Line" XBindingPath="Materia" YBindingPath="Media" >
+                <chart:PolarSeries EnableTooltip="true" x:Name="radarChart" Color="{x:Static local:Styles.PrimaryColor}" StrokeColor="#BE76CC" StrokeWidth="3" DrawType="Area" XBindingPath="Materia" YBindingPath="Media" >
                    <chart:PolarSeries.DataMarker>
                         <chart:ChartDataMarker ShowLabel="False" />
                     </chart:PolarSeries.DataMarker>
                 </chart:PolarSeries>
             </chart:SfChart>
+                <StackLayout Padding="30" x:Name="noSubjectsLayout" IsVisible="false" Orientation="Vertical">
+                    <iconize:IconLabel HorizontalOptions="Center" FontSize="Title" TextColor="{x:Static local:Styles.TextGray}" Text="fas-chart-pie"/>
+                    <Label HorizontalOptions="Center"  HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" Text="Prendi voti di almeno tre materie diverse per visualizzare il grafico"/>
+                </StackLayout>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -10,6 +10,8 @@ using Lottie.Forms.iOS.Renderers;
 using Plugin.Segmented.Control.iOS;
 using Syncfusion.SfCarousel.XForms.iOS;
 using UIKit;
+using UserNotifications;
+using Plugin.Toasts;
 using Xamarin.Forms;
 
 namespace SalveminiApp.iOS
@@ -66,6 +68,8 @@ namespace SalveminiApp.iOS
             }
 
             //Initialize Processes
+            DependencyService.Register<ToastNotification>();
+            ToastNotification.Init();
             CachedImageRenderer.Init();
             Forms9Patch.iOS.Settings.Initialize(this);
             var ignore = typeof(SvgCachedImage);
@@ -78,7 +82,22 @@ namespace SalveminiApp.iOS
             new SfCarouselRenderer();
             LoadApplication(new App());
 
-           
+            if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
+            {
+                // Request Permissions
+                UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound, (granted, error) =>
+                {
+                    // Do something if needed
+                });
+            }
+            else if (UIDevice.CurrentDevice.CheckSystemVersion(8, 0))
+            {
+                var notificationSettings = UIUserNotificationSettings.GetSettingsForTypes(
+                 UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, null
+                    );
+
+                app.RegisterUserNotificationSettings(notificationSettings);
+            }
             return base.FinishedLaunching(app, options);
         }
 

@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using MonkeyCache.SQLite;
+#if __IOS__
 using UIKit;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+#endif
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using Plugin.Toasts;
 
 namespace SalveminiApp.ArgoPages
 {
@@ -43,6 +46,8 @@ namespace SalveminiApp.ArgoPages
         {
             base.OnAppearing();
 
+            var notificator = DependencyService.Get<IToastNotificator>();
+
             //Start loading
             promemoriaList.IsRefreshing = true;
 
@@ -57,7 +62,12 @@ namespace SalveminiApp.ArgoPages
                 }
                 else
                 {
+                    var options = new NotificationOptions()
+                    {
+                        Description = datas.Message
+                    };
 
+                    var result = await notificator.Notify(options);
                 }
 
                 //Fill List
@@ -65,6 +75,15 @@ namespace SalveminiApp.ArgoPages
                 emptyLayout.IsVisible = Promemorias.Count <= 0;
                 promemoriaList.IsRefreshing = false;
 
+            }
+            else
+            {
+                var options = new NotificationOptions()
+                {
+                    Description = "Nessuna connessione ad internet 🚀",
+                };
+
+                var result = await notificator.Notify(options);
             }
 
         }

@@ -114,6 +114,9 @@
     <PackageReference Include="Acr.UserDialogs">
       <Version>7.0.32</Version>
     </PackageReference>
+    <PackageReference Include="Quoc99.Toasts.Forms.Plugin">
+      <Version>3.3.3</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

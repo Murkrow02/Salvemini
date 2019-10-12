@@ -5,11 +5,13 @@ using Forms9Patch;
 using Syncfusion.SfChart.XForms;
 using System.Linq;
 using System.Reflection;
+using Plugin.Toasts;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using UIKit;
 #endif
 using Xamarin.Forms;
+using Xamarin.Essentials;
 using MonkeyCache.SQLite;
 
 namespace SalveminiApp.ArgoPages
@@ -47,32 +49,53 @@ namespace SalveminiApp.ArgoPages
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            var response = await App.Argo.GetVoti();
+            var notificator = DependencyService.Get<IToastNotificator>();
 
-            if (!string.IsNullOrEmpty(response.Message))
+            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
+                var response = await App.Argo.GetVoti();
+
+                if (!string.IsNullOrEmpty(response.Message))
+                {
+                    var options = new NotificationOptions()
+                    {
+                        Description = response.Message
+                    };
+
+                    var result = await notificator.Notify(options);
+                }
+                else
+                {
+                    GroupedVoti = response.Data as ObservableCollection<RestApi.Models.GroupedVoti>;
+
+                    votiList.ItemsSource = GroupedVoti;
+                    emptyLayout.IsVisible = GroupedVoti.Count <= 0;
+                    fullMediaLabel.IsVisible = GroupedVoti.Count > 0;
+
+                    //Calculate Total media
+                    List<double> medie = new List<double>();
+                    foreach (var grouped in GroupedVoti)
+                    {
+                        medie.Add(grouped.Media);
+                    }
+                    double tempMedia = 0;
+                    foreach (double media in medie)
+                    {
+                        tempMedia += media;
+                    }
+                    fullMediaLabel.Text = "Media totale: " + (tempMedia / medie.Count).ToString();
+                }
             }
             else
             {
-                GroupedVoti = response.Data as ObservableCollection<RestApi.Models.GroupedVoti>;
-
-                votiList.ItemsSource = GroupedVoti;
-                emptyLayout.IsVisible = GroupedVoti.Count <= 0;
-                fullMediaLabel.IsVisible = GroupedVoti.Count > 0;
-
-                //Calculate Total media
-                List<double> medie = new List<double>();
-                foreach (var grouped in GroupedVoti)
+                var options = new NotificationOptions()
                 {
-                    medie.Add(grouped.Media);
-                }
-                double tempMedia = 0;
-                foreach (double media in medie)
-                {
-                    tempMedia += media;
-                }
-                fullMediaLabel.Text = "Media totale: " + (tempMedia / medie.Count).ToString();
+                    Description = "Nessuna connessione ad internet 🚀",
+                };
+
+                var result = await notificator.Notify(options);
             }
+            
         }
 
         void Cell_Tapped(object sender, System.EventArgs e)

@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Essentials;
-using Plugin.Toast;
+using UserNotifications;
+using Plugin.Toasts;
 using Rg.Plugins.Popup.Extensions;
 
 namespace SalveminiApp
@@ -33,7 +34,7 @@ namespace SalveminiApp
             adviceImage.WidthRequest = App.ScreenWidth / 22;
             clockImage.WidthRequest = App.ScreenWidth / 22;
             labelView.HeightRequest = App.ScreenHeight / 10;
-            tipBottom.TranslationY = App.ScreenHeight/3;
+            tipBottom.TranslationY = App.ScreenHeight / 3;
 
 #if __IOS__
             if (iOS.AppDelegate.HasNotch)
@@ -59,7 +60,7 @@ namespace SalveminiApp
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-
+            var notificator = DependencyService.Get<IToastNotificator>();
             if (Preferences.Get("orariTreniVersion", 0) > 0)
             {
                 getNextTrain();
@@ -111,6 +112,15 @@ namespace SalveminiApp
                     //UserDialogs.Instance.Toast(Costants.Toast("Le credenziali sono cambiate", Styles.PrimaryColor, Color.White, ToastPosition.Bottom));
                 }
             }
+            else
+            {
+                var options = new NotificationOptions()
+                {
+                    Description = "Nessuna connessione ad internet 🚀",
+                };
+
+                var result = await notificator.Notify(options);
+            }
 
             if (!string.IsNullOrEmpty(avvisiLabel.Text))
             {
@@ -118,8 +128,9 @@ namespace SalveminiApp
                 flowLabel();
             }
 
+           
             //Show tip at bottom
-           await tipBottom.TranslateTo(0,0,1000,Easing.SpringOut);
+            await tipBottom.TranslateTo(0, 0, 1000, Easing.SpringOut);
 
         }
 

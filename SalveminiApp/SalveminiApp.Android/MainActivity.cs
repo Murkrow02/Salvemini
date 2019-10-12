@@ -9,6 +9,8 @@ using Com.OneSignal;
 using Lottie.Forms.Droid;
 using SegmentedControl.FormsPlugin.Android;
 using Plugin.CurrentActivity;
+using Plugin.Toasts;
+
 
 namespace SalveminiApp.Droid
 {
@@ -37,6 +39,8 @@ namespace SalveminiApp.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
             //Initialize Components
+            DependencyService.Register<ToastNotification>();
+            ToastNotification.Init(this, new PlatformOptions() { SmallIconDrawable = Android.Resource.Drawable.IcDialogInfo });
             Syncfusion.XForms.Android.PopupLayout.SfPopupLayoutRenderer.Init();
             Plugin.Iconize.Iconize.Init(Resource.Id.toolbar, Resource.Id.sliding_tabs);
             UserDialogs.Init(this);

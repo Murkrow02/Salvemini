@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Rg.Plugins.Popup.Extensions;
 using Xamarin.Essentials;
 using System.Linq;
+using Plugin.Toasts;
 using MonkeyCache.SQLite;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
@@ -117,6 +118,7 @@ namespace SalveminiApp.ArgoPages
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+            var notificator = DependencyService.Get<IToastNotificator>();
 
             //Tip iniziale
             var firstPopUp = new Helpers.PopOvers().defaultPopOver;
@@ -154,7 +156,13 @@ namespace SalveminiApp.ArgoPages
                     }
                     else
                     {
-                        await DisplayAlert("Errore", datas.Message, "Ok");
+                        var options = new NotificationOptions()
+                        {
+                            Description = datas.Message
+                        };
+
+                        var result = await notificator.Notify(options);
+                        lista.IsRefreshing = false;
                         return;
                     }
 
@@ -179,6 +187,16 @@ namespace SalveminiApp.ArgoPages
 
                     lista.IsRefreshing = false;
                 }
+                else
+                {
+                    var options = new NotificationOptions()
+                    {
+                        Description = "Nessuna connessione ad internet 🚀",
+                    };
+
+                    var result = await notificator.Notify(options);
+                }
+
 
 
             }
@@ -207,7 +225,13 @@ namespace SalveminiApp.ArgoPages
                     }
                     else
                     {
-                        await DisplayAlert("Errore", datas.Message, "Ok");
+                        var options = new NotificationOptions()
+                        {
+                            Description = datas.Message
+                        };
+
+                        var result = await notificator.Notify(options);
+                        lista.IsRefreshing = false;
                         return;
                     }
 
@@ -220,7 +244,6 @@ namespace SalveminiApp.ArgoPages
                         emptyLayout.IsVisible = false;
                         filterBtn.IsEnabled = true;
                         sortBtn.IsEnabled = true;
-
                     }
                     else
                     {
@@ -233,11 +256,19 @@ namespace SalveminiApp.ArgoPages
 
                     lista.IsRefreshing = false;
                 }
+                else
+                {
+                    var options = new NotificationOptions()
+                    {
+                        Description = "Nessuna connessione ad internet 🚀",
+                    };
 
+                    var result = await notificator.Notify(options);
+                }
             }
         }
 
-        private void Second_PoUp(object sender, EventArgs e)
+        void Second_PoUp(object sender, EventArgs e)
         {
             var secondPopUp = new Helpers.PopOvers().defaultPopOver;
             secondPopUp.Content = new Xamarin.Forms.Label { Text = "Clicca per ordinare" + Environment.NewLine + "dai più vecchi ai più nuovi" + Environment.NewLine + "e viceversa", TextColor = Color.White, HorizontalTextAlignment = TextAlignment.Center };
@@ -251,7 +282,7 @@ namespace SalveminiApp.ArgoPages
                 secondPopUp.BackgroundColor = Color.FromHex("FFC400"); secondPopUp.Disappearing += Third_PoUp;
         }
 
-        private void Third_PoUp(object sender, EventArgs e)
+        void Third_PoUp(object sender, EventArgs e)
         {
             var thirdPopUp = new Helpers.PopOvers().defaultPopOver;
             thirdPopUp.Content = new Xamarin.Forms.Label { Text = "Clicca per filtrare" + Environment.NewLine + "per materia", TextColor = Color.White, HorizontalTextAlignment = TextAlignment.Center };
@@ -271,7 +302,7 @@ namespace SalveminiApp.ArgoPages
                 Preferences.Set("firstTimeArgomenti", true);
         }
 
-        private void ShowAll(object sender, EventArgs e)
+        void ShowAll(object sender, EventArgs e)
         {
             clockButton.Rotation = 0.1;
             clockButton.RotateTo(-360, 700, Easing.CubicIn);
@@ -371,7 +402,7 @@ namespace SalveminiApp.ArgoPages
 
         }
 
-        private void ShowOrder(object sender, EventArgs e)
+        void ShowOrder(object sender, EventArgs e)
         {
             if (type == "compiti")
             {
@@ -402,7 +433,7 @@ namespace SalveminiApp.ArgoPages
 
         }
 
-        private async void filterSubject(object sender, EventArgs e)
+        async void filterSubject(object sender, EventArgs e)
         {
             var materie = new List<string>();
 
@@ -492,7 +523,7 @@ namespace SalveminiApp.ArgoPages
             }
         }
 
-        private void Search(object sender, TextChangedEventArgs e)
+        void Search(object sender, TextChangedEventArgs e)
         {
             if (type == "compiti")
             {

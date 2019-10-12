@@ -12,6 +12,7 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using MonkeyCache.SQLite;
+using Plugin.Toasts;
 
 namespace SalveminiApp.ArgoPages
 {
@@ -56,6 +57,8 @@ namespace SalveminiApp.ArgoPages
         {
             base.OnAppearing();
 
+            var notificator = DependencyService.Get<IToastNotificator>();
+
             votiList.IsRefreshing = true;
 
             //Api Call
@@ -68,7 +71,12 @@ namespace SalveminiApp.ArgoPages
                 }
                 else
                 {
-                    await DisplayAlert("Errore", datas.Message, "Ok");
+                    var options = new NotificationOptions()
+                    {
+                        Description = datas.Message
+                    };
+
+                    var result = await notificator.Notify(options);
                     votiList.IsRefreshing = false;
                     return;
                 }
@@ -89,6 +97,16 @@ namespace SalveminiApp.ArgoPages
                     votiList.IsRefreshing = false;
                 }
             }
+            else
+            {
+                var options = new NotificationOptions()
+                {
+                    Description = "Nessuna connessione ad internet 🚀",
+                };
+
+                var result = await notificator.Notify(options);
+            }
+
             votiList.IsRefreshing = false;
         }
 

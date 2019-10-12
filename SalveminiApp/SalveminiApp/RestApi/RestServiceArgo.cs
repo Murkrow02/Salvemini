@@ -266,7 +266,8 @@ namespace SalveminiApp.RestApi
                 Debug.WriteLine(@"              ERROR {0}", ex.Message);
                 Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
             }
-            return Data;
+            //return Data;
+            return new Models.ResponseModel { Data = new List<Models.Pentagono> {  new Models.Pentagono { Materia = "Fisica", Media = 5 }, new Models.Pentagono { Materia = "Lettere", Media = 8 } } };
         }
         
         public async Task<Models.ResponseModel> GetVoti()

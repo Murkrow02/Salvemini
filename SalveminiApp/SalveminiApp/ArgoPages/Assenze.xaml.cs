@@ -5,6 +5,7 @@ using System.Linq;
 using Xamarin.Essentials;
 using MonkeyCache.SQLite;
 using Rg.Plugins.Popup.Extensions;
+using Plugin.Toasts;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using UIKit;
@@ -64,7 +65,7 @@ namespace SalveminiApp.ArgoPages
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-
+            var notificator = DependencyService.Get<IToastNotificator>();
             //Start loading
             assenzeList.IsRefreshing = true;
 
@@ -75,7 +76,12 @@ namespace SalveminiApp.ArgoPages
 
                 if (!string.IsNullOrEmpty(response.Message))
                 {
+                    var options = new NotificationOptions()
+                    {
+                        Description = response.Message
+                    };
 
+                    var result = await notificator.Notify(options);
                 }
                 else
                 {
@@ -85,6 +91,15 @@ namespace SalveminiApp.ArgoPages
                 assenzeList.ItemsSource = Assenzes;
                 emptyLayout.IsVisible = Assenzes.Count <= 0;
 
+            }
+            else
+            {
+                var options = new NotificationOptions()
+                {
+                    Description = "Nessuna connessione ad internet 🚀",
+                };
+
+                var result = await notificator.Notify(options);
             }
 
             //Fill Infos
