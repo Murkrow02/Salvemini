@@ -25,7 +25,8 @@ namespace SalveminiApp
         public static RestApi.AvvisiManager Avvisi { get; private set; }
         public static RestApi.ImageManager Immagini { get; private set; }
         public static RestApi.AnalytiscManager Analytics { get; private set; }
-
+        public static RestApi.ItemManagerUtenti Utenti { get; private set; }
+        public static RestApi.ItemManagerCard Card { get; private set; }
 
         public App()
         {
@@ -72,7 +73,8 @@ namespace SalveminiApp
             Avvisi = new RestApi.AvvisiManager(new RestApi.RestServiceAvvisi());
             Immagini = new RestApi.ImageManager(new RestApi.RestServiceImmagini());
             Analytics = new RestApi.AnalytiscManager(new RestApi.RestServiceAnalytics());
-
+            Utenti = new RestApi.ItemManagerUtenti(new RestApi.RestServiceUtenti());
+            Card = new RestApi.ItemManagerCard(new RestApi.RestServiceCard());
 
         }
 

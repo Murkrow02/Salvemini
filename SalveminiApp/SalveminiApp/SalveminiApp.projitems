@@ -226,6 +226,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)AreaVip\UtentiList.xaml.cs">
       <DependentUpon>UtentiList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceUtenti.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceCard.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Card.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

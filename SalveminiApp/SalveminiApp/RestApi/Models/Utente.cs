@@ -12,5 +12,20 @@ namespace SalveminiApp.RestApi.Models
         public int Stato { get; set; }
         public string Creazione { get; set; }
         public string ArgoToken { get; set; }
+
+        public string nomeCognome
+        {
+            get
+            {
+                return Nome + " " + Cognome;
+            }
+        }
+        public string classeCorso
+        {
+            get
+            {
+                return Classe + Corso;
+            }
+        }
     }
 }

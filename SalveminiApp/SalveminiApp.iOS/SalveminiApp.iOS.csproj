@@ -237,6 +237,7 @@
     <BundleResource Include="Resources\CompitiShadow.svg" />
     <BundleResource Include="Resources\trasportiSmall.png" />
     <BundleResource Include="Resources\scrutinioShadow.svg" />
+    <BundleResource Include="Resources\imagePlaceholder.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lotties\" />

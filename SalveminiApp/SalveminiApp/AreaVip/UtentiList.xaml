@@ -1,5 +1,20 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.AreaVip.UtentiList">
-    <ContentPage.Content>
-    </ContentPage.Content>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:SalveminiApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.AreaVip.UtentiList">
+   <StackLayout Spacing="0" Padding="10,0" VerticalOptions="FillAndExpand">
+        <SearchBar Placeholder="Cerca utenti" VerticalOptions="Start" x:Name="searchBar" TextChanged="Search_Action" IsSpellCheckEnabled="False"/>
+        <ContentView VerticalOptions="FillAndExpand">
+            <ListView x:Name="utentiListCtrl" HasUnevenRows="true" ItemSelected="userSelected" Header="" Footer="">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="5" Orientation="Horizontal">
+                                <Label FontSize="Medium" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="StartAndExpand" Text="{Binding nomeCognome}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                                <Label FontSize="Small" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="EndAndExpand" Text="{Binding classeCorso}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentView>
+    </StackLayout>
 </ContentPage>
