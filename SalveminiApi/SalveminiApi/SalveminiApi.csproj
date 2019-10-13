@@ -277,6 +277,7 @@
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\SalveminiCardController.cs" />
+    <Compile Include="Controllers\SondaggisController.cs" />
     <Compile Include="Controllers\UtentiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -323,10 +324,19 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\IndexModel.cs" />
+    <Compile Include="Models\OggettiSondaggi.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SalveminiCard.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Sondaggi.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Utenti.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VotiSondaggi.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="OneSignalApi\NotificationModel.cs" />
@@ -360,6 +370,7 @@
     <Content Include="Images\avvisi\2.png" />
     <Content Include="Images\avvisi\3.png" />
     <Content Include="Images\avvisi\4.png" />
+    <Content Include="Images\card\1.png" />
     <Content Include="Images\logoBianco.png" />
     <Content Include="Models\DatabaseModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -461,6 +472,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\sondaggi\" />
     <Folder Include="Views\Auth\" />
     <Folder Include="Views\Images\" />
   </ItemGroup>

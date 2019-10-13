@@ -14,6 +14,7 @@ namespace SalveminiApi.Models
         public int OrariAliVersion { get; set; }
         public int OrariScuolaVersion { get; set; }
         public Avvisi ultimoAvviso { get; set; }
+        public Sondaggi ultimoSondaggio { get; set; }
         public List<WholeModel> Oggi { get; set; }
         public List<Ads> Ads { get; set; }
         public bool ArgoAuth { get; set; }

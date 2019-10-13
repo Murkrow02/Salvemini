@@ -19,10 +19,10 @@ namespace SalveminiApi.Controllers
         public IHttpActionResult getImmagini(string path, string id)
         {
             //Check Auth
-            var authorize = new Helpers.Utility();
-            bool authorized = authorize.authorized(Request);
-            if (!authorized)
-                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+            //var authorize = new Helpers.Utility();
+            //bool authorized = authorize.authorized(Request);
+            //if (!authorized)
+            //    throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
             try
             {
                 var stream = File.OpenRead(HttpContext.Current.Server.MapPath("~/Images/" + path + "/" + id + ".png"));

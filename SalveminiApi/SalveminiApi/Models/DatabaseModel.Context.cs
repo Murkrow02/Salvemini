@@ -33,5 +33,8 @@ namespace SalveminiApi.Models
         public virtual DbSet<Ads> Ads { get; set; }
         public virtual DbSet<Analytics> Analytics { get; set; }
         public virtual DbSet<SalveminiCard> SalveminiCard { get; set; }
+        public virtual DbSet<OggettiSondaggi> OggettiSondaggi { get; set; }
+        public virtual DbSet<Sondaggi> Sondaggi { get; set; }
+        public virtual DbSet<VotiSondaggi> VotiSondaggi { get; set; }
     }
 }

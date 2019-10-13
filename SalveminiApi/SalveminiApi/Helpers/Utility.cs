@@ -44,7 +44,7 @@ namespace SalveminiApi.Helpers
             }
         }
 
-        public bool authorized(HttpRequestMessage re)
+        public bool authorized(HttpRequestMessage re, bool vip = false)
         {
             string token;
             string id;
@@ -69,7 +69,20 @@ namespace SalveminiApi.Helpers
                     if (utente.ArgoToken != token)
                         return false;
                     else
+                    {
+                        //Vip needed?
+                        if(!vip) //No
                         return true;
+                        else //Yes
+                        {
+                            //Check if vip
+                            if (utente.Stato < 1)
+                                return false;
+                            else
+                                return true;
+                        }
+
+                    }
                 }
                 else
                 {

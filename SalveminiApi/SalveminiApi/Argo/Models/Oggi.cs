@@ -265,21 +265,29 @@ namespace SalveminiApi.Argo.Models
         {
             get
             {
-                string value = "";
-                if (registrataDa != null)
+                try
                 {
-                    value = registrataDa;
-                }
-                else if (desMittente != null)
-                {
-                    value = desMittente;
-                }
-                else
-                {
-                    value = desMateria.First().ToString().ToUpper() + desMateria.Substring(1).ToLower();
-                }
+                    string value = "";
+                    if (registrataDa != null)
+                    {
+                        value = registrataDa;
+                    }
+                    else if (desMittente != null)
+                    {
+                        value = desMittente;
+                    }
+                    else
+                    {
+                        value = desMateria.First().ToString().ToUpper() + desMateria.Substring(1).ToLower();
+                    }
+                    return value;
 
-                return value;
+                }
+                catch
+                {
+                    return teacher;
+                }
+              
             }
         }
 

@@ -21,9 +21,8 @@ namespace SalveminiApi.Controllers
         [HttpGet]
         public List<Utenti> getAllUtenti()
         {
-            //Check Auth
             var authorize = new Helpers.Utility();
-            bool authorized = authorize.authorized(Request);
+            bool authorized = authorize.authorized(Request, true);
             if (!authorized)
                 throw new HttpResponseException(HttpStatusCode.Unauthorized);
 
@@ -50,6 +49,28 @@ namespace SalveminiApi.Controllers
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
             return utente;
+        }
+
+        [Route("change/{id}/{status}")]
+        [HttpGet]
+        public HttpResponseMessage changeStatus(int id, int status)
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request,true);
+            if (!authorized)
+                throw new HttpResponseException(HttpStatusCode.Unauthorized);
+
+            //Prendi utente selezionato
+            var utente = db.Utenti.Find(id);
+            if (utente == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+
+            //Cambia stato utente 
+            utente.Stato = status;
+            db.SaveChanges();
+
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
 

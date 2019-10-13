@@ -12,31 +12,25 @@ namespace SalveminiApi.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Utenti
+    public partial class Sondaggi
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Utenti()
+        public Sondaggi()
         {
-            this.Avvisi = new HashSet<Avvisi>();
-            this.Sondaggi = new HashSet<Sondaggi>();
+            this.OggettiSondaggi = new HashSet<OggettiSondaggi>();
             this.VotiSondaggi = new HashSet<VotiSondaggi>();
         }
     
         public int id { get; set; }
         public string Nome { get; set; }
-        public string Cognome { get; set; }
-        public string Sesso { get; set; }
-        public int Classe { get; set; }
-        public string Corso { get; set; }
-        public int Stato { get; set; }
+        public int Creatore { get; set; }
         public System.DateTime Creazione { get; set; }
-        public string ArgoToken { get; set; }
+        public bool Attivo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Avvisi> Avvisi { internal get; set; }
+        public virtual ICollection<OggettiSondaggi> OggettiSondaggi { get; set; }
+        public virtual Utenti Utenti { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sondaggi> Sondaggi { internal get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<VotiSondaggi> VotiSondaggi { internal get; set; }
+        public virtual ICollection<VotiSondaggi> VotiSondaggi { get; set; }
     }
 }
