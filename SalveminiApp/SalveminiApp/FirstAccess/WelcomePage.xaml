@@ -6,7 +6,7 @@
                 <TapGestureRecognizer Tapped="Layout_Tapped" />
             </StackLayout.GestureRecognizers>
             <StackLayout x:Name="titleLayout" Opacity="0">
-                <Image Source="Icon.png" x:Name="appIcon" HorizontalOptions="Start" VerticalOptions="Center" />
+                <Image Source="logoNuovo.png" x:Name="appIcon" HorizontalOptions="Start" VerticalOptions="Center" />
                 <StackLayout Spacing="0">
                     <Label Text="Benvenuto nella nuova" FontSize="30" />
                     <Label Text="SalveminiApp" FontAttributes="Bold" TextColor="{x:Static local:Styles.PrimaryColor}" FontSize="30" />
