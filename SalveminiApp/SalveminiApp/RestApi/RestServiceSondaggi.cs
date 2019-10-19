@@ -1,18 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using MonkeyCache.SQLite;
 using Newtonsoft.Json;
 using SalveminiApp.RestApi.Models;
 using Xamarin.Essentials;
 
 namespace SalveminiApp.RestApi
 {
-    public class RestServiceSondaggi: IRestServiceSondaggi
+    public class RestServiceSondaggi : IRestServiceSondaggi
     {
         HttpClient client;
+        public Dictionary<int, int> Risultati { get; private set; }
 
         public RestServiceSondaggi()
         {
@@ -37,11 +40,9 @@ namespace SalveminiApp.RestApi
                 {
                     //todo istruttore con troppe schede
                     case HttpStatusCode.OK:
-                        return new string[] { "Successo", "L'avviso è stato creato" };
-                    case HttpStatusCode.Unauthorized:
-                        return new string[] { "Errore", "Non hai l'autorizzazione per creare un avviso" };
-                    case HttpStatusCode.InternalServerError:
-                        return new string[] { "Errore", "Si è verificato un errore nella creazione dell'avviso, riprova più tardi o contattaci se il problema persiste" };
+                        return new string[] { "Grazie!", "Il tuo voto è stato inviato correttamente" };
+                    case HttpStatusCode.Conflict:
+                        return new string[] { "Attenzione", "Hai già inviato un voto per questo sondaggio" };
                     default:
                         return new string[] { "Errore", "Si è verificato un errore sconosciuto, riprova più tardi o contattaci se il problema persiste" };
                 }
@@ -53,11 +54,49 @@ namespace SalveminiApp.RestApi
                 return new string[] { "Errore", "Si è verificato un errore sconosciuto, riprova più tardi o contattaci se il problema persiste" };
             }
         }
+
+        public async Task<Dictionary<int, int>> ReturnRisultati(int id)
+        {
+            Risultati = new Dictionary<int, int>();
+            var uri = Costants.Uri("risultati/") + id.ToString();
+
+            try
+            {
+                //Get Cache if no Network Access
+                if (Connectivity.NetworkAccess != Xamarin.Essentials.NetworkAccess.Internet && Barrel.Current.Exists("risultati" + id.ToString()))
+                {
+                    return Barrel.Current.Get<Dictionary<int, int>>("risultati" + id.ToString());
+                }
+
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    Risultati = JsonConvert.DeserializeObject<Dictionary<int, int>>(content);
+
+                    //Save Cache
+                    Barrel.Current.Add("risultati" + id.ToString(), Risultati, TimeSpan.FromDays(10));
+                }
+                else if (response.StatusCode != System.Net.HttpStatusCode.Unauthorized)
+                {
+                    if (Barrel.Current.Exists("risultati" + id.ToString()))
+                    {
+                        return Barrel.Current.Get<Dictionary<int, int>>("risultati" + id.ToString());
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+            }
+            return Risultati;
+        }
     }
     public interface IRestServiceSondaggi
     {
         Task<string[]> PostVoto(VotoSondaggio voto);
-
+        Task<Dictionary<int, int>> ReturnRisultati(int id);
     }
 
     public class SondaggiManager
@@ -72,6 +111,11 @@ namespace SalveminiApp.RestApi
         public Task<string[]> PostVoto(VotoSondaggio voto)
         {
             return restServiceSondaggi.PostVoto(voto);
+        }
+
+        public Task<Dictionary<int, int>> ReturnRisultati(int id)
+        {
+            return restServiceSondaggi.ReturnRisultati(id);
         }
     }
 }
