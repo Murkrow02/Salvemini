@@ -60,6 +60,19 @@ namespace SalveminiApp
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+
+
+            var uno = new WidgetGradient { Title = "Prova 1", SubTitle = "asdansfoiasnioafssf", Icon = "calendar", StartColor = "FF7272", EndColor = "FACA6F" };
+            var due = new WidgetGradient { Title = "Prova 2", SubTitle = "asdansfoiasnioafssf", Icon = "train", StartColor = "A872FF", EndColor = "6F8AFA" };
+
+            var lista = new List<WidgetGradient>();
+            lista.Add(uno);
+            lista.Add(due);
+            widgetCollection.ItemsSource = lista;
+
+
+
+
             var notificator = DependencyService.Get<IToastNotificator>();
             if (Preferences.Get("orariTreniVersion", 0) > 0)
             {
@@ -168,7 +181,8 @@ namespace SalveminiApp
         }
         void PushToSettings(object sender, System.EventArgs e)
         {
-            Navigation.PushPopupAsync(new SecondaryViews.SettingsPanel());
+            //Navigation.PushPopupAsync(new SecondaryViews.SettingsPanel());
+
         }
 
         void PushToVip(object sender, System.EventArgs e)
