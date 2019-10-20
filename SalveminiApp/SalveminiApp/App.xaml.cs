@@ -59,7 +59,7 @@ namespace SalveminiApp
             OneSignal.Current.StartInit("a85553ca-c1fe-4d93-a02f-d30bf30e2a2a").EndInit();
 
             //Initialize Iconize
-            Plugin.Iconize.Iconize.With(new Plugin.Iconize.Fonts.FontAwesomeRegularModule()).With(new Plugin.Iconize.Fonts.FontAwesomeBrandsModule()).With(new Plugin.Iconize.Fonts.FontAwesomeSolidModule());
+            Plugin.Iconize.Iconize.With(new Plugin.Iconize.Fonts.FontAwesomeProBrandsModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProLightModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProRegularModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProSolidModule());
 
             //Reload Calls
             refreshCalls();

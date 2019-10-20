@@ -46,9 +46,10 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>iconize-fontawesome-regular.ttf</string>
-		<string>iconize-fontawesome-solid.ttf</string>
-		<string>iconize-fontawesome-brands.ttf</string>
+		<string>iconize-fontawesome-pro-brands.ttf</string>
+		<string>iconize-fontawesome-pro-light.ttf</string>
+		<string>iconize-fontawesome-pro-regular.ttf</string>
+		<string>iconize-fontawesome-pro-solid.ttf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>

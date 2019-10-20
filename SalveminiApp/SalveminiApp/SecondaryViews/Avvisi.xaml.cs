@@ -6,6 +6,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 #endif
 using Xamarin.Essentials;
 using Plugin.Toasts;
+using DLToolkit.Forms.Controls;
 
 namespace SalveminiApp.SecondaryViews
 {
@@ -16,12 +17,18 @@ namespace SalveminiApp.SecondaryViews
         public Avvisi()
         {
             InitializeComponent();
-
             //Set Safearea
 #if __IOS__
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
 #endif
 
+        }
+
+        private void ImageList_ItemSelected(object sender, ItemTappedEventArgs e)
+        {
+            var a = sender as FlowListView;
+            var b = a.FlowItemsSource as List<string>;
+            Navigation.PushModalAsync(new Helpers.ImageViewer(b));
         }
 
         void Close_Clicked(object sender, EventArgs e)

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Avvisi">
+<ContentPage xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView" xmlns:proc="clr-namespace:PanCardView.Processors;assembly=PanCardView" xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView" xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Avvisi">
     <ContentPage.Content>
         <StackLayout Spacing="40" Padding="20">
             <!--TITLE-->
@@ -9,14 +9,18 @@
                 <iconize:IconButton VerticalOptions="Center" HorizontalOptions="EndAndExpand" Text="fas-bars" FontSize="Title" TextColor="{x:Static local:Styles.PrimaryColor}" />
             </StackLayout>
             <!--CAROUSEL-->
-            <carousel:SfCarousel x:Name="avvisiCarousel">
-                <carousel:SfCarousel.ItemTemplate>
+            <cards:CarouselView VerticalOptions="FillAndExpand" x:Name="avvisiCarousel">
+                <x:Arguments>
+                    <proc:BaseCarouselFrontViewProcessor ScaleFactor="0.5" OpacityFactor="0" RotationFactor="0.1" />
+                    <proc:BaseCarouselBackViewProcessor ScaleFactor="0.5" OpacityFactor="0" RotationFactor="0.1" />
+                </x:Arguments>
+                <cards:CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout VerticalOptions="Center" Padding="20, 0" Spacing="15">
                             <Label Text="{Binding Titolo}" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Title" />
-                            <local:ShadowFrame BackgroundColor="Transparent" Padding="0">
-                                <Frame BackgroundColor="Transparent" HasShadow="False" Padding="0" IsClippedToBounds="True" CornerRadius="20">
-                                    <flv:FlowListView FlowItemsSource="{Binding FullImmagini}" SeparatorColor="Black" BackgroundColor="Transparent" FlowColumnExpand="ProportionalLast" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="false" RowHeight="100">
+                            <local:ShadowFrame BackgroundColor="Transparent" VerticalOptions="FillAndExpand" Padding="0">
+                                <Frame BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HasShadow="False" Padding="0" IsClippedToBounds="True" CornerRadius="20">
+                                    <flv:FlowListView FlowItemTapped="ImageList_ItemSelected" FlowItemsSource="{Binding FullImmagini}" SeparatorColor="Black" BackgroundColor="Transparent" FlowColumnExpand="ProportionalLast" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="false" RowHeight="100">
                                         <flv:FlowListView.FlowColumnTemplate>
                                             <DataTemplate>
                                                 <Grid Padding="2">
@@ -37,9 +41,20 @@
                             <Button Text="Mostra altro" />
                         </StackLayout>
                     </DataTemplate>
-                </carousel:SfCarousel.ItemTemplate>
-            </carousel:SfCarousel>
-
+                </cards:CarouselView.ItemTemplate>
+                <controls:IndicatorsControl SelectedIndicatorStyle="{StaticResource ActiveIndicator}" UnselectedIndicatorStyle="{StaticResource InactiveIndicator}" />
+            </cards:CarouselView>
         </StackLayout>
     </ContentPage.Content>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ActiveIndicator" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{x:Static local:Styles.PrimaryColor}" />
+            </Style>
+            <Style x:Key="InactiveIndicator" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="OutlineColor" Value="{x:Static local:Styles.ObjectGray}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 </ContentPage>

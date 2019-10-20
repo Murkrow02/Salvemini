@@ -112,6 +112,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\ImageViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -231,6 +235,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Card.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceSondaggi.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Sondaggi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ImageViewer.xaml.cs">
+      <DependentUpon>ImageViewer.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

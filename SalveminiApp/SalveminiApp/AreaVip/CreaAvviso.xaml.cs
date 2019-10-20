@@ -31,10 +31,13 @@ namespace SalveminiApp.AreaVip
             //Checks
             if (string.IsNullOrEmpty(title.Text))
             {
+                titoloEntry.HasError = true;
                 titoloEntry.ErrorText = "Inserisci un titolo";
                 createBtn.IsEnabled = true;
                 return;
             }
+            titoloEntry.HasError = false;
+
             //PROGRESS DIALOG
             using (IProgressDialog progress = UserDialogs.Instance.Progress("Caricamento avviso", null, null, true, MaskType.Black))
             {
@@ -59,14 +62,13 @@ namespace SalveminiApp.AreaVip
 
                         if (caricaImmagine == true)
                         {
-                            if (string.IsNullOrEmpty(imageList))
+                            if (currentImage == ImagesToUpload[ImagesToUpload.Count - 1])
                             {
-                                imageList = imageList + nomeImmagine + ",";
+                                imageList = imageList + nomeImmagine;
                             }
                             else
                             {
-                                imageList = imageList + "," + nomeImmagine;
-
+                                imageList = imageList + nomeImmagine + ",";
                             }
                         }
                         else

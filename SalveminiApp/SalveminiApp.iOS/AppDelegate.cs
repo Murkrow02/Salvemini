@@ -13,6 +13,7 @@ using UIKit;
 using UserNotifications;
 using Plugin.Toasts;
 using Xamarin.Forms;
+using PanCardView.iOS;
 
 namespace SalveminiApp.iOS
 {
@@ -78,6 +79,7 @@ namespace SalveminiApp.iOS
             Syncfusion.XForms.iOS.PopupLayout.SfPopupLayoutRenderer.Init();
             Syncfusion.SfChart.XForms.iOS.Renderers.SfChartRenderer.Init();
             SegmentedControlRenderer.Initialize();
+            CardsViewRenderer.Preserve();
             AnimationViewRenderer.Init();
             new SfCarouselRenderer();
             LoadApplication(new App());

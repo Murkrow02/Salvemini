@@ -23,11 +23,9 @@ namespace SalveminiApp.RestApi.Models
                 {
                     foreach (string image in Immagini.Split(","))
                     {
-
                         lista.Add(Costants.Uri("images/avvisi/").ToString() + image);
                     }
                 }
-                
                 return lista;
             }
         }

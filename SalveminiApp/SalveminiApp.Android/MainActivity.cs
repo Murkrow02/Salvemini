@@ -10,6 +10,7 @@ using Lottie.Forms.Droid;
 using SegmentedControl.FormsPlugin.Android;
 using Plugin.CurrentActivity;
 using Plugin.Toasts;
+using PanCardView.Droid;
 
 
 namespace SalveminiApp.Droid
@@ -44,6 +45,7 @@ namespace SalveminiApp.Droid
             Syncfusion.XForms.Android.PopupLayout.SfPopupLayoutRenderer.Init();
             Plugin.Iconize.Iconize.Init(Resource.Id.toolbar, Resource.Id.sliding_tabs);
             UserDialogs.Init(this);
+            CardsViewRenderer.Preserve();
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             AnimationViewRenderer.Init();
 
