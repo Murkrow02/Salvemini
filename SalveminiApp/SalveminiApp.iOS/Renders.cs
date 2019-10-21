@@ -6,14 +6,37 @@ using Xamarin.Forms.Platform.iOS;
 using CoreGraphics;
 using CoreAnimation;
 using Foundation;
+using System.Drawing;
 
 [assembly: ExportRenderer(typeof(SalveminiApp.Helpers.CustomNavigationPage), typeof(CustomNavigationPage))]
 [assembly: ExportRenderer(typeof(SalveminiApp.ShadowFrame), typeof(ShadowFrame))]
 [assembly: ExportRenderer(typeof(SalveminiApp.TransparentGradient), typeof(TransparentGradient))]
 [assembly: ExportRenderer(typeof(SalveminiApp.DashedBorderFrame), typeof(DashedBorderFrame))]
+[assembly: ExportRenderer(typeof(TabbedPage), typeof(TabbedPageRenderer))]
 
 namespace SalveminiApp.iOS
 {
+    public static class ImageExtensions
+    {
+        public static UIImage Crop(this UIImage image, int x, int y, int width, int height)
+        {
+            var imgSize = image.Size;
+
+            UIGraphics.BeginImageContext(new SizeF(width, height));
+            var imgToCrop = UIGraphics.GetCurrentContext();
+
+            var croppingRectangle = new CGRect(0, 0, width, height);
+            imgToCrop.ClipToRect(croppingRectangle);
+
+            var drawRectangle = new CGRect(-x, -y, imgSize.Width, imgSize.Height);
+
+            image.Draw(drawRectangle);
+            var croppedImg = UIGraphics.GetImageFromCurrentImageContext();
+
+            UIGraphics.EndImageContext();
+            return croppedImg;
+        }
+    }
 
     public class DashedBorderFrame : FrameRenderer
     {
@@ -22,7 +45,7 @@ namespace SalveminiApp.iOS
             base.LayoutSubviews();
 
             CAShapeLayer viewBorder = new CAShapeLayer();
-            viewBorder.StrokeColor = Color.FromHex("#BCBCBC").ToCGColor();
+            viewBorder.StrokeColor = Xamarin.Forms.Color.FromHex("#BCBCBC").ToCGColor();
             viewBorder.FillColor = null;
             viewBorder.LineDashPattern = new NSNumber[] { new NSNumber(10), new NSNumber(10) };
             viewBorder.Frame = NativeView.Bounds;
@@ -33,7 +56,31 @@ namespace SalveminiApp.iOS
             Element.HasShadow = false;
         }
     }
-    
+
+    public class TabbedPageRenderer : TabbedRenderer
+    {
+        public override void ViewWillLayoutSubviews()
+        {
+            base.ViewWillLayoutSubviews();
+            var image = UIImage.FromBundle("bbar.jpg");
+            image = image.Crop(0,
+                (int)(image.CGImage.Height - TabBar.Frame.Height),
+                (int)image.CGImage.Width,
+                (int)TabBar.Frame.Height);
+            image = image.Scale(new CGSize(TabBar.Frame.Width, TabBar.Frame.Height));
+            TabBar.BackgroundImage = image;
+            TabBar.BarStyle = UIBarStyle.Black;
+            //TabBar.UnselectedItemTintColor = UIColor.FromRGBA(255, 255, 255, 150);
+            
+        }
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            
+        }
+    }
+
     public class CustomNavigationPage : NavigationRenderer
     {
         protected override void OnElementChanged(VisualElementChangedEventArgs e)
@@ -51,7 +98,7 @@ namespace SalveminiApp.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            //NavigationBar.ShadowImage = new UIImage();
+            NavigationBar.ShadowImage = new UIImage();
             NavigationBar.Translucent = false;
            
         }
@@ -88,8 +135,8 @@ namespace SalveminiApp.iOS
                 Frame = rect,
                 Colors = new CGColor[]
                 {
-                    Color.White.ToCGColor(),
-                    Color.Transparent.ToCGColor()
+                    Xamarin.Forms.Color.White.ToCGColor(),
+                    Xamarin.Forms.Color.Transparent.ToCGColor()
                 },
                 CornerRadius = 0f
             };

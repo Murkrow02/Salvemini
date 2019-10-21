@@ -1,53 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage Title="Home" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SalveminiApp" x:Class="SalveminiApp.MainPage">
-    <!--ToolbarItems-->
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="settings" Clicked="PushToSettings" Priority="0" Order="Primary" />
-        <ToolbarItem Text="Vip" Clicked="PushToVip" Priority="0" Order="Primary" />
-    </ContentPage.ToolbarItems>
-
-    <StackLayout Padding="15,10,15,0" Spacing="15">
-
+<ContentPage x:Name="page" BackgroundColor="{x:Static local:Styles.BGColor}" Title="Home" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SalveminiApp" x:Class="SalveminiApp.MainPage">
+    <!--Navigation Bar-->
+    <NavigationPage.TitleView>
+        <Grid HorizontalOptions="FillAndExpand">
+            <Label Text="Lunedì" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" />
+            <Frame HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="Red" HasShadow="False" HeightRequest="35" WidthRequest="35" Padding="0" CornerRadius="17.5" />
+        </Grid>
+    </NavigationPage.TitleView>
+    <!--Layout-->
+    <StackLayout Padding="15,10,15,20" Spacing="15">
         <!--Orario-->
-        <StackLayout x:Name="orarioLayout" VerticalOptions="Start">
-            <!--Header-->
-            <StackLayout Orientation="Horizontal">
-                <!--Oggi + arrow-->
-                <StackLayout Orientation="Horizontal" Spacing="1">
-                    <Label Text="Oggi" TextColor="{x:Static local:Styles.TextGray}" VerticalTextAlignment="Center" FontSize="Large" HorizontalTextAlignment="Center" x:Name="orarioDay" />
-                    <iconize:IconButton Text="fas-caret-down" TextColor="{x:Static local:Styles.TextGray}" FontSize="Large" x:Name="arrowDown" Clicked="ChangeDay_Clicked" />
+        <Frame IsClippedToBounds="True" BackgroundColor="White" Padding="0" CornerRadius="15" HasShadow="False">
+            <StackLayout Padding="20, 0" x:Name="orarioLayout" BackgroundColor="White" VerticalOptions="Start">
+                <!--Header-->
+                <StackLayout Orientation="Horizontal" Margin="-5, 0">
+                    <!--Oggi + arrow-->
+                    <StackLayout Orientation="Horizontal" Spacing="1">
+                        <Label Text="Oggi" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" x:Name="orarioDay" />
+                        <iconize:IconButton Text="fas-caret-down" TextColor="{x:Static local:Styles.TextColor}" FontSize="Large" x:Name="arrowDown" Clicked="ChangeDay_Clicked" />
+                    </StackLayout>
+                    <!--Clock icon-->
+                    <iconize:IconLabel Text="fas-clock" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="{x:Static local:Styles.TextColor}" />
                 </StackLayout>
-                <!--Clock icon-->
-                <iconize:IconLabel Text="fas-clock" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="{x:Static local:Styles.TextColor}" />
-            </StackLayout>
-            <ListView IsEnabled="False" SeparatorVisibility="None" Footer=" " x:Name="orarioList" HasUnevenRows="true">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell IsEnabled="False">
-                            <StackLayout Orientation="Horizontal">
-                                <!--Ora-->
-                                <StackLayout Padding="0, 10">
-                                    <Label FontSize="Small" HorizontalOptions="Start" Text="{Binding oraLezione}" TextColor="{x:Static local:Styles.TextGray}" VerticalOptions="Start" />
+                <!--Lista Materie-->
+                <ListView HeightRequest="{Binding Path=Height, Source={x:Reference page}}" IsEnabled="False" SeparatorVisibility="None" Footer=" " x:Name="orarioList" HasUnevenRows="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell IsEnabled="False">
+                                <StackLayout Orientation="Horizontal">
+                                    <!--Ora-->
+                                    <StackLayout Padding="0, 10">
+                                        <Label FontSize="Small" HorizontalOptions="Start" Text="{Binding oraLezione}" TextColor="{x:Static local:Styles.TextGray}" VerticalOptions="Start" />
+                                    </StackLayout>
+                                    <!--Materia-->
+                                    <Frame HasShadow="False" BackgroundColor="{Binding Colore}" CornerRadius="{Binding OrarioFrameRadius}" Margin="{Binding OrarioFrameMargin}" Padding="10, 0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="{Binding OrarioFrameHeight}">
+                                        <Label TextColor="White" VerticalOptions="Center" Text="{Binding Materia}" />
+                                    </Frame>
                                 </StackLayout>
-                                <!--Materia-->
-                                <Frame HasShadow="False" BackgroundColor="{Binding Colore}" CornerRadius="{Binding OrarioFrameRadius}" Margin="{Binding OrarioFrameMargin}" Padding="10, 0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="{Binding OrarioFrameHeight}">
-                                    <Label TextColor="White" VerticalOptions="Center" Text="{Binding Materia}" />
-                                </Frame>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Frame>
         <!--WidgetList-->
-        <CollectionView  VerticalOptions="StartAndExpand" x:Name="widgetCollection" Margin="-15,0" HorizontalScrollBarVisibility="Never">
+        <CollectionView  VerticalOptions="End" x:Name="widgetCollection" Margin="-15,0" HorizontalScrollBarVisibility="Never">
             <CollectionView.ItemsLayout>
                 <ListItemsLayout Orientation="Horizontal">
                 </ListItemsLayout>
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <local:WidgetGradient Margin="5,10" Title="{Binding Title}" SubTitle="{Binding SubTitle}" Icon="{Binding Icon}" StartColor="{Binding StartColor}" EndColor="{Binding EndColor}" Push="{Binding Push}">
+                    <local:WidgetGradient Margin="5, 10" Title="{Binding Title}" SubTitle="{Binding SubTitle}" Icon="{Binding Icon}" StartColor="{Binding StartColor}" EndColor="{Binding EndColor}" Push="{Binding Push}">
                         <local:WidgetGradient.GestureRecognizers>
                             <TapGestureRecognizer Tapped="widget_Tapped" NumberOfTapsRequired="1" />
                         </local:WidgetGradient.GestureRecognizers>
@@ -57,10 +61,10 @@
         </CollectionView>
 
         <!--Ad-->
-        <Frame>
-            <Label Text="PROVA" HorizontalTextAlignment="Center"/>
-        </Frame>
-        
+        <!--<Frame>
+            <Label Text="PROVA" HorizontalTextAlignment="Center" />
+        </Frame>-->
+
     </StackLayout>
 
 </ContentPage>

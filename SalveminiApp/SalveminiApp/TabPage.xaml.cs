@@ -20,7 +20,7 @@ namespace SalveminiApp
         public static Helpers.CustomNavigationPage Home = new Helpers.CustomNavigationPage(new MainPage())
         {
             BarTextColor = Styles.PrimaryColor,
-            BarBackgroundColor = Color.White,
+            BarBackgroundColor = Styles.BGColor,
             Title = "Home",
             IconImageSource = "tabBarHome.png"
         };
@@ -49,7 +49,7 @@ namespace SalveminiApp
             CarouselHome.Title = "Home";
 
             //Initialize Bar
-            BarTextColor = Styles.PrimaryColor;
+            BarTextColor = Styles.TextColor;
 
 
             //Add Children
@@ -59,7 +59,7 @@ namespace SalveminiApp
 
 
 #if __IOS__
-            SelectedTabColor = Styles.PrimaryColor;
+            SelectedTabColor = Styles.TextColor;
 #endif
 #if __ANDROID__
             BarTextColor = Color.White;

@@ -1,7 +1,7 @@
 [
       {
-         "Docente":"Romano L.",
-         "Materia":"Letteratura",
+         "Docente":"Di Maggio",
+         "Materia":"Inglese",
          "Sede":"Sede centrale",
          "Giorno" : 1,
          "Ora" : 1
@@ -40,13 +40,6 @@
          "Sede":"Sede centrale",
          "Giorno" : 1,
          "Ora" : 3
-      },
-{
-         "Docente":"Romano L.",
-         "Materia":"Letteratura",
-         "Sede":"Sede centrale",
-         "Giorno" : 1,
-         "Ora" : 1
       },
       {
          "Docente":"Celotto",

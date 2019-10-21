@@ -23,5 +23,8 @@ namespace SalveminiApp
         //Vip primary
         public static Color VipPrimary = Color.FromHex("#FFD023");
 
+        //Grey BG
+        public static Color BGColor = Color.FromHex("#F3F4F7");
+
     }
 }

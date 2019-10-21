@@ -250,6 +250,7 @@
     <BundleResource Include="Resources\iconize-fontawesome-pro-light.ttf" />
     <BundleResource Include="Resources\iconize-fontawesome-pro-regular.ttf" />
     <BundleResource Include="Resources\iconize-fontawesome-pro-solid.ttf" />
+    <BundleResource Include="Resources\bbar.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lotties\" />

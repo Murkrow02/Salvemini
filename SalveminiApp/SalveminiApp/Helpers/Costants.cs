@@ -20,6 +20,7 @@ namespace SalveminiApp
             {"Fisica", "#7D77FF" },
             {"Arte Teoria", "#FFBB4E" },
             {"Filosofia", "#FF7064"},
+            {"Inglese", "#EA5AEA"},
         };
 
         public static Dictionary<int, string> Ore = new Dictionary<int, string>
