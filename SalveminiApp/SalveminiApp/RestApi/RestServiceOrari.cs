@@ -97,7 +97,7 @@ namespace SalveminiApp.RestApi
                     lezione.OrarioFrameHeight = (App.ScreenHeight / 24) * lezione.numOre;
 
                     //Setup Corner Radius
-                    lezione.OrarioFrameRadius = lezione.numOre > 1 ? 20 : 15;
+                    lezione.OrarioFrameRadius = lezione.numOre > 1 ? 12 : 8;
                 }
                 Lezioni = Lezioni.Where(x => x.toRemove == false).ToList();
             }

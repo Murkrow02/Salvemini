@@ -21,33 +21,17 @@ namespace SalveminiApp.RestApi.Models
         {
             get
             {
-                var value = new Thickness(10, 5);
+                var value = new Thickness(10, 2);
 
                 return value;
             }
         }
 
-        public string[] Colors
+        public string Colore
         {
             get
             {
-                return Costants.Colori[Materia];
-            }
-        }
-
-        public Color StartColor
-        {
-            get
-            {
-                return Color.FromHex(Colors[0]);
-            }
-        }
-
-        public Color EndColor
-        {
-            get
-            {
-                return Color.FromHex(Colors[1]);
+                return Costants.Colore[Materia];
             }
         }
 

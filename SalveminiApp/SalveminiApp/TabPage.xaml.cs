@@ -17,7 +17,7 @@ namespace SalveminiApp
     {
         //Home
         public static CarouselPage CarouselHome = new CarouselPage();
-        public static Helpers.CustomNavigationPage Home = new Helpers.CustomNavigationPage(CarouselHome)
+        public static Helpers.CustomNavigationPage Home = new Helpers.CustomNavigationPage(new MainPage())
         {
             BarTextColor = Styles.PrimaryColor,
             BarBackgroundColor = Color.White,

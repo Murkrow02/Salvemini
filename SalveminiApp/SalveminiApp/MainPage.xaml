@@ -1,117 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage Title="Home" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SalveminiApp" x:Class="SalveminiApp.MainPage">
+<ContentPage Title="Home" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SalveminiApp" x:Class="SalveminiApp.MainPage">
     <!--ToolbarItems-->
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="settings" Clicked="PushToSettings" Priority="0" Order="Primary" />
         <ToolbarItem Text="Vip" Clicked="PushToVip" Priority="0" Order="Primary" />
     </ContentPage.ToolbarItems>
 
-    <AbsoluteLayout>
-        <StackLayout Padding="20, 10, 20, 0" x:Name="mainLayout" Spacing="15" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+    <StackLayout Padding="15,10,15,0" Spacing="15">
 
-
-            <CollectionView x:Name="widgetCollection">
-                <CollectionView.ItemTemplate>
+        <!--Orario-->
+        <StackLayout x:Name="orarioLayout" VerticalOptions="Start">
+            <!--Header-->
+            <StackLayout Orientation="Horizontal">
+                <!--Oggi + arrow-->
+                <StackLayout Orientation="Horizontal" Spacing="1">
+                    <Label Text="Oggi" TextColor="{x:Static local:Styles.TextGray}" VerticalTextAlignment="Center" FontSize="Large" HorizontalTextAlignment="Center" x:Name="orarioDay" />
+                    <iconize:IconButton Text="fas-caret-down" TextColor="{x:Static local:Styles.TextGray}" FontSize="Large" x:Name="arrowDown" Clicked="ChangeDay_Clicked" />
+                </StackLayout>
+                <!--Clock icon-->
+                <iconize:IconLabel Text="fas-clock" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="{x:Static local:Styles.TextColor}" />
+            </StackLayout>
+            <ListView IsEnabled="False" SeparatorVisibility="None" Footer=" " x:Name="orarioList" HasUnevenRows="true">
+                <ListView.ItemTemplate>
                     <DataTemplate>
-                        <local:WidgetGradient Title="{Binding Title}" SubTitle="{Binding SubTitle}" Icon="{Binding Icon}"  StartColor="{Binding StartColor}" EndColor="{Binding EndColor}"/>
+                        <ViewCell IsEnabled="False">
+                            <StackLayout Orientation="Horizontal">
+                                <!--Ora-->
+                                <StackLayout Padding="0, 10">
+                                    <Label FontSize="Small" HorizontalOptions="Start" Text="{Binding oraLezione}" TextColor="{x:Static local:Styles.TextGray}" VerticalOptions="Start" />
+                                </StackLayout>
+                                <!--Materia-->
+                                <Frame HasShadow="False" BackgroundColor="{Binding Colore}" CornerRadius="{Binding OrarioFrameRadius}" Margin="{Binding OrarioFrameMargin}" Padding="10, 0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="{Binding OrarioFrameHeight}">
+                                    <Label TextColor="White" VerticalOptions="Center" Text="{Binding Materia}" />
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
                     </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-
-            <!--Pubblicità-->
-            <local:ShadowFrame Padding="0" x:Name="adsFrame" CornerRadius="20">
-                <Frame HasShadow="false" Padding="0" IsClippedToBounds="true" CornerRadius="20">
-                    <Image Source="ad.png" />
-                </Frame>
-            </local:ShadowFrame>
-            <StackLayout Orientation="Horizontal" Spacing="10">
-                <!--Calendario-->
-                <local:ShadowFrame x:Name="todayFrame" Padding="10" CornerRadius="20" HorizontalOptions="Start">
-                    <StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Image x:Name="calendarImage" Source="calendar.png" />
-                            <Label Text="Oggi" FontSize="18" TextColor="{x:Static local:Styles.TextGray}" />
-                        </StackLayout>
-                        <Label Text="Oggi hai preso 7 di matematica" />
-                        <Label Text="Mostra Altro" VerticalOptions="EndAndExpand" FontSize="13" HorizontalOptions="EndAndExpand" TextColor="{x:Static local:Styles.TextGray}" />
-                    </StackLayout>
-                </local:ShadowFrame>
-                <!--Bus e Treni-->
-                <local:ShadowFrame BackgroundColor="White" x:Name="trainFrame" Padding="10" CornerRadius="20" HorizontalOptions="EndAndExpand">
-                    <local:ShadowFrame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="busTrains_Tapped" />
-                    </local:ShadowFrame.GestureRecognizers>
-                    <StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Image x:Name="trainImage" Source="train.png" />
-                            <Label Text="Bus e Treni" FontSize="18" TextColor="{x:Static local:Styles.TextGray}" />
-                        </StackLayout>
-                        <Label x:Name="nextTrainLabel" />
-                        <Label Text="Mostra Altro" VerticalOptions="EndAndExpand" FontSize="13" HorizontalOptions="EndAndExpand" TextColor="{x:Static local:Styles.TextGray}" />
-                    </StackLayout>
-                </local:ShadowFrame>
-            </StackLayout>
-            <StackLayout Spacing="0">
-                <!--Avvisi-->
-                <StackLayout Spacing="0" x:Name="avvisiLayout" VerticalOptions="FillAndExpand">
-                    <StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Image Source="advice.png" x:Name="adviceImage" />
-                            <Label Text="Avvisi" TextColor="{x:Static local:Styles.TextGray}" FontSize="Large" />
-                        </StackLayout>
-                        <ContentView x:Name="labelView" Margin="-20, 0">
-                            <Grid>
-                                <ScrollView x:Name="avvisiScroll" Orientation="Horizontal" HorizontalOptions="FillAndExpand" HorizontalScrollBarVisibility="Never">
-                                    <Label x:Name="avvisiLabel" MaxLines="1" />
-                                </ScrollView>
-                                <local:TransparentGradient HorizontalOptions="Start" Padding="20, 0" HasShadow="false" CornerRadius="0" />
-                                <local:TransparentGradient HorizontalOptions="End" Rotation="180" Padding="20, 0" HasShadow="false" CornerRadius="0" />
-                            </Grid>
-                        </ContentView>
-                    </StackLayout>
-                    <Button Text="Mostra tutti gli avvisi" Clicked="Avvisi_Clicked" BackgroundColor="White" HorizontalOptions="End" VerticalOptions="Start" TextColor="{x:Static local:Styles.TextGray}" />
-                </StackLayout>
-
-                <!--Orario-->
-                <StackLayout x:Name="orarioLayout" VerticalOptions="Start">
-                    <StackLayout Orientation="Horizontal">
-                        <Image Source="clock.png" x:Name="clockImage" />
-                        <StackLayout Orientation="Horizontal" Spacing="1">
-                            <Label Text="Orario - " TextColor="{x:Static local:Styles.TextGray}" VerticalTextAlignment="Center" FontSize="Large" />
-                            <Label x:Name="timeTablesDay" VerticalTextAlignment="Center" FontAttributes="Bold" />
-                        </StackLayout>
-                    </StackLayout>
-                    <ListView SeparatorVisibility="None" VerticalOptions="End" Footer=" " x:Name="orarioList" HasUnevenRows="true">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell IsEnabled="False">
-                                    <StackLayout Orientation="Horizontal">
-                                        <StackLayout Padding="0, 10">
-                                            <Label FontSize="Small" HorizontalOptions="Start" Text="{Binding oraLezione}" TextColor="{x:Static local:Styles.TextGray}" VerticalOptions="Start" />
-                                        </StackLayout>
-                                        <yummy:PancakeView BackgroundGradientAngle="90" BackgroundGradientStartColor="{Binding StartColor}" BackgroundGradientEndColor="{Binding EndColor}" CornerRadius="{Binding OrarioFrameRadius}" Margin="{Binding OrarioFrameMargin}" Padding="10, 0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="{Binding OrarioFrameHeight}">
-                                            <Label TextColor="White" VerticalOptions="Center" Text="{Binding Materia}" />
-                                        </yummy:PancakeView>
-                                    </StackLayout>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </StackLayout>
-            </StackLayout>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
+        <!--WidgetList-->
+        <CollectionView  VerticalOptions="StartAndExpand" x:Name="widgetCollection" Margin="-15,0" HorizontalScrollBarVisibility="Never">
+            <CollectionView.ItemsLayout>
+                <ListItemsLayout Orientation="Horizontal">
+                </ListItemsLayout>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <local:WidgetGradient Margin="5,10" Title="{Binding Title}" SubTitle="{Binding SubTitle}" Icon="{Binding Icon}" StartColor="{Binding StartColor}" EndColor="{Binding EndColor}" Push="{Binding Push}">
+                        <local:WidgetGradient.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="widget_Tapped" NumberOfTapsRequired="1" />
+                        </local:WidgetGradient.GestureRecognizers>
+                    </local:WidgetGradient>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-        <!--TipBottom-->
-        <ContentView AbsoluteLayout.LayoutBounds=".9,.97,.8,.1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent">
-            <local:ShadowFrame x:Name="tipBottom" Padding="10" CornerRadius="10" HorizontalOptions="End" VerticalOptions="Center">
-                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="End" Orientation="Horizontal">
-                    <Label Text="Scorri per vedere altro" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Gray" />
-                    <lottie:AnimationView Rotation="90" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" x:Name="animationView" Animation="Lotties/animArrow.json" WidthRequest="30" HeightRequest="30" Loop="true" AutoPlay="true" />
-
-                </StackLayout>
-            </local:ShadowFrame>
-        </ContentView >
-
-    </AbsoluteLayout>
+        <!--Ad-->
+        <Frame>
+            <Label Text="PROVA" HorizontalTextAlignment="Center"/>
+        </Frame>
+        
+    </StackLayout>
 
 </ContentPage>

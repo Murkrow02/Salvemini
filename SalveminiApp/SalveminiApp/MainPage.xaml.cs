@@ -9,6 +9,8 @@ using Xamarin.Essentials;
 using UserNotifications;
 using Plugin.Toasts;
 using Rg.Plugins.Popup.Extensions;
+using Forms9Patch;
+using System.Globalization;
 
 namespace SalveminiApp
 {
@@ -21,27 +23,25 @@ namespace SalveminiApp
         public RestApi.Models.Index Index = new RestApi.Models.Index();
         public RestApi.Models.Treno NextTrain = new RestApi.Models.Treno();
 
+        //Giorni popup
+        BubblePopup dayPopOver = new Helpers.PopOvers().defaultPopOver;
+        Xamarin.Forms.ListView giorniList = new Xamarin.Forms.ListView { VerticalScrollBarVisibility = ScrollBarVisibility.Never, Footer = "", BackgroundColor = Color.Transparent, SeparatorColor = Color.Gray, WidthRequest = App.ScreenWidth / 4, HeightRequest = App.ScreenHeight / 5 };
+
+
         public MainPage()
         {
             InitializeComponent();
 
             //Initialize interface
-            adsFrame.HeightRequest = App.ScreenHeight / 14;
-            todayFrame.WidthRequest = App.ScreenWidth / 2.6;
-            calendarImage.WidthRequest = todayFrame.WidthRequest / 9;
-            trainFrame.WidthRequest = App.ScreenWidth / 2.6;
-            trainImage.WidthRequest = todayFrame.WidthRequest / 9;
-            adviceImage.WidthRequest = App.ScreenWidth / 22;
-            clockImage.WidthRequest = App.ScreenWidth / 22;
-            labelView.HeightRequest = App.ScreenHeight / 10;
-            tipBottom.TranslationY = App.ScreenHeight / 3;
+            var uno = new WidgetGradient { Title = "Prova 1", SubTitle = "<p>Il prossimo treno per <strong>Sorrento&nbsp;</strong>partirà alle <strong>10:50</strong> da <strong>Napoli</strong></p>", Icon = "calendar", StartColor = "FF7272", EndColor = "FACA6F" };
+            var due = new WidgetGradient { Title = "Prova 2", SubTitle = "asnaosfnoinOI", Icon = "train", StartColor = "A872FF", EndColor = "6F8AFA" };
+            var tre = new WidgetGradient { Title = "Prova 2", SubTitle = "asnaosfnoinOI", Icon = "train", StartColor = "000000", EndColor = "ffffff" };
 
-#if __IOS__
-            if (iOS.AppDelegate.HasNotch)
-            {
-                mainLayout.Spacing = 20;
-            }
-#endif
+            var lista = new List<WidgetGradient>();
+            lista.Add(uno);
+            lista.Add(due);
+            lista.Add(tre);
+            widgetCollection.ItemsSource = lista;
         }
 
         public async void getNextTrain()
@@ -54,7 +54,6 @@ namespace SalveminiApp
             nextTrainText.Spans.Add(new Span { Text = " parte alle " + NextTrain.Partenza + " da ", FontAttributes = FontAttributes.None });
             nextTrainText.Spans.Add(new Span { Text = Costants.Stazioni[NextTrain.Stazione], FontAttributes = FontAttributes.Bold });
 
-            nextTrainLabel.FormattedText = nextTrainText;
         }
 
         protected async override void OnAppearing()
@@ -62,13 +61,7 @@ namespace SalveminiApp
             base.OnAppearing();
 
 
-            var uno = new WidgetGradient { Title = "Prova 1", SubTitle = "asdansfoiasnioafssf", Icon = "calendar", StartColor = "FF7272", EndColor = "FACA6F" };
-            var due = new WidgetGradient { Title = "Prova 2", SubTitle = "asdansfoiasnioafssf", Icon = "train", StartColor = "A872FF", EndColor = "6F8AFA" };
-
-            var lista = new List<WidgetGradient>();
-            lista.Add(uno);
-            lista.Add(due);
-            widgetCollection.ItemsSource = lista;
+           
 
 
 
@@ -85,7 +78,7 @@ namespace SalveminiApp
             if (Orario != null)
             {
                 orarioList.ItemsSource = Orario;
-                timeTablesDay.Text = Costants.Giorni[Enum.GetName(typeof(DayOfWeek), Orario[0].Giorno)];
+                //timeTablesDay.Text = Costants.Giorni[Enum.GetName(typeof(DayOfWeek), Orario[0].Giorno)];
             }
 
             //Check Internet
@@ -106,7 +99,7 @@ namespace SalveminiApp
                     }
 
                     //Display string
-                    avvisiLabel.Text = stringToDisplay;
+                    //avvisiLabel.Text = stringToDisplay;
                 }
 
                 //Update orari
@@ -135,50 +128,12 @@ namespace SalveminiApp
                 var result = await notificator.Notify(options);
             }
 
-            if (!string.IsNullOrEmpty(avvisiLabel.Text))
-            {
-                //Alerts' Label starts to flow
-                flowLabel();
-            }
-
+        
            
-            //Show tip at bottom
-            await tipBottom.TranslateTo(0, 0, 1000, Easing.SpringOut);
 
         }
 
-        void flowLabel()
-        {
-            var speed = ((double)avvisiLabel.Text.Length / 10) * 1000 + 6000;
-            Point pointF = avvisiScroll.GetScrollPositionForElement(avvisiLabel, ScrollToPosition.End);
-            pointF.X += App.ScreenWidth * 2;
-            var animationF = new Animation(
-                callback: x => avvisiScroll.ScrollToAsync(x, pointF.Y, animated: false),
-                start: avvisiScroll.ScrollX,
-                end: pointF.X);
-            avvisiLabel.TranslationX = App.ScreenWidth;
-
-            animationF.Commit(
-            owner: this,
-            name: "ScrollF",
-            length: (uint)speed);
-
-            avvisiScroll.ScrollToAsync(0, 0, false);
-            avvisiLabel.TranslationX = App.ScreenWidth;
-
-            Device.StartTimer(new TimeSpan(0, 0, 0, 0, (int)speed + 1000), () =>
-            {
-                animationF.Commit(
-            owner: this,
-            name: "ScrollF",
-            length: (uint)speed);
-
-                avvisiScroll.ScrollToAsync(0, 0, false);
-                avvisiLabel.TranslationX = App.ScreenWidth;
-                return true;
-            });
-
-        }
+      
         void PushToSettings(object sender, System.EventArgs e)
         {
             //Navigation.PushPopupAsync(new SecondaryViews.SettingsPanel());
@@ -194,10 +149,80 @@ namespace SalveminiApp
         {
             Navigation.PushAsync(new SecondaryViews.BusAndTrains());
         }
-
         void Avvisi_Clicked(object sender, System.EventArgs e)
         {
             Navigation.PushModalAsync(new SecondaryViews.Avvisi());
+        }
+
+        void widget_Tapped(object sender, System.EventArgs e)
+        {
+            try
+            {
+                //Get push page from model
+                var widget = sender as WidgetGradient;
+
+                //Push to selected page
+                if(widget.Push != null)
+                Navigation.PushAsync(widget.Push);
+            }
+            catch(Exception ex)
+            {
+                //Page not set or some random error, sticazzi
+                return;
+            }
+            
+        }
+
+        void ChangeDay_Clicked(object sender, System.EventArgs e)
+        {
+            //Create layout
+            var stack = new Xamarin.Forms.StackLayout();
+            giorniList.ItemSelected += GiorniList_ItemSelected;
+            giorniList.ItemTemplate = new DataTemplate(() =>
+            {
+                var cell = new ViewCell();
+                var giorno = new Forms9Patch.Label { TextColor = Color.White, HorizontalTextAlignment = TextAlignment.Center, VerticalTextAlignment = TextAlignment.Center, MaxLines=1,AutoFit = AutoFit.Width };
+                cell.View = giorno;
+                giorno.SetBinding(Xamarin.Forms.Label.TextProperty, ".");
+                return cell;
+            });
+
+            var giorni = CultureInfo.CurrentCulture.DateTimeFormat.DayNames.ToList();
+            giorni.RemoveAt(0);
+            giorniList.ItemsSource = giorni;
+            stack.Children.Add(giorniList);
+
+
+            //Create popover
+            dayPopOver.Content = stack;
+            dayPopOver.PointerDirection = PointerDirection.Up;
+            dayPopOver.PreferredPointerDirection = PointerDirection.Up;
+            dayPopOver.Target = arrowDown;
+            dayPopOver.BackgroundColor = Color.FromHex("202020");
+            dayPopOver.IsVisible = true;
+        }
+
+        private async void GiorniList_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            //Deselect Animation
+            if (e.SelectedItem == null)
+                return;
+
+            giorniList.SelectedItem = null;
+            var giorno = e.SelectedItem as string;
+
+            var giorni = CultureInfo.CurrentCulture.DateTimeFormat.DayNames.ToList();
+            var intGiorno = giorni.IndexOf(giorno);
+
+            //Get timetables
+            Orario = await App.Orari.GetOrario("3FCAM", intGiorno);
+
+            if (Orario != null)
+            {
+                orarioList.ItemsSource = Orario;
+            }
+
+            dayPopOver.IsVisible = false;
         }
 
     }

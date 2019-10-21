@@ -23,7 +23,7 @@ namespace SalveminiApp
             }
         }
 
-        //Subtitle
+        //SubTitle
         public static readonly BindableProperty SubTitleProperty = BindableProperty.Create(nameof(SubTitle), typeof(string), typeof(WidgetGradient), default(string), Xamarin.Forms.BindingMode.OneWay);
         public string SubTitle
         {
@@ -103,8 +103,9 @@ namespace SalveminiApp
         {
             InitializeComponent();
 
-            //Set icon width
+            //Set dimensions
             iconImg.WidthRequest = App.ScreenWidth / 21;
+            view.WidthRequest = App.ScreenWidth / 3;
         }
 
         //Update values
@@ -112,41 +113,50 @@ namespace SalveminiApp
         {
             base.OnPropertyChanged(propertyName);
 
-            //Title
-            if (propertyName == TitleProperty.PropertyName)
+            try
             {
-                TitleLbl.Text = Title;
+                //Title
+                if (propertyName == TitleProperty.PropertyName)
+                {
+                    TitleLbl.Text = Title;
+                }
+
+                //SubTitle
+                if (propertyName == SubTitleProperty.PropertyName)
+                {
+                    SubTitleLbl.HtmlText = SubTitle;
+                }
+
+                //Icon
+                if (propertyName == IconProperty.PropertyName)
+                {
+                    iconImg.Source = Icon;
+                }
+
+                //StartColor
+                if (propertyName == StartColorProperty.PropertyName)
+                {
+                    view.BackgroundGradientStartColor = Color.FromHex(StartColor);
+                }
+
+                //EndColor
+                if (propertyName == EndColorProperty.PropertyName)
+                {
+                    view.BackgroundGradientEndColor = Color.FromHex(EndColor);
+                }
+
+                //Push
+                if (propertyName == PushProperty.PropertyName)
+                {
+                    pushPage = Push;
+                }
+            }
+            catch
+            {
+                //Boh per sicurezza a volte fa cose strane
+                return;
             }
 
-            //SubTitle
-            if (propertyName == SubTitleProperty.PropertyName)
-            {
-                SubTitleLbl.Text = SubTitle;
-            }
-
-            //Icon
-            if (propertyName == IconProperty.PropertyName)
-            {
-                iconImg.Source = Icon;
-            }
-
-            //StartColor
-            if (propertyName == StartColorProperty.PropertyName)
-            {
-                view.BackgroundGradientStartColor = Color.FromHex(StartColor);
-            }
-
-            //EndColor
-            if (propertyName == EndColorProperty.PropertyName)
-            {
-                view.BackgroundGradientEndColor = Color.FromHex(EndColor);
-            }
-
-            //Push
-            if (propertyName == PushProperty.PropertyName)
-            {
-                pushPage = Push;
-            }
         }
     }
 }
