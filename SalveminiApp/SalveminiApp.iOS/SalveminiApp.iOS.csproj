@@ -205,6 +205,9 @@
     <PackageReference Include="Xam.Plugin.Iconize.FontAwesomePro">
       <Version>3.5.0.129</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfBadgeView">
+      <Version>17.3.0.19</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\argoLogo.png" />
@@ -251,6 +254,8 @@
     <BundleResource Include="Resources\iconize-fontawesome-pro-regular.ttf" />
     <BundleResource Include="Resources\iconize-fontawesome-pro-solid.ttf" />
     <BundleResource Include="Resources\bbar.jpg" />
+    <BundleResource Include="Lotties\redPulse.json" />
+    <BundleResource Include="Resources\adTest.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lotties\" />

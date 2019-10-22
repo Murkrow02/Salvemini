@@ -77,6 +77,7 @@ namespace SalveminiApp.iOS
             Syncfusion.SfChart.XForms.iOS.Renderers.SfChartRenderer.Init();
             Syncfusion.XForms.iOS.TextInputLayout.SfTextInputLayoutRenderer.Init();
             Syncfusion.XForms.iOS.PopupLayout.SfPopupLayoutRenderer.Init();
+            Syncfusion.XForms.iOS.BadgeView.SfBadgeViewRenderer.Init();
             Syncfusion.SfChart.XForms.iOS.Renderers.SfChartRenderer.Init();
             SegmentedControlRenderer.Initialize();
             CardsViewRenderer.Preserve();

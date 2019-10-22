@@ -38,6 +38,21 @@ namespace SalveminiApp
             }
         }
 
+        //Badge
+        public static readonly BindableProperty BadgeProperty = BindableProperty.Create(nameof(Badge), typeof(string), typeof(WidgetGradient), default(string), Xamarin.Forms.BindingMode.OneWay);
+        public string Badge
+        {
+            get
+            {
+                return (string)GetValue(BadgeProperty);
+            }
+
+            set
+            {
+                SetValue(BadgeProperty, value);
+            }
+        }
+
         //Icon
         public static readonly BindableProperty IconProperty = BindableProperty.Create(nameof(Icon), typeof(string), typeof(WidgetGradient), default(string), Xamarin.Forms.BindingMode.OneWay);
         public string Icon
@@ -98,6 +113,21 @@ namespace SalveminiApp
             }
         }
 
+        //Order
+        public static readonly BindableProperty OrderProperty = BindableProperty.Create(nameof(Order), typeof(int), typeof(WidgetGradient), default(int), Xamarin.Forms.BindingMode.OneWay);
+        public int Order
+        {
+            get
+            {
+                return (int)GetValue(OrderProperty);
+            }
+
+            set
+            {
+                SetValue(OrderProperty, value);
+            }
+        }
+
 
         public WidgetGradient()
         {
@@ -106,6 +136,8 @@ namespace SalveminiApp
             //Set dimensions
             iconImg.WidthRequest = App.ScreenWidth / 21;
             view.WidthRequest = App.ScreenWidth / 3;
+            animationView.WidthRequest = App.ScreenWidth / 10;
+            animationView.HeightRequest = App.ScreenWidth / 10;
         }
 
         //Update values
@@ -125,6 +157,15 @@ namespace SalveminiApp
                 if (propertyName == SubTitleProperty.PropertyName)
                 {
                     SubTitleLbl.HtmlText = SubTitle;
+                }
+
+                //Badge
+                if (propertyName == BadgeProperty.PropertyName)
+                {
+                    if (Badge == "si")
+                        animationView.IsVisible = true;
+                    else
+                        animationView.IsVisible = false;
                 }
 
                 //Icon
