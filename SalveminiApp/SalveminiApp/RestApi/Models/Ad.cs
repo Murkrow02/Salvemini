@@ -9,5 +9,13 @@ namespace SalveminiApp.RestApi.Models
         public string Immagine { get; set; }
         public string Url { get; set; }
         public int Tipo { get; set; }
+
+        public string FullImmagine
+        {
+            get
+            {
+                return Costants.Uri("images/ads/") + Immagine;
+            }
+        }
     }
 }

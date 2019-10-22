@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns:local="clr-namespace:SalveminiApp" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.BusETreni.Treni">
+<ContentPage xmlns:local="clr-namespace:SalveminiApp" xmlns:control="clr-namespace:Plugin.Segmented.Control;assembly=Plugin.Segmented" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.BusETreni.Treni">
     <ContentPage.Content>
         <yummy:PancakeView BackgroundGradientStartColor="#FA8265" BackgroundGradientEndColor="#FF430A">
             <StackLayout Spacing="50" x:Name="mainLayout" Padding="20, 10">
@@ -13,14 +13,17 @@
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label HorizontalOptions="Start" Text="Da:" TextColor="White" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
                         <Frame x:Name="stationFrame" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, -1">
-                            <Picker Unfocused="picker_Unfocused" SelectedIndexChanged="Station_Selected" x:Name="stationPicker" HeightRequest="50" TitleColor="#EAEAEA" FontAttributes="Bold" HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
+                            <Picker Unfocused="picker_Unfocused" x:Name="stationPicker" HeightRequest="50" TitleColor="#EAEAEA" FontAttributes="Bold" HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
                         </Frame>
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label HorizontalOptions="Start" Text="Verso:" TextColor="White" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
-                        <Frame x:Name="directonFrame" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, -1">
-                            <Picker Unfocused="picker_Unfocused" SelectedIndexChanged="Direction_Selected" x:Name="directionPicker" HeightRequest="50" TitleColor="#EAEAEA" FontAttributes="Bold" HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
-                        </Frame>
+                        <control:SegmentedControl OnSegmentSelected="TrenoSegment_OnSegmentSelected" SelectedSegment="0" x:Name="TrenoSegment" TintColor="{x:Static local:Styles.Apple}" SelectedTextColor="{x:Static local:Styles.TextColor}" >
+                        <control:SegmentedControl.Children>
+                            <control:SegmentedControlOption Text="Sorrento" />
+                            <control:SegmentedControlOption Text="Napoli" />
+                        </control:SegmentedControl.Children>
+                    </control:SegmentedControl>
                     </StackLayout>
                 </StackLayout>
                 <Frame HasShadow="False" Padding="0" IsClippedToBounds="True" VerticalOptions="FillAndExpand" Margin="20 ,0" CornerRadius="20">

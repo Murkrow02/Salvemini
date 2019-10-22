@@ -74,7 +74,7 @@
 
 
         <!--Ad-->
-        <StackLayout VerticalOptions="End" x:Name="adLayout" >
+        <StackLayout VerticalOptions="End" x:Name="adLayout" Opacity="0" Spacing="2">
             <!--Ad header-->
             <StackLayout Orientation="Horizontal">
                 <Label Text="Sponsorizzato -" HorizontalOptions="Start" VerticalTextAlignment="Center" TextColor="{x:Static local:Styles.TextColor}" />
@@ -83,7 +83,7 @@
             </StackLayout>
             <!--Image-->
             <Frame HasShadow="False" CornerRadius="8" IsClippedToBounds="True" Padding="0">
-                <ffimageloading:CachedImage x:Name="adImage" Source="adTest"/>
+                <ffimageloading:CachedImage x:Name="adImage"/>
             </Frame>
             <!--Frame tapped-->
             <StackLayout.GestureRecognizers>
