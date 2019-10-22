@@ -34,6 +34,7 @@ namespace SalveminiApp
 
             //Initialize interface
             todayLbl.Text = DateTime.Now.ToString("dddd");
+            //widgetsLayout.HeightRequest = App.ScreenHeight / 5;
 
             //Create daylist for orario
             giorniList.ItemSelected += GiorniList_ItemSelected;
@@ -132,7 +133,7 @@ namespace SalveminiApp
                         adTitle.Text = Ad.Nome;
                         adImage.Source = Ad.Immagine;
                         adImage.Source = Ad.Immagine;
-                        await adBanner.FadeTo(1, 300, Easing.CubicInOut);
+                        await adLayout.FadeTo(1, 300, Easing.CubicInOut);
                     }
                 }
 
@@ -255,10 +256,14 @@ namespace SalveminiApp
             if (Orario != null)
             {
                 orarioList.ItemsSource = Orario;
-                double height = 0;
-                height = Orario[0].OrarioFrameHeight * Orario.Count + (4 * Orario.Count) ;
-                orarioFrame.HeightRequest = height + orarioHeader.Height;
+                orarioList.HeightRequest = Orario[0].OrarioFrameHeight * Orario.Sum(x => x.numOre) + (4 * Orario.Count);
+                orarioFrame.HeightRequest = orarioList.HeightRequest + orarioHeader.Height;
 
+                if (orarioFrame.HeightRequest > fullLayout.Height * 0.4)
+                {
+                    orarioFrame.HeightRequest = fullLayout.Height * 0.4;
+                }
+                widgetsLayout.HeightRequest = fullLayout.Height - orarioFrame.HeightRequest - adLayout.Height - 65;
             }
 
         }

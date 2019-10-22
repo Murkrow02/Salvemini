@@ -8,9 +8,9 @@
         </Grid>
     </NavigationPage.TitleView>
     <!--Layout-->
-    <StackLayout Padding="15,10,15,20" Spacing="15">
+    <StackLayout Padding="15,10,15,20" Spacing="15" x:Name="fullLayout">
         <!--Orario-->
-        <Frame x:Name="orarioFrame" Padding="20, 0" VerticalOptions="Start" IsClippedToBounds="True" BackgroundColor="White" CornerRadius="15" HasShadow="False">
+        <Frame x:Name="orarioFrame" Padding="20, 0,20,5" VerticalOptions="Start" IsClippedToBounds="True" BackgroundColor="White" CornerRadius="15" HasShadow="False">
             <StackLayout  x:Name="orarioLayout" BackgroundColor="White" Spacing="0">
                 <!--Header-->
                 <StackLayout Orientation="Horizontal" Margin="-5, 0" x:Name="orarioHeader">
@@ -23,7 +23,7 @@
                     <iconize:IconLabel Text="fas-clock" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="{x:Static local:Styles.TextColor}" />
                 </StackLayout>
                 <!--Lista Materie-->
-                <ListView SeparatorVisibility="None" Footer=" " x:Name="orarioList" HasUnevenRows="true">
+                <ListView VerticalOptions="Start" SeparatorVisibility="None" Footer=" " x:Name="orarioList" HasUnevenRows="true">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell IsEnabled="False">
@@ -44,7 +44,7 @@
             </StackLayout>
         </Frame>
         <!--WidgetList-->
-        <StackLayout VerticalOptions="End" IsVisible="false">
+        <StackLayout VerticalOptions="End"  x:Name="widgetsLayout">
             <!--Personalizza-->
             <StackLayout Orientation="Horizontal">
                 <Label Text="Personalizza" TextColor="{x:Static local:Styles.TextColor}" />
@@ -53,6 +53,7 @@
                     <TapGestureRecognizer Tapped="editWidget_Tapped" NumberOfTapsRequired="1" />
                 </StackLayout.GestureRecognizers>
             </StackLayout>
+
             <!--Widgets-->
             <CollectionView  x:Name="widgetCollection" Margin="-15,0" HorizontalScrollBarVisibility="Never">
                 <CollectionView.ItemsLayout>
@@ -73,7 +74,7 @@
 
 
         <!--Ad-->
-        <StackLayout VerticalOptions="End" x:Name="adBanner" >
+        <StackLayout VerticalOptions="End" x:Name="adLayout" >
             <!--Ad header-->
             <StackLayout Orientation="Horizontal">
                 <Label Text="Sponsorizzato -" HorizontalOptions="Start" VerticalTextAlignment="Center" TextColor="{x:Static local:Styles.TextColor}" />

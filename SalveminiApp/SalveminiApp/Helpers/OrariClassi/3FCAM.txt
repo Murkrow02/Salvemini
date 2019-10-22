@@ -13,14 +13,14 @@
          "Giorno" : 1,
          "Ora" : 4
       },
-      {
-         "Docente":"Iaccarino",
-         "Materia":"Arte Teoria",
+ {
+         "Docente":"Romano L.",
+         "Materia":"Letteratura",
          "Sede":"Sede centrale",
          "Giorno" : 1,
-         "Ora" : 5
+         "Ora" : 2
       },
-      {
+ {
          "Docente":"Romano L.",
          "Materia":"Letteratura",
          "Sede":"Sede centrale",
