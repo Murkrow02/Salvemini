@@ -12,9 +12,24 @@ namespace SalveminiApp.SecondaryViews
             InitializeComponent();
         }
 
-        void Trains_Tapped (object sender, EventArgs e)
+        void treni_tapped(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new BusETreni.Treni());
+        }
+
+        void bus_tapped(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new BusETreni.Treni());
+        }
+
+        void ali_tapped(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new BusETreni.Treni());
+        }
+
+        void changePref_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new FirstAccess.OrariTrasporti());
         }
     }
 }

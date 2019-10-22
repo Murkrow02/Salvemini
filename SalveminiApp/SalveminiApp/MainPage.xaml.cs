@@ -32,10 +32,7 @@ namespace SalveminiApp
         {
             InitializeComponent();
 
-            //Initialize interface
-            todayLbl.Text = DateTime.Now.ToString("dddd");
-            //widgetsLayout.HeightRequest = App.ScreenHeight / 5;
-
+          
             //Create daylist for orario
             giorniList.ItemSelected += GiorniList_ItemSelected;
             giorniList.ItemTemplate = new DataTemplate(() =>
@@ -57,7 +54,7 @@ namespace SalveminiApp
         public async Task<string> getNextTrain()
         {
             NextTrain = await App.Treni.GetNextTrain(Preferences.Get("savedStation", 0), Preferences.Get("savedDirection", true));
-            string result = "<p>Il prossimo treno per <strong>" + NextTrain.DirectionString + "</strong> partirà alle <strong>"+ NextTrain.Partenza +"</strong> da <strong>"+ NextTrain.Stazione +"</strong></p>";
+            string result = "<p>Il prossimo treno per <strong>" + NextTrain.DirectionString + "</strong> partirà alle <strong>"+ NextTrain.Partenza +"</strong> da <strong>"+ Costants.Stazioni[NextTrain.Stazione] + "</strong></p>";
             return result;
         }
 
@@ -84,6 +81,8 @@ namespace SalveminiApp
 
             //Get timetables 
             changeDay((int)DateTime.Now.DayOfWeek);
+            todayLbl.Text = DateTime.Now.ToString("dddd");
+
 
             //Check Internet
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
@@ -122,7 +121,7 @@ namespace SalveminiApp
                 }
 
                 //Get banner ad
-                if(Index.Ads.Count > 0)
+                if(Index.Ads != null && Index.Ads.Count > 0)
                 {
                     //Find a banner
                     var banner = Index.Ads.Where(x => x.Tipo == 0).ToList();
@@ -131,10 +130,9 @@ namespace SalveminiApp
                         //Found
                         Ad = banner[0];
                         adTitle.Text = Ad.Nome;
-                        adImage.Source = Ad.Immagine;
-                        adImage.Source = Ad.Immagine;
+                        adImage.Source = Ad.FullImmagine;
                         await adLayout.FadeTo(1, 300, Easing.CubicInOut);
-                    }
+                    } 
                 }
 
                 //Update orari if new version detected
@@ -172,10 +170,6 @@ namespace SalveminiApp
 
         }
 
-        void ad_Tapped(object sender, System.EventArgs e)
-        {
-           //todo 
-        }
         void Avvisi_Clicked(object sender, System.EventArgs e)
         {
             Navigation.PushModalAsync(new SecondaryViews.Avvisi());
@@ -190,7 +184,17 @@ namespace SalveminiApp
 
                 //Push to selected page
                 if (widget.Push != null)
-                    Navigation.PushModalAsync(widget.Push);
+                {
+                    if(widget.Title == "Trasporti")
+                    {
+                        Navigation.PushAsync(widget.Push); //Push
+                    }
+                    else
+                    {
+                        Navigation.PushModalAsync(widget.Push); //Modal
+                    }
+
+                }
             }
             catch (Exception ex)
             {
@@ -230,13 +234,6 @@ namespace SalveminiApp
             //Get timetables
             changeDay(intGiorno);
 
-
-            //Display dayname
-            if (intGiorno == (int)DateTime.Now.DayOfWeek)
-                orarioDay.Text = "Oggi"; //Lol it's today
-            else
-                orarioDay.Text = giorno; //Other day
-
             //Hide popover
             dayPopOver.IsVisible = false;
 
@@ -264,8 +261,43 @@ namespace SalveminiApp
                     orarioFrame.HeightRequest = fullLayout.Height * 0.4;
                 }
                 widgetsLayout.HeightRequest = fullLayout.Height - orarioFrame.HeightRequest - adLayout.Height - 65;
+                if (day == (int)DateTime.Now.DayOfWeek)
+                    orarioDay.Text = "Oggi"; //Lol it's today
+                else
+                {
+                    var giorni = CultureInfo.CurrentCulture.DateTimeFormat.DayNames.ToList();
+                    orarioDay.Text = giorni[day]; //Other day
+
+                }
             }
 
+        }
+
+
+        void ad_Tapped(object sender, System.EventArgs e)
+        {
+            if(Ad != null)
+            {
+                //URL
+                if( string.IsNullOrEmpty(Ad.Descrizione) && !string.IsNullOrEmpty(Ad.Url))
+                {
+                    try
+                    {
+                        //Apri browser
+                        Device.OpenUri(new Uri(Ad.Url));
+                    }
+                    catch
+                    {
+                        //Fa niente
+                    }
+                }
+
+                //DESCRIZIONE
+                if (!string.IsNullOrEmpty(Ad.Descrizione) && string.IsNullOrEmpty(Ad.Url))
+                {
+                    DisplayAlert(Ad.Nome,Ad.Descrizione,"Chiudi");
+                }
+            }
         }
 
     }

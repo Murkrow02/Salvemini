@@ -98,6 +98,7 @@ namespace SalveminiApp.FirstAccess
                     else
                     {
                         DisplayAlert("Attenzione", "Seleziona una stazione di partenza e una direzione","Ok");
+                        return;
                     }
                     break;
                 case 1:
@@ -106,6 +107,18 @@ namespace SalveminiApp.FirstAccess
                 case 2:
                     //Aliscafi
                     break;
+            }
+
+            if (Preferences.Get("isFirstTime", true))
+            {
+                Navigation.PushModalAsync(new TabPage());
+                //Remove Pages behind MainPage
+                //Navigation.RemovePage(Navigation.NavigationStack[0]);
+                Preferences.Set("isFirstTime", false);
+            }
+            else
+            {
+                Navigation.PopModalAsync();
             }
         }
 

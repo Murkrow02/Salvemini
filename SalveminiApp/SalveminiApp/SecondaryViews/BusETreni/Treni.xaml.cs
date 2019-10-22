@@ -21,7 +21,6 @@ namespace SalveminiApp.SecondaryViews.BusETreni
         {
             InitializeComponent();
             stationPicker.ItemsSource = Stazioni;
-            directionPicker.ItemsSource = new List<string> { Costants.Stazioni[0], Costants.Stazioni[Costants.Stazioni.Count - 1] };
 #if __IOS__
             if (iOS.AppDelegate.HasNotch)
             {
@@ -35,44 +34,40 @@ namespace SalveminiApp.SecondaryViews.BusETreni
 
         private void picker_Unfocused(object sender, FocusEventArgs e)
         {
+            //Sorrento to sorrento
+            if (stationPicker.SelectedItem.ToString() == "Sorrento" && TrenoSegment.SelectedSegment == 0)
+                TrenoSegment.SelectedSegment = 1;
+
+            //Napoli to napoli
+            if (stationPicker.SelectedItem.ToString() == "Napoli Porta Nolana" && TrenoSegment.SelectedSegment == 1)
+                TrenoSegment.SelectedSegment = 0;
+
             getTrains();
         }
 
-        private void Station_Selected(object sender, EventArgs e)
+        private void TrenoSegment_OnSegmentSelected(object sender, Plugin.Segmented.Event.SegmentSelectEventArgs e)
         {
-            if (stationPicker.SelectedItem.ToString() == Costants.Stazioni[0])
-            {
-                directionPicker.SelectedItem = Costants.Stazioni[Costants.Stazioni.Count - 1];
-            }
-            else if (stationPicker.SelectedItem.ToString() == Costants.Stazioni[Costants.Stazioni.Count - 1])
-            {
-                directionPicker.SelectedItem = Costants.Stazioni[0];
-            }
-        }
 
-        private void Direction_Selected(object sender, EventArgs e)
-        {
-            if (stationPicker.SelectedItem != null)
-            {
-                if (directionPicker.SelectedItem.ToString() == Costants.Stazioni[Costants.Stazioni.Count - 1] && stationPicker.SelectedItem.ToString() == Costants.Stazioni[Costants.Stazioni.Count - 1])
-                {
-                    directionPicker.SelectedItem = Costants.Stazioni[0];
-                }
+            if (string.IsNullOrEmpty(stationPicker.SelectedItem?.ToString()))
+                return;
 
-                if (directionPicker.SelectedItem.ToString() == Costants.Stazioni[0] && stationPicker.SelectedItem.ToString() == Costants.Stazioni[0])
-                {
-                    directionPicker.SelectedItem = Costants.Stazioni[Costants.Stazioni.Count - 1];
-                }
+            //Sorrento to sorrento
+            if (stationPicker.SelectedItem.ToString() == "Sorrento" && TrenoSegment.SelectedSegment == 0)
+                TrenoSegment.SelectedSegment = 1;
 
+            //Napoli to napoli
+            if (stationPicker.SelectedItem.ToString() == "Napoli Porta Nolana" && TrenoSegment.SelectedSegment == 1)
+                TrenoSegment.SelectedSegment = 0;
 
-            }
+            getTrains();
+
         }
 
         async void getTrains()
         {
-            if (stationPicker.SelectedItem != null && directionPicker.SelectedItem != null)
+            if (stationPicker.SelectedItem != null)
             {
-                bool direction = directionPicker.SelectedItem.ToString() == Costants.Stazioni[Costants.Stazioni.Count - 1];
+                bool direction = Convert.ToBoolean(TrenoSegment.SelectedSegment);
                 Trains = await App.Treni.GetTrains(Costants.Stazioni.FirstOrDefault(x => x.Value == stationPicker.SelectedItem.ToString()).Key, direction);
                 if (Trains != null)
                 {
@@ -86,11 +81,11 @@ namespace SalveminiApp.SecondaryViews.BusETreni
 
         void Starred_Clicked(object sender, EventArgs e)
         {
-            if (stationPicker.SelectedItem != null && directionPicker.SelectedItem != null)
+            if (stationPicker.SelectedItem != null)
             {
                 (sender as IconButton).Text = "check-circle";
                 Preferences.Set("savedStation", Costants.Stazioni.FirstOrDefault(x => x.Value == stationPicker.SelectedItem.ToString()).Key);
-                bool direction = directionPicker.SelectedItem.ToString() == Costants.Stazioni[Costants.Stazioni.Count - 1];
+                bool direction = TrenoSegment.SelectedSegment.ToString() == Costants.Stazioni[Costants.Stazioni.Count - 1];
                 Preferences.Set("savedDirection", direction);
             }
         }
