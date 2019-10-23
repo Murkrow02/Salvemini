@@ -7,6 +7,7 @@
             <Frame HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="Red" HasShadow="False" HeightRequest="35" WidthRequest="35" Padding="0" CornerRadius="17.5" />
         </Grid>
     </NavigationPage.TitleView>
+    <ScrollView>
     <!--Layout-->
     <StackLayout Padding="15,10,15,20" Spacing="15" x:Name="fullLayout">
         <!--Orario-->
@@ -44,7 +45,7 @@
             </StackLayout>
         </Frame>
         <!--WidgetList-->
-        <StackLayout VerticalOptions="End"  x:Name="widgetsLayout">
+        <StackLayout VerticalOptions="Start">
             <!--Personalizza-->
             <StackLayout Orientation="Horizontal">
                 <Label Text="Personalizza" TextColor="{x:Static local:Styles.TextColor}" />
@@ -55,26 +56,15 @@
             </StackLayout>
 
             <!--Widgets-->
-            <CollectionView  x:Name="widgetCollection" Margin="-15,0" HorizontalScrollBarVisibility="Never">
-                <CollectionView.ItemsLayout>
-                    <ListItemsLayout Orientation="Horizontal">
-                    </ListItemsLayout>
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <local:WidgetGradient Margin="5, 10" Title="{Binding Title}" SubTitle="{Binding SubTitle}" Badge="{Binding Badge}" Icon="{Binding Icon}" StartColor="{Binding StartColor}" EndColor="{Binding EndColor}" Push="{Binding Push}">
-                            <local:WidgetGradient.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="widget_Tapped" NumberOfTapsRequired="1" />
-                            </local:WidgetGradient.GestureRecognizers>
-                        </local:WidgetGradient>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+            <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Margin="-15,0" x:Name="widgetCollection">
+                <StackLayout x:Name="widgetsLayout" Orientation="Horizontal">
+
+                </StackLayout>
+            </ScrollView>
         </StackLayout>
 
-
         <!--Ad-->
-        <StackLayout VerticalOptions="End" x:Name="adLayout" Opacity="0" Spacing="2">
+        <StackLayout VerticalOptions="Start" x:Name="adLayout" Opacity="0" Spacing="2">
             <!--Ad header-->
             <StackLayout Orientation="Horizontal">
                 <Label Text="Sponsorizzato -" HorizontalOptions="Start" VerticalTextAlignment="Center" TextColor="{x:Static local:Styles.TextColor}" />
@@ -83,15 +73,16 @@
             </StackLayout>
             <!--Image-->
             <Frame HasShadow="False" CornerRadius="8" IsClippedToBounds="True" Padding="0">
-                <ffimageloading:CachedImage x:Name="adImage"/>
+                <ffimageloading:CachedImage x:Name="adImage" />
             </Frame>
             <!--Frame tapped-->
             <StackLayout.GestureRecognizers>
-                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ad_Tapped"/>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ad_Tapped" />
             </StackLayout.GestureRecognizers>
         </StackLayout>
 
 
     </StackLayout>
+        </ScrollView>
 
 </ContentPage>
