@@ -46,7 +46,7 @@ namespace SalveminiApp.Droid
             DependencyService.Register<ToastNotification>();
             ToastNotification.Init(this, new PlatformOptions() { SmallIconDrawable = Android.Resource.Drawable.IcDialogInfo });
             Syncfusion.XForms.Android.PopupLayout.SfPopupLayoutRenderer.Init();
-            Plugin.Iconize.Iconize.Init(ToolbarResource, TabLayoutResource);
+            Plugin.Iconize.Iconize.Init(Resource.Id.toolbar, Resource.Id.sliding_tabs);
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             DependencyService.Register<ToastNotification>(); // Register your dependency
             ToastNotification.Init(this);

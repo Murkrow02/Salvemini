@@ -65,9 +65,9 @@ namespace SalveminiApp
             SelectedTabColor = Styles.TextColor;
 #endif
 #if __ANDROID__
-            BarTextColor = Color.White;
-            BarBackgroundColor = Styles.PrimaryColor;
-            SelectedTabColor = Color.White;
+            BarTextColor = Styles.ObjectGray;
+            BarBackgroundColor = Color.White;
+            SelectedTabColor = Styles.TextColor;
             On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
             On<Xamarin.Forms.PlatformConfiguration.Android>().DisableSwipePaging();
 #endif
