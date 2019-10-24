@@ -256,10 +256,13 @@ namespace SalveminiApp
 
 
 
+        void profilePush(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new SecondaryViews.Profile());
+        }
+
         void editWidget_Tapped(object sender, System.EventArgs e)
         {
-
-
         }
 
         public async void changeDay (int day){

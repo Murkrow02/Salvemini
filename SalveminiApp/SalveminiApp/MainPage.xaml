@@ -4,7 +4,11 @@
     <NavigationPage.TitleView>
         <Grid HorizontalOptions="FillAndExpand">
             <Label x:Name="todayLbl" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" />
-            <Frame HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="Red" HasShadow="False" HeightRequest="35" WidthRequest="35" Padding="0" CornerRadius="17.5" />
+            <Frame HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="Red" HasShadow="False" HeightRequest="35" WidthRequest="35" Padding="0" CornerRadius="17.5" >
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="profilePush" NumberOfTapsRequired="1"/>
+                </Frame.GestureRecognizers>
+            </Frame>
         </Grid>
     </NavigationPage.TitleView>
     <ScrollView>
