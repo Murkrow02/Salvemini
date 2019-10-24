@@ -100,7 +100,7 @@
                 <!--Altri-->
                 <StackLayout Spacing="0" VerticalOptions="End">
                      <Button Text="Ho dimenticato la password" Margin="0,10,0,0"
-                        Clicked="forgotPwd_clicked"
+                        Clicked="forgotPwd_clicked" BackgroundColor="Transparent"
                         TextColor="{x:Static local:Styles.PrimaryColor}" />
 
                 <Button Text="Non riesco ad accedere"

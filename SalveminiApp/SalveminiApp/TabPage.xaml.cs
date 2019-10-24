@@ -8,12 +8,15 @@ using UIKit;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 #endif
 using Xamarin.Forms;
+#if __ANDROID__
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+#endif
 using Xamarin.Forms.Xaml;
 
 namespace SalveminiApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TabPage : TabbedPage
+    public partial class TabPage : Xamarin.Forms.TabbedPage
     {
         //Home
         public static CarouselPage CarouselHome = new CarouselPage();
@@ -65,6 +68,8 @@ namespace SalveminiApp
             BarTextColor = Color.White;
             BarBackgroundColor = Styles.PrimaryColor;
             SelectedTabColor = Color.White;
+            On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
+            On<Xamarin.Forms.PlatformConfiguration.Android>().DisableSwipePaging();
 #endif
         }
     }

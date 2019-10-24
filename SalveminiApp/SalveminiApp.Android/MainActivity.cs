@@ -36,6 +36,9 @@ namespace SalveminiApp.Droid
             //Init Popups
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
 
+            //Flags
+            Forms.SetFlags("CollectionView_Experimental");
+
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
@@ -43,11 +46,12 @@ namespace SalveminiApp.Droid
             DependencyService.Register<ToastNotification>();
             ToastNotification.Init(this, new PlatformOptions() { SmallIconDrawable = Android.Resource.Drawable.IcDialogInfo });
             Syncfusion.XForms.Android.PopupLayout.SfPopupLayoutRenderer.Init();
-            Plugin.Iconize.Iconize.Init(Resource.Id.toolbar, Resource.Id.sliding_tabs);
+            Plugin.Iconize.Iconize.Init(ToolbarResource, TabLayoutResource);
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             DependencyService.Register<ToastNotification>(); // Register your dependency
             ToastNotification.Init(this);
             UserDialogs.Init(this);
+            Forms9Patch.Droid.Settings.Initialize(this);
             CardsViewRenderer.Preserve();
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             AnimationViewRenderer.Init();

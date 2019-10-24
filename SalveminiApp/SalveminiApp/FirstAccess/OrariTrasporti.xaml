@@ -7,7 +7,7 @@
                 <Image Source="trasportiSmall" x:Name="topImage" />
                 <Label FontAttributes="Bold" FontSize="45" TextColor="{x:Static local:Styles.TextColor}" Text="Trasporti" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
                 <Label FontSize="18" TextColor="{x:Static local:Styles.TextGray}" Text="Scegli il tuo mezzo di trasporto preferito" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
-                <Button Text="Salta" FontSize="Small" Margin="-2" Clicked="skipClicked"/>
+                <Button Text="Salta" BackgroundColor="Transparent" FontSize="Small" Margin="-2" Clicked="skipClicked"/>
             </StackLayout>
 
             <!--ChooseMezzo-->

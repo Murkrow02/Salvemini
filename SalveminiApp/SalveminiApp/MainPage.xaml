@@ -22,7 +22,7 @@
                     <!--Oggi + arrow-->
                     <StackLayout Orientation="Horizontal" Spacing="1">
                         <Label Text="Oggi" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" x:Name="orarioDay" />
-                        <iconize:IconButton Text="fas-caret-down" TextColor="{x:Static local:Styles.TextColor}" FontSize="Large" x:Name="arrowDown" Clicked="ChangeDay_Clicked" />
+                        <iconize:IconButton Text="fas-caret-down" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.TextColor}" FontSize="Large" x:Name="arrowDown" Clicked="ChangeDay_Clicked" />
                     </StackLayout>
                     <!--Clock icon-->
                     <iconize:IconLabel Text="fas-clock" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="{x:Static local:Styles.TextColor}" />
@@ -72,7 +72,7 @@
             <StackLayout Orientation="Horizontal">
                 <Label Text="Sponsorizzato -" HorizontalOptions="Start" VerticalTextAlignment="Center" TextColor="{x:Static local:Styles.TextColor}" />
                 <Label x:Name="adTitle" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="Start" />
-                <iconize:IconButton Text="fas-info-circle" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold" HorizontalOptions="EndAndExpand" />
+                <iconize:IconButton Text="fas-info-circle" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold" HorizontalOptions="EndAndExpand" />
             </StackLayout>
             <!--Image-->
             <Frame HasShadow="False" CornerRadius="8" IsClippedToBounds="True" Padding="0">
