@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView  xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.WidgetGradient">
-    <yummy:PancakeView  BackgroundColor="Red" x:Name="view" Padding="10" CornerRadius="20" BackgroundGradientAngle="135" HorizontalOptions="CenterAndExpand">
+<ContentView VerticalOptions="FillAndExpand" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.WidgetGradient">
+    <yummy:PancakeView VerticalOptions="FillAndExpand"  BackgroundColor="Red" x:Name="view" Padding="10" CornerRadius="20" BackgroundGradientAngle="135" HorizontalOptions="CenterAndExpand">
         <StackLayout Spacing="8">
             <!--Titolo,descrizione e badge-->
             <StackLayout>

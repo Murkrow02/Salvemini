@@ -11,6 +11,7 @@ using Plugin.Toasts;
 using Rg.Plugins.Popup.Extensions;
 using Forms9Patch;
 using System.Globalization;
+using P42.Utils;
 
 namespace SalveminiApp
 {
@@ -63,14 +64,24 @@ namespace SalveminiApp
             base.OnAppearing();
 
             //Create static widgets
+            var tapGestureRecognizer = new TapGestureRecognizer();
+            tapGestureRecognizer.Tapped += widget_Tapped;
             var widgets = new List<WidgetGradient>();
             //Trasporti
-            widgets.Add(new WidgetGradient { Title = "Trasporti", SubTitle = await getNextTrain(), Icon = "train", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order= Preferences.Get("OrderTrasporti", 0) });
+            var trasporti = new WidgetGradient { Title = "Trasporti", SubTitle = await getNextTrain(), Icon = "train", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order = Preferences.Get("OrderTrasporti", 0) };
+            trasporti.GestureRecognizers.Add(tapGestureRecognizer);
             //Card
-            widgets.Add(new WidgetGradient { Title = "SalveminiCard", SubTitle = "Visualizza tutti i vantaggi esclusivi per gli studenti del Salvemini", Icon = "train", StartColor = "B487FD", EndColor = "FA6FFA", Push = new SecondaryViews.SalveminiCard(), Order= Preferences.Get("OrderCard", 0) });
+            var card = new WidgetGradient { Title = "SalveminiCard", SubTitle = "Visualizza tutti i vantaggi esclusivi per gli studenti del Salvemini", Icon = "train", StartColor = "B487FD", EndColor = "FA6FFA", Push = new SecondaryViews.SalveminiCard(), Order = Preferences.Get("OrderCard", 0) };
+            card.GestureRecognizers.Add(tapGestureRecognizer);
             //Extra
-            widgets.Add(new WidgetGradient { Title = "Extra", SubTitle = "Esplora funzioni aggiuntive", Icon = "train", StartColor = "B487FD", EndColor = "FA6FFA",Order = Preferences.Get("OrderExtra", 0) });
-            widgetCollection.ItemsSource = widgets.OrderBy(x => x.Order).ToList();
+            var extra = new WidgetGradient { Title = "Extra", SubTitle = "Esplora funzioni aggiuntive", Icon = "train", StartColor = "B487FD", EndColor = "FA6FFA",Order = Preferences.Get("OrderExtra", 0) };
+            extra.GestureRecognizers.Add(tapGestureRecognizer);
+
+            //Initialize list with first widgets
+            widgets.Add(trasporti); widgets.Add(card); widgets.Add(extra);
+            widgetsLayout.Children.Clear();
+            widgetsLayout.Children.AddRange(widgets);
+
 
 
             var notificator = DependencyService.Get<IToastNotificator>();
@@ -101,7 +112,10 @@ namespace SalveminiApp
                         positionSondaggio = 0;
                     }
                     //Create sondaggio widget
-                    widgets.Add(new WidgetGradient { Title = "Sondaggi", SubTitle = Index.ultimoSondaggio.Nome, Icon = "train", StartColor = "FD8787", EndColor = "F56FFA", Badge = nuovoSondaggio });
+                    var sondaggi = new WidgetGradient { Title = "Sondaggi", SubTitle = Index.ultimoSondaggio.Nome, Icon = "train", StartColor = "FD8787", EndColor = "F56FFA", Badge = nuovoSondaggio };
+                    sondaggi.GestureRecognizers.Add(tapGestureRecognizer);
+                    widgets.Add(sondaggi);
+
                 }
 
 
@@ -117,7 +131,9 @@ namespace SalveminiApp
                         positionAvvisi = 0;
                     }
                     //Create avviso widget
-                    widgets.Add(new WidgetGradient { Title = "Avvisi", SubTitle = Index.ultimoAvviso.Titolo, Icon = "train", StartColor = "FDD487", EndColor = "FA6F6F", Push = new SecondaryViews.Avvisi(), Badge = nuovoAvviso });
+                    var avvisi = new WidgetGradient { Title = "Avvisi", SubTitle = Index.ultimoAvviso.Titolo, Icon = "train", StartColor = "FDD487", EndColor = "FA6F6F", Push = new SecondaryViews.Avvisi(), Badge = nuovoAvviso };
+                    avvisi.GestureRecognizers.Add(tapGestureRecognizer);
+                    widgets.Add(avvisi);
                 }
 
                 //Get banner ad
@@ -161,13 +177,11 @@ namespace SalveminiApp
                 var result = await notificator.Notify(options);
             }
 
-
             //Refresh with new widgets
             await widgetCollection.FadeTo(0, 300, Easing.CubicInOut);
-            widgetCollection.ItemsSource = null;
-            widgetCollection.ItemsSource = widgets.OrderBy(x => x.Order).ToList();
+            widgetsLayout.Children.Clear();
+            widgetsLayout.Children.AddRange(widgets);
             await widgetCollection.FadeTo(1, 300, Easing.CubicInOut);
-
         }
 
         void Avvisi_Clicked(object sender, System.EventArgs e)
@@ -242,10 +256,13 @@ namespace SalveminiApp
 
 
 
+        void profilePush(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new SecondaryViews.Profile());
+        }
+
         void editWidget_Tapped(object sender, System.EventArgs e)
         {
-
-
         }
 
         public async void changeDay (int day){
@@ -260,7 +277,14 @@ namespace SalveminiApp
                 {
                     orarioFrame.HeightRequest = fullLayout.Height * 0.4;
                 }
-                widgetsLayout.HeightRequest = fullLayout.Height - orarioFrame.HeightRequest - adLayout.Height - 65;
+
+                
+
+                ////Set widgets height
+                //var widgetsHeight = fullLayout.Height - orarioFrame.HeightRequest - adLayout.Height - 65;
+                //if (widgetsHeight > fullLayout.Height * 0.3)
+                //    widgetsLayout.HeightRequest = App.ScreenHeight * 0.3;
+                //Set day label display text
                 if (day == (int)DateTime.Now.DayOfWeek)
                     orarioDay.Text = "Oggi"; //Lol it's today
                 else

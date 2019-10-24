@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage BackgroundColor="{x:Static local:Styles.BGColor}" Padding="15,0" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns:local="clr-namespace:SalveminiApp" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Profile">
+    <ScrollView>
+        <StackLayout Spacing="30">
+            <!--Profile view-->
+            <StackLayout>
+                <!--Image-->
+                <ffimageloading:CachedImage Source="clock">
+                    <ffimageloading:CachedImage.Transformations>
+                        <fftransformations:RoundedTransformation />
+                    </ffimageloading:CachedImage.Transformations>
+                </ffimageloading:CachedImage>
+                <!--Nome-->
+                <patch:Label Text="Marco Coppola" x:Name="nameLbl" FontSize="Title" TextColor="{x:Static local:Styles.TextColor}" Lines="1" AutoFit="Width" HorizontalTextAlignment="Center" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                <!--Classe-->
+                <Label Text="4FCAM" x:Name="classLbl" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" />
+            </StackLayout>
+            <!--Personalizza-->
+            <StackLayout>
+                <!--Header-->
+                <StackLayout Orientation="Horizontal">
+                    <iconize:IconLabel Text="fas-star" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" />
+                    <Label Text="Personalizza" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" FontAttributes="Bold" />
+                </StackLayout>
+                <!--Opzioni-->
+                <Frame Padding="0" HasShadow="False" CornerRadius="12" VerticalOptions="Start">
+                    <StackLayout x:Name="persLayout">
+
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+        </StackLayout>
+
+    </ScrollView>
+</ContentPage>
