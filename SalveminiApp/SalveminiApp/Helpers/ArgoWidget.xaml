@@ -9,6 +9,6 @@
                 </StackLayout>
             </StackLayout>
         </yummy:PancakeView>
-        <ffimageloadingsvg:SvgCachedImage BackgroundColor="Transparent" x:Name="image" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="4.5, 3" />
+        <ffimageloadingsvg:SvgCachedImage BackgroundColor="Transparent" x:Name="image" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="4, 3" />
     </AbsoluteLayout>
 </ContentView>

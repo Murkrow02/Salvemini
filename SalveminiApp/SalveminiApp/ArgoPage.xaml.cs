@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using P42.Utils;
 using Xamarin.Forms;
+using Xamarin.Essentials;
+using MonkeyCache.SQLite;
 
 namespace SalveminiApp
 {
     public partial class ArgoPage : ContentPage
     {
+        public List<RestApi.Models.Pentagono> Medie = new List<RestApi.Models.Pentagono>();
+
         public ArgoPage()
         {
             InitializeComponent();
@@ -21,54 +25,72 @@ namespace SalveminiApp
                 mainLayout.Padding = new Thickness(0, 40);
             }
 #endif
+
+            //Cache Grafico
+            if (Barrel.Current.Exists("Medie"))
+            {
+                Medie = Barrel.Current.Get<List<RestApi.Models.Pentagono>>("Medie");
+                radarChart.ItemsSource = Medie;
+            }
+
+            //Set Sizes
+            chart.WidthRequest = App.ScreenWidth;
+            chart.HeightRequest = App.ScreenHeight / 3;
         }
 
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
-            widgetCollection.ItemsSource = new List<ArgoWidget> { new ArgoWidget { Title = "Assenze", Icon = "Assenze.svg", StartColor = "FF7272", EndColor = "FACA6F", Push = new ArgoPages.Assenze() }, new ArgoWidget { Title = "Voti", Icon = "Voti.svg", StartColor = "A940F5", EndColor = "6E9BFF", Push = new ArgoPages.Voti() }, new ArgoWidget { Title = "Promemoria", Icon = "Promemoria.svg", StartColor = "F86095", EndColor = "FF6073", Push = new ArgoPages.Promemoria() }, new ArgoWidget { Title = "Scrutinio", Icon = "VotiScru.svg", StartColor = "A940F5", EndColor = "6E9BFF", Push = new ArgoPages.VotiScrutinio() } };
-            
+            var gestureRecognizer = new TapGestureRecognizer();
+            gestureRecognizer.Tapped += Widget_Tapped;
+            var assenze = new ArgoWidget { Title = "Assenze", Icon = "Assenze.svg", StartColor = "FF7272", EndColor = "FACA6F", Push = new ArgoPages.Assenze() };
+            assenze.GestureRecognizers.Add(gestureRecognizer);
+            var voti = new ArgoWidget { Title = "Voti", Icon = "Voti.svg", StartColor = "A940F5", EndColor = "6E9BFF", Push = new ArgoPages.Voti() };
+            voti.GestureRecognizers.Add(gestureRecognizer);
+            var promemoria = new ArgoWidget { Title = "Promemoria", Icon = "Promemoria.svg", StartColor = "F86095", EndColor = "FF6073", Push = new ArgoPages.Promemoria() };
+            promemoria.GestureRecognizers.Add(gestureRecognizer);
+            var scrutinio = new ArgoWidget { Title = "Scrutinio", Icon = "VotiScru.svg", StartColor = "A940F5", EndColor = "6E9BFF", Push = new ArgoPages.VotiScrutinio() };
+            scrutinio.GestureRecognizers.Add(gestureRecognizer);
+            var compiti = new ArgoWidget { Title = "Compiti", Icon = "Compiti.svg", StartColor = "FF7272", EndColor = "FACA6F", Push = new ArgoPages.CompitiArgomenti("compiti") };
+            compiti.GestureRecognizers.Add(gestureRecognizer);
+            var argomenti = new ArgoWidget { Title = "Argomenti", Icon = "Argomenti.svg", StartColor = "03F829", EndColor = "20B4C7", Push = new ArgoPages.CompitiArgomenti("argomenti") };
+            argomenti.GestureRecognizers.Add(gestureRecognizer);
+
+            firstRowWidgets.Children.AddRange(new List<ArgoWidget> { assenze, voti, promemoria });
+            firstRowWidgets.Children.Add(new ContentView { WidthRequest = 0 });
+            secondRowWidgets.Children.AddRange(new List<ArgoWidget> { scrutinio, compiti, argomenti });
+            secondRowWidgets.Children.Add(new ContentView { WidthRequest = 0 });
+
+            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+            {
+                var dates = await App.Argo.GetPentagono();
+
+                if (!string.IsNullOrEmpty(dates.Message))
+                {
+
+                }
+                else
+                {
+                    Medie = dates.Data as List<RestApi.Models.Pentagono>;
+                }
+
+                if (Medie.Count >= 3)
+                {
+                    chart.IsVisible = true;
+                    noSubjectsLayout.IsVisible = false;
+                    radarChart.ItemsSource = Medie;
+                }
+                else
+                {
+                    chart.IsVisible = false;
+                    noSubjectsLayout.IsVisible = true;
+                }
+            }
         }
 
         void Widget_Tapped(object sender, EventArgs e)
         {
-            //Get push page from model
-            var widget = sender as ArgoWidget;
-
-            //Push to selected page
-            if (widget.Push != null)
-                Navigation.PushModalAsync(widget.Push);
+            Navigation.PushModalAsync((sender as ArgoWidget).Push);
         }
-
-
-        //void Assenze_Tapped(object sender, System.EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new ArgoPages.Assenze());
-        //}
-
-        //void Promemoria_Tapped(object sender, System.EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new ArgoPages.Promemoria());
-        //}
-
-        //void Voti_Tapped(object sender, System.EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new ArgoPages.Voti());
-        //}
-
-        //void VotiScru_Tapped(object sender, System.EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new ArgoPages.VotiScrutinio());
-        //}
-
-        //void Compiti_Tapped(object sender, System.EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new ArgoPages.CompitiArgomenti("compiti"));
-        //}
-
-        //void Argomenti_Tapped(object sender, System.EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new ArgoPages.CompitiArgomenti("argomenti"));
-        //}
     }
 }

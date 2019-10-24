@@ -133,7 +133,7 @@ namespace SalveminiApp.RestApi
                                 Promemoria[Promemoria.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
                             }
                         }
-                        
+
                         Data.Data = Promemoria;
                         break;
                     case HttpStatusCode.Forbidden:
@@ -266,17 +266,16 @@ namespace SalveminiApp.RestApi
                 Debug.WriteLine(@"              ERROR {0}", ex.Message);
                 Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
             }
-            //return Data;
-            return new Models.ResponseModel { Data = new List<Models.Pentagono> {  new Models.Pentagono { Materia = "Fisica", Media = 5 }, new Models.Pentagono { Materia = "Lettere", Media = 8 } } };
+            return Data;
         }
-        
+
         public async Task<Models.ResponseModel> GetVoti()
         {
             Models.ResponseModel Data = new Models.ResponseModel();
             Voti = new List<Models.GroupedVoti>();
 
             var uri = Costants.Uri("argo/voti");
-            
+
             try
             {
                 var response = await client.GetAsync(uri);
@@ -305,7 +304,7 @@ namespace SalveminiApp.RestApi
 
                         Data.Data = Voti.ToObservableCollection();
 
-                        
+
                         break;
                     case HttpStatusCode.Forbidden:
                         Data.Message = "Si è verificato un errore nella connessione ad ARGO";
