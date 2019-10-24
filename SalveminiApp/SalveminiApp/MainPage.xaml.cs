@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Essentials;
-using UserNotifications;
+//using UserNotifications;
 using Plugin.Toasts;
 using Rg.Plugins.Popup.Extensions;
 using Forms9Patch;
@@ -169,12 +169,12 @@ namespace SalveminiApp
             }
             else
             {
-                var options = new NotificationOptions()
-                {
-                    Description = "Nessuna connessione ad internet 🚀",
-                };
+                //var options = new NotificationOptions()
+                //{
+                //    Description = "Nessuna connessione ad internet 🚀",
+                //};
 
-                var result = await notificator.Notify(options);
+                //var result = await notificator.Notify(options);
             }
 
             //Refresh with new widgets

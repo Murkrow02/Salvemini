@@ -10,8 +10,9 @@ using System.Net;
 using System.IO;
 using System.Reflection;
 using System.Linq;
+#if __IOS__
 using Foundation;
-using System.Json;
+#endif
 
 namespace SalveminiApp.RestApi
 {

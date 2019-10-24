@@ -7,11 +7,11 @@ using Android.Widget;
 using Android.OS;
 using Com.OneSignal;
 using Lottie.Forms.Droid;
-using SegmentedControl.FormsPlugin.Android;
 using Plugin.CurrentActivity;
 using Plugin.Toasts;
 using PanCardView.Droid;
-
+using Acr.UserDialogs;
+using Xamarin.Forms;
 
 namespace SalveminiApp.Droid
 {
@@ -44,6 +44,9 @@ namespace SalveminiApp.Droid
             ToastNotification.Init(this, new PlatformOptions() { SmallIconDrawable = Android.Resource.Drawable.IcDialogInfo });
             Syncfusion.XForms.Android.PopupLayout.SfPopupLayoutRenderer.Init();
             Plugin.Iconize.Iconize.Init(Resource.Id.toolbar, Resource.Id.sliding_tabs);
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
+            DependencyService.Register<ToastNotification>(); // Register your dependency
+            ToastNotification.Init(this);
             UserDialogs.Init(this);
             CardsViewRenderer.Preserve();
             CrossCurrentActivity.Current.Init(this, savedInstanceState);

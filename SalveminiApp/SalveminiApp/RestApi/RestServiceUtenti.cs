@@ -81,11 +81,11 @@ namespace SalveminiApp.RestApi
                     Utente = JsonConvert.DeserializeObject<Utente>(content);
 
                     //Save Cache
-                    Barrel.Current.Add("utentilist", Utenti, TimeSpan.FromDays(10));
+                    Barrel.Current.Add("utente" + id.ToString(), Utenti, TimeSpan.FromDays(10));
                 }
                 else if (response.StatusCode != System.Net.HttpStatusCode.Unauthorized)
                 {
-                    if (Barrel.Current.Exists("utentilist"))
+                    if (Barrel.Current.Exists("utente" + id.ToString()))
                     {
                         return Barrel.Current.Get<Models.Utente>("utente" + id.ToString());
                     }
