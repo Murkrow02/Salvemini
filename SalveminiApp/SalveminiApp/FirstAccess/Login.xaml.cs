@@ -158,7 +158,7 @@ namespace SalveminiApp.FirstAccess
             }
             else
             {
-                Navigation.PopModalAsync();
+                Xamarin.Forms.Application.Current.MainPage = new TabPage();
             }
             App.refreshCalls();
         }

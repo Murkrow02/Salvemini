@@ -132,6 +132,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\Team.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -266,6 +270,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Team.xaml.cs">
+      <DependentUpon>Team.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

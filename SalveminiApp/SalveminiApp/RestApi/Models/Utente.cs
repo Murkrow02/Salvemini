@@ -27,5 +27,13 @@ namespace SalveminiApp.RestApi.Models
                 return Classe + Corso;
             }
         }
+
+        public string Immagine
+        {
+            get
+            {
+                return Costants.Uri("images/users/") + id;
+            }
+        }
     }
 }
