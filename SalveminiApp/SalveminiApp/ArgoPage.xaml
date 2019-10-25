@@ -4,7 +4,7 @@
         <!--WidgetList-->
         <StackLayout VerticalOptions="FillAndExpand">
             <!--Personalizza-->
-            <StackLayout Padding="10, 0" Orientation="Horizontal">
+            <StackLayout Padding="10, 0" HorizontalOptions="End"  Orientation="Horizontal">
                 <Label Text="Personalizza" TextColor="{x:Static local:Styles.TextColor}" />
                 <iconize:IconLabel Text="fas-edit" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" />
                 <StackLayout.GestureRecognizers>
@@ -16,10 +16,8 @@
             <ScrollView Padding="0, 20" Orientation="Horizontal" VerticalOptions="Start" HorizontalScrollBarVisibility="Never" x:Name="widgetCollection">
                 <Grid RowSpacing="30">
                     <StackLayout Grid.Row="0" x:Name="firstRowWidgets" Spacing="45" Orientation="Horizontal">
-                        <ContentView WidthRequest="1" />
                     </StackLayout>
                     <StackLayout Grid.Row="1" x:Name="secondRowWidgets" Spacing="45" Orientation="Horizontal">
-                        <ContentView WidthRequest="1" />
                     </StackLayout>
                 </Grid>
             </ScrollView>

@@ -51,13 +51,16 @@ namespace SalveminiApp
             promemoria.GestureRecognizers.Add(gestureRecognizer);
             var scrutinio = new ArgoWidget { Title = "Scrutinio", Icon = "VotiScru.svg", StartColor = "A940F5", EndColor = "6E9BFF", Push = new ArgoPages.VotiScrutinio() };
             scrutinio.GestureRecognizers.Add(gestureRecognizer);
-            var compiti = new ArgoWidget { Title = "Compiti", Icon = "Compiti.svg", StartColor = "FF7272", EndColor = "FACA6F", Push = new ArgoPages.CompitiArgomenti("compiti") };
+            var compiti = new ArgoWidget { Title = "Compiti", Icon = "Compiti.svg", StartColor = "03F829", EndColor = "20B4C7", Push = new ArgoPages.CompitiArgomenti("compiti") };
             compiti.GestureRecognizers.Add(gestureRecognizer);
-            var argomenti = new ArgoWidget { Title = "Argomenti", Icon = "Argomenti.svg", StartColor = "03F829", EndColor = "20B4C7", Push = new ArgoPages.CompitiArgomenti("argomenti") };
+            var argomenti = new ArgoWidget { Title = "Argomenti", Icon = "Argomenti.svg", StartColor = "FF7272", EndColor = "FACA6F", Push = new ArgoPages.CompitiArgomenti("argomenti") };
             argomenti.GestureRecognizers.Add(gestureRecognizer);
-
+            firstRowWidgets.Children.Clear();
+            firstRowWidgets.Children.Add(new ContentView { WidthRequest = -30 });
             firstRowWidgets.Children.AddRange(new List<ArgoWidget> { assenze, voti, promemoria });
             firstRowWidgets.Children.Add(new ContentView { WidthRequest = 0 });
+            secondRowWidgets.Children.Clear();
+            secondRowWidgets.Children.Add(new ContentView { WidthRequest = -30 });
             secondRowWidgets.Children.AddRange(new List<ArgoWidget> { scrutinio, compiti, argomenti });
             secondRowWidgets.Children.Add(new ContentView { WidthRequest = 0 });
 

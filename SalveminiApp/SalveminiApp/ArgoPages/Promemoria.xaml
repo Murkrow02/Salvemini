@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.ArgoPages.Promemoria">
-    <yummy:PancakeView BackgroundGradientAngle="135" BackgroundGradientStartColor="#C1272D" BackgroundGradientEndColor="#FA6089" CornerRadius="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+    <yummy:PancakeView BackgroundGradientAngle="135" BackgroundGradientStartColor="#F86095" BackgroundGradientEndColor="#FF6073" CornerRadius="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <AbsoluteLayout>
             <ffimageloadingsvg:SvgCachedImage Source="PromemoriaShadow.svg" x:Name="shadowImage" BackgroundColor="Transparent" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1.5, -0.1" />
             <StackLayout Padding="20, 40" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
@@ -32,7 +32,7 @@
                     </Grid>
                 </Frame>
                 <Frame VerticalOptions="EndAndExpand" HasShadow="false" HorizontalOptions="Center" x:Name="buttonFrame" Padding="0">
-                    <iconize:IconButton Clicked="Close_Clicked" Text="fas-times" FontSize="30" TextColor="#C1272D" />
+                    <iconize:IconButton Clicked="Close_Clicked" Text="fas-times" FontSize="30" TextColor="#F86095" />
                 </Frame>
             </StackLayout>
         </AbsoluteLayout>

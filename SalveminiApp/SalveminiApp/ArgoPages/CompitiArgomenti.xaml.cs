@@ -33,12 +33,12 @@ namespace SalveminiApp.ArgoPages
             if (type == "compiti")
             {
                 clockLabel.Text = "Assegnati oggi";
-                gradient.BackgroundGradientStartColor = Color.FromHex("0DC637");
-                gradient.BackgroundGradientEndColor = Color.FromHex("54D991");
+                gradient.BackgroundGradientStartColor = Color.FromHex("03F829");
+                gradient.BackgroundGradientEndColor = Color.FromHex("20B4C7");
                 TitleLbl.Text = "Compiti";
                 shadowImage.Source = "CompitiShadow.svg";
                 searchFrame.BackgroundColor = Color.FromHex("119A46");
-                xClose.TextColor = Color.FromHex("21db18");
+                xClose.TextColor = Color.FromHex("03F829");
                 if (Barrel.Current.Exists("Compiti"))
                 {
                     Compitis = Barrel.Current.Get<List<RestApi.Models.Compiti>>("Compiti");
@@ -65,12 +65,12 @@ namespace SalveminiApp.ArgoPages
             {
 
                 clockLabel.Text = "Spiegati oggi";
-                gradient.BackgroundGradientStartColor = Color.FromHex("F46A05");
-                gradient.BackgroundGradientEndColor = Color.FromHex("FFBF96");
+                gradient.BackgroundGradientStartColor = Color.FromHex("FF7272");
+                gradient.BackgroundGradientEndColor = Color.FromHex("FACA6F");
                 TitleLbl.Text = "Argomenti";
                 shadowImage.Source = "ArgomentiShadow.svg";
                 searchFrame.BackgroundColor = Color.FromHex("FFBF96");
-                xClose.TextColor = Color.FromHex("F46A05");
+                xClose.TextColor = Color.FromHex("FF7272");
                 if (Barrel.Current.Exists("Argomenti"))
                 {
                     Argomentis = Barrel.Current.Get<List<RestApi.Models.Argomenti>>("Argomenti");
