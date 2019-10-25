@@ -267,12 +267,25 @@ namespace SalveminiApp
             //Create new navigation page
             var modalPush = new Xamarin.Forms.NavigationPage(new SecondaryViews.Profile());
 
+            modalPush.Disappearing += ModalPush_Disappearing;
             //Modal figo
 #if __IOS__
             modalPush.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(UIModalPresentationStyle.FormSheet);
 #endif
             modalPush.BarTextColor = Styles.TextColor;
             Navigation.PushModalAsync(modalPush);
+        }
+
+        private void ModalPush_Disappearing(object sender, EventArgs e)
+        {
+            try
+            {
+                Navigation.PopModalAsync();
+            }
+            catch
+            {
+                //fa nient
+            }
         }
 
         void editWidget_Tapped(object sender, System.EventArgs e)

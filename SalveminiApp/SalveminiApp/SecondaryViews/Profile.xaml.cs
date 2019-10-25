@@ -13,7 +13,7 @@ namespace SalveminiApp.SecondaryViews
     {
 
         public RestApi.Models.Utente utente = new RestApi.Models.Utente();
-
+        public bool shouldClose = true;
         public Profile()
         {
             InitializeComponent();
@@ -87,6 +87,7 @@ namespace SalveminiApp.SecondaryViews
                 if (cell.Push != null)
                 {
                     //Other
+                    shouldClose = false;
                     Navigation.PushAsync(cell.Push); //Push
                 }
             }
@@ -132,15 +133,7 @@ namespace SalveminiApp.SecondaryViews
         {
             base.OnDisappearing();
 
-            //Ios 13 bug
-            try
-            {
-                Navigation.PopModalAsync();
-            }
-            catch
-            {
-                //fa nient
-            }
+           
         }
 
         private void esci_Clicked(object sender, EventArgs e)

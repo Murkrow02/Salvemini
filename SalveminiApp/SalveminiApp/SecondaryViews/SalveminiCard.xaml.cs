@@ -14,6 +14,7 @@ namespace SalveminiApp.SecondaryViews
     public partial class SalveminiCard : ContentPage
     {
         public List<RestApi.Models.Offerte> offerte = new List<RestApi.Models.Offerte>();
+        public double cardInitialHeight;
 
         public SalveminiCard()
         {
@@ -99,6 +100,7 @@ namespace SalveminiApp.SecondaryViews
             if (card.RotationX >= 90)
                 card.RotationX = 90;
 
+            offersList.HeightRequest = offersList.Height + e.ScrollY;
 
         }
     }
