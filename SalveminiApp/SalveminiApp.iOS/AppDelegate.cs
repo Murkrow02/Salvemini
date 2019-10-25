@@ -37,7 +37,7 @@ namespace SalveminiApp.iOS
         {
             //Init Popups
             Rg.Plugins.Popup.Popup.Init();
-            Forms.SetFlags("CollectionView_Experimental");
+            //Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
 
             //Get Screen Size

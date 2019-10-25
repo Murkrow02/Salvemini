@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using MonkeyCache.SQLite;
 using Xamarin.Essentials;
+using System.Diagnostics;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using UIKit;
@@ -13,6 +14,7 @@ namespace SalveminiApp.SecondaryViews
     public partial class SalveminiCard : ContentPage
     {
         public List<RestApi.Models.Offerte> offerte = new List<RestApi.Models.Offerte>();
+
         public SalveminiCard()
         {
             InitializeComponent();
@@ -56,6 +58,21 @@ namespace SalveminiApp.SecondaryViews
 
         }
 
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+
+            //Ios 13 bug
+            try
+            {
+                Navigation.PopModalAsync();
+            }
+            catch
+            {
+                //fa nient
+            }
+        }
+
         async void offerSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null)
@@ -71,6 +88,18 @@ namespace SalveminiApp.SecondaryViews
             void closePage (object sender, EventArgs e)
         {
             Navigation.PopModalAsync();
+        }
+
+
+        public void listScroll(object sender, ScrolledEventArgs e)
+        {
+            Debug.WriteLine(e.ScrollY);
+
+            card.RotationX = 0 + e.ScrollY;
+            if (card.RotationX >= 90)
+                card.RotationX = 90;
+
+
         }
     }
 }

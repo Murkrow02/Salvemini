@@ -12,7 +12,9 @@ using Rg.Plugins.Popup.Extensions;
 using Forms9Patch;
 using System.Globalization;
 using P42.Utils;
-
+#if __IOS__
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+#endif
 namespace SalveminiApp
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
@@ -33,7 +35,7 @@ namespace SalveminiApp
         {
             InitializeComponent();
 
-          
+
             //Create daylist for orario
             giorniList.ItemSelected += GiorniList_ItemSelected;
             giorniList.ItemTemplate = new DataTemplate(() =>
@@ -55,7 +57,7 @@ namespace SalveminiApp
         public async Task<string> getNextTrain()
         {
             NextTrain = await App.Treni.GetNextTrain(Preferences.Get("savedStation", 0), Preferences.Get("savedDirection", true));
-            string result = "<p>Il prossimo treno per <strong>" + NextTrain.DirectionString + "</strong> partirà alle <strong>"+ NextTrain.Partenza +"</strong> da <strong>"+ Costants.Stazioni[NextTrain.Stazione] + "</strong></p>";
+            string result = "<p>Il prossimo treno per <strong>" + NextTrain.DirectionString + "</strong> partirà alle <strong>" + NextTrain.Partenza + "</strong> da <strong>" + Costants.Stazioni[NextTrain.Stazione] + "</strong></p>";
             return result;
         }
 
@@ -74,7 +76,7 @@ namespace SalveminiApp
             var card = new WidgetGradient { Title = "SalveminiCard", SubTitle = "Visualizza tutti i vantaggi esclusivi per gli studenti del Salvemini", Icon = "train", StartColor = "B487FD", EndColor = "FA6FFA", Push = new SecondaryViews.SalveminiCard(), Order = Preferences.Get("OrderCard", 0) };
             card.GestureRecognizers.Add(tapGestureRecognizer);
             //Extra
-            var extra = new WidgetGradient { Title = "Extra", SubTitle = "Esplora funzioni aggiuntive", Icon = "train", StartColor = "B487FD", EndColor = "FA6FFA",Order = Preferences.Get("OrderExtra", 0) };
+            var extra = new WidgetGradient { Title = "Extra", SubTitle = "Esplora funzioni aggiuntive", Icon = "train", StartColor = "B487FD", EndColor = "FA6FFA", Order = Preferences.Get("OrderExtra", 0) };
             extra.GestureRecognizers.Add(tapGestureRecognizer);
 
             //Initialize list with first widgets
@@ -101,7 +103,7 @@ namespace SalveminiApp
                 Index = await App.Index.GetIndex();
 
                 //Get last sondaggio
-                if(Index.ultimoSondaggio != null)
+                if (Index.ultimoSondaggio != null)
                 {
                     string nuovoSondaggio = "no";
                     int positionSondaggio = Preferences.Get("OrderSondaggio", 0);
@@ -137,18 +139,18 @@ namespace SalveminiApp
                 }
 
                 //Get banner ad
-                if(Index.Ads != null && Index.Ads.Count > 0)
+                if (Index.Ads != null && Index.Ads.Count > 0)
                 {
                     //Find a banner
                     var banner = Index.Ads.Where(x => x.Tipo == 0).ToList();
-                    if(banner.Count > 0)
+                    if (banner.Count > 0)
                     {
                         //Found
                         Ad = banner[0];
                         adTitle.Text = Ad.Nome;
                         adImage.Source = Ad.FullImmagine;
                         await adLayout.FadeTo(1, 300, Easing.CubicInOut);
-                    } 
+                    }
                 }
 
                 //Update orari if new version detected
@@ -199,12 +201,16 @@ namespace SalveminiApp
                 //Push to selected page
                 if (widget.Push != null)
                 {
-                    if(widget.Title == "Trasporti")
+                    if (widget.Title == "Trasporti")
                     {
                         Navigation.PushAsync(widget.Push); //Push
                     }
                     else
                     {
+                        //Modal figo
+#if __IOS__
+                        widget.Push.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(UIModalPresentationStyle.FormSheet);
+#endif
                         Navigation.PushModalAsync(widget.Push); //Modal
                     }
 
@@ -230,7 +236,7 @@ namespace SalveminiApp
             dayPopOver.IsVisible = true;
         }
 
-       
+
         private async void GiorniList_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
             //Deselect Animation
@@ -251,39 +257,47 @@ namespace SalveminiApp
             //Hide popover
             dayPopOver.IsVisible = false;
 
-           
+
         }
 
 
 
         void profilePush(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new SecondaryViews.Profile());
+            //Create new navigation page
+            var modalPush = new Xamarin.Forms.NavigationPage(new SecondaryViews.Profile());
+
+            //Modal figo
+#if __IOS__
+            modalPush.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(UIModalPresentationStyle.FormSheet);
+#endif
+            modalPush.BarTextColor = Styles.TextColor;
+            Navigation.PushModalAsync(modalPush);
         }
 
         void editWidget_Tapped(object sender, System.EventArgs e)
         {
         }
 
-        public async void changeDay (int day){
+        public async void changeDay(int day)
+        {
+
+            //Get orario from jsn
             Orario = await App.Orari.GetOrario("3FCAM", day);
+
+            //Orario loaded successfully
             if (Orario != null)
             {
+                //Fill orario list
                 orarioList.ItemsSource = Orario;
+                //Calc orario dimensions
                 orarioList.HeightRequest = Orario[0].OrarioFrameHeight * Orario.Sum(x => x.numOre) + (4 * Orario.Count);
                 orarioFrame.HeightRequest = orarioList.HeightRequest + orarioHeader.Height;
-
+                //Set max orario height
                 if (orarioFrame.HeightRequest > fullLayout.Height * 0.4)
                 {
                     orarioFrame.HeightRequest = fullLayout.Height * 0.4;
                 }
-
-                
-
-                ////Set widgets height
-                //var widgetsHeight = fullLayout.Height - orarioFrame.HeightRequest - adLayout.Height - 65;
-                //if (widgetsHeight > fullLayout.Height * 0.3)
-                //    widgetsLayout.HeightRequest = App.ScreenHeight * 0.3;
                 //Set day label display text
                 if (day == (int)DateTime.Now.DayOfWeek)
                     orarioDay.Text = "Oggi"; //Lol it's today
@@ -294,16 +308,20 @@ namespace SalveminiApp
 
                 }
             }
+            else
+            {
+                await DisplayAlert("Errore", "Non è stato possibile recuperare l'orario, contattaci se il problema persiste", "Ok");
+            }
 
         }
 
 
         void ad_Tapped(object sender, System.EventArgs e)
         {
-            if(Ad != null)
+            if (Ad != null)
             {
                 //URL
-                if( string.IsNullOrEmpty(Ad.Descrizione) && !string.IsNullOrEmpty(Ad.Url))
+                if (string.IsNullOrEmpty(Ad.Descrizione) && !string.IsNullOrEmpty(Ad.Url))
                 {
                     try
                     {
@@ -319,7 +337,7 @@ namespace SalveminiApp
                 //DESCRIZIONE
                 if (!string.IsNullOrEmpty(Ad.Descrizione) && string.IsNullOrEmpty(Ad.Url))
                 {
-                    DisplayAlert(Ad.Nome,Ad.Descrizione,"Chiudi");
+                    DisplayAlert(Ad.Nome, Ad.Descrizione, "Chiudi");
                 }
             }
         }

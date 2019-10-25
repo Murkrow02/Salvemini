@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using MonkeyCache.SQLite;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+#if __IOS__
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+#endif
 
 namespace SalveminiApp.SecondaryViews
 {
@@ -14,6 +17,7 @@ namespace SalveminiApp.SecondaryViews
         public Profile()
         {
             InitializeComponent();
+            
 
             //Get cache
             if (Barrel.Current.Exists("utenteLoggato"))
@@ -124,10 +128,25 @@ namespace SalveminiApp.SecondaryViews
 
         }
 
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+
+            //Ios 13 bug
+            try
+            {
+                Navigation.PopModalAsync();
+            }
+            catch
+            {
+                //fa nient
+            }
+        }
+
         private void esci_Clicked(object sender, EventArgs e)
         {
             //Perform logout
-            Application.Current.MainPage = new FirstAccess.Login();
+            Xamarin.Forms.Application.Current.MainPage = new FirstAccess.Login();
             Preferences.Set("UserId", 0);
             Preferences.Set("Token", "");
         }
