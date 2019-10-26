@@ -23,6 +23,8 @@ namespace SalveminiApp.ArgoPages
         public bool showingAll = false;
         public bool reversed = false;
         public string type;
+        public string noCompiti = "Oggi non è stato assegnato niente, clicca sull'icona dell'orologio per vedere tutti i compiti";
+        public string noArgomenti = "Oggi non è stato spiegato niente, clicca sull'icona dell'orologio per vedere tutti gli argomenti";
 
         public CompitiArgomenti(string tipo)
         {
@@ -54,7 +56,7 @@ namespace SalveminiApp.ArgoPages
                     else
                     {
                         lista.ItemsSource = today;
-                        placeholderLabel.Text = "Oggi non è stato assegnato niente";
+                        placeholderLabel.Text = noCompiti;
                         emptyLayout.IsVisible = true;
                         filterBtn.IsEnabled = false;
                         sortBtn.IsEnabled = false;
@@ -86,7 +88,7 @@ namespace SalveminiApp.ArgoPages
                     else
                     {
                         lista.ItemsSource = today;
-                        placeholderLabel.Text = "Oggi non è stato spiegato niente";
+                        placeholderLabel.Text = noArgomenti;
                         emptyLayout.IsVisible = true;
                         filterBtn.IsEnabled = false;
                         sortBtn.IsEnabled = false;
@@ -179,7 +181,7 @@ namespace SalveminiApp.ArgoPages
                     else
                     {
                         lista.ItemsSource = today;
-                        placeholderLabel.Text = "Oggi non è stato assegnato niente";
+                        placeholderLabel.Text = noCompiti;
                         emptyLayout.IsVisible = true;
                         filterBtn.IsEnabled = false;
                         sortBtn.IsEnabled = false;
@@ -248,7 +250,7 @@ namespace SalveminiApp.ArgoPages
                     else
                     {
                         lista.ItemsSource = today;
-                        placeholderLabel.Text = "Oggi non è stato spiegato niente";
+                        placeholderLabel.Text = noArgomenti;
                         emptyLayout.IsVisible = true;
                         filterBtn.IsEnabled = false;
                         sortBtn.IsEnabled = false;
@@ -323,7 +325,7 @@ namespace SalveminiApp.ArgoPages
                     else
                     {
                         lista.ItemsSource = today;
-                        placeholderLabel.Text = "Oggi non è stato assegnato niente";
+                        placeholderLabel.Text = noCompiti;
                         emptyLayout.IsVisible = true;
                         filterBtn.IsEnabled = false;
                         sortBtn.IsEnabled = false;
@@ -390,7 +392,7 @@ namespace SalveminiApp.ArgoPages
                     else
                     {
                         lista.ItemsSource = Argomentis;
-                        placeholderLabel.Text = "Oggi non è stato spiegato niente";
+                        placeholderLabel.Text = noArgomenti;
                         emptyLayout.IsVisible = true;
                         filterBtn.IsEnabled = false;
                         sortBtn.IsEnabled = false;
