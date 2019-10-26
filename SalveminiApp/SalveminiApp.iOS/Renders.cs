@@ -100,7 +100,6 @@ namespace SalveminiApp.iOS
             base.ViewDidLoad();
             NavigationBar.ShadowImage = new UIImage();
             NavigationBar.Translucent = false;
-           
         }
 
         protected override void Dispose(bool disposing)

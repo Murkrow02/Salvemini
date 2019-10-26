@@ -33,6 +33,17 @@ namespace SalveminiApp
             {6, "12:50" },
         };
 
+        public static Dictionary<string, string[]> Rotte = new Dictionary<string, string[]>
+        {
+            {"Sorrento", new string[] { "Capri", "Amalfi", "Ischia", "Napoli", "Positano", "Procida"} },
+            {"Capri", new string[] { "Sorrento", "Amalfi", "Castellammare", "Ischia", "Napoli", "Piano di Sorrento", "Positano", "Salerno", "Torre del Greco"} },
+            {"Piano di Sorrento", new string[] {"Capri"} },
+            {"Castellammare", new string[] {"Capri"} },
+            {"Torre del Greco", new string[] {"Capri"} },
+            {"Napoli", new string[] {"Capri", "Ischia", "Procida", "Positano", "Sorrento"} },
+            {"Positano", new string[] {"Capri", "Amalfi", "Ischia", "Napoli", "Salerno", "Sorrento"} },
+        };
+
         public static Dictionary<int, string> Stazioni = new Dictionary<int, string>
         {
             {0, "Sorrento"},

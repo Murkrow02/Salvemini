@@ -14,17 +14,17 @@ namespace SalveminiApp.SecondaryViews
 
         void treni_tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new BusETreni.Treni());
+            Navigation.PushModalAsync(new Trasporti.Treni());
         }
 
         void bus_tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new BusETreni.Treni());
+            Navigation.PushModalAsync(new Trasporti.Treni());
         }
 
         void ali_tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new BusETreni.Treni());
+            Navigation.PushModalAsync(new Trasporti.Aliscafi());
         }
 
         void changePref_Clicked(object sender, EventArgs e)

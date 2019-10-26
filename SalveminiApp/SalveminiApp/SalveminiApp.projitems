@@ -80,7 +80,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\BusETreni\Treni.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\Treni.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -133,6 +133,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\Team.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\Aliscafi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -221,7 +225,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\BusAndTrains.xaml.cs">
       <DependentUpon>BusAndTrains.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\BusETreni\Treni.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\Treni.xaml.cs">
       <DependentUpon>Treni.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)FirstAccess\OrariTrasporti.xaml.cs">
@@ -274,6 +278,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Team.xaml.cs">
       <DependentUpon>Team.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\Aliscafi.xaml.cs">
+      <DependentUpon>Aliscafi.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
@@ -285,7 +292,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\Popups\" />
     <Folder Include="$(MSBuildThisFileDirectory)SecondaryViews\" />
     <Folder Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\" />
-    <Folder Include="$(MSBuildThisFileDirectory)SecondaryViews\BusETreni\" />
+    <Folder Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\" />
     <Folder Include="$(MSBuildThisFileDirectory)AreaVip\" />
   </ItemGroup>
   <ItemGroup>
