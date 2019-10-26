@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<ContentPage Title="Profilo" BackgroundColor="{x:Static local:Styles.BGColor}" Padding="15,10,15,0" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns:local="clr-namespace:SalveminiApp" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Profile">
-    <ScrollView VerticalScrollBarVisibility="Never">
+<ContentPage Title="Profilo" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns:local="clr-namespace:SalveminiApp" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Profile">
+    <ScrollView VerticalScrollBarVisibility="Never" Padding="15,10,15,0" >
         <StackLayout Spacing="30">
             <!--Profile view-->
             <StackLayout>
                 <!--Image-->
-                <ffimageloading:CachedImage Source="clock" x:Name="userImg">
+                <ffimageloading:CachedImage CacheType="All" x:Name="userImg" LoadingPlaceholder="imagePlaceholder">
                     <ffimageloading:CachedImage.Transformations>
-                        <fftransformations:RoundedTransformation />
+                        <fftransformations:CircleTransformation />
                     </ffimageloading:CachedImage.Transformations>
                 </ffimageloading:CachedImage>
                 <!--Nome-->

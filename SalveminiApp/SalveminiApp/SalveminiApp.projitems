@@ -48,10 +48,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondHome.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\CountDown.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -92,10 +88,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)AreaVip\VipMenu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)AreaVip\CreaAvviso.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -133,6 +125,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\Team.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\Extra.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -188,9 +184,6 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceTreni.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Response.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SecondHome.xaml.cs">
-      <DependentUpon>SecondHome.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\CountDown.xaml.cs">
       <DependentUpon>CountDown.xaml</DependentUpon>
     </Compile>
@@ -229,9 +222,6 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\SalveminiCard.xaml.cs">
       <DependentUpon>SalveminiCard.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)AreaVip\VipMenu.xaml.cs">
-      <DependentUpon>VipMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)AreaVip\CreaAvviso.xaml.cs">
       <DependentUpon>CreaAvviso.xaml</DependentUpon>
@@ -273,6 +263,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Team.xaml.cs">
       <DependentUpon>Team.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Extra.xaml.cs">
+      <DependentUpon>Extra.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -3,10 +3,10 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="40">
-                <Frame HasShadow="False" CornerRadius="12" VerticalOptions="Start">
-                    <StackLayout Spacing="20">
+                <Frame IsClippedToBounds="True" HasShadow="False" Padding="10,0" CornerRadius="12" VerticalOptions="Start">
+                    <StackLayout Spacing="0" >
                         <!--Bus-->
-                        <StackLayout Orientation="Horizontal">
+                        <StackLayout Margin="-10,0" Padding="15"  Orientation="Horizontal">
                             <Label FontSize="Large" Text="Bus" TextColor="{x:Static local:Styles.TextColor}" />
                             <iconize:IconLabel Text="fas-bus" FontSize="Large" HorizontalOptions="EndAndExpand" TextColor="#F8BF03" />
                             <StackLayout.GestureRecognizers>
@@ -15,7 +15,7 @@
                         </StackLayout>
                         <Frame HasShadow="False" BackgroundColor="{x:Static local:Styles.ObjectGray}" HeightRequest="1" Padding="0" />
                         <!--Treni-->
-                        <StackLayout Orientation="Horizontal">
+                        <StackLayout Margin="-10,0" Padding="15"  Orientation="Horizontal">
                             <Label FontSize="Large" Text="Treni" TextColor="{x:Static local:Styles.TextColor}" />
                             <iconize:IconLabel Text="fas-subway" FontSize="Large" HorizontalOptions="EndAndExpand" TextColor="#FC511A" />
                              <StackLayout.GestureRecognizers>
@@ -24,7 +24,7 @@
                         </StackLayout>
                         <Frame HasShadow="False" BackgroundColor="{x:Static local:Styles.ObjectGray}" HeightRequest="1" Padding="0" />
                         <!--Aliscafi-->
-                        <StackLayout Orientation="Horizontal">
+                        <StackLayout  Margin="-10,0" Padding="15" Orientation="Horizontal">
                             <Label FontSize="Large" Text="Aliscafi" TextColor="{x:Static local:Styles.TextColor}" />
                             <iconize:IconLabel Text="fas-ship" FontSize="Large" HorizontalOptions="EndAndExpand" TextColor="#246BF2" />
                              <StackLayout.GestureRecognizers>
@@ -33,9 +33,9 @@
                         </StackLayout>
                     </StackLayout>
                 </Frame>
-                <!--<Frame HasShadow="False" CornerRadius="12" VerticalOptions="Start" Padding="2">
+                <Frame HasShadow="False" CornerRadius="12" VerticalOptions="Start" Padding="2">
                     <Button Clicked="changePref_Clicked" FontSize="Large" Text="Modifica trasporto preferito" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.Apple}"/>
-                    </Frame>-->
+                    </Frame>
             </StackLayout>
         </ScrollView>
 

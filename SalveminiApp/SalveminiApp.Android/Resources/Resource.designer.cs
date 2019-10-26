@@ -3035,6 +3035,7 @@ namespace SalveminiApp.Droid
 			global::PanCardView.Droid.Resource.Id.clip_vertical = global::SalveminiApp.Droid.Resource.Id.clip_vertical;
 			global::PanCardView.Droid.Resource.Id.collapseActionView = global::SalveminiApp.Droid.Resource.Id.collapseActionView;
 			global::PanCardView.Droid.Resource.Id.container = global::SalveminiApp.Droid.Resource.Id.container;
+			global::PanCardView.Droid.Resource.Id.content = global::SalveminiApp.Droid.Resource.Id.content;
 			global::PanCardView.Droid.Resource.Id.contentPanel = global::SalveminiApp.Droid.Resource.Id.contentPanel;
 			global::PanCardView.Droid.Resource.Id.coordinator = global::SalveminiApp.Droid.Resource.Id.coordinator;
 			global::PanCardView.Droid.Resource.Id.custom = global::SalveminiApp.Droid.Resource.Id.custom;
@@ -4287,6 +4288,2291 @@ namespace SalveminiApp.Droid
 			global::PanCardView.Droid.Resource.Styleable.ViewStubCompat_android_id = global::SalveminiApp.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::PanCardView.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId = global::SalveminiApp.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::PanCardView.Droid.Resource.Styleable.ViewStubCompat_android_layout = global::SalveminiApp.Droid.Resource.Styleable.ViewStubCompat_android_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_fade_in = global::SalveminiApp.Droid.Resource.Animation.abc_fade_in;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_fade_out = global::SalveminiApp.Droid.Resource.Animation.abc_fade_out;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_grow_fade_in_from_bottom = global::SalveminiApp.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_popup_enter = global::SalveminiApp.Droid.Resource.Animation.abc_popup_enter;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_popup_exit = global::SalveminiApp.Droid.Resource.Animation.abc_popup_exit;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom = global::SalveminiApp.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_slide_in_bottom = global::SalveminiApp.Droid.Resource.Animation.abc_slide_in_bottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_slide_in_top = global::SalveminiApp.Droid.Resource.Animation.abc_slide_in_top;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_slide_out_bottom = global::SalveminiApp.Droid.Resource.Animation.abc_slide_out_bottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_slide_out_top = global::SalveminiApp.Droid.Resource.Animation.abc_slide_out_top;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.design_bottom_sheet_slide_in = global::SalveminiApp.Droid.Resource.Animation.design_bottom_sheet_slide_in;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.design_bottom_sheet_slide_out = global::SalveminiApp.Droid.Resource.Animation.design_bottom_sheet_slide_out;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.design_snackbar_in = global::SalveminiApp.Droid.Resource.Animation.design_snackbar_in;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.design_snackbar_out = global::SalveminiApp.Droid.Resource.Animation.design_snackbar_out;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.EnterFromLeft = global::SalveminiApp.Droid.Resource.Animation.EnterFromLeft;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.EnterFromRight = global::SalveminiApp.Droid.Resource.Animation.EnterFromRight;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.ExitToLeft = global::SalveminiApp.Droid.Resource.Animation.ExitToLeft;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.ExitToRight = global::SalveminiApp.Droid.Resource.Animation.ExitToRight;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.tooltip_enter = global::SalveminiApp.Droid.Resource.Animation.tooltip_enter;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.tooltip_exit = global::SalveminiApp.Droid.Resource.Animation.tooltip_exit;
+			global::Plugin.Segmented.Control.Droid.Resource.Animator.design_appbar_state_list_animator = global::SalveminiApp.Droid.Resource.Animator.design_appbar_state_list_animator;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarDivider = global::SalveminiApp.Droid.Resource.Attribute.actionBarDivider;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarItemBackground = global::SalveminiApp.Droid.Resource.Attribute.actionBarItemBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarPopupTheme = global::SalveminiApp.Droid.Resource.Attribute.actionBarPopupTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarSize = global::SalveminiApp.Droid.Resource.Attribute.actionBarSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarSplitStyle = global::SalveminiApp.Droid.Resource.Attribute.actionBarSplitStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarStyle = global::SalveminiApp.Droid.Resource.Attribute.actionBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarTabBarStyle = global::SalveminiApp.Droid.Resource.Attribute.actionBarTabBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarTabStyle = global::SalveminiApp.Droid.Resource.Attribute.actionBarTabStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarTabTextStyle = global::SalveminiApp.Droid.Resource.Attribute.actionBarTabTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarTheme = global::SalveminiApp.Droid.Resource.Attribute.actionBarTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarWidgetTheme = global::SalveminiApp.Droid.Resource.Attribute.actionBarWidgetTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.actionButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionDropDownStyle = global::SalveminiApp.Droid.Resource.Attribute.actionDropDownStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionLayout = global::SalveminiApp.Droid.Resource.Attribute.actionLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionMenuTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.actionMenuTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionMenuTextColor = global::SalveminiApp.Droid.Resource.Attribute.actionMenuTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeBackground = global::SalveminiApp.Droid.Resource.Attribute.actionModeBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeCloseButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeCloseDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeCloseDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeCopyDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeCopyDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeCutDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeCutDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeFindDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeFindDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModePasteDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModePasteDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModePopupWindowStyle = global::SalveminiApp.Droid.Resource.Attribute.actionModePopupWindowStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeSelectAllDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeSelectAllDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeShareDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeShareDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeSplitBackground = global::SalveminiApp.Droid.Resource.Attribute.actionModeSplitBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeStyle = global::SalveminiApp.Droid.Resource.Attribute.actionModeStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeWebSearchDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeWebSearchDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionOverflowButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.actionOverflowButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionOverflowMenuStyle = global::SalveminiApp.Droid.Resource.Attribute.actionOverflowMenuStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionProviderClass = global::SalveminiApp.Droid.Resource.Attribute.actionProviderClass;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionViewClass = global::SalveminiApp.Droid.Resource.Attribute.actionViewClass;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.activityChooserViewStyle = global::SalveminiApp.Droid.Resource.Attribute.activityChooserViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.alertDialogButtonGroupStyle = global::SalveminiApp.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.alertDialogCenterButtons = global::SalveminiApp.Droid.Resource.Attribute.alertDialogCenterButtons;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.alertDialogStyle = global::SalveminiApp.Droid.Resource.Attribute.alertDialogStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.alertDialogTheme = global::SalveminiApp.Droid.Resource.Attribute.alertDialogTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.allowStacking = global::SalveminiApp.Droid.Resource.Attribute.allowStacking;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.alpha = global::SalveminiApp.Droid.Resource.Attribute.alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.alphabeticModifiers = global::SalveminiApp.Droid.Resource.Attribute.alphabeticModifiers;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.arrowHeadLength = global::SalveminiApp.Droid.Resource.Attribute.arrowHeadLength;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.arrowShaftLength = global::SalveminiApp.Droid.Resource.Attribute.arrowShaftLength;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.autoCompleteTextViewStyle = global::SalveminiApp.Droid.Resource.Attribute.autoCompleteTextViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.autoSizeMaxTextSize = global::SalveminiApp.Droid.Resource.Attribute.autoSizeMaxTextSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.autoSizeMinTextSize = global::SalveminiApp.Droid.Resource.Attribute.autoSizeMinTextSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.autoSizePresetSizes = global::SalveminiApp.Droid.Resource.Attribute.autoSizePresetSizes;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.autoSizeStepGranularity = global::SalveminiApp.Droid.Resource.Attribute.autoSizeStepGranularity;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.autoSizeTextType = global::SalveminiApp.Droid.Resource.Attribute.autoSizeTextType;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.background = global::SalveminiApp.Droid.Resource.Attribute.background;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.backgroundSplit = global::SalveminiApp.Droid.Resource.Attribute.backgroundSplit;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.backgroundStacked = global::SalveminiApp.Droid.Resource.Attribute.backgroundStacked;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.backgroundTint = global::SalveminiApp.Droid.Resource.Attribute.backgroundTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.backgroundTintMode = global::SalveminiApp.Droid.Resource.Attribute.backgroundTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.barLength = global::SalveminiApp.Droid.Resource.Attribute.barLength;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.behavior_autoHide = global::SalveminiApp.Droid.Resource.Attribute.behavior_autoHide;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.behavior_hideable = global::SalveminiApp.Droid.Resource.Attribute.behavior_hideable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.behavior_overlapTop = global::SalveminiApp.Droid.Resource.Attribute.behavior_overlapTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.behavior_peekHeight = global::SalveminiApp.Droid.Resource.Attribute.behavior_peekHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.behavior_skipCollapsed = global::SalveminiApp.Droid.Resource.Attribute.behavior_skipCollapsed;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.borderWidth = global::SalveminiApp.Droid.Resource.Attribute.borderWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.borderlessButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.borderlessButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.bottomSheetDialogTheme = global::SalveminiApp.Droid.Resource.Attribute.bottomSheetDialogTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.bottomSheetStyle = global::SalveminiApp.Droid.Resource.Attribute.bottomSheetStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonBarButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.buttonBarButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonBarNegativeButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonBarNeutralButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonBarPositiveButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonBarStyle = global::SalveminiApp.Droid.Resource.Attribute.buttonBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonGravity = global::SalveminiApp.Droid.Resource.Attribute.buttonGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonPanelSideLayout = global::SalveminiApp.Droid.Resource.Attribute.buttonPanelSideLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonStyle = global::SalveminiApp.Droid.Resource.Attribute.buttonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonStyleSmall = global::SalveminiApp.Droid.Resource.Attribute.buttonStyleSmall;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonTint = global::SalveminiApp.Droid.Resource.Attribute.buttonTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonTintMode = global::SalveminiApp.Droid.Resource.Attribute.buttonTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.cardBackgroundColor = global::SalveminiApp.Droid.Resource.Attribute.cardBackgroundColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.cardCornerRadius = global::SalveminiApp.Droid.Resource.Attribute.cardCornerRadius;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.cardElevation = global::SalveminiApp.Droid.Resource.Attribute.cardElevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.cardMaxElevation = global::SalveminiApp.Droid.Resource.Attribute.cardMaxElevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.cardPreventCornerOverlap = global::SalveminiApp.Droid.Resource.Attribute.cardPreventCornerOverlap;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.cardUseCompatPadding = global::SalveminiApp.Droid.Resource.Attribute.cardUseCompatPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.checkboxStyle = global::SalveminiApp.Droid.Resource.Attribute.checkboxStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.checkedTextViewStyle = global::SalveminiApp.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.closeIcon = global::SalveminiApp.Droid.Resource.Attribute.closeIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.closeItemLayout = global::SalveminiApp.Droid.Resource.Attribute.closeItemLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.collapseContentDescription = global::SalveminiApp.Droid.Resource.Attribute.collapseContentDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.collapseIcon = global::SalveminiApp.Droid.Resource.Attribute.collapseIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.collapsedTitleGravity = global::SalveminiApp.Droid.Resource.Attribute.collapsedTitleGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.collapsedTitleTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.collapsedTitleTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.color = global::SalveminiApp.Droid.Resource.Attribute.color;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorAccent = global::SalveminiApp.Droid.Resource.Attribute.colorAccent;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorBackgroundFloating = global::SalveminiApp.Droid.Resource.Attribute.colorBackgroundFloating;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorButtonNormal = global::SalveminiApp.Droid.Resource.Attribute.colorButtonNormal;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorControlActivated = global::SalveminiApp.Droid.Resource.Attribute.colorControlActivated;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorControlHighlight = global::SalveminiApp.Droid.Resource.Attribute.colorControlHighlight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorControlNormal = global::SalveminiApp.Droid.Resource.Attribute.colorControlNormal;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorError = global::SalveminiApp.Droid.Resource.Attribute.colorError;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorPrimary = global::SalveminiApp.Droid.Resource.Attribute.colorPrimary;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorPrimaryDark = global::SalveminiApp.Droid.Resource.Attribute.colorPrimaryDark;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorSwitchThumbNormal = global::SalveminiApp.Droid.Resource.Attribute.colorSwitchThumbNormal;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.commitIcon = global::SalveminiApp.Droid.Resource.Attribute.commitIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentDescription = global::SalveminiApp.Droid.Resource.Attribute.contentDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentInsetEnd = global::SalveminiApp.Droid.Resource.Attribute.contentInsetEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentInsetEndWithActions = global::SalveminiApp.Droid.Resource.Attribute.contentInsetEndWithActions;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentInsetLeft = global::SalveminiApp.Droid.Resource.Attribute.contentInsetLeft;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentInsetRight = global::SalveminiApp.Droid.Resource.Attribute.contentInsetRight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentInsetStart = global::SalveminiApp.Droid.Resource.Attribute.contentInsetStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentInsetStartWithNavigation = global::SalveminiApp.Droid.Resource.Attribute.contentInsetStartWithNavigation;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentPadding = global::SalveminiApp.Droid.Resource.Attribute.contentPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentPaddingBottom = global::SalveminiApp.Droid.Resource.Attribute.contentPaddingBottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentPaddingLeft = global::SalveminiApp.Droid.Resource.Attribute.contentPaddingLeft;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentPaddingRight = global::SalveminiApp.Droid.Resource.Attribute.contentPaddingRight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentPaddingTop = global::SalveminiApp.Droid.Resource.Attribute.contentPaddingTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentScrim = global::SalveminiApp.Droid.Resource.Attribute.contentScrim;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.controlBackground = global::SalveminiApp.Droid.Resource.Attribute.controlBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.counterEnabled = global::SalveminiApp.Droid.Resource.Attribute.counterEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.counterMaxLength = global::SalveminiApp.Droid.Resource.Attribute.counterMaxLength;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.counterOverflowTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.counterOverflowTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.counterTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.counterTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.customNavigationLayout = global::SalveminiApp.Droid.Resource.Attribute.customNavigationLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.defaultQueryHint = global::SalveminiApp.Droid.Resource.Attribute.defaultQueryHint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.dialogPreferredPadding = global::SalveminiApp.Droid.Resource.Attribute.dialogPreferredPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.dialogTheme = global::SalveminiApp.Droid.Resource.Attribute.dialogTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.displayOptions = global::SalveminiApp.Droid.Resource.Attribute.displayOptions;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.divider = global::SalveminiApp.Droid.Resource.Attribute.divider;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.dividerHorizontal = global::SalveminiApp.Droid.Resource.Attribute.dividerHorizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.dividerPadding = global::SalveminiApp.Droid.Resource.Attribute.dividerPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.dividerVertical = global::SalveminiApp.Droid.Resource.Attribute.dividerVertical;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.drawableSize = global::SalveminiApp.Droid.Resource.Attribute.drawableSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.drawerArrowStyle = global::SalveminiApp.Droid.Resource.Attribute.drawerArrowStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.dropDownListViewStyle = global::SalveminiApp.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.dropdownListPreferredItemHeight = global::SalveminiApp.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.editTextBackground = global::SalveminiApp.Droid.Resource.Attribute.editTextBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.editTextColor = global::SalveminiApp.Droid.Resource.Attribute.editTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.editTextStyle = global::SalveminiApp.Droid.Resource.Attribute.editTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.elevation = global::SalveminiApp.Droid.Resource.Attribute.elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.errorEnabled = global::SalveminiApp.Droid.Resource.Attribute.errorEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.errorTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.errorTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable = global::SalveminiApp.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.expanded = global::SalveminiApp.Droid.Resource.Attribute.expanded;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.expandedTitleGravity = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.expandedTitleMargin = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleMargin;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.expandedTitleMarginBottom = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleMarginBottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.expandedTitleMarginEnd = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleMarginEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.expandedTitleMarginStart = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleMarginStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.expandedTitleMarginTop = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleMarginTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.expandedTitleTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.externalRouteEnabledDrawable = global::SalveminiApp.Droid.Resource.Attribute.externalRouteEnabledDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fabSize = global::SalveminiApp.Droid.Resource.Attribute.fabSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fastScrollEnabled = global::SalveminiApp.Droid.Resource.Attribute.fastScrollEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable = global::SalveminiApp.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable = global::SalveminiApp.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable = global::SalveminiApp.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable = global::SalveminiApp.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.font = global::SalveminiApp.Droid.Resource.Attribute.font;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fontFamily = global::SalveminiApp.Droid.Resource.Attribute.fontFamily;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fontProviderAuthority = global::SalveminiApp.Droid.Resource.Attribute.fontProviderAuthority;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fontProviderCerts = global::SalveminiApp.Droid.Resource.Attribute.fontProviderCerts;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fontProviderFetchStrategy = global::SalveminiApp.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fontProviderFetchTimeout = global::SalveminiApp.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fontProviderPackage = global::SalveminiApp.Droid.Resource.Attribute.fontProviderPackage;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fontProviderQuery = global::SalveminiApp.Droid.Resource.Attribute.fontProviderQuery;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fontStyle = global::SalveminiApp.Droid.Resource.Attribute.fontStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fontWeight = global::SalveminiApp.Droid.Resource.Attribute.fontWeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.foregroundInsidePadding = global::SalveminiApp.Droid.Resource.Attribute.foregroundInsidePadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.gapBetweenBars = global::SalveminiApp.Droid.Resource.Attribute.gapBetweenBars;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.goIcon = global::SalveminiApp.Droid.Resource.Attribute.goIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.headerLayout = global::SalveminiApp.Droid.Resource.Attribute.headerLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.height = global::SalveminiApp.Droid.Resource.Attribute.height;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.hideOnContentScroll = global::SalveminiApp.Droid.Resource.Attribute.hideOnContentScroll;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.hintAnimationEnabled = global::SalveminiApp.Droid.Resource.Attribute.hintAnimationEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.hintEnabled = global::SalveminiApp.Droid.Resource.Attribute.hintEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.hintTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.hintTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.homeAsUpIndicator = global::SalveminiApp.Droid.Resource.Attribute.homeAsUpIndicator;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.homeLayout = global::SalveminiApp.Droid.Resource.Attribute.homeLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.icon = global::SalveminiApp.Droid.Resource.Attribute.icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.iconTint = global::SalveminiApp.Droid.Resource.Attribute.iconTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.iconTintMode = global::SalveminiApp.Droid.Resource.Attribute.iconTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.iconifiedByDefault = global::SalveminiApp.Droid.Resource.Attribute.iconifiedByDefault;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.imageButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.imageButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.indeterminateProgressStyle = global::SalveminiApp.Droid.Resource.Attribute.indeterminateProgressStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.initialActivityCount = global::SalveminiApp.Droid.Resource.Attribute.initialActivityCount;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.insetForeground = global::SalveminiApp.Droid.Resource.Attribute.insetForeground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.isLightTheme = global::SalveminiApp.Droid.Resource.Attribute.isLightTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.itemBackground = global::SalveminiApp.Droid.Resource.Attribute.itemBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.itemIconTint = global::SalveminiApp.Droid.Resource.Attribute.itemIconTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.itemPadding = global::SalveminiApp.Droid.Resource.Attribute.itemPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.itemTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.itemTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.itemTextColor = global::SalveminiApp.Droid.Resource.Attribute.itemTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.keylines = global::SalveminiApp.Droid.Resource.Attribute.keylines;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout = global::SalveminiApp.Droid.Resource.Attribute.layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layoutManager = global::SalveminiApp.Droid.Resource.Attribute.layoutManager;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_anchor = global::SalveminiApp.Droid.Resource.Attribute.layout_anchor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_anchorGravity = global::SalveminiApp.Droid.Resource.Attribute.layout_anchorGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_behavior = global::SalveminiApp.Droid.Resource.Attribute.layout_behavior;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_collapseMode = global::SalveminiApp.Droid.Resource.Attribute.layout_collapseMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_collapseParallaxMultiplier = global::SalveminiApp.Droid.Resource.Attribute.layout_collapseParallaxMultiplier;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_dodgeInsetEdges = global::SalveminiApp.Droid.Resource.Attribute.layout_dodgeInsetEdges;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_insetEdge = global::SalveminiApp.Droid.Resource.Attribute.layout_insetEdge;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_keyline = global::SalveminiApp.Droid.Resource.Attribute.layout_keyline;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_scrollFlags = global::SalveminiApp.Droid.Resource.Attribute.layout_scrollFlags;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_scrollInterpolator = global::SalveminiApp.Droid.Resource.Attribute.layout_scrollInterpolator;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listChoiceBackgroundIndicator = global::SalveminiApp.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listDividerAlertDialog = global::SalveminiApp.Droid.Resource.Attribute.listDividerAlertDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listItemLayout = global::SalveminiApp.Droid.Resource.Attribute.listItemLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listLayout = global::SalveminiApp.Droid.Resource.Attribute.listLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listMenuViewStyle = global::SalveminiApp.Droid.Resource.Attribute.listMenuViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listPopupWindowStyle = global::SalveminiApp.Droid.Resource.Attribute.listPopupWindowStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listPreferredItemHeight = global::SalveminiApp.Droid.Resource.Attribute.listPreferredItemHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listPreferredItemHeightLarge = global::SalveminiApp.Droid.Resource.Attribute.listPreferredItemHeightLarge;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listPreferredItemHeightSmall = global::SalveminiApp.Droid.Resource.Attribute.listPreferredItemHeightSmall;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listPreferredItemPaddingLeft = global::SalveminiApp.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listPreferredItemPaddingRight = global::SalveminiApp.Droid.Resource.Attribute.listPreferredItemPaddingRight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.logo = global::SalveminiApp.Droid.Resource.Attribute.logo;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.logoDescription = global::SalveminiApp.Droid.Resource.Attribute.logoDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.maxActionInlineWidth = global::SalveminiApp.Droid.Resource.Attribute.maxActionInlineWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.maxButtonHeight = global::SalveminiApp.Droid.Resource.Attribute.maxButtonHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.measureWithLargestChild = global::SalveminiApp.Droid.Resource.Attribute.measureWithLargestChild;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteAudioTrackDrawable = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteAudioTrackDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteButtonTint = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteButtonTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteCloseDrawable = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteCloseDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteControlPanelThemeOverlay = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteControlPanelThemeOverlay;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteDefaultIconDrawable = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteDefaultIconDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRoutePauseDrawable = global::SalveminiApp.Droid.Resource.Attribute.mediaRoutePauseDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRoutePlayDrawable = global::SalveminiApp.Droid.Resource.Attribute.mediaRoutePlayDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteSpeakerGroupIconDrawable = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteSpeakerGroupIconDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteSpeakerIconDrawable = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteSpeakerIconDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteStopDrawable = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteStopDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteTheme = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteTvIconDrawable = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteTvIconDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.menu = global::SalveminiApp.Droid.Resource.Attribute.menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.multiChoiceItemLayout = global::SalveminiApp.Droid.Resource.Attribute.multiChoiceItemLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.navigationContentDescription = global::SalveminiApp.Droid.Resource.Attribute.navigationContentDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.navigationIcon = global::SalveminiApp.Droid.Resource.Attribute.navigationIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.navigationMode = global::SalveminiApp.Droid.Resource.Attribute.navigationMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.numericModifiers = global::SalveminiApp.Droid.Resource.Attribute.numericModifiers;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.overlapAnchor = global::SalveminiApp.Droid.Resource.Attribute.overlapAnchor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.paddingBottomNoButtons = global::SalveminiApp.Droid.Resource.Attribute.paddingBottomNoButtons;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.paddingEnd = global::SalveminiApp.Droid.Resource.Attribute.paddingEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.paddingStart = global::SalveminiApp.Droid.Resource.Attribute.paddingStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.paddingTopNoTitle = global::SalveminiApp.Droid.Resource.Attribute.paddingTopNoTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.panelBackground = global::SalveminiApp.Droid.Resource.Attribute.panelBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.panelMenuListTheme = global::SalveminiApp.Droid.Resource.Attribute.panelMenuListTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.panelMenuListWidth = global::SalveminiApp.Droid.Resource.Attribute.panelMenuListWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.passwordToggleContentDescription = global::SalveminiApp.Droid.Resource.Attribute.passwordToggleContentDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.passwordToggleDrawable = global::SalveminiApp.Droid.Resource.Attribute.passwordToggleDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.passwordToggleEnabled = global::SalveminiApp.Droid.Resource.Attribute.passwordToggleEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.passwordToggleTint = global::SalveminiApp.Droid.Resource.Attribute.passwordToggleTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.passwordToggleTintMode = global::SalveminiApp.Droid.Resource.Attribute.passwordToggleTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.popupMenuStyle = global::SalveminiApp.Droid.Resource.Attribute.popupMenuStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.popupTheme = global::SalveminiApp.Droid.Resource.Attribute.popupTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.popupWindowStyle = global::SalveminiApp.Droid.Resource.Attribute.popupWindowStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.preserveIconSpacing = global::SalveminiApp.Droid.Resource.Attribute.preserveIconSpacing;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.pressedTranslationZ = global::SalveminiApp.Droid.Resource.Attribute.pressedTranslationZ;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.progressBarPadding = global::SalveminiApp.Droid.Resource.Attribute.progressBarPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.progressBarStyle = global::SalveminiApp.Droid.Resource.Attribute.progressBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.queryBackground = global::SalveminiApp.Droid.Resource.Attribute.queryBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.queryHint = global::SalveminiApp.Droid.Resource.Attribute.queryHint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.radioButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.radioButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.ratingBarStyle = global::SalveminiApp.Droid.Resource.Attribute.ratingBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.ratingBarStyleIndicator = global::SalveminiApp.Droid.Resource.Attribute.ratingBarStyleIndicator;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.ratingBarStyleSmall = global::SalveminiApp.Droid.Resource.Attribute.ratingBarStyleSmall;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.reverseLayout = global::SalveminiApp.Droid.Resource.Attribute.reverseLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.rippleColor = global::SalveminiApp.Droid.Resource.Attribute.rippleColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.scrimAnimationDuration = global::SalveminiApp.Droid.Resource.Attribute.scrimAnimationDuration;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.scrimVisibleHeightTrigger = global::SalveminiApp.Droid.Resource.Attribute.scrimVisibleHeightTrigger;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.searchHintIcon = global::SalveminiApp.Droid.Resource.Attribute.searchHintIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.searchIcon = global::SalveminiApp.Droid.Resource.Attribute.searchIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.searchViewStyle = global::SalveminiApp.Droid.Resource.Attribute.searchViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.seekBarStyle = global::SalveminiApp.Droid.Resource.Attribute.seekBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.selectableItemBackground = global::SalveminiApp.Droid.Resource.Attribute.selectableItemBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.selectableItemBackgroundBorderless = global::SalveminiApp.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.showAsAction = global::SalveminiApp.Droid.Resource.Attribute.showAsAction;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.showDividers = global::SalveminiApp.Droid.Resource.Attribute.showDividers;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.showText = global::SalveminiApp.Droid.Resource.Attribute.showText;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.showTitle = global::SalveminiApp.Droid.Resource.Attribute.showTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.singleChoiceItemLayout = global::SalveminiApp.Droid.Resource.Attribute.singleChoiceItemLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.spanCount = global::SalveminiApp.Droid.Resource.Attribute.spanCount;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.spinBars = global::SalveminiApp.Droid.Resource.Attribute.spinBars;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.spinnerDropDownItemStyle = global::SalveminiApp.Droid.Resource.Attribute.spinnerDropDownItemStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.spinnerStyle = global::SalveminiApp.Droid.Resource.Attribute.spinnerStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.splitTrack = global::SalveminiApp.Droid.Resource.Attribute.splitTrack;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.srcCompat = global::SalveminiApp.Droid.Resource.Attribute.srcCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.stackFromEnd = global::SalveminiApp.Droid.Resource.Attribute.stackFromEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.state_above_anchor = global::SalveminiApp.Droid.Resource.Attribute.state_above_anchor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.state_collapsed = global::SalveminiApp.Droid.Resource.Attribute.state_collapsed;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.state_collapsible = global::SalveminiApp.Droid.Resource.Attribute.state_collapsible;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.statusBarBackground = global::SalveminiApp.Droid.Resource.Attribute.statusBarBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.statusBarScrim = global::SalveminiApp.Droid.Resource.Attribute.statusBarScrim;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.subMenuArrow = global::SalveminiApp.Droid.Resource.Attribute.subMenuArrow;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.submitBackground = global::SalveminiApp.Droid.Resource.Attribute.submitBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.subtitle = global::SalveminiApp.Droid.Resource.Attribute.subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.subtitleTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.subtitleTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.subtitleTextColor = global::SalveminiApp.Droid.Resource.Attribute.subtitleTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.subtitleTextStyle = global::SalveminiApp.Droid.Resource.Attribute.subtitleTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.suggestionRowLayout = global::SalveminiApp.Droid.Resource.Attribute.suggestionRowLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.switchMinWidth = global::SalveminiApp.Droid.Resource.Attribute.switchMinWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.switchPadding = global::SalveminiApp.Droid.Resource.Attribute.switchPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.switchStyle = global::SalveminiApp.Droid.Resource.Attribute.switchStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.switchTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.switchTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabBackground = global::SalveminiApp.Droid.Resource.Attribute.tabBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabContentStart = global::SalveminiApp.Droid.Resource.Attribute.tabContentStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabGravity = global::SalveminiApp.Droid.Resource.Attribute.tabGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabIndicatorColor = global::SalveminiApp.Droid.Resource.Attribute.tabIndicatorColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabIndicatorHeight = global::SalveminiApp.Droid.Resource.Attribute.tabIndicatorHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabMaxWidth = global::SalveminiApp.Droid.Resource.Attribute.tabMaxWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabMinWidth = global::SalveminiApp.Droid.Resource.Attribute.tabMinWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabMode = global::SalveminiApp.Droid.Resource.Attribute.tabMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabPadding = global::SalveminiApp.Droid.Resource.Attribute.tabPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabPaddingBottom = global::SalveminiApp.Droid.Resource.Attribute.tabPaddingBottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabPaddingEnd = global::SalveminiApp.Droid.Resource.Attribute.tabPaddingEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabPaddingStart = global::SalveminiApp.Droid.Resource.Attribute.tabPaddingStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabPaddingTop = global::SalveminiApp.Droid.Resource.Attribute.tabPaddingTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabSelectedTextColor = global::SalveminiApp.Droid.Resource.Attribute.tabSelectedTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.tabTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabTextColor = global::SalveminiApp.Droid.Resource.Attribute.tabTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textAllCaps = global::SalveminiApp.Droid.Resource.Attribute.textAllCaps;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textAppearanceLargePopupMenu = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textAppearanceListItem = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceListItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textAppearanceListItemSecondary = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceListItemSecondary;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textAppearanceListItemSmall = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceListItemSmall;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textAppearancePopupMenuHeader = global::SalveminiApp.Droid.Resource.Attribute.textAppearancePopupMenuHeader;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textAppearanceSearchResultTitle = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textAppearanceSmallPopupMenu = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textColorAlertDialogListItem = global::SalveminiApp.Droid.Resource.Attribute.textColorAlertDialogListItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textColorError = global::SalveminiApp.Droid.Resource.Attribute.textColorError;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textColorSearchUrl = global::SalveminiApp.Droid.Resource.Attribute.textColorSearchUrl;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.theme = global::SalveminiApp.Droid.Resource.Attribute.theme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.thickness = global::SalveminiApp.Droid.Resource.Attribute.thickness;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.thumbTextPadding = global::SalveminiApp.Droid.Resource.Attribute.thumbTextPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.thumbTint = global::SalveminiApp.Droid.Resource.Attribute.thumbTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.thumbTintMode = global::SalveminiApp.Droid.Resource.Attribute.thumbTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tickMark = global::SalveminiApp.Droid.Resource.Attribute.tickMark;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tickMarkTint = global::SalveminiApp.Droid.Resource.Attribute.tickMarkTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tickMarkTintMode = global::SalveminiApp.Droid.Resource.Attribute.tickMarkTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tint = global::SalveminiApp.Droid.Resource.Attribute.tint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tintMode = global::SalveminiApp.Droid.Resource.Attribute.tintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.title = global::SalveminiApp.Droid.Resource.Attribute.title;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleEnabled = global::SalveminiApp.Droid.Resource.Attribute.titleEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleMargin = global::SalveminiApp.Droid.Resource.Attribute.titleMargin;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleMarginBottom = global::SalveminiApp.Droid.Resource.Attribute.titleMarginBottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleMarginEnd = global::SalveminiApp.Droid.Resource.Attribute.titleMarginEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleMarginStart = global::SalveminiApp.Droid.Resource.Attribute.titleMarginStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleMarginTop = global::SalveminiApp.Droid.Resource.Attribute.titleMarginTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleMargins = global::SalveminiApp.Droid.Resource.Attribute.titleMargins;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.titleTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleTextColor = global::SalveminiApp.Droid.Resource.Attribute.titleTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleTextStyle = global::SalveminiApp.Droid.Resource.Attribute.titleTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.toolbarId = global::SalveminiApp.Droid.Resource.Attribute.toolbarId;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.toolbarNavigationButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.toolbarStyle = global::SalveminiApp.Droid.Resource.Attribute.toolbarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tooltipForegroundColor = global::SalveminiApp.Droid.Resource.Attribute.tooltipForegroundColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tooltipFrameBackground = global::SalveminiApp.Droid.Resource.Attribute.tooltipFrameBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tooltipText = global::SalveminiApp.Droid.Resource.Attribute.tooltipText;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.track = global::SalveminiApp.Droid.Resource.Attribute.track;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.trackTint = global::SalveminiApp.Droid.Resource.Attribute.trackTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.trackTintMode = global::SalveminiApp.Droid.Resource.Attribute.trackTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.useCompatPadding = global::SalveminiApp.Droid.Resource.Attribute.useCompatPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.voiceIcon = global::SalveminiApp.Droid.Resource.Attribute.voiceIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowActionBar = global::SalveminiApp.Droid.Resource.Attribute.windowActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowActionBarOverlay = global::SalveminiApp.Droid.Resource.Attribute.windowActionBarOverlay;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowActionModeOverlay = global::SalveminiApp.Droid.Resource.Attribute.windowActionModeOverlay;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowFixedHeightMajor = global::SalveminiApp.Droid.Resource.Attribute.windowFixedHeightMajor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowFixedHeightMinor = global::SalveminiApp.Droid.Resource.Attribute.windowFixedHeightMinor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowFixedWidthMajor = global::SalveminiApp.Droid.Resource.Attribute.windowFixedWidthMajor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowFixedWidthMinor = global::SalveminiApp.Droid.Resource.Attribute.windowFixedWidthMinor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowMinWidthMajor = global::SalveminiApp.Droid.Resource.Attribute.windowMinWidthMajor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowMinWidthMinor = global::SalveminiApp.Droid.Resource.Attribute.windowMinWidthMinor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowNoTitle = global::SalveminiApp.Droid.Resource.Attribute.windowNoTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Boolean.abc_action_bar_embed_tabs = global::SalveminiApp.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::Plugin.Segmented.Control.Droid.Resource.Boolean.abc_allow_stacked_button_bar = global::SalveminiApp.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::Plugin.Segmented.Control.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::SalveminiApp.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::Plugin.Segmented.Control.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside = global::SalveminiApp.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside;
+			global::Plugin.Segmented.Control.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent = global::SalveminiApp.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark = global::SalveminiApp.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_background_cache_hint_selector_material_light = global::SalveminiApp.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_btn_colored_borderless_text_material = global::SalveminiApp.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_btn_colored_text_material = global::SalveminiApp.Droid.Resource.Color.abc_btn_colored_text_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_color_highlight_material = global::SalveminiApp.Droid.Resource.Color.abc_color_highlight_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_hint_foreground_material_dark = global::SalveminiApp.Droid.Resource.Color.abc_hint_foreground_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_hint_foreground_material_light = global::SalveminiApp.Droid.Resource.Color.abc_hint_foreground_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_input_method_navigation_guard = global::SalveminiApp.Droid.Resource.Color.abc_input_method_navigation_guard;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_primary_text_disable_only_material_dark = global::SalveminiApp.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_primary_text_disable_only_material_light = global::SalveminiApp.Droid.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_primary_text_material_dark = global::SalveminiApp.Droid.Resource.Color.abc_primary_text_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_primary_text_material_light = global::SalveminiApp.Droid.Resource.Color.abc_primary_text_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_search_url_text = global::SalveminiApp.Droid.Resource.Color.abc_search_url_text;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_search_url_text_normal = global::SalveminiApp.Droid.Resource.Color.abc_search_url_text_normal;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_search_url_text_pressed = global::SalveminiApp.Droid.Resource.Color.abc_search_url_text_pressed;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_search_url_text_selected = global::SalveminiApp.Droid.Resource.Color.abc_search_url_text_selected;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_secondary_text_material_dark = global::SalveminiApp.Droid.Resource.Color.abc_secondary_text_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_secondary_text_material_light = global::SalveminiApp.Droid.Resource.Color.abc_secondary_text_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_tint_btn_checkable = global::SalveminiApp.Droid.Resource.Color.abc_tint_btn_checkable;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_tint_default = global::SalveminiApp.Droid.Resource.Color.abc_tint_default;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_tint_edittext = global::SalveminiApp.Droid.Resource.Color.abc_tint_edittext;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_tint_seek_thumb = global::SalveminiApp.Droid.Resource.Color.abc_tint_seek_thumb;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_tint_spinner = global::SalveminiApp.Droid.Resource.Color.abc_tint_spinner;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_tint_switch_track = global::SalveminiApp.Droid.Resource.Color.abc_tint_switch_track;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.accent_material_dark = global::SalveminiApp.Droid.Resource.Color.accent_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.accent_material_light = global::SalveminiApp.Droid.Resource.Color.accent_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.background_floating_material_dark = global::SalveminiApp.Droid.Resource.Color.background_floating_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.background_floating_material_light = global::SalveminiApp.Droid.Resource.Color.background_floating_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.background_material_dark = global::SalveminiApp.Droid.Resource.Color.background_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.background_material_light = global::SalveminiApp.Droid.Resource.Color.background_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.bright_foreground_disabled_material_dark = global::SalveminiApp.Droid.Resource.Color.bright_foreground_disabled_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.bright_foreground_disabled_material_light = global::SalveminiApp.Droid.Resource.Color.bright_foreground_disabled_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.bright_foreground_inverse_material_dark = global::SalveminiApp.Droid.Resource.Color.bright_foreground_inverse_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.bright_foreground_inverse_material_light = global::SalveminiApp.Droid.Resource.Color.bright_foreground_inverse_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.bright_foreground_material_dark = global::SalveminiApp.Droid.Resource.Color.bright_foreground_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.bright_foreground_material_light = global::SalveminiApp.Droid.Resource.Color.bright_foreground_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.button_material_dark = global::SalveminiApp.Droid.Resource.Color.button_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.button_material_light = global::SalveminiApp.Droid.Resource.Color.button_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.cardview_dark_background = global::SalveminiApp.Droid.Resource.Color.cardview_dark_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.cardview_light_background = global::SalveminiApp.Droid.Resource.Color.cardview_light_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.cardview_shadow_end_color = global::SalveminiApp.Droid.Resource.Color.cardview_shadow_end_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.cardview_shadow_start_color = global::SalveminiApp.Droid.Resource.Color.cardview_shadow_start_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_bottom_navigation_shadow_color = global::SalveminiApp.Droid.Resource.Color.design_bottom_navigation_shadow_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_error = global::SalveminiApp.Droid.Resource.Color.design_error;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_fab_shadow_end_color = global::SalveminiApp.Droid.Resource.Color.design_fab_shadow_end_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_fab_shadow_mid_color = global::SalveminiApp.Droid.Resource.Color.design_fab_shadow_mid_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_fab_shadow_start_color = global::SalveminiApp.Droid.Resource.Color.design_fab_shadow_start_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_fab_stroke_end_inner_color = global::SalveminiApp.Droid.Resource.Color.design_fab_stroke_end_inner_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_fab_stroke_end_outer_color = global::SalveminiApp.Droid.Resource.Color.design_fab_stroke_end_outer_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_fab_stroke_top_inner_color = global::SalveminiApp.Droid.Resource.Color.design_fab_stroke_top_inner_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_fab_stroke_top_outer_color = global::SalveminiApp.Droid.Resource.Color.design_fab_stroke_top_outer_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_snackbar_background_color = global::SalveminiApp.Droid.Resource.Color.design_snackbar_background_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_tint_password_toggle = global::SalveminiApp.Droid.Resource.Color.design_tint_password_toggle;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.dim_foreground_disabled_material_dark = global::SalveminiApp.Droid.Resource.Color.dim_foreground_disabled_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.dim_foreground_disabled_material_light = global::SalveminiApp.Droid.Resource.Color.dim_foreground_disabled_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.dim_foreground_material_dark = global::SalveminiApp.Droid.Resource.Color.dim_foreground_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.dim_foreground_material_light = global::SalveminiApp.Droid.Resource.Color.dim_foreground_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.error_color_material = global::SalveminiApp.Droid.Resource.Color.error_color_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.foreground_material_dark = global::SalveminiApp.Droid.Resource.Color.foreground_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.foreground_material_light = global::SalveminiApp.Droid.Resource.Color.foreground_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.highlighted_text_material_dark = global::SalveminiApp.Droid.Resource.Color.highlighted_text_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.highlighted_text_material_light = global::SalveminiApp.Droid.Resource.Color.highlighted_text_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_blue_grey_800 = global::SalveminiApp.Droid.Resource.Color.material_blue_grey_800;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_blue_grey_900 = global::SalveminiApp.Droid.Resource.Color.material_blue_grey_900;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_blue_grey_950 = global::SalveminiApp.Droid.Resource.Color.material_blue_grey_950;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_deep_teal_200 = global::SalveminiApp.Droid.Resource.Color.material_deep_teal_200;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_deep_teal_500 = global::SalveminiApp.Droid.Resource.Color.material_deep_teal_500;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_grey_100 = global::SalveminiApp.Droid.Resource.Color.material_grey_100;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_grey_300 = global::SalveminiApp.Droid.Resource.Color.material_grey_300;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_grey_50 = global::SalveminiApp.Droid.Resource.Color.material_grey_50;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_grey_600 = global::SalveminiApp.Droid.Resource.Color.material_grey_600;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_grey_800 = global::SalveminiApp.Droid.Resource.Color.material_grey_800;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_grey_850 = global::SalveminiApp.Droid.Resource.Color.material_grey_850;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_grey_900 = global::SalveminiApp.Droid.Resource.Color.material_grey_900;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.normal = global::SalveminiApp.Droid.Resource.Color.normal;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.notification_action_color_filter = global::SalveminiApp.Droid.Resource.Color.notification_action_color_filter;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.notification_icon_bg_color = global::SalveminiApp.Droid.Resource.Color.notification_icon_bg_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.notification_material_background_media_default_color = global::SalveminiApp.Droid.Resource.Color.notification_material_background_media_default_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.primary_dark_material_dark = global::SalveminiApp.Droid.Resource.Color.primary_dark_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.primary_dark_material_light = global::SalveminiApp.Droid.Resource.Color.primary_dark_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.primary_material_dark = global::SalveminiApp.Droid.Resource.Color.primary_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.primary_material_light = global::SalveminiApp.Droid.Resource.Color.primary_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.primary_text_default_material_dark = global::SalveminiApp.Droid.Resource.Color.primary_text_default_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.primary_text_default_material_light = global::SalveminiApp.Droid.Resource.Color.primary_text_default_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.primary_text_disabled_material_dark = global::SalveminiApp.Droid.Resource.Color.primary_text_disabled_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.primary_text_disabled_material_light = global::SalveminiApp.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.ripple_material_dark = global::SalveminiApp.Droid.Resource.Color.ripple_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.ripple_material_light = global::SalveminiApp.Droid.Resource.Color.ripple_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.secondary_text_default_material_dark = global::SalveminiApp.Droid.Resource.Color.secondary_text_default_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.secondary_text_default_material_light = global::SalveminiApp.Droid.Resource.Color.secondary_text_default_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.secondary_text_disabled_material_dark = global::SalveminiApp.Droid.Resource.Color.secondary_text_disabled_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.secondary_text_disabled_material_light = global::SalveminiApp.Droid.Resource.Color.secondary_text_disabled_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.segmented_control_text = global::SalveminiApp.Droid.Resource.Color.segmented_control_text;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.selected = global::SalveminiApp.Droid.Resource.Color.selected;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.switch_thumb_disabled_material_dark = global::SalveminiApp.Droid.Resource.Color.switch_thumb_disabled_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.switch_thumb_disabled_material_light = global::SalveminiApp.Droid.Resource.Color.switch_thumb_disabled_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.switch_thumb_material_dark = global::SalveminiApp.Droid.Resource.Color.switch_thumb_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.switch_thumb_material_light = global::SalveminiApp.Droid.Resource.Color.switch_thumb_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.switch_thumb_normal_material_dark = global::SalveminiApp.Droid.Resource.Color.switch_thumb_normal_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.switch_thumb_normal_material_light = global::SalveminiApp.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.tooltip_background_dark = global::SalveminiApp.Droid.Resource.Color.tooltip_background_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.tooltip_background_light = global::SalveminiApp.Droid.Resource.Color.tooltip_background_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_content_inset_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_default_height_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_default_height_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_elevation_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_elevation_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_progress_bar_size = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_progress_bar_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_stacked_max_height = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_button_min_height_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_button_min_height_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_button_min_width_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_button_min_width_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height = global::SalveminiApp.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_button_inset_horizontal_material = global::SalveminiApp.Droid.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_button_inset_vertical_material = global::SalveminiApp.Droid.Resource.Dimension.abc_button_inset_vertical_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_button_padding_horizontal_material = global::SalveminiApp.Droid.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_button_padding_vertical_material = global::SalveminiApp.Droid.Resource.Dimension.abc_button_padding_vertical_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::SalveminiApp.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_config_prefDialogWidth = global::SalveminiApp.Droid.Resource.Dimension.abc_config_prefDialogWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_control_corner_material = global::SalveminiApp.Droid.Resource.Dimension.abc_control_corner_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_control_inset_material = global::SalveminiApp.Droid.Resource.Dimension.abc_control_inset_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_control_padding_material = global::SalveminiApp.Droid.Resource.Dimension.abc_control_padding_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_fixed_height_major = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_fixed_height_minor = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_fixed_width_major = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_fixed_width_minor = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_min_width_major = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_min_width_major;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_min_width_minor = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_min_width_minor;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_padding_material = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_padding_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_padding_top_material = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_padding_top_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_title_divider_material = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_title_divider_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_disabled_alpha_material_dark = global::SalveminiApp.Droid.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_disabled_alpha_material_light = global::SalveminiApp.Droid.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dropdownitem_icon_width = global::SalveminiApp.Droid.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left = global::SalveminiApp.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right = global::SalveminiApp.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material = global::SalveminiApp.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::SalveminiApp.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_edit_text_inset_top_material = global::SalveminiApp.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_floating_window_z = global::SalveminiApp.Droid.Resource.Dimension.abc_floating_window_z;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material = global::SalveminiApp.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_panel_menu_list_width = global::SalveminiApp.Droid.Resource.Dimension.abc_panel_menu_list_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_progress_bar_height_material = global::SalveminiApp.Droid.Resource.Dimension.abc_progress_bar_height_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_search_view_preferred_height = global::SalveminiApp.Droid.Resource.Dimension.abc_search_view_preferred_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_search_view_preferred_width = global::SalveminiApp.Droid.Resource.Dimension.abc_search_view_preferred_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_seekbar_track_background_height_material = global::SalveminiApp.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material = global::SalveminiApp.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_select_dialog_padding_start_material = global::SalveminiApp.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_switch_padding = global::SalveminiApp.Droid.Resource.Dimension.abc_switch_padding;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_body_1_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_body_1_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_body_2_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_body_2_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_button_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_button_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_caption_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_caption_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_display_1_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_display_1_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_display_2_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_display_2_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_display_3_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_display_3_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_display_4_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_display_4_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_headline_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_headline_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_large_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_large_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_medium_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_medium_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_menu_header_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_menu_header_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_menu_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_menu_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_small_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_small_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_subhead_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_subhead_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_title_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_title_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_title_material_toolbar = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.cardview_compat_inset_shadow = global::SalveminiApp.Droid.Resource.Dimension.cardview_compat_inset_shadow;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.cardview_default_elevation = global::SalveminiApp.Droid.Resource.Dimension.cardview_default_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.cardview_default_radius = global::SalveminiApp.Droid.Resource.Dimension.cardview_default_radius;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.compat_button_inset_horizontal_material = global::SalveminiApp.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.compat_button_inset_vertical_material = global::SalveminiApp.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.compat_button_padding_horizontal_material = global::SalveminiApp.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.compat_button_padding_vertical_material = global::SalveminiApp.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.compat_control_corner_material = global::SalveminiApp.Droid.Resource.Dimension.compat_control_corner_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_appbar_elevation = global::SalveminiApp.Droid.Resource.Dimension.design_appbar_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_navigation_active_text_size = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_active_text_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_navigation_elevation = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_navigation_height = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_navigation_item_max_width = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_item_max_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_navigation_item_min_width = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_item_min_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_navigation_margin = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_margin;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_navigation_shadow_height = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_shadow_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_navigation_text_size = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_text_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_fab_border_width = global::SalveminiApp.Droid.Resource.Dimension.design_fab_border_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_fab_elevation = global::SalveminiApp.Droid.Resource.Dimension.design_fab_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_fab_image_size = global::SalveminiApp.Droid.Resource.Dimension.design_fab_image_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_fab_size_mini = global::SalveminiApp.Droid.Resource.Dimension.design_fab_size_mini;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_fab_size_normal = global::SalveminiApp.Droid.Resource.Dimension.design_fab_size_normal;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_fab_translation_z_pressed = global::SalveminiApp.Droid.Resource.Dimension.design_fab_translation_z_pressed;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_navigation_elevation = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_navigation_icon_padding = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_icon_padding;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_navigation_icon_size = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_icon_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_navigation_max_width = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_max_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_navigation_padding_bottom = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_padding_bottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_navigation_separator_vertical_padding = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_separator_vertical_padding;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_action_inline_max_width = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_background_corner_radius = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_background_corner_radius;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_elevation = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_max_width = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_max_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_min_width = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_min_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_padding_horizontal = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_padding_horizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_padding_vertical = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_padding_vertical;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_text_size = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_text_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_tab_max_width = global::SalveminiApp.Droid.Resource.Dimension.design_tab_max_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_tab_scrollable_min_width = global::SalveminiApp.Droid.Resource.Dimension.design_tab_scrollable_min_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_tab_text_size = global::SalveminiApp.Droid.Resource.Dimension.design_tab_text_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_tab_text_size_2line = global::SalveminiApp.Droid.Resource.Dimension.design_tab_text_size_2line;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.disabled_alpha_material_dark = global::SalveminiApp.Droid.Resource.Dimension.disabled_alpha_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.disabled_alpha_material_light = global::SalveminiApp.Droid.Resource.Dimension.disabled_alpha_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.fastscroll_default_thickness = global::SalveminiApp.Droid.Resource.Dimension.fastscroll_default_thickness;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.fastscroll_margin = global::SalveminiApp.Droid.Resource.Dimension.fastscroll_margin;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.fastscroll_minimum_range = global::SalveminiApp.Droid.Resource.Dimension.fastscroll_minimum_range;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.highlight_alpha_material_colored = global::SalveminiApp.Droid.Resource.Dimension.highlight_alpha_material_colored;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.highlight_alpha_material_dark = global::SalveminiApp.Droid.Resource.Dimension.highlight_alpha_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.highlight_alpha_material_light = global::SalveminiApp.Droid.Resource.Dimension.highlight_alpha_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.hint_alpha_material_dark = global::SalveminiApp.Droid.Resource.Dimension.hint_alpha_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.hint_alpha_material_light = global::SalveminiApp.Droid.Resource.Dimension.hint_alpha_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.hint_pressed_alpha_material_dark = global::SalveminiApp.Droid.Resource.Dimension.hint_pressed_alpha_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.hint_pressed_alpha_material_light = global::SalveminiApp.Droid.Resource.Dimension.hint_pressed_alpha_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::SalveminiApp.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::SalveminiApp.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::SalveminiApp.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.mr_controller_volume_group_list_item_height = global::SalveminiApp.Droid.Resource.Dimension.mr_controller_volume_group_list_item_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.mr_controller_volume_group_list_item_icon_size = global::SalveminiApp.Droid.Resource.Dimension.mr_controller_volume_group_list_item_icon_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.mr_controller_volume_group_list_max_height = global::SalveminiApp.Droid.Resource.Dimension.mr_controller_volume_group_list_max_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.mr_controller_volume_group_list_padding_top = global::SalveminiApp.Droid.Resource.Dimension.mr_controller_volume_group_list_padding_top;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.mr_dialog_fixed_width_major = global::SalveminiApp.Droid.Resource.Dimension.mr_dialog_fixed_width_major;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.mr_dialog_fixed_width_minor = global::SalveminiApp.Droid.Resource.Dimension.mr_dialog_fixed_width_minor;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_action_icon_size = global::SalveminiApp.Droid.Resource.Dimension.notification_action_icon_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_action_text_size = global::SalveminiApp.Droid.Resource.Dimension.notification_action_text_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_big_circle_margin = global::SalveminiApp.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_content_margin_start = global::SalveminiApp.Droid.Resource.Dimension.notification_content_margin_start;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_large_icon_height = global::SalveminiApp.Droid.Resource.Dimension.notification_large_icon_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_large_icon_width = global::SalveminiApp.Droid.Resource.Dimension.notification_large_icon_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_main_column_padding_top = global::SalveminiApp.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_media_narrow_margin = global::SalveminiApp.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_right_icon_size = global::SalveminiApp.Droid.Resource.Dimension.notification_right_icon_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_right_side_padding_top = global::SalveminiApp.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_small_icon_background_padding = global::SalveminiApp.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_small_icon_size_as_large = global::SalveminiApp.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_subtext_size = global::SalveminiApp.Droid.Resource.Dimension.notification_subtext_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_top_pad = global::SalveminiApp.Droid.Resource.Dimension.notification_top_pad;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_top_pad_large_text = global::SalveminiApp.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.tooltip_corner_radius = global::SalveminiApp.Droid.Resource.Dimension.tooltip_corner_radius;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.tooltip_horizontal_padding = global::SalveminiApp.Droid.Resource.Dimension.tooltip_horizontal_padding;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.tooltip_margin = global::SalveminiApp.Droid.Resource.Dimension.tooltip_margin;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.tooltip_precise_anchor_extra_offset = global::SalveminiApp.Droid.Resource.Dimension.tooltip_precise_anchor_extra_offset;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.tooltip_precise_anchor_threshold = global::SalveminiApp.Droid.Resource.Dimension.tooltip_precise_anchor_threshold;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.tooltip_vertical_padding = global::SalveminiApp.Droid.Resource.Dimension.tooltip_vertical_padding;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.tooltip_y_offset_non_touch = global::SalveminiApp.Droid.Resource.Dimension.tooltip_y_offset_non_touch;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.tooltip_y_offset_touch = global::SalveminiApp.Droid.Resource.Dimension.tooltip_y_offset_touch;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_action_bar_item_background_material = global::SalveminiApp.Droid.Resource.Drawable.abc_action_bar_item_background_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_borderless_material = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_borderless_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_check_material = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_check_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_colored_material = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_colored_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_default_mtrl_shape = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_radio_material = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_radio_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_cab_background_internal_bg = global::SalveminiApp.Droid.Resource.Drawable.abc_cab_background_internal_bg;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_cab_background_top_material = global::SalveminiApp.Droid.Resource.Drawable.abc_cab_background_top_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_control_background_material = global::SalveminiApp.Droid.Resource.Drawable.abc_control_background_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_dialog_material_background = global::SalveminiApp.Droid.Resource.Drawable.abc_dialog_material_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_edit_text_material = global::SalveminiApp.Droid.Resource.Drawable.abc_edit_text_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_ab_back_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_ab_back_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_clear_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_clear_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_go_search_api_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_go_search_api_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_menu_overflow_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_menu_overflow_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_search_api_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_search_api_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_star_black_16dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_star_black_16dp;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_star_black_36dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_star_black_36dp;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_star_black_48dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_star_black_48dp;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_star_half_black_16dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_star_half_black_36dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_star_half_black_48dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_star_half_black_48dp;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_voice_search_api_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_voice_search_api_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_item_background_holo_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_item_background_holo_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_item_background_holo_light = global::SalveminiApp.Droid.Resource.Drawable.abc_item_background_holo_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_focused_holo = global::SalveminiApp.Droid.Resource.Drawable.abc_list_focused_holo;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_longpressed_holo = global::SalveminiApp.Droid.Resource.Drawable.abc_list_longpressed_holo;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_pressed_holo_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_pressed_holo_light = global::SalveminiApp.Droid.Resource.Drawable.abc_list_pressed_holo_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::SalveminiApp.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light = global::SalveminiApp.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_selector_holo_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_list_selector_holo_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_selector_holo_light = global::SalveminiApp.Droid.Resource.Drawable.abc_list_selector_holo_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::SalveminiApp.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_popup_background_mtrl_mult = global::SalveminiApp.Droid.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ratingbar_indicator_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ratingbar_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ratingbar_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ratingbar_small_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ratingbar_small_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::SalveminiApp.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::SalveminiApp.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_seekbar_thumb_material = global::SalveminiApp.Droid.Resource.Drawable.abc_seekbar_thumb_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_seekbar_tick_mark_material = global::SalveminiApp.Droid.Resource.Drawable.abc_seekbar_tick_mark_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_seekbar_track_material = global::SalveminiApp.Droid.Resource.Drawable.abc_seekbar_track_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_spinner_textfield_background_material = global::SalveminiApp.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_switch_thumb_material = global::SalveminiApp.Droid.Resource.Drawable.abc_switch_thumb_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_tab_indicator_material = global::SalveminiApp.Droid.Resource.Drawable.abc_tab_indicator_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_text_cursor_material = global::SalveminiApp.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light = global::SalveminiApp.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light = global::SalveminiApp.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light = global::SalveminiApp.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_textfield_search_material = global::SalveminiApp.Droid.Resource.Drawable.abc_textfield_search_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_vector_test = global::SalveminiApp.Droid.Resource.Drawable.abc_vector_test;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.avd_hide_password = global::SalveminiApp.Droid.Resource.Drawable.avd_hide_password;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.avd_show_password = global::SalveminiApp.Droid.Resource.Drawable.avd_show_password;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.design_bottom_navigation_item_background = global::SalveminiApp.Droid.Resource.Drawable.design_bottom_navigation_item_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.design_fab_background = global::SalveminiApp.Droid.Resource.Drawable.design_fab_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.design_ic_visibility = global::SalveminiApp.Droid.Resource.Drawable.design_ic_visibility;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.design_ic_visibility_off = global::SalveminiApp.Droid.Resource.Drawable.design_ic_visibility_off;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.design_password_eye = global::SalveminiApp.Droid.Resource.Drawable.design_password_eye;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.design_snackbar_background = global::SalveminiApp.Droid.Resource.Drawable.design_snackbar_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_audiotrack_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_audiotrack_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_audiotrack_light = global::SalveminiApp.Droid.Resource.Drawable.ic_audiotrack_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_dialog_close_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_dialog_close_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_dialog_close_light = global::SalveminiApp.Droid.Resource.Drawable.ic_dialog_close_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_00 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_00;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_01 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_01;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_02 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_02;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_03 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_03;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_04 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_04;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_05 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_05;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_06 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_06;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_07 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_07;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_08 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_08;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_09 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_09;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_10 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_10;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_11 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_11;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_12 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_12;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_13 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_13;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_14 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_14;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_15 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_15;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_00 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_00;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_01 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_01;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_02 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_02;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_03 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_03;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_04 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_04;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_05 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_05;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_06 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_06;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_07 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_07;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_08 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_08;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_09 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_09;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_10 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_10;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_11 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_11;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_12 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_12;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_13 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_13;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_14 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_14;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_15 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_15;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_media_pause_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_media_pause_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_media_pause_light = global::SalveminiApp.Droid.Resource.Drawable.ic_media_pause_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_media_play_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_media_play_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_media_play_light = global::SalveminiApp.Droid.Resource.Drawable.ic_media_play_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_media_stop_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_media_stop_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_media_stop_light = global::SalveminiApp.Droid.Resource.Drawable.ic_media_stop_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_00_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_00_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_00_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_00_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_01_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_01_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_01_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_01_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_02_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_02_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_02_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_02_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_03_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_03_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_03_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_03_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_04_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_04_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_04_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_04_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_05_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_05_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_05_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_05_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_06_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_06_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_06_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_06_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_07_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_07_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_07_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_07_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_08_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_08_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_08_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_08_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_09_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_09_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_09_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_09_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_10_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_10_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_10_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_10_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_11_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_11_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_11_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_11_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_12_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_12_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_12_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_12_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_13_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_13_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_13_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_13_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_14_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_14_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_14_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_14_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_15_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_15_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_15_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_15_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_16_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_16_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_16_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_16_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_17_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_17_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_17_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_17_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_18_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_18_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_18_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_18_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_19_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_19_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_19_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_19_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_20_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_20_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_20_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_20_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_21_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_21_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_21_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_21_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_22_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_22_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_22_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_22_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_23_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_23_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_23_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_23_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_24_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_24_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_24_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_24_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_25_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_25_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_25_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_25_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_26_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_26_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_26_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_26_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_27_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_27_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_27_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_27_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_28_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_28_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_28_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_28_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_29_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_29_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_29_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_29_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_30_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_30_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_30_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_30_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_00_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_00_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_00_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_00_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_01_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_01_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_01_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_01_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_02_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_02_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_02_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_02_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_03_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_03_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_03_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_03_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_04_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_04_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_04_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_04_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_05_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_05_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_05_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_05_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_06_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_06_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_06_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_06_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_07_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_07_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_07_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_07_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_08_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_08_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_08_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_08_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_09_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_09_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_09_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_09_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_10_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_10_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_10_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_10_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_11_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_11_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_11_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_11_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_12_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_12_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_12_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_12_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_13_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_13_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_13_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_13_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_14_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_14_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_14_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_14_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_15_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_15_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_15_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_15_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_16_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_16_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_16_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_16_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_17_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_17_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_17_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_17_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_18_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_18_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_18_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_18_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_19_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_19_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_19_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_19_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_20_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_20_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_20_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_20_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_21_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_21_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_21_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_21_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_22_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_22_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_22_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_22_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_23_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_23_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_23_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_23_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_24_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_24_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_24_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_24_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_25_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_25_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_25_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_25_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_26_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_26_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_26_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_26_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_27_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_27_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_27_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_27_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_28_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_28_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_28_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_28_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_29_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_29_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_29_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_29_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_30_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_30_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_30_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_30_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_disabled_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_disabled_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_disabled_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_disabled_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_disconnected_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_disconnected_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_disconnected_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_disconnected_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_grey = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_grey;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_vol_type_speaker_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_vol_type_speaker_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_vol_type_speaker_group_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_vol_type_speaker_group_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_vol_type_speaker_group_light = global::SalveminiApp.Droid.Resource.Drawable.ic_vol_type_speaker_group_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_vol_type_speaker_light = global::SalveminiApp.Droid.Resource.Drawable.ic_vol_type_speaker_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_vol_type_tv_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_vol_type_tv_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_vol_type_tv_light = global::SalveminiApp.Droid.Resource.Drawable.ic_vol_type_tv_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_button_connected_dark = global::SalveminiApp.Droid.Resource.Drawable.mr_button_connected_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_button_connected_light = global::SalveminiApp.Droid.Resource.Drawable.mr_button_connected_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_button_connecting_dark = global::SalveminiApp.Droid.Resource.Drawable.mr_button_connecting_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_button_connecting_light = global::SalveminiApp.Droid.Resource.Drawable.mr_button_connecting_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_button_dark = global::SalveminiApp.Droid.Resource.Drawable.mr_button_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_button_light = global::SalveminiApp.Droid.Resource.Drawable.mr_button_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_dialog_close_dark = global::SalveminiApp.Droid.Resource.Drawable.mr_dialog_close_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_dialog_close_light = global::SalveminiApp.Droid.Resource.Drawable.mr_dialog_close_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_dialog_material_background_dark = global::SalveminiApp.Droid.Resource.Drawable.mr_dialog_material_background_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_dialog_material_background_light = global::SalveminiApp.Droid.Resource.Drawable.mr_dialog_material_background_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_group_collapse = global::SalveminiApp.Droid.Resource.Drawable.mr_group_collapse;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_group_expand = global::SalveminiApp.Droid.Resource.Drawable.mr_group_expand;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_media_pause_dark = global::SalveminiApp.Droid.Resource.Drawable.mr_media_pause_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_media_pause_light = global::SalveminiApp.Droid.Resource.Drawable.mr_media_pause_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_media_play_dark = global::SalveminiApp.Droid.Resource.Drawable.mr_media_play_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_media_play_light = global::SalveminiApp.Droid.Resource.Drawable.mr_media_play_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_media_stop_dark = global::SalveminiApp.Droid.Resource.Drawable.mr_media_stop_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_media_stop_light = global::SalveminiApp.Droid.Resource.Drawable.mr_media_stop_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_vol_type_audiotrack_dark = global::SalveminiApp.Droid.Resource.Drawable.mr_vol_type_audiotrack_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_vol_type_audiotrack_light = global::SalveminiApp.Droid.Resource.Drawable.mr_vol_type_audiotrack_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.navigation_empty_icon = global::SalveminiApp.Droid.Resource.Drawable.navigation_empty_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_action_background = global::SalveminiApp.Droid.Resource.Drawable.notification_action_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_bg = global::SalveminiApp.Droid.Resource.Drawable.notification_bg;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_bg_low = global::SalveminiApp.Droid.Resource.Drawable.notification_bg_low;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_bg_low_normal = global::SalveminiApp.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_bg_low_pressed = global::SalveminiApp.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_bg_normal = global::SalveminiApp.Droid.Resource.Drawable.notification_bg_normal;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_bg_normal_pressed = global::SalveminiApp.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_icon_background = global::SalveminiApp.Droid.Resource.Drawable.notification_icon_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_template_icon_bg = global::SalveminiApp.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_template_icon_low_bg = global::SalveminiApp.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_tile_bg = global::SalveminiApp.Droid.Resource.Drawable.notification_tile_bg;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notify_panel_notification_icon_bg = global::SalveminiApp.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.segmented_control_background = global::SalveminiApp.Droid.Resource.Drawable.segmented_control_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.segmented_control_first_background = global::SalveminiApp.Droid.Resource.Drawable.segmented_control_first_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.segmented_control_last_background = global::SalveminiApp.Droid.Resource.Drawable.segmented_control_last_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.tooltip_frame_dark = global::SalveminiApp.Droid.Resource.Drawable.tooltip_frame_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.tooltip_frame_light = global::SalveminiApp.Droid.Resource.Drawable.tooltip_frame_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.ALT = global::SalveminiApp.Droid.Resource.Id.ALT;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.CTRL = global::SalveminiApp.Droid.Resource.Id.CTRL;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.FUNCTION = global::SalveminiApp.Droid.Resource.Id.FUNCTION;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.META = global::SalveminiApp.Droid.Resource.Id.META;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.SHIFT = global::SalveminiApp.Droid.Resource.Id.SHIFT;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.SYM = global::SalveminiApp.Droid.Resource.Id.SYM;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.SegControl = global::SalveminiApp.Droid.Resource.Id.SegControl;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action0 = global::SalveminiApp.Droid.Resource.Id.action0;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_bar = global::SalveminiApp.Droid.Resource.Id.action_bar;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_bar_activity_content = global::SalveminiApp.Droid.Resource.Id.action_bar_activity_content;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_bar_container = global::SalveminiApp.Droid.Resource.Id.action_bar_container;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_bar_root = global::SalveminiApp.Droid.Resource.Id.action_bar_root;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_bar_spinner = global::SalveminiApp.Droid.Resource.Id.action_bar_spinner;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_bar_subtitle = global::SalveminiApp.Droid.Resource.Id.action_bar_subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_bar_title = global::SalveminiApp.Droid.Resource.Id.action_bar_title;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_container = global::SalveminiApp.Droid.Resource.Id.action_container;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_context_bar = global::SalveminiApp.Droid.Resource.Id.action_context_bar;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_divider = global::SalveminiApp.Droid.Resource.Id.action_divider;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_image = global::SalveminiApp.Droid.Resource.Id.action_image;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_menu_divider = global::SalveminiApp.Droid.Resource.Id.action_menu_divider;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_menu_presenter = global::SalveminiApp.Droid.Resource.Id.action_menu_presenter;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_mode_bar = global::SalveminiApp.Droid.Resource.Id.action_mode_bar;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_mode_bar_stub = global::SalveminiApp.Droid.Resource.Id.action_mode_bar_stub;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_mode_close_button = global::SalveminiApp.Droid.Resource.Id.action_mode_close_button;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_text = global::SalveminiApp.Droid.Resource.Id.action_text;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.actions = global::SalveminiApp.Droid.Resource.Id.actions;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.activity_chooser_view_content = global::SalveminiApp.Droid.Resource.Id.activity_chooser_view_content;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.add = global::SalveminiApp.Droid.Resource.Id.add;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.alertTitle = global::SalveminiApp.Droid.Resource.Id.alertTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.all = global::SalveminiApp.Droid.Resource.Id.all;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.always = global::SalveminiApp.Droid.Resource.Id.always;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.async = global::SalveminiApp.Droid.Resource.Id.async;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.auto = global::SalveminiApp.Droid.Resource.Id.auto;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.beginning = global::SalveminiApp.Droid.Resource.Id.beginning;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.blocking = global::SalveminiApp.Droid.Resource.Id.blocking;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.bottom = global::SalveminiApp.Droid.Resource.Id.bottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.bottomtab_navarea = global::SalveminiApp.Droid.Resource.Id.bottomtab_navarea;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.bottomtab_tabbar = global::SalveminiApp.Droid.Resource.Id.bottomtab_tabbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.buttonPanel = global::SalveminiApp.Droid.Resource.Id.buttonPanel;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.cancel_action = global::SalveminiApp.Droid.Resource.Id.cancel_action;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.center = global::SalveminiApp.Droid.Resource.Id.center;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.center_horizontal = global::SalveminiApp.Droid.Resource.Id.center_horizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.center_vertical = global::SalveminiApp.Droid.Resource.Id.center_vertical;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.checkbox = global::SalveminiApp.Droid.Resource.Id.checkbox;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.chronometer = global::SalveminiApp.Droid.Resource.Id.chronometer;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.clip_horizontal = global::SalveminiApp.Droid.Resource.Id.clip_horizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.clip_vertical = global::SalveminiApp.Droid.Resource.Id.clip_vertical;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.collapseActionView = global::SalveminiApp.Droid.Resource.Id.collapseActionView;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.container = global::SalveminiApp.Droid.Resource.Id.container;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.contentPanel = global::SalveminiApp.Droid.Resource.Id.contentPanel;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.coordinator = global::SalveminiApp.Droid.Resource.Id.coordinator;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.custom = global::SalveminiApp.Droid.Resource.Id.custom;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.customPanel = global::SalveminiApp.Droid.Resource.Id.customPanel;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.decor_content_parent = global::SalveminiApp.Droid.Resource.Id.decor_content_parent;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.default_activity_button = global::SalveminiApp.Droid.Resource.Id.default_activity_button;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.design_bottom_sheet = global::SalveminiApp.Droid.Resource.Id.design_bottom_sheet;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.design_menu_item_action_area = global::SalveminiApp.Droid.Resource.Id.design_menu_item_action_area;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.design_menu_item_action_area_stub = global::SalveminiApp.Droid.Resource.Id.design_menu_item_action_area_stub;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.design_menu_item_text = global::SalveminiApp.Droid.Resource.Id.design_menu_item_text;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.design_navigation_view = global::SalveminiApp.Droid.Resource.Id.design_navigation_view;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.disableHome = global::SalveminiApp.Droid.Resource.Id.disableHome;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.edit_query = global::SalveminiApp.Droid.Resource.Id.edit_query;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.end = global::SalveminiApp.Droid.Resource.Id.end;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.end_padder = global::SalveminiApp.Droid.Resource.Id.end_padder;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.enterAlways = global::SalveminiApp.Droid.Resource.Id.enterAlways;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.enterAlwaysCollapsed = global::SalveminiApp.Droid.Resource.Id.enterAlwaysCollapsed;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.exitUntilCollapsed = global::SalveminiApp.Droid.Resource.Id.exitUntilCollapsed;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.expand_activities_button = global::SalveminiApp.Droid.Resource.Id.expand_activities_button;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.expanded_menu = global::SalveminiApp.Droid.Resource.Id.expanded_menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.fill = global::SalveminiApp.Droid.Resource.Id.fill;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.fill_horizontal = global::SalveminiApp.Droid.Resource.Id.fill_horizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.fill_vertical = global::SalveminiApp.Droid.Resource.Id.fill_vertical;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.@fixed = global::SalveminiApp.Droid.Resource.Id.@fixed;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.flyoutcontent_appbar = global::SalveminiApp.Droid.Resource.Id.flyoutcontent_appbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.flyoutcontent_recycler = global::SalveminiApp.Droid.Resource.Id.flyoutcontent_recycler;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.forever = global::SalveminiApp.Droid.Resource.Id.forever;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.ghost_view = global::SalveminiApp.Droid.Resource.Id.ghost_view;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.home = global::SalveminiApp.Droid.Resource.Id.home;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.homeAsUp = global::SalveminiApp.Droid.Resource.Id.homeAsUp;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.icon = global::SalveminiApp.Droid.Resource.Id.icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.icon_group = global::SalveminiApp.Droid.Resource.Id.icon_group;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.ifRoom = global::SalveminiApp.Droid.Resource.Id.ifRoom;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.image = global::SalveminiApp.Droid.Resource.Id.image;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.info = global::SalveminiApp.Droid.Resource.Id.info;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.italic = global::SalveminiApp.Droid.Resource.Id.italic;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.item_touch_helper_previous_elevation = global::SalveminiApp.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.largeLabel = global::SalveminiApp.Droid.Resource.Id.largeLabel;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.left = global::SalveminiApp.Droid.Resource.Id.left;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.line1 = global::SalveminiApp.Droid.Resource.Id.line1;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.line3 = global::SalveminiApp.Droid.Resource.Id.line3;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.listMode = global::SalveminiApp.Droid.Resource.Id.listMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.list_item = global::SalveminiApp.Droid.Resource.Id.list_item;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.main_appbar = global::SalveminiApp.Droid.Resource.Id.main_appbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.main_tablayout = global::SalveminiApp.Droid.Resource.Id.main_tablayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.main_toolbar = global::SalveminiApp.Droid.Resource.Id.main_toolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.masked = global::SalveminiApp.Droid.Resource.Id.masked;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.media_actions = global::SalveminiApp.Droid.Resource.Id.media_actions;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.message = global::SalveminiApp.Droid.Resource.Id.message;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.middle = global::SalveminiApp.Droid.Resource.Id.middle;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mini = global::SalveminiApp.Droid.Resource.Id.mini;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_art = global::SalveminiApp.Droid.Resource.Id.mr_art;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_chooser_list = global::SalveminiApp.Droid.Resource.Id.mr_chooser_list;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_chooser_route_desc = global::SalveminiApp.Droid.Resource.Id.mr_chooser_route_desc;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_chooser_route_icon = global::SalveminiApp.Droid.Resource.Id.mr_chooser_route_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_chooser_route_name = global::SalveminiApp.Droid.Resource.Id.mr_chooser_route_name;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_chooser_title = global::SalveminiApp.Droid.Resource.Id.mr_chooser_title;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_close = global::SalveminiApp.Droid.Resource.Id.mr_close;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_control_divider = global::SalveminiApp.Droid.Resource.Id.mr_control_divider;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_control_playback_ctrl = global::SalveminiApp.Droid.Resource.Id.mr_control_playback_ctrl;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_control_subtitle = global::SalveminiApp.Droid.Resource.Id.mr_control_subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_control_title = global::SalveminiApp.Droid.Resource.Id.mr_control_title;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_control_title_container = global::SalveminiApp.Droid.Resource.Id.mr_control_title_container;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_custom_control = global::SalveminiApp.Droid.Resource.Id.mr_custom_control;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_default_control = global::SalveminiApp.Droid.Resource.Id.mr_default_control;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_dialog_area = global::SalveminiApp.Droid.Resource.Id.mr_dialog_area;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_expandable_area = global::SalveminiApp.Droid.Resource.Id.mr_expandable_area;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_group_expand_collapse = global::SalveminiApp.Droid.Resource.Id.mr_group_expand_collapse;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_media_main_control = global::SalveminiApp.Droid.Resource.Id.mr_media_main_control;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_name = global::SalveminiApp.Droid.Resource.Id.mr_name;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_playback_control = global::SalveminiApp.Droid.Resource.Id.mr_playback_control;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_title_bar = global::SalveminiApp.Droid.Resource.Id.mr_title_bar;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_volume_control = global::SalveminiApp.Droid.Resource.Id.mr_volume_control;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_volume_group_list = global::SalveminiApp.Droid.Resource.Id.mr_volume_group_list;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_volume_item_icon = global::SalveminiApp.Droid.Resource.Id.mr_volume_item_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_volume_slider = global::SalveminiApp.Droid.Resource.Id.mr_volume_slider;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.multiply = global::SalveminiApp.Droid.Resource.Id.multiply;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.navigation_header_container = global::SalveminiApp.Droid.Resource.Id.navigation_header_container;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.never = global::SalveminiApp.Droid.Resource.Id.never;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.none = global::SalveminiApp.Droid.Resource.Id.none;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.normal = global::SalveminiApp.Droid.Resource.Id.normal;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.notification_background = global::SalveminiApp.Droid.Resource.Id.notification_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.notification_main_column = global::SalveminiApp.Droid.Resource.Id.notification_main_column;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.notification_main_column_container = global::SalveminiApp.Droid.Resource.Id.notification_main_column_container;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.parallax = global::SalveminiApp.Droid.Resource.Id.parallax;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.parentPanel = global::SalveminiApp.Droid.Resource.Id.parentPanel;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.parent_matrix = global::SalveminiApp.Droid.Resource.Id.parent_matrix;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.pin = global::SalveminiApp.Droid.Resource.Id.pin;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.progress_circular = global::SalveminiApp.Droid.Resource.Id.progress_circular;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.progress_horizontal = global::SalveminiApp.Droid.Resource.Id.progress_horizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.radio = global::SalveminiApp.Droid.Resource.Id.radio;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.right = global::SalveminiApp.Droid.Resource.Id.right;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.right_icon = global::SalveminiApp.Droid.Resource.Id.right_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.right_side = global::SalveminiApp.Droid.Resource.Id.right_side;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.save_image_matrix = global::SalveminiApp.Droid.Resource.Id.save_image_matrix;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.save_non_transition_alpha = global::SalveminiApp.Droid.Resource.Id.save_non_transition_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.save_scale_type = global::SalveminiApp.Droid.Resource.Id.save_scale_type;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.screen = global::SalveminiApp.Droid.Resource.Id.screen;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.scroll = global::SalveminiApp.Droid.Resource.Id.scroll;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.scrollIndicatorDown = global::SalveminiApp.Droid.Resource.Id.scrollIndicatorDown;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.scrollIndicatorUp = global::SalveminiApp.Droid.Resource.Id.scrollIndicatorUp;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.scrollView = global::SalveminiApp.Droid.Resource.Id.scrollView;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.scrollable = global::SalveminiApp.Droid.Resource.Id.scrollable;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_badge = global::SalveminiApp.Droid.Resource.Id.search_badge;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_bar = global::SalveminiApp.Droid.Resource.Id.search_bar;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_button = global::SalveminiApp.Droid.Resource.Id.search_button;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_close_btn = global::SalveminiApp.Droid.Resource.Id.search_close_btn;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_edit_frame = global::SalveminiApp.Droid.Resource.Id.search_edit_frame;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_go_btn = global::SalveminiApp.Droid.Resource.Id.search_go_btn;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_mag_icon = global::SalveminiApp.Droid.Resource.Id.search_mag_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_plate = global::SalveminiApp.Droid.Resource.Id.search_plate;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_src_text = global::SalveminiApp.Droid.Resource.Id.search_src_text;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_voice_btn = global::SalveminiApp.Droid.Resource.Id.search_voice_btn;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.select_dialog_listview = global::SalveminiApp.Droid.Resource.Id.select_dialog_listview;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.shape_id = global::SalveminiApp.Droid.Resource.Id.shape_id;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.shellcontent_appbar = global::SalveminiApp.Droid.Resource.Id.shellcontent_appbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.shellcontent_toolbar = global::SalveminiApp.Droid.Resource.Id.shellcontent_toolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.shortcut = global::SalveminiApp.Droid.Resource.Id.shortcut;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.showCustom = global::SalveminiApp.Droid.Resource.Id.showCustom;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.showHome = global::SalveminiApp.Droid.Resource.Id.showHome;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.showTitle = global::SalveminiApp.Droid.Resource.Id.showTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.smallLabel = global::SalveminiApp.Droid.Resource.Id.smallLabel;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.snackbar_action = global::SalveminiApp.Droid.Resource.Id.snackbar_action;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.snackbar_text = global::SalveminiApp.Droid.Resource.Id.snackbar_text;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.snap = global::SalveminiApp.Droid.Resource.Id.snap;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.spacer = global::SalveminiApp.Droid.Resource.Id.spacer;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.split_action_bar = global::SalveminiApp.Droid.Resource.Id.split_action_bar;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.src_atop = global::SalveminiApp.Droid.Resource.Id.src_atop;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.src_in = global::SalveminiApp.Droid.Resource.Id.src_in;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.src_over = global::SalveminiApp.Droid.Resource.Id.src_over;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.start = global::SalveminiApp.Droid.Resource.Id.start;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.status_bar_latest_event_content = global::SalveminiApp.Droid.Resource.Id.status_bar_latest_event_content;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.submenuarrow = global::SalveminiApp.Droid.Resource.Id.submenuarrow;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.submit_area = global::SalveminiApp.Droid.Resource.Id.submit_area;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.tabMode = global::SalveminiApp.Droid.Resource.Id.tabMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.tag_transition_group = global::SalveminiApp.Droid.Resource.Id.tag_transition_group;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.text = global::SalveminiApp.Droid.Resource.Id.text;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.text2 = global::SalveminiApp.Droid.Resource.Id.text2;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.textSpacerNoButtons = global::SalveminiApp.Droid.Resource.Id.textSpacerNoButtons;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.textSpacerNoTitle = global::SalveminiApp.Droid.Resource.Id.textSpacerNoTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.text_input_password_toggle = global::SalveminiApp.Droid.Resource.Id.text_input_password_toggle;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.textinput_counter = global::SalveminiApp.Droid.Resource.Id.textinput_counter;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.textinput_error = global::SalveminiApp.Droid.Resource.Id.textinput_error;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.time = global::SalveminiApp.Droid.Resource.Id.time;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.title = global::SalveminiApp.Droid.Resource.Id.title;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.titleDividerNoCustom = global::SalveminiApp.Droid.Resource.Id.titleDividerNoCustom;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.title_template = global::SalveminiApp.Droid.Resource.Id.title_template;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.top = global::SalveminiApp.Droid.Resource.Id.top;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.topPanel = global::SalveminiApp.Droid.Resource.Id.topPanel;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.touch_outside = global::SalveminiApp.Droid.Resource.Id.touch_outside;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.transition_current_scene = global::SalveminiApp.Droid.Resource.Id.transition_current_scene;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.transition_layout_save = global::SalveminiApp.Droid.Resource.Id.transition_layout_save;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.transition_position = global::SalveminiApp.Droid.Resource.Id.transition_position;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.transition_scene_layoutid_cache = global::SalveminiApp.Droid.Resource.Id.transition_scene_layoutid_cache;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.transition_transform = global::SalveminiApp.Droid.Resource.Id.transition_transform;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.uniform = global::SalveminiApp.Droid.Resource.Id.uniform;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.up = global::SalveminiApp.Droid.Resource.Id.up;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.useLogo = global::SalveminiApp.Droid.Resource.Id.useLogo;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.view_offset_helper = global::SalveminiApp.Droid.Resource.Id.view_offset_helper;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.visible = global::SalveminiApp.Droid.Resource.Id.visible;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.volume_item_container = global::SalveminiApp.Droid.Resource.Id.volume_item_container;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.withText = global::SalveminiApp.Droid.Resource.Id.withText;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.wrap_content = global::SalveminiApp.Droid.Resource.Id.wrap_content;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.abc_config_activityDefaultDur = global::SalveminiApp.Droid.Resource.Integer.abc_config_activityDefaultDur;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.abc_config_activityShortDur = global::SalveminiApp.Droid.Resource.Integer.abc_config_activityShortDur;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.app_bar_elevation_anim_duration = global::SalveminiApp.Droid.Resource.Integer.app_bar_elevation_anim_duration;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.bottom_sheet_slide_duration = global::SalveminiApp.Droid.Resource.Integer.bottom_sheet_slide_duration;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.cancel_button_image_alpha = global::SalveminiApp.Droid.Resource.Integer.cancel_button_image_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.config_tooltipAnimTime = global::SalveminiApp.Droid.Resource.Integer.config_tooltipAnimTime;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.design_snackbar_text_max_lines = global::SalveminiApp.Droid.Resource.Integer.design_snackbar_text_max_lines;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.hide_password_duration = global::SalveminiApp.Droid.Resource.Integer.hide_password_duration;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.mr_controller_volume_group_list_animation_duration_ms = global::SalveminiApp.Droid.Resource.Integer.mr_controller_volume_group_list_animation_duration_ms;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.mr_controller_volume_group_list_fade_in_duration_ms = global::SalveminiApp.Droid.Resource.Integer.mr_controller_volume_group_list_fade_in_duration_ms;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.mr_controller_volume_group_list_fade_out_duration_ms = global::SalveminiApp.Droid.Resource.Integer.mr_controller_volume_group_list_fade_out_duration_ms;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.show_password_duration = global::SalveminiApp.Droid.Resource.Integer.show_password_duration;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.status_bar_notification_info_maxnum = global::SalveminiApp.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Plugin.Segmented.Control.Droid.Resource.Interpolator.mr_fast_out_slow_in = global::SalveminiApp.Droid.Resource.Interpolator.mr_fast_out_slow_in;
+			global::Plugin.Segmented.Control.Droid.Resource.Interpolator.mr_linear_out_slow_in = global::SalveminiApp.Droid.Resource.Interpolator.mr_linear_out_slow_in;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_action_bar_title_item = global::SalveminiApp.Droid.Resource.Layout.abc_action_bar_title_item;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_action_bar_up_container = global::SalveminiApp.Droid.Resource.Layout.abc_action_bar_up_container;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_action_menu_item_layout = global::SalveminiApp.Droid.Resource.Layout.abc_action_menu_item_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_action_menu_layout = global::SalveminiApp.Droid.Resource.Layout.abc_action_menu_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_action_mode_bar = global::SalveminiApp.Droid.Resource.Layout.abc_action_mode_bar;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_action_mode_close_item_material = global::SalveminiApp.Droid.Resource.Layout.abc_action_mode_close_item_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_activity_chooser_view = global::SalveminiApp.Droid.Resource.Layout.abc_activity_chooser_view;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_activity_chooser_view_list_item = global::SalveminiApp.Droid.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_alert_dialog_button_bar_material = global::SalveminiApp.Droid.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_alert_dialog_material = global::SalveminiApp.Droid.Resource.Layout.abc_alert_dialog_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_alert_dialog_title_material = global::SalveminiApp.Droid.Resource.Layout.abc_alert_dialog_title_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_dialog_title_material = global::SalveminiApp.Droid.Resource.Layout.abc_dialog_title_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_expanded_menu_layout = global::SalveminiApp.Droid.Resource.Layout.abc_expanded_menu_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_list_menu_item_checkbox = global::SalveminiApp.Droid.Resource.Layout.abc_list_menu_item_checkbox;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_list_menu_item_icon = global::SalveminiApp.Droid.Resource.Layout.abc_list_menu_item_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_list_menu_item_layout = global::SalveminiApp.Droid.Resource.Layout.abc_list_menu_item_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_list_menu_item_radio = global::SalveminiApp.Droid.Resource.Layout.abc_list_menu_item_radio;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_popup_menu_header_item_layout = global::SalveminiApp.Droid.Resource.Layout.abc_popup_menu_header_item_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_popup_menu_item_layout = global::SalveminiApp.Droid.Resource.Layout.abc_popup_menu_item_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_screen_content_include = global::SalveminiApp.Droid.Resource.Layout.abc_screen_content_include;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_screen_simple = global::SalveminiApp.Droid.Resource.Layout.abc_screen_simple;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode = global::SalveminiApp.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_screen_toolbar = global::SalveminiApp.Droid.Resource.Layout.abc_screen_toolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line = global::SalveminiApp.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_search_view = global::SalveminiApp.Droid.Resource.Layout.abc_search_view;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_select_dialog_material = global::SalveminiApp.Droid.Resource.Layout.abc_select_dialog_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.BottomTabLayout = global::SalveminiApp.Droid.Resource.Layout.BottomTabLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_bottom_navigation_item = global::SalveminiApp.Droid.Resource.Layout.design_bottom_navigation_item;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_bottom_sheet_dialog = global::SalveminiApp.Droid.Resource.Layout.design_bottom_sheet_dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_layout_snackbar = global::SalveminiApp.Droid.Resource.Layout.design_layout_snackbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_layout_snackbar_include = global::SalveminiApp.Droid.Resource.Layout.design_layout_snackbar_include;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_layout_tab_icon = global::SalveminiApp.Droid.Resource.Layout.design_layout_tab_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_layout_tab_text = global::SalveminiApp.Droid.Resource.Layout.design_layout_tab_text;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_menu_item_action_area = global::SalveminiApp.Droid.Resource.Layout.design_menu_item_action_area;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_navigation_item = global::SalveminiApp.Droid.Resource.Layout.design_navigation_item;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_navigation_item_header = global::SalveminiApp.Droid.Resource.Layout.design_navigation_item_header;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_navigation_item_separator = global::SalveminiApp.Droid.Resource.Layout.design_navigation_item_separator;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_navigation_item_subheader = global::SalveminiApp.Droid.Resource.Layout.design_navigation_item_subheader;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_navigation_menu = global::SalveminiApp.Droid.Resource.Layout.design_navigation_menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_navigation_menu_item = global::SalveminiApp.Droid.Resource.Layout.design_navigation_menu_item;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_text_input_password_icon = global::SalveminiApp.Droid.Resource.Layout.design_text_input_password_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.FlyoutContent = global::SalveminiApp.Droid.Resource.Layout.FlyoutContent;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.mr_chooser_dialog = global::SalveminiApp.Droid.Resource.Layout.mr_chooser_dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.mr_chooser_list_item = global::SalveminiApp.Droid.Resource.Layout.mr_chooser_list_item;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.mr_controller_material_dialog_b = global::SalveminiApp.Droid.Resource.Layout.mr_controller_material_dialog_b;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.mr_controller_volume_item = global::SalveminiApp.Droid.Resource.Layout.mr_controller_volume_item;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.mr_playback_control = global::SalveminiApp.Droid.Resource.Layout.mr_playback_control;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.mr_volume_control = global::SalveminiApp.Droid.Resource.Layout.mr_volume_control;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_action = global::SalveminiApp.Droid.Resource.Layout.notification_action;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_action_tombstone = global::SalveminiApp.Droid.Resource.Layout.notification_action_tombstone;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_media_action = global::SalveminiApp.Droid.Resource.Layout.notification_media_action;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_media_cancel_action = global::SalveminiApp.Droid.Resource.Layout.notification_media_cancel_action;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_big_media = global::SalveminiApp.Droid.Resource.Layout.notification_template_big_media;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_big_media_custom = global::SalveminiApp.Droid.Resource.Layout.notification_template_big_media_custom;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_big_media_narrow = global::SalveminiApp.Droid.Resource.Layout.notification_template_big_media_narrow;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_big_media_narrow_custom = global::SalveminiApp.Droid.Resource.Layout.notification_template_big_media_narrow_custom;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_custom_big = global::SalveminiApp.Droid.Resource.Layout.notification_template_custom_big;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_icon_group = global::SalveminiApp.Droid.Resource.Layout.notification_template_icon_group;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_lines_media = global::SalveminiApp.Droid.Resource.Layout.notification_template_lines_media;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_media = global::SalveminiApp.Droid.Resource.Layout.notification_template_media;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_media_custom = global::SalveminiApp.Droid.Resource.Layout.notification_template_media_custom;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_part_chronometer = global::SalveminiApp.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_part_time = global::SalveminiApp.Droid.Resource.Layout.notification_template_part_time;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.RadioButton = global::SalveminiApp.Droid.Resource.Layout.RadioButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.RadioGroup = global::SalveminiApp.Droid.Resource.Layout.RadioGroup;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.RootLayout = global::SalveminiApp.Droid.Resource.Layout.RootLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.select_dialog_item_material = global::SalveminiApp.Droid.Resource.Layout.select_dialog_item_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.select_dialog_multichoice_material = global::SalveminiApp.Droid.Resource.Layout.select_dialog_multichoice_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.select_dialog_singlechoice_material = global::SalveminiApp.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.ShellContent = global::SalveminiApp.Droid.Resource.Layout.ShellContent;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.support_simple_spinner_dropdown_item = global::SalveminiApp.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.tooltip = global::SalveminiApp.Droid.Resource.Layout.tooltip;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_action_bar_home_description = global::SalveminiApp.Droid.Resource.String.abc_action_bar_home_description;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_action_bar_up_description = global::SalveminiApp.Droid.Resource.String.abc_action_bar_up_description;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_action_menu_overflow_description = global::SalveminiApp.Droid.Resource.String.abc_action_menu_overflow_description;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_action_mode_done = global::SalveminiApp.Droid.Resource.String.abc_action_mode_done;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_activity_chooser_view_see_all = global::SalveminiApp.Droid.Resource.String.abc_activity_chooser_view_see_all;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_activitychooserview_choose_application = global::SalveminiApp.Droid.Resource.String.abc_activitychooserview_choose_application;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_capital_off = global::SalveminiApp.Droid.Resource.String.abc_capital_off;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_capital_on = global::SalveminiApp.Droid.Resource.String.abc_capital_on;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_body_1_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_body_1_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_body_2_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_body_2_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_button_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_button_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_caption_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_caption_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_display_1_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_display_1_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_display_2_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_display_2_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_display_3_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_display_3_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_display_4_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_display_4_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_headline_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_headline_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_menu_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_menu_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_subhead_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_subhead_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_title_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_title_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_search_hint = global::SalveminiApp.Droid.Resource.String.abc_search_hint;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_searchview_description_clear = global::SalveminiApp.Droid.Resource.String.abc_searchview_description_clear;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_searchview_description_query = global::SalveminiApp.Droid.Resource.String.abc_searchview_description_query;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_searchview_description_search = global::SalveminiApp.Droid.Resource.String.abc_searchview_description_search;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_searchview_description_submit = global::SalveminiApp.Droid.Resource.String.abc_searchview_description_submit;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_searchview_description_voice = global::SalveminiApp.Droid.Resource.String.abc_searchview_description_voice;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_shareactionprovider_share_with = global::SalveminiApp.Droid.Resource.String.abc_shareactionprovider_share_with;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_shareactionprovider_share_with_application = global::SalveminiApp.Droid.Resource.String.abc_shareactionprovider_share_with_application;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_toolbar_collapse_description = global::SalveminiApp.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::Plugin.Segmented.Control.Droid.Resource.String.appbar_scrolling_view_behavior = global::SalveminiApp.Droid.Resource.String.appbar_scrolling_view_behavior;
+			global::Plugin.Segmented.Control.Droid.Resource.String.bottom_sheet_behavior = global::SalveminiApp.Droid.Resource.String.bottom_sheet_behavior;
+			global::Plugin.Segmented.Control.Droid.Resource.String.character_counter_pattern = global::SalveminiApp.Droid.Resource.String.character_counter_pattern;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_button_content_description = global::SalveminiApp.Droid.Resource.String.mr_button_content_description;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_cast_button_connected = global::SalveminiApp.Droid.Resource.String.mr_cast_button_connected;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_cast_button_connecting = global::SalveminiApp.Droid.Resource.String.mr_cast_button_connecting;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_cast_button_disconnected = global::SalveminiApp.Droid.Resource.String.mr_cast_button_disconnected;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_chooser_searching = global::SalveminiApp.Droid.Resource.String.mr_chooser_searching;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_chooser_title = global::SalveminiApp.Droid.Resource.String.mr_chooser_title;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_album_art = global::SalveminiApp.Droid.Resource.String.mr_controller_album_art;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_casting_screen = global::SalveminiApp.Droid.Resource.String.mr_controller_casting_screen;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_close_description = global::SalveminiApp.Droid.Resource.String.mr_controller_close_description;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_collapse_group = global::SalveminiApp.Droid.Resource.String.mr_controller_collapse_group;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_disconnect = global::SalveminiApp.Droid.Resource.String.mr_controller_disconnect;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_expand_group = global::SalveminiApp.Droid.Resource.String.mr_controller_expand_group;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_no_info_available = global::SalveminiApp.Droid.Resource.String.mr_controller_no_info_available;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_no_media_selected = global::SalveminiApp.Droid.Resource.String.mr_controller_no_media_selected;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_pause = global::SalveminiApp.Droid.Resource.String.mr_controller_pause;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_play = global::SalveminiApp.Droid.Resource.String.mr_controller_play;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_stop = global::SalveminiApp.Droid.Resource.String.mr_controller_stop;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_stop_casting = global::SalveminiApp.Droid.Resource.String.mr_controller_stop_casting;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_volume_slider = global::SalveminiApp.Droid.Resource.String.mr_controller_volume_slider;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_system_route_name = global::SalveminiApp.Droid.Resource.String.mr_system_route_name;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_user_route_category_name = global::SalveminiApp.Droid.Resource.String.mr_user_route_category_name;
+			global::Plugin.Segmented.Control.Droid.Resource.String.password_toggle_content_description = global::SalveminiApp.Droid.Resource.String.password_toggle_content_description;
+			global::Plugin.Segmented.Control.Droid.Resource.String.path_password_eye = global::SalveminiApp.Droid.Resource.String.path_password_eye;
+			global::Plugin.Segmented.Control.Droid.Resource.String.path_password_eye_mask_strike_through = global::SalveminiApp.Droid.Resource.String.path_password_eye_mask_strike_through;
+			global::Plugin.Segmented.Control.Droid.Resource.String.path_password_eye_mask_visible = global::SalveminiApp.Droid.Resource.String.path_password_eye_mask_visible;
+			global::Plugin.Segmented.Control.Droid.Resource.String.path_password_strike_through = global::SalveminiApp.Droid.Resource.String.path_password_strike_through;
+			global::Plugin.Segmented.Control.Droid.Resource.String.search_menu_title = global::SalveminiApp.Droid.Resource.String.search_menu_title;
+			global::Plugin.Segmented.Control.Droid.Resource.String.status_bar_notification_info_overflow = global::SalveminiApp.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.AlertDialog_AppCompat = global::SalveminiApp.Droid.Resource.Style.AlertDialog_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.AlertDialog_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Animation_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Animation_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Animation_AppCompat_DropDownUp = global::SalveminiApp.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Animation_AppCompat_Tooltip = global::SalveminiApp.Droid.Resource.Style.Animation_AppCompat_Tooltip;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Animation_Design_BottomSheetDialog = global::SalveminiApp.Droid.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_AlertDialog_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_AlertDialog_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Animation_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::SalveminiApp.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip = global::SalveminiApp.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_CardView = global::SalveminiApp.Droid.Resource.Style.Base_CardView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Tooltip = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Tooltip;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_ThemeOverlay_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView = global::SalveminiApp.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText = global::SalveminiApp.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V14_Widget_Design_AppBarLayout = global::SalveminiApp.Droid.Resource.Style.Base_V14_Widget_Design_AppBarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V21_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_V21_Theme_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V21_Widget_Design_AppBarLayout = global::SalveminiApp.Droid.Resource.Style.Base_V21_Widget_Design_AppBarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V22_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_V22_Theme_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V23_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_V23_Theme_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V26_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_V26_Theme_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar = global::SalveminiApp.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V26_Widget_Design_AppBarLayout = global::SalveminiApp.Droid.Resource.Style.Base_V26_Widget_Design_AppBarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V7_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_V7_Theme_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::SalveminiApp.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::SalveminiApp.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar = global::SalveminiApp.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Button = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Button;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_EditText = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ListView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_SearchView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Spinner = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_Design_AppBarLayout = global::SalveminiApp.Droid.Resource.Style.Base_Widget_Design_AppBarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_Design_TabLayout = global::SalveminiApp.Droid.Resource.Style.Base_Widget_Design_TabLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.CardView = global::SalveminiApp.Droid.Resource.Style.CardView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.CardView_Dark = global::SalveminiApp.Droid.Resource.Style.CardView_Dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.CardView_Light = global::SalveminiApp.Droid.Resource.Style.CardView_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_AppCompat = global::SalveminiApp.Droid.Resource.Style.Platform_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Platform_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat = global::SalveminiApp.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::SalveminiApp.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_V11_AppCompat = global::SalveminiApp.Droid.Resource.Style.Platform_V11_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_V11_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Platform_V11_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_V14_AppCompat = global::SalveminiApp.Droid.Resource.Style.Platform_V14_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_V14_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Platform_V14_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_V21_AppCompat = global::SalveminiApp.Droid.Resource.Style.Platform_V21_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_V21_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Platform_V21_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_V25_AppCompat = global::SalveminiApp.Droid.Resource.Style.Platform_V25_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_V25_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Platform_V25_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner = global::SalveminiApp.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::SalveminiApp.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::SalveminiApp.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Body1 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Body2 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Button = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Button;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Caption = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Display1 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Display2 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Display3 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Display4 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Headline = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Large = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Large;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Medium = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Menu = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Small = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Subhead = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Tooltip = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Tooltip;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification_Info = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification_Media = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Media;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification_Time = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Design_Counter = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_Counter;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Design_Error = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_Error;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Design_Hint = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_Hint;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Design_Tab = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_Tab;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_MediaRouter_PrimaryText = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MediaRouter_PrimaryText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_MediaRouter_SecondaryText = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MediaRouter_SecondaryText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_MediaRouter_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MediaRouter_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_CompactMenu = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_DayNight = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Light_Dialog = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_NoActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_Design = global::SalveminiApp.Droid.Resource.Style.Theme_Design;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_Design_BottomSheetDialog = global::SalveminiApp.Droid.Resource.Style.Theme_Design_BottomSheetDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_Design_Light = global::SalveminiApp.Droid.Resource.Style.Theme_Design_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::SalveminiApp.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_Design_Light_NoActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_Design_Light_NoActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_Design_NoActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_Design_NoActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_MediaRouter = global::SalveminiApp.Droid.Resource.Style.Theme_MediaRouter;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_MediaRouter_Light = global::SalveminiApp.Droid.Resource.Style.Theme_MediaRouter_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel = global::SalveminiApp.Droid.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_MediaRouter_LightControlPanel = global::SalveminiApp.Droid.Resource.Style.Theme_MediaRouter_LightControlPanel;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.ThemeOverlay_AppCompat = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.ThemeOverlay_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.ThemeOverlay_MediaRouter_Dark = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_MediaRouter_Dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.ThemeOverlay_MediaRouter_Light = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_MediaRouter_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActionBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActionButton = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActionMode = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Button = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Button;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Button_Borderless = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Button_Colored = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Button_Small = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Button_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ButtonBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_EditText = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_EditText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ImageButton = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ImageButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_SearchView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ListMenuView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ListMenuView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ListView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ListView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ListView_Menu = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_PopupMenu = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_PopupWindow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ProgressBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_RatingBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_RatingBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_SearchView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_SearchView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_SeekBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_SeekBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Spinner = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Spinner;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Toolbar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Toolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Compat_NotificationActionContainer = global::SalveminiApp.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Compat_NotificationActionText = global::SalveminiApp.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_AppBarLayout = global::SalveminiApp.Droid.Resource.Style.Widget_Design_AppBarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_BottomNavigationView = global::SalveminiApp.Droid.Resource.Style.Widget_Design_BottomNavigationView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_BottomSheet_Modal = global::SalveminiApp.Droid.Resource.Style.Widget_Design_BottomSheet_Modal;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_CollapsingToolbar = global::SalveminiApp.Droid.Resource.Style.Widget_Design_CollapsingToolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_CoordinatorLayout = global::SalveminiApp.Droid.Resource.Style.Widget_Design_CoordinatorLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_FloatingActionButton = global::SalveminiApp.Droid.Resource.Style.Widget_Design_FloatingActionButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_NavigationView = global::SalveminiApp.Droid.Resource.Style.Widget_Design_NavigationView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::SalveminiApp.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_Snackbar = global::SalveminiApp.Droid.Resource.Style.Widget_Design_Snackbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_TabLayout = global::SalveminiApp.Droid.Resource.Style.Widget_Design_TabLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_TextInputLayout = global::SalveminiApp.Droid.Resource.Style.Widget_Design_TextInputLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton = global::SalveminiApp.Droid.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_MediaRouter_MediaRouteButton = global::SalveminiApp.Droid.Resource.Style.Widget_MediaRouter_MediaRouteButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar = global::SalveminiApp.Droid.Resource.Styleable.ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_background = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_backgroundSplit = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_backgroundSplit;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_backgroundStacked = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_backgroundStacked;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_contentInsetEnd = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_contentInsetLeft = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_contentInsetRight = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_contentInsetRight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_contentInsetStart = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_contentInsetStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_customNavigationLayout = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_displayOptions = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_displayOptions;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_divider = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_divider;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_elevation = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_height = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_hideOnContentScroll = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_homeLayout = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_homeLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_icon = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_itemPadding = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_itemPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_logo = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_logo;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_navigationMode = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_navigationMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_popupTheme = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_popupTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_progressBarPadding = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_progressBarPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_progressBarStyle = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_progressBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_subtitle = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_subtitleTextStyle = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_title = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_title;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_titleTextStyle = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_titleTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBarLayout = global::SalveminiApp.Droid.Resource.Styleable.ActionBarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::SalveminiApp.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMenuItemView = global::SalveminiApp.Droid.Resource.Styleable.ActionMenuItemView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth = global::SalveminiApp.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMenuView = global::SalveminiApp.Droid.Resource.Styleable.ActionMenuView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMode = global::SalveminiApp.Droid.Resource.Styleable.ActionMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMode_background = global::SalveminiApp.Droid.Resource.Styleable.ActionMode_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMode_backgroundSplit = global::SalveminiApp.Droid.Resource.Styleable.ActionMode_backgroundSplit;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMode_closeItemLayout = global::SalveminiApp.Droid.Resource.Styleable.ActionMode_closeItemLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMode_height = global::SalveminiApp.Droid.Resource.Styleable.ActionMode_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMode_subtitleTextStyle = global::SalveminiApp.Droid.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMode_titleTextStyle = global::SalveminiApp.Droid.Resource.Styleable.ActionMode_titleTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActivityChooserView = global::SalveminiApp.Droid.Resource.Styleable.ActivityChooserView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::SalveminiApp.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount = global::SalveminiApp.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AlertDialog = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AlertDialog_android_layout = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_android_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AlertDialog_listItemLayout = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_listItemLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AlertDialog_listLayout = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_listLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AlertDialog_showTitle = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_showTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayout = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayout_android_background = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_android_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayout_elevation = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayout_expanded = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_expanded;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayoutStates = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayoutStates;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayout_Layout = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_Layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatImageView = global::SalveminiApp.Droid.Resource.Styleable.AppCompatImageView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatImageView_android_src = global::SalveminiApp.Droid.Resource.Styleable.AppCompatImageView_android_src;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatImageView_srcCompat = global::SalveminiApp.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatImageView_tint = global::SalveminiApp.Droid.Resource.Styleable.AppCompatImageView_tint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatImageView_tintMode = global::SalveminiApp.Droid.Resource.Styleable.AppCompatImageView_tintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatSeekBar = global::SalveminiApp.Droid.Resource.Styleable.AppCompatSeekBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb = global::SalveminiApp.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatSeekBar_tickMark = global::SalveminiApp.Droid.Resource.Styleable.AppCompatSeekBar_tickMark;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::SalveminiApp.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::SalveminiApp.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextHelper = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextView = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextView_fontFamily = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextView_textAllCaps = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarSize = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_buttonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorAccent = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorError = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorError;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorPrimary = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_controlBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_dialogTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_dividerVertical = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_editTextBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_editTextColor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_editTextStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_panelBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_switchStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_tooltipForegroundColor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_tooltipForegroundColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_tooltipFrameBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_tooltipFrameBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowActionBar = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomNavigationView = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomNavigationView_elevation = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomNavigationView_itemBackground = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_itemBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomNavigationView_itemIconTint = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_itemIconTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomNavigationView_itemTextColor = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_itemTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomNavigationView_menu = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomSheetBehavior_Layout = global::SalveminiApp.Droid.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::SalveminiApp.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::SalveminiApp.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::SalveminiApp.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ButtonBarLayout = global::SalveminiApp.Droid.Resource.Styleable.ButtonBarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ButtonBarLayout_allowStacking = global::SalveminiApp.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView = global::SalveminiApp.Droid.Resource.Styleable.CardView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_android_minHeight = global::SalveminiApp.Droid.Resource.Styleable.CardView_android_minHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_android_minWidth = global::SalveminiApp.Droid.Resource.Styleable.CardView_android_minWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_cardBackgroundColor = global::SalveminiApp.Droid.Resource.Styleable.CardView_cardBackgroundColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_cardCornerRadius = global::SalveminiApp.Droid.Resource.Styleable.CardView_cardCornerRadius;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_cardElevation = global::SalveminiApp.Droid.Resource.Styleable.CardView_cardElevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_cardMaxElevation = global::SalveminiApp.Droid.Resource.Styleable.CardView_cardMaxElevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap = global::SalveminiApp.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_cardUseCompatPadding = global::SalveminiApp.Droid.Resource.Styleable.CardView_cardUseCompatPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_contentPadding = global::SalveminiApp.Droid.Resource.Styleable.CardView_contentPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_contentPaddingBottom = global::SalveminiApp.Droid.Resource.Styleable.CardView_contentPaddingBottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_contentPaddingLeft = global::SalveminiApp.Droid.Resource.Styleable.CardView_contentPaddingLeft;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_contentPaddingRight = global::SalveminiApp.Droid.Resource.Styleable.CardView_contentPaddingRight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_contentPaddingTop = global::SalveminiApp.Droid.Resource.Styleable.CardView_contentPaddingTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_title = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_title;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ColorStateListItem = global::SalveminiApp.Droid.Resource.Styleable.ColorStateListItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ColorStateListItem_alpha = global::SalveminiApp.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ColorStateListItem_android_alpha = global::SalveminiApp.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ColorStateListItem_android_color = global::SalveminiApp.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CompoundButton = global::SalveminiApp.Droid.Resource.Styleable.CompoundButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CompoundButton_android_button = global::SalveminiApp.Droid.Resource.Styleable.CompoundButton_android_button;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CompoundButton_buttonTint = global::SalveminiApp.Droid.Resource.Styleable.CompoundButton_buttonTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CompoundButton_buttonTintMode = global::SalveminiApp.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_keylines = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_Layout = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DesignTheme = global::SalveminiApp.Droid.Resource.Styleable.DesignTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme = global::SalveminiApp.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle = global::SalveminiApp.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DesignTheme_textColorError = global::SalveminiApp.Droid.Resource.Styleable.DesignTheme_textColorError;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DrawerArrowToggle = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DrawerArrowToggle_barLength = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DrawerArrowToggle_color = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DrawerArrowToggle_spinBars = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DrawerArrowToggle_thickness = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_backgroundTint = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_borderWidth = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_elevation = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_fabSize = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_fabSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_rippleColor = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamily = global::SalveminiApp.Droid.Resource.Styleable.FontFamily;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamily_fontProviderAuthority = global::SalveminiApp.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamily_fontProviderCerts = global::SalveminiApp.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::SalveminiApp.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::SalveminiApp.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamily_fontProviderPackage = global::SalveminiApp.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamily_fontProviderQuery = global::SalveminiApp.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamilyFont = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamilyFont_android_font = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamilyFont_font = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamilyFont_fontStyle = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamilyFont_fontWeight = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ForegroundLinearLayout = global::SalveminiApp.Droid.Resource.Styleable.ForegroundLinearLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::SalveminiApp.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::SalveminiApp.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::SalveminiApp.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_divider = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_divider;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_showDividers = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_Layout = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ListPopupWindow = global::SalveminiApp.Droid.Resource.Styleable.ListPopupWindow;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::SalveminiApp.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::SalveminiApp.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MediaRouteButton = global::SalveminiApp.Droid.Resource.Styleable.MediaRouteButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MediaRouteButton_android_minHeight = global::SalveminiApp.Droid.Resource.Styleable.MediaRouteButton_android_minHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MediaRouteButton_android_minWidth = global::SalveminiApp.Droid.Resource.Styleable.MediaRouteButton_android_minWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable = global::SalveminiApp.Droid.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MediaRouteButton_mediaRouteButtonTint = global::SalveminiApp.Droid.Resource.Styleable.MediaRouteButton_mediaRouteButtonTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuGroup = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuGroup_android_enabled = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup_android_enabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuGroup_android_id = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup_android_id;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuGroup_android_menuCategory = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuGroup_android_orderInCategory = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuGroup_android_visible = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup_android_visible;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem = global::SalveminiApp.Droid.Resource.Styleable.MenuItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_actionLayout = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_actionLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_actionProviderClass = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_actionProviderClass;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_actionViewClass = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_actionViewClass;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_alphabeticModifiers = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_alphabeticModifiers;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_checkable = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_checkable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_checked = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_checked;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_enabled = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_enabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_icon = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_id = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_id;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_menuCategory = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_menuCategory;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_numericShortcut = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_onClick = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_onClick;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_orderInCategory = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_title = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_title;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_titleCondensed = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_visible = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_visible;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_contentDescription = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_contentDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_iconTint = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_iconTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_iconTintMode = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_iconTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_numericModifiers = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_numericModifiers;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_showAsAction = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_showAsAction;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_tooltipText = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_tooltipText;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView = global::SalveminiApp.Droid.Resource.Styleable.MenuView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView_android_headerBackground = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_headerBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView_android_horizontalDivider = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView_android_itemBackground = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_itemBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView_android_itemTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView_android_verticalDivider = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_verticalDivider;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView_preserveIconSpacing = global::SalveminiApp.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView_subMenuArrow = global::SalveminiApp.Droid.Resource.Styleable.MenuView_subMenuArrow;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView = global::SalveminiApp.Droid.Resource.Styleable.NavigationView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_android_background = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_android_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_android_maxWidth = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_android_maxWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_elevation = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_headerLayout = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_headerLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_itemBackground = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_itemBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_itemIconTint = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_itemIconTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_itemTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_itemTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_itemTextColor = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_itemTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_menu = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.PopupWindow = global::SalveminiApp.Droid.Resource.Styleable.PopupWindow;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::SalveminiApp.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.PopupWindow_android_popupBackground = global::SalveminiApp.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.PopupWindow_overlapAnchor = global::SalveminiApp.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.PopupWindowBackgroundState = global::SalveminiApp.Droid.Resource.Styleable.PopupWindowBackgroundState;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::SalveminiApp.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecycleListView = global::SalveminiApp.Droid.Resource.Styleable.RecycleListView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::SalveminiApp.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::SalveminiApp.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_android_orientation = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_android_orientation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_layoutManager = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_layoutManager;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_reverseLayout = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_reverseLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_spanCount = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_spanCount;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_stackFromEnd = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ScrimInsetsFrameLayout = global::SalveminiApp.Droid.Resource.Styleable.ScrimInsetsFrameLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::SalveminiApp.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ScrollingViewBehavior_Layout = global::SalveminiApp.Droid.Resource.Styleable.ScrollingViewBehavior_Layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::SalveminiApp.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView = global::SalveminiApp.Droid.Resource.Styleable.SearchView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_android_focusable = global::SalveminiApp.Droid.Resource.Styleable.SearchView_android_focusable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_android_imeOptions = global::SalveminiApp.Droid.Resource.Styleable.SearchView_android_imeOptions;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_android_inputType = global::SalveminiApp.Droid.Resource.Styleable.SearchView_android_inputType;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_android_maxWidth = global::SalveminiApp.Droid.Resource.Styleable.SearchView_android_maxWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_closeIcon = global::SalveminiApp.Droid.Resource.Styleable.SearchView_closeIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_commitIcon = global::SalveminiApp.Droid.Resource.Styleable.SearchView_commitIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_defaultQueryHint = global::SalveminiApp.Droid.Resource.Styleable.SearchView_defaultQueryHint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_goIcon = global::SalveminiApp.Droid.Resource.Styleable.SearchView_goIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_iconifiedByDefault = global::SalveminiApp.Droid.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_layout = global::SalveminiApp.Droid.Resource.Styleable.SearchView_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_queryBackground = global::SalveminiApp.Droid.Resource.Styleable.SearchView_queryBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_queryHint = global::SalveminiApp.Droid.Resource.Styleable.SearchView_queryHint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_searchHintIcon = global::SalveminiApp.Droid.Resource.Styleable.SearchView_searchHintIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_searchIcon = global::SalveminiApp.Droid.Resource.Styleable.SearchView_searchIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_submitBackground = global::SalveminiApp.Droid.Resource.Styleable.SearchView_submitBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_suggestionRowLayout = global::SalveminiApp.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_voiceIcon = global::SalveminiApp.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SnackbarLayout = global::SalveminiApp.Droid.Resource.Styleable.SnackbarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth = global::SalveminiApp.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SnackbarLayout_elevation = global::SalveminiApp.Droid.Resource.Styleable.SnackbarLayout_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::SalveminiApp.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Spinner = global::SalveminiApp.Droid.Resource.Styleable.Spinner;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Spinner_android_dropDownWidth = global::SalveminiApp.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Spinner_android_entries = global::SalveminiApp.Droid.Resource.Styleable.Spinner_android_entries;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Spinner_android_popupBackground = global::SalveminiApp.Droid.Resource.Styleable.Spinner_android_popupBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Spinner_android_prompt = global::SalveminiApp.Droid.Resource.Styleable.Spinner_android_prompt;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Spinner_popupTheme = global::SalveminiApp.Droid.Resource.Styleable.Spinner_popupTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_android_textOff = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_android_textOff;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_android_textOn = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_android_textOn;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_android_thumb = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_android_thumb;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_showText = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_showText;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_splitTrack = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_splitTrack;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_switchMinWidth = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_switchPadding = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_switchPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_thumbTint = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_thumbTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_thumbTintMode = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_thumbTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_track = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_track;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_trackTint = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_trackTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_trackTintMode = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabItem = global::SalveminiApp.Droid.Resource.Styleable.TabItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabItem_android_icon = global::SalveminiApp.Droid.Resource.Styleable.TabItem_android_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabItem_android_layout = global::SalveminiApp.Droid.Resource.Styleable.TabItem_android_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabItem_android_text = global::SalveminiApp.Droid.Resource.Styleable.TabItem_android_text;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout = global::SalveminiApp.Droid.Resource.Styleable.TabLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabBackground = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabContentStart = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabContentStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabGravity = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabIndicatorColor = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabIndicatorColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabMaxWidth = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabMaxWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabMinWidth = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabMinWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabMode = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabPadding = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabPaddingBottom = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabPaddingBottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabPaddingEnd = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabPaddingEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabPaddingStart = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabPaddingStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabPaddingTop = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabPaddingTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabTextColor = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_fontFamily = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_fontFamily;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_shadowColor = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_shadowDx = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_shadowDy = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_shadowRadius = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_textColor = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_textColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_textColorHint = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_textColorHint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_textColorLink = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_textSize = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_textSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_textStyle = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_textStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_typeface = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_typeface;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_fontFamily = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_fontFamily;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_textAllCaps = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_textAllCaps;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_android_hint = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_android_hint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_android_textColorHint = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_counterEnabled = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_counterEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_counterMaxLength = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_counterMaxLength;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_errorEnabled = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_hintEnabled = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_hintEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar = global::SalveminiApp.Droid.Resource.Styleable.Toolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_android_gravity = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_android_gravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_android_minHeight = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_android_minHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_buttonGravity = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_buttonGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_collapseContentDescription = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_collapseIcon = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_collapseIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_contentInsetEnd = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_contentInsetLeft = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_contentInsetRight = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_contentInsetRight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_contentInsetStart = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_contentInsetStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_logo = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_logo;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_logoDescription = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_logoDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_maxButtonHeight = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_navigationContentDescription = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_navigationIcon = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_navigationIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_popupTheme = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_popupTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_subtitle = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_subtitleTextColor = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_title = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_title;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_titleMargin = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleMargin;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_titleMarginBottom = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_titleMarginEnd = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_titleMarginStart = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleMarginStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_titleMarginTop = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleMarginTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_titleMargins = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleMargins;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_titleTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_titleTextColor = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.View = global::SalveminiApp.Droid.Resource.Styleable.View;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.View_android_focusable = global::SalveminiApp.Droid.Resource.Styleable.View_android_focusable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.View_android_theme = global::SalveminiApp.Droid.Resource.Styleable.View_android_theme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.View_paddingEnd = global::SalveminiApp.Droid.Resource.Styleable.View_paddingEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.View_paddingStart = global::SalveminiApp.Droid.Resource.Styleable.View_paddingStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.View_theme = global::SalveminiApp.Droid.Resource.Styleable.View_theme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ViewBackgroundHelper = global::SalveminiApp.Droid.Resource.Styleable.ViewBackgroundHelper;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ViewBackgroundHelper_android_background = global::SalveminiApp.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::SalveminiApp.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::SalveminiApp.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ViewStubCompat = global::SalveminiApp.Droid.Resource.Styleable.ViewStubCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ViewStubCompat_android_id = global::SalveminiApp.Droid.Resource.Styleable.ViewStubCompat_android_id;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId = global::SalveminiApp.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ViewStubCompat_android_layout = global::SalveminiApp.Droid.Resource.Styleable.ViewStubCompat_android_layout;
 			global::Syncfusion.XForms.Android.Core.Resource.Drawable.input_layout_drop_down_icon = global::SalveminiApp.Droid.Resource.Drawable.input_layout_drop_down_icon;
 			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglecollapseicon = global::SalveminiApp.Droid.Resource.Drawable.inputlayout_togglecollapseicon;
 			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglevisibleicon = global::SalveminiApp.Droid.Resource.Drawable.inputlayout_togglevisibleicon;
@@ -5500,6 +7786,49 @@ namespace SalveminiApp.Droid
 			global::Com.Syncfusion.Carousel.Resource.Styleable.lbVerticalGridView = global::SalveminiApp.Droid.Resource.Styleable.lbVerticalGridView;
 			global::Com.Syncfusion.Carousel.Resource.Styleable.lbVerticalGridView_columnWidth = global::SalveminiApp.Droid.Resource.Styleable.lbVerticalGridView_columnWidth;
 			global::Com.Syncfusion.Carousel.Resource.Styleable.lbVerticalGridView_numberOfColumns = global::SalveminiApp.Droid.Resource.Styleable.lbVerticalGridView_numberOfColumns;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Animation.SfChart_Fade_In = global::SalveminiApp.Droid.Resource.Animation.SfChart_Fade_In;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Animation.SfChart_Scale_In = global::SalveminiApp.Droid.Resource.Animation.SfChart_Scale_In;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Animation.SfChart_Fade_Out = global::SalveminiApp.Droid.Resource.Animation.SfChart_Fade_Out;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Animation.SfChart_Scale_Out = global::SalveminiApp.Droid.Resource.Animation.SfChart_Scale_Out;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.annotationLayout = global::SalveminiApp.Droid.Resource.Id.annotationLayout;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.axisLayout = global::SalveminiApp.Droid.Resource.Id.axisLayout;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.bottom_labels = global::SalveminiApp.Droid.Resource.Id.bottom_labels;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.chartBehaviorLayout = global::SalveminiApp.Droid.Resource.Id.chartBehaviorLayout;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.chartLegendScrollView = global::SalveminiApp.Droid.Resource.Id.chartLegendScrollView;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.content = global::SalveminiApp.Droid.Resource.Id.content;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.dataMarkerLayout = global::SalveminiApp.Droid.Resource.Id.dataMarkerLayout;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.gridLineLayout = global::SalveminiApp.Droid.Resource.Id.gridLineLayout;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.gridLinesLayout = global::SalveminiApp.Droid.Resource.Id.gridLinesLayout;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.iconView = global::SalveminiApp.Droid.Resource.Id.iconView;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.label = global::SalveminiApp.Droid.Resource.Id.label;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.legendHeader = global::SalveminiApp.Droid.Resource.Id.legendHeader;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.legendItemsLayout = global::SalveminiApp.Droid.Resource.Id.legendItemsLayout;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.legendLayout = global::SalveminiApp.Droid.Resource.Id.legendLayout;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.legendScrollView = global::SalveminiApp.Droid.Resource.Id.legendScrollView;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.legendViewGroup = global::SalveminiApp.Droid.Resource.Id.legendViewGroup;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.rootLayout = global::SalveminiApp.Droid.Resource.Id.rootLayout;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.seriesLayout = global::SalveminiApp.Droid.Resource.Id.seriesLayout;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.stripLinesLayout = global::SalveminiApp.Droid.Resource.Id.stripLinesLayout;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.technicalIndicatorLayout = global::SalveminiApp.Droid.Resource.Id.technicalIndicatorLayout;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.thumbLayout = global::SalveminiApp.Droid.Resource.Id.thumbLayout;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.titleLayout = global::SalveminiApp.Droid.Resource.Id.titleLayout;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.top_labels = global::SalveminiApp.Droid.Resource.Id.top_labels;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Layout.chart_layout = global::SalveminiApp.Droid.Resource.Layout.chart_layout;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Layout.chart_legend = global::SalveminiApp.Droid.Resource.Layout.chart_legend;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Layout.chart_legend_item = global::SalveminiApp.Droid.Resource.Layout.chart_legend_item;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Layout.range_navigator_layout = global::SalveminiApp.Droid.Resource.Layout.range_navigator_layout;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.String.q = global::SalveminiApp.Droid.Resource.String.q;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.String.quarter = global::SalveminiApp.Droid.Resource.String.quarter;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_close_label = global::SalveminiApp.Droid.Resource.String.sfchart_close_label;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_high_label = global::SalveminiApp.Droid.Resource.String.sfchart_high_label;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_low_label = global::SalveminiApp.Droid.Resource.String.sfchart_low_label;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_open_label = global::SalveminiApp.Droid.Resource.String.sfchart_open_label;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.String.w = global::SalveminiApp.Droid.Resource.String.w;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.String.week = global::SalveminiApp.Droid.Resource.String.week;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_others_label = global::SalveminiApp.Droid.Resource.String.sfchart_others_label;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_increase_label = global::SalveminiApp.Droid.Resource.String.sfchart_increase_label;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_decrease_label = global::SalveminiApp.Droid.Resource.String.sfchart_decrease_label;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_total_label = global::SalveminiApp.Droid.Resource.String.sfchart_total_label;
 			global::Syncfusion.XForms.Android.PopupLayout.Resource.Drawable.input_layout_drop_down_icon = global::SalveminiApp.Droid.Resource.Drawable.input_layout_drop_down_icon;
 			global::Syncfusion.XForms.Android.PopupLayout.Resource.Drawable.inputlayout_togglecollapseicon = global::SalveminiApp.Droid.Resource.Drawable.inputlayout_togglecollapseicon;
 			global::Syncfusion.XForms.Android.PopupLayout.Resource.Drawable.inputlayout_togglevisibleicon = global::SalveminiApp.Droid.Resource.Drawable.inputlayout_togglevisibleicon;
@@ -9075,10 +11404,22 @@ namespace SalveminiApp.Droid
 			public const int lb_decelerator_4 = 2130771987;
 			
 			// aapt resource value: 0x7F010014
-			public const int tooltip_enter = 2130771988;
+			public const int SfChart_Fade_In = 2130771988;
 			
 			// aapt resource value: 0x7F010015
-			public const int tooltip_exit = 2130771989;
+			public const int SfChart_Fade_Out = 2130771989;
+			
+			// aapt resource value: 0x7F010016
+			public const int SfChart_Scale_In = 2130771990;
+			
+			// aapt resource value: 0x7F010017
+			public const int SfChart_Scale_Out = 2130771991;
+			
+			// aapt resource value: 0x7F010018
+			public const int tooltip_enter = 2130771992;
+			
+			// aapt resource value: 0x7F010019
+			public const int tooltip_exit = 2130771993;
 			
 			static Animation()
 			{
@@ -11422,79 +13763,88 @@ namespace SalveminiApp.Droid
 			public const int material_grey_900 = 2131034251;
 			
 			// aapt resource value: 0x7F05008C
-			public const int notification_action_color_filter = 2131034252;
+			public const int normal = 2131034252;
 			
 			// aapt resource value: 0x7F05008D
-			public const int notification_icon_bg_color = 2131034253;
+			public const int notification_action_color_filter = 2131034253;
 			
 			// aapt resource value: 0x7F05008E
-			public const int notification_material_background_media_default_color = 2131034254;
+			public const int notification_icon_bg_color = 2131034254;
 			
 			// aapt resource value: 0x7F05008F
-			public const int primary_dark_material_dark = 2131034255;
+			public const int notification_material_background_media_default_color = 2131034255;
 			
 			// aapt resource value: 0x7F050090
-			public const int primary_dark_material_light = 2131034256;
+			public const int primary_dark_material_dark = 2131034256;
 			
 			// aapt resource value: 0x7F050091
-			public const int primary_material_dark = 2131034257;
+			public const int primary_dark_material_light = 2131034257;
 			
 			// aapt resource value: 0x7F050092
-			public const int primary_material_light = 2131034258;
+			public const int primary_material_dark = 2131034258;
 			
 			// aapt resource value: 0x7F050093
-			public const int primary_text_default_material_dark = 2131034259;
+			public const int primary_material_light = 2131034259;
 			
 			// aapt resource value: 0x7F050094
-			public const int primary_text_default_material_light = 2131034260;
+			public const int primary_text_default_material_dark = 2131034260;
 			
 			// aapt resource value: 0x7F050095
-			public const int primary_text_disabled_material_dark = 2131034261;
+			public const int primary_text_default_material_light = 2131034261;
 			
 			// aapt resource value: 0x7F050096
-			public const int primary_text_disabled_material_light = 2131034262;
+			public const int primary_text_disabled_material_dark = 2131034262;
 			
 			// aapt resource value: 0x7F050097
-			public const int ripple_material_dark = 2131034263;
+			public const int primary_text_disabled_material_light = 2131034263;
 			
 			// aapt resource value: 0x7F050098
-			public const int ripple_material_light = 2131034264;
+			public const int ripple_material_dark = 2131034264;
 			
 			// aapt resource value: 0x7F050099
-			public const int secondary_text_default_material_dark = 2131034265;
+			public const int ripple_material_light = 2131034265;
 			
 			// aapt resource value: 0x7F05009A
-			public const int secondary_text_default_material_light = 2131034266;
+			public const int secondary_text_default_material_dark = 2131034266;
 			
 			// aapt resource value: 0x7F05009B
-			public const int secondary_text_disabled_material_dark = 2131034267;
+			public const int secondary_text_default_material_light = 2131034267;
 			
 			// aapt resource value: 0x7F05009C
-			public const int secondary_text_disabled_material_light = 2131034268;
+			public const int secondary_text_disabled_material_dark = 2131034268;
 			
 			// aapt resource value: 0x7F05009D
-			public const int switch_thumb_disabled_material_dark = 2131034269;
+			public const int secondary_text_disabled_material_light = 2131034269;
 			
 			// aapt resource value: 0x7F05009E
-			public const int switch_thumb_disabled_material_light = 2131034270;
+			public const int segmented_control_text = 2131034270;
 			
 			// aapt resource value: 0x7F05009F
-			public const int switch_thumb_material_dark = 2131034271;
+			public const int selected = 2131034271;
 			
 			// aapt resource value: 0x7F0500A0
-			public const int switch_thumb_material_light = 2131034272;
+			public const int switch_thumb_disabled_material_dark = 2131034272;
 			
 			// aapt resource value: 0x7F0500A1
-			public const int switch_thumb_normal_material_dark = 2131034273;
+			public const int switch_thumb_disabled_material_light = 2131034273;
 			
 			// aapt resource value: 0x7F0500A2
-			public const int switch_thumb_normal_material_light = 2131034274;
+			public const int switch_thumb_material_dark = 2131034274;
 			
 			// aapt resource value: 0x7F0500A3
-			public const int tooltip_background_dark = 2131034275;
+			public const int switch_thumb_material_light = 2131034275;
 			
 			// aapt resource value: 0x7F0500A4
-			public const int tooltip_background_light = 2131034276;
+			public const int switch_thumb_normal_material_dark = 2131034276;
+			
+			// aapt resource value: 0x7F0500A5
+			public const int switch_thumb_normal_material_light = 2131034277;
+			
+			// aapt resource value: 0x7F0500A6
+			public const int tooltip_background_dark = 2131034278;
+			
+			// aapt resource value: 0x7F0500A7
+			public const int tooltip_background_light = 2131034279;
 			
 			static Color()
 			{
@@ -13869,10 +16219,19 @@ namespace SalveminiApp.Droid
 			public const int roundedbgdark = 2131165577;
 			
 			// aapt resource value: 0x7F07018A
-			public const int tooltip_frame_dark = 2131165578;
+			public const int segmented_control_background = 2131165578;
 			
 			// aapt resource value: 0x7F07018B
-			public const int tooltip_frame_light = 2131165579;
+			public const int segmented_control_first_background = 2131165579;
+			
+			// aapt resource value: 0x7F07018C
+			public const int segmented_control_last_background = 2131165580;
+			
+			// aapt resource value: 0x7F07018D
+			public const int tooltip_frame_dark = 2131165581;
+			
+			// aapt resource value: 0x7F07018E
+			public const int tooltip_frame_light = 2131165582;
 			
 			static Drawable()
 			{
@@ -13887,497 +16246,524 @@ namespace SalveminiApp.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7F09000E
-			public const int action0 = 2131296270;
-			
 			// aapt resource value: 0x7F09000F
-			public const int actionIcon = 2131296271;
-			
-			// aapt resource value: 0x7F090024
-			public const int actions = 2131296292;
+			public const int action0 = 2131296271;
 			
 			// aapt resource value: 0x7F090010
-			public const int action_bar = 2131296272;
-			
-			// aapt resource value: 0x7F090011
-			public const int action_bar_activity_content = 2131296273;
-			
-			// aapt resource value: 0x7F090012
-			public const int action_bar_container = 2131296274;
-			
-			// aapt resource value: 0x7F090013
-			public const int action_bar_root = 2131296275;
-			
-			// aapt resource value: 0x7F090014
-			public const int action_bar_spinner = 2131296276;
-			
-			// aapt resource value: 0x7F090015
-			public const int action_bar_subtitle = 2131296277;
-			
-			// aapt resource value: 0x7F090016
-			public const int action_bar_title = 2131296278;
-			
-			// aapt resource value: 0x7F090017
-			public const int action_container = 2131296279;
-			
-			// aapt resource value: 0x7F090018
-			public const int action_context_bar = 2131296280;
-			
-			// aapt resource value: 0x7F090019
-			public const int action_divider = 2131296281;
-			
-			// aapt resource value: 0x7F09001A
-			public const int action_fragment = 2131296282;
-			
-			// aapt resource value: 0x7F09001B
-			public const int action_fragment_background = 2131296283;
-			
-			// aapt resource value: 0x7F09001C
-			public const int action_fragment_root = 2131296284;
-			
-			// aapt resource value: 0x7F09001D
-			public const int action_image = 2131296285;
-			
-			// aapt resource value: 0x7F09001E
-			public const int action_menu_divider = 2131296286;
-			
-			// aapt resource value: 0x7F09001F
-			public const int action_menu_presenter = 2131296287;
-			
-			// aapt resource value: 0x7F090020
-			public const int action_mode_bar = 2131296288;
-			
-			// aapt resource value: 0x7F090021
-			public const int action_mode_bar_stub = 2131296289;
-			
-			// aapt resource value: 0x7F090022
-			public const int action_mode_close_button = 2131296290;
-			
-			// aapt resource value: 0x7F090023
-			public const int action_text = 2131296291;
+			public const int actionIcon = 2131296272;
 			
 			// aapt resource value: 0x7F090025
-			public const int activated = 2131296293;
+			public const int actions = 2131296293;
+			
+			// aapt resource value: 0x7F090011
+			public const int action_bar = 2131296273;
+			
+			// aapt resource value: 0x7F090012
+			public const int action_bar_activity_content = 2131296274;
+			
+			// aapt resource value: 0x7F090013
+			public const int action_bar_container = 2131296275;
+			
+			// aapt resource value: 0x7F090014
+			public const int action_bar_root = 2131296276;
+			
+			// aapt resource value: 0x7F090015
+			public const int action_bar_spinner = 2131296277;
+			
+			// aapt resource value: 0x7F090016
+			public const int action_bar_subtitle = 2131296278;
+			
+			// aapt resource value: 0x7F090017
+			public const int action_bar_title = 2131296279;
+			
+			// aapt resource value: 0x7F090018
+			public const int action_container = 2131296280;
+			
+			// aapt resource value: 0x7F090019
+			public const int action_context_bar = 2131296281;
+			
+			// aapt resource value: 0x7F09001A
+			public const int action_divider = 2131296282;
+			
+			// aapt resource value: 0x7F09001B
+			public const int action_fragment = 2131296283;
+			
+			// aapt resource value: 0x7F09001C
+			public const int action_fragment_background = 2131296284;
+			
+			// aapt resource value: 0x7F09001D
+			public const int action_fragment_root = 2131296285;
+			
+			// aapt resource value: 0x7F09001E
+			public const int action_image = 2131296286;
+			
+			// aapt resource value: 0x7F09001F
+			public const int action_menu_divider = 2131296287;
+			
+			// aapt resource value: 0x7F090020
+			public const int action_menu_presenter = 2131296288;
+			
+			// aapt resource value: 0x7F090021
+			public const int action_mode_bar = 2131296289;
+			
+			// aapt resource value: 0x7F090022
+			public const int action_mode_bar_stub = 2131296290;
+			
+			// aapt resource value: 0x7F090023
+			public const int action_mode_close_button = 2131296291;
+			
+			// aapt resource value: 0x7F090024
+			public const int action_text = 2131296292;
 			
 			// aapt resource value: 0x7F090026
-			public const int activity_chooser_view_content = 2131296294;
+			public const int activated = 2131296294;
 			
 			// aapt resource value: 0x7F090027
-			public const int add = 2131296295;
+			public const int activity_chooser_view_content = 2131296295;
 			
 			// aapt resource value: 0x7F090028
-			public const int adjust_height = 2131296296;
+			public const int add = 2131296296;
 			
 			// aapt resource value: 0x7F090029
-			public const int adjust_width = 2131296297;
+			public const int adjust_height = 2131296297;
 			
 			// aapt resource value: 0x7F09002A
-			public const int alertTitle = 2131296298;
+			public const int adjust_width = 2131296298;
 			
 			// aapt resource value: 0x7F09002B
-			public const int all = 2131296299;
+			public const int alertTitle = 2131296299;
+			
+			// aapt resource value: 0x7F09002C
+			public const int all = 2131296300;
 			
 			// aapt resource value: 0x7F090000
 			public const int ALT = 2131296256;
 			
-			// aapt resource value: 0x7F09002C
-			public const int always = 2131296300;
-			
 			// aapt resource value: 0x7F09002D
-			public const int async = 2131296301;
+			public const int always = 2131296301;
 			
 			// aapt resource value: 0x7F09002E
-			public const int auto = 2131296302;
+			public const int annotationLayout = 2131296302;
 			
 			// aapt resource value: 0x7F09002F
-			public const int background = 2131296303;
+			public const int async = 2131296303;
 			
 			// aapt resource value: 0x7F090030
-			public const int background_container = 2131296304;
+			public const int auto = 2131296304;
 			
 			// aapt resource value: 0x7F090031
-			public const int background_imagein = 2131296305;
+			public const int axisLayout = 2131296305;
 			
 			// aapt resource value: 0x7F090032
-			public const int background_imageout = 2131296306;
+			public const int background = 2131296306;
 			
 			// aapt resource value: 0x7F090033
-			public const int bar1 = 2131296307;
+			public const int background_container = 2131296307;
 			
 			// aapt resource value: 0x7F090034
-			public const int bar2 = 2131296308;
+			public const int background_imagein = 2131296308;
 			
 			// aapt resource value: 0x7F090035
-			public const int bar3 = 2131296309;
+			public const int background_imageout = 2131296309;
 			
 			// aapt resource value: 0x7F090036
-			public const int beginning = 2131296310;
+			public const int bar1 = 2131296310;
 			
 			// aapt resource value: 0x7F090037
-			public const int blocking = 2131296311;
+			public const int bar2 = 2131296311;
+			
+			// aapt resource value: 0x7F090038
+			public const int bar3 = 2131296312;
+			
+			// aapt resource value: 0x7F090039
+			public const int beginning = 2131296313;
+			
+			// aapt resource value: 0x7F09003A
+			public const int blocking = 2131296314;
 			
 			// aapt resource value: 0x7F090001
 			public const int BorderView = 2131296257;
 			
-			// aapt resource value: 0x7F090038
-			public const int bottom = 2131296312;
-			
-			// aapt resource value: 0x7F09003A
-			public const int bottomtab_navarea = 2131296314;
-			
 			// aapt resource value: 0x7F09003B
-			public const int bottomtab_tabbar = 2131296315;
-			
-			// aapt resource value: 0x7F090039
-			public const int bottom_spacer = 2131296313;
-			
-			// aapt resource value: 0x7F09003C
-			public const int browse_container_dock = 2131296316;
-			
-			// aapt resource value: 0x7F09003D
-			public const int browse_dummy = 2131296317;
+			public const int bottom = 2131296315;
 			
 			// aapt resource value: 0x7F09003E
-			public const int browse_frame = 2131296318;
+			public const int bottomtab_navarea = 2131296318;
 			
 			// aapt resource value: 0x7F09003F
-			public const int browse_grid = 2131296319;
+			public const int bottomtab_tabbar = 2131296319;
+			
+			// aapt resource value: 0x7F09003C
+			public const int bottom_labels = 2131296316;
+			
+			// aapt resource value: 0x7F09003D
+			public const int bottom_spacer = 2131296317;
 			
 			// aapt resource value: 0x7F090040
-			public const int browse_grid_dock = 2131296320;
+			public const int browse_container_dock = 2131296320;
 			
 			// aapt resource value: 0x7F090041
-			public const int browse_headers = 2131296321;
+			public const int browse_dummy = 2131296321;
 			
 			// aapt resource value: 0x7F090042
-			public const int browse_headers_dock = 2131296322;
+			public const int browse_frame = 2131296322;
 			
 			// aapt resource value: 0x7F090043
-			public const int browse_headers_root = 2131296323;
+			public const int browse_grid = 2131296323;
 			
 			// aapt resource value: 0x7F090044
-			public const int browse_title_group = 2131296324;
+			public const int browse_grid_dock = 2131296324;
 			
 			// aapt resource value: 0x7F090045
-			public const int button = 2131296325;
+			public const int browse_headers = 2131296325;
 			
 			// aapt resource value: 0x7F090046
-			public const int buttonPanel = 2131296326;
+			public const int browse_headers_dock = 2131296326;
 			
 			// aapt resource value: 0x7F090047
-			public const int button_start = 2131296327;
+			public const int browse_headers_root = 2131296327;
 			
 			// aapt resource value: 0x7F090048
-			public const int cancel_action = 2131296328;
+			public const int browse_title_group = 2131296328;
 			
 			// aapt resource value: 0x7F090049
-			public const int center = 2131296329;
+			public const int button = 2131296329;
 			
 			// aapt resource value: 0x7F09004A
-			public const int center_horizontal = 2131296330;
+			public const int buttonPanel = 2131296330;
 			
 			// aapt resource value: 0x7F09004B
-			public const int center_vertical = 2131296331;
+			public const int button_start = 2131296331;
 			
 			// aapt resource value: 0x7F09004C
-			public const int checkbox = 2131296332;
+			public const int cancel_action = 2131296332;
 			
 			// aapt resource value: 0x7F09004D
-			public const int chronometer = 2131296333;
+			public const int center = 2131296333;
 			
 			// aapt resource value: 0x7F09004E
-			public const int clip_horizontal = 2131296334;
+			public const int center_horizontal = 2131296334;
 			
 			// aapt resource value: 0x7F09004F
-			public const int clip_vertical = 2131296335;
+			public const int center_vertical = 2131296335;
 			
 			// aapt resource value: 0x7F090050
-			public const int collapseActionView = 2131296336;
+			public const int chartBehaviorLayout = 2131296336;
 			
 			// aapt resource value: 0x7F090051
-			public const int column = 2131296337;
+			public const int chartLegendScrollView = 2131296337;
 			
 			// aapt resource value: 0x7F090052
-			public const int container = 2131296338;
+			public const int checkbox = 2131296338;
 			
 			// aapt resource value: 0x7F090053
-			public const int container_list = 2131296339;
+			public const int chronometer = 2131296339;
+			
+			// aapt resource value: 0x7F090054
+			public const int clip_horizontal = 2131296340;
+			
+			// aapt resource value: 0x7F090055
+			public const int clip_vertical = 2131296341;
+			
+			// aapt resource value: 0x7F090056
+			public const int collapseActionView = 2131296342;
+			
+			// aapt resource value: 0x7F090057
+			public const int column = 2131296343;
+			
+			// aapt resource value: 0x7F090058
+			public const int container = 2131296344;
+			
+			// aapt resource value: 0x7F090059
+			public const int container_list = 2131296345;
 			
 			// aapt resource value: 0x7F090003
 			public const int Content = 2131296259;
 			
-			// aapt resource value: 0x7F090054
-			public const int contentPanel = 2131296340;
-			
-			// aapt resource value: 0x7F090055
-			public const int content_container = 2131296341;
-			
-			// aapt resource value: 0x7F090056
-			public const int content_fragment = 2131296342;
-			
-			// aapt resource value: 0x7F090057
-			public const int content_frame = 2131296343;
-			
-			// aapt resource value: 0x7F090058
-			public const int content_text = 2131296344;
-			
 			// aapt resource value: 0x7F09005A
-			public const int controls_card = 2131296346;
+			public const int content = 2131296346;
 			
 			// aapt resource value: 0x7F09005B
-			public const int controls_card_right_panel = 2131296347;
+			public const int contentPanel = 2131296347;
 			
 			// aapt resource value: 0x7F09005C
-			public const int controls_container = 2131296348;
+			public const int content_container = 2131296348;
 			
 			// aapt resource value: 0x7F09005D
-			public const int controls_dock = 2131296349;
-			
-			// aapt resource value: 0x7F090059
-			public const int control_bar = 2131296345;
+			public const int content_fragment = 2131296349;
 			
 			// aapt resource value: 0x7F09005E
-			public const int coordinator = 2131296350;
+			public const int content_frame = 2131296350;
+			
+			// aapt resource value: 0x7F09005F
+			public const int content_text = 2131296351;
+			
+			// aapt resource value: 0x7F090061
+			public const int controls_card = 2131296353;
+			
+			// aapt resource value: 0x7F090062
+			public const int controls_card_right_panel = 2131296354;
+			
+			// aapt resource value: 0x7F090063
+			public const int controls_container = 2131296355;
+			
+			// aapt resource value: 0x7F090064
+			public const int controls_dock = 2131296356;
+			
+			// aapt resource value: 0x7F090060
+			public const int control_bar = 2131296352;
+			
+			// aapt resource value: 0x7F090065
+			public const int coordinator = 2131296357;
 			
 			// aapt resource value: 0x7F090002
 			public const int CTRL = 2131296258;
 			
-			// aapt resource value: 0x7F09005F
-			public const int current_time = 2131296351;
+			// aapt resource value: 0x7F090066
+			public const int current_time = 2131296358;
 			
-			// aapt resource value: 0x7F090060
-			public const int custom = 2131296352;
+			// aapt resource value: 0x7F090067
+			public const int custom = 2131296359;
 			
-			// aapt resource value: 0x7F090061
-			public const int customPanel = 2131296353;
+			// aapt resource value: 0x7F090068
+			public const int customPanel = 2131296360;
 			
-			// aapt resource value: 0x7F090062
-			public const int dark = 2131296354;
+			// aapt resource value: 0x7F090069
+			public const int dark = 2131296361;
 			
-			// aapt resource value: 0x7F090063
-			public const int decor_content_parent = 2131296355;
+			// aapt resource value: 0x7F09006A
+			public const int dataMarkerLayout = 2131296362;
+			
+			// aapt resource value: 0x7F09006B
+			public const int decor_content_parent = 2131296363;
 			
 			// aapt resource value: 0x7F090004
 			public const int Default = 2131296260;
 			
-			// aapt resource value: 0x7F090064
-			public const int default_activity_button = 2131296356;
-			
-			// aapt resource value: 0x7F090065
-			public const int description = 2131296357;
-			
-			// aapt resource value: 0x7F090066
-			public const int description_dock = 2131296358;
-			
-			// aapt resource value: 0x7F090067
-			public const int design_bottom_sheet = 2131296359;
-			
-			// aapt resource value: 0x7F090068
-			public const int design_menu_item_action_area = 2131296360;
-			
-			// aapt resource value: 0x7F090069
-			public const int design_menu_item_action_area_stub = 2131296361;
-			
-			// aapt resource value: 0x7F09006A
-			public const int design_menu_item_text = 2131296362;
-			
-			// aapt resource value: 0x7F09006B
-			public const int design_navigation_view = 2131296363;
-			
 			// aapt resource value: 0x7F09006C
-			public const int details_background_view = 2131296364;
+			public const int default_activity_button = 2131296364;
 			
 			// aapt resource value: 0x7F09006D
-			public const int details_fragment_root = 2131296365;
+			public const int description = 2131296365;
 			
 			// aapt resource value: 0x7F09006E
-			public const int details_frame = 2131296366;
+			public const int description_dock = 2131296366;
 			
 			// aapt resource value: 0x7F09006F
-			public const int details_overview = 2131296367;
+			public const int design_bottom_sheet = 2131296367;
 			
 			// aapt resource value: 0x7F090070
-			public const int details_overview_actions = 2131296368;
+			public const int design_menu_item_action_area = 2131296368;
 			
 			// aapt resource value: 0x7F090071
-			public const int details_overview_actions_background = 2131296369;
+			public const int design_menu_item_action_area_stub = 2131296369;
 			
 			// aapt resource value: 0x7F090072
-			public const int details_overview_description = 2131296370;
+			public const int design_menu_item_text = 2131296370;
 			
 			// aapt resource value: 0x7F090073
-			public const int details_overview_image = 2131296371;
+			public const int design_navigation_view = 2131296371;
 			
 			// aapt resource value: 0x7F090074
-			public const int details_overview_right_panel = 2131296372;
+			public const int details_background_view = 2131296372;
 			
 			// aapt resource value: 0x7F090075
-			public const int details_root = 2131296373;
+			public const int details_fragment_root = 2131296373;
 			
 			// aapt resource value: 0x7F090076
-			public const int details_rows_dock = 2131296374;
+			public const int details_frame = 2131296374;
 			
 			// aapt resource value: 0x7F090077
-			public const int disableHome = 2131296375;
+			public const int details_overview = 2131296375;
 			
 			// aapt resource value: 0x7F090078
-			public const int dummy = 2131296376;
+			public const int details_overview_actions = 2131296376;
 			
 			// aapt resource value: 0x7F090079
-			public const int edit_query = 2131296377;
+			public const int details_overview_actions_background = 2131296377;
 			
 			// aapt resource value: 0x7F09007A
-			public const int end = 2131296378;
+			public const int details_overview_description = 2131296378;
 			
 			// aapt resource value: 0x7F09007B
-			public const int end_padder = 2131296379;
+			public const int details_overview_image = 2131296379;
 			
 			// aapt resource value: 0x7F09007C
-			public const int enterAlways = 2131296380;
+			public const int details_overview_right_panel = 2131296380;
 			
 			// aapt resource value: 0x7F09007D
-			public const int enterAlwaysCollapsed = 2131296381;
+			public const int details_root = 2131296381;
 			
 			// aapt resource value: 0x7F09007E
-			public const int error_frame = 2131296382;
+			public const int details_rows_dock = 2131296382;
 			
 			// aapt resource value: 0x7F09007F
-			public const int exitUntilCollapsed = 2131296383;
-			
-			// aapt resource value: 0x7F090081
-			public const int expanded_menu = 2131296385;
+			public const int disableHome = 2131296383;
 			
 			// aapt resource value: 0x7F090080
-			public const int expand_activities_button = 2131296384;
+			public const int dummy = 2131296384;
+			
+			// aapt resource value: 0x7F090081
+			public const int edit_query = 2131296385;
 			
 			// aapt resource value: 0x7F090082
-			public const int extra = 2131296386;
+			public const int end = 2131296386;
 			
 			// aapt resource value: 0x7F090083
-			public const int extra_badge = 2131296387;
+			public const int end_padder = 2131296387;
 			
 			// aapt resource value: 0x7F090084
-			public const int fade_out_edge = 2131296388;
+			public const int enterAlways = 2131296388;
 			
 			// aapt resource value: 0x7F090085
-			public const int fill = 2131296389;
+			public const int enterAlwaysCollapsed = 2131296389;
 			
 			// aapt resource value: 0x7F090086
-			public const int fill_horizontal = 2131296390;
+			public const int error_frame = 2131296390;
 			
 			// aapt resource value: 0x7F090087
-			public const int fill_vertical = 2131296391;
-			
-			// aapt resource value: 0x7F090088
-			public const int @fixed = 2131296392;
+			public const int exitUntilCollapsed = 2131296391;
 			
 			// aapt resource value: 0x7F090089
-			public const int flyoutcontent_appbar = 2131296393;
+			public const int expanded_menu = 2131296393;
+			
+			// aapt resource value: 0x7F090088
+			public const int expand_activities_button = 2131296392;
 			
 			// aapt resource value: 0x7F09008A
-			public const int flyoutcontent_recycler = 2131296394;
+			public const int extra = 2131296394;
 			
 			// aapt resource value: 0x7F09008B
-			public const int foreground_container = 2131296395;
+			public const int extra_badge = 2131296395;
 			
 			// aapt resource value: 0x7F09008C
-			public const int forever = 2131296396;
+			public const int fade_out_edge = 2131296396;
+			
+			// aapt resource value: 0x7F09008D
+			public const int fill = 2131296397;
+			
+			// aapt resource value: 0x7F09008E
+			public const int fill_horizontal = 2131296398;
+			
+			// aapt resource value: 0x7F09008F
+			public const int fill_vertical = 2131296399;
+			
+			// aapt resource value: 0x7F090090
+			public const int @fixed = 2131296400;
+			
+			// aapt resource value: 0x7F090091
+			public const int flyoutcontent_appbar = 2131296401;
+			
+			// aapt resource value: 0x7F090092
+			public const int flyoutcontent_recycler = 2131296402;
+			
+			// aapt resource value: 0x7F090093
+			public const int foreground_container = 2131296403;
+			
+			// aapt resource value: 0x7F090094
+			public const int forever = 2131296404;
 			
 			// aapt resource value: 0x7F090005
 			public const int FUNCTION = 2131296261;
 			
-			// aapt resource value: 0x7F09008D
-			public const int ghost_view = 2131296397;
-			
-			// aapt resource value: 0x7F09008E
-			public const int grid_frame = 2131296398;
-			
-			// aapt resource value: 0x7F09008F
-			public const int guidance_breadcrumb = 2131296399;
-			
-			// aapt resource value: 0x7F090090
-			public const int guidance_container = 2131296400;
-			
-			// aapt resource value: 0x7F090091
-			public const int guidance_description = 2131296401;
-			
-			// aapt resource value: 0x7F090092
-			public const int guidance_icon = 2131296402;
-			
-			// aapt resource value: 0x7F090093
-			public const int guidance_title = 2131296403;
-			
-			// aapt resource value: 0x7F090094
-			public const int guidedactions_activator_item = 2131296404;
-			
 			// aapt resource value: 0x7F090095
-			public const int guidedactions_content = 2131296405;
+			public const int ghost_view = 2131296405;
 			
 			// aapt resource value: 0x7F090096
-			public const int guidedactions_content2 = 2131296406;
+			public const int gridLineLayout = 2131296406;
 			
 			// aapt resource value: 0x7F090097
-			public const int guidedactions_item_checkmark = 2131296407;
+			public const int gridLinesLayout = 2131296407;
 			
 			// aapt resource value: 0x7F090098
-			public const int guidedactions_item_chevron = 2131296408;
+			public const int grid_frame = 2131296408;
 			
 			// aapt resource value: 0x7F090099
-			public const int guidedactions_item_content = 2131296409;
+			public const int guidance_breadcrumb = 2131296409;
 			
 			// aapt resource value: 0x7F09009A
-			public const int guidedactions_item_description = 2131296410;
+			public const int guidance_container = 2131296410;
 			
 			// aapt resource value: 0x7F09009B
-			public const int guidedactions_item_icon = 2131296411;
+			public const int guidance_description = 2131296411;
 			
 			// aapt resource value: 0x7F09009C
-			public const int guidedactions_item_title = 2131296412;
+			public const int guidance_icon = 2131296412;
 			
 			// aapt resource value: 0x7F09009D
-			public const int guidedactions_list = 2131296413;
+			public const int guidance_title = 2131296413;
 			
 			// aapt resource value: 0x7F09009E
-			public const int guidedactions_list2 = 2131296414;
+			public const int guidedactions_activator_item = 2131296414;
 			
 			// aapt resource value: 0x7F09009F
-			public const int guidedactions_list_background = 2131296415;
+			public const int guidedactions_content = 2131296415;
 			
 			// aapt resource value: 0x7F0900A0
-			public const int guidedactions_list_background2 = 2131296416;
+			public const int guidedactions_content2 = 2131296416;
 			
 			// aapt resource value: 0x7F0900A1
-			public const int guidedactions_root = 2131296417;
+			public const int guidedactions_item_checkmark = 2131296417;
 			
 			// aapt resource value: 0x7F0900A2
-			public const int guidedactions_root2 = 2131296418;
+			public const int guidedactions_item_chevron = 2131296418;
 			
 			// aapt resource value: 0x7F0900A3
-			public const int guidedactions_sub_list = 2131296419;
+			public const int guidedactions_item_content = 2131296419;
 			
 			// aapt resource value: 0x7F0900A4
-			public const int guidedactions_sub_list_background = 2131296420;
+			public const int guidedactions_item_description = 2131296420;
 			
 			// aapt resource value: 0x7F0900A5
-			public const int guidedstep_background = 2131296421;
+			public const int guidedactions_item_icon = 2131296421;
 			
 			// aapt resource value: 0x7F0900A6
-			public const int guidedstep_background_view_root = 2131296422;
+			public const int guidedactions_item_title = 2131296422;
 			
 			// aapt resource value: 0x7F0900A7
-			public const int guidedstep_root = 2131296423;
+			public const int guidedactions_list = 2131296423;
 			
 			// aapt resource value: 0x7F0900A8
-			public const int home = 2131296424;
+			public const int guidedactions_list2 = 2131296424;
 			
 			// aapt resource value: 0x7F0900A9
-			public const int homeAsUp = 2131296425;
+			public const int guidedactions_list_background = 2131296425;
 			
 			// aapt resource value: 0x7F0900AA
-			public const int hovercard_panel = 2131296426;
+			public const int guidedactions_list_background2 = 2131296426;
 			
 			// aapt resource value: 0x7F0900AB
-			public const int icon = 2131296427;
+			public const int guidedactions_root = 2131296427;
+			
+			// aapt resource value: 0x7F0900AC
+			public const int guidedactions_root2 = 2131296428;
+			
+			// aapt resource value: 0x7F0900AD
+			public const int guidedactions_sub_list = 2131296429;
+			
+			// aapt resource value: 0x7F0900AE
+			public const int guidedactions_sub_list_background = 2131296430;
+			
+			// aapt resource value: 0x7F0900AF
+			public const int guidedstep_background = 2131296431;
+			
+			// aapt resource value: 0x7F0900B0
+			public const int guidedstep_background_view_root = 2131296432;
+			
+			// aapt resource value: 0x7F0900B1
+			public const int guidedstep_root = 2131296433;
+			
+			// aapt resource value: 0x7F0900B2
+			public const int home = 2131296434;
+			
+			// aapt resource value: 0x7F0900B3
+			public const int homeAsUp = 2131296435;
+			
+			// aapt resource value: 0x7F0900B4
+			public const int hovercard_panel = 2131296436;
+			
+			// aapt resource value: 0x7F0900B5
+			public const int icon = 2131296437;
 			
 			// aapt resource value: 0x7F090006
 			public const int IconOnLeft = 2131296262;
@@ -14385,728 +16771,773 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 0x7F090007
 			public const int IconOnRight = 2131296263;
 			
-			// aapt resource value: 0x7F0900AC
-			public const int icon_group = 2131296428;
+			// aapt resource value: 0x7F0900B6
+			public const int iconView = 2131296438;
 			
-			// aapt resource value: 0x7F0900AD
-			public const int icon_only = 2131296429;
+			// aapt resource value: 0x7F0900B7
+			public const int icon_group = 2131296439;
 			
-			// aapt resource value: 0x7F0900AE
-			public const int ifRoom = 2131296430;
+			// aapt resource value: 0x7F0900B8
+			public const int icon_only = 2131296440;
 			
-			// aapt resource value: 0x7F0900AF
-			public const int image = 2131296431;
+			// aapt resource value: 0x7F0900B9
+			public const int ifRoom = 2131296441;
+			
+			// aapt resource value: 0x7F0900BA
+			public const int image = 2131296442;
 			
 			// aapt resource value: 0x7F090008
 			public const int ImageOnly = 2131296264;
 			
-			// aapt resource value: 0x7F0900B0
-			public const int info = 2131296432;
-			
-			// aapt resource value: 0x7F0900B1
-			public const int infoOver = 2131296433;
-			
-			// aapt resource value: 0x7F0900B2
-			public const int infoUnder = 2131296434;
-			
-			// aapt resource value: 0x7F0900B3
-			public const int infoUnderWithExtra = 2131296435;
-			
-			// aapt resource value: 0x7F0900B4
-			public const int info_field = 2131296436;
-			
-			// aapt resource value: 0x7F0900B5
-			public const int initial = 2131296437;
-			
-			// aapt resource value: 0x7F0900B6
-			public const int italic = 2131296438;
-			
-			// aapt resource value: 0x7F0900B7
-			public const int item_touch_helper_previous_elevation = 2131296439;
-			
-			// aapt resource value: 0x7F0900B8
-			public const int label = 2131296440;
-			
-			// aapt resource value: 0x7F0900B9
-			public const int largeLabel = 2131296441;
-			
-			// aapt resource value: 0x7F0900BA
-			public const int lb_action_button = 2131296442;
-			
 			// aapt resource value: 0x7F0900BB
-			public const int lb_control_closed_captioning = 2131296443;
+			public const int info = 2131296443;
 			
 			// aapt resource value: 0x7F0900BC
-			public const int lb_control_fast_forward = 2131296444;
+			public const int infoOver = 2131296444;
 			
 			// aapt resource value: 0x7F0900BD
-			public const int lb_control_fast_rewind = 2131296445;
+			public const int infoUnder = 2131296445;
 			
 			// aapt resource value: 0x7F0900BE
-			public const int lb_control_high_quality = 2131296446;
+			public const int infoUnderWithExtra = 2131296446;
 			
 			// aapt resource value: 0x7F0900BF
-			public const int lb_control_more_actions = 2131296447;
+			public const int info_field = 2131296447;
 			
 			// aapt resource value: 0x7F0900C0
-			public const int lb_control_picture_in_picture = 2131296448;
+			public const int initial = 2131296448;
 			
 			// aapt resource value: 0x7F0900C1
-			public const int lb_control_play_pause = 2131296449;
+			public const int italic = 2131296449;
 			
 			// aapt resource value: 0x7F0900C2
-			public const int lb_control_repeat = 2131296450;
+			public const int item_touch_helper_previous_elevation = 2131296450;
 			
 			// aapt resource value: 0x7F0900C3
-			public const int lb_control_shuffle = 2131296451;
+			public const int label = 2131296451;
 			
 			// aapt resource value: 0x7F0900C4
-			public const int lb_control_skip_next = 2131296452;
+			public const int largeLabel = 2131296452;
 			
 			// aapt resource value: 0x7F0900C5
-			public const int lb_control_skip_previous = 2131296453;
+			public const int lb_action_button = 2131296453;
 			
 			// aapt resource value: 0x7F0900C6
-			public const int lb_control_thumbs_down = 2131296454;
+			public const int lb_control_closed_captioning = 2131296454;
 			
 			// aapt resource value: 0x7F0900C7
-			public const int lb_control_thumbs_up = 2131296455;
+			public const int lb_control_fast_forward = 2131296455;
 			
 			// aapt resource value: 0x7F0900C8
-			public const int lb_details_description_body = 2131296456;
+			public const int lb_control_fast_rewind = 2131296456;
 			
 			// aapt resource value: 0x7F0900C9
-			public const int lb_details_description_subtitle = 2131296457;
+			public const int lb_control_high_quality = 2131296457;
 			
 			// aapt resource value: 0x7F0900CA
-			public const int lb_details_description_title = 2131296458;
+			public const int lb_control_more_actions = 2131296458;
 			
 			// aapt resource value: 0x7F0900CB
-			public const int lb_focus_animator = 2131296459;
+			public const int lb_control_picture_in_picture = 2131296459;
 			
 			// aapt resource value: 0x7F0900CC
-			public const int lb_guidedstep_background = 2131296460;
+			public const int lb_control_play_pause = 2131296460;
 			
 			// aapt resource value: 0x7F0900CD
-			public const int lb_parallax_source = 2131296461;
+			public const int lb_control_repeat = 2131296461;
 			
 			// aapt resource value: 0x7F0900CE
-			public const int lb_results_frame = 2131296462;
+			public const int lb_control_shuffle = 2131296462;
 			
 			// aapt resource value: 0x7F0900CF
-			public const int lb_row_container_header_dock = 2131296463;
+			public const int lb_control_skip_next = 2131296463;
 			
 			// aapt resource value: 0x7F0900D0
-			public const int lb_search_bar = 2131296464;
+			public const int lb_control_skip_previous = 2131296464;
 			
 			// aapt resource value: 0x7F0900D1
-			public const int lb_search_bar_badge = 2131296465;
+			public const int lb_control_thumbs_down = 2131296465;
 			
 			// aapt resource value: 0x7F0900D2
-			public const int lb_search_bar_items = 2131296466;
+			public const int lb_control_thumbs_up = 2131296466;
 			
 			// aapt resource value: 0x7F0900D3
-			public const int lb_search_bar_speech_orb = 2131296467;
+			public const int lb_details_description_body = 2131296467;
 			
 			// aapt resource value: 0x7F0900D4
-			public const int lb_search_frame = 2131296468;
+			public const int lb_details_description_subtitle = 2131296468;
 			
 			// aapt resource value: 0x7F0900D5
-			public const int lb_search_text_editor = 2131296469;
+			public const int lb_details_description_title = 2131296469;
 			
 			// aapt resource value: 0x7F0900D6
-			public const int lb_shadow_focused = 2131296470;
+			public const int lb_focus_animator = 2131296470;
 			
 			// aapt resource value: 0x7F0900D7
-			public const int lb_shadow_impl = 2131296471;
+			public const int lb_guidedstep_background = 2131296471;
 			
 			// aapt resource value: 0x7F0900D8
-			public const int lb_shadow_normal = 2131296472;
+			public const int lb_parallax_source = 2131296472;
 			
 			// aapt resource value: 0x7F0900D9
-			public const int lb_slide_transition_value = 2131296473;
+			public const int lb_results_frame = 2131296473;
 			
 			// aapt resource value: 0x7F0900DA
-			public const int left = 2131296474;
+			public const int lb_row_container_header_dock = 2131296474;
 			
 			// aapt resource value: 0x7F0900DB
-			public const int light = 2131296475;
+			public const int lb_search_bar = 2131296475;
 			
 			// aapt resource value: 0x7F0900DC
-			public const int line1 = 2131296476;
+			public const int lb_search_bar_badge = 2131296476;
 			
 			// aapt resource value: 0x7F0900DD
-			public const int line3 = 2131296477;
+			public const int lb_search_bar_items = 2131296477;
+			
+			// aapt resource value: 0x7F0900DE
+			public const int lb_search_bar_speech_orb = 2131296478;
+			
+			// aapt resource value: 0x7F0900DF
+			public const int lb_search_frame = 2131296479;
+			
+			// aapt resource value: 0x7F0900E0
+			public const int lb_search_text_editor = 2131296480;
+			
+			// aapt resource value: 0x7F0900E1
+			public const int lb_shadow_focused = 2131296481;
+			
+			// aapt resource value: 0x7F0900E2
+			public const int lb_shadow_impl = 2131296482;
+			
+			// aapt resource value: 0x7F0900E3
+			public const int lb_shadow_normal = 2131296483;
+			
+			// aapt resource value: 0x7F0900E4
+			public const int lb_slide_transition_value = 2131296484;
+			
+			// aapt resource value: 0x7F0900E5
+			public const int left = 2131296485;
+			
+			// aapt resource value: 0x7F0900E6
+			public const int legendHeader = 2131296486;
+			
+			// aapt resource value: 0x7F0900E7
+			public const int legendItemsLayout = 2131296487;
+			
+			// aapt resource value: 0x7F0900E8
+			public const int legendLayout = 2131296488;
+			
+			// aapt resource value: 0x7F0900E9
+			public const int legendScrollView = 2131296489;
+			
+			// aapt resource value: 0x7F0900EA
+			public const int legendViewGroup = 2131296490;
+			
+			// aapt resource value: 0x7F0900EB
+			public const int light = 2131296491;
+			
+			// aapt resource value: 0x7F0900EC
+			public const int line1 = 2131296492;
+			
+			// aapt resource value: 0x7F0900ED
+			public const int line3 = 2131296493;
 			
 			// aapt resource value: 0x7F090009
 			public const int Linear = 2131296265;
 			
-			// aapt resource value: 0x7F0900DE
-			public const int listMode = 2131296478;
-			
-			// aapt resource value: 0x7F0900DF
-			public const int list_item = 2131296479;
-			
-			// aapt resource value: 0x7F0900E0
-			public const int loadingImage = 2131296480;
-			
-			// aapt resource value: 0x7F0900E1
-			public const int loadingProgressBar = 2131296481;
-			
-			// aapt resource value: 0x7F0900E2
-			public const int loadingProgressWheel = 2131296482;
-			
-			// aapt resource value: 0x7F0900E3
-			public const int logo = 2131296483;
-			
-			// aapt resource value: 0x7F0900E4
-			public const int lottie_layer_name = 2131296484;
-			
-			// aapt resource value: 0x7F0900E5
-			public const int main = 2131296485;
-			
-			// aapt resource value: 0x7F0900EA
-			public const int mainOnly = 2131296490;
-			
-			// aapt resource value: 0x7F0900E6
-			public const int main_appbar = 2131296486;
-			
-			// aapt resource value: 0x7F0900EB
-			public const int main_icon = 2131296491;
-			
-			// aapt resource value: 0x7F0900EC
-			public const int main_image = 2131296492;
-			
-			// aapt resource value: 0x7F0900E7
-			public const int main_tablayout = 2131296487;
-			
-			// aapt resource value: 0x7F0900E8
-			public const int main_toolbar = 2131296488;
-			
-			// aapt resource value: 0x7F0900E9
-			public const int main_viewpager = 2131296489;
-			
-			// aapt resource value: 0x7F0900ED
-			public const int masked = 2131296493;
-			
 			// aapt resource value: 0x7F0900EE
-			public const int maxLines = 2131296494;
+			public const int listMode = 2131296494;
 			
 			// aapt resource value: 0x7F0900EF
-			public const int mediaItemActionsContainer = 2131296495;
+			public const int list_item = 2131296495;
 			
 			// aapt resource value: 0x7F0900F0
-			public const int mediaItemDetails = 2131296496;
+			public const int loadingImage = 2131296496;
 			
 			// aapt resource value: 0x7F0900F1
-			public const int mediaItemDuration = 2131296497;
+			public const int loadingProgressBar = 2131296497;
 			
 			// aapt resource value: 0x7F0900F2
-			public const int mediaItemName = 2131296498;
+			public const int loadingProgressWheel = 2131296498;
 			
 			// aapt resource value: 0x7F0900F3
-			public const int mediaItemNumberViewFlipper = 2131296499;
+			public const int logo = 2131296499;
 			
 			// aapt resource value: 0x7F0900F4
-			public const int mediaItemRow = 2131296500;
+			public const int lottie_layer_name = 2131296500;
 			
 			// aapt resource value: 0x7F0900F5
-			public const int mediaListHeader = 2131296501;
+			public const int main = 2131296501;
+			
+			// aapt resource value: 0x7F0900FA
+			public const int mainOnly = 2131296506;
 			
 			// aapt resource value: 0x7F0900F6
-			public const int mediaRowSelector = 2131296502;
+			public const int main_appbar = 2131296502;
+			
+			// aapt resource value: 0x7F0900FB
+			public const int main_icon = 2131296507;
+			
+			// aapt resource value: 0x7F0900FC
+			public const int main_image = 2131296508;
 			
 			// aapt resource value: 0x7F0900F7
-			public const int mediaRowSeparator = 2131296503;
+			public const int main_tablayout = 2131296503;
 			
 			// aapt resource value: 0x7F0900F8
-			public const int media_actions = 2131296504;
+			public const int main_toolbar = 2131296504;
 			
 			// aapt resource value: 0x7F0900F9
-			public const int message = 2131296505;
+			public const int main_viewpager = 2131296505;
+			
+			// aapt resource value: 0x7F0900FD
+			public const int masked = 2131296509;
+			
+			// aapt resource value: 0x7F0900FE
+			public const int maxLines = 2131296510;
+			
+			// aapt resource value: 0x7F0900FF
+			public const int mediaItemActionsContainer = 2131296511;
+			
+			// aapt resource value: 0x7F090100
+			public const int mediaItemDetails = 2131296512;
+			
+			// aapt resource value: 0x7F090101
+			public const int mediaItemDuration = 2131296513;
+			
+			// aapt resource value: 0x7F090102
+			public const int mediaItemName = 2131296514;
+			
+			// aapt resource value: 0x7F090103
+			public const int mediaItemNumberViewFlipper = 2131296515;
+			
+			// aapt resource value: 0x7F090104
+			public const int mediaItemRow = 2131296516;
+			
+			// aapt resource value: 0x7F090105
+			public const int mediaListHeader = 2131296517;
+			
+			// aapt resource value: 0x7F090106
+			public const int mediaRowSelector = 2131296518;
+			
+			// aapt resource value: 0x7F090107
+			public const int mediaRowSeparator = 2131296519;
+			
+			// aapt resource value: 0x7F090108
+			public const int media_actions = 2131296520;
+			
+			// aapt resource value: 0x7F090109
+			public const int message = 2131296521;
 			
 			// aapt resource value: 0x7F09000A
 			public const int META = 2131296266;
 			
-			// aapt resource value: 0x7F0900FA
-			public const int middle = 2131296506;
-			
-			// aapt resource value: 0x7F0900FB
-			public const int mini = 2131296507;
-			
-			// aapt resource value: 0x7F0900FC
-			public const int more_actions_dock = 2131296508;
-			
-			// aapt resource value: 0x7F0900FD
-			public const int mr_art = 2131296509;
-			
-			// aapt resource value: 0x7F0900FE
-			public const int mr_chooser_list = 2131296510;
-			
-			// aapt resource value: 0x7F0900FF
-			public const int mr_chooser_route_desc = 2131296511;
-			
-			// aapt resource value: 0x7F090100
-			public const int mr_chooser_route_icon = 2131296512;
-			
-			// aapt resource value: 0x7F090101
-			public const int mr_chooser_route_name = 2131296513;
-			
-			// aapt resource value: 0x7F090102
-			public const int mr_chooser_title = 2131296514;
-			
-			// aapt resource value: 0x7F090103
-			public const int mr_close = 2131296515;
-			
-			// aapt resource value: 0x7F090104
-			public const int mr_control_divider = 2131296516;
-			
-			// aapt resource value: 0x7F090105
-			public const int mr_control_playback_ctrl = 2131296517;
-			
-			// aapt resource value: 0x7F090106
-			public const int mr_control_subtitle = 2131296518;
-			
-			// aapt resource value: 0x7F090107
-			public const int mr_control_title = 2131296519;
-			
-			// aapt resource value: 0x7F090108
-			public const int mr_control_title_container = 2131296520;
-			
-			// aapt resource value: 0x7F090109
-			public const int mr_custom_control = 2131296521;
-			
 			// aapt resource value: 0x7F09010A
-			public const int mr_default_control = 2131296522;
+			public const int middle = 2131296522;
 			
 			// aapt resource value: 0x7F09010B
-			public const int mr_dialog_area = 2131296523;
+			public const int mini = 2131296523;
 			
 			// aapt resource value: 0x7F09010C
-			public const int mr_expandable_area = 2131296524;
+			public const int more_actions_dock = 2131296524;
 			
 			// aapt resource value: 0x7F09010D
-			public const int mr_group_expand_collapse = 2131296525;
+			public const int mr_art = 2131296525;
 			
 			// aapt resource value: 0x7F09010E
-			public const int mr_media_main_control = 2131296526;
+			public const int mr_chooser_list = 2131296526;
 			
 			// aapt resource value: 0x7F09010F
-			public const int mr_name = 2131296527;
+			public const int mr_chooser_route_desc = 2131296527;
 			
 			// aapt resource value: 0x7F090110
-			public const int mr_playback_control = 2131296528;
+			public const int mr_chooser_route_icon = 2131296528;
 			
 			// aapt resource value: 0x7F090111
-			public const int mr_title_bar = 2131296529;
+			public const int mr_chooser_route_name = 2131296529;
 			
 			// aapt resource value: 0x7F090112
-			public const int mr_volume_control = 2131296530;
+			public const int mr_chooser_title = 2131296530;
 			
 			// aapt resource value: 0x7F090113
-			public const int mr_volume_group_list = 2131296531;
+			public const int mr_close = 2131296531;
 			
 			// aapt resource value: 0x7F090114
-			public const int mr_volume_item_icon = 2131296532;
+			public const int mr_control_divider = 2131296532;
 			
 			// aapt resource value: 0x7F090115
-			public const int mr_volume_slider = 2131296533;
+			public const int mr_control_playback_ctrl = 2131296533;
 			
 			// aapt resource value: 0x7F090116
-			public const int multiply = 2131296534;
+			public const int mr_control_subtitle = 2131296534;
 			
 			// aapt resource value: 0x7F090117
-			public const int navigation_header_container = 2131296535;
+			public const int mr_control_title = 2131296535;
 			
 			// aapt resource value: 0x7F090118
-			public const int navigator_container = 2131296536;
+			public const int mr_control_title_container = 2131296536;
 			
 			// aapt resource value: 0x7F090119
-			public const int never = 2131296537;
+			public const int mr_custom_control = 2131296537;
 			
 			// aapt resource value: 0x7F09011A
-			public const int none = 2131296538;
+			public const int mr_default_control = 2131296538;
 			
 			// aapt resource value: 0x7F09011B
-			public const int normal = 2131296539;
+			public const int mr_dialog_area = 2131296539;
 			
 			// aapt resource value: 0x7F09011C
-			public const int notification_background = 2131296540;
+			public const int mr_expandable_area = 2131296540;
 			
 			// aapt resource value: 0x7F09011D
-			public const int notification_main_column = 2131296541;
+			public const int mr_group_expand_collapse = 2131296541;
 			
 			// aapt resource value: 0x7F09011E
-			public const int notification_main_column_container = 2131296542;
+			public const int mr_media_main_control = 2131296542;
 			
 			// aapt resource value: 0x7F09011F
-			public const int onboarding_fragment_root = 2131296543;
+			public const int mr_name = 2131296543;
 			
 			// aapt resource value: 0x7F090120
-			public const int os_bgimage_notif_bgimage = 2131296544;
+			public const int mr_playback_control = 2131296544;
 			
 			// aapt resource value: 0x7F090121
-			public const int os_bgimage_notif_bgimage_align_layout = 2131296545;
+			public const int mr_title_bar = 2131296545;
 			
 			// aapt resource value: 0x7F090122
-			public const int os_bgimage_notif_bgimage_right_aligned = 2131296546;
+			public const int mr_volume_control = 2131296546;
 			
 			// aapt resource value: 0x7F090123
-			public const int os_bgimage_notif_body = 2131296547;
+			public const int mr_volume_group_list = 2131296547;
 			
 			// aapt resource value: 0x7F090124
-			public const int os_bgimage_notif_title = 2131296548;
+			public const int mr_volume_item_icon = 2131296548;
 			
 			// aapt resource value: 0x7F090125
-			public const int page_container = 2131296549;
+			public const int mr_volume_slider = 2131296549;
 			
 			// aapt resource value: 0x7F090126
-			public const int page_indicator = 2131296550;
+			public const int multiply = 2131296550;
 			
 			// aapt resource value: 0x7F090127
-			public const int parallax = 2131296551;
+			public const int navigation_header_container = 2131296551;
 			
 			// aapt resource value: 0x7F090128
-			public const int parentPanel = 2131296552;
+			public const int navigator_container = 2131296552;
 			
 			// aapt resource value: 0x7F090129
-			public const int parent_matrix = 2131296553;
+			public const int never = 2131296553;
 			
 			// aapt resource value: 0x7F09012A
-			public const int paused = 2131296554;
+			public const int none = 2131296554;
 			
 			// aapt resource value: 0x7F09012B
-			public const int picker = 2131296555;
+			public const int normal = 2131296555;
 			
 			// aapt resource value: 0x7F09012C
-			public const int pin = 2131296556;
+			public const int notification_background = 2131296556;
 			
 			// aapt resource value: 0x7F09012D
-			public const int playback_controls_dock = 2131296557;
+			public const int notification_main_column = 2131296557;
 			
 			// aapt resource value: 0x7F09012E
-			public const int playback_fragment_background = 2131296558;
+			public const int notification_main_column_container = 2131296558;
 			
 			// aapt resource value: 0x7F09012F
-			public const int playback_fragment_root = 2131296559;
+			public const int onboarding_fragment_root = 2131296559;
 			
 			// aapt resource value: 0x7F090130
-			public const int playback_progress = 2131296560;
+			public const int os_bgimage_notif_bgimage = 2131296560;
 			
 			// aapt resource value: 0x7F090131
-			public const int playing = 2131296561;
+			public const int os_bgimage_notif_bgimage_align_layout = 2131296561;
 			
 			// aapt resource value: 0x7F090132
-			public const int progress_circular = 2131296562;
+			public const int os_bgimage_notif_bgimage_right_aligned = 2131296562;
 			
 			// aapt resource value: 0x7F090133
-			public const int progress_horizontal = 2131296563;
+			public const int os_bgimage_notif_body = 2131296563;
 			
 			// aapt resource value: 0x7F090134
-			public const int radio = 2131296564;
+			public const int os_bgimage_notif_title = 2131296564;
 			
 			// aapt resource value: 0x7F090135
-			public const int restart = 2131296565;
+			public const int page_container = 2131296565;
 			
 			// aapt resource value: 0x7F090136
-			public const int reverse = 2131296566;
+			public const int page_indicator = 2131296566;
 			
 			// aapt resource value: 0x7F090137
-			public const int right = 2131296567;
+			public const int parallax = 2131296567;
 			
 			// aapt resource value: 0x7F090138
-			public const int right_icon = 2131296568;
+			public const int parentPanel = 2131296568;
 			
 			// aapt resource value: 0x7F090139
-			public const int right_side = 2131296569;
+			public const int parent_matrix = 2131296569;
 			
 			// aapt resource value: 0x7F09013A
-			public const int row_content = 2131296570;
+			public const int paused = 2131296570;
 			
 			// aapt resource value: 0x7F09013B
-			public const int row_header = 2131296571;
+			public const int picker = 2131296571;
 			
 			// aapt resource value: 0x7F09013C
-			public const int row_header_description = 2131296572;
+			public const int pin = 2131296572;
 			
 			// aapt resource value: 0x7F09013D
-			public const int save_image_matrix = 2131296573;
+			public const int playback_controls_dock = 2131296573;
 			
 			// aapt resource value: 0x7F09013E
-			public const int save_non_transition_alpha = 2131296574;
+			public const int playback_fragment_background = 2131296574;
 			
 			// aapt resource value: 0x7F09013F
-			public const int save_scale_type = 2131296575;
+			public const int playback_fragment_root = 2131296575;
 			
 			// aapt resource value: 0x7F090140
-			public const int scale_frame = 2131296576;
+			public const int playback_progress = 2131296576;
 			
 			// aapt resource value: 0x7F090141
-			public const int screen = 2131296577;
+			public const int playing = 2131296577;
 			
 			// aapt resource value: 0x7F090142
-			public const int scroll = 2131296578;
-			
-			// aapt resource value: 0x7F090146
-			public const int scrollable = 2131296582;
+			public const int progress_circular = 2131296578;
 			
 			// aapt resource value: 0x7F090143
-			public const int scrollIndicatorDown = 2131296579;
+			public const int progress_horizontal = 2131296579;
 			
 			// aapt resource value: 0x7F090144
-			public const int scrollIndicatorUp = 2131296580;
+			public const int radio = 2131296580;
 			
 			// aapt resource value: 0x7F090145
-			public const int scrollView = 2131296581;
+			public const int restart = 2131296581;
+			
+			// aapt resource value: 0x7F090146
+			public const int reverse = 2131296582;
 			
 			// aapt resource value: 0x7F090147
-			public const int search_badge = 2131296583;
+			public const int right = 2131296583;
 			
 			// aapt resource value: 0x7F090148
-			public const int search_bar = 2131296584;
+			public const int right_icon = 2131296584;
 			
 			// aapt resource value: 0x7F090149
-			public const int search_button = 2131296585;
+			public const int right_side = 2131296585;
 			
 			// aapt resource value: 0x7F09014A
-			public const int search_close_btn = 2131296586;
+			public const int rootLayout = 2131296586;
 			
 			// aapt resource value: 0x7F09014B
-			public const int search_edit_frame = 2131296587;
+			public const int row_content = 2131296587;
 			
 			// aapt resource value: 0x7F09014C
-			public const int search_go_btn = 2131296588;
+			public const int row_header = 2131296588;
 			
 			// aapt resource value: 0x7F09014D
-			public const int search_mag_icon = 2131296589;
+			public const int row_header_description = 2131296589;
 			
 			// aapt resource value: 0x7F09014E
-			public const int search_orb = 2131296590;
+			public const int save_image_matrix = 2131296590;
 			
 			// aapt resource value: 0x7F09014F
-			public const int search_plate = 2131296591;
+			public const int save_non_transition_alpha = 2131296591;
 			
 			// aapt resource value: 0x7F090150
-			public const int search_src_text = 2131296592;
+			public const int save_scale_type = 2131296592;
 			
 			// aapt resource value: 0x7F090151
-			public const int search_voice_btn = 2131296593;
+			public const int scale_frame = 2131296593;
 			
 			// aapt resource value: 0x7F090152
-			public const int secondary_controls_dock = 2131296594;
-			
-			// aapt resource value: 0x7F090154
-			public const int selected = 2131296596;
+			public const int screen = 2131296594;
 			
 			// aapt resource value: 0x7F090153
-			public const int select_dialog_listview = 2131296595;
-			
-			// aapt resource value: 0x7F090155
-			public const int separate_time = 2131296597;
-			
-			// aapt resource value: 0x7F090156
-			public const int separator = 2131296598;
+			public const int scroll = 2131296595;
 			
 			// aapt resource value: 0x7F090157
-			public const int shellcontent_appbar = 2131296599;
+			public const int scrollable = 2131296599;
+			
+			// aapt resource value: 0x7F090154
+			public const int scrollIndicatorDown = 2131296596;
+			
+			// aapt resource value: 0x7F090155
+			public const int scrollIndicatorUp = 2131296597;
+			
+			// aapt resource value: 0x7F090156
+			public const int scrollView = 2131296598;
 			
 			// aapt resource value: 0x7F090158
-			public const int shellcontent_toolbar = 2131296600;
+			public const int search_badge = 2131296600;
+			
+			// aapt resource value: 0x7F090159
+			public const int search_bar = 2131296601;
+			
+			// aapt resource value: 0x7F09015A
+			public const int search_button = 2131296602;
+			
+			// aapt resource value: 0x7F09015B
+			public const int search_close_btn = 2131296603;
+			
+			// aapt resource value: 0x7F09015C
+			public const int search_edit_frame = 2131296604;
+			
+			// aapt resource value: 0x7F09015D
+			public const int search_go_btn = 2131296605;
+			
+			// aapt resource value: 0x7F09015E
+			public const int search_mag_icon = 2131296606;
+			
+			// aapt resource value: 0x7F09015F
+			public const int search_orb = 2131296607;
+			
+			// aapt resource value: 0x7F090160
+			public const int search_plate = 2131296608;
+			
+			// aapt resource value: 0x7F090161
+			public const int search_src_text = 2131296609;
+			
+			// aapt resource value: 0x7F090162
+			public const int search_voice_btn = 2131296610;
+			
+			// aapt resource value: 0x7F090163
+			public const int secondary_controls_dock = 2131296611;
+			
+			// aapt resource value: 0x7F09000D
+			public const int SegControl = 2131296269;
+			
+			// aapt resource value: 0x7F090165
+			public const int selected = 2131296613;
+			
+			// aapt resource value: 0x7F090164
+			public const int select_dialog_listview = 2131296612;
+			
+			// aapt resource value: 0x7F090166
+			public const int separate_time = 2131296614;
+			
+			// aapt resource value: 0x7F090167
+			public const int separator = 2131296615;
+			
+			// aapt resource value: 0x7F090168
+			public const int seriesLayout = 2131296616;
+			
+			// aapt resource value: 0x7F090169
+			public const int shape_id = 2131296617;
+			
+			// aapt resource value: 0x7F09016A
+			public const int shellcontent_appbar = 2131296618;
+			
+			// aapt resource value: 0x7F09016B
+			public const int shellcontent_toolbar = 2131296619;
 			
 			// aapt resource value: 0x7F09000B
 			public const int SHIFT = 2131296267;
 			
-			// aapt resource value: 0x7F090159
-			public const int shortcut = 2131296601;
-			
-			// aapt resource value: 0x7F09015A
-			public const int showCustom = 2131296602;
-			
-			// aapt resource value: 0x7F09015B
-			public const int showHome = 2131296603;
-			
-			// aapt resource value: 0x7F09015C
-			public const int showTitle = 2131296604;
-			
-			// aapt resource value: 0x7F09015D
-			public const int sliding_tabs = 2131296605;
-			
-			// aapt resource value: 0x7F09015E
-			public const int smallLabel = 2131296606;
-			
-			// aapt resource value: 0x7F09015F
-			public const int snackbar_action = 2131296607;
-			
-			// aapt resource value: 0x7F090160
-			public const int snackbar_text = 2131296608;
-			
-			// aapt resource value: 0x7F090161
-			public const int snap = 2131296609;
-			
-			// aapt resource value: 0x7F090162
-			public const int spacer = 2131296610;
-			
-			// aapt resource value: 0x7F090163
-			public const int split_action_bar = 2131296611;
-			
-			// aapt resource value: 0x7F090164
-			public const int src_atop = 2131296612;
-			
-			// aapt resource value: 0x7F090165
-			public const int src_in = 2131296613;
-			
-			// aapt resource value: 0x7F090166
-			public const int src_over = 2131296614;
-			
-			// aapt resource value: 0x7F090167
-			public const int standard = 2131296615;
-			
-			// aapt resource value: 0x7F090168
-			public const int start = 2131296616;
-			
-			// aapt resource value: 0x7F090169
-			public const int status_bar_latest_event_content = 2131296617;
-			
-			// aapt resource value: 0x7F09016A
-			public const int strong = 2131296618;
-			
-			// aapt resource value: 0x7F09016B
-			public const int submenuarrow = 2131296619;
-			
 			// aapt resource value: 0x7F09016C
-			public const int submit_area = 2131296620;
+			public const int shortcut = 2131296620;
+			
+			// aapt resource value: 0x7F09016D
+			public const int showCustom = 2131296621;
+			
+			// aapt resource value: 0x7F09016E
+			public const int showHome = 2131296622;
+			
+			// aapt resource value: 0x7F09016F
+			public const int showTitle = 2131296623;
+			
+			// aapt resource value: 0x7F090170
+			public const int sliding_tabs = 2131296624;
+			
+			// aapt resource value: 0x7F090171
+			public const int smallLabel = 2131296625;
+			
+			// aapt resource value: 0x7F090172
+			public const int snackbar_action = 2131296626;
+			
+			// aapt resource value: 0x7F090173
+			public const int snackbar_text = 2131296627;
+			
+			// aapt resource value: 0x7F090174
+			public const int snap = 2131296628;
+			
+			// aapt resource value: 0x7F090175
+			public const int spacer = 2131296629;
+			
+			// aapt resource value: 0x7F090176
+			public const int split_action_bar = 2131296630;
+			
+			// aapt resource value: 0x7F090177
+			public const int src_atop = 2131296631;
+			
+			// aapt resource value: 0x7F090178
+			public const int src_in = 2131296632;
+			
+			// aapt resource value: 0x7F090179
+			public const int src_over = 2131296633;
+			
+			// aapt resource value: 0x7F09017A
+			public const int standard = 2131296634;
+			
+			// aapt resource value: 0x7F09017B
+			public const int start = 2131296635;
+			
+			// aapt resource value: 0x7F09017C
+			public const int status_bar_latest_event_content = 2131296636;
+			
+			// aapt resource value: 0x7F09017D
+			public const int stripLinesLayout = 2131296637;
+			
+			// aapt resource value: 0x7F09017E
+			public const int strong = 2131296638;
+			
+			// aapt resource value: 0x7F09017F
+			public const int submenuarrow = 2131296639;
+			
+			// aapt resource value: 0x7F090180
+			public const int submit_area = 2131296640;
 			
 			// aapt resource value: 0x7F09000C
 			public const int SYM = 2131296268;
 			
-			// aapt resource value: 0x7F09016D
-			public const int tabMode = 2131296621;
-			
-			// aapt resource value: 0x7F09016E
-			public const int tag_transition_group = 2131296622;
-			
-			// aapt resource value: 0x7F09016F
-			public const int text = 2131296623;
-			
-			// aapt resource value: 0x7F090170
-			public const int text2 = 2131296624;
-			
-			// aapt resource value: 0x7F090175
-			public const int textinput_counter = 2131296629;
-			
-			// aapt resource value: 0x7F090176
-			public const int textinput_error = 2131296630;
-			
-			// aapt resource value: 0x7F090171
-			public const int textSpacerNoButtons = 2131296625;
-			
-			// aapt resource value: 0x7F090172
-			public const int textSpacerNoTitle = 2131296626;
-			
-			// aapt resource value: 0x7F090173
-			public const int textViewStatus = 2131296627;
-			
-			// aapt resource value: 0x7F090174
-			public const int text_input_password_toggle = 2131296628;
-			
-			// aapt resource value: 0x7F090177
-			public const int thumbs_row = 2131296631;
-			
-			// aapt resource value: 0x7F090178
-			public const int time = 2131296632;
-			
-			// aapt resource value: 0x7F090179
-			public const int title = 2131296633;
-			
-			// aapt resource value: 0x7F09000D
-			public const int Title = 2131296269;
-			
-			// aapt resource value: 0x7F09017A
-			public const int titleDividerNoCustom = 2131296634;
-			
-			// aapt resource value: 0x7F09017B
-			public const int title_badge = 2131296635;
-			
-			// aapt resource value: 0x7F09017C
-			public const int title_orb = 2131296636;
-			
-			// aapt resource value: 0x7F09017D
-			public const int title_template = 2131296637;
-			
-			// aapt resource value: 0x7F09017E
-			public const int title_text = 2131296638;
-			
-			// aapt resource value: 0x7F09017F
-			public const int toolbar = 2131296639;
-			
-			// aapt resource value: 0x7F090180
-			public const int top = 2131296640;
-			
 			// aapt resource value: 0x7F090181
-			public const int topPanel = 2131296641;
+			public const int tabMode = 2131296641;
 			
 			// aapt resource value: 0x7F090182
-			public const int total_time = 2131296642;
+			public const int tag_transition_group = 2131296642;
 			
 			// aapt resource value: 0x7F090183
-			public const int touch_outside = 2131296643;
+			public const int technicalIndicatorLayout = 2131296643;
 			
 			// aapt resource value: 0x7F090184
-			public const int transitionPosition = 2131296644;
+			public const int text = 2131296644;
 			
 			// aapt resource value: 0x7F090185
-			public const int transition_current_scene = 2131296645;
-			
-			// aapt resource value: 0x7F090186
-			public const int transition_layout_save = 2131296646;
-			
-			// aapt resource value: 0x7F090187
-			public const int transition_position = 2131296647;
-			
-			// aapt resource value: 0x7F090188
-			public const int transition_scene_layoutid_cache = 2131296648;
-			
-			// aapt resource value: 0x7F090189
-			public const int transition_transform = 2131296649;
+			public const int text2 = 2131296645;
 			
 			// aapt resource value: 0x7F09018A
-			public const int transport_row = 2131296650;
+			public const int textinput_counter = 2131296650;
 			
 			// aapt resource value: 0x7F09018B
-			public const int uniform = 2131296651;
+			public const int textinput_error = 2131296651;
+			
+			// aapt resource value: 0x7F090186
+			public const int textSpacerNoButtons = 2131296646;
+			
+			// aapt resource value: 0x7F090187
+			public const int textSpacerNoTitle = 2131296647;
+			
+			// aapt resource value: 0x7F090188
+			public const int textViewStatus = 2131296648;
+			
+			// aapt resource value: 0x7F090189
+			public const int text_input_password_toggle = 2131296649;
 			
 			// aapt resource value: 0x7F09018C
-			public const int up = 2131296652;
+			public const int thumbLayout = 2131296652;
 			
 			// aapt resource value: 0x7F09018D
-			public const int useLogo = 2131296653;
+			public const int thumbs_row = 2131296653;
 			
 			// aapt resource value: 0x7F09018E
-			public const int video_surface = 2131296654;
+			public const int time = 2131296654;
+			
+			// aapt resource value: 0x7F09000E
+			public const int Title = 2131296270;
 			
 			// aapt resource value: 0x7F09018F
-			public const int video_surface_container = 2131296655;
+			public const int title = 2131296655;
 			
 			// aapt resource value: 0x7F090190
-			public const int view_offset_helper = 2131296656;
+			public const int titleDividerNoCustom = 2131296656;
 			
 			// aapt resource value: 0x7F090191
-			public const int visible = 2131296657;
+			public const int titleLayout = 2131296657;
 			
 			// aapt resource value: 0x7F090192
-			public const int volume_item_container = 2131296658;
+			public const int title_badge = 2131296658;
 			
 			// aapt resource value: 0x7F090193
-			public const int weak = 2131296659;
+			public const int title_orb = 2131296659;
 			
 			// aapt resource value: 0x7F090194
-			public const int wide = 2131296660;
+			public const int title_template = 2131296660;
 			
 			// aapt resource value: 0x7F090195
-			public const int withText = 2131296661;
+			public const int title_text = 2131296661;
 			
 			// aapt resource value: 0x7F090196
-			public const int wrap_content = 2131296662;
+			public const int toolbar = 2131296662;
+			
+			// aapt resource value: 0x7F090197
+			public const int top = 2131296663;
+			
+			// aapt resource value: 0x7F090198
+			public const int topPanel = 2131296664;
+			
+			// aapt resource value: 0x7F090199
+			public const int top_labels = 2131296665;
+			
+			// aapt resource value: 0x7F09019A
+			public const int total_time = 2131296666;
+			
+			// aapt resource value: 0x7F09019B
+			public const int touch_outside = 2131296667;
+			
+			// aapt resource value: 0x7F09019C
+			public const int transitionPosition = 2131296668;
+			
+			// aapt resource value: 0x7F09019D
+			public const int transition_current_scene = 2131296669;
+			
+			// aapt resource value: 0x7F09019E
+			public const int transition_layout_save = 2131296670;
+			
+			// aapt resource value: 0x7F09019F
+			public const int transition_position = 2131296671;
+			
+			// aapt resource value: 0x7F0901A0
+			public const int transition_scene_layoutid_cache = 2131296672;
+			
+			// aapt resource value: 0x7F0901A1
+			public const int transition_transform = 2131296673;
+			
+			// aapt resource value: 0x7F0901A2
+			public const int transport_row = 2131296674;
+			
+			// aapt resource value: 0x7F0901A3
+			public const int uniform = 2131296675;
+			
+			// aapt resource value: 0x7F0901A4
+			public const int up = 2131296676;
+			
+			// aapt resource value: 0x7F0901A5
+			public const int useLogo = 2131296677;
+			
+			// aapt resource value: 0x7F0901A6
+			public const int video_surface = 2131296678;
+			
+			// aapt resource value: 0x7F0901A7
+			public const int video_surface_container = 2131296679;
+			
+			// aapt resource value: 0x7F0901A8
+			public const int view_offset_helper = 2131296680;
+			
+			// aapt resource value: 0x7F0901A9
+			public const int visible = 2131296681;
+			
+			// aapt resource value: 0x7F0901AA
+			public const int volume_item_container = 2131296682;
+			
+			// aapt resource value: 0x7F0901AB
+			public const int weak = 2131296683;
+			
+			// aapt resource value: 0x7F0901AC
+			public const int wide = 2131296684;
+			
+			// aapt resource value: 0x7F0901AD
+			public const int withText = 2131296685;
+			
+			// aapt resource value: 0x7F0901AE
+			public const int wrap_content = 2131296686;
 			
 			static Id()
 			{
@@ -15379,331 +17810,349 @@ namespace SalveminiApp.Droid
 			public const int BottomTabLayout = 2131492890;
 			
 			// aapt resource value: 0x7F0C001B
-			public const int design_bottom_navigation_item = 2131492891;
+			public const int chart_layout = 2131492891;
 			
 			// aapt resource value: 0x7F0C001C
-			public const int design_bottom_sheet_dialog = 2131492892;
+			public const int chart_legend = 2131492892;
 			
 			// aapt resource value: 0x7F0C001D
-			public const int design_layout_snackbar = 2131492893;
+			public const int chart_legend_item = 2131492893;
 			
 			// aapt resource value: 0x7F0C001E
-			public const int design_layout_snackbar_include = 2131492894;
+			public const int design_bottom_navigation_item = 2131492894;
 			
 			// aapt resource value: 0x7F0C001F
-			public const int design_layout_tab_icon = 2131492895;
+			public const int design_bottom_sheet_dialog = 2131492895;
 			
 			// aapt resource value: 0x7F0C0020
-			public const int design_layout_tab_text = 2131492896;
+			public const int design_layout_snackbar = 2131492896;
 			
 			// aapt resource value: 0x7F0C0021
-			public const int design_menu_item_action_area = 2131492897;
+			public const int design_layout_snackbar_include = 2131492897;
 			
 			// aapt resource value: 0x7F0C0022
-			public const int design_navigation_item = 2131492898;
+			public const int design_layout_tab_icon = 2131492898;
 			
 			// aapt resource value: 0x7F0C0023
-			public const int design_navigation_item_header = 2131492899;
+			public const int design_layout_tab_text = 2131492899;
 			
 			// aapt resource value: 0x7F0C0024
-			public const int design_navigation_item_separator = 2131492900;
+			public const int design_menu_item_action_area = 2131492900;
 			
 			// aapt resource value: 0x7F0C0025
-			public const int design_navigation_item_subheader = 2131492901;
+			public const int design_navigation_item = 2131492901;
 			
 			// aapt resource value: 0x7F0C0026
-			public const int design_navigation_menu = 2131492902;
+			public const int design_navigation_item_header = 2131492902;
 			
 			// aapt resource value: 0x7F0C0027
-			public const int design_navigation_menu_item = 2131492903;
+			public const int design_navigation_item_separator = 2131492903;
 			
 			// aapt resource value: 0x7F0C0028
-			public const int design_text_input_password_icon = 2131492904;
+			public const int design_navigation_item_subheader = 2131492904;
 			
 			// aapt resource value: 0x7F0C0029
-			public const int FlyoutContent = 2131492905;
+			public const int design_navigation_menu = 2131492905;
 			
 			// aapt resource value: 0x7F0C002A
-			public const int lb_action_1_line = 2131492906;
+			public const int design_navigation_menu_item = 2131492906;
 			
 			// aapt resource value: 0x7F0C002B
-			public const int lb_action_2_lines = 2131492907;
+			public const int design_text_input_password_icon = 2131492907;
 			
 			// aapt resource value: 0x7F0C002C
-			public const int lb_background_window = 2131492908;
+			public const int FlyoutContent = 2131492908;
 			
 			// aapt resource value: 0x7F0C002D
-			public const int lb_browse_fragment = 2131492909;
+			public const int lb_action_1_line = 2131492909;
 			
 			// aapt resource value: 0x7F0C002E
-			public const int lb_browse_title = 2131492910;
+			public const int lb_action_2_lines = 2131492910;
 			
 			// aapt resource value: 0x7F0C002F
-			public const int lb_control_bar = 2131492911;
+			public const int lb_background_window = 2131492911;
 			
 			// aapt resource value: 0x7F0C0030
-			public const int lb_control_button_primary = 2131492912;
+			public const int lb_browse_fragment = 2131492912;
 			
 			// aapt resource value: 0x7F0C0031
-			public const int lb_control_button_secondary = 2131492913;
+			public const int lb_browse_title = 2131492913;
 			
 			// aapt resource value: 0x7F0C0032
-			public const int lb_details_description = 2131492914;
+			public const int lb_control_bar = 2131492914;
 			
 			// aapt resource value: 0x7F0C0033
-			public const int lb_details_fragment = 2131492915;
+			public const int lb_control_button_primary = 2131492915;
 			
 			// aapt resource value: 0x7F0C0034
-			public const int lb_details_overview = 2131492916;
+			public const int lb_control_button_secondary = 2131492916;
 			
 			// aapt resource value: 0x7F0C0035
-			public const int lb_divider = 2131492917;
+			public const int lb_details_description = 2131492917;
 			
 			// aapt resource value: 0x7F0C0036
-			public const int lb_error_fragment = 2131492918;
+			public const int lb_details_fragment = 2131492918;
 			
 			// aapt resource value: 0x7F0C0037
-			public const int lb_fullwidth_details_overview = 2131492919;
+			public const int lb_details_overview = 2131492919;
 			
 			// aapt resource value: 0x7F0C0038
-			public const int lb_fullwidth_details_overview_logo = 2131492920;
+			public const int lb_divider = 2131492920;
 			
 			// aapt resource value: 0x7F0C0039
-			public const int lb_guidance = 2131492921;
+			public const int lb_error_fragment = 2131492921;
 			
 			// aapt resource value: 0x7F0C003A
-			public const int lb_guidedactions = 2131492922;
+			public const int lb_fullwidth_details_overview = 2131492922;
 			
 			// aapt resource value: 0x7F0C003B
-			public const int lb_guidedactions_datepicker_item = 2131492923;
+			public const int lb_fullwidth_details_overview_logo = 2131492923;
 			
 			// aapt resource value: 0x7F0C003C
-			public const int lb_guidedactions_item = 2131492924;
+			public const int lb_guidance = 2131492924;
 			
 			// aapt resource value: 0x7F0C003D
-			public const int lb_guidedbuttonactions = 2131492925;
+			public const int lb_guidedactions = 2131492925;
 			
 			// aapt resource value: 0x7F0C003E
-			public const int lb_guidedstep_background = 2131492926;
+			public const int lb_guidedactions_datepicker_item = 2131492926;
 			
 			// aapt resource value: 0x7F0C003F
-			public const int lb_guidedstep_fragment = 2131492927;
+			public const int lb_guidedactions_item = 2131492927;
 			
 			// aapt resource value: 0x7F0C0040
-			public const int lb_header = 2131492928;
+			public const int lb_guidedbuttonactions = 2131492928;
 			
 			// aapt resource value: 0x7F0C0041
-			public const int lb_headers_fragment = 2131492929;
+			public const int lb_guidedstep_background = 2131492929;
 			
 			// aapt resource value: 0x7F0C0042
-			public const int lb_image_card_view = 2131492930;
+			public const int lb_guidedstep_fragment = 2131492930;
 			
 			// aapt resource value: 0x7F0C0043
-			public const int lb_image_card_view_themed_badge_left = 2131492931;
+			public const int lb_header = 2131492931;
 			
 			// aapt resource value: 0x7F0C0044
-			public const int lb_image_card_view_themed_badge_right = 2131492932;
+			public const int lb_headers_fragment = 2131492932;
 			
 			// aapt resource value: 0x7F0C0045
-			public const int lb_image_card_view_themed_content = 2131492933;
+			public const int lb_image_card_view = 2131492933;
 			
 			// aapt resource value: 0x7F0C0046
-			public const int lb_image_card_view_themed_title = 2131492934;
+			public const int lb_image_card_view_themed_badge_left = 2131492934;
 			
 			// aapt resource value: 0x7F0C0047
-			public const int lb_list_row = 2131492935;
+			public const int lb_image_card_view_themed_badge_right = 2131492935;
 			
 			// aapt resource value: 0x7F0C0048
-			public const int lb_list_row_hovercard = 2131492936;
+			public const int lb_image_card_view_themed_content = 2131492936;
 			
 			// aapt resource value: 0x7F0C0049
-			public const int lb_media_item_number_view_flipper = 2131492937;
+			public const int lb_image_card_view_themed_title = 2131492937;
 			
 			// aapt resource value: 0x7F0C004A
-			public const int lb_media_list_header = 2131492938;
+			public const int lb_list_row = 2131492938;
 			
 			// aapt resource value: 0x7F0C004B
-			public const int lb_onboarding_fragment = 2131492939;
+			public const int lb_list_row_hovercard = 2131492939;
 			
 			// aapt resource value: 0x7F0C004C
-			public const int lb_picker = 2131492940;
+			public const int lb_media_item_number_view_flipper = 2131492940;
 			
 			// aapt resource value: 0x7F0C004D
-			public const int lb_picker_column = 2131492941;
+			public const int lb_media_list_header = 2131492941;
 			
 			// aapt resource value: 0x7F0C004E
-			public const int lb_picker_item = 2131492942;
+			public const int lb_onboarding_fragment = 2131492942;
 			
 			// aapt resource value: 0x7F0C004F
-			public const int lb_picker_separator = 2131492943;
+			public const int lb_picker = 2131492943;
 			
 			// aapt resource value: 0x7F0C0050
-			public const int lb_playback_controls = 2131492944;
+			public const int lb_picker_column = 2131492944;
 			
 			// aapt resource value: 0x7F0C0051
-			public const int lb_playback_controls_row = 2131492945;
+			public const int lb_picker_item = 2131492945;
 			
 			// aapt resource value: 0x7F0C0052
-			public const int lb_playback_fragment = 2131492946;
+			public const int lb_picker_separator = 2131492946;
 			
 			// aapt resource value: 0x7F0C0053
-			public const int lb_playback_now_playing_bars = 2131492947;
+			public const int lb_playback_controls = 2131492947;
 			
 			// aapt resource value: 0x7F0C0054
-			public const int lb_playback_transport_controls = 2131492948;
+			public const int lb_playback_controls_row = 2131492948;
 			
 			// aapt resource value: 0x7F0C0055
-			public const int lb_playback_transport_controls_row = 2131492949;
-			
-			// aapt resource value: 0x7F0C005A
-			public const int lb_rows_fragment = 2131492954;
+			public const int lb_playback_fragment = 2131492949;
 			
 			// aapt resource value: 0x7F0C0056
-			public const int lb_row_container = 2131492950;
+			public const int lb_playback_now_playing_bars = 2131492950;
 			
 			// aapt resource value: 0x7F0C0057
-			public const int lb_row_header = 2131492951;
+			public const int lb_playback_transport_controls = 2131492951;
 			
 			// aapt resource value: 0x7F0C0058
-			public const int lb_row_media_item = 2131492952;
-			
-			// aapt resource value: 0x7F0C0059
-			public const int lb_row_media_item_action = 2131492953;
-			
-			// aapt resource value: 0x7F0C005B
-			public const int lb_search_bar = 2131492955;
-			
-			// aapt resource value: 0x7F0C005C
-			public const int lb_search_fragment = 2131492956;
+			public const int lb_playback_transport_controls_row = 2131492952;
 			
 			// aapt resource value: 0x7F0C005D
-			public const int lb_search_orb = 2131492957;
+			public const int lb_rows_fragment = 2131492957;
+			
+			// aapt resource value: 0x7F0C0059
+			public const int lb_row_container = 2131492953;
+			
+			// aapt resource value: 0x7F0C005A
+			public const int lb_row_header = 2131492954;
+			
+			// aapt resource value: 0x7F0C005B
+			public const int lb_row_media_item = 2131492955;
+			
+			// aapt resource value: 0x7F0C005C
+			public const int lb_row_media_item_action = 2131492956;
 			
 			// aapt resource value: 0x7F0C005E
-			public const int lb_section_header = 2131492958;
+			public const int lb_search_bar = 2131492958;
 			
 			// aapt resource value: 0x7F0C005F
-			public const int lb_shadow = 2131492959;
+			public const int lb_search_fragment = 2131492959;
 			
 			// aapt resource value: 0x7F0C0060
-			public const int lb_speech_orb = 2131492960;
+			public const int lb_search_orb = 2131492960;
 			
 			// aapt resource value: 0x7F0C0061
-			public const int lb_title_view = 2131492961;
+			public const int lb_section_header = 2131492961;
 			
 			// aapt resource value: 0x7F0C0062
-			public const int lb_vertical_grid = 2131492962;
+			public const int lb_shadow = 2131492962;
 			
 			// aapt resource value: 0x7F0C0063
-			public const int lb_vertical_grid_fragment = 2131492963;
+			public const int lb_speech_orb = 2131492963;
 			
 			// aapt resource value: 0x7F0C0064
-			public const int lb_video_surface = 2131492964;
+			public const int lb_title_view = 2131492964;
 			
 			// aapt resource value: 0x7F0C0065
-			public const int loading = 2131492965;
+			public const int lb_vertical_grid = 2131492965;
 			
 			// aapt resource value: 0x7F0C0066
-			public const int loadingimage = 2131492966;
+			public const int lb_vertical_grid_fragment = 2131492966;
 			
 			// aapt resource value: 0x7F0C0067
-			public const int loadingprogress = 2131492967;
+			public const int lb_video_surface = 2131492967;
 			
 			// aapt resource value: 0x7F0C0068
-			public const int mr_chooser_dialog = 2131492968;
+			public const int loading = 2131492968;
 			
 			// aapt resource value: 0x7F0C0069
-			public const int mr_chooser_list_item = 2131492969;
+			public const int loadingimage = 2131492969;
 			
 			// aapt resource value: 0x7F0C006A
-			public const int mr_controller_material_dialog_b = 2131492970;
+			public const int loadingprogress = 2131492970;
 			
 			// aapt resource value: 0x7F0C006B
-			public const int mr_controller_volume_item = 2131492971;
+			public const int mr_chooser_dialog = 2131492971;
 			
 			// aapt resource value: 0x7F0C006C
-			public const int mr_playback_control = 2131492972;
+			public const int mr_chooser_list_item = 2131492972;
 			
 			// aapt resource value: 0x7F0C006D
-			public const int mr_volume_control = 2131492973;
+			public const int mr_controller_material_dialog_b = 2131492973;
 			
 			// aapt resource value: 0x7F0C006E
-			public const int notification_action = 2131492974;
+			public const int mr_controller_volume_item = 2131492974;
 			
 			// aapt resource value: 0x7F0C006F
-			public const int notification_action_tombstone = 2131492975;
+			public const int mr_playback_control = 2131492975;
 			
 			// aapt resource value: 0x7F0C0070
-			public const int notification_media_action = 2131492976;
+			public const int mr_volume_control = 2131492976;
 			
 			// aapt resource value: 0x7F0C0071
-			public const int notification_media_cancel_action = 2131492977;
+			public const int notification_action = 2131492977;
 			
 			// aapt resource value: 0x7F0C0072
-			public const int notification_template_big_media = 2131492978;
+			public const int notification_action_tombstone = 2131492978;
 			
 			// aapt resource value: 0x7F0C0073
-			public const int notification_template_big_media_custom = 2131492979;
+			public const int notification_media_action = 2131492979;
 			
 			// aapt resource value: 0x7F0C0074
-			public const int notification_template_big_media_narrow = 2131492980;
+			public const int notification_media_cancel_action = 2131492980;
 			
 			// aapt resource value: 0x7F0C0075
-			public const int notification_template_big_media_narrow_custom = 2131492981;
+			public const int notification_template_big_media = 2131492981;
 			
 			// aapt resource value: 0x7F0C0076
-			public const int notification_template_custom_big = 2131492982;
+			public const int notification_template_big_media_custom = 2131492982;
 			
 			// aapt resource value: 0x7F0C0077
-			public const int notification_template_icon_group = 2131492983;
+			public const int notification_template_big_media_narrow = 2131492983;
 			
 			// aapt resource value: 0x7F0C0078
-			public const int notification_template_lines_media = 2131492984;
+			public const int notification_template_big_media_narrow_custom = 2131492984;
 			
 			// aapt resource value: 0x7F0C0079
-			public const int notification_template_media = 2131492985;
+			public const int notification_template_custom_big = 2131492985;
 			
 			// aapt resource value: 0x7F0C007A
-			public const int notification_template_media_custom = 2131492986;
+			public const int notification_template_icon_group = 2131492986;
 			
 			// aapt resource value: 0x7F0C007B
-			public const int notification_template_part_chronometer = 2131492987;
+			public const int notification_template_lines_media = 2131492987;
 			
 			// aapt resource value: 0x7F0C007C
-			public const int notification_template_part_time = 2131492988;
+			public const int notification_template_media = 2131492988;
 			
 			// aapt resource value: 0x7F0C007D
-			public const int onesignal_bgimage_notif_layout = 2131492989;
+			public const int notification_template_media_custom = 2131492989;
 			
 			// aapt resource value: 0x7F0C007E
-			public const int RootLayout = 2131492990;
+			public const int notification_template_part_chronometer = 2131492990;
 			
 			// aapt resource value: 0x7F0C007F
-			public const int select_dialog_item_material = 2131492991;
+			public const int notification_template_part_time = 2131492991;
 			
 			// aapt resource value: 0x7F0C0080
-			public const int select_dialog_multichoice_material = 2131492992;
+			public const int onesignal_bgimage_notif_layout = 2131492992;
 			
 			// aapt resource value: 0x7F0C0081
-			public const int select_dialog_singlechoice_material = 2131492993;
+			public const int RadioButton = 2131492993;
 			
 			// aapt resource value: 0x7F0C0082
-			public const int ShellContent = 2131492994;
+			public const int RadioGroup = 2131492994;
 			
 			// aapt resource value: 0x7F0C0083
-			public const int support_simple_spinner_dropdown_item = 2131492995;
+			public const int range_navigator_layout = 2131492995;
 			
 			// aapt resource value: 0x7F0C0084
-			public const int Tabbar = 2131492996;
+			public const int RootLayout = 2131492996;
 			
 			// aapt resource value: 0x7F0C0085
-			public const int Toolbar = 2131492997;
+			public const int select_dialog_item_material = 2131492997;
 			
 			// aapt resource value: 0x7F0C0086
-			public const int tooltip = 2131492998;
+			public const int select_dialog_multichoice_material = 2131492998;
 			
 			// aapt resource value: 0x7F0C0087
-			public const int video_surface_fragment = 2131492999;
+			public const int select_dialog_singlechoice_material = 2131492999;
+			
+			// aapt resource value: 0x7F0C0088
+			public const int ShellContent = 2131493000;
+			
+			// aapt resource value: 0x7F0C0089
+			public const int support_simple_spinner_dropdown_item = 2131493001;
+			
+			// aapt resource value: 0x7F0C008A
+			public const int Tabbar = 2131493002;
+			
+			// aapt resource value: 0x7F0C008B
+			public const int Toolbar = 2131493003;
+			
+			// aapt resource value: 0x7F0C008C
+			public const int tooltip = 2131493004;
+			
+			// aapt resource value: 0x7F0C008D
+			public const int video_surface_fragment = 2131493005;
 			
 			static Layout()
 			{
@@ -16165,13 +18614,49 @@ namespace SalveminiApp.Droid
 			public const int popup_message = 2131689603;
 			
 			// aapt resource value: 0x7F0F0084
-			public const int search_menu_title = 2131689604;
+			public const int q = 2131689604;
 			
 			// aapt resource value: 0x7F0F0085
-			public const int status_bar_notification_info_overflow = 2131689605;
+			public const int quarter = 2131689605;
 			
 			// aapt resource value: 0x7F0F0086
-			public const int title = 2131689606;
+			public const int search_menu_title = 2131689606;
+			
+			// aapt resource value: 0x7F0F0087
+			public const int sfchart_close_label = 2131689607;
+			
+			// aapt resource value: 0x7F0F0088
+			public const int sfchart_decrease_label = 2131689608;
+			
+			// aapt resource value: 0x7F0F0089
+			public const int sfchart_high_label = 2131689609;
+			
+			// aapt resource value: 0x7F0F008A
+			public const int sfchart_increase_label = 2131689610;
+			
+			// aapt resource value: 0x7F0F008B
+			public const int sfchart_low_label = 2131689611;
+			
+			// aapt resource value: 0x7F0F008C
+			public const int sfchart_open_label = 2131689612;
+			
+			// aapt resource value: 0x7F0F008D
+			public const int sfchart_others_label = 2131689613;
+			
+			// aapt resource value: 0x7F0F008E
+			public const int sfchart_total_label = 2131689614;
+			
+			// aapt resource value: 0x7F0F008F
+			public const int status_bar_notification_info_overflow = 2131689615;
+			
+			// aapt resource value: 0x7F0F0090
+			public const int title = 2131689616;
+			
+			// aapt resource value: 0x7F0F0091
+			public const int w = 2131689617;
+			
+			// aapt resource value: 0x7F0F0092
+			public const int week = 2131689618;
 			
 			static String()
 			{

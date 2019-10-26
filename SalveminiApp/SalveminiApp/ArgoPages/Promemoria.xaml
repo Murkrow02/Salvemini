@@ -32,7 +32,7 @@
                     </Grid>
                 </Frame>
                 <Frame VerticalOptions="EndAndExpand" HasShadow="false" HorizontalOptions="Center" x:Name="buttonFrame" Padding="0">
-                    <iconize:IconButton Clicked="Close_Clicked" Text="fas-times" FontSize="30" TextColor="#F86095" />
+                    <iconize:IconButton BackgroundColor="Transparent" Clicked="Close_Clicked" Text="fas-times" FontSize="30" TextColor="#F86095" />
                 </Frame>
             </StackLayout>
         </AbsoluteLayout>

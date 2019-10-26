@@ -12,6 +12,7 @@ namespace SalveminiApp.FirstAccess
 {
     public partial class OrariTrasporti : ContentPage
     {
+        public List<RestApi.Models.Treno> Trains = new List<RestApi.Models.Treno>();
         public List<string> Stazioni = new List<string>(Costants.Stazioni.Values);
 
         public OrariTrasporti()
@@ -27,7 +28,7 @@ namespace SalveminiApp.FirstAccess
             topImage.WidthRequest = App.ScreenWidth / 1.9;
 
             //Set pickers lists
-            stationPicker.ItemsSource = Stazioni;
+            trainStationPicker.ItemsSource = Stazioni;
 
         }
 
@@ -37,20 +38,20 @@ namespace SalveminiApp.FirstAccess
             base.OnAppearing();
 
             //Check connection and download orari
-            if(Connectivity.NetworkAccess == NetworkAccess.Internet)
+            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
                 //Treni
                 bool successTreni = await App.Treni.GetTrainJson();
 
                 if (successTreni)
                 {
-                    await progress.ProgressTo(1, 500,Easing.CubicInOut);
+                    await progress.ProgressTo(1, 500, Easing.CubicInOut);
                     loadingLayout.IsVisible = false;
                     continueLayout.IsVisible = true;
                 }
                 else
                 {
-                    fail();  
+                    fail();
                     await DisplayAlert("Errore", "Non è stato possibile scaricare gli orari, contattaci se il problema persiste", "Ok");
                 }
             }
@@ -73,9 +74,9 @@ namespace SalveminiApp.FirstAccess
 
         }
 
-         void Retry_Clicked(object sender, System.EventArgs e)
+        void Retry_Clicked(object sender, System.EventArgs e)
         {
-            downlaodStatus.Text = "Sto scaricando gli orari più recenti di bus, treni e aliscafi";
+            downlaodStatus.Text = "Sto scaricando gli orari più recenti di bus e treni";
             loading.IsRunning = true;
             loading.IsVisible = true;
             retry.IsVisible = false;
@@ -83,21 +84,21 @@ namespace SalveminiApp.FirstAccess
             OnAppearing();
         }
 
-         void Continue_Clicked(object sender, System.EventArgs e)
+        void Continue_Clicked(object sender, System.EventArgs e)
         {
             switch (MezzoSegment.SelectedSegment)
             {
                 case 0:
                     //Treni
-                    if(stationPicker.SelectedItem != null && TrenoSegment.SelectedSegment != -1)
+                    if (trainStationPicker.SelectedItem != null && TrenoSegment.SelectedSegment != -1)
                     {
-                        Preferences.Set("savedStation", Costants.Stazioni.FirstOrDefault(x => x.Value == stationPicker.SelectedItem.ToString()).Key);
-                        bool direction = TrenoSegment.SelectedSegment.ToString() == Costants.Stazioni[Costants.Stazioni.Count - 1];
+                        Preferences.Set("savedStation", Costants.Stazioni.FirstOrDefault(x => x.Value == trainStationPicker.SelectedItem.ToString()).Key);
+                        bool direction = Convert.ToBoolean(TrenoSegment.SelectedSegment);
                         Preferences.Set("savedDirection", direction);
                     }
                     else
                     {
-                        DisplayAlert("Attenzione", "Seleziona una stazione di partenza e una direzione","Ok");
+                        DisplayAlert("Attenzione", "Seleziona una stazione di partenza e una direzione", "Ok");
                         return;
                     }
                     break;
@@ -124,18 +125,50 @@ namespace SalveminiApp.FirstAccess
 
         public void ChoseMezzo(object o, int e)
         {
+
             switch (MezzoSegment.SelectedSegment)
             {
                 case 0:
                     //Treni
+                    trenoLayout.IsVisible = true;
+                    busLayout.IsVisible = false;
                     break;
                 case 1:
                     //Bus
-                    break;
-                case 2:
-                    //Aliscafi
+                    trenoLayout.IsVisible = false;
+                    busLayout.IsVisible = true;
                     break;
             }
+        }
+
+        private void TrenoSegment_OnSegmentSelected(object sender, Plugin.Segmented.Event.SegmentSelectEventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(trainStationPicker.SelectedItem?.ToString()))
+                return;
+
+            //Sorrento to sorrento
+            if (trainStationPicker.SelectedItem.ToString() == "Sorrento" && TrenoSegment.SelectedSegment == 0)
+                TrenoSegment.SelectedSegment = 1;
+
+            //Napoli to napoli
+            if (trainStationPicker.SelectedItem.ToString() == "Napoli Porta Nolana" && TrenoSegment.SelectedSegment == 1)
+                TrenoSegment.SelectedSegment = 0;
+        }
+
+        private void picker_Unfocused(object sender, FocusEventArgs e)
+        {
+            if (string.IsNullOrEmpty(trainStationPicker.SelectedItem?.ToString()))
+                return;
+
+            //Sorrento to sorrento
+            if (trainStationPicker.SelectedItem.ToString() == "Sorrento" && TrenoSegment.SelectedSegment == 0)
+                TrenoSegment.SelectedSegment = 1;
+
+            //Napoli to napoli
+            if (trainStationPicker.SelectedItem.ToString() == "Napoli Porta Nolana" && TrenoSegment.SelectedSegment == 1)
+                TrenoSegment.SelectedSegment = 0;
+
         }
 
         public void skipClicked(object sender, System.EventArgs e)
@@ -153,5 +186,5 @@ namespace SalveminiApp.FirstAccess
             }
         }
 
-        }
+    }
 }

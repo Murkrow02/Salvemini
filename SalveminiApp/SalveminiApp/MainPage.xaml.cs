@@ -26,6 +26,8 @@ namespace SalveminiApp
         public RestApi.Models.Index Index = new RestApi.Models.Index();
         public RestApi.Models.Treno NextTrain = new RestApi.Models.Treno();
         public RestApi.Models.Ad Ad = new RestApi.Models.Ad();
+        List<WidgetGradient> widgets = new List<WidgetGradient>();
+
         //Giorni popup
         BubblePopup dayPopOver = new Helpers.PopOvers().defaultPopOver;
         Xamarin.Forms.ListView giorniList = new Xamarin.Forms.ListView { VerticalScrollBarVisibility = ScrollBarVisibility.Never, Footer = "", BackgroundColor = Color.Transparent, SeparatorColor = Color.Gray, WidthRequest = App.ScreenWidth / 4, HeightRequest = App.ScreenHeight / 5 };
@@ -49,7 +51,10 @@ namespace SalveminiApp
 
             //Get day names list
             var giorni = CultureInfo.CurrentCulture.DateTimeFormat.DayNames.ToList();
+            //Remove sunday
             giorni.RemoveAt(0);
+            //First letter to upper
+            giorni = giorni.ConvertAll(x => x.FirstCharToUpper());
             giorniList.ItemsSource = giorni;
 
         }
@@ -66,9 +71,9 @@ namespace SalveminiApp
             base.OnAppearing();
 
             //Create static widgets
+            widgets.Clear();
             var tapGestureRecognizer = new TapGestureRecognizer();
             tapGestureRecognizer.Tapped += widget_Tapped;
-            var widgets = new List<WidgetGradient>();
             //Trasporti
             var trasporti = new WidgetGradient { Title = "Trasporti", SubTitle = await getNextTrain(), Icon = "train", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order = Preferences.Get("OrderTrasporti", 0) };
             trasporti.GestureRecognizers.Add(tapGestureRecognizer);
@@ -76,14 +81,12 @@ namespace SalveminiApp
             var card = new WidgetGradient { Title = "SalveminiCard", SubTitle = "Visualizza tutti i vantaggi esclusivi per gli studenti del Salvemini", Icon = "train", StartColor = "B487FD", EndColor = "FA6FFA", Push = new SecondaryViews.SalveminiCard(), Order = Preferences.Get("OrderCard", 0) };
             card.GestureRecognizers.Add(tapGestureRecognizer);
             //Extra
-            var extra = new WidgetGradient { Title = "Extra", SubTitle = "Esplora funzioni aggiuntive", Icon = "train", StartColor = "B487FD", EndColor = "FA6FFA", Order = Preferences.Get("OrderExtra", 0) };
+            var extra = new WidgetGradient { Title = "Extra", SubTitle = "Esplora funzioni aggiuntive", Icon = "train", StartColor = "B487FD", EndColor = "FA6FFA", Order = Preferences.Get("OrderExtra", 0), Push = new SecondaryViews.Extra() };
             extra.GestureRecognizers.Add(tapGestureRecognizer);
 
             //Initialize list with first widgets
             widgets.Add(trasporti); widgets.Add(card); widgets.Add(extra);
-            widgetsLayout.Children.Clear();
-            widgetsLayout.Children.AddRange(widgets);
-
+            OrderWidgets(false);
 
 
             var notificator = DependencyService.Get<IToastNotificator>();
@@ -109,12 +112,12 @@ namespace SalveminiApp
                     int positionSondaggio = Preferences.Get("OrderSondaggio", 0);
                     if (Preferences.Get("LastSondaggio", 0) != Index.ultimoSondaggio.id) //New sondaggio detected
                     {
-                        Preferences.Set("LastSondaggio", Index.ultimoSondaggio.id);
+                        //Preferences.Set("LastSondaggio", Index.ultimoSondaggio.id);
                         nuovoSondaggio = "si";
-                        positionSondaggio = 0;
+                        positionSondaggio = -1;
                     }
                     //Create sondaggio widget
-                    var sondaggi = new WidgetGradient { Title = "Sondaggi", SubTitle = Index.ultimoSondaggio.Nome, Icon = "train", StartColor = "FD8787", EndColor = "F56FFA", Badge = nuovoSondaggio };
+                    var sondaggi = new WidgetGradient { Order = positionSondaggio, Title = "Sondaggi", SubTitle = Index.ultimoSondaggio.Nome, Icon = "train", StartColor = "FD8787", EndColor = "F56FFA", Badge = nuovoSondaggio };
                     sondaggi.GestureRecognizers.Add(tapGestureRecognizer);
                     widgets.Add(sondaggi);
 
@@ -128,12 +131,11 @@ namespace SalveminiApp
                     int positionAvvisi = Preferences.Get("OrderAvvisi", 0);
                     if (Preferences.Get("LastAvviso", 0) != Index.ultimoAvviso.id) //New avviso detected
                     {
-                        Preferences.Set("LastAvviso", Index.ultimoAvviso.id);
                         nuovoAvviso = "si";
-                        positionAvvisi = 0;
+                        positionAvvisi = -2;
                     }
                     //Create avviso widget
-                    var avvisi = new WidgetGradient { Title = "Avvisi", SubTitle = Index.ultimoAvviso.Titolo, Icon = "train", StartColor = "FDD487", EndColor = "FA6F6F", Push = new SecondaryViews.Avvisi(), Badge = nuovoAvviso };
+                    var avvisi = new WidgetGradient { Order = positionAvvisi, Title = "Avvisi", SubTitle = Index.ultimoAvviso.Titolo, Icon = "train", StartColor = "FDD487", EndColor = "FA6F6F", Push = new SecondaryViews.Avvisi(), Badge = nuovoAvviso };
                     avvisi.GestureRecognizers.Add(tapGestureRecognizer);
                     widgets.Add(avvisi);
                 }
@@ -179,11 +181,8 @@ namespace SalveminiApp
                 //var result = await notificator.Notify(options);
             }
 
-            //Refresh with new widgets
-            await widgetCollection.FadeTo(0, 300, Easing.CubicInOut);
-            widgetsLayout.Children.Clear();
-            widgetsLayout.Children.AddRange(widgets);
-            await widgetCollection.FadeTo(1, 300, Easing.CubicInOut);
+            OrderWidgets(true);
+
         }
 
         void Avvisi_Clicked(object sender, System.EventArgs e)
@@ -267,7 +266,14 @@ namespace SalveminiApp
             //Create new navigation page
             var modalPush = new Xamarin.Forms.NavigationPage(new SecondaryViews.Profile());
 
+            //Add disappearing event
             modalPush.Disappearing += ModalPush_Disappearing;
+
+            //Add toolbaritem to close page
+            var close = new ToolbarItem { Text = "Annulla" };
+            close.Clicked += ModalPush_Disappearing;
+            modalPush.ToolbarItems.Add(close);
+
             //Modal figo
 #if __IOS__
             modalPush.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(UIModalPresentationStyle.FormSheet);
@@ -280,7 +286,10 @@ namespace SalveminiApp
         {
             try
             {
-                Navigation.PopModalAsync();
+                if (!SecondaryViews.Profile.isSelectingImage)
+                    Navigation.PopModalAsync();
+                else
+                    SecondaryViews.Profile.isSelectingImage = false;
             }
             catch
             {
@@ -328,6 +337,19 @@ namespace SalveminiApp
 
         }
 
+        public async void OrderWidgets(bool animate)
+        {
+            //Refresh with new widgets
+            if (animate)
+                await widgetCollection.FadeTo(0, 300, Easing.CubicInOut);
+            widgetsLayout.Children.Clear();
+            widgetsLayout.Children.Add(new Xamarin.Forms.ContentView { WidthRequest = 5 });
+            widgets = widgets.OrderBy(x => x.Order).ToList();
+            widgetsLayout.Children.AddRange(widgets);
+            widgetsLayout.Children.Add(new Xamarin.Forms.ContentView { WidthRequest = 5 });
+            if (animate)
+                await widgetCollection.FadeTo(1, 300, Easing.CubicInOut);
+        }
 
         void ad_Tapped(object sender, System.EventArgs e)
         {
@@ -374,6 +396,19 @@ namespace SalveminiApp
                 {
                     list.Add(item);
                 }
+            }
+        }
+    }
+
+    public static class StringExtensions
+    {
+        public static string FirstCharToUpper(this string input)
+        {
+            switch (input)
+            {
+                case null: throw new ArgumentNullException(nameof(input));
+                case "": throw new ArgumentException($"{nameof(input)} cannot be empty", nameof(input));
+                default: return input.First().ToString().ToUpper() + input.Substring(1);
             }
         }
     }

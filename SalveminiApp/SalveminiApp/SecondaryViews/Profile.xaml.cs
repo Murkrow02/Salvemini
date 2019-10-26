@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using MonkeyCache.SQLite;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
+using FFImageLoading;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 #endif
@@ -14,10 +17,13 @@ namespace SalveminiApp.SecondaryViews
 
         public RestApi.Models.Utente utente = new RestApi.Models.Utente();
         public bool shouldClose = true;
+        public MediaFile newPic;
+        public static bool isSelectingImage;
+
         public Profile()
         {
             InitializeComponent();
-            
+
 
             //Get cache
             if (Barrel.Current.Exists("utenteLoggato"))
@@ -25,8 +31,11 @@ namespace SalveminiApp.SecondaryViews
                 utente = Barrel.Current.Get<RestApi.Models.Utente>("utenteLoggato");
                 nameLbl.Text = utente.nomeCognome;
                 classLbl.Text = utente.classeCorso;
+                userImg.Source = utente.Immagine;
             }
 
+            //Set dimensions
+            userImg.WidthRequest = App.ScreenWidth / 3.5;
 
             //Create tapped gesture
             var tapGestureRecognizer = new TapGestureRecognizer();
@@ -37,12 +46,15 @@ namespace SalveminiApp.SecondaryViews
             var notifiche = new Helpers.PushCell { Title = "Notifiche", Separator = "si" };
             notifiche.GestureRecognizers.Add(tapGestureRecognizer);
             persLayout.Children.Add(notifiche);
-            var countdown = new Helpers.PushCell { Title = "Countdown", Separator = "No" };
+            var countdown = new Helpers.PushCell { Title = "Countdown", Separator = "si" };
             countdown.GestureRecognizers.Add(tapGestureRecognizer);
             persLayout.Children.Add(countdown);
+            var profileImg = new Helpers.PushCell { Title = "Immagine di profilo", Separator = "No" };
+            profileImg.GestureRecognizers.Add(tapGestureRecognizer);
+            persLayout.Children.Add(profileImg);
 
             //Contattaci
-            var insta = new Helpers.PushCell { Title = "Il nostro team", Separator = "si" ,Push = new SecondaryViews.Team()};
+            var insta = new Helpers.PushCell { Title = "Il nostro team", Separator = "si", Push = new SecondaryViews.Team() };
             insta.GestureRecognizers.Add(tapGestureRecognizer);
             contactLayout.Children.Add(insta);
             var Mail = new Helpers.PushCell { Title = "Mail", Separator = "No" };
@@ -80,7 +92,13 @@ namespace SalveminiApp.SecondaryViews
                     {
                         DisplayAlert("Errore", "Non è possiile inviare e-mail da questo dispositivo, in alternativa puoi scrivere a questo indirizzo: support@codexdevelopment.net", "Ok");
                     }
+                    return;
+                }
 
+                //Profile image
+                if (cell.Title == "Immagine di profilo")
+                {
+                    changePic();
                 }
 
                 //Push to selected page
@@ -133,7 +151,7 @@ namespace SalveminiApp.SecondaryViews
         {
             base.OnDisappearing();
 
-           
+
         }
 
         private void esci_Clicked(object sender, EventArgs e)
@@ -142,6 +160,47 @@ namespace SalveminiApp.SecondaryViews
             Xamarin.Forms.Application.Current.MainPage = new FirstAccess.Login();
             Preferences.Set("UserId", 0);
             Preferences.Set("Token", "");
+        }
+
+        private async void changePic()
+        {
+            var decision = await DisplayActionSheet("Come vuoi procedere", "Annulla", "Rimuovi immagine", "Scegli una foto", "Scatta una foto");
+
+            isSelectingImage = true;
+            if (decision == "Scegli una foto")
+            {
+                if (!CrossMedia.Current.IsPickPhotoSupported)
+                {
+                    await DisplayAlert("Attenzione", "Non ci hai dato il permesso di accedere alle tue foto :(", "OK");
+                    return;
+                }
+                var choosenImage = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+                {
+                    PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+                    CompressionQuality = 80
+
+                });
+
+                if (choosenImage == null)
+                    return;
+
+                //Upload image
+                var success = await App.Immagini.uploadImages(choosenImage.GetStreamWithImageRotatedForExternalStorage(), Preferences.Get("UserId", 0).ToString(), "users");
+
+                if (success)
+                {
+                    userImg.Source = "";
+                    userImg.Source = utente.Immagine;
+                }
+                else
+                    await DisplayAlert("Errore", "Si è verificato un errore durante il caricamento dell'immagine, contattaci se il problema persiste", "Ok");
+
+
+            }
+            else if (decision == "Scatta una foto")
+            {
+
+            }
         }
     }
 }

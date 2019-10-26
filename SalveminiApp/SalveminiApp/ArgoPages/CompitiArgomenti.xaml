@@ -59,7 +59,7 @@
                             </ListView>
                             <StackLayout IsVisible="false" x:Name="emptyLayout" VerticalOptions="Center">
                                 <iconize:IconLabel Text="far-sticky-note" VerticalOptions="Center" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" FontSize="40" />
-                                <Label x:Name="placeholderLabel" VerticalOptions="Center" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" />
+                                <Label x:Name="placeholderLabel" VerticalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="CenterAndExpand" Margin="5"/>
                             </StackLayout>
                         </Grid>
                     </StackLayout>
@@ -67,7 +67,7 @@
 
                 <!--Chiudi-->
                 <Frame VerticalOptions="EndAndExpand" HasShadow="false" HorizontalOptions="Center" x:Name="buttonFrame" Padding="0">
-                    <iconize:IconButton Clicked="Close_Clicked" Text="fas-times" FontSize="30" x:Name="xClose" />
+                    <iconize:IconButton Clicked="Close_Clicked" Text="fas-times" FontSize="30" x:Name="xClose" BackgroundColor="Transparent"/>
                 </Frame>
             </StackLayout>
         </AbsoluteLayout>

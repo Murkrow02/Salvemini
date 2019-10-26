@@ -1,58 +1,92 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:control="clr-namespace:Plugin.Segmented.Control;assembly=Plugin.Segmented" xmlns:local="clr-namespace:SalveminiApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.FirstAccess.OrariTrasporti">
-    <ScrollView>
-        <StackLayout Padding="25,8" Spacing="10">
-            <!--TitleView-->
+    <StackLayout Padding="25,8" Spacing="10">
+        <ScrollView>
             <StackLayout>
-                <Image Source="trasportiSmall" x:Name="topImage" />
-                <Label FontAttributes="Bold" FontSize="45" TextColor="{x:Static local:Styles.TextColor}" Text="Trasporti" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
-                <Label FontSize="18" TextColor="{x:Static local:Styles.TextGray}" Text="Scegli il tuo mezzo di trasporto preferito" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
-                <Button Text="Salta" BackgroundColor="Transparent" FontSize="Small" Margin="-2" Clicked="skipClicked"/>
-            </StackLayout>
-
-            <!--ChooseMezzo-->
-            <control:SegmentedControl x:Name="MezzoSegment" OnSegmentSelected="ChoseMezzo" TintColor="{x:Static local:Styles.Apple}" SelectedTextColor="{x:Static local:Styles.TextColor}">
-                <control:SegmentedControl.Children>
-                    <control:SegmentedControlOption Text="Treno" />
-                    <control:SegmentedControlOption Text="Bus" />
-                    <control:SegmentedControlOption Text="Aliscafo" />
-                </control:SegmentedControl.Children>
-            </control:SegmentedControl>
-
-            <!--Treno-->
-            <StackLayout VerticalOptions="CenterAndExpand" Spacing="15" x:Name="trenoLayout">
-                <StackLayout HorizontalOptions="FillAndExpand">
-                    <Label HorizontalOptions="Start" Text="Da:" TextColor="{x:Static local:Styles.TextGray}" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
-                    <Frame x:Name="stationFrame" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, 0" BorderColor="{x:Static local:Styles.ObjectGray}">
-                        <Picker x:Name="stationPicker" HeightRequest="50" TitleColor="#EAEAEA" HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
-                    </Frame>
+                <!--TitleView-->
+                <StackLayout>
+                    <Image Source="trasportiSmall" x:Name="topImage" />
+                    <Label FontAttributes="Bold" FontSize="45" TextColor="{x:Static local:Styles.TextColor}" Text="Trasporti" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+                    <Label FontSize="18" TextColor="{x:Static local:Styles.TextGray}" Text="Scegli il tuo mezzo di trasporto preferito" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+                    <Button Text="Salta" BackgroundColor="Transparent" FontSize="Small" Margin="-2" Clicked="skipClicked" />
                 </StackLayout>
-                <StackLayout HorizontalOptions="FillAndExpand">
-                    <Label HorizontalOptions="Start" Text="Verso:" TextColor="{x:Static local:Styles.TextGray}" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
-                    <control:SegmentedControl SelectedSegment="-1" x:Name="TrenoSegment" TintColor="{x:Static local:Styles.Apple}" SelectedTextColor="{x:Static local:Styles.TextColor}">
-                        <control:SegmentedControl.Children>
-                            <control:SegmentedControlOption Text="Sorrento" />
-                            <control:SegmentedControlOption Text="Napoli" />
-                        </control:SegmentedControl.Children>
-                    </control:SegmentedControl>
+
+                <!--ChooseMezzo-->
+                <control:SegmentedControl VerticalOptions="StartAndExpand" x:Name="MezzoSegment" OnSegmentSelected="ChoseMezzo" TintColor="{x:Static local:Styles.Apple}" SelectedTextColor="{x:Static local:Styles.TextColor}">
+                    <control:SegmentedControl.Children>
+                        <control:SegmentedControlOption Text="Treno" />
+                        <control:SegmentedControlOption Text="Bus" />
+                        <!--<control:SegmentedControlOption Text="Aliscafo" />-->
+                    </control:SegmentedControl.Children>
+                </control:SegmentedControl>
+
+                <!--Treno-->
+                <StackLayout IsVisible="false" VerticalOptions="CenterAndExpand" Spacing="15" x:Name="trenoLayout">
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Label HorizontalOptions="Start" Text="Da:" TextColor="{x:Static local:Styles.TextGray}" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
+                        <Frame x:Name="stationFrame" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, 0" BorderColor="{x:Static local:Styles.ObjectGray}">
+                            <Picker Unfocused="picker_Unfocused" x:Name="trainStationPicker" HeightRequest="50" TitleColor="#EAEAEA" HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Label HorizontalOptions="Start" Text="Verso:" TextColor="{x:Static local:Styles.TextGray}" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
+                        <control:SegmentedControl OnSegmentSelected="TrenoSegment_OnSegmentSelected" SelectedSegment="-1" x:Name="TrenoSegment" TintColor="{x:Static local:Styles.Apple}" SelectedTextColor="{x:Static local:Styles.TextColor}">
+                            <control:SegmentedControl.Children>
+                                <control:SegmentedControlOption Text="Sorrento" />
+                                <control:SegmentedControlOption Text="Napoli" />
+                            </control:SegmentedControl.Children>
+                        </control:SegmentedControl>
+                    </StackLayout>
                 </StackLayout>
-            </StackLayout>
+
+                <!--Bus-->
+                <StackLayout VerticalOptions="CenterAndExpand" Spacing="15" x:Name="busLayout">
 
 
-            <!--Downlaod view-->
-            <StackLayout VerticalOptions="CenterAndExpand" Spacing="20" Padding="0,0,0,20" x:Name="loadingLayout">
-                <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" x:Name="downlaodStatus" Text="Sto scaricando gli orari più recenti di bus, treni e aliscafi" />
-                <StackLayout Orientation="Horizontal" Spacing="20">
-                    <ProgressBar BackgroundColor="{x:Static local:Styles.ObjectGray}" ProgressColor="{x:Static local:Styles.Apple}" x:Name="progress" Progress="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
-                    <ActivityIndicator x:Name="loading" IsRunning="True" HorizontalOptions="End" VerticalOptions="CenterAndExpand" />
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                          <control:SegmentedControl  x:Name="eavSitaSegment" TintColor="{x:Static local:Styles.Apple}" SelectedTextColor="{x:Static local:Styles.TextColor}">
+                            <control:SegmentedControl.Children>
+                                <control:SegmentedControlOption Text="EAV" />
+                                <control:SegmentedControlOption Text="Sita" />
+                            </control:SegmentedControl.Children>
+                        </control:SegmentedControl>
+
+
+                          <Frame HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, 0" BorderColor="{x:Static local:Styles.ObjectGray}">
+                            <Picker x:Name="lineaPicker" HeightRequest="50" TitleColor="#EAEAEA" HorizontalOptions="FillAndExpand" FontSize="25" Title="Linea" />
+                        </Frame>
+
+      <StackLayout HorizontalOptions="FillAndExpand">
+                        <Label HorizontalOptions="Start" Text="Da:" TextColor="{x:Static local:Styles.TextGray}" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
+                       <Frame HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, 0" BorderColor="{x:Static local:Styles.ObjectGray}">
+                            <Picker x:Name="busStartPicker"  HeightRequest="50" TitleColor="#EAEAEA" HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
+                        </Frame>
+                    </StackLayout>                      
+                          <StackLayout HorizontalOptions="FillAndExpand">
+                        <Label HorizontalOptions="Start" Text="Verso:" TextColor="{x:Static local:Styles.TextGray}" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
+                       <Frame HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, 0" BorderColor="{x:Static local:Styles.ObjectGray}">
+                            <Picker x:Name="busEndPicker"  HeightRequest="50" TitleColor="#EAEAEA" HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
+                        </Frame>
+                    </StackLayout>  
+
+                    </StackLayout>
+                  
                 </StackLayout>
-                <Button Clicked="Retry_Clicked" IsVisible="false" x:Name="retry" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.Apple}" Text="Riprova" FontSize="Large" />
             </StackLayout>
-            <!--EndLayout-->
-            <StackLayout x:Name="continueLayout" IsVisible="false" VerticalOptions="EndAndExpand">
-                <Button Clicked="Continue_Clicked" Text="Prosegui" TextColor="White" FontSize="Title" CornerRadius="10" BackgroundColor="{x:Static local:Styles.Apple}" />
-                <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" Text="Sono stati scaricati gli orari più recenti" />
+        </ScrollView>
+        <!--Downlaod view-->
+        <StackLayout VerticalOptions="CenterAndExpand" Spacing="20" Padding="0,0,0,20" x:Name="loadingLayout">
+            <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" x:Name="downlaodStatus" Text="Sto scaricando gli orari più recenti di bus, treni e aliscafi" />
+            <StackLayout Orientation="Horizontal" Spacing="20">
+                <ProgressBar BackgroundColor="{x:Static local:Styles.ObjectGray}" ProgressColor="{x:Static local:Styles.Apple}" x:Name="progress" Progress="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
+                <ActivityIndicator x:Name="loading" IsRunning="True" HorizontalOptions="End" VerticalOptions="CenterAndExpand" />
             </StackLayout>
+            <Button Clicked="Retry_Clicked" IsVisible="false" x:Name="retry" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.Apple}" Text="Riprova" FontSize="Large" />
         </StackLayout>
-    </ScrollView>
+        <!--EndLayout-->
+        <StackLayout x:Name="continueLayout" VerticalOptions="EndAndExpand">
+            <Button Clicked="Continue_Clicked" Text="Prosegui" TextColor="White" FontSize="Title" CornerRadius="10" BackgroundColor="{x:Static local:Styles.Apple}" />
+            <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" Text="Sono stati scaricati gli orari più recenti" />
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

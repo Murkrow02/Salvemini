@@ -17,6 +17,7 @@ namespace SalveminiApp.SecondaryViews
         public Avvisi()
         {
             InitializeComponent();
+
             //Set Safearea
 #if __IOS__
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
@@ -45,9 +46,11 @@ namespace SalveminiApp.SecondaryViews
             {
                 Avvisis = await App.Avvisi.GetAvvisi();
 
-                if (Avvisis != null)
+                if (Avvisis != null && Avvisis.Count > 0)
                 {
                     avvisiCarousel.ItemsSource = Avvisis;
+                    Preferences.Set("LastAvviso", Avvisis[0].id);
+
                 }
             }
             else
@@ -59,6 +62,22 @@ namespace SalveminiApp.SecondaryViews
 
                 var result = await notificator.Notify(options);
             }
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+
+            //Ios 13 bug
+            try
+            {
+                Navigation.PopModalAsync();
+            }
+            catch
+            {
+                //fa nient
+            }
+
         }
     }
 }

@@ -28,8 +28,8 @@
         <Label Text="Grafico Materie" Margin="20, 0" FontAttributes="Bold" HorizontalOptions="Start" TextColor="{x:Static local:Styles.TextColor}" FontSize="Large"/>
         <Frame Margin="20, 0" HasShadow="False" CornerRadius="20" Padding="5">
             <StackLayout>
-                <chart:SfChart VerticalOptions="Start" x:Name="chart">
-                    <chart:SfChart.PrimaryAxis>
+                <chart:SfChart VerticalOptions="Start" x:Name="chart" AreaBorderColor="Red">
+                    <chart:SfChart.PrimaryAxis >
                         <chart:CategoryAxis>
                         </chart:CategoryAxis>
                     </chart:SfChart.PrimaryAxis>

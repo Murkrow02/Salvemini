@@ -6,7 +6,6 @@
                 <StackLayout Orientation="Horizontal" Spacing="20">
                     <iconize:IconButton Text="fas-times" Clicked="Close_Page" TextColor="White" FontAttributes="Bold" HorizontalOptions="End" FontSize="30" />
                     <Label FontAttributes="Bold" TextColor="White" Text="Treni" FontSize="50" HorizontalOptions="StartAndExpand" />
-                    <iconize:IconButton x:Name="starButton" Clicked="Starred_Clicked" Text="far-star" TextColor="White" FontAttributes="Bold" HorizontalOptions="End" FontSize="30" />
                     <iconize:IconButton Text="far-compass" TextColor="White" FontAttributes="Bold" HorizontalOptions="End" FontSize="30" />
                 </StackLayout>
                 <StackLayout Spacing="10" Margin="20 ,0">

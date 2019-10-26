@@ -67,7 +67,7 @@
                     <Label x:Name="fullMediaLabel" TextColor="White" FontAttributes="None" FontSize="Large" />
                 </StackLayout>
                 <Frame VerticalOptions="EndAndExpand" HasShadow="false" HorizontalOptions="Center" x:Name="buttonFrame" Padding="0">
-                    <iconize:IconButton Clicked="Close_Clicked" Text="fas-times" FontSize="30" TextColor="#A940F5" />
+                    <iconize:IconButton BackgroundColor="Transparent" Clicked="Close_Clicked" Text="fas-times" FontSize="30" TextColor="#A940F5" />
                 </Frame>
             </StackLayout>
         </AbsoluteLayout>

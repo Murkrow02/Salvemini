@@ -61,7 +61,7 @@
 
             <!--Widgets-->
             <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Margin="-15,0" x:Name="widgetCollection">
-                <StackLayout x:Name="widgetsLayout" Orientation="Horizontal">
+                <StackLayout x:Name="widgetsLayout" Orientation="Horizontal" Spacing="10">
                 </StackLayout>
             </ScrollView>
         </StackLayout>

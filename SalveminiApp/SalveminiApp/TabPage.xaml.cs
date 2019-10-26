@@ -19,7 +19,6 @@ namespace SalveminiApp
     public partial class TabPage : Xamarin.Forms.TabbedPage
     {
         //Home
-        public static CarouselPage CarouselHome = new CarouselPage();
         public static Helpers.CustomNavigationPage Home = new Helpers.CustomNavigationPage(new MainPage())
         {
             BarTextColor = Styles.PrimaryColor,
@@ -45,11 +44,6 @@ namespace SalveminiApp
         public TabPage()
         {
             InitializeComponent();
-
-            //Init Carousel
-            CarouselHome.Children.Add(new MainPage());
-            CarouselHome.Children.Add(new SecondHome());
-            CarouselHome.Title = "Home";
 
             //Initialize Bar
             BarTextColor = Styles.TextColor;
