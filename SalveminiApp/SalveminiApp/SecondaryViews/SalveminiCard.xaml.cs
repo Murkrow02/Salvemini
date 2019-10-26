@@ -19,6 +19,7 @@ namespace SalveminiApp.SecondaryViews
         public SalveminiCard()
         {
             InitializeComponent();
+            lilCard.Opacity = 0;
 
 #if __IOS__
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
@@ -37,13 +38,13 @@ namespace SalveminiApp.SecondaryViews
             base.OnAppearing();
 
             //Animation
-           await card.RotateYTo(0,600,Easing.BounceOut);
+            await card.RotateYTo(0, 600, Easing.BounceOut);
 
             //Download offerte
-            if(Connectivity.NetworkAccess == NetworkAccess.Internet)
+            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
                 var offerte_ = await App.Card.GetOfferte();
-                if(offerte_.Count < 1)
+                if (offerte_.Count < 1)
                 {
                     //Non possibile caricare nuove offerte
                 }
@@ -72,6 +73,7 @@ namespace SalveminiApp.SecondaryViews
             {
                 //fa nient
             }
+
         }
 
         async void offerSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
@@ -86,21 +88,38 @@ namespace SalveminiApp.SecondaryViews
         }
 
 
-            void closePage (object sender, EventArgs e)
+        void closePage(object sender, EventArgs e)
         {
             Navigation.PopModalAsync();
         }
 
-
-        public void listScroll(object sender, ScrolledEventArgs e)
+        private double previousScrollPosition = 0;
+        public bool animating = false;
+        public async void listScroll(object sender, ScrolledEventArgs e)
         {
             Debug.WriteLine(e.ScrollY);
 
-            card.RotationX = 0 + e.ScrollY;
-            if (card.RotationX >= 90)
-                card.RotationX = 90;
-
-            offersList.HeightRequest = offersList.Height + e.ScrollY;
+            if (previousScrollPosition < e.ScrollY)
+            {
+                //scrolled up
+                if ((int)e.ScrollY > (int)card.Height && !animating)
+                {
+                    animating = true;
+                    await lilCard.FadeTo(1, 300, Easing.CubicInOut);
+                    animating = false;
+                }
+            }
+            else
+            {
+                //scrolled down
+                if ((int)e.ScrollY < (int)card.Height && !animating)
+                {
+                    animating = true;
+                    await lilCard.FadeTo(0, 300, Easing.CubicInOut);
+                    animating = false;
+                }
+            }
+            previousScrollPosition = e.ScrollY;
 
         }
     }
