@@ -19,10 +19,13 @@ namespace SalveminiApi
             //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             //);
 
-            //My routes
-            routes.Add(new Route("", new PageRouteHandler("~/Home.aspx")));
-            routes.Add(new Route("AggiungiLibro", new PageRouteHandler("~/BookMarket/AddBooks.aspx")));
-            routes.Add(new Route("BookMarketLogin", new PageRouteHandler("~/BookMarket/Login.aspx")));
+            ////My routes
+            //routes.Add(new Route("", new PageRouteHandler("~/Home.aspx")));
+            //routes.Add(new Route("AggiungiLibro", new PageRouteHandler("~/BookMarket/AddBooks.aspx")));
+            //routes.Add(new Route("BookMarketLogin", new PageRouteHandler("~/BookMarket/Login.aspx")));
+
+            routes.Add(new Route("gestione", new PageRouteHandler("~/Gestione/Login.aspx")));
+
         }
     }
 }

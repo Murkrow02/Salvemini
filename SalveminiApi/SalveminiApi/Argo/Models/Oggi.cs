@@ -33,17 +33,6 @@ namespace SalveminiApi.Argo.Models
     public class OggiValues
     {
 
-
-        //public OggiValues(string desCompiti, string desMateria, string docente, string desArgomento)
-        //{
-
-        //    this.desCompiti = desCompiti;
-        //    this.desMateria = desMateria;
-        //    this.docente = docente;
-        //    this.desArgomento = desArgomento;
-
-        //}
-
         public string datGiorno { get; set; }
 
         public string codEvento { get; set; }
@@ -295,17 +284,6 @@ namespace SalveminiApi.Argo.Models
 
         public class OggiValues
         {
-
-
-            //public OggiValues(string desCompiti, string desMateria, string docente, string desArgomento)
-            //{
-
-            //    this.desCompiti = desCompiti;
-            //    this.desMateria = desMateria;
-            //    this.docente = docente;
-            //    this.desArgomento = desArgomento;
-
-            //}
 
             public string datGiorno { get; set; }
 

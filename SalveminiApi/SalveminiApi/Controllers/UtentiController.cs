@@ -73,6 +73,25 @@ namespace SalveminiApi.Controllers
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
+        [Route("classe/{id}")]
+        [HttpGet]
+        public List<Utenti> getClassUtenti(int id)
+        {
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request, true);
+            if (!authorized)
+                throw new HttpResponseException(HttpStatusCode.Unauthorized);
 
+            //Prendi classe dell utente selezionato
+            var utente = db.Utenti.Find(id);
+            if(utente == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            var classe = utente.Classe.ToString() + utente.Corso;
+
+            //Prendi tutti gli utenti di quella classe
+            var utenti = db.Utenti.Where(x => x.Classe.ToString() + x.Corso == classe).ToList();
+
+            return utenti;
+        }
     }
 }

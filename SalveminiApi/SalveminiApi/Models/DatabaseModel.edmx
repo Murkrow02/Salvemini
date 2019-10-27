@@ -15,6 +15,7 @@
           <Property Name="Immagine" Type="nvarchar" MaxLength="2000" />
           <Property Name="Url" Type="nvarchar" MaxLength="2000" />
           <Property Name="Tipo" Type="int" Nullable="false" />
+          <Property Name="Impressions" Type="int" />
         </EntityType>
         <EntityType Name="Analytics">
           <Key>
@@ -74,7 +75,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nome" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Immagine" Type="nvarchar" MaxLength="300" />
           <Property Name="idSondaggio" Type="int" Nullable="false" />
@@ -92,7 +93,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nome" Type="nvarchar" MaxLength="400" Nullable="false" />
           <Property Name="Creatore" Type="int" Nullable="false" />
           <Property Name="Creazione" Type="datetime" Nullable="false" />
@@ -116,10 +117,10 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idSondaggio" Type="int" Nullable="false" />
           <Property Name="Utente" Type="int" Nullable="false" />
-          <Property Name="Voto" Type="int" />
+          <Property Name="Voto" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Avvisi_Utenti">
           <End Role="Utenti" Type="Self.Utenti" Multiplicity="1">
@@ -386,6 +387,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <Property Name="Immagine" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
           <Property Name="Url" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
           <Property Name="Tipo" Type="Int32" Nullable="false" />
+          <Property Name="Impressions" Type="Int32" />
         </EntityType>
         <EntityType Name="Analytics">
           <Key>
@@ -564,6 +566,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <EntitySetMapping Name="Ads">
             <EntityTypeMapping TypeName="Entities.Ads">
               <MappingFragment StoreEntitySet="Ads">
+                <ScalarProperty Name="Impressions" ColumnName="Impressions" />
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
                 <ScalarProperty Name="Url" ColumnName="Url" />
                 <ScalarProperty Name="Immagine" ColumnName="Immagine" />
