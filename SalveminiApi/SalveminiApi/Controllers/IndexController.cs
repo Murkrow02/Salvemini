@@ -36,7 +36,7 @@ namespace SalveminiApi.Controllers
             var id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
             string token = Request.Headers.GetValues("x-auth-token").First();
 
-            //Aggiungi ad analytics
+            //Aggiungi accesso ad analytics
             Helpers.Utility.addToAnalytics("Accessi");
 
             //Versioni
@@ -83,12 +83,12 @@ namespace SalveminiApi.Controllers
                 returnModel.ultimoSondaggio = null;
             }
 
-            //ARGO
-            //Prendi modello
-            var argoUtils = new ArgoUtils();
-            var argoClient = argoUtils.ArgoClient(id, token);
+            ////ARGO
+            ////Prendi modello
+            //var argoUtils = new ArgoUtils();
+            //var argoClient = argoUtils.ArgoClient(id, token);
 
-            //Codice copiato dalla salveminiapp vecchia, non si capisce un cazzo (ritorna cosa è successo in classe)
+            ////Codice copiato dalla salveminiapp vecchia, non si capisce un cazzo (ritorna cosa è successo in classe)
             //var Oggi = new Oggi();
             //List<WholeModel> Oggis = new List<WholeModel>();
             //var uri = "https://www.portaleargo.it/famiglia/api/rest/oggi?datGiorno=" + Helpers.Utility.italianTime().ToString("yyyy-MM-dd").Split(' ')[0].Trim();
@@ -98,7 +98,7 @@ namespace SalveminiApi.Controllers
             //    returnModel.ArgoAuth = true;
             //    var response = await argoClient.GetAsync(uri);
             //    if (response.StatusCode == HttpStatusCode.Unauthorized)
-            //         returnModel.ArgoAuth = false;
+            //        returnModel.ArgoAuth = false;
             //    if (response.IsSuccessStatusCode)
             //    {
             //        var content = await response.Content.ReadAsStringAsync();
@@ -154,18 +154,31 @@ namespace SalveminiApi.Controllers
 
             //Get banner
             if (banner.Count > 0)
+            {
                 adsList.Add(banner[0]);
+                db.Ads.Find(banner[0].id).Impressions ++;
+            }
 
             //Get random interstitial
-            if(interstitial.Count > 0)
+            if (interstitial.Count > 0)
             {
                 Random r = new Random();
                 int rInt = r.Next(0, interstitial.Count);
                 adsList.Add(interstitial[rInt]);
+                db.Ads.Find(interstitial[rInt]).Impressions++;
             }
+
+            //Save ad downloads
+            try
+            {
+                db.SaveChanges();
+            }
+            catch
+            {
+                //Fa niente
+            }
+
             returnModel.Ads = adsList;
-
-
             return returnModel;
         }
 

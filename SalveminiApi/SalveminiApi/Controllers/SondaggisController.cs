@@ -42,6 +42,10 @@ namespace SalveminiApi.Controllers
 
             try
             {
+                var alreadyVoted = db.VotiSondaggi.Where(x => x.idSondaggio == voto.idSondaggio && x.Utente == voto.Utente).ToList();
+                if(alreadyVoted.Count > 0)
+                    return new HttpResponseMessage(HttpStatusCode.Conflict); //Already voted
+
                 db.VotiSondaggi.Add(voto);
                 db.SaveChanges();
                 return new HttpResponseMessage(HttpStatusCode.OK);

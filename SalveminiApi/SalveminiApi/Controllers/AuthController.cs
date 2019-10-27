@@ -63,10 +63,14 @@ namespace UlysseApi.Controllers
                 //Check if user is already in the db
                 int id = utente.prgAlunno;
                 var conflict = db.Utenti.Find(id);
+
                 if (conflict != null)
                 {
                     //Conflict found
+                    conflict.Classe = Convert.ToInt32(utente.desDenominazione);
+                    conflict.Corso = utente.desCorso;
                     returnList.Add(conflict);
+                    db.SaveChanges();
                     continue;
 
                 }

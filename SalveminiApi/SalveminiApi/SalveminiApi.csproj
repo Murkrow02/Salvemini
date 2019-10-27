@@ -279,6 +279,13 @@
     <Compile Include="Controllers\SalveminiCardController.cs" />
     <Compile Include="Controllers\SondaggisController.cs" />
     <Compile Include="Controllers\UtentiController.cs" />
+    <Compile Include="Gestione\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestione\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -324,6 +331,7 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\IndexModel.cs" />
+    <Compile Include="Models\Lezione.cs" />
     <Compile Include="Models\OggettiSondaggi.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -364,8 +372,10 @@
     <Content Include="Content\navigation.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Gestione\Login.aspx" />
     <Content Include="Global.asax" />
     <Content Include="icons\responsivenav.svg" />
+    <Content Include="Images\ads\ulysseBanner.png" />
     <Content Include="Images\avvisi\1.png" />
     <Content Include="Images\avvisi\2.png" />
     <Content Include="Images\avvisi\3.png" />
@@ -382,6 +392,7 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
       <LastGenOutput>DatabaseModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Orari\Classi\4FCAM.txt" />
     <Content Include="Orari\OrariTreni.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
