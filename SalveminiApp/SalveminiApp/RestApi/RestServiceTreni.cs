@@ -33,10 +33,8 @@ namespace SalveminiApp.RestApi
 
         public async Task<bool> GetTrainJson()
         {
-           
             try
             {
-
                 var filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "OrariTreni.txt");
                 using (var client2 = new WebClient())
                 {
@@ -78,16 +76,7 @@ namespace SalveminiApp.RestApi
 
                 string text;
 
-               
-
-
-
                 text = File.ReadAllText(filename);
-
-
-                
-
-
 
                 //GetTrains
                 Trains = JsonConvert.DeserializeObject<List<Models.Treno>>(text);

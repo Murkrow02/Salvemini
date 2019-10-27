@@ -30,7 +30,7 @@
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label HorizontalOptions="Start" Text="Verso:" TextColor="{x:Static local:Styles.TextGray}" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
-                        <control:SegmentedControl OnSegmentSelected="TrenoSegment_OnSegmentSelected" SelectedSegment="-1" x:Name="TrenoSegment" TintColor="{x:Static local:Styles.Apple}" SelectedTextColor="{x:Static local:Styles.TextColor}">
+                        <control:SegmentedControl OnSegmentSelected="TrenoSegment_OnSegmentSelected" SelectedSegment="0" x:Name="TrenoSegment" TintColor="{x:Static local:Styles.Apple}" SelectedTextColor="{x:Static local:Styles.TextColor}">
                             <control:SegmentedControl.Children>
                                 <control:SegmentedControlOption Text="Sorrento" />
                                 <control:SegmentedControlOption Text="Napoli" />

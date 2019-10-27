@@ -10,6 +10,7 @@ using System.Net;
 using System.IO;
 using System.Reflection;
 using System.Linq;
+using MonkeyCache.SQLite;
 
 namespace SalveminiApp.RestApi
 {
@@ -17,102 +18,151 @@ namespace SalveminiApp.RestApi
     {
         HttpClient client;
         public List<Models.Lezione> Lezioni { get; private set; }
+        public List<Models.Lezione> Orario { get; private set; }
 
         public RestServiceOrari()
         {
             client = new HttpClient();
-            client.Timeout = TimeSpan.FromSeconds(10);
+            client.Timeout = TimeSpan.FromSeconds(15);
+            client.DefaultRequestHeaders.Add("x-user-id", Preferences.Get("UserId", 0).ToString());
+            client.DefaultRequestHeaders.Add("x-auth-token", Preferences.Get("Token", ""));
         }
 
-        public async Task<List<Models.Lezione>> GetOrario(string classe, int day)
+        //Downloads orario of that class
+        public async Task<List<Models.Lezione>> GetOrario(string classe)
         {
             Lezioni = new List<Models.Lezione>();
             try
             {
-                var assembly = typeof(RestServiceOrari).GetTypeInfo().Assembly;
+                var uri = Costants.Uri("orari/classe/" + classe);
 
-                var osgu = assembly.GetManifestResourceNames();
-
-#if __ANDROID__
-                Stream stream = assembly.GetManifestResourceStream("SalveminiApp.Droid.Helpers.OrariClassi." + classe + ".txt");
-
-#endif
-#if __IOS__
-                Stream stream = assembly.GetManifestResourceStream("SalveminiApp.iOS.Helpers.OrariClassi." + classe + ".txt");
-#endif
-
-                string text;
-
-                using (var reader = new System.IO.StreamReader(stream))
+                //Get Cache if no Network Access
+                if (Connectivity.NetworkAccess != Xamarin.Essentials.NetworkAccess.Internet && Barrel.Current.Exists("orario" + classe))
                 {
-                    text = reader.ReadToEnd();
+                    return Barrel.Current.Get<List<Models.Lezione>>("orario" + classe);
                 }
 
-                Lezioni = JsonConvert.DeserializeObject<List<Models.Lezione>>(text);
+                var response = await client.GetAsync(uri);
 
-                //Filter list per day and order by hour
-                Lezioni = Lezioni.Where(x => x.Giorno == day).OrderBy(x => x.Ora).ToList();
-
-
-                //Group hours by duration
-                for (int i = 0; i < Lezioni.Count; i++)
+                if (response.IsSuccessStatusCode)
                 {
-                    //Skip hour if is equal to the previous
-                    if (Lezioni.ElementAtOrDefault(i - 1) != null && Lezioni[i].Materia == Lezioni[i - 1].Materia)
-                    {
-                        Lezioni[i].toRemove = true;
-                        continue;
-                    }
-                    int next = 1;
+                    var content = await response.Content.ReadAsStringAsync();
+                    Lezioni = JsonConvert.DeserializeObject<List<Models.Lezione>>(content);
 
-                    Models.Lezione lezione()
+                    //Save Cache
+                    Barrel.Current.Add("orario" + classe, Lezioni, TimeSpan.FromDays(90));
+                }
+                else if (response.StatusCode != System.Net.HttpStatusCode.Unauthorized)
+                {
+                    if (Barrel.Current.Exists("orario" + classe))
                     {
-                        //Check if next hour is the same of this hour
-                        if (Lezioni.ElementAtOrDefault(i + next) != null && Lezioni[i].Materia == Lezioni[i + next].Materia)
-                        {
-                            //Increment hours number
-                            Lezioni[i].numOre = next + 1;
-                            //Incre
-                            next++;
-                            lezione();
-                        }
-
-                            
-                        return Lezioni[i];
+                        return Barrel.Current.Get<List<Models.Lezione>>("orario" + classe);
                     }
 
-                    Lezioni[i] = lezione();
+                    //Failed
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                //Failed
+                return null;
+            }
 
+            return Lezioni;
+        }
+
+        //Gets only one day
+        public async Task<List<Models.Lezione>> GetOrarioDay(int day, List<Models.Lezione> orario)
+        {
+            //Filter list per day and order by hour
+            orario = orario.Where(x => x.Giorno == day).OrderBy(x => x.Ora).ToList();
+
+
+            //Group hours by duration
+            for (int i = 0; i < orario.Count; i++)
+            {
+                //Skip hour if is equal to the previous
+                if (orario.ElementAtOrDefault(i - 1) != null && orario[i].Materia == orario[i - 1].Materia)
+                {
+                    orario[i].toRemove = true;
+                    continue;
+                }
+                int next = 1;
+
+                RestApi.Models.Lezione lezione()
+                {
+                    //Check if next hour is the same of this hour
+                    if (orario.ElementAtOrDefault(i + next) != null && orario[i].Materia == orario[i + next].Materia)
+                    {
+                        //Increment hours number
+                        orario[i].numOre = next + 1;
+                        //Incre
+                        next++;
+                        lezione();
+                    }
+
+
+                    return orario[i];
                 }
 
-                foreach (var lezione in Lezioni)
+                orario[i] = lezione();
+            }
+
+            foreach (var lezione in orario)
+            {
+                if (lezione.numOre == 0)
                 {
-                    if (lezione.numOre == 0)
-                    {
-                        //Set Number of hours to default
-                        lezione.numOre = 1;
-                    }
-
-                    //Setup Height Of Hour
-                    lezione.OrarioFrameHeight = (App.ScreenHeight / 24) * lezione.numOre;
-
-                    //Setup Corner Radius
-                    lezione.OrarioFrameRadius = lezione.numOre > 1 ? 10 : 8;
+                    //Set Number of hours to default
+                    lezione.numOre = 1;
                 }
-                Lezioni = Lezioni.Where(x => x.toRemove == false).ToList();
+
+                //Setup Height Of Hour
+                lezione.OrarioFrameHeight = (App.ScreenHeight / 24) * lezione.numOre;
+
+                //Setup Corner Radius
+                lezione.OrarioFrameRadius = lezione.numOre > 1 ? 10 : 8;
+            }
+            orario = orario.Where(x => x.toRemove == false).ToList();
+
+
+
+            return orario;
+        }
+
+        public async Task<string[]> UploadOrario(string classe, List<Models.newOrario> newOrario)
+        {
+            var uri = Costants.Uri("orari/classe/" + classe);
+
+            try
+            {
+                var json = JsonConvert.SerializeObject(newOrario);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await client.PostAsync(uri, content);
+
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.Created:
+                        return new string[] { "Grazie!", "Il nuovo orario è stato inviato correttamente" };
+                    default:
+                        return new string[] { "Errore", "Si è verificato un errore sconosciuto, riprova più tardi o contattaci se il problema persiste" };
+                }
+
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(@"              ERROR {0}", ex.Message);
-
+                return new string[] { "Errore", "Si è verificato un errore sconosciuto, riprova più tardi o contattaci se il problema persiste" };
             }
-            return Lezioni;
         }
     }
 
     public interface IRestServiceOrari
     {
-        Task<List<Models.Lezione>> GetOrario(string classe, int day);
+        Task<List<Models.Lezione>> GetOrario(string classe);
+        Task<List<Models.Lezione>> GetOrarioDay(int day, List<Models.Lezione> orario);
+        Task<string[]> UploadOrario(string classe, List<Models.newOrario> newOrario);
+
     }
 
     public class ItemManagerOrari
@@ -125,10 +175,20 @@ namespace SalveminiApp.RestApi
             restServiceOrari = serviceOrari;
         }
 
-        public Task<List<Models.Lezione>> GetOrario(string classe, int day)
+        public Task<List<Models.Lezione>> GetOrario(string classe)
         {
-            return restServiceOrari.GetOrario(classe, day);
+            return restServiceOrari.GetOrario(classe);
+        }
+
+        public Task<List<Models.Lezione>> GetOrarioDay(int day, List<Models.Lezione> orario)
+        {
+            return restServiceOrari.GetOrarioDay(day, orario);
+        }
+        public Task<string[]> UploadOrario(string classe, List<Models.newOrario> newOrario)
+        {
+            return restServiceOrari.UploadOrario(classe, newOrario);
         }
 
     }
 }
+

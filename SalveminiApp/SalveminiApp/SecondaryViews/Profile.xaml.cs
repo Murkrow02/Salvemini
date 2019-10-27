@@ -71,6 +71,9 @@ namespace SalveminiApp.SecondaryViews
             var utenti = new Helpers.PushCell { Title = "Utenti", Separator = "si", Push = new AreaVip.UtentiList() };
             utenti.GestureRecognizers.Add(tapGestureRecognizer);
             vipLayout.Children.Add(utenti);
+            var orari = new Helpers.PushCell { Title = "Crea orario", Separator = "no", Push = new AreaVip.CreaOrario() };
+            orari.GestureRecognizers.Add(tapGestureRecognizer);
+            vipLayout.Children.Add(orari);
 
         }
 
@@ -126,11 +129,19 @@ namespace SalveminiApp.SecondaryViews
                 var user = await App.Utenti.GetUtente(Preferences.Get("UserId", 0));
                 if (user != null)
                 {
-                    //Display cose
+                    //Display user details
                     utente = user;
                     nameLbl.Text = utente.nomeCognome;
                     classLbl.Text = utente.classeCorso;
                     userImg.Source = utente.Immagine;
+
+                    //Show vip area if vip
+                    if(utente.Stato > 0)
+                    {
+                        vipLayout.IsEnabled = true;
+                        vipLayout.Opacity = 1;
+                    }
+                  
 
                     //Save cache
                     Barrel.Current.Add("utenteLoggato", user, TimeSpan.FromDays(10));
@@ -171,7 +182,8 @@ namespace SalveminiApp.SecondaryViews
             {
                 if (!CrossMedia.Current.IsPickPhotoSupported)
                 {
-                    await DisplayAlert("Attenzione", "Non ci hai dato il permesso di accedere alle tue foto :(", "OK");
+                    await DisplayAlert("Attenzione", "Non ci hai dato il permesso di accedere alle tue foto :(", "Ok");
+                    isSelectingImage = false;
                     return;
                 }
                 var choosenImage = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
@@ -182,7 +194,10 @@ namespace SalveminiApp.SecondaryViews
                 });
 
                 if (choosenImage == null)
+                {
+                    isSelectingImage = false;
                     return;
+                }
 
                 //Upload image
                 var success = await App.Immagini.uploadImages(choosenImage.GetStreamWithImageRotatedForExternalStorage(), Preferences.Get("UserId", 0).ToString(), "users");
@@ -193,13 +208,45 @@ namespace SalveminiApp.SecondaryViews
                     userImg.Source = utente.Immagine;
                 }
                 else
+                {
+                    isSelectingImage = false;
                     await DisplayAlert("Errore", "Si è verificato un errore durante il caricamento dell'immagine, contattaci se il problema persiste", "Ok");
-
+                }
 
             }
             else if (decision == "Scatta una foto")
             {
+                if (!CrossMedia.Current.IsCameraAvailable)
+                {
+                    await DisplayAlert("Attenzione", "Non è stato possibile accedere alla fotocamera", "Ok");
+                    isSelectingImage = false;
+                    return;
+                }
 
+
+                var choosenImage = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+                {
+                    CompressionQuality = 80,
+                    AllowCropping = false,
+                    PhotoSize = PhotoSize.Medium,
+                    RotateImage = true,
+                    DefaultCamera = CameraDevice.Rear
+                });
+
+                //Upload image
+                var success = await App.Immagini.uploadImages(choosenImage.GetStreamWithImageRotatedForExternalStorage(), Preferences.Get("UserId", 0).ToString(), "users");
+
+                if (success)
+                {
+                    userImg.Source = "";
+                    userImg.Source = utente.Immagine;
+                }
+                else
+                {
+                    await DisplayAlert("Errore", "Si è verificato un errore durante il caricamento dell'immagine, contattaci se il problema persiste", "Ok");
+                    isSelectingImage = false;
+
+                }
             }
         }
     }

@@ -53,7 +53,7 @@ namespace SalveminiApp
                 MainPage = new TabPage();
             }
 
-            //MainPage = new NavigationPage(new AreaVip.VipMenu());
+            //MainPage = new AreaVip.CreaOrario();
 
             //Register OneSignal License
             OneSignal.Current.StartInit("a85553ca-c1fe-4d93-a02f-d30bf30e2a2a").EndInit();

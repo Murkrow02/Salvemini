@@ -11,10 +11,10 @@
                 <patch:Label x:Name="SubTitleLbl" TextColor="White" MinFontSize="15" Lines="4" AutoFit="Width" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" />
             </StackLayout>
 
-            <!--Immagine e freccia-->
+            <!--Icona e freccia-->
             <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
-                <Image x:Name="iconImg" />
-                <iconize:IconLabel Text="fas-chevron-right" TextColor="White" HorizontalTextAlignment="End" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" />
+                <iconize:IconLabel x:Name="iconLbl" TextColor="White" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" FontSize="Medium"/>
+                <iconize:IconLabel Text="fas-chevron-right" TextColor="White" HorizontalTextAlignment="End" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" FontSize="Medium"/>
             </StackLayout>
         </StackLayout>
     </yummy:PancakeView>

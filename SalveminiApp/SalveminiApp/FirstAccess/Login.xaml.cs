@@ -148,18 +148,18 @@ namespace SalveminiApp.FirstAccess
         {
             Preferences.Set("UserId", UtentiLogin[0].id);
             Preferences.Set("Token", UtentiLogin[0].ArgoToken);
+            Preferences.Set("Classe", UtentiLogin[0].Classe);
+            Preferences.Set("Corso", UtentiLogin[0].Corso);
 
             if (Preferences.Get("isFirstTime", true))
             {
                 Navigation.PushModalAsync(new OrariTrasporti());
-                //Remove Pages behind MainPage
-                //Navigation.RemovePage(Navigation.NavigationStack[0]);
-                //Preferences.Set("isFirstTime", false);
             }
             else
             {
                 Xamarin.Forms.Application.Current.MainPage = new TabPage();
             }
+
             App.refreshCalls();
         }
         void Username_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)

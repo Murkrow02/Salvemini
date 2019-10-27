@@ -67,5 +67,9 @@
 	<string>Salvemini ha bisogno di accedere al microfono per registrare un video</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Salvemini ha bisogno di accedere alla tua galleria per salvare la foto</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Salvemini ha bisogno di accedere al tuo calendario per prendere l&apos;orario odierno</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

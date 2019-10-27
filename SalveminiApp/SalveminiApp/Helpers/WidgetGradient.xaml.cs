@@ -134,7 +134,6 @@ namespace SalveminiApp
             InitializeComponent();
 
             //Set dimensions
-            iconImg.WidthRequest = App.ScreenWidth / 21;
             view.WidthRequest = App.ScreenWidth / 3;
             animationView.WidthRequest = App.ScreenWidth / 10;
             animationView.HeightRequest = App.ScreenWidth / 10;
@@ -171,7 +170,7 @@ namespace SalveminiApp
                 //Icon
                 if (propertyName == IconProperty.PropertyName)
                 {
-                    iconImg.Source = Icon;
+                    iconLbl.Text = Icon;
                 }
 
                 //StartColor

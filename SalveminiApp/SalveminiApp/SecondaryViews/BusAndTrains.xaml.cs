@@ -19,7 +19,7 @@ namespace SalveminiApp.SecondaryViews
 
         void bus_tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Trasporti.Treni());
+            Navigation.PushModalAsync(new Trasporti.Bus());
         }
 
         void ali_tapped(object sender, EventArgs e)

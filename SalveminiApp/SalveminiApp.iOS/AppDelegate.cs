@@ -35,9 +35,10 @@ namespace SalveminiApp.iOS
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            //Init Popups
+            //Init Plugins
             Rg.Plugins.Popup.Popup.Init();
-            //Forms.SetFlags("CollectionView_Experimental");
+            new Syncfusion.SfAutoComplete.XForms.iOS.SfAutoCompleteRenderer();
+
             global::Xamarin.Forms.Forms.Init();
 
             //Get Screen Size

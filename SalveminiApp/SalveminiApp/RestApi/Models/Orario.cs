@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace SalveminiApp.RestApi.Models
@@ -7,7 +8,6 @@ namespace SalveminiApp.RestApi.Models
     {
         public int Giorno { get; set; }
         public int Ora { get; set; }
-        public string Docente { get; set; }
         public string Materia { get; set; }
         public string Sede { get; set; }
 
@@ -31,7 +31,7 @@ namespace SalveminiApp.RestApi.Models
         {
             get
             {
-                return Costants.Colore[Materia];
+                return Costants.SetColors(Materia);
             }
         }
 
@@ -43,4 +43,29 @@ namespace SalveminiApp.RestApi.Models
             }
         }
     }
+
+    public class newOrario
+    {
+        public int Giorno { get; set; }
+        public int Ora { get; set; }
+        public string Materia { get; set; }
+        public string Sede { get; set; }
+
+    }
+
+   public static class extension
+    {
+        public static TValue GetValueOrDefault<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TKey key, TValue defaultValue = default(TValue))
+        {
+            if (dictionary == null) { throw new ArgumentNullException(nameof(dictionary)); } // using C# 6
+            if (key == null) { throw new ArgumentNullException(nameof(key)); } //  using C# 6
+
+            TValue value;
+            return dictionary.TryGetValue(key, out value) ? value : defaultValue;
+        }
+    }
 }
+
+
+
+

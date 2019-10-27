@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Crea orario" xmlns:local="clr-namespace:SalveminiApp" xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.AreaVip.CreaOrario">
+    <ScrollView>
+        <StackLayout Padding="10,10,10,0">
+            <!--Class entry-->
+            <Entry Placeholder="Classe"/>
+            <!--Freeday picker-->
+            <Label Text="Giorno libero" TextColor="{x:Static local:Styles.TextColor}"/>
+            <Picker x:Name="giornoLibero" Unfocused="picker_Unfocused" />
+            <!--Entry stack-->
+            <StackLayout x:Name="layout" >
+                <!--Template here-->
+            </StackLayout>
+            <!--Send orario-->
+            <Button x:Name="saveBtn" IsVisible="false" Clicked="saveOrario_Clicked" Text="Salva" FontSize="Title" CornerRadius="10" Margin="10,0" BackgroundColor="{x:Static local:Styles.VipPrimary}" TextColor="White"/>
+        </StackLayout>
+
+    </ScrollView>
+
+</ContentPage>

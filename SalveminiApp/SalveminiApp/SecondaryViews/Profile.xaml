@@ -43,7 +43,7 @@
                     <Label Text="Area Vip" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" FontAttributes="Bold" />
                 </StackLayout>
                 <Frame Padding="0" IsClippedToBounds="True" HasShadow="False" CornerRadius="12" VerticalOptions="Start">
-                    <StackLayout x:Name="vipLayout" Spacing="0" />
+                    <StackLayout x:Name="vipLayout" Spacing="0" IsEnabled="False" Opacity="0.6"/>
                 </Frame>
             </StackLayout>
             <!--Esci-->

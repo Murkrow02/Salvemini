@@ -24,8 +24,8 @@
                         <Label Text="Oggi" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" x:Name="orarioDay" />
                         <iconize:IconButton Text="fas-caret-down" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.TextColor}" FontSize="Large" x:Name="arrowDown" Clicked="ChangeDay_Clicked" />
                     </StackLayout>
-                    <!--Clock icon-->
-                    <iconize:IconLabel Text="fas-clock" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="{x:Static local:Styles.TextColor}" />
+                    <!--Sede-->
+                    <Label x:Name="sedeLbl" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" />
                 </StackLayout>
                 <!--Lista Materie-->
                 <ListView VerticalOptions="Start" SeparatorVisibility="None" Footer=" " x:Name="orarioList" HasUnevenRows="true">

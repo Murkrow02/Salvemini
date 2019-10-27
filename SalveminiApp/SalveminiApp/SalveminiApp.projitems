@@ -76,10 +76,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\BusETreni\Treni.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)FirstAccess\OrariTrasporti.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -129,6 +125,22 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\Extra.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\Aliscafi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\Bus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\Treni.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)AreaVip\CreaOrario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -214,9 +226,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\BusAndTrains.xaml.cs">
       <DependentUpon>BusAndTrains.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\BusETreni\Treni.xaml.cs">
-      <DependentUpon>Treni.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)FirstAccess\OrariTrasporti.xaml.cs">
       <DependentUpon>OrariTrasporti.xaml</DependentUpon>
     </Compile>
@@ -267,6 +276,19 @@
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Extra.xaml.cs">
       <DependentUpon>Extra.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\Aliscafi.xaml.cs">
+      <DependentUpon>Aliscafi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\Bus.xaml.cs">
+      <DependentUpon>Bus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\Treni.xaml.cs">
+      <DependentUpon>Treni.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)AreaVip\CreaOrario.xaml.cs">
+      <DependentUpon>CreaOrario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\OrariClassi\MaterieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
@@ -278,8 +300,8 @@
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\Popups\" />
     <Folder Include="$(MSBuildThisFileDirectory)SecondaryViews\" />
     <Folder Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\" />
-    <Folder Include="$(MSBuildThisFileDirectory)SecondaryViews\BusETreni\" />
     <Folder Include="$(MSBuildThisFileDirectory)AreaVip\" />
+    <Folder Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Helpers\Preferences.txt" />

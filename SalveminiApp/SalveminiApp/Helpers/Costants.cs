@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
+using System.Globalization;
+using System.Linq;
+using Xamarin.Essentials;
 
 namespace SalveminiApp
 {
@@ -14,14 +17,40 @@ namespace SalveminiApp
         }
 
         //Materie Dictionary
-        public static Dictionary<string, string> Colore = new Dictionary<string, string>
+        public static List<string> Colors = new List<string>
         {
-            {"Letteratura", "#5BB0E5"},
-            {"Fisica", "#7D77FF" },
-            {"Arte Teoria", "#FFBB4E" },
-            {"Filosofia", "#FF7064"},
-            {"Inglese", "#EA5AEA"},
+            "#5BB0E5", "#7D77FF", "#FFBB4E" ,"#FF7064",  "#EA5AEA","#48EB9A","#FF5A1D","#3F83E0","#A346E8","#C73636","#C73679","#36C7C7"
         };
+
+        public static string SetColors(string materia)
+        {
+            try
+            {
+                //Index of colors
+                var index = Preferences.Get("colorLoop", 0);
+
+                if (Preferences.Get("mat" + materia, "#802891") == "#802891")
+                {
+                    //save new color
+                    Preferences.Set("mat" + materia, Colors[index]);
+                    //reset index to prevent crashes
+                    if (index == Colors.Count())
+                        Preferences.Set("colorLoop", 0);
+                    else
+                        Preferences.Set("colorLoop", index + 1);
+                    return Preferences.Get("mat" + materia, "#802891");
+                }
+                else
+                {
+                    return Preferences.Get("mat" + materia, "#802891");
+                }
+            }
+            catch
+            {
+                return Preferences.Get("mat" + materia, "#802891");
+            }
+
+        }
 
         public static Dictionary<int, string> Ore = new Dictionary<int, string>
         {
@@ -92,7 +121,16 @@ namespace SalveminiApp
             {"Saturday", "Sabato"},
         };
 
-
+        public static List<string> getDays()
+        {
+            //Get day names list
+            var Days = CultureInfo.CurrentCulture.DateTimeFormat.DayNames.ToList();
+            //Remove sunday
+            Days.RemoveAt(0);
+            //First letter to upper
+            Days = Days.ConvertAll(x => x.FirstCharToUpper());
+            return Days;
+        }
     }
 
     public static class Extensions
