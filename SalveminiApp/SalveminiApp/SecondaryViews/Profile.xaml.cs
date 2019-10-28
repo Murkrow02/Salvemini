@@ -6,6 +6,8 @@ using Xamarin.Forms;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using FFImageLoading;
+using FFImageLoading.Cache;
+using FFImageLoading.Forms;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 #endif
@@ -58,7 +60,7 @@ namespace SalveminiApp.SecondaryViews
             insta.GestureRecognizers.Add(tapGestureRecognizer);
             contactLayout.Children.Add(insta);
             var Mail = new Helpers.PushCell { Title = "Mail", Separator = "No" };
-            countdown.GestureRecognizers.Add(tapGestureRecognizer);
+            Mail.GestureRecognizers.Add(tapGestureRecognizer);
             contactLayout.Children.Add(Mail);
 
             //Vip
@@ -89,7 +91,7 @@ namespace SalveminiApp.SecondaryViews
                 {
                     try
                     {
-                        Device.OpenUri(new Uri("mailto:support@codexdevelopment.net"));
+                        Launcher.TryOpenAsync(new Uri("mailto:support@codexdevelopment.net"));
                     }
                     catch
                     {
@@ -136,12 +138,12 @@ namespace SalveminiApp.SecondaryViews
                     userImg.Source = utente.Immagine;
 
                     //Show vip area if vip
-                    if(utente.Stato > 0)
+                    if (utente.Stato > 0)
                     {
                         vipLayout.IsEnabled = true;
                         vipLayout.Opacity = 1;
                     }
-                  
+
 
                     //Save cache
                     Barrel.Current.Add("utenteLoggato", user, TimeSpan.FromDays(10));
@@ -162,15 +164,13 @@ namespace SalveminiApp.SecondaryViews
         {
             base.OnDisappearing();
 
-
         }
 
         private void esci_Clicked(object sender, EventArgs e)
         {
             //Perform logout
-            Xamarin.Forms.Application.Current.MainPage = new FirstAccess.Login();
-            Preferences.Set("UserId", 0);
-            Preferences.Set("Token", "");
+            Costants.Logout();
+
         }
 
         private async void changePic()
@@ -204,8 +204,7 @@ namespace SalveminiApp.SecondaryViews
 
                 if (success)
                 {
-                    userImg.Source = "";
-                    userImg.Source = utente.Immagine;
+                    reloadImage();
                 }
                 else
                 {
@@ -238,8 +237,7 @@ namespace SalveminiApp.SecondaryViews
 
                 if (success)
                 {
-                    userImg.Source = "";
-                    userImg.Source = utente.Immagine;
+                    reloadImage();
                 }
                 else
                 {
@@ -248,6 +246,15 @@ namespace SalveminiApp.SecondaryViews
 
                 }
             }
+        }
+
+        public async void reloadImage()
+        {
+            await ImageService.Instance.InvalidateCacheEntryAsync(utente.Immagine, CacheType.All, removeSimilar: true);
+            userImg.Source = "";
+            userImg.Source = utente.Immagine;
+            userImg.ReloadImage();
+            userImg.WidthRequest = App.ScreenWidth / 3.5;
         }
     }
 }

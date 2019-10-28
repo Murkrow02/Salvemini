@@ -135,7 +135,6 @@ namespace SalveminiApp.FirstAccess
                 }
             }
 
-
             //End Loading
             loading.IsRunning = false;
             loading.IsVisible = false;
@@ -144,8 +143,17 @@ namespace SalveminiApp.FirstAccess
             confirmButton.IsEnabled = true;
 
         }
-        void success1()
+
+       async void success1()
         {
+            //Waat bannato?
+            if(UtentiLogin[0].Stato < 0)
+            {
+                await DisplayAlert("Ueueueue", "Sembrerebbe proprio che il tuo account sia stato disabilitato! Contatta gli sviluppatori se ritieni si tratti di un errore", "Ok");
+                return;
+            }
+
+
             Preferences.Set("UserId", UtentiLogin[0].id);
             Preferences.Set("Token", UtentiLogin[0].ArgoToken);
             Preferences.Set("Classe", UtentiLogin[0].Classe);

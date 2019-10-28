@@ -37,6 +37,13 @@ namespace SalveminiApp
         {
             InitializeComponent();
 
+            //Set profile image size
+            userImg.WidthRequest = App.ScreenWidth / 8.8;
+            userImg.Source = Costants.Uri("images/users/") + Preferences.Get("UserId","");
+
+            //Set navigation view
+            todayLbl.Text = DateTime.Now.ToString("dddd").FirstCharToUpper();
+
             //Create daylist for orario popover
             giorniList.ItemSelected += GiorniList_ItemSelected;
             giorniList.ItemTemplate = new DataTemplate(() =>
@@ -65,14 +72,15 @@ namespace SalveminiApp
 
             //Security checks todo
 
+            //Remove modals bug
+            ModalPush_Disappearing(null, null);
 
             //Get cached orario
             classeCorso = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
             if (Barrel.Current.Exists("orario" + classeCorso))
             {
-                changeDay((int)DateTime.Now.DayOfWeek);
-                todayLbl.Text = DateTime.Now.ToString("dddd").FirstCharToUpper();
                 Orario = Barrel.Current.Get<List<RestApi.Models.Lezione>>("orario" + classeCorso);
+                changeDay((int)DateTime.Now.DayOfWeek);
             }
 
             //Create static widgets
@@ -110,7 +118,6 @@ namespace SalveminiApp
                 {
                     //Update with new orario
                     changeDay((int)DateTime.Now.DayOfWeek);
-                    todayLbl.Text = DateTime.Now.ToString("dddd");
                     Orario = _orario;
                 }
 
@@ -333,6 +340,8 @@ namespace SalveminiApp
                     //Fill orario list
                     var orarioOggi = await App.Orari.GetOrarioDay(day, Orario);
 
+                  
+
                     //Set day label display text
                     if (day == (int)DateTime.Now.DayOfWeek)
                         orarioDay.Text = "Oggi"; //Lol it's today
@@ -344,7 +353,14 @@ namespace SalveminiApp
                     }
 
                     //Set sede label
-                    sedeLbl.Text = orarioOggi[0].Sede;
+                    try
+                    {
+                        sedeLbl.Text = orarioOggi[0].Sede;
+                    }
+                    catch
+                    {
+                        //Fa niente
+                    }
 
                     //Detect if freeday todo
                     if (orarioOggi[0].Materia == "Libero")
@@ -373,7 +389,7 @@ namespace SalveminiApp
                     orarioList.IsVisible = false;
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 orarioList.IsVisible = false;
                 await DisplayAlert("Errore", "Non è stato possibile recuperare l'orario, contattaci se il problema persiste", "Ok");

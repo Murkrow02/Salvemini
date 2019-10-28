@@ -131,6 +131,15 @@ namespace SalveminiApp
             Days = Days.ConvertAll(x => x.FirstCharToUpper());
             return Days;
         }
+
+        public static void Logout()
+        {
+            Preferences.Set("UserId", 0);
+            Preferences.Set("Token", "");
+            Preferences.Set("Classe", 0);
+            Preferences.Set("Corso", "");
+            Xamarin.Forms.Application.Current.MainPage = new FirstAccess.Login();
+        }
     }
 
     public static class Extensions
