@@ -82,7 +82,7 @@ namespace SalveminiApp
                 Orario = Barrel.Current.Get<List<RestApi.Models.Lezione>>("orario" + classeCorso);
                 changeDay((int)DateTime.Now.DayOfWeek);
             }
-
+            changeDay((int)DateTime.Now.DayOfWeek);
             //Create static widgets
             widgets.Clear();
             var tapGestureRecognizer = new TapGestureRecognizer();
@@ -277,7 +277,7 @@ namespace SalveminiApp
         }
 
 
-        //Push to profile page
+        //Push to profile pageo
         void profilePush(object sender, System.EventArgs e)
         {
             //Create new navigation page

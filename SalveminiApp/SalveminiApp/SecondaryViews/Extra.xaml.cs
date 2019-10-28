@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace SalveminiApp.SecondaryViews
 {
     public partial class Extra : ContentPage
     {
+        
+
         public Extra()
         {
             InitializeComponent();
@@ -27,5 +30,13 @@ namespace SalveminiApp.SecondaryViews
             }
 
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+               }
+
+        
     }
 }
