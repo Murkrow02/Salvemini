@@ -91,7 +91,7 @@ namespace SalveminiApp.SecondaryViews
                 {
                     try
                     {
-                        Launcher.TryOpenAsync(new Uri("mailto:support@codexdevelopment.net"));
+                        Device.OpenUri(new Uri("mailto:support@codexdevelopment.net"));
                     }
                     catch
                     {
