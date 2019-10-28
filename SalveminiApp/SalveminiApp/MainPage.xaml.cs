@@ -42,7 +42,6 @@ namespace SalveminiApp
 
             //Set profile image size
             userImg.WidthRequest = App.ScreenWidth / 8.8;
-            userImg.Source = Costants.Uri("images/users/") + Preferences.Get("UserId","");
 
             //Set navigation view
             todayLbl.Text = DateTime.Now.ToString("dddd").FirstCharToUpper();
@@ -92,6 +91,9 @@ namespace SalveminiApp
 
             //Security checks todo
 
+            //Set image profile url
+            userImg.Source = Costants.Uri("images/users/") + Preferences.Get("UserId", "");
+
             //Remove modals bug
             ModalPush_Disappearing(null, null);
 
@@ -102,7 +104,7 @@ namespace SalveminiApp
                 Orario = Barrel.Current.Get<List<RestApi.Models.Lezione>>("orario" + classeCorso);
                 changeDay((int)DateTime.Now.DayOfWeek);
             }
-            changeDay((int)DateTime.Now.DayOfWeek);
+
             //Create static widgets
             widgets.Clear();
             var tapGestureRecognizer = new TapGestureRecognizer();
@@ -142,6 +144,18 @@ namespace SalveminiApp
                 }
 
                 Index = await App.Index.GetIndex();
+
+                //Checks
+                //Authorized?
+                if(Index != null)
+                {
+                    if (!Index.Authorized)
+                    {
+                        await DisplayAlert("Attenzione", "Accesso all'app non autorizzato, la sessione di argo è scaduta oppure il tuo account è stato disabilitato", "Ok");
+                        Costants.Logout();
+                    }
+                }
+                
 
                 //Get last sondaggio
                 if (Index.ultimoSondaggio != null)
@@ -204,10 +218,6 @@ namespace SalveminiApp
                     }
                 }
 
-                if (!Index.ArgoAuth)
-                {
-                    //Log out and notify argo problem
-                }
             }
             else
             {
