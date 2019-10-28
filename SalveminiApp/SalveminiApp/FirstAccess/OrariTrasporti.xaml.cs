@@ -112,7 +112,7 @@ namespace SalveminiApp.FirstAccess
 
             if (Preferences.Get("isFirstTime", true))
             {
-                Navigation.PushModalAsync(new TabPage());
+                Xamarin.Forms.Application.Current.MainPage = new TabPage();
                 //Remove Pages behind MainPage
                 //Navigation.RemovePage(Navigation.NavigationStack[0]);
                 Preferences.Set("isFirstTime", false);
@@ -175,7 +175,7 @@ namespace SalveminiApp.FirstAccess
         {
             if (Preferences.Get("isFirstTime", true))
             {
-                Navigation.PushModalAsync(new TabPage());
+                Xamarin.Forms.Application.Current.MainPage = new TabPage();
                 //Remove Pages behind MainPage
                 //Navigation.RemovePage(Navigation.NavigationStack[0]);
                 Preferences.Set("isFirstTime", false);

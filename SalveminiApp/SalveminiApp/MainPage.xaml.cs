@@ -84,7 +84,7 @@ namespace SalveminiApp
                 RemoveBadge();
             });
         }
-
+        
 
         protected async override void OnAppearing()
         {
@@ -102,7 +102,7 @@ namespace SalveminiApp
                 Orario = Barrel.Current.Get<List<RestApi.Models.Lezione>>("orario" + classeCorso);
                 changeDay((int)DateTime.Now.DayOfWeek);
             }
-            changeDay((int)DateTime.Now.DayOfWeek);
+
             //Create static widgets
             widgets.Clear();
             var tapGestureRecognizer = new TapGestureRecognizer();
