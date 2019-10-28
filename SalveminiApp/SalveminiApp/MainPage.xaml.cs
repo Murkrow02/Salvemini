@@ -10,6 +10,8 @@ using Forms9Patch;
 using System.Globalization;
 using P42.Utils;
 using MonkeyCache.SQLite;
+using FFImageLoading;
+using FFImageLoading.Cache;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 #endif
@@ -31,7 +33,8 @@ namespace SalveminiApp
         //Giorni popover
         BubblePopup dayPopOver = new Helpers.PopOvers().defaultPopOver;
         Xamarin.Forms.ListView giorniList = new Xamarin.Forms.ListView { VerticalScrollBarVisibility = ScrollBarVisibility.Never, Footer = "", BackgroundColor = Color.Transparent, SeparatorColor = Color.Gray, WidthRequest = App.ScreenWidth / 4, HeightRequest = App.ScreenHeight / 5 };
-
+        //Fix close modal bug
+        public static bool isSelectingImage;
 
         public MainPage()
         {
@@ -63,6 +66,23 @@ namespace SalveminiApp
             giorni = giorni.ConvertAll(x => x.FirstCharToUpper());
             giorniList.ItemsSource = giorni;
 
+
+            //Subscribe to messaging center
+            //Refresh image cache
+            MessagingCenter.Subscribe<App>(this, "ReloadUserPic", (sender) =>
+            {
+                ImageService.Instance.InvalidateCacheEntryAsync(Costants.Uri("images/users/") + Preferences.Get("UserId", ""), CacheType.All, removeSimilar: true);
+                userImg.Source = "";
+                userImg.Source = Costants.Uri("images/users/") + Preferences.Get("UserId", "");
+                userImg.ReloadImage();
+                userImg.WidthRequest = App.ScreenWidth / 8.8;
+            });
+
+            //Remove avvisi badge
+            MessagingCenter.Subscribe<App>(this, "RemoveAvvisiBadge", (sender) =>
+            {
+                RemoveBadge();
+            });
         }
 
 
@@ -304,10 +324,10 @@ namespace SalveminiApp
         {
             try
             {
-                if (!SecondaryViews.Profile.isSelectingImage)
+                if (!isSelectingImage)
                     Navigation.PopModalAsync();
                 else
-                    SecondaryViews.Profile.isSelectingImage = false;
+                    isSelectingImage = false;
             }
             catch
             {
@@ -445,6 +465,15 @@ namespace SalveminiApp
                     DisplayAlert(Ad.Nome, Ad.Descrizione, "Chiudi");
                 }
             }
+        }
+
+        public void RemoveBadge()
+        {
+            var widget = widgets.First(x => x.Title == "Avvisi");
+            widgets.Remove(widget);
+            widget.Badge = "no";
+            widgets.Add(widget);
+            OrderWidgets(true);
         }
 
     }

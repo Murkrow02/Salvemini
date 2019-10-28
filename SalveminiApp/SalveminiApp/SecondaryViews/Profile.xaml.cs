@@ -20,7 +20,6 @@ namespace SalveminiApp.SecondaryViews
         public RestApi.Models.Utente utente = new RestApi.Models.Utente();
         public bool shouldClose = true;
         public MediaFile newPic;
-        public static bool isSelectingImage;
 
         public Profile()
         {
@@ -177,13 +176,13 @@ namespace SalveminiApp.SecondaryViews
         {
             var decision = await DisplayActionSheet("Come vuoi procedere", "Annulla", "Rimuovi immagine", "Scegli una foto", "Scatta una foto");
 
-            isSelectingImage = true;
+           MainPage.isSelectingImage = true;
             if (decision == "Scegli una foto")
             {
                 if (!CrossMedia.Current.IsPickPhotoSupported)
                 {
                     await DisplayAlert("Attenzione", "Non ci hai dato il permesso di accedere alle tue foto :(", "Ok");
-                    isSelectingImage = false;
+                    MainPage.isSelectingImage = false;
                     return;
                 }
                 var choosenImage = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
@@ -195,7 +194,7 @@ namespace SalveminiApp.SecondaryViews
 
                 if (choosenImage == null)
                 {
-                    isSelectingImage = false;
+                    MainPage.isSelectingImage = false;
                     return;
                 }
 
@@ -208,7 +207,7 @@ namespace SalveminiApp.SecondaryViews
                 }
                 else
                 {
-                    isSelectingImage = false;
+                    MainPage.isSelectingImage = false;
                     await DisplayAlert("Errore", "Si è verificato un errore durante il caricamento dell'immagine, contattaci se il problema persiste", "Ok");
                 }
 
@@ -218,7 +217,7 @@ namespace SalveminiApp.SecondaryViews
                 if (!CrossMedia.Current.IsCameraAvailable)
                 {
                     await DisplayAlert("Attenzione", "Non è stato possibile accedere alla fotocamera", "Ok");
-                    isSelectingImage = false;
+                    MainPage.isSelectingImage = false;
                     return;
                 }
 
@@ -242,7 +241,7 @@ namespace SalveminiApp.SecondaryViews
                 else
                 {
                     await DisplayAlert("Errore", "Si è verificato un errore durante il caricamento dell'immagine, contattaci se il problema persiste", "Ok");
-                    isSelectingImage = false;
+                    MainPage.isSelectingImage = false;
 
                 }
             }
@@ -250,11 +249,16 @@ namespace SalveminiApp.SecondaryViews
 
         public async void reloadImage()
         {
+            //Remove cache
             await ImageService.Instance.InvalidateCacheEntryAsync(utente.Immagine, CacheType.All, removeSimilar: true);
             userImg.Source = "";
             userImg.Source = utente.Immagine;
             userImg.ReloadImage();
             userImg.WidthRequest = App.ScreenWidth / 3.5;
+            userImg.HeightRequest = App.ScreenWidth / 3.5;
+
+            //Remove cached home profile pic
+            MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "ReloadUserPic");
         }
     }
 }

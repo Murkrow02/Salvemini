@@ -27,6 +27,7 @@ namespace SalveminiApp.SecondaryViews
 
         private void ImageList_ItemSelected(object sender, ItemTappedEventArgs e)
         {
+            MainPage.isSelectingImage = true;
             var a = sender as FlowListView;
             var b = a.FlowItemsSource as List<string>;
             Navigation.PushModalAsync(new Helpers.ImageViewer(b));
@@ -40,6 +41,8 @@ namespace SalveminiApp.SecondaryViews
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+            MainPage.isSelectingImage = false;
+
             var notificator = DependencyService.Get<IToastNotificator>();
 
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
@@ -50,7 +53,7 @@ namespace SalveminiApp.SecondaryViews
                 {
                     avvisiCarousel.ItemsSource = Avvisis;
                     Preferences.Set("LastAvviso", Avvisis[0].id);
-
+                    MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "RemoveAvvisiBadge");
                 }
             }
             else

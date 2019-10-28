@@ -121,11 +121,11 @@ namespace SalveminiApp.AreaVip
             }
             else
             {
-               SecondaryViews.Profile.isSelectingImage = true;
+                MainPage.isSelectingImage = true;
                     if (!CrossMedia.Current.IsPickPhotoSupported)
                     {
                         await DisplayAlert("Attenzione", "Non ci hai dato il permesso di accedere alle tue foto :(", "Ok");
-                    SecondaryViews.Profile.isSelectingImage = false;
+                    MainPage.isSelectingImage = false;
                     return;
                     }
                     var choosenImage = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
@@ -137,7 +137,7 @@ namespace SalveminiApp.AreaVip
 
                     if (choosenImage == null)
                     {
-                    SecondaryViews.Profile.isSelectingImage = false;
+                    MainPage.isSelectingImage = false;
                     return;
                     }
 
@@ -154,7 +154,7 @@ namespace SalveminiApp.AreaVip
                 ImagesToUpload.Add(choosenImageToUpload);
                 imageAttach.FlowItemsSource = null;
                 imageAttach.FlowItemsSource = ImagesToUpload;
-                SecondaryViews.Profile.isSelectingImage = false;
+                MainPage.isSelectingImage = false;
             }
         }
 
