@@ -68,11 +68,11 @@ namespace SalveminiApi.Controllers
         [HttpGet]
         public List<Models.Lezione> getOrarioClasse(string classe)
         {
-            ////Check Auth
-            //var authorize = new Helpers.Utility();
-            //bool authorized = authorize.authorized(Request);
-            //if (!authorized)
-            //    throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
             //Deserialize json
             try

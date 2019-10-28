@@ -200,6 +200,7 @@
     <Compile Include="Argo\Models\Argomenti.cs" />
     <Compile Include="Argo\Models\Assenze.cs" />
     <Compile Include="Argo\Models\AuthBlock.cs" />
+    <Compile Include="Argo\Models\Bacheca.cs" />
     <Compile Include="Argo\Models\Compiti.cs" />
     <Compile Include="Argo\Models\Oggi.cs" />
     <Compile Include="Argo\Models\Promemoria.cs" />
@@ -484,6 +485,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\sondaggi\" />
+    <Folder Include="Images\users\" />
     <Folder Include="Views\Auth\" />
     <Folder Include="Views\Images\" />
   </ItemGroup>

@@ -29,8 +29,6 @@ namespace SalveminiApi.Controllers
             //Check Auth
             var authorize = new Helpers.Utility();
             bool authorized = authorize.authorized(Request);
-            if (!authorized)
-                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
             //Prendi parametri utente da chiamata
             var id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
@@ -38,6 +36,15 @@ namespace SalveminiApi.Controllers
 
             //Aggiungi accesso ad analytics
             Helpers.Utility.addToAnalytics("Accessi");
+
+            //Authorized?
+            var utente = db.Utenti.Find(id);
+            if (utente.Stato < 0 || !authorized)
+            {
+                returnModel.Authorized = false;
+                return returnModel;
+            }
+            returnModel.Authorized = true;
 
             //Versioni
             returnModel.AppVersion = 1.0M;
@@ -83,68 +90,7 @@ namespace SalveminiApi.Controllers
                 returnModel.ultimoSondaggio = null;
             }
 
-            ////ARGO
-            ////Prendi modello
-            //var argoUtils = new ArgoUtils();
-            //var argoClient = argoUtils.ArgoClient(id, token);
-
-            ////Codice copiato dalla salveminiapp vecchia, non si capisce un cazzo (ritorna cosa è successo in classe)
-            //var Oggi = new Oggi();
-            //List<WholeModel> Oggis = new List<WholeModel>();
-            //var uri = "https://www.portaleargo.it/famiglia/api/rest/oggi?datGiorno=" + Helpers.Utility.italianTime().ToString("yyyy-MM-dd").Split(' ')[0].Trim();
-
-            //try
-            //{
-            //    returnModel.ArgoAuth = true;
-            //    var response = await argoClient.GetAsync(uri);
-            //    if (response.StatusCode == HttpStatusCode.Unauthorized)
-            //        returnModel.ArgoAuth = false;
-            //    if (response.IsSuccessStatusCode)
-            //    {
-            //        var content = await response.Content.ReadAsStringAsync();
-            //        Oggi = JsonConvert.DeserializeObject<Oggi>(content);
-            //        var Dates = Oggi.dati;
-            //        for (int i = Dates.Count - 1; i >= 0; i--)
-            //        {
-            //            var Model = new WholeModel();
-            //            Model.binUid = Dates[i].dati.binUid;
-            //            Model.codEvento = Dates[i].dati.codEvento;
-            //            Model.codMin = Dates[i].codMin;
-            //            Model.codVoto = Dates[i].dati.codVoto;
-            //            Model.datGiorno = Dates[i].dati.datGiorno;
-            //            Model.datGiustificazione = Dates[i].dati.datGiustificazione;
-            //            Model.decValore = Dates[i].dati.decValore;
-            //            Model.desAnnotazioni = Dates[i].dati.desAnnotazioni;
-            //            Model.desArgomento = Dates[i].dati.desArgomento;
-            //            Model.desAssenza = Dates[i].dati.desAssenza;
-            //            Model.desCompiti = Dates[i].dati.desCompiti;
-            //            Model.desMateria = Dates[i].dati.desMateria;
-            //            Model.desMittente = Dates[i].dati.desMittente;
-            //            Model.docente = Dates[i].dati.docente;
-            //            Model.flgDaGiustificare = Dates[i].dati.flgDaGiustificare;
-            //            Model.giorno = Dates[i].giorno;
-            //            Model.giustificataDa = Dates[i].dati.giustificataDa;
-            //            Model.numAnno = Dates[i].numAnno;
-            //            Model.ordine = Dates[i].ordine;
-            //            Model.prgAlunno = Dates[i].prgAlunno;
-            //            Model.prgClasse = Dates[i].dati.prgClasse;
-            //            Model.prgMateria = Dates[i].dati.prgMateria;
-            //            Model.prgScheda = Dates[i].prgScheda;
-            //            Model.prgScuola = Dates[i].prgScuola;
-            //            Model.registrataDa = Dates[i].dati.registrataDa;
-            //            Model.tipo = Dates[i].tipo;
-            //            Model.datAssenza = Dates[i].dati.datAssenza;
-            //            Oggis.Add(Model);
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    //Argo fail, don't mind this
-            //    Oggis.Add(new WholeModel());
-            //}
-
-            //returnModel.Oggi = Oggis;
+           
 
 
             //ADS
@@ -182,7 +128,101 @@ namespace SalveminiApi.Controllers
             return returnModel;
         }
 
-     
+        [Route("oggi/{giorno}")]
+        [HttpGet]
+        public async Task<WholeModel> argoOggi(string giorno)
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request);
+            if(!authorized)
+                throw new HttpResponseException(HttpStatusCode.Unauthorized);
+
+            //Prendi parametri utente da chiamata
+            var id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
+            string token = Request.Headers.GetValues("x-auth-token").First();
+
+            //ARGO
+            //Prendi modello
+            var argoUtils = new ArgoUtils();
+            var argoClient = argoUtils.ArgoClient(id, token);
+
+            //Oggi or data selected
+            string data = "";
+            if (giorno == "oggi") //Today
+                data = Helpers.Utility.italianTime().ToString("yyyy-MM-dd").Split(' ')[0].Trim();
+            else
+                data = giorno; //Custom date
+
+            var returnModel = new WholeModel();
+            //Create new uri
+            var uri = "https://www.portaleargo.it/famiglia/api/rest/oggi?datGiorno=" + data;
+
+            try
+            {
+                //Get all today things
+                var response = await argoClient.GetAsync(uri);
+
+                //Token changed
+                if (response.StatusCode == HttpStatusCode.Unauthorized)
+                    throw new HttpResponseException(HttpStatusCode.Forbidden);
+
+                var oggi = new Oggi();
+                var content = await response.Content.ReadAsStringAsync();
+                oggi = JsonConvert.DeserializeObject<Oggi>(content);
+
+                var notizie = oggi.dati;
+
+                //Initialize lists
+                var compiti = new List<Compiti>();
+                var argomenti = new List<Argomenti>();
+                var assenze = new List<Assenze>();
+                var bacheca = new List<Bacheca>();
+                var promemoria = new List<Promemoria>();
+                var voti = new List<Voti>();
+
+
+                foreach (var notizia in notizie)
+                {
+                    switch (notizia.tipo)
+                    {
+                        case "BAC":
+                            //BACHECA
+                            bacheca.Add(new Bacheca { adesione = notizia.dati.adesione,  allegati = notizia.dati.allegati,  desMessaggio = notizia.dati.desMessaggio,  desOggetto = notizia.dati.desOggetto, desUrl = notizia.dati.desUrl, presaVisione = notizia.dati.presaVisione, prgMessaggio = notizia.dati.prgMessaggio,  richiediAd = notizia.dati.richiediAd, richiediPv = notizia.dati.richiediPv });
+                            break;
+                        case "COM":
+                            break;
+                        case "ARG":
+                            break;
+                        case "VOT":
+                            break;
+                        case "PRO":
+                            break;
+                        case "ASS":
+                            break;
+                    }
+
+                    //COMPITI
+                    //ARGOMENTI
+                    //ASSENZE
+                    //PROMEMORIA
+                    //VOTI
+                }
+
+                returnModel.bacheca = bacheca;
+
+                if (response.IsSuccessStatusCode)
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
+            }
+
+            return returnModel;
+        }
 
         protected override void Dispose(bool disposing)
         {
