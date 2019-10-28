@@ -119,8 +119,8 @@ namespace SalveminiApp.ArgoPages
         void firstQuad_Clicked(object sender, System.EventArgs e)
         {
             quad1.TextColor = Color.White;
-            quad1.BackgroundColor = Color.FromHex("5DB2D9");
-            quad2.TextColor = Color.FromHex("5DB2D9");
+            quad1.BackgroundColor = Color.FromHex("7F80FF");
+            quad2.TextColor = Color.FromHex("7F80FF");
             quad2.BackgroundColor = Color.White;
             votiList.ItemsSource = Votis.Primo;
             if (Votis.Primo.Count > 0)
@@ -137,8 +137,8 @@ namespace SalveminiApp.ArgoPages
         void secondQuad_Clicked(object sender, System.EventArgs e)
         {
             quad2.TextColor = Color.White;
-            quad2.BackgroundColor = Color.FromHex("5DB2D9");
-            quad1.TextColor = Color.FromHex("5DB2D9");
+            quad2.BackgroundColor = Color.FromHex("7F80FF");
+            quad1.TextColor = Color.FromHex("7F80FF");
             quad1.BackgroundColor = Color.White;
             votiList.ItemsSource = Votis.Secondo;
             if (Votis.Secondo.Count > 0)

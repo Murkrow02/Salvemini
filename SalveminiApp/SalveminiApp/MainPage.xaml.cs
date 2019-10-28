@@ -42,7 +42,6 @@ namespace SalveminiApp
 
             //Set profile image size
             userImg.WidthRequest = App.ScreenWidth / 8.8;
-            userImg.Source = Costants.Uri("images/users/") + Preferences.Get("UserId","");
 
             //Set navigation view
             todayLbl.Text = DateTime.Now.ToString("dddd").FirstCharToUpper();
@@ -91,6 +90,9 @@ namespace SalveminiApp
             base.OnAppearing();
 
             //Security checks todo
+
+            //Set image profile url
+            userImg.Source = Costants.Uri("images/users/") + Preferences.Get("UserId", "");
 
             //Remove modals bug
             ModalPush_Disappearing(null, null);
@@ -142,6 +144,18 @@ namespace SalveminiApp
                 }
 
                 Index = await App.Index.GetIndex();
+
+                //Checks
+                //Authorized?
+                if(Index != null)
+                {
+                    if (!Index.Authorized)
+                    {
+                        await DisplayAlert("Attenzione", "Accesso all'app non autorizzato, la sessione di argo è scaduta oppure il tuo account è stato disabilitato", "Ok");
+                        Costants.Logout();
+                    }
+                }
+                
 
                 //Get last sondaggio
                 if (Index.ultimoSondaggio != null)
@@ -204,10 +218,6 @@ namespace SalveminiApp
                     }
                 }
 
-                if (!Index.ArgoAuth)
-                {
-                    //Log out and notify argo problem
-                }
             }
             else
             {
