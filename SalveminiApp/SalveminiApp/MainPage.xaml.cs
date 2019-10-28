@@ -139,8 +139,8 @@ namespace SalveminiApp
                 if (_orario != null && Orario != _orario)
                 {
                     //Update with new orario
-                    changeDay((int)DateTime.Now.DayOfWeek);
                     Orario = _orario;
+                    changeDay((int)DateTime.Now.DayOfWeek);
                 }
 
                 Index = await App.Index.GetIndex();

@@ -74,7 +74,10 @@ namespace SalveminiApp.SecondaryViews
             //Ios 13 bug
             try
             {
-                Navigation.PopModalAsync();
+                if (!MainPage.isSelectingImage)
+                    Navigation.PopModalAsync();
+                else
+                    MainPage.isSelectingImage = false;
             }
             catch
             {
