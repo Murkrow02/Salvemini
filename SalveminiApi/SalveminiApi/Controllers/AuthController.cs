@@ -55,7 +55,15 @@ namespace UlysseApi.Controllers
             var schedeClient =  argoUtils.ArgoClient(0, Token);
             var schedeResponse = await schedeClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/schede");
             var schedeContent = await schedeResponse.Content.ReadAsStringAsync();
-            var ArgoUser = JsonConvert.DeserializeObject<List<Utente>>(schedeContent);
+            var ArgoUser = new List<Utente>();
+            try
+            {
+                 ArgoUser = JsonConvert.DeserializeObject<List<Utente>>(schedeContent);
+            }
+            catch
+            {
+                throw new HttpResponseException(System.Net.HttpStatusCode.NotAcceptable);
+            }
 
             //Save each user in the db
             foreach (Utente utente in ArgoUser)

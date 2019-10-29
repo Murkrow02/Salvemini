@@ -34,7 +34,7 @@ namespace SalveminiApi.Controllers
             string token = Request.Headers.GetValues("x-auth-token").First();
 
             //Prendi avvisi
-            var avvisi = db.Avvisi.OrderBy(x => x.Creazione).ToList();
+            var avvisi = db.Avvisi.OrderByDescending(x => x.Creazione).ToList();
             return avvisi;
         }
 

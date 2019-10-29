@@ -17,6 +17,6 @@ namespace SalveminiApi.Models
         public Sondaggi ultimoSondaggio { get; set; }
         //public List<WholeModel> Oggi { get; set; }
         public List<Ads> Ads { get; set; }
-        public bool ArgoAuth { get; set; }
+        public bool Authorized { get; set; }
     }
 }

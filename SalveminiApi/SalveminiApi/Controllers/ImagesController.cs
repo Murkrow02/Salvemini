@@ -18,11 +18,7 @@ namespace SalveminiApi.Controllers
         [HttpGet]
         public IHttpActionResult getImmagini(string path, string id)
         {
-            //Check Auth
-            //var authorize = new Helpers.Utility();
-            //bool authorized = authorize.authorized(Request);
-            //if (!authorized)
-            //    throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+
             try
             {
                 var stream = File.OpenRead(HttpContext.Current.Server.MapPath("~/Images/" + path + "/" + id + ".png"));
@@ -33,6 +29,35 @@ namespace SalveminiApi.Controllers
                 response.Content.Headers.ContentLength = stream.Length;
 
                 return ResponseMessage(response);
+            }
+            catch
+            {
+                throw new HttpResponseException(System.Net.HttpStatusCode.NotFound);
+            }
+        }
+
+        [Route("{id}")]
+        [HttpDelete]
+        public HttpResponseMessage deleteProfilePic(string id)
+        {
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+
+            //Trying to delete someone else image bruh?
+            if (Request.Headers.Contains("x-user-id"))
+            {
+                var _id = Request.Headers.GetValues("x-user-id").First();
+                if (id != _id)
+                    throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+            }
+
+            //Delete image
+            try
+            {
+                File.Delete(HttpContext.Current.Server.MapPath("~/Images/users/" + id + ".png"));
+                return new HttpResponseMessage(HttpStatusCode.OK);
             }
             catch
             {
@@ -64,23 +89,12 @@ namespace SalveminiApi.Controllers
                     if (postedFile != null && postedFile.ContentLength > 0)
                     {
 
-                        int MaxContentLength = 1024 * 1024 * 10; //Size = 10 MB  
+                        int MaxContentLength = 1024 * 1024 * 20; //Size = 20 MB  
 
-                        //IList<string> AllowedFileExtensions = new List<string> { ".png" };
-                        //var ext = postedFile.FileName.Substring(postedFile.FileName.LastIndexOf('.'));
-                        //var extension = ext.ToLower();
-                        //if (!AllowedFileExtensions.Contains(extension))
-                        //{
-
-                        //    var message = string.Format("Puoi caricare solo immagini png");
-
-                        //    dict.Add("error", message);
-                        //    return Request.CreateResponse(HttpStatusCode.BadRequest, dict);
-                        //}
-                         if (postedFile.ContentLength > MaxContentLength)
+                        if (postedFile.ContentLength > MaxContentLength)
                         {
 
-                            var message = string.Format("I file devono pesare meno di 10MB.");
+                            var message = string.Format("I file devono pesare meno di 15MB.");
 
                             dict.Add("error", message);
                             return Request.CreateResponse(HttpStatusCode.BadRequest, dict);
@@ -88,7 +102,12 @@ namespace SalveminiApi.Controllers
                         else
                         {
                             var filePath = HttpContext.Current.Server.MapPath("~/Images/" + path + "/" + id + ".png");
-                            postedFile.SaveAs(filePath);
+
+                            //Reduce image size if users
+                            if (path == "users")
+                                Helpers.Utility.CropImage(postedFile.InputStream, 320, 320, filePath);
+                            else
+                                postedFile.SaveAs(filePath);
                         }
                     }
 

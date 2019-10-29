@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Web;
@@ -96,7 +99,93 @@ namespace SalveminiApi.Helpers
                 return false;
             }
         }
-        
+
+         public static void ReduceImageSize(double scaleFactor, Stream sourcePath, string targetPath)
+        {
+            using (var image = System.Drawing.Image.FromStream(sourcePath))
+            {
+                var newWidth = (int)(image.Width * scaleFactor);
+                var newHeight = (int)(image.Height * scaleFactor);
+                var thumbnailImg = new Bitmap(newWidth, newHeight);
+                var thumbGraph = Graphics.FromImage(thumbnailImg);
+                thumbGraph.CompositingQuality = CompositingQuality.HighQuality;
+                thumbGraph.SmoothingMode = SmoothingMode.HighQuality;
+                thumbGraph.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                var imageRectangle = new Rectangle(0, 0, newWidth, newHeight);
+                thumbGraph.DrawImage(image, imageRectangle);
+                thumbnailImg.Save(targetPath, image.RawFormat);
+            }
+        }
+
+        public static void CropImage(Stream stream, int width, int height, string path)
+        {
+            Image source = System.Drawing.Image.FromStream(stream);
+
+            Image result = null;
+
+            try
+            {
+                if (source.Width != width || source.Height != height)
+                {
+                    // Resize image
+                    float sourceRatio = (float)source.Width / source.Height;
+
+                    using (var target = new Bitmap(width, height))
+                    {
+                        using (var g = System.Drawing.Graphics.FromImage(target))
+                        {
+                            g.CompositingQuality = CompositingQuality.HighQuality;
+                            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                            g.SmoothingMode = SmoothingMode.HighQuality;
+
+                            // Scaling
+                            float scaling;
+                            float scalingY = (float)source.Height / height;
+                            float scalingX = (float)source.Width / width;
+                            if (scalingX < scalingY) scaling = scalingX; else scaling = scalingY;
+
+                            int newWidth = (int)(source.Width / scaling);
+                            int newHeight = (int)(source.Height / scaling);
+
+                            // Correct float to int rounding
+                            if (newWidth < width) newWidth = width;
+                            if (newHeight < height) newHeight = height;
+
+                            // See if image needs to be cropped
+                            int shiftX = 0;
+                            int shiftY = 0;
+
+                            if (newWidth > width)
+                            {
+                                shiftX = (newWidth - width) / 2;
+                            }
+
+                            if (newHeight > height)
+                            {
+                                shiftY = (newHeight - height) / 2;
+                            }
+
+                            // Draw image
+                            g.DrawImage(source, -shiftX, -shiftY, newWidth, newHeight);
+                        }
+
+                        result = (Image)target.Clone();
+                    }
+                }
+                else
+                {
+                    // Image size matched the given size
+                    result = (Image)source.Clone();
+                }
+            }
+            catch (Exception)
+            {
+                result = null;
+            }
+
+            result.Save(path, result.RawFormat);
+        }
+
     }
 
     public static class Extensions {
