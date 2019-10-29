@@ -17,4 +17,10 @@ namespace SalveminiApi.Argo.Models
         public string disclaimer { get; set; }
         public string tipoUtente { get; set; }
     }
+
+    public class changeBlock
+    {
+        public string vecchiaPassword { get; set; }
+        public string nuovaPassword { get; set; }
+    }
 }

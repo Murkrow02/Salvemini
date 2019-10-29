@@ -335,30 +335,120 @@ namespace SalveminiApi.Controllers
             return grouped;
         }
 
+        [Route("bacheca")]
+        [HttpGet]
+        public async Task<List<Bacheca>> getBacheca()
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
-        //new argo cazzi
-//        Posta visione documento
-//Post a url https://www.portaleargo.it/famiglia/api/rest/presavisionebachecanuova
-//{"prgMessaggio":20,"presaVisione":true}
+            //Get parameters from request
+            int id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
+            string token = Request.Headers.GetValues("x-auth-token").First();
 
-//Tutte le bacheche
-//Get url https://www.portaleargo.it/famiglia/api/rest/bachecanuova
+            //Prendi modello
+            var argoUtils = new ArgoUtils();
+            var argoClient = argoUtils.ArgoClient(id, token);
+            var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/bachecanuova");
+            if (!argoResponse.IsSuccessStatusCode)
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
+            var argoContent = await argoResponse.Content.ReadAsStringAsync();
+            var returnModel = JsonConvert.DeserializeObject<bachecaList>(argoContent);
+            var returnList = new List<Bacheca>();
+            returnList = returnModel.dati;
+            return returnList;
+        }
 
-//Url documenti bacheca
-//https://www.portaleargo.it/famiglia/api/rest/messaggiobachecanuova?id=FFFSS16836EEEII0000100000000 + prgMessaggio + userToken + ax6542sdru3217t4eesd9
+        [Route("visualizzabacheca")]
+        [HttpPost]
+        public async Task<HttpResponseMessage> visualizzaBacheca(VisualizzaBacheca visto)
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
-//Esempi
-//https://www.portaleargo.it/famiglia/api/rest/messaggiobachecanuova?id=FFFSS16836EEEII000010000000014e5308fc6214a41488372057ba09c422c.11ax6542sdru3217t4eesd9
-//https://www.portaleargo.it/famiglia/api/rest/messaggiobachecanuova?id=FFFSS16836EEEII000010000000014e5308fc6214a41488372057ba09c422c.11ax6542sdru3217t4eesd9
-//https://www.portaleargo.it/famiglia/api/rest/messaggiobachecanuova?id=FFFSS16836EEEII000010000000020bbb1bb6958f549e1860701fa46898311.11ax6542sdru3217t4eesd9
+            //Get parameters from request
+            int id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
+            string token = Request.Headers.GetValues("x-auth-token").First();
+
+            //Posta modello
+            var argoUtils = new ArgoUtils();
+            var json = JsonConvert.SerializeObject(visto);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var argoClient = argoUtils.ArgoClient(id, token);
+            //Post
+            var argoResponse = await argoClient.PostAsync("https://www.portaleargo.it/famiglia/api/rest/presavisionebachecanuova", content);
+            if (!argoResponse.IsSuccessStatusCode)
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
 
 
-//Tutte le note
-//Get url https://www.portaleargo.it/famiglia/api/rest/notedisciplinari
+            return new HttpResponseMessage(HttpStatusCode.OK);
+        }
 
-//Cambio password
-//Post a https://www.portaleargo.it/famiglia/api/rest/cambiopassword
-//{"vecchiaPassword":"vecchia","nuovaPassword":"nuova"}
+        [Route("changePwd")]
+        [HttpPost]
+        public async Task<HttpResponseMessage> changePwd(changeBlock block)
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+
+            //Get parameters from request
+            int id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
+            string token = Request.Headers.GetValues("x-auth-token").First();
+
+            //Posta modello
+            var argoUtils = new ArgoUtils();
+            var json = JsonConvert.SerializeObject(block);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var argoClient = argoUtils.ArgoClient(id, token);
+            //Post
+            var argoResponse = await argoClient.PostAsync("https://www.portaleargo.it/famiglia/api/rest/cambiopassword", content);
+            if (!argoResponse.IsSuccessStatusCode)
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
+
+
+            return new HttpResponseMessage(HttpStatusCode.OK);
+        }
+
+        //[Route("note")]
+        //[HttpGet]
+        //public async Task<List<Bacheca>> getBacheca()
+        //{
+        //    //Check Auth
+        //    var authorize = new Helpers.Utility();
+        //    bool authorized = authorize.authorized(Request);
+        //    if (!authorized)
+        //        throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+
+        //    //Get parameters from request
+        //    int id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
+        //    string token = Request.Headers.GetValues("x-auth-token").First();
+
+        //    //Prendi modello
+        //    var argoUtils = new ArgoUtils();
+        //    var argoClient = argoUtils.ArgoClient(id, token);
+        //    var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/notedisciplinari");
+        //    if (!argoResponse.IsSuccessStatusCode)
+        //        throw new HttpResponseException(HttpStatusCode.Forbidden);
+        //    var argoContent = await argoResponse.Content.ReadAsStringAsync();
+        //    var returnModel = JsonConvert.DeserializeObject<bachecaList>(argoContent);
+        //    var returnList = new List<Bacheca>();
+        //    returnList = returnModel.dati;
+        //    return returnList;
+        //}
+
+        //Tutte le note
+        //Get url https://www.portaleargo.it/famiglia/api/rest/notedisciplinari
+
+
 
         protected override void Dispose(bool disposing)
         {

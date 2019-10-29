@@ -27,11 +27,11 @@ namespace UlysseApi.Controllers
             var client = new HttpClient();
             client.DefaultRequestHeaders.Add("x-app-code", "APF");
             client.DefaultRequestHeaders.Add("x-cod-min", "SS16836");
-            client.DefaultRequestHeaders.Add("x-key-app", "ax6542sdru3217t4eesd9");
+            client.DefaultRequestHeaders.Add("x-key-app", SalveminiApi.Costants.argoKey);
             client.DefaultRequestHeaders.Add("x-produttore-software", "ARGO Software s.r.l. - Ragusa");
             client.DefaultRequestHeaders.Add("x-pwd", authBlock.password);
             client.DefaultRequestHeaders.Add("x-user-id", authBlock.username);
-            client.DefaultRequestHeaders.Add("x-version", "2.1.0");
+            client.DefaultRequestHeaders.Add("x-version", SalveminiApi.Costants.argoVersion);
             client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36");
             var response = await client.GetAsync("https://www.portaleargo.it/famiglia/api/rest/login");
 
@@ -77,6 +77,7 @@ namespace UlysseApi.Controllers
                     //Conflict found
                     conflict.Classe = Convert.ToInt32(utente.desDenominazione);
                     conflict.Corso = utente.desCorso;
+                    conflict.ArgoToken = Token;
                     returnList.Add(conflict);
                     db.SaveChanges();
                     continue;

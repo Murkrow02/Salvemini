@@ -36,7 +36,6 @@ namespace SalveminiApi.Argo.Models
     //POST
     public class AssenzaModel
     {
-
         public string motivazione { get; set; }
         public List<ListaAssenze> listaAssenze { get; set; }
     }
