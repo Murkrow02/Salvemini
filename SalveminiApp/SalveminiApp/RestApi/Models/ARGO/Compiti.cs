@@ -7,7 +7,6 @@ namespace SalveminiApp.RestApi.Models
     {
         public string datGiorno { get; set; }
         public string desMateria { get; set; }
-        public string Materia { get; set; }
         public string Data { get; set; }
         public string desCompiti { get; set; }
         public string docente { get; set; }

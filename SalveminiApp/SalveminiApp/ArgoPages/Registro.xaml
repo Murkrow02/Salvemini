@@ -3,25 +3,12 @@
     <ContentPage.Content>
         <StackLayout x:Name="mainLayout">
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Button Text="29/10/2019" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Center" FontSize="Large" />
-                <iconize:IconButton TextColor="{x:Static local:Styles.TextColor}" Text="fas-caret-down" HorizontalOptions="Center" FontSize="Large" />
+                <Button x:Name="todayButton" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Center" FontSize="Large" />
+                <iconize:IconButton Clicked="ChangeDate_Clicked" TextColor="{x:Static local:Styles.TextColor}" Text="fas-caret-down" HorizontalOptions="Center" FontSize="Large" />
             </StackLayout>
-            <StackLayout x:Name="widgetsLayout" Padding="20">
-                <!--<Frame HasShadow="False" CornerRadius="15" IsClippedToBounds="True" Padding="0">
-                    <expander:SfExpander IconColor="White" HeaderBackgroundColor="#FF8181">
-                        <expander:SfExpander.Header>
-                            <Frame HasShadow="False" CornerRadius="0" Padding="10, 10" BackgroundColor="#FF8181" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                                <Label FontSize="Large" Text="Compiti" TextColor="White" HorizontalOptions="Start" />
-                            </Frame>
-                        </expander:SfExpander.Header>
-                        <expander:SfExpander.Content>
-                            <StackLayout Padding="10">
-                                <Label Text="Matefisica" />
-                            </StackLayout>
-                        </expander:SfExpander.Content>
-                    </expander:SfExpander>
-                </Frame>-->
+            <StackLayout x:Name="widgetsLayout" Spacing="20"  Padding="20">
             </StackLayout>
+            <DatePicker DateSelected="Picker_SelectedDate" Unfocused="Picker_Unfocused" HeightRequest="0" x:Name="datepicker"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

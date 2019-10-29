@@ -19,6 +19,14 @@ namespace SalveminiApp.RestApi.Models
         public double? decValore { get; set; }
         public string Materia { get; set; }
 
+        public string formattedSubject
+        {
+            get
+            {
+                return desMateria.ToUpper()[0] + desMateria.Substring(1).ToLower();
+            }
+        }
+
         public string Data
         {
             get

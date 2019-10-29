@@ -44,7 +44,7 @@
                                         <ViewCell>
                                             <StackLayout Padding="{Binding CellPadding}" Spacing="30">
                                                 <StackLayout>
-                                                    <Label HorizontalOptions="Start" FontAttributes="Bold" Text="{Binding Materia}" FontSize="Large" />
+                                                    <Label HorizontalOptions="Start" FontAttributes="Bold" Text="{Binding desMateria}" FontSize="Large" />
                                                     <Label HorizontalOptions="Start" Text="{Binding Contenuto}" FontSize="Large" />
                                                     <StackLayout Orientation="Horizontal">
                                                         <Label Text="{Binding Data}" TextColor="{x:Static local:Styles.TextGray}" FontSize="Small" HorizontalOptions="Start" />
