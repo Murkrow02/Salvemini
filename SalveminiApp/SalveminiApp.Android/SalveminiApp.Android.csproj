@@ -159,6 +159,9 @@
     <PackageReference Include="Syncfusion.Xamarin.SfAutoComplete">
       <Version>17.3.0.19</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.Expander">
+      <Version>17.2.0.49</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
