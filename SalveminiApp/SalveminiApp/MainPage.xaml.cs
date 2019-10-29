@@ -110,6 +110,9 @@ namespace SalveminiApp
             var tapGestureRecognizer = new TapGestureRecognizer();
             tapGestureRecognizer.Tapped += widget_Tapped;
             //Trasporti
+            var registro = new WidgetGradient { Title = "Registro", SubTitle = "Qua ci va l'ultima cosa che hai preso oggi", Icon = "far-calendar-alt", StartColor = "FACA6F", EndColor = "FF7272", Push = new ArgoPages.Registro(), Order = Preferences.Get("OrderRegistro", 0) };
+            registro.GestureRecognizers.Add(tapGestureRecognizer);
+            //Trasporti
             var trasporti = new WidgetGradient { Title = "Trasporti", SubTitle = await getNextTrain(), Icon = "fas-subway", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order = Preferences.Get("OrderTrasporti", 0) };
             trasporti.GestureRecognizers.Add(tapGestureRecognizer);
             //Card
@@ -120,7 +123,7 @@ namespace SalveminiApp
             extra.GestureRecognizers.Add(tapGestureRecognizer);
 
             //Initialize list with first widgets
-            widgets.Add(trasporti); widgets.Add(card); widgets.Add(extra);
+            widgets.Add(registro); widgets.Add(trasporti); widgets.Add(card); widgets.Add(extra); 
             OrderWidgets(false);
 
             //Check train version

@@ -26,6 +26,7 @@ namespace SalveminiApp.RestApi
         public List<Models.Argomenti> Argomenti { get; private set; }
         public List<Models.Voti> Voti { get; private set; }
         public Models.ScrutinioGrouped VotiScrutinio { get; private set; }
+        public Models.WholeModel Oggi { get; private set; }
 
 
         public RestServiceArgo()
@@ -353,7 +354,37 @@ namespace SalveminiApp.RestApi
             }
             return Data;
         }
-
+        public async Task<Models.ResponseModel> GetOggi(DateTime data)
+        {
+            Models.ResponseModel Data = new Models.ResponseModel();
+            Oggi = new Models.WholeModel();
+            var uri = Costants.Uri("oggi/" + data.ToString("yyyy-MM-dd"));
+            try
+            {
+                var response = await client.GetAsync(uri);
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                        var content = await response.Content.ReadAsStringAsync();
+                        Oggi = JsonConvert.DeserializeObject<Models.WholeModel>(content);
+                        Data.Data = Oggi;
+                        break;
+                    case HttpStatusCode.Forbidden:
+                        Data.Message = "Si è verificato un errore nella connessione ad ARGO";
+                        break;
+                    case HttpStatusCode.InternalServerError:
+                        Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+                        break;
+                }
+                Barrel.Current.Add("Oggi" + data.ToString("yyyy-MM-dd"), Oggi, TimeSpan.FromDays(7));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+            }
+            return Data;
+        }
     }
 
     public interface IRestServiceArgo
@@ -366,7 +397,7 @@ namespace SalveminiApp.RestApi
         Task<Models.ResponseModel> GetArgomenti();
         Task<Models.ResponseModel> GetVoti();
         Task<Models.ResponseModel> GetVotiScrutinio();
-
+        Task<Models.ResponseModel> GetOggi(DateTime data);
     }
 
     public class ItemManagerArgo
@@ -416,6 +447,11 @@ namespace SalveminiApp.RestApi
         public Task<Models.ResponseModel> GetVotiScrutinio()
         {
             return restServiceArgo.GetVotiScrutinio();
+        }
+
+        public Task<Models.ResponseModel> GetOggi(DateTime data)
+        {
+            return restServiceArgo.GetOggi(data);
         }
     }
 }
