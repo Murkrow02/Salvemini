@@ -25,6 +25,23 @@ namespace SalveminiApi.Argo.Models
         public string desFile { get; set; }
         public int numAnno { get; set; }
         public string codMin { get; set; }
+        //Construct full uri
+        public string urlMessaggio
+        {
+            get { return Costants.allegatiUrl(prgMessaggio.ToString()); }
+        }
+    }
+
+    //POST
+    public class VisualizzaBacheca
+    {
+        public int prgMessaggio { get; set; }
+        public bool presaVisione { get; set; }
+    }
+
+    public class bachecaList
+    {
+        public List<Bacheca> dati { get; set; }
     }
 
 }

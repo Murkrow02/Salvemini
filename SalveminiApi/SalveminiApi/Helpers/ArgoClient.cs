@@ -13,9 +13,9 @@ namespace SalveminiApi.Utility
             var client = new HttpClient();
             client.DefaultRequestHeaders.Add("x-app-code", "APF");
             client.DefaultRequestHeaders.Add("x-cod-min", "SS16836");
-            client.DefaultRequestHeaders.Add("x-key-app", "ax6542sdru3217t4eesd9");
+            client.DefaultRequestHeaders.Add("x-key-app", SalveminiApi.Costants.argoKey);
             client.DefaultRequestHeaders.Add("x-produttore-software", "ARGO Software s.r.l. - Ragusa");
-            client.DefaultRequestHeaders.Add("x-version", "2.1.0");
+            client.DefaultRequestHeaders.Add("x-version", SalveminiApi.Costants.argoVersion);
             client.DefaultRequestHeaders.Add("x-prg-scheda", "1");
             client.DefaultRequestHeaders.Add("x-prg-scuola", "1");
             //client.DefaultRequestHeaders.Add("Content-Type", "application/json");

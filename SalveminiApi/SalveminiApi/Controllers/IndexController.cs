@@ -215,7 +215,7 @@ namespace SalveminiApi.Controllers
                 returnModel.assenze = assenze;
                 returnModel.compiti = compiti;
                 returnModel.promemoria = promemoria;
-                returnModel.assenze = assenze;
+                returnModel.voti = voti;
             }
             catch (Exception ex)
             {
