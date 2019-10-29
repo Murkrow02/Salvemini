@@ -24,7 +24,7 @@ namespace SalveminiApp.RestApi
         public List<Models.Pentagono> Medie { get; private set; }
         public List<Models.Compiti> Compiti { get; private set; }
         public List<Models.Argomenti> Argomenti { get; private set; }
-        public List<Models.GroupedVoti> Voti { get; private set; }
+        public List<Models.Voti> Voti { get; private set; }
         public Models.ScrutinioGrouped VotiScrutinio { get; private set; }
 
 
@@ -272,7 +272,7 @@ namespace SalveminiApp.RestApi
         public async Task<Models.ResponseModel> GetVoti()
         {
             Models.ResponseModel Data = new Models.ResponseModel();
-            Voti = new List<Models.GroupedVoti>();
+            Voti = new List<Models.Voti>();
 
             var uri = Costants.Uri("argo/voti");
 
@@ -283,28 +283,8 @@ namespace SalveminiApp.RestApi
                 {
                     case HttpStatusCode.OK:
                         var content = await response.Content.ReadAsStringAsync();
-                        Voti = JsonConvert.DeserializeObject<List<Models.GroupedVoti>>(content);
-                        //Voti = new List<Models.GroupedVoti> { new Models.GroupedVoti { Materia = "Matematica", Media = 8 }, new Models.GroupedVoti { Materia = "Letteratura", Media = 4 } };
-                        //Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "7", datGiorno = "10-09-2019", decValore = 7, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
-                        //Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 9, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
-                        //Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 1, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
-                        //Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 6.3, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
-                        //Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 3, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
-                        //Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "9", datGiorno = "10-09-2019", decValore = 10, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDK", desProva = "Compito", docente = "Raffaella Celotto" });
-                        //Voti[0].Add(new Models.Voti { Materia = "Matematica", codVoto = "5.5", datGiorno = "10-09-2019", decValore = 5.5, desMateria = "Matematica", codVotoPratico = "8", desCommento = "IDKcdjnnvjfbnidfnbvmdfomvodfmvodmfvodfmvodfmovmdfomvodfmvofdmvodfmvodfmvofdmvodfmvofdmvofdmvodfmvodfmvofdmvodf", desProva = "Compito", docente = "Raffaella Celotto" });
-                        //Voti[1].Add(new Models.Voti { Materia = "Letteratura", codVoto = "4", datGiorno = "10-09-2019", decValore = 4, desMateria = "Letteratura", codVotoPratico = "4", desProva = "Compito", docente = "Leyla Romano" });
-
-                        for (int i = 0; i < Voti.Count; i++)
-                        {
-                            if (Voti[i].Count > 0)
-                            {
-                                Voti[i][Voti[i].Count - 1].SeparatorVisibility = false;
-                            }
-                        }
-
-                        Data.Data = Voti.ToObservableCollection();
-
-
+                        Voti = JsonConvert.DeserializeObject<List<Models.Voti>>(content);
+                        Data.Data = Voti;
                         break;
                     case HttpStatusCode.Forbidden:
                         Data.Message = "Si è verificato un errore nella connessione ad ARGO";
@@ -313,7 +293,7 @@ namespace SalveminiApp.RestApi
                         Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
                         break;
                 }
-                Barrel.Current.Add("Voti", Voti.ToObservableCollection(), TimeSpan.FromDays(7));
+                Barrel.Current.Add("Voti", Voti, TimeSpan.FromDays(7));
             }
             catch (Exception ex)
             {
