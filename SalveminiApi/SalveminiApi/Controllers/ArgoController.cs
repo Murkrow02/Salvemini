@@ -190,7 +190,7 @@ namespace SalveminiApi.Controllers
 
         [Route("voti")]
         [HttpGet]
-        public async Task<List<GroupedVoti>> getVoti()
+        public async Task<List<Voti>> getVoti()
         {
             //Check Auth
             var authorize = new Helpers.Utility();
@@ -210,60 +210,16 @@ namespace SalveminiApi.Controllers
                 throw new HttpResponseException(HttpStatusCode.Forbidden);
             var argoContent = await argoResponse.Content.ReadAsStringAsync();
             var returnModel = JsonConvert.DeserializeObject<VotiList>(argoContent);
+
             var votiList = new List<Voti>();
             votiList = returnModel.dati;
 
             //Raggruppa per materia
             var groupedVoti = new List<GroupedVoti>();
-            var votiGrouped = votiList.GroupBy(x => x.Materia).ToList();
+            var votiGrouped = votiList.GroupBy(x => x.desMateria).ToList();
             var groupedCollection = new List<GroupedVoti>();
-            
-            for (int i = 0; i < votiGrouped.Count(); i++)
-            {
-                var groupedMateria = new GroupedVoti();
-                var listaVoti = new List<Voti>();
 
-                foreach (var voto in votiGrouped[i])
-                {
-                    listaVoti.Add(voto);
-                    groupedMateria.Materia = voto.Materia;
-                }
-
-                foreach (var voto in listaVoti)
-                {
-                    groupedMateria.Add(voto);
-                }
-
-                //Calcola media
-                int count = 0;
-                double media = 0.0;
-                foreach (var voto in votiGrouped[i])
-                {
-
-                    //Controlla se è una giustifica
-                    if (voto.decValore == null) {
-                        voto.codVoto = "G";
-                        continue;
-                    }
-
-                    //Aggiungi alla media
-                    media += Convert.ToDouble(voto.decValore);
-                    count++;
-                }
-
-                //Controlla se ci sono voti
-                if (count > 0)
-                    groupedMateria.Media = media / count;
-                else
-                    groupedMateria.Media = 0;
-
-
-                groupedCollection.Add(groupedMateria);
-
-            }
-
-
-            return groupedCollection;
+            return votiList;
         }
 
         [Route("pentagono")]
@@ -293,7 +249,7 @@ namespace SalveminiApi.Controllers
 
             //Raggruppa per materia
             var groupedVoti = new List<GroupedVoti>();
-            var votiGrouped = votiList.GroupBy(x => x.Materia).ToList();
+            var votiGrouped = votiList.GroupBy(x => x.desMateria).ToList();
             var groupedCollection = new List<Pentagono>();
 
             for (int i = 0; i < votiGrouped.Count(); i++)
@@ -304,7 +260,7 @@ namespace SalveminiApi.Controllers
                 foreach (var voto in votiGrouped[i])
                 {
                     listaVoti.Add(voto);
-                    groupedMateria.Materia = voto.Materia;
+                    groupedMateria.Materia = voto.desMateria;
                 }
 
 
@@ -379,82 +335,30 @@ namespace SalveminiApi.Controllers
             return grouped;
         }
 
-        //[Route("oggi")]
-        //[HttpGet]
-        //public async Task<List<WholeModel>> getOggi(DateTime data)
-        //{
-        //    //Check Auth
-        //    var authorize = new Helpers.Utility();
-        //    bool authorized = authorize.authorized(Request);
-        //    if (!authorized)
-        //        throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
-        //    //Get parameters from request
-        //    int id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
-        //    string token = Request.Headers.GetValues("x-auth-token").First();
+        //new argo cazzi
+//        Posta visione documento
+//Post a url https://www.portaleargo.it/famiglia/api/rest/presavisionebachecanuova
+//{"prgMessaggio":20,"presaVisione":true}
 
-        //    //Prendi modello
-        //    var argoUtils = new ArgoUtils();
-        //    var argoClient = argoUtils.ArgoClient(id, token);
+//Tutte le bacheche
+//Get url https://www.portaleargo.it/famiglia/api/rest/bachecanuova
 
-        //    //Codice copiato dalla salveminiapp vecchia, non si capisce un cazzo (ritorna cosa è successo in classe)
-        //    var Oggi = new Oggi();
-        //    List<WholeModel> Oggis = new List<WholeModel>();
-        //    var uri = "https://www.portaleargo.it/famiglia/api/rest/oggi?datGiorno=" + data.ToString("yyyy-MM-dd").Split(' ')[0].Trim();
+//Url documenti bacheca
+//https://www.portaleargo.it/famiglia/api/rest/messaggiobachecanuova?id=FFFSS16836EEEII0000100000000 + prgMessaggio + userToken + ax6542sdru3217t4eesd9
 
-        //    try
-        //    {
-        //        var response = await argoClient.GetAsync(uri);
-        //        if (!response.IsSuccessStatusCode)
-        //            throw new HttpResponseException(HttpStatusCode.Forbidden);
-        //        var content = await response.Content.ReadAsStringAsync();
-        //        Oggi = JsonConvert.DeserializeObject<Oggi>(content);
-        //        var Dates = Oggi.dati;
-        //        for (int i = Dates.Count - 1; i >= 0; i--)
-        //        {
-        //            var Model = new WholeModel();
-        //            Model.binUid = Dates[i].dati.binUid;
-        //            Model.codEvento = Dates[i].dati.codEvento;
-        //            Model.codMin = Dates[i].codMin;
-        //            Model.codVoto = Dates[i].dati.codVoto;
-        //            Model.datGiorno = Dates[i].dati.datGiorno;
-        //            Model.datGiustificazione = Dates[i].dati.datGiustificazione;
-        //            Model.decValore = Dates[i].dati.decValore;
-        //            Model.desAnnotazioni = Dates[i].dati.desAnnotazioni;
-        //            Model.desArgomento = Dates[i].dati.desArgomento;
-        //            Model.desAssenza = Dates[i].dati.desAssenza;
-        //            Model.desCompiti = Dates[i].dati.desCompiti;
-        //            Model.desMateria = Dates[i].dati.desMateria;
-        //            Model.desMittente = Dates[i].dati.desMittente;
-        //            Model.docente = Dates[i].dati.docente;
-        //            Model.flgDaGiustificare = Dates[i].dati.flgDaGiustificare;
-        //            Model.giorno = Dates[i].giorno;
-        //            Model.giustificataDa = Dates[i].dati.giustificataDa;
-        //            Model.numAnno = Dates[i].numAnno;
-        //            Model.ordine = Dates[i].ordine;
-        //            Model.prgAlunno = Dates[i].prgAlunno;
-        //            Model.prgClasse = Dates[i].dati.prgClasse;
-        //            Model.prgMateria = Dates[i].dati.prgMateria;
-        //            Model.prgScheda = Dates[i].prgScheda;
-        //            Model.prgScuola = Dates[i].prgScuola;
-        //            Model.registrataDa = Dates[i].dati.registrataDa;
-        //            Model.tipo = Dates[i].tipo;
-        //            Model.datAssenza = Dates[i].dati.datAssenza;
-        //            Oggis.Add(Model);
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new HttpResponseException(HttpStatusCode.InternalServerError);
-        //    }
-        //    return Oggis;
-        //}
+//Esempi
+//https://www.portaleargo.it/famiglia/api/rest/messaggiobachecanuova?id=FFFSS16836EEEII000010000000014e5308fc6214a41488372057ba09c422c.11ax6542sdru3217t4eesd9
+//https://www.portaleargo.it/famiglia/api/rest/messaggiobachecanuova?id=FFFSS16836EEEII000010000000014e5308fc6214a41488372057ba09c422c.11ax6542sdru3217t4eesd9
+//https://www.portaleargo.it/famiglia/api/rest/messaggiobachecanuova?id=FFFSS16836EEEII000010000000020bbb1bb6958f549e1860701fa46898311.11ax6542sdru3217t4eesd9
 
 
+//Tutte le note
+//Get url https://www.portaleargo.it/famiglia/api/rest/notedisciplinari
 
-
-
+//Cambio password
+//Post a https://www.portaleargo.it/famiglia/api/rest/cambiopassword
+//{"vecchiaPassword":"vecchia","nuovaPassword":"nuova"}
 
         protected override void Dispose(bool disposing)
         {

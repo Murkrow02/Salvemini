@@ -54,24 +54,6 @@ namespace SalveminiApp.RestApi.Models
 		public Thickness CellPadding { get; set; } = new Thickness(10);
 	}
 
-    public class GroupedVoti : ObservableCollection<Voti>
-    {
-        public string Materia { get; set; }
-        public double Media { get; set; }
-
-        public bool chartButtonVisibility
-        {
-            get
-            {
-                return Count > 1;
-            }
-        }
-    }
-
-    public class VotiList
-    {
-        public List<Voti> dati { get; set; }
-    }
 
 
     //Pentagono

@@ -17,4 +17,14 @@ namespace SalveminiApi.Argo.Models
         public string desMessaggio { get; set; }
         public List<Allegati> allegati { get; set; }
     }
+
+    public class Allegati
+    {
+        public int prgAllegato { get; set; }
+        public int prgMessaggio { get; set; }
+        public string desFile { get; set; }
+        public int numAnno { get; set; }
+        public string codMin { get; set; }
+    }
+
 }

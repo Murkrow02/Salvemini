@@ -18,50 +18,13 @@ namespace SalveminiApi.Argo.Models
         public int prgMateria { get; set; }
         public double? decValore { get; set; }
 
-        public string Materia
-        {
-            get
-            {
-                if (desMateria == "LINGUA E CULTURA STRANIERA(INGLESE)")
-                {
-                    return "Inglese";
-                }
-                else if (desMateria == "LINGUA e LETTERATURA ITALIANA")
-                {
-                    return "Letteratura Italiana";
-                }
-                else if (desMateria == "LINGUA e CULTURA LATINA")
-                {
-                    return "Latino";
-                }
-                else if (desMateria == "SCIENZE NATURALI")
-                {
-                    return "Scienze Naturali";
-                }
-                else if (desMateria == "LINGUA E CULTURA STRANIERA(TEDESCO)")
-                {
-                    return "Tedesco";
-                }
-                else if (desMateria == "DISEGNO E STORIA DELL'ARTE")
-                {
-                    return "Arte";
-                }
-                else
-                {
-                    return desMateria.First().ToString().ToUpper() + desMateria.Substring(1).ToLower();
-                }
-
-            }
-        }
-      
-
     }
 
-    public class GroupedVoti: ObservableCollection<Voti>
+    public class GroupedVoti
     {
         public string Materia { get; set; }
         public double Media { get; set; }
-
+        public List<Voti> Voti { get; set; }
     }
 
     public class VotiList

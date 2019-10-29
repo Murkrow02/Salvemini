@@ -39,11 +39,12 @@ namespace SalveminiApi.Argo.Models
     public class OggiValues
     {
 
-        //public string datGiorno { get; set; }
         //public string codMin { get; set; }
         //public int numAnno { get; set; }
         //public int prgClasse { get; set; }
         //public int prgScuola { get; set; }
+        //ALL
+        public string datGiorno { get; set; }
 
         //IDK
         public string codEvento { get; set; }
@@ -59,10 +60,13 @@ namespace SalveminiApi.Argo.Models
         public string desMateria { get; set; }
         public int prgMateria { get; set; }
 
+
         //Voti
         public string codVoto { get; set; }
         public double decValore { get; set; }
         public string desCommento { get; set; }
+        public string codVotoPratico { get; set; }
+        public string desProva { get; set; }
 
         //Assenze
         public string datGiustificazione { get; set; }
@@ -72,11 +76,12 @@ namespace SalveminiApi.Argo.Models
         public string desAssenza { get; set; }
         public bool flgDaGiustificare { get; set; }
         public string datAssenza { get; set; }
+        public int? numOra { get; set; }
+        public string oraAssenza { get; set; }
 
         //Promemoria
         public string desAnnotazioni { get; set; }
         public string desMittente { get; set; }
-        public string datGiorno { get; set; }
 
 
         //Bacheca
@@ -91,14 +96,6 @@ namespace SalveminiApi.Argo.Models
         public List<Allegati> allegati { get; set; }
     }
 
-    public class Allegati
-    {
-        public int prgAllegato { get; set; }
-        public int prgMessaggio { get; set; }
-        public string desFile { get; set; }
-        public int numAnno { get; set; }
-        public string codMin { get; set; }
-    }
 
     public class WholeModel
     {
