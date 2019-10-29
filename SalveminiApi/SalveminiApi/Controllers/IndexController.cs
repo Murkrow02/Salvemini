@@ -147,16 +147,11 @@ namespace SalveminiApi.Controllers
             var argoUtils = new ArgoUtils();
             var argoClient = argoUtils.ArgoClient(id, token);
 
-            //Oggi or data selected
-            string data = "";
-            if (giorno == "oggi") //Today
-                data = Helpers.Utility.italianTime().ToString("yyyy-MM-dd").Split(' ')[0].Trim();
-            else
-                data = giorno; //Custom date
-
+            //Create new model to return
             var returnModel = new WholeModel();
+
             //Create new uri
-            var uri = "https://www.portaleargo.it/famiglia/api/rest/oggi?datGiorno=" + data;
+            var uri = "https://www.portaleargo.it/famiglia/api/rest/oggi?datGiorno=" + giorno;
 
             try
             {
@@ -191,30 +186,36 @@ namespace SalveminiApi.Controllers
                             bacheca.Add(new Bacheca { adesione = notizia.dati.adesione,  allegati = notizia.dati.allegati,  desMessaggio = notizia.dati.desMessaggio,  desOggetto = notizia.dati.desOggetto, desUrl = notizia.dati.desUrl, presaVisione = notizia.dati.presaVisione, prgMessaggio = notizia.dati.prgMessaggio,  richiediAd = notizia.dati.richiediAd, richiediPv = notizia.dati.richiediPv });
                             break;
                         case "COM":
+                            //COMPITI
+                            compiti.Add(new Compiti { datGiorno = notizia.dati.datGiorno, desCompiti = notizia.dati.desCompiti, desMateria = notizia.dati.desMateria, docente = notizia.dati.docente });
                             break;
                         case "ARG":
+                            //ARGOMENTI
+                            argomenti.Add(new Argomenti { datGiorno = notizia.dati.datGiorno, desMateria = notizia.dati.desMateria, desArgomento = notizia.dati.desArgomento, docente = notizia.dati.docente});
                             break;
                         case "VOT":
+                            //VOTI
+                            voti.Add(new Voti { datGiorno = notizia.dati.datGiorno, prgMateria = notizia.dati.prgMateria, docente = notizia.dati.docente, codVoto = notizia.dati.codVoto, codVotoPratico = notizia.dati.codVotoPratico, decValore = notizia.dati.decValore, desCommento = notizia.dati.desCommento, desMateria = notizia.dati.desMateria, desProva = notizia.dati.desProva });
                             break;
                         case "PRO":
+                            //PROMEMORIA
+                            promemoria.Add(new Promemoria { datGiorno = notizia.dati.datGiorno, desAnnotazioni = notizia.dati.desAnnotazioni, desMittente = notizia.dati.desMittente});
                             break;
                         case "ASS":
+                            //ASSENZE
+                            assenze.Add(new Assenze { datAssenza = notizia.dati.datAssenza, binUid = notizia.dati.binUid, datGiustificazione = notizia.dati.datGiustificazione, desAssenza = notizia.dati.desAssenza, flgDaGiustificare = notizia.dati.flgDaGiustificare, giustificataDa = notizia.dati.giustificataDa, numOra = notizia.dati.numOra, oraAssenza = notizia.dati.oraAssenza, registrataDa = notizia.dati.registrataDa });
                             break;
                     }
 
-                    //COMPITI
-                    //ARGOMENTI
-                    //ASSENZE
-                    //PROMEMORIA
-                    //VOTI
                 }
 
+                //Add to return model
                 returnModel.bacheca = bacheca;
-
-                if (response.IsSuccessStatusCode)
-                {
-
-                }
+                returnModel.argomenti = argomenti;
+                returnModel.assenze = assenze;
+                returnModel.compiti = compiti;
+                returnModel.promemoria = promemoria;
+                returnModel.assenze = assenze;
             }
             catch (Exception ex)
             {
