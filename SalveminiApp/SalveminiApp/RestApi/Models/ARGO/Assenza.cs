@@ -61,6 +61,14 @@ namespace SalveminiApp.RestApi.Models
             }
         }
 
+        public string FormattedInfo
+        {
+            get
+            {
+                return !string.IsNullOrEmpty(desAssenza) ? desAssenza.Replace("^", "ᵃ") : Tipo;
+            }
+        }
+
         public bool Giustificata
         {
             get

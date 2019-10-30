@@ -5,6 +5,8 @@ using Xamarin.Forms;
 using Syncfusion.XForms.Expander;
 using Forms9Patch;
 using System.Linq;
+using Newtonsoft.Json;
+using MonkeyCache.SQLite;
 
 namespace SalveminiApp.ArgoPages
 {
@@ -18,47 +20,125 @@ namespace SalveminiApp.ArgoPages
         public List<RestApi.Models.Compiti> Compiti = new List<RestApi.Models.Compiti>();
         public List<RestApi.Models.Promemoria> Promemoria = new List<RestApi.Models.Promemoria>();
 
+
+        bool gotByCache = false;
         public Registro()
         {
             InitializeComponent();
 
             todayButton.Text = DateTime.Today.ToString("dd/MM/yyyy");
+
+            getDayCache(DateTime.Today.ToString("yyyy-MM-dd"));
+
+
+        }
+
+        void getDayCache(string date)
+        {
+            if (Barrel.Current.Exists("Oggi" + date))
+            {
+                widgetsLayout.Children.Clear();
+                Oggi = Barrel.Current.Get<RestApi.Models.WholeModel>("Oggi" + date);
+                gotByCache = true;
+                if (Oggi != null)
+                {
+                    callSetLayout();
+
+                }
+            }
         }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+
+            if (Oggi.assenze != null && Oggi.compiti != null && Oggi.argomenti != null && Oggi.promemoria != null && Oggi.bacheca != null && Oggi.voti != null)
+            {
+                getDayCache(DateTime.Today.ToString("yyyy-MM-dd"));
+            }
+
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
                 getValues(DateTime.Today);
             }
         }
 
+        public bool ObjectsDiffer(RestApi.Models.WholeModel callObj, RestApi.Models.WholeModel cachedObj)
+        {
+            if (callObj == null || cachedObj == null)
+            {
+                return true;
+            }
+
+            var firstString = JsonConvert.SerializeObject(callObj);
+            var secondString = JsonConvert.SerializeObject(cachedObj);
+
+            if (firstString == secondString)
+                return false;
+            else
+                return true;
+        }
+
+
         async void getValues(DateTime date)
         {
-            widgetsLayout.Children.Clear();
+            loadingIndicator.IsRunning = true;
+
             var response = await App.Argo.GetOggi(date);
             if (string.IsNullOrEmpty(response.Message))
             {
-                Oggi = response.Data as RestApi.Models.WholeModel;
-                if (Oggi != null)
+                var calledOggi = response.Data as RestApi.Models.WholeModel;
+                if (calledOggi != null && ObjectsDiffer(calledOggi, Oggi))
                 {
-                    if (Oggi.bacheca != null && Oggi.bacheca.Count > 0)
-                    {
-                        Bacheca = Oggi.bacheca;
-                        setLayout("BAC");
-                    }
-                    if (Oggi.voti != null && Oggi.voti.Count > 0)
-                    {
-                        Voti = Oggi.voti;
-                        setLayout("VOT");
-                    }
-                    if (Oggi.argomenti != null && Oggi.argomenti.Count > 0)
-                    {
-                        Argomenti = Oggi.argomenti;
-                        setLayout("ARG");
-                    }
+                    widgetsLayout.Children.Clear();
+                    Oggi = calledOggi;
+                    callSetLayout();
                 }
+            }
+            else
+            {
+                await DisplayAlert("Errore", response.Message, "Ok");
+            }
+            loadingIndicator.IsRunning = false;
+        }
+
+        void callSetLayout()
+        {
+            nothingLayout.IsVisible = false;
+            if (Oggi.bacheca.Count == 0 && Oggi.voti.Count == 0 && Oggi.argomenti.Count == 0 && Oggi.compiti.Count == 0 && Oggi.promemoria.Count == 0 && Oggi.assenze.Count == 0)
+            {
+                nothingLayout.IsVisible = true;
+            }
+
+            if (Oggi.bacheca != null && Oggi.bacheca.Count > 0)
+            {
+                Bacheca = Oggi.bacheca;
+                setLayout("BAC");
+            }
+            if (Oggi.voti != null && Oggi.voti.Count > 0)
+            {
+                Voti = Oggi.voti;
+                setLayout("VOT");
+            }
+            if (Oggi.argomenti != null && Oggi.argomenti.Count > 0)
+            {
+                Argomenti = Oggi.argomenti;
+                setLayout("ARG");
+            }
+            if (Oggi.compiti != null && Oggi.compiti.Count > 0)
+            {
+                Compiti = Oggi.compiti;
+                setLayout("COM");
+            }
+            if (Oggi.promemoria != null && Oggi.promemoria.Count > 0)
+            {
+                Promemoria = Oggi.promemoria;
+                setLayout("PRO");
+            }
+            if (Oggi.assenze != null && Oggi.assenze.Count > 0)
+            {
+                Assenze = Oggi.assenze;
+                setLayout("ASS");
             }
         }
 
@@ -68,19 +148,16 @@ namespace SalveminiApp.ArgoPages
             string title = "";
             string color = "";
             bool IsExpanded = false;
-            int rowHeight = 0;
+            List<View> Content = new List<View>();
 
             //Create List of contents of each widget
-            Xamarin.Forms.ListView ExpanderContent = new Xamarin.Forms.ListView { HasUnevenRows = false, HorizontalScrollBarVisibility = ScrollBarVisibility.Never, VerticalScrollBarVisibility = ScrollBarVisibility.Never, VerticalOptions = LayoutOptions.Start, Footer = " " };
             switch (type)
             {
                 case "BAC":
                     title = "Bacheca";
                     color = "FF8181";
-                    rowHeight = 70;
-                    ExpanderContent.ItemsSource = Bacheca;
                     IsExpanded = Bacheca.Count == 1;
-                    ExpanderContent.ItemTemplate = new DataTemplate(() =>
+                    foreach (var bacheca in Bacheca)
                     {
                         //Main Layout
                         var layout = new Xamarin.Forms.StackLayout { HorizontalOptions = LayoutOptions.FillAndExpand, Padding = new Thickness(10), Spacing = 5, VerticalOptions = LayoutOptions.FillAndExpand };
@@ -89,31 +166,27 @@ namespace SalveminiApp.ArgoPages
                         var titleLayout = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, HorizontalOptions = LayoutOptions.Start };
 
                         //Title Label
-                        var titleLabel = new Xamarin.Forms.Label { FontSize = 20, FontAttributes = FontAttributes.Bold, HorizontalOptions = LayoutOptions.Start };
-                        titleLabel.SetBinding(Xamarin.Forms.Label.TextProperty, "formattedTitle");
+                        var titleLabel = new Xamarin.Forms.Label { FontSize = 20, Text = bacheca.formattedTitle, FontAttributes = FontAttributes.Bold, HorizontalOptions = LayoutOptions.Start };
                         titleLayout.Children.Add(titleLabel);
 
                         //File icon
                         titleLayout.Children.Add(new Plugin.Iconize.IconLabel { FontSize = 20, Text = "far-file-alt", HorizontalOptions = LayoutOptions.Start });
 
                         //Pdf name
-                        var descriptionLabel = new Forms9Patch.Label { Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.FillAndExpand };
-                        descriptionLabel.SetBinding(Xamarin.Forms.Label.TextProperty, "desMessaggio");
+                        var descriptionLabel = new Forms9Patch.Label { Lines = 1, Text = bacheca.desMessaggio, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.FillAndExpand };
 
                         //Add childrens to main layout
                         layout.Children.Add(titleLayout);
                         layout.Children.Add(descriptionLabel);
-                        return new ViewCell { View = layout };
-                    });
-                    ExpanderContent.HeightRequest = Bacheca.Count * rowHeight;
+                        Content.Add(layout);
+                    }
+
                     break;
                 case "VOT":
                     title = "Voti Giornalieri";
                     color = "7690FF";
-                    rowHeight = 70;
-                    ExpanderContent.ItemsSource = Voti;
                     IsExpanded = Voti.Count == 1;
-                    ExpanderContent.ItemTemplate = new DataTemplate(() =>
+                    foreach (var voto in Voti)
                     {
                         //Main Layout
                         var layout = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, Padding = 10 };
@@ -122,68 +195,138 @@ namespace SalveminiApp.ArgoPages
                         var titleLayout = new Xamarin.Forms.StackLayout { HorizontalOptions = LayoutOptions.Start };
 
                         //Subject Label
-                        var subjectLabel = new Forms9Patch.Label { FontSize = 20, FontAttributes = FontAttributes.Bold, Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.FillAndExpand };
-                        subjectLabel.SetBinding(Xamarin.Forms.Label.TextProperty, "formattedSubject");
+                        var subjectLabel = new Forms9Patch.Label { FontSize = 20, Text = voto.formattedSubject, FontAttributes = FontAttributes.Bold, Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.FillAndExpand };
                         titleLayout.Children.Add(subjectLabel);
 
                         //Teacher Label
-                        var teacherLabel = new Xamarin.Forms.Label { FontSize = 15, TextColor = Styles.TextGray, HorizontalOptions = LayoutOptions.Start };
-                        teacherLabel.SetBinding(Xamarin.Forms.Label.TextProperty, "docente");
+                        var teacherLabel = new Xamarin.Forms.Label { FontSize = 15, Text = voto.formattedTeacher, TextColor = Styles.TextGray, HorizontalOptions = LayoutOptions.Start };
                         titleLayout.Children.Add(teacherLabel);
 
                         //Mark Label
-                        var markLabel = new Xamarin.Forms.Label { FontAttributes = FontAttributes.Bold, HorizontalOptions = LayoutOptions.EndAndExpand, FontSize = 30 };
-                        markLabel.SetBinding(Xamarin.Forms.Label.TextProperty, "codVoto");
-                        markLabel.SetBinding(Xamarin.Forms.Label.TextColorProperty, "markColor");
+                        var markLabel = new Xamarin.Forms.Label { FontAttributes = FontAttributes.Bold, TextColor = voto.markColor, Text = voto.codVoto, HorizontalOptions = LayoutOptions.EndAndExpand, FontSize = 30 };
 
                         //Add childrens to main layout
                         layout.Children.Add(titleLayout);
                         layout.Children.Add(markLabel);
-                        return new ViewCell { View = layout };
-                    });
-                    ExpanderContent.HeightRequest = Bacheca.Count * rowHeight;
+                        Content.Add(layout);
+                    }
                     break;
                 case "ARG":
                     title = "Argomenti Lezione";
                     color = "64EB7D";
-                    rowHeight = 100;
-                    ExpanderContent.ItemsSource = Argomenti;
                     IsExpanded = Argomenti.Count == 1;
-                    ExpanderContent.ItemTemplate = new DataTemplate(() =>
+                    foreach (var argomento in Argomenti)
                     {
                         //Main Layout
                         var layout = new Xamarin.Forms.StackLayout { HorizontalOptions = LayoutOptions.FillAndExpand, Padding = new Thickness(10), Spacing = 5, VerticalOptions = LayoutOptions.FillAndExpand };
 
                         //Layout with subject and teacher
-                        var titleLayout = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, HorizontalOptions = LayoutOptions.Start };
+                        var titleLayout = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, HorizontalOptions = LayoutOptions.FillAndExpand };
 
                         //Subject Label
-                        var subjectLabel = new Forms9Patch.Label { FontSize = 20, FontAttributes = FontAttributes.Bold, Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.FillAndExpand };
-                        subjectLabel.SetBinding(Xamarin.Forms.Label.TextProperty, "formattedSubject");
+                        var subjectLabel = new Forms9Patch.Label { FontSize = 20, VerticalOptions = LayoutOptions.Center, Text = argomento.formattedSubject, FontAttributes = FontAttributes.Bold, Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.StartAndExpand };
                         titleLayout.Children.Add(subjectLabel);
 
                         //Teacher Label
-                        var teacherLabel = new Xamarin.Forms.Label { FontSize = 15, TextColor = Styles.TextGray, HorizontalOptions = LayoutOptions.Start };
-                        teacherLabel.SetBinding(Xamarin.Forms.Label.TextProperty, "docente");
+                        var teacherLabel = new Forms9Patch.Label { FontSize = 10, Lines = 1, AutoFit = AutoFit.Width, Text = argomento.formattedTeacher, TextColor = Styles.TextGray, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.End, HorizontalTextAlignment = TextAlignment.End };
                         titleLayout.Children.Add(teacherLabel);
 
                         //Argomento lezione label
-                        var argumentLabel = new Forms9Patch.Label { FontSize = 15, Lines = 3, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.FillAndExpand };
-                        argumentLabel.SetBinding(Xamarin.Forms.Label.TextProperty, "Contenuto");
-                        
+                        var argumentLabel = new Forms9Patch.Label { FontSize = 15, Lines = 3, Text = argomento.Contenuto, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.FillAndExpand };
+
                         //Add childrens to main layout
                         layout.Children.Add(titleLayout);
                         layout.Children.Add(argumentLabel);
-                        return new ViewCell { View = layout };
-                    });
-                    ExpanderContent.HeightRequest = Bacheca.Count * rowHeight;
+                        Content.Add(layout);
+                    }
+                    break;
+                case "COM":
+                    title = "Compiti Assegnati";
+                    color = "FFAF52";
+                    IsExpanded = Compiti.Count == 1;
+                    foreach (var compito in Compiti)
+                    {
+                        //Main Layout
+                        var layout = new Xamarin.Forms.StackLayout { HorizontalOptions = LayoutOptions.FillAndExpand, Padding = new Thickness(10), Spacing = 5, VerticalOptions = LayoutOptions.FillAndExpand };
+
+                        //Layout with subject and teacher
+                        var titleLayout = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, HorizontalOptions = LayoutOptions.FillAndExpand };
+
+                        //Subject Label
+                        var subjectLabel = new Forms9Patch.Label { FontSize = 20, VerticalOptions = LayoutOptions.Center, Text = compito.formattedSubject, FontAttributes = FontAttributes.Bold, Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.StartAndExpand };
+                        titleLayout.Children.Add(subjectLabel);
+
+                        //Teacher Label
+                        var teacherLabel = new Forms9Patch.Label { FontSize = 10, Lines = 1, AutoFit = AutoFit.Width, Text = compito.formattedTeacher, TextColor = Styles.TextGray, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.End, HorizontalTextAlignment = TextAlignment.End };
+                        titleLayout.Children.Add(teacherLabel);
+
+                        //Argomento lezione label
+                        var argumentLabel = new Forms9Patch.Label { FontSize = 15, Lines = 3, Text = compito.Contenuto, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.FillAndExpand };
+
+                        //Add childrens to main layout
+                        layout.Children.Add(titleLayout);
+                        layout.Children.Add(argumentLabel);
+                        Content.Add(layout);
+                    }
+                    break;
+                case "PRO":
+                    title = "Promemoria";
+                    color = "FF5FFF";
+                    IsExpanded = Promemoria.Count == 1;
+                    foreach (var promemoria in Promemoria)
+                    {
+                        //Main Layout
+                        var layout = new Xamarin.Forms.StackLayout { HorizontalOptions = LayoutOptions.FillAndExpand, Padding = new Thickness(10), Spacing = 5, VerticalOptions = LayoutOptions.FillAndExpand };
+
+                        //Promemoria Label
+                        var reminderLabel = new Forms9Patch.Label { FontSize = 20, VerticalOptions = LayoutOptions.Center, Text = promemoria.desAnnotazioni, FontAttributes = FontAttributes.Bold, Lines = 3, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.StartAndExpand };
+
+                        //Teacher Label
+                        var teacherLabel = new Forms9Patch.Label { FontSize = 10, Lines = 1, AutoFit = AutoFit.Width, Text = promemoria.desMittente, TextColor = Styles.TextGray, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.End, HorizontalTextAlignment = TextAlignment.End };
+
+                        //Add childrens to main layout
+                        layout.Children.Add(reminderLabel);
+                        layout.Children.Add(teacherLabel);
+                        Content.Add(layout);
+                    }
+                    break;
+                case "ASS":
+                    title = "Assenza";
+                    color = "FFD800";
+                    IsExpanded = Assenze.Count == 1;
+                    foreach (var assenza in Assenze)
+                    {
+                        //Main Layout
+                        var layout = new Xamarin.Forms.StackLayout { HorizontalOptions = LayoutOptions.FillAndExpand, Padding = new Thickness(10), Orientation = StackOrientation.Horizontal, Spacing = 5, VerticalOptions = LayoutOptions.FillAndExpand };
+
+                        //Assenza Label
+                        var assenzaLabel = new Forms9Patch.Label { FontSize = 20, VerticalOptions = LayoutOptions.Center, Text = assenza.FormattedInfo, FontAttributes = FontAttributes.Bold, Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.StartAndExpand };
+
+                        //Layout with status and teacher
+                        var statusLayout = new Xamarin.Forms.StackLayout { VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.End };
+
+                        //Status Label
+                        var statusLabel = new Plugin.Iconize.IconLabel { Text = "fas-circle", TextColor = Color.FromHex(assenza.StatusColor), FontSize = 20, HorizontalOptions = LayoutOptions.End, HorizontalTextAlignment = TextAlignment.End };
+                        statusLayout.Children.Add(statusLabel);
+
+                        //Teacher Label
+                        var teacherLabel = new Forms9Patch.Label { FontSize = 10, Lines = 1, AutoFit = AutoFit.Width, Text = assenza.Professore, TextColor = Styles.TextGray, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.End, HorizontalTextAlignment = TextAlignment.End };
+                        statusLayout.Children.Add(teacherLabel);
+
+                        //Add childrens to main layout
+                        layout.Children.Add(assenzaLabel);
+                        layout.Children.Add(statusLayout);
+                        Content.Add(layout);
+                    }
                     break;
 
+
             }
-            ExpanderContent.RowHeight = rowHeight;
             var mainFrame = new Xamarin.Forms.Frame { HasShadow = false, CornerRadius = 15, IsClippedToBounds = true, Padding = 0 };
             var expander = new SfExpander { IconColor = Color.White, HeaderBackgroundColor = Color.FromHex(color), Header = new Xamarin.Forms.Frame { Content = new Xamarin.Forms.Label { FontSize = 20, Text = title, TextColor = Color.White, HorizontalOptions = LayoutOptions.Start }, HasShadow = false, CornerRadius = 0, Padding = 10, BackgroundColor = Color.FromHex(color), HorizontalOptions = LayoutOptions.FillAndExpand, VerticalOptions = LayoutOptions.Start } };
-            expander.Content = ExpanderContent;
+            var contentLayout = new Xamarin.Forms.StackLayout();
+            contentLayout.Children.AddRange(Content);
+            expander.Content = contentLayout;
             expander.IsExpanded = IsExpanded;
             mainFrame.Content = expander;
             widgetsLayout.Children.Add(mainFrame);
@@ -201,21 +344,38 @@ namespace SalveminiApp.ArgoPages
 
         private void Picker_Unfocused(object sender, FocusEventArgs e)
         {
-            getValues(datepicker.Date);
+            if (datepicker.Date.ToString("dd/MM/yyyy") != savedDate)
+            {
+                getDayCache(datepicker.Date.ToString("yyyy-MM-dd"));
+                getValues(datepicker.Date);
+            }
         }
-
+        public static string savedDate = "";
+        private void Picker_Focused(object sender, FocusEventArgs e)
+        {
+            savedDate = todayButton.Text;
+        }
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
             //Ios 13 bug
             try
             {
+                todayButton.Text = DateTime.Today.ToString("dd/MM/yyyy");
+                widgetsLayout.Children.Clear();
                 Navigation.PopModalAsync();
             }
             catch
             {
                 //fa nient
             }
+        }
+
+        void Close_Clicked(object sender, EventArgs e)
+        {
+            todayButton.Text = DateTime.Today.ToString("dd/MM/yyyy");
+            widgetsLayout.Children.Clear();
+            Navigation.PopModalAsync();
         }
     }
 }

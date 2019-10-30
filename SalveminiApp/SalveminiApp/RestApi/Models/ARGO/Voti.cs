@@ -19,6 +19,14 @@ namespace SalveminiApp.RestApi.Models
         public double? decValore { get; set; }
         public string Materia { get; set; }
 
+        public string formattedTeacher
+        {
+            get
+            {
+                return docente.Substring(7).Replace(")", "");
+            }
+        }
+
         public string formattedSubject
         {
             get

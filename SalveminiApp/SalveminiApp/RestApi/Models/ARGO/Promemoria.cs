@@ -7,6 +7,8 @@ namespace SalveminiApp.RestApi.Models
     {
         public string desAnnotazioni { get; set; }
         public string datGiorno { get; set; }
+
+        //Teacher is already formatted
         public string desMittente { get; set; }
         public bool SeparatorVisibility { get; set; } = true;
         public Thickness CellPadding { get; set; } = new Thickness(10);
