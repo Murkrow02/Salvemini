@@ -27,6 +27,14 @@ namespace SalveminiApp.RestApi.Models
             }
         }
 
+        public string formattedTeacher
+        {
+            get
+            {
+                return docente.Substring(7).Replace(")", "");
+            }
+        }
+
         public string Contenuto
         {
             get
