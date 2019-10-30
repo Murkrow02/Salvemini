@@ -20,7 +20,23 @@ namespace SalveminiApp.SecondaryViews.Trasporti
         public Treni()
         {
             InitializeComponent();
+
+            //Fill picker
             stationPicker.ItemsSource = Stazioni;
+
+            //Try intelligent autoselect
+            try
+            {
+                var a = Preferences.Get("savedStation", "");
+                stationPicker.SelectedIndex = Preferences.Get("savedStation", -1);
+                TrenoSegment.SelectedSegment = Convert.ToInt32(Preferences.Get("savedDirection", false));
+            }
+            catch
+            {
+                //Fa niente
+            }
+
+            //IphoneX optimization
 #if __IOS__
             if (iOS.AppDelegate.HasNotch)
             {

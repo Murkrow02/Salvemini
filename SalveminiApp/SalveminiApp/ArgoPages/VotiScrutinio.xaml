@@ -9,12 +9,13 @@
                 <Frame IsClippedToBounds="true" Padding="0" VerticalOptions="Fill" HasShadow="false" CornerRadius="15">
                     <StackLayout Spacing="0">
                         <!--Header-->
-                        <Frame HasShadow="False" Padding="0,0,0,3" BackgroundColor="#5DB2D9" CornerRadius="0" IsClippedToBounds="True">
+                        <Frame HasShadow="False" Padding="0,0,0,3" BackgroundColor="#7F80FF" CornerRadius="0" IsClippedToBounds="True">
                             <StackLayout Orientation="Horizontal">
                                 <Button x:Name="quad1" TextColor="White" BackgroundColor="#7F80FF" Text="1° Quadrimestre" HorizontalOptions="FillAndExpand" CornerRadius="0" Clicked="firstQuad_Clicked" />
                                 <Button x:Name="quad2" HorizontalOptions="FillAndExpand" Text="2° Quadrimestre" TextColor="#7F80FF" BackgroundColor="White" CornerRadius="0" Clicked="secondQuad_Clicked" />
                             </StackLayout>
                         </Frame>
+                        <!--Lista-->
                         <Grid>
                             <ListView SelectionMode="None" HasUnevenRows="true" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None" x:Name="votiList" VerticalOptions="Start">
                                 <ListView.ItemTemplate>

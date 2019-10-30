@@ -12,7 +12,7 @@
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label HorizontalOptions="Start" Text="Da:" TextColor="White" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
                         <Frame x:Name="stationFrame" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, -1">
-                            <Picker Unfocused="picker_Unfocused" x:Name="stationPicker" HeightRequest="50" TitleColor="#EAEAEA" FontAttributes="Bold" HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
+                            <Picker Unfocused="picker_Unfocused" TextColor="{x:Static local:Styles.TextColor}" x:Name="stationPicker" HeightRequest="50" TitleColor="#EAEAEA"  HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
                         </Frame>
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand">
@@ -32,7 +32,7 @@
                                 <DataTemplate>
                                     <ViewCell>
                                         <StackLayout Padding="20, 0" Orientation="Horizontal">
-                                            <Label FontSize="25" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" Text="{Binding Partenza}" />
+                                            <Label FontSize="25" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" Text="{Binding Partenza}" TextColor="{x:Static local:Styles.TextColor}" />
                                             <StackLayout HorizontalOptions="Start" Spacing="1" Orientation="Horizontal">
                                                 <Frame CornerRadius="10" VerticalOptions="Center" Padding="5, 1" HasShadow="False" BackgroundColor="{x:Static local:Styles.ObjectGray}">
                                                     <Label Text="D" HorizontalOptions="Center" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />

@@ -50,9 +50,13 @@ namespace SalveminiApp.SecondaryViews
             var countdown = new Helpers.PushCell { Title = "Countdown", Separator = "si" };
             countdown.GestureRecognizers.Add(tapGestureRecognizer);
             persLayout.Children.Add(countdown);
+            var argoPwd = new Helpers.PushCell { Title = "Password di Argo", Separator = "si" };
+            argoPwd.GestureRecognizers.Add(tapGestureRecognizer);
+            persLayout.Children.Add(argoPwd);
             var profileImg = new Helpers.PushCell { Title = "Immagine di profilo", Separator = "No" };
             profileImg.GestureRecognizers.Add(tapGestureRecognizer);
             persLayout.Children.Add(profileImg);
+
 
             //Contattaci
             var insta = new Helpers.PushCell { Title = "Il nostro team", Separator = "si", Push = new SecondaryViews.Team() };

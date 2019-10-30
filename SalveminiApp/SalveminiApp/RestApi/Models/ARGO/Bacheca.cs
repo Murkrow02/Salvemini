@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Xamarin.Essentials;
 
 namespace SalveminiApp.RestApi.Models
 {
@@ -31,5 +32,13 @@ namespace SalveminiApp.RestApi.Models
         public string desFile { get; set; }
         public int numAnno { get; set; }
         public string codMin { get; set; }
+        public string urlMessaggio { get; set; }
+        public string fullUrl
+        {
+            get
+            {
+                return urlMessaggio.Replace("{token}", Preferences.Get("Token", "").Replace("-",""));
+            }
+        }
     }
 }

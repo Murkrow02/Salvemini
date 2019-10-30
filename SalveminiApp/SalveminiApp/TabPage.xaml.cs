@@ -48,7 +48,7 @@ namespace SalveminiApp
             //Initialize Bar
             BarTextColor = Styles.TextColor;
 
-
+            
             //Add Children
             Children.Add(Home);
             Children.Add(Argo);
