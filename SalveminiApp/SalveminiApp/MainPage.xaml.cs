@@ -82,8 +82,28 @@ namespace SalveminiApp
             {
                 RemoveBadge();
             });
+
+            //Fill initial cache
+            if (Barrel.Current.Exists("Index"))
+            {
+                var tempIndex = Barrel.Current.Get<RestApi.Models.Index>("Index");
+                //Get banner ad
+                if (tempIndex != null && tempIndex.Ads != null && tempIndex.Ads.Count > 0)
+                {
+                    //Find a banner
+                    var banner = tempIndex.Ads.Where(x => x.Tipo == 0).ToList();
+                    if (banner.Count > 0)
+                    {
+                        //Found
+                        Ad = banner[0];
+                        adTitle.Text = Ad.Nome;
+                        adImage.Source = Ad.FullImmagine;
+                        adLayout.Opacity = 1;
+                    }
+                }
+            }
         }
-        
+
 
         protected async override void OnAppearing()
         {
@@ -102,7 +122,7 @@ namespace SalveminiApp
             if (Barrel.Current.Exists("orario" + classeCorso))
             {
                 Orario = Barrel.Current.Get<List<RestApi.Models.Lezione>>("orario" + classeCorso);
-                changeDay((int)DateTime.Now.DayOfWeek);
+                changeDay(-1);
             }
 
             //Create static widgets
@@ -123,7 +143,7 @@ namespace SalveminiApp
             extra.GestureRecognizers.Add(tapGestureRecognizer);
 
             //Initialize list with first widgets
-            widgets.Add(registro); widgets.Add(trasporti); widgets.Add(card); widgets.Add(extra); 
+            widgets.Add(registro); widgets.Add(trasporti); widgets.Add(card); widgets.Add(extra);
             OrderWidgets(false);
 
             //Check train version
@@ -135,7 +155,7 @@ namespace SalveminiApp
             //Check Internet
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                // Get updated orario
+                //Get updated orario
                 var _orario = await App.Orari.GetOrario(classeCorso);
 
                 //Check if success and if there are updates
@@ -143,14 +163,14 @@ namespace SalveminiApp
                 {
                     //Update with new orario
                     Orario = _orario;
-                    changeDay((int)DateTime.Now.DayOfWeek);
+                    changeDay(-1);
                 }
 
                 Index = await App.Index.GetIndex();
 
                 //Checks
-                //Authorized?
-                if(Index != null)
+                //Authorized? todo
+                if (Index != null)
                 {
                     if (!Index.Authorized)
                     {
@@ -158,7 +178,7 @@ namespace SalveminiApp
                         Costants.Logout();
                     }
                 }
-                
+
 
                 //Get last sondaggio
                 if (Index.ultimoSondaggio != null)
@@ -353,31 +373,45 @@ namespace SalveminiApp
         {
         }
 
-        //Update orario list
+        //Update orario list (-1 = today)
         public async void changeDay(int day)
         {
-            //Sunday todo
-            if (day == 0)
-            {
-                orarioList.IsVisible = false;
-                return;
-            }
-
+            //-1 notify the algorythm that today is selected
+            bool today = day == -1;
             orarioList.IsVisible = true;
+
+            //reset original day
+            if (today)
+                day = (int)DateTime.Now.DayOfWeek;
 
             try
             {
                 //Orario loaded successfully
                 if (Orario != null)
                 {
+                    //Detect sunday
+                    if (day == 0) day++;
+                    //Intelligent skip today
+                    if(today && DateTime.Now.Hour > 14)
+                        day++;
+
                     //Fill orario list
                     var orarioOggi = await App.Orari.GetOrarioDay(day, Orario);
 
-                  
+                    //Skip freeday
+                    if (orarioOggi[0].Materia == "Libero") 
+                    {
+                        day++;
+                        orarioOggi = await App.Orari.GetOrarioDay(day, Orario);
+                    }
 
                     //Set day label display text
                     if (day == (int)DateTime.Now.DayOfWeek)
                         orarioDay.Text = "Oggi"; //Lol it's today
+                    else if (today && DateTime.Now.Hour > 14)
+                    {
+                        orarioDay.Text = "Domani"; //Auto select tomorrow
+                    }
                     else
                     {
                         var giorni = CultureInfo.CurrentCulture.DateTimeFormat.DayNames.ToList();
@@ -395,12 +429,6 @@ namespace SalveminiApp
                         //Fa niente
                     }
 
-                    //Detect if freeday todo
-                    if (orarioOggi[0].Materia == "Libero")
-                    {
-                        orarioList.IsVisible = false;
-                        return;
-                    }
 
                     //Fill list with lezioni
                     orarioList.ItemsSource = orarioOggi;
@@ -414,7 +442,7 @@ namespace SalveminiApp
                     {
                         orarioFrame.HeightRequest = fullLayout.Height * 0.4;
                     }
-                   
+
                 }
                 else
                 {
@@ -422,7 +450,7 @@ namespace SalveminiApp
                     orarioList.IsVisible = false;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 orarioList.IsVisible = false;
                 await DisplayAlert("Errore", "Non è stato possibile recuperare l'orario, contattaci se il problema persiste", "Ok");

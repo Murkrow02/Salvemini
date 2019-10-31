@@ -83,7 +83,7 @@
                 </StackLayout>
                 <!--Image-->
                 <Frame HasShadow="False" CornerRadius="8" IsClippedToBounds="True" Padding="0">
-                    <ffimageloading:CachedImage x:Name="adImage" />
+                    <ffimageloading:CachedImage x:Name="adImage" CacheType="All"/>
                 </Frame>
                 <!--Frame tapped-->
                 <StackLayout.GestureRecognizers>

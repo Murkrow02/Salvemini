@@ -39,9 +39,9 @@
                             </ListView.ItemTemplate>
                         </ListView>
                         <StackLayout IsVisible="false" x:Name="emptyLayout" VerticalOptions="Center">
-                                <iconize:IconLabel Text="fas-exclamation-triangle" VerticalOptions="Center" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" FontSize="40" />
-                                <Label x:Name="placeholderLabel" Text="Non hai nessuna assenza" VerticalOptions="Center" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" />
-                            </StackLayout>
+                            <iconize:IconLabel Text="fas-exclamation-triangle" VerticalOptions="Center" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" FontSize="40" />
+                            <Label x:Name="placeholderLabel" Text="Non hai nessuna assenza" VerticalOptions="Center" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" />
+                        </StackLayout>
                     </Grid>
                 </Frame>
                 <StackLayout>

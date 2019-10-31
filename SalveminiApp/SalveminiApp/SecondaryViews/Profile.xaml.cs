@@ -235,6 +235,12 @@ namespace SalveminiApp.SecondaryViews
                     DefaultCamera = CameraDevice.Rear
                 });
 
+                if (choosenImage == null)
+                {
+                    MainPage.isSelectingImage = false;
+                    return;
+                }
+
                 //Upload image
                 var success = await App.Immagini.uploadImages(choosenImage.GetStreamWithImageRotatedForExternalStorage(), Preferences.Get("UserId", 0).ToString(), "users");
 
