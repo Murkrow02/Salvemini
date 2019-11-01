@@ -30,15 +30,9 @@ namespace SalveminiApp.RestApi
         {
             Index = new Models.Index();
             var uri = Costants.Uri("index");
-
             try
             {
-                //Get Cache if no Network Access
-                if (Connectivity.NetworkAccess != Xamarin.Essentials.NetworkAccess.Internet && Barrel.Current.Exists("Index"))
-                {
-                    return Barrel.Current.Get<Models.Index>("Index");
-                }
-
+                //Get from url
                 var response = await client.GetAsync(uri);
                 if (response.IsSuccessStatusCode)
                 {
@@ -50,20 +44,18 @@ namespace SalveminiApp.RestApi
                 }
                 else
                 {
-                    if (Barrel.Current.Exists("Index"))
-                    {
-                        return Barrel.Current.Get<Models.Index>("Index");
-                    }
+                    return null;
                 }
-                
+
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                Debug.WriteLine(@"Errore GET index", ex.Message);
             }
             return Index;
         }
     }
+
 
     public interface IRestServiceIndex
     {

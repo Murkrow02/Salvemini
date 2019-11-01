@@ -14,7 +14,10 @@ namespace SalveminiApp.FirstAccess
     public partial class Login : ContentPage
     {
         public List<RestApi.Models.Utente> UtentiLogin = new List<RestApi.Models.Utente>();
-        
+
+        //First tip
+        BubblePopup firstPopUp = new Helpers.PopOvers().defaultPopOver;
+
 
         public Login()
         {
@@ -41,13 +44,24 @@ namespace SalveminiApp.FirstAccess
             await this.FadeTo(1,300, Easing.CubicIn);
 
             //PopOvers
-            var firstPopUp = new Helpers.PopOvers().defaultPopOver;
             firstPopUp.Content = new Xamarin.Forms.Label { Text = "Utilizza le stesse credenziali" + Environment.NewLine + "che usi nell'app DidUp Famiglia", TextColor = Color.White, HorizontalTextAlignment = TextAlignment.Center };
             firstPopUp.IsVisible = true;
             firstPopUp.PointerDirection = PointerDirection.Down;
             firstPopUp.PreferredPointerDirection = PointerDirection.Down;
             firstPopUp.Target = usernameEntry;
             firstPopUp.BackgroundColor = Styles.PrimaryColor;
+            firstPopUp.BackgroundClicked += FirstPopUp_BackgroundClicked;
+            firstPopUp.CloseWhenBackgroundIsClicked = true;
+            var tapGestureRecognizer = new TapGestureRecognizer();
+            tapGestureRecognizer.Tapped += FirstPopUp_BackgroundClicked;
+            firstPopUp.PopAfter = TimeSpan.FromSeconds(3);
+            firstPopUp.Content.GestureRecognizers.Add(tapGestureRecognizer);
+
+        }
+
+        private void FirstPopUp_BackgroundClicked(object sender, EventArgs e)
+        {
+            firstPopUp.IsVisible = false;
         }
 
         async void Continue_Clicked(object sender, System.EventArgs e)

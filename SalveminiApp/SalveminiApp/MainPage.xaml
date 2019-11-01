@@ -22,7 +22,7 @@
         <!--Layout-->
         <StackLayout Padding="15,10,15,20" Spacing="15" x:Name="fullLayout">
             <!--Orario-->
-            <Frame x:Name="orarioFrame" Padding="20, 0,20,5" VerticalOptions="Start" IsClippedToBounds="True" BackgroundColor="White" CornerRadius="15" HasShadow="False">
+            <Frame x:Name="orarioFrame" IsVisible="False" Padding="20, 0,20,5" VerticalOptions="Start" IsClippedToBounds="True" BackgroundColor="White" CornerRadius="15" HasShadow="False">
                 <StackLayout  x:Name="orarioLayout" BackgroundColor="White" Spacing="0">
                     <!--Header-->
                     <StackLayout Orientation="Horizontal" Margin="-5, 0" x:Name="orarioHeader">

@@ -57,13 +57,6 @@ namespace SalveminiApp
                 return cell;
             });
 
-            //Get day names list
-            var giorni = CultureInfo.CurrentCulture.DateTimeFormat.DayNames.ToList();
-            //Remove sunday
-            giorni.RemoveAt(0);
-            //First letter to upper
-            giorni = giorni.ConvertAll(x => x.FirstCharToUpper());
-            giorniList.ItemsSource = giorni;
 
 
             //Subscribe to messaging center
@@ -86,21 +79,31 @@ namespace SalveminiApp
             //Fill initial cache
             if (Barrel.Current.Exists("Index"))
             {
-                var tempIndex = Barrel.Current.Get<RestApi.Models.Index>("Index");
-                //Get banner ad
-                if (tempIndex != null && tempIndex.Ads != null && tempIndex.Ads.Count > 0)
+                try
                 {
-                    //Find a banner
-                    var banner = tempIndex.Ads.Where(x => x.Tipo == 0).ToList();
-                    if (banner.Count > 0)
+                    var tempIndex = Barrel.Current.Get<RestApi.Models.Index>("Index");
+                    Index = tempIndex;
+                    //Get banner ad
+                    if (tempIndex != null && tempIndex.Ads != null && tempIndex.Ads.Count > 0)
                     {
-                        //Found
-                        Ad = banner[0];
-                        adTitle.Text = Ad.Nome;
-                        adImage.Source = Ad.FullImmagine;
-                        adLayout.Opacity = 1;
+                        //Find a banner
+                        var banner = tempIndex.Ads.Where(x => x.Tipo == 0).ToList();
+                        if (banner.Count > 0)
+                        {
+                            //Found
+                            Ad = banner[0];
+                            adTitle.Text = Ad.Nome;
+                            adImage.Source = Ad.FullImmagine;
+                            adLayout.Opacity = 1;
+                        }
                     }
                 }
+                catch
+                {
+                    //Error getting cache, delete it
+                    Barrel.Current.Empty("Index");
+                }
+
             }
         }
 
@@ -166,17 +169,35 @@ namespace SalveminiApp
                     changeDay(-1);
                 }
 
-                Index = await App.Index.GetIndex();
+                var tempIndex = await App.Index.GetIndex();
 
                 //Checks
                 //Authorized? todo
-                if (Index != null)
+                if (tempIndex != null)
                 {
-                    if (!Index.Authorized)
+                    //Save new index
+                    Index = tempIndex;
+
+                    switch (Index.Authorized)
                     {
-                        await DisplayAlert("Attenzione", "Accesso all'app non autorizzato, la sessione di argo è scaduta oppure il tuo account è stato disabilitato", "Ok");
-                        Costants.Logout();
+                        case -1: //Banned
+                            await DisplayAlert("Accesso all'app non autorizzato", "Ooops, tuo account è stato disabilitato! Contatta gli sviluppatori se ritieni si tratti di un errore!", "Ok");
+                            Costants.Logout();
+                            break;
+                        case -2: //Argo unauthorized
+                            await DisplayAlert("Accesso all'app non autorizzato", "La sessione di ARGO è scaduta, probabilmente la password è stata cambiata, rieffettua l'accesso per continuare", "Ok");
+                            Costants.Logout();
+                            break;
                     }
+                }
+                else
+                {
+                    //todo 
+                    await DisplayAlert("Attenzione", "Non è stato possibile connettersi al server", "Ok");
+
+                    //Anche la cache è nulla, stacca stacca
+                    if (Index != null)
+                        return;
                 }
 
 
@@ -376,47 +397,60 @@ namespace SalveminiApp
         //Update orario list (-1 = today)
         public async void changeDay(int day)
         {
-            //-1 notify the algorythm that today is selected
-            bool today = day == -1;
-            orarioList.IsVisible = true;
+            bool today = day == -1; //Today is selected
 
-            //reset original day
             if (today)
-                day = (int)DateTime.Now.DayOfWeek;
+                day = (int)DateTime.Now.DayOfWeek; //Reset current day
+
+            int daySkipped = 0;
 
             try
             {
-                //Orario loaded successfully
                 if (Orario != null)
                 {
-                    //Detect sunday
-                    if (day == 0) day++;
-                    //Intelligent skip today
-                    if(today && DateTime.Now.Hour > 14)
-                        day++;
+                    //Detect freeday
+                    var freedayInt = Orario.FirstOrDefault(x => x.Materia == "Libero").Giorno;
+                    var allDays = Costants.getDays();
 
-                    //Fill orario list
-                    var orarioOggi = await App.Orari.GetOrarioDay(day, Orario);
+                    //Remove freeday from list
+                    allDays.RemoveAt(freedayInt -1);
+                    giorniList.ItemsSource = allDays;
 
-                    //Skip freeday
-                    if (orarioOggi[0].Materia == "Libero") 
+                    //Detect Sunday
+                    if(day == 0)
                     {
                         day++;
-                        orarioOggi = await App.Orari.GetOrarioDay(day, Orario);
+                        daySkipped++;
                     }
 
-                    //Set day label display text
-                    if (day == (int)DateTime.Now.DayOfWeek)
-                        orarioDay.Text = "Oggi"; //Lol it's today
-                    else if (today && DateTime.Now.Hour > 14)
+                    //intelligent auto skip if dopo le 2
+                    if(today && DateTime.Now.Hour > 14)
                     {
-                        orarioDay.Text = "Domani"; //Auto select tomorrow
+                        daySkipped++;
+                        day = SkipDay(day);
+                    }
+
+                    //Skip freeday
+                    if (day == freedayInt)
+                    {
+                        daySkipped++;
+                        day = SkipDay(day);
+                    }
+
+                    //get only today lessons
+                    var orarioOggi = await App.Orari.GetOrarioDay(day, Orario);
+
+                    //Set day label
+                    if(day == (int)DateTime.Now.DayOfWeek)
+                    {
+                        orarioDay.Text = "Oggi";
+                    }else if(daySkipped == 1 && today)
+                    {
+                        orarioDay.Text = "Domani";
                     }
                     else
                     {
-                        var giorni = CultureInfo.CurrentCulture.DateTimeFormat.DayNames.ToList();
-                        orarioDay.Text = giorni[day].FirstCharToUpper(); //Other day
-
+                        orarioDay.Text = Costants.getDays()[day - 1].FirstCharToUpper(); //Other day
                     }
 
                     //Set sede label
@@ -443,6 +477,8 @@ namespace SalveminiApp
                         orarioFrame.HeightRequest = fullLayout.Height * 0.4;
                     }
 
+                    //Show orario
+                    orarioFrame.IsVisible = true;
                 }
                 else
                 {
@@ -515,6 +551,16 @@ namespace SalveminiApp
             widget.Badge = "no";
             widgets.Add(widget);
             OrderWidgets(true);
+        }
+
+        public int SkipDay(int day)
+        {
+            int newDay = day;
+            newDay++;
+            if (newDay == 7)
+                return 1;
+            else
+                return newDay;
         }
 
     }
