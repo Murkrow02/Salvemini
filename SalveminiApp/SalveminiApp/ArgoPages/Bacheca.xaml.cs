@@ -67,7 +67,7 @@ namespace SalveminiApp.ArgoPages
             var content = new ContentPage { Title = (e.SelectedItem as RestApi.Models.Bacheca).formattedTitle, Content = new WebView { Source = (e.SelectedItem as RestApi.Models.Bacheca).Allegati[0].fullUrl } };
             bool haftaClose = true;
             //Add toolbaritems to the page
-            var barItem = new ToolbarItem { Text = "Chiudi" , };
+            var barItem = new ToolbarItem { Text = "Chiudi", };
             barItem.Clicked += (object mandatore, EventArgs f) =>
             {
                 haftaClose = false;

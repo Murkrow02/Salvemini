@@ -52,10 +52,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)UserPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ArgoPages\CompitiArgomenti.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -160,6 +156,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\CambiaPassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ArgoPages\Bacheca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -214,9 +218,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Response.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\CountDown.xaml.cs">
       <DependentUpon>CountDown.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)UserPage.xaml.cs">
-      <DependentUpon>UserPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\CompitiArgomenti.xaml.cs">
       <DependentUpon>CompitiArgomenti.xaml</DependentUpon>
@@ -317,6 +318,12 @@
       <DependentUpon>PollOption.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\CreaSondaggio.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\CambiaPassword.xaml.cs">
+      <DependentUpon>CambiaPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\Bacheca.xaml.cs">
+      <DependentUpon>Bacheca.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

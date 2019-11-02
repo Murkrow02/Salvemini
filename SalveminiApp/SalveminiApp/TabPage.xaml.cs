@@ -33,27 +33,17 @@ namespace SalveminiApp
             Title = "Argo",
             IconImageSource = "tabBarArgo.png"
         };
-        public static Helpers.CustomNavigationPage User = new Helpers.CustomNavigationPage(new UserPage())
-        {
-            BarTextColor = Styles.PrimaryColor,
-            BarBackgroundColor = Color.White,
-            Title = "Profilo",
-            IconImageSource = "tabBarProfile.png"
-        };
-
+        
         public TabPage()
         {
             InitializeComponent();
 
             //Initialize Bar
             BarTextColor = Styles.TextColor;
-
             
             //Add Children
             Children.Add(Home);
             Children.Add(Argo);
-            Children.Add(User);
-
 
 #if __IOS__
             SelectedTabColor = Styles.TextColor;

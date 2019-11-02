@@ -179,11 +179,18 @@ namespace SalveminiApp.SecondaryViews
 
         }
 
+        private void ChangePwd_Clicked(object sender, EventArgs e)
+        {
+            //Push to changePwd Page
+            shouldClose = false;
+            Navigation.PushAsync(new CambiaPassword());
+        }
+
         private async void changePic()
         {
             var decision = await DisplayActionSheet("Come vuoi procedere", "Annulla", "Rimuovi immagine", "Scegli una foto", "Scatta una foto");
 
-           MainPage.isSelectingImage = true;
+            MainPage.isSelectingImage = true;
             if (decision == "Scegli una foto")
             {
                 if (!CrossMedia.Current.IsPickPhotoSupported)

@@ -52,7 +52,7 @@ namespace SalveminiApp.SecondaryViews
 
         void Account_Tapped(object sender, System.EventArgs e)
         {
-            UserPage UserPage = new UserPage();
+            SecondaryViews.Profile UserPage = new Profile();
 #if __IOS__
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
             UIApplication.SharedApplication.StatusBarHidden = true;
