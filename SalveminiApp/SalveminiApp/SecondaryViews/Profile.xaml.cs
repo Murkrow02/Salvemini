@@ -76,6 +76,9 @@ namespace SalveminiApp.SecondaryViews
             var utenti = new Helpers.PushCell { Title = "Utenti", Separator = "si", Push = new AreaVip.UtentiList() };
             utenti.GestureRecognizers.Add(tapGestureRecognizer);
             vipLayout.Children.Add(utenti);
+            var sondaggio = new Helpers.PushCell { Title = "Crea sondaggio", Separator = "si", Push = new AreaVip.CreaSondaggio() };
+            sondaggio.GestureRecognizers.Add(tapGestureRecognizer);
+            vipLayout.Children.Add(sondaggio);
             var orari = new Helpers.PushCell { Title = "Crea orario", Separator = "no", Push = new AreaVip.CreaOrario() };
             orari.GestureRecognizers.Add(tapGestureRecognizer);
             vipLayout.Children.Add(orari);

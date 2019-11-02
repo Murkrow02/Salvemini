@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:local="clr-namespace:SalveminiApp" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.Helpers.PollOption">
+    <StackLayout  x:Name="view" HorizontalOptions="CenterAndExpand">
+        <Frame HasShadow="False"  IsClippedToBounds="True" Padding="0" CornerRadius="20" x:Name="imageFrame">
+            <ffimageloading:CachedImage x:Name="optionImage" CacheType="Memory" Source="imagePlaceholder.png" LoadingPlaceholder="imagePlaceholder.png" />
+        </Frame>
+        <Frame HasShadow="False"  Padding="10" CornerRadius="20" x:Name="labelFrame" VerticalOptions="Start">
+            <patch:Label Margin="15,0" Text="Musa, quell'uom di multiforme g" TextColor="{x:Static local:Styles.TextColor}" x:Name="questionLbl" MinFontSize="10" Lines="3" AutoFit="Width" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+        </Frame>
+    </StackLayout>
+
+</ContentView>

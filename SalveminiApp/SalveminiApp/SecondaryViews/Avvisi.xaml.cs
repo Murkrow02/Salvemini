@@ -53,7 +53,7 @@ namespace SalveminiApp.SecondaryViews
                 {
                     avvisiCarousel.ItemsSource = Avvisis;
                     Preferences.Set("LastAvviso", Avvisis[0].id);
-                    MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "RemoveAvvisiBadge");
+                    MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "RemoveBadge", "Avvisi");
                 }
             }
             else

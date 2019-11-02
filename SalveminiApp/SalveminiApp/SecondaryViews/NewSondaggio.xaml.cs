@@ -1,0 +1,120 @@
+﻿using System;
+using System.Collections.Generic;
+using SalveminiApp.RestApi.Models;
+using Xamarin.Forms;
+using Xamarin.Essentials;
+#if __IOS__
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+#endif
+namespace SalveminiApp.SecondaryViews
+{
+    public partial class NewSondaggio : ContentPage
+    {
+        public Sondaggi sondaggio = new Sondaggi();
+
+        public NewSondaggio(Sondaggi sondaggio_)
+        {
+            InitializeComponent();
+
+            //Safe area
+#if __IOS__
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
+#endif
+
+            //Fill sondaggio values
+            sondaggio = sondaggio_;
+
+            //Fill layout with sondaggio options
+            foreach (var opzione in sondaggio.OggettiSondaggi)
+            {
+                //Create new layout to add a vote button under the option
+                var layout = new StackLayout { Spacing = 2, VerticalOptions = LayoutOptions.FillAndExpand };
+                var votaBtn = new Button { Text = "Vota", BackgroundColor = Color.Transparent, FontSize = 15, Margin = 0, VerticalOptions = LayoutOptions.Start };
+                votaBtn.Clicked += VotaBtn_Clicked;
+
+                //Detect images
+                string image = "no";
+                if (!string.IsNullOrEmpty(opzione.Immagine))
+                    image = opzione.FullImmagine;
+
+                //Create new poll option
+                var widget = new Helpers.PollOption { Title = opzione.Nome, Image = image, optionId = opzione.id, VerticalOptions = LayoutOptions.CenterAndExpand };
+                layout.Children.Add(widget);
+                layout.Children.Add(votaBtn);
+                widgetsLayout.Children.Add(layout);
+            }
+
+            //Set question label and creation label
+            questionLbl.Text = sondaggio.Nome;
+            creatorLbl.Text = "Creato da " + sondaggio.Utenti.nomeCognome;
+        }
+
+        private async void VotaBtn_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                //Get id scelta
+                var button = sender as Button; var layout = button.Parent as StackLayout; var widget = layout.Children[0] as Helpers.PollOption;
+                var scelta = widget.optionId;
+
+                //Create new voto with id scelta
+                var voto = new VotoSondaggio { idSondaggio = sondaggio.id, Utente = Preferences.Get("UserId", 0), Voto = scelta };
+
+                //post the voto
+                var response = await App.Sondaggi.PostVoto(voto);
+
+                //Notify the user success or failure
+                await DisplayAlert(response[0], response[1], "Ok");
+
+                //Success
+                if (response[0] == "Grazie!")
+                {
+                    Preferences.Set("skipPoll" + sondaggio.id, true);
+                    MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "RemoveBadge", "Sondaggi");
+                    //todo show results
+                }
+            }
+            catch
+            {
+                await DisplayAlert("Errore", "Non è stato possibile inviare il tuo voto, riprova più tardi", "Ok");
+            }
+        }
+
+        async void closePage(object sender, EventArgs e)
+        {
+            //Already voted
+            if (Preferences.Get("skipPoll" + sondaggio.id, false))
+            {
+                await Navigation.PopModalAsync();
+                return;
+            }
+
+            //Not voted
+            bool choice = await DisplayAlert("Aspetta!", "La tua opinione è importante, sei sicuro di non voler votare? Se cambi idea puoi sempre tornare su questa pagina cliccando la sezione 'Sondaggi' alla home!", "Ho cambiato idea", "No mi scoccio");
+            if (choice) //He chenged his mind
+                return;
+            else //He decided not to vote :(
+            {
+                Preferences.Set("skipPoll" + sondaggio.id, true);
+                await Navigation.PopModalAsync();
+
+            }
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+
+            //Ios 13 bug
+            try
+            {
+                Navigation.PopModalAsync();
+            }
+            catch
+            {
+                //fa nient
+            }
+
+        }
+    }
+}

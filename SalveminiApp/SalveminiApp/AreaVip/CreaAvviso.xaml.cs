@@ -56,7 +56,7 @@ namespace SalveminiApp.AreaVip
                     {
                         byte[] byteArray = File.ReadAllBytes(currentImage.mediaFile.Path);
                         Stream convertedStream = new MemoryStream(byteArray);
-                        var nomeImmagine = (title.Text + Preferences.Get("UserId", 0).ToString() + DateTime.Now.ToString("yyyyMMddHHmmss")).Trim().Replace(' ', '_');
+                        var nomeImmagine = (title.Text + Preferences.Get("UserId", 0).ToString() + imageIndex.ToString() + DateTime.Now.ToString("yyyyMMddHHmmss")).Trim().Replace(' ', '_');
                         bool caricaImmagine = await App.Immagini.uploadImages(convertedStream, nomeImmagine, "avvisi");
 
 

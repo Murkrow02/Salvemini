@@ -55,6 +55,32 @@ namespace SalveminiApp.RestApi
             }
         }
 
+        public async Task<string[]> PostSondaggio(Sondaggi sondaggio)
+        {
+            var uri = Costants.Uri("sondaggi");
+
+            try
+            {
+                var json = JsonConvert.SerializeObject(sondaggio);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await client.PostAsync(uri, content);
+
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                        return new string[] { "Grazie!", "Il tuo sondaggio è stato inviato correttamente!" };
+                    default:
+                        return new string[] { "Errore", "Si è verificato un errore sconosciuto, riprova più tardi o contattaci se il problema persiste" };
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Crea sondaggio ", ex.Message);
+                return new string[] { "Errore", "Si è verificato un errore sconosciuto, riprova più tardi o contattaci se il problema persiste" };
+            }
+        }
+
         public async Task<Dictionary<int, int>> ReturnRisultati(int id)
         {
             Risultati = new Dictionary<int, int>();
@@ -96,6 +122,7 @@ namespace SalveminiApp.RestApi
     public interface IRestServiceSondaggi
     {
         Task<string[]> PostVoto(VotoSondaggio voto);
+        Task<string[]> PostSondaggio(Sondaggi sondaggio);
         Task<Dictionary<int, int>> ReturnRisultati(int id);
     }
 
@@ -111,6 +138,11 @@ namespace SalveminiApp.RestApi
         public Task<string[]> PostVoto(VotoSondaggio voto)
         {
             return restServiceSondaggi.PostVoto(voto);
+        }
+
+        public Task<string[]> PostSondaggio(Sondaggi sondaggio)
+        {
+            return restServiceSondaggi.PostSondaggio(sondaggio);
         }
 
         public Task<Dictionary<int, int>> ReturnRisultati(int id)

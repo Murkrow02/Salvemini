@@ -22,6 +22,7 @@ namespace SalveminiApp.ArgoPages
 
 
         bool gotByCache = false;
+
         public Registro()
         {
             InitializeComponent();
@@ -159,9 +160,12 @@ namespace SalveminiApp.ArgoPages
                     IsExpanded = Bacheca.Count == 1;
                     foreach (var bacheca in Bacheca)
                     {
+                        var gesture = new TapGestureRecognizer();
+                        gesture.Tapped += Gesture_Tapped;
+
                         //Main Layout
                         var layout = new Xamarin.Forms.StackLayout { HorizontalOptions = LayoutOptions.FillAndExpand, Padding = new Thickness(10), Spacing = 5, VerticalOptions = LayoutOptions.FillAndExpand };
-
+                        layout.GestureRecognizers.Add(gesture);
                         //Title Layout
                         var titleLayout = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, HorizontalOptions = LayoutOptions.Start };
 
@@ -179,6 +183,11 @@ namespace SalveminiApp.ArgoPages
                         layout.Children.Add(titleLayout);
                         layout.Children.Add(descriptionLabel);
                         Content.Add(layout);
+
+                        void Gesture_Tapped(object sender, EventArgs e)
+                        {
+                            Device.OpenUri(new Uri(bacheca.Allegati[0].fullUrl));
+                        }
                     }
 
                     break;
@@ -331,6 +340,9 @@ namespace SalveminiApp.ArgoPages
             mainFrame.Content = expander;
             widgetsLayout.Children.Add(mainFrame);
         }
+
+        
+
 
         void ChangeDate_Clicked(object sender, EventArgs e)
         {

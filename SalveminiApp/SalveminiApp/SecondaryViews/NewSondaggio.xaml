@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:local="clr-namespace:SalveminiApp" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.NewSondaggio">
+    <StackLayout Padding="25,0" Spacing="15">
+
+        <!--Header-->
+        <Grid  Margin="-20,0" Padding="0,5">
+            <Label Text="Sondaggio" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontSize="Title" />
+            <iconize:IconButton Text="fal-times" FontSize="25" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="EndAndExpand" Clicked="closePage" VerticalOptions="CenterAndExpand" />
+        </Grid>
+        <!--Poll question-->
+        <patch:Label x:Name="questionLbl" TextColor="{x:Static local:Styles.TextGray}" MinFontSize="10" Lines="4" AutoFit="Width" VerticalOptions="Start" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+
+        <!--Options-->
+        <ScrollView VerticalOptions="StartAndExpand" Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Margin="-25,0" x:Name="widgetCollection">
+            <StackLayout x:Name="widgetsLayout" Orientation="Horizontal" Spacing="10">
+            </StackLayout>
+        </ScrollView>
+
+        <!--Creator-->
+        <Label x:Name="creatorLbl" TextColor="{x:Static local:Styles.TextGray}" HorizontalTextAlignment="Center" VerticalOptions="StartAndExpand" FontSize="Medium"/>
+
+    </StackLayout>
+</ContentPage>

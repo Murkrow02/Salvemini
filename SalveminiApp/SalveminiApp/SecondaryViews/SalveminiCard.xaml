@@ -3,8 +3,8 @@
     <StackLayout Padding="25,0" Spacing="5">
 
         <Grid  Margin="-20,0" Padding="0,5">
-            <Image HeightRequest="45" HorizontalOptions="CenterAndExpand" Source="SalveminiCard.png" x:Name="lilCard" Opacity="0" />
-            <iconize:IconButton Text="fal-times" FontSize="30" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="EndAndExpand" Clicked="closePage" />
+            <Image HeightRequest="25" HorizontalOptions="CenterAndExpand" Source="SalveminiCard.png" x:Name="lilCard" Opacity="0" />
+            <iconize:IconButton Text="fal-times" FontSize="30" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="EndAndExpand" Clicked="closePage" VerticalOptions="CenterAndExpand"/>
         </Grid>
         <!--Lista-->
         <ListView  Scrolled="listScroll" Margin="-25,0" Footer="" SeparatorVisibility="None" x:Name="offersList" HasUnevenRows="true" ItemSelected="offerSelected">

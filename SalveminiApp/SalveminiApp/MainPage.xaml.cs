@@ -71,9 +71,9 @@ namespace SalveminiApp
             });
 
             //Remove avvisi badge
-            MessagingCenter.Subscribe<App>(this, "RemoveAvvisiBadge", (sender) =>
+            MessagingCenter.Subscribe<App, string>(this, "RemoveBadge", (sender, tipo) =>
             {
-                RemoveBadge();
+                RemoveBadge(tipo);
             });
 
             //Fill initial cache
@@ -206,14 +206,21 @@ namespace SalveminiApp
                 {
                     string nuovoSondaggio = "no";
                     int positionSondaggio = Preferences.Get("OrderSondaggio", 0);
-                    if (Preferences.Get("LastSondaggio", 0) != Index.ultimoSondaggio.id) //New sondaggio detected
+                    if (Preferences.Get("LastSondaggio", 0) != Index.ultimoSondaggio.id && !Index.VotedSondaggio) //New sondaggio detected
                     {
                         //Preferences.Set("LastSondaggio", Index.ultimoSondaggio.id);
                         nuovoSondaggio = "si";
                         positionSondaggio = -1;
+
+
+                        if (!Preferences.Get("skipPoll" + Index.ultimoSondaggio.id, false)) //Push to vote
+                            await Navigation.PushModalAsync(new SecondaryViews.NewSondaggio(Index.ultimoSondaggio));
                     }
+
+                    
+
                     //Create sondaggio widget
-                    var sondaggi = new WidgetGradient { Order = positionSondaggio, Title = "Sondaggi", SubTitle = Index.ultimoSondaggio.Nome, Icon = "fas-people-poll", StartColor = "FD8787", EndColor = "F56FFA", Badge = nuovoSondaggio };
+                    var sondaggi = new WidgetGradient { Order = positionSondaggio, Title = "Sondaggi", SubTitle = Index.ultimoSondaggio.Nome, Icon = "fas-poll", StartColor = "FD8787", EndColor = "F56FFA", Badge = nuovoSondaggio, Push = new SecondaryViews.NewSondaggio(Index.ultimoSondaggio) };
                     sondaggi.GestureRecognizers.Add(tapGestureRecognizer);
                     widgets.Add(sondaggi);
 
@@ -544,13 +551,21 @@ namespace SalveminiApp
             }
         }
 
-        public void RemoveBadge()
+        public void RemoveBadge(string tipo)
         {
-            var widget = widgets.First(x => x.Title == "Avvisi");
-            widgets.Remove(widget);
-            widget.Badge = "no";
-            widgets.Add(widget);
-            OrderWidgets(true);
+            try
+            {
+                var widget = widgets.First(x => x.Title == tipo);
+                widgets.Remove(widget);
+                widget.Badge = "no";
+                widgets.Add(widget);
+                OrderWidgets(true);
+            }
+            catch
+            {
+                //Fa nient
+            }
+           
         }
 
         public int SkipDay(int day)

@@ -65,8 +65,8 @@ namespace SalveminiApp.AreaVip
                 //Add segmented control
                 layout.Children.Add(new SegmentedControl { Children = sedi, SelectedTextColor = Color.Black });
 
-                //Create 6 autocomplete entries
-                for (int i = 1; i <= 6; i++)
+                //Create 7 autocomplete entries
+                for (int i = 1; i <= 7; i++)
                 {
                     layout.Children.Add(new Label { Text = i.ToString() + "a ora" });
                     layout.Children.Add(new Syncfusion.SfAutoComplete.XForms.SfAutoComplete { AutoCompleteMode = Syncfusion.SfAutoComplete.XForms.AutoCompleteMode.Append, DataSource = materie });
@@ -110,11 +110,11 @@ namespace SalveminiApp.AreaVip
                     if (string.IsNullOrEmpty(materia) || string.IsNullOrWhiteSpace(materia))
                     {
                         //Last hour, can skip to other day
-                        if (ora == 6 || ora == 5)
+                        if (ora == 7 || ora == 6 || ora == 5)
                         {
                             giorno++;
                             ora = 1;
-                            segmentedIndex += 14;
+                            segmentedIndex += 15;
                             continue;
                         }
                         else
@@ -130,11 +130,11 @@ namespace SalveminiApp.AreaVip
                     lezioni.Add(lezione);
 
                     //If is last hour skip to next day
-                    if (ora == 6)
+                    if (ora == 7)
                     {
                         giorno++;
                         ora = 1;
-                        segmentedIndex += 14;
+                        segmentedIndex += 15;
                     }
                     else
                         ora++; //Else skip to next hour

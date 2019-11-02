@@ -60,6 +60,8 @@ namespace SalveminiApp
             {4, "11:00" },
             {5, "11:55" },
             {6, "12:50" },
+           {7, "13:45" }
+
         };
 
         public static Dictionary<string, string[]> Rotte = new Dictionary<string, string[]>
