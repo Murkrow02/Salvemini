@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace SalveminiApp.RestApi.Models
 {
     public class Bacheca
     {
-        public string prgMessaggio { get; set; }
+        public int prgMessaggio { get; set; }
         public string desOggetto { get; set; }
         public bool adesione { get; set; }
         public bool richiediAd { get; set; }
@@ -15,6 +16,8 @@ namespace SalveminiApp.RestApi.Models
         public string desUrl { get; set; }
         public string desMessaggio { get; set; }
         public List<Allegati> Allegati { get; set; }
+        public Thickness CellPadding { get; set; } = new Thickness(10);
+        public bool SeparatorVisibility { get; set; } = true;
 
         public string formattedTitle
         {

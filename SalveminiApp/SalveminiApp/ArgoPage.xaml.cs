@@ -4,6 +4,7 @@ using P42.Utils;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using MonkeyCache.SQLite;
+using Syncfusion.SfChart.XForms;
 
 namespace SalveminiApp
 {
@@ -49,6 +50,8 @@ namespace SalveminiApp
             voti.GestureRecognizers.Add(gestureRecognizer);
             var promemoria = new ArgoWidget { Title = "Promemoria", Icon = "Promemoria.svg", StartColor = "F86095", EndColor = "FF6073", Push = new ArgoPages.Promemoria() };
             promemoria.GestureRecognizers.Add(gestureRecognizer);
+            var bacheca = new ArgoWidget { Title = "Bacheca", Icon = "Promemoria.svg", StartColor = "F86095", EndColor = "FF6073", Push = new ArgoPages.Bacheca() };
+            bacheca.GestureRecognizers.Add(gestureRecognizer);
             var scrutinio = new ArgoWidget { Title = "Scrutinio", Icon = "VotiScru.svg", StartColor = "A940F5", EndColor = "6E9BFF", Push = new ArgoPages.VotiScrutinio() };
             scrutinio.GestureRecognizers.Add(gestureRecognizer);
             var compiti = new ArgoWidget { Title = "Compiti", Icon = "Compiti.svg", StartColor = "03F829", EndColor = "20B4C7", Push = new ArgoPages.CompitiArgomenti("compiti") };
@@ -57,7 +60,7 @@ namespace SalveminiApp
             argomenti.GestureRecognizers.Add(gestureRecognizer);
             firstRowWidgets.Children.Clear();
             firstRowWidgets.Children.Add(new ContentView { WidthRequest = -30 });
-            firstRowWidgets.Children.AddRange(new List<ArgoWidget> { assenze, voti, promemoria });
+            firstRowWidgets.Children.AddRange(new List<ArgoWidget> { assenze, voti, promemoria, bacheca });
             firstRowWidgets.Children.Add(new ContentView { WidthRequest = 0 });
             secondRowWidgets.Children.Clear();
             secondRowWidgets.Children.Add(new ContentView { WidthRequest = -30 });
@@ -75,6 +78,7 @@ namespace SalveminiApp
                 else
                 {
                     Medie = dates.Data as List<RestApi.Models.Pentagono>;
+                   // foreach(var a in Medie) { a.Materia = "Dmax"; }
                 }
 
                 if (Medie.Count >= 3)
@@ -94,6 +98,14 @@ namespace SalveminiApp
         void Widget_Tapped(object sender, EventArgs e)
         {
             Navigation.PushModalAsync((sender as ArgoWidget).Push);
+        }
+
+        private void Chart_LabelCreated(object sender, ChartAxisLabelEventArgs e)
+        {
+            if (e.LabelContent.Length > 8 )
+            {
+                e.LabelContent = e.LabelContent.Remove(8);
+            }
         }
     }
 }

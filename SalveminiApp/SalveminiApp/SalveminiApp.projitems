@@ -160,6 +160,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ArgoPages\Bacheca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -318,6 +322,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\PollOption.xaml.cs">
       <DependentUpon>PollOption.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\Bacheca.xaml.cs">
+      <DependentUpon>Bacheca.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -25,6 +25,7 @@ namespace SalveminiApp.RestApi
         public List<Models.Compiti> Compiti { get; private set; }
         public List<Models.Argomenti> Argomenti { get; private set; }
         public List<Models.Voti> Voti { get; private set; }
+        public List<Models.Bacheca> Bacheca { get; private set; }
         public Models.ScrutinioGrouped VotiScrutinio { get; private set; }
         public Models.WholeModel Oggi { get; private set; }
 
@@ -354,6 +355,50 @@ namespace SalveminiApp.RestApi
             }
             return Data;
         }
+
+        public async Task<Models.ResponseModel> GetBacheca()
+        {
+            Models.ResponseModel Data = new Models.ResponseModel();
+            Bacheca = new List<Models.Bacheca>();
+
+            var uri = Costants.Uri("argo/bacheca");
+
+            try
+            {
+                var response = await client.GetAsync(uri);
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                        var content = await response.Content.ReadAsStringAsync();
+                        Bacheca = JsonConvert.DeserializeObject<List<Models.Bacheca>>(content);
+                        if (Bacheca.Count > 0)
+                        {
+                            Bacheca[Bacheca.Count - 1].SeparatorVisibility = false;
+                            Bacheca[0].CellPadding = new Thickness(10, 20, 10, 10);
+                            if (Bacheca.Count > 1)
+                            {
+                                Bacheca[Bacheca.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
+                            }
+                        }
+                        Data.Data = Bacheca;
+                        break;
+                    case HttpStatusCode.Forbidden:
+                        Data.Message = "Si è verificato un errore nella connessione ad ARGO";
+                        break;
+                    case HttpStatusCode.InternalServerError:
+                        Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+                        break;
+                }
+                Barrel.Current.Add("Bacheca", Bacheca, TimeSpan.FromDays(7));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+            }
+            return Data;
+        }
+
         public async Task<Models.ResponseModel> GetOggi(DateTime data)
         {
             Models.ResponseModel Data = new Models.ResponseModel();
@@ -430,6 +475,7 @@ namespace SalveminiApp.RestApi
         Task<Models.ResponseModel> GetVoti();
         Task<Models.ResponseModel> GetVotiScrutinio();
         Task<Models.ResponseModel> GetOggi(DateTime data);
+        Task<Models.ResponseModel> GetBacheca();
     }
 
     public class ItemManagerArgo
@@ -489,6 +535,11 @@ namespace SalveminiApp.RestApi
         public Task<Models.ResponseModel> GetOggi(DateTime data)
         {
             return restServiceArgo.GetOggi(data);
+        }
+
+        public Task<Models.ResponseModel> GetBacheca()
+        {
+            return restServiceArgo.GetBacheca();
         }
     }
 }

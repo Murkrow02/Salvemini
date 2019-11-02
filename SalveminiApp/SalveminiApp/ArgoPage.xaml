@@ -4,7 +4,7 @@
         <!--WidgetList-->
         <StackLayout VerticalOptions="FillAndExpand">
             <!--Personalizza-->
-            <StackLayout Padding="10, 0" HorizontalOptions="End"  Orientation="Horizontal">
+            <StackLayout Padding="10, 0" HorizontalOptions="End" Orientation="Horizontal">
                 <Label Text="Personalizza" TextColor="{x:Static local:Styles.TextColor}" />
                 <iconize:IconLabel Text="fas-edit" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" />
                 <StackLayout.GestureRecognizers>
@@ -25,12 +25,12 @@
 
 
         <!--Grafico Materie-->
-        <Label Text="Grafico Materie" Margin="20, 0" FontAttributes="Bold" HorizontalOptions="Start" TextColor="{x:Static local:Styles.TextColor}" FontSize="Large"/>
+        <Label Text="Grafico Materie" Margin="20, 0" FontAttributes="Bold" HorizontalOptions="Start" TextColor="{x:Static local:Styles.TextColor}" FontSize="Large" />
         <Frame Margin="20, 0" HasShadow="False" CornerRadius="20" Padding="5">
             <StackLayout>
                 <chart:SfChart VerticalOptions="Start" x:Name="chart" AreaBorderColor="Red">
-                    <chart:SfChart.PrimaryAxis >
-                        <chart:CategoryAxis>
+                    <chart:SfChart.PrimaryAxis>
+                        <chart:CategoryAxis LabelCreated="Chart_LabelCreated">
                         </chart:CategoryAxis>
                     </chart:SfChart.PrimaryAxis>
                     <chart:SfChart.SecondaryAxis>
