@@ -7,7 +7,7 @@ namespace SalveminiApi.Argo.Models
 {
     public class Bacheca
     {
-        public string prgMessaggio { get; set; }
+        public int prgMessaggio { get; set; }
         public string desOggetto { get; set; }
         public bool adesione { get; set; }
         public bool richiediAd { get; set; }
@@ -28,7 +28,7 @@ namespace SalveminiApi.Argo.Models
         //Construct full uri
         public string urlMessaggio
         {
-            get { return Costants.allegatiUrl(prgMessaggio.ToString()); }
+            get { return Costants.allegatiUrl(prgMessaggio.ToString(), prgAllegato.ToString()); }
         }
     }
 

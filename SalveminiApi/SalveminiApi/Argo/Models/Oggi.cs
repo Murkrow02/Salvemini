@@ -85,7 +85,7 @@ namespace SalveminiApi.Argo.Models
 
 
         //Bacheca
-        public string prgMessaggio { get; set; }
+        public int prgMessaggio { get; set; }
         public string desOggetto { get; set; }
         public bool adesione { get; set; }
         public bool richiediAd { get; set; }

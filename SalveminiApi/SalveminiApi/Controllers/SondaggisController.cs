@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using SalveminiApi.Models;
+using SalveminiApi.OneSignalApi;
 
 namespace SalveminiApi.Controllers
 {
@@ -28,6 +29,53 @@ namespace SalveminiApi.Controllers
                 throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
             return db.Sondaggi.ToList();
+        }
+
+        [Route("")]
+        [HttpPost]
+        public HttpResponseMessage PostSondaggio(Sondaggi sondaggio)
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request, true);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+
+            //Deactive others
+            foreach (var sondaggio_ in db.Sondaggi)
+            {
+                sondaggio_.Attivo = false;
+            }
+
+            //Set current time to creation and active poll
+            sondaggio.Creazione = Helpers.Utility.italianTime();
+            sondaggio.Attivo = true;
+
+            db.Sondaggi.Add(sondaggio);
+            db.SaveChanges();
+
+            //Invia notifica se necessario
+            try
+            {
+                var mittente = db.Utenti.Find(sondaggio.Creatore);
+                var notifica = new NotificationModel();
+                var titolo = new Localized { en = "Nuovo sondaggio, apri l'app per votare" };
+                var dettagli = new Localized { en = sondaggio.Nome};
+                //var filter = new Tags { field = "tag", key = "SchedaId", relation = "=", value = ListaUtenti.SelectedValue };
+                //var tags = new List<Tags>();
+                //tags.Add(filter);
+                notifica.headings = titolo;
+                notifica.contents = dettagli;
+                //notifica.filters = tags;
+                NotificationService.sendNotification(notifica);
+            }
+            catch
+            {
+                //Errore nell inviare la notifica, ma fa niente lol avviso creato con successo
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
         [Route("vota")]

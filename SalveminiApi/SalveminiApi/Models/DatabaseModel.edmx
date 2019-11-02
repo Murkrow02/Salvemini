@@ -412,7 +412,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="Nome" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Immagine" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="idSondaggio" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Sondaggi" Relationship="Entities.FK_OggettiSondaggi_Sondaggi" FromRole="OggettiSondaggi" ToRole="Sondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
@@ -422,7 +422,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="Nome" Type="String" Nullable="false" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Creatore" Type="Int32" Nullable="false" />
           <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Attivo" Type="Boolean" Nullable="false" />
