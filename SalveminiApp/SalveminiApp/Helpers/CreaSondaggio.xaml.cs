@@ -13,7 +13,7 @@ namespace SalveminiApp.AreaVip
     public partial class CreaSondaggio : ContentPage
     {
         List<OggettiToUpload> Oggetti = new List<OggettiToUpload>();
-        ImagesToUpload choosenImageToUpload = new ImagesToUpload();
+        ImagesToUpload choosenImageToUpload = null;
 
         public CreaSondaggio()
         {
@@ -30,6 +30,21 @@ namespace SalveminiApp.AreaVip
             createBtn.IsEnabled = false;
 
             //todo checks
+            //At least 2 objects noob
+            if(Oggetti.Count < 2)
+            {
+                await DisplayAlert("Attenzione", "Devi aggiungere almeno 2 opzioni per inviare il sondaggio!", "Ok");
+                createBtn.IsEnabled = true;
+                return;
+            }
+
+            //Check if entered option name
+            if (string.IsNullOrEmpty(pollTitle.Text) || string.IsNullOrWhiteSpace(pollTitle.Text))
+            {
+                await DisplayAlert("Attenzione", "Devi inserire una domanda per il tuo sondaggio", "Ok");
+                createBtn.IsEnabled = true;
+                return;
+            }
 
             //PROGRESS DIALOG
             using (IProgressDialog progress = UserDialogs.Instance.Progress("Caricamento sondaggio", null, null, true, MaskType.Black))
@@ -73,8 +88,68 @@ namespace SalveminiApp.AreaVip
 
             //Post sondaggio
             sondaggio.OggettiSondaggi = opzioni_;
-            var response = App.Sondaggi.PostSondaggio(sondaggio);
+            var response = await App.Sondaggi.PostSondaggio(sondaggio);
+
+            //Success
+            if (response[0] == "Grazie!")
+               await Navigation.PopModalAsync();
+
+            createBtn.IsEnabled = true;
         }
+
+        async void OrderOpzioni()
+        {
+            //Reset
+            widgetsLayout.Children.Clear();
+
+            //Add initial space
+            widgetsLayout.Children.Add(new Xamarin.Forms.ContentView { WidthRequest = 5 });
+
+            int selectedWidget = 0;
+            //Fill layout with sondaggio options
+            foreach (var opzione in Oggetti)
+            {
+                //Create new layout to add a vote button under the option
+                var layout = new StackLayout { Spacing = 2, VerticalOptions = LayoutOptions.FillAndExpand };
+                var removeBtn = new Button { Text = "Rimuovi", BackgroundColor = Color.Transparent, FontSize = 15, Margin = 0, VerticalOptions = LayoutOptions.Start };
+                removeBtn.Clicked += RemoveBtn_Clicked;
+
+                ImageSource image = null;
+                string hideImage = null;
+                //Detect images
+                if (opzione.imageSource != null)
+                    image = opzione.imageSource;
+                else
+                    hideImage = "si";
+
+                //Create new poll option
+                var widget = new Helpers.PollOption {HideImage = hideImage, optionId = selectedWidget, Title = opzione.Nome, VerticalOptions = LayoutOptions.CenterAndExpand,PreviewImage = image };
+                layout.Children.Add(widget);
+                layout.Children.Add(removeBtn);
+                widgetsLayout.Children.Add(layout);
+
+                //Give widget an id for removal
+                selectedWidget++;
+            }
+
+            void RemoveBtn_Clicked(object sender, EventArgs e)
+            {
+                try
+                {
+                    var button = sender as Button;
+                    var layout = button.Parent as StackLayout;
+                    var widget = layout.Children[0] as Helpers.PollOption;
+                    Oggetti.RemoveAt(widget.optionId);
+                }
+                catch
+                {
+                    Oggetti.Clear();
+                }
+                OrderOpzioni();
+            }
+        }
+
+        
 
         async void choosePhoto(object sender, System.EventArgs e)
         {
@@ -104,27 +179,30 @@ namespace SalveminiApp.AreaVip
             choosenImageToUpload.imageSource = ImageSource.FromStream(() =>
             {
                 var streams = choosenImage.GetStreamWithImageRotatedForExternalStorage();
-                choosenImageToUpload.mediaFile = choosenImage;
                 return streams;
             });
 
-            MainPage.isSelectingImage = false;
+            choosenImageToUpload.mediaFile = choosenImage;
 
+
+            MainPage.isSelectingImage = false;
+            attachBtn.IsEnabled = false;
+            attachBtn.Text = "Hai allegato un file";
         }
 
         public void addOption(object sender, EventArgs e)
         {
-            //Check if entered option name
-            if(string.IsNullOrEmpty(opzioneEntry.Text) || string.IsNullOrWhiteSpace(opzioneEntry.Text))
-            {
-                DisplayAlert("Attenzione", "Devi inserire una domanda per il tup sondaggio", "Ok");
-                return;
-            }
-
             //Too many options
             if(Oggetti.Count >= 6)
             {
                 DisplayAlert("Attenzione", "Puoi aggiungere massimo 6 opzioni al tuo sondaggio", "Ok");
+                return;
+            }
+
+            //No name to option
+            if (string.IsNullOrEmpty(opzioneEntry.Text))
+            {
+                DisplayAlert("Attenzione", "Inserisci un nome per questa opzione", "Ok");
                 return;
             }
 
@@ -137,7 +215,7 @@ namespace SalveminiApp.AreaVip
             {
                 newOggetto.mediaFile = choosenImageToUpload.mediaFile;
                 newOggetto.imageSource = choosenImageToUpload.imageSource;
-                newOggetto = null;
+                choosenImageToUpload = null;
             }
 
             //Add to list new option
@@ -146,8 +224,13 @@ namespace SalveminiApp.AreaVip
             //Clear entry
             opzioneEntry.Text = "";
 
+            //reset attachment
+            attachBtn.IsEnabled = true;
+            attachBtn.Text = "Allega immagine (Opzionale)";
+
             //Notify success
-            DisplayAlert("Successo", "L'oggetto è stato aggiunto come opzione del sondaggio","Ok");
+           // DisplayAlert("Successo", "L'oggetto è stato aggiunto come opzione del sondaggio","Ok");
+            OrderOpzioni();
         }
     }
 }

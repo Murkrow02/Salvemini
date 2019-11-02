@@ -51,6 +51,36 @@ namespace SalveminiApp.Helpers
             }
         }
 
+        //PreviewImage
+        public static readonly BindableProperty PreviewImageProperty = BindableProperty.Create(nameof(PreviewImage), typeof(ImageSource), typeof(PollOption), default(ImageSource), Xamarin.Forms.BindingMode.OneWay);
+        public ImageSource PreviewImage
+        {
+            get
+            {
+                return (ImageSource)GetValue(PreviewImageProperty);
+            }
+
+            set
+            {
+                SetValue(PreviewImageProperty, value);
+            }
+        }
+
+        //HideImage
+        public static readonly BindableProperty HideImageProperty = BindableProperty.Create(nameof(HideImage), typeof(string), typeof(PollOption), default(string), Xamarin.Forms.BindingMode.OneWay);
+        public string HideImage
+        {
+            get
+            {
+                return (string)GetValue(HideImageProperty);
+            }
+
+            set
+            {
+                SetValue(HideImageProperty, value);
+            }
+        }
+
         public PollOption()
         {
             InitializeComponent();
@@ -81,6 +111,33 @@ namespace SalveminiApp.Helpers
                         labelFrame.BackgroundColor = Color.Transparent;
                     }
                     else //No image
+                    {
+                        imageFrame.IsVisible = false;
+                        labelFrame.VerticalOptions = LayoutOptions.CenterAndExpand;
+                    }
+                }
+
+                //PreviewImage
+                if (propertyName == PreviewImageProperty.PropertyName)
+                {
+                    //Image found
+                    if (PreviewImage != null)
+                    {
+                        optionImage.Source = PreviewImage;
+                        labelFrame.BackgroundColor = Color.Transparent;
+                    }
+                    else //No image
+                    {
+                        imageFrame.IsVisible = false;
+                        labelFrame.VerticalOptions = LayoutOptions.CenterAndExpand;
+                    }
+                }
+
+                //HidePreviewImage
+                if (propertyName == HideImageProperty.PropertyName)
+                {
+                    //Image not found
+                    if (HideImage != null)
                     {
                         imageFrame.IsVisible = false;
                         labelFrame.VerticalOptions = LayoutOptions.CenterAndExpand;

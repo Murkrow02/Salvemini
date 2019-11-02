@@ -24,6 +24,9 @@ namespace SalveminiApp.SecondaryViews
             //Fill sondaggio values
             sondaggio = sondaggio_;
 
+            //Add initial space
+            widgetsLayout.Children.Add(new Xamarin.Forms.ContentView { WidthRequest = 5 });
+
             //Fill layout with sondaggio options
             foreach (var opzione in sondaggio.OggettiSondaggi)
             {
@@ -43,6 +46,9 @@ namespace SalveminiApp.SecondaryViews
                 layout.Children.Add(votaBtn);
                 widgetsLayout.Children.Add(layout);
             }
+
+            //Add final space
+            widgetsLayout.Children.Add(new Xamarin.Forms.ContentView { WidthRequest = 5 });
 
             //Set question label and creation label
             questionLbl.Text = sondaggio.Nome;

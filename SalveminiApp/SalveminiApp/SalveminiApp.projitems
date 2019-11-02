@@ -160,10 +160,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ArgoPages\Bacheca.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -314,18 +310,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Bacheca.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\WholeModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Argo.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AreaVip\CreaSondaggio.xaml.cs">
-      <DependentUpon>CreaSondaggio.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\NewSondaggio.xaml.cs">
       <DependentUpon>NewSondaggio.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\PollOption.xaml.cs">
       <DependentUpon>PollOption.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\Bacheca.xaml.cs">
-      <DependentUpon>Bacheca.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\CreaSondaggio.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
