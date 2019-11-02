@@ -217,10 +217,10 @@ namespace SalveminiApp
                             await Navigation.PushModalAsync(new SecondaryViews.NewSondaggio(Index.ultimoSondaggio));
                     }
 
-                    
+
 
                     //Create sondaggio widget
-                    var sondaggi = new WidgetGradient { Order = positionSondaggio, Title = "Sondaggi", SubTitle = Index.ultimoSondaggio.Nome, Icon = "fas-poll", StartColor = "FD8787", EndColor = "F56FFA", Badge = nuovoSondaggio, Push = new SecondaryViews.NewSondaggio(Index.ultimoSondaggio) };
+                    var sondaggi = new WidgetGradient { Order = positionSondaggio, Title = "Sondaggi", SubTitle = Index.ultimoSondaggio.Nome.Truncate(50), Icon = "fas-poll", StartColor = "FD8787", EndColor = "F56FFA", Badge = nuovoSondaggio, Push = new SecondaryViews.NewSondaggio(Index.ultimoSondaggio) };
                     sondaggi.GestureRecognizers.Add(tapGestureRecognizer);
                     widgets.Add(sondaggi);
 
@@ -420,18 +420,18 @@ namespace SalveminiApp
                     var allDays = Costants.getDays();
 
                     //Remove freeday from list
-                    allDays.RemoveAt(freedayInt -1);
+                    allDays.RemoveAt(freedayInt - 1);
                     giorniList.ItemsSource = allDays;
 
                     //Detect Sunday
-                    if(day == 0)
+                    if (day == 0)
                     {
                         day++;
                         daySkipped++;
                     }
 
                     //intelligent auto skip if dopo le 2
-                    if(today && DateTime.Now.Hour > 14)
+                    if (today && DateTime.Now.Hour > 14)
                     {
                         daySkipped++;
                         day = SkipDay(day);
@@ -448,10 +448,11 @@ namespace SalveminiApp
                     var orarioOggi = await App.Orari.GetOrarioDay(day, Orario);
 
                     //Set day label
-                    if(day == (int)DateTime.Now.DayOfWeek)
+                    if (day == (int)DateTime.Now.DayOfWeek)
                     {
                         orarioDay.Text = "Oggi";
-                    }else if(daySkipped == 1 && today)
+                    }
+                    else if (daySkipped == 1 && today)
                     {
                         orarioDay.Text = "Domani";
                     }
@@ -565,7 +566,7 @@ namespace SalveminiApp
             {
                 //Fa nient
             }
-           
+
         }
 
         public int SkipDay(int day)
@@ -614,5 +615,12 @@ namespace SalveminiApp
                 default: return input.First().ToString().ToUpper() + input.Substring(1);
             }
         }
+
+        public static string Truncate(this string value, int maxLength)
+        {
+            if (string.IsNullOrEmpty(value)) return value;
+            return value.Length <= maxLength ? value : value.Substring(0, maxLength);
+        }
+
     }
 }
