@@ -41,4 +41,10 @@ namespace SalveminiApp.RestApi.Models
             }
         }
     }
+
+    public class VisualizzaBacheca
+    {
+        public int prgMessaggio { get; set; }
+        public bool presaVisione { get; set; }
+    }
 }

@@ -385,12 +385,44 @@ namespace SalveminiApp.RestApi
             }
             return Data;
         }
+
+        public async Task<Models.ResponseModel> VisualizzaBacheca(RestApi.Models.VisualizzaBacheca item)
+        {
+            Models.ResponseModel Data = new Models.ResponseModel();
+            string uri = Costants.Uri("argo/visualizzabacheca");
+            try
+            {
+                var json = JsonConvert.SerializeObject(item);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await client.PostAsync(uri, content);
+
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                        Data.Data = response.IsSuccessStatusCode;
+                        break;
+                    case HttpStatusCode.Forbidden:
+                        Data.Message = "Si è verificato un errore nella connessione ad ARGO";
+                        break;
+                    case HttpStatusCode.InternalServerError:
+                        Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+            }
+            return Data;
+        }
     }
 
     public interface IRestServiceArgo
     {
         Task<Models.ResponseModel> GetAssenze();
         Task<Models.ResponseModel> GiustificaAssenza(RestApi.Models.AssenzaModel item);
+        Task<Models.ResponseModel> VisualizzaBacheca(RestApi.Models.VisualizzaBacheca item);
         Task<Models.ResponseModel> GetPromemoria();
         Task<Models.ResponseModel> GetPentagono();
         Task<Models.ResponseModel> GetCompiti();
@@ -428,6 +460,11 @@ namespace SalveminiApp.RestApi
         public Task<Models.ResponseModel> GiustificaAssenza(RestApi.Models.AssenzaModel item)
         {
             return restServiceArgo.GiustificaAssenza(item);
+        }
+
+        public Task<Models.ResponseModel> VisualizzaBacheca(RestApi.Models.VisualizzaBacheca item)
+        {
+            return restServiceArgo.VisualizzaBacheca(item);
         }
 
         public Task<Models.ResponseModel> GetPromemoria()

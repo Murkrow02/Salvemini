@@ -143,7 +143,7 @@ namespace SalveminiApp.ArgoPages
             }
         }
 
-        void setLayout(string type)
+       void setLayout(string type)
         {
             //Static values for widgets
             string title = "";
@@ -184,9 +184,19 @@ namespace SalveminiApp.ArgoPages
                         layout.Children.Add(descriptionLabel);
                         Content.Add(layout);
 
-                        void Gesture_Tapped(object sender, EventArgs e)
+                       async void Gesture_Tapped(object sender, EventArgs e)
                         {
-                            Device.OpenUri(new Uri(bacheca.Allegati[0].fullUrl));
+                            try
+                            {
+                                Device.OpenUri(new Uri(bacheca.Allegati[0].fullUrl));
+
+                                //Post visualizzazione
+                                var response = await App.Argo.VisualizzaBacheca(new RestApi.Models.VisualizzaBacheca { presaVisione = true, prgMessaggio = bacheca.Allegati[0].prgMessaggio });
+                            }
+                            catch
+                            {
+                                DisplayAlert("Errore", "Non è stato possibile scaricare l'allegato", "Ok");
+                            }
                         }
                     }
 
