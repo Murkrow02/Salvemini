@@ -20,4 +20,11 @@ namespace SalveminiApi.Models
         public int Authorized { get; set; }
         public bool VotedSondaggio { get; set; }
     }
+
+    public class IndexArgo
+    {
+        public int NotizieCount { get; set; }
+        public string UltimaNotizia { get; set; }
+        public string TipoNotizia { get; set; }
+    }
 }

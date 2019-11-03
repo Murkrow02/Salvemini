@@ -31,6 +31,6 @@ namespace SalveminiApi.Models
         public virtual ICollection<OggettiSondaggi> OggettiSondaggi { get; set; }
         public virtual Utenti Utenti { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<VotiSondaggi> VotiSondaggi { get; set; }
+        public virtual ICollection<VotiSondaggi> VotiSondaggi { internal get; set; }
     }
 }

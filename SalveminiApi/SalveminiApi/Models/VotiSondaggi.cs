@@ -20,6 +20,7 @@ namespace SalveminiApi.Models
         public int Voto { get; set; }
     
         public virtual Sondaggi Sondaggi { internal get; set; }
-        public virtual Utenti Utenti { get; set; }
+        public virtual Utenti Utenti { internal get; set; }
+        public virtual OggettiSondaggi OggettiSondaggi { internal get; set; }
     }
 }

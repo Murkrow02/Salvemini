@@ -235,6 +235,124 @@ namespace SalveminiApi.Controllers
             return returnModel;
         }
 
+        [Route("indexargo")]
+        [HttpGet]
+        public async Task<IndexArgo> argoOggi()
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request);
+            if (!authorized)
+                throw new HttpResponseException(HttpStatusCode.Unauthorized);
+
+            //Prendi parametri utente da chiamata
+            var id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
+            string token = Request.Headers.GetValues("x-auth-token").First();
+
+            //ARGO
+            //Prendi modello
+            var argoUtils = new ArgoUtils();
+            var argoClient = argoUtils.ArgoClient(id, token);
+
+            //Create new model to return
+            var returnModel = new WholeModel();
+
+            //Create new uri
+            var uri = "https://www.portaleargo.it/famiglia/api/rest/oggi?datGiorno=" + Helpers.Utility.italianTime().ToString("yyyy-MM-dd");
+
+            try
+            {
+                //Get all today things
+                var response = await argoClient.GetAsync(uri);
+
+                //Token changed
+                if (response.StatusCode == HttpStatusCode.Unauthorized)
+                    throw new HttpResponseException(HttpStatusCode.Forbidden);
+
+                var oggi = new Oggi();
+                var content = await response.Content.ReadAsStringAsync();
+                oggi = JsonConvert.DeserializeObject<Oggi>(content);
+                var notizie = oggi.dati;
+
+                //Create new model
+                var argoIndex = new Models.IndexArgo();
+                argoIndex.NotizieCount = notizie.Count();
+
+                //Create list to random extract later
+                var listaRandom = new List<string[]>();
+
+                foreach (var notizia in notizie)
+                {
+                    switch (notizia.tipo)
+                    {
+                        case "BAC":
+                            //BACHECA
+                            listaRandom.Add(new string[] { "Bacheca: ",notizia.dati.desMessaggio });
+                            break;
+                        case "COM":
+                            //COMPITI
+                            listaRandom.Add(new string[] { "Compiti da " + notizia.dati.docente.Replace("(","").Replace(")","") + ": ", notizia.dati.desCompiti });
+                            break;
+                        case "ARG":
+                            //ARGOMENTI
+                            listaRandom.Add(new string[] { notizia.dati.docente.Replace("(", "").Replace(")", "") + ": ", notizia.dati.desArgomento });
+                            break;
+                        case "VOT":
+                            //VOTI
+                            listaRandom.Add(new string[] { "", "Hai preso " + notizia.dati.codVoto + " di " + notizia.dati.desMateria });
+                            break;
+                        case "PRO":
+                            //PROMEMORIA
+                            listaRandom.Add(new string[] { "Promemoria: ", notizia.dati.desAnnotazioni });
+                            break;
+                        case "ASS":
+                            //ASSENZE
+                            string cosa = "";
+                            switch (notizia.dati.codEvento)
+                            {
+                                case "A":
+                                    cosa = "Oggi sei stato assente";
+                                    break;
+                                case "U":
+                                    cosa = "Oggi sei uscito in anticipo";
+                                    break;
+                                case "I":
+                                    cosa = "Oggi sei entrato in ritardo";
+                                    break;
+                            }
+
+                            listaRandom.Add(new string[] { "", cosa});
+                            break;
+                    }
+
+                }
+
+                //Add to return model
+                //Prendi prima assenze o voti
+                var priorità = listaRandom.Where(x => x[0] == "").ToList();
+                if (priorità.Count > 0)
+                {
+                    argoIndex.TipoNotizia = priorità[0][0];
+                    argoIndex.UltimaNotizia = priorità[0][1];
+
+                }
+                else
+                {
+                    if(listaRandom.Count > 0)
+                    {
+                        argoIndex.TipoNotizia = listaRandom[0][0];
+                        argoIndex.UltimaNotizia = listaRandom[0][1];
+                    }
+                }
+                return argoIndex;
+            }
+            catch (Exception ex)
+            {
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
+            }
+
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

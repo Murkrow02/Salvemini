@@ -343,6 +343,7 @@
     <Compile Include="Models\Sondaggi.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SondaggiResult.cs" />
     <Compile Include="Models\Utenti.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
