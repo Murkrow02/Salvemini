@@ -58,14 +58,13 @@
             <!--WidgetList-->
             <StackLayout VerticalOptions="Start">
                 <!--Personalizza-->
-                <StackLayout Orientation="Horizontal">
+                <!--<StackLayout Orientation="Horizontal">
                     <Label Text="Personalizza" TextColor="{x:Static local:Styles.TextColor}" />
                     <iconize:IconLabel Text="fas-edit" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" />
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="editWidget_Tapped" NumberOfTapsRequired="1" />
                     </StackLayout.GestureRecognizers>
-                </StackLayout>
-
+                </StackLayout>-->
                 <!--Widgets-->
                 <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Margin="-15,0" x:Name="widgetCollection">
                     <StackLayout x:Name="widgetsLayout" Orientation="Horizontal" Spacing="10">

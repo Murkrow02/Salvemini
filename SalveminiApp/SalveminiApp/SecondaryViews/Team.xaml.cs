@@ -10,6 +10,12 @@ namespace SalveminiApp.SecondaryViews
         public Team()
         {
             InitializeComponent();
-        }
+
+            layout.Children.Add(new Controls.TeamPersonFrame { Icon= "safariLogo", Image="codexLogo.png", Title = "Codex Development", SubTitle = "Applicazioni mobile, siti web e molto altro",IconUrl= "http://codexdevelopment.net" });
+            layout.Children.Add(new Controls.TeamPersonFrame { Icon = "instaLogo",Image = "calendar.png", Title = "Marco Coppola", SubTitle="Backend e Frontend Developer", IconUrl= "https://www.instagram.com/_murkrow_/"});
+            layout.Children.Add(new Controls.TeamPersonFrame { Icon = "instaLogo",Image = "calendar.png", Title = "Valerio de Nicola", SubTitle = "Frontend Developer, UI e UX Designer",IconUrl = "https://www.instagram.com/vale_denicola/" });
+            layout.Children.Add(new Controls.TeamPersonFrame { Icon = "instaLogo",Image = "calendar.png", Title = "Ilaria Pontecorvo", SubTitle = "Graphic & UI Designer",IconUrl = "https://www.instagram.com/jlarjia/" });
+
+            }
     }
 }

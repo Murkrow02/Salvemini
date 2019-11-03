@@ -259,6 +259,9 @@
     <BundleResource Include="Resources\bbar.jpg" />
     <BundleResource Include="Lotties\redPulse.json" />
     <BundleResource Include="Resources\adTest.png" />
+    <BundleResource Include="Resources\codexLogo.png" />
+    <BundleResource Include="Resources\safariLogo.png" />
+    <BundleResource Include="Resources\instaLogo.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lotties\" />

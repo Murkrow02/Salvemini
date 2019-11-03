@@ -20,7 +20,7 @@
                                                     </StackLayout>
                                                     <Label Text="{Binding desMessaggio}" TextColor="{x:Static local:Styles.TextGray}" FontSize="12" HorizontalOptions="Start" />
                                                 </StackLayout>
-                                                <iconize:IconLabel Text="far-file" FontSize="30" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+                                                <iconize:IconLabel TextColor="{x:Static local:Styles.TextColor}" Text="far-file" FontSize="30" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
                                             </StackLayout>
                                             <local:DashedBorderFrame IsVisible="{Binding SeparatorVisibility}" Padding="0" Margin="-10" HeightRequest="0.1" />
                                         </StackLayout>
@@ -30,7 +30,7 @@
                         </ListView>
                         <StackLayout IsVisible="false" x:Name="emptyLayout" VerticalOptions="Center">
                             <iconize:IconLabel Text="fas-clipboard-list" VerticalOptions="Center" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" FontSize="40" />
-                            <Label HorizontalTextAlignment="Center" x:Name="placeholderLabel" Text="La bacheca è vuotas" VerticalOptions="Center" Margin="20, 0" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" />
+                            <Label HorizontalTextAlignment="Center" x:Name="placeholderLabel" Text="La bacheca è vuota" VerticalOptions="Center" Margin="20, 0" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" />
                         </StackLayout>
                     </Grid>
                 </Frame>

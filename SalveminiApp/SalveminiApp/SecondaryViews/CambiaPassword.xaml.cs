@@ -27,5 +27,14 @@ namespace SalveminiApp.SecondaryViews
             confirmPwdEye.Text = confirmPwdEye.Text == "fas-eye-slash" || confirmPwdEye.Text == "eye-slash" ? "eye" : "eye-slash";
             confirmPwdEntry.IsPassword = confirmPwdEye.Text == "fas-eye-slash" || confirmPwdEye.Text == "eye-slash";
         }
+
+
+        void changePwd_Clicked(object sender, EventArgs e)
+        {
+            //todo
+        }
+
+
+
     }
 }

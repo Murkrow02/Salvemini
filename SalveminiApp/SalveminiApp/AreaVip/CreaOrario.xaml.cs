@@ -77,6 +77,11 @@ namespace SalveminiApp.AreaVip
 
         public async void saveOrario_Clicked(object sender, EventArgs e)
         {
+            //Ask confirmation
+            bool sure = await DisplayAlert("Attenzione", "Questo orario sovrascriverà quello precedente, sei sicuro di voler procedere?", "Procedi", "Annulla");
+            if (!sure)
+                return;
+
             //Initialize values
             int giorno = 1;
             int ora = 1;
@@ -155,7 +160,7 @@ namespace SalveminiApp.AreaVip
             await DisplayAlert(success[0], success[1], "Ok");
             //Success, close page
             if (success[0] == "Grazie!")
-               await Navigation.PopAsync();
+                await Navigation.PopAsync();
             lezioni.Clear();
         }
 

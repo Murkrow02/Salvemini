@@ -18,6 +18,8 @@ namespace SalveminiApp.RestApi
     {
         HttpClient client;
         public Models.Index Index { get; private set; }
+        public Models.IndexArgo IndexArgo { get; private set; }
+
         public RestServiceIndex()
         {
             client = new HttpClient();
@@ -54,12 +56,43 @@ namespace SalveminiApp.RestApi
             }
             return Index;
         }
+
+        public async Task<Models.IndexArgo> GetIndexArgo()
+        {
+            IndexArgo = new Models.IndexArgo();
+            var uri = Costants.Uri("indexargo");
+            try
+            {
+                //Get from url
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    IndexArgo = JsonConvert.DeserializeObject<Models.IndexArgo>(content);
+
+                    //Save Cache
+                    Barrel.Current.Add("indexargo" + DateTime.Today.ToString("yyyy-MM-dd"), IndexArgo, TimeSpan.FromDays(10));
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Errore GET indexargo", ex.Message);
+            }
+            return IndexArgo;
+        }
     }
 
 
     public interface IRestServiceIndex
     {
         Task<Models.Index> GetIndex();
+        Task<Models.IndexArgo> GetIndexArgo();
+
     }
 
     public class ItemManagerIndex
@@ -75,6 +108,11 @@ namespace SalveminiApp.RestApi
         public Task<Models.Index> GetIndex()
         {
             return restServiceIndex.GetIndex();
+        }
+
+        public Task<Models.IndexArgo> GetIndexArgo()
+        {
+            return restServiceIndex.GetIndexArgo();
         }
 
     }

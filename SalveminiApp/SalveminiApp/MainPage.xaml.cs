@@ -24,6 +24,8 @@ namespace SalveminiApp
         public List<RestApi.Models.Lezione> Orario = new List<RestApi.Models.Lezione>();
         //Index informations, such as app version, avvisi, sondaggi
         public RestApi.Models.Index Index = new RestApi.Models.Index();
+        //Argo index, how many notizie etc.
+        public RestApi.Models.IndexArgo ArgoIndex = null;
         //Ad to be shown
         public RestApi.Models.Ad Ad = new RestApi.Models.Ad();
         //List of widgets to be shown
@@ -132,17 +134,20 @@ namespace SalveminiApp
             widgets.Clear();
             var tapGestureRecognizer = new TapGestureRecognizer();
             tapGestureRecognizer.Tapped += widget_Tapped;
-            //Trasporti
-            var registro = new WidgetGradient { Title = "Registro", SubTitle = "Qua ci va l'ultima cosa che hai preso oggi", Icon = "far-calendar-alt", StartColor = "FACA6F", EndColor = "FF7272", Push = new ArgoPages.Registro(), Order = Preferences.Get("OrderRegistro", 0) };
+            //Registro
+            string notizia = "Cosa è successo oggi in classe?";
+            if (ArgoIndex != null)
+                notizia = "<strong>" + ArgoIndex.TipoNotizia + "</strong>" + ArgoIndex.UltimaNotizia;
+            var registro = new WidgetGradient { Title = "Registro", SubTitle = notizia, Icon = "far-calendar-alt", StartColor = "FACA6F", EndColor = "FF7272", Push = new ArgoPages.Registro(), Order = 1 };
             registro.GestureRecognizers.Add(tapGestureRecognizer);
             //Trasporti
-            var trasporti = new WidgetGradient { Title = "Trasporti", SubTitle = await getNextTrain(), Icon = "fas-subway", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order = Preferences.Get("OrderTrasporti", 0) };
+            var trasporti = new WidgetGradient { Title = "Trasporti", SubTitle = await getNextTrain(), Icon = "fas-subway", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order = 2 };
             trasporti.GestureRecognizers.Add(tapGestureRecognizer);
             //Card
-            var card = new WidgetGradient { Title = "SalveminiCard", SubTitle = "Visualizza tutti i vantaggi esclusivi per gli studenti del Salvemini", Icon = "fas-credit-card", StartColor = "B487FD", EndColor = "FA6FFA", Push = new SecondaryViews.SalveminiCard(), Order = Preferences.Get("OrderCard", 0) };
+            var card = new WidgetGradient { Title = "SalveminiCard", SubTitle = "Visualizza tutti i vantaggi esclusivi per gli studenti del Salvemini", Icon = "fas-credit-card", StartColor = "B487FD", EndColor = "FA6FFA", Push = new SecondaryViews.SalveminiCard(), Order = 6 };
             card.GestureRecognizers.Add(tapGestureRecognizer);
             //Extra
-            var extra = new WidgetGradient { Title = "Extra", SubTitle = "Esplora funzioni aggiuntive", Icon = "fas-star", StartColor = "B487FD", EndColor = "FA6FFA", Order = Preferences.Get("OrderExtra", 0), Push = new SecondaryViews.Extra() };
+            var extra = new WidgetGradient { Title = "Extra", SubTitle = "Esplora funzioni aggiuntive", Icon = "fas-star", StartColor = "B487FD", EndColor = "FA6FFA", Order = 5, Push = new SecondaryViews.Extra() };
             extra.GestureRecognizers.Add(tapGestureRecognizer);
 
             //Initialize list with first widgets
@@ -158,6 +163,9 @@ namespace SalveminiApp
             //Check Internet
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
+                //Argo index
+                GetArgoIndex();
+
                 //Get updated orario
                 var _orario = await App.Orari.GetOrario(classeCorso);
 
@@ -205,7 +213,7 @@ namespace SalveminiApp
                 if (Index.ultimoSondaggio != null)
                 {
                     string nuovoSondaggio = "no";
-                    int positionSondaggio = Preferences.Get("OrderSondaggio", 0);
+                    int positionSondaggio = 4;
                     if (Preferences.Get("LastSondaggio", 0) != Index.ultimoSondaggio.id && !Index.VotedSondaggio) //New sondaggio detected
                     {
                         //Preferences.Set("LastSondaggio", Index.ultimoSondaggio.id);
@@ -231,7 +239,7 @@ namespace SalveminiApp
                 if (Index.ultimoAvviso != null)
                 {
                     string nuovoAvviso = "no";
-                    int positionAvvisi = Preferences.Get("OrderAvvisi", 0);
+                    int positionAvvisi = 3;
                     if (Preferences.Get("LastAvviso", 0) != Index.ultimoAvviso.id) //New avviso detected
                     {
                         nuovoAvviso = "si";
@@ -275,6 +283,7 @@ namespace SalveminiApp
                 //todo notify no internet
             }
 
+            //Update widgets order
             OrderWidgets(true);
 
         }
@@ -334,6 +343,52 @@ namespace SalveminiApp
             dayPopOver.IsVisible = true;
         }
 
+        //Get argo index
+        async void GetArgoIndex()
+        {
+            //Get argo index
+            var ArgoIndex_ = await App.Index.GetIndexArgo();
+
+
+            if (ArgoIndex_ != null && ArgoIndex_.NotizieCount > 0)
+            {
+                ArgoIndex = ArgoIndex_;
+                try
+                {
+                    //Get registro widget
+                    var widget = widgets.First(x => x.Title == "Registro");
+                    var dataUltimoControllo = Preferences.Get("lastDate", "02/05/2002");
+                    var notizieUltimoControllo = Preferences.Get("lastNotizie", 0);
+                    var dataOggi = DateTime.Now.ToString("dd/MM-yyyy");
+
+                    //same day, same notizie count
+                    if (dataUltimoControllo == dataOggi && ArgoIndex.NotizieCount <= notizieUltimoControllo)
+                    {
+                        return;
+                    }
+
+                    //New day
+                    if (dataUltimoControllo != dataOggi)
+                    {
+                        //Save new date
+                        Preferences.Set("lastDate", DateTime.Now.ToString("dd/MM/yyyy"));
+                    }
+
+                    //Notizie > notizie saved
+                    Preferences.Set("lastNotizie", ArgoIndex.NotizieCount);
+                    widget.Badge = "si";
+                    widget.SubTitle = "<strong>" + ArgoIndex.TipoNotizia + "</strong>" + ArgoIndex.UltimaNotizia;
+                    widgets.Remove(widget);
+                    widgets.Add(widget);
+                    OrderWidgets(true);
+                }
+                catch
+                {
+                    //Fa nient
+                }
+            }
+        }
+
         //Selected day from popover
         private void GiorniList_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
@@ -358,7 +413,7 @@ namespace SalveminiApp
         }
 
 
-        //Push to profile pageo
+        //Push to profile page
         void profilePush(object sender, System.EventArgs e)
         {
             //Create new navigation page

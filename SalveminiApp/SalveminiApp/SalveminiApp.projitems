@@ -15,10 +15,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\CustomNavigationPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)FirstAccess\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -27,7 +23,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\OrariClassi\3FCAM.txt" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ArgoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -45,10 +40,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\Popups\BindablePopup.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\CountDown.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -96,22 +87,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\ImageViewer.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\WidgetGradient.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\ArgoWidget.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\PushCell.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\Profile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -152,15 +127,43 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\PollOption.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\CambiaPassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ArgoPages\Bacheca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Controls\ArgoWidget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Controls\CountDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Controls\CustomNavigationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Controls\ImageViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Controls\PollOption.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Controls\PushCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Controls\TeamPersonFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Controls\WidgetGradient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -178,9 +181,6 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Renders.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Styles.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\CustomNavigationPage.xaml.cs">
-      <DependentUpon>CustomNavigationPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)FirstAccess\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -216,13 +216,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceTreni.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Response.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\CountDown.xaml.cs">
-      <DependentUpon>CountDown.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\CompitiArgomenti.xaml.cs">
       <DependentUpon>CompitiArgomenti.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\PopOvers.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\GetStorageInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\SettingsPanel.xaml.cs">
       <DependentUpon>SettingsPanel.xaml</DependentUpon>
@@ -270,19 +266,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Card.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceSondaggi.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Sondaggi.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ImageViewer.xaml.cs">
-      <DependentUpon>ImageViewer.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\WidgetGradient.xaml.cs">
-      <DependentUpon>WidgetGradient.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\WidgetModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ArgoWidget.xaml.cs">
-      <DependentUpon>ArgoWidget.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\PushCell.xaml.cs">
-      <DependentUpon>PushCell.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
     </Compile>
@@ -314,16 +297,39 @@
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\NewSondaggio.xaml.cs">
       <DependentUpon>NewSondaggio.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\PollOption.xaml.cs">
-      <DependentUpon>PollOption.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\CreaSondaggio.xaml.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\CambiaPassword.xaml.cs">
       <DependentUpon>CambiaPassword.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\Bacheca.xaml.cs">
       <DependentUpon>Bacheca.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)AreaVip\CreaSondaggio.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ArgoWidget.xaml.cs">
+      <DependentUpon>..\Helpers\Controls\ArgoWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CountDown.xaml.cs">
+      <DependentUpon>..\Helpers\Controls\CountDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CustomNavigationPage.xaml.cs">
+      <DependentUpon>..\Helpers\Controls\CustomNavigationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ImageViewer.xaml.cs">
+      <DependentUpon>..\Helpers\Controls\ImageViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\PollOption.xaml.cs">
+      <DependentUpon>..\Helpers\Controls\PollOption.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\PopOvers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\PushCell.xaml.cs">
+      <DependentUpon>..\Helpers\Controls\PushCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\TeamPersonFrame.xaml.cs">
+      <DependentUpon>TeamPersonFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\WidgetGradient.xaml.cs">
+      <DependentUpon>..\Helpers\Controls\WidgetGradient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\WidgetModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
@@ -337,6 +343,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\" />
     <Folder Include="$(MSBuildThisFileDirectory)AreaVip\" />
     <Folder Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Controls\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Helpers\Preferences.txt" />

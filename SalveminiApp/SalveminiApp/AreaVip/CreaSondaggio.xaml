@@ -4,26 +4,28 @@
         <ToolbarItem Text="Crea" Clicked="Crea_Clicked" x:Name="createBtn" />
     </ContentPage.ToolbarItems>
 
-    <StackLayout Padding="25,20,25,0" Spacing="40" BackgroundColor="{x:Static local:Styles.BGColor}">
+    <ScrollView>
+        <StackLayout Padding="25,20,25,0" Spacing="40" BackgroundColor="{x:Static local:Styles.BGColor}">
 
-        <!--Domanda-->
-        <StackLayout>
+            <!--Domanda-->
+            <StackLayout>
 
-            <Label HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" Text="Domanda del sondaggio" FontSize="Title" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" />
-            <Editor HeightRequest="100" Placeholder="Cosa vuoi chiedere agli studenti?" MaxLength="149" x:Name="pollTitle" />
-        </StackLayout>
-        <!--Aggiungi opzioni-->
-        <StackLayout>
-            <Label HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" Text="Opzioni" FontSize="Title" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" />
-            <Button  Text="Allega immagine (Opzionale)" BackgroundColor="Transparent" Clicked="choosePhoto" x:Name="attachBtn" />
-            <Entry MaxLength="29" x:Name="opzioneEntry" Placeholder="Nome opzione" HorizontalOptions="FillAndExpand" />
-            <Button Text="Aggiungi opzione" Clicked="addOption" />
-        </StackLayout>
-
-        <!--Options-->
-        <ScrollView VerticalOptions="StartAndExpand" Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Margin="-25,0" x:Name="widgetCollection">
-            <StackLayout x:Name="widgetsLayout" Orientation="Horizontal" Spacing="10">
+                <Label HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" Text="Domanda del sondaggio" FontSize="Title" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" />
+                <Editor HeightRequest="100" Placeholder="Cosa vuoi chiedere agli studenti?" MaxLength="149" x:Name="pollTitle" />
             </StackLayout>
-        </ScrollView>
-    </StackLayout>
+            <!--Aggiungi opzioni-->
+            <StackLayout>
+                <Label HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" Text="Opzioni" FontSize="Title" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" />
+                <Button  Text="Allega immagine (Opzionale)" BackgroundColor="Transparent" Clicked="choosePhoto" x:Name="attachBtn" />
+                <Entry MaxLength="29" x:Name="opzioneEntry" Placeholder="Nome opzione" HorizontalOptions="FillAndExpand" />
+                <Button Text="Aggiungi opzione" Clicked="addOption" />
+            </StackLayout>
+
+            <!--Options-->
+            <ScrollView VerticalOptions="StartAndExpand" Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Margin="-25,0" x:Name="widgetCollection">
+                <StackLayout x:Name="widgetsLayout" Orientation="Horizontal" Spacing="10">
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
