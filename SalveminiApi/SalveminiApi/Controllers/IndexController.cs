@@ -39,12 +39,19 @@ namespace SalveminiApi.Controllers
 
             //Authorized?
             var utente = db.Utenti.Find(id);
-            if (utente.Stato < 0 || !authorized)
+
+            //Bannato
+            if (utente.Stato < 0)
             {
-                returnModel.Authorized = false;
+                returnModel.Authorized = -2;
                 return returnModel;
             }
-            returnModel.Authorized = true;
+
+            //Token cambiato
+            if (!authorized)
+            {
+                returnModel.Authorized = -1;
+            }
 
             //Versioni
             returnModel.AppVersion = 1.0M;
@@ -70,27 +77,30 @@ namespace SalveminiApi.Controllers
             try
             {
                 var attivo = db.Sondaggi.Where(x => x.Attivo).ToList();
+
+                //Ci sono sondaggi attivi?
                 if (attivo.Count < 1)
-                    returnModel.ultimoSondaggio = null;
-                else
+                    returnModel.ultimoSondaggio = null; //No
+                else //Si
                 {
-                    //Controlla se ha votato
+                    //Controlla se ha votato SCOMMENTA SE VUOI CHE NON ESCE SE HA GIA VOTATO
                     var voti = attivo[0].VotiSondaggi.ToList();
                     var suo = voti.Where(x => x.Utente == id).ToList();
+
                     if (suo.Count > 0) //Ha votato
-                        returnModel.ultimoSondaggio = null;
-                    else
-                        returnModel.ultimoSondaggio = attivo[0]; //Non ha votato, manda il sondaggio
+                        returnModel.VotedSondaggio = true;
+                    //returnModel.ultimoSondaggio = null;
+                    //else
+                    returnModel.ultimoSondaggio = attivo[0];
 
                 }
             }
             catch
             {
-                //Prendi valore alto così non dice che ce ne sono altri
                 returnModel.ultimoSondaggio = null;
             }
 
-           
+
 
 
             //ADS
@@ -102,7 +112,7 @@ namespace SalveminiApi.Controllers
             if (banner.Count > 0)
             {
                 adsList.Add(banner[0]);
-                db.Ads.Find(banner[0].id).Impressions ++;
+                db.Ads.Find(banner[0].id).Impressions++;
             }
 
             //Get random interstitial
@@ -135,7 +145,7 @@ namespace SalveminiApi.Controllers
             //Check Auth
             var authorize = new Helpers.Utility();
             bool authorized = authorize.authorized(Request);
-            if(!authorized)
+            if (!authorized)
                 throw new HttpResponseException(HttpStatusCode.Unauthorized);
 
             //Prendi parametri utente da chiamata
@@ -183,7 +193,7 @@ namespace SalveminiApi.Controllers
                     {
                         case "BAC":
                             //BACHECA
-                            bacheca.Add(new Bacheca { adesione = notizia.dati.adesione,  allegati = notizia.dati.allegati,  desMessaggio = notizia.dati.desMessaggio,  desOggetto = notizia.dati.desOggetto, desUrl = notizia.dati.desUrl, presaVisione = notizia.dati.presaVisione, prgMessaggio = notizia.dati.prgMessaggio,  richiediAd = notizia.dati.richiediAd, richiediPv = notizia.dati.richiediPv });
+                            bacheca.Add(new Bacheca { adesione = notizia.dati.adesione, allegati = notizia.dati.allegati, desMessaggio = notizia.dati.desMessaggio, desOggetto = notizia.dati.desOggetto, desUrl = notizia.dati.desUrl, presaVisione = notizia.dati.presaVisione, prgMessaggio = notizia.dati.prgMessaggio, richiediAd = notizia.dati.richiediAd, richiediPv = notizia.dati.richiediPv });
                             break;
                         case "COM":
                             //COMPITI
@@ -191,7 +201,7 @@ namespace SalveminiApi.Controllers
                             break;
                         case "ARG":
                             //ARGOMENTI
-                            argomenti.Add(new Argomenti { datGiorno = notizia.dati.datGiorno, desMateria = notizia.dati.desMateria, desArgomento = notizia.dati.desArgomento, docente = notizia.dati.docente});
+                            argomenti.Add(new Argomenti { datGiorno = notizia.dati.datGiorno, desMateria = notizia.dati.desMateria, desArgomento = notizia.dati.desArgomento, docente = notizia.dati.docente });
                             break;
                         case "VOT":
                             //VOTI
@@ -199,7 +209,7 @@ namespace SalveminiApi.Controllers
                             break;
                         case "PRO":
                             //PROMEMORIA
-                            promemoria.Add(new Promemoria { datGiorno = notizia.dati.datGiorno, desAnnotazioni = notizia.dati.desAnnotazioni, desMittente = notizia.dati.desMittente});
+                            promemoria.Add(new Promemoria { datGiorno = notizia.dati.datGiorno, desAnnotazioni = notizia.dati.desAnnotazioni, desMittente = notizia.dati.desMittente });
                             break;
                         case "ASS":
                             //ASSENZE
