@@ -76,7 +76,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nome" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="30" />
           <Property Name="Immagine" Type="nvarchar" MaxLength="300" />
           <Property Name="idSondaggio" Type="int" Nullable="false" />
         </EntityType>
@@ -94,7 +94,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nome" Type="nvarchar" MaxLength="400" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="150" />
           <Property Name="Creatore" Type="int" Nullable="false" />
           <Property Name="Creazione" Type="datetime" Nullable="false" />
           <Property Name="Attivo" Type="bit" Nullable="false" />
@@ -176,6 +176,18 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_VotiSondaggi_OggettiSondaggi">
+          <End Role="OggettiSondaggi" Type="Self.OggettiSondaggi" Multiplicity="1" />
+          <End Role="VotiSondaggi" Type="Self.VotiSondaggi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OggettiSondaggi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="VotiSondaggi">
+              <PropertyRef Name="Voto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_VotiSondaggi_Sondaggi">
           <End Role="Sondaggi" Type="Self.Sondaggi" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -235,6 +247,10 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <AssociationSet Name="FK_Sondaggi_Utenti" Association="Self.FK_Sondaggi_Utenti">
             <End Role="Utenti" EntitySet="Utenti" />
             <End Role="Sondaggi" EntitySet="Sondaggi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VotiSondaggi_OggettiSondaggi" Association="Self.FK_VotiSondaggi_OggettiSondaggi">
+            <End Role="OggettiSondaggi" EntitySet="OggettiSondaggi" />
+            <End Role="VotiSondaggi" EntitySet="VotiSondaggi" />
           </AssociationSet>
           <AssociationSet Name="FK_VotiSondaggi_Sondaggi" Association="Self.FK_VotiSondaggi_Sondaggi">
             <End Role="Sondaggi" EntitySet="Sondaggi" />
@@ -343,6 +359,10 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
             <End Role="Utenti" EntitySet="Utenti" />
             <End Role="VotiSondaggi" EntitySet="VotiSondaggi" />
           </AssociationSet>
+          <AssociationSet Name="FK_VotiSondaggi_OggettiSondaggi" Association="Entities.FK_VotiSondaggi_OggettiSondaggi">
+            <End Role="OggettiSondaggi" EntitySet="OggettiSondaggi" />
+            <End Role="VotiSondaggi" EntitySet="VotiSondaggi" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="AppInfo">
           <Key>
@@ -412,23 +432,24 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="Nome" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Nome" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Immagine" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="idSondaggio" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Sondaggi" Relationship="Entities.FK_OggettiSondaggi_Sondaggi" FromRole="OggettiSondaggi" ToRole="Sondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="VotiSondaggi" Relationship="Entities.FK_VotiSondaggi_OggettiSondaggi" FromRole="OggettiSondaggi" ToRole="VotiSondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
         <EntityType Name="Sondaggi">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="Nome" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Creatore" Type="Int32" Nullable="false" />
           <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Attivo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="OggettiSondaggi" Relationship="Entities.FK_OggettiSondaggi_Sondaggi" FromRole="Sondaggi" ToRole="OggettiSondaggi" />
           <NavigationProperty Name="Utenti" Relationship="Entities.FK_Sondaggi_Utenti" FromRole="Sondaggi" ToRole="Utenti" a:GetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
-          <NavigationProperty Name="VotiSondaggi" Relationship="Entities.FK_VotiSondaggi_Sondaggi" FromRole="Sondaggi" ToRole="VotiSondaggi" />
+          <NavigationProperty Name="VotiSondaggi" Relationship="Entities.FK_VotiSondaggi_Sondaggi" FromRole="Sondaggi" ToRole="VotiSondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
         <EntityType Name="VotiSondaggi">
           <Key>
@@ -439,7 +460,8 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <Property Name="Utente" Type="Int32" Nullable="false" />
           <Property Name="Voto" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Sondaggi" Relationship="Entities.FK_VotiSondaggi_Sondaggi" FromRole="VotiSondaggi" ToRole="Sondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
-          <NavigationProperty Name="Utenti" Relationship="Entities.FK_VotiSondaggi_Utenti" FromRole="VotiSondaggi" ToRole="Utenti" />
+          <NavigationProperty Name="Utenti" Relationship="Entities.FK_VotiSondaggi_Utenti" FromRole="VotiSondaggi" ToRole="Utenti" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="OggettiSondaggi" Relationship="Entities.FK_VotiSondaggi_OggettiSondaggi" FromRole="VotiSondaggi" ToRole="OggettiSondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
         <Association Name="FK_OggettiSondaggi_Sondaggi">
           <End Type="Entities.Sondaggi" Role="Sondaggi" Multiplicity="1">
@@ -492,6 +514,18 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
             </Principal>
             <Dependent Role="VotiSondaggi">
               <PropertyRef Name="Utente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VotiSondaggi_OggettiSondaggi">
+          <End Type="Entities.OggettiSondaggi" Role="OggettiSondaggi" Multiplicity="1" />
+          <End Type="Entities.VotiSondaggi" Role="VotiSondaggi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OggettiSondaggi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="VotiSondaggi">
+              <PropertyRef Name="Voto" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

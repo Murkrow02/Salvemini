@@ -14,11 +14,19 @@ namespace SalveminiApi.Models
     
     public partial class OggettiSondaggi
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public OggettiSondaggi()
+        {
+            this.VotiSondaggi = new HashSet<VotiSondaggi>();
+        }
+    
         public int id { get; set; }
         public string Nome { get; set; }
         public string Immagine { get; set; }
         public int idSondaggio { get; set; }
     
         public virtual Sondaggi Sondaggi { internal get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<VotiSondaggi> VotiSondaggi { internal get; set; }
     }
 }

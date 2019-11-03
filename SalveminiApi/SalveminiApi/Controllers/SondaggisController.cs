@@ -106,7 +106,7 @@ namespace SalveminiApi.Controllers
 
         [Route("risultati/{id}")]
         [HttpGet]
-        public Dictionary<int,int> ReturnRisultati(int id)
+        public List<SondaggiResult> ReturnRisultati(int id)
         {
             //Check Auth
             var authorize = new Helpers.Utility();
@@ -115,25 +115,42 @@ namespace SalveminiApi.Controllers
                 throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
             //Create new dictionary
-            var voti = new Dictionary<int, int>();
+            var Risultati = new List<SondaggiResult>();
             
             try
             {
                 //Find sondaggio
                 var sondaggio = db.Sondaggi.Find(id);
 
-                //Get voti vor sondaggio
-                var votiSondaggio = sondaggio.VotiSondaggi.ToList();
+                //Get voti sondaggio
+                var votiSondaggio = db.VotiSondaggi.Where(x => x.idSondaggio == id).ToList();
 
                 //Count each vote
-                for (int i = votiSondaggio.Count() - 1; i >= 0; i--)
+                foreach(var opzione in sondaggio.OggettiSondaggi)
                 {
-                    int contoVoti = votiSondaggio.Where(x => x.Voto == votiSondaggio[i].Voto).Count();
-                    voti.Add(votiSondaggio[i].Voto, contoVoti);
-                    votiSondaggio.RemoveAll(x => x.Voto == votiSondaggio[i].Voto);
+                    var risultato = new SondaggiResult();
+
+                    //Conta voti opzione
+                    int contoVoti = votiSondaggio.Where(x => x.Voto == opzione.id).Count();
+                    risultato.Voti = contoVoti;
+
+                    //Prendi nome opzione
+                    risultato.NomeOpzione = opzione.Nome;
+
+                    //Calcola percentuale
+                    if (contoVoti == 0)
+                        risultato.Percentuale = 0;
+                    else
+                    {
+                        var percentuale = contoVoti * 100 / votiSondaggio.Count;
+                        risultato.Percentuale = percentuale;
+                    }
+
+                    //Add result to result list
+                    Risultati.Add(risultato);
                 }
 
-                return voti;
+                return Risultati;
                
             }
             catch(Exception ex)

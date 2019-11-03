@@ -15,13 +15,14 @@
         <EntityTypeShape EntityType="Entities.Ads" Width="1.5" PointX="9.625" PointY="1" />
         <EntityTypeShape EntityType="Entities.Analytics" Width="1.5" PointX="5.375" PointY="3.75" />
         <EntityTypeShape EntityType="Entities.SalveminiCard" Width="1.5" PointX="5.375" PointY="6.75" />
-        <EntityTypeShape EntityType="Entities.OggettiSondaggi" Width="1.5" PointX="6.5" PointY="10.5" />
+        <EntityTypeShape EntityType="Entities.OggettiSondaggi" Width="1.5" PointX="7.125" PointY="10.25" />
         <EntityTypeShape EntityType="Entities.Sondaggi" Width="1.5" PointX="3" PointY="9.375" />
-        <EntityTypeShape EntityType="Entities.VotiSondaggi" Width="1.5" PointX="8.25" PointY="6.875" />
+        <EntityTypeShape EntityType="Entities.VotiSondaggi" Width="1.5" PointX="9.75" PointY="7.875" />
         <AssociationConnector Association="Entities.FK_OggettiSondaggi_Sondaggi" />
         <AssociationConnector Association="Entities.FK_Sondaggi_Utenti" />
         <AssociationConnector Association="Entities.FK_VotiSondaggi_Sondaggi" />
         <AssociationConnector Association="Entities.FK_VotiSondaggi_Utenti" />
+        <AssociationConnector Association="Entities.FK_VotiSondaggi_OggettiSondaggi" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
