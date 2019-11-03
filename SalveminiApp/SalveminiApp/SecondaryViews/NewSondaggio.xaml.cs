@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using SalveminiApp.RestApi.Models;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using System.Threading.Tasks;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 #endif
@@ -24,6 +25,9 @@ namespace SalveminiApp.SecondaryViews
             //Fill sondaggio values
             sondaggio = sondaggio_;
 
+            //Save that user viewed last sondaggio
+            Preferences.Set("LastSondaggio", sondaggio.id);
+
             //Add initial space
             widgetsLayout.Children.Add(new Xamarin.Forms.ContentView { WidthRequest = 5 });
 
@@ -43,7 +47,11 @@ namespace SalveminiApp.SecondaryViews
                 //Create new poll option
                 var widget = new Helpers.PollOption { Title = opzione.Nome, Image = image, optionId = opzione.id, VerticalOptions = LayoutOptions.CenterAndExpand };
                 layout.Children.Add(widget);
-                layout.Children.Add(votaBtn);
+
+                //Already voted, hide vote btn
+                if (!Preferences.Get("voted" + sondaggio.id, false))
+                    layout.Children.Add(votaBtn);
+
                 widgetsLayout.Children.Add(layout);
             }
 
@@ -53,6 +61,8 @@ namespace SalveminiApp.SecondaryViews
             //Set question label and creation label
             questionLbl.Text = sondaggio.Nome;
             creatorLbl.Text = "Creato da " + sondaggio.Utenti.nomeCognome;
+
+
         }
 
         private async void VotaBtn_Clicked(object sender, EventArgs e)
@@ -75,9 +85,11 @@ namespace SalveminiApp.SecondaryViews
                 //Success
                 if (response[0] == "Grazie!")
                 {
-                    Preferences.Set("skipPoll" + sondaggio.id, true);
+                    Preferences.Set("voted" + sondaggio.id, true);
                     MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "RemoveBadge", "Sondaggi");
-                    //todo show results
+
+                    //Show results
+                    showResults();
                 }
             }
             catch
@@ -89,7 +101,7 @@ namespace SalveminiApp.SecondaryViews
         async void closePage(object sender, EventArgs e)
         {
             //Already voted
-            if (Preferences.Get("skipPoll" + sondaggio.id, false))
+            if (Preferences.Get("voted" + sondaggio.id, false))
             {
                 await Navigation.PopModalAsync();
                 return;
@@ -101,10 +113,40 @@ namespace SalveminiApp.SecondaryViews
                 return;
             else //He decided not to vote :(
             {
-                Preferences.Set("skipPoll" + sondaggio.id, true);
+                Preferences.Set("voted" + sondaggio.id, true);
                 await Navigation.PopModalAsync();
 
             }
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            //Already voted, show results
+            if (Preferences.Get("voted" + sondaggio.id, false))
+            {
+                showResults();
+            }
+
+        }
+
+        public async void showResults()
+        {
+            //Get results
+            var risultati = await App.Sondaggi.ReturnRisultati(sondaggio.id);
+
+            //Remove previous results
+            resultsLayout.Children.Clear();
+
+            //Foreach result add a custom control
+            for (int i = 0; i < risultati.Count; i++)
+            {
+                resultsLayout.Children.Add(new Controls.PercentageBar { Title = "<p><strong><span>" + risultati[i].NomeOpzione + ":</span>&nbsp;</strong><span>" + risultati[i].Voti + " voti</span></p>", Percentage = risultati[i].Percentuale, BgColor = Costants.Colors[i].Replace("#", "") });
+            }
+
+            //Show frame
+            await Task.WhenAll(resultsFrame.FadeTo(1, 1000, Easing.CubicInOut), resultsFrame.TranslateTo(0,0,1500, Easing.CubicOut));
         }
 
         protected override void OnDisappearing()

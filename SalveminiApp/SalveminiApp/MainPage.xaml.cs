@@ -221,7 +221,7 @@ namespace SalveminiApp
                         positionSondaggio = -1;
 
 
-                        if (!Preferences.Get("skipPoll" + Index.ultimoSondaggio.id, false)) //Push to vote
+                        if (!Preferences.Get("voted" + Index.ultimoSondaggio.id, false)) //Push to vote
                             await Navigation.PushModalAsync(new SecondaryViews.NewSondaggio(Index.ultimoSondaggio));
                     }
 
@@ -478,18 +478,18 @@ namespace SalveminiApp
                     allDays.RemoveAt(freedayInt - 1);
                     giorniList.ItemsSource = allDays;
 
-                    //Detect Sunday
-                    if (day == 0)
-                    {
-                        day++;
-                        daySkipped++;
-                    }
-
                     //intelligent auto skip if dopo le 2
                     if (today && DateTime.Now.Hour > 14)
                     {
                         daySkipped++;
                         day = SkipDay(day);
+                    }
+
+                    //Detect Sunday
+                    if (day == 0)
+                    {
+                        day++;
+                        daySkipped++;
                     }
 
                     //Skip freeday

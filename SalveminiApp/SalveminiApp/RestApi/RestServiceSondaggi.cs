@@ -15,7 +15,7 @@ namespace SalveminiApp.RestApi
     public class RestServiceSondaggi : IRestServiceSondaggi
     {
         HttpClient client;
-        public Dictionary<int, int> Risultati { get; private set; }
+        public List<Models.SondaggiResult> Risultati { get; private set; }
 
         public RestServiceSondaggi()
         {
@@ -81,24 +81,24 @@ namespace SalveminiApp.RestApi
             }
         }
 
-        public async Task<Dictionary<int, int>> ReturnRisultati(int id)
+        public async Task<List<SondaggiResult>> ReturnRisultati(int id)
         {
-            Risultati = new Dictionary<int, int>();
-            var uri = Costants.Uri("risultati/") + id.ToString();
+            Risultati = new List<SondaggiResult>();
+            var uri = Costants.Uri("sondaggi/risultati/") + id.ToString();
 
             try
             {
                 //Get Cache if no Network Access
                 if (Connectivity.NetworkAccess != Xamarin.Essentials.NetworkAccess.Internet && Barrel.Current.Exists("risultati" + id.ToString()))
                 {
-                    return Barrel.Current.Get<Dictionary<int, int>>("risultati" + id.ToString());
+                    return Barrel.Current.Get<List<SondaggiResult>>("risultati" + id.ToString());
                 }
 
                 var response = await client.GetAsync(uri);
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    Risultati = JsonConvert.DeserializeObject<Dictionary<int, int>>(content);
+                    Risultati = JsonConvert.DeserializeObject<List<SondaggiResult>>(content);
 
                     //Save Cache
                     Barrel.Current.Add("risultati" + id.ToString(), Risultati, TimeSpan.FromDays(10));
@@ -107,7 +107,7 @@ namespace SalveminiApp.RestApi
                 {
                     if (Barrel.Current.Exists("risultati" + id.ToString()))
                     {
-                        return Barrel.Current.Get<Dictionary<int, int>>("risultati" + id.ToString());
+                        return Barrel.Current.Get<List<SondaggiResult>>("risultati" + id.ToString());
                     }
                 }
 
@@ -123,7 +123,7 @@ namespace SalveminiApp.RestApi
     {
         Task<string[]> PostVoto(VotoSondaggio voto);
         Task<string[]> PostSondaggio(Sondaggi sondaggio);
-        Task<Dictionary<int, int>> ReturnRisultati(int id);
+        Task<List<SondaggiResult>> ReturnRisultati(int id);
     }
 
     public class SondaggiManager
@@ -145,7 +145,7 @@ namespace SalveminiApp.RestApi
             return restServiceSondaggi.PostSondaggio(sondaggio);
         }
 
-        public Task<Dictionary<int, int>> ReturnRisultati(int id)
+        public Task<List<SondaggiResult>> ReturnRisultati(int id)
         {
             return restServiceSondaggi.ReturnRisultati(id);
         }

@@ -44,4 +44,11 @@ namespace SalveminiApp.RestApi.Models
         public string Nome { get; set; }
     }
 
+    public class SondaggiResult
+    {
+        public string NomeOpzione { get; set; }
+        public int Voti { get; set; }
+        public int Percentuale { get; set; }
+    }
+
 }

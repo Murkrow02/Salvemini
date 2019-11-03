@@ -121,11 +121,6 @@ namespace SalveminiApp
 
             try
             {
-                //if (string.IsNullOrEmpty(Title) && string.IsNullOrEmpty(Icon) && string.IsNullOrEmpty(StartColor) && string.IsNullOrEmpty(EndColor) && Push == null)
-                //{
-                //    return;
-                //}
-
 
                 //Title
                 if (propertyName == TitleProperty.PropertyName)

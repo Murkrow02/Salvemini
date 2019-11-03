@@ -4,7 +4,10 @@
 
         <!--Header-->
         <Grid  Margin="-20,0" Padding="0,5">
-            <Label Text="Sondaggio" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontSize="Title" />
+            <StackLayout Spacing="2" VerticalOptions="CenterAndExpand">
+                <Label Text="Sondaggio" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontSize="Title" />
+                <Label Text="Vota per visualizzare i risultati" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.TextGray}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontSize="12" />
+            </StackLayout>
             <iconize:IconButton Text="fal-times" FontSize="25" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="EndAndExpand" Clicked="closePage" VerticalOptions="CenterAndExpand" />
         </Grid>
         <!--Poll question-->
@@ -17,7 +20,16 @@
         </ScrollView>
 
         <!--Creator-->
-        <Label x:Name="creatorLbl" TextColor="{x:Static local:Styles.TextGray}" HorizontalTextAlignment="Center" VerticalOptions="StartAndExpand" FontSize="Medium"/>
+        <Label x:Name="creatorLbl" TextColor="{x:Static local:Styles.TextGray}" HorizontalTextAlignment="Center" VerticalOptions="StartAndExpand" FontSize="Medium" />
 
+        <!--Results-->
+        <Frame HasShadow="False" x:Name="resultsFrame" Opacity="0" TranslationY="300">
+            <ScrollView>
+                <StackLayout x:Name="resultsLayout">
+
+                </StackLayout>
+            </ScrollView>
+
+        </Frame>
     </StackLayout>
 </ContentPage>

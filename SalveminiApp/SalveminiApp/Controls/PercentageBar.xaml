@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns:local="clr-namespace:SalveminiApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.Controls.PercentageBar">
+
+    <StackLayout  Margin="10" Spacing="8">
+        <!--Option names and votes-->
+        <patch:Label x:Name="TitleLbl" FontSize="20" TextColor="{x:Static local:Styles.TextColor}" Lines="1" AutoFit="Width" HorizontalTextAlignment="Start" VerticalOptions="Center" HorizontalOptions="Start" />
+        <!--Frame-->
+        <Frame BorderColor="{x:Static local:Styles.ObjectGray}"  BackgroundColor="White" x:Name="parentFrame" VerticalOptions="StartAndExpand" Padding="0" IsClippedToBounds="True" CornerRadius="10" HorizontalOptions="CenterAndExpand" >
+            <AbsoluteLayout>
+                <!--Percentage frame-->
+                <Frame x:Name="percentageFrame" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" HasShadow="False" BackgroundColor="OrangeRed" HorizontalOptions="Start" Padding="0" HeightRequest="40"/>
+                <!--Percentage Label-->
+                <Label Margin="10,0,0,0" FontSize="20" TextColor="{x:Static local:Styles.TextColor}" x:Name="percentageNumber" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" />
+            </AbsoluteLayout>
+        </Frame>
+    </StackLayout>
+</ContentView>
