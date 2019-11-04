@@ -15,8 +15,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -31,8 +29,6 @@
 	<string>Salvemini</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.codex.salveminiapp</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
@@ -72,5 +68,9 @@
 	<string>Salvemini ha bisogno di accedere al tuo calendario per prendere l&apos;orario odierno</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>CFBundleShortVersionString</key>
+	<string>10</string>
+	<key>CFBundleVersion</key>
+	<string>3.1</string>
 </dict>
 </plist>
