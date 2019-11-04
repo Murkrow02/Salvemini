@@ -21,7 +21,7 @@
                                                     </FormattedString>
                                                 </Label.FormattedText>
                                             </Label>
-                                            <iconize:IconButton Text="far-chart-bar" TextColor="{x:Static local:Styles.TextColor}" VerticalOptions="Center" IsVisible="{Binding chartButtonVisibility}" HorizontalOptions="EndAndExpand" Clicked="Chart_Clicked" />
+                                            <iconize:IconButton Text="far-chart-bar" TextColor="{x:Static local:Styles.TextColor}" VerticalOptions="Center" IsVisible="{Binding chartVisibility}" HorizontalOptions="EndAndExpand" Clicked="Chart_Clicked" />
                                         </StackLayout>
                                     </ViewCell>
                                 </DataTemplate>
@@ -29,28 +29,30 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
+                                        <ViewCell.ContextActions>
+                                            <MenuItem Text="Non fa media" IsDestructive="True" Clicked="NonFaMedia_Clicked" Command="{Binding FaMedia}" CommandParameter="{Binding .}" />
+                                        </ViewCell.ContextActions>
                                         <StackLayout Padding="10, 5" Spacing="10">
                                             <StackLayout.GestureRecognizers>
                                                 <TapGestureRecognizer Tapped="Cell_Tapped" />
                                             </StackLayout.GestureRecognizers>
-                                            <StackLayout Spacing="0">
+                                            <StackLayout Spacing="0" VerticalOptions="Start">
                                                 <StackLayout Orientation="Horizontal">
                                                     <Label Text="{Binding codVoto}" TextColor="{Binding markColor}" FontSize="32" HorizontalOptions="Start" VerticalOptions="Center" FontAttributes="Bold" />
+                                                    <Label Text="Non fa media" FontSize="Small" TextColor="{x:Static local:Styles.TextColor}" IsVisible="{Binding NonFaMedia}" VerticalOptions="Center"/>
                                                     <StackLayout IsVisible="{Binding dotsVisibility}" Orientation="Horizontal" Spacing="1" VerticalOptions="Start" HorizontalOptions="EndAndExpand">
                                                         <iconize:IconLabel Text="fas-circle" FontSize="5" TextColor="#989696" />
                                                         <iconize:IconLabel Text="fas-circle" FontSize="5" TextColor="#C1C1C1" />
                                                         <iconize:IconLabel Text="fas-circle" FontSize="5" TextColor="#D1D0D0" />
-
                                                     </StackLayout>
-
                                                 </StackLayout>
                                                 <StackLayout Orientation="Horizontal">
                                                     <Label FontSize="12" HorizontalOptions="Start" Text="{Binding Data}" TextColor="{x:Static local:Styles.TextGray}" />
                                                     <Label FontSize="12" HorizontalOptions="EndAndExpand" Text="{Binding docente}" TextColor="{x:Static local:Styles.TextGray}" />
                                                 </StackLayout>
                                             </StackLayout>
-                                            <local:DashedBorderFrame IsVisible="{Binding SeparatorVisibility}" Padding="0" Margin="-10, -5" HeightRequest="0.1" />
-                                            <Label Text="{Binding Materia}" HeightRequest="0" />
+                                            <Label Text="{Binding Materia}" HeightRequest="0" VerticalOptions="Start" />
+                                            <local:DashedBorderFrame IsVisible="{Binding SeparatorVisibility}" Padding="0" Margin="-10, -5" VerticalOptions="EndAndExpand" HeightRequest="0.1" />
                                         </StackLayout>
                                     </ViewCell>
                                 </DataTemplate>

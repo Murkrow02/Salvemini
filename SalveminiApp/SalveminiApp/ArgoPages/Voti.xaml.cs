@@ -18,7 +18,7 @@ namespace SalveminiApp.ArgoPages
 {
     public partial class Voti : ContentPage
     {
-        public List<RestApi.Models.Voti> GroupedVoti = new List<RestApi.Models.Voti>();
+        public static ObservableCollection<RestApi.Models.GroupedVoti> GroupedVoti = new ObservableCollection<RestApi.Models.GroupedVoti>();
 
         public Voti()
         {
@@ -63,9 +63,8 @@ namespace SalveminiApp.ArgoPages
                 }
                 else
                 {
-                    GroupedVoti = response.Data as List<RestApi.Models.Voti>;
+                    GroupedVoti = response.Data as ObservableCollection<RestApi.Models.GroupedVoti>;
                     votiList.ItemsSource = GroupedVoti;
-
                 }
             }
             else
@@ -77,7 +76,13 @@ namespace SalveminiApp.ArgoPages
 
                 var result = await notificator.Notify(options);
             }
-            
+        }
+
+        void NonFaMedia_Clicked(object sender, System.EventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+            menuItem.Text = menuItem.Text == "Non fa media" ? menuItem.Text = "Fa media" : menuItem.Text = "Non fa media";
+            menuItem.IsDestructive = !menuItem.IsDestructive;
         }
 
         void Cell_Tapped(object sender, System.EventArgs e)
@@ -92,23 +97,23 @@ namespace SalveminiApp.ArgoPages
             var materia = ((sender as Xamarin.Forms.StackLayout).Children[(sender as Xamarin.Forms.StackLayout).Children.Count - 1] as Xamarin.Forms.Label).Text;
 
             //Get The Mark
-            //var Voto = GroupedVoti.Where(x => x.Materia == materia).ToList().FirstOrDefault(x => x.codVoto == codVoto && x.Data == Data && x.docente == docente);
+            var Voto = GroupedVoti.FirstOrDefault(x => x.Materia == materia).FirstOrDefault(x => x.codVoto == codVoto && x.Data == Data && x.docente == docente);
 
             //Get the three dots of the cell
             var pallini = (((sender as Xamarin.Forms.StackLayout).Children[0] as Xamarin.Forms.StackLayout).Children[0] as Xamarin.Forms.StackLayout).Children[1] as Xamarin.Forms.StackLayout;
 
             //Check if the comment exists
-            //if (!string.IsNullOrEmpty(Voto.desCommento))
-            //{
-            //    //Display Popup with the comment
-            //    var secondPopUp = new Helpers.PopOvers().defaultPopOver;
-            //    secondPopUp.Content = new Xamarin.Forms.Label { Text = Voto.desCommento, HorizontalOptions = LayoutOptions.FillAndExpand, HorizontalTextAlignment = TextAlignment.Center, WidthRequest = App.ScreenWidth / 1.5 };
-            //    secondPopUp.PointerDirection = PointerDirection.Vertical;
-            //    secondPopUp.PreferredPointerDirection = PointerDirection.Vertical;
-            //    secondPopUp.Target = pallini;
-            //    secondPopUp.BackgroundColor = Color.White;
-            //    secondPopUp.IsVisible = true;
-            //}
+            if (!string.IsNullOrEmpty(Voto.desCommento))
+            {
+                //Display Popup with the comment
+                var secondPopUp = new Helpers.PopOvers().defaultPopOver;
+                secondPopUp.Content = new Xamarin.Forms.Label { Text = Voto.desCommento, HorizontalOptions = LayoutOptions.FillAndExpand, HorizontalTextAlignment = TextAlignment.Center, WidthRequest = App.ScreenWidth / 1.5 };
+                secondPopUp.PointerDirection = PointerDirection.Vertical;
+                secondPopUp.PreferredPointerDirection = PointerDirection.Vertical;
+                secondPopUp.Target = pallini;
+                secondPopUp.BackgroundColor = Color.White;
+                secondPopUp.IsVisible = true;
+            }
         }
 
         void Chart_Clicked(object sender, System.EventArgs e)
@@ -120,7 +125,7 @@ namespace SalveminiApp.ArgoPages
             var materia = ((chartButton.Parent as Xamarin.Forms.StackLayout).Children[0] as Xamarin.Forms.Label).FormattedText.Spans[0].Text;
 
             //Get the marks to display in the chart
-            //var source = GroupedVoti.Voti.Where(x => x.Materia == materia).ToList()[0].ToList();
+            var source = GroupedVoti.FirstOrDefault(x => x.Materia == materia).Voti;
 
             //Create the chart
             SfChart chart = new SfChart();
@@ -142,7 +147,7 @@ namespace SalveminiApp.ArgoPages
             SplineSeries series = new SplineSeries();
             series.StrokeWidth = 3;
             series.EnableTooltip = true;
-            //series.ItemsSource = source;
+            series.ItemsSource = source;
             series.Color = Styles.PrimaryColor;
             series.XBindingPath = "datGiorno";
             series.YBindingPath = "decValore";

@@ -81,7 +81,6 @@ namespace SalveminiApp.RestApi
             }
             return Data;
         }
-
         public async Task<Models.ResponseModel> GiustificaAssenza(RestApi.Models.AssenzaModel item)
         {
             Models.ResponseModel Data = new Models.ResponseModel();
@@ -112,7 +111,6 @@ namespace SalveminiApp.RestApi
             }
             return Data;
         }
-
         public async Task<Models.ResponseModel> GetPromemoria()
         {
             Models.ResponseModel Data = new Models.ResponseModel();
@@ -154,7 +152,6 @@ namespace SalveminiApp.RestApi
             }
             return Data;
         }
-
         public async Task<Models.ResponseModel> GetCompiti()
         {
             Models.ResponseModel Data = new Models.ResponseModel();
@@ -195,7 +192,6 @@ namespace SalveminiApp.RestApi
             }
             return Data;
         }
-
         public async Task<Models.ResponseModel> GetArgomenti()
         {
             Models.ResponseModel Data = new Models.ResponseModel();
@@ -236,7 +232,6 @@ namespace SalveminiApp.RestApi
             }
             return Data;
         }
-
         public async Task<Models.ResponseModel> GetPentagono()
         {
             Models.ResponseModel Data = new Models.ResponseModel();
@@ -286,7 +281,53 @@ namespace SalveminiApp.RestApi
                     case HttpStatusCode.OK:
                         var content = await response.Content.ReadAsStringAsync();
                         Voti = JsonConvert.DeserializeObject<List<Models.Voti>>(content);
-                        Data.Data = Voti;
+
+                        //Create list of grouped voti
+                        var GroupedVoti = new ObservableCollection<Models.GroupedVoti>();
+
+                        //Get voti filtered by subject from api call
+                        var groupedBySubject = Voti.GroupBy(x => x.desMateria).Select(y => y.ToList()).ToList();
+
+                        //Fill GroupedVoti
+                        foreach (var group in groupedBySubject)
+                        {
+                            //Remove separator from last item
+                            group[group.Count - 1].SeparatorVisibility = false;
+
+                            var tempVoti = new List<Models.Voti>();
+                            tempVoti.AddRange(group);
+
+                            if (Barrel.Current.Exists("NoCountVoti"))
+                            {
+                                var noCountVoti = Barrel.Current.Get<List<Models.CachedVoto>>("NoCountVoti");
+                                for (int i = tempVoti.Count - 1; i >= 0; i--)
+                                {
+                                    foreach (var nocount in noCountVoti)
+                                    {
+                                        if (tempVoti[i].decValore == nocount.decValore && tempVoti[i].desMateria == nocount.desMateria && tempVoti[i].datGiorno == nocount.datGiorno)
+                                        {
+                                            group[group.IndexOf(tempVoti[i])].NonFaMedia = true;
+                                            tempVoti.RemoveAt(i);
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+
+                            //Calculate media
+                            var media = tempVoti.Sum(x => x.decValore) / tempVoti.Count();
+
+                            //Add characteristics of the model
+                            var groupOfMarks = new Models.GroupedVoti((double)media) { Materia = group[0].desMateria };
+
+                            //Add voti of that subject
+                            groupOfMarks.AddRange(group);
+
+                            //Add GroupedVoti into the list
+                            GroupedVoti.Add(groupOfMarks);
+                        }
+
+                        Data.Data = GroupedVoti;
                         break;
                     case HttpStatusCode.Forbidden:
                         Data.Message = "Si è verificato un errore nella connessione ad ARGO";
@@ -321,12 +362,6 @@ namespace SalveminiApp.RestApi
                         var content = await response.Content.ReadAsStringAsync();
                         VotiScrutinio = JsonConvert.DeserializeObject<Models.ScrutinioGrouped>(content);
 
-                        //var voti = new List<Models.Scrutinio>();
-                        ////{ new Models.Scrutinio { assenze = 2, desMateria = "Matematica", Voto = "10" }, new Models.Scrutinio { assenze = 5, desMateria = "Italiano", Voto = "8" } };
-                        //VotiScrutinio.Primo = voti;
-
-                        //var voti2 = new List<Models.Scrutinio> { new Models.Scrutinio { assenze = 1, desMateria = "Italiano", Voto = "5" } };
-                        //VotiScrutinio.Secondo = voti2;
                         if (VotiScrutinio.Primo.ElementAtOrDefault(VotiScrutinio.Primo.Count - 1) != null)
                         {
                             VotiScrutinio.Primo[VotiScrutinio.Primo.Count - 1].SeparatorVisibility = false;
