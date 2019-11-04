@@ -60,7 +60,7 @@
             </StackLayout>
 
              <!--SuperVip-->
-            <StackLayout x:Name="superVip">
+            <StackLayout x:Name="superVip" IsVisible="false">
                 <StackLayout Orientation="Horizontal">
                     <iconize:IconLabel Text="fas-user-astronaut" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" />
                     <Label Text="Super Vip" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" FontAttributes="Bold" />

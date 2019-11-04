@@ -475,7 +475,7 @@ namespace SalveminiApp
                     var allDays = Costants.getDays();
 
                     //Remove freeday from list
-                    allDays.RemoveAt(freedayInt - 1);
+                    allDays.RemoveAt(freedayInt);
                     giorniList.ItemsSource = allDays;
 
                     //intelligent auto skip if dopo le 2
