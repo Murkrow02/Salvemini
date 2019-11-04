@@ -96,12 +96,14 @@ namespace SalveminiApp.ArgoPages
                 }
             }
 
-            //Hide status bar
+            //Hide status bar and iPhone X optimization
 #if __IOS__
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
             UIApplication.SharedApplication.StatusBarHidden = true;
+           if(iOS.AppDelegate.HasNotch)
+                fullLayout.Padding = new Thickness(20,35,20,25);
 #endif
-            //Set Sizes
+                //Set Sizes
             shadowImage.WidthRequest = App.ScreenWidth * 1.5;
             shadowImage.HeightRequest = App.ScreenWidth * 1.5;
             listFrame.HeightRequest = App.ScreenHeight / 1.5;
@@ -313,7 +315,7 @@ namespace SalveminiApp.ArgoPages
             {
                 if (showingAll)
                 {
-                    var today = Compitis.Where(x => x.datGiorno == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    var today = Compitis.Where(x => x.datGiorno == DateTime.Now.ToString("yyyy-MM-dd")).ToList();
                     if (today.Count > 0)
                     {
                         lista.IsVisible = true;

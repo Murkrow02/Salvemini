@@ -31,21 +31,37 @@ namespace SalveminiApp.ArgoPages
 
             getDayCache(DateTime.Today.ToString("yyyy-MM-dd"));
 
-
+            //Set max and min date
+            datepicker.MaximumDate = DateTime.Now;
+            datepicker.MinimumDate = DateTime.Now.AddYears(-1);
         }
 
         void getDayCache(string date)
         {
             if (Barrel.Current.Exists("Oggi" + date))
             {
-                widgetsLayout.Children.Clear();
-                Oggi = Barrel.Current.Get<RestApi.Models.WholeModel>("Oggi" + date);
-                gotByCache = true;
-                if (Oggi != null)
+                try
                 {
-                    callSetLayout();
+                    widgetsLayout.Children.Clear();
+                    Oggi = Barrel.Current.Get<RestApi.Models.WholeModel>("Oggi" + date);
+                    gotByCache = true;
+                    if (Oggi != null)
+                    {
+                        callSetLayout();
 
+                    }
                 }
+                catch(Exception ex)
+                {
+                    //Failed stacca stacca
+                    Barrel.Current.Empty("Oggi" + date);
+                    if (Oggi != null)
+                    {
+                        callSetLayout();
+
+                    }
+                }
+               
             }
         }
 

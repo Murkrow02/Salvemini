@@ -3,7 +3,7 @@
     <yummy:PancakeView BackgroundGradientAngle="135" BackgroundGradientStartColor="#A940F5" BackgroundGradientEndColor="#6E9BFF" CornerRadius="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <AbsoluteLayout>
             <ffimageloadingsvg:SvgCachedImage Source="VotiShadow.svg" x:Name="shadowImage" BackgroundColor="Transparent" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1.5, -0.1" />
-            <StackLayout Spacing="20" Padding="20, 40" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <StackLayout x:Name="fullLayout" Spacing="15" Padding="20, 10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
                 <Label HorizontalOptions="Start" TextColor="White" Text="Voti" FontSize="40" FontAttributes="Bold" />
                 <Frame IsClippedToBounds="true" Padding="0" VerticalOptions="Start" HasShadow="false" CornerRadius="15">
                     <Grid>

@@ -3,7 +3,7 @@
     <yummy:PancakeView BackgroundGradientAngle="135" BackgroundGradientStartColor="#F86095" BackgroundGradientEndColor="#FF6073" CornerRadius="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <AbsoluteLayout>
             <ffimageloadingsvg:SvgCachedImage Source="PromemoriaShadow.svg" x:Name="shadowImage" BackgroundColor="Transparent" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1.5, -0.1" />
-            <StackLayout Padding="20, 40" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <StackLayout x:Name="fullLayout" Spacing="5" Padding="20, 10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
                 <Label TextColor="White" Text="Promemoria" FontSize="40" FontAttributes="Bold" />
                 <Frame IsClippedToBounds="true" Padding="0" VerticalOptions="Start" HasShadow="false" CornerRadius="15">
                     <Grid>
