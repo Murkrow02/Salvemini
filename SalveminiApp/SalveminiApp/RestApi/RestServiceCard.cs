@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using MonkeyCache.SQLite;
 using Newtonsoft.Json;
@@ -61,11 +63,42 @@ namespace SalveminiApp.RestApi
             return Offerte;
         }
 
+        public async Task<string[]> PostOfferta(Offerte offerta)
+        {
+            var uri = Costants.Uri("card/offerta");
+
+            try
+            {
+                var json = JsonConvert.SerializeObject(offerta);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await client.PostAsync(uri, content);
+
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                        return new string[] { "Successo", "L'offerta è stata creata" };
+                    case HttpStatusCode.Unauthorized:
+                        return new string[] { "Errore", "Non hai l'autorizzazione per creare un'offerta" };
+                    case HttpStatusCode.InternalServerError:
+                        return new string[] { "Errore", "Si è verificato un errore nella creazione dell'offerta, riprova più tardi o contattaci se il problema persiste" };
+                    default:
+                        return new string[] { "Errore", "Si è verificato un errore sconosciuto, riprova più tardi o contattaci se il problema persiste" };
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Crea offerta", ex.Message);
+                return new string[] { "Errore", "Si è verificato un errore sconosciuto, riprova più tardi o contattaci se il problema persiste" };
+            }
+        }
+
     }
 
     public interface IRestServiceCard
     {
         Task<List<Offerte>> GetOfferte();
+        Task<string[]> PostOfferta(Offerte offerta);
     }
 
     public class ItemManagerCard
@@ -81,6 +114,11 @@ namespace SalveminiApp.RestApi
         public Task<List<Offerte>> GetOfferte()
         {
             return restServiceCard.GetOfferte();
+        }
+
+        public Task<string[]> PostOfferta(Offerte offerta)
+        {
+            return restServiceCard.PostOfferta(offerta);
         }
 
     }

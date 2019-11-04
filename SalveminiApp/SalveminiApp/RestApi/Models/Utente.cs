@@ -35,5 +35,27 @@ namespace SalveminiApp.RestApi.Models
                 return Costants.Uri("images/users/") + id;
             }
         }
+
+        public string StatoLabel
+        {
+            get
+            {
+                switch (Stato)
+                {
+                    case 0:
+                        return "Plebeo";
+                    case 1:
+                        return "Rappr.";
+                    case 2:
+                        return "VIP";
+                    case 3:
+                        return "Super VIP";
+                    case -1:
+                        return "Disab.";
+                    default:
+                        return "null";
+                }
+            }
+        }
     }
 }
