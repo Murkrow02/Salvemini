@@ -3,7 +3,7 @@
     <ScrollView>
         <StackLayout Padding="10,10,10,0">
             <!--Class entry-->
-            <Entry Placeholder="Classe"/>
+            <Entry Placeholder="Classe" x:Name="classEntry"/>
             <!--Freeday picker-->
             <Label Text="Giorno libero" TextColor="{x:Static local:Styles.TextColor}"/>
             <Picker x:Name="giornoLibero" Unfocused="picker_Unfocused" />

@@ -36,6 +36,18 @@
                     <StackLayout x:Name="contactLayout" Spacing="0" />
                 </Frame>
             </StackLayout>
+
+              <!--Rappresentanti-->
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <iconize:IconLabel Text="fas-users" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" />
+                    <Label Text="Rappresentanti di classe" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" FontAttributes="Bold" />
+                </StackLayout>
+                <Frame Padding="0" IsClippedToBounds="True" HasShadow="False" CornerRadius="12" VerticalOptions="Start">
+                    <StackLayout x:Name="rapprLayout" Spacing="0" IsEnabled="False" Opacity="0.6" />
+                </Frame>
+            </StackLayout>
+
             <!--Vip-->
             <StackLayout>
                 <StackLayout Orientation="Horizontal">
@@ -44,6 +56,17 @@
                 </StackLayout>
                 <Frame Padding="0" IsClippedToBounds="True" HasShadow="False" CornerRadius="12" VerticalOptions="Start">
                     <StackLayout x:Name="vipLayout" Spacing="0" IsEnabled="False" Opacity="0.6" />
+                </Frame>
+            </StackLayout>
+
+             <!--SuperVip-->
+            <StackLayout x:Name="superVip">
+                <StackLayout Orientation="Horizontal">
+                    <iconize:IconLabel Text="fas-user-astronaut" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" />
+                    <Label Text="Super Vip" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" FontAttributes="Bold" />
+                </StackLayout>
+                <Frame Padding="0" IsClippedToBounds="True" HasShadow="False" CornerRadius="12" VerticalOptions="Start">
+                    <StackLayout x:Name="superVipLayout" Spacing="0" />
                 </Frame>
             </StackLayout>
 

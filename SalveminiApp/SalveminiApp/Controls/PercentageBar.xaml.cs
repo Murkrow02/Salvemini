@@ -26,6 +26,21 @@ namespace SalveminiApp.Controls
             }
         }
 
+        //NoVotes
+        public static readonly BindableProperty HideVotesProperty = BindableProperty.Create(nameof(HideVotes), typeof(string), typeof(PercentageBar), default(string), Xamarin.Forms.BindingMode.OneWay);
+        public string HideVotes
+        {
+            get
+            {
+                return (string)GetValue(HideVotesProperty);
+            }
+
+            set
+            {
+                SetValue(HideVotesProperty, value);
+            }
+        }
+
         //BgColor
         public static readonly BindableProperty BgColorProperty = BindableProperty.Create(nameof(BgColor), typeof(string), typeof(PercentageBar), default(string), Xamarin.Forms.BindingMode.OneWay);
         public string BgColor
@@ -69,6 +84,14 @@ namespace SalveminiApp.Controls
                 {
                     if (!string.IsNullOrEmpty(Title))
                         TitleLbl.HtmlText = Title;
+                }
+
+                //Voti
+                if (propertyName == HideVotesProperty.PropertyName)
+                {
+                    //No votes, hide frame
+                    if (HideVotes == "si")
+                        parentFrame.IsVisible = false;
                 }
 
                 //BgColor

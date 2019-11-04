@@ -44,7 +44,7 @@ namespace SalveminiApp.ArgoPages
                 if (Barrel.Current.Exists("Compiti"))
                 {
                     Compitis = Barrel.Current.Get<List<RestApi.Models.Compiti>>("Compiti");
-                    var today = Compitis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    var today = Compitis.Where(x => x.datGiorno == DateTime.Now.ToString("yyyy-MM-dd")).ToList();
                     if (today.Count > 0)
                     {
                         lista.IsVisible = true;
@@ -76,7 +76,7 @@ namespace SalveminiApp.ArgoPages
                 if (Barrel.Current.Exists("Argomenti"))
                 {
                     Argomentis = Barrel.Current.Get<List<RestApi.Models.Argomenti>>("Argomenti");
-                    var today = Argomentis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    var today = Argomentis.Where(x => x.datGiorno == DateTime.Now.ToString("yyyy-MM-dd")).ToList();
                     if (today.Count > 0)
                     {
                         lista.IsVisible = true;
@@ -169,7 +169,7 @@ namespace SalveminiApp.ArgoPages
                     }
 
                     //Fill List
-                    var today = Compitis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    var today = Compitis.Where(x => x.datGiorno == DateTime.Now.ToString("yyyy-MM-dd")).ToList();
                     if (today.Count > 0)
                     {
                         lista.IsVisible = true;
@@ -238,7 +238,7 @@ namespace SalveminiApp.ArgoPages
                     }
 
                     //Fill List
-                    var today = Argomentis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    var today = Argomentis.Where(x => x.datGiorno == DateTime.Now.ToString("yyyy-MM-dd")).ToList();
                     if (today.Count > 0)
                     {
                         lista.IsVisible = true;
@@ -313,7 +313,7 @@ namespace SalveminiApp.ArgoPages
             {
                 if (showingAll)
                 {
-                    var today = Compitis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    var today = Compitis.Where(x => x.datGiorno == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
                     if (today.Count > 0)
                     {
                         lista.IsVisible = true;
@@ -358,7 +358,7 @@ namespace SalveminiApp.ArgoPages
             {
                 if (showingAll)
                 {
-                    var today = Argomentis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    var today = Argomentis.Where(x => x.datGiorno == DateTime.Now.ToString("yyyy-MM-dd")).ToList();
                     if (today.Count > 0)
                     {
                         lista.IsVisible = true;
@@ -448,7 +448,7 @@ namespace SalveminiApp.ArgoPages
                 }
                 else
                 {
-                    listForSubjects = Compitis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    listForSubjects = Compitis.Where(x => x.datGiorno == DateTime.Now.ToString("yyyy-MM-dd")).ToList();
                 }
                 foreach (RestApi.Models.Compiti compito in listForSubjects)
                 {
@@ -490,7 +490,7 @@ namespace SalveminiApp.ArgoPages
                 }
                 else
                 {
-                    listForSubjects = Argomentis.Where(x => x.Data == DateTime.Now.ToString("dd/MM/yyyy")).ToList();
+                    listForSubjects = Argomentis.Where(x => x.datGiorno == DateTime.Now.ToString("yyyy-MM-dd")).ToList();
                 }
                 foreach (RestApi.Models.Argomenti argomento in listForSubjects)
                 {

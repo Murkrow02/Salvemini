@@ -17,7 +17,7 @@ namespace SalveminiApp.AreaVip
         public IList<SegmentedControlOption> sedi = new List<SegmentedControlOption>();
         public int daySkipped = 0;
 
-        public CreaOrario()
+        public CreaOrario(string classe = "")
         {
             InitializeComponent();
 
@@ -34,13 +34,20 @@ namespace SalveminiApp.AreaVip
             sedi.Add(centrale);
             sedi.Add(succursale);
 
+            //Detect if super vip or restrict to class
+            if (!string.IsNullOrEmpty(classe))
+            {
+                classEntry.Text = classe;
+                classEntry.IsEnabled = false;
+            }
+
         }
 
         //When the picker loses focus generate a new layout
         private void picker_Unfocused(object sender, FocusEventArgs e)
         {
             //No day selected, return
-            if (string.IsNullOrEmpty(giornoLibero.SelectedItem.ToString()))
+            if (string.IsNullOrEmpty(giornoLibero.SelectedItem?.ToString()))
             {
                 saveBtn.IsVisible = false;
                 return;

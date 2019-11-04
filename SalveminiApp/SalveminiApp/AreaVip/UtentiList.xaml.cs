@@ -10,9 +10,12 @@ namespace SalveminiApp.AreaVip
     {
         public bool superVip = false;
 
-        public UtentiList()
+        public UtentiList(bool superVip_)
         {
             InitializeComponent();
+
+            //Detect if super vip
+            superVip = superVip_;
         }
 
         public List<RestApi.Models.Utente> utentiList = new List<RestApi.Models.Utente>();
@@ -43,11 +46,14 @@ namespace SalveminiApp.AreaVip
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+
+            //Show loading
             utentiListCtrl.IsRefreshing = true;
             searchBar.IsEnabled = false;
 
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
+                //Download users
                 utentiList = await App.Utenti.GetUtenti();
                 if (utentiList.Count < 1)
                 {
@@ -65,74 +71,75 @@ namespace SalveminiApp.AreaVip
                 await DisplayAlert("Attenzione", "Non sei connesso ad internet!", "Ok");
             }
 
+            //Stop loading
             utentiListCtrl.IsRefreshing = false;
             searchBar.IsEnabled = true;
 
-            //Optional super vip feature
-            var utente = await App.Utenti.GetUtente(Preferences.Get("UserId", 0));
-            if (utente.Stato > 1)
-                superVip = true;
         }
 
         async void userSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
+            //Deselect cell
             if (e.SelectedItem == null)
                 return;
-
             utentiListCtrl.SelectedItem = null;
 
+            //Get user selcted
             var data = (sender as Xamarin.Forms.ListView).SelectedItem as RestApi.Models.Utente;
+
+            //Access with feature if super vip
             if (superVip)
             {
-                var userEdit = await DisplayActionSheet("Come vuoi procedere?", "Annulla","Disabilita utente", "Abilita utente", "Accedi");
+                Preferences.Set("UserId", data.id);
+                Preferences.Set("Token", data.ArgoToken);
+                App.refreshCalls();
+                await DisplayAlert("Successo", "Ora sei loggato come " + data.nomeCognome, "Yo");
+            }
+
+            else
+            {
+                //Show options
+                var userEdit = await DisplayActionSheet("Come vuoi procedere?", "Annulla", "Disabilita utente", "Abilita utente");
                 switch (userEdit)
                 {
-                    case "Accedi":
-                        Preferences.Set("UserId", data.id);
-                        Preferences.Set("Token", data.ArgoToken);
-                        App.refreshCalls();
-                        await DisplayAlert("Successo", "Ora sei loggato come " + data.nomeCognome, "Yo");
-                        break;
+                    //case "Disabilita utente":
+                    //    if (data.Stato == 2)
+                    //    {
+                    //        await DisplayAlert("Non puoi disabilitare un VIP!", null, "Cazz");
+                    //        return;
+                    //    }
+                    //    var success1 = await App.Utenti.editUser(data.id, "disable");
+                    //    if (success1 == true)
+                    //    {
+                    //        await DisplayAlert("Successo", "L'account di " + data.Nome + " è stato disabilitato", "Ok");
+                    //    }
+                    //    else
+                    //    {
+                    //        await DisplayAlert("Oooops!", "Si è verificato un problema durante la tua richiesta", "Ok");
+
+                    //    }
+                    //    break;
+
+                    //case "Abilita utente":
+                    //    var success2 = await App.Utenti.editUser(data.id, "enable");
+                    //    if (success2 == true)
+                    //    {
+                    //        await DisplayAlert("Successo", "L'account di " + data.Nome + " è stato abilitato", "Ok");
+                    //    }
+                    //    else
+                    //    {
+                    //        await DisplayAlert("Oooops!", "Si è verificato un problema durante la tua richiesta", "Ok");
+
+                    //    }
+                    //    break;
                 }
             }
-           
+        }
 
-                    //    case "Disabilita utente":
-                    //        if (data.Stato == 2)
-                    //        {
-                    //            await DisplayAlert("Non puoi disabilitare un VIP!", null, "Cazz");
-                    //            return;
-                    //        }
-                    //        var success1 = await App.Utenti.editUser(data.id, "disable");
-                    //        if (success1 == true)
-                    //        {
-                    //            await DisplayAlert("Successo", "L'account di " + data.Nome + " è stato disabilitato", "Ok");
-                    //        }
-                    //        else
-                    //        {
-                    //            await DisplayAlert("Oooops!", "Si è verificato un problema durante la tua richiesta", "Ok");
 
-                    //        }
-                    //        break;
-
-                    //    case "Abilita utente":
-                    //        var success2 = await App.Utenti.editUser(data.id, "enable");
-                    //        if (success2 == true)
-                    //        {
-                    //            await DisplayAlert("Successo", "L'account di " + data.Nome + " è stato abilitato", "Ok");
-                    //        }
-                    //        else
-                    //        {
-                    //            await DisplayAlert("Oooops!", "Si è verificato un problema durante la tua richiesta", "Ok");
-
-                    //        }
-                    //        break;
-
-                    //    case "Invia messaggio":
-                    //        await DisplayAlert("Aspè", "Non ancora pronto", "Ok");
-                    //        break;
-                    //}
-
-            }
     }
+
+
+
 }
+

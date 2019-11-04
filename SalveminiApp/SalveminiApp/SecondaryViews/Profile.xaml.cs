@@ -63,6 +63,11 @@ namespace SalveminiApp.SecondaryViews
             Mail.GestureRecognizers.Add(tapGestureRecognizer);
             contactLayout.Children.Add(Mail);
 
+            //Rappresentanti
+            var orariClasse = new Helpers.PushCell { Title = "Crea orario", Separator = "no", Push = new AreaVip.CreaOrario(Preferences.Get("Classe", 0).ToString() + Preferences.Get("Corso", "")) };
+            orariClasse.GestureRecognizers.Add(tapGestureRecognizer);
+            rapprLayout.Children.Add(orariClasse);
+
             //Vip
             var avviso = new Helpers.PushCell { Title = "Crea avviso", Separator = "si", Push = new AreaVip.CreaAvviso() };
             avviso.GestureRecognizers.Add(tapGestureRecognizer);
@@ -70,15 +75,20 @@ namespace SalveminiApp.SecondaryViews
             var stats = new Helpers.PushCell { Title = "Statistiche", Separator = "si", Push = new AreaVip.Analytics() };
             stats.GestureRecognizers.Add(tapGestureRecognizer);
             vipLayout.Children.Add(stats);
-            var utenti = new Helpers.PushCell { Title = "Utenti", Separator = "si", Push = new AreaVip.UtentiList() };
+            var utenti = new Helpers.PushCell { Title = "Controlla utenti", Separator = "si", Push = new AreaVip.UtentiList(false) };
             utenti.GestureRecognizers.Add(tapGestureRecognizer);
             vipLayout.Children.Add(utenti);
-            var sondaggio = new Helpers.PushCell { Title = "Crea sondaggio", Separator = "si", Push = new AreaVip.CreaSondaggio() };
+            var sondaggio = new Helpers.PushCell { Title = "Crea sondaggio", Separator = "no", Push = new AreaVip.CreaSondaggio() };
             sondaggio.GestureRecognizers.Add(tapGestureRecognizer);
             vipLayout.Children.Add(sondaggio);
-            var orari = new Helpers.PushCell { Title = "Crea orario", Separator = "no", Push = new AreaVip.CreaOrario() };
+
+            //SuperVip
+            var orari = new Helpers.PushCell { Title = "Crea orario", Separator = "si", Push = new AreaVip.CreaOrario() };
             orari.GestureRecognizers.Add(tapGestureRecognizer);
-            vipLayout.Children.Add(orari);
+            superVipLayout.Children.Add(orari);
+            var accediCon = new Helpers.PushCell { Title = "Accedi con", Separator = "no", Push = new AreaVip.UtentiList(true )};
+            accediCon.GestureRecognizers.Add(tapGestureRecognizer);
+            superVipLayout.Children.Add(accediCon);
 
         }
 
@@ -140,11 +150,26 @@ namespace SalveminiApp.SecondaryViews
                     classLbl.Text = utente.classeCorso;
                     userImg.Source = utente.Immagine;
 
-                    //Show vip area if vip
-                    if (utente.Stato > 0)
+                    //Show areas according to user status
+                    switch (utente.Stato)
                     {
-                        vipLayout.IsEnabled = true;
-                        vipLayout.Opacity = 1;
+                        case 1: //Rappresentante
+                            rapprLayout.IsEnabled = true;
+                            rapprLayout.Opacity = 1;
+                            break;
+                        case 2: //Vip
+                            rapprLayout.IsEnabled = true;
+                            rapprLayout.Opacity = 1;
+                            vipLayout.IsEnabled = true;
+                            vipLayout.Opacity = 1;
+                            break;
+                        case 3: //Super vip
+                            rapprLayout.IsEnabled = true;
+                            rapprLayout.Opacity = 1;
+                            vipLayout.IsEnabled = true;
+                            vipLayout.Opacity = 1;
+                            superVip.IsVisible = true;
+                            break;
                     }
 
 

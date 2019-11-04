@@ -142,7 +142,12 @@ namespace SalveminiApp.SecondaryViews
             //Foreach result add a custom control
             for (int i = 0; i < risultati.Count; i++)
             {
-                resultsLayout.Children.Add(new Controls.PercentageBar { Title = "<p><strong><span>" + risultati[i].NomeOpzione + ":</span>&nbsp;</strong><span>" + risultati[i].Voti + " voti</span></p>", Percentage = risultati[i].Percentuale, BgColor = Costants.Colors[i].Replace("#", "") });
+                //If 0 votes hide bar
+                string hideVotes = "no";
+                if (risultati[i].Voti == 0)
+                    hideVotes = "si";
+
+                resultsLayout.Children.Add(new Controls.PercentageBar { Title = "<p><strong><span>" + risultati[i].NomeOpzione + ":</span>&nbsp;</strong><span>" + risultati[i].Voti + " voti</span></p>", HideVotes = hideVotes, Percentage = risultati[i].Percentuale, BgColor = Costants.Colors[i].Replace("#", "") });
             }
 
             //Show frame
