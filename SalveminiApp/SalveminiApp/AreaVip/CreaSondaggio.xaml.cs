@@ -153,13 +153,22 @@ namespace SalveminiApp.AreaVip
 
         async void choosePhoto(object sender, System.EventArgs e)
         {
+            //Prevent modal closing
             MainPage.isSelectingImage = true;
+
+            //No gallery
             if (!CrossMedia.Current.IsPickPhotoSupported)
             {
-                await DisplayAlert("Attenzione", "Non ci hai dato il permesso di accedere alle tue foto :(", "Ok");
+                await DisplayAlert("Attenzione", "Non è stato possibile accedere alle foto", "Ok");
                 MainPage.isSelectingImage = false;
                 return;
             }
+
+            //Check permissions
+            bool garanted = await Helpers.CameraPermissions.checkPermissions();
+            if (!garanted)
+                await DisplayAlert("Attenzione", "Non ci hai permesso di accedere alla tua fotocamera o alla tua galleria", "Ok");
+
             var choosenImage = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
             {
                 PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
