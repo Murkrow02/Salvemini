@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.AreaVip.CreaOfferta">
+     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Crea" Clicked="Crea_Clicked" x:Name="createBtn" />
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <StackLayout Padding="25,20,25,0">
+            <!--Titolo-->
+            <Entry x:Name="title" MaxLength="50" Placeholder="Nome offerta (Ex. Bar Gelateria da David)" />
+            <!--Descrizione-->
+            <Editor HeightRequest="200" x:Name="desc" MaxLength="1000" Placeholder="Descrizione offerta (Quale sconto si applica)" />
+            <!--Image-->
+            <Button Text="Allega immagine" Clicked="attachImage_Clicked" BackgroundColor="Transparent" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

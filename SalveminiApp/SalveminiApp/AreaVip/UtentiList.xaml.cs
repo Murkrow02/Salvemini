@@ -90,48 +90,73 @@ namespace SalveminiApp.AreaVip
             //Access with feature if super vip
             if (superVip)
             {
-                Preferences.Set("UserId", data.id);
-                Preferences.Set("Token", data.ArgoToken);
-                App.refreshCalls();
-                await DisplayAlert("Successo", "Ora sei loggato come " + data.nomeCognome, "Yo");
-            }
+                //Show options
+                var userEdit = await DisplayActionSheet("Come vuoi procedere?", "Annulla", "Accedi", "Rendi VIP","Rendi rappresentante","Rendi plebeo");
+                switch (userEdit)
+                {
+                    case "Rendi VIP":
 
+                        //Vip user
+                        var response1 = await App.Utenti.ChangeStatus(data.id, 2);
+
+                        //Notify status of the request
+                        await DisplayAlert(response1[0], response1[1], "Ok");
+                        break;
+
+                    case "Rendi rappresentante":
+
+                        //Re-Enable user
+                        var response2 = await App.Utenti.ChangeStatus(data.id, 1);
+
+                        //Notify status of the request
+                        await DisplayAlert(response2[0], response2[1], "Ok");
+                        break;
+                    case "Rendi plebeo":
+
+                        //Re-Enable user
+                        var response3 = await App.Utenti.ChangeStatus(data.id, 0);
+
+                        //Notify status of the request
+                        await DisplayAlert(response3[0], response3[1], "Ok");
+                        break;
+                    case "Accedi":
+                        Preferences.Set("UserId", data.id);
+                        Preferences.Set("Token", data.ArgoToken);
+                        App.refreshCalls();
+                        await DisplayAlert("Successo", "Ora sei loggato come " + data.nomeCognome, "Yo");
+                        break;
+                }
+              
+            }
             else
             {
                 //Show options
                 var userEdit = await DisplayActionSheet("Come vuoi procedere?", "Annulla", "Disabilita utente", "Abilita utente");
                 switch (userEdit)
                 {
-                    //case "Disabilita utente":
-                    //    if (data.Stato == 2)
-                    //    {
-                    //        await DisplayAlert("Non puoi disabilitare un VIP!", null, "Cazz");
-                    //        return;
-                    //    }
-                    //    var success1 = await App.Utenti.editUser(data.id, "disable");
-                    //    if (success1 == true)
-                    //    {
-                    //        await DisplayAlert("Successo", "L'account di " + data.Nome + " è stato disabilitato", "Ok");
-                    //    }
-                    //    else
-                    //    {
-                    //        await DisplayAlert("Oooops!", "Si è verificato un problema durante la tua richiesta", "Ok");
+                    case "Disabilita utente":
+                        //The user is vip
+                        if (data.Stato >= 2)
+                        {
+                            await DisplayAlert("Non puoi disabilitare un VIP!", null, "Cazz");
+                            return;
+                        }
 
-                    //    }
-                    //    break;
+                        //Disable user
+                        var response1 = await App.Utenti.ChangeStatus(data.id, -1);
 
-                    //case "Abilita utente":
-                    //    var success2 = await App.Utenti.editUser(data.id, "enable");
-                    //    if (success2 == true)
-                    //    {
-                    //        await DisplayAlert("Successo", "L'account di " + data.Nome + " è stato abilitato", "Ok");
-                    //    }
-                    //    else
-                    //    {
-                    //        await DisplayAlert("Oooops!", "Si è verificato un problema durante la tua richiesta", "Ok");
+                        //Notify status of the request
+                        await DisplayAlert(response1[0], response1[1], "Ok");
+                        break;
 
-                    //    }
-                    //    break;
+                    case "Abilita utente":
+
+                        //Re-Enable user
+                        var response2 = await App.Utenti.ChangeStatus(data.id, 0);
+
+                        //Notify status of the request
+                        await DisplayAlert(response2[0], response2[1], "Ok");
+                        break;
                 }
             }
         }

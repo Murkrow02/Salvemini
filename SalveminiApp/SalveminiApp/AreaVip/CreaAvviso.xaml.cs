@@ -121,25 +121,32 @@ namespace SalveminiApp.AreaVip
             }
             else
             {
+                //Prevent modal closing
                 MainPage.isSelectingImage = true;
-                    if (!CrossMedia.Current.IsPickPhotoSupported)
-                    {
-                        await DisplayAlert("Attenzione", "Non ci hai dato il permesso di accedere alle tue foto :(", "Ok");
+                if (!CrossMedia.Current.IsPickPhotoSupported)
+                {
+                    await DisplayAlert("Attenzione", "Non ci hai dato il permesso di accedere alle tue foto :(", "Ok");
                     MainPage.isSelectingImage = false;
                     return;
-                    }
-                    var choosenImage = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
-                    {
-                        PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
-                        CompressionQuality = 80
+                }
 
-                    });
+                //Check permissions
+                bool garanted = await Helpers.CameraPermissions.checkPermissions();
+                if (!garanted)
+                    await DisplayAlert("Attenzione", "Non ci hai permesso di accedere alla tua fotocamera o alla tua galleria", "Ok");
 
-                    if (choosenImage == null)
-                    {
+                var choosenImage = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+                {
+                    PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+                    CompressionQuality = 80
+
+                });
+
+                if (choosenImage == null)
+                {
                     MainPage.isSelectingImage = false;
                     return;
-                    }
+                }
 
                 var choosenImageToUpload = new ImagesToUpload();
 

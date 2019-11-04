@@ -86,7 +86,10 @@ namespace SalveminiApp.SecondaryViews
             var orari = new Helpers.PushCell { Title = "Crea orario", Separator = "si", Push = new AreaVip.CreaOrario() };
             orari.GestureRecognizers.Add(tapGestureRecognizer);
             superVipLayout.Children.Add(orari);
-            var accediCon = new Helpers.PushCell { Title = "Accedi con", Separator = "no", Push = new AreaVip.UtentiList(true )};
+            var offerta = new Helpers.PushCell { Title = "Crea offerta", Separator = "si", Push = new AreaVip.CreaOfferta() };
+            offerta.GestureRecognizers.Add(tapGestureRecognizer);
+            superVipLayout.Children.Add(offerta);
+            var accediCon = new Helpers.PushCell { Title = "Controlla utenti", Separator = "no", Push = new AreaVip.UtentiList(true )};
             accediCon.GestureRecognizers.Add(tapGestureRecognizer);
             superVipLayout.Children.Add(accediCon);
 
@@ -212,12 +215,20 @@ namespace SalveminiApp.SecondaryViews
         {
             var decision = await DisplayActionSheet("Come vuoi procedere", "Annulla", "Rimuovi immagine", "Scegli una foto", "Scatta una foto");
 
+            //Prevent modal closing
             MainPage.isSelectingImage = true;
+
+            //Check permissions
+            bool garanted = await Helpers.CameraPermissions.checkPermissions();
+            if (!garanted)
+                await DisplayAlert("Attenzione", "Non ci hai permesso di accedere alla tua fotocamera o alla tua galleria", "Ok");
+
             if (decision == "Scegli una foto")
             {
+                //No gallery
                 if (!CrossMedia.Current.IsPickPhotoSupported)
                 {
-                    await DisplayAlert("Attenzione", "Non ci hai dato il permesso di accedere alle tue foto :(", "Ok");
+                    await DisplayAlert("Attenzione", "Non è stato possibile accedere alle foto", "Ok");
                     MainPage.isSelectingImage = false;
                     return;
                 }
