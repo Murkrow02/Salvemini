@@ -43,7 +43,16 @@ namespace SalveminiApp.ArgoPages
 
             if (Barrel.Current.Exists("Voti"))
             {
-               
+                try
+                {
+                    GroupedVoti = Barrel.Current.Get<ObservableCollection<RestApi.Models.GroupedVoti>>("Voti");
+                    votiList.ItemsSource = GroupedVoti;
+                }
+                catch (Exception ex)
+                {
+                    Barrel.Current.Empty("Voti");
+                }
+                
             }
 
 

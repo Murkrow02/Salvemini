@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Input;
 using MonkeyCache.SQLite;
+using Newtonsoft.Json;
 using Xamarin.Forms;
 
 namespace SalveminiApp.RestApi.Models
@@ -15,12 +16,17 @@ namespace SalveminiApp.RestApi.Models
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Voti(bool nonfamedia)
+        
+        //[JsonConstructor]
+        internal Voti(bool nonfamedia)
         {
             this.nonFaMedia_ = nonfamedia;
         }
 
+        public Voti()
+        {
 
+        }
         public bool NonFaMedia
         {
             get { return nonFaMedia_; }
@@ -105,7 +111,7 @@ namespace SalveminiApp.RestApi.Models
         public bool SeparatorVisibility { get; set; } = true;
         public Thickness CellPadding { get; set; } = new Thickness(10);
 
-
+        
         void calculateMedia(List<CachedVoto> cache, Voti arg)
         {
             var votiDellaMateria = ArgoPages.Voti.GroupedVoti.FirstOrDefault(x => x.Materia == arg.desMateria).ToList();
@@ -126,6 +132,7 @@ namespace SalveminiApp.RestApi.Models
             ArgoPages.Voti.GroupedVoti.FirstOrDefault(x => x.Materia == arg.desMateria).Media = (double)media;
         }
 
+        [JsonIgnore]
         public ICommand FaMedia => new Command<Voti>((arg) =>
         {
             if (!arg.NonFaMedia)
@@ -171,9 +178,15 @@ namespace SalveminiApp.RestApi.Models
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public GroupedVoti(double media)
+        //[JsonConstructor]
+        internal GroupedVoti(double media)
         {
             this.media_ = media;
+        }
+
+        public GroupedVoti()
+        {
+
         }
 
 
@@ -236,43 +249,5 @@ namespace SalveminiApp.RestApi.Models
         public double? decValore { get; set; }
     }
 
-    //Voti nella cache normale non quelli che non fanno media
-    public class PostVote
-    {
-        public string datGiorno { get; set; }
-        public string desMateria { get; set; }
-        public string codVotoPratico { get; set; }
-        public string desProva { get; set; }
-        public string codVoto { get; set; }
-        public string desCommento { get; set; }
-        public string docente { get; set; }
-        public int prgMateria { get; set; }
-        public double? decValore { get; set; }
-        public string Materia { get; set; }
-
-        public string formattedTeacher
-        {
-            get
-            {
-                return docente.Substring(7).Replace(")", "");
-            }
-        }
-
-        public string formattedSubject
-        {
-            get
-            {
-                return desMateria.ToUpper()[0] + desMateria.Substring(1).ToLower();
-            }
-        }
-
-        public Color markColor
-        {
-            get
-            {
-                return decValore < 6 ? Color.FromHex("#E37070") : Styles.TextColor;
-            }
-        }
-    }
 }
 

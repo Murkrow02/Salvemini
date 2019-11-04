@@ -270,6 +270,8 @@ namespace SalveminiApp.RestApi
         {
             Models.ResponseModel Data = new Models.ResponseModel();
             Voti = new List<Models.Voti>();
+            //Create list of grouped voti
+            ObservableCollection<Models.GroupedVoti> GroupedVoti = new ObservableCollection<Models.GroupedVoti>();
 
             var uri = Costants.Uri("argo/voti");
 
@@ -282,8 +284,7 @@ namespace SalveminiApp.RestApi
                         var content = await response.Content.ReadAsStringAsync();
                         Voti = JsonConvert.DeserializeObject<List<Models.Voti>>(content);
 
-                        //Create list of grouped voti
-                        var GroupedVoti = new ObservableCollection<Models.GroupedVoti>();
+                        
 
                         //Get voti filtered by subject from api call
                         var groupedBySubject = Voti.GroupBy(x => x.desMateria).Select(y => y.ToList()).ToList();
@@ -336,7 +337,8 @@ namespace SalveminiApp.RestApi
                         Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
                         break;
                 }
-                Barrel.Current.Add("Voti", Voti, TimeSpan.FromDays(7));
+                var a = JsonConvert.SerializeObject(GroupedVoti);
+                Barrel.Current.Add("Voti", GroupedVoti, TimeSpan.FromDays(7));
             }
             catch (Exception ex)
             {

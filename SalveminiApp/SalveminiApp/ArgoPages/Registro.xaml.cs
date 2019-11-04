@@ -15,7 +15,7 @@ namespace SalveminiApp.ArgoPages
         public RestApi.Models.WholeModel Oggi = new RestApi.Models.WholeModel();
         public List<RestApi.Models.Assenza> Assenze = new List<RestApi.Models.Assenza>();
         public List<RestApi.Models.Bacheca> Bacheca = new List<RestApi.Models.Bacheca>();
-        public List<RestApi.Models.PostVote> Voti = new List<RestApi.Models.PostVote>();
+        public List<RestApi.Models.Voti> Voti = new List<RestApi.Models.Voti>();
         public List<RestApi.Models.Argomenti> Argomenti = new List<RestApi.Models.Argomenti>();
         public List<RestApi.Models.Compiti> Compiti = new List<RestApi.Models.Compiti>();
         public List<RestApi.Models.Promemoria> Promemoria = new List<RestApi.Models.Promemoria>();
