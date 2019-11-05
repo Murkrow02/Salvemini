@@ -37,6 +37,8 @@ namespace SalveminiApp
         Xamarin.Forms.ListView giorniList = new Xamarin.Forms.ListView { VerticalScrollBarVisibility = ScrollBarVisibility.Never, Footer = "", BackgroundColor = Color.Transparent, SeparatorColor = Color.Gray, WidthRequest = App.ScreenWidth / 4, HeightRequest = App.ScreenHeight / 5 };
         //Fix close modal bug
         public static bool isSelectingImage;
+        //Do not update orario if already cached
+        public bool orarioFromCached;
 
         public MainPage()
         {
@@ -78,36 +80,41 @@ namespace SalveminiApp
                 RemoveBadge(tipo);
             });
 
-            //Fill initial cache
-            if (Barrel.Current.Exists("Index"))
-            {
-                try
-                {
-                    var tempIndex = Barrel.Current.Get<RestApi.Models.Index>("Index");
-                    Index = tempIndex;
-                    //Get banner ad
-                    if (tempIndex != null && tempIndex.Ads != null && tempIndex.Ads.Count > 0)
-                    {
-                        //Find a banner
-                        var banner = tempIndex.Ads.Where(x => x.Tipo == 0).ToList();
-                        if (banner.Count > 0)
-                        {
-                            //Found
-                            Ad = banner[0];
-                            adTitle.Text = Ad.Nome;
-                            adImage.Source = Ad.FullImmagine;
-                            adLayout.Opacity = 1;
-                        }
-                    }
-                }
-                catch
-                {
-                    //Error getting cache, delete it
-                    Barrel.Current.Empty("Index");
-                }
 
+
+            //Get orario cached
+            var orarioCached = CacheHelper.GetCache<List<RestApi.Models.Lezione>>("orarioday" + (int)DateTime.Now.DayOfWeek);
+            if (orarioCached != null)
+            {
+                orarioFromCached = true;
+                showOrario(orarioCached, Preferences.Get("FreedayInt", 0));
+                orarioDay.Text = "Oggi";
+                sedeLbl.Text = orarioCached[0].Sede;
             }
+
+
+            //Failed to get
+            //if (IndexCache == null)
+            //    return;
+            ////Get index cache
+            //var IndexCache = CacheHelper.GetCache<RestApi.Models.Index>("Index");
+
+            ////Get banner cache
+            //if (IndexCache.Ads != null && IndexCache.Ads.Count > 0)
+            //{
+            //    //Find a banner
+            //    var banner = IndexCache.Ads.Where(x => x.Tipo == 0).ToList();
+            //    if (banner.Count > 0)
+            //    {
+            //        //Found
+            //        Ad = banner[0];
+            //        adTitle.Text = Ad.Nome;
+            //        adImage.Source = Ad.FullImmagine;
+            //        adLayout.Opacity = 1;
+            //    }
+            //}
         }
+
 
 
         protected async override void OnAppearing()
@@ -119,180 +126,179 @@ namespace SalveminiApp
             //Sempre meglio mettere il try lol
             try
             {
-            //Set image profile url
-            userImg.Source = Costants.Uri("images/users/") + Preferences.Get("UserId", 0).ToString();
+                //Set image profile url
+                userImg.Source = Costants.Uri("images/users/") + Preferences.Get("UserId", 0).ToString();
 
-            //Remove modals bug
-            ModalPush_Disappearing(null, null);
+                //Remove modals bug
+                ModalPush_Disappearing(null, null);
 
-            //Get cached orario
-            classeCorso = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
-            if (Barrel.Current.Exists("orario" + classeCorso))
-            {
-                Orario = Barrel.Current.Get<List<RestApi.Models.Lezione>>("orario" + classeCorso);
-                changeDay(-1);
-            }
-
-            //Create static widgets
-            widgets.Clear();
-            var tapGestureRecognizer = new TapGestureRecognizer();
-            tapGestureRecognizer.Tapped += widget_Tapped;
-
-            //Registro
-            string notizia = "Cosa è successo oggi in classe?";
-            if (ArgoIndex != null)
-                notizia = "<strong>" + ArgoIndex.TipoNotizia + "</strong>" + ArgoIndex.UltimaNotizia;
-            var registro = new WidgetGradient { Title = "Registro", SubTitle = notizia, Icon = "far-calendar-alt", StartColor = "FACA6F", EndColor = "FF7272", Push = new ArgoPages.Registro(), Order = 1 };
-            registro.GestureRecognizers.Add(tapGestureRecognizer);
-            //Trasporti
-            var trasporti = new WidgetGradient { Title = "Trasporti", SubTitle = await getNextTrain(), Icon = "fas-subway", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order = 2 };
-            trasporti.GestureRecognizers.Add(tapGestureRecognizer);
-            //Card
-            var card = new WidgetGradient { Title = "SalveminiCard", SubTitle = "Visualizza tutti i vantaggi esclusivi per gli studenti del Salvemini", Icon = "fas-credit-card", StartColor = "B487FD", EndColor = "FA6FFA", Push = new SecondaryViews.SalveminiCard(), Order = 6 };
-            card.GestureRecognizers.Add(tapGestureRecognizer);
-            //Extra
-            var extra = new WidgetGradient { Title = "Extra", SubTitle = "Esplora funzioni aggiuntive", Icon = "fas-star", StartColor = "B487FD", EndColor = "FA6FFA", Order = 5, Push = new SecondaryViews.Extra() };
-            extra.GestureRecognizers.Add(tapGestureRecognizer);
-
-            //Initialize list with first widgets
-            widgets.Add(registro); widgets.Add(trasporti); widgets.Add(card); widgets.Add(extra);
-            OrderWidgets(false);
-
-            //Check train version
-            if (Preferences.Get("orariTreniVersion", 0) > 0)
-            {
-                getNextTrain();
-            }
-
-            //Check Internet
-            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
-            {
-                //Argo index
-                GetArgoIndex();
-
-                //Get updated orario
-                var _orario = await App.Orari.GetOrario(classeCorso);
-
-                //Check if success and if there are updates
-                if (_orario != null && Orario != _orario)
+                //Get cached orario
+                classeCorso = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
+                if (Barrel.Current.Exists("orario" + classeCorso))
                 {
-                    //Update with new orario
-                    Orario = _orario;
-                    changeDay(-1);
+                    Orario = Barrel.Current.Get<List<RestApi.Models.Lezione>>("orario" + classeCorso);
+                    if (!orarioFromCached) //already got today
+                        changeDay(-1);
                 }
 
-                var tempIndex = await App.Index.GetIndex();
+                //Create static widgets
+                widgets.Clear();
+                var tapGestureRecognizer = new TapGestureRecognizer();
+                tapGestureRecognizer.Tapped += widget_Tapped;
 
-                //Checks
-                //Authorized? todo
-                if (tempIndex != null)
+                //Registro
+                var registro = new WidgetGradient { Title = "Registro", SubTitle = lastArgoString(), Icon = "far-calendar-alt", StartColor = "FACA6F", EndColor = "FF7272", Push = new ArgoPages.Registro(), Order = 1 };
+                registro.GestureRecognizers.Add(tapGestureRecognizer);
+                //Trasporti
+                var trasporti = new WidgetGradient { Title = "Trasporti", SubTitle = await getNextTrain(), Icon = "fas-subway", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order = 3 };
+                trasporti.GestureRecognizers.Add(tapGestureRecognizer);
+                //Card
+                var card = new WidgetGradient { Title = "SalveminiCard", SubTitle = "Visualizza tutti i vantaggi esclusivi per gli studenti del Salvemini", Icon = "fas-credit-card", StartColor = "B487FD", EndColor = "FA6FFA", Push = new SecondaryViews.SalveminiCard(), Order = 6 };
+                card.GestureRecognizers.Add(tapGestureRecognizer);
+                //Extra
+                var extra = new WidgetGradient { Title = "Extra", SubTitle = "Esplora funzioni aggiuntive", Icon = "fas-star", StartColor = "B487FD", EndColor = "FA6FFA", Order = 5, Push = new SecondaryViews.Extra() };
+                extra.GestureRecognizers.Add(tapGestureRecognizer);
+
+                //Initialize list with first widgets
+                widgets.Add(registro); widgets.Add(trasporti); widgets.Add(card); widgets.Add(extra);
+                //OrderWidgets(false); todo uncomment to fast load initial widgets
+
+                //Check if downloaded trains
+                if (Preferences.Get("orariTreniVersion", 0) > 0)
                 {
-                    //Save new index
-                    Index = tempIndex;
+                   await getNextTrain();
+                }
 
-                    switch (Index.Authorized)
+                //Check Internet
+                if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+                {
+                    //Argo index in background
+                     GetArgoIndex();
+
+                    //Get updated orario
+                    var _orario = await App.Orari.GetOrario(classeCorso);
+
+                    //Check if success and if there are updates
+                    if (_orario != null && Orario != _orario && !orarioFromCached)
                     {
-                        case -1: //Banned
-                            await DisplayAlert("Accesso all'app non autorizzato", "Ooops, tuo account è stato disabilitato! Contatta gli sviluppatori se ritieni si tratti di un errore!", "Ok");
-                            Costants.Logout();
-                            break;
-                        case -2: //Argo unauthorized
-                            await DisplayAlert("Accesso all'app non autorizzato", "La sessione di ARGO è scaduta, probabilmente la password è stata cambiata, rieffettua l'accesso per continuare", "Ok");
-                            Costants.Logout();
-                            break;
+                        //Update with new orario
+                        Orario = _orario;
+                        changeDay(-1);
                     }
+
+                    //Get index from api call
+                    var tempIndex = await App.Index.GetIndex();
+
+                    //Checks in downloaded index
+                    if (tempIndex != null)
+                    {
+                        //Save new index
+                        Index = tempIndex;
+
+                        //Can use the app?
+                        switch (Index.Authorized)
+                        {
+                            case -1: //Banned
+                                await DisplayAlert("Accesso all'app non autorizzato", "Ooops, tuo account è stato disabilitato! Contatta gli sviluppatori se ritieni si tratti di un errore!", "Ok");
+                                Costants.Logout();
+                                break;
+                            case -2: //Argo unauthorized
+                                await DisplayAlert("Accesso all'app non autorizzato", "La sessione di ARGO è scaduta, probabilmente la password è stata cambiata, rieffettua l'accesso per continuare", "Ok");
+                                Costants.Logout();
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        //Chiamata api fallita
+                        showToast("Non è stato possibile connettersi al server");
+
+                        //Anche la cache è nulla, stacca stacca
+                        if (Index != null)
+                            return;
+                    }
+
+
+                    //Get last sondaggio
+                    if (Index.ultimoSondaggio != null)
+                    {
+                        string nuovoSondaggio = "no";
+                        int positionSondaggio = 4;
+                        if (Preferences.Get("LastSondaggio", 0) != Index.ultimoSondaggio.id && !Index.VotedSondaggio) //New sondaggio detected
+                        {
+                            //Preferences.Set("LastSondaggio", Index.ultimoSondaggio.id);
+                            nuovoSondaggio = "si";
+                            positionSondaggio = -1;
+
+
+                            if (!Preferences.Get("voted" + Index.ultimoSondaggio.id, false)) //Push to vote
+                                await Navigation.PushModalAsync(new SecondaryViews.NewSondaggio(Index.ultimoSondaggio));
+                        }
+
+
+
+                        //Create sondaggio widget
+                        var sondaggi = new WidgetGradient { Order = positionSondaggio, Title = "Sondaggi", SubTitle = Index.ultimoSondaggio.Nome.Truncate(50), Icon = "fas-poll", StartColor = "FD8787", EndColor = "F56FFA", Badge = nuovoSondaggio, Push = new SecondaryViews.NewSondaggio(Index.ultimoSondaggio) };
+                        sondaggi.GestureRecognizers.Add(tapGestureRecognizer);
+                        widgets.Add(sondaggi);
+
+                    }
+
+
+                    //Get last avviso
+                    if (Index.ultimoAvviso != null)
+                    {
+                        string nuovoAvviso = "no";
+                        int positionAvvisi = 2;
+                        if (Preferences.Get("LastAvviso", 0) != Index.ultimoAvviso.id) //New avviso detected
+                        {
+                            nuovoAvviso = "si";
+                            positionAvvisi = -2;
+                        }
+                        //Create avviso widget
+                        var avvisi = new WidgetGradient { Order = positionAvvisi, Title = "Avvisi", SubTitle = Index.ultimoAvviso.Titolo, Icon = "fas-exclamation-triangle", StartColor = "FDD487", EndColor = "FA6F6F", Push = new SecondaryViews.Avvisi(), Badge = nuovoAvviso };
+                        avvisi.GestureRecognizers.Add(tapGestureRecognizer);
+                        widgets.Add(avvisi);
+                    }
+
+                    //Get banner ad
+                    if (Index.Ads != null && Index.Ads.Count > 0)
+                    {
+                        //Find a banner
+                        var banner = Index.Ads.Where(x => x.Tipo == 0).ToList();
+                        if (banner.Count > 0)
+                        {
+                            //Found
+                            Ad = banner[0];
+                            adTitle.Text = Ad.Nome;
+                            adImage.Source = Ad.FullImmagine;
+                            await adLayout.FadeTo(1, 300, Easing.CubicInOut);
+                        }
+                    }
+
+                    //Update orari if new version detected
+                    if (Index.OrariTreniVersion > Preferences.Get("orariTreniVersion", 0))
+                    {
+                        bool successTreni = await App.Treni.GetTrainJson();
+                        if (successTreni)
+                        {
+                            Preferences.Set("orariTreniVersion", Index.OrariTreniVersion);
+                            getNextTrain();
+                        }
+                    }
+
                 }
                 else
                 {
-                    //Chiamata api fallita
-                    showToast("Non è stato possibile connettersi al server");
-
-                    //Anche la cache è nulla, stacca stacca
-                    if (Index != null)
-                        return;
+                    //Nessuna connessione
+                    showToast("Nessuna connessione rilevata");
                 }
 
-
-                //Get last sondaggio
-                if (Index.ultimoSondaggio != null)
-                {
-                    string nuovoSondaggio = "no";
-                    int positionSondaggio = 4;
-                    if (Preferences.Get("LastSondaggio", 0) != Index.ultimoSondaggio.id && !Index.VotedSondaggio) //New sondaggio detected
-                    {
-                        //Preferences.Set("LastSondaggio", Index.ultimoSondaggio.id);
-                        nuovoSondaggio = "si";
-                        positionSondaggio = -1;
-
-
-                        if (!Preferences.Get("voted" + Index.ultimoSondaggio.id, false)) //Push to vote
-                            await Navigation.PushModalAsync(new SecondaryViews.NewSondaggio(Index.ultimoSondaggio));
-                    }
-
-
-
-                    //Create sondaggio widget
-                    var sondaggi = new WidgetGradient { Order = positionSondaggio, Title = "Sondaggi", SubTitle = Index.ultimoSondaggio.Nome.Truncate(50), Icon = "fas-poll", StartColor = "FD8787", EndColor = "F56FFA", Badge = nuovoSondaggio, Push = new SecondaryViews.NewSondaggio(Index.ultimoSondaggio) };
-                    sondaggi.GestureRecognizers.Add(tapGestureRecognizer);
-                    widgets.Add(sondaggi);
-
-                }
-
-
-                //Get last avviso
-                if (Index.ultimoAvviso != null)
-                {
-                    string nuovoAvviso = "no";
-                    int positionAvvisi = 3;
-                    if (Preferences.Get("LastAvviso", 0) != Index.ultimoAvviso.id) //New avviso detected
-                    {
-                        nuovoAvviso = "si";
-                        positionAvvisi = -2;
-                    }
-                    //Create avviso widget
-                    var avvisi = new WidgetGradient { Order = positionAvvisi, Title = "Avvisi", SubTitle = Index.ultimoAvviso.Titolo, Icon = "fas-exclamation-triangle", StartColor = "FDD487", EndColor = "FA6F6F", Push = new SecondaryViews.Avvisi(), Badge = nuovoAvviso };
-                    avvisi.GestureRecognizers.Add(tapGestureRecognizer);
-                    widgets.Add(avvisi);
-                }
-
-                //Get banner ad
-                if (Index.Ads != null && Index.Ads.Count > 0)
-                {
-                    //Find a banner
-                    var banner = Index.Ads.Where(x => x.Tipo == 0).ToList();
-                    if (banner.Count > 0)
-                    {
-                        //Found
-                        Ad = banner[0];
-                        adTitle.Text = Ad.Nome;
-                        adImage.Source = Ad.FullImmagine;
-                        await adLayout.FadeTo(1, 300, Easing.CubicInOut);
-                    }
-                }
-
-                //Update orari if new version detected
-                if (Index.OrariTreniVersion > Preferences.Get("orariTreniVersion", 0))
-                {
-                    bool successTreni = await App.Treni.GetTrainJson();
-                    if (successTreni)
-                    {
-                        Preferences.Set("orariTreniVersion", Index.OrariTreniVersion);
-                        getNextTrain();
-                    }
-                }
+                //Update widgets order
+                OrderWidgets(false);
 
             }
-            else
-            {
-                //Nessuna connessione
-                showToast("Nessuna connessione rilevata");
-            }
-
-            //Update widgets order
-            OrderWidgets(true);
-
-            }
-            catch(Exception ex) //Errore sconosciuto :0
+            catch (Exception ex) //Errore sconosciuto :0
             {
                 showToast("Si è verificato un errore fatale, contatta gli sviluppatori se il problema persiste");
             }
@@ -369,7 +375,7 @@ namespace SalveminiApp
                     var widget = widgets.First(x => x.Title == "Registro");
                     var dataUltimoControllo = Preferences.Get("lastDate", "02/05/2002");
                     var notizieUltimoControllo = Preferences.Get("lastNotizie", 0);
-                    var dataOggi = DateTime.Now.ToString("dd/MM-yyyy");
+                    var dataOggi = DateTime.Now.ToString("dd/MM/yyyy");
 
                     //same day, same notizie count
                     if (dataUltimoControllo == dataOggi && ArgoIndex.NotizieCount <= notizieUltimoControllo)
@@ -385,8 +391,11 @@ namespace SalveminiApp
                     }
 
                     //Notizie > notizie saved
-                    Preferences.Set("lastNotizie", ArgoIndex.NotizieCount);
+                    Preferences.Set("lastNotizie", ArgoIndex.NotizieCount); //Notizie count
+                    Preferences.Set("lastTipoNotizia", ArgoIndex.TipoNotizia); //Cached last title
+                    Preferences.Set("lastNotizia", ArgoIndex.UltimaNotizia); //Cached last subtitle
                     widget.Badge = "si";
+                    widget.Order = -2;
                     widget.SubTitle = "<strong>" + ArgoIndex.TipoNotizia + "</strong>" + ArgoIndex.UltimaNotizia;
                     widgets.Remove(widget);
                     widgets.Add(widget);
@@ -394,7 +403,8 @@ namespace SalveminiApp
                 }
                 catch
                 {
-                    //Fa nient
+                    //Non è stato possibile connettersi al registro
+                    showToast("Impossibile connettersi ad ARGO");
                 }
             }
         }
@@ -482,11 +492,10 @@ namespace SalveminiApp
                 {
                     //Detect freeday
                     var freedayInt = Orario.FirstOrDefault(x => x.Materia == "Libero").Giorno;
-                    var allDays = Costants.getDays();
+                    //Save freeday
+                    Preferences.Set("FreedayInt", freedayInt);
 
-                    //Remove freeday from list
-                    allDays.RemoveAt(freedayInt - 1);
-                    giorniList.ItemsSource = allDays;
+                    
 
                     //intelligent auto skip if dopo le 2
                     if (today && DateTime.Now.Hour > 14)
@@ -536,22 +545,7 @@ namespace SalveminiApp
                         //Fa niente
                     }
 
-
-                    //Fill list with lezioni
-                    orarioList.ItemsSource = orarioOggi;
-
-                    //Calc orario dimensions
-                    orarioList.HeightRequest = orarioOggi[0].OrarioFrameHeight * orarioOggi.Sum(x => x.numOre) + (4 * orarioOggi.Count);
-                    orarioFrame.HeightRequest = orarioList.HeightRequest + orarioHeader.Height;
-
-                    //Set max orario height
-                    if (orarioFrame.HeightRequest > fullLayout.Height * 0.4)
-                    {
-                        orarioFrame.HeightRequest = fullLayout.Height * 0.4;
-                    }
-
-                    //Show orario
-                    orarioFrame.IsVisible = true;
+                    showOrario(orarioOggi, freedayInt);
                 }
                 else
                 {
@@ -565,6 +559,40 @@ namespace SalveminiApp
                 await DisplayAlert("Errore", "Non è stato possibile recuperare l'orario, contattaci se il problema persiste", "Ok");
             }
 
+        }
+
+
+        public void showOrario(List<RestApi.Models.Lezione> orario, int freeday)
+        {
+            try
+            {
+                //Remove freeday from list
+                var allDays = Costants.getDays();
+                allDays.RemoveAt(freeday - 1);
+                giorniList.ItemsSource = allDays;
+
+                //Fill list with lezioni
+                orarioList.ItemsSource = orario;
+
+                //Calc orario dimensions
+                orarioList.HeightRequest = orario[0].OrarioFrameHeight * orario.Sum(x => x.numOre) + (4 * orario.Count);
+                orarioFrame.HeightRequest = orarioList.HeightRequest + orarioHeader.Height;
+
+                //Set max orario height
+                if (orarioFrame.HeightRequest > App.ScreenHeight * 0.4)
+                {
+                    orarioFrame.HeightRequest = App.ScreenHeight * 0.4;
+                }
+
+                //Show orario
+                orarioFrame.IsVisible = true;
+            }
+            catch
+            {
+                //From constructor, get full orario to fix this
+                orarioFromCached = false;
+            }
+            
         }
 
         //Update widget list
@@ -630,6 +658,7 @@ namespace SalveminiApp
             catch
             {
                 //Fa nient
+
             }
 
         }
@@ -647,11 +676,25 @@ namespace SalveminiApp
         public void showToast(string message)
         {
 #if __IOS__
-          BigTed2.BTProgressHUD2.ShowToast(message, BigTed2.ProgressHUD2.MaskType.None, false, 3000);
+            BigTed2.BTProgressHUD2.ShowToast(message, BigTed2.ProgressHUD2.MaskType.None, false, 3000);
 #endif
 #if __ANDROID_
             SalveminiApp.Droid.ShowToast.LongAlert(message);
 #endif
+        }
+
+
+        //returns the last news from argo or the default if there are not
+        public string lastArgoString()
+        {
+            var dataUltimoControllo = Preferences.Get("lastDate", "02/05/2002");
+            var dataOggi = DateTime.Now.ToString("dd/MM/yyyy");
+
+            //He saved a string today
+            if (dataUltimoControllo == dataOggi)
+                return "<strong>" + Preferences.Get("lastTipoNotizia", "") + "</strong>" + Preferences.Get("lastNotizia", "Cosa è successo oggi in classe?");
+
+            return "Cosa è successo oggi in classe?";
         }
 
     }

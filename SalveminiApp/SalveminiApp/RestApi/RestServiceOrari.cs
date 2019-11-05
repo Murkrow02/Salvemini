@@ -126,6 +126,7 @@ namespace SalveminiApp.RestApi
             orario = orario.Where(x => x.toRemove == false).ToList();
 
 
+            Barrel.Current.Add("orarioday" + day, orario, TimeSpan.FromDays(90));
 
             return orario;
         }
