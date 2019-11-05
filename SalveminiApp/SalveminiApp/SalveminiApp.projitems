@@ -175,6 +175,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ArgoPages\Note.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -346,6 +350,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\CameraPermissions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Note.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\Note.xaml.cs">
+      <DependentUpon>Note.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

@@ -262,6 +262,8 @@
     <BundleResource Include="Resources\codexLogo.png" />
     <BundleResource Include="Resources\safariLogo.png" />
     <BundleResource Include="Resources\instaLogo.png" />
+    <BundleResource Include="Resources\fillTabBarArgo%402x.png" />
+    <BundleResource Include="Resources\fillTabBarHome%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lotties\" />

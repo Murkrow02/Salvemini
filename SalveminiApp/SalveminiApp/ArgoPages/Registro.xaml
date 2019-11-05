@@ -15,7 +15,7 @@
                 </StackLayout>
                 <StackLayout IsVisible="false" Spacing="15" x:Name="nothingLayout" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
                     <iconize:IconLabel HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="fal-calendar-alt" TextColor="{x:Static local:Styles.TextGray}" FontSize="50" />
-                    <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" FontSize="Medium" Text="Oggi non è successo niente"/>
+                    <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" x:Name="placeholderLabel" FontSize="Medium" Text="Oggi non è successo niente"/>
                 </StackLayout>
                 <DatePicker Focused="Picker_Focused" VerticalOptions="End" DateSelected="Picker_SelectedDate" Unfocused="Picker_Unfocused" HeightRequest="0" x:Name="datepicker" />
             </StackLayout>

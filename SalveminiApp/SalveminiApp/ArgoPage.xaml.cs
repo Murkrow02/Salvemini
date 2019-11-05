@@ -55,13 +55,15 @@ namespace SalveminiApp
             compiti.GestureRecognizers.Add(gestureRecognizer);
             var argomenti = new ArgoWidget { Title = "Argomenti", Icon = "Argomenti.svg", StartColor = "FF7272", EndColor = "FACA6F", Push = new ArgoPages.CompitiArgomenti("argomenti") };
             argomenti.GestureRecognizers.Add(gestureRecognizer);
+            var note = new ArgoWidget { Title = "Note", Icon = "Assenze.svg", StartColor = "FF7272", EndColor = "FACA6F", Push = new ArgoPages.Note() };
+            note.GestureRecognizers.Add(gestureRecognizer);
             firstRowWidgets.Children.Clear();
             firstRowWidgets.Children.Add(new ContentView { WidthRequest = -30 });
             firstRowWidgets.Children.AddRange(new List<ArgoWidget> { assenze, voti, promemoria, bacheca });
             firstRowWidgets.Children.Add(new ContentView { WidthRequest = 0 });
             secondRowWidgets.Children.Clear();
             secondRowWidgets.Children.Add(new ContentView { WidthRequest = -30 });
-            secondRowWidgets.Children.AddRange(new List<ArgoWidget> { scrutinio, compiti, argomenti });
+            secondRowWidgets.Children.AddRange(new List<ArgoWidget> { scrutinio, compiti, argomenti, note });
             secondRowWidgets.Children.Add(new ContentView { WidthRequest = 0 });
         }
 

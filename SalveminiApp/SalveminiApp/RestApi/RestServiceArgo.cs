@@ -26,6 +26,7 @@ namespace SalveminiApp.RestApi
         public List<Models.Argomenti> Argomenti { get; private set; }
         public List<Models.Voti> Voti { get; private set; }
         public List<Models.Bacheca> Bacheca { get; private set; }
+        public List<Models.Note> Note { get; private set; }
         public Models.ScrutinioGrouped VotiScrutinio { get; private set; }
         public Models.WholeModel Oggi { get; private set; }
 
@@ -63,6 +64,49 @@ namespace SalveminiApp.RestApi
                             }
                         }
                         Data.Data = Assenze;
+                        Barrel.Current.Add("Assenze", Assenze, TimeSpan.FromDays(7));
+                        break;
+                    case HttpStatusCode.Forbidden:
+                        Data.Message = "Si è verificato un errore nella connessione ad ARGO";
+                        break;
+                    case HttpStatusCode.InternalServerError:
+                        Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+            }
+            return Data;
+        }
+
+        public async Task<Models.ResponseModel> GetNote()
+        {
+            Note = new List<Models.Note>();
+            Models.ResponseModel Data = new Models.ResponseModel();
+            var uri = Costants.Uri("argo/note");
+            try
+            {
+                var response = await client.GetAsync(uri);
+
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                        var content = await response.Content.ReadAsStringAsync();
+                        Note = JsonConvert.DeserializeObject<List<Models.Note>>(content);
+                        if (Note.Count > 0)
+                        {
+                            Note[Note.Count - 1].SeparatorVisibility = false;
+                            if (Note.Count > 1)
+                            {
+                                Note[Note.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
+                                Note[0].CellPadding = new Thickness(10, 20, 10, 10);
+                            }
+                        }
+                        Data.Data = Note;
+                        Barrel.Current.Add("Note", Note, TimeSpan.FromDays(7));
                         break;
                     case HttpStatusCode.Forbidden:
                         Data.Message = "Si è verificato un errore nella connessione ad ARGO";
@@ -72,7 +116,7 @@ namespace SalveminiApp.RestApi
                         break;
                 }
 
-                Barrel.Current.Add("Assenze", Assenze, TimeSpan.FromDays(7));
+                
             }
             catch (Exception ex)
             {
@@ -133,8 +177,8 @@ namespace SalveminiApp.RestApi
                                 Promemoria[Promemoria.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
                             }
                         }
-
                         Data.Data = Promemoria;
+                        Barrel.Current.Add("Promemoria", Promemoria, TimeSpan.FromDays(7));
                         break;
                     case HttpStatusCode.Forbidden:
                         Data.Message = "Si è verificato un errore nella connessione ad ARGO";
@@ -143,7 +187,6 @@ namespace SalveminiApp.RestApi
                         Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
                         break;
                 }
-                Barrel.Current.Add("Promemoria", Promemoria, TimeSpan.FromDays(7));
             }
             catch (Exception ex)
             {
@@ -175,6 +218,7 @@ namespace SalveminiApp.RestApi
                             }
                         }
                         Data.Data = Compiti;
+                        Barrel.Current.Add("Compiti", Compiti, TimeSpan.FromDays(7));
                         break;
                     case HttpStatusCode.Forbidden:
                         Data.Message = "Si è verificato un errore nella connessione ad ARGO";
@@ -183,7 +227,6 @@ namespace SalveminiApp.RestApi
                         Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
                         break;
                 }
-                Barrel.Current.Add("Compiti", Compiti, TimeSpan.FromDays(7));
             }
             catch (Exception ex)
             {
@@ -215,6 +258,7 @@ namespace SalveminiApp.RestApi
                             }
                         }
                         Data.Data = Argomenti;
+                        Barrel.Current.Add("Argomenti", Argomenti, TimeSpan.FromDays(7));
                         break;
                     case HttpStatusCode.Forbidden:
                         Data.Message = "Si è verificato un errore nella connessione ad ARGO";
@@ -223,7 +267,6 @@ namespace SalveminiApp.RestApi
                         Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
                         break;
                 }
-                Barrel.Current.Add("Argomenti", Argomenti, TimeSpan.FromDays(7));
             }
             catch (Exception ex)
             {
@@ -236,9 +279,7 @@ namespace SalveminiApp.RestApi
         {
             Models.ResponseModel Data = new Models.ResponseModel();
             Medie = new List<Models.Pentagono>();
-
             var uri = Costants.Uri("argo/pentagono");
-
             try
             {
                 var response = await client.GetAsync(uri);
@@ -248,6 +289,7 @@ namespace SalveminiApp.RestApi
                         var content = await response.Content.ReadAsStringAsync();
                         Medie = JsonConvert.DeserializeObject<List<Models.Pentagono>>(content);
                         Data.Data = Medie;
+                        Barrel.Current.Add("Medie", Medie, TimeSpan.FromDays(7));
                         break;
                     case HttpStatusCode.Forbidden:
                         Data.Message = "Si è verificato un errore nella connessione ad ARGO";
@@ -256,7 +298,6 @@ namespace SalveminiApp.RestApi
                         Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
                         break;
                 }
-                Barrel.Current.Add("Medie", Medie, TimeSpan.FromDays(7));
             }
             catch (Exception ex)
             {
@@ -327,8 +368,8 @@ namespace SalveminiApp.RestApi
                             //Add GroupedVoti into the list
                             GroupedVoti.Add(groupOfMarks);
                         }
-
                         Data.Data = GroupedVoti;
+                        Barrel.Current.Add("Voti", GroupedVoti, TimeSpan.FromDays(7));
                         break;
                     case HttpStatusCode.Forbidden:
                         Data.Message = "Si è verificato un errore nella connessione ad ARGO";
@@ -337,8 +378,7 @@ namespace SalveminiApp.RestApi
                         Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
                         break;
                 }
-                var a = JsonConvert.SerializeObject(GroupedVoti);
-                Barrel.Current.Add("Voti", GroupedVoti, TimeSpan.FromDays(7));
+                
             }
             catch (Exception ex)
             {
@@ -372,8 +412,8 @@ namespace SalveminiApp.RestApi
                         {
                             VotiScrutinio.Secondo[VotiScrutinio.Secondo.Count - 1].SeparatorVisibility = false;
                         }
-
                         Data.Data = VotiScrutinio;
+                        Barrel.Current.Add("VotiScrutinio", VotiScrutinio, TimeSpan.FromDays(7));
 
                         break;
                     case HttpStatusCode.Forbidden:
@@ -383,7 +423,6 @@ namespace SalveminiApp.RestApi
                         Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
                         break;
                 }
-                Barrel.Current.Add("VotiScrutinio", VotiScrutinio, TimeSpan.FromDays(7));
             }
             catch (Exception ex)
             {
@@ -418,6 +457,7 @@ namespace SalveminiApp.RestApi
                             }
                         }
                         Data.Data = Bacheca;
+                        Barrel.Current.Add("Bacheca", Bacheca, TimeSpan.FromDays(7));
                         break;
                     case HttpStatusCode.Forbidden:
                         Data.Message = "Si è verificato un errore nella connessione ad ARGO";
@@ -426,7 +466,6 @@ namespace SalveminiApp.RestApi
                         Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
                         break;
                 }
-                Barrel.Current.Add("Bacheca", Bacheca, TimeSpan.FromDays(7));
             }
             catch (Exception ex)
             {
@@ -450,6 +489,7 @@ namespace SalveminiApp.RestApi
                         var content = await response.Content.ReadAsStringAsync();
                         Oggi = JsonConvert.DeserializeObject<Models.WholeModel>(content);
                         Data.Data = Oggi;
+                        Barrel.Current.Add("Oggi" + data.ToString("yyyy-MM-dd"), Oggi, TimeSpan.FromDays(7));
                         break;
                     case HttpStatusCode.Forbidden:
                         Data.Message = "Si è verificato un errore nella connessione ad ARGO";
@@ -458,7 +498,6 @@ namespace SalveminiApp.RestApi
                         Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
                         break;
                 }
-                Barrel.Current.Add("Oggi" + data.ToString("yyyy-MM-dd"), Oggi, TimeSpan.FromDays(7));
             }
             catch (Exception ex)
             {
@@ -513,6 +552,7 @@ namespace SalveminiApp.RestApi
         Task<Models.ResponseModel> GetVotiScrutinio();
         Task<Models.ResponseModel> GetOggi(DateTime data);
         Task<Models.ResponseModel> GetBacheca();
+        Task<Models.ResponseModel> GetNote();
     }
 
     public class ItemManagerArgo
@@ -577,6 +617,11 @@ namespace SalveminiApp.RestApi
         public Task<Models.ResponseModel> GetBacheca()
         {
             return restServiceArgo.GetBacheca();
+        }
+
+        public Task<Models.ResponseModel> GetNote()
+        {
+            return restServiceArgo.GetNote();
         }
     }
 }
