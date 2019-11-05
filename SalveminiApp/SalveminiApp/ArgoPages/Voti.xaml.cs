@@ -19,7 +19,9 @@ namespace SalveminiApp.ArgoPages
     public partial class Voti : ContentPage
     {
         public static ObservableCollection<RestApi.Models.GroupedVoti> GroupedVoti = new ObservableCollection<RestApi.Models.GroupedVoti>();
+        public static double TotalMedia;
 
+        private int _myProperty;
         public Voti()
         {
             InitializeComponent();
@@ -29,6 +31,7 @@ namespace SalveminiApp.ArgoPages
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FullScreen);
             if (iOS.AppDelegate.HasNotch)
                 fullLayout.Padding = new Thickness(20, 35, 20, 25);
+
 #endif
             //Set Sizes
             shadowImage.WidthRequest = App.ScreenWidth * 1.5;
@@ -40,9 +43,23 @@ namespace SalveminiApp.ArgoPages
 
             if (Barrel.Current.Exists("Voti"))
             {
-               
+                try
+                {
+                    GroupedVoti = Barrel.Current.Get<ObservableCollection<RestApi.Models.GroupedVoti>>("Voti");
+                    votiList.ItemsSource = GroupedVoti;
+                }
+                catch (Exception ex)
+                {
+                    Barrel.Current.Empty("Voti");
+                }
+                
             }
 
+
+            MessagingCenter.Subscribe<App, double>(this, "TotalMediaChanged", (sender, arg) =>
+            {
+                fullMediaLabel.Text = string.Format("{0:0.00}", arg);
+            });
         }
 
         protected async override void OnAppearing()
@@ -67,6 +84,7 @@ namespace SalveminiApp.ArgoPages
                 {
                     GroupedVoti = response.Data as ObservableCollection<RestApi.Models.GroupedVoti>;
                     votiList.ItemsSource = GroupedVoti;
+                    RestApi.Models.GroupedVoti.calcTotalMedia();
                 }
             }
             else
@@ -96,7 +114,7 @@ namespace SalveminiApp.ArgoPages
             //Get the teacher of the mark
             var docente = ((((sender as Xamarin.Forms.StackLayout).Children[0] as Xamarin.Forms.StackLayout).Children[1] as Xamarin.Forms.StackLayout).Children[1] as Xamarin.Forms.Label).Text;
             //Get the subject of the mark
-            var materia = ((sender as Xamarin.Forms.StackLayout).Children[(sender as Xamarin.Forms.StackLayout).Children.Count - 1] as Xamarin.Forms.Label).Text;
+            var materia = ((sender as Xamarin.Forms.StackLayout).Children[1] as Xamarin.Forms.Label).Text;
 
             //Get The Mark
             var Voto = GroupedVoti.FirstOrDefault(x => x.Materia == materia).FirstOrDefault(x => x.codVoto == codVoto && x.Data == Data && x.docente == docente);

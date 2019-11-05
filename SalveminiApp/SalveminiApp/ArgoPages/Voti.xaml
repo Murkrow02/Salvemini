@@ -30,7 +30,7 @@
                                 <DataTemplate>
                                     <ViewCell>
                                         <ViewCell.ContextActions>
-                                            <MenuItem Text="Non fa media" IsDestructive="True" Clicked="NonFaMedia_Clicked" Command="{Binding FaMedia}" CommandParameter="{Binding .}" />
+                                            <MenuItem Text="{Binding MenuItemText}" IsDestructive="{Binding Distructive}" Clicked="NonFaMedia_Clicked" Command="{Binding FaMedia}" CommandParameter="{Binding .}" />
                                         </ViewCell.ContextActions>
                                         <StackLayout Padding="10, 5" Spacing="10">
                                             <StackLayout.GestureRecognizers>
@@ -39,7 +39,7 @@
                                             <StackLayout Spacing="0" VerticalOptions="Start">
                                                 <StackLayout Orientation="Horizontal">
                                                     <Label Text="{Binding codVoto}" TextColor="{Binding markColor}" FontSize="32" HorizontalOptions="Start" VerticalOptions="Center" FontAttributes="Bold" />
-                                                    <Label Text="Non fa media" FontSize="Small" TextColor="{x:Static local:Styles.TextColor}" IsVisible="{Binding NonFaMedia}" VerticalOptions="Center"/>
+                                                    <Label Text="Non fa media" FontSize="Small" TextColor="{x:Static local:Styles.TextColor}" IsVisible="{Binding NonFaMedia}" VerticalOptions="Center" />
                                                     <StackLayout IsVisible="{Binding dotsVisibility}" Orientation="Horizontal" Spacing="1" VerticalOptions="Start" HorizontalOptions="EndAndExpand">
                                                         <iconize:IconLabel Text="fas-circle" FontSize="5" TextColor="#989696" />
                                                         <iconize:IconLabel Text="fas-circle" FontSize="5" TextColor="#C1C1C1" />
@@ -51,7 +51,7 @@
                                                     <Label FontSize="12" HorizontalOptions="EndAndExpand" Text="{Binding docente}" TextColor="{x:Static local:Styles.TextGray}" />
                                                 </StackLayout>
                                             </StackLayout>
-                                            <Label Text="{Binding Materia}" HeightRequest="0" VerticalOptions="Start" />
+                                            <Label Text="{Binding desMateria}" HeightRequest="0" VerticalOptions="Start" />
                                             <local:DashedBorderFrame IsVisible="{Binding SeparatorVisibility}" Padding="0" Margin="-10, -5" VerticalOptions="EndAndExpand" HeightRequest="0.1" />
                                         </StackLayout>
                                     </ViewCell>
