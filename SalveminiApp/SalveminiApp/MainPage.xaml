@@ -8,7 +8,7 @@
                 <Label Text="SalveminiApp internal beta v1" TextColor="#9c9c9c" FontSize="Small" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
             </StackLayout>
             <!--Profile Image-->
-            <ffimageloading:CachedImage x:Name="userImg" LoadingPlaceholder="imagePlaceholder" HorizontalOptions="EndAndExpand">
+            <ffimageloading:CachedImage Margin="-2"  x:Name="userImg" LoadingPlaceholder="imagePlaceholder" HorizontalOptions="EndAndExpand">
                 <ffimageloading:CachedImage.Transformations>
                     <fftransformations:CircleTransformation />
                 </ffimageloading:CachedImage.Transformations>

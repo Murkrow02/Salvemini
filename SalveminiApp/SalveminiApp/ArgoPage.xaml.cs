@@ -37,11 +37,8 @@ namespace SalveminiApp
             //Set Sizes
             chart.WidthRequest = App.ScreenWidth;
             chart.HeightRequest = App.ScreenHeight / 3;
-        }
 
-        protected async override void OnAppearing()
-        {
-            base.OnAppearing();
+            //Add widgets
             var gestureRecognizer = new TapGestureRecognizer();
             gestureRecognizer.Tapped += Widget_Tapped;
             var assenze = new ArgoWidget { Title = "Assenze", Icon = "Assenze.svg", StartColor = "FF7272", EndColor = "FACA6F", Push = new ArgoPages.Assenze() };
@@ -66,6 +63,12 @@ namespace SalveminiApp
             secondRowWidgets.Children.Add(new ContentView { WidthRequest = -30 });
             secondRowWidgets.Children.AddRange(new List<ArgoWidget> { scrutinio, compiti, argomenti });
             secondRowWidgets.Children.Add(new ContentView { WidthRequest = 0 });
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            
 
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {

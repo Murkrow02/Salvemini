@@ -134,6 +134,7 @@ namespace SalveminiApp
             widgets.Clear();
             var tapGestureRecognizer = new TapGestureRecognizer();
             tapGestureRecognizer.Tapped += widget_Tapped;
+
             //Registro
             string notizia = "Cosa è successo oggi in classe?";
             if (ArgoIndex != null)
@@ -493,7 +494,7 @@ namespace SalveminiApp
                     }
 
                     //Skip freeday
-                    if (day == freedayInt)
+                    if (day == freedayInt + 1)
                     {
                         daySkipped++;
                         day = SkipDay(day);
