@@ -57,6 +57,7 @@
             </Frame>
             <!--WidgetList-->
             <StackLayout VerticalOptions="Start">
+                <ActivityIndicator x:Name="widgetLoading"/>
                 <!--Personalizza-->
                 <!--<StackLayout Orientation="Horizontal">
                     <Label Text="Personalizza" TextColor="{x:Static local:Styles.TextColor}" />

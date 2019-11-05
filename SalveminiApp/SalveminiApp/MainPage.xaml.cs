@@ -122,6 +122,8 @@ namespace SalveminiApp
             base.OnAppearing();
 
             //Security checks todo
+            widgetLoading.IsRunning = true;
+            widgetLoading.IsVisible = true;
 
             //Sempre meglio mettere il try lol
             try
@@ -215,7 +217,11 @@ namespace SalveminiApp
 
                         //Anche la cache è nulla, stacca stacca
                         if (Index != null)
+                        {
+                            widgetLoading.IsRunning = false;
+                            widgetLoading.IsVisible = false;
                             return;
+                        }
                     }
 
 
@@ -296,10 +302,13 @@ namespace SalveminiApp
 
                 //Update widgets order
                 OrderWidgets(false);
-
+                widgetLoading.IsRunning = false;
+                widgetLoading.IsVisible = false;
             }
             catch (Exception ex) //Errore sconosciuto :0
             {
+                widgetLoading.IsRunning = false;
+                widgetLoading.IsVisible = false;
                 showToast("Si è verificato un errore fatale, contatta gli sviluppatori se il problema persiste");
             }
         }

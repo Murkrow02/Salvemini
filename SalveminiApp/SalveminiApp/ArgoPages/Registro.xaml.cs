@@ -74,6 +74,10 @@ namespace SalveminiApp.ArgoPages
             {
                 getValues(DateTime.Today);
             }
+
+            //Remove badge
+            MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "RemoveBadge", "Registro");
+
         }
 
         public bool ObjectsDiffer(RestApi.Models.WholeModel callObj, RestApi.Models.WholeModel cachedObj)

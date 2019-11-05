@@ -3,7 +3,7 @@
     <Frame HasShadow="False" VerticalOptions="Start" CornerRadius="20" Padding="10,15">
         <StackLayout Orientation="Horizontal" Spacing="25">
             <!--Profile pic-->
-            <ffimageloading:CachedImage x:Name="image" HorizontalOptions="Start" VerticalOptions="CenterAndExpand">
+            <ffimageloading:CachedImage LoadingPlaceholder="imagePlaceholder.png"  x:Name="image" HorizontalOptions="Start" VerticalOptions="CenterAndExpand">
                 <ffimageloading:CachedImage.Transformations>
                     <fftransformations:CircleTransformation  BorderSize="15" BorderHexColor="efefef"/>
                 </ffimageloading:CachedImage.Transformations>
