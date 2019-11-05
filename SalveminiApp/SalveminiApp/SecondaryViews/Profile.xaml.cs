@@ -232,6 +232,7 @@ namespace SalveminiApp.SecondaryViews
                     MainPage.isSelectingImage = false;
                     return;
                 }
+
                 var choosenImage = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
                 {
                     PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,

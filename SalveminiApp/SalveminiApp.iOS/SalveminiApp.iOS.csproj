@@ -78,6 +78,21 @@
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renders.cs" />
+    <Compile Include="ToastIos\BTProgressHUD.cs" />
+    <None Include="ToastIos\error.png" />
+    <None Include="ToastIos\error%402x.png" />
+    <None Include="ToastIos\error_7.png" />
+    <None Include="ToastIos\error_7%402x.png" />
+    <Compile Include="ToastIos\NSObjectExtensions.cs" />
+    <Compile Include="ToastIos\ProgressHUD.cs" />
+    <Compile Include="ToastIos\Ring.cs" />
+    <None Include="ToastIos\success.png" />
+    <None Include="ToastIos\success%402x.png" />
+    <None Include="ToastIos\success_7.png" />
+    <None Include="ToastIos\success_7%402x.png" />
+    <None Include="ToastIos\xamarin.png" />
+    <None Include="ToastIos\xamarin%402x.png" />
+    <Compile Include="ToastIos\XHUD.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -265,6 +280,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lotties\" />
+    <Folder Include="ToastIos\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SalveminiAppIntent\SalveminiAppIntent.csproj">

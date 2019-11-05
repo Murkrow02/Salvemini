@@ -6,7 +6,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Com.OneSignal;
-using Lottie.Forms.Droid;
+//using Lottie.Forms.Droid;
 using Plugin.CurrentActivity;
 using Plugin.Toasts;
 using PanCardView.Droid;
@@ -54,7 +54,7 @@ namespace SalveminiApp.Droid
             Forms9Patch.Droid.Settings.Initialize(this);
             CardsViewRenderer.Preserve();
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
-            AnimationViewRenderer.Init();
+            //AnimationViewRenderer.Init();
 
             LoadApplication(new App());
         }

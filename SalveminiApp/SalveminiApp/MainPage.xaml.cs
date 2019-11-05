@@ -113,12 +113,14 @@ namespace SalveminiApp
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-           
 
             //Security checks todo
 
+            //Sempre meglio mettere il try lol
+            try
+            {
             //Set image profile url
-            userImg.Source = Costants.Uri("images/users/") + Preferences.Get("UserId", "");
+            userImg.Source = Costants.Uri("images/users/") + Preferences.Get("UserId", 0).ToString();
 
             //Remove modals bug
             ModalPush_Disappearing(null, null);
@@ -202,8 +204,8 @@ namespace SalveminiApp
                 }
                 else
                 {
-                    //todo 
-                    await DisplayAlert("Attenzione", "Non è stato possibile connettersi al server", "Ok");
+                    //Chiamata api fallita
+                    showToast("Non è stato possibile connettersi al server");
 
                     //Anche la cache è nulla, stacca stacca
                     if (Index != null)
@@ -282,12 +284,18 @@ namespace SalveminiApp
             }
             else
             {
-                //todo notify no internet
+                //Nessuna connessione
+                showToast("Nessuna connessione rilevata");
             }
 
             //Update widgets order
             OrderWidgets(true);
 
+            }
+            catch(Exception ex) //Errore sconosciuto :0
+            {
+                showToast("Si è verificato un errore fatale, contatta gli sviluppatori se il problema persiste");
+            }
         }
 
         //Handle widget redirections
@@ -636,6 +644,16 @@ namespace SalveminiApp
                 return newDay;
         }
 
+        public void showToast(string message)
+        {
+#if __IOS__
+          BigTed2.BTProgressHUD2.ShowToast(message, BigTed2.ProgressHUD2.MaskType.None, false, 3000);
+#endif
+#if __ANDROID_
+            SalveminiApp.Droid.ShowToast.LongAlert(message);
+#endif
+        }
+
     }
 
     //Add range to iList
@@ -659,6 +677,7 @@ namespace SalveminiApp
             }
         }
     }
+
 
     //Upper only first letter
     public static class StringExtensions
