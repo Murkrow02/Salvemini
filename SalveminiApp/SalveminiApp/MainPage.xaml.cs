@@ -113,6 +113,7 @@ namespace SalveminiApp
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+           
 
             //Security checks todo
 
@@ -476,7 +477,7 @@ namespace SalveminiApp
                     var allDays = Costants.getDays();
 
                     //Remove freeday from list
-                    allDays.RemoveAt(freedayInt);
+                    allDays.RemoveAt(freedayInt - 1);
                     giorniList.ItemsSource = allDays;
 
                     //intelligent auto skip if dopo le 2

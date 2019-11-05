@@ -17,7 +17,6 @@ namespace SalveminiApp.RestApi.Models
         public event PropertyChangedEventHandler PropertyChanged;
 
         
-        //[JsonConstructor]
         internal Voti(bool nonfamedia)
         {
             this.nonFaMedia_ = nonfamedia;

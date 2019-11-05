@@ -95,6 +95,10 @@ namespace SalveminiApp.AreaVip
             string sede = "";
             int segmentedIndex = 1;
 
+            //If his freeday is monday start from martedi
+            if (daySkipped == 1)
+                giorno = 2;
+
             //Get values from each autocomplete entry
             foreach (var input in layout.Children.ToList())
             {
