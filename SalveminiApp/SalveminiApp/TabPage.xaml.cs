@@ -24,7 +24,7 @@ namespace SalveminiApp
             BarTextColor = Styles.PrimaryColor,
             BarBackgroundColor = Styles.BGColor,
             Title = "Home",
-            IconImageSource = "tabBarHome.png"
+            IconImageSource = "fillTabBarHome.png"
         };
         public static Helpers.CustomNavigationPage Argo = new Helpers.CustomNavigationPage(new ArgoPage())
         {
@@ -33,14 +33,14 @@ namespace SalveminiApp
             Title = "Argo",
             IconImageSource = "tabBarArgo.png"
         };
-        
+
         public TabPage()
         {
             InitializeComponent();
 
             //Initialize Bar
             BarTextColor = Styles.TextColor;
-            
+
             //Add Children
             Children.Add(Home);
             Children.Add(Argo);
@@ -55,6 +55,30 @@ namespace SalveminiApp
             On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
             On<Xamarin.Forms.PlatformConfiguration.Android>().DisableSwipePaging();
 #endif
+        }
+
+        protected override void OnCurrentPageChanged()
+        {
+            base.OnCurrentPageChanged();
+            var index = Children.IndexOf(CurrentPage);
+
+            switch (index)
+            {
+                case 0:
+                    //Home
+                    (Children[index] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
+                    if (Children.ElementAtOrDefault(1) != null)
+                    {
+                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
+                    }
+                    break;
+
+                case 1:
+                    //Home
+                    (Children[index] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarArgo.png";
+                    (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
+                    break;
+            }
         }
     }
 }

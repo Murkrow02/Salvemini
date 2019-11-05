@@ -47,19 +47,15 @@ namespace SalveminiApp.ArgoPages
                     gotByCache = true;
                     if (Oggi != null)
                     {
-                        callSetLayout();
-
+                        var data = Convert.ToDateTime(date);
+                        callSetLayout(data.Day == DateTime.Today.Day && data.Month == DateTime.Today.Month && data.Year == DateTime.Today.Year);
+                        
                     }
                 }
                 catch(Exception ex)
                 {
                     //Failed stacca stacca
                     Barrel.Current.Empty("Oggi" + date);
-                    if (Oggi != null)
-                    {
-                        callSetLayout();
-
-                    }
                 }
                
             }
@@ -109,7 +105,7 @@ namespace SalveminiApp.ArgoPages
                 {
                     widgetsLayout.Children.Clear();
                     Oggi = calledOggi;
-                    callSetLayout();
+                    callSetLayout(date.Day == DateTime.Today.Day && date.Month == DateTime.Today.Month && date.Year == DateTime.Today.Year);
                 }
             }
             else
@@ -119,11 +115,12 @@ namespace SalveminiApp.ArgoPages
             loadingIndicator.IsRunning = false;
         }
 
-        void callSetLayout()
+        void callSetLayout(bool isToday)
         {
             nothingLayout.IsVisible = false;
             if (Oggi.bacheca.Count == 0 && Oggi.voti.Count == 0 && Oggi.argomenti.Count == 0 && Oggi.compiti.Count == 0 && Oggi.promemoria.Count == 0 && Oggi.assenze.Count == 0)
             {
+                placeholderLabel.Text = isToday ? "Oggi non è successo niente" : "Questo giorno non è successo niente"; 
                 nothingLayout.IsVisible = true;
             }
 

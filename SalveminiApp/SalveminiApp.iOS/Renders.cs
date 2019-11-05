@@ -70,7 +70,7 @@ namespace SalveminiApp.iOS
             image = image.Scale(new CGSize(TabBar.Frame.Width, TabBar.Frame.Height));
             TabBar.BackgroundImage = image;
             TabBar.BarStyle = UIBarStyle.Black;
-            //TabBar.UnselectedItemTintColor = UIColor.FromRGBA(255, 255, 255, 150);
+            TabBar.UnselectedItemTintColor = UIColor.Black;
             
         }
 
