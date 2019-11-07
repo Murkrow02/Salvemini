@@ -29,5 +29,30 @@ namespace SalveminiApp.RestApi.Models
                 return lista;
             }
         }
+
+        public bool ShowMoreVisibility
+        {
+            get
+            {
+                return Descrizione.Length > 100;
+            }
+        }
+
+        public bool ListVisibility
+        {
+            get
+            {
+                return FullImmagini != null && FullImmagini.Count > 0;
+            }
+        }
+
+        //Description to display
+        public string CorrectDescription
+        {
+            get
+            {
+                return Descrizione.Length > 0 ? Descrizione.Remove(100) + "..." : Descrizione;
+            }
+        }
     }
 }

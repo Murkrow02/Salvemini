@@ -15,17 +15,27 @@ using Foundation;
 #endif
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using System.Linq;
+using Syncfusion.SfCarousel.XForms;
 
 namespace SalveminiApp.Helpers
 {
     public partial class ImageViewer : ContentPage
     {
         string FullUrl = "";
+        List<string> Images = new List<string>();
+
         public ImageViewer(List<string> Urls)
         {
             InitializeComponent();
             ImageCarousel.ItemsSource = Urls;
-            //FullUrl = WebUrl;
+            Images = Urls;
+            FullUrl = Urls[0];
+        }
+
+        private void Image_SelectionChanged(object sender, Syncfusion.SfCarousel.XForms.SelectionChangedEventArgs e)
+        {
+            FullUrl = Images[e.SelectedIndex];
         }
 
         void Close_Clicked(object sender, EventArgs e)
@@ -33,9 +43,29 @@ namespace SalveminiApp.Helpers
             Navigation.PopModalAsync();
         }
 
+        void ImageSwipedLeft(object sender, SwipedEventArgs e)
+        {
+            if (e.Direction == SwipeDirection.Left)
+            {
+                if (Images.ElementAtOrDefault(ImageCarousel.SelectedIndex + 1) != null)
+                {
+                    ImageCarousel.SelectedIndex++;
+                }
+            }
+        }
 
+        void ImageSwipedRight(object sender, SwipedEventArgs e)
+        {
+            if (e.Direction == SwipeDirection.Right)
+            {
+                if (Images.ElementAtOrDefault(ImageCarousel.SelectedIndex - 1) != null)
+                {
+                    ImageCarousel.SelectedIndex--;
+                }
+            }
+        }
 
-      async void Save_Clicked(object sender, EventArgs e)
+        async void Save_Clicked(object sender, EventArgs e)
         { 
             if (Connectivity.NetworkAccess != Xamarin.Essentials.NetworkAccess.Internet)
             {

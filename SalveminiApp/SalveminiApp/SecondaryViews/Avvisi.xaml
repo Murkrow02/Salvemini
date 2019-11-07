@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView" xmlns:proc="clr-namespace:PanCardView.Processors;assembly=PanCardView" xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView" xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Avvisi">
+<ContentPage BackgroundColor="{x:Static local:Styles.BGColor}"  xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView" xmlns:proc="clr-namespace:PanCardView.Processors;assembly=PanCardView" xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView" xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Avvisi">
     <ContentPage.Content>
         <StackLayout Spacing="40" Padding="20">
             <!--TITLE-->
             <StackLayout Spacing="10" Orientation="Horizontal">
-                <iconize:IconButton Clicked="Close_Clicked" VerticalOptions="Center" HorizontalOptions="Start" Text="fas-times" FontSize="Title" TextColor="{x:Static local:Styles.PrimaryColor}" />
-                <Label VerticalOptions="Center" HorizontalOptions="Start" Text="Avvisi" TextColor="{x:Static local:Styles.PrimaryColor}" FontSize="Title" FontAttributes="Bold" />
-                <iconize:IconButton VerticalOptions="Center" HorizontalOptions="EndAndExpand" Text="fas-bars" FontSize="Title" TextColor="{x:Static local:Styles.PrimaryColor}" />
+                <iconize:IconButton Clicked="Close_Clicked" VerticalOptions="Center" HorizontalOptions="Start" Text="fas-times" FontSize="Title" TextColor="{x:Static local:Styles.TextColor}" />
+                <Label VerticalOptions="Center" HorizontalOptions="Start" Text="Avvisi" TextColor="{x:Static local:Styles.TextColor}" FontSize="Title" FontAttributes="Bold" />
+                <iconize:IconButton Clicked="Menu_Clicked" x:Name="menuButton" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Text="fas-bars" FontSize="Title" TextColor="{x:Static local:Styles.TextColor}" />
             </StackLayout>
             <!--CAROUSEL-->
             <cards:CarouselView VerticalOptions="FillAndExpand" x:Name="avvisiCarousel">
@@ -16,11 +16,11 @@
                 </x:Arguments>
                 <cards:CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout VerticalOptions="Center" Padding="20, 0" Spacing="15">
+                        <StackLayout VerticalOptions="CenterAndExpand" Padding="20, 0" Spacing="15">
                             <Label Text="{Binding Titolo}" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Title" />
                             <local:ShadowFrame BackgroundColor="Transparent" VerticalOptions="FillAndExpand" Padding="0">
                                 <Frame BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HasShadow="False" Padding="0" IsClippedToBounds="True" CornerRadius="20">
-                                    <flv:FlowListView FlowItemTapped="ImageList_ItemSelected" FlowItemsSource="{Binding FullImmagini}" SeparatorColor="Black" BackgroundColor="Transparent" FlowColumnExpand="ProportionalLast" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="false" RowHeight="100">
+                                    <flv:FlowListView IsVisible="{Binding ListVisibility}" FlowItemTapped="ImageList_ItemSelected" FlowItemsSource="{Binding FullImmagini}" SeparatorColor="Black" BackgroundColor="Transparent" FlowColumnExpand="ProportionalLast" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="false" RowHeight="100">
                                         <flv:FlowListView.FlowColumnTemplate>
                                             <DataTemplate>
                                                 <Grid Padding="2">
@@ -37,8 +37,8 @@
                                     </flv:FlowListView>
                                 </Frame>
                             </local:ShadowFrame>
-                            <Label Text="{Binding Descrizione}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" />
-                            <Button Text="Mostra altro" />
+                            <Label Text="{Binding CorrectDescription}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" />
+                            <Button Clicked="ShowMore_Clicked" Text="Mostra altro" IsVisible="{Binding ShowMoreVisibility}" />
                         </StackLayout>
                     </DataTemplate>
                 </cards:CarouselView.ItemTemplate>
@@ -49,7 +49,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="ActiveIndicator" TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="{x:Static local:Styles.PrimaryColor}" />
+                <Setter Property="BackgroundColor" Value="{x:Static local:Styles.TextColor}" />
             </Style>
             <Style x:Key="InactiveIndicator" TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="Transparent" />
