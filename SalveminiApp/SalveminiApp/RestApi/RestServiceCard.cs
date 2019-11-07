@@ -32,12 +32,6 @@ namespace SalveminiApp.RestApi
 
             try
             {
-                //Get Cache if no Network Access
-                if (Connectivity.NetworkAccess != Xamarin.Essentials.NetworkAccess.Internet && Barrel.Current.Exists("cardofferte"))
-                {
-                    return Barrel.Current.Get<List<Models.Offerte>>("cardofferte");
-                }
-
                 var response = await client.GetAsync(uri);
                 if (response.IsSuccessStatusCode)
                 {
@@ -47,18 +41,10 @@ namespace SalveminiApp.RestApi
                     //Save Cache
                     Barrel.Current.Add("cardofferte", Offerte, TimeSpan.FromDays(10));
                 }
-                else if (response.StatusCode != System.Net.HttpStatusCode.Unauthorized)
-                {
-                    if (Barrel.Current.Exists("cardofferte"))
-                    {
-                        return Barrel.Current.Get<List<Models.Offerte>>("cardofferte");
-                    }
-                }
-
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                Debug.WriteLine(@"Errore offerte salvemini card", ex.Message);
             }
             return Offerte;
         }

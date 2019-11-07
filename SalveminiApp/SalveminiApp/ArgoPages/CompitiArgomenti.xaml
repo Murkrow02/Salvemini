@@ -46,7 +46,7 @@
                                                     <Label HorizontalOptions="Start" FontAttributes="Bold" Text="{Binding desMateria}" FontSize="Large" />
                                                     <Label HorizontalOptions="Start" Text="{Binding Contenuto}" FontSize="Large" />
                                                     <StackLayout Orientation="Horizontal">
-                                                        <Label Text="{Binding Data}" TextColor="{x:Static local:Styles.TextGray}" FontSize="Small" HorizontalOptions="Start" />
+                                                        <Label Text="{Binding datGiorno}" TextColor="{x:Static local:Styles.TextGray}" FontSize="Small" HorizontalOptions="Start" />
                                                         <Label Text="{Binding docente}" TextColor="{x:Static local:Styles.TextGray}" FontSize="Small" HorizontalOptions="EndAndExpand" />
                                                     </StackLayout>
                                                 </StackLayout>

@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using MonkeyCache.SQLite;
 using Xamarin.Essentials;
 
 namespace SalveminiApp
@@ -134,13 +135,51 @@ namespace SalveminiApp
             return Days;
         }
 
-        public static void Logout()
+        public static void Logout(bool fromSuperVip = false)
         {
+            //Clear preferences
             Preferences.Set("UserId", 0);
             Preferences.Set("Token", "");
             Preferences.Set("Classe", 0);
             Preferences.Set("Corso", "");
-            Xamarin.Forms.Application.Current.MainPage = new FirstAccess.Login();
+
+            //Clear cache
+            Barrel.Current.EmptyAll();
+
+            //Push to login
+            if (!fromSuperVip)
+                Xamarin.Forms.Application.Current.MainPage = new FirstAccess.Login();
+        }
+
+        public static void showToast(string message)
+        {
+            //Costants
+            if (message == "connection") message = "Nessuna connessione rilevata";
+#if __IOS__
+            //Show toast
+            BigTed2.BTProgressHUD2.ShowToast(message, BigTed2.ProgressHUD2.MaskType.None, false, 3000);
+
+            //Vibrate
+            iOS.AppDelegate.hapticVibration();
+#endif
+
+#if _ANDROID_
+            //Show toast
+            SalveminiApp.Droid.ShowToast.LongAlert(message);
+
+            //Vibrate
+            try
+            {
+                Vibration.Vibrate();
+
+                var duration = TimeSpan.FromMilliseconds(200);
+                Vibration.Vibrate(duration);
+            }
+            catch (FeatureNotSupportedException ex)
+            {
+                Console.WriteLine("Not supported");
+            }
+#endif
         }
     }
 

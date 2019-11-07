@@ -120,8 +120,11 @@ namespace SalveminiApp.AreaVip
                         await DisplayAlert(response3[0], response3[1], "Ok");
                         break;
                     case "Accedi":
+                        Costants.Logout(true);
                         Preferences.Set("UserId", data.id);
                         Preferences.Set("Token", data.ArgoToken);
+                        Preferences.Set("Classe", data.Classe);
+                        Preferences.Set("Corso", data.Corso);
                         App.refreshCalls();
                         await DisplayAlert("Successo", "Ora sei loggato come " + data.nomeCognome, "Yo");
                         break;

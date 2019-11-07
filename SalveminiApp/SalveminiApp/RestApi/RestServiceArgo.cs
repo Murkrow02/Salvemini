@@ -116,7 +116,7 @@ namespace SalveminiApp.RestApi
                         break;
                 }
 
-                
+
             }
             catch (Exception ex)
             {
@@ -301,8 +301,8 @@ namespace SalveminiApp.RestApi
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(@"              ERROR {0}", ex.Message);
-                Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+                Debug.WriteLine(@"Errore pentagono", ex.Message);
+                Data.Message = "Non è stato possibile connettersi al server, controlla la tua connessione e riprova";
             }
             return Data;
         }
@@ -325,7 +325,9 @@ namespace SalveminiApp.RestApi
                         var content = await response.Content.ReadAsStringAsync();
                         Voti = JsonConvert.DeserializeObject<List<Models.Voti>>(content);
 
-                        
+                        //Voti.Clear();
+                        //Voti.Add(new Models.Voti { Materia = "LINGUA e LETTERATURA ITALIANA", codVoto = "9", datGiorno = "2019-11-05", decValore = 9, desMateria = "LINGUA e LETTERATURA ITALIANA", codVotoPratico = "9", desCommento = "prova", desProva = "Compito", docente = "Marialuigia Ruggiero" });
+                        //Voti.Add(new Models.Voti { Materia = "LINGUA e LETTERATURA ITALIANA", codVoto = "6", datGiorno = "2019-10-05", decValore = 6, desMateria = "LINGUA e LETTERATURA ITALIANA", codVotoPratico = "6", desCommento = "prova", desProva = "Compito", docente = "Marialuigia Ruggiero" });
 
                         //Get voti filtered by subject from api call
                         var groupedBySubject = Voti.GroupBy(x => x.desMateria).Select(y => y.ToList()).ToList();
@@ -339,9 +341,10 @@ namespace SalveminiApp.RestApi
                             var tempVoti = new List<Models.Voti>();
                             tempVoti.AddRange(group);
 
-                            if (Barrel.Current.Exists("NoCountVoti"))
+                            //Caclculate votes to exclude from media
+                            var noCountVoti = CacheHelper.GetCache<List<Models.CachedVoto>>("NoCountVoti");
+                            if(noCountVoti != null)
                             {
-                                var noCountVoti = Barrel.Current.Get<List<Models.CachedVoto>>("NoCountVoti");
                                 for (int i = tempVoti.Count - 1; i >= 0; i--)
                                 {
                                     foreach (var nocount in noCountVoti)
@@ -355,6 +358,8 @@ namespace SalveminiApp.RestApi
                                     }
                                 }
                             }
+                           
+
 
                             //Calculate media
                             var media = tempVoti.Sum(x => x.decValore) / tempVoti.Count();
@@ -378,7 +383,7 @@ namespace SalveminiApp.RestApi
                         Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
                         break;
                 }
-                
+
             }
             catch (Exception ex)
             {

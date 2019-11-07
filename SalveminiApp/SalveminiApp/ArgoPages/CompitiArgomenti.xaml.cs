@@ -32,8 +32,9 @@ namespace SalveminiApp.ArgoPages
 
             //Argomenti o compiti
             type = tipo;
-            if (type == "compiti")
+            if (type == "compiti") //Compiti
             {
+                //Set layout
                 clockLabel.Text = "Assegnati oggi";
                 gradient.BackgroundGradientStartColor = Color.FromHex("03F829");
                 gradient.BackgroundGradientEndColor = Color.FromHex("20B4C7");
@@ -41,31 +42,19 @@ namespace SalveminiApp.ArgoPages
                 shadowImage.Source = "CompitiShadow.svg";
                 searchFrame.BackgroundColor = Color.FromHex("119A46");
                 xClose.TextColor = Color.FromHex("03F829");
-                if (Barrel.Current.Exists("Compiti"))
+
+                //Get cache
+                var cachedCompiti = CacheHelper.GetCache<List<RestApi.Models.Compiti>>("Compiti");
+                if (cachedCompiti != null)
                 {
-                    Compitis = Barrel.Current.Get<List<RestApi.Models.Compiti>>("Compiti");
-                    var today = Compitis.Where(x => x.datGiorno == DateTime.Now.ToString("yyyy-MM-dd")).ToList();
-                    if (today.Count > 0)
-                    {
-                        lista.IsVisible = true;
-                        lista.ItemsSource = today;
-                        emptyLayout.IsVisible = false;
-                        filterBtn.IsEnabled = true;
-                        sortBtn.IsEnabled = true;
-                    }
-                    else
-                    {
-                        lista.ItemsSource = today;
-                        placeholderLabel.Text = noCompiti;
-                        emptyLayout.IsVisible = true;
-                        filterBtn.IsEnabled = false;
-                        sortBtn.IsEnabled = false;
-                    }
+                    //Fill list with cached
+                    Compitis = cachedCompiti;
+                    FillListToday();
                 }
             }
-            else
+            else //Argomenti
             {
-
+                //Set layout
                 clockLabel.Text = "Spiegati oggi";
                 gradient.BackgroundGradientStartColor = Color.FromHex("FF7272");
                 gradient.BackgroundGradientEndColor = Color.FromHex("FACA6F");
@@ -73,26 +62,14 @@ namespace SalveminiApp.ArgoPages
                 shadowImage.Source = "ArgomentiShadow.svg";
                 searchFrame.BackgroundColor = Color.FromHex("FFBF96");
                 xClose.TextColor = Color.FromHex("FF7272");
-                if (Barrel.Current.Exists("Argomenti"))
+
+                //Get cache
+                var cachedArgomenti = CacheHelper.GetCache<List<RestApi.Models.Argomenti>>("Argomenti");
+                if (cachedArgomenti != null)
                 {
-                    Argomentis = Barrel.Current.Get<List<RestApi.Models.Argomenti>>("Argomenti");
-                    var today = Argomentis.Where(x => x.datGiorno == DateTime.Now.ToString("yyyy-MM-dd")).ToList();
-                    if (today.Count > 0)
-                    {
-                        lista.IsVisible = true;
-                        lista.ItemsSource = today;
-                        emptyLayout.IsVisible = false;
-                        filterBtn.IsEnabled = true;
-                        sortBtn.IsEnabled = true;
-                    }
-                    else
-                    {
-                        lista.ItemsSource = today;
-                        placeholderLabel.Text = noArgomenti;
-                        emptyLayout.IsVisible = true;
-                        filterBtn.IsEnabled = false;
-                        sortBtn.IsEnabled = false;
-                    }
+                    //Fill list with cached
+                    Argomentis = cachedArgomenti;
+                    FillListToday();
                 }
             }
 
@@ -100,10 +77,11 @@ namespace SalveminiApp.ArgoPages
 #if __IOS__
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
             UIApplication.SharedApplication.StatusBarHidden = true;
-           if(iOS.AppDelegate.HasNotch)
-                fullLayout.Padding = new Thickness(20,35,20,25);
+            if (iOS.AppDelegate.HasNotch)
+                fullLayout.Padding = new Thickness(20, 35, 20, 25);
 #endif
-                //Set Sizes
+
+            //Set Sizes
             shadowImage.WidthRequest = App.ScreenWidth * 1.5;
             shadowImage.HeightRequest = App.ScreenWidth * 1.5;
             listFrame.HeightRequest = App.ScreenHeight / 1.5;
@@ -112,17 +90,12 @@ namespace SalveminiApp.ArgoPages
             buttonFrame.CornerRadius = (float)(App.ScreenWidth / 6) / 2;
         }
 
-        //Close modal
-        void Close_Clicked(object sender, System.EventArgs e)
-        {
-            Navigation.PopModalAsync();
-        }
+
 
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            var notificator = DependencyService.Get<IToastNotificator>();
 
             //Tip iniziale
             var firstPopUp = new Helpers.PopOvers().defaultPopOver;
@@ -136,206 +109,113 @@ namespace SalveminiApp.ArgoPages
                 firstPopUp.BackgroundColor = Color.FromHex("FFC400");
             firstPopUp.Disappearing += Second_PoUp;
 
-            //COMPITI
-            if (type == "compiti")
+            //Start downloading things
+            try
             {
-
-                //First time?
-                if (!Preferences.Get("firstTimeCompiti", true))
-                {
-                    firstPopUp.IsVisible = true;
-                }
-                else
-                {
-                    lista.IsRefreshing = true;
-                }
-
-                //Api Call
+                //Check connection status
                 if (Connectivity.NetworkAccess == NetworkAccess.Internet)
                 {
-                    var datas = await App.Argo.GetCompiti();
-                    if (string.IsNullOrEmpty(datas.Message))
+                    //COMPITI
+                    if (type == "compiti")
                     {
+                        //First time?
+                        if (!Preferences.Get("firstTimeCompiti", true))
+                        {
+                            firstPopUp.IsVisible = true; //Show tip
+                        }
+                        else
+                        {
+                            lista.IsRefreshing = true;
+                        }
+
+                        //Download compiti from api
+                        var datas = await App.Argo.GetCompiti();
+
+                        //Detect if call returned a message of error
+                        if (!string.IsNullOrEmpty(datas.Message))
+                        {
+                            //Error occourred, notify the user
+                            Costants.showToast(datas.Message);
+                            //Stop loading list
+                            lista.IsRefreshing = false;
+                            return;
+                        }
+
+                        //Deserialize new object
                         Compitis = datas.Data as List<RestApi.Models.Compiti>;
-                    }
-                    else
-                    {
-                        var options = new NotificationOptions()
-                        {
-                            Description = datas.Message
-                        };
 
-                        var result = await notificator.Notify(options);
+                        //Fill List
+                        FillListToday();
                         lista.IsRefreshing = false;
-                        return;
                     }
-
-                    //Fill List
-                    var today = Compitis.Where(x => x.datGiorno == DateTime.Now.ToString("yyyy-MM-dd")).ToList();
-                    if (today.Count > 0)
-                    {
-                        lista.IsVisible = true;
-                        lista.ItemsSource = today;
-                        emptyLayout.IsVisible = false;
-                        filterBtn.IsEnabled = true;
-                        sortBtn.IsEnabled = true;
-                    }
+                    //ARGOMENTI
                     else
                     {
-                        lista.ItemsSource = today;
-                        placeholderLabel.Text = noCompiti;
-                        emptyLayout.IsVisible = true;
-                        filterBtn.IsEnabled = false;
-                        sortBtn.IsEnabled = false;
-                    }
 
-                    lista.IsRefreshing = false;
-                }
-                else
-                {
-                    var options = new NotificationOptions()
-                    {
-                        Description = "Nessuna connessione ad internet 🚀",
-                    };
-
-                    var result = await notificator.Notify(options);
-                }
+                        //First time?
+                        if (!Preferences.Get("firstTimeArgomenti", true))
+                        {
+                            firstPopUp.IsVisible = true;
+                            lista.IsRefreshing = true;
+                        }
+                        else
+                        {
+                            lista.IsRefreshing = true;
+                        }
 
 
+                        //Download compiti from api
+                        var datas = await App.Argo.GetArgomenti();
 
-            }
-            //ARGOMENTI
-            else
-            {
+                        //Detect if call returned a message of error
+                        if (!string.IsNullOrEmpty(datas.Message))
+                        {
+                            //Error occourred, notify the user
+                            Costants.showToast(datas.Message);
+                            //Stop loading list
+                            lista.IsRefreshing = false;
+                            return;
+                        }
 
-                //First time?
-                if (!Preferences.Get("firstTimeArgomenti", true))
-                {
-                    firstPopUp.IsVisible = true;
-                    lista.IsRefreshing = true;
-                }
-                else
-                {
-                    lista.IsRefreshing = true;
-                }
-
-                //Api Call
-                if (Connectivity.NetworkAccess == NetworkAccess.Internet)
-                {
-                    var datas = await App.Argo.GetArgomenti();
-                    if (string.IsNullOrEmpty(datas.Message))
-                    {
+                        //Deserialize new object
                         Argomentis = datas.Data as List<RestApi.Models.Argomenti>;
-                    }
-                    else
-                    {
-                        var options = new NotificationOptions()
-                        {
-                            Description = datas.Message
-                        };
 
-                        var result = await notificator.Notify(options);
+                        //Fill List
+                        FillListToday();
                         lista.IsRefreshing = false;
-                        return;
                     }
-
-                    //Fill List
-                    var today = Argomentis.Where(x => x.datGiorno == DateTime.Now.ToString("yyyy-MM-dd")).ToList();
-                    if (today.Count > 0)
-                    {
-                        lista.IsVisible = true;
-                        lista.ItemsSource = today;
-                        emptyLayout.IsVisible = false;
-                        filterBtn.IsEnabled = true;
-                        sortBtn.IsEnabled = true;
-                    }
-                    else
-                    {
-                        lista.ItemsSource = today;
-                        placeholderLabel.Text = noArgomenti;
-                        emptyLayout.IsVisible = true;
-                        filterBtn.IsEnabled = false;
-                        sortBtn.IsEnabled = false;
-                    }
-
-                    lista.IsRefreshing = false;
                 }
                 else
                 {
-                    var options = new NotificationOptions()
-                    {
-                        Description = "Nessuna connessione ad internet 🚀",
-                    };
-
-                    var result = await notificator.Notify(options);
+                    //No internet
+                    Costants.showToast("connection");
+                    lista.IsRefreshing = false;
                 }
+            }
+            catch //Random error
+            {
+                Costants.showToast("Non è stato possibile aggiornare i dati");
             }
         }
 
-        void Second_PoUp(object sender, EventArgs e)
-        {
-            var secondPopUp = new Helpers.PopOvers().defaultPopOver;
-            secondPopUp.Content = new Xamarin.Forms.Label { Text = "Clicca per ordinare" + Environment.NewLine + "dai più vecchi ai più nuovi" + Environment.NewLine + "e viceversa", TextColor = Color.White, HorizontalTextAlignment = TextAlignment.Center };
-            secondPopUp.IsVisible = true;
-            secondPopUp.PointerDirection = PointerDirection.Up;
-            secondPopUp.PreferredPointerDirection = PointerDirection.Up;
-            secondPopUp.Target = sortBtn;
-            if (type == "compiti")
-                secondPopUp.BackgroundColor = Color.FromHex("#00D10D");
-            else
-                secondPopUp.BackgroundColor = Color.FromHex("FFC400"); secondPopUp.Disappearing += Third_PoUp;
-        }
 
-        void Third_PoUp(object sender, EventArgs e)
-        {
-            var thirdPopUp = new Helpers.PopOvers().defaultPopOver;
-            thirdPopUp.Content = new Xamarin.Forms.Label { Text = "Clicca per filtrare" + Environment.NewLine + "per materia", TextColor = Color.White, HorizontalTextAlignment = TextAlignment.Center };
-            thirdPopUp.IsVisible = true;
-            thirdPopUp.PointerDirection = PointerDirection.Up;
-            thirdPopUp.PreferredPointerDirection = PointerDirection.Up;
-            thirdPopUp.Target = filterBtn;
-            if (type == "compiti")
-                thirdPopUp.BackgroundColor = Color.FromHex("#00D10D");
-            else
-                thirdPopUp.BackgroundColor = Color.FromHex("FFC400");
-
-            //Change this to false before release 
-            if (type == "compiti")
-                Preferences.Set("firstTimeCompiti", true);
-            else
-                Preferences.Set("firstTimeArgomenti", true);
-        }
 
         void ShowAll(object sender, EventArgs e)
         {
+            //Animate clock rotation
             clockButton.Rotation = 0.1;
             clockButton.RotateTo(-360, 700, Easing.CubicIn);
 
-            if (type == "compiti")
+            //Detect types
+            if (type == "compiti") //Compiti
             {
-                if (showingAll)
+                if (showingAll) //Show only today
                 {
-                    var today = Compitis.Where(x => x.datGiorno == DateTime.Now.ToString("yyyy-MM-dd")).ToList();
-                    if (today.Count > 0)
-                    {
-                        lista.IsVisible = true;
-                        lista.ItemsSource = today;
-                        emptyLayout.IsVisible = false;
-                        filterBtn.IsEnabled = true;
-                        sortBtn.IsEnabled = true;
-                    }
-                    else
-                    {
-                        lista.ItemsSource = today;
-                        placeholderLabel.Text = noCompiti;
-                        emptyLayout.IsVisible = true;
-                        filterBtn.IsEnabled = false;
-                        sortBtn.IsEnabled = false;
-                    }
+                    FillListToday();
                     showingAll = false;
                     clockLabel.Text = "Assegnati oggi";
                 }
-                else
+                else //Show all
                 {
                     clockLabel.Text = "Tutti";
                     if (Compitis.Count > 0)
@@ -356,31 +236,15 @@ namespace SalveminiApp.ArgoPages
                     showingAll = true;
                 }
             }
-            else
+            else //Argomenti
             {
-                if (showingAll)
+                if (showingAll) //Show only today
                 {
-                    var today = Argomentis.Where(x => x.datGiorno == DateTime.Now.ToString("yyyy-MM-dd")).ToList();
-                    if (today.Count > 0)
-                    {
-                        lista.IsVisible = true;
-                        lista.ItemsSource = today;
-                        emptyLayout.IsVisible = false;
-                        filterBtn.IsEnabled = true;
-                        sortBtn.IsEnabled = true;
-
-                    }
-                    else
-                    {
-                        lista.ItemsSource = today;
-                        emptyLayout.IsVisible = true;
-                        filterBtn.IsEnabled = false;
-                        sortBtn.IsEnabled = false;
-                    }
+                    FillListToday();
                     showingAll = false;
                     clockLabel.Text = "Spiegati oggi";
                 }
-                else
+                else //Show all
                 {
                     clockLabel.Text = "Tutti";
                     if (Argomentis.Count > 0)
@@ -550,7 +414,54 @@ namespace SalveminiApp.ArgoPages
 
         }
 
+        public void FillListToday()
+        {
+            if (type == "compiti")
+            {
+                //Get only today
+                var today = Compitis.Where(x => x.datGiorno == DateTime.Now.ToString("yyyy-MM-dd")).ToList();
+                if (today.Count > 0) //There is something today
+                {
+                    lista.IsVisible = true;
+                    lista.ItemsSource = today;
+                    emptyLayout.IsVisible = false;
+                    filterBtn.IsEnabled = true;
+                    sortBtn.IsEnabled = true;
+                }
+                else
+                {
+                    lista.ItemsSource = today;
+                    placeholderLabel.Text = noCompiti;
+                    emptyLayout.IsVisible = true;
+                    filterBtn.IsEnabled = false;
+                    sortBtn.IsEnabled = false;
+                }
+            }
+            else
+            {
+                //Get only today
+                var today = Argomentis.Where(x => x.datGiorno == DateTime.Now.ToString("yyyy-MM-dd")).ToList();
+                if (today.Count > 0) //There is something today
+                {
+                    lista.IsVisible = true;
+                    lista.ItemsSource = today;
+                    emptyLayout.IsVisible = false;
+                    filterBtn.IsEnabled = true;
+                    sortBtn.IsEnabled = true;
+                }
+                else
+                {
+                    lista.ItemsSource = today;
+                    placeholderLabel.Text = noArgomenti;
+                    emptyLayout.IsVisible = true;
+                    filterBtn.IsEnabled = false;
+                    sortBtn.IsEnabled = false;
+                }
+            }
 
+        }
+
+        //String dynamic
         public string compArg()
         {
             if (type == "compiti")
@@ -559,5 +470,60 @@ namespace SalveminiApp.ArgoPages
                 return "tutti gli argomenti";
         }
 
+        void Second_PoUp(object sender, EventArgs e)
+        {
+            var secondPopUp = new Helpers.PopOvers().defaultPopOver;
+            secondPopUp.Content = new Xamarin.Forms.Label { Text = "Clicca per ordinare" + Environment.NewLine + "dai più vecchi ai più nuovi" + Environment.NewLine + "e viceversa", TextColor = Color.White, HorizontalTextAlignment = TextAlignment.Center };
+            secondPopUp.IsVisible = true;
+            secondPopUp.PointerDirection = PointerDirection.Up;
+            secondPopUp.PreferredPointerDirection = PointerDirection.Up;
+            secondPopUp.Target = sortBtn;
+            if (type == "compiti")
+                secondPopUp.BackgroundColor = Color.FromHex("#00D10D");
+            else
+                secondPopUp.BackgroundColor = Color.FromHex("FFC400"); secondPopUp.Disappearing += Third_PoUp;
+        }
+
+        void Third_PoUp(object sender, EventArgs e)
+        {
+            var thirdPopUp = new Helpers.PopOvers().defaultPopOver;
+            thirdPopUp.Content = new Xamarin.Forms.Label { Text = "Clicca per filtrare" + Environment.NewLine + "per materia", TextColor = Color.White, HorizontalTextAlignment = TextAlignment.Center };
+            thirdPopUp.IsVisible = true;
+            thirdPopUp.PointerDirection = PointerDirection.Up;
+            thirdPopUp.PreferredPointerDirection = PointerDirection.Up;
+            thirdPopUp.Target = filterBtn;
+            if (type == "compiti")
+                thirdPopUp.BackgroundColor = Color.FromHex("#00D10D");
+            else
+                thirdPopUp.BackgroundColor = Color.FromHex("FFC400");
+
+            //Change this to false before release 
+            if (type == "compiti")
+                Preferences.Set("firstTimeCompiti", true);
+            else
+                Preferences.Set("firstTimeArgomenti", true);
+        }
+
+        //Close modal
+        void Close_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PopModalAsync();
+        }
+
+        //Reset all values on page closing
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+
+            //Reset values
+            if (type == "compiti")
+                clockLabel.Text = "Assegnati oggi";
+            else
+                clockLabel.Text = "Spiegati oggi";
+            filtersLbl.Text = "Dal più recente";
+
+            showingAll = false;
+            reversed = false;
+        }
     }
 }

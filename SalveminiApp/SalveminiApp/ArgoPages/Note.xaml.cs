@@ -36,9 +36,10 @@ namespace SalveminiApp.ArgoPages
             buttonFrame.CornerRadius = (float)(App.ScreenWidth / 6) / 2;
 
             //Load Cache
-            if (Barrel.Current.Exists("Note"))
+            var cachedNote = CacheHelper.GetCache<List<RestApi.Models.Note>>("Note");
+            if (cachedNote != null)
             {
-                Notes = Barrel.Current.Get<List<RestApi.Models.Note>>("Note");
+                Notes = cachedNote;
                 noteList.ItemsSource = Notes;
                 emptyLayout.IsVisible = Notes.Count <= 0;
             }
@@ -47,43 +48,47 @@ namespace SalveminiApp.ArgoPages
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            var notificator = DependencyService.Get<IToastNotificator>();
-            //Start loading
+
+            //Show loading
             noteList.IsRefreshing = true;
 
-            //Api Call
+            //Check connection status
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                var response = await App.Argo.GetNote();
-
-                if (!string.IsNullOrEmpty(response.Message))
+                try
                 {
-                    var options = new NotificationOptions()
+                    //Download note from api
+                    var response = await App.Argo.GetNote();
+
+                    //Detect if call returned a message of error
+                    if (!string.IsNullOrEmpty(response.Message))
                     {
-                        Description = response.Message
-                    };
+                        //Error occourred, notify the user
+                        Costants.showToast(response.Message);
+                        //Stop loading list
+                        noteList.IsRefreshing = false;
+                        return;
+                    }
 
-                    var result = await notificator.Notify(options);
-                }
-                else
-                {
+                    //Deserialize object
                     Notes = response.Data as List<RestApi.Models.Note>;
+
+                    //Fill List
+                    noteList.ItemsSource = Notes;
+                    emptyLayout.IsVisible = Notes.Count <= 0;
+
                 }
-                //Fill List
-                noteList.ItemsSource = Notes;
-                emptyLayout.IsVisible = Notes.Count <= 0;
-
-            }
-            else
-            {
-                var options = new NotificationOptions()
+                catch //Random error
                 {
-                    Description = "Nessuna connessione ad internet 🚀",
-                };
-
-                var result = await notificator.Notify(options);
+                    Costants.showToast("Non è stato possibile aggiornare le note");
+                }
+            }
+            else //No connection
+            {
+                Costants.showToast("connection");
             }
 
+            //Stop loading list
             noteList.IsRefreshing = false;
         }
 

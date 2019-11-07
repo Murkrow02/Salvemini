@@ -48,7 +48,7 @@
                                                 </StackLayout>
                                                 <StackLayout Orientation="Horizontal">
                                                     <Label FontSize="12" HorizontalOptions="Start" Text="{Binding Data}" TextColor="{x:Static local:Styles.TextGray}" />
-                                                    <Label FontSize="12" HorizontalOptions="EndAndExpand" Text="{Binding docente}" TextColor="{x:Static local:Styles.TextGray}" />
+                                                    <Label FontSize="12" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" Text="{Binding docente}" TextColor="{x:Static local:Styles.TextGray}" />
                                                 </StackLayout>
                                             </StackLayout>
                                             <Label Text="{Binding desMateria}" HeightRequest="0" VerticalOptions="Start" />

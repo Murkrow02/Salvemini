@@ -10,6 +10,9 @@
                     <ffimageloading:CachedImage.Transformations>
                         <fftransformations:CircleTransformation />
                     </ffimageloading:CachedImage.Transformations>
+                    <ffimageloading:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="changePic"/>
+                    </ffimageloading:CachedImage.GestureRecognizers>
                 </ffimageloading:CachedImage>
                 <!--Nome-->
                 <patch:Label  x:Name="nameLbl" FontSize="Title" TextColor="{x:Static local:Styles.TextColor}" Lines="1" AutoFit="Width" HorizontalTextAlignment="Center" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />

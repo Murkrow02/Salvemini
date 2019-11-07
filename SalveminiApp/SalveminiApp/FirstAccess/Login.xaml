@@ -75,8 +75,8 @@
             <StackLayout VerticalOptions="CenterAndExpand">
 
                 <!--Continua-->
-                <StackLayout Spacing="0" Padding="40,0"
-                             VerticalOptions="Start" Orientation="Horizontal">
+                <StackLayout Spacing="10" Padding="40,0"
+                             VerticalOptions="Start" Orientation="Vertical">
                     
                     <Button x:Name="confirmButton"
                             Clicked="Continue_Clicked"
@@ -93,7 +93,7 @@
                                        VerticalOptions="CenterAndExpand"
                                        Color="{x:Static local:Styles.PrimaryColor}"
                                        IsRunning="False"
-                                       HorizontalOptions="EndAndExpand"
+                                       HorizontalOptions="CenterAndExpand"
                                        IsVisible="false" />
                 </StackLayout>
 

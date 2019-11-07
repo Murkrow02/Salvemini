@@ -43,10 +43,10 @@ namespace SalveminiApp.ArgoPages
                 try
                 {
                     widgetsLayout.Children.Clear();
-                    Oggi = Barrel.Current.Get<RestApi.Models.WholeModel>("Oggi" + date);
-                    gotByCache = true;
+                    Oggi = CacheHelper.GetCache<RestApi.Models.WholeModel>("Oggi" + date);
                     if (Oggi != null)
                     {
+                        gotByCache = true;
                         var data = Convert.ToDateTime(date);
                         callSetLayout(data.Day == DateTime.Today.Day && data.Month == DateTime.Today.Month && data.Year == DateTime.Today.Year);
                         

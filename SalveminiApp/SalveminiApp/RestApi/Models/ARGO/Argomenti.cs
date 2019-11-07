@@ -43,6 +43,7 @@ namespace SalveminiApp.RestApi.Models
             }
         }
 
+
         public bool SeparatorVisibility { get; set; } = true;
         public Thickness CellPadding { get; set; } = new Thickness(10);
     }

@@ -35,9 +35,10 @@ namespace SalveminiApp.ArgoPages
             buttonFrame.CornerRadius = (float)(App.ScreenWidth / 6) / 2;
 
             //Load Cache
-            if (Barrel.Current.Exists("Promemoria"))
+            var cachedPromemoria = CacheHelper.GetCache<List<RestApi.Models.Promemoria>>("Promemoria");
+            if (cachedPromemoria != null)
             {
-                Promemorias = Barrel.Current.Get<List<RestApi.Models.Promemoria>>("Promemoria");
+                Promemorias = cachedPromemoria;
                 promemoriaList.ItemsSource = Promemorias;
                 emptyLayout.IsVisible = Promemorias.Count <= 0;
             }
@@ -48,47 +49,50 @@ namespace SalveminiApp.ArgoPages
         {
             base.OnAppearing();
 
-            var notificator = DependencyService.Get<IToastNotificator>();
-
             //Start loading
             promemoriaList.IsRefreshing = true;
 
-            //Api Call
+            //Check connection status
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                var datas = await App.Argo.GetPromemoria();
+                try
+                {
+                    //Download promemoria from api
+                    var response = await App.Argo.GetPromemoria();
 
-                if (string.IsNullOrEmpty(datas.Message))
-                {
-                    Promemorias = datas.Data as List<RestApi.Models.Promemoria>;
-                }
-                else
-                {
-                    var options = new NotificationOptions()
+                    //Detect if call returned a message of error
+                    if (!string.IsNullOrEmpty(response.Message))
                     {
-                        Description = datas.Message
-                    };
+                        //Error occourred, notify the user
+                        Costants.showToast(response.Message);
+                        //Stop loading list
+                        promemoriaList.IsRefreshing = false;
+                        return;
+                    }
 
-                    var result = await notificator.Notify(options);
+                    //Deserialize object
+                    Promemorias = response.Data as List<RestApi.Models.Promemoria>;
+
+                    //Fill promemoria list
+                    promemoriaList.ItemsSource = Promemorias;
+                    emptyLayout.IsVisible = Promemorias.Count <= 0;
                 }
-
-                //Fill List
-                promemoriaList.ItemsSource = Promemorias;
-                emptyLayout.IsVisible = Promemorias.Count <= 0;
-                promemoriaList.IsRefreshing = false;
-
-            }
-            else
-            {
-                var options = new NotificationOptions()
+                catch //Random error
                 {
-                    Description = "Nessuna connessione ad internet 🚀",
-                };
-
-                var result = await notificator.Notify(options);
+                    Costants.showToast("Non è stato possibile aggiornare i promemoria");
+                }
+            }
+            else //No connection
+            {
+                Costants.showToast("connection");
             }
 
+            //Stop loading list
+            promemoriaList.IsRefreshing = false;
         }
+
+
+
 
         void Close_Clicked(object sender, System.EventArgs e)
         {

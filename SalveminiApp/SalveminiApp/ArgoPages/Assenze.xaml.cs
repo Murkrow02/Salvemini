@@ -38,9 +38,10 @@ namespace SalveminiApp.ArgoPages
             infoImage.WidthRequest = App.ScreenWidth / 13;
 
             //Load Cache
-            if (Barrel.Current.Exists("Assenze"))
+            var cachedAssenze = CacheHelper.GetCache<List<RestApi.Models.Assenza>>("Assenze");
+            if (cachedAssenze != null)
             {
-                Assenzes = Barrel.Current.Get<List<RestApi.Models.Assenza>>("Assenze");
+                Assenzes = cachedAssenze;
                 assenzeList.ItemsSource = Assenzes;
                 emptyLayout.IsVisible = Assenzes.Count <= 0;
                 loadInfo();
@@ -52,7 +53,53 @@ namespace SalveminiApp.ArgoPages
                OnAppearing();
            });
         }
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
 
+            //Show loading
+            assenzeList.IsRefreshing = true;
+
+            //Check connection status
+            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+            {
+                try
+                {
+                    //Get assenze from api
+                    var response = await App.Argo.GetAssenze();
+
+                    //Detect if call returned a message of error
+                    if (!string.IsNullOrEmpty(response.Message))
+                    {
+                        //Error occourred, notify the user
+                        Costants.showToast(response.Message);
+                        //Stop loading list
+                        assenzeList.IsRefreshing = false;
+                        return;
+                    }
+
+                    Assenzes = response.Data as List<RestApi.Models.Assenza>;
+
+                    //Fill assnze list
+                    assenzeList.ItemsSource = Assenzes;
+                    emptyLayout.IsVisible = Assenzes.Count <= 0;
+                    loadInfo();
+                }
+                catch //Random error
+                {
+                    Costants.showToast("Non è stato possibile aggiornare le assenze");
+                }
+            }
+            else //No connection
+            {
+                Costants.showToast("connection");
+            }
+
+            //Stop loading list
+            assenzeList.IsRefreshing = false;
+        }
+
+        //Show bottom label with assenze ritardi e uscite count
         void loadInfo()
         {
             //Load Counters
@@ -64,50 +111,6 @@ namespace SalveminiApp.ArgoPages
             usciteLabel.Text = usciteCount == 1 ? usciteCount.ToString() + " Uscita" : usciteCount.ToString() + " Uscite";
         }
 
-        protected async override void OnAppearing()
-        {
-            base.OnAppearing();
-            var notificator = DependencyService.Get<IToastNotificator>();
-            //Start loading
-            assenzeList.IsRefreshing = true;
-
-            //Api Call
-            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
-            {
-                var response = await App.Argo.GetAssenze();
-
-                if (!string.IsNullOrEmpty(response.Message))
-                {
-                    var options = new NotificationOptions()
-                    {
-                        Description = response.Message
-                    };
-
-                    var result = await notificator.Notify(options);
-                }
-                else
-                {
-                    Assenzes = response.Data as List<RestApi.Models.Assenza>;
-                }
-                //Fill List
-                assenzeList.ItemsSource = Assenzes;
-                emptyLayout.IsVisible = Assenzes.Count <= 0;
-
-            }
-            else
-            {
-                var options = new NotificationOptions()
-                {
-                    Description = "Nessuna connessione ad internet 🚀",
-                };
-
-                var result = await notificator.Notify(options);
-            }
-
-            //Fill Infos
-            loadInfo();
-            assenzeList.IsRefreshing = false;
-        }
 
         void Assenza_Selected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
@@ -123,6 +126,7 @@ namespace SalveminiApp.ArgoPages
             }
         }
 
+        //Show popup with legenda
         void Info_Tapped(object sender, System.EventArgs e)
         {
             var infoLayout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Orientation = StackOrientation.Vertical, Spacing = 10 };

@@ -14,6 +14,7 @@ using UserNotifications;
 using Plugin.Toasts;
 using Xamarin.Forms;
 using PanCardView.iOS;
+using System.Threading.Tasks;
 
 namespace SalveminiApp.iOS
 {
@@ -147,6 +148,15 @@ namespace SalveminiApp.iOS
             //}
             //var segue = OrderHistoryTableViewController.SegueIdentifiers.SoupMenu;
             //orderHistoryViewController.PerformSegue(segue, null);
+        }
+
+        public static async void hapticVibration()
+        {
+            var impact = new UIImpactFeedbackGenerator(UIImpactFeedbackStyle.Medium);
+            impact.Prepare();
+            impact.ImpactOccurred();
+            await Task.Delay(200);
+            impact.ImpactOccurred();
         }
     }
 }

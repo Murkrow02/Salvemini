@@ -943,10 +943,10 @@ namespace BigTed2
 
 				
 
-				hudHeight += stringHeight;
+				hudHeight += stringHeight / 1.1f;
 
 				if (stringWidth > hudWidth)
-					hudWidth = (float)Math.Ceiling (stringWidth / 2) * 3;
+					hudWidth = (float)Math.Ceiling (stringWidth / 2) * 3.5f;
 				
 				float labelRectY = imageUsed ? 66 : 9;
 				

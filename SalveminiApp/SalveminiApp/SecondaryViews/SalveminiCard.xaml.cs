@@ -26,11 +26,11 @@ namespace SalveminiApp.SecondaryViews
             UIApplication.SharedApplication.StatusBarHidden = true;
 #endif
 
-            if (Barrel.Current.Exists("cardofferte"))
-            {
-                offerte = Barrel.Current.Get<List<RestApi.Models.Offerte>>("cardofferte");
+            //Get cached offerte
+            offerte = CacheHelper.GetCache<List<RestApi.Models.Offerte>>("cardofferte");
+            if (offerte != null)
                 offersList.ItemsSource = offerte;
-            }
+
         }
 
         protected override async void OnAppearing()
@@ -55,7 +55,7 @@ namespace SalveminiApp.SecondaryViews
             }
             else
             {
-                //Notify no internet
+                Costants.showToast("connection");
             }
 
         }
@@ -76,6 +76,7 @@ namespace SalveminiApp.SecondaryViews
 
         }
 
+        //Open alert on offer selcted
         async void offerSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null)

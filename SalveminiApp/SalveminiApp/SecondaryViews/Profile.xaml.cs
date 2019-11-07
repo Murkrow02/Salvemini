@@ -27,9 +27,10 @@ namespace SalveminiApp.SecondaryViews
 
 
             //Get cache
-            if (Barrel.Current.Exists("utenteLoggato"))
+            var cachedUtente = CacheHelper.GetCache<RestApi.Models.Utente>("utenteLoggato");
+            if (cachedUtente != null)
             {
-                utente = Barrel.Current.Get<RestApi.Models.Utente>("utenteLoggato");
+                utente = cachedUtente;
                 nameLbl.Text = utente.nomeCognome;
                 classLbl.Text = utente.classeCorso;
                 userImg.Source = utente.Immagine;
@@ -95,47 +96,7 @@ namespace SalveminiApp.SecondaryViews
 
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-        {
-            try
-            {
-                //Get push page from model
-                var cell = sender as Helpers.PushCell;
-
-                //Mail
-                if (cell.Title == "Mail")
-                {
-                    try
-                    {
-                        Device.OpenUri(new Uri("mailto:support@codexdevelopment.net"));
-                    }
-                    catch
-                    {
-                        DisplayAlert("Errore", "Non è possiile inviare e-mail da questo dispositivo, in alternativa puoi scrivere a questo indirizzo: support@codexdevelopment.net", "Ok");
-                    }
-                    return;
-                }
-
-                //Profile image
-                if (cell.Title == "Immagine di profilo")
-                {
-                    changePic();
-                }
-
-                //Push to selected page
-                if (cell.Push != null)
-                {
-                    //Other
-                    shouldClose = false;
-                    Navigation.PushAsync(cell.Push); //Push
-                }
-            }
-            catch (Exception ex)
-            {
-                //Page not set or some random error, sticazzi
-                return;
-            }
-        }
+        
 
         protected override async void OnAppearing()
         {
@@ -143,50 +104,63 @@ namespace SalveminiApp.SecondaryViews
 
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                //Get current user
-                var user = await App.Utenti.GetUtente(Preferences.Get("UserId", 0));
-                if (user != null)
+                try
                 {
-                    //Display user details
-                    utente = user;
-                    nameLbl.Text = utente.nomeCognome;
-                    classLbl.Text = utente.classeCorso;
-                    userImg.Source = utente.Immagine;
-
-                    //Show areas according to user status
-                    switch (utente.Stato)
+                    //Get current user
+                    var user = await App.Utenti.GetUtente(Preferences.Get("UserId", 0));
+                    if (user != null)
                     {
-                        case 1: //Rappresentante
-                            rapprLayout.IsEnabled = true;
-                            rapprLayout.Opacity = 1;
-                            break;
-                        case 2: //Vip
-                            rapprLayout.IsEnabled = true;
-                            rapprLayout.Opacity = 1;
-                            vipLayout.IsEnabled = true;
-                            vipLayout.Opacity = 1;
-                            break;
-                        case 3: //Super vip
-                            rapprLayout.IsEnabled = true;
-                            rapprLayout.Opacity = 1;
-                            vipLayout.IsEnabled = true;
-                            vipLayout.Opacity = 1;
-                            superVip.IsVisible = true;
-                            break;
+                        //Display user details
+                        utente = user;
+                        nameLbl.Text = utente.nomeCognome;
+                        classLbl.Text = utente.classeCorso;
+                        userImg.Source = utente.Immagine;
+
+                        //Show areas according to user status
+                        switch (utente.Stato)
+                        {
+                            case 1: //Rappresentante
+                                rapprLayout.IsEnabled = true;
+                                rapprLayout.Opacity = 1;
+                                break;
+                            case 2: //Vip
+                                rapprLayout.IsEnabled = true;
+                                rapprLayout.Opacity = 1;
+                                vipLayout.IsEnabled = true;
+                                vipLayout.Opacity = 1;
+                                break;
+                            case 3: //Super vip
+                                rapprLayout.IsEnabled = true;
+                                rapprLayout.Opacity = 1;
+                                vipLayout.IsEnabled = true;
+                                vipLayout.Opacity = 1;
+                                superVip.IsVisible = true;
+                                break;
+                            default: //Hide everything
+                                rapprLayout.IsEnabled = false;
+                                rapprLayout.Opacity = 0.6;
+                                vipLayout.IsEnabled = false;
+                                vipLayout.Opacity = 0.6;
+                                superVip.IsVisible = false;
+                                break;
+                        }
+
+                        //Save cache
+                        Barrel.Current.Add("utenteLoggato", user, TimeSpan.FromDays(10));
                     }
-
-
-                    //Save cache
-                    Barrel.Current.Add("utenteLoggato", user, TimeSpan.FromDays(10));
+                    else //No user returned
+                    {
+                        Costants.showToast("Non è stato possibile recuperare il tuo profilo");
+                    }
                 }
-                else
+                catch //Error
                 {
-                    //todo handle error
+                    Costants.showToast("Non è stato possibile recuperare il tuo profilo");
                 }
             }
-            else
+            else //No connection
             {
-                //todo handle no connection
+                Costants.showToast("connection");
             }
 
         }
@@ -211,7 +185,7 @@ namespace SalveminiApp.SecondaryViews
             Navigation.PushAsync(new CambiaPassword());
         }
 
-        private async void changePic()
+        private async void changePic(object sender, EventArgs e)
         {
             var decision = await DisplayActionSheet("Come vuoi procedere", "Annulla", "Rimuovi immagine", "Scegli una foto", "Scatta una foto");
 
@@ -313,6 +287,49 @@ namespace SalveminiApp.SecondaryViews
 
             //Remove cached home profile pic
             MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "ReloadUserPic");
+        }
+
+        //Handle cell tapped
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            try
+            {
+                //Get push page from model
+                var cell = sender as Helpers.PushCell;
+
+                //Mail
+                if (cell.Title == "Mail")
+                {
+                    try
+                    {
+                        Device.OpenUri(new Uri("mailto:support@codexdevelopment.net"));
+                    }
+                    catch
+                    {
+                        DisplayAlert("Errore", "Non è possiile inviare e-mail da questo dispositivo, in alternativa puoi scrivere a questo indirizzo: support@codexdevelopment.net", "Ok");
+                    }
+                    return;
+                }
+
+                //Profile image
+                if (cell.Title == "Immagine di profilo")
+                {
+                    changePic(null,null);
+                }
+
+                //Push to selected page
+                if (cell.Push != null)
+                {
+                    //Other
+                    shouldClose = false;
+                    Navigation.PushAsync(cell.Push); //Push
+                }
+            }
+            catch (Exception ex)
+            {
+                //Page not set or some random error, sticazzi
+                return;
+            }
         }
     }
 }

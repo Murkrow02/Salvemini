@@ -14,12 +14,12 @@ namespace SalveminiApp.ArgoPages
     public partial class Bacheca : ContentPage
     {
         public List<RestApi.Models.Bacheca> Bacheche = new List<RestApi.Models.Bacheca>();
-        IToastNotificator notificator = DependencyService.Get<IToastNotificator>();
 
         public Bacheca()
         {
             InitializeComponent();
 
+            //Hide large titles (useless)
 #if __IOS__
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
             UIApplication.SharedApplication.StatusBarHidden = true;
@@ -34,18 +34,22 @@ namespace SalveminiApp.ArgoPages
             buttonFrame.CornerRadius = (float)(App.ScreenWidth / 6) / 2;
 
             //Load Cache
-            if (Barrel.Current.Exists("Bacheca"))
+            var cachedBacheca = CacheHelper.GetCache<List<RestApi.Models.Bacheca>>("Bacheca");
+            if (cachedBacheca != null)
             {
-                Bacheche = Barrel.Current.Get<List<RestApi.Models.Bacheca>>("Bacheca");
+                Bacheche = cachedBacheca;
                 bachecaList.ItemsSource = Bacheche;
                 emptyLayout.IsVisible = Bacheche.Count <= 0;
             }
         }
 
+        //Show avviso selected
         private async void Bacheca_Selected(object sender, SelectedItemChangedEventArgs e)
         {
+            //Get selected item
             var data = e.SelectedItem as RestApi.Models.Bacheca;
 
+            //Check internet connection
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
                 if (!data.presaVisione)
@@ -53,14 +57,9 @@ namespace SalveminiApp.ArgoPages
                     var success = await App.Argo.VisualizzaBacheca(new RestApi.Models.VisualizzaBacheca { presaVisione = true, prgMessaggio = data.prgMessaggio });
                 }
             }
-            else
+            else //No connection
             {
-                var options = new NotificationOptions
-                {
-                    Description = "Nessuna connessione ad internet 🚀",
-                };
-
-                var result = await notificator.Notify(options);
+                Costants.showToast("connection");
             }
 
             //Create page with webview
@@ -111,41 +110,42 @@ namespace SalveminiApp.ArgoPages
             //Start loading
             bachecaList.IsRefreshing = true;
 
-            //Api Call
+            //Check connection
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                var datas = await App.Argo.GetBacheca();
+                try
+                {
+                    //Download bacheca from api
+                    var datas = await App.Argo.GetBacheca();
 
-                if (string.IsNullOrEmpty(datas.Message))
-                {
-                    Bacheche = datas.Data as List<RestApi.Models.Bacheca>;
-                }
-                else
-                {
-                    var options = new NotificationOptions()
+                    //Detect if call returned a message of error
+                    if (!string.IsNullOrEmpty(datas.Message))
                     {
-                        Description = datas.Message
-                    };
+                        //Error occourred, notify the user
+                        Costants.showToast(datas.Message);
+                        //Stop loading list
+                        bachecaList.IsRefreshing = false;
+                        return;
+                    }
 
-                    var result = await notificator.Notify(options);
+                    //Deserialize new object
+                    Bacheche = datas.Data as List<RestApi.Models.Bacheca>;
+
+                    //Fill List
+                    bachecaList.ItemsSource = Bacheche;
+                    emptyLayout.IsVisible = Bacheche.Count <= 0;
+                    bachecaList.IsRefreshing = false;
                 }
-
-                //Fill List
-                bachecaList.ItemsSource = Bacheche;
-                emptyLayout.IsVisible = Bacheche.Count <= 0;
-                bachecaList.IsRefreshing = false;
-
-            }
-            else
-            {
-                var options = new NotificationOptions()
+                catch //Random error
                 {
-                    Description = "Nessuna connessione ad internet 🚀",
-                };
-
-                var result = await notificator.Notify(options);
+                    Costants.showToast("Non è stato possibile aggiornare la bacheca");
+                }
             }
-
+            else //No connection
+            {
+                Costants.showToast("connection");
+            }
+            bachecaList.IsRefreshing = false;
         }
 
         void Close_Clicked(object sender, System.EventArgs e)

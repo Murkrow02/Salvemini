@@ -12,6 +12,80 @@ namespace SalveminiApp
     {
         public List<RestApi.Models.Pentagono> Medie = new List<RestApi.Models.Pentagono>();
 
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            
+            //Check internet status
+            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+            {
+                try
+                {
+                    //Get values from pentagono api
+                    var dates = await App.Argo.GetPentagono();
+
+                    //Detect if call returned a message of error
+                    if (!string.IsNullOrEmpty(dates.Message))
+                    {
+                        //Error occourred, notify the user
+                        Costants.showToast(dates.Message);
+                        return;
+                    }
+
+                    //Get new medie
+                    var newMedie = dates.Data as List<RestApi.Models.Pentagono>;
+
+                    //If new medie are different from cache update them
+                    if (newMedie != Medie)
+                    {
+                        //Fill medie list
+                        Medie = newMedie;
+                        showChart();
+                    }
+                }
+                catch //Random error
+                {
+                    Costants.showToast("Non è stato possibile aggiornare il tuo grafico");
+                }
+            }
+            else //No internet
+            {
+                //Costants.showToast("connection");
+            }
+        }
+
+        //Push from widget to argo page
+        void Widget_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync((sender as ArgoWidget).Push);
+        }
+
+        //Fix chart label too long
+        private void Chart_LabelCreated(object sender, ChartAxisLabelEventArgs e)
+        {
+            if (e.LabelContent.Length > 8 )
+            {
+                e.LabelContent = e.LabelContent.Remove(8);
+            }
+        }
+
+        //Shows the chart if abbastanza materie
+        public void showChart()
+        {
+            if (Medie.Count >= 3)
+            {
+                chart.IsVisible = true;
+                noSubjectsLayout.IsVisible = false;
+                radarChart.ItemsSource = Medie;
+            }
+            else
+            {
+                //Non abbastanza :(
+                chart.IsVisible = false;
+                noSubjectsLayout.IsVisible = true;
+            }
+        }
+
         public ArgoPage()
         {
             InitializeComponent();
@@ -28,9 +102,10 @@ namespace SalveminiApp
 #endif
 
             //Cache Grafico
-            if (Barrel.Current.Exists("Medie"))
+            var cachedMedie = CacheHelper.GetCache<List<RestApi.Models.Pentagono>>("Medie");
+            if (cachedMedie != null)
             {
-                Medie = Barrel.Current.Get<List<RestApi.Models.Pentagono>>("Medie");
+                Medie = cachedMedie;
                 radarChart.ItemsSource = Medie;
             }
 
@@ -47,7 +122,7 @@ namespace SalveminiApp
             voti.GestureRecognizers.Add(gestureRecognizer);
             var promemoria = new ArgoWidget { Title = "Promemoria", Icon = "Promemoria.svg", StartColor = "F86095", EndColor = "FF6073", Push = new ArgoPages.Promemoria() };
             promemoria.GestureRecognizers.Add(gestureRecognizer);
-            var bacheca = new ArgoWidget { Title = "Bacheca", Icon = "Promemoria.svg", StartColor = "F86095", EndColor = "FF6073", Push = new ArgoPages.Bacheca() };
+            var bacheca = new ArgoWidget { Title = "Bacheca", Icon = "Bacheca.svg", StartColor = "03F829", EndColor = "20B4C7", Push = new ArgoPages.Bacheca() };
             bacheca.GestureRecognizers.Add(gestureRecognizer);
             var scrutinio = new ArgoWidget { Title = "Scrutinio", Icon = "VotiScru.svg", StartColor = "A940F5", EndColor = "6E9BFF", Push = new ArgoPages.VotiScrutinio() };
             scrutinio.GestureRecognizers.Add(gestureRecognizer);
@@ -55,7 +130,7 @@ namespace SalveminiApp
             compiti.GestureRecognizers.Add(gestureRecognizer);
             var argomenti = new ArgoWidget { Title = "Argomenti", Icon = "Argomenti.svg", StartColor = "FF7272", EndColor = "FACA6F", Push = new ArgoPages.CompitiArgomenti("argomenti") };
             argomenti.GestureRecognizers.Add(gestureRecognizer);
-            var note = new ArgoWidget { Title = "Note", Icon = "Assenze.svg", StartColor = "FF7272", EndColor = "FACA6F", Push = new ArgoPages.Note() };
+            var note = new ArgoWidget { Title = "Note", Icon = "NoteDisciplinari.svg", StartColor = "F86095", EndColor = "FF6073", Push = new ArgoPages.Note() };
             note.GestureRecognizers.Add(gestureRecognizer);
             firstRowWidgets.Children.Clear();
             firstRowWidgets.Children.Add(new ContentView { WidthRequest = -30 });
@@ -65,52 +140,6 @@ namespace SalveminiApp
             secondRowWidgets.Children.Add(new ContentView { WidthRequest = -30 });
             secondRowWidgets.Children.AddRange(new List<ArgoWidget> { scrutinio, compiti, argomenti, note });
             secondRowWidgets.Children.Add(new ContentView { WidthRequest = 0 });
-        }
-
-        protected async override void OnAppearing()
-        {
-            base.OnAppearing();
-            
-
-            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
-            {
-                var dates = await App.Argo.GetPentagono();
-
-                if (!string.IsNullOrEmpty(dates.Message))
-                {
-
-                }
-                else
-                {
-                    Medie = dates.Data as List<RestApi.Models.Pentagono>;
-                   // foreach(var a in Medie) { a.Materia = "Dmax"; }
-                }
-
-                if (Medie.Count >= 3)
-                {
-                    chart.IsVisible = true;
-                    noSubjectsLayout.IsVisible = false;
-                    radarChart.ItemsSource = Medie;
-                }
-                else
-                {
-                    chart.IsVisible = false;
-                    noSubjectsLayout.IsVisible = true;
-                }
-            }
-        }
-
-        void Widget_Tapped(object sender, EventArgs e)
-        {
-            Navigation.PushModalAsync((sender as ArgoWidget).Push);
-        }
-
-        private void Chart_LabelCreated(object sender, ChartAxisLabelEventArgs e)
-        {
-            if (e.LabelContent.Length > 8 )
-            {
-                e.LabelContent = e.LabelContent.Remove(8);
-            }
         }
     }
 }

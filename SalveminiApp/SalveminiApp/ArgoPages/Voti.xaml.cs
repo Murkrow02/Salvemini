@@ -13,6 +13,7 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using MonkeyCache.SQLite;
+using System.Globalization;
 
 namespace SalveminiApp.ArgoPages
 {
@@ -41,61 +42,61 @@ namespace SalveminiApp.ArgoPages
             buttonFrame.HeightRequest = App.ScreenWidth / 6;
             buttonFrame.CornerRadius = (float)(App.ScreenWidth / 6) / 2;
 
-            if (Barrel.Current.Exists("Voti"))
-            {
-                try
-                {
-                    GroupedVoti = Barrel.Current.Get<ObservableCollection<RestApi.Models.GroupedVoti>>("Voti");
-                    votiList.ItemsSource = GroupedVoti;
-                }
-                catch (Exception ex)
-                {
-                    Barrel.Current.Empty("Voti");
-                }
-                
-            }
+            //Get cache
+            var cachedVoti = CacheHelper.GetCache<ObservableCollection<RestApi.Models.GroupedVoti>>("Voti");
+            if (cachedVoti != null)
+                votiList.ItemsSource = GroupedVoti;
 
-
+            //Subscribe to messaging center
             MessagingCenter.Subscribe<App, double>(this, "TotalMediaChanged", (sender, arg) =>
             {
-                fullMediaLabel.Text = string.Format("{0:0.00}", arg);
+                fullMediaLabel.Text = "Media totale: " + string.Format("{0:0.00}", arg);
             });
         }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            var notificator = DependencyService.Get<IToastNotificator>();
 
+            votiList.IsRefreshing = true;
+
+            //Check internet connection
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                var response = await App.Argo.GetVoti();
-
-                if (!string.IsNullOrEmpty(response.Message))
+                try
                 {
-                    var options = new NotificationOptions()
+                    //Download voti from api
+                    var response = await App.Argo.GetVoti();
+
+                    //Detect if call returned a message of error
+                    if (!string.IsNullOrEmpty(response.Message))
                     {
-                        Description = response.Message
-                    };
+                        //Error occourred, notify the user
+                        Costants.showToast(response.Message);
+                        //Stop loading list
+                        votiList.IsRefreshing = false;
+                        return;
+                    }
 
-                    var result = await notificator.Notify(options);
-                }
-                else
-                {
+                    //Deserialize object
                     GroupedVoti = response.Data as ObservableCollection<RestApi.Models.GroupedVoti>;
+
+                    //Update list
                     votiList.ItemsSource = GroupedVoti;
+
+                    //Calculate media
                     RestApi.Models.GroupedVoti.calcTotalMedia();
                 }
-            }
-            else
-            {
-                var options = new NotificationOptions()
+                catch
                 {
-                    Description = "Nessuna connessione ad internet 🚀",
-                };
-
-                var result = await notificator.Notify(options);
+                    Costants.showToast("Si è verificato un errore");
+                }
             }
+            else //No connection
+            {
+                Costants.showToast("connection");
+            }
+            votiList.IsRefreshing = false;
         }
 
         void NonFaMedia_Clicked(object sender, System.EventArgs e)
@@ -145,7 +146,18 @@ namespace SalveminiApp.ArgoPages
             var materia = ((chartButton.Parent as Xamarin.Forms.StackLayout).Children[0] as Xamarin.Forms.Label).FormattedText.Spans[0].Text;
 
             //Get the marks to display in the chart
-            var source = GroupedVoti.FirstOrDefault(x => x.Materia == materia).Voti;
+            var source = new List<RestApi.Models.Voti>();
+            try
+            {
+                source = GroupedVoti.FirstOrDefault(x => x.Materia == materia).Voti.OrderBy(x => DateTime.ParseExact(x.datGiorno, "yyyy-MM-dd", CultureInfo.InvariantCulture)).ToList();
+            }
+            catch
+            {
+                source = GroupedVoti.FirstOrDefault(x => x.Materia == materia).Voti.ToList(); //Failed to order in chronological
+            }
+
+            //Create popover layout
+            var layout = new Xamarin.Forms.StackLayout { Spacing = 0 };
 
             //Create the chart
             SfChart chart = new SfChart();
@@ -179,9 +191,24 @@ namespace SalveminiApp.ArgoPages
             chart.HeightRequest = App.ScreenHeight / 5;
             chart.WidthRequest = App.ScreenWidth / 1.3;
 
+            //Add chart to layout
+            layout.Children.Add(chart);
+
+            //Add stonks label
+            if (source.Count >= 2)
+            {
+                try
+                {
+                    layout.Children.Add(new Xamarin.Forms.Label { Text = stonks(source[source.Count - 2].decValore, source[source.Count - 1].decValore), VerticalTextAlignment = TextAlignment.Center, HorizontalTextAlignment = TextAlignment.Center, TextColor = Styles.TextColor, FontSize = 15 });
+                }
+                catch
+                { //Fa niente
+                }
+            }
+
             //Display Popup
             var secondPopUp = new Helpers.PopOvers().defaultPopOver;
-            secondPopUp.Content = chart;
+            secondPopUp.Content = layout;
             secondPopUp.PointerDirection = PointerDirection.Up;
             secondPopUp.PreferredPointerDirection = PointerDirection.Up;
             secondPopUp.Target = chartButton;
@@ -194,6 +221,17 @@ namespace SalveminiApp.ArgoPages
         {
             //Close Page
             Navigation.PopModalAsync();
+        }
+
+
+        string stonks(double? primoVoto, double? secondoVoto)
+        {
+            if (secondoVoto > primoVoto)
+                return "Stonks";
+            else if (secondoVoto == primoVoto)
+                return "";
+            else
+                return "Not stonks";
         }
     }
 }

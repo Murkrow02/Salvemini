@@ -36,12 +36,6 @@ namespace SalveminiApp.RestApi
             {
                 var uri = Costants.Uri("orari/classe/" + classe);
 
-                //Get Cache if no Network Access
-                if (Connectivity.NetworkAccess != Xamarin.Essentials.NetworkAccess.Internet && Barrel.Current.Exists("orario" + classe))
-                {
-                    return Barrel.Current.Get<List<Models.Lezione>>("orario" + classe);
-                }
-
                 var response = await client.GetAsync(uri);
 
                 if (response.IsSuccessStatusCode)
@@ -52,13 +46,8 @@ namespace SalveminiApp.RestApi
                     //Save Cache
                     Barrel.Current.Add("orario" + classe, Lezioni, TimeSpan.FromDays(90));
                 }
-                else if (response.StatusCode != System.Net.HttpStatusCode.Unauthorized)
+                else
                 {
-                    if (Barrel.Current.Exists("orario" + classe))
-                    {
-                        return Barrel.Current.Get<List<Models.Lezione>>("orario" + classe);
-                    }
-
                     //Failed
                     return null;
                 }

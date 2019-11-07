@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using Com.OneSignal;
+using Com.OneSignal.Abstractions;
 using DLToolkit.Forms.Controls;
 using MonkeyCache.SQLite;
+using Plugin.Toasts;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -43,10 +47,17 @@ namespace SalveminiApp
             //Cache Folder
             Barrel.ApplicationId = "com.codex.salveminiapp";
 
+            //Fix if upgraded from salveminiapp 2.0
+            if (Preferences.Get("veryFirstTime", true)) { Preferences.Set("isFirstTime", true); Preferences.Set("veryFirstTime", false); }
+
             //Set MainPage
             if (Preferences.Get("isFirstTime", true))
             {
                 MainPage = new NavigationPage(new FirstAccess.WelcomePage());
+            }
+            else if (Preferences.Get("Token", "") == "" || Preferences.Get("UserId", 0) == 0)
+            {
+                MainPage = new FirstAccess.Login();
             }
             else
             {
@@ -56,13 +67,18 @@ namespace SalveminiApp
             //MainPage = new SecondaryViews.Team();
 
             //Register OneSignal License
-            OneSignal.Current.StartInit("a85553ca-c1fe-4d93-a02f-d30bf30e2a2a").EndInit();
+            OneSignal.Current.StartInit("a85553ca-c1fe-4d93-a02f-d30bf30e2a2a").InFocusDisplaying(OSInFocusDisplayOption.None)
+                .HandleNotificationReceived(HandleNotificationReceived)
+                .EndInit();
 
             //Initialize Iconize
             Plugin.Iconize.Iconize.With(new Plugin.Iconize.Fonts.FontAwesomeProBrandsModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProLightModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProRegularModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProSolidModule()).With(new Plugin.Iconize.Fonts.FontAwesomeBrandsModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProBrandsModule());
 
             //Reload Calls
             refreshCalls();
+
+            //Remove expired cache
+            Barrel.Current.EmptyExpired();
         }
 
         public static void refreshCalls()
@@ -80,6 +96,30 @@ namespace SalveminiApp
             Sondaggi = new RestApi.SondaggiManager(new RestApi.RestServiceSondaggi());
 
         }
+
+        private static async void HandleNotificationReceived(OSNotification notification)
+        {
+            try
+            {
+
+                OSNotificationPayload payload = notification.payload;
+                Dictionary<string, object> additionalData = payload.additionalData;
+                string message = payload.body;
+
+                var notificator = DependencyService.Get<IToastNotificator>();
+                var options = new NotificationOptions()
+                {
+                    Description = "Nessuna connessione ad internet 🚀",
+                };
+
+                var result = await notificator.Notify(options);
+            }
+            catch
+            {
+                Debug.WriteLine("Error handling push notification");
+            }
+        }
+
 
         protected override void OnStart()
         {

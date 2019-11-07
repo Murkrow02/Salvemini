@@ -140,7 +140,7 @@ namespace SalveminiApp.RestApi.Models
 
                 if (Barrel.Current.Exists("NoCountVoti"))
                 {
-                    var cache = Barrel.Current.Get<List<CachedVoto>>("NoCountVoti");
+                    var cache = CacheHelper.GetCache<List<CachedVoto>>("NoCountVoti");
                     cache.Add(new CachedVoto { datGiorno = arg.datGiorno, decValore = arg.decValore, desMateria = arg.desMateria });
                     Barrel.Current.Add("NoCountVoti", cache, TimeSpan.FromDays(365));
                     calculateMedia(cache, arg);
@@ -148,7 +148,7 @@ namespace SalveminiApp.RestApi.Models
                 else
                 {
                     Barrel.Current.Add("NoCountVoti", new List<CachedVoto> { new CachedVoto { datGiorno = arg.datGiorno, decValore = arg.decValore, desMateria = arg.desMateria } }, TimeSpan.FromDays(365));
-                    var cache = Barrel.Current.Get<List<CachedVoto>>("NoCountVoti");
+                    var cache = CacheHelper.GetCache<List<CachedVoto>>("NoCountVoti");
                     calculateMedia(cache, arg);
                 }
             }
@@ -158,7 +158,7 @@ namespace SalveminiApp.RestApi.Models
 
                 if (Barrel.Current.Exists("NoCountVoti"))
                 {
-                    var cache = Barrel.Current.Get<List<CachedVoto>>("NoCountVoti");
+                    var cache = CacheHelper.GetCache<List<CachedVoto>>("NoCountVoti");
                     cache.RemoveAll(x => x.datGiorno == arg.datGiorno && x.decValore == arg.decValore && x.desMateria == arg.desMateria);
                     Barrel.Current.Add("NoCountVoti", cache, TimeSpan.FromDays(365));
                     calculateMedia(cache, arg);

@@ -61,8 +61,6 @@ namespace SalveminiApp
                 return cell;
             });
 
-
-
             //Subscribe to messaging center
             //Refresh image cache
             MessagingCenter.Subscribe<App>(this, "ReloadUserPic", (sender) =>
@@ -134,13 +132,15 @@ namespace SalveminiApp
                 //Remove modals bug
                 ModalPush_Disappearing(null, null);
 
-                //Get cached orario
+                //Get classe e corso
                 classeCorso = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
-                if (Barrel.Current.Exists("orario" + classeCorso))
+
+                //Get cached orario
+                Orario = CacheHelper.GetCache<List<RestApi.Models.Lezione>>("orario" + classeCorso);
+                if (!orarioFromCached && Orario != null) //already got today from initialize component
                 {
-                    Orario = Barrel.Current.Get<List<RestApi.Models.Lezione>>("orario" + classeCorso);
-                    if (!orarioFromCached) //already got today
-                        changeDay(-1);
+                    changeDay(-1);
+                    orarioFromCached = false;
                 }
 
                 //Create static widgets
@@ -151,9 +151,14 @@ namespace SalveminiApp
                 //Registro
                 var registro = new WidgetGradient { Title = "Registro", SubTitle = lastArgoString(), Icon = "far-calendar-alt", StartColor = "FACA6F", EndColor = "FF7272", Push = new ArgoPages.Registro(), Order = 1 };
                 registro.GestureRecognizers.Add(tapGestureRecognizer);
+
                 //Trasporti
-                var trasporti = new WidgetGradient { Title = "Trasporti", SubTitle = await getNextTrain(), Icon = "fas-subway", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order = 3 };
-                trasporti.GestureRecognizers.Add(tapGestureRecognizer);
+                if (Preferences.Get("orariTreniVersion", 0) > 0) //Add this only if orario is downloaded
+                {
+                    var trasporti = new WidgetGradient { Title = "Trasporti", SubTitle = await getNextTrain(), Icon = "fas-subway", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order = 3 };
+                    trasporti.GestureRecognizers.Add(tapGestureRecognizer);
+                    widgets.Add(trasporti);
+                }
                 //Card
                 var card = new WidgetGradient { Title = "SalveminiCard", SubTitle = "Visualizza tutti i vantaggi esclusivi per gli studenti del Salvemini", Icon = "fas-credit-card", StartColor = "B487FD", EndColor = "FA6FFA", Push = new SecondaryViews.SalveminiCard(), Order = 6 };
                 card.GestureRecognizers.Add(tapGestureRecognizer);
@@ -162,20 +167,14 @@ namespace SalveminiApp
                 extra.GestureRecognizers.Add(tapGestureRecognizer);
 
                 //Initialize list with first widgets
-                widgets.Add(registro); widgets.Add(trasporti); widgets.Add(card); widgets.Add(extra);
+                widgets.Add(registro); widgets.Add(card); widgets.Add(extra);
                 //OrderWidgets(false); todo uncomment to fast load initial widgets
-
-                //Check if downloaded trains
-                if (Preferences.Get("orariTreniVersion", 0) > 0)
-                {
-                   await getNextTrain();
-                }
 
                 //Check Internet
                 if (Connectivity.NetworkAccess == NetworkAccess.Internet)
                 {
                     //Argo index in background
-                     GetArgoIndex();
+                    GetArgoIndex();
 
                     //Get updated orario
                     var _orario = await App.Orari.GetOrario(classeCorso);
@@ -213,7 +212,7 @@ namespace SalveminiApp
                     else
                     {
                         //Chiamata api fallita
-                        showToast("Non è stato possibile connettersi al server");
+                        Costants.showToast("Non è stato possibile connettersi al server");
 
                         //Anche la cache è nulla, stacca stacca
                         if (Index != null)
@@ -289,7 +288,7 @@ namespace SalveminiApp
                         if (successTreni)
                         {
                             Preferences.Set("orariTreniVersion", Index.OrariTreniVersion);
-                            getNextTrain();
+                            await getNextTrain();
                         }
                     }
 
@@ -297,7 +296,7 @@ namespace SalveminiApp
                 else
                 {
                     //Nessuna connessione
-                    showToast("Nessuna connessione rilevata");
+                    Costants.showToast("connection");
                 }
 
                 //Update widgets order
@@ -309,7 +308,7 @@ namespace SalveminiApp
             {
                 widgetLoading.IsRunning = false;
                 widgetLoading.IsVisible = false;
-                showToast("Si è verificato un errore fatale, contatta gli sviluppatori se il problema persiste");
+                Costants.showToast("Si è verificato un errore fatale, contatta gli sviluppatori se il problema persiste");
             }
         }
 
@@ -336,7 +335,6 @@ namespace SalveminiApp
 #endif
                         Navigation.PushModalAsync(widget.Push); //Modal
                     }
-
                 }
             }
             catch (Exception ex)
@@ -396,6 +394,8 @@ namespace SalveminiApp
                     if (dataUltimoControllo != dataOggi)
                     {
                         //Save new date
+                        Preferences.Remove("lastTipoNotizia"); //Cached last title
+                        Preferences.Remove("lastNotizia"); //Cached last subtitle
                         Preferences.Set("lastDate", DateTime.Now.ToString("dd/MM/yyyy"));
                     }
 
@@ -405,7 +405,7 @@ namespace SalveminiApp
                     Preferences.Set("lastNotizia", ArgoIndex.UltimaNotizia); //Cached last subtitle
                     widget.Badge = "si";
                     widget.Order = -2;
-                    widget.SubTitle = "<strong>" + ArgoIndex.TipoNotizia + "</strong>" + ArgoIndex.UltimaNotizia;
+                    widget.SubTitle = ("<strong>" + ArgoIndex.TipoNotizia + "</strong>" + ArgoIndex.UltimaNotizia).Truncate(70);
                     widgets.Remove(widget);
                     widgets.Add(widget);
                     OrderWidgets(true);
@@ -413,7 +413,7 @@ namespace SalveminiApp
                 catch
                 {
                     //Non è stato possibile connettersi al registro
-                    showToast("Impossibile connettersi ad ARGO");
+                    Costants.showToast("Impossibile connettersi ad ARGO");
                 }
             }
         }
@@ -504,7 +504,7 @@ namespace SalveminiApp
                     //Save freeday
                     Preferences.Set("FreedayInt", freedayInt);
 
-                    
+
 
                     //intelligent auto skip if dopo le 2
                     if (today && DateTime.Now.Hour > 14)
@@ -601,7 +601,7 @@ namespace SalveminiApp
                 //From constructor, get full orario to fix this
                 orarioFromCached = false;
             }
-            
+
         }
 
         //Update widget list
@@ -682,15 +682,7 @@ namespace SalveminiApp
                 return newDay;
         }
 
-        public void showToast(string message)
-        {
-#if __IOS__
-            BigTed2.BTProgressHUD2.ShowToast(message, BigTed2.ProgressHUD2.MaskType.None, false, 3000);
-#endif
-#if __ANDROID_
-            SalveminiApp.Droid.ShowToast.LongAlert(message);
-#endif
-        }
+
 
 
         //returns the last news from argo or the default if there are not
@@ -701,7 +693,7 @@ namespace SalveminiApp
 
             //He saved a string today
             if (dataUltimoControllo == dataOggi)
-                return "<strong>" + Preferences.Get("lastTipoNotizia", "") + "</strong>" + Preferences.Get("lastNotizia", "Cosa è successo oggi in classe?");
+                return ("<strong>" + Preferences.Get("lastTipoNotizia", "") + "</strong>" + Preferences.Get("lastNotizia", "Cosa è successo oggi in classe?")).Truncate(70);
 
             return "Cosa è successo oggi in classe?";
         }
@@ -747,7 +739,7 @@ namespace SalveminiApp
         public static string Truncate(this string value, int maxLength)
         {
             if (string.IsNullOrEmpty(value)) return value;
-            return value.Length <= maxLength ? value : value.Substring(0, maxLength);
+            return value.Length <= maxLength ? value : value.Substring(0, maxLength) + "...";
         }
 
     }

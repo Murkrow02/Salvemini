@@ -19,6 +19,8 @@ namespace SalveminiApp.SecondaryViews
 
         void bus_tapped(object sender, EventArgs e)
         {
+            DisplayAlert("Attenzione","Non ancora disponibile","Ok");
+            return;
             Navigation.PushModalAsync(new Trasporti.Bus());
         }
 

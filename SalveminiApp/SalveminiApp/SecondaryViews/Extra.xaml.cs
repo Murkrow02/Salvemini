@@ -37,6 +37,9 @@ namespace SalveminiApp.SecondaryViews
             mainLayout.Children.Insert(1, new Helpers.CountDown());
         }
 
-
+        void closePage(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
+        }
     }
 }

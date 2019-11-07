@@ -38,10 +38,11 @@ namespace SalveminiApp.ArgoPages
             buttonFrame.HeightRequest = App.ScreenWidth / 6;
             buttonFrame.CornerRadius = (float)(App.ScreenWidth / 6) / 2;
 
-            //Cache
-            if (Barrel.Current.Exists("VotiScrutinio"))
+            //Get cache
+            var cachedVoti = CacheHelper.GetCache<RestApi.Models.ScrutinioGrouped>("VotiScrutinio");
+            if (cachedVoti != null)
             {
-                Votis = Barrel.Current.Get<RestApi.Models.ScrutinioGrouped>("VotiScrutinio");
+                Votis = cachedVoti;
                 votiList.ItemsSource = Votis.Primo;
                 if (Votis.Primo.Count > 0)
                 {
@@ -59,54 +60,54 @@ namespace SalveminiApp.ArgoPages
         {
             base.OnAppearing();
 
-            var notificator = DependencyService.Get<IToastNotificator>();
-
+            //Show loading
             votiList.IsRefreshing = true;
 
-            //Api Call
+            //Check connection status
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                var datas = await App.Argo.GetVotiScrutinio();
-                if (string.IsNullOrEmpty(datas.Message))
+                try
                 {
-                    Votis = datas.Data as RestApi.Models.ScrutinioGrouped;
-                }
-                else
-                {
-                    var options = new NotificationOptions()
-                    {
-                        Description = datas.Message
-                    };
+                    //Download voti from api call
+                    var response = await App.Argo.GetVotiScrutinio();
 
-                    var result = await notificator.Notify(options);
-                    votiList.IsRefreshing = false;
-                    return;
-                }
+                    //Detect if call returned a message of error
+                    if (!string.IsNullOrEmpty(response.Message))
+                    {
+                        //Error occourred, notify the user
+                        Costants.showToast(response.Message);
+                        //Stop loading list
+                        votiList.IsRefreshing = false;
+                        return;
+                    }
 
-                //Fill List
-                if (Votis != null)
+                    //Deserialize object
+                    Votis = response.Data as RestApi.Models.ScrutinioGrouped;
+
+                    //Fill List
+                    if (Votis != null)
+                    {
+                        votiList.ItemsSource = Votis.Primo;
+                        if (Votis.Primo.Count > 0)
+                        {
+                            emptyLayout.IsVisible = false;
+                        }
+                        else
+                        {
+                            emptyLayout.IsVisible = true;
+                            placeholderLabel.Text = "I voti del primo quadrimestre non sono ancora stati pubblicati";
+                        }
+                        votiList.IsRefreshing = false;
+                    }
+                }
+                catch
                 {
-                    votiList.ItemsSource = Votis.Primo;
-                    if (Votis.Primo.Count > 0)
-                    {
-                        emptyLayout.IsVisible = false;
-                    }
-                    else
-                    {
-                        emptyLayout.IsVisible = true;
-                        placeholderLabel.Text = "I voti del primo quadrimestre non sono ancora stati pubblicati";
-                    }
-                    votiList.IsRefreshing = false;
+                    Costants.showToast("Non è stato possibile aggiornare i voti");
                 }
             }
-            else
+            else //No connection
             {
-                var options = new NotificationOptions()
-                {
-                    Description = "Nessuna connessione ad internet 🚀",
-                };
-
-                var result = await notificator.Notify(options);
+                Costants.showToast("connection");
             }
 
             votiList.IsRefreshing = false;
@@ -120,38 +121,60 @@ namespace SalveminiApp.ArgoPages
 
         void firstQuad_Clicked(object sender, System.EventArgs e)
         {
-            quad1.TextColor = Color.White;
-            quad1.BackgroundColor = Color.FromHex("7F80FF");
-            quad2.TextColor = Color.FromHex("7F80FF");
-            quad2.BackgroundColor = Color.White;
-            votiList.ItemsSource = Votis.Primo;
-            if (Votis.Primo.Count > 0)
+            try
             {
-                emptyLayout.IsVisible = false;
+                //Set layout
+                quad1.TextColor = Color.White;
+                quad1.BackgroundColor = Color.FromHex("7F80FF");
+                quad2.TextColor = Color.FromHex("7F80FF");
+                quad2.BackgroundColor = Color.White;
+
+                //Change itemsource
+                votiList.ItemsSource = Votis.Primo;
+                if (Votis.Primo.Count > 0)
+                {
+                    emptyLayout.IsVisible = false;
+                }
+                else
+                {
+                    emptyLayout.IsVisible = true;
+                    placeholderLabel.Text = "I voti del primo quadrimestre non sono ancora stati pubblicati";
+                }
             }
-            else
+            catch
             {
-                emptyLayout.IsVisible = true;
-                placeholderLabel.Text = "I voti del primo quadrimestre non sono ancora stati pubblicati";
+                Costants.showToast("Non è stato possibile caricare i voti del primo quadrimestre");
             }
+
         }
 
         void secondQuad_Clicked(object sender, System.EventArgs e)
         {
-            quad2.TextColor = Color.White;
-            quad2.BackgroundColor = Color.FromHex("7F80FF");
-            quad1.TextColor = Color.FromHex("7F80FF");
-            quad1.BackgroundColor = Color.White;
-            votiList.ItemsSource = Votis.Secondo;
-            if (Votis.Secondo.Count > 0)
+            try
             {
-                emptyLayout.IsVisible = false;
+                //Set layout
+                quad2.TextColor = Color.White;
+                quad2.BackgroundColor = Color.FromHex("7F80FF");
+                quad1.TextColor = Color.FromHex("7F80FF");
+                quad1.BackgroundColor = Color.White;
+
+                //Change itemsource
+                votiList.ItemsSource = Votis.Secondo;
+                if (Votis.Secondo.Count > 0)
+                {
+                    emptyLayout.IsVisible = false;
+                }
+                else
+                {
+                    emptyLayout.IsVisible = true;
+                    placeholderLabel.Text = "I voti del secondo quadrimestre non sono ancora stati pubblicati";
+                }
             }
-            else
+            catch
             {
-                emptyLayout.IsVisible = true;
-                placeholderLabel.Text = "I voti del secondo quadrimestre non sono ancora stati pubblicati";
+                Costants.showToast("Non è stato possibile caricare i voti del secondo quadrimestre");
             }
+
         }
     }
 }

@@ -66,6 +66,9 @@ namespace SalveminiApp.FirstAccess
 
         async void Continue_Clicked(object sender, System.EventArgs e)
         {
+            //ShowLoading();
+            //return;
+
             //Disable button to avoid reclick
             confirmButton.IsEnabled = false;
 
@@ -78,6 +81,8 @@ namespace SalveminiApp.FirstAccess
                 entryStack.Spacing = 8;
                 return;
             }
+
+            //No username error
             usernameEntry.HasError = false;
             entryStack.Spacing = 0;
 
@@ -89,20 +94,38 @@ namespace SalveminiApp.FirstAccess
                 confirmButton.IsEnabled = true;
                 return;
             }
+
+            //No password errror
             passwordEntry.HasError = false;
 
             //Start Loading
             loading.IsRunning = true;
             loading.IsVisible = true;
+         
 
             //Create LoginForms
             var form = new RestApi.Models.LoginForm();
             form.Username = username.Text;
             form.Password = password.Text;
 
-            //Api Call
+            //Check internet connection
+            if(Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                //No connection
+                Costants.showToast("connection");
+                //End Loading
+                loading.IsRunning = false;
+                loading.IsVisible = false;
+
+                //Re-enable button at end of task
+                confirmButton.IsEnabled = true;
+                return;
+            }
+
+            //Get response from api
             var Response = await App.Login.Login(form);
 
+            //Error from response
             if (!string.IsNullOrEmpty(Response.Message))
             {
                 usernameEntry.ErrorText = Response.Message;
@@ -111,14 +134,29 @@ namespace SalveminiApp.FirstAccess
             }
             else
             {
+                //Success
                 UtentiLogin = Response.Data as List<RestApi.Models.Utente>;
             }
 
-            if (UtentiLogin != null && UtentiLogin.Count > 0)
+            //Error getting users
+            if (UtentiLogin == null)
+            {
+                Costants.showToast("Si è verificato un errore, riprova più tardi");
+                //End Loading
+                loading.IsRunning = false;
+                loading.IsVisible = false;
+
+                //Re-enable button at end of task
+                confirmButton.IsEnabled = true;
+                return;
+            }
+
+            if (UtentiLogin.Count > 0)
             {
                 //Success
                 if (UtentiLogin.Count > 1)
                 {
+                    //Pop up for more than one user
                     popupLayout.PopupView.ContentTemplate = new DataTemplate(() =>
 
                     {
@@ -167,11 +205,12 @@ namespace SalveminiApp.FirstAccess
                 return;
             }
 
-
+            //Save user data
             Preferences.Set("UserId", UtentiLogin[0].id);
             Preferences.Set("Token", UtentiLogin[0].ArgoToken);
             Preferences.Set("Classe", UtentiLogin[0].Classe);
             Preferences.Set("Corso", UtentiLogin[0].Corso);
+
 
             if (Preferences.Get("isFirstTime", true))
             {
@@ -209,8 +248,11 @@ namespace SalveminiApp.FirstAccess
 
         void SecondUserButton_Clicked(object sender, EventArgs e)
         {
+            //Save user data
             Preferences.Set("UserId", UtentiLogin[1].id);
             Preferences.Set("Token", UtentiLogin[1].ArgoToken);
+            Preferences.Set("Classe", UtentiLogin[1].Classe);
+            Preferences.Set("Corso", UtentiLogin[1].Corso);
             App.refreshCalls();
         }
 
@@ -237,6 +279,13 @@ namespace SalveminiApp.FirstAccess
             {
                 DisplayAlert("Attenzione", "Non è stato possibile inviare una mail, puoi inviarla manualmente a support@codexdevelopment.net", "Ok");
             }
+        }
+
+
+        public void ShowLoading()
+        {
+            confirmButton.Animate("TimeBarAnimation", new Animation(scaleXTo => confirmButton.WidthRequest = scaleXTo, 0, 124), 16, 1000);
+
         }
 
     }

@@ -31,12 +31,6 @@ namespace SalveminiApp.RestApi
 
             try
             {
-                //Get Cache if no Network Access
-                if (Connectivity.NetworkAccess != Xamarin.Essentials.NetworkAccess.Internet && Barrel.Current.Exists("utentilist"))
-                {
-                    return Barrel.Current.Get<List<Models.Utente>>("utentilist");
-                }
-
                 var response = await client.GetAsync(uri);
                 if (response.IsSuccessStatusCode)
                 {
@@ -46,18 +40,10 @@ namespace SalveminiApp.RestApi
                     //Save Cache
                     Barrel.Current.Add("utentilist", Utenti, TimeSpan.FromDays(10));
                 }
-                else if (response.StatusCode != System.Net.HttpStatusCode.Unauthorized)
-                {
-                    if (Barrel.Current.Exists("utentilist"))
-                    {
-                        return Barrel.Current.Get<List<Models.Utente>>("utentilist");
-                    }
-                }
-
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                Debug.WriteLine(@"Errore lista utenti", ex.Message);
             }
             return Utenti;
         }
@@ -69,12 +55,6 @@ namespace SalveminiApp.RestApi
 
             try
             {
-                //Get Cache if no Network Access
-                if (Connectivity.NetworkAccess != Xamarin.Essentials.NetworkAccess.Internet && Barrel.Current.Exists("utente" + id.ToString()))
-                {
-                    return Barrel.Current.Get<Models.Utente>("utente" + id.ToString());
-                }
-
                 var response = await client.GetAsync(uri);
                 if (response.IsSuccessStatusCode)
                 {
@@ -84,18 +64,15 @@ namespace SalveminiApp.RestApi
                     //Save Cache
                     Barrel.Current.Add("utente" + id.ToString(), Utenti, TimeSpan.FromDays(10));
                 }
-                else if (response.StatusCode != System.Net.HttpStatusCode.Unauthorized)
+                else
                 {
-                    if (Barrel.Current.Exists("utente" + id.ToString()))
-                    {
-                        return Barrel.Current.Get<Models.Utente>("utente" + id.ToString());
-                    }
+                    return CacheHelper.GetCache<Models.Utente>("utente" + id.ToString());
                 }
 
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                Debug.WriteLine(@"Errore utente donwload", ex.Message);
             }
             return Utente;
         }
