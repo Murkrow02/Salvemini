@@ -226,6 +226,9 @@
     <PackageReference Include="Syncfusion.Xamarin.SfAutoComplete">
       <Version>17.3.0.19</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.SignalR.Client">
+      <Version>2.4.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\argoLogo.png" />

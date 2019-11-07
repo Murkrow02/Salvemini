@@ -91,26 +91,31 @@ namespace SalveminiApp
             }
 
 
-            //Failed to get
-            //if (IndexCache == null)
-            //    return;
-            ////Get index cache
-            //var IndexCache = CacheHelper.GetCache<RestApi.Models.Index>("Index");
 
-            ////Get banner cache
-            //if (IndexCache.Ads != null && IndexCache.Ads.Count > 0)
-            //{
-            //    //Find a banner
-            //    var banner = IndexCache.Ads.Where(x => x.Tipo == 0).ToList();
-            //    if (banner.Count > 0)
-            //    {
-            //        //Found
-            //        Ad = banner[0];
-            //        adTitle.Text = Ad.Nome;
-            //        adImage.Source = Ad.FullImmagine;
-            //        adLayout.Opacity = 1;
-            //    }
-            //}
+            //Get index cache
+            var IndexCache = CacheHelper.GetCache<RestApi.Models.Index>("Index");
+
+            //Failed to get
+            if (IndexCache == null)
+                return;
+
+            //SalveminiCoin
+            sCoinLbl.Text = IndexCache.sCoin.ToString();
+
+            //Get banner cache
+            if (IndexCache.Ads != null && IndexCache.Ads.Count > 0)
+            {
+                //Find a banner
+                var banner = IndexCache.Ads.Where(x => x.Tipo == 0).ToList();
+                if (banner.Count > 0)
+                {
+                    //Found
+                    Ad = banner[0];
+                    adTitle.Text = Ad.Nome;
+                    adImage.Source = Ad.FullImmagine;
+                    adLayout.Opacity = 1;
+                }
+            }
         }
 
 
@@ -153,7 +158,7 @@ namespace SalveminiApp
                 registro.GestureRecognizers.Add(tapGestureRecognizer);
 
                 //Trasporti
-                if (Preferences.Get("orariTreniVersion", 0) > 0) //Add this only if orario is downloaded
+                if (Preferences.Get("OrarioTrasportiVersion", 0) > 0) //Add this only if orario is downloaded
                 {
                     var trasporti = new WidgetGradient { Title = "Trasporti", SubTitle = await getNextTrain(), Icon = "fas-subway", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order = 3 };
                     trasporti.GestureRecognizers.Add(tapGestureRecognizer);
@@ -223,7 +228,9 @@ namespace SalveminiApp
                         }
                     }
 
-
+                    //Save salveminiCoin value
+                    sCoinLbl.Text = Index.sCoin.ToString();
+                    
                     //Get last sondaggio
                     if (Index.ultimoSondaggio != null)
                     {
@@ -231,13 +238,17 @@ namespace SalveminiApp
                         int positionSondaggio = 4;
                         if (Preferences.Get("LastSondaggio", 0) != Index.ultimoSondaggio.id && !Index.VotedSondaggio) //New sondaggio detected
                         {
-                            //Preferences.Set("LastSondaggio", Index.ultimoSondaggio.id);
+
                             nuovoSondaggio = "si";
                             positionSondaggio = -1;
 
-
                             if (!Preferences.Get("voted" + Index.ultimoSondaggio.id, false)) //Push to vote
                                 await Navigation.PushModalAsync(new SecondaryViews.NewSondaggio(Index.ultimoSondaggio));
+                        }
+                        else
+                        {
+                            //save that he voted
+                            Preferences.Set("voted" + Index.ultimoSondaggio.id, true);
                         }
 
 
@@ -282,12 +293,12 @@ namespace SalveminiApp
                     }
 
                     //Update orari if new version detected
-                    if (Index.OrariTreniVersion > Preferences.Get("orariTreniVersion", 0))
+                    if (Index.OrarioTrasportiVersion > Preferences.Get("OrarioTrasportiVersion", 0))
                     {
                         bool successTreni = await App.Treni.GetTrainJson();
                         if (successTreni)
                         {
-                            Preferences.Set("orariTreniVersion", Index.OrariTreniVersion);
+                            Preferences.Set("OrarioTrasportiVersion", Index.OrarioTrasportiVersion);
                             await getNextTrain();
                         }
                     }

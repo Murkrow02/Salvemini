@@ -162,6 +162,9 @@
     <PackageReference Include="Syncfusion.Xamarin.Expander">
       <Version>17.2.0.49</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.SignalR.Client">
+      <Version>2.4.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

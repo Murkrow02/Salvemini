@@ -12,9 +12,13 @@ namespace SalveminiApp
     public class Costants
     {
         //Api Url
-        public static string Uri(string next)
+        public static string Uri(string next, bool api = true)
         {
+        if(api)
             return "http://mysalvemini.me/api/" + next;
+        else
+                return "http://mysalvemini.me/" + next;
+
         }
 
         //Materie Dictionary

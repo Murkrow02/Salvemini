@@ -4,6 +4,7 @@ using SalveminiApp.RestApi.Models;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using System.Threading.Tasks;
+using Microsoft.AspNet.SignalR.Client;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 #endif
@@ -12,6 +13,7 @@ namespace SalveminiApp.SecondaryViews
     public partial class NewSondaggio : ContentPage
     {
         public Sondaggi sondaggio = new Sondaggi();
+        public List<SondaggiResult> Risultati = new List<SondaggiResult>(); 
 
         public NewSondaggio(Sondaggi sondaggio_)
         {
@@ -62,6 +64,11 @@ namespace SalveminiApp.SecondaryViews
             questionLbl.Text = sondaggio.Nome;
             creatorLbl.Text = "Creato da " + sondaggio.Utenti.nomeCognome;
 
+            //Subscribe to messaging center
+            MessagingCenter.Subscribe<App>(this, "updateResults", (sender) =>
+            {
+                showResults();
+            });
 
         }
 
@@ -131,23 +138,28 @@ namespace SalveminiApp.SecondaryViews
 
         }
 
-        public async void showResults()
+        public async void showResults(bool fromSignalR = false)
         {
-            //Get results
-            var risultati = await App.Sondaggi.ReturnRisultati(sondaggio.id);
+            //Get new results
+            if(!fromSignalR)
+            Risultati = await App.Sondaggi.ReturnRisultati(sondaggio.id);
 
             //Remove previous results
             resultsLayout.Children.Clear();
 
+            //Return if no voti
+            if (Risultati == null || Risultati.Count < 1)
+                return;
+
             //Foreach result add a custom control
-            for (int i = 0; i < risultati.Count; i++)
+            for (int i = 0; i < Risultati.Count; i++)
             {
                 //If 0 votes hide bar
                 string hideVotes = "no";
-                if (risultati[i].Voti == 0)
+                if (Risultati[i].Voti == 0)
                     hideVotes = "si";
 
-                resultsLayout.Children.Add(new Controls.PercentageBar { Title = "<p><strong><span>" + risultati[i].NomeOpzione + ":</span>&nbsp;</strong><span>" + risultati[i].Voti + " voti</span></p>", HideVotes = hideVotes, Percentage = risultati[i].Percentuale, BgColor = Costants.Colors[i].Replace("#", "") });
+                resultsLayout.Children.Add(new Controls.PercentageBar { Title = "<p><strong><span>" + Risultati[i].NomeOpzione + ":</span>&nbsp;</strong><span>" + Risultati[i].Voti + " voti</span></p>", HideVotes = hideVotes, Percentage = Risultati[i].Percentuale, BgColor = Costants.Colors[i].Replace("#", "") });
             }
 
             //Show frame

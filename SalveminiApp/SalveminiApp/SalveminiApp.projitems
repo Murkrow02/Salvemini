@@ -354,6 +354,7 @@
       <DependentUpon>Note.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\GetCache.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\SignalR\HubManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
@@ -368,6 +369,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)AreaVip\" />
     <Folder Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\" />
     <Folder Include="$(MSBuildThisFileDirectory)Controls\" />
+    <Folder Include="$(MSBuildThisFileDirectory)RestApi\SignalR\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Helpers\Preferences.txt" />
