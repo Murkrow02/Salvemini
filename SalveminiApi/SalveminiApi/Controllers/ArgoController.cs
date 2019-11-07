@@ -148,6 +148,7 @@ namespace SalveminiApi.Controllers
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/assenze");
             if (!argoResponse.IsSuccessStatusCode)
                 throw new HttpResponseException(HttpStatusCode.Forbidden);
+
             var argoContent = await argoResponse.Content.ReadAsStringAsync();
             var returnModel = JsonConvert.DeserializeObject<AssenzeList>(argoContent);
 
@@ -208,11 +209,20 @@ namespace SalveminiApi.Controllers
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/votigiornalieri");
             if (!argoResponse.IsSuccessStatusCode)
                 throw new HttpResponseException(HttpStatusCode.Forbidden);
-            var argoContent = await argoResponse.Content.ReadAsStringAsync();
-            var returnModel = JsonConvert.DeserializeObject<VotiList>(argoContent);
 
             var votiList = new List<Voti>();
-            votiList = returnModel.dati;
+
+            try
+            {
+                var argoContent = await argoResponse.Content.ReadAsStringAsync();
+                var returnModel = JsonConvert.DeserializeObject<VotiList>(argoContent);
+                votiList = returnModel.dati;
+            }
+            catch //ARGO offline
+            {
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
+            }
+
 
             //Raggruppa per materia
             var groupedVoti = new List<GroupedVoti>();
