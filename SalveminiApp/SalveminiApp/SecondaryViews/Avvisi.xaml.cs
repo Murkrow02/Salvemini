@@ -58,8 +58,7 @@ namespace SalveminiApp.SecondaryViews
         {
             var bubblePopup = new Helpers.PopOvers().defaultPopOver;
             bubblePopup.Content = new Xamarin.Forms.ListView { WidthRequest = App.ScreenWidth / 4, BackgroundColor = Color.Transparent, ItemsSource = Avvisis.Select(x => x.Titolo).ToList(), ItemTemplate = new DataTemplate(() => { var lbl = new Xamarin.Forms.Label { VerticalOptions = LayoutOptions.Center, TextColor = Color.White, HorizontalOptions = LayoutOptions.Center }; lbl.SetBinding(Xamarin.Forms.Label.TextProperty, "."); return new ViewCell { View = lbl }; }) };
-            bubblePopup.IsVisible = true;
-            bubblePopup.WidthRequest = App.ScreenWidth / 4;
+            bubblePopup.WidthRequest = App.ScreenWidth / 9;
             bubblePopup.HeightRequest = App.ScreenWidth / 3;
             bubblePopup.PointerDirection = PointerDirection.Up;
             bubblePopup.PreferredPointerDirection = PointerDirection.Up;

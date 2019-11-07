@@ -64,11 +64,11 @@ namespace SalveminiApp.SecondaryViews
             questionLbl.Text = sondaggio.Nome;
             creatorLbl.Text = "Creato da " + sondaggio.Utenti.nomeCognome;
 
-            //Subscribe to messaging center
-            MessagingCenter.Subscribe<App>(this, "updateResults", (sender) =>
-            {
-                showResults();
-            });
+            ////Subscribe to messaging center
+            //MessagingCenter.Subscribe<App>(this, "updateResults", (sender) =>
+            //{
+            //    showResults();
+            //});
 
         }
 

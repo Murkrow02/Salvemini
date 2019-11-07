@@ -39,6 +39,8 @@ namespace SalveminiApp
         public static bool isSelectingImage;
         //Do not update orario if already cached
         public bool orarioFromCached;
+        //How many times the page loaded onAppearing
+        public int appearedTImes;
 
         public MainPage()
         {
@@ -123,6 +125,9 @@ namespace SalveminiApp
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+
+            //Increment number of appeared times
+            appearedTImes++;
 
             //Security checks todo
             widgetLoading.IsRunning = true;
@@ -302,6 +307,11 @@ namespace SalveminiApp
                             await getNextTrain();
                         }
                     }
+
+                    //Check app version
+                    var appversion = Convert.ToDecimal(VersionTracking.CurrentVersion);
+                    if (Index.AppVersion > appversion)
+                        newVersion(); //New version detected
 
                 }
                 else
@@ -707,6 +717,28 @@ namespace SalveminiApp
                 return ("<strong>" + Preferences.Get("lastTipoNotizia", "") + "</strong>" + Preferences.Get("lastNotizia", "Cosa è successo oggi in classe?")).Truncate(70);
 
             return "Cosa è successo oggi in classe?";
+        }
+
+        public async void newVersion()
+        {
+            //Check App Version
+            var appversion = Convert.ToDecimal(VersionTracking.CurrentVersion);
+            if (Index.AppVersion > appversion && appearedTImes % 2 == 0) //Show this only 1/2
+            {
+                bool choice = await DisplayAlert("Buone notizie!", "È disponibile un aggiornamento dell'app, recati sullo store per effettuarlo!", "Aggiorna", "Chiudi");
+                if (choice)
+                {
+                    //Redirect to store
+#if __ANDROID__
+
+#endif
+#if __IOS__
+
+#endif
+
+
+                }
+            }
         }
 
     }
