@@ -148,6 +148,7 @@ namespace SalveminiApi.Controllers
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/assenze");
             if (!argoResponse.IsSuccessStatusCode)
                 throw new HttpResponseException(HttpStatusCode.Forbidden);
+
             var argoContent = await argoResponse.Content.ReadAsStringAsync();
             var returnModel = JsonConvert.DeserializeObject<AssenzeList>(argoContent);
 
@@ -208,11 +209,20 @@ namespace SalveminiApi.Controllers
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/votigiornalieri");
             if (!argoResponse.IsSuccessStatusCode)
                 throw new HttpResponseException(HttpStatusCode.Forbidden);
-            var argoContent = await argoResponse.Content.ReadAsStringAsync();
-            var returnModel = JsonConvert.DeserializeObject<VotiList>(argoContent);
 
             var votiList = new List<Voti>();
-            votiList = returnModel.dati;
+
+            try
+            {
+                var argoContent = await argoResponse.Content.ReadAsStringAsync();
+                var returnModel = JsonConvert.DeserializeObject<VotiList>(argoContent);
+                votiList = returnModel.dati;
+            }
+            catch //ARGO offline
+            {
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
+            }
+
 
             //Raggruppa per materia
             var groupedVoti = new List<GroupedVoti>();
@@ -418,32 +428,32 @@ namespace SalveminiApi.Controllers
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
-        //[Route("note")]
-        //[HttpGet]
-        //public async Task<List<Bacheca>> getBacheca()
-        //{
-        //    //Check Auth
-        //    var authorize = new Helpers.Utility();
-        //    bool authorized = authorize.authorized(Request);
-        //    if (!authorized)
-        //        throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+        [Route("note")]
+        [HttpGet]
+        public async Task<List<Note>> getNote()
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
-        //    //Get parameters from request
-        //    int id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
-        //    string token = Request.Headers.GetValues("x-auth-token").First();
+            //Get parameters from request
+            int id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
+            string token = Request.Headers.GetValues("x-auth-token").First();
 
-        //    //Prendi modello
-        //    var argoUtils = new ArgoUtils();
-        //    var argoClient = argoUtils.ArgoClient(id, token);
-        //    var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/notedisciplinari");
-        //    if (!argoResponse.IsSuccessStatusCode)
-        //        throw new HttpResponseException(HttpStatusCode.Forbidden);
-        //    var argoContent = await argoResponse.Content.ReadAsStringAsync();
-        //    var returnModel = JsonConvert.DeserializeObject<bachecaList>(argoContent);
-        //    var returnList = new List<Bacheca>();
-        //    returnList = returnModel.dati;
-        //    return returnList;
-        //}
+            //Prendi modello
+            var argoUtils = new ArgoUtils();
+            var argoClient = argoUtils.ArgoClient(id, token);
+            var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/notedisciplinari");
+            if (!argoResponse.IsSuccessStatusCode)
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
+            var argoContent = await argoResponse.Content.ReadAsStringAsync();
+            var returnModel = JsonConvert.DeserializeObject<noteList>(argoContent);
+            var returnList = new List<Note>();
+            returnList = returnModel.dati;
+            return returnList;
+        }
 
         //Tutte le note
         //Get url https://www.portaleargo.it/famiglia/api/rest/notedisciplinari

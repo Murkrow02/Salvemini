@@ -22,7 +22,7 @@ namespace SalveminiApi.Controllers
         public List<Utenti> getAllUtenti()
         {
             var authorize = new Helpers.Utility();
-            bool authorized = authorize.authorized(Request, true);
+            bool authorized = authorize.authorized(Request, 2);
             if (!authorized)
                 throw new HttpResponseException(HttpStatusCode.Unauthorized);
 
@@ -57,7 +57,7 @@ namespace SalveminiApi.Controllers
         {
             //Check Auth
             var authorize = new Helpers.Utility();
-            bool authorized = authorize.authorized(Request,true);
+            bool authorized = authorize.authorized(Request,2);
             if (!authorized)
                 throw new HttpResponseException(HttpStatusCode.Unauthorized);
 
@@ -78,7 +78,7 @@ namespace SalveminiApi.Controllers
         public List<Utenti> getClassUtenti(int id)
         {
             var authorize = new Helpers.Utility();
-            bool authorized = authorize.authorized(Request, true);
+            bool authorized = authorize.authorized(Request, 2);
             if (!authorized)
                 throw new HttpResponseException(HttpStatusCode.Unauthorized);
 

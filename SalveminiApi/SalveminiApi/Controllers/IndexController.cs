@@ -55,10 +55,7 @@ namespace SalveminiApi.Controllers
 
             //Versioni
             returnModel.AppVersion = 1.0M;
-            returnModel.OrariTreniVersion = 1;
-            returnModel.OrariBusVersion = 1;
-            returnModel.OrariScuolaVersion = 1;
-            returnModel.OrariAliVersion = 1;
+            returnModel.OrarioTrasportiVersion = 1;
 
 
             //Prendi ultimo avviso
@@ -81,16 +78,15 @@ namespace SalveminiApi.Controllers
                 //Ci sono sondaggi attivi?
                 if (attivo.Count < 1)
                     returnModel.ultimoSondaggio = null; //No
+
                 else //Si
                 {
-                    //Controlla se ha votato SCOMMENTA SE VUOI CHE NON ESCE SE HA GIA VOTATO
-                    var voti = attivo[0].VotiSondaggi.ToList();
-                    var suo = voti.Where(x => x.Utente == id).ToList();
+                    //Find his voto
+                    var suo = db.VotiSondaggi.Where(x => x.Utente == id && x.idSondaggio == attivo[0].id).ToList();
 
                     if (suo.Count > 0) //Ha votato
                         returnModel.VotedSondaggio = true;
-                    //returnModel.ultimoSondaggio = null;
-                    //else
+
                     returnModel.ultimoSondaggio = attivo[0];
 
                 }

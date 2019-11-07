@@ -37,7 +37,7 @@ namespace SalveminiApi.Controllers
         {
             //Check Auth
             var authorize = new Helpers.Utility();
-            bool authorized = authorize.authorized(Request, true);
+            bool authorized = authorize.authorized(Request, 2);
             if (!authorized)
                 throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
@@ -88,14 +88,28 @@ namespace SalveminiApi.Controllers
             if (!authorized)
                 throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
+            //Find sondaggio
+            var sondaggio = db.Sondaggi.Find(voto.idSondaggio);
+            if (sondaggio == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound); //Sondaggio not found
+
             try
             {
+                //Check if already voted
                 var alreadyVoted = db.VotiSondaggi.Where(x => x.idSondaggio == voto.idSondaggio && x.Utente == voto.Utente).ToList();
                 if(alreadyVoted.Count > 0)
                     return new HttpResponseMessage(HttpStatusCode.Conflict); //Already voted
 
+                //Add new voto to db
                 db.VotiSondaggi.Add(voto);
                 db.SaveChanges();
+
+                //Send signalR voti update
+                try
+                {
+                    Hubs.SignalRHub.SondaggioUpdate("Update sondaggio");
+                }
+                catch { }
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }
             catch
@@ -116,12 +130,14 @@ namespace SalveminiApi.Controllers
 
             //Create new dictionary
             var Risultati = new List<SondaggiResult>();
-            
+
+            //Find sondaggio
+            var sondaggio = db.Sondaggi.Find(id);
+            if (sondaggio == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound); //Sondaggio not found
+
             try
             {
-                //Find sondaggio
-                var sondaggio = db.Sondaggi.Find(id);
-
                 //Get voti sondaggio
                 var votiSondaggio = db.VotiSondaggi.Where(x => x.idSondaggio == id).ToList();
 
@@ -148,8 +164,11 @@ namespace SalveminiApi.Controllers
 
                     //Add result to result list
                     Risultati.Add(risultato);
-                }
 
+                  
+
+                }
+              
                 return Risultati;
                
             }

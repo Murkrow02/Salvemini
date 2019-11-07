@@ -32,6 +32,22 @@ namespace SalveminiApi.Controllers
             return offerte;
         }
 
+        [Route("offerta")]
+        [HttpPost]
+        public HttpResponseMessage postOfferta(SalveminiCard offerta)
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request,3);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+            
+            //Add offer to database
+            db.SalveminiCard.Add(offerta);
+            db.SaveChanges();
+            return new HttpResponseMessage(HttpStatusCode.OK);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
