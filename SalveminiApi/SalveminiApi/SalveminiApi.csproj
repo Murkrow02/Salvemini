@@ -202,6 +202,7 @@
     <Compile Include="Argo\Models\AuthBlock.cs" />
     <Compile Include="Argo\Models\Bacheca.cs" />
     <Compile Include="Argo\Models\Compiti.cs" />
+    <Compile Include="Argo\Models\Note.cs" />
     <Compile Include="Argo\Models\Oggi.cs" />
     <Compile Include="Argo\Models\Promemoria.cs" />
     <Compile Include="Argo\Models\Scrutinio.cs" />

@@ -43,7 +43,7 @@ namespace SalveminiApi.Controllers
         {
             //Check Auth
             var authorize = new Helpers.Utility();
-            bool authorized = authorize.authorized(Request, true);
+            bool authorized = authorize.authorized(Request, 1);
             if (!authorized)
                 throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
