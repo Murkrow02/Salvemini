@@ -25,8 +25,61 @@ namespace SalveminiApp.SecondaryViews
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
 #endif
 
+            //Get avvisi from cache
+            var cachedAvvisi = CacheHelper.GetCache<List<RestApi.Models.Avvisi>>("Avvisi");
+            if (cachedAvvisi != null)
+            {
+                Avvisis = cachedAvvisi;
+                avvisiCarousel.ItemsSource = Avvisis;
+            }
         }
 
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            //Check if is coming from imageviewer
+            if (!canRefresh)
+            {
+                canRefresh = true;
+                return;
+            }
+
+            MainPage.isSelectingImage = false;
+
+            //Check internet connection
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                Costants.showToast("connection");
+                return;
+            }
+
+            try
+            {
+                //Download new avvisi from api
+                var newAvvisi = await App.Avvisi.GetAvvisi();
+
+                //Check if all went good
+                if (newAvvisi != null && newAvvisi.Count > 0)
+                {
+                    Avvisis = newAvvisi;
+                    avvisiCarousel.ItemsSource = Avvisis;
+                    Preferences.Set("LastAvviso", Avvisis[0].id);
+                    MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "RemoveBadge", "Avvisi");
+                    return;
+                }
+
+                //Cannot download avvisi
+                Costants.showToast("Non è stato possibile scaricare i nuovi avvisi, controlla la tua connessione e riprova");
+            }
+            catch //Unexpected error
+            {
+                Costants.showToast("Si è verificato un errore, riprova più tardi");
+            }
+        }
+
+
+        //Open full image list
         private void ImageList_ItemSelected(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
             MainPage.isSelectingImage = true;
@@ -36,6 +89,7 @@ namespace SalveminiApp.SecondaryViews
             Navigation.PushModalAsync(new Helpers.ImageViewer(b));
         }
 
+        //Show more text
         void ShowMore_Clicked(object sender, EventArgs e)
         {
             //Get the text
@@ -54,6 +108,8 @@ namespace SalveminiApp.SecondaryViews
             bubblePopup.IsVisible = true;
         }
 
+
+        //Open menu avvisi
         void Menu_Clicked(object sender, EventArgs e)
         {
             var bubblePopup = new Helpers.PopOvers().defaultPopOver;
@@ -67,48 +123,16 @@ namespace SalveminiApp.SecondaryViews
             bubblePopup.IsVisible = true;
         }
 
+        //Close page
         void Close_Clicked(object sender, EventArgs e)
         {
             Navigation.PopModalAsync();
         }
 
+
         bool canRefresh = true;
-        protected async override void OnAppearing()
-        {
-            base.OnAppearing();
 
-            //Check if is coming from imageviewer
-            if (!canRefresh)
-            {
-                canRefresh = true;
-                return;
-            }
 
-            MainPage.isSelectingImage = false;
-
-            var notificator = DependencyService.Get<IToastNotificator>();
-
-            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
-            {
-                Avvisis = await App.Avvisi.GetAvvisi();
-
-                if (Avvisis != null && Avvisis.Count > 0)
-                {
-                    avvisiCarousel.ItemsSource = Avvisis;
-                    Preferences.Set("LastAvviso", Avvisis[0].id);
-                    MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "RemoveBadge", "Avvisi");
-                }
-            }
-            else
-            {
-                var options = new NotificationOptions()
-                {
-                    Description = "Nessuna connessione ad internet 🚀",
-                };
-
-                var result = await notificator.Notify(options);
-            }
-        }
 
         protected override void OnDisappearing()
         {

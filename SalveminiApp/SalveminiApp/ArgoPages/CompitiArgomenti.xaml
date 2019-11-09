@@ -8,9 +8,8 @@
                 <!--Title and filters-->
                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                     <Label TextColor="White" x:Name="TitleLbl" FontSize="40" HorizontalOptions="StartAndExpand" FontAttributes="Bold" />
-                    <iconize:IconButton Text="fas-filter" TextColor="White" FontSize="Large" VerticalOptions="FillAndExpand" HorizontalOptions="End" x:Name="filterBtn" Clicked="filterSubject" />
-                    <iconize:IconButton Text="fas-sort" TextColor="White" x:Name="sortBtn" Clicked="ShowOrder" FontSize="Large" VerticalOptions="FillAndExpand" HorizontalOptions="End" />
-
+                    <iconize:IconButton Padding="0" BackgroundColor="Transparent" Text="fas-filter" TextColor="White" FontSize="Large" VerticalOptions="Start" HorizontalOptions="End" x:Name="filterBtn" Clicked="filterSubject" />
+                    <iconize:IconButton Padding="0" BackgroundColor="Transparent" Text="fas-sort" TextColor="White" x:Name="sortBtn" Clicked="ShowOrder" FontSize="Large" VerticalOptions="Start" HorizontalOptions="End" />
                 </StackLayout>
 
                 <!--SearchBar-->
@@ -31,10 +30,14 @@
                         <!--Header-->
                         <StackLayout Spacing="1">
                             <Grid Padding="6,0" BackgroundColor="#fcfcfc">
-                                <Label Margin="0" FontSize="22" TextColor="{x:Static local:Styles.TextGray}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" x:Name="clockLabel" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" />
-                                <iconize:IconButton Margin="0" Text="fas-history" FontSize="22" HorizontalOptions="End" x:Name="clockButton" TextColor="#333333" Clicked="ShowAll" />
+                                <!--Filters Label-->
+                                <StackLayout>
+                                    <Label Margin="0" FontSize="22" TextColor="{x:Static local:Styles.TextGray}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" x:Name="clockLabel" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" />
+                                    <Label Margin="0,0,0,5" Text="Dal più recente" FontSize="Small" x:Name="filtersLbl" TextColor="#c7c7c7" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
+                                </StackLayout>
+                                <!--Clock icon-->
+                                <iconize:IconButton Margin="0" BackgroundColor="Transparent" Text="fas-history" FontSize="22" HorizontalOptions="End" x:Name="clockButton" TextColor="#333333" Clicked="ShowAll" VerticalOptions="FillAndExpand"/>
                             </Grid>
-                            <Label Margin="0,0,0,5" Text="Dal più recente" FontSize="Small" x:Name="filtersLbl" TextColor="#c7c7c7" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
                         </StackLayout>
                         <Grid VerticalOptions="FillAndExpand" >
                             <ListView SelectionMode="None" HasUnevenRows="true" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None" x:Name="lista" VerticalOptions="StartAndExpand">

@@ -23,6 +23,8 @@ namespace SalveminiApp.ArgoPages
 #if __IOS__
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
             UIApplication.SharedApplication.StatusBarHidden = true;
+            if (iOS.AppDelegate.HasNotch)
+                fullLayout.Padding = new Thickness(20, 35, 20, 25);
 #endif
 
             //Set Sizes

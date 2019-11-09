@@ -141,16 +141,14 @@ namespace SalveminiApp
 
         public static void Logout(bool fromSuperVip = false)
         {
-            //Clear preferences
-            Preferences.Set("UserId", 0);
-            Preferences.Set("Token", "");
-            Preferences.Set("Classe", 0);
-            Preferences.Set("Corso", "");
+            //Clear preferences except firsttime
+            Preferences.Clear();
+            Preferences.Set("veryFirstTime",false); Preferences.Set("isFirstTime",false);
 
             //Clear cache
             Barrel.Current.EmptyAll();
 
-            //Push to login
+            //Push to login only if triggered from super vip page
             if (!fromSuperVip)
                 Xamarin.Forms.Application.Current.MainPage = new FirstAccess.Login();
         }

@@ -7,34 +7,19 @@
                     <DataTemplate>
                         <local:ZoomImage Aspect="AspectFill" Source="{Binding .}" x:Name="imageView">
                             <local:ZoomImage.GestureRecognizers>
-                                <SwipeGestureRecognizer Direction="Left" Swiped="ImageSwipedLeft"/>
-                                <SwipeGestureRecognizer Direction="Right" Swiped="ImageSwipedRight"/>
+                                <SwipeGestureRecognizer Direction="Left" Swiped="ImageSwipedLeft" />
+                                <SwipeGestureRecognizer Direction="Right" Swiped="ImageSwipedRight" />
                             </local:ZoomImage.GestureRecognizers>
                         </local:ZoomImage>
                     </DataTemplate>
                 </carousel:SfCarousel.ItemTemplate>
             </carousel:SfCarousel>
 
-
-            <!--<cards:CoverFlowView.ItemTemplate>
-                    <DataTemplate>
-                        <ContentView Padding="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                            <Frame Margin="80" VerticalOptions="Center" HorizontalOptions="Fill" Padding="0" HasShadow="false" IsClippedToBounds="true" CornerRadius="10">
-                                <local:ZoomImage Aspect="AspectFill" Source="{Binding .}" x:Name="imageView" />
-                            </Frame>
-                        </ContentView>
-                    </DataTemplate>
-                </cards:CoverFlowView.ItemTemplate>
-            </cards:CoverFlowView>-->
-
             <StackLayout Orientation="Horizontal" AbsoluteLayout.LayoutBounds=".5, .01, 1, .1" AbsoluteLayout.LayoutFlags="All" Padding="10, 0">
                 <iconize:IconButton Text="fas-times" TextColor="White" Clicked="Close_Clicked" BackgroundColor="Transparent" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Start" />
                 <iconize:IconButton Text="fas-arrow-to-bottom" HorizontalOptions="EndAndExpand" TextColor="White" Clicked="Save_Clicked" FontSize="Large" BackgroundColor="Transparent" FontAttributes="Bold" />
             </StackLayout>
-            <!--<StackLayout Spacing="20" Orientation="Horizontal" AbsoluteLayout.LayoutBounds=".5, .99" AbsoluteLayout.LayoutFlags="PositionProportional" Padding="10, 0">
-                <iconize:IconButton Text="fas-arrow-left" TextColor="White" BackgroundColor="Transparent" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" />
-                <iconize:IconButton Text="fas-arrow-right" HorizontalOptions="Center" TextColor="White" FontSize="Large" BackgroundColor="Transparent" FontAttributes="Bold" />
-            </StackLayout>-->
+           
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

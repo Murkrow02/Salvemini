@@ -4,10 +4,10 @@
         <ScrollView>
             <StackLayout x:Name="mainLayout">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                    <iconize:IconButton VerticalOptions="Center" Clicked="Close_Clicked" TextColor="{x:Static local:Styles.TextColor}" Text="far-times" HorizontalOptions="Start" FontSize="Large" />
+                    <iconize:IconButton BackgroundColor="Transparent" VerticalOptions="Center" Clicked="Close_Clicked" TextColor="{x:Static local:Styles.TextColor}" Text="far-times" HorizontalOptions="Start" FontSize="Large" />
                     <StackLayout Spacing="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                         <Button x:Name="todayButton" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Center" FontSize="Large" />
-                        <iconize:IconButton Clicked="ChangeDate_Clicked" TextColor="{x:Static local:Styles.TextColor}" Text="fas-caret-down" HorizontalOptions="Center" FontSize="Large" />
+                        <iconize:IconButton BackgroundColor="Transparent" Clicked="ChangeDate_Clicked" TextColor="{x:Static local:Styles.TextColor}" Text="fas-caret-down" HorizontalOptions="Center" FontSize="Large" />
                     </StackLayout>
                     <ActivityIndicator Margin="10, 0" x:Name="loadingIndicator" IsRunning="False" HorizontalOptions="End" />
                 </StackLayout>
@@ -17,7 +17,7 @@
                     <iconize:IconLabel HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="fal-calendar-alt" TextColor="{x:Static local:Styles.TextGray}" FontSize="50" />
                     <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" x:Name="placeholderLabel" FontSize="Medium" Text="Oggi non è successo niente"/>
                 </StackLayout>
-                <DatePicker Focused="Picker_Focused" VerticalOptions="End" DateSelected="Picker_SelectedDate" Unfocused="Picker_Unfocused" HeightRequest="0" x:Name="datepicker" />
+                <DatePicker BackgroundColor="Transparent" Focused="Picker_Focused" VerticalOptions="End" DateSelected="Picker_SelectedDate" Unfocused="Picker_Unfocused" HeightRequest="0" x:Name="datepicker" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

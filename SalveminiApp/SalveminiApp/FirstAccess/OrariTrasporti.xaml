@@ -12,7 +12,7 @@
                 </StackLayout>
 
                 <!--ChooseMezzo-->
-                <control:SegmentedControl VerticalOptions="StartAndExpand" x:Name="MezzoSegment" OnSegmentSelected="ChoseMezzo" TintColor="{x:Static local:Styles.Apple}" SelectedTextColor="{x:Static local:Styles.TextColor}">
+                <control:SegmentedControl VerticalOptions="StartAndExpand" x:Name="MezzoSegment" OnSegmentSelected="ChoseMezzo" TintColor="White" SelectedTextColor="{x:Static local:Styles.TextColor}">
                     <control:SegmentedControl.Children>
                         <control:SegmentedControlOption Text="Treno" />
                         <control:SegmentedControlOption Text="Bus" />
@@ -30,7 +30,7 @@
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label HorizontalOptions="Start" Text="Verso:" TextColor="{x:Static local:Styles.TextGray}" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
-                        <control:SegmentedControl OnSegmentSelected="TrenoSegment_OnSegmentSelected" SelectedSegment="0" x:Name="TrenoSegment" TintColor="{x:Static local:Styles.Apple}" SelectedTextColor="{x:Static local:Styles.TextColor}">
+                        <control:SegmentedControl OnSegmentSelected="TrenoSegment_OnSegmentSelected" SelectedSegment="0" x:Name="TrenoSegment" TintColor="White" SelectedTextColor="{x:Static local:Styles.TextColor}">
                             <control:SegmentedControl.Children>
                                 <control:SegmentedControlOption Text="Sorrento" />
                                 <control:SegmentedControlOption Text="Napoli" />
@@ -44,7 +44,7 @@
 
 
                     <StackLayout HorizontalOptions="FillAndExpand">
-                          <control:SegmentedControl  x:Name="eavSitaSegment" TintColor="{x:Static local:Styles.Apple}" SelectedTextColor="{x:Static local:Styles.TextColor}">
+                          <control:SegmentedControl  x:Name="eavSitaSegment" TintColor="White" SelectedTextColor="{x:Static local:Styles.TextColor}">
                             <control:SegmentedControl.Children>
                                 <control:SegmentedControlOption Text="EAV" />
                                 <control:SegmentedControlOption Text="Sita" />

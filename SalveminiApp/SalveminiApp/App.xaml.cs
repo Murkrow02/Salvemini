@@ -48,18 +48,18 @@ namespace SalveminiApp
             Barrel.ApplicationId = "com.codex.salveminiapp";
 
             //Fix if upgraded from salveminiapp 2.0
-            if (Preferences.Get("veryFirstTime", true)) { Preferences.Set("isFirstTime", true); Preferences.Set("veryFirstTime", false); }
+            if (Preferences.Get("veryFirstTime", true)) { Preferences.Clear(); Preferences.Set("isFirstTime", true); Preferences.Set("veryFirstTime", false); }
 
             //Set MainPage
-            if (Preferences.Get("isFirstTime", true))
+            if (Preferences.Get("isFirstTime", true)) //First time
             {
                 MainPage = new NavigationPage(new FirstAccess.WelcomePage());
             }
-            else if (Preferences.Get("Token", "") == "" || Preferences.Get("UserId", 0) == 0)
+            else if (Preferences.Get("Token", "") == "" || Preferences.Get("UserId", 0) == 0) //Not logged
             {
-                MainPage = new FirstAccess.Login();
+                MainPage = new FirstAccess.Login(); 
             }
-            else
+            else //Logged
             {
                 MainPage = new TabPage();
             }

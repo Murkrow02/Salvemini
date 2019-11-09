@@ -18,7 +18,7 @@ namespace SalveminiApp.SecondaryViews
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            mainLayout.Children.RemoveAt(1);
+            secondLayout.Children.RemoveAt(1);
             //Ios 13 bug
             try
             {
@@ -34,7 +34,7 @@ namespace SalveminiApp.SecondaryViews
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            mainLayout.Children.Insert(1, new Helpers.CountDown());
+            secondLayout.Children.Insert(1, new Helpers.CountDown());
         }
 
         void closePage(object sender, EventArgs e)

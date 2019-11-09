@@ -52,7 +52,7 @@ namespace SalveminiApp.RestApi
                         Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
                         break;
                 }
-            }
+           }
             catch (Exception ex)
             {
                 Debug.WriteLine(@"              ERROR {0}", ex.Message);

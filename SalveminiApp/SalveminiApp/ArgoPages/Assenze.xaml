@@ -50,7 +50,7 @@
                     <Label x:Name="usciteLabel" TextColor="White" FontAttributes="None" FontSize="Large" />
                 </StackLayout>
                 <Frame VerticalOptions="EndAndExpand" HasShadow="false" HorizontalOptions="Center" x:Name="buttonFrame" Padding="0">
-                    <iconize:IconButton Clicked="Close_Clicked" Text="fas-times" FontSize="30" TextColor="#FF7272" />
+                    <iconize:IconButton BackgroundColor="Transparent"  Clicked="Close_Clicked" Text="fas-times" FontSize="30" TextColor="#FF7272" />
                 </Frame>
             </StackLayout>
         </AbsoluteLayout>

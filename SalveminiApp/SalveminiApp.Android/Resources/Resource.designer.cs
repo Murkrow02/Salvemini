@@ -23862,6 +23862,9 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 0x7F130000
 			public const int file_paths = 2131951616;
 			
+			// aapt resource value: 0x7F130001
+			public const int network_security_config = 2131951617;
+			
 			static Xml()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

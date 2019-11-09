@@ -4,7 +4,7 @@ using SalveminiApp.RestApi.Models;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using System.Threading.Tasks;
-using Microsoft.AspNet.SignalR.Client;
+using Microsoft.AspNetCore.SignalR.Client;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 #endif

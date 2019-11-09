@@ -43,13 +43,13 @@ namespace SalveminiApp.RestApi
                     Avvisi = JsonConvert.DeserializeObject<List<Models.Avvisi>>(content);
 
                     //Save Cache
-                    Barrel.Current.Add("Index", Avvisi, TimeSpan.FromDays(10));
+                    Barrel.Current.Add("Avvisi", Avvisi, TimeSpan.FromDays(10));
                 }
 
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                Debug.WriteLine(@"Error getting avvisi", ex.Message);
             }
             return Avvisi;
         }

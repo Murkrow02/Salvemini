@@ -127,6 +127,8 @@ namespace SalveminiApp.AreaVip
                         Preferences.Set("Corso", data.Corso);
                         App.refreshCalls();
                         await DisplayAlert("Successo", "Ora sei loggato come " + data.nomeCognome, "Yo");
+                        //Remove cached home profile pic
+                        MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "ReloadUserPic");
                         break;
                 }
               

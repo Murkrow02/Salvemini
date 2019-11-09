@@ -265,7 +265,6 @@ namespace SalveminiApp
 
                     }
 
-
                     //Get last avviso
                     if (Index.ultimoAvviso != null)
                     {

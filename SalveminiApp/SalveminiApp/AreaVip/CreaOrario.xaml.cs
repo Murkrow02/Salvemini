@@ -70,7 +70,7 @@ namespace SalveminiApp.AreaVip
                 //Add day label
                 layout.Children.Add(new Label { Text = giorno, FontSize = 25, FontAttributes = FontAttributes.Bold, TextColor = Styles.TextColor });
                 //Add segmented control
-                layout.Children.Add(new SegmentedControl { Children = sedi, SelectedTextColor = Color.Black });
+                layout.Children.Add(new SegmentedControl { Children = sedi, SelectedTextColor = Color.Black, TintColor = Color.White });
 
                 //Create 7 autocomplete entries
                 for (int i = 1; i <= 7; i++)

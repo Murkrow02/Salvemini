@@ -1,38 +1,37 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Microsoft.AspNet.SignalR.Client;
+using Microsoft.AspNetCore.SignalR.Client;
 using Xamarin.Forms;
 
 namespace SalveminiApp.SignalR
 {
     public class HubManager
     {
-        public string Url = Costants.Uri("signalr",false);
-        public HubConnection Connection { get; set; }
-        public IHubProxy Hub { get; set; }
-
+        public HubConnection hubConnection;
         public HubManager()
         {
-            Connection = new HubConnection(Url, useDefaultUrl: false);
-            Hub = Connection.CreateHubProxy("SignalRHub");
-            Connection.Start().Wait();
+            // localhost for UWP/iOS or special IP for Android
+            hubConnection = new HubConnectionBuilder()
+        .WithUrl($"http://localhost:5001/signalr")
+        .Build();
 
-            //Connect to signalr
-            Hub.On<string>("acknowledgeMessage", (message) =>
+
+            hubConnection.On<string>("acknowledgeMessage", (message) =>
             {
                 MessagingCenter.Send<App>((App)Application.Current, "updateResults");
             });
         }
 
-        public void SayHello(string message)
+        public async Task Connect()
         {
-            Hub.Invoke("hello", message);
-            Console.WriteLine("hello method is called!");
-        }
-
-        public void Stop()
-        {
-            Connection.Stop();
+            try
+            {
+                await hubConnection.StartAsync();
+            }
+            catch (Exception ex)
+            {
+                // Something has gone wrong
+            }
         }
     }
 }

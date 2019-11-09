@@ -89,7 +89,8 @@ UIImage UIImageFromUrl(string uri)
         return UIImage.LoadFromData(data);
 }
 
-someImage.SaveToPhotosAlbum((image, error) => {                         var o = image as UIImage;                         if(error == null) {                              new UIAlertView("Successo", "L'immagine è stata aggiunta al tuo rullino foto", null, "Ok", null).Show();                         }                         else {                             new UIAlertView("Errore", "Non è stato possibile scaricare l'immagine, controlla di averci concesso i permessi di accedere al tuo rullino", null, "Ok", null).Show();                          }                     }); 
+someImage.SaveToPhotosAlbum((image, error) => {                         var o = image as UIImage;                         if(error == null) {                              new UIAlertView("Successo", "L'immagine è stata aggiunta al tuo rullino foto", null, "Ok", null).Show();                         }                         else {                             new UIAlertView("Errore", "Non è stato possibile scaricare l'immagine, controlla di averci concesso i permessi di accedere al tuo rullino", null, "Ok", null).Show();                          }                     });
+
 #endif 
 #if __ANDROID__              //ACCESS CAMERA             var status1 = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage);              if (status1 != PermissionStatus.Granted)             {                 if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Storage))                 { 
 #if __IOS__                     new UIAlertView("Errore", "Non abbiamo il permesso di accedere alle foto",null, "OK",null).Show(); 
@@ -107,6 +108,8 @@ someImage.SaveToPhotosAlbum((image, error) => {                         var o 
 
             }  
 #endif 
-            } 
+          
+
+        } 
     }
 }
