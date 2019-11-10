@@ -113,7 +113,7 @@ namespace SalveminiApp.SecondaryViews
         void Menu_Clicked(object sender, EventArgs e)
         {
             var bubblePopup = new Helpers.PopOvers().defaultPopOver;
-            bubblePopup.Content = new Xamarin.Forms.ListView { WidthRequest = App.ScreenWidth / 4, BackgroundColor = Color.Transparent, ItemsSource = Avvisis.Select(x => x.Titolo).ToList(), ItemTemplate = new DataTemplate(() => { var lbl = new Xamarin.Forms.Label { VerticalOptions = LayoutOptions.Center, TextColor = Color.White, HorizontalOptions = LayoutOptions.Center }; lbl.SetBinding(Xamarin.Forms.Label.TextProperty, "."); return new ViewCell { View = lbl }; }) };
+            bubblePopup.Content = new Xamarin.Forms.ListView { WidthRequest = App.ScreenWidth / 8, BackgroundColor = Color.Transparent, ItemsSource = Avvisis, ItemTemplate = new DataTemplate(() => { var lbl = new Xamarin.Forms.Label { VerticalOptions = LayoutOptions.Center, TextColor = Color.White, HorizontalOptions = LayoutOptions.Center }; lbl.SetBinding(Xamarin.Forms.Label.TextProperty, "Title"); return new ViewCell { View = lbl }; }) };
             bubblePopup.WidthRequest = App.ScreenWidth / 9;
             bubblePopup.HeightRequest = App.ScreenWidth / 3;
             bubblePopup.PointerDirection = PointerDirection.Up;
