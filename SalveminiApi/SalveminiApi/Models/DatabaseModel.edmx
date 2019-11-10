@@ -4,16 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Entities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="SalveminiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Ads">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Descrizione" Type="nvarchar" MaxLength="4000" />
-          <Property Name="Immagine" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Descrizione" Type="nvarchar" MaxLength="4000" Nullable="false" />
           <Property Name="Url" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Immagine" Type="nvarchar" MaxLength="2000" />
           <Property Name="Tipo" Type="int" Nullable="false" />
           <Property Name="Impressions" Type="int" />
         </EntityType>
@@ -25,14 +25,6 @@
           <Property Name="Tipo" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Giorno" Type="date" Nullable="false" />
           <Property Name="Valore" Type="int" Nullable="false" />
-        </EntityType>
-        <!--Errori trovati durante la generazione:
-avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB_A41900_salvemini.dbo.AppInfo'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
-        <EntityType Name="AppInfo">
-          <Key>
-            <PropertyRef Name="Versione" />
-          </Key>
-          <Property Name="Versione" Type="decimal" Precision="15" Scale="1" Nullable="false" />
         </EntityType>
         <EntityType Name="Avvisi">
           <Key>
@@ -76,7 +68,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nome" Type="nvarchar" MaxLength="30" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Immagine" Type="nvarchar" MaxLength="300" />
           <Property Name="idSondaggio" Type="int" Nullable="false" />
         </EntityType>
@@ -94,7 +86,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nome" Type="nvarchar" MaxLength="150" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="Creatore" Type="int" Nullable="false" />
           <Property Name="Creazione" Type="datetime" Nullable="false" />
           <Property Name="Attivo" Type="bit" Nullable="false" />
@@ -103,7 +95,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nome" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="Cognome" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="Sesso" Type="nvarchar" MaxLength="1" Nullable="false" />
@@ -165,7 +157,9 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Sondaggi_Utenti">
-          <End Role="Utenti" Type="Self.Utenti" Multiplicity="1" />
+          <End Role="Utenti" Type="Self.Utenti" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Sondaggi" Type="Self.Sondaggi" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Utenti">
@@ -189,9 +183,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_VotiSondaggi_Sondaggi">
-          <End Role="Sondaggi" Type="Self.Sondaggi" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="Sondaggi" Type="Self.Sondaggi" Multiplicity="1" />
           <End Role="VotiSondaggi" Type="Self.VotiSondaggi" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sondaggi">
@@ -216,7 +208,7 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="EntitiesStoreContainer">
+        <EntityContainer Name="SalveminiModelStoreContainer">
           <EntitySet Name="Ads" EntityType="Self.Ads" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Analytics" EntityType="Self.Analytics" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Avvisi" EntityType="Self.Avvisi" Schema="dbo" store:Type="Tables" />
@@ -227,11 +219,6 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <EntitySet Name="Sondaggi" EntityType="Self.Sondaggi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Utenti" EntityType="Self.Utenti" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VotiSondaggi" EntityType="Self.VotiSondaggi" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AppInfo" EntityType="Self.AppInfo" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [AppInfo].[Versione] AS [Versione]
-    FROM [dbo].[AppInfo] AS [AppInfo]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_Avvisi_Utenti" Association="Self.FK_Avvisi_Utenti">
             <End Role="Utenti" EntitySet="Utenti" />
             <End Role="Avvisi" EntitySet="Avvisi" />
@@ -261,10 +248,45 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
             <End Role="VotiSondaggi" EntitySet="VotiSondaggi" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Entities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="SalveminiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Ads">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Descrizione" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Url" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Immagine" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Tipo" Type="Int32" Nullable="false" />
+          <Property Name="Impressions" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Analytics">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Giorno" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Valore" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Avvisi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titolo" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Descrizione" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="Immagini" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="idCreatore" Type="Int32" Nullable="false" />
+          <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SendNotification" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Utenti" Relationship="Self.FK_Avvisi_Utenti" FromRole="Avvisi" ToRole="Utenti" />
+        </EntityType>
         <EntityType Name="BookLibri">
           <Key>
             <PropertyRef Name="id" />
@@ -275,8 +297,8 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <Property Name="Prezzo" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="idUtente" Type="Int32" Nullable="false" />
           <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="BookUtenti" Relationship="Self.FK_BookLibri_BookUtenti" FromRole="BookLibri" ToRole="BookUtenti" />
           <Property Name="Accettato" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="BookUtenti" Relationship="Self.FK_BookLibri_BookUtenti" FromRole="BookLibri" ToRole="BookUtenti" />
         </EntityType>
         <EntityType Name="BookUtenti">
           <Key>
@@ -289,14 +311,47 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="BookLibri" Relationship="Self.FK_BookLibri_BookUtenti" FromRole="BookUtenti" ToRole="BookLibri" />
           <Property Name="IG" Type="Boolean" />
+          <NavigationProperty Name="BookLibri" Relationship="Self.FK_BookLibri_BookUtenti" FromRole="BookUtenti" ToRole="BookLibri" />
+        </EntityType>
+        <EntityType Name="OggettiSondaggi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Immagine" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="idSondaggio" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sondaggi" Relationship="Self.FK_OggettiSondaggi_Sondaggi" FromRole="OggettiSondaggi" ToRole="Sondaggi" />
+          <NavigationProperty Name="VotiSondaggi" Relationship="Self.FK_VotiSondaggi_OggettiSondaggi" FromRole="OggettiSondaggi" ToRole="VotiSondaggi" />
+        </EntityType>
+        <EntityType Name="SalveminiCard">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Descrizione" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Immagine" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sondaggi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Creatore" Type="Int32" Nullable="false" />
+          <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Attivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="OggettiSondaggi" Relationship="Self.FK_OggettiSondaggi_Sondaggi" FromRole="Sondaggi" ToRole="OggettiSondaggi" />
+          <NavigationProperty Name="Utenti" Relationship="Self.FK_Sondaggi_Utenti" FromRole="Sondaggi" ToRole="Utenti" />
+          <NavigationProperty Name="VotiSondaggi" Relationship="Self.FK_VotiSondaggi_Sondaggi" FromRole="Sondaggi" ToRole="VotiSondaggi" />
         </EntityType>
         <EntityType Name="Utenti">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Cognome" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Sesso" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
@@ -304,11 +359,37 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           <Property Name="Corso" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Stato" Type="Int32" Nullable="false" />
           <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ArgoToken" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Avvisi" Relationship="Entities.FK_Avvisi_Utenti" FromRole="Utenti" ToRole="Avvisi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
-          <NavigationProperty Name="Sondaggi" Relationship="Entities.FK_Sondaggi_Utenti" FromRole="Utenti" ToRole="Sondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
-          <NavigationProperty Name="VotiSondaggi" Relationship="Entities.FK_VotiSondaggi_Utenti" FromRole="Utenti" ToRole="VotiSondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Name="ArgoToken" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Avvisi" Relationship="Self.FK_Avvisi_Utenti" FromRole="Utenti" ToRole="Avvisi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="Sondaggi" Relationship="Self.FK_Sondaggi_Utenti" FromRole="Utenti" ToRole="Sondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="VotiSondaggi" Relationship="Self.FK_VotiSondaggi_Utenti" FromRole="Utenti" ToRole="VotiSondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
+        <EntityType Name="VotiSondaggi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idSondaggio" Type="Int32" Nullable="false" />
+          <Property Name="Utente" Type="Int32" Nullable="false" />
+          <Property Name="Voto" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="OggettiSondaggi" Relationship="Self.FK_VotiSondaggi_OggettiSondaggi" FromRole="VotiSondaggi" ToRole="OggettiSondaggi" />
+          <NavigationProperty Name="Sondaggi" Relationship="Self.FK_VotiSondaggi_Sondaggi" FromRole="VotiSondaggi" ToRole="Sondaggi" />
+          <NavigationProperty Name="Utenti" Relationship="Self.FK_VotiSondaggi_Utenti" FromRole="VotiSondaggi" ToRole="Utenti" />
+        </EntityType>
+        <Association Name="FK_Avvisi_Utenti">
+          <End Role="Utenti" Type="Self.Utenti" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Avvisi" Type="Self.Avvisi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Avvisi">
+              <PropertyRef Name="idCreatore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_BookLibri_BookUtenti">
           <End Role="BookUtenti" Type="Self.BookUtenti" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -323,151 +404,11 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DatabaseString" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="BookLibri" EntityType="Self.BookLibri" />
-          <EntitySet Name="BookUtenti" EntityType="Self.BookUtenti" />
-          <EntitySet Name="Utenti" EntityType="Self.Utenti" />
-          <AssociationSet Name="FK_BookLibri_BookUtenti" Association="Self.FK_BookLibri_BookUtenti">
-            <End Role="BookUtenti" EntitySet="BookUtenti" />
-            <End Role="BookLibri" EntitySet="BookLibri" />
-          </AssociationSet>
-          <EntitySet Name="AppInfo" EntityType="Entities.AppInfo" />
-          <EntitySet Name="Avvisi" EntityType="Entities.Avvisi" />
-          <AssociationSet Name="FK_Avvisi_Utenti" Association="Entities.FK_Avvisi_Utenti">
-            <End Role="Utenti" EntitySet="Utenti" />
-            <End Role="Avvisi" EntitySet="Avvisi" />
-          </AssociationSet>
-          <EntitySet Name="Ads" EntityType="Entities.Ads" />
-          <EntitySet Name="Analytics" EntityType="Entities.Analytics" />
-          <EntitySet Name="SalveminiCard" EntityType="Entities.SalveminiCard" />
-          <EntitySet Name="OggettiSondaggi" EntityType="Entities.OggettiSondaggi" />
-          <EntitySet Name="Sondaggi" EntityType="Entities.Sondaggi" />
-          <EntitySet Name="VotiSondaggi" EntityType="Entities.VotiSondaggi" />
-          <AssociationSet Name="FK_OggettiSondaggi_Sondaggi" Association="Entities.FK_OggettiSondaggi_Sondaggi">
-            <End Role="Sondaggi" EntitySet="Sondaggi" />
-            <End Role="OggettiSondaggi" EntitySet="OggettiSondaggi" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Sondaggi_Utenti" Association="Entities.FK_Sondaggi_Utenti">
-            <End Role="Utenti" EntitySet="Utenti" />
-            <End Role="Sondaggi" EntitySet="Sondaggi" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VotiSondaggi_Sondaggi" Association="Entities.FK_VotiSondaggi_Sondaggi">
-            <End Role="Sondaggi" EntitySet="Sondaggi" />
-            <End Role="VotiSondaggi" EntitySet="VotiSondaggi" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VotiSondaggi_Utenti" Association="Entities.FK_VotiSondaggi_Utenti">
-            <End Role="Utenti" EntitySet="Utenti" />
-            <End Role="VotiSondaggi" EntitySet="VotiSondaggi" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VotiSondaggi_OggettiSondaggi" Association="Entities.FK_VotiSondaggi_OggettiSondaggi">
-            <End Role="OggettiSondaggi" EntitySet="OggettiSondaggi" />
-            <End Role="VotiSondaggi" EntitySet="VotiSondaggi" />
-          </AssociationSet>
-        </EntityContainer>
-        <EntityType Name="AppInfo">
-          <Key>
-            <PropertyRef Name="Versione" />
-          </Key>
-          <Property Name="Versione" Type="Decimal" Nullable="false" Precision="15" Scale="1" />
-        </EntityType>
-        <EntityType Name="Avvisi">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Titolo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Descrizione" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
-          <Property Name="Immagini" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
-          <Property Name="idCreatore" Type="Int32" Nullable="false" />
-          <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="SendNotification" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Utenti" Relationship="Entities.FK_Avvisi_Utenti" FromRole="Avvisi" ToRole="Utenti" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
-        </EntityType>
-        <Association Name="FK_Avvisi_Utenti">
-          <End Type="Entities.Utenti" Role="Utenti" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="Entities.Avvisi" Role="Avvisi" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Utenti">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Avvisi">
-              <PropertyRef Name="idCreatore" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Ads">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Descrizione" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
-          <Property Name="Immagine" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
-          <Property Name="Url" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
-          <Property Name="Tipo" Type="Int32" Nullable="false" />
-          <Property Name="Impressions" Type="Int32" />
-        </EntityType>
-        <EntityType Name="Analytics">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Tipo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Giorno" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Valore" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="SalveminiCard">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Descrizione" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="Immagine" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="OggettiSondaggi">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="Nome" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Immagine" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="idSondaggio" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Sondaggi" Relationship="Entities.FK_OggettiSondaggi_Sondaggi" FromRole="OggettiSondaggi" ToRole="Sondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
-          <NavigationProperty Name="VotiSondaggi" Relationship="Entities.FK_VotiSondaggi_OggettiSondaggi" FromRole="OggettiSondaggi" ToRole="VotiSondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
-        </EntityType>
-        <EntityType Name="Sondaggi">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Creatore" Type="Int32" Nullable="false" />
-          <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Attivo" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="OggettiSondaggi" Relationship="Entities.FK_OggettiSondaggi_Sondaggi" FromRole="Sondaggi" ToRole="OggettiSondaggi" />
-          <NavigationProperty Name="Utenti" Relationship="Entities.FK_Sondaggi_Utenti" FromRole="Sondaggi" ToRole="Utenti" a:GetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
-          <NavigationProperty Name="VotiSondaggi" Relationship="Entities.FK_VotiSondaggi_Sondaggi" FromRole="Sondaggi" ToRole="VotiSondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
-        </EntityType>
-        <EntityType Name="VotiSondaggi">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="idSondaggio" Type="Int32" Nullable="false" />
-          <Property Name="Utente" Type="Int32" Nullable="false" />
-          <Property Name="Voto" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Sondaggi" Relationship="Entities.FK_VotiSondaggi_Sondaggi" FromRole="VotiSondaggi" ToRole="Sondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
-          <NavigationProperty Name="Utenti" Relationship="Entities.FK_VotiSondaggi_Utenti" FromRole="VotiSondaggi" ToRole="Utenti" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
-          <NavigationProperty Name="OggettiSondaggi" Relationship="Entities.FK_VotiSondaggi_OggettiSondaggi" FromRole="VotiSondaggi" ToRole="OggettiSondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
-        </EntityType>
         <Association Name="FK_OggettiSondaggi_Sondaggi">
-          <End Type="Entities.Sondaggi" Role="Sondaggi" Multiplicity="1">
+          <End Role="Sondaggi" Type="Self.Sondaggi" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="Entities.OggettiSondaggi" Role="OggettiSondaggi" Multiplicity="*" />
+          <End Role="OggettiSondaggi" Type="Self.OggettiSondaggi" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sondaggi">
               <PropertyRef Name="id" />
@@ -477,9 +418,23 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_VotiSondaggi_OggettiSondaggi">
+          <End Role="OggettiSondaggi" Type="Self.OggettiSondaggi" Multiplicity="1" />
+          <End Role="VotiSondaggi" Type="Self.VotiSondaggi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OggettiSondaggi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="VotiSondaggi">
+              <PropertyRef Name="Voto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Sondaggi_Utenti">
-          <End Type="Entities.Utenti" Role="Utenti" Multiplicity="1" />
-          <End Type="Entities.Sondaggi" Role="Sondaggi" Multiplicity="*" />
+          <End Role="Utenti" Type="Self.Utenti" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Sondaggi" Type="Self.Sondaggi" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Utenti">
               <PropertyRef Name="id" />
@@ -490,10 +445,8 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_VotiSondaggi_Sondaggi">
-          <End Type="Entities.Sondaggi" Role="Sondaggi" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="Entities.VotiSondaggi" Role="VotiSondaggi" Multiplicity="*" />
+          <End Role="Sondaggi" Type="Self.Sondaggi" Multiplicity="1" />
+          <End Role="VotiSondaggi" Type="Self.VotiSondaggi" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sondaggi">
               <PropertyRef Name="id" />
@@ -504,10 +457,10 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_VotiSondaggi_Utenti">
-          <End Type="Entities.Utenti" Role="Utenti" Multiplicity="1">
+          <End Role="Utenti" Type="Self.Utenti" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="Entities.VotiSondaggi" Role="VotiSondaggi" Multiplicity="*" />
+          <End Role="VotiSondaggi" Type="Self.VotiSondaggi" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Utenti">
               <PropertyRef Name="id" />
@@ -517,41 +470,104 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_VotiSondaggi_OggettiSondaggi">
-          <End Type="Entities.OggettiSondaggi" Role="OggettiSondaggi" Multiplicity="1" />
-          <End Type="Entities.VotiSondaggi" Role="VotiSondaggi" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="OggettiSondaggi">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="VotiSondaggi">
-              <PropertyRef Name="Voto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityContainer Name="DatabaseString" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ads" EntityType="Self.Ads" />
+          <EntitySet Name="Analytics" EntityType="Self.Analytics" />
+          <EntitySet Name="Avvisi" EntityType="Self.Avvisi" />
+          <EntitySet Name="BookLibri" EntityType="Self.BookLibri" />
+          <EntitySet Name="BookUtenti" EntityType="Self.BookUtenti" />
+          <EntitySet Name="OggettiSondaggi" EntityType="Self.OggettiSondaggi" />
+          <EntitySet Name="SalveminiCard" EntityType="Self.SalveminiCard" />
+          <EntitySet Name="Sondaggi" EntityType="Self.Sondaggi" />
+          <EntitySet Name="Utenti" EntityType="Self.Utenti" />
+          <EntitySet Name="VotiSondaggi" EntityType="Self.VotiSondaggi" />
+          <AssociationSet Name="FK_Avvisi_Utenti" Association="Self.FK_Avvisi_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="Avvisi" EntitySet="Avvisi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookLibri_BookUtenti" Association="Self.FK_BookLibri_BookUtenti">
+            <End Role="BookUtenti" EntitySet="BookUtenti" />
+            <End Role="BookLibri" EntitySet="BookLibri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OggettiSondaggi_Sondaggi" Association="Self.FK_OggettiSondaggi_Sondaggi">
+            <End Role="Sondaggi" EntitySet="Sondaggi" />
+            <End Role="OggettiSondaggi" EntitySet="OggettiSondaggi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VotiSondaggi_OggettiSondaggi" Association="Self.FK_VotiSondaggi_OggettiSondaggi">
+            <End Role="OggettiSondaggi" EntitySet="OggettiSondaggi" />
+            <End Role="VotiSondaggi" EntitySet="VotiSondaggi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sondaggi_Utenti" Association="Self.FK_Sondaggi_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="Sondaggi" EntitySet="Sondaggi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VotiSondaggi_Sondaggi" Association="Self.FK_VotiSondaggi_Sondaggi">
+            <End Role="Sondaggi" EntitySet="Sondaggi" />
+            <End Role="VotiSondaggi" EntitySet="VotiSondaggi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VotiSondaggi_Utenti" Association="Self.FK_VotiSondaggi_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="VotiSondaggi" EntitySet="VotiSondaggi" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="EntitiesStoreContainer" CdmEntityContainer="DatabaseString">
+        <EntityContainerMapping StorageEntityContainer="SalveminiModelStoreContainer" CdmEntityContainer="DatabaseString">
+          <EntitySetMapping Name="Ads">
+            <EntityTypeMapping TypeName="SalveminiModel.Ads">
+              <MappingFragment StoreEntitySet="Ads">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Immagine" ColumnName="Immagine" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Impressions" ColumnName="Impressions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Analytics">
+            <EntityTypeMapping TypeName="SalveminiModel.Analytics">
+              <MappingFragment StoreEntitySet="Analytics">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Giorno" ColumnName="Giorno" />
+                <ScalarProperty Name="Valore" ColumnName="Valore" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Avvisi">
+            <EntityTypeMapping TypeName="SalveminiModel.Avvisi">
+              <MappingFragment StoreEntitySet="Avvisi">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Titolo" ColumnName="Titolo" />
+                <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+                <ScalarProperty Name="Immagini" ColumnName="Immagini" />
+                <ScalarProperty Name="idCreatore" ColumnName="idCreatore" />
+                <ScalarProperty Name="Creazione" ColumnName="Creazione" />
+                <ScalarProperty Name="SendNotification" ColumnName="SendNotification" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="BookLibri">
-            <EntityTypeMapping TypeName="Entities.BookLibri">
+            <EntityTypeMapping TypeName="SalveminiModel.BookLibri">
               <MappingFragment StoreEntitySet="BookLibri">
-                <ScalarProperty Name="Accettato" ColumnName="Accettato" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Seriale" ColumnName="Seriale" />
                 <ScalarProperty Name="Prezzo" ColumnName="Prezzo" />
                 <ScalarProperty Name="idUtente" ColumnName="idUtente" />
                 <ScalarProperty Name="Creazione" ColumnName="Creazione" />
+                <ScalarProperty Name="Accettato" ColumnName="Accettato" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BookUtenti">
-            <EntityTypeMapping TypeName="Entities.BookUtenti">
+            <EntityTypeMapping TypeName="SalveminiModel.BookUtenti">
               <MappingFragment StoreEntitySet="BookUtenti">
-                <ScalarProperty Name="IG" ColumnName="IG" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Cognome" ColumnName="Cognome" />
@@ -559,13 +575,44 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Ip" ColumnName="Ip" />
                 <ScalarProperty Name="Creazione" ColumnName="Creazione" />
+                <ScalarProperty Name="IG" ColumnName="IG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OggettiSondaggi">
+            <EntityTypeMapping TypeName="SalveminiModel.OggettiSondaggi">
+              <MappingFragment StoreEntitySet="OggettiSondaggi">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Immagine" ColumnName="Immagine" />
+                <ScalarProperty Name="idSondaggio" ColumnName="idSondaggio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalveminiCard">
+            <EntityTypeMapping TypeName="SalveminiModel.SalveminiCard">
+              <MappingFragment StoreEntitySet="SalveminiCard">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+                <ScalarProperty Name="Immagine" ColumnName="Immagine" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sondaggi">
+            <EntityTypeMapping TypeName="SalveminiModel.Sondaggi">
+              <MappingFragment StoreEntitySet="Sondaggi">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Creatore" ColumnName="Creatore" />
+                <ScalarProperty Name="Creazione" ColumnName="Creazione" />
+                <ScalarProperty Name="Attivo" ColumnName="Attivo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Utenti">
-            <EntityTypeMapping TypeName="Entities.Utenti">
+            <EntityTypeMapping TypeName="SalveminiModel.Utenti">
               <MappingFragment StoreEntitySet="Utenti">
-                <ScalarProperty Name="ArgoToken" ColumnName="ArgoToken" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Cognome" ColumnName="Cognome" />
@@ -574,90 +621,17 @@ avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'DB
                 <ScalarProperty Name="Corso" ColumnName="Corso" />
                 <ScalarProperty Name="Stato" ColumnName="Stato" />
                 <ScalarProperty Name="Creazione" ColumnName="Creazione" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AppInfo">
-            <EntityTypeMapping TypeName="Entities.AppInfo">
-              <MappingFragment StoreEntitySet="AppInfo">
-                <ScalarProperty Name="Versione" ColumnName="Versione" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Avvisi">
-            <EntityTypeMapping TypeName="Entities.Avvisi">
-              <MappingFragment StoreEntitySet="Avvisi">
-                <ScalarProperty Name="SendNotification" ColumnName="SendNotification" />
-                <ScalarProperty Name="Creazione" ColumnName="Creazione" />
-                <ScalarProperty Name="idCreatore" ColumnName="idCreatore" />
-                <ScalarProperty Name="Immagini" ColumnName="Immagini" />
-                <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
-                <ScalarProperty Name="Titolo" ColumnName="Titolo" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Ads">
-            <EntityTypeMapping TypeName="Entities.Ads">
-              <MappingFragment StoreEntitySet="Ads">
-                <ScalarProperty Name="Impressions" ColumnName="Impressions" />
-                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
-                <ScalarProperty Name="Url" ColumnName="Url" />
-                <ScalarProperty Name="Immagine" ColumnName="Immagine" />
-                <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
-                <ScalarProperty Name="Nome" ColumnName="Nome" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Analytics">
-            <EntityTypeMapping TypeName="Entities.Analytics">
-              <MappingFragment StoreEntitySet="Analytics">
-                <ScalarProperty Name="Valore" ColumnName="Valore" />
-                <ScalarProperty Name="Giorno" ColumnName="Giorno" />
-                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SalveminiCard">
-            <EntityTypeMapping TypeName="Entities.SalveminiCard">
-              <MappingFragment StoreEntitySet="SalveminiCard">
-                <ScalarProperty Name="Immagine" ColumnName="Immagine" />
-                <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
-                <ScalarProperty Name="Nome" ColumnName="Nome" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="OggettiSondaggi">
-            <EntityTypeMapping TypeName="Entities.OggettiSondaggi">
-              <MappingFragment StoreEntitySet="OggettiSondaggi">
-                <ScalarProperty Name="idSondaggio" ColumnName="idSondaggio" />
-                <ScalarProperty Name="Immagine" ColumnName="Immagine" />
-                <ScalarProperty Name="Nome" ColumnName="Nome" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Sondaggi">
-            <EntityTypeMapping TypeName="Entities.Sondaggi">
-              <MappingFragment StoreEntitySet="Sondaggi">
-                <ScalarProperty Name="Attivo" ColumnName="Attivo" />
-                <ScalarProperty Name="Creazione" ColumnName="Creazione" />
-                <ScalarProperty Name="Creatore" ColumnName="Creatore" />
-                <ScalarProperty Name="Nome" ColumnName="Nome" />
-                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ArgoToken" ColumnName="ArgoToken" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="VotiSondaggi">
-            <EntityTypeMapping TypeName="Entities.VotiSondaggi">
+            <EntityTypeMapping TypeName="SalveminiModel.VotiSondaggi">
               <MappingFragment StoreEntitySet="VotiSondaggi">
-                <ScalarProperty Name="Voto" ColumnName="Voto" />
-                <ScalarProperty Name="Utente" ColumnName="Utente" />
-                <ScalarProperty Name="idSondaggio" ColumnName="idSondaggio" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idSondaggio" ColumnName="idSondaggio" />
+                <ScalarProperty Name="Utente" ColumnName="Utente" />
+                <ScalarProperty Name="Voto" ColumnName="Voto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

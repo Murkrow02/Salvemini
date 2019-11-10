@@ -4,25 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a83ae46c1aaf499789276b48f96e7854" Name="Diagram1">
-        <EntityTypeShape EntityType="Entities.BookLibri" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="Entities.BookUtenti" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="Entities.Utenti" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <AssociationConnector Association="Entities.FK_BookLibri_BookUtenti" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="Entities.AppInfo" Width="1.5" PointX="7.875" PointY="1" />
-        <EntityTypeShape EntityType="Entities.Avvisi" Width="1.5" PointX="3" PointY="4.25" />
-        <AssociationConnector Association="Entities.FK_Avvisi_Utenti" />
-        <EntityTypeShape EntityType="Entities.Ads" Width="1.5" PointX="9.625" PointY="1" />
-        <EntityTypeShape EntityType="Entities.Analytics" Width="1.5" PointX="5.375" PointY="3.75" />
-        <EntityTypeShape EntityType="Entities.SalveminiCard" Width="1.5" PointX="5.375" PointY="6.75" />
-        <EntityTypeShape EntityType="Entities.OggettiSondaggi" Width="1.5" PointX="7.125" PointY="10.25" />
-        <EntityTypeShape EntityType="Entities.Sondaggi" Width="1.5" PointX="3" PointY="9.375" />
-        <EntityTypeShape EntityType="Entities.VotiSondaggi" Width="1.5" PointX="9.75" PointY="7.875" />
-        <AssociationConnector Association="Entities.FK_OggettiSondaggi_Sondaggi" />
-        <AssociationConnector Association="Entities.FK_Sondaggi_Utenti" />
-        <AssociationConnector Association="Entities.FK_VotiSondaggi_Sondaggi" />
-        <AssociationConnector Association="Entities.FK_VotiSondaggi_Utenti" />
-        <AssociationConnector Association="Entities.FK_VotiSondaggi_OggettiSondaggi" />
+      <Diagram DiagramId="656d5e6cc7b34332b656b707faaae8ec" Name="Diagram1">
+        <EntityTypeShape EntityType="SalveminiModel.Ads" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalveminiModel.Analytics" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalveminiModel.Avvisi" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalveminiModel.BookLibri" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalveminiModel.BookUtenti" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalveminiModel.OggettiSondaggi" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalveminiModel.SalveminiCard" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalveminiModel.Sondaggi" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalveminiModel.Utenti" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalveminiModel.VotiSondaggi" Width="1.5" PointX="7.5" PointY="3.5" IsExpanded="true" />
+        <AssociationConnector Association="SalveminiModel.FK_Avvisi_Utenti" ManuallyRouted="false" />
+        <AssociationConnector Association="SalveminiModel.FK_BookLibri_BookUtenti" ManuallyRouted="false" />
+        <AssociationConnector Association="SalveminiModel.FK_OggettiSondaggi_Sondaggi" ManuallyRouted="false" />
+        <AssociationConnector Association="SalveminiModel.FK_VotiSondaggi_OggettiSondaggi" ManuallyRouted="false" />
+        <AssociationConnector Association="SalveminiModel.FK_Sondaggi_Utenti" ManuallyRouted="false" />
+        <AssociationConnector Association="SalveminiModel.FK_VotiSondaggi_Sondaggi" ManuallyRouted="false" />
+        <AssociationConnector Association="SalveminiModel.FK_VotiSondaggi_Utenti" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

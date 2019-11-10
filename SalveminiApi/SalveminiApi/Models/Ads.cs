@@ -17,8 +17,8 @@ namespace SalveminiApi.Models
         public int id { get; set; }
         public string Nome { get; set; }
         public string Descrizione { get; set; }
-        public string Immagine { get; set; }
         public string Url { get; set; }
+        public string Immagine { get; set; }
         public int Tipo { get; set; }
         public Nullable<int> Impressions { get; set; }
     }

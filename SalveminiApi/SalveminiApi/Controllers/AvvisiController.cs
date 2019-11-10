@@ -29,10 +29,6 @@ namespace SalveminiApi.Controllers
             if (!authorized)
                 throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
-            //Get parameters from request
-            int id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
-            string token = Request.Headers.GetValues("x-auth-token").First();
-
             //Prendi avvisi
             var avvisi = db.Avvisi.OrderByDescending(x => x.Creazione).ToList();
             return avvisi;
