@@ -48,6 +48,7 @@ namespace SalveminiApp
 
             //Set profile image size
             userImg.WidthRequest = App.ScreenWidth / 8.8;
+            coinImage.WidthRequest = App.ScreenWidth / 13;
 
             //Set navigation view
             todayLbl.Text = DateTime.Now.ToString("dddd").FirstCharToUpper();
@@ -83,13 +84,14 @@ namespace SalveminiApp
 
 
             //Get orario cached
-            var orarioCached = CacheHelper.GetCache<List<RestApi.Models.Lezione>>("orarioday" + (int)DateTime.Now.DayOfWeek);
+            var orarioCached = CacheHelper.GetCache<List<RestApi.Models.Lezione>>("orario" + Preferences.Get("Classe", 0) + Preferences.Get("Corso", ""));
             if (orarioCached != null)
             {
                 orarioFromCached = true;
+                var selectedDay = orarioCached.Where(x => x.Giorno == (int)DateTime.Today.DayOfWeek).ToList();
                 showOrario(orarioCached, Preferences.Get("FreedayInt", 0));
                 orarioDay.Text = "Oggi";
-                sedeLbl.Text = orarioCached[0].Sede;
+                sedeLbl.Text = selectedDay[0].Sede;
             }
 
 
@@ -187,14 +189,22 @@ namespace SalveminiApp
                     GetArgoIndex();
 
                     //Get updated orario
-                    var _orario = await App.Orari.GetOrario(classeCorso);
-
-                    //Check if success and if there are updates
-                    if (_orario != null && Orario != _orario && !orarioFromCached)
+                    var data = await App.Orari.GetOrario(classeCorso);
+                    if (data.Message != null)
                     {
-                        //Update with new orario
-                        Orario = _orario;
-                        changeDay(-1);
+
+                    }
+                    else
+                    {
+                        var _orario = data.Data as List<RestApi.Models.Lezione>;
+
+                        //Check if success and if there are updates
+                        if (_orario != null && Orario != _orario && !orarioFromCached)
+                        {
+                            //Update with new orario
+                            Orario = _orario;
+                            changeDay(-1);
+                        }
                     }
 
                     //Get index from api call
@@ -235,7 +245,7 @@ namespace SalveminiApp
 
                     //Save salveminiCoin value
                     sCoinLbl.Text = Index.sCoin.ToString();
-                    
+
                     //Get last sondaggio
                     if (Index.ultimoSondaggio != null)
                     {

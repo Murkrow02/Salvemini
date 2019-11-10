@@ -11,7 +11,7 @@ namespace SalveminiApi
     {
         public void Configuration(IAppBuilder app)
         {
-            app.MapSignalR("/signalr", new Microsoft.AspNet.SignalR.HubConfiguration());
+            //app.MapSignalR("/signalr", new Microsoft.AspNet.SignalR.HubConfiguration());
         }
 
     }

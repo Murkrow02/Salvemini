@@ -104,12 +104,12 @@ namespace SalveminiApi.Controllers
                 db.VotiSondaggi.Add(voto);
                 db.SaveChanges();
 
-                //Send signalR voti update
-                try
-                {
-                    Hubs.SignalRHub.SondaggioUpdate("Update sondaggio");
-                }
-                catch { }
+                ////Send signalR voti update
+                //try
+                //{
+                //    Hubs.SignalRHub.SondaggioUpdate("Update sondaggio");
+                //}
+                //catch { }
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }
             catch

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:local="clr-namespace:SalveminiApp" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.NewSondaggio">
-    <StackLayout Padding="25,0" Spacing="15">
+    <StackLayout Padding="25,0" Spacing="15" x:Name="mainLayout">
 
         <!--Header-->
         <Grid  Margin="-20,0" Padding="0,5">

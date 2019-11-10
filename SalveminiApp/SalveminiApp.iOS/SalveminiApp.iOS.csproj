@@ -285,6 +285,7 @@
     <BundleResource Include="Resources\fillTabBarHome%402x.png" />
     <BundleResource Include="Resources\Bacheca.svg" />
     <BundleResource Include="Resources\NoteDisciplinari.svg" />
+    <BundleResource Include="Resources\SalveminiCoin.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lotties\" />

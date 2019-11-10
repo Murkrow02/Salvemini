@@ -419,6 +419,7 @@ namespace SalveminiApi.Controllers
             var json = JsonConvert.SerializeObject(block);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var argoClient = argoUtils.ArgoClient(id, token);
+
             //Post
             var argoResponse = await argoClient.PostAsync("https://www.portaleargo.it/famiglia/api/rest/cambiopassword", content);
             if (!argoResponse.IsSuccessStatusCode)

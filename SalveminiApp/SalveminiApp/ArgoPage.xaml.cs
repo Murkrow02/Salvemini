@@ -5,7 +5,9 @@ using Xamarin.Forms;
 using Xamarin.Essentials;
 using MonkeyCache.SQLite;
 using Syncfusion.SfChart.XForms;
-
+#if __IOS__
+using UIKit;
+#endif
 namespace SalveminiApp
 {
     public partial class ArgoPage : ContentPage
@@ -15,7 +17,7 @@ namespace SalveminiApp
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            
+
             //Check internet status
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
@@ -57,13 +59,16 @@ namespace SalveminiApp
         //Push from widget to argo page
         void Widget_Tapped(object sender, EventArgs e)
         {
+#if __IOS__
+            //UIApplication.SharedApplication.StatusBarHidden = true;
+#endif
             Navigation.PushModalAsync((sender as ArgoWidget).Push);
         }
 
         //Fix chart label too long
         private void Chart_LabelCreated(object sender, ChartAxisLabelEventArgs e)
         {
-            if (e.LabelContent.Length > 8 )
+            if (e.LabelContent.Length > 8)
             {
                 e.LabelContent = e.LabelContent.Remove(8);
             }

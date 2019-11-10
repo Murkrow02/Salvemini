@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.SalveminiCard">
-    <StackLayout Padding="25,0" Spacing="5">
+    <StackLayout Padding="25,0" Spacing="5" x:Name="mainLayout">
 
         <Grid  Margin="-20,0" Padding="0,5">
             <Image HeightRequest="25" HorizontalOptions="CenterAndExpand" Source="SalveminiCard.png" x:Name="lilCard" Opacity="0" />

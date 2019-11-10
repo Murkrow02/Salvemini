@@ -22,6 +22,6 @@ namespace SalveminiApi.Models
         public System.DateTime Creazione { get; set; }
         public bool SendNotification { get; set; }
     
-        public virtual Utenti Utenti { internal get; set; }
+        public virtual Utenti Utenti { get; set; }
     }
 }

@@ -27,8 +27,8 @@ namespace SalveminiApp.SecondaryViews
 
             //Set Interface
 #if __IOS__
-            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
-            UIApplication.SharedApplication.StatusBarHidden = true;
+            //On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
+            //UIApplication.SharedApplication.StatusBarHidden = true;
             if (iOS.AppDelegate.HasNotch)
             {
                 mainLayout.Padding = new Thickness(0, 25);
@@ -54,8 +54,8 @@ namespace SalveminiApp.SecondaryViews
         {
             SecondaryViews.Profile UserPage = new Profile();
 #if __IOS__
-            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
-            UIApplication.SharedApplication.StatusBarHidden = true;
+            //On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
+            //UIApplication.SharedApplication.StatusBarHidden = true;
 #endif
             Navigation.PushModalAsync(UserPage);
             closePopUp();
@@ -122,7 +122,7 @@ namespace SalveminiApp.SecondaryViews
         {
             base.OnDisappearing();
 #if __IOS__
-            UIApplication.SharedApplication.StatusBarHidden = false;
+            //UIApplication.SharedApplication.StatusBarHidden = false;
 #endif
         }
 

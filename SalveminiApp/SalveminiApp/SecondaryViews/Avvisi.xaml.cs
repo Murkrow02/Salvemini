@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using UIKit;
 #endif
 using Xamarin.Essentials;
 using Plugin.Toasts;

@@ -51,7 +51,7 @@ namespace SalveminiApp.RestApi.Models
         {
             get
             {
-                return Descrizione.Length > 0 ? Descrizione.Remove(100) + "..." : Descrizione;
+                return Descrizione.Length > 100 ? Descrizione.Remove(100) + "..." : Descrizione;
             }
         }
     }

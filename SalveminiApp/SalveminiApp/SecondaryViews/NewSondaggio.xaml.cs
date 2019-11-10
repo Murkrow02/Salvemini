@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR.Client;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using UIKit;
 #endif
 namespace SalveminiApp.SecondaryViews
 {
@@ -22,6 +23,10 @@ namespace SalveminiApp.SecondaryViews
             //Safe area
 #if __IOS__
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
+            if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0) && !iOS.AppDelegate.HasNotch)
+            {
+                mainLayout.Padding = new Thickness(0, 20, 0, 0);
+            }
 #endif
 
             //Fill sondaggio values

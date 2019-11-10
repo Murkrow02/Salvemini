@@ -7,6 +7,9 @@ using Forms9Patch;
 using System.Linq;
 using Newtonsoft.Json;
 using MonkeyCache.SQLite;
+#if __IOS__
+using UIKit;
+#endif
 
 namespace SalveminiApp.ArgoPages
 {
@@ -34,6 +37,13 @@ namespace SalveminiApp.ArgoPages
             //Set max and min date
             datepicker.MaximumDate = DateTime.Now;
             datepicker.MinimumDate = DateTime.Now.AddYears(-1);
+
+#if __IOS__
+            if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0) && !iOS.AppDelegate.HasNotch)
+            {
+                mainLayout.Padding = new Thickness(0, 20, 0, 0);
+            }
+#endif
         }
 
         void getDayCache(string date)
@@ -49,15 +59,15 @@ namespace SalveminiApp.ArgoPages
                         gotByCache = true;
                         var data = Convert.ToDateTime(date);
                         callSetLayout(data.Day == DateTime.Today.Day && data.Month == DateTime.Today.Month && data.Year == DateTime.Today.Year);
-                        
+
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     //Failed stacca stacca
                     Barrel.Current.Empty("Oggi" + date);
                 }
-               
+
             }
         }
 
@@ -124,7 +134,7 @@ namespace SalveminiApp.ArgoPages
             nothingLayout.IsVisible = false;
             if (Oggi.bacheca.Count == 0 && Oggi.voti.Count == 0 && Oggi.argomenti.Count == 0 && Oggi.compiti.Count == 0 && Oggi.promemoria.Count == 0 && Oggi.assenze.Count == 0)
             {
-                placeholderLabel.Text = isToday ? "Oggi non è successo niente" : "Questo giorno non è successo niente"; 
+                placeholderLabel.Text = isToday ? "Oggi non è successo niente" : "Questo giorno non è successo niente";
                 nothingLayout.IsVisible = true;
             }
 
@@ -160,7 +170,7 @@ namespace SalveminiApp.ArgoPages
             }
         }
 
-       void setLayout(string type)
+        void setLayout(string type)
         {
             //Static values for widgets
             string title = "";
@@ -201,7 +211,7 @@ namespace SalveminiApp.ArgoPages
                         layout.Children.Add(descriptionLabel);
                         Content.Add(layout);
 
-                       async void Gesture_Tapped(object sender, EventArgs e)
+                        async void Gesture_Tapped(object sender, EventArgs e)
                         {
                             try
                             {
@@ -368,7 +378,7 @@ namespace SalveminiApp.ArgoPages
             widgetsLayout.Children.Add(mainFrame);
         }
 
-        
+
 
 
         void ChangeDate_Clicked(object sender, EventArgs e)

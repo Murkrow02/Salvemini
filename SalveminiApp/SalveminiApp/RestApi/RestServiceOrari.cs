@@ -29,36 +29,39 @@ namespace SalveminiApp.RestApi
         }
 
         //Downloads orario of that class
-        public async Task<List<Models.Lezione>> GetOrario(string classe)
+        public async Task<Models.ResponseModel> GetOrario(string classe)
         {
             Lezioni = new List<Models.Lezione>();
+            var data = new Models.ResponseModel();
             try
             {
                 var uri = Costants.Uri("orari/classe/" + classe);
 
                 var response = await client.GetAsync(uri);
-
-                if (response.IsSuccessStatusCode)
+                switch (response.StatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
-                    Lezioni = JsonConvert.DeserializeObject<List<Models.Lezione>>(content);
-
-                    //Save Cache
-                    Barrel.Current.Add("orario" + classe, Lezioni, TimeSpan.FromDays(90));
+                    case HttpStatusCode.OK:
+                        var content = await response.Content.ReadAsStringAsync();
+                        Lezioni = JsonConvert.DeserializeObject<List<Models.Lezione>>(content);
+                        data.Data = Lezioni;
+                        //Save Cache
+                        Barrel.Current.Add("orario" + classe, Lezioni, TimeSpan.FromDays(90));
+                        break;
+                    case HttpStatusCode.NotFound:
+                        data.Message = "L'orario della classe non è stato trovato";
+                        break;
+                    case HttpStatusCode.InternalServerError:
+                        data.Message = "Non è stato possibile recuperare l'orario";
+                        break;
                 }
-                else
-                {
-                    //Failed
-                    return null;
-                }
+                
             }
             catch (Exception ex)
             {
-                //Failed
-                return null;
+                data.Message = "Si è verificato un errore";
             }
 
-            return Lezioni;
+            return data;
         }
 
         //Gets only one day
@@ -149,7 +152,7 @@ namespace SalveminiApp.RestApi
 
     public interface IRestServiceOrari
     {
-        Task<List<Models.Lezione>> GetOrario(string classe);
+        Task<Models.ResponseModel> GetOrario(string classe);
         Task<List<Models.Lezione>> GetOrarioDay(int day, List<Models.Lezione> orario);
         Task<string[]> UploadOrario(string classe, List<Models.newOrario> newOrario);
 
@@ -165,7 +168,7 @@ namespace SalveminiApp.RestApi
             restServiceOrari = serviceOrari;
         }
 
-        public Task<List<Models.Lezione>> GetOrario(string classe)
+        public Task<Models.ResponseModel> GetOrario(string classe)
         {
             return restServiceOrari.GetOrario(classe);
         }
