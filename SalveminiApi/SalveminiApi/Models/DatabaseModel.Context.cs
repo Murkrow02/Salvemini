@@ -25,16 +25,15 @@ namespace SalveminiApi.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<BookLibri> BookLibri { get; set; }
-        public virtual DbSet<BookUtenti> BookUtenti { get; set; }
-        public virtual DbSet<Utenti> Utenti { get; set; }
-        public virtual DbSet<AppInfo> AppInfo { get; set; }
-        public virtual DbSet<Avvisi> Avvisi { get; set; }
         public virtual DbSet<Ads> Ads { get; set; }
         public virtual DbSet<Analytics> Analytics { get; set; }
-        public virtual DbSet<SalveminiCard> SalveminiCard { get; set; }
+        public virtual DbSet<Avvisi> Avvisi { get; set; }
+        public virtual DbSet<BookLibri> BookLibri { get; set; }
+        public virtual DbSet<BookUtenti> BookUtenti { get; set; }
         public virtual DbSet<OggettiSondaggi> OggettiSondaggi { get; set; }
+        public virtual DbSet<SalveminiCard> SalveminiCard { get; set; }
         public virtual DbSet<Sondaggi> Sondaggi { get; set; }
+        public virtual DbSet<Utenti> Utenti { get; set; }
         public virtual DbSet<VotiSondaggi> VotiSondaggi { get; set; }
     }
 }

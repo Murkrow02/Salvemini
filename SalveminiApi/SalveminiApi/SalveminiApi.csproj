@@ -451,9 +451,6 @@
     <Compile Include="Models\Analytics.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\AppInfo.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Avvisi.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
