@@ -44,7 +44,7 @@ namespace SalveminiApp.AreaVip
         }
 
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
 
@@ -55,7 +55,7 @@ namespace SalveminiApp.AreaVip
                 return;
             }
 
-            var orari = await App.Orari.GetOrario()
+            //var orari = await App.Orari.GetOrario();
         }
 
         //When the picker loses focus generate a new layout

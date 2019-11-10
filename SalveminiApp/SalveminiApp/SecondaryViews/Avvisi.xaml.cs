@@ -61,7 +61,7 @@ namespace SalveminiApp.SecondaryViews
                 var newAvvisi = await App.Avvisi.GetAvvisi();
 
                 //Check if all went good
-                if (newAvvisi != null && newAvvisi.Count > 0)
+                if (newAvvisi != null)
                 {
                     Avvisis = newAvvisi;
                     avvisiCarousel.ItemsSource = Avvisis;

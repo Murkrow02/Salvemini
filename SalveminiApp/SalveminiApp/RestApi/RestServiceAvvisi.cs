@@ -45,12 +45,18 @@ namespace SalveminiApp.RestApi
                     //Save Cache
                     Barrel.Current.Add("Avvisi", Avvisi, TimeSpan.FromDays(10));
                 }
+                else
+                {
+                    return null;
+                }
 
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(@"Error getting avvisi", ex.Message);
+                return null;
             }
+
             return Avvisi;
         }
 
