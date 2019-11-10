@@ -69,7 +69,16 @@ namespace SalveminiApp.iOS
                 (int)TabBar.Frame.Height);
             image = image.Scale(new CGSize(TabBar.Frame.Width, TabBar.Frame.Height));
             TabBar.BackgroundImage = image;
-            TabBar.BarStyle = UIBarStyle.Black;
+
+            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+            {
+                TabBar.BarStyle = UIBarStyle.Black;
+            }
+            else
+            {
+                TabBar.ShadowImage = new UIImage();
+            }
+
             TabBar.UnselectedItemTintColor = UIColor.Black;
             
         }
@@ -83,18 +92,6 @@ namespace SalveminiApp.iOS
 
     public class CustomNavigationPage : NavigationRenderer
     {
-        protected override void OnElementChanged(VisualElementChangedEventArgs e)
-        {
-            base.OnElementChanged(e);
-            if (e.NewElement != null)
-            {
-                var att = new UITextAttributes();
-                att.Font = UIFont.FromName("Monserrat-Medium.otf", 24);
-
-                UINavigationBar.Appearance.SetTitleTextAttributes(att);
-            }
-        }
-
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();

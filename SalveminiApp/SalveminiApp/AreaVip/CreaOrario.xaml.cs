@@ -24,7 +24,7 @@ namespace SalveminiApp.AreaVip
             //Fill materie list todo
             materie.Add("Italiano");
             materie.Add("Inglese");
-
+            
             //Fill picker with days of week
             giornoLibero.ItemsSource = Costants.getDays();
 
@@ -41,6 +41,21 @@ namespace SalveminiApp.AreaVip
                 classEntry.IsEnabled = false;
             }
 
+        }
+
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            //Check internet connection
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                Costants.showToast("connection");
+                return;
+            }
+
+            var orari = await App.Orari.GetOrario()
         }
 
         //When the picker loses focus generate a new layout

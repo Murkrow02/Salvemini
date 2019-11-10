@@ -6,7 +6,7 @@
             <Entry Placeholder="Classe" x:Name="classEntry"/>
             <!--Freeday picker-->
             <Label Text="Giorno libero" TextColor="{x:Static local:Styles.TextColor}"/>
-            <Picker x:Name="giornoLibero" Unfocused="picker_Unfocused" />
+            <Picker x:Name="giornoLibero" IsEnabled="False" Unfocused="picker_Unfocused" />
             <!--Entry stack-->
             <StackLayout x:Name="layout" >
                 <!--Template here-->

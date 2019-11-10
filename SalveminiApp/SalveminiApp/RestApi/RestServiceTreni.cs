@@ -38,7 +38,7 @@ namespace SalveminiApp.RestApi
                 var filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "OrariTreni.txt");
                 using (var client2 = new WebClient())
                 {
-                   client2.DownloadFile("http://www.mysalvemini.me/Orari/OrariTreni.txt", filename);
+                   client2.DownloadFile( Costants.Uri("Orari/OrariTreni.txt", false) , filename);
                 }
                 //var content = await response.Content.ReadAsStringAsync();
                 //var assembly = typeof(RestServiceTreni).GetTypeInfo().Assembly;

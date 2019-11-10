@@ -15,9 +15,9 @@ namespace SalveminiApp
         public static string Uri(string next, bool api = true)
         {
         if(api)
-            return "http://mysalvemini.me/api/" + next;
+            return "http://68.168.220.50/plesk-site-preview/www.mysalvemini.me/api/" + next;
         else
-                return "http://mysalvemini.me/" + next;
+                return "http://68.168.220.50/plesk-site-preview/www.mysalvemini.me/" + next;
 
         }
 

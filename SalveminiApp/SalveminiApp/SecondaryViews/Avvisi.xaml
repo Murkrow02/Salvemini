@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage BackgroundColor="{x:Static local:Styles.BGColor}"  xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView" xmlns:proc="clr-namespace:PanCardView.Processors;assembly=PanCardView" xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView" xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Avvisi">
     <ContentPage.Content>
-        <StackLayout Spacing="40" Padding="20">
+        <StackLayout Spacing="40" Padding="20" x:Name="mainLayout">
             <!--TITLE-->
             <StackLayout Spacing="10" Orientation="Horizontal">
                 <iconize:IconButton BackgroundColor="Transparent" Clicked="Close_Clicked" VerticalOptions="Center" HorizontalOptions="Start" Text="fas-times" FontSize="Title" TextColor="{x:Static local:Styles.TextColor}" />

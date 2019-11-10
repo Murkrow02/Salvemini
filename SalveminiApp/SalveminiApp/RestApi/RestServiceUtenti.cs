@@ -8,6 +8,8 @@ using MonkeyCache.SQLite;
 using Newtonsoft.Json;
 using SalveminiApp.RestApi.Models;
 using Xamarin.Essentials;
+using System.Text;
+
 namespace SalveminiApp.RestApi
 {
     public class RestServiceUtenti : IRestServiceUtenti
@@ -106,6 +108,36 @@ namespace SalveminiApp.RestApi
                 return new string[] { "Errore", "Si è verificato un errore sconosciuto, riprova più tardi o contattaci se il problema persiste" };
             }
         }
+
+        public async Task<Models.ResponseModel> ChangePwd(Models.changeBlock changeData)
+        {
+            Models.ResponseModel Data = new Models.ResponseModel();
+            var uri = Costants.Uri("argo/changepwd");
+            try
+            {
+                var json = JsonConvert.SerializeObject(changeData);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await client.PostAsync(uri, content);
+
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                        Data.Data = true;
+                        break;
+                    case HttpStatusCode.Forbidden:
+                        Data.Message = "La vecchia password non è corretta";
+                        break;
+                    case HttpStatusCode.InternalServerError:
+                        Data.Message = "Si è verificato un errore, contattaci se il problema persiste";
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+            }
+            return Data;
+        }
     }
 
 
@@ -115,6 +147,7 @@ namespace SalveminiApp.RestApi
         Task<List<Utente>> GetUtenti();
         Task<Utente> GetUtente(int id);
         Task<string[]> ChangeStatus(int idUtente, int stato);
+        Task<Models.ResponseModel> ChangePwd(Models.changeBlock changeData);
 
     }
 
@@ -143,5 +176,9 @@ namespace SalveminiApp.RestApi
             return restServiceUtenti.ChangeStatus(idUtente, stato);
         }
 
+        public Task<Models.ResponseModel> ChangePwd(Models.changeBlock changeData)
+        {
+            return restServiceUtenti.ChangePwd(changeData);
+        }
     }
 }

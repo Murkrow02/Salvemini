@@ -23,7 +23,11 @@ namespace SalveminiApp.SecondaryViews
 
 #if __IOS__
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
-            UIApplication.SharedApplication.StatusBarHidden = true;
+            if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0) && !iOS.AppDelegate.HasNotch)
+            {
+                mainLayout.Padding = new Thickness(25, 20,25, 0);
+            }
+            //UIApplication.SharedApplication.StatusBarHidden = true;
 #endif
 
             //Get cached offerte

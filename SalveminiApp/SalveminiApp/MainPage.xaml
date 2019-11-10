@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage x:Name="page" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SalveminiApp" x:Class="SalveminiApp.MainPage">
     <!--Navigation Bar-->
-    <NavigationPage.TitleView> 
+    <NavigationPage.TitleView>
         <Grid HorizontalOptions="FillAndExpand" Padding="5">
             <!--Coin-->
-            <Label x:Name="sCoinLbl" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                <Image Source="SalveminiCoin.png" x:Name="coinImage"/>
+                <Label x:Name="sCoinLbl" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center"  />
+            </StackLayout>
             <!--Middle label-->
             <StackLayout Spacing="1" HorizontalOptions="CenterAndExpand">
                 <Label x:Name="todayLbl" FontSize="Medium" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" />
                 <Label Text="SalveminiApp internal beta v1" TextColor="#9c9c9c" FontSize="Small" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
             </StackLayout>
             <!--Profile Image-->
-            <ffimageloading:CachedImage Margin="-2"  x:Name="userImg" LoadingPlaceholder="imagePlaceholder" HorizontalOptions="EndAndExpand">
+            <ffimageloading:CachedImage Margin="-2" x:Name="userImg" LoadingPlaceholder="imagePlaceholder" HorizontalOptions="EndAndExpand">
                 <ffimageloading:CachedImage.Transformations>
                     <fftransformations:CircleTransformation />
                 </ffimageloading:CachedImage.Transformations>
@@ -60,7 +63,7 @@
             </Frame>
             <!--WidgetList-->
             <StackLayout VerticalOptions="Start">
-                <ActivityIndicator x:Name="widgetLoading"/>
+                <ActivityIndicator x:Name="widgetLoading" />
                 <!--Personalizza-->
                 <!--<StackLayout Orientation="Horizontal">
                     <Label Text="Personalizza" TextColor="{x:Static local:Styles.TextColor}" />
@@ -86,7 +89,7 @@
                 </StackLayout>
                 <!--Image-->
                 <Frame HasShadow="False" CornerRadius="8" IsClippedToBounds="True" Padding="0">
-                    <ffimageloading:CachedImage x:Name="adImage" CacheType="All"/>
+                    <ffimageloading:CachedImage x:Name="adImage" CacheType="All" />
                 </Frame>
                 <!--Frame tapped-->
                 <StackLayout.GestureRecognizers>

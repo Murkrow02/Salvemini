@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using System.Linq;
+#if __IOS__
+using UIKit;
+#endif
 
 namespace SalveminiApp.SecondaryViews
 {
@@ -13,6 +16,12 @@ namespace SalveminiApp.SecondaryViews
         public Extra()
         {
             InitializeComponent();
+#if __IOS__
+            if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0) && !iOS.AppDelegate.HasNotch)
+            {
+                mainLayout.Padding = new Thickness(0, 20, 0, 0);
+            }
+#endif
         }
 
         protected override void OnDisappearing()

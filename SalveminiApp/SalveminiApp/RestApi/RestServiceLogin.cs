@@ -59,6 +59,8 @@ namespace SalveminiApp.RestApi
             }
             return Data;
         }
+
+        
     }
 
     public interface IRestServiceLogin
@@ -80,5 +82,7 @@ namespace SalveminiApp.RestApi
         {
             return restServiceLogin.Login(loginData);
         }
+
+        
     }
 }
