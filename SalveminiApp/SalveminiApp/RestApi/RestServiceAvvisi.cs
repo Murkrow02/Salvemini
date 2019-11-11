@@ -90,11 +90,41 @@ namespace SalveminiApp.RestApi
                 return new string[] { "Errore", "Si è verificato un errore sconosciuto, riprova più tardi o contattaci se il problema persiste" };
             }
         }
+
+        public async Task<string> DeleteAvviso(int id)
+        {
+            Avvisi = new List<Models.Avvisi>();
+            var uri = Costants.Uri("avvisi/delete/" + id);
+
+            try
+            {
+                var response = await client.DeleteAsync(uri);
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                        return "Avviso eliminato con successo";
+                    case HttpStatusCode.NotFound:
+                        return "L'avviso non è stato trovato";
+                    case HttpStatusCode.InternalServerError:
+                        return "Si è verificato un errore durante la richiesta";
+                    default:
+                        return "Si è verificato un errore sconosciuto";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Error deleting avviso", ex.Message);
+                return "Si è verificato un errore nella connessione al server";
+            }
+
+        }
     }
 
     public interface IRestServiceAvvisi
     {
         Task<string[]> PostAvviso(Avvisi avviso);
+        Task<string> DeleteAvviso(int id);
         Task<List<Models.Avvisi>> GetAvvisi();
 
     }
@@ -116,6 +146,11 @@ namespace SalveminiApp.RestApi
         public Task<string[]> PostAvviso(Avvisi avviso)
         {
             return restServiceAvvisi.PostAvviso(avviso);
+        }
+
+        public Task<string> DeleteAvviso(int id)
+        {
+            return restServiceAvvisi.DeleteAvviso(id);
         }
     }
 }

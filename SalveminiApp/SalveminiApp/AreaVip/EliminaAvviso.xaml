@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:SalveminiApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.AreaVip.EliminaAvviso">
+     <StackLayout Spacing="0" Padding="10,0" VerticalOptions="FillAndExpand">
+        <!--Search bar-->
+        <SearchBar Placeholder="Cerca avviso" VerticalOptions="Start" x:Name="searchBar" TextChanged="Search_Action" IsSpellCheckEnabled="False" />
+        <ContentView VerticalOptions="FillAndExpand">
+            <!--Lista-->
+            <ListView x:Name="avvisiListCtrl" HasUnevenRows="true" ItemSelected="avvisoSelected" Header="" Footer="">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout Padding="5" Orientation="Vertical">
+                                    <!--Nome-->
+                                    <Label FontSize="Medium" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="StartAndExpand" Text="{Binding Titolo}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" />
+                                    <!--Creatore-->
+                                    <Label FontSize="Small" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="StartAndExpand" Text="{Binding nomeCreatore}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" />
+                                </StackLayout>
+                                <!--Creazione-->
+                                <Label FontSize="Small" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="EndAndExpand" Text="{Binding Creazione}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentView>
+    </StackLayout>
+</ContentPage>

@@ -17,7 +17,7 @@ namespace SalveminiApp.AreaVip
             base.OnAppearing();
             int accessi = 0;
             var analytics = await App.Analytics.GetAnalytics();
-            var questoMese = analytics.Where(x => x.Giorno.Month == DateTime.Today.Month && x.Tipo == "Accessi").ToList();
+            var questoMese = analytics.Where(x => x.Mese.Month == DateTime.Today.Month && x.Tipo == "Accessi").ToList();
 
             foreach(RestApi.Models.Analytics accesso in analytics)
             {
@@ -25,7 +25,6 @@ namespace SalveminiApp.AreaVip
             }
 
             accessiLbl.Text = "Questo mese ci sono stati " + accessi.ToString() + " accessi";
-
         }
     }
 }

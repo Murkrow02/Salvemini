@@ -22,25 +22,17 @@ namespace SalveminiApp.AreaVip
 
         async void Search_Action(object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
-            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+            if (string.IsNullOrWhiteSpace(e.NewTextValue))
             {
-                if (string.IsNullOrWhiteSpace(e.NewTextValue))
-                {
-                    var sortedList = utentiList.OrderBy(x => x.Nome);
-                    utentiListCtrl.ItemsSource = sortedList;
+                var sortedList = utentiList.OrderBy(x => x.Nome);
+                utentiListCtrl.ItemsSource = sortedList;
 
-                }
-                else
-                {
-                    //var utentiFiltered = utentiList.Where(x => x.Nome.ToLower().Contains(e.NewTextValue.ToLower()) || x.Cognome.ToLower().Contains(e.NewTextValue.ToLower())).ToList();
-                    var utentiFiltered = utentiList.Where(y => y.nomeCognome.ToLower().Contains(e.NewTextValue.ToLower())).ToList();
-                    utentiListCtrl.ItemsSource = utentiFiltered;
-
-                }
             }
             else
             {
-                await DisplayAlert("Attenzione bro", "Non sei connesso ad internet!!", "Provvedo");
+                var utentiFiltered = utentiList.Where(y => y.nomeCognome.ToLower().Contains(e.NewTextValue.ToLower())).ToList();
+                utentiListCtrl.ItemsSource = utentiFiltered;
+
             }
         }
         protected async override void OnAppearing()
@@ -91,7 +83,7 @@ namespace SalveminiApp.AreaVip
             if (superVip)
             {
                 //Show options
-                var userEdit = await DisplayActionSheet("Come vuoi procedere?", "Annulla", "Accedi", "Rendi VIP","Rendi rappresentante","Rendi plebeo");
+                var userEdit = await DisplayActionSheet("Come vuoi procedere?", "Annulla", "Accedi", "Rendi VIP", "Rendi rappresentante", "Rendi plebeo");
                 switch (userEdit)
                 {
                     case "Rendi VIP":
@@ -131,7 +123,7 @@ namespace SalveminiApp.AreaVip
                         MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "ReloadUserPic");
                         break;
                 }
-              
+
             }
             else
             {

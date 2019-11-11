@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace SalveminiApp.RestApi.Models
 {
@@ -12,6 +13,7 @@ namespace SalveminiApp.RestApi.Models
         public int idCreatore { get; set; }
         public DateTime Creazione { get; set; }
         public bool SendNotification { get; set; }
+        public Utente Utenti { get; set; } 
 
         public List<string> FullImmagini
         {
@@ -52,6 +54,15 @@ namespace SalveminiApp.RestApi.Models
             get
             {
                 return Descrizione.Length > 100 ? Descrizione.Remove(100) + "..." : Descrizione;
+            }
+        }
+
+        [JsonIgnore]
+        public string nomeCreatore
+        {
+            get
+            {
+                try { return Utenti.nomeCognome; } catch { return ""; }
             }
         }
     }

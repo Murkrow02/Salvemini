@@ -179,6 +179,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)AreaVip\EventLogs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)AreaVip\EliminaAvviso.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -355,6 +363,12 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\GetCache.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\SignalR\HubManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AreaVip\EventLogs.xaml.cs">
+      <DependentUpon>EventLogs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)AreaVip\EliminaAvviso.xaml.cs">
+      <DependentUpon>EliminaAvviso.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

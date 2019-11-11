@@ -12,6 +12,7 @@ namespace SalveminiApp.RestApi
     {
         HttpClient client;
         public List<Models.Analytics> Analytics = new List<Models.Analytics>();
+        public List<Models.EventLog> ConsoleEvents = new List<Models.EventLog>();
 
         public RestServiceAnalytics()
         {
@@ -43,11 +44,34 @@ namespace SalveminiApp.RestApi
             }
             return Analytics;
         }
+
+        public async Task<List<Models.EventLog>> GetConsole()
+        {
+            ConsoleEvents = new List<Models.EventLog>();
+            var uri = Costants.Uri("analytics/console");
+
+            try
+            {
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    ConsoleEvents = JsonConvert.DeserializeObject<List<Models.EventLog>>(content);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+            }
+            return ConsoleEvents;
+        }
     }
 
     public interface IRestServiceAnalytics
     {
         Task<List<Models.Analytics>> GetAnalytics();
+        Task<List<Models.EventLog>> GetConsole();
 
     }
 
@@ -63,6 +87,11 @@ namespace SalveminiApp.RestApi
         public Task<List<Models.Analytics>> GetAnalytics()
         {
             return restServiceAnalytics.GetAnalytics();
+        }
+
+        public Task<List<Models.EventLog>> GetConsole()
+        {
+            return restServiceAnalytics.GetConsole();
         }
 
     }
