@@ -27,12 +27,13 @@ namespace SalveminiApi.Controllers
             try
             {
                 var path = HttpContext.Current.Server.MapPath("~/Orari/OrariTreni.txt");
-              var a =   File.ReadAllText(path);
+                var a = File.ReadAllText(path);
                 return a;
             }
             catch (Exception ex)
             {
-                throw new HttpResponseException(System.Net.HttpStatusCode.InternalServerError);
+                Helpers.Utility.saveCrash("Error get orario trasporti", ex.ToString());
+                throw new HttpResponseException(System.Net.HttpStatusCode.NotFound);
             }
 
         }
@@ -60,6 +61,7 @@ namespace SalveminiApi.Controllers
             }
             catch (Exception ex)
             {
+                Helpers.Utility.saveCrash("Error saving orario classe " + classe, ex.ToString());
                 throw new HttpResponseException(System.Net.HttpStatusCode.InternalServerError);
             }
         }
@@ -84,6 +86,7 @@ namespace SalveminiApi.Controllers
             }
             catch (Exception ex)
             {
+                Helpers.Utility.saveCrash("Error getting orario classe " + classe, ex.ToString());
                 throw new HttpResponseException(System.Net.HttpStatusCode.InternalServerError);
             }
         }

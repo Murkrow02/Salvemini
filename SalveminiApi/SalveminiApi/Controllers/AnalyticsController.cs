@@ -21,15 +21,26 @@ namespace SalveminiApi.Controllers
         [HttpGet]
         public List<Models.Analytics> GetAnalytics()
         {
-            var returnModel = new Models.Analytics();
-
             //Check Auth
             var authorize = new Helpers.Utility();
-            bool authorized = authorize.authorized(Request);
+            bool authorized = authorize.authorized(Request, 2);
             if (!authorized)
                 throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
             return db.Analytics.ToList();
+        }
+
+        [Route("console")]
+        [HttpGet]
+        public List<Models.EventsLog> GetConsole()
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request, 3);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+
+            return db.EventsLog.OrderByDescending(x => x.Data).ToList();
         }
 
         protected override void Dispose(bool disposing)

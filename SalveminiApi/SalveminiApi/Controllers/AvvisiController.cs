@@ -30,8 +30,17 @@ namespace SalveminiApi.Controllers
                 throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
             //Prendi avvisi
-            var avvisi = db.Avvisi.OrderByDescending(x => x.Creazione).ToList();
-            return avvisi;
+            try
+            {
+                var avvisi = db.Avvisi.OrderByDescending(x => x.Creazione).ToList();
+                return avvisi;
+            }
+            catch(Exception ex)
+            {
+              Helpers.Utility.saveCrash("Errore get lista avvisi", ex.ToString());
+                throw new HttpResponseException(HttpStatusCode.InternalServerError);
+            }
+         
         }
 
         [Route("")]
@@ -40,71 +49,64 @@ namespace SalveminiApi.Controllers
         {
             //Check Auth
             var authorize = new Helpers.Utility();
-            bool authorized = authorize.authorized(Request);
+            bool authorized = authorize.authorized(Request, 2);
             if (!authorized)
                 return new HttpResponseMessage(HttpStatusCode.Unauthorized);
 
             //Get parameters from request
             int idUtente = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
 
-            //Check if vip
-            var studente = db.Utenti.Find(idUtente);
-            if (studente.Stato < 1)
-                return new HttpResponseMessage(HttpStatusCode.Unauthorized);
-
-            //Aggiungi avviso al database
-            avviso.Creazione = Helpers.Utility.italianTime();
-            db.Avvisi.Add(avviso);
+         
             try
             {
+                //Aggiungi avviso al database
+                avviso.Creazione = Helpers.Utility.italianTime();
+                db.Avvisi.Add(avviso);
                 db.SaveChanges();
             }
-            catch
+            catch(Exception ex)
             {
-                return new HttpResponseMessage(HttpStatusCode.InternalServerError);
+                Helpers.Utility.saveCrash("Errore aggiunta avviso", ex.ToString());
+                throw new HttpResponseException(HttpStatusCode.InternalServerError);
             }
 
             //Invia notifica se necessario
-            try
+            if (avviso.SendNotification)
             {
-                var mittente = db.Utenti.Find(avviso.idCreatore);
-                var notifica = new NotificationModel();
-                var titolo = new Localized { en = avviso.Titolo };
-                var dettagli = new Localized { en = "Nuovo avviso da " + mittente.Nome + " " + mittente.Cognome + ", apri l'app per saperne di più!" };
-                //var filter = new Tags { field = "tag", key = "SchedaId", relation = "=", value = ListaUtenti.SelectedValue };
-                //var tags = new List<Tags>();
-                //tags.Add(filter);
-                notifica.headings = titolo;
-                notifica.contents = dettagli;
-                //notifica.filters = tags;
-                NotificationService.sendNotification(notifica);
+                try
+                {
+                    var mittente = db.Utenti.Find(avviso.idCreatore);
+                    var notifica = new NotificationModel();
+                    var titolo = new Localized { en = avviso.Titolo };
+                    var dettagli = new Localized { en = "Nuovo avviso da " + mittente.Nome + " " + mittente.Cognome + ", apri l'app per saperne di più!" };
+                    notifica.headings = titolo;
+                    notifica.contents = dettagli;
+                    NotificationService.sendNotification(notifica);
+                }
+                catch
+                {
+                    //Errore nell inviare la notifica, ma fa niente lol avviso creato con successo
+                    return new HttpResponseMessage(HttpStatusCode.OK);
+                }
             }
-            catch
-            {
-                //Errore nell inviare la notifica, ma fa niente lol avviso creato con successo
-                return new HttpResponseMessage(HttpStatusCode.OK);
-            }
+           
+
+            //Add to console log
+            Helpers.Utility.saveEvent(avviso.Utenti.Nome + "(" + avviso.idCreatore + ")" + " ha creato l'avviso " + avviso.Titolo + "(" + avviso.id + ")");
 
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
-        [Route("{id}")]
+        [Route("delete/{id}")]
         [HttpDelete]
         public HttpResponseMessage deleteAvviso(int id)
         {
             //Check Auth
             var authorize = new Helpers.Utility();
-            bool authorized = authorize.authorized(Request);
+            bool authorized = authorize.authorized(Request, 3);
             if (!authorized)
                 return new HttpResponseMessage(HttpStatusCode.Unauthorized);
 
-            //Get parameters from request
-            int idUtente = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
-
-            //Check if vip
-            var studente = db.Utenti.Find(idUtente);
-            if (studente.Stato < 1)
-                return new HttpResponseMessage(HttpStatusCode.Unauthorized);
 
             //Prendi avviso da eliminare
             var avviso = db.Avvisi.Find(id);
@@ -112,16 +114,17 @@ namespace SalveminiApi.Controllers
             //Avviso non trovato
             if(avviso == null)
                 return new HttpResponseMessage(HttpStatusCode.NotFound);
-
-            //Elimina avviso
-            db.Avvisi.Remove(avviso);
-
+           
             try
             {
+                //Elimina avviso
+                db.Avvisi.Remove(avviso);
                 db.SaveChanges();
             }
-            catch
+            catch(Exception ex)
             {
+                //Save error crash
+                Helpers.Utility.saveCrash("Error deleting avviso " + id, ex.ToString());
                 return new HttpResponseMessage(HttpStatusCode.InternalServerError);
             }
 

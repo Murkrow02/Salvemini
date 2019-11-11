@@ -66,50 +66,63 @@ namespace UlysseApi.Controllers
             }
 
             //Save each user in the db
-            foreach (Utente utente in ArgoUser)
+            try
             {
-                //Check if user is already in the db
-                int id = utente.prgAlunno;
-                var conflict = db.Utenti.Find(id);
-
-                if (conflict != null)
+                foreach (Utente utente in ArgoUser)
                 {
-                    //Conflict found
-                    conflict.Classe = Convert.ToInt32(utente.desDenominazione);
-                    conflict.Corso = utente.desCorso;
-                    conflict.ArgoToken = Token;
-                    returnList.Add(conflict);
+                    //Check if user is already in the db
+                    int id = utente.prgAlunno;
+                    var conflict = db.Utenti.Find(id);
+
+                    if (conflict != null)
+                    {
+                        //Conflict found
+                        conflict.Classe = Convert.ToInt32(utente.desDenominazione);
+                        conflict.Corso = utente.desCorso;
+                        conflict.ArgoToken = Token;
+                        returnList.Add(conflict);
+                        db.SaveChanges();
+                        continue;
+
+                    }
+
+                    //Conflict not found, create new user
+                    var newUser = new Utenti();
+                    newUser.Nome = FirstCharToUpper(utente.alunno.desNome.ToLower());
+                    newUser.Cognome = FirstCharToUpper(utente.alunno.desCognome.ToLower());
+                    newUser.id = id;
+                    newUser.Sesso = utente.alunno.flgSesso;
+                    newUser.Classe = Convert.ToInt32(utente.desDenominazione);
+                    newUser.Corso = utente.desCorso;
+                    newUser.Creazione = Utility.italianTime();
+                    newUser.ArgoToken = Token;
+                    newUser.Stato = 0;
+                    db.Utenti.Add(newUser);
                     db.SaveChanges();
-                    continue;
+                    returnList.Add(newUser);
 
+                    //Add to console log new user created
+                    Utility.saveEvent(newUser.Nome + " " + newUser.Cognome + " (" + newUser.id + ")" + " si è registrato all'app");
                 }
-
-                //Conflict not found, create new user
-                var newUser = new Utenti();
-                newUser.Nome = FirstCharToUpper(utente.alunno.desNome.ToLower());
-                newUser.Cognome = FirstCharToUpper(utente.alunno.desCognome.ToLower());
-                newUser.id = id;
-                newUser.Sesso = utente.alunno.flgSesso;
-                newUser.Classe = Convert.ToInt32(utente.desDenominazione);
-                newUser.Corso = utente.desCorso;
-                newUser.Creazione = Utility.italianTime();
-                newUser.ArgoToken = Token;
-                newUser.Stato = 0;
-                db.Utenti.Add(newUser);
-                db.SaveChanges();
-                returnList.Add(newUser);
+                return returnList;
             }
-            return returnList;
+            catch(Exception ex)
+            {
+                //Save crash in db
+                Utility.saveCrash("Errore salvataggio utente argo", ex.ToString());
+                throw new HttpResponseException(System.Net.HttpStatusCode.InternalServerError);
+            }
+           
         }
 
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        db.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
         public static string FirstCharToUpper(string value)
         {

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SalveminiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SalveminiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Ads">
           <Key>
             <PropertyRef Name="id" />
@@ -23,7 +23,7 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Tipo" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Giorno" Type="date" Nullable="false" />
+          <Property Name="Mese" Type="date" Nullable="false" />
           <Property Name="Valore" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Avvisi">
@@ -63,6 +63,14 @@
           <Property Name="Creazione" Type="datetime" Nullable="false" />
           <Property Name="IG" Type="bit" />
         </EntityType>
+        <EntityType Name="EventsLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Evento" Type="nvarchar" MaxLength="3000" Nullable="false" />
+          <Property Name="Data" Type="datetime" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="None" Nullable="false" />
+        </EntityType>
         <EntityType Name="OggettiSondaggi">
           <Key>
             <PropertyRef Name="id" />
@@ -95,7 +103,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
           <Property Name="Nome" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="Cognome" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="Sesso" Type="nvarchar" MaxLength="1" Nullable="false" />
@@ -214,6 +222,7 @@
           <EntitySet Name="Avvisi" EntityType="Self.Avvisi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BookLibri" EntityType="Self.BookLibri" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BookUtenti" EntityType="Self.BookUtenti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventsLog" EntityType="Self.EventsLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OggettiSondaggi" EntityType="Self.OggettiSondaggi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SalveminiCard" EntityType="Self.SalveminiCard" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sondaggi" EntityType="Self.Sondaggi" Schema="dbo" store:Type="Tables" />
@@ -248,8 +257,7 @@
             <End Role="VotiSondaggi" EntitySet="VotiSondaggi" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SalveminiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -271,8 +279,8 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Tipo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Giorno" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Valore" Type="Int32" Nullable="false" />
+          <Property Name="Mese" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="Avvisi">
           <Key>
@@ -345,13 +353,13 @@
           <Property Name="Attivo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="OggettiSondaggi" Relationship="Self.FK_OggettiSondaggi_Sondaggi" FromRole="Sondaggi" ToRole="OggettiSondaggi" />
           <NavigationProperty Name="Utenti" Relationship="Self.FK_Sondaggi_Utenti" FromRole="Sondaggi" ToRole="Utenti" />
-          <NavigationProperty Name="VotiSondaggi" Relationship="Self.FK_VotiSondaggi_Sondaggi" FromRole="Sondaggi" ToRole="VotiSondaggi" />
+          <NavigationProperty Name="VotiSondaggi" Relationship="Self.FK_VotiSondaggi_Sondaggi" FromRole="Sondaggi" ToRole="VotiSondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
         <EntityType Name="Utenti">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <Property Name="Nome" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Cognome" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Sesso" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
@@ -372,9 +380,9 @@
           <Property Name="idSondaggio" Type="Int32" Nullable="false" />
           <Property Name="Utente" Type="Int32" Nullable="false" />
           <Property Name="Voto" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="OggettiSondaggi" Relationship="Self.FK_VotiSondaggi_OggettiSondaggi" FromRole="VotiSondaggi" ToRole="OggettiSondaggi" />
-          <NavigationProperty Name="Sondaggi" Relationship="Self.FK_VotiSondaggi_Sondaggi" FromRole="VotiSondaggi" ToRole="Sondaggi" />
-          <NavigationProperty Name="Utenti" Relationship="Self.FK_VotiSondaggi_Utenti" FromRole="VotiSondaggi" ToRole="Utenti" />
+          <NavigationProperty Name="OggettiSondaggi" Relationship="Self.FK_VotiSondaggi_OggettiSondaggi" FromRole="VotiSondaggi" ToRole="OggettiSondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="Sondaggi" Relationship="Self.FK_VotiSondaggi_Sondaggi" FromRole="VotiSondaggi" ToRole="Sondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="Utenti" Relationship="Self.FK_VotiSondaggi_Utenti" FromRole="VotiSondaggi" ToRole="Utenti" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
         <Association Name="FK_Avvisi_Utenti">
           <End Role="Utenti" Type="Self.Utenti" Multiplicity="1">
@@ -509,7 +517,16 @@
             <End Role="Utenti" EntitySet="Utenti" />
             <End Role="VotiSondaggi" EntitySet="VotiSondaggi" />
           </AssociationSet>
+          <EntitySet Name="EventsLog" EntityType="SalveminiModel.EventsLog" />
         </EntityContainer>
+        <EntityType Name="EventsLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Evento" Type="String" Nullable="false" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="Data" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="id" Type="Int32" Nullable="false" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -532,9 +549,9 @@
           <EntitySetMapping Name="Analytics">
             <EntityTypeMapping TypeName="SalveminiModel.Analytics">
               <MappingFragment StoreEntitySet="Analytics">
+                <ScalarProperty Name="Mese" ColumnName="Mese" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
-                <ScalarProperty Name="Giorno" ColumnName="Giorno" />
                 <ScalarProperty Name="Valore" ColumnName="Valore" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -632,6 +649,15 @@
                 <ScalarProperty Name="idSondaggio" ColumnName="idSondaggio" />
                 <ScalarProperty Name="Utente" ColumnName="Utente" />
                 <ScalarProperty Name="Voto" ColumnName="Voto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventsLog">
+            <EntityTypeMapping TypeName="SalveminiModel.EventsLog">
+              <MappingFragment StoreEntitySet="EventsLog">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Evento" ColumnName="Evento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

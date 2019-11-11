@@ -12,15 +12,10 @@ namespace SalveminiApi.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class VotiSondaggi
+    public partial class EventsLog
     {
-        public int id { get; set; }
-        public int idSondaggio { get; set; }
-        public int Utente { get; set; }
-        public int Voto { get; set; }
-    
-        public virtual OggettiSondaggi OggettiSondaggi { internal get; set; }
-        public virtual Sondaggi Sondaggi { internal get; set; }
-        public virtual Utenti Utenti { internal get; set; }
+        public string Evento { get; set; }
+        public System.DateTime Data { get; set; }
+        public int id { internal get; set; }
     }
 }

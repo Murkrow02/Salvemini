@@ -22,30 +22,7 @@ namespace SalveminiApi.Helpers
             return italianDate;
         }
 
-       public static void addToAnalytics(string valore)
-        {
-            DatabaseString db2 = new DatabaseString();
-
-            try
-            {
-                var data = Helpers.Utility.italianTime();
-                var esiste = db2.Analytics.Where(x => x.Giorno.Year == data.Year && x.Giorno.Month == data.Month && x.Giorno.Day == data.Day && x.Tipo == valore).ToList();
-                if (esiste.Count < 1)
-                {
-                    var accesso = new Analytics { Giorno = data, Tipo = valore, Valore = 1 };
-                    db2.Analytics.Add(accesso);
-                }
-                else
-                {
-                    esiste[0].Valore = esiste[0].Valore + 1;
-                }
-                db2.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                //Fa niente
-            }
-        }
+       
 
         public bool authorized(HttpRequestMessage re, int minStatus = 0)
         {
@@ -177,6 +154,78 @@ namespace SalveminiApi.Helpers
             }
 
             result.Save(path, result.RawFormat);
+        }
+
+        //Salva ogni crash dell api
+        public static void saveCrash(string name, string info)
+        {
+            try
+            {
+                var path = HttpContext.Current.Server.MapPath("~/Crashes/API/" + name + "_" + italianTime() + ".txt");
+                File.WriteAllText(path, info);
+            }
+            catch
+            {
+                //Fa niente
+            }
+        }
+
+        //Salva evento nei log
+        public static void saveEvent(string name)
+        {
+            int maxEvents = 5000;
+
+            try
+            {
+                DatabaseString db2 = new DatabaseString();
+
+                //Get all events
+                var eventi = db2.EventsLog.OrderByDescending(x => x.Data).ToList();
+
+                //If elements are more than maxEvents delete first one
+                if (eventi.Count > maxEvents)
+                    eventi.RemoveAt(0);
+
+                //Add event to log console
+                db2.EventsLog.Add(new EventsLog { Data = italianTime(), Evento = name});
+
+                db2.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                //Fa niente
+            }
+        }
+
+        public static void addToAnalytics(string valore)
+        {
+            DatabaseString db2 = new DatabaseString();
+
+            try
+            {
+                //get italian tipe
+                var data = italianTime();
+
+                //Check if type exists for that month
+                var esiste = db2.Analytics.FirstOrDefault(x => x.Mese.Month == data.Month && x.Tipo == valore);
+
+                if (esiste != null) //No
+                {
+                    //Create new data for that month
+                    var accesso = new Analytics { Mese = data, Tipo = valore, Valore = 1 };
+                    db2.Analytics.Add(accesso);
+                }
+                else //Yes
+                {
+                    //Update value
+                    esiste.Valore = esiste.Valore + 1;
+                }
+                db2.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                //Fa niente
+            }
         }
 
     }

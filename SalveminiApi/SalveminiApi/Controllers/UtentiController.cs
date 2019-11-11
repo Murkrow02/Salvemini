@@ -70,6 +70,10 @@ namespace SalveminiApi.Controllers
             utente.Stato = status;
             db.SaveChanges();
 
+
+            //Add to console log
+            Helpers.Utility.saveEvent("L'utente " + utente.Nome + " " + utente.Cognome + " (" + utente.id + ")" + " è passato allo stato " + status);
+
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 

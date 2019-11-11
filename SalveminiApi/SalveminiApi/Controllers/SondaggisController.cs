@@ -75,6 +75,9 @@ namespace SalveminiApi.Controllers
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }
 
+            //Add to console log
+            Helpers.Utility.saveEvent(sondaggio.Utenti.Nome + "(" + sondaggio.Creatore + ")" + " ha creato l'avviso " + sondaggio.Nome + "(" + sondaggio.id + ")");
+
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
@@ -112,8 +115,9 @@ namespace SalveminiApi.Controllers
                 //catch { }
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }
-            catch
+            catch(Exception ex)
             {
+                Helpers.Utility.saveCrash("Error voting sondaggio " + voto.idSondaggio, ex.ToString());
                 throw new HttpResponseException(System.Net.HttpStatusCode.InternalServerError);
             }
         }
@@ -164,9 +168,6 @@ namespace SalveminiApi.Controllers
 
                     //Add result to result list
                     Risultati.Add(risultato);
-
-                  
-
                 }
               
                 return Risultati;

@@ -16,7 +16,7 @@ namespace SalveminiApi.Models
     {
         public int id { get; set; }
         public string Tipo { get; set; }
-        public System.DateTime Giorno { get; set; }
         public int Valore { get; set; }
+        public System.DateTime Mese { get; set; }
     }
 }

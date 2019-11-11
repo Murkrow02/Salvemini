@@ -22,6 +22,7 @@
         <AssociationConnector Association="SalveminiModel.FK_Sondaggi_Utenti" ManuallyRouted="false" />
         <AssociationConnector Association="SalveminiModel.FK_VotiSondaggi_Sondaggi" ManuallyRouted="false" />
         <AssociationConnector Association="SalveminiModel.FK_VotiSondaggi_Utenti" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SalveminiModel.EventsLog" Width="1.5" PointX="8.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
