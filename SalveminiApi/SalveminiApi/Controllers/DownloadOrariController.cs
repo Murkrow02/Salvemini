@@ -57,10 +57,15 @@ namespace SalveminiApi.Controllers
                 //Save file
                 File.WriteAllText(path, orarioString);
 
+                //Add record to log
+                var id = Request.Headers.GetValues("x-user-id").First();
+                Helpers.Utility.saveEvent("L'utente " + id + " ha pubblicato un orario per la classe " + classe);
+
                 return new HttpResponseMessage(System.Net.HttpStatusCode.Created);
             }
             catch (Exception ex)
             {
+                //Save crash
                 Helpers.Utility.saveCrash("Error saving orario classe " + classe, ex.ToString());
                 throw new HttpResponseException(System.Net.HttpStatusCode.InternalServerError);
             }
