@@ -12,6 +12,7 @@ using P42.Utils;
 using MonkeyCache.SQLite;
 using FFImageLoading;
 using FFImageLoading.Cache;
+using System.Diagnostics;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 #endif
@@ -138,6 +139,7 @@ namespace SalveminiApp
             //Sempre meglio mettere il try lol
             try
             {
+
                 //Set image profile url
                 userImg.Source = Costants.Uri("images/users/") + Preferences.Get("UserId", 0).ToString();
 
@@ -182,30 +184,16 @@ namespace SalveminiApp
                 widgets.Add(registro); widgets.Add(card); widgets.Add(extra);
                 //OrderWidgets(false); todo uncomment to fast load initial widgets
 
+
                 //Check Internet
                 if (Connectivity.NetworkAccess == NetworkAccess.Internet)
                 {
+
                     //Argo index in background
-                    GetArgoIndex();
+                    await Task.Run((Action)GetArgoIndex);
 
-                    //Get updated orario
-                    var data = await App.Orari.GetOrario(classeCorso);
-                    if (data.Message != null)
-                    {
-
-                    }
-                    else
-                    {
-                        var _orario = data.Data as List<RestApi.Models.Lezione>;
-
-                        //Check if success and if there are updates
-                        if (_orario != null && Orario != _orario && !orarioFromCached)
-                        {
-                            //Update with new orario
-                            Orario = _orario;
-                            changeDay(-1);
-                        }
-                    }
+                    //Update orario in background
+                    await Task.Run((Action)updateOrario);
 
                     //Get index from api call
                     var tempIndex = await App.Index.GetIndex();
@@ -746,6 +734,28 @@ namespace SalveminiApp
 #endif
 
 
+                }
+            }
+        }
+
+
+        public async void updateOrario()
+        {
+            var data = await App.Orari.GetOrario(classeCorso);
+            if (data.Message != null)
+            {
+                Costants.showToast("Non è stato possibile recuperare l'orario");
+            }
+            else
+            {
+                var _orario = data.Data as List<RestApi.Models.Lezione>;
+
+                //Check if success and if there are updates
+                if (_orario != null && Orario != _orario && !orarioFromCached)
+                {
+                    //Update with new orario
+                    Orario = _orario;
+                    changeDay(-1);
                 }
             }
         }
