@@ -14,8 +14,8 @@ namespace SalveminiApi.Models
     
     public partial class EventsLog
     {
+        public int id { get; set; }
         public string Evento { get; set; }
         public System.DateTime Data { get; set; }
-        public int id { internal get; set; }
     }
 }

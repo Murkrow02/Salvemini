@@ -67,9 +67,9 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Evento" Type="nvarchar" MaxLength="3000" Nullable="false" />
           <Property Name="Data" Type="datetime" Nullable="false" />
-          <Property Name="id" Type="int" StoreGeneratedPattern="None" Nullable="false" />
         </EntityType>
         <EntityType Name="OggettiSondaggi">
           <Key>
@@ -523,9 +523,9 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Evento" Type="String" Nullable="false" MaxLength="3000" FixedLength="false" Unicode="true" />
           <Property Name="Data" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="id" Type="Int32" Nullable="false" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -655,9 +655,9 @@
           <EntitySetMapping Name="EventsLog">
             <EntityTypeMapping TypeName="SalveminiModel.EventsLog">
               <MappingFragment StoreEntitySet="EventsLog">
-                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Data" ColumnName="Data" />
                 <ScalarProperty Name="Evento" ColumnName="Evento" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
