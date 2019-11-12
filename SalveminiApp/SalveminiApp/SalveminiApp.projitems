@@ -369,6 +369,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AreaVip\EliminaAvviso.xaml.cs">
       <DependentUpon>EliminaAvviso.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SignalR\FlappyHub.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
@@ -384,6 +385,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\" />
     <Folder Include="$(MSBuildThisFileDirectory)Controls\" />
     <Folder Include="$(MSBuildThisFileDirectory)RestApi\SignalR\" />
+    <Folder Include="$(MSBuildThisFileDirectory)SignalR\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Helpers\Preferences.txt" />
