@@ -13,6 +13,7 @@ namespace SalveminiApp.AreaVip
     {
         public List<string> materie = new List<string>();
         public List<RestApi.Models.newOrario> lezioni = new List<RestApi.Models.newOrario>();
+        public List<RestApi.Models.Lezione> callOrario = null;
         public List<string> availableDays = new List<string>();
         public IList<SegmentedControlOption> sedi = new List<SegmentedControlOption>();
         public int daySkipped = 0;
@@ -24,7 +25,7 @@ namespace SalveminiApp.AreaVip
             //Fill materie list todo
             materie.Add("Italiano");
             materie.Add("Inglese");
-            
+
             //Fill picker with days of week
             giornoLibero.ItemsSource = Costants.getDays();
 
@@ -55,19 +56,32 @@ namespace SalveminiApp.AreaVip
                 return;
             }
 
-            //var orari = await App.Orari.GetOrario();
+            var classeCorso = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
+            var orario = await App.Orari.GetOrario(classeCorso);
+            if (orario.Data != null)
+            {
+                callOrario = (orario.Data as List<RestApi.Models.Lezione>).OrderBy(x => x.Giorno).ToList();
+
+                //Get freeday
+                var freeday = Costants.Giorni[((DayOfWeek)callOrario.FirstOrDefault(x => x.Materia == "Libero").Giorno).ToString()];
+
+                //Select freeday
+                giornoLibero.SelectedItem = freeday;
+
+                //Fill layout with old values
+                fillLayout(callOrario);
+
+                giornoLibero.IsEnabled = true;
+            }
+            else
+            {
+                giornoLibero.IsEnabled = true;
+            }
         }
 
-        //When the picker loses focus generate a new layout
-        private void picker_Unfocused(object sender, FocusEventArgs e)
-        {
-            //No day selected, return
-            if (string.IsNullOrEmpty(giornoLibero.SelectedItem?.ToString()))
-            {
-                saveBtn.IsVisible = false;
-                return;
-            }
 
+        void fillLayout(List<RestApi.Models.Lezione> orario = null)
+        {
             //get int of day skipped
             daySkipped = Costants.getDays().IndexOf(giornoLibero.SelectedItem.ToString()) + 1;
 
@@ -90,11 +104,36 @@ namespace SalveminiApp.AreaVip
                 //Create 7 autocomplete entries
                 for (int i = 1; i <= 7; i++)
                 {
+                   
+                    //Get int of the day
+                    var dayInt = Convert.ToInt32((DayOfWeek)Enum.Parse(typeof(DayOfWeek), Costants.Giorni.FirstOrDefault(x => x.Value == giorno).Key));
+
+                    //Initialize list
+                    List<RestApi.Models.Lezione> list = new List<RestApi.Models.Lezione>();
+                    if (orario != null)
+                    {
+                        //Get list of subjects
+                        list = orario.Where(x => x.Giorno == dayInt).OrderBy(x => x.Ora).ToList();
+                    }
+
                     layout.Children.Add(new Label { Text = i.ToString() + "a ora" });
-                    layout.Children.Add(new Syncfusion.SfAutoComplete.XForms.SfAutoComplete { AutoCompleteMode = Syncfusion.SfAutoComplete.XForms.AutoCompleteMode.Append, DataSource = materie });
+                    layout.Children.Add(new Syncfusion.SfAutoComplete.XForms.SfAutoComplete { Text = orario != null && list.ElementAtOrDefault(i - 1) != null ? list[i - 1].Materia : null, AutoCompleteMode = Syncfusion.SfAutoComplete.XForms.AutoCompleteMode.Append, DataSource = materie });
 
                 }
             }
+        }
+
+        //When the picker loses focus generate a new layout
+        private void picker_Unfocused(object sender, FocusEventArgs e)
+        {
+            //No day selected, return
+            if (string.IsNullOrEmpty(giornoLibero.SelectedItem?.ToString()))
+            {
+                saveBtn.IsVisible = false;
+                return;
+            }
+
+            fillLayout();
         }
 
         public async void saveOrario_Clicked(object sender, EventArgs e)
@@ -181,6 +220,7 @@ namespace SalveminiApp.AreaVip
             lezioni.Add(freeDay);
             //Upload new orario
             var classeCorso = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
+            lezioni = lezioni.OrderBy(x => x.Giorno).ToList();
             var success = await App.Orari.UploadOrario(classeCorso, lezioni);
             //Show result
             await DisplayAlert(success[0], success[1], "Ok");
