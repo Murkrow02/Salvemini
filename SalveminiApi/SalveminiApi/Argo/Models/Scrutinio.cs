@@ -24,6 +24,15 @@ namespace SalveminiApi.Argo.Models
         public string giudizioSintetico { get; set; }
         public int prgClasse { get; set; }
 
+
+        public string Materia
+        {
+            get
+            {
+                try { return Helpers.Utility.FirstCharToUpper(desMateria.ToLower()); } catch { return desMateria; }
+            }
+        }
+
         public string Voto
         {
             get

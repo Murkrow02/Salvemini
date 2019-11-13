@@ -61,12 +61,8 @@ namespace SalveminiApi.Controllers
                 var notifica = new NotificationModel();
                 var titolo = new Localized { en = "Nuovo sondaggio, apri l'app per votare" };
                 var dettagli = new Localized { en = sondaggio.Nome};
-                //var filter = new Tags { field = "tag", key = "SchedaId", relation = "=", value = ListaUtenti.SelectedValue };
-                //var tags = new List<Tags>();
-                //tags.Add(filter);
                 notifica.headings = titolo;
                 notifica.contents = dettagli;
-                //notifica.filters = tags;
                 NotificationService.sendNotification(notifica);
             }
             catch
@@ -76,7 +72,7 @@ namespace SalveminiApi.Controllers
             }
 
             //Add to console log
-            Helpers.Utility.saveEvent(sondaggio.Utenti.Nome + "(" + sondaggio.Creatore + ")" + " ha creato l'avviso " + sondaggio.Nome + "(" + sondaggio.id + ")");
+            Helpers.Utility.saveEvent(sondaggio.Utenti.Nome + "(" + sondaggio.Creatore + ")" + " ha creato il sondaggio " + sondaggio.Nome + "(" + sondaggio.id + ")");
 
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
@@ -107,12 +103,13 @@ namespace SalveminiApi.Controllers
                 db.VotiSondaggi.Add(voto);
                 db.SaveChanges();
 
-                ////Send signalR voti update
-                //try
-                //{
-                //    Hubs.SignalRHub.SondaggioUpdate("Update sondaggio");
-                //}
-                //catch { }
+                //Send signalR voti update
+                try
+                {
+                    var Hub = new Hubs.SondaggiHub();
+                    Hub.NewVoto();
+                }
+                catch { }
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }
             catch(Exception ex)

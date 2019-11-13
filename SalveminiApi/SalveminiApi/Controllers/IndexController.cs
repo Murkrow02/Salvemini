@@ -73,25 +73,25 @@ namespace SalveminiApi.Controllers
             //Prendi ultimo sondaggio
             try
             {
-                var attivo = db.Sondaggi.Where(x => x.Attivo).ToList();
+                var attivo = db.Sondaggi.FirstOrDefault(x => x.Attivo);
 
                 //Ci sono sondaggi attivi?
-                if (attivo.Count < 1)
+                if (attivo == null)
                     returnModel.ultimoSondaggio = null; //No
 
                 else //Si
                 {
                     //Find his voto
-                    var suo = db.VotiSondaggi.Where(x => x.Utente == id && x.idSondaggio == attivo[0].id).ToList();
+                    var suo = db.VotiSondaggi.FirstOrDefault(x => x.Utente == id && x.idSondaggio == attivo.id);
 
-                    if (suo.Count > 0) //Ha votato
+                    if (suo != null) //Ha votato
                         returnModel.VotedSondaggio = true;
 
-                    returnModel.ultimoSondaggio = attivo[0];
+                    returnModel.ultimoSondaggio = attivo;
 
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 returnModel.ultimoSondaggio = null;
             }

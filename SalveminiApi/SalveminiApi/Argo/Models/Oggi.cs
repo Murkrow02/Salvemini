@@ -60,6 +60,13 @@ namespace SalveminiApi.Argo.Models
         public string desMateria { get; set; }
         public int prgMateria { get; set; }
 
+        public string Materia
+        {
+            get
+            {
+                try { return Helpers.Utility.FirstCharToUpper(desMateria.ToLower()); } catch { return desMateria; }
+            }
+        }
 
         //Voti
         public string codVoto { get; set; }

@@ -161,10 +161,11 @@ namespace SalveminiApi.Helpers
         {
             try
             {
-                var path = HttpContext.Current.Server.MapPath("~/Crashes/API/" + name + "_" + italianTime() + ".txt");
+                var dataInizioFile = "##" + italianTime().ToString("dddd-MM-yyyy") + "##";
+                var path = HttpContext.Current.Server.MapPath("~/Helpers/Crashes/API/" + dataInizioFile + name + ".txt");
                 File.WriteAllText(path, info);
             }
-            catch
+            catch(Exception ex)
             {
                 //Fa niente
             }
@@ -226,6 +227,32 @@ namespace SalveminiApi.Helpers
             {
                 //Fa niente
             }
+        }
+
+        public static string FirstCharToUpper(string value)
+        {
+            char[] array = value.ToCharArray();
+            // Handle the first letter in the string.  
+            if (array.Length >= 1)
+            {
+                if (char.IsLower(array[0]))
+                {
+                    array[0] = char.ToUpper(array[0]);
+                }
+            }
+            // Scan through the letters, checking for spaces.  
+            // ... Uppercase the lowercase letters following spaces.  
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (array[i - 1] == ' ')
+                {
+                    if (char.IsLower(array[i]))
+                    {
+                        array[i] = char.ToUpper(array[i]);
+                    }
+                }
+            }
+            return new string(array);
         }
 
     }

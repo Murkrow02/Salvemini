@@ -47,10 +47,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\SettingsPanel.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ArgoPages\Voti.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -187,6 +183,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\CountdownSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -240,9 +240,6 @@
       <DependentUpon>CompitiArgomenti.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\GetStorageInfo.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\SettingsPanel.xaml.cs">
-      <DependentUpon>SettingsPanel.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Assenza.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Compiti.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Promemoria.cs" />
@@ -371,6 +368,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)SignalR\FlappyHub.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SignalR\SondaggiHub.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\CountdownSettings.xaml.cs">
+      <DependentUpon>CountdownSettings.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

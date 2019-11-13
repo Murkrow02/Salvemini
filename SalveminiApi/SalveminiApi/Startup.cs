@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNet.SignalR;
 using Microsoft.Owin;
 using Owin;
 
@@ -11,7 +10,13 @@ namespace SalveminiApi
     {
         public void Configuration(IAppBuilder app)
         {
-            //app.MapSignalR("/signalr", new Microsoft.AspNet.SignalR.HubConfiguration());
+            var hubConfiguration = new HubConfiguration
+            {
+                EnableDetailedErrors = true,
+                EnableJavaScriptProxies = false
+            };
+            app.MapSignalR(hubConfiguration);
+
         }
 
     }

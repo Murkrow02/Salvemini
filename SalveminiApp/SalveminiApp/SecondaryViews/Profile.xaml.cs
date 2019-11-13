@@ -48,7 +48,7 @@ namespace SalveminiApp.SecondaryViews
             //var notifiche = new Helpers.PushCell { Title = "Notifiche", Separator = "si" };
             //notifiche.GestureRecognizers.Add(tapGestureRecognizer);
             //persLayout.Children.Add(notifiche);
-            var countdown = new Helpers.PushCell { Title = "Countdown", Separator = "si" };
+            var countdown = new Helpers.PushCell { Title = "Countdown", Separator = "si", Push = new SecondaryViews.CountdownSettings() };
             countdown.GestureRecognizers.Add(tapGestureRecognizer);
             persLayout.Children.Add(countdown);
             var profileImg = new Helpers.PushCell { Title = "Immagine di profilo", Separator = "No" };
@@ -296,7 +296,7 @@ namespace SalveminiApp.SecondaryViews
         }
 
         //Handle cell tapped
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+       async private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             try
             {
@@ -322,6 +322,7 @@ namespace SalveminiApp.SecondaryViews
                 {
                     changePic(null,null);
                 }
+
 
                 //Push to selected page
                 if (cell.Push != null)

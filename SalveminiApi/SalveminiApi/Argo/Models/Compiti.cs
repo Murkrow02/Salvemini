@@ -16,6 +16,14 @@ namespace SalveminiApi.Argo.Models
         //public int prgMateria { get; set; }
         //public int prgClasse { get; set; }
         //public int prgScuola { get; set; }
+
+        public string Materia
+        {
+            get
+            {
+                try { return Helpers.Utility.FirstCharToUpper(desMateria.ToLower()); } catch { return desMateria; }
+            }
+        }
     }
     public class compitiList
         {
