@@ -44,7 +44,7 @@
 
 
                     <StackLayout HorizontalOptions="FillAndExpand">
-                          <control:SegmentedControl  x:Name="eavSitaSegment" TintColor="White" SelectedTextColor="{x:Static local:Styles.TextColor}">
+                        <control:SegmentedControl  x:Name="eavSitaSegment" TintColor="White" SelectedTextColor="{x:Static local:Styles.TextColor}">
                             <control:SegmentedControl.Children>
                                 <control:SegmentedControlOption Text="EAV" />
                                 <control:SegmentedControlOption Text="Sita" />
@@ -52,25 +52,25 @@
                         </control:SegmentedControl>
 
 
-                          <Frame HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, 0" BorderColor="{x:Static local:Styles.ObjectGray}">
+                        <Frame HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, 0" BorderColor="{x:Static local:Styles.ObjectGray}">
                             <Picker x:Name="lineaPicker" HeightRequest="50" TitleColor="#EAEAEA" HorizontalOptions="FillAndExpand" FontSize="25" Title="Linea" />
                         </Frame>
 
-      <StackLayout HorizontalOptions="FillAndExpand">
-                        <Label HorizontalOptions="Start" Text="Da:" TextColor="{x:Static local:Styles.TextGray}" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
-                       <Frame HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, 0" BorderColor="{x:Static local:Styles.ObjectGray}">
-                            <Picker x:Name="busStartPicker"  HeightRequest="50" TitleColor="#EAEAEA" HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
-                        </Frame>
-                    </StackLayout>                      
-                          <StackLayout HorizontalOptions="FillAndExpand">
-                        <Label HorizontalOptions="Start" Text="Verso:" TextColor="{x:Static local:Styles.TextGray}" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
-                       <Frame HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, 0" BorderColor="{x:Static local:Styles.ObjectGray}">
-                            <Picker x:Name="busEndPicker"  HeightRequest="50" TitleColor="#EAEAEA" HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
-                        </Frame>
-                    </StackLayout>  
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <Label HorizontalOptions="Start" Text="Da:" TextColor="{x:Static local:Styles.TextGray}" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
+                            <Frame HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, 0" BorderColor="{x:Static local:Styles.ObjectGray}">
+                                <Picker x:Name="busStartPicker" HeightRequest="50" TitleColor="#EAEAEA" HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <Label HorizontalOptions="Start" Text="Verso:" TextColor="{x:Static local:Styles.TextGray}" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
+                            <Frame HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, 0" BorderColor="{x:Static local:Styles.ObjectGray}">
+                                <Picker x:Name="busEndPicker" HeightRequest="50" TitleColor="#EAEAEA" HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
+                            </Frame>
+                        </StackLayout>
 
                     </StackLayout>
-                  
+
                 </StackLayout>
             </StackLayout>
         </ScrollView>

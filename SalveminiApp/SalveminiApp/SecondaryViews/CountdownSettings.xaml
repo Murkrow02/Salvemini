@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Impostazioni Countdown" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:segmented="clr-namespace:Plugin.Segmented.Control;assembly=Plugin.Segmented" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.CountdownSettings">
+    <StackLayout Padding="15" Spacing="30">
+        <!--Cowntdown Pointer-->
+        <StackLayout>
+            <Label Text="A che data deve riferirsi il countdown?" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold" />
+            <segmented:SegmentedControl x:Name="pointerSegment" HorizontalOptions="Center" VerticalOptions="Start" OnSegmentSelected="DateSegment_SelectionChanged" TintColor="White" SelectedTextColor="{x:Static local:Styles.TextColor}">
+                <segmented:SegmentedControl.Children>
+                    <segmented:SegmentedControlOption Text="Fine della scuola" />
+                    <segmented:SegmentedControlOption Text="Natale" />
+                    <segmented:SegmentedControlOption Text="Pasqua" />
+                </segmented:SegmentedControl.Children>
+            </segmented:SegmentedControl>
+        </StackLayout>
+        <!--Switch to Count Holidays-->
+        <StackLayout Orientation="Horizontal">
+            <Label FontSize="Small" VerticalOptions="Center" VerticalTextAlignment="Center" Text="Vuoi escludere i giorni festivi dal countdown?"/>
+            <Switch Toggled="HolydaysSwitch_Toggled" VerticalOptions="Center" x:Name="holydaysSwitch"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

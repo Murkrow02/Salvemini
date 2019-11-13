@@ -7,7 +7,7 @@
             <!--CountDown-->
             <StackLayout x:Name="secondLayout" Spacing="25">
                 <Label Margin="0,20,0,0" Text="Mancano" TextColor="{x:Static local:Styles.TextGray}" FontAttributes="Bold" FontSize="35" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
-                <Label Text="Alla fine della scuola" TextColor="{x:Static local:Styles.TextGray}" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
+                <Label x:Name="wenEta" TextColor="{x:Static local:Styles.TextGray}" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

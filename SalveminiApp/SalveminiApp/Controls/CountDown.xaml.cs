@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.Linq;
 using System.Diagnostics;
+using Xamarin.Essentials;
 
 namespace SalveminiApp.Helpers
 {
@@ -12,7 +13,37 @@ namespace SalveminiApp.Helpers
 
         public static List<DateTime> datesToSkip = new List<DateTime>
         {
-            new DateTime(2019, 12, 25)
+            new DateTime(2019, 11, 01),
+            new DateTime(2019, 11, 02),
+            new DateTime(2019, 12, 21),
+            new DateTime(2019, 12, 22),
+            new DateTime(2019, 12, 23),
+            new DateTime(2019, 12, 24),
+            new DateTime(2019, 12, 25),
+            new DateTime(2019, 12, 26),
+            new DateTime(2019, 12, 27),
+            new DateTime(2019, 12, 28),
+            new DateTime(2019, 12, 29),
+            new DateTime(2019, 12, 30),
+            new DateTime(2019, 12, 31),
+            new DateTime(2020, 01, 01),
+            new DateTime(2020, 01, 02),
+            new DateTime(2020, 01, 03),
+            new DateTime(2020, 01, 04),
+            new DateTime(2020, 01, 05),
+            new DateTime(2020, 01, 06),
+            new DateTime(2020, 02, 24),
+            new DateTime(2020, 02, 25),
+            new DateTime(2020, 04, 09),
+            new DateTime(2020, 04, 10),
+            new DateTime(2020, 04, 11),
+            new DateTime(2020, 04, 12),
+            new DateTime(2020, 04, 13),
+            new DateTime(2020, 04, 14),
+            new DateTime(2020, 04, 25),
+            new DateTime(2020, 05, 01),
+            new DateTime(2020, 05, 02),
+            new DateTime(2020, 06, 02),
         };
 
         public CountDown()
@@ -31,19 +62,23 @@ namespace SalveminiApp.Helpers
         {
             //Get dates
             var startDate = DateTime.Now;
-            var endDate = new DateTime(2020, 6, 10, 13, 40, 0);
+            var endDate = Preferences.Get("DateToPoint", new DateTime(2020, 6, 6, 13, 40, 0));
             var tempToSkip = new List<DateTime>();
-            tempToSkip.AddRange(datesToSkip);
-            for (var i = 0; i <= (endDate - startDate).Days; i++)
+
+            if (!Preferences.Get("CountHolidays", false))
             {
-                //Check if is freeday or sunday
-                if (startDate.AddDays(i).DayOfWeek == DayOfWeek.Sunday || startDate.AddDays(i).DayOfWeek == DayOfWeek.Saturday)
+                tempToSkip.AddRange(datesToSkip);
+                for (var i = 0; i <= (endDate - startDate).Days; i++)
                 {
-                    //Check if daystoskip already contains this day
-                    if (!tempToSkip.Contains(startDate.AddDays(i)))
+                    //Check if is freeday or sunday
+                    if (startDate.AddDays(i).DayOfWeek == DayOfWeek.Sunday || startDate.AddDays(i).DayOfWeek == DayOfWeek.Saturday)
                     {
-                        //Add day to days to skip
-                        tempToSkip.Add(startDate.AddDays(i));
+                        //Check if daystoskip already contains this day
+                        if (!tempToSkip.Contains(startDate.AddDays(i)))
+                        {
+                            //Add day to days to skip
+                            tempToSkip.Add(startDate.AddDays(i));
+                        }
                     }
                 }
             }
