@@ -330,8 +330,8 @@
           <Property Name="Nome" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Immagine" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="idSondaggio" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Sondaggi" Relationship="Self.FK_OggettiSondaggi_Sondaggi" FromRole="OggettiSondaggi" ToRole="Sondaggi" />
-          <NavigationProperty Name="VotiSondaggi" Relationship="Self.FK_VotiSondaggi_OggettiSondaggi" FromRole="OggettiSondaggi" ToRole="VotiSondaggi" />
+          <NavigationProperty Name="Sondaggi" Relationship="Self.FK_OggettiSondaggi_Sondaggi" FromRole="OggettiSondaggi" ToRole="Sondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="VotiSondaggi" Relationship="Self.FK_VotiSondaggi_OggettiSondaggi" FromRole="OggettiSondaggi" ToRole="VotiSondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
         <EntityType Name="SalveminiCard">
           <Key>

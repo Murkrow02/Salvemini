@@ -98,7 +98,7 @@ namespace SalveminiApi.Controllers
         }
 
         [Route("delete/{id}")]
-        [HttpDelete]
+        [HttpGet]
         public HttpResponseMessage deleteAvviso(int id)
         {
             //Check Auth
