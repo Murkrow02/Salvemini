@@ -184,6 +184,10 @@ namespace SalveminiApp.SecondaryViews
 
         public async void showResults()
         {
+            //Show loading label
+            if(!showingResults)
+            await loadingLbl.FadeTo(1,200);
+
             //Get new results
             Risultati = await App.Sondaggi.ReturnRisultati(sondaggio.id);
 
@@ -208,8 +212,12 @@ namespace SalveminiApp.SecondaryViews
                 resultsLayout.Children.Add(new Controls.PercentageBar { Title = "<p><strong><span>" + Risultati[i].NomeOpzione + ":</span>&nbsp;</strong><span>" + Risultati[i].Voti + " voti</span></p>", HideVotes = hideVotes, Percentage = Risultati[i].Percentuale, BgColor = Costants.Colors[i].Replace("#", "") });
             }
 
-            //Show frame
+            //Hide loading label
             if(!showingResults)
+                await loadingLbl.FadeTo(0, 200);
+
+            //Show frame
+            if (!showingResults)
             await Task.WhenAll(resultsFrame.FadeTo(1, 1000, Easing.CubicInOut), resultsFrame.TranslateTo(0, 0, 1500, Easing.CubicOut));
             showingResults = true;
         }

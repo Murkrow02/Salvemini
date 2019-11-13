@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:local="clr-namespace:SalveminiApp" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.NewSondaggio">
-    <StackLayout Padding="25,0" Spacing="15" x:Name="mainLayout">
+    <StackLayout Padding="25,0" Spacing="10" x:Name="mainLayout">
 
         <!--Header-->
         <Grid  Margin="-20,0" Padding="0,5">
@@ -20,10 +20,12 @@
         </ScrollView>
 
         <!--Creator-->
-        <Label x:Name="creatorLbl" TextColor="{x:Static local:Styles.TextGray}" HorizontalTextAlignment="Center" VerticalOptions="StartAndExpand" FontSize="Medium" />
+        <Label x:Name="creatorLbl" TextColor="{x:Static local:Styles.TextGray}" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand" FontSize="Medium" VerticalTextAlignment="Center"/>
 
         <!--Results-->
-        <Frame HasShadow="False" x:Name="resultsFrame" Opacity="0" TranslationY="300">
+        <Label Opacity="0" x:Name="loadingLbl" Text="Carico i risultati..." TextColor="{x:Static local:Styles.TextGray}" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand" FontSize="Medium" VerticalTextAlignment="Center"/>
+        <Frame HasShadow="False" x:Name="resultsFrame" Opacity="0" TranslationY="300" VerticalOptions="End">
+            <!--300-->
             <ScrollView>
                 <StackLayout x:Name="resultsLayout">
 

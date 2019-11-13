@@ -152,11 +152,15 @@ namespace SalveminiApp.iOS
 
         public static async void hapticVibration()
         {
-            var impact = new UIImpactFeedbackGenerator(UIImpactFeedbackStyle.Medium);
-            impact.Prepare();
-            impact.ImpactOccurred();
-            await Task.Delay(200);
-            impact.ImpactOccurred();
+            Device.BeginInvokeOnMainThread(async() =>
+            {
+                var impact = new UIImpactFeedbackGenerator(UIImpactFeedbackStyle.Medium);
+                impact.Prepare();
+                impact.ImpactOccurred();
+                await Task.Delay(200);
+                impact.ImpactOccurred();
+            });
+            
         }
     }
 }

@@ -41,24 +41,9 @@
                         <Label x:Name="sedeLbl" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" />
                     </StackLayout>
                     <!--Lista Materie-->
-                    <ListView VerticalOptions="Start" SeparatorVisibility="None" Footer=" " x:Name="orarioList" HasUnevenRows="true">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell IsEnabled="False">
-                                    <StackLayout Orientation="Horizontal">
-                                        <!--Ora-->
-                                        <StackLayout Padding="0, 10">
-                                            <Label FontSize="Small" HorizontalOptions="Start" Text="{Binding oraLezione}" TextColor="{x:Static local:Styles.TextGray}" VerticalOptions="Start" />
-                                        </StackLayout>
-                                        <!--Materia-->
-                                        <Frame HasShadow="False" BackgroundColor="{Binding Colore}" CornerRadius="{Binding OrarioFrameRadius}" Margin="{Binding OrarioFrameMargin}" Padding="10, 0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="{Binding OrarioFrameHeight}">
-                                            <Label TextColor="White" VerticalOptions="Center" Text="{Binding Materia}" />
-                                        </Frame>
-                                    </StackLayout>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                    <StackLayout x:Name="materieLayout" Spacing="2">
+
+                    </StackLayout>
                 </StackLayout>
             </Frame>
             <!--WidgetList-->

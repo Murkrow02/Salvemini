@@ -115,6 +115,7 @@ namespace SalveminiApp.RestApi
                 //Setup Corner Radius
                 lezione.OrarioFrameRadius = lezione.numOre > 1 ? 10 : 8;
             }
+
             orario = orario.Where(x => x.toRemove == false).ToList();
 
 

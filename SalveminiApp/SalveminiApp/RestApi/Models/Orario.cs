@@ -15,7 +15,7 @@ namespace SalveminiApp.RestApi.Models
         public int numOre { get; set; }
         public bool toRemove { get; set; }
         public double OrarioFrameHeight { get; set; }
-        public double OrarioFrameRadius { get; set; }
+        public float OrarioFrameRadius { get; set; }
 
         public Thickness OrarioFrameMargin
         {

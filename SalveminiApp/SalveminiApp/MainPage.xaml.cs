@@ -84,16 +84,13 @@ namespace SalveminiApp
 
 
 
-            //Get orario cached
-            var orarioCached = CacheHelper.GetCache<List<RestApi.Models.Lezione>>("orario" + Preferences.Get("Classe", 0) + Preferences.Get("Corso", ""));
-            if (orarioCached != null)
-            {
-                orarioFromCached = true;
-                var selectedDay = orarioCached.Where(x => x.Giorno == (int)DateTime.Today.DayOfWeek).ToList();
-                showOrario(selectedDay, Preferences.Get("FreedayInt", 0));
-                orarioDay.Text = "Oggi";
-                sedeLbl.Text = selectedDay[0].Sede;
-            }
+            ////Get orario cached
+            //var orarioCached = CacheHelper.GetCache<List<RestApi.Models.Lezione>>("orario" + Preferences.Get("Classe", 0) + Preferences.Get("Corso", ""));
+            //if (orarioCached != null)
+            //{
+            //    Orario = orarioCached;
+            //    changeDay(-1);
+            //}
 
 
 
@@ -527,6 +524,7 @@ namespace SalveminiApp
                 {
                     //Detect freeday
                     var freedayInt = Orario.FirstOrDefault(x => x.Materia == "Libero").Giorno;
+
                     //Save freeday
                     Preferences.Set("FreedayInt", freedayInt);
 
@@ -585,12 +583,12 @@ namespace SalveminiApp
                 else
                 {
                     await DisplayAlert("Errore", "Non è stato possibile recuperare l'orario, contattaci se il problema persiste", "Ok");
-                    orarioList.IsVisible = false;
+                    materieLayout.IsVisible = false;
                 }
             }
             catch (Exception ex)
             {
-                orarioList.IsVisible = false;
+                materieLayout.IsVisible = false;
                 await DisplayAlert("Errore", "Non è stato possibile recuperare l'orario, contattaci se il problema persiste", "Ok");
             }
 
@@ -607,17 +605,23 @@ namespace SalveminiApp
                 giorniList.ItemsSource = allDays;
 
                 //Fill list with lezioni
-                orarioList.ItemsSource = orario;
-
-                //Calc orario dimensions
-                orarioList.HeightRequest = orario[0].OrarioFrameHeight * orario.Sum(x => x.numOre) + (4 * orario.Count);
-                orarioFrame.HeightRequest = orarioList.HeightRequest + orarioHeader.Height;
-
-                //Set max orario height
-                if (orarioFrame.HeightRequest > App.ScreenHeight * 0.4)
+                materieLayout.Children.Clear();
+                foreach(var lezione in orario)
                 {
-                    orarioFrame.HeightRequest = App.ScreenHeight * 0.4;
+                    //Horizontal stack layout
+                    var stack = new Xamarin.Forms.StackLayout { Orientation= StackOrientation.Horizontal, Spacing = 0 };
+                    //Ora
+                    var oraLbl = new Xamarin.Forms.Label { FontSize = 10, HorizontalOptions = LayoutOptions.Start, Text = lezione.oraLezione, TextColor = Styles.TextGray, VerticalOptions = LayoutOptions.Start };
+                    //Materia
+                    var materiaFrame = new Xamarin.Forms.Frame { HasShadow = false, BackgroundColor = Color.FromHex(lezione.Colore), CornerRadius = lezione.OrarioFrameRadius, Margin = lezione.OrarioFrameMargin, Padding = new Thickness(10, 0), VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.FillAndExpand, HeightRequest = lezione.OrarioFrameHeight };
+                    materiaFrame.Content = new Xamarin.Forms.Label { TextColor = Color.White, Text = lezione.Materia, VerticalOptions = LayoutOptions.Center };
+
+                    //Add to final layout
+                    stack.Children.Add(oraLbl); stack.Children.Add(materiaFrame);
+                    materieLayout.Children.Add(stack);
                 }
+
+               
 
                 //Show orario
                 orarioFrame.IsVisible = true;
@@ -755,7 +759,10 @@ namespace SalveminiApp
             //Failed to get
             if (data.Message != null)
             {
-                Costants.showToast("Non è stato possibile recuperare l'orario");
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    Costants.showToast("Non è stato possibile recuperare l'orario");
+                });
             }
             else
             {
