@@ -23,24 +23,7 @@ namespace SalveminiApp.SecondaryViews
             }
 #endif
 
-            string etaText = "A";
-            switch (Preferences.Get("DateToPoint", new DateTime(2020, 6, 6, 13, 40, 0)).ToString("dd-MM-yyyy"))
-            {
-                case "25-12-2019":
-                    //Natale
-                    etaText += " Natale";
-                    break;
-                case "12-04-2020":
-                    //Pasqua
-                    etaText += " Pasqua";
-                    break;
-                default:
-                    etaText += "lla fine della scuola";
-                    break;
-            }
-
-            //Update EtaText
-            wenEta.Text = etaText;
+           
 
         }
 
@@ -64,7 +47,27 @@ namespace SalveminiApp.SecondaryViews
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
             secondLayout.Children.Insert(1, new Helpers.CountDown());
+
+            string etaText = "A";
+            switch (Preferences.Get("DateToPoint", new DateTime(2020, 6, 6, 13, 40, 0)).ToString("dd-MM-yyyy"))
+            {
+                case "25-12-2019":
+                    //Natale
+                    etaText += " Natale";
+                    break;
+                case "12-04-2020":
+                    //Pasqua
+                    etaText += " Pasqua";
+                    break;
+                default:
+                    etaText += "lla fine della scuola";
+                    break;
+            }
+
+            //Update EtaText
+            wenEta.Text = etaText;
 
         }
 

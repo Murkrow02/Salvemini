@@ -48,7 +48,8 @@ namespace SalveminiApp.FirstAccess
                     await progress.ProgressTo(1, 500, Easing.CubicInOut);
                     loadingLayout.IsVisible = false;
                     continueLayout.IsVisible = true;
-                }
+                    Preferences.Set("OrarioTrasportiVersion", 1);
+                                }
                 else
                 {
                     fail();

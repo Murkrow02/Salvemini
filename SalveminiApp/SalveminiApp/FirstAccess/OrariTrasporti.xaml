@@ -8,7 +8,6 @@
                     <Image Source="trasportiSmall" x:Name="topImage" />
                     <Label FontAttributes="Bold" FontSize="45" TextColor="{x:Static local:Styles.TextColor}" Text="Trasporti" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
                     <Label FontSize="18" TextColor="{x:Static local:Styles.TextGray}" Text="Scegli il tuo mezzo di trasporto preferito" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
-                    <Button Text="Salta" BackgroundColor="Transparent" FontSize="Small" Margin="-2" Clicked="skipClicked" />
                 </StackLayout>
 
                 <!--ChooseMezzo-->
@@ -74,7 +73,7 @@
                 </StackLayout>
             </StackLayout>
         </ScrollView>
-        <!--Downlaod view-->
+        <!--Download view-->
         <StackLayout VerticalOptions="CenterAndExpand" Spacing="20" Padding="0,0,0,20" x:Name="loadingLayout">
             <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" x:Name="downlaodStatus" Text="Sto scaricando gli orari più recenti di bus, treni e aliscafi" />
             <StackLayout Orientation="Horizontal" Spacing="20">
@@ -85,8 +84,10 @@
         </StackLayout>
         <!--EndLayout-->
         <StackLayout x:Name="continueLayout" VerticalOptions="EndAndExpand">
-            <Button Clicked="Continue_Clicked" Text="Prosegui" TextColor="White" FontSize="Title" CornerRadius="10" BackgroundColor="{x:Static local:Styles.Apple}" />
             <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" Text="Sono stati scaricati gli orari più recenti" />
+            <Button Clicked="Continue_Clicked" Text="Prosegui" TextColor="White" FontSize="Title" CornerRadius="10" BackgroundColor="Black" />
+            <Button Text="Salta" BackgroundColor="Transparent" FontSize="Small" Margin="-2" Clicked="skipClicked" VerticalOptions="End"/>
+
         </StackLayout>
     </StackLayout>
 </ContentPage>
