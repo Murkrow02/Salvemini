@@ -27,6 +27,11 @@
     <ScrollView>
         <!--Layout-->
         <StackLayout Padding="15,10,15,20" Spacing="15" x:Name="fullLayout">
+             <!--Empty layout-->
+                    <StackLayout Padding="8" IsVisible="false" x:Name="emptyLayout" VerticalOptions="Center">
+                        <iconize:IconLabel Text="far-clock" VerticalOptions="Center" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" FontSize="40" />
+                        <Label FontSize="Small" Text="L'orario della tua classe non è stato trovato, chiedi ai tuoi rappresentanti di aggiungerlo o contattaci se sei un rappresentante" VerticalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="CenterAndExpand" Margin="5"/>
+                    </StackLayout>
             <!--Orario-->
             <Frame x:Name="orarioFrame" IsVisible="False" Padding="20, 0,20,5" VerticalOptions="Start" IsClippedToBounds="True" BackgroundColor="White" CornerRadius="15" HasShadow="False">
                 <StackLayout  x:Name="orarioLayout" BackgroundColor="White" Spacing="0">
@@ -44,6 +49,7 @@
                     <StackLayout x:Name="materieLayout" Spacing="2">
 
                     </StackLayout>
+                   
                 </StackLayout>
             </Frame>
             <!--WidgetList-->

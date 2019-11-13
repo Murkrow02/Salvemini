@@ -597,6 +597,9 @@ namespace SalveminiApp
 
         public void showOrario(List<RestApi.Models.Lezione> orario, int freeday)
         {
+            //Orario is not empty
+            emptyLayout.IsVisible = false;
+
             try
             {
                 //Remove freeday from list
@@ -606,10 +609,10 @@ namespace SalveminiApp
 
                 //Fill list with lezioni
                 materieLayout.Children.Clear();
-                foreach(var lezione in orario)
+                foreach (var lezione in orario)
                 {
                     //Horizontal stack layout
-                    var stack = new Xamarin.Forms.StackLayout { Orientation= StackOrientation.Horizontal, Spacing = 0 };
+                    var stack = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, Spacing = 0 };
                     //Ora
                     var oraLbl = new Xamarin.Forms.Label { FontSize = 10, HorizontalOptions = LayoutOptions.Start, Text = lezione.oraLezione, TextColor = Styles.TextGray, VerticalOptions = LayoutOptions.Start };
                     //Materia
@@ -621,7 +624,7 @@ namespace SalveminiApp
                     materieLayout.Children.Add(stack);
                 }
 
-               
+
 
                 //Show orario
                 orarioFrame.IsVisible = true;
@@ -761,7 +764,10 @@ namespace SalveminiApp
             {
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    Costants.showToast("Non è stato possibile recuperare l'orario");
+                    Costants.showToast(data.Message);
+
+                    if (data.Message == "L'orario della classe non è stato trovato")
+                        emptyLayout.IsVisible = true;
                 });
             }
             else

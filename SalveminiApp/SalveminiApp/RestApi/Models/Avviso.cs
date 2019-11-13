@@ -66,7 +66,7 @@ namespace SalveminiApp.RestApi.Models
         {
             get
             {
-                try { return Utenti.nomeCognome; } catch { return ""; }
+                try { return "Creato da " + Utenti.nomeCognome; } catch { return ""; }
             }
         }
     }

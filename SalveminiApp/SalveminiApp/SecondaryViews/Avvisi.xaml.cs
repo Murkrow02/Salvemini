@@ -57,6 +57,9 @@ namespace SalveminiApp.SecondaryViews
 
             try
             {
+                //Show loading
+                loading.IsRunning = true;
+
                 //Download new avvisi from api
                 var newAvvisi = await App.Avvisi.GetAvvisi();
 
@@ -67,15 +70,18 @@ namespace SalveminiApp.SecondaryViews
                     avvisiCarousel.ItemsSource = Avvisis;
                     Preferences.Set("LastAvviso", Avvisis[0].id);
                     MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "RemoveBadge", "Avvisi");
+                    loading.IsRunning = false;
                     return;
                 }
 
                 //Cannot download avvisi
                 Costants.showToast("Non è stato possibile scaricare i nuovi avvisi, controlla la tua connessione e riprova");
+                loading.IsRunning = true;
             }
             catch //Unexpected error
             {
                 Costants.showToast("Si è verificato un errore, riprova più tardi");
+                loading.IsRunning = true;
             }
         }
 

@@ -8,6 +8,8 @@
                 <Label VerticalOptions="Center" HorizontalOptions="Start" Text="Avvisi" TextColor="{x:Static local:Styles.TextColor}" FontSize="Title" FontAttributes="Bold" />
                 <iconize:IconButton IsVisible="false" BackgroundColor="Transparent" Clicked="Menu_Clicked" x:Name="menuButton" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Text="fas-bars" FontSize="Title" TextColor="{x:Static local:Styles.TextColor}" />
             </StackLayout>
+            <!--Loading spinner-->
+            <ActivityIndicator x:Name="loading" IsRunning="True"/>
             <!--CAROUSEL-->
             <cards:CarouselView VerticalOptions="FillAndExpand" x:Name="avvisiCarousel">
                 <x:Arguments>
@@ -17,9 +19,12 @@
                 <cards:CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout VerticalOptions="CenterAndExpand" Padding="20, 0" Spacing="15">
-                            <Label Text="{Binding Titolo}" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Title" />
-                            <local:ShadowFrame BackgroundColor="Transparent" VerticalOptions="FillAndExpand" Padding="0">
-                                <Frame BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HasShadow="False" Padding="0" IsClippedToBounds="True" CornerRadius="20">
+                            <!--Frame avviso-->
+                            <Frame CornerRadius="12" BackgroundColor="White" HasShadow="False" HorizontalOptions="Center" VerticalOptions="FillAndExpand" Padding="8,12">
+                                <StackLayout Spacing="3">
+                                    <!--Titolo-->
+                                    <Label Text="{Binding Titolo}" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Title" />
+                                    <!--Immagini-->
                                     <flv:FlowListView IsVisible="{Binding ListVisibility}" FlowItemTapped="ImageList_ItemSelected" FlowItemsSource="{Binding FullImmagini}" SeparatorColor="Black" BackgroundColor="Transparent" FlowColumnExpand="ProportionalLast" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="false" RowHeight="100">
                                         <flv:FlowListView.FlowColumnTemplate>
                                             <DataTemplate>
@@ -35,10 +40,16 @@
                                             </DataTemplate>
                                         </flv:FlowListView.FlowColumnTemplate>
                                     </flv:FlowListView>
-                                </Frame>
-                            </local:ShadowFrame>
-                            <Label Text="{Binding CorrectDescription}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" />
-                            <Button BackgroundColor="Transparent" TextColor="{x:Static local:Styles.Apple}" Clicked="ShowMore_Clicked" Text="Mostra altro" IsVisible="{Binding ShowMoreVisibility}" />
+                                    <!--Descrizione-->
+                                    <Label Text="{Binding CorrectDescription}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" />
+                                    <!--Mostra altro-->
+                                    <Button BackgroundColor="Transparent" TextColor="{x:Static local:Styles.Apple}" Clicked="ShowMore_Clicked" Text="Mostra altro" IsVisible="{Binding ShowMoreVisibility}" />
+
+                                </StackLayout>
+                            </Frame>
+
+                            <!--Creatore-->
+                            <Label Text="{Binding nomeCreatore}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" VerticalOptions="EndAndExpand"/>
                         </StackLayout>
                     </DataTemplate>
                 </cards:CarouselView.ItemTemplate>
