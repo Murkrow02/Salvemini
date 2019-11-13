@@ -18,14 +18,9 @@ namespace SalveminiApp.RestApi.Models
         public int prgClasse { get; set; }
         public int prgScuola { get; set; }
         public string Data { get; set; }
+        public string Materia { get; set; }
 
-        public string formattedSubject
-        {
-            get
-            {
-                 return desMateria.ToUpper()[0] + desMateria.Substring(1).ToLower();
-            }
-        }
+
 
         public string formattedTeacher
         {

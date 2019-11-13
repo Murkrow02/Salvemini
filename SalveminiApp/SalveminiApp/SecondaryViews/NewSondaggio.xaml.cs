@@ -5,6 +5,8 @@ using Xamarin.Forms;
 using Xamarin.Essentials;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR.Client;
+using Microsoft.AspNet.SignalR.Client;
+using System.Linq;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using UIKit;
@@ -13,8 +15,17 @@ namespace SalveminiApp.SecondaryViews
 {
     public partial class NewSondaggio : ContentPage
     {
+        //Save the selected poll
         public Sondaggi sondaggio = new Sondaggi();
-        public List<SondaggiResult> Risultati = new List<SondaggiResult>(); 
+
+        //Save poll results
+        public List<SondaggiResult> Risultati = new List<SondaggiResult>();
+
+        //Save signalR connection class
+        SignalR.SondaggiHub connection = new SignalR.SondaggiHub();
+
+        //Save if frame voti is visible
+        bool showingResults = false;
 
         public NewSondaggio(Sondaggi sondaggio_)
         {
@@ -33,7 +44,7 @@ namespace SalveminiApp.SecondaryViews
             sondaggio = sondaggio_;
 
             //Save that user viewed last sondaggio
-            Preferences.Set("LastSondaggio", sondaggio.id);
+           // Preferences.Set("LastSondaggio", sondaggio.id);
 
             //Add initial space
             widgetsLayout.Children.Add(new Xamarin.Forms.ContentView { WidthRequest = 5 });
@@ -68,17 +79,13 @@ namespace SalveminiApp.SecondaryViews
             //Set question label and creation label
             questionLbl.Text = sondaggio.Nome;
             creatorLbl.Text = "Creato da " + sondaggio.Utenti.nomeCognome;
-
-            ////Subscribe to messaging center
-            //MessagingCenter.Subscribe<App>(this, "updateResults", (sender) =>
-            //{
-            //    showResults();
-            //});
-
         }
 
         private async void VotaBtn_Clicked(object sender, EventArgs e)
         {
+            //Disable votes
+            widgetCollection.IsEnabled = false;
+            widgetCollection.Opacity = 0.6;
             try
             {
                 //Get id scelta
@@ -100,6 +107,22 @@ namespace SalveminiApp.SecondaryViews
                     Preferences.Set("voted" + sondaggio.id, true);
                     MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "RemoveBadge", "Sondaggi");
 
+                    //Remove vote btn
+                    try
+                    {
+                       var layouts = widgetsLayout.Children.ToList();
+                        foreach(var stack in layouts)
+                        {
+                           var stack_ = stack as StackLayout;
+                            try {
+                                var buttonVote = stack_.Children[1] as Button;
+                                stack_.Children.Remove(buttonVote);
+                            }
+                            catch { continue; }
+                        }
+                    }
+                    catch { }
+
                     //Show results
                     showResults();
                 }
@@ -108,6 +131,10 @@ namespace SalveminiApp.SecondaryViews
             {
                 await DisplayAlert("Errore", "Non è stato possibile inviare il tuo voto, riprova più tardi", "Ok");
             }
+
+            //Enable votes
+            widgetCollection.IsEnabled = true;
+            widgetCollection.Opacity = 1;
         }
 
         async void closePage(object sender, EventArgs e)
@@ -125,7 +152,7 @@ namespace SalveminiApp.SecondaryViews
                 return;
             else //He decided not to vote :(
             {
-                Preferences.Set("voted" + sondaggio.id, true);
+                Preferences.Set("skipPoll" + sondaggio.id, true);
                 await Navigation.PopModalAsync();
 
             }
@@ -141,20 +168,34 @@ namespace SalveminiApp.SecondaryViews
                 showResults();
             }
 
+            //Connect to SignalR hub
+            connection.InitilizeHub();
+
+            //Handle new voto
+            connection.hubProxy.On("UpdateVoti", () =>
+                {
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        if (showingResults)
+                            showResults();
+                    });
+                });
         }
 
-        public async void showResults(bool fromSignalR = false)
+        public async void showResults()
         {
             //Get new results
-            if(!fromSignalR)
             Risultati = await App.Sondaggi.ReturnRisultati(sondaggio.id);
-
-            //Remove previous results
-            resultsLayout.Children.Clear();
 
             //Return if no voti
             if (Risultati == null || Risultati.Count < 1)
                 return;
+
+            //Show label
+            headerDesc.Text = "I risultati sono aggiornati in tempo reale";
+
+            //Remove previous results
+            resultsLayout.Children.Clear();
 
             //Foreach result add a custom control
             for (int i = 0; i < Risultati.Count; i++)
@@ -168,12 +209,18 @@ namespace SalveminiApp.SecondaryViews
             }
 
             //Show frame
-            await Task.WhenAll(resultsFrame.FadeTo(1, 1000, Easing.CubicInOut), resultsFrame.TranslateTo(0,0,1500, Easing.CubicOut));
+            if(!showingResults)
+            await Task.WhenAll(resultsFrame.FadeTo(1, 1000, Easing.CubicInOut), resultsFrame.TranslateTo(0, 0, 1500, Easing.CubicOut));
+            showingResults = true;
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
+
+            //Disconnect from SignalR
+            connection.Disconnect();
+            connection = new SignalR.SondaggiHub();
 
             //Ios 13 bug
             try

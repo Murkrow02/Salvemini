@@ -45,9 +45,9 @@ namespace SalveminiApp.SecondaryViews
 
             //Fill lists
             //Personalizza
-            var notifiche = new Helpers.PushCell { Title = "Notifiche", Separator = "si" };
-            notifiche.GestureRecognizers.Add(tapGestureRecognizer);
-            persLayout.Children.Add(notifiche);
+            //var notifiche = new Helpers.PushCell { Title = "Notifiche", Separator = "si" };
+            //notifiche.GestureRecognizers.Add(tapGestureRecognizer);
+            //persLayout.Children.Add(notifiche);
             var countdown = new Helpers.PushCell { Title = "Countdown", Separator = "si" };
             countdown.GestureRecognizers.Add(tapGestureRecognizer);
             persLayout.Children.Add(countdown);

@@ -24,7 +24,7 @@
                                             <StackLayout Padding="{Binding CellPadding}" Spacing="30">
                                                 <StackLayout Orientation="Horizontal">
                                                     <StackLayout HorizontalOptions="FillAndExpand">
-                                                        <Label HorizontalOptions="Start" FontAttributes="Bold" Text="{Binding desMateria}" FontSize="Large" />
+                                                        <Label HorizontalOptions="Start" FontAttributes="Bold" Text="{Binding Materia}" FontSize="Large" />
                                                         <Label Text="{Binding FullAssenze}" TextColor="{x:Static local:Styles.TextGray}" FontSize="Small" HorizontalOptions="Start" />
                                                     </StackLayout>
                                                     <Label Text="{Binding Voto}" TextColor="{x:Static local:Styles.TextColor}" FontSize="25" HorizontalOptions="End" HorizontalTextAlignment="Center" VerticalOptions="Center" FontAttributes="Bold" VerticalTextAlignment="Center" />

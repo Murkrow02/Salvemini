@@ -98,7 +98,7 @@ namespace SalveminiApp.RestApi
 
             try
             {
-                var response = await client.DeleteAsync(uri);
+                var response = await client.GetAsync(uri);
                 switch (response.StatusCode)
                 {
                     case HttpStatusCode.OK:

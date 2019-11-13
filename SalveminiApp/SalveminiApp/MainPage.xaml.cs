@@ -90,7 +90,7 @@ namespace SalveminiApp
             {
                 orarioFromCached = true;
                 var selectedDay = orarioCached.Where(x => x.Giorno == (int)DateTime.Today.DayOfWeek).ToList();
-                showOrario(orarioCached, Preferences.Get("FreedayInt", 0));
+                showOrario(selectedDay, Preferences.Get("FreedayInt", 0));
                 orarioDay.Text = "Oggi";
                 sedeLbl.Text = selectedDay[0].Sede;
             }
@@ -235,17 +235,21 @@ namespace SalveminiApp
                     sCoinLbl.Text = Index.sCoin.ToString();
 
                     //Get last sondaggio
-                    if (Index.ultimoSondaggio != null)
+                    if (Index.ultimoSondaggio != null) //New sondaggio detected
                     {
                         string nuovoSondaggio = "no";
                         int positionSondaggio = 4;
-                        if (Preferences.Get("LastSondaggio", 0) != Index.ultimoSondaggio.id && !Index.VotedSondaggio) //New sondaggio detected
+                        if (!Index.VotedSondaggio) //User did not vote
                         {
+                            //Save that user has not voted
+                            Preferences.Set("voted" + Index.ultimoSondaggio.id, false);
 
+                            //Set badges on widget
                             nuovoSondaggio = "si";
                             positionSondaggio = -1;
 
-                            if (!Preferences.Get("voted" + Index.ultimoSondaggio.id, false)) //Push to vote
+                            //If user decided not to vote don't show popup
+                            if (!Preferences.Get("skipPoll" + Index.ultimoSondaggio.id, false)) //Push to vote
                                 await Navigation.PushModalAsync(new SecondaryViews.NewSondaggio(Index.ultimoSondaggio));
                         }
                         else
@@ -426,7 +430,11 @@ namespace SalveminiApp
                     widget.SubTitle = ("<strong>" + ArgoIndex.TipoNotizia + "</strong>" + ArgoIndex.UltimaNotizia).Truncate(70);
                     widgets.Remove(widget);
                     widgets.Add(widget);
-                    OrderWidgets(true);
+                    //Order widgets on main thread to prevent crashes
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        OrderWidgets(true);
+                    });
                 }
                 catch
                 {
@@ -741,13 +749,19 @@ namespace SalveminiApp
 
         public async void updateOrario()
         {
+            //Download orario
             var data = await App.Orari.GetOrario(classeCorso);
+
+            //Failed to get
             if (data.Message != null)
             {
                 Costants.showToast("Non è stato possibile recuperare l'orario");
             }
             else
             {
+                //Delete last color palette
+                Costants.ClearColors();
+
                 var _orario = data.Data as List<RestApi.Models.Lezione>;
 
                 //Check if success and if there are updates
@@ -755,7 +769,12 @@ namespace SalveminiApp
                 {
                     //Update with new orario
                     Orario = _orario;
-                    changeDay(-1);
+
+                    //Use main thread to prevent crashes
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        changeDay(-1);
+                    });
                 }
             }
         }

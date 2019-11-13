@@ -23,6 +23,10 @@ namespace SalveminiApp.RestApi.Models
         public string giudizioSintetico { get; set; }
         public int prgClasse { get; set; }
         public bool SeparatorVisibility { get; set; } = true;
+        public string Materia { get; set; }
+
+
+
         public Thickness CellPadding { get; set; } = new Thickness(10);
 
         public string FullAssenze

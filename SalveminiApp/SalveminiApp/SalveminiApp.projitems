@@ -370,6 +370,7 @@
       <DependentUpon>EliminaAvviso.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)SignalR\FlappyHub.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SignalR\SondaggiHub.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

@@ -42,7 +42,6 @@ namespace SalveminiApp.RestApi.Models
         }
 
         public string datGiorno { get; set; }
-        public string desMateria { get; set; }
         public string codVotoPratico { get; set; }
         public string desProva { get; set; }
         public string codVoto { get; set; }
@@ -80,7 +79,7 @@ namespace SalveminiApp.RestApi.Models
         {
             get
             {
-                return desMateria.ToUpper()[0] + desMateria.Substring(1).ToLower();
+                return Materia.ToUpper()[0] + Materia.Substring(1).ToLower();
             }
         }
 
@@ -113,13 +112,13 @@ namespace SalveminiApp.RestApi.Models
         
         void calculateMedia(List<CachedVoto> cache, Voti arg)
         {
-            var votiDellaMateria = ArgoPages.Voti.GroupedVoti.FirstOrDefault(x => x.Materia == arg.desMateria).ToList();
+            var votiDellaMateria = ArgoPages.Voti.GroupedVoti.FirstOrDefault(x => x.Materia == arg.Materia).ToList();
 
             for (int i = votiDellaMateria.Count - 1; i >= 0; i--)
             {
                 foreach (var cobj in cache)
                 {
-                    if (votiDellaMateria[i].decValore == cobj.decValore && votiDellaMateria[i].desMateria == cobj.desMateria && votiDellaMateria[i].datGiorno == cobj.datGiorno)
+                    if (votiDellaMateria[i].decValore == cobj.decValore && votiDellaMateria[i].Materia == cobj.Materia && votiDellaMateria[i].datGiorno == cobj.datGiorno)
                     {
                         votiDellaMateria.RemoveAt(i);
                         break;
@@ -128,7 +127,7 @@ namespace SalveminiApp.RestApi.Models
             }
 
             var media = votiDellaMateria.Sum(x => x.decValore) / votiDellaMateria.Count();
-            ArgoPages.Voti.GroupedVoti.FirstOrDefault(x => x.Materia == arg.desMateria).Media = (double)media;
+            ArgoPages.Voti.GroupedVoti.FirstOrDefault(x => x.Materia == arg.Materia).Media = (double)media;
         }
 
         [JsonIgnore]
@@ -136,30 +135,30 @@ namespace SalveminiApp.RestApi.Models
         {
             if (!arg.NonFaMedia)
             {
-                ArgoPages.Voti.GroupedVoti.FirstOrDefault(x => x.Materia == arg.desMateria).ToList()[ArgoPages.Voti.GroupedVoti.FirstOrDefault(x => x.Materia == arg.desMateria).ToList().IndexOf(arg)].NonFaMedia = true;
+                ArgoPages.Voti.GroupedVoti.FirstOrDefault(x => x.Materia == arg.Materia).ToList()[ArgoPages.Voti.GroupedVoti.FirstOrDefault(x => x.Materia == arg.Materia).ToList().IndexOf(arg)].NonFaMedia = true;
 
                 if (Barrel.Current.Exists("NoCountVoti"))
                 {
                     var cache = CacheHelper.GetCache<List<CachedVoto>>("NoCountVoti");
-                    cache.Add(new CachedVoto { datGiorno = arg.datGiorno, decValore = arg.decValore, desMateria = arg.desMateria });
+                    cache.Add(new CachedVoto { datGiorno = arg.datGiorno, decValore = arg.decValore, Materia = arg.Materia });
                     Barrel.Current.Add("NoCountVoti", cache, TimeSpan.FromDays(365));
                     calculateMedia(cache, arg);
                 }
                 else
                 {
-                    Barrel.Current.Add("NoCountVoti", new List<CachedVoto> { new CachedVoto { datGiorno = arg.datGiorno, decValore = arg.decValore, desMateria = arg.desMateria } }, TimeSpan.FromDays(365));
+                    Barrel.Current.Add("NoCountVoti", new List<CachedVoto> { new CachedVoto { datGiorno = arg.datGiorno, decValore = arg.decValore, Materia = arg.Materia } }, TimeSpan.FromDays(365));
                     var cache = CacheHelper.GetCache<List<CachedVoto>>("NoCountVoti");
                     calculateMedia(cache, arg);
                 }
             }
             else
             {
-                ArgoPages.Voti.GroupedVoti.FirstOrDefault(x => x.Materia == arg.desMateria).ToList()[ArgoPages.Voti.GroupedVoti.FirstOrDefault(x => x.Materia == arg.desMateria).ToList().IndexOf(arg)].NonFaMedia = false;
+                ArgoPages.Voti.GroupedVoti.FirstOrDefault(x => x.Materia == arg.Materia).ToList()[ArgoPages.Voti.GroupedVoti.FirstOrDefault(x => x.Materia == arg.Materia).ToList().IndexOf(arg)].NonFaMedia = false;
 
                 if (Barrel.Current.Exists("NoCountVoti"))
                 {
                     var cache = CacheHelper.GetCache<List<CachedVoto>>("NoCountVoti");
-                    cache.RemoveAll(x => x.datGiorno == arg.datGiorno && x.decValore == arg.decValore && x.desMateria == arg.desMateria);
+                    cache.RemoveAll(x => x.datGiorno == arg.datGiorno && x.decValore == arg.decValore && x.Materia == arg.Materia);
                     Barrel.Current.Add("NoCountVoti", cache, TimeSpan.FromDays(365));
                     calculateMedia(cache, arg);
                 }
@@ -244,7 +243,7 @@ namespace SalveminiApp.RestApi.Models
     public class CachedVoto
     {
         public string datGiorno { get; set; }
-        public string desMateria { get; set; }
+        public string Materia { get; set; }
         public double? decValore { get; set; }
     }
 

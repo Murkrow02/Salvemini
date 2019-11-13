@@ -6,7 +6,7 @@
         <Grid  Margin="-20,0" Padding="0,5">
             <StackLayout Spacing="2" VerticalOptions="CenterAndExpand">
                 <Label Text="Sondaggio" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontSize="Title" />
-                <Label Text="Vota per visualizzare i risultati" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.TextGray}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontSize="12" />
+                <Label x:Name="headerDesc" Text="Vota per visualizzare i risultati" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.TextGray}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontSize="12" />
             </StackLayout>
             <iconize:IconButton Text="fal-times" FontSize="25" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="EndAndExpand" Clicked="closePage" VerticalOptions="CenterAndExpand" />
         </Grid>

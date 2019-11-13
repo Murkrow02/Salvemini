@@ -32,28 +32,32 @@ namespace SalveminiApp.RestApi.Models
             }
         }
 
+        [JsonIgnore]
         public bool ShowMoreVisibility
         {
             get
             {
-                return Descrizione.Length > 100;
+                try { return Descrizione.Length > 100; } catch { return false; }
             }
         }
 
+        [JsonIgnore]
         public bool ListVisibility
         {
             get
             {
-                return FullImmagini != null && FullImmagini.Count > 0;
+                try { return FullImmagini != null && FullImmagini.Count > 0; } catch { return false; }             
             }
         }
 
         //Description to display
+        [JsonIgnore]
         public string CorrectDescription
         {
             get
             {
-                return Descrizione.Length > 100 ? Descrizione.Remove(100) + "..." : Descrizione;
+                try { return Descrizione.Length > 100 ? Descrizione.Remove(100) + "..." : Descrizione; } catch { return ""; }
+                
             }
         }
 

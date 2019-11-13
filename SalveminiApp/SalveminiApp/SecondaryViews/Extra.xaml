@@ -9,9 +9,6 @@
                 <Label Margin="0,20,0,0" Text="Mancano" TextColor="{x:Static local:Styles.TextGray}" FontAttributes="Bold" FontSize="35" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
                 <Label Text="Alla fine della scuola" TextColor="{x:Static local:Styles.TextGray}" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
             </StackLayout>
-            <Button x:Name="lbl" Text="Pedo" Clicked="Signal"/>
-            <Slider x:Name="S1" Value="0.5" ValueChanged="SendValue"/>
-            <Slider x:Name="S2" Value="0.5"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

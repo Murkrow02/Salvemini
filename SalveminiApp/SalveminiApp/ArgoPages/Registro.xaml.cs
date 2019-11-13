@@ -270,7 +270,7 @@ namespace SalveminiApp.ArgoPages
                         var titleLayout = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, HorizontalOptions = LayoutOptions.FillAndExpand };
 
                         //Subject Label
-                        var subjectLabel = new Forms9Patch.Label { FontSize = 20, VerticalOptions = LayoutOptions.Center, Text = argomento.formattedSubject, FontAttributes = FontAttributes.Bold, Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.StartAndExpand };
+                        var subjectLabel = new Forms9Patch.Label { FontSize = 20, VerticalOptions = LayoutOptions.Center, Text = argomento.Materia, FontAttributes = FontAttributes.Bold, Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.StartAndExpand };
                         titleLayout.Children.Add(subjectLabel);
 
                         //Teacher Label
@@ -299,7 +299,7 @@ namespace SalveminiApp.ArgoPages
                         var titleLayout = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, HorizontalOptions = LayoutOptions.FillAndExpand };
 
                         //Subject Label
-                        var subjectLabel = new Forms9Patch.Label { FontSize = 20, VerticalOptions = LayoutOptions.Center, Text = compito.formattedSubject, FontAttributes = FontAttributes.Bold, Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.StartAndExpand };
+                        var subjectLabel = new Forms9Patch.Label { FontSize = 20, VerticalOptions = LayoutOptions.Center, Text = compito.Materia, FontAttributes = FontAttributes.Bold, Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.StartAndExpand };
                         titleLayout.Children.Add(subjectLabel);
 
                         //Teacher Label

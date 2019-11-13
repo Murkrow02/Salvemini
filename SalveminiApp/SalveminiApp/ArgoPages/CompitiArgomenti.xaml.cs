@@ -318,9 +318,9 @@ namespace SalveminiApp.ArgoPages
                 }
                 foreach (RestApi.Models.Compiti compito in listForSubjects)
                 {
-                    if (!materie.Contains(compito.desMateria))
+                    if (!materie.Contains(compito.Materia))
                     {
-                        materie.Add(compito.desMateria);
+                        materie.Add(compito.Materia);
                     }
                 }
 
@@ -345,7 +345,7 @@ namespace SalveminiApp.ArgoPages
                     return;
 
                 clockLabel.Text = scelta;
-                lista.ItemsSource = Compitis.Where(x => x.desMateria == scelta).ToList();
+                lista.ItemsSource = Compitis.Where(x => x.Materia == scelta).ToList();
             }
             else
             {
@@ -360,9 +360,9 @@ namespace SalveminiApp.ArgoPages
                 }
                 foreach (RestApi.Models.Argomenti argomento in listForSubjects)
                 {
-                    if (!materie.Contains(argomento.desMateria))
+                    if (!materie.Contains(argomento.Materia))
                     {
-                        materie.Add(argomento.desMateria);
+                        materie.Add(argomento.Materia);
                     }
                 }
 
@@ -386,7 +386,7 @@ namespace SalveminiApp.ArgoPages
                     return;
 
                 clockLabel.Text = scelta;
-                lista.ItemsSource = Argomentis.Where(x => x.desMateria == scelta).ToList();
+                lista.ItemsSource = Argomentis.Where(x => x.Materia == scelta).ToList();
 
             }
         }
@@ -399,7 +399,7 @@ namespace SalveminiApp.ArgoPages
                     lista.ItemsSource = Compitis;
                 else
                 {
-                    lista.ItemsSource = Compitis.Where(x => x.Contenuto.ToLower().Contains(e.NewTextValue.ToLower()) || x.desMateria.ToLower().Contains(e.NewTextValue.ToLower())).ToList();
+                    lista.ItemsSource = Compitis.Where(x => x.Contenuto.ToLower().Contains(e.NewTextValue.ToLower()) || x.Materia.ToLower().Contains(e.NewTextValue.ToLower())).ToList();
                 }
             }
             else
@@ -408,7 +408,7 @@ namespace SalveminiApp.ArgoPages
                     lista.ItemsSource = Argomentis;
                 else
                 {
-                    lista.ItemsSource = Argomentis.Where(x => x.Contenuto.ToLower().Contains(e.NewTextValue.ToLower()) || x.desMateria.ToLower().Contains(e.NewTextValue.ToLower())).ToList();
+                    lista.ItemsSource = Argomentis.Where(x => x.Contenuto.ToLower().Contains(e.NewTextValue.ToLower()) || x.Materia.ToLower().Contains(e.NewTextValue.ToLower())).ToList();
                 }
             }
 

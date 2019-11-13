@@ -34,15 +34,18 @@ namespace SalveminiApp
                 //Index of colors
                 var index = Preferences.Get("colorLoop", 0);
 
-                if (Preferences.Get("mat" + materia, "#802891") == "#802891")
+                if (Preferences.Get("mat" + materia, "#802891") == "#802891") //Empty color
                 {
                     //save new color
                     Preferences.Set("mat" + materia, Colors[index]);
+                    Preferences.Set("matlist", Preferences.Get("matlist", "") + " mat" + materia + ",");
                     //reset index to prevent crashes
                     if (index == Colors.Count())
                         Preferences.Set("colorLoop", 0);
                     else
                         Preferences.Set("colorLoop", index + 1);
+
+                    //Return generated color
                     return Preferences.Get("mat" + materia, "#802891");
                 }
                 else
@@ -54,7 +57,23 @@ namespace SalveminiApp
             {
                 return Preferences.Get("mat" + materia, "#802891");
             }
+        }
 
+        public static void ClearColors()
+        {
+            try{
+                var colori = Preferences.Get("matlist", "");
+                var listaColori = colori.Split(',').ToList();
+                foreach (var colore in listaColori)
+                {
+                    Preferences.Remove(colore);
+                }
+                Preferences.Set("colorLoop", 0);
+            }
+            catch
+            {
+
+            }
         }
 
         public static Dictionary<int, string> Ore = new Dictionary<int, string>

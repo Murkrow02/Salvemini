@@ -51,7 +51,7 @@
                                                     <Label FontSize="12" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" Text="{Binding docente}" TextColor="{x:Static local:Styles.TextGray}" />
                                                 </StackLayout>
                                             </StackLayout>
-                                            <Label Text="{Binding desMateria}" HeightRequest="0" VerticalOptions="Start" />
+                                            <Label Text="{Binding Materia}" HeightRequest="0" VerticalOptions="Start" />
                                             <local:DashedBorderFrame IsVisible="{Binding SeparatorVisibility}" Padding="0" Margin="-10, -5" VerticalOptions="EndAndExpand" HeightRequest="0.1" />
                                         </StackLayout>
                                     </ViewCell>

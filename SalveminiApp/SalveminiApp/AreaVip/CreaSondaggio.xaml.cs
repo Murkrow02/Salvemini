@@ -90,6 +90,9 @@ namespace SalveminiApp.AreaVip
             sondaggio.OggettiSondaggi = opzioni_;
             var response = await App.Sondaggi.PostSondaggio(sondaggio);
 
+            //Show response
+            await DisplayAlert(response[0], response[1], "Ok");
+
             //Success
             if (response[0] == "Grazie!")
                await Navigation.PopModalAsync();

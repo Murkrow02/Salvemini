@@ -330,7 +330,7 @@ namespace SalveminiApp.RestApi
                         //Voti.Add(new Models.Voti { Materia = "LINGUA e LETTERATURA ITALIANA", codVoto = "6", datGiorno = "2019-10-05", decValore = 6, desMateria = "LINGUA e LETTERATURA ITALIANA", codVotoPratico = "6", desCommento = "prova", desProva = "Compito", docente = "Marialuigia Ruggiero" });
 
                         //Get voti filtered by subject from api call
-                        var groupedBySubject = Voti.GroupBy(x => x.desMateria).Select(y => y.ToList()).ToList();
+                        var groupedBySubject = Voti.GroupBy(x => x.Materia).Select(y => y.ToList()).ToList();
 
                         //Fill GroupedVoti
                         foreach (var group in groupedBySubject)
@@ -349,7 +349,7 @@ namespace SalveminiApp.RestApi
                                 {
                                     foreach (var nocount in noCountVoti)
                                     {
-                                        if (tempVoti[i].decValore == nocount.decValore && tempVoti[i].desMateria == nocount.desMateria && tempVoti[i].datGiorno == nocount.datGiorno)
+                                        if (tempVoti[i].decValore == nocount.decValore && tempVoti[i].Materia == nocount.Materia && tempVoti[i].datGiorno == nocount.datGiorno)
                                         {
                                             group[group.IndexOf(tempVoti[i])].NonFaMedia = true;
                                             tempVoti.RemoveAt(i);
@@ -365,7 +365,7 @@ namespace SalveminiApp.RestApi
                             var media = tempVoti.Sum(x => x.decValore) / tempVoti.Count();
 
                             //Add characteristics of the model
-                            var groupOfMarks = new Models.GroupedVoti((double)media) { Materia = group[0].desMateria };
+                            var groupOfMarks = new Models.GroupedVoti((double)media) { Materia = group[0].Materia };
 
                             //Add voti of that subject
                             groupOfMarks.AddRange(group);
