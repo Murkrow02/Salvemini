@@ -17,7 +17,13 @@ namespace SalveminiApi.Argo.Models
         //public int prgClasse { get; set; }
         //public int prgScuola { get; set; }
 
-      
+      public string Materia
+        {
+            get
+            {
+                return Helpers.Utility.FirstCharToUpper(desMateria.ToLower());
+            }
+        }
         
     }
     public class argomentiList

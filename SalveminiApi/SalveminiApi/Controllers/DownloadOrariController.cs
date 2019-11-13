@@ -92,7 +92,7 @@ namespace SalveminiApi.Controllers
             catch (Exception ex)
             {
                 Helpers.Utility.saveCrash("Error getting orario classe " + classe, ex.ToString());
-                throw new HttpResponseException(System.Net.HttpStatusCode.InternalServerError);
+                throw new HttpResponseException(System.Net.HttpStatusCode.NotFound);
             }
         }
     }
