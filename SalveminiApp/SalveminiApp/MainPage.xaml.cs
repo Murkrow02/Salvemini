@@ -453,9 +453,9 @@ namespace SalveminiApp
             var giorno = e.SelectedItem as string;
 
             //Find index from that name
-            var giorni = CultureInfo.CurrentCulture.DateTimeFormat.DayNames.ToList();
+            var giorni = Costants.getDays();
             giorni = giorni.ConvertAll(x => x.ToLower());
-            var intGiorno = giorni.IndexOf(giorno.ToLower());
+            var intGiorno = giorni.IndexOf(giorno.ToLower()) + 1;
 
             //Get timetables
             changeDay(intGiorno);

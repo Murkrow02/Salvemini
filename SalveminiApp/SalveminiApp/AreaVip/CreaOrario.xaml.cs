@@ -56,7 +56,13 @@ namespace SalveminiApp.AreaVip
                 return;
             }
 
-            var classeCorso = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
+
+
+            //Auto fill entries
+            if (string.IsNullOrEmpty(classEntry.Text))
+                return;
+
+            var classeCorso = classEntry.Text;
             var orario = await App.Orari.GetOrario(classeCorso);
             if (orario.Data != null)
             {
@@ -106,7 +112,10 @@ namespace SalveminiApp.AreaVip
                 {
                    
                     //Get int of the day
-                    var dayInt = Convert.ToInt32((DayOfWeek)Enum.Parse(typeof(DayOfWeek), Costants.Giorni.FirstOrDefault(x => x.Value == giorno).Key));
+
+                    //var dayInt = Convert.ToInt32((DayOfWeek)Enum.Parse(typeof(DayOfWeek), Costants.Giorni.FirstOrDefault(x => x.Value == giorno).Key));
+
+                    var dayInt = Costants.Giorni.Values.ToList().IndexOf(giorno);
 
                     //Initialize list
                     List<RestApi.Models.Lezione> list = new List<RestApi.Models.Lezione>();
@@ -144,10 +153,11 @@ namespace SalveminiApp.AreaVip
                 return;
 
             //Initialize values
-            int giorno = 1;
-            int ora = 1;
+            int giorno = 1; //Current day scanned
+            int ora = 1; //Current hour scanned
             string sede = "";
             int segmentedIndex = 1;
+            int oreGiorno = 0; //Save how many hours added for that day
 
             //If his freeday is monday start from martedi
             if (daySkipped == 1)
@@ -176,34 +186,26 @@ namespace SalveminiApp.AreaVip
                     //Get value from autocomplete
                     var materia = autoComplete.Text;
 
-                    //Skip ora if is null
-                    if (string.IsNullOrEmpty(materia) || string.IsNullOrWhiteSpace(materia))
-                    {
-                        //Last hour, can skip to other day
-                        if (ora == 7 || ora == 6 || ora == 5)
-                        {
-                            giorno++;
-                            ora = 1;
-                            segmentedIndex += 15;
-                            continue;
-                        }
-                        else
-                        {
-                            //1,2,3,4 ora non possono essere vuote
-                            await DisplayAlert("Attenzione", "Le ore dalla prima alla quarta non possono essere lasciate vuote", "Ok");
-                            return;
-                        }
-                    }
-
                     //Add lezione to list
                     var lezione = new RestApi.Models.newOrario { Ora = ora, Giorno = giorno, Materia = materia, Sede = sede };
                     lezioni.Add(lezione);
 
+                    //Save that hour is not empty for this day
+                    if(!string.IsNullOrEmpty(materia))
+                    oreGiorno++;
+
                     //If is last hour skip to next day
                     if (ora == 7)
                     {
+                        if(oreGiorno < 3) //Ha messo meno di tre ore in un giorno
+                        {
+                            await DisplayAlert("Attenzione","Non puoi inserire un giorno con meno di 3 ore","Ok");
+                            return;
+                        }
+
                         giorno++;
                         ora = 1;
+                        oreGiorno = 0;
                         segmentedIndex += 15;
                     }
                     else
@@ -214,6 +216,10 @@ namespace SalveminiApp.AreaVip
                     continue;
                 }
             }
+
+            //Checks
+
+
 
             //Add fake free day hour to list
             var freeDay = new RestApi.Models.newOrario { Ora = 1, Materia = "Libero", Sede = "", Giorno = daySkipped };

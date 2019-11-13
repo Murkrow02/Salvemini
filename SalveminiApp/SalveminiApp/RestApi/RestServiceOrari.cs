@@ -75,13 +75,12 @@ namespace SalveminiApp.RestApi
             for (int i = 0; i < orario.Count; i++)
             {
                 //Skip hour if is equal to the previous
-                if (orario.ElementAtOrDefault(i - 1) != null && orario[i].Materia == orario[i - 1].Materia)
+                if (orario.ElementAtOrDefault(i - 1) != null && orario[i].Materia == orario[i - 1].Materia || string.IsNullOrEmpty(orario[i].Materia))
                 {
                     orario[i].toRemove = true;
                     continue;
                 }
                 int next = 1;
-
                 RestApi.Models.Lezione lezione()
                 {
                     //Check if next hour is the same of this hour
@@ -89,7 +88,7 @@ namespace SalveminiApp.RestApi
                     {
                         //Increment hours number
                         orario[i].numOre = next + 1;
-                        //Incre
+                        //Increment
                         next++;
                         lezione();
                     }
@@ -116,6 +115,7 @@ namespace SalveminiApp.RestApi
                 lezione.OrarioFrameRadius = lezione.numOre > 1 ? 10 : 8;
             }
 
+            //Remove to remove items
             orario = orario.Where(x => x.toRemove == false).ToList();
 
 

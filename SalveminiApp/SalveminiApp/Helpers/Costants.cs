@@ -150,7 +150,8 @@ namespace SalveminiApp
         public static List<string> getDays()
         {
             //Get day names list
-            var Days = CultureInfo.CurrentCulture.DateTimeFormat.DayNames.ToList();
+            var culture = new CultureInfo("it-IT");
+            var Days = culture.DateTimeFormat.DayNames.ToList();
             //Remove sunday
             Days.RemoveAt(0);
             //First letter to upper
