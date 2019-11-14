@@ -21,7 +21,7 @@ namespace SalveminiApp
         //Home
         public static Helpers.CustomNavigationPage Home = new Helpers.CustomNavigationPage(new MainPage())
         {
-            BarTextColor = Styles.PrimaryColor,
+            BarTextColor = Styles.TextColor,
             BarBackgroundColor = Styles.BGColor,
             Title = "Home",
             IconImageSource = "fillTabBarHome.png"
@@ -49,7 +49,7 @@ namespace SalveminiApp
             SelectedTabColor = Styles.TextColor;
 #endif
 #if __ANDROID__
-            BarTextColor = Styles.ObjectGray;
+            BarTextColor = Styles.TextColor;
             BarBackgroundColor = Color.White;
             SelectedTabColor = Styles.TextColor;
             On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);

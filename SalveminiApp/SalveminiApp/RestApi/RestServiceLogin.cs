@@ -55,6 +55,7 @@ namespace SalveminiApp.RestApi
            }
             catch (Exception ex)
             {
+                Data.Message = "Non è stato possibile completare la richiesta, controlla la tua connessione e riprova";
                 Debug.WriteLine(@"              ERROR {0}", ex.Message);
             }
             return Data;

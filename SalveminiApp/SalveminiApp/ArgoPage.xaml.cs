@@ -115,8 +115,8 @@ namespace SalveminiApp
             }
 
             //Set Sizes
-            chart.WidthRequest = App.ScreenWidth;
-            chart.HeightRequest = App.ScreenHeight / 3;
+            //chart.WidthRequest = App.ScreenWidth;
+            //chart.HeightRequest = App.ScreenHeight / 3;
 
             //Add widgets
             var gestureRecognizer = new TapGestureRecognizer();

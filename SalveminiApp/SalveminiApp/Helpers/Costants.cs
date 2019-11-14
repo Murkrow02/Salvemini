@@ -185,7 +185,7 @@ namespace SalveminiApp
             iOS.AppDelegate.hapticVibration();
 #endif
 
-#if _ANDROID_
+#if __ANDROID__
             //Show toast
             SalveminiApp.Droid.ShowToast.LongAlert(message);
 

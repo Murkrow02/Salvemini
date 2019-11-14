@@ -6,7 +6,7 @@
                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                     <iconize:IconButton BackgroundColor="Transparent" VerticalOptions="Center" Clicked="Close_Clicked" TextColor="{x:Static local:Styles.TextColor}" Text="far-times" HorizontalOptions="Start" FontSize="Large" />
                     <StackLayout Spacing="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                        <Button x:Name="todayButton" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Center" FontSize="Large" />
+                        <Button BackgroundColor="Transparent" x:Name="todayButton" Clicked="ChangeDate_Clicked" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Center" FontSize="Large" />
                         <iconize:IconButton BackgroundColor="Transparent" Clicked="ChangeDate_Clicked" TextColor="{x:Static local:Styles.TextColor}" Text="fas-caret-down" HorizontalOptions="Center" FontSize="Large" />
                     </StackLayout>
                     <ActivityIndicator Margin="10, 0" x:Name="loadingIndicator" IsRunning="False" HorizontalOptions="End" />

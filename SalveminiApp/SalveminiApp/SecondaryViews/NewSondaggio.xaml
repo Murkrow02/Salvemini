@@ -8,10 +8,10 @@
                 <Label Text="Sondaggio" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontSize="Title" />
                 <Label x:Name="headerDesc" Text="Vota per visualizzare i risultati" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.TextGray}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontSize="12" />
             </StackLayout>
-            <iconize:IconButton Text="fal-times" FontSize="25" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="EndAndExpand" Clicked="closePage" VerticalOptions="CenterAndExpand" />
+            <iconize:IconButton BackgroundColor="Transparent" Text="fal-times" FontSize="25" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="EndAndExpand" Clicked="closePage" VerticalOptions="CenterAndExpand" />
         </Grid>
         <!--Poll question-->
-        <patch:Label x:Name="questionLbl" TextColor="{x:Static local:Styles.TextGray}" MinFontSize="10" Lines="4" AutoFit="Width" VerticalOptions="Start" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+        <patch:Label x:Name="questionLbl" TextColor="{x:Static local:Styles.TextColor}" MinFontSize="12" Lines="4" AutoFit="Width" VerticalOptions="Start" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
 
         <!--Options-->
         <ScrollView VerticalOptions="StartAndExpand" Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Margin="-25,0" x:Name="widgetCollection">

@@ -129,7 +129,7 @@ namespace SalveminiApp
             //Increment number of appeared times
             appearedTImes++;
 
-            //Security checks todo
+            //Show loading
             widgetLoading.IsRunning = true;
             widgetLoading.IsVisible = true;
 
@@ -179,7 +179,7 @@ namespace SalveminiApp
 
                 //Initialize list with first widgets
                 widgets.Add(registro); widgets.Add(card); widgets.Add(extra);
-                //OrderWidgets(false); todo uncomment to fast load initial widgets
+                OrderWidgets(false); //uncomment to fast load initial widgets
 
 
                 //Check Internet
@@ -192,8 +192,13 @@ namespace SalveminiApp
                     //Update orario in background
                     await Task.Run((Action)updateOrario);
 
+
+
+                    var secondo = new Stopwatch();secondo.Start();
                     //Get index from api call
                     var tempIndex = await App.Index.GetIndex();
+
+    
 
                     //Checks in downloaded index
                     if (tempIndex != null)
@@ -329,6 +334,7 @@ namespace SalveminiApp
                 widgetLoading.IsVisible = false;
                 Costants.showToast("Si è verificato un errore fatale, contatta gli sviluppatori se il problema persiste");
             }
+
         }
 
         //Handle widget redirections
@@ -640,6 +646,7 @@ namespace SalveminiApp
         //Update widget list
         public async void OrderWidgets(bool animate)
         {
+
             //Refresh with new widgets
             //Fade animation
             if (animate)
@@ -658,6 +665,7 @@ namespace SalveminiApp
             //Fade animation
             if (animate)
                 await widgetCollection.FadeTo(1, 300, Easing.CubicInOut);
+
         }
 
         //Handle ad tapped to show info

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <ContentPage Title="Profilo" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns:local="clr-namespace:SalveminiApp" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Profile">
-    <ScrollView VerticalScrollBarVisibility="Never" Padding="15,10,15,0">
+    <ScrollView VerticalScrollBarVisibility="Never" Padding="15,10,15,5">
         <StackLayout Spacing="30">
             <!--Profile view-->
             <StackLayout>
@@ -76,7 +76,7 @@
             <StackLayout Spacing="15">
                 <!--Cambia Password-->
                 <Frame Padding="0" IsClippedToBounds="True" HasShadow="False" CornerRadius="12" VerticalOptions="Start">
-                    <Button Clicked="ChangePwd_Clicked" BackgroundColor="Transparent" FontSize="Large" Text="Cambia Password" TextColor="{x:Static local:Styles.Apple}" HorizontalOptions="FillAndExpand" />
+                    <Button Clicked="ChangePwd_Clicked" BackgroundColor="Transparent" FontSize="Large" Text="Cambia Password" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="FillAndExpand" />
                 </Frame>
                 <!--Esci-->
                 <Frame Padding="0" IsClippedToBounds="True" HasShadow="False" CornerRadius="12" VerticalOptions="Start">

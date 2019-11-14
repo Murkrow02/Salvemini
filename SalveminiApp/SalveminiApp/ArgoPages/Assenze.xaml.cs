@@ -34,8 +34,6 @@ namespace SalveminiApp.ArgoPages
             buttonFrame.WidthRequest = App.ScreenWidth / 6;
             buttonFrame.HeightRequest = App.ScreenWidth / 6;
             buttonFrame.CornerRadius = (float)(App.ScreenWidth / 6) / 2;
-            infoImage.HeightRequest = App.ScreenWidth / 13;
-            infoImage.WidthRequest = App.ScreenWidth / 13;
 
             //Load Cache
             var cachedAssenze = CacheHelper.GetCache<List<RestApi.Models.Assenza>>("Assenze");
