@@ -21,6 +21,12 @@ namespace SalveminiApp.SecondaryViews.Trasporti
         {
             InitializeComponent();
 
+#if __IOS__
+            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+            {
+                UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, true);
+            }
+#endif
             //Fill picker
             stationPicker.ItemsSource = Stazioni;
 
@@ -46,6 +52,20 @@ namespace SalveminiApp.SecondaryViews.Trasporti
 
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+#if __IOS__
+            UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.DarkContent, true);
+#endif
+        }
+
         private void picker_Unfocused(object sender, FocusEventArgs e)
         {
             if (string.IsNullOrEmpty(stationPicker.SelectedItem?.ToString()))
@@ -59,6 +79,19 @@ namespace SalveminiApp.SecondaryViews.Trasporti
                 TrenoSegment.SelectedSegment = 0;
 
             getTrains();
+        }
+
+        private void Safari_Clicked(object sender, EventArgs e)
+        {
+            var page = new IconNavigationPage(new ContentPage { Title = "Orari treni", Content = new WebView { Source = "https://www.eavsrl.it/web/sites/default/files/eavferro/NAPOLI%20SORRENTO%20L1.pdf" } }) { BarBackgroundColor = Color.FromHex("FA8265"), BarTextColor = Color.White };
+            page.ToolbarItems.Add(new IconToolbarItem { IconImageSource = "fas-times", IconColor = Color.White });
+            page.ToolbarItems[0].Clicked += WebClose_Clicked;
+            Navigation.PushModalAsync(page);
+        }
+
+        private void WebClose_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
         }
 
         private void TrenoSegment_OnSegmentSelected(object sender, Plugin.Segmented.Event.SegmentSelectEventArgs e)

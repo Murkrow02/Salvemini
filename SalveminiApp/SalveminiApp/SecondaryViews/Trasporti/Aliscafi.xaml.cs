@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Plugin.Iconize;
 using Xamarin.Forms;
 using System.Linq;
+#if __IOS__
+using UIKit;
+#endif
 
 namespace SalveminiApp.SecondaryViews.Trasporti
 {
@@ -12,7 +15,12 @@ namespace SalveminiApp.SecondaryViews.Trasporti
         public Aliscafi()
         {
             InitializeComponent();
-
+#if __IOS__
+            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+            {
+                UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, true);
+            }
+#endif
             //Set ItemsSource
             fromPicker.ItemsSource = new List<string>(Costants.Rotte.Keys);
 
@@ -109,6 +117,20 @@ namespace SalveminiApp.SecondaryViews.Trasporti
         {
             //Close the page
             Navigation.PopModalAsync();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+#if __IOS__
+            UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.DarkContent, true);
+#endif
         }
     }
 }
