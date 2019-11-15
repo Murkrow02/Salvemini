@@ -69,11 +69,18 @@ namespace SalveminiApp
             //Refresh image cache
             MessagingCenter.Subscribe<App>(this, "ReloadUserPic", (sender) =>
             {
-                ImageService.Instance.InvalidateCacheEntryAsync(Costants.Uri("images/users/") + Preferences.Get("UserId", ""), CacheType.All, removeSimilar: true);
-                userImg.Source = "";
-                userImg.Source = Costants.Uri("images/users/") + Preferences.Get("UserId", "");
-                userImg.ReloadImage();
-                userImg.WidthRequest = App.ScreenWidth / 8.8;
+                try
+                {
+                    ImageService.Instance.InvalidateCacheEntryAsync(Costants.Uri("images/users/") + Preferences.Get("UserId", ""), CacheType.All, removeSimilar: true);
+                    userImg.Source = "";
+                    userImg.Source = Costants.Uri("images/users/") + Preferences.Get("UserId", "");
+                    userImg.ReloadImage();
+                    userImg.WidthRequest = App.ScreenWidth / 8.8;
+                }
+                catch
+                {
+
+                }
             });
 
             //Remove avvisi badge

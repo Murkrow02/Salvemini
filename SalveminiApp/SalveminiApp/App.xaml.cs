@@ -103,13 +103,13 @@ namespace SalveminiApp
             {
 
                 OSNotificationPayload payload = notification.payload;
-                Dictionary<string, object> additionalData = payload.additionalData;
+              //  Dictionary<string, object> additionalData = payload.additionalData;
                 string message = payload.body;
 
                 var notificator = DependencyService.Get<IToastNotificator>();
                 var options = new NotificationOptions()
                 {
-                    Description = "Nessuna connessione ad internet 🚀",
+                    Description = message.Replace(", apri l'app per saperne di più!", "").Replace(", apri l'app per votare","")
                 };
 
                 var result = await notificator.Notify(options);

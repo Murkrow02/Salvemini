@@ -159,7 +159,7 @@
       <Version>3.4.1</Version>
     </PackageReference>
     <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie">
-      <Version>3.0.1</Version>
+      <Version>2.6.3</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms.PancakeView">
       <Version>1.1.8</Version>
@@ -252,7 +252,6 @@
     <BundleResource Include="Resources\tabBarArgo%402x.png" />
     <BundleResource Include="Resources\settings%403x.png" />
     <BundleResource Include="Resources\Compiti.svg" />
-    <BundleResource Include="Resources\Icon.png" />
     <BundleResource Include="Resources\logoBianco.png" />
     <BundleResource Include="Resources\VotiShadow.svg" />
     <BundleResource Include="Resources\Voti.svg" />

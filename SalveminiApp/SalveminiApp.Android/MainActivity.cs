@@ -6,7 +6,6 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Com.OneSignal;
-//using Lottie.Forms.Droid;
 using Plugin.CurrentActivity;
 using Plugin.Toasts;
 using PanCardView.Droid;
@@ -15,7 +14,7 @@ using Xamarin.Forms;
 
 namespace SalveminiApp.Droid
 {
-    [Activity(Label = "SalveminiApp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Salvemini", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -54,7 +53,6 @@ namespace SalveminiApp.Droid
             Forms9Patch.Droid.Settings.Initialize(this);
             CardsViewRenderer.Preserve();
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
-            //AnimationViewRenderer.Init();
 
             LoadApplication(new App());
         }

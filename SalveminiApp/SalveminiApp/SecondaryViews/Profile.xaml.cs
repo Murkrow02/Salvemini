@@ -96,13 +96,13 @@ namespace SalveminiApp.SecondaryViews
             var deleteAvvisi = new Helpers.PushCell { Title = "Elimina avviso", Separator = "si", Push = new AreaVip.EliminaAvviso() };
             deleteAvvisi.GestureRecognizers.Add(tapGestureRecognizer);
             superVipLayout.Children.Add(deleteAvvisi);
-            var accediCon = new Helpers.PushCell { Title = "Controlla utenti", Separator = "no", Push = new AreaVip.UtentiList(true )};
+            var accediCon = new Helpers.PushCell { Title = "Controlla utenti", Separator = "no", Push = new AreaVip.UtentiList(true) };
             accediCon.GestureRecognizers.Add(tapGestureRecognizer);
             superVipLayout.Children.Add(accediCon);
 
         }
 
-        
+
 
         protected override async void OnAppearing()
         {
@@ -203,82 +203,95 @@ namespace SalveminiApp.SecondaryViews
             if (!garanted)
                 await DisplayAlert("Attenzione", "Non ci hai permesso di accedere alla tua fotocamera o alla tua galleria", "Ok");
 
-            if (decision == "Scegli una foto")
+            try
             {
-                //No gallery
-                if (!CrossMedia.Current.IsPickPhotoSupported)
+                if (decision == "Scegli una foto")
                 {
-                    await DisplayAlert("Attenzione", "Non è stato possibile accedere alle foto", "Ok");
-                    MainPage.isSelectingImage = false;
-                    return;
+                    //No gallery
+                    if (!CrossMedia.Current.IsPickPhotoSupported)
+                    {
+                        await DisplayAlert("Attenzione", "Non è stato possibile accedere alle foto", "Ok");
+                        MainPage.isSelectingImage = false;
+                        return;
+                    }
+
+                    var choosenImage = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+                    {
+                        PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+                        CompressionQuality = 80
+
+                    });
+
+                    if (choosenImage == null)
+                    {
+                        MainPage.isSelectingImage = false;
+                        return;
+                    }
+
+                    //Upload image
+                    var success = await App.Immagini.uploadImages(choosenImage.GetStreamWithImageRotatedForExternalStorage(), Preferences.Get("UserId", 0).ToString(), "users");
+
+                    if (success)
+                    {
+                        reloadImage();
+                    }
+                    else
+                    {
+                        MainPage.isSelectingImage = false;
+                        await DisplayAlert("Errore", "Si è verificato un errore durante il caricamento dell'immagine, contattaci se il problema persiste", "Ok");
+                    }
+
                 }
-
-                var choosenImage = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+                else if (decision == "Scatta una foto")
                 {
-                    PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
-                    CompressionQuality = 80
+                    if (!CrossMedia.Current.IsCameraAvailable)
+                    {
+                        await DisplayAlert("Attenzione", "Non è stato possibile accedere alla fotocamera", "Ok");
+                        MainPage.isSelectingImage = false;
+                        return;
+                    }
 
-                });
 
-                if (choosenImage == null)
-                {
-                    MainPage.isSelectingImage = false;
-                    return;
+                    var choosenImage = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+                    {
+                        CompressionQuality = 80,
+                        AllowCropping = false,
+                        PhotoSize = PhotoSize.Medium,
+                        RotateImage = true,
+                        DefaultCamera = CameraDevice.Rear
+                    });
+
+                    if (choosenImage == null)
+                    {
+                        MainPage.isSelectingImage = false;
+                        return;
+                    }
+
+                    //Upload image
+                    var success = await App.Immagini.uploadImages(choosenImage.GetStreamWithImageRotatedForExternalStorage(), Preferences.Get("UserId", 0).ToString(), "users");
+
+                    if (success)
+                    {
+                        reloadImage();
+                    }
+                    else
+                    {
+                        await DisplayAlert("Errore", "Si è verificato un errore durante il caricamento dell'immagine, contattaci se il problema persiste", "Ok");
+                        MainPage.isSelectingImage = false;
+
+                    }
                 }
-
-                //Upload image
-                var success = await App.Immagini.uploadImages(choosenImage.GetStreamWithImageRotatedForExternalStorage(), Preferences.Get("UserId", 0).ToString(), "users");
-
-                if (success)
+                else if (decision == "Rimuovi immagine")
                 {
-                    reloadImage();
+                    var success = await App.Immagini.DeleteImage();
+                    await DisplayAlert(success[0], success[1], "Ok");
                 }
-                else
-                {
-                    MainPage.isSelectingImage = false;
-                    await DisplayAlert("Errore", "Si è verificato un errore durante il caricamento dell'immagine, contattaci se il problema persiste", "Ok");
-                }
-
             }
-            else if (decision == "Scatta una foto")
+            catch
             {
-                if (!CrossMedia.Current.IsCameraAvailable)
-                {
-                    await DisplayAlert("Attenzione", "Non è stato possibile accedere alla fotocamera", "Ok");
-                    MainPage.isSelectingImage = false;
-                    return;
-                }
-
-
-                var choosenImage = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
-                {
-                    CompressionQuality = 80,
-                    AllowCropping = false,
-                    PhotoSize = PhotoSize.Medium,
-                    RotateImage = true,
-                    DefaultCamera = CameraDevice.Rear
-                });
-
-                if (choosenImage == null)
-                {
-                    MainPage.isSelectingImage = false;
-                    return;
-                }
-
-                //Upload image
-                var success = await App.Immagini.uploadImages(choosenImage.GetStreamWithImageRotatedForExternalStorage(), Preferences.Get("UserId", 0).ToString(), "users");
-
-                if (success)
-                {
-                    reloadImage();
-                }
-                else
-                {
-                    await DisplayAlert("Errore", "Si è verificato un errore durante il caricamento dell'immagine, contattaci se il problema persiste", "Ok");
-                    MainPage.isSelectingImage = false;
-
-                }
+                await DisplayAlert("Errore","Non è stato possibile completare l'azione, contattaci se il problema persiste","Ok");
             }
+           
         }
 
         public async void reloadImage()
@@ -296,7 +309,7 @@ namespace SalveminiApp.SecondaryViews
         }
 
         //Handle cell tapped
-       async private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        async private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             try
             {
@@ -320,7 +333,7 @@ namespace SalveminiApp.SecondaryViews
                 //Profile image
                 if (cell.Title == "Immagine di profilo")
                 {
-                    changePic(null,null);
+                    changePic(null, null);
                 }
 
 

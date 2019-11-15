@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -48,11 +50,39 @@ namespace SalveminiApp.RestApi
             }
            
         }
+
+        public async Task<string[]> DeleteImage()
+        {
+            var uri = Costants.Uri("images/" + Preferences.Get("UserId", -1));
+
+            try
+            {
+                var response = await client.GetAsync(uri);
+
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                        return new string[] { "Perfetto", "La tua immagine è stata rimossa" };
+                    case HttpStatusCode.InternalServerError:
+                        return new string[] { "Errore", "Si è verificato un errore, riprova più tardi o contattaci se il problema persiste" };
+                    default:
+                        return new string[] { "Errore", "Si è verificato un errore sconosciuto, riprova più tardi o contattaci se il problema persiste" };
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Rimuovi immagine", ex.Message);
+                return new string[] { "Errore", "Si è verificato un errore sconosciuto, riprova più tardi o contattaci se il problema persiste" };
+            }
+        }
     }
 
     public interface ImageService
     {
         Task<bool> UploadImageAsync(Stream image, string fileName, string percorso);
+        Task<string[]> DeleteImage();
+
     }
 
     public class ImageManager
@@ -70,7 +100,10 @@ namespace SalveminiApp.RestApi
             return apiService.UploadImageAsync(image, fileName, percorso);
         }
 
-
+        public Task<string[]> DeleteImage()
+        {
+            return apiService.DeleteImage();
+        }
 
     }
 

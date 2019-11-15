@@ -6,7 +6,7 @@
             <StackLayout>
                 <StackLayout Orientation="Horizontal" Spacing="5">
                     <patch:Label x:Name="TitleLbl" FontSize="Title" TextColor="White" Lines="1" AutoFit="Width" HorizontalTextAlignment="Start" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" />
-                    <lottie:AnimationView IsVisible="False" BackgroundColor="Transparent" HorizontalOptions="End" x:Name="animationView" Animation="Lotties/redPulse.json" Loop="true" AutoPlay="true" />
+                    <lottie:AnimationView IsVisible="False" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" x:Name="animationView" Animation="Lotties/redPulse.json" Loop="true" AutoPlay="true" />
                 </StackLayout>
                 <patch:Label x:Name="SubTitleLbl" TextColor="White" MinFontSize="15" Lines="4" AutoFit="Width" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" />
             </StackLayout>

@@ -135,9 +135,12 @@ namespace SalveminiApp.FirstAccess
                     busLayout.IsVisible = false;
                     break;
                 case 1:
-                    //Bus
+                    //Bus disable for the moment
+                    MezzoSegment.SelectedSegment = 0; DisplayAlert("Attenzione", "Gli orari dei bus non sono ancora supportati", "Ok");
+                    return;
                     trenoLayout.IsVisible = false;
                     busLayout.IsVisible = true;
+                    
                     break;
             }
         }
@@ -147,6 +150,8 @@ namespace SalveminiApp.FirstAccess
 
             if (string.IsNullOrEmpty(trainStationPicker.SelectedItem?.ToString()))
                 return;
+
+           
 
             //Sorrento to sorrento
             if (trainStationPicker.SelectedItem.ToString() == "Sorrento" && TrenoSegment.SelectedSegment == 0)
