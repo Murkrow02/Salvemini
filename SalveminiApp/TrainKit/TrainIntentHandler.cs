@@ -47,8 +47,10 @@ namespace TrainKit
 
             //GetTrains
             var defaults = new NSUserDefaults("group.com.codex.SalveminiApp",NSUserDefaultsType.SuiteName);
-            var stazione = defaults.IntForKey("savedStation");
-            var direzione = defaults.BoolForKey("savedDirection");
+            var stazione = defaults.IntForKey("savedStation" + intent.IdentifierString.Description);
+            var direzione = defaults.BoolForKey("savedDirection" + intent.IdentifierString.Description);
+            
+           // Console.WriteLine(intent.Identifier);
 
             var value = JsonValue.Parse(text) as JsonArray;
             foreach (var obj in value)

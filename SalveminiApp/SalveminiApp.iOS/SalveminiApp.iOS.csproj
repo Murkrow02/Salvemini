@@ -30,6 +30,7 @@
     <MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
     <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignProvision>SalveminiApp</CodesignProvision>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -94,6 +95,7 @@
     <None Include="ToastIos\xamarin.png" />
     <None Include="ToastIos\xamarin%402x.png" />
     <Compile Include="ToastIos\XHUD.cs" />
+    <Compile Include="AddVoiceShortcutView.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

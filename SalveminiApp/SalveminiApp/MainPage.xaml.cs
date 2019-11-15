@@ -13,8 +13,6 @@ using MonkeyCache.SQLite;
 using FFImageLoading;
 using FFImageLoading.Cache;
 using System.Diagnostics;
-using Intents;
-using IntentsUI;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using UIKit;
@@ -45,7 +43,7 @@ namespace SalveminiApp
         //Do not update orario if already cached
         public bool orarioFromCached;
         //How many times the page loaded onAppearing
-        public int appearedTImes;
+        public int appearedTimes;
 
         public MainPage()
         {
@@ -137,26 +135,8 @@ namespace SalveminiApp
         {
             base.OnAppearing();
 
-
-            // var intent = userActivity.GetInteraction()?.Intent as TrainIntent;
-           INShortcut newShortcut = new INShortcut(new SalveminiApp.TrainIntent());
-                var addVoiceShortcutVC = new INUIAddVoiceShortcutViewController(newShortcut);
-
-            var window = UIApplication.SharedApplication.KeyWindow;
-            var vc = window.RootViewController;
-            while (vc.PresentedViewController != null)
-            {
-                vc = vc.PresentedViewController;
-                
-            }
-            //addVoiceShortcutVC.Delegate = this;
-            vc.PresentViewController(addVoiceShortcutVC, true, null);
-
-
-            return;
-
             //Increment number of appeared times
-            appearedTImes++;
+            appearedTimes++;
 
             //Show loading
             widgetLoading.IsRunning = true;
@@ -775,7 +755,7 @@ namespace SalveminiApp
         {
             //Check App Version
             var appversion = Convert.ToDecimal(VersionTracking.CurrentVersion);
-            if (Index.AppVersion > appversion && appearedTImes % 2 == 0) //Show this only 1/2
+            if (Index.AppVersion > appversion && appearedTimes % 2 == 0) //Show this only 1/2
             {
                 bool choice = await DisplayAlert("Buone notizie!", "È disponibile un aggiornamento dell'app, recati sullo store per effettuarlo!", "Aggiorna", "Chiudi");
                 if (choice)

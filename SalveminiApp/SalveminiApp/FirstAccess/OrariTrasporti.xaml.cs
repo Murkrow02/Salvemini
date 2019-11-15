@@ -4,6 +4,9 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Forms9Patch;
 using System.Linq;
+using UIKit;
+using Intents;
+using IntentsUI;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Foundation;
@@ -11,6 +14,7 @@ using Foundation;
 
 namespace SalveminiApp.FirstAccess
 {
+
     public partial class OrariTrasporti : ContentPage
     {
         public List<RestApi.Models.Treno> Trains = new List<RestApi.Models.Treno>();
@@ -50,7 +54,7 @@ namespace SalveminiApp.FirstAccess
                     loadingLayout.IsVisible = false;
                     continueLayout.IsVisible = true;
                     Preferences.Set("OrarioTrasportiVersion", 1);
-                                }
+                }
                 else
                 {
                     fail();
@@ -86,8 +90,10 @@ namespace SalveminiApp.FirstAccess
             OnAppearing();
         }
 
-        void Continue_Clicked(object sender, System.EventArgs e)
+        async void Continue_Clicked(object sender, System.EventArgs e)
         {
+            bool canClose = true;
+
             switch (MezzoSegment.SelectedSegment)
             {
                 case 0:
@@ -103,17 +109,39 @@ namespace SalveminiApp.FirstAccess
                         Preferences.Set("savedDirection", direction);
 
 #if __IOS__
+                        //Add siri shortcut
+                        if (!UIDevice.CurrentDevice.CheckSystemVersion(12, 0))
+                            return; //Pre ios 12 can't use this :(
 
-                        //Save values for siri intent
-                        var defaults = new NSUserDefaults("group.com.codex.SalveminiApp", NSUserDefaultsType.SuiteName);
-                        defaults.AddSuite("group.com.codex.SalveminiApp");
-                        defaults.SetInt(station, new NSString("savedStation"));
-                        defaults.SetBool(direction, new NSString("savedDirection"));
+                        bool decision = await DisplayAlert("Vuoi aggiungere il comando a Siri?", "Potrai sapere quando arriverà il prossimo treno facilmente chiedendo a Siri con una frase personalizzata, che ne dici?", "Proviamo!", "Magari più tardi");
+                        if (!decision)  //Non vuole aggiungere :(
+                            return;
+
+                        canClose = false;
+
+                        //Get shortcut
+                        INShortcut newShortcut = new INShortcut(new SalveminiApp.TrainIntent());
+                        var addVoiceShortcutVC = new INUIAddVoiceShortcutViewController(newShortcut);
+                        addVoiceShortcutVC.Delegate = new SalveminiApp.iOS.AddVoiceShortcutView(this,station,direction);
+
+                        //Create new window
+                        var window = UIApplication.SharedApplication.KeyWindow;
+                        var vc = window.RootViewController;
+
+                        while (vc.PresentedViewController != null)
+                        {
+                            vc = vc.PresentedViewController;
+
+                        }
+
+                        //Show intent window
+                        vc.PresentViewController(addVoiceShortcutVC, true, null);
+
 #endif
                     }
                     else
                     {
-                        DisplayAlert("Attenzione", "Seleziona una stazione di partenza e una direzione", "Ok");
+                        await DisplayAlert("Attenzione", "Seleziona una stazione di partenza e una direzione", "Ok");
                         return;
                     }
                     break;
@@ -134,7 +162,8 @@ namespace SalveminiApp.FirstAccess
             }
             else
             {
-                Navigation.PopModalAsync();
+                if (canClose)
+                    await Navigation.PopModalAsync();
             }
         }
 
@@ -154,7 +183,7 @@ namespace SalveminiApp.FirstAccess
                     return;
                     trenoLayout.IsVisible = false;
                     busLayout.IsVisible = true;
-                    
+
                     break;
             }
         }
@@ -165,7 +194,7 @@ namespace SalveminiApp.FirstAccess
             if (string.IsNullOrEmpty(trainStationPicker.SelectedItem?.ToString()))
                 return;
 
-           
+
 
             //Sorrento to sorrento
             if (trainStationPicker.SelectedItem.ToString() == "Sorrento" && TrenoSegment.SelectedSegment == 0)
@@ -206,7 +235,7 @@ namespace SalveminiApp.FirstAccess
             {
                 Navigation.PopModalAsync();
             }
-        }
+        }   
 
     }
 }
