@@ -828,7 +828,7 @@ namespace SalveminiApp
             }
             else
             {
-                foreach (var item in items)
+                foreach (var item in items.ToList())
                 {
                     list.Add(item);
                 }

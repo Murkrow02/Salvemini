@@ -4,7 +4,6 @@ using Xamarin.Forms;
 using Xamarin.Essentials;
 using Syncfusion.XForms.PopupLayout;
 using Plugin.Iconize;
-using Forms9Patch;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 #endif
@@ -16,7 +15,7 @@ namespace SalveminiApp.FirstAccess
         public List<RestApi.Models.Utente> UtentiLogin = new List<RestApi.Models.Utente>();
 
         //First tip
-        BubblePopup firstPopUp = new Helpers.PopOvers().defaultPopOver;
+        Forms9Patch.BubblePopup firstPopUp = new Helpers.PopOvers().defaultPopOver;
 
 
         public Login()
@@ -41,13 +40,13 @@ namespace SalveminiApp.FirstAccess
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            await this.FadeTo(1,300, Easing.CubicIn);
+            await this.FadeTo(1, 300, Easing.CubicIn);
 
             //PopOvers
             firstPopUp.Content = new Xamarin.Forms.Label { Text = "Utilizza le stesse credenziali" + Environment.NewLine + "che usi nell'app DidUp Famiglia", TextColor = Color.White, HorizontalTextAlignment = TextAlignment.Center };
             firstPopUp.IsVisible = true;
-            firstPopUp.PointerDirection = PointerDirection.Down;
-            firstPopUp.PreferredPointerDirection = PointerDirection.Down;
+            firstPopUp.PointerDirection = Forms9Patch.PointerDirection.Down;
+            firstPopUp.PreferredPointerDirection = Forms9Patch.PointerDirection.Down;
             firstPopUp.Target = usernameEntry;
             firstPopUp.BackgroundColor = Styles.PrimaryColor;
             firstPopUp.BackgroundClicked += FirstPopUp_BackgroundClicked;
@@ -101,7 +100,7 @@ namespace SalveminiApp.FirstAccess
             //Start Loading
             loading.IsRunning = true;
             loading.IsVisible = true;
-         
+
 
             //Create LoginForms
             var form = new RestApi.Models.LoginForm();
@@ -109,7 +108,7 @@ namespace SalveminiApp.FirstAccess
             form.Password = password.Text;
 
             //Check internet connection
-            if(Connectivity.NetworkAccess != NetworkAccess.Internet)
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
                 //No connection
                 Costants.showToast("connection");
@@ -157,33 +156,33 @@ namespace SalveminiApp.FirstAccess
                 if (UtentiLogin.Count > 1)
                 {
                     //Pop up for more than one user
-                    popupLayout.PopupView.ContentTemplate = new DataTemplate(() =>
+                    var popover = new Helpers.PopOvers().defaultPopOver;
+                    var content = new StackLayout();
 
+                    //Create Layout
+                    content.Children.Add(new Label { Text = "Seleziona un account", HorizontalOptions = LayoutOptions.Center, TextColor = Styles.TextGray });
+                    foreach (var utente in UtentiLogin)
                     {
-                        var mainLayout = new Xamarin.Forms.StackLayout { Padding = new Thickness(20, 10) };
-                        var firstUserLayout = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal };
-                        var firstUserName = new Xamarin.Forms.Label { Text = UtentiLogin[0].Nome, VerticalOptions = LayoutOptions.Center, VerticalTextAlignment = TextAlignment.Center, FontSize = 20, HorizontalOptions = LayoutOptions.Start };
-                        var firstUserButton = new IconButton { Text = "fas-arrow-right", TextColor = Styles.PrimaryColor, FontSize = 20, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.EndAndExpand };
-                        firstUserButton.Clicked += FirstUserButton_Clicked;
-                        firstUserLayout.Children.Add(firstUserName);
-                        firstUserLayout.Children.Add(firstUserButton);
-                        var secondUserLayout = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal };
-                        var secondUserName = new Xamarin.Forms.Label { Text = UtentiLogin[1].Nome, VerticalOptions = LayoutOptions.Center, VerticalTextAlignment = TextAlignment.Center, FontSize = 20, HorizontalOptions = LayoutOptions.Start };
-                        var secondUserButton = new IconButton { Text = "fas-arrow-right", TextColor = Styles.PrimaryColor, FontSize = 20, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.EndAndExpand };
-                        secondUserButton.Clicked += SecondUserButton_Clicked;
-                        secondUserLayout.Children.Add(firstUserName);
-                        secondUserLayout.Children.Add(firstUserButton);
-                        var titleLabel = new Xamarin.Forms.Label { Text = "Seleziona un account", TextColor = Styles.TextGray, HorizontalOptions = LayoutOptions.Center };
-                        mainLayout.Children.Add(titleLabel);
-                        mainLayout.Children.Add(firstUserLayout);
-                        mainLayout.Children.Add(secondUserLayout);
-                        return mainLayout;
-                    });
-                    popupLayout.ShowRelativeToView(confirmButton, RelativePosition.AlignTopLeft, App.ScreenWidth / 2, -15);
+                        var view = new StackLayout { Orientation = StackOrientation.Horizontal, HorizontalOptions = LayoutOptions.FillAndExpand };
+                        view.Children.Add(new Label { Text = utente.Nome, VerticalOptions = LayoutOptions.Center, VerticalTextAlignment = TextAlignment.Center, FontSize = 20, HorizontalOptions = LayoutOptions.Start });
+                        var GoButton = new IconButton { Text = "fas-arrow-circle-right", TextColor = Styles.PrimaryColor, FontSize = 20, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.EndAndExpand };
+                        GoButton.Clicked += (object sender2, EventArgs f) => { success(UtentiLogin.IndexOf(utente)); popover.IsVisible = true; };
+                        view.Children.Add(GoButton);
+                        content.Children.Add(view);
+                    }
+
+                    popover.Content = content;
+                    popover.IsVisible = true;
+                    popover.PointerDirection = Forms9Patch.PointerDirection.Down;
+                    popover.PreferredPointerDirection = Forms9Patch.PointerDirection.Down;
+                    popover.Target = sender as Button;
+                    popover.BackgroundClicked += (object sender3, EventArgs g) => { popover.IsVisible = false; };
+                    popover.CloseWhenBackgroundIsClicked = true;
                 }
                 else
                 {
-                    success1();
+                    //Only one user
+                    success(0);
                 }
             }
 
@@ -196,20 +195,20 @@ namespace SalveminiApp.FirstAccess
 
         }
 
-       async void success1()
+        async void success(int id)
         {
             //Waat bannato?
-            if(UtentiLogin[0].Stato < 0)
+            if (UtentiLogin[id].Stato < 0)
             {
                 await DisplayAlert("Ueueueue", "Sembrerebbe proprio che il tuo account sia stato disabilitato! Contatta gli sviluppatori se ritieni si tratti di un errore", "Ok");
                 return;
             }
 
             //Save user data
-            Preferences.Set("UserId", UtentiLogin[0].id);
-            Preferences.Set("Token", UtentiLogin[0].ArgoToken);
-            Preferences.Set("Classe", UtentiLogin[0].Classe);
-            Preferences.Set("Corso", UtentiLogin[0].Corso);
+            Preferences.Set("UserId", UtentiLogin[id].id);
+            Preferences.Set("Token", UtentiLogin[id].ArgoToken);
+            Preferences.Set("Classe", UtentiLogin[id].Classe);
+            Preferences.Set("Corso", UtentiLogin[id].Corso);
 
 
             if (Preferences.Get("isFirstTime", true))
@@ -243,20 +242,15 @@ namespace SalveminiApp.FirstAccess
 
         void FirstUserButton_Clicked(object sender, EventArgs e)
         {
-            success1();
+            success(0);
         }
 
         void SecondUserButton_Clicked(object sender, EventArgs e)
         {
-            //Save user data
-            Preferences.Set("UserId", UtentiLogin[1].id);
-            Preferences.Set("Token", UtentiLogin[1].ArgoToken);
-            Preferences.Set("Classe", UtentiLogin[1].Classe);
-            Preferences.Set("Corso", UtentiLogin[1].Corso);
-            App.refreshCalls();
+            success(1);
         }
 
-         void forgotPwd_clicked(object sender, System.EventArgs e)
+        void forgotPwd_clicked(object sender, System.EventArgs e)
         {
             try
             {
@@ -265,7 +259,7 @@ namespace SalveminiApp.FirstAccess
             }
             catch
             {
-                DisplayAlert("Attenzione", "Non è stato possibile aprire il browser","Ok");
+                DisplayAlert("Attenzione", "Non è stato possibile aprire il browser", "Ok");
             }
         }
 
