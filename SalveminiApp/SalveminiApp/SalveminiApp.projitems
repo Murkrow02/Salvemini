@@ -371,6 +371,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\CountdownSettings.xaml.cs">
       <DependentUpon>CountdownSettings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Bus.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
