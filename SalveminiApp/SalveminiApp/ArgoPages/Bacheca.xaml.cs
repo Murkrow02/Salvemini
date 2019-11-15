@@ -21,8 +21,8 @@ namespace SalveminiApp.ArgoPages
 
             //Hide large titles (useless)
 #if __IOS__
-            //On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
-            //UIApplication.SharedApplication.StatusBarHidden = true;
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
+            UIApplication.SharedApplication.StatusBarHidden = true;
             if (iOS.AppDelegate.HasNotch)
                 fullLayout.Padding = new Thickness(20, 35, 20, 25);
 #endif
@@ -43,6 +43,15 @@ namespace SalveminiApp.ArgoPages
                 bachecaList.ItemsSource = Bacheche;
                 emptyLayout.IsVisible = Bacheche.Count <= 0;
             }
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+#if __IOS__
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
+            UIApplication.SharedApplication.StatusBarHidden = true;
+#endif
         }
 
         //Show avviso selected
@@ -67,6 +76,7 @@ namespace SalveminiApp.ArgoPages
             //Create page with webview
             var content = new ContentPage { Title = (e.SelectedItem as RestApi.Models.Bacheca).formattedTitle, Content = new WebView { Source = (e.SelectedItem as RestApi.Models.Bacheca).Allegati[0].fullUrl } };
             bool haftaClose = true;
+
             //Add toolbaritems to the page
             var barItem = new ToolbarItem { Text = "Chiudi", };
             barItem.Clicked += (object mandatore, EventArgs f) =>

@@ -10,6 +10,7 @@ using FFImageLoading.Cache;
 using FFImageLoading.Forms;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using UIKit;
 #endif
 
 namespace SalveminiApp.SecondaryViews
@@ -107,6 +108,14 @@ namespace SalveminiApp.SecondaryViews
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+
+            //Status bar color
+#if __IOS__
+            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+            {
+                UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, true);
+            }
+#endif
 
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {

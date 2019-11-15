@@ -39,6 +39,13 @@ namespace SalveminiApp.SecondaryViews
         {
             base.OnAppearing();
 
+            //Status bar color
+#if __IOS__
+            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+            {
+                UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, true);
+            }
+#endif
             //Check if is coming from imageviewer
             if (!canRefresh)
             {
@@ -148,6 +155,10 @@ namespace SalveminiApp.SecondaryViews
             //Ios 13 bug
             try
             {
+#if __IOS__
+                UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.DarkContent, true);
+#endif
+
                 if (!MainPage.isSelectingImage)
                     Navigation.PopModalAsync();
                 else

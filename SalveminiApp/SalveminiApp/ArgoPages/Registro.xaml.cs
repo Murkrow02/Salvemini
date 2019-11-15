@@ -75,6 +75,13 @@ namespace SalveminiApp.ArgoPages
         {
             base.OnAppearing();
 
+            //Status bar color
+#if __IOS__
+            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+            {
+                UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, true);
+            }
+#endif
             if (Oggi.assenze != null && Oggi.compiti != null && Oggi.argomenti != null && Oggi.promemoria != null && Oggi.bacheca != null && Oggi.voti != null)
             {
                 getDayCache(DateTime.Today.ToString("yyyy-MM-dd"));
@@ -407,6 +414,10 @@ namespace SalveminiApp.ArgoPages
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
+
+#if __IOS__
+            UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.DarkContent, true);
+#endif
             //Ios 13 bug
             try
             {

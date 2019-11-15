@@ -15,7 +15,9 @@ using FFImageLoading.Cache;
 using System.Diagnostics;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using UIKit;
 #endif
+
 namespace SalveminiApp
 {
     [DesignTimeVisible(true)]
@@ -363,7 +365,7 @@ namespace SalveminiApp
                     {
                         //Modal figo
 #if __IOS__
-                        widget.Push.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(UIModalPresentationStyle.FormSheet);
+                        widget.Push.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
 #endif
                         Navigation.PushModalAsync(widget.Push); //Modal
                     }
@@ -494,7 +496,7 @@ namespace SalveminiApp
 
             //Modal figo
 #if __IOS__
-            modalPush.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(UIModalPresentationStyle.FormSheet);
+            modalPush.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
 #endif
             modalPush.BarTextColor = Styles.TextColor;
             Navigation.PushModalAsync(modalPush);
@@ -505,6 +507,9 @@ namespace SalveminiApp
         {
             try
             {
+#if __IOS__
+                UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.DarkContent, true);
+#endif
                 if (!isSelectingImage)
                     Navigation.PopModalAsync();
                 else

@@ -40,7 +40,12 @@ namespace SalveminiApp.SecondaryViews
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-
+#if __IOS__
+            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+            {
+                UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, true);
+            }
+#endif
             //Animation
             await card.RotateYTo(0, 600, Easing.BounceOut);
 
@@ -67,7 +72,9 @@ namespace SalveminiApp.SecondaryViews
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-
+#if __IOS__
+            UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.DarkContent, true);
+#endif
             //Ios 13 bug
             try
             {

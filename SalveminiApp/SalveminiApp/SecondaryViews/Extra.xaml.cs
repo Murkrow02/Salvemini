@@ -31,6 +31,9 @@ namespace SalveminiApp.SecondaryViews
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
+#if __IOS__
+            UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.DarkContent, true);
+#endif
             secondLayout.Children.RemoveAt(1);
             //Ios 13 bug
             try
@@ -47,7 +50,13 @@ namespace SalveminiApp.SecondaryViews
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
+            //Status bar color
+#if __IOS__
+            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+            {
+                UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, true);
+            }
+#endif
             secondLayout.Children.Insert(1, new Helpers.CountDown());
 
             string etaText = "A";

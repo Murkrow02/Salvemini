@@ -6,7 +6,7 @@
                 <StackLayout Orientation="Horizontal" Spacing="20">
                     <iconize:IconButton BackgroundColor="Transparent" Text="fas-times" Clicked="Close_Page" TextColor="White" FontAttributes="Bold" HorizontalOptions="End" FontSize="30" />
                     <Label FontAttributes="Bold" TextColor="White" Text="Treni" FontSize="50" HorizontalOptions="StartAndExpand" />
-                    <iconize:IconButton BackgroundColor="Transparent" Text="far-compass" TextColor="White" FontAttributes="Bold" HorizontalOptions="End" FontSize="30" />
+                    <iconize:IconButton BackgroundColor="Transparent" Text="far-compass" TextColor="White" FontAttributes="Bold" HorizontalOptions="End" FontSize="30" Clicked="Safari_Clicked"/>
                 </StackLayout>
                 <StackLayout Spacing="10" Margin="20 ,0">
                     <StackLayout HorizontalOptions="FillAndExpand">
