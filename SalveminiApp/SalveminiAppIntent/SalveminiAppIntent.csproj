@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProjectGuid>{64E26C65-AF5D-4E61-961D-F186E0DE3249}</ProjectGuid>
+    <ProjectGuid>{FC21C3CF-9905-43D8-A0C7-FD03CCE631BE}</ProjectGuid>
     <ProjectTypeGuids>{EE2C853D-36AF-4FDB-B1AD-8E90477E2198};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>SalveminiAppIntent</RootNamespace>
@@ -22,8 +22,8 @@
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchFastDev>true</MtouchFastDev>
-    <IOSDebuggerPort>57300</IOSDebuggerPort>
-    <MtouchLink>SdkOnly</MtouchLink>
+    <IOSDebuggerPort>50057</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <DeviceSpecificBuild>false</DeviceSpecificBuild>
@@ -38,7 +38,7 @@
     <DefineConstants></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Distribution: Marco Coppola (NP46PS7Q98)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchUseLlvm>true</MtouchUseLlvm>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
@@ -46,7 +46,6 @@
     <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <MtouchVerbosity></MtouchVerbosity>
-    <CodesignProvision>SalveminiAppIntentStore</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>pdbonly</DebugType>
@@ -55,13 +54,12 @@
     <DefineConstants></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: Marco Coppola (94823TJK2J)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <MtouchVerbosity></MtouchVerbosity>
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -78,12 +76,11 @@
     <MtouchFastDev>true</MtouchFastDev>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <IOSDebuggerPort>11819</IOSDebuggerPort>
-    <MtouchLink>None</MtouchLink>
+    <IOSDebuggerPort>12325</IOSDebuggerPort>
+    <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <MtouchVerbosity></MtouchVerbosity>
-    <CodesignProvision>SalveminiAppIntent</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -102,13 +99,13 @@
     <Compile Include="IntentHandler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TrainIntentBinding\TrainIntentBinding.csproj">
-      <Project>{36E0872E-DBBA-4FBD-9D91-228775C55BBD}</Project>
-      <Name>TrainIntentBinding</Name>
+    <ProjectReference Include="..\IntentsKit\IntentsKit.csproj">
+      <Project>{9F1F274D-365F-4275-9E85-8B6E68004EDA}</Project>
+      <Name>IntentsKit</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TrainKit\TrainKit.csproj">
-      <Project>{AD0C360A-48EA-48AC-A38F-0B5B298CB5DC}</Project>
-      <Name>TrainKit</Name>
+    <ProjectReference Include="..\IntentsBindings\IntentsBindings.csproj">
+      <Project>{85DD4908-6CBF-4174-BC82-3AB48E13F556}</Project>
+      <Name>IntentsBindings</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.AppExtension.CSharp.targets" />

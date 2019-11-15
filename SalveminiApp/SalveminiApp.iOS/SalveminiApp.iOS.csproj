@@ -29,8 +29,8 @@
     <MtouchDebug>true</MtouchDebug>
     <MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <CodesignProvision>SalveminiApp</CodesignProvision>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>SalveminiApp</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -285,23 +285,23 @@
     <Folder Include="ToastIos\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IntentsBindings\IntentsBindings.csproj">
+      <Project>{85DD4908-6CBF-4174-BC82-3AB48E13F556}</Project>
+      <Name>IntentsBindings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IntentsKit\IntentsKit.csproj">
+      <Project>{9F1F274D-365F-4275-9E85-8B6E68004EDA}</Project>
+      <Name>IntentsKit</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SalveminiAppIntent\SalveminiAppIntent.csproj">
       <IsAppExtension>true</IsAppExtension>
-      <Project>{64E26C65-AF5D-4E61-961D-F186E0DE3249}</Project>
+      <Project>{FC21C3CF-9905-43D8-A0C7-FD03CCE631BE}</Project>
       <Name>SalveminiAppIntent</Name>
     </ProjectReference>
     <ProjectReference Include="..\SalveminiAppIntentUI\SalveminiAppIntentUI.csproj">
       <IsAppExtension>true</IsAppExtension>
-      <Project>{35B463FF-A55B-4D4B-B0EB-C0ABA72C8390}</Project>
+      <Project>{F8F7EDB2-E92B-47A1-81EA-36A7C9B11E06}</Project>
       <Name>SalveminiAppIntentUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TrainKit\TrainKit.csproj">
-      <Project>{AD0C360A-48EA-48AC-A38F-0B5B298CB5DC}</Project>
-      <Name>TrainKit</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TrainIntentBinding\TrainIntentBinding.csproj">
-      <Project>{36E0872E-DBBA-4FBD-9D91-228775C55BBD}</Project>
-      <Name>TrainIntentBinding</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

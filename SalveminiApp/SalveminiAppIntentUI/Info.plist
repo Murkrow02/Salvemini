@@ -14,6 +14,10 @@
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
+	<key>CFBundleShortVersionString</key>
+	<string>12</string>
+	<key>CFBundleVersion</key>
+	<string>3.3</string>
 	<key>MinimumOSVersion</key>
 	<string>12.0</string>
 	<key>NSExtension</key>
@@ -23,7 +27,8 @@
 			<key>IntentsSupported</key>
 			<array>
 				<string>INSendMessageIntent</string>
-				<string>TrainIntent</string>
+				<string>TrenoIntent</string>
+				<string>OrarioIntent</string>
 			</array>
 		</dict>
 		<key>NSExtensionMainStoryboard</key>
@@ -31,10 +36,6 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.intents-ui-service</string>
 	</dict>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
 </dict>

@@ -22,7 +22,8 @@
 	<true/>
 	<key>NSUserActivityTypes</key>
 	<array>
-		<string>TrainIntent</string>
+		<string>OrarioIntent</string>
+		<string>TrenoIntent</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

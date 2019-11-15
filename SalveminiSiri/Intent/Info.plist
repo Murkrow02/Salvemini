@@ -30,7 +30,8 @@
 			<array/>
 			<key>IntentsSupported</key>
 			<array>
-				<string>TrainIntent</string>
+				<string>OrarioIntent</string>
+				<string>TrenoIntent</string>
 			</array>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>

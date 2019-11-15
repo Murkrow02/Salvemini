@@ -6,14 +6,16 @@
 	<string>SalveminiAppIntent</string>
 	<key>CFBundleName</key>
 	<string>SalveminiAppIntent</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.codex.salveminiapp.salveminiappntent</string>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>it</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
+	<key>CFBundleShortVersionString</key>
+	<string>12</string>
+	<key>CFBundleVersion</key>
+	<string>3.3</string>
 	<key>MinimumOSVersion</key>
 	<string>12.0</string>
 	<key>NSExtension</key>
@@ -27,7 +29,8 @@
 				<string>INSendMessageIntent</string>
 				<string>INSearchForMessagesIntent</string>
 				<string>INSetMessageAttributeIntent</string>
-				<string>TrainIntent</string>
+				<string>TrenoIntent</string>
+				<string>OrarioIntent</string>
 			</array>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
@@ -35,9 +38,7 @@
 		<key>NSExtensionPrincipalClass</key>
 		<string>IntentHandler</string>
 	</dict>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.codex.salveminiapp.salveminiappntent</string>
 </dict>
 </plist>

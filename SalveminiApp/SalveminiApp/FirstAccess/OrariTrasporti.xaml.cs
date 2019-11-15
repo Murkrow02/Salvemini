@@ -120,9 +120,11 @@ namespace SalveminiApp.FirstAccess
                         canClose = false;
 
                         //Get shortcut
-                        INShortcut newShortcut = new INShortcut(new SalveminiApp.TrainIntent());
+                        var intent = new TrenoIntent();
+                        intent.SuggestedInvocationPhrase = "Prossimo treno"; // da " + Costants.Stazioni[station] + " ";
+                        INShortcut newShortcut = new INShortcut(intent);
                         var addVoiceShortcutVC = new INUIAddVoiceShortcutViewController(newShortcut);
-                        addVoiceShortcutVC.Delegate = new SalveminiApp.iOS.AddVoiceShortcutView(this,station,direction);
+                        addVoiceShortcutVC.Delegate = new SalveminiApp.iOS.AddVoiceShortcutView(this, station, direction);
 
                         //Create new window
                         var window = UIApplication.SharedApplication.KeyWindow;
@@ -153,6 +155,9 @@ namespace SalveminiApp.FirstAccess
                     break;
             }
 
+            if (!canClose)
+                return;
+
             if (Preferences.Get("isFirstTime", true))
             {
                 Xamarin.Forms.Application.Current.MainPage = new TabPage();
@@ -162,8 +167,7 @@ namespace SalveminiApp.FirstAccess
             }
             else
             {
-                if (canClose)
-                    await Navigation.PopModalAsync();
+                await Navigation.PopModalAsync();
             }
         }
 
@@ -235,7 +239,7 @@ namespace SalveminiApp.FirstAccess
             {
                 Navigation.PopModalAsync();
             }
-        }   
+        }
 
     }
 }
