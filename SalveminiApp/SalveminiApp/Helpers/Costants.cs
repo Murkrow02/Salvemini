@@ -136,6 +136,8 @@ namespace SalveminiApp
             {32, "Napoli Porta Nolana"},
         };
 
+        
+
         public static Dictionary<string, string> Giorni = new Dictionary<string, string>
         {
             {"Sunday", "Domenica"},
