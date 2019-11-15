@@ -24,6 +24,7 @@ namespace SalveminiAppIntent
             {
                 return new TrainKit.TrainIntentHandler();
             }
+
             throw new Exception("Unhandled intent type: ${intent}");
         }
 

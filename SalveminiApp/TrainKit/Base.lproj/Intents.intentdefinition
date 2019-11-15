@@ -53,7 +53,7 @@
 				<array>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>Il prossimo treno per ${citta} arriverà alle ore ${ora}</string>
+						<string>Il prossimo treno per ${citta} parte alle ore ${ora}</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>e0mvBr</string>
 						<key>INIntentResponseCodeName</key>

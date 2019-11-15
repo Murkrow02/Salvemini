@@ -46,9 +46,9 @@ namespace TrainKit
             var text = File.ReadAllText(filename);
 
             //GetTrains
-            var defaults = new NSUserDefaults("group.com.codex.SalveminiApp");
+            var defaults = new NSUserDefaults("group.com.codex.SalveminiApp",NSUserDefaultsType.SuiteName);
             var stazione = defaults.IntForKey("savedStation");
-
+            var direzione = defaults.BoolForKey("savedDirection");
 
             var value = JsonValue.Parse(text) as JsonArray;
             foreach (var obj in value)
@@ -56,12 +56,13 @@ namespace TrainKit
                 Trains.Add(new RestApi.Models.Treno { Direzione = obj["Direzione"], Importanza = obj["Importanza"], Partenza = obj["Partenza"], Stazione = obj["Stazione"], Variazioni = obj["Variazioni"] });
             }
 
-            ////Filter by station and direction
-            Trains = Trains.Where(x => x.Direzione == true && x.Stazione == 0).OrderBy(x => x.LeaveTime).ToList();
+            //Filter by station and direction
+            Trains = Trains.Where(x => x.Direzione == direzione && x.Stazione == stazione).OrderBy(x => x.LeaveTime).ToList();
 
-            ////Remove Campania Express
+            //Remove Campania Express
             Trains = Trains.Where(x => x.Importanza != "EXP").ToList();
             bool done = false;
+
             //Check if there are more trains
             if (Trains[Trains.Count - 1].LeaveTime > new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0))
             {
@@ -89,7 +90,46 @@ namespace TrainKit
 
             //if (!done)
             NextTrain = Trains[0];
-            completion(TrainIntentResponse.SuccessIntentResponseWithCitta(NextTrain.DirectionString, NextTrain.Partenza));
+
+            completion(TrainIntentResponse.SuccessIntentResponseWithCitta(NextTrain.DirectionString, NextTrain.Partenza + " da " + Stazioni[(int)stazione]));
+           
         }
+
+        public static Dictionary<int, string> Stazioni = new Dictionary<int, string>
+        {
+            {0, "Sorrento"},
+            {1, "S. Agnello"},
+            {2, "Piano"},
+            {3, "Meta"},
+            {4, "Seiano"},
+            {5, "Vico Equense"},
+            {6, "Castellammare di Stabia"},
+            {7, "Via Nocera"},
+            {8, "Pioppaino"},
+            {9, "Moregine"},
+            {10, "Pompei Scavi"},
+            {11, "Villa Regina"},
+            {12, "Torre Annunziata"},
+            {13, "Trecase"},
+            {14, "Via Viuli"},
+            {15, "Leopardi"},
+            {16, "Villa delle Ginestre"},
+            {17, "Via dei Monaci"},
+            {18, "Via del Monte"},
+            {19, "Via S'Antonio"},
+            {20, "Torre del Greco"},
+            {21, "Ercolano Miglio d'Oro"},
+            {22, "Ercolano Scavi"},
+            {23, "Portici Via Libertà"},
+            {24, "Portici Bellavista"},
+            {25, "S'Giorgio Cavalli di Bronzo"},
+            {26, "S'Giorgio a Cremano"},
+            {27, "S'Maria del Pozzo"},
+            {28, "Barra"},
+            {29, "S'Giovanni a Teduccio"},
+            {30, "Via Gianturco"},
+            {31, "Napoli Piazza Garibaldi"},
+            {32, "Napoli Porta Nolana"},
+        };
     }
 }

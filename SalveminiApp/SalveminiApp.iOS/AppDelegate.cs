@@ -15,6 +15,7 @@ using Plugin.Toasts;
 using Xamarin.Forms;
 using PanCardView.iOS;
 using System.Threading.Tasks;
+using IntentsUI;
 
 namespace SalveminiApp.iOS
 {
@@ -70,6 +71,12 @@ namespace SalveminiApp.iOS
                 Console.WriteLine("Error homebar");
             }
 
+            //User defaults playground
+            var defaults = new NSUserDefaults("group.com.codex.SalveminiApp");
+            defaults.SetValueForKey(new NSString("asd"), new NSString("pedo"));
+
+            var asd = defaults.StringForKey(new NSString("pedo"));
+
             //Initialize Processes
             DependencyService.Register<ToastNotification>();
             ToastNotification.Init();
@@ -104,6 +111,11 @@ namespace SalveminiApp.iOS
 
                 app.RegisterUserNotificationSettings(notificationSettings);
             }
+
+
+         
+
+
             return base.FinishedLaunching(app, options);
         }
 

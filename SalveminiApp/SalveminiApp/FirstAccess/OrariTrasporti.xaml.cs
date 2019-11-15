@@ -6,6 +6,7 @@ using Forms9Patch;
 using System.Linq;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using Foundation;
 #endif
 
 namespace SalveminiApp.FirstAccess
@@ -93,9 +94,22 @@ namespace SalveminiApp.FirstAccess
                     //Treni
                     if (trainStationPicker.SelectedItem != null && TrenoSegment.SelectedSegment != -1)
                     {
-                        Preferences.Set("savedStation", Costants.Stazioni.FirstOrDefault(x => x.Value == trainStationPicker.SelectedItem.ToString()).Key);
+                        //Get station and direction
+                        var station = Costants.Stazioni.FirstOrDefault(x => x.Value == trainStationPicker.SelectedItem.ToString()).Key;
                         bool direction = Convert.ToBoolean(TrenoSegment.SelectedSegment);
+
+                        //Save in preferences
+                        Preferences.Set("savedStation", station);
                         Preferences.Set("savedDirection", direction);
+
+#if __IOS__
+
+                        //Save values for siri intent
+                        var defaults = new NSUserDefaults("group.com.codex.SalveminiApp", NSUserDefaultsType.SuiteName);
+                        defaults.AddSuite("group.com.codex.SalveminiApp");
+                        defaults.SetInt(station, new NSString("savedStation"));
+                        defaults.SetBool(direction, new NSString("savedDirection"));
+#endif
                     }
                     else
                     {
@@ -160,6 +174,8 @@ namespace SalveminiApp.FirstAccess
             //Napoli to napoli
             if (trainStationPicker.SelectedItem.ToString() == "Napoli Porta Nolana" && TrenoSegment.SelectedSegment == 1)
                 TrenoSegment.SelectedSegment = 0;
+
+
         }
 
         private void picker_Unfocused(object sender, FocusEventArgs e)

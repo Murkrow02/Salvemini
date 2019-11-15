@@ -13,6 +13,8 @@ using MonkeyCache.SQLite;
 using FFImageLoading;
 using FFImageLoading.Cache;
 using System.Diagnostics;
+using Intents;
+using IntentsUI;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using UIKit;
@@ -134,6 +136,24 @@ namespace SalveminiApp
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+
+
+            // var intent = userActivity.GetInteraction()?.Intent as TrainIntent;
+           INShortcut newShortcut = new INShortcut(new SalveminiApp.TrainIntent());
+                var addVoiceShortcutVC = new INUIAddVoiceShortcutViewController(newShortcut);
+
+            var window = UIApplication.SharedApplication.KeyWindow;
+            var vc = window.RootViewController;
+            while (vc.PresentedViewController != null)
+            {
+                vc = vc.PresentedViewController;
+                
+            }
+            //addVoiceShortcutVC.Delegate = this;
+            vc.PresentViewController(addVoiceShortcutVC, true, null);
+
+
+            return;
 
             //Increment number of appeared times
             appearedTImes++;
