@@ -10,13 +10,12 @@ namespace SalveminiApp.iOS
 {
     public class AddVoiceShortcutButton : INUIAddVoiceShortcutButtonDelegate
     {
-        public ContentPage page;
+       
         public int station;
         public bool direction;
 
-        public AddVoiceShortcutButton(ContentPage page_, int station_, bool direction_)
+        public AddVoiceShortcutButton( int station_, bool direction_)
         {
-            page = page_;
             station = station_;
             direction = direction_;
         }
@@ -24,32 +23,30 @@ namespace SalveminiApp.iOS
         //Push to add new shortcut
         public override void PresentAddVoiceShortcut(INUIAddVoiceShortcutViewController addVoiceShortcutViewController, INUIAddVoiceShortcutButton addVoiceShortcutButton)
         {
-            UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(false);
-            addVoiceShortcutViewController.Delegate = new AddVoiceShortcutView(page,station,direction);
+           // UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(false);
+            addVoiceShortcutViewController.Delegate = new AddVoiceShortcutView(station,direction);
             addVoiceShortcutViewController.ModalPresentationStyle = UIModalPresentationStyle.FormSheet;
-            UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(addVoiceShortcutViewController, animated: true, null);
+            UIApplication.SharedApplication.KeyWindow.RootViewController.PresentedViewController.PresentViewController(addVoiceShortcutViewController, animated: true, null);
         }
     
         //Push to edit existing shortcut
         public override void PresentEditVoiceShortcut(INUIEditVoiceShortcutViewController editVoiceShortcutViewController, INUIAddVoiceShortcutButton addVoiceShortcutButton)
         {
-            UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
-            editVoiceShortcutViewController.Delegate = new EditVoiceShortcutView(page, station, direction);
+            //UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
+            editVoiceShortcutViewController.Delegate = new EditVoiceShortcutView(station, direction);
             editVoiceShortcutViewController.ModalPresentationStyle = UIModalPresentationStyle.FormSheet;
-            UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(editVoiceShortcutViewController, animated: true, null);
+            UIApplication.SharedApplication.KeyWindow.RootViewController.PresentedViewController.PresentViewController(editVoiceShortcutViewController, animated: true, null);
         }
 
     }
 
     public class AddVoiceShortcutView : INUIAddVoiceShortcutViewControllerDelegate
     {
-        public ContentPage page;
         public int station;
         public bool direction;
 
-        public AddVoiceShortcutView(ContentPage page_, int station_, bool direction_)
+        public AddVoiceShortcutView( int station_, bool direction_)
         {
-            page = page_;
             station = station_;
             direction = direction_;
         }
@@ -71,9 +68,10 @@ namespace SalveminiApp.iOS
 
             //Close page
             UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
+            UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
 
             //Display response to user
-            page.DisplayAlert("Comando aggiunto!", "Prova a dire \"Ehi Siri, " + voiceShortcut.InvocationPhrase + "\"", "K");
+            Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Comando aggiunto!", "Prova a dire \"Ehi Siri, " + voiceShortcut.InvocationPhrase + "\"", "K");
 
         }
     }
@@ -81,13 +79,11 @@ namespace SalveminiApp.iOS
 
     public class EditVoiceShortcutView : INUIEditVoiceShortcutViewControllerDelegate
     {
-        public ContentPage page;
         public int station;
         public bool direction;
 
-        public EditVoiceShortcutView(ContentPage page_, int station_, bool direction_)
+        public EditVoiceShortcutView(int station_, bool direction_)
         {
-            page = page_;
             station = station_;
             direction = direction_;
         }
@@ -112,7 +108,7 @@ namespace SalveminiApp.iOS
             UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
 
             //Display response to user
-            page.DisplayAlert("Comando aggiornato!", "Prova a dire \"Ehi Siri, " + voiceShortcut.InvocationPhrase + "\"", "K");
+            Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Comando aggiornato!", "Prova a dire \"Ehi Siri, " + voiceShortcut.InvocationPhrase + "\"", "K");
 
         }
     }

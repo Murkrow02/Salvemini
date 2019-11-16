@@ -153,7 +153,6 @@ namespace SalveminiApp
             intent.SuggestedInvocationPhrase = "Prossimo treno"; // da " + Costants.Stazioni[station] + " ";
             INShortcut trainShortcut = new INShortcut(intent);
 
-
             //Create new window
             var window = UIApplication.SharedApplication.KeyWindow;
             var vc = new UIViewController();
@@ -164,7 +163,7 @@ namespace SalveminiApp
             siriButton.Shortcut = trainShortcut;
 
             //Connect actions
-            siriButton.Delegate = new SalveminiApp.iOS.AddVoiceShortcutButton(this, 2, true); //Passa ultimi 2 valori solo se deve aggiungere shortcut del treno
+            siriButton.Delegate = new SalveminiApp.iOS.AddVoiceShortcutButton( 2, true); //Passa ultimi 2 valori solo se deve aggiungere shortcut del treno
             vc.View.AddSubview(siriButton);
 
             //Add button constraints
@@ -173,7 +172,7 @@ namespace SalveminiApp
             vc.View.CenterYAnchor.ConstraintEqualTo(siriButton.CenterYAnchor).Active = true;
 
             //Show intent window
-            UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(vc, true, null);
+            UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(new iOS.SiriShortcutPopup(), true, null);
 
             return;
 

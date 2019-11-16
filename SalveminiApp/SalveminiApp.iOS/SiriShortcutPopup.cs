@@ -1,36 +1,36 @@
 ﻿using System;
+using Intents;
+using IntentsUI;
 using UIKit;
 namespace SalveminiApp.iOS
 {
     public class SiriShortcutPopup : UIViewController
     {
-        
         public SiriShortcutPopup()
         {
-            ModalPresentationStyle = UIModalPresentationStyle.OverCurrentContext;
-            ModalTransitionStyle = UIModalTransitionStyle.CrossDissolve;
-            //var a = new ModalViewController
+            ModalPresentationStyle = UIModalPresentationStyle.PageSheet;
+            View.BackgroundColor = UIColor.White;
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            DefinesPresentationContext = true;
 
-            var view = new UIView { BackgroundColor = UIColor.White };
-            view.Frame = new CoreGraphics.CGRect { X = View.Frame.Width / 2, Y = View.Frame.Height / 2, Width = 300, Height = 300 };
-            view.Center = View.Center;
+            var intent = new TrenoIntent();
+            intent.SuggestedInvocationPhrase = "Prossimo treno"; // da " + Costants.Stazioni[station] + " ";
+            INShortcut trainShortcut = new INShortcut(intent);
 
+            //Create siri button
+            var siriButton = new INUIAddVoiceShortcutButton(INUIAddVoiceShortcutButtonStyle.WhiteOutline);
+            siriButton.Shortcut = trainShortcut;
 
-            
-            var blurEffectView = new UIView();
-            blurEffectView.BackgroundColor = UIColor.Black;
-            blurEffectView.Alpha = 0.6f;
-            blurEffectView.Frame = View.Frame;
-            View.InsertSubview(blurEffectView, 0);
-
-            View.AddSubview(view);
-
+            //Connect actions
+            siriButton.Delegate = new SalveminiApp.iOS.AddVoiceShortcutButton( 2, true); //Passa ultimi 2 valori solo se deve aggiungere shortcut del treno
+            View.AddSubview(siriButton);
+            //Constraints
+            siriButton.TranslatesAutoresizingMaskIntoConstraints = false;
+            View.CenterXAnchor.ConstraintEqualTo(siriButton.CenterXAnchor).Active = true;
+            View.CenterYAnchor.ConstraintEqualTo(siriButton.CenterYAnchor).Active = true;
         }
     }
 }
