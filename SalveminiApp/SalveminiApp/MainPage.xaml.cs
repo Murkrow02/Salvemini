@@ -13,6 +13,8 @@ using MonkeyCache.SQLite;
 using FFImageLoading;
 using FFImageLoading.Cache;
 using System.Diagnostics;
+using Intents;
+using IntentsUI;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using UIKit;
@@ -134,6 +136,42 @@ namespace SalveminiApp
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+
+
+
+
+            //Add siri shortcut
+            if (!UIDevice.CurrentDevice.CheckSystemVersion(12, 0))
+                return; //Pre ios 12 can't use this :(
+
+            bool decision = await DisplayAlert("Vuoi aggiungere il comando a Siri?", "Potrai sapere quando arriverà il prossimo treno facilmente chiedendo a Siri con una frase personalizzata, che ne dici?", "Proviamo!", "Magari più tardi");
+            if (!decision)  //Non vuole aggiungere :(
+                return;
+
+            //Get shortcut
+            var intent = new TrenoIntent();
+            intent.SuggestedInvocationPhrase = "Prossimo treno"; // da " + Costants.Stazioni[station] + " ";
+            INShortcut trainShortcut = new INShortcut(intent);
+
+
+            //Create new window
+            var window = UIApplication.SharedApplication.KeyWindow;
+            var vc = new UIViewController();
+            vc.View.BackgroundColor = UIColor.Red;
+            var siriButton = new INUIAddVoiceShortcutButton(INUIAddVoiceShortcutButtonStyle.BlackOutline);
+            siriButton.Shortcut = trainShortcut;
+            //var addVoiceShortcutVC = new INUIEditVoiceShortcutViewController(trainShortcut);
+            siriButton.TranslatesAutoresizingMaskIntoConstraints = false;
+            siriButton.Delegate = new SalveminiApp.iOS.AddVoiceShortcutButton(this, 2, true);
+            vc.View.AddSubview(siriButton);
+
+            vc.View.CenterXAnchor.ConstraintEqualTo(siriButton.CenterXAnchor).Active = true;
+            vc.View.CenterYAnchor.ConstraintEqualTo(siriButton.CenterYAnchor).Active = true;
+
+            //Show intent window
+            UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(vc, true, null);
+
+            return;
 
             //Increment number of appeared times
             appearedTimes++;

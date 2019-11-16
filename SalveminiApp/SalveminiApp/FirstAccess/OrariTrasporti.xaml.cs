@@ -108,38 +108,6 @@ namespace SalveminiApp.FirstAccess
                         Preferences.Set("savedStation", station);
                         Preferences.Set("savedDirection", direction);
 
-#if __IOS__
-                        //Add siri shortcut
-                        if (!UIDevice.CurrentDevice.CheckSystemVersion(12, 0))
-                            return; //Pre ios 12 can't use this :(
-
-                        bool decision = await DisplayAlert("Vuoi aggiungere il comando a Siri?", "Potrai sapere quando arriverà il prossimo treno facilmente chiedendo a Siri con una frase personalizzata, che ne dici?", "Proviamo!", "Magari più tardi");
-                        if (!decision)  //Non vuole aggiungere :(
-                            return;
-
-                        canClose = false;
-
-                        //Get shortcut
-                        var intent = new TrenoIntent();
-                        intent.SuggestedInvocationPhrase = "Prossimo treno"; // da " + Costants.Stazioni[station] + " ";
-                        INShortcut newShortcut = new INShortcut(intent);
-                        var addVoiceShortcutVC = new INUIAddVoiceShortcutViewController(newShortcut);
-                        addVoiceShortcutVC.Delegate = new SalveminiApp.iOS.AddVoiceShortcutView(this, station, direction);
-
-                        //Create new window
-                        var window = UIApplication.SharedApplication.KeyWindow;
-                        var vc = window.RootViewController;
-
-                        while (vc.PresentedViewController != null)
-                        {
-                            vc = vc.PresentedViewController;
-
-                        }
-
-                        //Show intent window
-                        vc.PresentViewController(addVoiceShortcutVC, true, null);
-
-#endif
                     }
                     else
                     {

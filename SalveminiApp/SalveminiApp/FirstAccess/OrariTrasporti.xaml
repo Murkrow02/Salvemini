@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage BackgroundColor="{x:Static local:Styles.BGColor}" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:control="clr-namespace:Plugin.Segmented.Control;assembly=Plugin.Segmented" xmlns:local="clr-namespace:SalveminiApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.FirstAccess.OrariTrasporti">
-    <StackLayout Padding="25,8" Spacing="10">
+<ContentPage x:Name="mainLayout" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:siri="clr-namespace:IntentsUI;assembly=Xamarin.iOS" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:control="clr-namespace:Plugin.Segmented.Control;assembly=Plugin.Segmented" xmlns:local="clr-namespace:SalveminiApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.FirstAccess.OrariTrasporti">
+    <StackLayout Padding="25,8" Spacing="10" >
         <ScrollView>
             <StackLayout>
                 <!--TitleView-->
@@ -87,7 +87,6 @@
             <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" Text="Sono stati scaricati gli orari più recenti" />
             <Button Clicked="Continue_Clicked" Text="Prosegui" TextColor="White" FontSize="Title" CornerRadius="10" BackgroundColor="Black" />
             <Button Text="Salta" BackgroundColor="Transparent" FontSize="Small" Margin="-2" Clicked="skipClicked" VerticalOptions="End"/>
-
-        </StackLayout>
+                </StackLayout>
     </StackLayout>
 </ContentPage>
