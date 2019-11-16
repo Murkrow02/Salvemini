@@ -21,6 +21,7 @@ namespace SalveminiApp.iOS
             direction = direction_;
         }
 
+        //Push to add new shortcut
         public override void PresentAddVoiceShortcut(INUIAddVoiceShortcutViewController addVoiceShortcutViewController, INUIAddVoiceShortcutButton addVoiceShortcutButton)
         {
             UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(false);
@@ -29,7 +30,7 @@ namespace SalveminiApp.iOS
             UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(addVoiceShortcutViewController, animated: true, null);
         }
     
-
+        //Push to edit existing shortcut
         public override void PresentEditVoiceShortcut(INUIEditVoiceShortcutViewController editVoiceShortcutViewController, INUIAddVoiceShortcutButton addVoiceShortcutButton)
         {
             UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
@@ -53,11 +54,13 @@ namespace SalveminiApp.iOS
             direction = direction_;
         }
 
+        //User cancelled, remove popup
         public override void DidCancel(INUIAddVoiceShortcutViewController controller)
         {
             UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
         }
 
+        //User added successfully a new shortcut, save values
         public override void DidFinish(INUIAddVoiceShortcutViewController controller, INVoiceShortcut voiceShortcut, NSError error)
         {
             //Save values for siri intent
@@ -68,12 +71,10 @@ namespace SalveminiApp.iOS
 
             //Close page
             UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
-       //     UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
 
+            //Display response to user
             page.DisplayAlert("Comando aggiunto!", "Prova a dire \"Ehi Siri, " + voiceShortcut.InvocationPhrase + "\"", "K");
 
-
-            
         }
     }
 
@@ -91,24 +92,28 @@ namespace SalveminiApp.iOS
             direction = direction_;
         }
 
+        //User cancelled, remove popup
         public override void DidCancel(INUIEditVoiceShortcutViewController controller)
         {
             UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
         }
 
+        //User deleted existing shortcut
         public override void DidDelete(INUIEditVoiceShortcutViewController controller, NSUuid deletedVoiceShortcutIdentifier)
         {
             //Close page
             UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
         }
 
+        //User cancelled, remove popup
         public override void DidUpdate(INUIEditVoiceShortcutViewController controller, INVoiceShortcut voiceShortcut, NSError error)
         {
-            page.DisplayAlert("Comando aggiornato!", "Prova a dire \"Ehi Siri, " + voiceShortcut.InvocationPhrase + "\"", "K");
-
-
             //Close page
             UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
+
+            //Display response to user
+            page.DisplayAlert("Comando aggiornato!", "Prova a dire \"Ehi Siri, " + voiceShortcut.InvocationPhrase + "\"", "K");
+
         }
     }
 }

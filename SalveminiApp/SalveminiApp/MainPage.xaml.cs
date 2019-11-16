@@ -158,13 +158,17 @@ namespace SalveminiApp
             var window = UIApplication.SharedApplication.KeyWindow;
             var vc = new UIViewController();
             vc.View.BackgroundColor = UIColor.Red;
+
+            //Create siri button
             var siriButton = new INUIAddVoiceShortcutButton(INUIAddVoiceShortcutButtonStyle.BlackOutline);
             siriButton.Shortcut = trainShortcut;
-            //var addVoiceShortcutVC = new INUIEditVoiceShortcutViewController(trainShortcut);
-            siriButton.TranslatesAutoresizingMaskIntoConstraints = false;
-            siriButton.Delegate = new SalveminiApp.iOS.AddVoiceShortcutButton(this, 2, true);
+
+            //Connect actions
+            siriButton.Delegate = new SalveminiApp.iOS.AddVoiceShortcutButton(this, 2, true); //Passa ultimi 2 valori solo se deve aggiungere shortcut del treno
             vc.View.AddSubview(siriButton);
 
+            //Add button constraints
+            siriButton.TranslatesAutoresizingMaskIntoConstraints = false;
             vc.View.CenterXAnchor.ConstraintEqualTo(siriButton.CenterXAnchor).Active = true;
             vc.View.CenterYAnchor.ConstraintEqualTo(siriButton.CenterYAnchor).Active = true;
 
