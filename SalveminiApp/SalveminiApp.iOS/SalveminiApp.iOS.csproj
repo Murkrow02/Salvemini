@@ -96,6 +96,7 @@
     <None Include="ToastIos\xamarin%402x.png" />
     <Compile Include="ToastIos\XHUD.cs" />
     <Compile Include="AddVoiceShortcutView.cs" />
+    <Compile Include="SiriShortcutPopup.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
