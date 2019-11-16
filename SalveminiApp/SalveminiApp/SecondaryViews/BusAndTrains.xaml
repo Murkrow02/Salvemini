@@ -33,9 +33,9 @@
                         </StackLayout>
                     </StackLayout>
                 </Frame>
-                <Frame HasShadow="False" CornerRadius="12" VerticalOptions="Start" Padding="2">
-                    <Button Clicked="changePref_Clicked" FontSize="Large" Text="Modifica trasporto preferito" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.Apple}"/>
-                    </Frame>
+                <!--<Frame HasShadow="False" CornerRadius="12" VerticalOptions="Start" Padding="2">
+                    <Button Clicked="changePref_Clicked" FontSize="Large" Text="Modifica tratta preferita" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.Apple}"/>
+                    </Frame>-->
             </StackLayout>
         </ScrollView>
 

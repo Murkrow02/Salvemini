@@ -56,7 +56,9 @@ namespace SalveminiApp.RestApi.Models
         {
             get
             {
-                try { return Descrizione.Length > 100 ? Descrizione.Remove(100) + "..." : Descrizione; } catch { return ""; }
+                int cutAt = 100; //Start cutting string at 100 char
+                if (string.IsNullOrEmpty(Immagini)) cutAt = 500; //More characters if no images
+                try { return Descrizione.Length > cutAt ? Descrizione.Remove(cutAt) + "..." : Descrizione; } catch { return ""; }
                 
             }
         }

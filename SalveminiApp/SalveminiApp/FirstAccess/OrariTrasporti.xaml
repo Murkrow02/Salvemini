@@ -6,21 +6,20 @@
                 <!--TitleView-->
                 <StackLayout>
                     <Image Source="trasportiSmall" x:Name="topImage" />
-                    <Label FontAttributes="Bold" FontSize="45" TextColor="{x:Static local:Styles.TextColor}" Text="Trasporti" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
-                    <Label FontSize="18" TextColor="{x:Static local:Styles.TextGray}" Text="Scegli il tuo mezzo di trasporto preferito" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+                    <Label FontAttributes="Bold" FontSize="45" TextColor="{x:Static local:Styles.TextColor}" Text="Orari treni" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+                    <Label FontSize="18" TextColor="{x:Static local:Styles.TextGray}" Text="Seleziona la tua tratta preferita" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
                 </StackLayout>
 
                 <!--ChooseMezzo-->
-                <control:SegmentedControl VerticalOptions="StartAndExpand" x:Name="MezzoSegment" OnSegmentSelected="ChoseMezzo" TintColor="White" SelectedTextColor="{x:Static local:Styles.TextColor}">
+                <!--<control:SegmentedControl VerticalOptions="StartAndExpand" x:Name="MezzoSegment" OnSegmentSelected="ChoseMezzo" TintColor="White" SelectedTextColor="{x:Static local:Styles.TextColor}">
                     <control:SegmentedControl.Children>
                         <control:SegmentedControlOption Text="Treno" />
                         <control:SegmentedControlOption Text="Bus" />
-                        <!--<control:SegmentedControlOption Text="Aliscafo" />-->
                     </control:SegmentedControl.Children>
-                </control:SegmentedControl>
+                </control:SegmentedControl>-->
 
                 <!--Treno-->
-                <StackLayout IsVisible="false" VerticalOptions="CenterAndExpand" Spacing="15" x:Name="trenoLayout">
+                <StackLayout VerticalOptions="CenterAndExpand" Spacing="15" x:Name="trenoLayout">
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label HorizontalOptions="Start" Text="Da:" TextColor="{x:Static local:Styles.TextGray}" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
                         <Frame x:Name="stationFrame" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, 0" BorderColor="{x:Static local:Styles.ObjectGray}">
@@ -39,7 +38,7 @@
                 </StackLayout>
 
                 <!--Bus-->
-                <StackLayout VerticalOptions="CenterAndExpand" Spacing="15" x:Name="busLayout">
+                <!--<StackLayout VerticalOptions="CenterAndExpand" Spacing="15" x:Name="busLayout">
 
 
                     <StackLayout HorizontalOptions="FillAndExpand">
@@ -70,9 +69,10 @@
 
                     </StackLayout>
 
-                </StackLayout>
+                </StackLayout>-->
             </StackLayout>
         </ScrollView>
+
         <!--Download view-->
         <StackLayout VerticalOptions="CenterAndExpand" Spacing="20" Padding="0,0,0,20" x:Name="loadingLayout">
             <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" x:Name="downlaodStatus" Text="Sto scaricando gli orari più recenti di bus, treni e aliscafi" />
@@ -82,11 +82,12 @@
             </StackLayout>
             <Button Clicked="Retry_Clicked" IsVisible="false" x:Name="retry" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.Apple}" Text="Riprova" FontSize="Large" />
         </StackLayout>
+
         <!--EndLayout-->
-        <StackLayout x:Name="continueLayout" VerticalOptions="EndAndExpand">
+        <StackLayout VerticalOptions="EndAndExpand">
             <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" Text="Sono stati scaricati gli orari più recenti" />
-            <Button Clicked="Continue_Clicked" Text="Prosegui" TextColor="White" FontSize="Title" CornerRadius="10" BackgroundColor="Black" />
-            <Button Text="Salta" BackgroundColor="Transparent" FontSize="Small" Margin="-2" Clicked="skipClicked" VerticalOptions="End"/>
-                </StackLayout>
+            <Button x:Name="doneBtn" Opacity="0.8" IsEnabled="False" Clicked="Continue_Clicked" Text="Prosegui" TextColor="White" FontSize="Title" CornerRadius="10" BackgroundColor="Black" />
+            <Button Text="Salta" TextColor="{x:Static local:Styles.TextGray}" BackgroundColor="Transparent" FontSize="Small" Margin="-2" Clicked="skipClicked" VerticalOptions="End"/>
+        </StackLayout>
     </StackLayout>
 </ContentPage>

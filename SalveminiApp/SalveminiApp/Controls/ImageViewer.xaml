@@ -5,7 +5,7 @@
             <carousel:SfCarousel SelectionChanged="Image_SelectionChanged" x:Name="ImageCarousel" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5, .5, 1, .8">
                 <carousel:SfCarousel.ItemTemplate>
                     <DataTemplate>
-                        <local:ZoomImage Aspect="AspectFill" Source="{Binding .}" x:Name="imageView">
+                        <local:ZoomImage LoadingPlaceholder="imagePlaceholder.png" Aspect="AspectFill" Source="{Binding .}" x:Name="imageView">
                             <local:ZoomImage.GestureRecognizers>
                                 <SwipeGestureRecognizer Direction="Left" Swiped="ImageSwipedLeft" />
                                 <SwipeGestureRecognizer Direction="Right" Swiped="ImageSwipedRight" />

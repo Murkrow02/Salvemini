@@ -10,21 +10,18 @@ namespace SalveminiApp.iOS
 {
     public class AddVoiceShortcutButton : INUIAddVoiceShortcutButtonDelegate
     {
-       
-        public int station;
-        public bool direction;
+        string tipo;
 
-        public AddVoiceShortcutButton( int station_, bool direction_)
+        public AddVoiceShortcutButton(string tipo_)
         {
-            station = station_;
-            direction = direction_;
+            tipo = tipo_;
         }
 
         //Push to add new shortcut
         public override void PresentAddVoiceShortcut(INUIAddVoiceShortcutViewController addVoiceShortcutViewController, INUIAddVoiceShortcutButton addVoiceShortcutButton)
         {
            // UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(false);
-            addVoiceShortcutViewController.Delegate = new AddVoiceShortcutView(station,direction);
+            addVoiceShortcutViewController.Delegate = new AddVoiceShortcutView(tipo);
             addVoiceShortcutViewController.ModalPresentationStyle = UIModalPresentationStyle.FormSheet;
             UIApplication.SharedApplication.KeyWindow.RootViewController.PresentedViewController.PresentViewController(addVoiceShortcutViewController, animated: true, null);
         }
@@ -33,7 +30,7 @@ namespace SalveminiApp.iOS
         public override void PresentEditVoiceShortcut(INUIEditVoiceShortcutViewController editVoiceShortcutViewController, INUIAddVoiceShortcutButton addVoiceShortcutButton)
         {
             //UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
-            editVoiceShortcutViewController.Delegate = new EditVoiceShortcutView(station, direction);
+            editVoiceShortcutViewController.Delegate = new EditVoiceShortcutView(tipo);
             editVoiceShortcutViewController.ModalPresentationStyle = UIModalPresentationStyle.FormSheet;
             UIApplication.SharedApplication.KeyWindow.RootViewController.PresentedViewController.PresentViewController(editVoiceShortcutViewController, animated: true, null);
         }
@@ -42,13 +39,11 @@ namespace SalveminiApp.iOS
 
     public class AddVoiceShortcutView : INUIAddVoiceShortcutViewControllerDelegate
     {
-        public int station;
-        public bool direction;
+        string tipo;
 
-        public AddVoiceShortcutView( int station_, bool direction_)
+        public AddVoiceShortcutView(string tipo_)
         {
-            station = station_;
-            direction = direction_;
+            tipo = tipo_;
         }
 
         //User cancelled, remove popup
@@ -66,6 +61,10 @@ namespace SalveminiApp.iOS
             //defaults.SetInt(station, new NSString("savedStation"));
             //defaults.SetBool(direction, new NSString("savedDirection"));
 
+            //Save that user added a shortcut
+           ShortcutUtility.SaveStatus(true, tipo);
+
+
             //Close page
             UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
             UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
@@ -79,14 +78,13 @@ namespace SalveminiApp.iOS
 
     public class EditVoiceShortcutView : INUIEditVoiceShortcutViewControllerDelegate
     {
-        public int station;
-        public bool direction;
+        string tipo;
 
-        public EditVoiceShortcutView(int station_, bool direction_)
+        public EditVoiceShortcutView(string tipo_)
         {
-            station = station_;
-            direction = direction_;
+            tipo = tipo_;
         }
+
 
         //User cancelled, remove popup
         public override void DidCancel(INUIEditVoiceShortcutViewController controller)
@@ -97,13 +95,19 @@ namespace SalveminiApp.iOS
         //User deleted existing shortcut
         public override void DidDelete(INUIEditVoiceShortcutViewController controller, NSUuid deletedVoiceShortcutIdentifier)
         {
+            //Save that user deleted a shortcut
+            ShortcutUtility.SaveStatus(false, tipo);
+
             //Close page
             UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
         }
 
-        //User cancelled, remove popup
+        //User updated an existing shortcut
         public override void DidUpdate(INUIEditVoiceShortcutViewController controller, INVoiceShortcut voiceShortcut, NSError error)
         {
+            //Save that user added a shortcut
+            ShortcutUtility.SaveStatus(true, tipo);
+
             //Close page
             UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
 
@@ -112,4 +116,21 @@ namespace SalveminiApp.iOS
 
         }
     }
+
+    public class ShortcutUtility
+    {
+        public static void SaveStatus(bool status, string tipo)
+        {
+            //Detect which shortcut is adding
+            if (tipo == "Orario") //Orario
+            {
+                Preferences.Set("OrarioSiriSet", status);
+            }
+            else if (tipo == "Treno") //Treno
+            {
+                Preferences.Set("TrenoSiriSet", status);
+            }
+        }
+    }
+   
 }

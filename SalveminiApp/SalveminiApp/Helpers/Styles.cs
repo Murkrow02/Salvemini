@@ -21,7 +21,7 @@ namespace SalveminiApp
         public static Color Apple = Color.FromHex("#007aff");
 
         //Vip primary
-        public static Color VipPrimary = Color.FromHex("#FFD023");
+        public static Color VipPrimary = Color.FromHex("#3d2d2d");
 
         //Grey BG
         public static Color BGColor = Color.FromHex("#F3F4F7");

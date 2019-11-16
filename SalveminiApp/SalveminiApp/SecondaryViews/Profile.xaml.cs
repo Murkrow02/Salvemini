@@ -8,6 +8,7 @@ using Plugin.Media.Abstractions;
 using FFImageLoading;
 using FFImageLoading.Cache;
 using FFImageLoading.Forms;
+using Intents;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using UIKit;
@@ -46,9 +47,16 @@ namespace SalveminiApp.SecondaryViews
 
             //Fill lists
             //Personalizza
-            //var notifiche = new Helpers.PushCell { Title = "Notifiche", Separator = "si" };
-            //notifiche.GestureRecognizers.Add(tapGestureRecognizer);
-            //persLayout.Children.Add(notifiche);
+
+#if __IOS__
+            if (UIDevice.CurrentDevice.CheckSystemVersion(12, 0))
+            {
+                var siriShortcuts = new Helpers.PushCell { Title = "Scorciatoie di Siri", Separator = "si" };
+                siriShortcuts.GestureRecognizers.Add(tapGestureRecognizer);
+                persLayout.Children.Add(siriShortcuts);
+            }
+
+#endif
             var countdown = new Helpers.PushCell { Title = "Countdown", Separator = "si", Push = new SecondaryViews.CountdownSettings() };
             countdown.GestureRecognizers.Add(tapGestureRecognizer);
             persLayout.Children.Add(countdown);
@@ -298,9 +306,9 @@ namespace SalveminiApp.SecondaryViews
             }
             catch
             {
-                await DisplayAlert("Errore","Non è stato possibile completare l'azione, contattaci se il problema persiste","Ok");
+                await DisplayAlert("Errore", "Non è stato possibile completare l'azione, contattaci se il problema persiste", "Ok");
             }
-           
+
         }
 
         public async void reloadImage()
@@ -343,6 +351,32 @@ namespace SalveminiApp.SecondaryViews
                 if (cell.Title == "Immagine di profilo")
                 {
                     changePic(null, null);
+                }
+
+                //Siri shortcuts
+                if (cell.Title == "Scorciatoie di Siri")
+                {
+#if __IOS__
+                    var decision = await DisplayActionSheet("Quale scorciatoia vuoi modificare?", "Annulla", null, "Treni", "Orario classe");
+                    if (decision == "Treni")
+                    {
+                        //Create intent
+                        var trenoIntent = new TrenoIntent();
+                        trenoIntent.SuggestedInvocationPhrase = "Prossimo treno";
+                        INShortcut shortcut = new INShortcut(trenoIntent);
+                        Navigation.PopModalAsync();
+                        UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(new iOS.SiriShortcutPopup(shortcut, "Treno"), true, null);
+                    }
+                    if (decision == "Orario classe")
+                    {
+                        //Create intent
+                        var orarioIntent = new OrarioIntent();
+                        orarioIntent.SuggestedInvocationPhrase = "Orario di domani";
+                        INShortcut shortcut = new INShortcut(orarioIntent);
+                        Navigation.PopModalAsync();
+                        UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(new iOS.SiriShortcutPopup(shortcut, "Orario"),true,null);
+                    }
+#endif
                 }
 
 

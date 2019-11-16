@@ -19,7 +19,7 @@ namespace SalveminiApp
 
     }
 
-    public class ZoomImage : Image
+    public class ZoomImage : FFImageLoading.Forms.CachedImage
     {
         private const double MIN_SCALE = 1;
         private const double MAX_SCALE = 4;

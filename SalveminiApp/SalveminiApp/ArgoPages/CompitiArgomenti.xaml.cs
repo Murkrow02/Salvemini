@@ -119,7 +119,7 @@ namespace SalveminiApp.ArgoPages
                     if (type == "compiti")
                     {
                         //First time?
-                        if (!Preferences.Get("firstTimeCompiti", true))
+                        if (Preferences.Get("firstTimeCompiti", true))
                         {
                             firstPopUp.IsVisible = true; //Show tip
                         }
@@ -153,7 +153,7 @@ namespace SalveminiApp.ArgoPages
                     {
 
                         //First time?
-                        if (!Preferences.Get("firstTimeArgomenti", true))
+                        if (Preferences.Get("firstTimeArgomenti", true))
                         {
                             firstPopUp.IsVisible = true;
                             lista.IsRefreshing = true;
@@ -499,9 +499,9 @@ namespace SalveminiApp.ArgoPages
 
             //Change this to false before release 
             if (type == "compiti")
-                Preferences.Set("firstTimeCompiti", true);
+                Preferences.Set("firstTimeCompiti", false);
             else
-                Preferences.Set("firstTimeArgomenti", true);
+                Preferences.Set("firstTimeArgomenti", false);
         }
 
         //Close modal

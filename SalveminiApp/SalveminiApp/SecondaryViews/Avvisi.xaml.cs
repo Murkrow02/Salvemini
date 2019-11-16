@@ -110,7 +110,7 @@ namespace SalveminiApp.SecondaryViews
             var text = (((sender as Xamarin.Forms.Button).Parent as Xamarin.Forms.StackLayout).Children[2] as Xamarin.Forms.Label).Text;
 
             //Get the full description
-            var fullDesc = Avvisis.FirstOrDefault(x => x.Descrizione.Length > 100 && x.Descrizione.Remove(100) + "..." == text).Descrizione;
+            var fullDesc = Avvisis.FirstOrDefault(x => x.Descrizione.Contains(text.Replace("...", ""))).Descrizione;
 
             var bubblePopup = new Helpers.PopOvers().defaultPopOver;
             bubblePopup.Content = new Xamarin.Forms.ScrollView { VerticalOptions = LayoutOptions.FillAndExpand, Content = new Xamarin.Forms.Label { Text = fullDesc, VerticalOptions = LayoutOptions.FillAndExpand } };

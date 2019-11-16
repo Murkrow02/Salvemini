@@ -2,22 +2,19 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using Forms9Patch;
-using System.Globalization;
-using P42.Utils;
-using MonkeyCache.SQLite;
 using FFImageLoading;
 using FFImageLoading.Cache;
 using System.Diagnostics;
-using Intents;
-using IntentsUI;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using UIKit;
+using Intents;
+using Foundation;
+using IntentsUI;
 #endif
 
 namespace SalveminiApp
@@ -137,47 +134,11 @@ namespace SalveminiApp
         {
             base.OnAppearing();
 
-
-
-
-            //Add siri shortcut
-            if (!UIDevice.CurrentDevice.CheckSystemVersion(12, 0))
-                return; //Pre ios 12 can't use this :(
-
-            bool decision = await DisplayAlert("Vuoi aggiungere il comando a Siri?", "Potrai sapere quando arriverà il prossimo treno facilmente chiedendo a Siri con una frase personalizzata, che ne dici?", "Proviamo!", "Magari più tardi");
-            if (!decision)  //Non vuole aggiungere :(
-                return;
-
-            //Get shortcut
-            var intent = new TrenoIntent();
-            intent.SuggestedInvocationPhrase = "Prossimo treno"; // da " + Costants.Stazioni[station] + " ";
-            INShortcut trainShortcut = new INShortcut(intent);
-
-            //Create new window
-            var window = UIApplication.SharedApplication.KeyWindow;
-            var vc = new UIViewController();
-            vc.View.BackgroundColor = UIColor.Red;
-
-            //Create siri button
-            var siriButton = new INUIAddVoiceShortcutButton(INUIAddVoiceShortcutButtonStyle.BlackOutline);
-            siriButton.Shortcut = trainShortcut;
-
-            //Connect actions
-            siriButton.Delegate = new SalveminiApp.iOS.AddVoiceShortcutButton( 2, true); //Passa ultimi 2 valori solo se deve aggiungere shortcut del treno
-            vc.View.AddSubview(siriButton);
-
-            //Add button constraints
-            siriButton.TranslatesAutoresizingMaskIntoConstraints = false;
-            vc.View.CenterXAnchor.ConstraintEqualTo(siriButton.CenterXAnchor).Active = true;
-            vc.View.CenterYAnchor.ConstraintEqualTo(siriButton.CenterYAnchor).Active = true;
-
-            //Show intent window
-            UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(new iOS.SiriShortcutPopup(), true, null);
-
-            return;
-
             //Increment number of appeared times
             appearedTimes++;
+
+            //Get classe e corso
+            classeCorso = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
 
             //Show loading
             widgetLoading.IsRunning = true;
@@ -192,9 +153,6 @@ namespace SalveminiApp
 
                 //Remove modals bug
                 ModalPush_Disappearing(null, null);
-
-                //Get classe e corso
-                classeCorso = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
 
                 //Get cached orario
                 Orario = CacheHelper.GetCache<List<RestApi.Models.Lezione>>("orario" + classeCorso);
@@ -216,7 +174,7 @@ namespace SalveminiApp
                 //Trasporti
                 if (Preferences.Get("OrarioTrasportiVersion", 0) > 0) //Add this only if orario is downloaded
                 {
-                    var trasporti = new WidgetGradient { Title = "Trasporti", SubTitle = await getNextTrain(), Icon = "fas-subway", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order = 3 };
+                    var trasporti = new WidgetGradient { Title = "Treni", SubTitle = await getNextTrain(), Icon = "fas-subway", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order = 3 };
                     trasporti.GestureRecognizers.Add(tapGestureRecognizer);
                     widgets.Add(trasporti);
                 }
@@ -231,7 +189,6 @@ namespace SalveminiApp
                 widgets.Add(registro); widgets.Add(card); widgets.Add(extra);
                 OrderWidgets(false); //uncomment to fast load initial widgets
 
-
                 //Check Internet
                 if (Connectivity.NetworkAccess == NetworkAccess.Internet)
                 {
@@ -244,11 +201,11 @@ namespace SalveminiApp
 
 
 
-                    var secondo = new Stopwatch();secondo.Start();
+                    var secondo = new Stopwatch(); secondo.Start();
                     //Get index from api call
                     var tempIndex = await App.Index.GetIndex();
 
-    
+
 
                     //Checks in downloaded index
                     if (tempIndex != null)
@@ -377,6 +334,7 @@ namespace SalveminiApp
                 OrderWidgets(false);
                 widgetLoading.IsRunning = false;
                 widgetLoading.IsVisible = false;
+
             }
             catch (Exception ex) //Errore sconosciuto :0
             {
@@ -398,7 +356,7 @@ namespace SalveminiApp
                 //Push to selected page
                 if (widget.Push != null)
                 {
-                    if (widget.Title == "Trasporti")
+                    if (widget.Title == "Treni")
                     {
                         Navigation.PushAsync(widget.Push); //Push
                     }
@@ -590,7 +548,14 @@ namespace SalveminiApp
 
 
                     //intelligent auto skip if dopo le 2
-                    if (today && DateTime.Now.Hour > 14)
+                    if (today && DateTime.Now.Hour > 14 && day != 6 && day != freedayInt)
+                    {
+                        daySkipped++;
+                        day = SkipDay(day);
+                    }
+
+                    //Skip freeday (if saturday)
+                    if (day == freedayInt)
                     {
                         daySkipped++;
                         day = SkipDay(day);
@@ -603,8 +568,8 @@ namespace SalveminiApp
                         daySkipped++;
                     }
 
-                    //Skip freeday
-                    if (day == freedayInt + 1)
+                    //Skip freeday (if monday)
+                    if (day == freedayInt)
                     {
                         daySkipped++;
                         day = SkipDay(day);
@@ -771,7 +736,7 @@ namespace SalveminiApp
             int newDay = day;
             newDay++;
             if (newDay == 7)
-                return 1;
+                return 0;
             else
                 return newDay;
         }
@@ -828,7 +793,10 @@ namespace SalveminiApp
                     Costants.showToast(data.Message);
 
                     if (data.Message == "L'orario della classe non è stato trovato")
+                    {
                         emptyLayout.IsVisible = true;
+                        orarioLayout.IsVisible = false;
+                    }
                 });
             }
             else
@@ -850,8 +818,36 @@ namespace SalveminiApp
                         changeDay(-1);
                     });
                 }
+
+#if __IOS__
+                //Add siri shortcut
+                if (!UIDevice.CurrentDevice.CheckSystemVersion(12, 0))
+                    return; //Pre ios 12 can't use this :(
+
+                //Check if intent is already added or user doesen't want to add it
+                if (Preferences.Get("OrarioSiriSet", false) || appearedTimes < 2) //Show on second appearing
+                    return;
+
+                //Save values for siri intent
+                var defaults = new NSUserDefaults("group.com.codex.SalveminiApp", NSUserDefaultsType.SuiteName);
+                defaults.AddSuite("group.com.codex.SalveminiApp");
+                defaults.SetString(classeCorso, new NSString("SiriClass"));
+
+                //Create intent
+                var orarioIntent = new OrarioIntent();
+                orarioIntent.SuggestedInvocationPhrase = "Orario di domani";
+                INShortcut shortcut = new INShortcut(orarioIntent);
+
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(new iOS.SiriShortcutPopup(shortcut, "Orario"), true, null);
+                });
+#endif
             }
         }
+
+       
+
 
     }
 

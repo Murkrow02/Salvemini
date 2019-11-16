@@ -8,10 +8,11 @@ using System.Collections.Generic;
 using System.Linq;
 using Foundation;
 using ObjCRuntime;
+using Newtonsoft.Json;
 
 namespace IntentsKit
 {
-    public class TrenoHandler: TrenoIntentHandling
+    public class TrenoHandler : TrenoIntentHandling
     {
         public override void ConfirmTreno(TrenoIntent intent, Action<TrenoIntentResponse> completion)
         {
@@ -21,7 +22,9 @@ namespace IntentsKit
 
         public override void HandleTreno(TrenoIntent intent, Action<TrenoIntentResponse> completion)
         {
-            completion(TrenoIntentResponse.SuccessIntentResponseWithCitta("Sorrento","12:50"));
+
+
+            completion(TrenoIntentResponse.SuccessIntentResponseWithCitta("Sorrento", "12:50"));
         }
 
     }
@@ -36,7 +39,27 @@ namespace IntentsKit
 
         public override void HandleOrario(OrarioIntent intent, Action<OrarioIntentResponse> completion)
         {
-            completion(OrarioIntentResponse.SuccessIntentResponseWithGiorno("Domani", "Letteratura, Matematica, Fisica, Filosofia"));
+            try
+            {
+                //Get his class
+                var defaults = new NSUserDefaults("group.com.codex.SalveminiApp", NSUserDefaultsType.SuiteName);
+                defaults.AddSuite("group.com.codex.SalveminiApp");
+                var classe = defaults.StringForKey("SiriClass");
+
+                //Download strings
+                WebClient wc = new WebClient();
+                var json = wc.DownloadString("https://www.mysalvemini.me/api/orari/siri/" + classe);
+                string[] response = JsonConvert.DeserializeObject<string[]>(json);
+
+                //Success, send to siri
+                completion(OrarioIntentResponse.SuccessIntentResponseWithGiorno(response[0], response[1]));
+
+            }
+            catch
+            {
+                completion(OrarioIntentResponse.FailureIntentResponseWithGiorno("domani"));
+
+            }
         }
 
     }

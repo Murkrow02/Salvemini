@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage BackgroundColor="{x:Static local:Styles.BGColor}"  xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView" xmlns:proc="clr-namespace:PanCardView.Processors;assembly=PanCardView" xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView" xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Avvisi">
+<ContentPage BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch"  xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView" xmlns:proc="clr-namespace:PanCardView.Processors;assembly=PanCardView" xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView" xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Avvisi">
     <ContentPage.Content>
         <StackLayout Spacing="40" Padding="20" x:Name="mainLayout">
             <!--TITLE-->
@@ -18,12 +18,13 @@
                 </x:Arguments>
                 <cards:CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout VerticalOptions="CenterAndExpand" Padding="20, 0" Spacing="15">
+                        <StackLayout VerticalOptions="CenterAndExpand" Padding="12, 0" Spacing="15">
                             <!--Frame avviso-->
-                            <Frame CornerRadius="12" BackgroundColor="White" HasShadow="False" HorizontalOptions="Center" VerticalOptions="FillAndExpand" Padding="8,12">
+                            <Frame CornerRadius="12" BackgroundColor="White" HasShadow="False" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="8,12">
                                 <StackLayout Spacing="3">
                                     <!--Titolo-->
-                                    <Label Text="{Binding Titolo}" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Title" />
+                                   <patch:Label Lines="1" AutoFit="Width" Text="{Binding Titolo}" TextColor="{x:Static local:Styles.TextColor}" FontSize="30" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" />
+
                                     <!--Immagini-->
                                     <flv:FlowListView IsVisible="{Binding ListVisibility}" FlowItemTapped="ImageList_ItemSelected" FlowItemsSource="{Binding FullImmagini}" SeparatorColor="Black" BackgroundColor="Transparent" FlowColumnExpand="ProportionalLast" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="false" RowHeight="100">
                                         <flv:FlowListView.FlowColumnTemplate>
@@ -35,7 +36,7 @@
                                                     <Grid.ColumnDefinitions>
                                                         <ColumnDefinition Width="*" />
                                                     </Grid.ColumnDefinitions>
-                                                    <ffimageloading:CachedImage BitmapOptimizations="true" DownsampleToViewSize="true" LoadingPlaceholder="loadingPlaceholder" Aspect="AspectFill" Source="{Binding .}" />
+                                                    <ffimageloading:CachedImage BitmapOptimizations="true" DownsampleToViewSize="true" LoadingPlaceholder="imagePlaceholder.png" Aspect="AspectFill" Source="{Binding .}" />
                                                 </Grid>
                                             </DataTemplate>
                                         </flv:FlowListView.FlowColumnTemplate>

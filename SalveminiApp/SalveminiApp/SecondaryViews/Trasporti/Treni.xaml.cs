@@ -131,5 +131,16 @@ namespace SalveminiApp.SecondaryViews.Trasporti
         {
             Navigation.PopModalAsync();
         }
+
+        void Starred_Clicked(object sender, EventArgs e)
+        {
+            if (stationPicker.SelectedItem != null && TrenoSegment.SelectedSegment != -1)
+            {
+                (sender as IconButton).Text = "check-circle";
+                Preferences.Set("savedStation", Costants.Stazioni.FirstOrDefault(x => x.Value == stationPicker.SelectedItem.ToString()).Key);
+                bool direction = Convert.ToBoolean(TrenoSegment.SelectedSegment);
+                Preferences.Set("savedDirection", direction);
+            }
+        }
     }
 }

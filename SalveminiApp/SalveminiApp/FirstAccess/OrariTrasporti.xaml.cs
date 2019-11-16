@@ -52,7 +52,10 @@ namespace SalveminiApp.FirstAccess
                 {
                     await progress.ProgressTo(1, 500, Easing.CubicInOut);
                     loadingLayout.IsVisible = false;
-                    continueLayout.IsVisible = true;
+
+                    //Enable continue button
+                    doneBtn.Opacity = 1;
+                    doneBtn.IsEnabled = true;
                     Preferences.Set("OrarioTrasportiVersion", 1);
                 }
                 else
@@ -92,71 +95,31 @@ namespace SalveminiApp.FirstAccess
 
         async void Continue_Clicked(object sender, System.EventArgs e)
         {
-            bool canClose = true;
-
-            switch (MezzoSegment.SelectedSegment)
+            if (trainStationPicker.SelectedItem != null && TrenoSegment.SelectedSegment != -1)
             {
-                case 0:
-                    //Treni
-                    if (trainStationPicker.SelectedItem != null && TrenoSegment.SelectedSegment != -1)
-                    {
-                        //Get station and direction
-                        var station = Costants.Stazioni.FirstOrDefault(x => x.Value == trainStationPicker.SelectedItem.ToString()).Key;
-                        bool direction = Convert.ToBoolean(TrenoSegment.SelectedSegment);
+                //Get station and direction
+                var station = Costants.Stazioni.FirstOrDefault(x => x.Value == trainStationPicker.SelectedItem.ToString()).Key;
+                bool direction = Convert.ToBoolean(TrenoSegment.SelectedSegment);
 
-                        //Save in preferences
-                        Preferences.Set("savedStation", station);
-                        Preferences.Set("savedDirection", direction);
+                //Save in preferences
+                Preferences.Set("savedStation", station);
+                Preferences.Set("savedDirection", direction);
 
-                    }
-                    else
-                    {
-                        await DisplayAlert("Attenzione", "Seleziona una stazione di partenza e una direzione", "Ok");
-                        return;
-                    }
-                    break;
-                case 1:
-                    //Bus
-                    break;
-                case 2:
-                    //Aliscafi
-                    break;
             }
-
-            if (!canClose)
+            else
+            {
+                await DisplayAlert("Attenzione", "Seleziona una stazione di partenza e una direzione", "Ok");
                 return;
+            }
 
             if (Preferences.Get("isFirstTime", true))
             {
                 Xamarin.Forms.Application.Current.MainPage = new TabPage();
-                //Remove Pages behind MainPage
-                //Navigation.RemovePage(Navigation.NavigationStack[0]);
                 Preferences.Set("isFirstTime", false);
             }
             else
             {
                 await Navigation.PopModalAsync();
-            }
-        }
-
-        public void ChoseMezzo(object o, int e)
-        {
-
-            switch (MezzoSegment.SelectedSegment)
-            {
-                case 0:
-                    //Treni
-                    trenoLayout.IsVisible = true;
-                    busLayout.IsVisible = false;
-                    break;
-                case 1:
-                    //Bus disable for the moment
-                    MezzoSegment.SelectedSegment = 0; DisplayAlert("Attenzione", "Gli orari dei bus non sono ancora supportati", "Ok");
-                    return;
-                    trenoLayout.IsVisible = false;
-                    busLayout.IsVisible = true;
-
-                    break;
             }
         }
 

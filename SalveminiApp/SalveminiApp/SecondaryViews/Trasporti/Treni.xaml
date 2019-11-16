@@ -6,6 +6,7 @@
                 <StackLayout Orientation="Horizontal" Spacing="20">
                     <iconize:IconButton BackgroundColor="Transparent" Text="fas-times" Clicked="Close_Page" TextColor="White" FontAttributes="Bold" HorizontalOptions="End" FontSize="30" />
                     <Label FontAttributes="Bold" TextColor="White" Text="Treni" FontSize="50" HorizontalOptions="StartAndExpand" />
+                    <iconize:IconButton BackgroundColor="Transparent" x:Name="starButton" Clicked="Starred_Clicked" Text="far-star" TextColor="White" FontAttributes="Bold" HorizontalOptions="End" FontSize="30" />
                     <iconize:IconButton BackgroundColor="Transparent" Text="far-compass" TextColor="White" FontAttributes="Bold" HorizontalOptions="End" FontSize="30" Clicked="Safari_Clicked"/>
                 </StackLayout>
                 <StackLayout Spacing="10" Margin="20 ,0">
@@ -18,11 +19,11 @@
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label HorizontalOptions="Start" Text="Verso:" TextColor="White" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
                         <control:SegmentedControl OnSegmentSelected="TrenoSegment_OnSegmentSelected" SelectedSegment="0" x:Name="TrenoSegment" TintColor="White" SelectedTextColor="{x:Static local:Styles.TextColor}" >
-                        <control:SegmentedControl.Children>
-                            <control:SegmentedControlOption Text="Sorrento" />
-                            <control:SegmentedControlOption Text="Napoli" />
-                        </control:SegmentedControl.Children>
-                    </control:SegmentedControl>
+                            <control:SegmentedControl.Children>
+                                <control:SegmentedControlOption Text="Sorrento" />
+                                <control:SegmentedControlOption Text="Napoli" />
+                            </control:SegmentedControl.Children>
+                        </control:SegmentedControl>
                     </StackLayout>
                 </StackLayout>
                 <Frame HasShadow="False" Padding="0" IsClippedToBounds="True" VerticalOptions="FillAndExpand" Margin="20 ,0" CornerRadius="20">
