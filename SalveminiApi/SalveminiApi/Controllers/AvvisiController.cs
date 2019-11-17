@@ -70,17 +70,22 @@ namespace SalveminiApi.Controllers
                 throw new HttpResponseException(HttpStatusCode.InternalServerError);
             }
 
+            //Find user creating avviso
+            var mittente = db.Utenti.Find(avviso.idCreatore);
+
+
             //Invia notifica se necessario
             if (avviso.SendNotification)
             {
                 try
                 {
-                    var mittente = db.Utenti.Find(avviso.idCreatore);
                     var notifica = new NotificationModel();
                     var titolo = new Localized { en = avviso.Titolo };
                     var dettagli = new Localized { en = "Nuovo avviso da " + mittente.Nome + " " + mittente.Cognome + ", apri l'app per saperne di più!" };
+                    //var data = new AdditionalData { tipo = "push", id = "avviso" };
                     notifica.headings = titolo;
                     notifica.contents = dettagli;
+                    //notifica.data = data;
                     NotificationService.sendNotification(notifica);
                 }
                 catch
@@ -92,7 +97,7 @@ namespace SalveminiApi.Controllers
            
 
             //Add to console log
-            Helpers.Utility.saveEvent(avviso.Utenti.Nome + "(" + avviso.idCreatore + ")" + " ha creato l'avviso " + avviso.Titolo + "(" + avviso.id + ")");
+            Helpers.Utility.saveEvent(mittente.Nome + "(" + avviso.idCreatore + ")" + " ha creato l'avviso " + avviso.Titolo + "(" + avviso.id + ")");
 
             return new HttpResponseMessage(HttpStatusCode.OK);
         }

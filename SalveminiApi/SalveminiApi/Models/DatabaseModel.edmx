@@ -112,6 +112,9 @@
           <Property Name="Stato" Type="int" Nullable="false" />
           <Property Name="Creazione" Type="datetime" Nullable="false" />
           <Property Name="ArgoToken" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="sCoin" Type="int" Nullable="false" />
+          <Property Name="AdsWatched" Type="int" Nullable="false" />
+          <Property Name="LastAdWatched" Type="datetime" />
         </EntityType>
         <EntityType Name="VotiSondaggi">
           <Key>
@@ -164,20 +167,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Sondaggi_Utenti">
-          <End Role="Utenti" Type="Self.Utenti" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Sondaggi" Type="Self.Sondaggi" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Utenti">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Sondaggi">
-              <PropertyRef Name="Creatore" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_VotiSondaggi_OggettiSondaggi">
           <End Role="OggettiSondaggi" Type="Self.OggettiSondaggi" Multiplicity="1" />
           <End Role="VotiSondaggi" Type="Self.VotiSondaggi" Multiplicity="*" />
@@ -191,7 +180,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_VotiSondaggi_Sondaggi">
-          <End Role="Sondaggi" Type="Self.Sondaggi" Multiplicity="1" />
+          <End Role="Sondaggi" Type="Self.Sondaggi" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="VotiSondaggi" Type="Self.VotiSondaggi" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sondaggi">
@@ -239,10 +230,6 @@
           <AssociationSet Name="FK_OggettiSondaggi_Sondaggi" Association="Self.FK_OggettiSondaggi_Sondaggi">
             <End Role="Sondaggi" EntitySet="Sondaggi" />
             <End Role="OggettiSondaggi" EntitySet="OggettiSondaggi" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Sondaggi_Utenti" Association="Self.FK_Sondaggi_Utenti">
-            <End Role="Utenti" EntitySet="Utenti" />
-            <End Role="Sondaggi" EntitySet="Sondaggi" />
           </AssociationSet>
           <AssociationSet Name="FK_VotiSondaggi_OggettiSondaggi" Association="Self.FK_VotiSondaggi_OggettiSondaggi">
             <End Role="OggettiSondaggi" EntitySet="OggettiSondaggi" />
@@ -371,6 +358,9 @@
           <NavigationProperty Name="Avvisi" Relationship="Self.FK_Avvisi_Utenti" FromRole="Utenti" ToRole="Avvisi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <NavigationProperty Name="Sondaggi" Relationship="Self.FK_Sondaggi_Utenti" FromRole="Utenti" ToRole="Sondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <NavigationProperty Name="VotiSondaggi" Relationship="Self.FK_VotiSondaggi_Utenti" FromRole="Utenti" ToRole="VotiSondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Name="sCoin" Type="Int32" Nullable="false" />
+          <Property Name="AdsWatched" Type="Int32" Nullable="false" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Name="LastAdWatched" Type="DateTime" Precision="3" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
         <EntityType Name="VotiSondaggi">
           <Key>
@@ -630,6 +620,9 @@
           <EntitySetMapping Name="Utenti">
             <EntityTypeMapping TypeName="SalveminiModel.Utenti">
               <MappingFragment StoreEntitySet="Utenti">
+                <ScalarProperty Name="LastAdWatched" ColumnName="LastAdWatched" />
+                <ScalarProperty Name="AdsWatched" ColumnName="AdsWatched" />
+                <ScalarProperty Name="sCoin" ColumnName="sCoin" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Cognome" ColumnName="Cognome" />
