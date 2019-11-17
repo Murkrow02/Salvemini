@@ -840,7 +840,17 @@ namespace SalveminiApp
 
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(new iOS.SiriShortcutPopup(shortcut, "Orario"), true, null);
+                    var vc = UIApplication.SharedApplication.KeyWindow.RootViewController;
+                    var popup = new iOS.SiriShortcutPopup(shortcut, "Orario");
+                    vc.PresentViewController(popup, true, null);
+
+                    //vc.View.AddSubview(popup.View);
+                    popup.DidMoveToParentViewController(vc);
+
+                    var height = vc.View.Frame.Height;
+                    var width = vc.View.Frame.Width;
+                    popup.View.Frame = new CoreGraphics.CGRect(0, vc.View.Frame.Y, width, height);
+
                 });
 #endif
             }

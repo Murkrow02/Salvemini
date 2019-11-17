@@ -357,8 +357,8 @@ namespace SalveminiApp.SecondaryViews
                 if (cell.Title == "Scorciatoie di Siri")
                 {
 #if __IOS__
-                    var decision = await DisplayActionSheet("Quale scorciatoia vuoi modificare?", "Annulla", null, "Treni", "Orario classe");
-                    if (decision == "Treni")
+                    //Treni Button
+                    var TreniAction = UIAlertAction.Create("Treni", UIAlertActionStyle.Default, (action) =>
                     {
                         //Create intent
                         var trenoIntent = new TrenoIntent();
@@ -366,16 +366,31 @@ namespace SalveminiApp.SecondaryViews
                         INShortcut shortcut = new INShortcut(trenoIntent);
                         Navigation.PopModalAsync();
                         UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(new iOS.SiriShortcutPopup(shortcut, "Treno"), true, null);
-                    }
-                    if (decision == "Orario classe")
+
+                    });
+
+                    //Orario Button
+                    var OrarioAction = UIAlertAction.Create("Orario classe", UIAlertActionStyle.Default, (action) =>
                     {
                         //Create intent
                         var orarioIntent = new OrarioIntent();
                         orarioIntent.SuggestedInvocationPhrase = "Orario di domani";
                         INShortcut shortcut = new INShortcut(orarioIntent);
                         Navigation.PopModalAsync();
-                        UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(new iOS.SiriShortcutPopup(shortcut, "Orario"),true,null);
-                    }
+                        UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(new iOS.SiriShortcutPopup(shortcut, "Orario"), true, null);
+                    });
+
+                    //Display Cool Alert
+                    var controller = UIAlertController.Create("Quale scorciatoia vuoi modificare", null, UIAlertControllerStyle.Alert);
+                    //if (utente.id != 2106)
+                    //{
+                    //    controller.View.TintColor = UIColor.Black;
+                    //}
+                    controller.AddAction(TreniAction);
+                    controller.AddAction(OrarioAction);
+                    controller.AddAction(UIAlertAction.Create("Annulla", UIAlertActionStyle.Cancel, null));
+
+                    UIApplication.SharedApplication.KeyWindow.RootViewController.PresentedViewController.PresentViewController(controller, true, null);
 #endif
                 }
 
@@ -393,6 +408,21 @@ namespace SalveminiApp.SecondaryViews
                 //Page not set or some random error, sticazzi
                 return;
             }
+        }
+    }
+
+    public class UIAlertControllerExtension : UIAlertController
+    {
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            Create("Quale scorciatoia vuoi modificare", null, UIAlertControllerStyle.Alert);
+        }
+
+        public override void ViewDidLayoutSubviews()
+        {
+            base.ViewDidLayoutSubviews();
+            View.TintColor = UIColor.Black;
         }
     }
 }
