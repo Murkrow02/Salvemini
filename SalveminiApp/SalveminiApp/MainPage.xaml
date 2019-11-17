@@ -7,6 +7,9 @@
             <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
                 <Image Source="SalveminiCoin.png" x:Name="coinImage"/>
                 <Label x:Name="sCoinLbl" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center"  />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="sCoin_Tapped"/>
+                </StackLayout.GestureRecognizers>
             </StackLayout>
             <!--Middle label-->
             <StackLayout Spacing="1" HorizontalOptions="CenterAndExpand">

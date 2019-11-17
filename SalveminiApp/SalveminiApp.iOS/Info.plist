@@ -72,5 +72,9 @@
 	<string>12</string>
 	<key>CFBundleVersion</key>
 	<string>3.3</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-2688730930606353~1053541819</string>
+	<key>GADIsAdManagerApp</key>
+	<true/>
 </dict>
 </plist>

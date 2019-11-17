@@ -205,6 +205,16 @@ namespace SalveminiApp
             }
 #endif
         }
+
+
+        public static string RewardId() {
+#if DEBUG
+            return "ca-app-pub-3940256099942544/5224354917";
+#else
+            return "ca-app-pub-2688730930606353/4691822196";
+#endif
+
+        }
     }
 
     public static class Extensions
