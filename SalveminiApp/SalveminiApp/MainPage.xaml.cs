@@ -128,8 +128,8 @@ namespace SalveminiApp
             }
         }
 
-
-
+        //Detect if onappearing must be triggered
+        bool forceAppearing; bool userRefreshed = true;
         protected async override void OnAppearing()
         {
             base.OnAppearing();
@@ -140,9 +140,14 @@ namespace SalveminiApp
             //Get classe e corso
             classeCorso = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
 
+            //Do Appearing only every 5 times or from pull to refresh or connection lost or first
+            var lastDigit = appearedTimes % 10;
+            if (lastDigit != 0 && lastDigit != 5 && !forceAppearing && appearedTimes != 1)
+                return;
+
+
             //Show loading
-            widgetLoading.IsRunning = true;
-            widgetLoading.IsVisible = true;
+            userRefreshed = false; homeLoading.IsRefreshing = true; 
 
             //Sempre meglio mettere il try lol
             try
@@ -199,9 +204,6 @@ namespace SalveminiApp
                     //Update orario in background
                     await Task.Run((Action)updateOrario);
 
-
-
-                    var secondo = new Stopwatch(); secondo.Start();
                     //Get index from api call
                     var tempIndex = await App.Index.GetIndex();
 
@@ -234,8 +236,8 @@ namespace SalveminiApp
                         //Anche la cache è nulla, stacca stacca
                         if (Index != null)
                         {
-                            widgetLoading.IsRunning = false;
-                            widgetLoading.IsVisible = false;
+                            homeLoading.IsRefreshing = false;
+                            forceAppearing = false;
                             return;
                         }
                     }
@@ -292,6 +294,10 @@ namespace SalveminiApp
                         widgets.Add(avvisi);
                     }
 
+                    //Update widgets order
+                    OrderWidgets(false);
+                    homeLoading.IsRefreshing = false;
+
                     //Get banner ad
                     if (Index.Ads != null && Index.Ads.Count > 0)
                     {
@@ -330,20 +336,32 @@ namespace SalveminiApp
                     Costants.showToast("connection");
                 }
 
-                //Update widgets order
-                OrderWidgets(false);
-                widgetLoading.IsRunning = false;
-                widgetLoading.IsVisible = false;
 
+                forceAppearing = false;
             }
             catch (Exception ex) //Errore sconosciuto :0
             {
-                widgetLoading.IsRunning = false;
-                widgetLoading.IsVisible = false;
+                homeLoading.IsRefreshing = false;
+                forceAppearing = true;
                 Costants.showToast("Si è verificato un errore fatale, contatta gli sviluppatori se il problema persiste");
             }
 
         }
+
+        public void refreshHome(object sender, EventArgs e)
+        {
+            //Fix bcause this event is triggered even if is refreshed by code
+            if (!userRefreshed)
+            {
+                userRefreshed = true;
+                return;
+
+            }
+
+            forceAppearing = true;
+            OnAppearing();
+        }
+
 
         //Handle widget redirections
         void widget_Tapped(object sender, System.EventArgs e)
@@ -846,7 +864,7 @@ namespace SalveminiApp
             }
         }
 
-       
+
         public void sCoin_Tapped(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new SecondaryViews.SalveminiCoin());

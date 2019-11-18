@@ -9,6 +9,7 @@ using FFImageLoading;
 using FFImageLoading.Cache;
 using FFImageLoading.Forms;
 using Intents;
+using Foundation;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using UIKit;
@@ -51,9 +52,18 @@ namespace SalveminiApp.SecondaryViews
 #if __IOS__
             if (UIDevice.CurrentDevice.CheckSystemVersion(12, 0))
             {
-                var siriShortcuts = new Helpers.PushCell { Title = "Scorciatoie di Siri", Separator = "si" };
-                siriShortcuts.GestureRecognizers.Add(tapGestureRecognizer);
-                persLayout.Children.Add(siriShortcuts);
+                //Check if downloaded orario
+                var defaults = new NSUserDefaults("group.com.codex.SalveminiApp", NSUserDefaultsType.SuiteName);
+                defaults.AddSuite("group.com.codex.SalveminiApp");
+                bool exists = !string.IsNullOrEmpty(defaults.StringForKey("SiriClass"));
+
+                if (exists) //Orario saved
+                {
+                    //Exists, add shortcut cell
+                    var siriShortcuts = new Helpers.PushCell { Title = "Scorciatoie di Siri", Separator = "si" };
+                    siriShortcuts.GestureRecognizers.Add(tapGestureRecognizer);
+                    persLayout.Children.Add(siriShortcuts);
+                }
             }
 
 #endif
@@ -374,7 +384,7 @@ namespace SalveminiApp.SecondaryViews
                         orarioIntent.SuggestedInvocationPhrase = "Orario di domani";
                         INShortcut shortcut = new INShortcut(orarioIntent);
                         Navigation.PopModalAsync();
-                        UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(new iOS.SiriShortcutPopup(shortcut, "Orario"),true,null);
+                        UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(new iOS.SiriShortcutPopup(shortcut, "Orario"), true, null);
                     }
 #endif
                 }

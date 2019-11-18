@@ -5519,6 +5519,2913 @@ namespace SalveminiApp.Droid
 			global::PanCardView.Droid.Resource.Styleable.ViewStubCompat_android_id = global::SalveminiApp.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::PanCardView.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId = global::SalveminiApp.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::PanCardView.Droid.Resource.Styleable.ViewStubCompat_android_layout = global::SalveminiApp.Droid.Resource.Styleable.ViewStubCompat_android_layout;
+			global::MarcTron.Plugin.Resource.Animation.abc_fade_in = global::SalveminiApp.Droid.Resource.Animation.abc_fade_in;
+			global::MarcTron.Plugin.Resource.Animation.abc_fade_out = global::SalveminiApp.Droid.Resource.Animation.abc_fade_out;
+			global::MarcTron.Plugin.Resource.Animation.abc_grow_fade_in_from_bottom = global::SalveminiApp.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::MarcTron.Plugin.Resource.Animation.abc_popup_enter = global::SalveminiApp.Droid.Resource.Animation.abc_popup_enter;
+			global::MarcTron.Plugin.Resource.Animation.abc_popup_exit = global::SalveminiApp.Droid.Resource.Animation.abc_popup_exit;
+			global::MarcTron.Plugin.Resource.Animation.abc_shrink_fade_out_from_bottom = global::SalveminiApp.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::MarcTron.Plugin.Resource.Animation.abc_slide_in_bottom = global::SalveminiApp.Droid.Resource.Animation.abc_slide_in_bottom;
+			global::MarcTron.Plugin.Resource.Animation.abc_slide_in_top = global::SalveminiApp.Droid.Resource.Animation.abc_slide_in_top;
+			global::MarcTron.Plugin.Resource.Animation.abc_slide_out_bottom = global::SalveminiApp.Droid.Resource.Animation.abc_slide_out_bottom;
+			global::MarcTron.Plugin.Resource.Animation.abc_slide_out_top = global::SalveminiApp.Droid.Resource.Animation.abc_slide_out_top;
+			global::MarcTron.Plugin.Resource.Animation.abc_tooltip_enter = global::SalveminiApp.Droid.Resource.Animation.abc_tooltip_enter;
+			global::MarcTron.Plugin.Resource.Animation.abc_tooltip_exit = global::SalveminiApp.Droid.Resource.Animation.abc_tooltip_exit;
+			global::MarcTron.Plugin.Resource.Animation.design_bottom_sheet_slide_in = global::SalveminiApp.Droid.Resource.Animation.design_bottom_sheet_slide_in;
+			global::MarcTron.Plugin.Resource.Animation.design_bottom_sheet_slide_out = global::SalveminiApp.Droid.Resource.Animation.design_bottom_sheet_slide_out;
+			global::MarcTron.Plugin.Resource.Animation.design_snackbar_in = global::SalveminiApp.Droid.Resource.Animation.design_snackbar_in;
+			global::MarcTron.Plugin.Resource.Animation.design_snackbar_out = global::SalveminiApp.Droid.Resource.Animation.design_snackbar_out;
+			global::MarcTron.Plugin.Resource.Animation.EnterFromLeft = global::SalveminiApp.Droid.Resource.Animation.EnterFromLeft;
+			global::MarcTron.Plugin.Resource.Animation.EnterFromRight = global::SalveminiApp.Droid.Resource.Animation.EnterFromRight;
+			global::MarcTron.Plugin.Resource.Animation.ExitToLeft = global::SalveminiApp.Droid.Resource.Animation.ExitToLeft;
+			global::MarcTron.Plugin.Resource.Animation.ExitToRight = global::SalveminiApp.Droid.Resource.Animation.ExitToRight;
+			global::MarcTron.Plugin.Resource.Animator.design_appbar_state_list_animator = global::SalveminiApp.Droid.Resource.Animator.design_appbar_state_list_animator;
+			global::MarcTron.Plugin.Resource.Animator.design_fab_hide_motion_spec = global::SalveminiApp.Droid.Resource.Animator.design_fab_hide_motion_spec;
+			global::MarcTron.Plugin.Resource.Animator.design_fab_show_motion_spec = global::SalveminiApp.Droid.Resource.Animator.design_fab_show_motion_spec;
+			global::MarcTron.Plugin.Resource.Animator.mtrl_btn_state_list_anim = global::SalveminiApp.Droid.Resource.Animator.mtrl_btn_state_list_anim;
+			global::MarcTron.Plugin.Resource.Animator.mtrl_btn_unelevated_state_list_anim = global::SalveminiApp.Droid.Resource.Animator.mtrl_btn_unelevated_state_list_anim;
+			global::MarcTron.Plugin.Resource.Animator.mtrl_chip_state_list_anim = global::SalveminiApp.Droid.Resource.Animator.mtrl_chip_state_list_anim;
+			global::MarcTron.Plugin.Resource.Animator.mtrl_fab_hide_motion_spec = global::SalveminiApp.Droid.Resource.Animator.mtrl_fab_hide_motion_spec;
+			global::MarcTron.Plugin.Resource.Animator.mtrl_fab_show_motion_spec = global::SalveminiApp.Droid.Resource.Animator.mtrl_fab_show_motion_spec;
+			global::MarcTron.Plugin.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec = global::SalveminiApp.Droid.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec;
+			global::MarcTron.Plugin.Resource.Animator.mtrl_fab_transformation_sheet_expand_spec = global::SalveminiApp.Droid.Resource.Animator.mtrl_fab_transformation_sheet_expand_spec;
+			global::MarcTron.Plugin.Resource.Attribute.actionBarDivider = global::SalveminiApp.Droid.Resource.Attribute.actionBarDivider;
+			global::MarcTron.Plugin.Resource.Attribute.actionBarItemBackground = global::SalveminiApp.Droid.Resource.Attribute.actionBarItemBackground;
+			global::MarcTron.Plugin.Resource.Attribute.actionBarPopupTheme = global::SalveminiApp.Droid.Resource.Attribute.actionBarPopupTheme;
+			global::MarcTron.Plugin.Resource.Attribute.actionBarSize = global::SalveminiApp.Droid.Resource.Attribute.actionBarSize;
+			global::MarcTron.Plugin.Resource.Attribute.actionBarSplitStyle = global::SalveminiApp.Droid.Resource.Attribute.actionBarSplitStyle;
+			global::MarcTron.Plugin.Resource.Attribute.actionBarStyle = global::SalveminiApp.Droid.Resource.Attribute.actionBarStyle;
+			global::MarcTron.Plugin.Resource.Attribute.actionBarTabBarStyle = global::SalveminiApp.Droid.Resource.Attribute.actionBarTabBarStyle;
+			global::MarcTron.Plugin.Resource.Attribute.actionBarTabStyle = global::SalveminiApp.Droid.Resource.Attribute.actionBarTabStyle;
+			global::MarcTron.Plugin.Resource.Attribute.actionBarTabTextStyle = global::SalveminiApp.Droid.Resource.Attribute.actionBarTabTextStyle;
+			global::MarcTron.Plugin.Resource.Attribute.actionBarTheme = global::SalveminiApp.Droid.Resource.Attribute.actionBarTheme;
+			global::MarcTron.Plugin.Resource.Attribute.actionBarWidgetTheme = global::SalveminiApp.Droid.Resource.Attribute.actionBarWidgetTheme;
+			global::MarcTron.Plugin.Resource.Attribute.actionButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.actionButtonStyle;
+			global::MarcTron.Plugin.Resource.Attribute.actionDropDownStyle = global::SalveminiApp.Droid.Resource.Attribute.actionDropDownStyle;
+			global::MarcTron.Plugin.Resource.Attribute.actionLayout = global::SalveminiApp.Droid.Resource.Attribute.actionLayout;
+			global::MarcTron.Plugin.Resource.Attribute.actionMenuTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.actionMenuTextAppearance;
+			global::MarcTron.Plugin.Resource.Attribute.actionMenuTextColor = global::SalveminiApp.Droid.Resource.Attribute.actionMenuTextColor;
+			global::MarcTron.Plugin.Resource.Attribute.actionModeBackground = global::SalveminiApp.Droid.Resource.Attribute.actionModeBackground;
+			global::MarcTron.Plugin.Resource.Attribute.actionModeCloseButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::MarcTron.Plugin.Resource.Attribute.actionModeCloseDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeCloseDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.actionModeCopyDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeCopyDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.actionModeCutDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeCutDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.actionModeFindDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeFindDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.actionModePasteDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModePasteDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.actionModePopupWindowStyle = global::SalveminiApp.Droid.Resource.Attribute.actionModePopupWindowStyle;
+			global::MarcTron.Plugin.Resource.Attribute.actionModeSelectAllDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeSelectAllDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.actionModeShareDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeShareDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.actionModeSplitBackground = global::SalveminiApp.Droid.Resource.Attribute.actionModeSplitBackground;
+			global::MarcTron.Plugin.Resource.Attribute.actionModeStyle = global::SalveminiApp.Droid.Resource.Attribute.actionModeStyle;
+			global::MarcTron.Plugin.Resource.Attribute.actionModeWebSearchDrawable = global::SalveminiApp.Droid.Resource.Attribute.actionModeWebSearchDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.actionOverflowButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.actionOverflowButtonStyle;
+			global::MarcTron.Plugin.Resource.Attribute.actionOverflowMenuStyle = global::SalveminiApp.Droid.Resource.Attribute.actionOverflowMenuStyle;
+			global::MarcTron.Plugin.Resource.Attribute.actionProviderClass = global::SalveminiApp.Droid.Resource.Attribute.actionProviderClass;
+			global::MarcTron.Plugin.Resource.Attribute.actionViewClass = global::SalveminiApp.Droid.Resource.Attribute.actionViewClass;
+			global::MarcTron.Plugin.Resource.Attribute.activityChooserViewStyle = global::SalveminiApp.Droid.Resource.Attribute.activityChooserViewStyle;
+			global::MarcTron.Plugin.Resource.Attribute.adSize = global::SalveminiApp.Droid.Resource.Attribute.adSize;
+			global::MarcTron.Plugin.Resource.Attribute.adSizes = global::SalveminiApp.Droid.Resource.Attribute.adSizes;
+			global::MarcTron.Plugin.Resource.Attribute.adUnitId = global::SalveminiApp.Droid.Resource.Attribute.adUnitId;
+			global::MarcTron.Plugin.Resource.Attribute.alertDialogButtonGroupStyle = global::SalveminiApp.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::MarcTron.Plugin.Resource.Attribute.alertDialogCenterButtons = global::SalveminiApp.Droid.Resource.Attribute.alertDialogCenterButtons;
+			global::MarcTron.Plugin.Resource.Attribute.alertDialogStyle = global::SalveminiApp.Droid.Resource.Attribute.alertDialogStyle;
+			global::MarcTron.Plugin.Resource.Attribute.alertDialogTheme = global::SalveminiApp.Droid.Resource.Attribute.alertDialogTheme;
+			global::MarcTron.Plugin.Resource.Attribute.allowStacking = global::SalveminiApp.Droid.Resource.Attribute.allowStacking;
+			global::MarcTron.Plugin.Resource.Attribute.alpha = global::SalveminiApp.Droid.Resource.Attribute.alpha;
+			global::MarcTron.Plugin.Resource.Attribute.alphabeticModifiers = global::SalveminiApp.Droid.Resource.Attribute.alphabeticModifiers;
+			global::MarcTron.Plugin.Resource.Attribute.arrowHeadLength = global::SalveminiApp.Droid.Resource.Attribute.arrowHeadLength;
+			global::MarcTron.Plugin.Resource.Attribute.arrowShaftLength = global::SalveminiApp.Droid.Resource.Attribute.arrowShaftLength;
+			global::MarcTron.Plugin.Resource.Attribute.autoCompleteTextViewStyle = global::SalveminiApp.Droid.Resource.Attribute.autoCompleteTextViewStyle;
+			global::MarcTron.Plugin.Resource.Attribute.autoSizeMaxTextSize = global::SalveminiApp.Droid.Resource.Attribute.autoSizeMaxTextSize;
+			global::MarcTron.Plugin.Resource.Attribute.autoSizeMinTextSize = global::SalveminiApp.Droid.Resource.Attribute.autoSizeMinTextSize;
+			global::MarcTron.Plugin.Resource.Attribute.autoSizePresetSizes = global::SalveminiApp.Droid.Resource.Attribute.autoSizePresetSizes;
+			global::MarcTron.Plugin.Resource.Attribute.autoSizeStepGranularity = global::SalveminiApp.Droid.Resource.Attribute.autoSizeStepGranularity;
+			global::MarcTron.Plugin.Resource.Attribute.autoSizeTextType = global::SalveminiApp.Droid.Resource.Attribute.autoSizeTextType;
+			global::MarcTron.Plugin.Resource.Attribute.background = global::SalveminiApp.Droid.Resource.Attribute.background;
+			global::MarcTron.Plugin.Resource.Attribute.backgroundSplit = global::SalveminiApp.Droid.Resource.Attribute.backgroundSplit;
+			global::MarcTron.Plugin.Resource.Attribute.backgroundStacked = global::SalveminiApp.Droid.Resource.Attribute.backgroundStacked;
+			global::MarcTron.Plugin.Resource.Attribute.backgroundTint = global::SalveminiApp.Droid.Resource.Attribute.backgroundTint;
+			global::MarcTron.Plugin.Resource.Attribute.backgroundTintMode = global::SalveminiApp.Droid.Resource.Attribute.backgroundTintMode;
+			global::MarcTron.Plugin.Resource.Attribute.barLength = global::SalveminiApp.Droid.Resource.Attribute.barLength;
+			global::MarcTron.Plugin.Resource.Attribute.behavior_autoHide = global::SalveminiApp.Droid.Resource.Attribute.behavior_autoHide;
+			global::MarcTron.Plugin.Resource.Attribute.behavior_fitToContents = global::SalveminiApp.Droid.Resource.Attribute.behavior_fitToContents;
+			global::MarcTron.Plugin.Resource.Attribute.behavior_hideable = global::SalveminiApp.Droid.Resource.Attribute.behavior_hideable;
+			global::MarcTron.Plugin.Resource.Attribute.behavior_overlapTop = global::SalveminiApp.Droid.Resource.Attribute.behavior_overlapTop;
+			global::MarcTron.Plugin.Resource.Attribute.behavior_peekHeight = global::SalveminiApp.Droid.Resource.Attribute.behavior_peekHeight;
+			global::MarcTron.Plugin.Resource.Attribute.behavior_skipCollapsed = global::SalveminiApp.Droid.Resource.Attribute.behavior_skipCollapsed;
+			global::MarcTron.Plugin.Resource.Attribute.borderlessButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.borderlessButtonStyle;
+			global::MarcTron.Plugin.Resource.Attribute.borderWidth = global::SalveminiApp.Droid.Resource.Attribute.borderWidth;
+			global::MarcTron.Plugin.Resource.Attribute.bottomAppBarStyle = global::SalveminiApp.Droid.Resource.Attribute.bottomAppBarStyle;
+			global::MarcTron.Plugin.Resource.Attribute.bottomNavigationStyle = global::SalveminiApp.Droid.Resource.Attribute.bottomNavigationStyle;
+			global::MarcTron.Plugin.Resource.Attribute.bottomSheetDialogTheme = global::SalveminiApp.Droid.Resource.Attribute.bottomSheetDialogTheme;
+			global::MarcTron.Plugin.Resource.Attribute.bottomSheetStyle = global::SalveminiApp.Droid.Resource.Attribute.bottomSheetStyle;
+			global::MarcTron.Plugin.Resource.Attribute.boxBackgroundColor = global::SalveminiApp.Droid.Resource.Attribute.boxBackgroundColor;
+			global::MarcTron.Plugin.Resource.Attribute.boxBackgroundMode = global::SalveminiApp.Droid.Resource.Attribute.boxBackgroundMode;
+			global::MarcTron.Plugin.Resource.Attribute.boxCollapsedPaddingTop = global::SalveminiApp.Droid.Resource.Attribute.boxCollapsedPaddingTop;
+			global::MarcTron.Plugin.Resource.Attribute.boxCornerRadiusBottomEnd = global::SalveminiApp.Droid.Resource.Attribute.boxCornerRadiusBottomEnd;
+			global::MarcTron.Plugin.Resource.Attribute.boxCornerRadiusBottomStart = global::SalveminiApp.Droid.Resource.Attribute.boxCornerRadiusBottomStart;
+			global::MarcTron.Plugin.Resource.Attribute.boxCornerRadiusTopEnd = global::SalveminiApp.Droid.Resource.Attribute.boxCornerRadiusTopEnd;
+			global::MarcTron.Plugin.Resource.Attribute.boxCornerRadiusTopStart = global::SalveminiApp.Droid.Resource.Attribute.boxCornerRadiusTopStart;
+			global::MarcTron.Plugin.Resource.Attribute.boxStrokeColor = global::SalveminiApp.Droid.Resource.Attribute.boxStrokeColor;
+			global::MarcTron.Plugin.Resource.Attribute.boxStrokeWidth = global::SalveminiApp.Droid.Resource.Attribute.boxStrokeWidth;
+			global::MarcTron.Plugin.Resource.Attribute.buttonBarButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.buttonBarButtonStyle;
+			global::MarcTron.Plugin.Resource.Attribute.buttonBarNegativeButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::MarcTron.Plugin.Resource.Attribute.buttonBarNeutralButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::MarcTron.Plugin.Resource.Attribute.buttonBarPositiveButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::MarcTron.Plugin.Resource.Attribute.buttonBarStyle = global::SalveminiApp.Droid.Resource.Attribute.buttonBarStyle;
+			global::MarcTron.Plugin.Resource.Attribute.buttonGravity = global::SalveminiApp.Droid.Resource.Attribute.buttonGravity;
+			global::MarcTron.Plugin.Resource.Attribute.buttonIconDimen = global::SalveminiApp.Droid.Resource.Attribute.buttonIconDimen;
+			global::MarcTron.Plugin.Resource.Attribute.buttonPanelSideLayout = global::SalveminiApp.Droid.Resource.Attribute.buttonPanelSideLayout;
+			global::MarcTron.Plugin.Resource.Attribute.buttonStyle = global::SalveminiApp.Droid.Resource.Attribute.buttonStyle;
+			global::MarcTron.Plugin.Resource.Attribute.buttonStyleSmall = global::SalveminiApp.Droid.Resource.Attribute.buttonStyleSmall;
+			global::MarcTron.Plugin.Resource.Attribute.buttonTint = global::SalveminiApp.Droid.Resource.Attribute.buttonTint;
+			global::MarcTron.Plugin.Resource.Attribute.buttonTintMode = global::SalveminiApp.Droid.Resource.Attribute.buttonTintMode;
+			global::MarcTron.Plugin.Resource.Attribute.cardBackgroundColor = global::SalveminiApp.Droid.Resource.Attribute.cardBackgroundColor;
+			global::MarcTron.Plugin.Resource.Attribute.cardCornerRadius = global::SalveminiApp.Droid.Resource.Attribute.cardCornerRadius;
+			global::MarcTron.Plugin.Resource.Attribute.cardElevation = global::SalveminiApp.Droid.Resource.Attribute.cardElevation;
+			global::MarcTron.Plugin.Resource.Attribute.cardMaxElevation = global::SalveminiApp.Droid.Resource.Attribute.cardMaxElevation;
+			global::MarcTron.Plugin.Resource.Attribute.cardPreventCornerOverlap = global::SalveminiApp.Droid.Resource.Attribute.cardPreventCornerOverlap;
+			global::MarcTron.Plugin.Resource.Attribute.cardUseCompatPadding = global::SalveminiApp.Droid.Resource.Attribute.cardUseCompatPadding;
+			global::MarcTron.Plugin.Resource.Attribute.cardViewStyle = global::SalveminiApp.Droid.Resource.Attribute.cardViewStyle;
+			global::MarcTron.Plugin.Resource.Attribute.checkboxStyle = global::SalveminiApp.Droid.Resource.Attribute.checkboxStyle;
+			global::MarcTron.Plugin.Resource.Attribute.checkedChip = global::SalveminiApp.Droid.Resource.Attribute.checkedChip;
+			global::MarcTron.Plugin.Resource.Attribute.checkedIcon = global::SalveminiApp.Droid.Resource.Attribute.checkedIcon;
+			global::MarcTron.Plugin.Resource.Attribute.checkedIconEnabled = global::SalveminiApp.Droid.Resource.Attribute.checkedIconEnabled;
+			global::MarcTron.Plugin.Resource.Attribute.checkedIconVisible = global::SalveminiApp.Droid.Resource.Attribute.checkedIconVisible;
+			global::MarcTron.Plugin.Resource.Attribute.checkedTextViewStyle = global::SalveminiApp.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::MarcTron.Plugin.Resource.Attribute.chipBackgroundColor = global::SalveminiApp.Droid.Resource.Attribute.chipBackgroundColor;
+			global::MarcTron.Plugin.Resource.Attribute.chipCornerRadius = global::SalveminiApp.Droid.Resource.Attribute.chipCornerRadius;
+			global::MarcTron.Plugin.Resource.Attribute.chipEndPadding = global::SalveminiApp.Droid.Resource.Attribute.chipEndPadding;
+			global::MarcTron.Plugin.Resource.Attribute.chipGroupStyle = global::SalveminiApp.Droid.Resource.Attribute.chipGroupStyle;
+			global::MarcTron.Plugin.Resource.Attribute.chipIcon = global::SalveminiApp.Droid.Resource.Attribute.chipIcon;
+			global::MarcTron.Plugin.Resource.Attribute.chipIconEnabled = global::SalveminiApp.Droid.Resource.Attribute.chipIconEnabled;
+			global::MarcTron.Plugin.Resource.Attribute.chipIconSize = global::SalveminiApp.Droid.Resource.Attribute.chipIconSize;
+			global::MarcTron.Plugin.Resource.Attribute.chipIconTint = global::SalveminiApp.Droid.Resource.Attribute.chipIconTint;
+			global::MarcTron.Plugin.Resource.Attribute.chipIconVisible = global::SalveminiApp.Droid.Resource.Attribute.chipIconVisible;
+			global::MarcTron.Plugin.Resource.Attribute.chipMinHeight = global::SalveminiApp.Droid.Resource.Attribute.chipMinHeight;
+			global::MarcTron.Plugin.Resource.Attribute.chipSpacing = global::SalveminiApp.Droid.Resource.Attribute.chipSpacing;
+			global::MarcTron.Plugin.Resource.Attribute.chipSpacingHorizontal = global::SalveminiApp.Droid.Resource.Attribute.chipSpacingHorizontal;
+			global::MarcTron.Plugin.Resource.Attribute.chipSpacingVertical = global::SalveminiApp.Droid.Resource.Attribute.chipSpacingVertical;
+			global::MarcTron.Plugin.Resource.Attribute.chipStandaloneStyle = global::SalveminiApp.Droid.Resource.Attribute.chipStandaloneStyle;
+			global::MarcTron.Plugin.Resource.Attribute.chipStartPadding = global::SalveminiApp.Droid.Resource.Attribute.chipStartPadding;
+			global::MarcTron.Plugin.Resource.Attribute.chipStrokeColor = global::SalveminiApp.Droid.Resource.Attribute.chipStrokeColor;
+			global::MarcTron.Plugin.Resource.Attribute.chipStrokeWidth = global::SalveminiApp.Droid.Resource.Attribute.chipStrokeWidth;
+			global::MarcTron.Plugin.Resource.Attribute.chipStyle = global::SalveminiApp.Droid.Resource.Attribute.chipStyle;
+			global::MarcTron.Plugin.Resource.Attribute.closeIcon = global::SalveminiApp.Droid.Resource.Attribute.closeIcon;
+			global::MarcTron.Plugin.Resource.Attribute.closeIconEnabled = global::SalveminiApp.Droid.Resource.Attribute.closeIconEnabled;
+			global::MarcTron.Plugin.Resource.Attribute.closeIconEndPadding = global::SalveminiApp.Droid.Resource.Attribute.closeIconEndPadding;
+			global::MarcTron.Plugin.Resource.Attribute.closeIconSize = global::SalveminiApp.Droid.Resource.Attribute.closeIconSize;
+			global::MarcTron.Plugin.Resource.Attribute.closeIconStartPadding = global::SalveminiApp.Droid.Resource.Attribute.closeIconStartPadding;
+			global::MarcTron.Plugin.Resource.Attribute.closeIconTint = global::SalveminiApp.Droid.Resource.Attribute.closeIconTint;
+			global::MarcTron.Plugin.Resource.Attribute.closeIconVisible = global::SalveminiApp.Droid.Resource.Attribute.closeIconVisible;
+			global::MarcTron.Plugin.Resource.Attribute.closeItemLayout = global::SalveminiApp.Droid.Resource.Attribute.closeItemLayout;
+			global::MarcTron.Plugin.Resource.Attribute.collapseContentDescription = global::SalveminiApp.Droid.Resource.Attribute.collapseContentDescription;
+			global::MarcTron.Plugin.Resource.Attribute.collapsedTitleGravity = global::SalveminiApp.Droid.Resource.Attribute.collapsedTitleGravity;
+			global::MarcTron.Plugin.Resource.Attribute.collapsedTitleTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.collapsedTitleTextAppearance;
+			global::MarcTron.Plugin.Resource.Attribute.collapseIcon = global::SalveminiApp.Droid.Resource.Attribute.collapseIcon;
+			global::MarcTron.Plugin.Resource.Attribute.color = global::SalveminiApp.Droid.Resource.Attribute.color;
+			global::MarcTron.Plugin.Resource.Attribute.colorAccent = global::SalveminiApp.Droid.Resource.Attribute.colorAccent;
+			global::MarcTron.Plugin.Resource.Attribute.colorBackgroundFloating = global::SalveminiApp.Droid.Resource.Attribute.colorBackgroundFloating;
+			global::MarcTron.Plugin.Resource.Attribute.colorButtonNormal = global::SalveminiApp.Droid.Resource.Attribute.colorButtonNormal;
+			global::MarcTron.Plugin.Resource.Attribute.colorControlActivated = global::SalveminiApp.Droid.Resource.Attribute.colorControlActivated;
+			global::MarcTron.Plugin.Resource.Attribute.colorControlHighlight = global::SalveminiApp.Droid.Resource.Attribute.colorControlHighlight;
+			global::MarcTron.Plugin.Resource.Attribute.colorControlNormal = global::SalveminiApp.Droid.Resource.Attribute.colorControlNormal;
+			global::MarcTron.Plugin.Resource.Attribute.colorError = global::SalveminiApp.Droid.Resource.Attribute.colorError;
+			global::MarcTron.Plugin.Resource.Attribute.colorPrimary = global::SalveminiApp.Droid.Resource.Attribute.colorPrimary;
+			global::MarcTron.Plugin.Resource.Attribute.colorPrimaryDark = global::SalveminiApp.Droid.Resource.Attribute.colorPrimaryDark;
+			global::MarcTron.Plugin.Resource.Attribute.colorSecondary = global::SalveminiApp.Droid.Resource.Attribute.colorSecondary;
+			global::MarcTron.Plugin.Resource.Attribute.colorSwitchThumbNormal = global::SalveminiApp.Droid.Resource.Attribute.colorSwitchThumbNormal;
+			global::MarcTron.Plugin.Resource.Attribute.commitIcon = global::SalveminiApp.Droid.Resource.Attribute.commitIcon;
+			global::MarcTron.Plugin.Resource.Attribute.contentDescription = global::SalveminiApp.Droid.Resource.Attribute.contentDescription;
+			global::MarcTron.Plugin.Resource.Attribute.contentInsetEnd = global::SalveminiApp.Droid.Resource.Attribute.contentInsetEnd;
+			global::MarcTron.Plugin.Resource.Attribute.contentInsetEndWithActions = global::SalveminiApp.Droid.Resource.Attribute.contentInsetEndWithActions;
+			global::MarcTron.Plugin.Resource.Attribute.contentInsetLeft = global::SalveminiApp.Droid.Resource.Attribute.contentInsetLeft;
+			global::MarcTron.Plugin.Resource.Attribute.contentInsetRight = global::SalveminiApp.Droid.Resource.Attribute.contentInsetRight;
+			global::MarcTron.Plugin.Resource.Attribute.contentInsetStart = global::SalveminiApp.Droid.Resource.Attribute.contentInsetStart;
+			global::MarcTron.Plugin.Resource.Attribute.contentInsetStartWithNavigation = global::SalveminiApp.Droid.Resource.Attribute.contentInsetStartWithNavigation;
+			global::MarcTron.Plugin.Resource.Attribute.contentPadding = global::SalveminiApp.Droid.Resource.Attribute.contentPadding;
+			global::MarcTron.Plugin.Resource.Attribute.contentPaddingBottom = global::SalveminiApp.Droid.Resource.Attribute.contentPaddingBottom;
+			global::MarcTron.Plugin.Resource.Attribute.contentPaddingLeft = global::SalveminiApp.Droid.Resource.Attribute.contentPaddingLeft;
+			global::MarcTron.Plugin.Resource.Attribute.contentPaddingRight = global::SalveminiApp.Droid.Resource.Attribute.contentPaddingRight;
+			global::MarcTron.Plugin.Resource.Attribute.contentPaddingTop = global::SalveminiApp.Droid.Resource.Attribute.contentPaddingTop;
+			global::MarcTron.Plugin.Resource.Attribute.contentScrim = global::SalveminiApp.Droid.Resource.Attribute.contentScrim;
+			global::MarcTron.Plugin.Resource.Attribute.controlBackground = global::SalveminiApp.Droid.Resource.Attribute.controlBackground;
+			global::MarcTron.Plugin.Resource.Attribute.coordinatorLayoutStyle = global::SalveminiApp.Droid.Resource.Attribute.coordinatorLayoutStyle;
+			global::MarcTron.Plugin.Resource.Attribute.cornerRadius = global::SalveminiApp.Droid.Resource.Attribute.cornerRadius;
+			global::MarcTron.Plugin.Resource.Attribute.counterEnabled = global::SalveminiApp.Droid.Resource.Attribute.counterEnabled;
+			global::MarcTron.Plugin.Resource.Attribute.counterMaxLength = global::SalveminiApp.Droid.Resource.Attribute.counterMaxLength;
+			global::MarcTron.Plugin.Resource.Attribute.counterOverflowTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.counterOverflowTextAppearance;
+			global::MarcTron.Plugin.Resource.Attribute.counterTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.counterTextAppearance;
+			global::MarcTron.Plugin.Resource.Attribute.customNavigationLayout = global::SalveminiApp.Droid.Resource.Attribute.customNavigationLayout;
+			global::MarcTron.Plugin.Resource.Attribute.defaultQueryHint = global::SalveminiApp.Droid.Resource.Attribute.defaultQueryHint;
+			global::MarcTron.Plugin.Resource.Attribute.dialogCornerRadius = global::SalveminiApp.Droid.Resource.Attribute.dialogCornerRadius;
+			global::MarcTron.Plugin.Resource.Attribute.dialogPreferredPadding = global::SalveminiApp.Droid.Resource.Attribute.dialogPreferredPadding;
+			global::MarcTron.Plugin.Resource.Attribute.dialogTheme = global::SalveminiApp.Droid.Resource.Attribute.dialogTheme;
+			global::MarcTron.Plugin.Resource.Attribute.displayOptions = global::SalveminiApp.Droid.Resource.Attribute.displayOptions;
+			global::MarcTron.Plugin.Resource.Attribute.divider = global::SalveminiApp.Droid.Resource.Attribute.divider;
+			global::MarcTron.Plugin.Resource.Attribute.dividerHorizontal = global::SalveminiApp.Droid.Resource.Attribute.dividerHorizontal;
+			global::MarcTron.Plugin.Resource.Attribute.dividerPadding = global::SalveminiApp.Droid.Resource.Attribute.dividerPadding;
+			global::MarcTron.Plugin.Resource.Attribute.dividerVertical = global::SalveminiApp.Droid.Resource.Attribute.dividerVertical;
+			global::MarcTron.Plugin.Resource.Attribute.drawableSize = global::SalveminiApp.Droid.Resource.Attribute.drawableSize;
+			global::MarcTron.Plugin.Resource.Attribute.drawerArrowStyle = global::SalveminiApp.Droid.Resource.Attribute.drawerArrowStyle;
+			global::MarcTron.Plugin.Resource.Attribute.dropdownListPreferredItemHeight = global::SalveminiApp.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::MarcTron.Plugin.Resource.Attribute.dropDownListViewStyle = global::SalveminiApp.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::MarcTron.Plugin.Resource.Attribute.editTextBackground = global::SalveminiApp.Droid.Resource.Attribute.editTextBackground;
+			global::MarcTron.Plugin.Resource.Attribute.editTextColor = global::SalveminiApp.Droid.Resource.Attribute.editTextColor;
+			global::MarcTron.Plugin.Resource.Attribute.editTextStyle = global::SalveminiApp.Droid.Resource.Attribute.editTextStyle;
+			global::MarcTron.Plugin.Resource.Attribute.elevation = global::SalveminiApp.Droid.Resource.Attribute.elevation;
+			global::MarcTron.Plugin.Resource.Attribute.enforceMaterialTheme = global::SalveminiApp.Droid.Resource.Attribute.enforceMaterialTheme;
+			global::MarcTron.Plugin.Resource.Attribute.enforceTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.enforceTextAppearance;
+			global::MarcTron.Plugin.Resource.Attribute.errorEnabled = global::SalveminiApp.Droid.Resource.Attribute.errorEnabled;
+			global::MarcTron.Plugin.Resource.Attribute.errorTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.errorTextAppearance;
+			global::MarcTron.Plugin.Resource.Attribute.expandActivityOverflowButtonDrawable = global::SalveminiApp.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.expanded = global::SalveminiApp.Droid.Resource.Attribute.expanded;
+			global::MarcTron.Plugin.Resource.Attribute.expandedTitleGravity = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleGravity;
+			global::MarcTron.Plugin.Resource.Attribute.expandedTitleMargin = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleMargin;
+			global::MarcTron.Plugin.Resource.Attribute.expandedTitleMarginBottom = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleMarginBottom;
+			global::MarcTron.Plugin.Resource.Attribute.expandedTitleMarginEnd = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleMarginEnd;
+			global::MarcTron.Plugin.Resource.Attribute.expandedTitleMarginStart = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleMarginStart;
+			global::MarcTron.Plugin.Resource.Attribute.expandedTitleMarginTop = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleMarginTop;
+			global::MarcTron.Plugin.Resource.Attribute.expandedTitleTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.expandedTitleTextAppearance;
+			global::MarcTron.Plugin.Resource.Attribute.externalRouteEnabledDrawable = global::SalveminiApp.Droid.Resource.Attribute.externalRouteEnabledDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.fabAlignmentMode = global::SalveminiApp.Droid.Resource.Attribute.fabAlignmentMode;
+			global::MarcTron.Plugin.Resource.Attribute.fabCradleMargin = global::SalveminiApp.Droid.Resource.Attribute.fabCradleMargin;
+			global::MarcTron.Plugin.Resource.Attribute.fabCradleRoundedCornerRadius = global::SalveminiApp.Droid.Resource.Attribute.fabCradleRoundedCornerRadius;
+			global::MarcTron.Plugin.Resource.Attribute.fabCradleVerticalOffset = global::SalveminiApp.Droid.Resource.Attribute.fabCradleVerticalOffset;
+			global::MarcTron.Plugin.Resource.Attribute.fabCustomSize = global::SalveminiApp.Droid.Resource.Attribute.fabCustomSize;
+			global::MarcTron.Plugin.Resource.Attribute.fabSize = global::SalveminiApp.Droid.Resource.Attribute.fabSize;
+			global::MarcTron.Plugin.Resource.Attribute.fastScrollEnabled = global::SalveminiApp.Droid.Resource.Attribute.fastScrollEnabled;
+			global::MarcTron.Plugin.Resource.Attribute.fastScrollHorizontalThumbDrawable = global::SalveminiApp.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.fastScrollHorizontalTrackDrawable = global::SalveminiApp.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.fastScrollVerticalThumbDrawable = global::SalveminiApp.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.fastScrollVerticalTrackDrawable = global::SalveminiApp.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.firstBaselineToTopHeight = global::SalveminiApp.Droid.Resource.Attribute.firstBaselineToTopHeight;
+			global::MarcTron.Plugin.Resource.Attribute.floatingActionButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.floatingActionButtonStyle;
+			global::MarcTron.Plugin.Resource.Attribute.font = global::SalveminiApp.Droid.Resource.Attribute.font;
+			global::MarcTron.Plugin.Resource.Attribute.fontFamily = global::SalveminiApp.Droid.Resource.Attribute.fontFamily;
+			global::MarcTron.Plugin.Resource.Attribute.fontProviderAuthority = global::SalveminiApp.Droid.Resource.Attribute.fontProviderAuthority;
+			global::MarcTron.Plugin.Resource.Attribute.fontProviderCerts = global::SalveminiApp.Droid.Resource.Attribute.fontProviderCerts;
+			global::MarcTron.Plugin.Resource.Attribute.fontProviderFetchStrategy = global::SalveminiApp.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::MarcTron.Plugin.Resource.Attribute.fontProviderFetchTimeout = global::SalveminiApp.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::MarcTron.Plugin.Resource.Attribute.fontProviderPackage = global::SalveminiApp.Droid.Resource.Attribute.fontProviderPackage;
+			global::MarcTron.Plugin.Resource.Attribute.fontProviderQuery = global::SalveminiApp.Droid.Resource.Attribute.fontProviderQuery;
+			global::MarcTron.Plugin.Resource.Attribute.fontStyle = global::SalveminiApp.Droid.Resource.Attribute.fontStyle;
+			global::MarcTron.Plugin.Resource.Attribute.fontVariationSettings = global::SalveminiApp.Droid.Resource.Attribute.fontVariationSettings;
+			global::MarcTron.Plugin.Resource.Attribute.fontWeight = global::SalveminiApp.Droid.Resource.Attribute.fontWeight;
+			global::MarcTron.Plugin.Resource.Attribute.foregroundInsidePadding = global::SalveminiApp.Droid.Resource.Attribute.foregroundInsidePadding;
+			global::MarcTron.Plugin.Resource.Attribute.gapBetweenBars = global::SalveminiApp.Droid.Resource.Attribute.gapBetweenBars;
+			global::MarcTron.Plugin.Resource.Attribute.goIcon = global::SalveminiApp.Droid.Resource.Attribute.goIcon;
+			global::MarcTron.Plugin.Resource.Attribute.headerLayout = global::SalveminiApp.Droid.Resource.Attribute.headerLayout;
+			global::MarcTron.Plugin.Resource.Attribute.height = global::SalveminiApp.Droid.Resource.Attribute.height;
+			global::MarcTron.Plugin.Resource.Attribute.helperText = global::SalveminiApp.Droid.Resource.Attribute.helperText;
+			global::MarcTron.Plugin.Resource.Attribute.helperTextEnabled = global::SalveminiApp.Droid.Resource.Attribute.helperTextEnabled;
+			global::MarcTron.Plugin.Resource.Attribute.helperTextTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.helperTextTextAppearance;
+			global::MarcTron.Plugin.Resource.Attribute.hideMotionSpec = global::SalveminiApp.Droid.Resource.Attribute.hideMotionSpec;
+			global::MarcTron.Plugin.Resource.Attribute.hideOnContentScroll = global::SalveminiApp.Droid.Resource.Attribute.hideOnContentScroll;
+			global::MarcTron.Plugin.Resource.Attribute.hideOnScroll = global::SalveminiApp.Droid.Resource.Attribute.hideOnScroll;
+			global::MarcTron.Plugin.Resource.Attribute.hintAnimationEnabled = global::SalveminiApp.Droid.Resource.Attribute.hintAnimationEnabled;
+			global::MarcTron.Plugin.Resource.Attribute.hintEnabled = global::SalveminiApp.Droid.Resource.Attribute.hintEnabled;
+			global::MarcTron.Plugin.Resource.Attribute.hintTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.hintTextAppearance;
+			global::MarcTron.Plugin.Resource.Attribute.homeAsUpIndicator = global::SalveminiApp.Droid.Resource.Attribute.homeAsUpIndicator;
+			global::MarcTron.Plugin.Resource.Attribute.homeLayout = global::SalveminiApp.Droid.Resource.Attribute.homeLayout;
+			global::MarcTron.Plugin.Resource.Attribute.hoveredFocusedTranslationZ = global::SalveminiApp.Droid.Resource.Attribute.hoveredFocusedTranslationZ;
+			global::MarcTron.Plugin.Resource.Attribute.icon = global::SalveminiApp.Droid.Resource.Attribute.icon;
+			global::MarcTron.Plugin.Resource.Attribute.iconEndPadding = global::SalveminiApp.Droid.Resource.Attribute.iconEndPadding;
+			global::MarcTron.Plugin.Resource.Attribute.iconGravity = global::SalveminiApp.Droid.Resource.Attribute.iconGravity;
+			global::MarcTron.Plugin.Resource.Attribute.iconifiedByDefault = global::SalveminiApp.Droid.Resource.Attribute.iconifiedByDefault;
+			global::MarcTron.Plugin.Resource.Attribute.iconPadding = global::SalveminiApp.Droid.Resource.Attribute.iconPadding;
+			global::MarcTron.Plugin.Resource.Attribute.iconSize = global::SalveminiApp.Droid.Resource.Attribute.iconSize;
+			global::MarcTron.Plugin.Resource.Attribute.iconStartPadding = global::SalveminiApp.Droid.Resource.Attribute.iconStartPadding;
+			global::MarcTron.Plugin.Resource.Attribute.iconTint = global::SalveminiApp.Droid.Resource.Attribute.iconTint;
+			global::MarcTron.Plugin.Resource.Attribute.iconTintMode = global::SalveminiApp.Droid.Resource.Attribute.iconTintMode;
+			global::MarcTron.Plugin.Resource.Attribute.imageButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.imageButtonStyle;
+			global::MarcTron.Plugin.Resource.Attribute.indeterminateProgressStyle = global::SalveminiApp.Droid.Resource.Attribute.indeterminateProgressStyle;
+			global::MarcTron.Plugin.Resource.Attribute.initialActivityCount = global::SalveminiApp.Droid.Resource.Attribute.initialActivityCount;
+			global::MarcTron.Plugin.Resource.Attribute.insetForeground = global::SalveminiApp.Droid.Resource.Attribute.insetForeground;
+			global::MarcTron.Plugin.Resource.Attribute.isLightTheme = global::SalveminiApp.Droid.Resource.Attribute.isLightTheme;
+			global::MarcTron.Plugin.Resource.Attribute.itemBackground = global::SalveminiApp.Droid.Resource.Attribute.itemBackground;
+			global::MarcTron.Plugin.Resource.Attribute.itemHorizontalPadding = global::SalveminiApp.Droid.Resource.Attribute.itemHorizontalPadding;
+			global::MarcTron.Plugin.Resource.Attribute.itemHorizontalTranslationEnabled = global::SalveminiApp.Droid.Resource.Attribute.itemHorizontalTranslationEnabled;
+			global::MarcTron.Plugin.Resource.Attribute.itemIconPadding = global::SalveminiApp.Droid.Resource.Attribute.itemIconPadding;
+			global::MarcTron.Plugin.Resource.Attribute.itemIconSize = global::SalveminiApp.Droid.Resource.Attribute.itemIconSize;
+			global::MarcTron.Plugin.Resource.Attribute.itemIconTint = global::SalveminiApp.Droid.Resource.Attribute.itemIconTint;
+			global::MarcTron.Plugin.Resource.Attribute.itemPadding = global::SalveminiApp.Droid.Resource.Attribute.itemPadding;
+			global::MarcTron.Plugin.Resource.Attribute.itemSpacing = global::SalveminiApp.Droid.Resource.Attribute.itemSpacing;
+			global::MarcTron.Plugin.Resource.Attribute.itemTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.itemTextAppearance;
+			global::MarcTron.Plugin.Resource.Attribute.itemTextAppearanceActive = global::SalveminiApp.Droid.Resource.Attribute.itemTextAppearanceActive;
+			global::MarcTron.Plugin.Resource.Attribute.itemTextAppearanceInactive = global::SalveminiApp.Droid.Resource.Attribute.itemTextAppearanceInactive;
+			global::MarcTron.Plugin.Resource.Attribute.itemTextColor = global::SalveminiApp.Droid.Resource.Attribute.itemTextColor;
+			global::MarcTron.Plugin.Resource.Attribute.keylines = global::SalveminiApp.Droid.Resource.Attribute.keylines;
+			global::MarcTron.Plugin.Resource.Attribute.labelVisibilityMode = global::SalveminiApp.Droid.Resource.Attribute.labelVisibilityMode;
+			global::MarcTron.Plugin.Resource.Attribute.lastBaselineToBottomHeight = global::SalveminiApp.Droid.Resource.Attribute.lastBaselineToBottomHeight;
+			global::MarcTron.Plugin.Resource.Attribute.layout = global::SalveminiApp.Droid.Resource.Attribute.layout;
+			global::MarcTron.Plugin.Resource.Attribute.layoutManager = global::SalveminiApp.Droid.Resource.Attribute.layoutManager;
+			global::MarcTron.Plugin.Resource.Attribute.layout_anchor = global::SalveminiApp.Droid.Resource.Attribute.layout_anchor;
+			global::MarcTron.Plugin.Resource.Attribute.layout_anchorGravity = global::SalveminiApp.Droid.Resource.Attribute.layout_anchorGravity;
+			global::MarcTron.Plugin.Resource.Attribute.layout_behavior = global::SalveminiApp.Droid.Resource.Attribute.layout_behavior;
+			global::MarcTron.Plugin.Resource.Attribute.layout_collapseMode = global::SalveminiApp.Droid.Resource.Attribute.layout_collapseMode;
+			global::MarcTron.Plugin.Resource.Attribute.layout_collapseParallaxMultiplier = global::SalveminiApp.Droid.Resource.Attribute.layout_collapseParallaxMultiplier;
+			global::MarcTron.Plugin.Resource.Attribute.layout_dodgeInsetEdges = global::SalveminiApp.Droid.Resource.Attribute.layout_dodgeInsetEdges;
+			global::MarcTron.Plugin.Resource.Attribute.layout_insetEdge = global::SalveminiApp.Droid.Resource.Attribute.layout_insetEdge;
+			global::MarcTron.Plugin.Resource.Attribute.layout_keyline = global::SalveminiApp.Droid.Resource.Attribute.layout_keyline;
+			global::MarcTron.Plugin.Resource.Attribute.layout_scrollFlags = global::SalveminiApp.Droid.Resource.Attribute.layout_scrollFlags;
+			global::MarcTron.Plugin.Resource.Attribute.layout_scrollInterpolator = global::SalveminiApp.Droid.Resource.Attribute.layout_scrollInterpolator;
+			global::MarcTron.Plugin.Resource.Attribute.liftOnScroll = global::SalveminiApp.Droid.Resource.Attribute.liftOnScroll;
+			global::MarcTron.Plugin.Resource.Attribute.lineHeight = global::SalveminiApp.Droid.Resource.Attribute.lineHeight;
+			global::MarcTron.Plugin.Resource.Attribute.lineSpacing = global::SalveminiApp.Droid.Resource.Attribute.lineSpacing;
+			global::MarcTron.Plugin.Resource.Attribute.listChoiceBackgroundIndicator = global::SalveminiApp.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::MarcTron.Plugin.Resource.Attribute.listDividerAlertDialog = global::SalveminiApp.Droid.Resource.Attribute.listDividerAlertDialog;
+			global::MarcTron.Plugin.Resource.Attribute.listItemLayout = global::SalveminiApp.Droid.Resource.Attribute.listItemLayout;
+			global::MarcTron.Plugin.Resource.Attribute.listLayout = global::SalveminiApp.Droid.Resource.Attribute.listLayout;
+			global::MarcTron.Plugin.Resource.Attribute.listMenuViewStyle = global::SalveminiApp.Droid.Resource.Attribute.listMenuViewStyle;
+			global::MarcTron.Plugin.Resource.Attribute.listPopupWindowStyle = global::SalveminiApp.Droid.Resource.Attribute.listPopupWindowStyle;
+			global::MarcTron.Plugin.Resource.Attribute.listPreferredItemHeight = global::SalveminiApp.Droid.Resource.Attribute.listPreferredItemHeight;
+			global::MarcTron.Plugin.Resource.Attribute.listPreferredItemHeightLarge = global::SalveminiApp.Droid.Resource.Attribute.listPreferredItemHeightLarge;
+			global::MarcTron.Plugin.Resource.Attribute.listPreferredItemHeightSmall = global::SalveminiApp.Droid.Resource.Attribute.listPreferredItemHeightSmall;
+			global::MarcTron.Plugin.Resource.Attribute.listPreferredItemPaddingLeft = global::SalveminiApp.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::MarcTron.Plugin.Resource.Attribute.listPreferredItemPaddingRight = global::SalveminiApp.Droid.Resource.Attribute.listPreferredItemPaddingRight;
+			global::MarcTron.Plugin.Resource.Attribute.logo = global::SalveminiApp.Droid.Resource.Attribute.logo;
+			global::MarcTron.Plugin.Resource.Attribute.logoDescription = global::SalveminiApp.Droid.Resource.Attribute.logoDescription;
+			global::MarcTron.Plugin.Resource.Attribute.materialButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.materialButtonStyle;
+			global::MarcTron.Plugin.Resource.Attribute.materialCardViewStyle = global::SalveminiApp.Droid.Resource.Attribute.materialCardViewStyle;
+			global::MarcTron.Plugin.Resource.Attribute.maxActionInlineWidth = global::SalveminiApp.Droid.Resource.Attribute.maxActionInlineWidth;
+			global::MarcTron.Plugin.Resource.Attribute.maxButtonHeight = global::SalveminiApp.Droid.Resource.Attribute.maxButtonHeight;
+			global::MarcTron.Plugin.Resource.Attribute.maxImageSize = global::SalveminiApp.Droid.Resource.Attribute.maxImageSize;
+			global::MarcTron.Plugin.Resource.Attribute.measureWithLargestChild = global::SalveminiApp.Droid.Resource.Attribute.measureWithLargestChild;
+			global::MarcTron.Plugin.Resource.Attribute.mediaRouteAudioTrackDrawable = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteAudioTrackDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.mediaRouteButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteButtonStyle;
+			global::MarcTron.Plugin.Resource.Attribute.mediaRouteButtonTint = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteButtonTint;
+			global::MarcTron.Plugin.Resource.Attribute.mediaRouteCloseDrawable = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteCloseDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.mediaRouteControlPanelThemeOverlay = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteControlPanelThemeOverlay;
+			global::MarcTron.Plugin.Resource.Attribute.mediaRouteDefaultIconDrawable = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteDefaultIconDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.mediaRoutePauseDrawable = global::SalveminiApp.Droid.Resource.Attribute.mediaRoutePauseDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.mediaRoutePlayDrawable = global::SalveminiApp.Droid.Resource.Attribute.mediaRoutePlayDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.mediaRouteSpeakerGroupIconDrawable = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteSpeakerGroupIconDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.mediaRouteSpeakerIconDrawable = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteSpeakerIconDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.mediaRouteStopDrawable = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteStopDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.mediaRouteTheme = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteTheme;
+			global::MarcTron.Plugin.Resource.Attribute.mediaRouteTvIconDrawable = global::SalveminiApp.Droid.Resource.Attribute.mediaRouteTvIconDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.menu = global::SalveminiApp.Droid.Resource.Attribute.menu;
+			global::MarcTron.Plugin.Resource.Attribute.multiChoiceItemLayout = global::SalveminiApp.Droid.Resource.Attribute.multiChoiceItemLayout;
+			global::MarcTron.Plugin.Resource.Attribute.navigationContentDescription = global::SalveminiApp.Droid.Resource.Attribute.navigationContentDescription;
+			global::MarcTron.Plugin.Resource.Attribute.navigationIcon = global::SalveminiApp.Droid.Resource.Attribute.navigationIcon;
+			global::MarcTron.Plugin.Resource.Attribute.navigationMode = global::SalveminiApp.Droid.Resource.Attribute.navigationMode;
+			global::MarcTron.Plugin.Resource.Attribute.navigationViewStyle = global::SalveminiApp.Droid.Resource.Attribute.navigationViewStyle;
+			global::MarcTron.Plugin.Resource.Attribute.numericModifiers = global::SalveminiApp.Droid.Resource.Attribute.numericModifiers;
+			global::MarcTron.Plugin.Resource.Attribute.overlapAnchor = global::SalveminiApp.Droid.Resource.Attribute.overlapAnchor;
+			global::MarcTron.Plugin.Resource.Attribute.paddingBottomNoButtons = global::SalveminiApp.Droid.Resource.Attribute.paddingBottomNoButtons;
+			global::MarcTron.Plugin.Resource.Attribute.paddingEnd = global::SalveminiApp.Droid.Resource.Attribute.paddingEnd;
+			global::MarcTron.Plugin.Resource.Attribute.paddingStart = global::SalveminiApp.Droid.Resource.Attribute.paddingStart;
+			global::MarcTron.Plugin.Resource.Attribute.paddingTopNoTitle = global::SalveminiApp.Droid.Resource.Attribute.paddingTopNoTitle;
+			global::MarcTron.Plugin.Resource.Attribute.panelBackground = global::SalveminiApp.Droid.Resource.Attribute.panelBackground;
+			global::MarcTron.Plugin.Resource.Attribute.panelMenuListTheme = global::SalveminiApp.Droid.Resource.Attribute.panelMenuListTheme;
+			global::MarcTron.Plugin.Resource.Attribute.panelMenuListWidth = global::SalveminiApp.Droid.Resource.Attribute.panelMenuListWidth;
+			global::MarcTron.Plugin.Resource.Attribute.passwordToggleContentDescription = global::SalveminiApp.Droid.Resource.Attribute.passwordToggleContentDescription;
+			global::MarcTron.Plugin.Resource.Attribute.passwordToggleDrawable = global::SalveminiApp.Droid.Resource.Attribute.passwordToggleDrawable;
+			global::MarcTron.Plugin.Resource.Attribute.passwordToggleEnabled = global::SalveminiApp.Droid.Resource.Attribute.passwordToggleEnabled;
+			global::MarcTron.Plugin.Resource.Attribute.passwordToggleTint = global::SalveminiApp.Droid.Resource.Attribute.passwordToggleTint;
+			global::MarcTron.Plugin.Resource.Attribute.passwordToggleTintMode = global::SalveminiApp.Droid.Resource.Attribute.passwordToggleTintMode;
+			global::MarcTron.Plugin.Resource.Attribute.popupMenuStyle = global::SalveminiApp.Droid.Resource.Attribute.popupMenuStyle;
+			global::MarcTron.Plugin.Resource.Attribute.popupTheme = global::SalveminiApp.Droid.Resource.Attribute.popupTheme;
+			global::MarcTron.Plugin.Resource.Attribute.popupWindowStyle = global::SalveminiApp.Droid.Resource.Attribute.popupWindowStyle;
+			global::MarcTron.Plugin.Resource.Attribute.preserveIconSpacing = global::SalveminiApp.Droid.Resource.Attribute.preserveIconSpacing;
+			global::MarcTron.Plugin.Resource.Attribute.pressedTranslationZ = global::SalveminiApp.Droid.Resource.Attribute.pressedTranslationZ;
+			global::MarcTron.Plugin.Resource.Attribute.progressBarPadding = global::SalveminiApp.Droid.Resource.Attribute.progressBarPadding;
+			global::MarcTron.Plugin.Resource.Attribute.progressBarStyle = global::SalveminiApp.Droid.Resource.Attribute.progressBarStyle;
+			global::MarcTron.Plugin.Resource.Attribute.queryBackground = global::SalveminiApp.Droid.Resource.Attribute.queryBackground;
+			global::MarcTron.Plugin.Resource.Attribute.queryHint = global::SalveminiApp.Droid.Resource.Attribute.queryHint;
+			global::MarcTron.Plugin.Resource.Attribute.radioButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.radioButtonStyle;
+			global::MarcTron.Plugin.Resource.Attribute.ratingBarStyle = global::SalveminiApp.Droid.Resource.Attribute.ratingBarStyle;
+			global::MarcTron.Plugin.Resource.Attribute.ratingBarStyleIndicator = global::SalveminiApp.Droid.Resource.Attribute.ratingBarStyleIndicator;
+			global::MarcTron.Plugin.Resource.Attribute.ratingBarStyleSmall = global::SalveminiApp.Droid.Resource.Attribute.ratingBarStyleSmall;
+			global::MarcTron.Plugin.Resource.Attribute.reverseLayout = global::SalveminiApp.Droid.Resource.Attribute.reverseLayout;
+			global::MarcTron.Plugin.Resource.Attribute.rippleColor = global::SalveminiApp.Droid.Resource.Attribute.rippleColor;
+			global::MarcTron.Plugin.Resource.Attribute.scrimAnimationDuration = global::SalveminiApp.Droid.Resource.Attribute.scrimAnimationDuration;
+			global::MarcTron.Plugin.Resource.Attribute.scrimBackground = global::SalveminiApp.Droid.Resource.Attribute.scrimBackground;
+			global::MarcTron.Plugin.Resource.Attribute.scrimVisibleHeightTrigger = global::SalveminiApp.Droid.Resource.Attribute.scrimVisibleHeightTrigger;
+			global::MarcTron.Plugin.Resource.Attribute.searchHintIcon = global::SalveminiApp.Droid.Resource.Attribute.searchHintIcon;
+			global::MarcTron.Plugin.Resource.Attribute.searchIcon = global::SalveminiApp.Droid.Resource.Attribute.searchIcon;
+			global::MarcTron.Plugin.Resource.Attribute.searchViewStyle = global::SalveminiApp.Droid.Resource.Attribute.searchViewStyle;
+			global::MarcTron.Plugin.Resource.Attribute.seekBarStyle = global::SalveminiApp.Droid.Resource.Attribute.seekBarStyle;
+			global::MarcTron.Plugin.Resource.Attribute.selectableItemBackground = global::SalveminiApp.Droid.Resource.Attribute.selectableItemBackground;
+			global::MarcTron.Plugin.Resource.Attribute.selectableItemBackgroundBorderless = global::SalveminiApp.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::MarcTron.Plugin.Resource.Attribute.showAsAction = global::SalveminiApp.Droid.Resource.Attribute.showAsAction;
+			global::MarcTron.Plugin.Resource.Attribute.showDividers = global::SalveminiApp.Droid.Resource.Attribute.showDividers;
+			global::MarcTron.Plugin.Resource.Attribute.showMotionSpec = global::SalveminiApp.Droid.Resource.Attribute.showMotionSpec;
+			global::MarcTron.Plugin.Resource.Attribute.showText = global::SalveminiApp.Droid.Resource.Attribute.showText;
+			global::MarcTron.Plugin.Resource.Attribute.showTitle = global::SalveminiApp.Droid.Resource.Attribute.showTitle;
+			global::MarcTron.Plugin.Resource.Attribute.singleChoiceItemLayout = global::SalveminiApp.Droid.Resource.Attribute.singleChoiceItemLayout;
+			global::MarcTron.Plugin.Resource.Attribute.singleLine = global::SalveminiApp.Droid.Resource.Attribute.singleLine;
+			global::MarcTron.Plugin.Resource.Attribute.singleSelection = global::SalveminiApp.Droid.Resource.Attribute.singleSelection;
+			global::MarcTron.Plugin.Resource.Attribute.snackbarButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.snackbarButtonStyle;
+			global::MarcTron.Plugin.Resource.Attribute.snackbarStyle = global::SalveminiApp.Droid.Resource.Attribute.snackbarStyle;
+			global::MarcTron.Plugin.Resource.Attribute.spanCount = global::SalveminiApp.Droid.Resource.Attribute.spanCount;
+			global::MarcTron.Plugin.Resource.Attribute.spinBars = global::SalveminiApp.Droid.Resource.Attribute.spinBars;
+			global::MarcTron.Plugin.Resource.Attribute.spinnerDropDownItemStyle = global::SalveminiApp.Droid.Resource.Attribute.spinnerDropDownItemStyle;
+			global::MarcTron.Plugin.Resource.Attribute.spinnerStyle = global::SalveminiApp.Droid.Resource.Attribute.spinnerStyle;
+			global::MarcTron.Plugin.Resource.Attribute.splitTrack = global::SalveminiApp.Droid.Resource.Attribute.splitTrack;
+			global::MarcTron.Plugin.Resource.Attribute.srcCompat = global::SalveminiApp.Droid.Resource.Attribute.srcCompat;
+			global::MarcTron.Plugin.Resource.Attribute.stackFromEnd = global::SalveminiApp.Droid.Resource.Attribute.stackFromEnd;
+			global::MarcTron.Plugin.Resource.Attribute.state_above_anchor = global::SalveminiApp.Droid.Resource.Attribute.state_above_anchor;
+			global::MarcTron.Plugin.Resource.Attribute.state_collapsed = global::SalveminiApp.Droid.Resource.Attribute.state_collapsed;
+			global::MarcTron.Plugin.Resource.Attribute.state_collapsible = global::SalveminiApp.Droid.Resource.Attribute.state_collapsible;
+			global::MarcTron.Plugin.Resource.Attribute.state_liftable = global::SalveminiApp.Droid.Resource.Attribute.state_liftable;
+			global::MarcTron.Plugin.Resource.Attribute.state_lifted = global::SalveminiApp.Droid.Resource.Attribute.state_lifted;
+			global::MarcTron.Plugin.Resource.Attribute.statusBarBackground = global::SalveminiApp.Droid.Resource.Attribute.statusBarBackground;
+			global::MarcTron.Plugin.Resource.Attribute.statusBarScrim = global::SalveminiApp.Droid.Resource.Attribute.statusBarScrim;
+			global::MarcTron.Plugin.Resource.Attribute.strokeColor = global::SalveminiApp.Droid.Resource.Attribute.strokeColor;
+			global::MarcTron.Plugin.Resource.Attribute.strokeWidth = global::SalveminiApp.Droid.Resource.Attribute.strokeWidth;
+			global::MarcTron.Plugin.Resource.Attribute.subMenuArrow = global::SalveminiApp.Droid.Resource.Attribute.subMenuArrow;
+			global::MarcTron.Plugin.Resource.Attribute.submitBackground = global::SalveminiApp.Droid.Resource.Attribute.submitBackground;
+			global::MarcTron.Plugin.Resource.Attribute.subtitle = global::SalveminiApp.Droid.Resource.Attribute.subtitle;
+			global::MarcTron.Plugin.Resource.Attribute.subtitleTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.subtitleTextAppearance;
+			global::MarcTron.Plugin.Resource.Attribute.subtitleTextColor = global::SalveminiApp.Droid.Resource.Attribute.subtitleTextColor;
+			global::MarcTron.Plugin.Resource.Attribute.subtitleTextStyle = global::SalveminiApp.Droid.Resource.Attribute.subtitleTextStyle;
+			global::MarcTron.Plugin.Resource.Attribute.suggestionRowLayout = global::SalveminiApp.Droid.Resource.Attribute.suggestionRowLayout;
+			global::MarcTron.Plugin.Resource.Attribute.switchMinWidth = global::SalveminiApp.Droid.Resource.Attribute.switchMinWidth;
+			global::MarcTron.Plugin.Resource.Attribute.switchPadding = global::SalveminiApp.Droid.Resource.Attribute.switchPadding;
+			global::MarcTron.Plugin.Resource.Attribute.switchStyle = global::SalveminiApp.Droid.Resource.Attribute.switchStyle;
+			global::MarcTron.Plugin.Resource.Attribute.switchTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.switchTextAppearance;
+			global::MarcTron.Plugin.Resource.Attribute.tabBackground = global::SalveminiApp.Droid.Resource.Attribute.tabBackground;
+			global::MarcTron.Plugin.Resource.Attribute.tabContentStart = global::SalveminiApp.Droid.Resource.Attribute.tabContentStart;
+			global::MarcTron.Plugin.Resource.Attribute.tabGravity = global::SalveminiApp.Droid.Resource.Attribute.tabGravity;
+			global::MarcTron.Plugin.Resource.Attribute.tabIconTint = global::SalveminiApp.Droid.Resource.Attribute.tabIconTint;
+			global::MarcTron.Plugin.Resource.Attribute.tabIconTintMode = global::SalveminiApp.Droid.Resource.Attribute.tabIconTintMode;
+			global::MarcTron.Plugin.Resource.Attribute.tabIndicator = global::SalveminiApp.Droid.Resource.Attribute.tabIndicator;
+			global::MarcTron.Plugin.Resource.Attribute.tabIndicatorAnimationDuration = global::SalveminiApp.Droid.Resource.Attribute.tabIndicatorAnimationDuration;
+			global::MarcTron.Plugin.Resource.Attribute.tabIndicatorColor = global::SalveminiApp.Droid.Resource.Attribute.tabIndicatorColor;
+			global::MarcTron.Plugin.Resource.Attribute.tabIndicatorFullWidth = global::SalveminiApp.Droid.Resource.Attribute.tabIndicatorFullWidth;
+			global::MarcTron.Plugin.Resource.Attribute.tabIndicatorGravity = global::SalveminiApp.Droid.Resource.Attribute.tabIndicatorGravity;
+			global::MarcTron.Plugin.Resource.Attribute.tabIndicatorHeight = global::SalveminiApp.Droid.Resource.Attribute.tabIndicatorHeight;
+			global::MarcTron.Plugin.Resource.Attribute.tabInlineLabel = global::SalveminiApp.Droid.Resource.Attribute.tabInlineLabel;
+			global::MarcTron.Plugin.Resource.Attribute.tabMaxWidth = global::SalveminiApp.Droid.Resource.Attribute.tabMaxWidth;
+			global::MarcTron.Plugin.Resource.Attribute.tabMinWidth = global::SalveminiApp.Droid.Resource.Attribute.tabMinWidth;
+			global::MarcTron.Plugin.Resource.Attribute.tabMode = global::SalveminiApp.Droid.Resource.Attribute.tabMode;
+			global::MarcTron.Plugin.Resource.Attribute.tabPadding = global::SalveminiApp.Droid.Resource.Attribute.tabPadding;
+			global::MarcTron.Plugin.Resource.Attribute.tabPaddingBottom = global::SalveminiApp.Droid.Resource.Attribute.tabPaddingBottom;
+			global::MarcTron.Plugin.Resource.Attribute.tabPaddingEnd = global::SalveminiApp.Droid.Resource.Attribute.tabPaddingEnd;
+			global::MarcTron.Plugin.Resource.Attribute.tabPaddingStart = global::SalveminiApp.Droid.Resource.Attribute.tabPaddingStart;
+			global::MarcTron.Plugin.Resource.Attribute.tabPaddingTop = global::SalveminiApp.Droid.Resource.Attribute.tabPaddingTop;
+			global::MarcTron.Plugin.Resource.Attribute.tabRippleColor = global::SalveminiApp.Droid.Resource.Attribute.tabRippleColor;
+			global::MarcTron.Plugin.Resource.Attribute.tabSelectedTextColor = global::SalveminiApp.Droid.Resource.Attribute.tabSelectedTextColor;
+			global::MarcTron.Plugin.Resource.Attribute.tabStyle = global::SalveminiApp.Droid.Resource.Attribute.tabStyle;
+			global::MarcTron.Plugin.Resource.Attribute.tabTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.tabTextAppearance;
+			global::MarcTron.Plugin.Resource.Attribute.tabTextColor = global::SalveminiApp.Droid.Resource.Attribute.tabTextColor;
+			global::MarcTron.Plugin.Resource.Attribute.tabUnboundedRipple = global::SalveminiApp.Droid.Resource.Attribute.tabUnboundedRipple;
+			global::MarcTron.Plugin.Resource.Attribute.textAllCaps = global::SalveminiApp.Droid.Resource.Attribute.textAllCaps;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceBody1 = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceBody1;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceBody2 = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceBody2;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceButton = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceButton;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceCaption = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceCaption;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceHeadline1 = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceHeadline1;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceHeadline2 = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceHeadline2;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceHeadline3 = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceHeadline3;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceHeadline4 = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceHeadline4;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceHeadline5 = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceHeadline5;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceHeadline6 = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceHeadline6;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceLargePopupMenu = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceListItem = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceListItem;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceListItemSecondary = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceListItemSecondary;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceListItemSmall = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceListItemSmall;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceOverline = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceOverline;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearancePopupMenuHeader = global::SalveminiApp.Droid.Resource.Attribute.textAppearancePopupMenuHeader;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceSearchResultSubtitle = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceSearchResultTitle = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceSmallPopupMenu = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceSubtitle1 = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceSubtitle1;
+			global::MarcTron.Plugin.Resource.Attribute.textAppearanceSubtitle2 = global::SalveminiApp.Droid.Resource.Attribute.textAppearanceSubtitle2;
+			global::MarcTron.Plugin.Resource.Attribute.textColorAlertDialogListItem = global::SalveminiApp.Droid.Resource.Attribute.textColorAlertDialogListItem;
+			global::MarcTron.Plugin.Resource.Attribute.textColorSearchUrl = global::SalveminiApp.Droid.Resource.Attribute.textColorSearchUrl;
+			global::MarcTron.Plugin.Resource.Attribute.textEndPadding = global::SalveminiApp.Droid.Resource.Attribute.textEndPadding;
+			global::MarcTron.Plugin.Resource.Attribute.textInputStyle = global::SalveminiApp.Droid.Resource.Attribute.textInputStyle;
+			global::MarcTron.Plugin.Resource.Attribute.textStartPadding = global::SalveminiApp.Droid.Resource.Attribute.textStartPadding;
+			global::MarcTron.Plugin.Resource.Attribute.theme = global::SalveminiApp.Droid.Resource.Attribute.theme;
+			global::MarcTron.Plugin.Resource.Attribute.thickness = global::SalveminiApp.Droid.Resource.Attribute.thickness;
+			global::MarcTron.Plugin.Resource.Attribute.thumbTextPadding = global::SalveminiApp.Droid.Resource.Attribute.thumbTextPadding;
+			global::MarcTron.Plugin.Resource.Attribute.thumbTint = global::SalveminiApp.Droid.Resource.Attribute.thumbTint;
+			global::MarcTron.Plugin.Resource.Attribute.thumbTintMode = global::SalveminiApp.Droid.Resource.Attribute.thumbTintMode;
+			global::MarcTron.Plugin.Resource.Attribute.tickMark = global::SalveminiApp.Droid.Resource.Attribute.tickMark;
+			global::MarcTron.Plugin.Resource.Attribute.tickMarkTint = global::SalveminiApp.Droid.Resource.Attribute.tickMarkTint;
+			global::MarcTron.Plugin.Resource.Attribute.tickMarkTintMode = global::SalveminiApp.Droid.Resource.Attribute.tickMarkTintMode;
+			global::MarcTron.Plugin.Resource.Attribute.tint = global::SalveminiApp.Droid.Resource.Attribute.tint;
+			global::MarcTron.Plugin.Resource.Attribute.tintMode = global::SalveminiApp.Droid.Resource.Attribute.tintMode;
+			global::MarcTron.Plugin.Resource.Attribute.title = global::SalveminiApp.Droid.Resource.Attribute.title;
+			global::MarcTron.Plugin.Resource.Attribute.titleEnabled = global::SalveminiApp.Droid.Resource.Attribute.titleEnabled;
+			global::MarcTron.Plugin.Resource.Attribute.titleMargin = global::SalveminiApp.Droid.Resource.Attribute.titleMargin;
+			global::MarcTron.Plugin.Resource.Attribute.titleMarginBottom = global::SalveminiApp.Droid.Resource.Attribute.titleMarginBottom;
+			global::MarcTron.Plugin.Resource.Attribute.titleMarginEnd = global::SalveminiApp.Droid.Resource.Attribute.titleMarginEnd;
+			global::MarcTron.Plugin.Resource.Attribute.titleMargins = global::SalveminiApp.Droid.Resource.Attribute.titleMargins;
+			global::MarcTron.Plugin.Resource.Attribute.titleMarginStart = global::SalveminiApp.Droid.Resource.Attribute.titleMarginStart;
+			global::MarcTron.Plugin.Resource.Attribute.titleMarginTop = global::SalveminiApp.Droid.Resource.Attribute.titleMarginTop;
+			global::MarcTron.Plugin.Resource.Attribute.titleTextAppearance = global::SalveminiApp.Droid.Resource.Attribute.titleTextAppearance;
+			global::MarcTron.Plugin.Resource.Attribute.titleTextColor = global::SalveminiApp.Droid.Resource.Attribute.titleTextColor;
+			global::MarcTron.Plugin.Resource.Attribute.titleTextStyle = global::SalveminiApp.Droid.Resource.Attribute.titleTextStyle;
+			global::MarcTron.Plugin.Resource.Attribute.toolbarId = global::SalveminiApp.Droid.Resource.Attribute.toolbarId;
+			global::MarcTron.Plugin.Resource.Attribute.toolbarNavigationButtonStyle = global::SalveminiApp.Droid.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::MarcTron.Plugin.Resource.Attribute.toolbarStyle = global::SalveminiApp.Droid.Resource.Attribute.toolbarStyle;
+			global::MarcTron.Plugin.Resource.Attribute.tooltipForegroundColor = global::SalveminiApp.Droid.Resource.Attribute.tooltipForegroundColor;
+			global::MarcTron.Plugin.Resource.Attribute.tooltipFrameBackground = global::SalveminiApp.Droid.Resource.Attribute.tooltipFrameBackground;
+			global::MarcTron.Plugin.Resource.Attribute.tooltipText = global::SalveminiApp.Droid.Resource.Attribute.tooltipText;
+			global::MarcTron.Plugin.Resource.Attribute.track = global::SalveminiApp.Droid.Resource.Attribute.track;
+			global::MarcTron.Plugin.Resource.Attribute.trackTint = global::SalveminiApp.Droid.Resource.Attribute.trackTint;
+			global::MarcTron.Plugin.Resource.Attribute.trackTintMode = global::SalveminiApp.Droid.Resource.Attribute.trackTintMode;
+			global::MarcTron.Plugin.Resource.Attribute.ttcIndex = global::SalveminiApp.Droid.Resource.Attribute.ttcIndex;
+			global::MarcTron.Plugin.Resource.Attribute.useCompatPadding = global::SalveminiApp.Droid.Resource.Attribute.useCompatPadding;
+			global::MarcTron.Plugin.Resource.Attribute.viewInflaterClass = global::SalveminiApp.Droid.Resource.Attribute.viewInflaterClass;
+			global::MarcTron.Plugin.Resource.Attribute.voiceIcon = global::SalveminiApp.Droid.Resource.Attribute.voiceIcon;
+			global::MarcTron.Plugin.Resource.Attribute.windowActionBar = global::SalveminiApp.Droid.Resource.Attribute.windowActionBar;
+			global::MarcTron.Plugin.Resource.Attribute.windowActionBarOverlay = global::SalveminiApp.Droid.Resource.Attribute.windowActionBarOverlay;
+			global::MarcTron.Plugin.Resource.Attribute.windowActionModeOverlay = global::SalveminiApp.Droid.Resource.Attribute.windowActionModeOverlay;
+			global::MarcTron.Plugin.Resource.Attribute.windowFixedHeightMajor = global::SalveminiApp.Droid.Resource.Attribute.windowFixedHeightMajor;
+			global::MarcTron.Plugin.Resource.Attribute.windowFixedHeightMinor = global::SalveminiApp.Droid.Resource.Attribute.windowFixedHeightMinor;
+			global::MarcTron.Plugin.Resource.Attribute.windowFixedWidthMajor = global::SalveminiApp.Droid.Resource.Attribute.windowFixedWidthMajor;
+			global::MarcTron.Plugin.Resource.Attribute.windowFixedWidthMinor = global::SalveminiApp.Droid.Resource.Attribute.windowFixedWidthMinor;
+			global::MarcTron.Plugin.Resource.Attribute.windowMinWidthMajor = global::SalveminiApp.Droid.Resource.Attribute.windowMinWidthMajor;
+			global::MarcTron.Plugin.Resource.Attribute.windowMinWidthMinor = global::SalveminiApp.Droid.Resource.Attribute.windowMinWidthMinor;
+			global::MarcTron.Plugin.Resource.Attribute.windowNoTitle = global::SalveminiApp.Droid.Resource.Attribute.windowNoTitle;
+			global::MarcTron.Plugin.Resource.Boolean.abc_action_bar_embed_tabs = global::SalveminiApp.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::MarcTron.Plugin.Resource.Boolean.abc_allow_stacked_button_bar = global::SalveminiApp.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::MarcTron.Plugin.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::SalveminiApp.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::MarcTron.Plugin.Resource.Boolean.mtrl_btn_textappearance_all_caps = global::SalveminiApp.Droid.Resource.Boolean.mtrl_btn_textappearance_all_caps;
+			global::MarcTron.Plugin.Resource.Color.abc_background_cache_hint_selector_material_dark = global::SalveminiApp.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::MarcTron.Plugin.Resource.Color.abc_background_cache_hint_selector_material_light = global::SalveminiApp.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::MarcTron.Plugin.Resource.Color.abc_btn_colored_borderless_text_material = global::SalveminiApp.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
+			global::MarcTron.Plugin.Resource.Color.abc_btn_colored_text_material = global::SalveminiApp.Droid.Resource.Color.abc_btn_colored_text_material;
+			global::MarcTron.Plugin.Resource.Color.abc_color_highlight_material = global::SalveminiApp.Droid.Resource.Color.abc_color_highlight_material;
+			global::MarcTron.Plugin.Resource.Color.abc_hint_foreground_material_dark = global::SalveminiApp.Droid.Resource.Color.abc_hint_foreground_material_dark;
+			global::MarcTron.Plugin.Resource.Color.abc_hint_foreground_material_light = global::SalveminiApp.Droid.Resource.Color.abc_hint_foreground_material_light;
+			global::MarcTron.Plugin.Resource.Color.abc_input_method_navigation_guard = global::SalveminiApp.Droid.Resource.Color.abc_input_method_navigation_guard;
+			global::MarcTron.Plugin.Resource.Color.abc_primary_text_disable_only_material_dark = global::SalveminiApp.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::MarcTron.Plugin.Resource.Color.abc_primary_text_disable_only_material_light = global::SalveminiApp.Droid.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::MarcTron.Plugin.Resource.Color.abc_primary_text_material_dark = global::SalveminiApp.Droid.Resource.Color.abc_primary_text_material_dark;
+			global::MarcTron.Plugin.Resource.Color.abc_primary_text_material_light = global::SalveminiApp.Droid.Resource.Color.abc_primary_text_material_light;
+			global::MarcTron.Plugin.Resource.Color.abc_search_url_text = global::SalveminiApp.Droid.Resource.Color.abc_search_url_text;
+			global::MarcTron.Plugin.Resource.Color.abc_search_url_text_normal = global::SalveminiApp.Droid.Resource.Color.abc_search_url_text_normal;
+			global::MarcTron.Plugin.Resource.Color.abc_search_url_text_pressed = global::SalveminiApp.Droid.Resource.Color.abc_search_url_text_pressed;
+			global::MarcTron.Plugin.Resource.Color.abc_search_url_text_selected = global::SalveminiApp.Droid.Resource.Color.abc_search_url_text_selected;
+			global::MarcTron.Plugin.Resource.Color.abc_secondary_text_material_dark = global::SalveminiApp.Droid.Resource.Color.abc_secondary_text_material_dark;
+			global::MarcTron.Plugin.Resource.Color.abc_secondary_text_material_light = global::SalveminiApp.Droid.Resource.Color.abc_secondary_text_material_light;
+			global::MarcTron.Plugin.Resource.Color.abc_tint_btn_checkable = global::SalveminiApp.Droid.Resource.Color.abc_tint_btn_checkable;
+			global::MarcTron.Plugin.Resource.Color.abc_tint_default = global::SalveminiApp.Droid.Resource.Color.abc_tint_default;
+			global::MarcTron.Plugin.Resource.Color.abc_tint_edittext = global::SalveminiApp.Droid.Resource.Color.abc_tint_edittext;
+			global::MarcTron.Plugin.Resource.Color.abc_tint_seek_thumb = global::SalveminiApp.Droid.Resource.Color.abc_tint_seek_thumb;
+			global::MarcTron.Plugin.Resource.Color.abc_tint_spinner = global::SalveminiApp.Droid.Resource.Color.abc_tint_spinner;
+			global::MarcTron.Plugin.Resource.Color.abc_tint_switch_track = global::SalveminiApp.Droid.Resource.Color.abc_tint_switch_track;
+			global::MarcTron.Plugin.Resource.Color.accent_material_dark = global::SalveminiApp.Droid.Resource.Color.accent_material_dark;
+			global::MarcTron.Plugin.Resource.Color.accent_material_light = global::SalveminiApp.Droid.Resource.Color.accent_material_light;
+			global::MarcTron.Plugin.Resource.Color.background_floating_material_dark = global::SalveminiApp.Droid.Resource.Color.background_floating_material_dark;
+			global::MarcTron.Plugin.Resource.Color.background_floating_material_light = global::SalveminiApp.Droid.Resource.Color.background_floating_material_light;
+			global::MarcTron.Plugin.Resource.Color.background_material_dark = global::SalveminiApp.Droid.Resource.Color.background_material_dark;
+			global::MarcTron.Plugin.Resource.Color.background_material_light = global::SalveminiApp.Droid.Resource.Color.background_material_light;
+			global::MarcTron.Plugin.Resource.Color.bright_foreground_disabled_material_dark = global::SalveminiApp.Droid.Resource.Color.bright_foreground_disabled_material_dark;
+			global::MarcTron.Plugin.Resource.Color.bright_foreground_disabled_material_light = global::SalveminiApp.Droid.Resource.Color.bright_foreground_disabled_material_light;
+			global::MarcTron.Plugin.Resource.Color.bright_foreground_inverse_material_dark = global::SalveminiApp.Droid.Resource.Color.bright_foreground_inverse_material_dark;
+			global::MarcTron.Plugin.Resource.Color.bright_foreground_inverse_material_light = global::SalveminiApp.Droid.Resource.Color.bright_foreground_inverse_material_light;
+			global::MarcTron.Plugin.Resource.Color.bright_foreground_material_dark = global::SalveminiApp.Droid.Resource.Color.bright_foreground_material_dark;
+			global::MarcTron.Plugin.Resource.Color.bright_foreground_material_light = global::SalveminiApp.Droid.Resource.Color.bright_foreground_material_light;
+			global::MarcTron.Plugin.Resource.Color.browser_actions_bg_grey = global::SalveminiApp.Droid.Resource.Color.browser_actions_bg_grey;
+			global::MarcTron.Plugin.Resource.Color.browser_actions_divider_color = global::SalveminiApp.Droid.Resource.Color.browser_actions_divider_color;
+			global::MarcTron.Plugin.Resource.Color.browser_actions_text_color = global::SalveminiApp.Droid.Resource.Color.browser_actions_text_color;
+			global::MarcTron.Plugin.Resource.Color.browser_actions_title_color = global::SalveminiApp.Droid.Resource.Color.browser_actions_title_color;
+			global::MarcTron.Plugin.Resource.Color.button_material_dark = global::SalveminiApp.Droid.Resource.Color.button_material_dark;
+			global::MarcTron.Plugin.Resource.Color.button_material_light = global::SalveminiApp.Droid.Resource.Color.button_material_light;
+			global::MarcTron.Plugin.Resource.Color.cardview_dark_background = global::SalveminiApp.Droid.Resource.Color.cardview_dark_background;
+			global::MarcTron.Plugin.Resource.Color.cardview_light_background = global::SalveminiApp.Droid.Resource.Color.cardview_light_background;
+			global::MarcTron.Plugin.Resource.Color.cardview_shadow_end_color = global::SalveminiApp.Droid.Resource.Color.cardview_shadow_end_color;
+			global::MarcTron.Plugin.Resource.Color.cardview_shadow_start_color = global::SalveminiApp.Droid.Resource.Color.cardview_shadow_start_color;
+			global::MarcTron.Plugin.Resource.Color.design_bottom_navigation_shadow_color = global::SalveminiApp.Droid.Resource.Color.design_bottom_navigation_shadow_color;
+			global::MarcTron.Plugin.Resource.Color.design_default_color_primary = global::SalveminiApp.Droid.Resource.Color.design_default_color_primary;
+			global::MarcTron.Plugin.Resource.Color.design_default_color_primary_dark = global::SalveminiApp.Droid.Resource.Color.design_default_color_primary_dark;
+			global::MarcTron.Plugin.Resource.Color.design_error = global::SalveminiApp.Droid.Resource.Color.design_error;
+			global::MarcTron.Plugin.Resource.Color.design_fab_shadow_end_color = global::SalveminiApp.Droid.Resource.Color.design_fab_shadow_end_color;
+			global::MarcTron.Plugin.Resource.Color.design_fab_shadow_mid_color = global::SalveminiApp.Droid.Resource.Color.design_fab_shadow_mid_color;
+			global::MarcTron.Plugin.Resource.Color.design_fab_shadow_start_color = global::SalveminiApp.Droid.Resource.Color.design_fab_shadow_start_color;
+			global::MarcTron.Plugin.Resource.Color.design_fab_stroke_end_inner_color = global::SalveminiApp.Droid.Resource.Color.design_fab_stroke_end_inner_color;
+			global::MarcTron.Plugin.Resource.Color.design_fab_stroke_end_outer_color = global::SalveminiApp.Droid.Resource.Color.design_fab_stroke_end_outer_color;
+			global::MarcTron.Plugin.Resource.Color.design_fab_stroke_top_inner_color = global::SalveminiApp.Droid.Resource.Color.design_fab_stroke_top_inner_color;
+			global::MarcTron.Plugin.Resource.Color.design_fab_stroke_top_outer_color = global::SalveminiApp.Droid.Resource.Color.design_fab_stroke_top_outer_color;
+			global::MarcTron.Plugin.Resource.Color.design_snackbar_background_color = global::SalveminiApp.Droid.Resource.Color.design_snackbar_background_color;
+			global::MarcTron.Plugin.Resource.Color.design_tint_password_toggle = global::SalveminiApp.Droid.Resource.Color.design_tint_password_toggle;
+			global::MarcTron.Plugin.Resource.Color.dim_foreground_disabled_material_dark = global::SalveminiApp.Droid.Resource.Color.dim_foreground_disabled_material_dark;
+			global::MarcTron.Plugin.Resource.Color.dim_foreground_disabled_material_light = global::SalveminiApp.Droid.Resource.Color.dim_foreground_disabled_material_light;
+			global::MarcTron.Plugin.Resource.Color.dim_foreground_material_dark = global::SalveminiApp.Droid.Resource.Color.dim_foreground_material_dark;
+			global::MarcTron.Plugin.Resource.Color.dim_foreground_material_light = global::SalveminiApp.Droid.Resource.Color.dim_foreground_material_light;
+			global::MarcTron.Plugin.Resource.Color.error_color_material_dark = global::SalveminiApp.Droid.Resource.Color.error_color_material_dark;
+			global::MarcTron.Plugin.Resource.Color.error_color_material_light = global::SalveminiApp.Droid.Resource.Color.error_color_material_light;
+			global::MarcTron.Plugin.Resource.Color.foreground_material_dark = global::SalveminiApp.Droid.Resource.Color.foreground_material_dark;
+			global::MarcTron.Plugin.Resource.Color.foreground_material_light = global::SalveminiApp.Droid.Resource.Color.foreground_material_light;
+			global::MarcTron.Plugin.Resource.Color.highlighted_text_material_dark = global::SalveminiApp.Droid.Resource.Color.highlighted_text_material_dark;
+			global::MarcTron.Plugin.Resource.Color.highlighted_text_material_light = global::SalveminiApp.Droid.Resource.Color.highlighted_text_material_light;
+			global::MarcTron.Plugin.Resource.Color.material_blue_grey_800 = global::SalveminiApp.Droid.Resource.Color.material_blue_grey_800;
+			global::MarcTron.Plugin.Resource.Color.material_blue_grey_900 = global::SalveminiApp.Droid.Resource.Color.material_blue_grey_900;
+			global::MarcTron.Plugin.Resource.Color.material_blue_grey_950 = global::SalveminiApp.Droid.Resource.Color.material_blue_grey_950;
+			global::MarcTron.Plugin.Resource.Color.material_deep_teal_200 = global::SalveminiApp.Droid.Resource.Color.material_deep_teal_200;
+			global::MarcTron.Plugin.Resource.Color.material_deep_teal_500 = global::SalveminiApp.Droid.Resource.Color.material_deep_teal_500;
+			global::MarcTron.Plugin.Resource.Color.material_grey_100 = global::SalveminiApp.Droid.Resource.Color.material_grey_100;
+			global::MarcTron.Plugin.Resource.Color.material_grey_300 = global::SalveminiApp.Droid.Resource.Color.material_grey_300;
+			global::MarcTron.Plugin.Resource.Color.material_grey_50 = global::SalveminiApp.Droid.Resource.Color.material_grey_50;
+			global::MarcTron.Plugin.Resource.Color.material_grey_600 = global::SalveminiApp.Droid.Resource.Color.material_grey_600;
+			global::MarcTron.Plugin.Resource.Color.material_grey_800 = global::SalveminiApp.Droid.Resource.Color.material_grey_800;
+			global::MarcTron.Plugin.Resource.Color.material_grey_850 = global::SalveminiApp.Droid.Resource.Color.material_grey_850;
+			global::MarcTron.Plugin.Resource.Color.material_grey_900 = global::SalveminiApp.Droid.Resource.Color.material_grey_900;
+			global::MarcTron.Plugin.Resource.Color.mtrl_bottom_nav_colored_item_tint = global::SalveminiApp.Droid.Resource.Color.mtrl_bottom_nav_colored_item_tint;
+			global::MarcTron.Plugin.Resource.Color.mtrl_bottom_nav_item_tint = global::SalveminiApp.Droid.Resource.Color.mtrl_bottom_nav_item_tint;
+			global::MarcTron.Plugin.Resource.Color.mtrl_btn_bg_color_disabled = global::SalveminiApp.Droid.Resource.Color.mtrl_btn_bg_color_disabled;
+			global::MarcTron.Plugin.Resource.Color.mtrl_btn_bg_color_selector = global::SalveminiApp.Droid.Resource.Color.mtrl_btn_bg_color_selector;
+			global::MarcTron.Plugin.Resource.Color.mtrl_btn_ripple_color = global::SalveminiApp.Droid.Resource.Color.mtrl_btn_ripple_color;
+			global::MarcTron.Plugin.Resource.Color.mtrl_btn_stroke_color_selector = global::SalveminiApp.Droid.Resource.Color.mtrl_btn_stroke_color_selector;
+			global::MarcTron.Plugin.Resource.Color.mtrl_btn_text_btn_ripple_color = global::SalveminiApp.Droid.Resource.Color.mtrl_btn_text_btn_ripple_color;
+			global::MarcTron.Plugin.Resource.Color.mtrl_btn_text_color_disabled = global::SalveminiApp.Droid.Resource.Color.mtrl_btn_text_color_disabled;
+			global::MarcTron.Plugin.Resource.Color.mtrl_btn_text_color_selector = global::SalveminiApp.Droid.Resource.Color.mtrl_btn_text_color_selector;
+			global::MarcTron.Plugin.Resource.Color.mtrl_btn_transparent_bg_color = global::SalveminiApp.Droid.Resource.Color.mtrl_btn_transparent_bg_color;
+			global::MarcTron.Plugin.Resource.Color.mtrl_chip_background_color = global::SalveminiApp.Droid.Resource.Color.mtrl_chip_background_color;
+			global::MarcTron.Plugin.Resource.Color.mtrl_chip_close_icon_tint = global::SalveminiApp.Droid.Resource.Color.mtrl_chip_close_icon_tint;
+			global::MarcTron.Plugin.Resource.Color.mtrl_chip_ripple_color = global::SalveminiApp.Droid.Resource.Color.mtrl_chip_ripple_color;
+			global::MarcTron.Plugin.Resource.Color.mtrl_chip_text_color = global::SalveminiApp.Droid.Resource.Color.mtrl_chip_text_color;
+			global::MarcTron.Plugin.Resource.Color.mtrl_fab_ripple_color = global::SalveminiApp.Droid.Resource.Color.mtrl_fab_ripple_color;
+			global::MarcTron.Plugin.Resource.Color.mtrl_scrim_color = global::SalveminiApp.Droid.Resource.Color.mtrl_scrim_color;
+			global::MarcTron.Plugin.Resource.Color.mtrl_tabs_colored_ripple_color = global::SalveminiApp.Droid.Resource.Color.mtrl_tabs_colored_ripple_color;
+			global::MarcTron.Plugin.Resource.Color.mtrl_tabs_icon_color_selector = global::SalveminiApp.Droid.Resource.Color.mtrl_tabs_icon_color_selector;
+			global::MarcTron.Plugin.Resource.Color.mtrl_tabs_icon_color_selector_colored = global::SalveminiApp.Droid.Resource.Color.mtrl_tabs_icon_color_selector_colored;
+			global::MarcTron.Plugin.Resource.Color.mtrl_tabs_legacy_text_color_selector = global::SalveminiApp.Droid.Resource.Color.mtrl_tabs_legacy_text_color_selector;
+			global::MarcTron.Plugin.Resource.Color.mtrl_tabs_ripple_color = global::SalveminiApp.Droid.Resource.Color.mtrl_tabs_ripple_color;
+			global::MarcTron.Plugin.Resource.Color.mtrl_textinput_default_box_stroke_color = global::SalveminiApp.Droid.Resource.Color.mtrl_textinput_default_box_stroke_color;
+			global::MarcTron.Plugin.Resource.Color.mtrl_textinput_disabled_color = global::SalveminiApp.Droid.Resource.Color.mtrl_textinput_disabled_color;
+			global::MarcTron.Plugin.Resource.Color.mtrl_textinput_filled_box_default_background_color = global::SalveminiApp.Droid.Resource.Color.mtrl_textinput_filled_box_default_background_color;
+			global::MarcTron.Plugin.Resource.Color.mtrl_textinput_hovered_box_stroke_color = global::SalveminiApp.Droid.Resource.Color.mtrl_textinput_hovered_box_stroke_color;
+			global::MarcTron.Plugin.Resource.Color.mtrl_text_btn_text_color_selector = global::SalveminiApp.Droid.Resource.Color.mtrl_text_btn_text_color_selector;
+			global::MarcTron.Plugin.Resource.Color.notification_action_color_filter = global::SalveminiApp.Droid.Resource.Color.notification_action_color_filter;
+			global::MarcTron.Plugin.Resource.Color.notification_icon_bg_color = global::SalveminiApp.Droid.Resource.Color.notification_icon_bg_color;
+			global::MarcTron.Plugin.Resource.Color.notification_material_background_media_default_color = global::SalveminiApp.Droid.Resource.Color.notification_material_background_media_default_color;
+			global::MarcTron.Plugin.Resource.Color.primary_dark_material_dark = global::SalveminiApp.Droid.Resource.Color.primary_dark_material_dark;
+			global::MarcTron.Plugin.Resource.Color.primary_dark_material_light = global::SalveminiApp.Droid.Resource.Color.primary_dark_material_light;
+			global::MarcTron.Plugin.Resource.Color.primary_material_dark = global::SalveminiApp.Droid.Resource.Color.primary_material_dark;
+			global::MarcTron.Plugin.Resource.Color.primary_material_light = global::SalveminiApp.Droid.Resource.Color.primary_material_light;
+			global::MarcTron.Plugin.Resource.Color.primary_text_default_material_dark = global::SalveminiApp.Droid.Resource.Color.primary_text_default_material_dark;
+			global::MarcTron.Plugin.Resource.Color.primary_text_default_material_light = global::SalveminiApp.Droid.Resource.Color.primary_text_default_material_light;
+			global::MarcTron.Plugin.Resource.Color.primary_text_disabled_material_dark = global::SalveminiApp.Droid.Resource.Color.primary_text_disabled_material_dark;
+			global::MarcTron.Plugin.Resource.Color.primary_text_disabled_material_light = global::SalveminiApp.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::MarcTron.Plugin.Resource.Color.ripple_material_dark = global::SalveminiApp.Droid.Resource.Color.ripple_material_dark;
+			global::MarcTron.Plugin.Resource.Color.ripple_material_light = global::SalveminiApp.Droid.Resource.Color.ripple_material_light;
+			global::MarcTron.Plugin.Resource.Color.secondary_text_default_material_dark = global::SalveminiApp.Droid.Resource.Color.secondary_text_default_material_dark;
+			global::MarcTron.Plugin.Resource.Color.secondary_text_default_material_light = global::SalveminiApp.Droid.Resource.Color.secondary_text_default_material_light;
+			global::MarcTron.Plugin.Resource.Color.secondary_text_disabled_material_dark = global::SalveminiApp.Droid.Resource.Color.secondary_text_disabled_material_dark;
+			global::MarcTron.Plugin.Resource.Color.secondary_text_disabled_material_light = global::SalveminiApp.Droid.Resource.Color.secondary_text_disabled_material_light;
+			global::MarcTron.Plugin.Resource.Color.switch_thumb_disabled_material_dark = global::SalveminiApp.Droid.Resource.Color.switch_thumb_disabled_material_dark;
+			global::MarcTron.Plugin.Resource.Color.switch_thumb_disabled_material_light = global::SalveminiApp.Droid.Resource.Color.switch_thumb_disabled_material_light;
+			global::MarcTron.Plugin.Resource.Color.switch_thumb_material_dark = global::SalveminiApp.Droid.Resource.Color.switch_thumb_material_dark;
+			global::MarcTron.Plugin.Resource.Color.switch_thumb_material_light = global::SalveminiApp.Droid.Resource.Color.switch_thumb_material_light;
+			global::MarcTron.Plugin.Resource.Color.switch_thumb_normal_material_dark = global::SalveminiApp.Droid.Resource.Color.switch_thumb_normal_material_dark;
+			global::MarcTron.Plugin.Resource.Color.switch_thumb_normal_material_light = global::SalveminiApp.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::MarcTron.Plugin.Resource.Color.tooltip_background_dark = global::SalveminiApp.Droid.Resource.Color.tooltip_background_dark;
+			global::MarcTron.Plugin.Resource.Color.tooltip_background_light = global::SalveminiApp.Droid.Resource.Color.tooltip_background_light;
+			global::MarcTron.Plugin.Resource.Dimension.abc_action_bar_content_inset_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav;
+			global::MarcTron.Plugin.Resource.Dimension.abc_action_bar_default_height_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_default_height_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_action_bar_default_padding_end_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_action_bar_default_padding_start_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_action_bar_elevation_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_elevation_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_action_bar_stacked_max_height = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::MarcTron.Plugin.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::MarcTron.Plugin.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_action_button_min_height_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_button_min_height_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_action_button_min_width_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_button_min_width_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_action_button_min_width_overflow_material = global::SalveminiApp.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_alert_dialog_button_bar_height = global::SalveminiApp.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::MarcTron.Plugin.Resource.Dimension.abc_alert_dialog_button_dimen = global::SalveminiApp.Droid.Resource.Dimension.abc_alert_dialog_button_dimen;
+			global::MarcTron.Plugin.Resource.Dimension.abc_button_inset_horizontal_material = global::SalveminiApp.Droid.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_button_inset_vertical_material = global::SalveminiApp.Droid.Resource.Dimension.abc_button_inset_vertical_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_button_padding_horizontal_material = global::SalveminiApp.Droid.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_button_padding_vertical_material = global::SalveminiApp.Droid.Resource.Dimension.abc_button_padding_vertical_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::SalveminiApp.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width;
+			global::MarcTron.Plugin.Resource.Dimension.abc_config_prefDialogWidth = global::SalveminiApp.Droid.Resource.Dimension.abc_config_prefDialogWidth;
+			global::MarcTron.Plugin.Resource.Dimension.abc_control_corner_material = global::SalveminiApp.Droid.Resource.Dimension.abc_control_corner_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_control_inset_material = global::SalveminiApp.Droid.Resource.Dimension.abc_control_inset_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_control_padding_material = global::SalveminiApp.Droid.Resource.Dimension.abc_control_padding_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_dialog_corner_radius_material = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_corner_radius_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_dialog_fixed_height_major = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::MarcTron.Plugin.Resource.Dimension.abc_dialog_fixed_height_minor = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::MarcTron.Plugin.Resource.Dimension.abc_dialog_fixed_width_major = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::MarcTron.Plugin.Resource.Dimension.abc_dialog_fixed_width_minor = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::MarcTron.Plugin.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
+			global::MarcTron.Plugin.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title;
+			global::MarcTron.Plugin.Resource.Dimension.abc_dialog_min_width_major = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_min_width_major;
+			global::MarcTron.Plugin.Resource.Dimension.abc_dialog_min_width_minor = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_min_width_minor;
+			global::MarcTron.Plugin.Resource.Dimension.abc_dialog_padding_material = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_padding_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_dialog_padding_top_material = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_padding_top_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_dialog_title_divider_material = global::SalveminiApp.Droid.Resource.Dimension.abc_dialog_title_divider_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_disabled_alpha_material_dark = global::SalveminiApp.Droid.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::MarcTron.Plugin.Resource.Dimension.abc_disabled_alpha_material_light = global::SalveminiApp.Droid.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::MarcTron.Plugin.Resource.Dimension.abc_dropdownitem_icon_width = global::SalveminiApp.Droid.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::MarcTron.Plugin.Resource.Dimension.abc_dropdownitem_text_padding_left = global::SalveminiApp.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::MarcTron.Plugin.Resource.Dimension.abc_dropdownitem_text_padding_right = global::SalveminiApp.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::MarcTron.Plugin.Resource.Dimension.abc_edit_text_inset_bottom_material = global::SalveminiApp.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::SalveminiApp.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_edit_text_inset_top_material = global::SalveminiApp.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_floating_window_z = global::SalveminiApp.Droid.Resource.Dimension.abc_floating_window_z;
+			global::MarcTron.Plugin.Resource.Dimension.abc_list_item_padding_horizontal_material = global::SalveminiApp.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_panel_menu_list_width = global::SalveminiApp.Droid.Resource.Dimension.abc_panel_menu_list_width;
+			global::MarcTron.Plugin.Resource.Dimension.abc_progress_bar_height_material = global::SalveminiApp.Droid.Resource.Dimension.abc_progress_bar_height_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_search_view_preferred_height = global::SalveminiApp.Droid.Resource.Dimension.abc_search_view_preferred_height;
+			global::MarcTron.Plugin.Resource.Dimension.abc_search_view_preferred_width = global::SalveminiApp.Droid.Resource.Dimension.abc_search_view_preferred_width;
+			global::MarcTron.Plugin.Resource.Dimension.abc_seekbar_track_background_height_material = global::SalveminiApp.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_seekbar_track_progress_height_material = global::SalveminiApp.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_select_dialog_padding_start_material = global::SalveminiApp.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_switch_padding = global::SalveminiApp.Droid.Resource.Dimension.abc_switch_padding;
+			global::MarcTron.Plugin.Resource.Dimension.abc_text_size_body_1_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_body_1_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_text_size_body_2_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_body_2_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_text_size_button_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_button_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_text_size_caption_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_caption_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_text_size_display_1_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_display_1_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_text_size_display_2_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_display_2_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_text_size_display_3_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_display_3_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_text_size_display_4_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_display_4_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_text_size_headline_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_headline_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_text_size_large_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_large_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_text_size_medium_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_medium_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_text_size_menu_header_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_menu_header_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_text_size_menu_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_menu_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_text_size_small_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_small_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_text_size_subhead_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_subhead_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::MarcTron.Plugin.Resource.Dimension.abc_text_size_title_material = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_title_material;
+			global::MarcTron.Plugin.Resource.Dimension.abc_text_size_title_material_toolbar = global::SalveminiApp.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::MarcTron.Plugin.Resource.Dimension.browser_actions_context_menu_max_width = global::SalveminiApp.Droid.Resource.Dimension.browser_actions_context_menu_max_width;
+			global::MarcTron.Plugin.Resource.Dimension.browser_actions_context_menu_min_padding = global::SalveminiApp.Droid.Resource.Dimension.browser_actions_context_menu_min_padding;
+			global::MarcTron.Plugin.Resource.Dimension.cardview_compat_inset_shadow = global::SalveminiApp.Droid.Resource.Dimension.cardview_compat_inset_shadow;
+			global::MarcTron.Plugin.Resource.Dimension.cardview_default_elevation = global::SalveminiApp.Droid.Resource.Dimension.cardview_default_elevation;
+			global::MarcTron.Plugin.Resource.Dimension.cardview_default_radius = global::SalveminiApp.Droid.Resource.Dimension.cardview_default_radius;
+			global::MarcTron.Plugin.Resource.Dimension.compat_button_inset_horizontal_material = global::SalveminiApp.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::MarcTron.Plugin.Resource.Dimension.compat_button_inset_vertical_material = global::SalveminiApp.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::MarcTron.Plugin.Resource.Dimension.compat_button_padding_horizontal_material = global::SalveminiApp.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::MarcTron.Plugin.Resource.Dimension.compat_button_padding_vertical_material = global::SalveminiApp.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::MarcTron.Plugin.Resource.Dimension.compat_control_corner_material = global::SalveminiApp.Droid.Resource.Dimension.compat_control_corner_material;
+			global::MarcTron.Plugin.Resource.Dimension.compat_notification_large_icon_max_height = global::SalveminiApp.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
+			global::MarcTron.Plugin.Resource.Dimension.compat_notification_large_icon_max_width = global::SalveminiApp.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::MarcTron.Plugin.Resource.Dimension.design_appbar_elevation = global::SalveminiApp.Droid.Resource.Dimension.design_appbar_elevation;
+			global::MarcTron.Plugin.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width;
+			global::MarcTron.Plugin.Resource.Dimension.design_bottom_navigation_active_item_min_width = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_active_item_min_width;
+			global::MarcTron.Plugin.Resource.Dimension.design_bottom_navigation_active_text_size = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_active_text_size;
+			global::MarcTron.Plugin.Resource.Dimension.design_bottom_navigation_elevation = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_elevation;
+			global::MarcTron.Plugin.Resource.Dimension.design_bottom_navigation_height = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_height;
+			global::MarcTron.Plugin.Resource.Dimension.design_bottom_navigation_icon_size = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_icon_size;
+			global::MarcTron.Plugin.Resource.Dimension.design_bottom_navigation_item_max_width = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_item_max_width;
+			global::MarcTron.Plugin.Resource.Dimension.design_bottom_navigation_item_min_width = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_item_min_width;
+			global::MarcTron.Plugin.Resource.Dimension.design_bottom_navigation_margin = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_margin;
+			global::MarcTron.Plugin.Resource.Dimension.design_bottom_navigation_shadow_height = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_shadow_height;
+			global::MarcTron.Plugin.Resource.Dimension.design_bottom_navigation_text_size = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_navigation_text_size;
+			global::MarcTron.Plugin.Resource.Dimension.design_bottom_sheet_modal_elevation = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation;
+			global::MarcTron.Plugin.Resource.Dimension.design_bottom_sheet_peek_height_min = global::SalveminiApp.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min;
+			global::MarcTron.Plugin.Resource.Dimension.design_fab_border_width = global::SalveminiApp.Droid.Resource.Dimension.design_fab_border_width;
+			global::MarcTron.Plugin.Resource.Dimension.design_fab_elevation = global::SalveminiApp.Droid.Resource.Dimension.design_fab_elevation;
+			global::MarcTron.Plugin.Resource.Dimension.design_fab_image_size = global::SalveminiApp.Droid.Resource.Dimension.design_fab_image_size;
+			global::MarcTron.Plugin.Resource.Dimension.design_fab_size_mini = global::SalveminiApp.Droid.Resource.Dimension.design_fab_size_mini;
+			global::MarcTron.Plugin.Resource.Dimension.design_fab_size_normal = global::SalveminiApp.Droid.Resource.Dimension.design_fab_size_normal;
+			global::MarcTron.Plugin.Resource.Dimension.design_fab_translation_z_hovered_focused = global::SalveminiApp.Droid.Resource.Dimension.design_fab_translation_z_hovered_focused;
+			global::MarcTron.Plugin.Resource.Dimension.design_fab_translation_z_pressed = global::SalveminiApp.Droid.Resource.Dimension.design_fab_translation_z_pressed;
+			global::MarcTron.Plugin.Resource.Dimension.design_navigation_elevation = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_elevation;
+			global::MarcTron.Plugin.Resource.Dimension.design_navigation_icon_padding = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_icon_padding;
+			global::MarcTron.Plugin.Resource.Dimension.design_navigation_icon_size = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_icon_size;
+			global::MarcTron.Plugin.Resource.Dimension.design_navigation_item_horizontal_padding = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_item_horizontal_padding;
+			global::MarcTron.Plugin.Resource.Dimension.design_navigation_item_icon_padding = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_item_icon_padding;
+			global::MarcTron.Plugin.Resource.Dimension.design_navigation_max_width = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_max_width;
+			global::MarcTron.Plugin.Resource.Dimension.design_navigation_padding_bottom = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_padding_bottom;
+			global::MarcTron.Plugin.Resource.Dimension.design_navigation_separator_vertical_padding = global::SalveminiApp.Droid.Resource.Dimension.design_navigation_separator_vertical_padding;
+			global::MarcTron.Plugin.Resource.Dimension.design_snackbar_action_inline_max_width = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::MarcTron.Plugin.Resource.Dimension.design_snackbar_background_corner_radius = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_background_corner_radius;
+			global::MarcTron.Plugin.Resource.Dimension.design_snackbar_elevation = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_elevation;
+			global::MarcTron.Plugin.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
+			global::MarcTron.Plugin.Resource.Dimension.design_snackbar_max_width = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_max_width;
+			global::MarcTron.Plugin.Resource.Dimension.design_snackbar_min_width = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_min_width;
+			global::MarcTron.Plugin.Resource.Dimension.design_snackbar_padding_horizontal = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_padding_horizontal;
+			global::MarcTron.Plugin.Resource.Dimension.design_snackbar_padding_vertical = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_padding_vertical;
+			global::MarcTron.Plugin.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines;
+			global::MarcTron.Plugin.Resource.Dimension.design_snackbar_text_size = global::SalveminiApp.Droid.Resource.Dimension.design_snackbar_text_size;
+			global::MarcTron.Plugin.Resource.Dimension.design_tab_max_width = global::SalveminiApp.Droid.Resource.Dimension.design_tab_max_width;
+			global::MarcTron.Plugin.Resource.Dimension.design_tab_scrollable_min_width = global::SalveminiApp.Droid.Resource.Dimension.design_tab_scrollable_min_width;
+			global::MarcTron.Plugin.Resource.Dimension.design_tab_text_size = global::SalveminiApp.Droid.Resource.Dimension.design_tab_text_size;
+			global::MarcTron.Plugin.Resource.Dimension.design_tab_text_size_2line = global::SalveminiApp.Droid.Resource.Dimension.design_tab_text_size_2line;
+			global::MarcTron.Plugin.Resource.Dimension.design_textinput_caption_translate_y = global::SalveminiApp.Droid.Resource.Dimension.design_textinput_caption_translate_y;
+			global::MarcTron.Plugin.Resource.Dimension.disabled_alpha_material_dark = global::SalveminiApp.Droid.Resource.Dimension.disabled_alpha_material_dark;
+			global::MarcTron.Plugin.Resource.Dimension.disabled_alpha_material_light = global::SalveminiApp.Droid.Resource.Dimension.disabled_alpha_material_light;
+			global::MarcTron.Plugin.Resource.Dimension.fastscroll_default_thickness = global::SalveminiApp.Droid.Resource.Dimension.fastscroll_default_thickness;
+			global::MarcTron.Plugin.Resource.Dimension.fastscroll_margin = global::SalveminiApp.Droid.Resource.Dimension.fastscroll_margin;
+			global::MarcTron.Plugin.Resource.Dimension.fastscroll_minimum_range = global::SalveminiApp.Droid.Resource.Dimension.fastscroll_minimum_range;
+			global::MarcTron.Plugin.Resource.Dimension.highlight_alpha_material_colored = global::SalveminiApp.Droid.Resource.Dimension.highlight_alpha_material_colored;
+			global::MarcTron.Plugin.Resource.Dimension.highlight_alpha_material_dark = global::SalveminiApp.Droid.Resource.Dimension.highlight_alpha_material_dark;
+			global::MarcTron.Plugin.Resource.Dimension.highlight_alpha_material_light = global::SalveminiApp.Droid.Resource.Dimension.highlight_alpha_material_light;
+			global::MarcTron.Plugin.Resource.Dimension.hint_alpha_material_dark = global::SalveminiApp.Droid.Resource.Dimension.hint_alpha_material_dark;
+			global::MarcTron.Plugin.Resource.Dimension.hint_alpha_material_light = global::SalveminiApp.Droid.Resource.Dimension.hint_alpha_material_light;
+			global::MarcTron.Plugin.Resource.Dimension.hint_pressed_alpha_material_dark = global::SalveminiApp.Droid.Resource.Dimension.hint_pressed_alpha_material_dark;
+			global::MarcTron.Plugin.Resource.Dimension.hint_pressed_alpha_material_light = global::SalveminiApp.Droid.Resource.Dimension.hint_pressed_alpha_material_light;
+			global::MarcTron.Plugin.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::SalveminiApp.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::MarcTron.Plugin.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::SalveminiApp.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::MarcTron.Plugin.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::SalveminiApp.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::MarcTron.Plugin.Resource.Dimension.mr_controller_volume_group_list_item_height = global::SalveminiApp.Droid.Resource.Dimension.mr_controller_volume_group_list_item_height;
+			global::MarcTron.Plugin.Resource.Dimension.mr_controller_volume_group_list_item_icon_size = global::SalveminiApp.Droid.Resource.Dimension.mr_controller_volume_group_list_item_icon_size;
+			global::MarcTron.Plugin.Resource.Dimension.mr_controller_volume_group_list_max_height = global::SalveminiApp.Droid.Resource.Dimension.mr_controller_volume_group_list_max_height;
+			global::MarcTron.Plugin.Resource.Dimension.mr_controller_volume_group_list_padding_top = global::SalveminiApp.Droid.Resource.Dimension.mr_controller_volume_group_list_padding_top;
+			global::MarcTron.Plugin.Resource.Dimension.mr_dialog_fixed_width_major = global::SalveminiApp.Droid.Resource.Dimension.mr_dialog_fixed_width_major;
+			global::MarcTron.Plugin.Resource.Dimension.mr_dialog_fixed_width_minor = global::SalveminiApp.Droid.Resource.Dimension.mr_dialog_fixed_width_minor;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode = global::SalveminiApp.Droid.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin = global::SalveminiApp.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius = global::SalveminiApp.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset = global::SalveminiApp.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_bottomappbar_height = global::SalveminiApp.Droid.Resource.Dimension.mtrl_bottomappbar_height;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_corner_radius = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_corner_radius;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_dialog_btn_min_width = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_dialog_btn_min_width;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_disabled_elevation = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_disabled_elevation;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_disabled_z = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_disabled_z;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_elevation = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_elevation;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_focused_z = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_focused_z;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_hovered_z = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_hovered_z;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_icon_btn_padding_left = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_icon_btn_padding_left;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_icon_padding = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_icon_padding;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_inset = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_inset;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_letter_spacing = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_letter_spacing;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_padding_bottom = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_padding_bottom;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_padding_left = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_padding_left;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_padding_right = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_padding_right;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_padding_top = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_padding_top;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_pressed_z = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_pressed_z;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_stroke_size = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_stroke_size;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_text_btn_icon_padding = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_text_btn_icon_padding;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_text_btn_padding_left = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_left;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_text_btn_padding_right = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_right;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_text_size = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_text_size;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_btn_z = global::SalveminiApp.Droid.Resource.Dimension.mtrl_btn_z;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_card_elevation = global::SalveminiApp.Droid.Resource.Dimension.mtrl_card_elevation;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_card_spacing = global::SalveminiApp.Droid.Resource.Dimension.mtrl_card_spacing;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_chip_pressed_translation_z = global::SalveminiApp.Droid.Resource.Dimension.mtrl_chip_pressed_translation_z;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_chip_text_size = global::SalveminiApp.Droid.Resource.Dimension.mtrl_chip_text_size;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_fab_elevation = global::SalveminiApp.Droid.Resource.Dimension.mtrl_fab_elevation;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_fab_translation_z_hovered_focused = global::SalveminiApp.Droid.Resource.Dimension.mtrl_fab_translation_z_hovered_focused;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_fab_translation_z_pressed = global::SalveminiApp.Droid.Resource.Dimension.mtrl_fab_translation_z_pressed;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_navigation_elevation = global::SalveminiApp.Droid.Resource.Dimension.mtrl_navigation_elevation;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_navigation_item_horizontal_padding = global::SalveminiApp.Droid.Resource.Dimension.mtrl_navigation_item_horizontal_padding;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_navigation_item_icon_padding = global::SalveminiApp.Droid.Resource.Dimension.mtrl_navigation_item_icon_padding;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_snackbar_background_corner_radius = global::SalveminiApp.Droid.Resource.Dimension.mtrl_snackbar_background_corner_radius;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_snackbar_margin = global::SalveminiApp.Droid.Resource.Dimension.mtrl_snackbar_margin;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_textinput_box_bottom_offset = global::SalveminiApp.Droid.Resource.Dimension.mtrl_textinput_box_bottom_offset;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_textinput_box_corner_radius_medium = global::SalveminiApp.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_medium;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_textinput_box_corner_radius_small = global::SalveminiApp.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_small;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_textinput_box_label_cutout_padding = global::SalveminiApp.Droid.Resource.Dimension.mtrl_textinput_box_label_cutout_padding;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_textinput_box_padding_end = global::SalveminiApp.Droid.Resource.Dimension.mtrl_textinput_box_padding_end;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_textinput_box_stroke_width_default = global::SalveminiApp.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_default;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_textinput_box_stroke_width_focused = global::SalveminiApp.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_focused;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding = global::SalveminiApp.Droid.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding;
+			global::MarcTron.Plugin.Resource.Dimension.mtrl_toolbar_default_height = global::SalveminiApp.Droid.Resource.Dimension.mtrl_toolbar_default_height;
+			global::MarcTron.Plugin.Resource.Dimension.notification_action_icon_size = global::SalveminiApp.Droid.Resource.Dimension.notification_action_icon_size;
+			global::MarcTron.Plugin.Resource.Dimension.notification_action_text_size = global::SalveminiApp.Droid.Resource.Dimension.notification_action_text_size;
+			global::MarcTron.Plugin.Resource.Dimension.notification_big_circle_margin = global::SalveminiApp.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::MarcTron.Plugin.Resource.Dimension.notification_content_margin_start = global::SalveminiApp.Droid.Resource.Dimension.notification_content_margin_start;
+			global::MarcTron.Plugin.Resource.Dimension.notification_large_icon_height = global::SalveminiApp.Droid.Resource.Dimension.notification_large_icon_height;
+			global::MarcTron.Plugin.Resource.Dimension.notification_large_icon_width = global::SalveminiApp.Droid.Resource.Dimension.notification_large_icon_width;
+			global::MarcTron.Plugin.Resource.Dimension.notification_main_column_padding_top = global::SalveminiApp.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::MarcTron.Plugin.Resource.Dimension.notification_media_narrow_margin = global::SalveminiApp.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::MarcTron.Plugin.Resource.Dimension.notification_right_icon_size = global::SalveminiApp.Droid.Resource.Dimension.notification_right_icon_size;
+			global::MarcTron.Plugin.Resource.Dimension.notification_right_side_padding_top = global::SalveminiApp.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::MarcTron.Plugin.Resource.Dimension.notification_small_icon_background_padding = global::SalveminiApp.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::MarcTron.Plugin.Resource.Dimension.notification_small_icon_size_as_large = global::SalveminiApp.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::MarcTron.Plugin.Resource.Dimension.notification_subtext_size = global::SalveminiApp.Droid.Resource.Dimension.notification_subtext_size;
+			global::MarcTron.Plugin.Resource.Dimension.notification_top_pad = global::SalveminiApp.Droid.Resource.Dimension.notification_top_pad;
+			global::MarcTron.Plugin.Resource.Dimension.notification_top_pad_large_text = global::SalveminiApp.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::MarcTron.Plugin.Resource.Dimension.subtitle_corner_radius = global::SalveminiApp.Droid.Resource.Dimension.subtitle_corner_radius;
+			global::MarcTron.Plugin.Resource.Dimension.subtitle_outline_width = global::SalveminiApp.Droid.Resource.Dimension.subtitle_outline_width;
+			global::MarcTron.Plugin.Resource.Dimension.subtitle_shadow_offset = global::SalveminiApp.Droid.Resource.Dimension.subtitle_shadow_offset;
+			global::MarcTron.Plugin.Resource.Dimension.subtitle_shadow_radius = global::SalveminiApp.Droid.Resource.Dimension.subtitle_shadow_radius;
+			global::MarcTron.Plugin.Resource.Dimension.tooltip_corner_radius = global::SalveminiApp.Droid.Resource.Dimension.tooltip_corner_radius;
+			global::MarcTron.Plugin.Resource.Dimension.tooltip_horizontal_padding = global::SalveminiApp.Droid.Resource.Dimension.tooltip_horizontal_padding;
+			global::MarcTron.Plugin.Resource.Dimension.tooltip_margin = global::SalveminiApp.Droid.Resource.Dimension.tooltip_margin;
+			global::MarcTron.Plugin.Resource.Dimension.tooltip_precise_anchor_extra_offset = global::SalveminiApp.Droid.Resource.Dimension.tooltip_precise_anchor_extra_offset;
+			global::MarcTron.Plugin.Resource.Dimension.tooltip_precise_anchor_threshold = global::SalveminiApp.Droid.Resource.Dimension.tooltip_precise_anchor_threshold;
+			global::MarcTron.Plugin.Resource.Dimension.tooltip_vertical_padding = global::SalveminiApp.Droid.Resource.Dimension.tooltip_vertical_padding;
+			global::MarcTron.Plugin.Resource.Dimension.tooltip_y_offset_non_touch = global::SalveminiApp.Droid.Resource.Dimension.tooltip_y_offset_non_touch;
+			global::MarcTron.Plugin.Resource.Dimension.tooltip_y_offset_touch = global::SalveminiApp.Droid.Resource.Dimension.tooltip_y_offset_touch;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_action_bar_item_background_material = global::SalveminiApp.Droid.Resource.Drawable.abc_action_bar_item_background_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_btn_borderless_material = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_borderless_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_btn_check_material = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_check_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::MarcTron.Plugin.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::MarcTron.Plugin.Resource.Drawable.abc_btn_colored_material = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_colored_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_btn_default_mtrl_shape = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::MarcTron.Plugin.Resource.Drawable.abc_btn_radio_material = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_radio_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::MarcTron.Plugin.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::MarcTron.Plugin.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::MarcTron.Plugin.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::SalveminiApp.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::MarcTron.Plugin.Resource.Drawable.abc_cab_background_internal_bg = global::SalveminiApp.Droid.Resource.Drawable.abc_cab_background_internal_bg;
+			global::MarcTron.Plugin.Resource.Drawable.abc_cab_background_top_material = global::SalveminiApp.Droid.Resource.Drawable.abc_cab_background_top_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_control_background_material = global::SalveminiApp.Droid.Resource.Drawable.abc_control_background_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_dialog_material_background = global::SalveminiApp.Droid.Resource.Drawable.abc_dialog_material_background;
+			global::MarcTron.Plugin.Resource.Drawable.abc_edit_text_material = global::SalveminiApp.Droid.Resource.Drawable.abc_edit_text_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_ab_back_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_ab_back_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_clear_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_clear_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_go_search_api_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_go_search_api_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_menu_overflow_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_menu_overflow_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_search_api_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_search_api_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_star_black_16dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_star_black_16dp;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_star_black_36dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_star_black_36dp;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_star_black_48dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_star_black_48dp;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_star_half_black_16dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_star_half_black_36dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_star_half_black_48dp = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_star_half_black_48dp;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ic_voice_search_api_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ic_voice_search_api_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_item_background_holo_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_item_background_holo_dark;
+			global::MarcTron.Plugin.Resource.Drawable.abc_item_background_holo_light = global::SalveminiApp.Droid.Resource.Drawable.abc_item_background_holo_light;
+			global::MarcTron.Plugin.Resource.Drawable.abc_list_divider_material = global::SalveminiApp.Droid.Resource.Drawable.abc_list_divider_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_list_divider_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_list_focused_holo = global::SalveminiApp.Droid.Resource.Drawable.abc_list_focused_holo;
+			global::MarcTron.Plugin.Resource.Drawable.abc_list_longpressed_holo = global::SalveminiApp.Droid.Resource.Drawable.abc_list_longpressed_holo;
+			global::MarcTron.Plugin.Resource.Drawable.abc_list_pressed_holo_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::MarcTron.Plugin.Resource.Drawable.abc_list_pressed_holo_light = global::SalveminiApp.Droid.Resource.Drawable.abc_list_pressed_holo_light;
+			global::MarcTron.Plugin.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::MarcTron.Plugin.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::SalveminiApp.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::MarcTron.Plugin.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::MarcTron.Plugin.Resource.Drawable.abc_list_selector_disabled_holo_light = global::SalveminiApp.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::MarcTron.Plugin.Resource.Drawable.abc_list_selector_holo_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_list_selector_holo_dark;
+			global::MarcTron.Plugin.Resource.Drawable.abc_list_selector_holo_light = global::SalveminiApp.Droid.Resource.Drawable.abc_list_selector_holo_light;
+			global::MarcTron.Plugin.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::SalveminiApp.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::MarcTron.Plugin.Resource.Drawable.abc_popup_background_mtrl_mult = global::SalveminiApp.Droid.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ratingbar_indicator_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ratingbar_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ratingbar_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_ratingbar_small_material = global::SalveminiApp.Droid.Resource.Drawable.abc_ratingbar_small_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::SalveminiApp.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::MarcTron.Plugin.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::SalveminiApp.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::MarcTron.Plugin.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_seekbar_thumb_material = global::SalveminiApp.Droid.Resource.Drawable.abc_seekbar_thumb_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_seekbar_tick_mark_material = global::SalveminiApp.Droid.Resource.Drawable.abc_seekbar_tick_mark_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_seekbar_track_material = global::SalveminiApp.Droid.Resource.Drawable.abc_seekbar_track_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_spinner_textfield_background_material = global::SalveminiApp.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_switch_thumb_material = global::SalveminiApp.Droid.Resource.Drawable.abc_switch_thumb_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_switch_track_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_tab_indicator_material = global::SalveminiApp.Droid.Resource.Drawable.abc_tab_indicator_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::SalveminiApp.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::MarcTron.Plugin.Resource.Drawable.abc_textfield_search_material = global::SalveminiApp.Droid.Resource.Drawable.abc_textfield_search_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_text_cursor_material = global::SalveminiApp.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::MarcTron.Plugin.Resource.Drawable.abc_text_select_handle_left_mtrl_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark;
+			global::MarcTron.Plugin.Resource.Drawable.abc_text_select_handle_left_mtrl_light = global::SalveminiApp.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light;
+			global::MarcTron.Plugin.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark;
+			global::MarcTron.Plugin.Resource.Drawable.abc_text_select_handle_middle_mtrl_light = global::SalveminiApp.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light;
+			global::MarcTron.Plugin.Resource.Drawable.abc_text_select_handle_right_mtrl_dark = global::SalveminiApp.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark;
+			global::MarcTron.Plugin.Resource.Drawable.abc_text_select_handle_right_mtrl_light = global::SalveminiApp.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light;
+			global::MarcTron.Plugin.Resource.Drawable.abc_vector_test = global::SalveminiApp.Droid.Resource.Drawable.abc_vector_test;
+			global::MarcTron.Plugin.Resource.Drawable.avd_hide_password = global::SalveminiApp.Droid.Resource.Drawable.avd_hide_password;
+			global::MarcTron.Plugin.Resource.Drawable.avd_show_password = global::SalveminiApp.Droid.Resource.Drawable.avd_show_password;
+			global::MarcTron.Plugin.Resource.Drawable.design_bottom_navigation_item_background = global::SalveminiApp.Droid.Resource.Drawable.design_bottom_navigation_item_background;
+			global::MarcTron.Plugin.Resource.Drawable.design_fab_background = global::SalveminiApp.Droid.Resource.Drawable.design_fab_background;
+			global::MarcTron.Plugin.Resource.Drawable.design_ic_visibility = global::SalveminiApp.Droid.Resource.Drawable.design_ic_visibility;
+			global::MarcTron.Plugin.Resource.Drawable.design_ic_visibility_off = global::SalveminiApp.Droid.Resource.Drawable.design_ic_visibility_off;
+			global::MarcTron.Plugin.Resource.Drawable.design_password_eye = global::SalveminiApp.Droid.Resource.Drawable.design_password_eye;
+			global::MarcTron.Plugin.Resource.Drawable.design_snackbar_background = global::SalveminiApp.Droid.Resource.Drawable.design_snackbar_background;
+			global::MarcTron.Plugin.Resource.Drawable.ic_audiotrack_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_audiotrack_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_audiotrack_light = global::SalveminiApp.Droid.Resource.Drawable.ic_audiotrack_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_dialog_close_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_dialog_close_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_dialog_close_light = global::SalveminiApp.Droid.Resource.Drawable.ic_dialog_close_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_collapse_00 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_00;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_collapse_01 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_01;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_collapse_02 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_02;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_collapse_03 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_03;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_collapse_04 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_04;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_collapse_05 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_05;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_collapse_06 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_06;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_collapse_07 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_07;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_collapse_08 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_08;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_collapse_09 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_09;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_collapse_10 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_10;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_collapse_11 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_11;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_collapse_12 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_12;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_collapse_13 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_13;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_collapse_14 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_14;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_collapse_15 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_collapse_15;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_expand_00 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_00;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_expand_01 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_01;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_expand_02 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_02;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_expand_03 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_03;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_expand_04 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_04;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_expand_05 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_05;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_expand_06 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_06;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_expand_07 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_07;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_expand_08 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_08;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_expand_09 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_09;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_expand_10 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_10;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_expand_11 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_11;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_expand_12 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_12;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_expand_13 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_13;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_expand_14 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_14;
+			global::MarcTron.Plugin.Resource.Drawable.ic_group_expand_15 = global::SalveminiApp.Droid.Resource.Drawable.ic_group_expand_15;
+			global::MarcTron.Plugin.Resource.Drawable.ic_media_pause_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_media_pause_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_media_pause_light = global::SalveminiApp.Droid.Resource.Drawable.ic_media_pause_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_media_play_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_media_play_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_media_play_light = global::SalveminiApp.Droid.Resource.Drawable.ic_media_play_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_media_stop_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_media_stop_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_media_stop_light = global::SalveminiApp.Droid.Resource.Drawable.ic_media_stop_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_00_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_00_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_00_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_00_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_01_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_01_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_01_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_01_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_02_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_02_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_02_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_02_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_03_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_03_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_03_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_03_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_04_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_04_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_04_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_04_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_05_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_05_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_05_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_05_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_06_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_06_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_06_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_06_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_07_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_07_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_07_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_07_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_08_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_08_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_08_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_08_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_09_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_09_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_09_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_09_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_10_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_10_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_10_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_10_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_11_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_11_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_11_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_11_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_12_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_12_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_12_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_12_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_13_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_13_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_13_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_13_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_14_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_14_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_14_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_14_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_15_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_15_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_15_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_15_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_16_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_16_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_16_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_16_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_17_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_17_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_17_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_17_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_18_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_18_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_18_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_18_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_19_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_19_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_19_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_19_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_20_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_20_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_20_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_20_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_21_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_21_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_21_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_21_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_22_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_22_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_22_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_22_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_23_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_23_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_23_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_23_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_24_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_24_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_24_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_24_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_25_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_25_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_25_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_25_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_26_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_26_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_26_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_26_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_27_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_27_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_27_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_27_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_28_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_28_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_28_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_28_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_29_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_29_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_29_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_29_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_30_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_30_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connected_30_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connected_30_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_00_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_00_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_00_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_00_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_01_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_01_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_01_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_01_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_02_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_02_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_02_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_02_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_03_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_03_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_03_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_03_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_04_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_04_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_04_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_04_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_05_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_05_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_05_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_05_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_06_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_06_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_06_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_06_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_07_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_07_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_07_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_07_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_08_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_08_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_08_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_08_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_09_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_09_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_09_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_09_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_10_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_10_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_10_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_10_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_11_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_11_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_11_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_11_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_12_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_12_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_12_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_12_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_13_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_13_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_13_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_13_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_14_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_14_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_14_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_14_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_15_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_15_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_15_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_15_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_16_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_16_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_16_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_16_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_17_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_17_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_17_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_17_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_18_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_18_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_18_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_18_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_19_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_19_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_19_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_19_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_20_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_20_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_20_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_20_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_21_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_21_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_21_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_21_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_22_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_22_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_22_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_22_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_23_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_23_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_23_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_23_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_24_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_24_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_24_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_24_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_25_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_25_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_25_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_25_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_26_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_26_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_26_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_26_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_27_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_27_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_27_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_27_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_28_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_28_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_28_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_28_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_29_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_29_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_29_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_29_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_30_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_30_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_connecting_30_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_connecting_30_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_disabled_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_disabled_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_disabled_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_disabled_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_disconnected_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_disconnected_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_disconnected_light = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_disconnected_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mr_button_grey = global::SalveminiApp.Droid.Resource.Drawable.ic_mr_button_grey;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mtrl_chip_checked_black = global::SalveminiApp.Droid.Resource.Drawable.ic_mtrl_chip_checked_black;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mtrl_chip_checked_circle = global::SalveminiApp.Droid.Resource.Drawable.ic_mtrl_chip_checked_circle;
+			global::MarcTron.Plugin.Resource.Drawable.ic_mtrl_chip_close_circle = global::SalveminiApp.Droid.Resource.Drawable.ic_mtrl_chip_close_circle;
+			global::MarcTron.Plugin.Resource.Drawable.ic_vol_type_speaker_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_vol_type_speaker_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_vol_type_speaker_group_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_vol_type_speaker_group_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_vol_type_speaker_group_light = global::SalveminiApp.Droid.Resource.Drawable.ic_vol_type_speaker_group_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_vol_type_speaker_light = global::SalveminiApp.Droid.Resource.Drawable.ic_vol_type_speaker_light;
+			global::MarcTron.Plugin.Resource.Drawable.ic_vol_type_tv_dark = global::SalveminiApp.Droid.Resource.Drawable.ic_vol_type_tv_dark;
+			global::MarcTron.Plugin.Resource.Drawable.ic_vol_type_tv_light = global::SalveminiApp.Droid.Resource.Drawable.ic_vol_type_tv_light;
+			global::MarcTron.Plugin.Resource.Drawable.mr_button_connected_dark = global::SalveminiApp.Droid.Resource.Drawable.mr_button_connected_dark;
+			global::MarcTron.Plugin.Resource.Drawable.mr_button_connected_light = global::SalveminiApp.Droid.Resource.Drawable.mr_button_connected_light;
+			global::MarcTron.Plugin.Resource.Drawable.mr_button_connecting_dark = global::SalveminiApp.Droid.Resource.Drawable.mr_button_connecting_dark;
+			global::MarcTron.Plugin.Resource.Drawable.mr_button_connecting_light = global::SalveminiApp.Droid.Resource.Drawable.mr_button_connecting_light;
+			global::MarcTron.Plugin.Resource.Drawable.mr_button_dark = global::SalveminiApp.Droid.Resource.Drawable.mr_button_dark;
+			global::MarcTron.Plugin.Resource.Drawable.mr_button_light = global::SalveminiApp.Droid.Resource.Drawable.mr_button_light;
+			global::MarcTron.Plugin.Resource.Drawable.mr_dialog_close_dark = global::SalveminiApp.Droid.Resource.Drawable.mr_dialog_close_dark;
+			global::MarcTron.Plugin.Resource.Drawable.mr_dialog_close_light = global::SalveminiApp.Droid.Resource.Drawable.mr_dialog_close_light;
+			global::MarcTron.Plugin.Resource.Drawable.mr_dialog_material_background_dark = global::SalveminiApp.Droid.Resource.Drawable.mr_dialog_material_background_dark;
+			global::MarcTron.Plugin.Resource.Drawable.mr_dialog_material_background_light = global::SalveminiApp.Droid.Resource.Drawable.mr_dialog_material_background_light;
+			global::MarcTron.Plugin.Resource.Drawable.mr_group_collapse = global::SalveminiApp.Droid.Resource.Drawable.mr_group_collapse;
+			global::MarcTron.Plugin.Resource.Drawable.mr_group_expand = global::SalveminiApp.Droid.Resource.Drawable.mr_group_expand;
+			global::MarcTron.Plugin.Resource.Drawable.mr_media_pause_dark = global::SalveminiApp.Droid.Resource.Drawable.mr_media_pause_dark;
+			global::MarcTron.Plugin.Resource.Drawable.mr_media_pause_light = global::SalveminiApp.Droid.Resource.Drawable.mr_media_pause_light;
+			global::MarcTron.Plugin.Resource.Drawable.mr_media_play_dark = global::SalveminiApp.Droid.Resource.Drawable.mr_media_play_dark;
+			global::MarcTron.Plugin.Resource.Drawable.mr_media_play_light = global::SalveminiApp.Droid.Resource.Drawable.mr_media_play_light;
+			global::MarcTron.Plugin.Resource.Drawable.mr_media_stop_dark = global::SalveminiApp.Droid.Resource.Drawable.mr_media_stop_dark;
+			global::MarcTron.Plugin.Resource.Drawable.mr_media_stop_light = global::SalveminiApp.Droid.Resource.Drawable.mr_media_stop_light;
+			global::MarcTron.Plugin.Resource.Drawable.mr_vol_type_audiotrack_dark = global::SalveminiApp.Droid.Resource.Drawable.mr_vol_type_audiotrack_dark;
+			global::MarcTron.Plugin.Resource.Drawable.mr_vol_type_audiotrack_light = global::SalveminiApp.Droid.Resource.Drawable.mr_vol_type_audiotrack_light;
+			global::MarcTron.Plugin.Resource.Drawable.mtrl_snackbar_background = global::SalveminiApp.Droid.Resource.Drawable.mtrl_snackbar_background;
+			global::MarcTron.Plugin.Resource.Drawable.mtrl_tabs_default_indicator = global::SalveminiApp.Droid.Resource.Drawable.mtrl_tabs_default_indicator;
+			global::MarcTron.Plugin.Resource.Drawable.navigation_empty_icon = global::SalveminiApp.Droid.Resource.Drawable.navigation_empty_icon;
+			global::MarcTron.Plugin.Resource.Drawable.notification_action_background = global::SalveminiApp.Droid.Resource.Drawable.notification_action_background;
+			global::MarcTron.Plugin.Resource.Drawable.notification_bg = global::SalveminiApp.Droid.Resource.Drawable.notification_bg;
+			global::MarcTron.Plugin.Resource.Drawable.notification_bg_low = global::SalveminiApp.Droid.Resource.Drawable.notification_bg_low;
+			global::MarcTron.Plugin.Resource.Drawable.notification_bg_low_normal = global::SalveminiApp.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::MarcTron.Plugin.Resource.Drawable.notification_bg_low_pressed = global::SalveminiApp.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::MarcTron.Plugin.Resource.Drawable.notification_bg_normal = global::SalveminiApp.Droid.Resource.Drawable.notification_bg_normal;
+			global::MarcTron.Plugin.Resource.Drawable.notification_bg_normal_pressed = global::SalveminiApp.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::MarcTron.Plugin.Resource.Drawable.notification_icon_background = global::SalveminiApp.Droid.Resource.Drawable.notification_icon_background;
+			global::MarcTron.Plugin.Resource.Drawable.notification_template_icon_bg = global::SalveminiApp.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::MarcTron.Plugin.Resource.Drawable.notification_template_icon_low_bg = global::SalveminiApp.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::MarcTron.Plugin.Resource.Drawable.notification_tile_bg = global::SalveminiApp.Droid.Resource.Drawable.notification_tile_bg;
+			global::MarcTron.Plugin.Resource.Drawable.notify_panel_notification_icon_bg = global::SalveminiApp.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::MarcTron.Plugin.Resource.Drawable.tooltip_frame_dark = global::SalveminiApp.Droid.Resource.Drawable.tooltip_frame_dark;
+			global::MarcTron.Plugin.Resource.Drawable.tooltip_frame_light = global::SalveminiApp.Droid.Resource.Drawable.tooltip_frame_light;
+			global::MarcTron.Plugin.Resource.Id.action0 = global::SalveminiApp.Droid.Resource.Id.action0;
+			global::MarcTron.Plugin.Resource.Id.actions = global::SalveminiApp.Droid.Resource.Id.actions;
+			global::MarcTron.Plugin.Resource.Id.action_bar = global::SalveminiApp.Droid.Resource.Id.action_bar;
+			global::MarcTron.Plugin.Resource.Id.action_bar_activity_content = global::SalveminiApp.Droid.Resource.Id.action_bar_activity_content;
+			global::MarcTron.Plugin.Resource.Id.action_bar_container = global::SalveminiApp.Droid.Resource.Id.action_bar_container;
+			global::MarcTron.Plugin.Resource.Id.action_bar_root = global::SalveminiApp.Droid.Resource.Id.action_bar_root;
+			global::MarcTron.Plugin.Resource.Id.action_bar_spinner = global::SalveminiApp.Droid.Resource.Id.action_bar_spinner;
+			global::MarcTron.Plugin.Resource.Id.action_bar_subtitle = global::SalveminiApp.Droid.Resource.Id.action_bar_subtitle;
+			global::MarcTron.Plugin.Resource.Id.action_bar_title = global::SalveminiApp.Droid.Resource.Id.action_bar_title;
+			global::MarcTron.Plugin.Resource.Id.action_container = global::SalveminiApp.Droid.Resource.Id.action_container;
+			global::MarcTron.Plugin.Resource.Id.action_context_bar = global::SalveminiApp.Droid.Resource.Id.action_context_bar;
+			global::MarcTron.Plugin.Resource.Id.action_divider = global::SalveminiApp.Droid.Resource.Id.action_divider;
+			global::MarcTron.Plugin.Resource.Id.action_image = global::SalveminiApp.Droid.Resource.Id.action_image;
+			global::MarcTron.Plugin.Resource.Id.action_menu_divider = global::SalveminiApp.Droid.Resource.Id.action_menu_divider;
+			global::MarcTron.Plugin.Resource.Id.action_menu_presenter = global::SalveminiApp.Droid.Resource.Id.action_menu_presenter;
+			global::MarcTron.Plugin.Resource.Id.action_mode_bar = global::SalveminiApp.Droid.Resource.Id.action_mode_bar;
+			global::MarcTron.Plugin.Resource.Id.action_mode_bar_stub = global::SalveminiApp.Droid.Resource.Id.action_mode_bar_stub;
+			global::MarcTron.Plugin.Resource.Id.action_mode_close_button = global::SalveminiApp.Droid.Resource.Id.action_mode_close_button;
+			global::MarcTron.Plugin.Resource.Id.action_text = global::SalveminiApp.Droid.Resource.Id.action_text;
+			global::MarcTron.Plugin.Resource.Id.activity_chooser_view_content = global::SalveminiApp.Droid.Resource.Id.activity_chooser_view_content;
+			global::MarcTron.Plugin.Resource.Id.add = global::SalveminiApp.Droid.Resource.Id.add;
+			global::MarcTron.Plugin.Resource.Id.alertTitle = global::SalveminiApp.Droid.Resource.Id.alertTitle;
+			global::MarcTron.Plugin.Resource.Id.all = global::SalveminiApp.Droid.Resource.Id.all;
+			global::MarcTron.Plugin.Resource.Id.ALT = global::SalveminiApp.Droid.Resource.Id.ALT;
+			global::MarcTron.Plugin.Resource.Id.always = global::SalveminiApp.Droid.Resource.Id.always;
+			global::MarcTron.Plugin.Resource.Id.async = global::SalveminiApp.Droid.Resource.Id.async;
+			global::MarcTron.Plugin.Resource.Id.auto = global::SalveminiApp.Droid.Resource.Id.auto;
+			global::MarcTron.Plugin.Resource.Id.beginning = global::SalveminiApp.Droid.Resource.Id.beginning;
+			global::MarcTron.Plugin.Resource.Id.blocking = global::SalveminiApp.Droid.Resource.Id.blocking;
+			global::MarcTron.Plugin.Resource.Id.bottom = global::SalveminiApp.Droid.Resource.Id.bottom;
+			global::MarcTron.Plugin.Resource.Id.bottomtab_navarea = global::SalveminiApp.Droid.Resource.Id.bottomtab_navarea;
+			global::MarcTron.Plugin.Resource.Id.bottomtab_tabbar = global::SalveminiApp.Droid.Resource.Id.bottomtab_tabbar;
+			global::MarcTron.Plugin.Resource.Id.browser_actions_header_text = global::SalveminiApp.Droid.Resource.Id.browser_actions_header_text;
+			global::MarcTron.Plugin.Resource.Id.browser_actions_menu_items = global::SalveminiApp.Droid.Resource.Id.browser_actions_menu_items;
+			global::MarcTron.Plugin.Resource.Id.browser_actions_menu_item_icon = global::SalveminiApp.Droid.Resource.Id.browser_actions_menu_item_icon;
+			global::MarcTron.Plugin.Resource.Id.browser_actions_menu_item_text = global::SalveminiApp.Droid.Resource.Id.browser_actions_menu_item_text;
+			global::MarcTron.Plugin.Resource.Id.browser_actions_menu_view = global::SalveminiApp.Droid.Resource.Id.browser_actions_menu_view;
+			global::MarcTron.Plugin.Resource.Id.buttonPanel = global::SalveminiApp.Droid.Resource.Id.buttonPanel;
+			global::MarcTron.Plugin.Resource.Id.cancel_action = global::SalveminiApp.Droid.Resource.Id.cancel_action;
+			global::MarcTron.Plugin.Resource.Id.center = global::SalveminiApp.Droid.Resource.Id.center;
+			global::MarcTron.Plugin.Resource.Id.center_horizontal = global::SalveminiApp.Droid.Resource.Id.center_horizontal;
+			global::MarcTron.Plugin.Resource.Id.center_vertical = global::SalveminiApp.Droid.Resource.Id.center_vertical;
+			global::MarcTron.Plugin.Resource.Id.checkbox = global::SalveminiApp.Droid.Resource.Id.checkbox;
+			global::MarcTron.Plugin.Resource.Id.chronometer = global::SalveminiApp.Droid.Resource.Id.chronometer;
+			global::MarcTron.Plugin.Resource.Id.clip_horizontal = global::SalveminiApp.Droid.Resource.Id.clip_horizontal;
+			global::MarcTron.Plugin.Resource.Id.clip_vertical = global::SalveminiApp.Droid.Resource.Id.clip_vertical;
+			global::MarcTron.Plugin.Resource.Id.collapseActionView = global::SalveminiApp.Droid.Resource.Id.collapseActionView;
+			global::MarcTron.Plugin.Resource.Id.container = global::SalveminiApp.Droid.Resource.Id.container;
+			global::MarcTron.Plugin.Resource.Id.content = global::SalveminiApp.Droid.Resource.Id.content;
+			global::MarcTron.Plugin.Resource.Id.contentPanel = global::SalveminiApp.Droid.Resource.Id.contentPanel;
+			global::MarcTron.Plugin.Resource.Id.coordinator = global::SalveminiApp.Droid.Resource.Id.coordinator;
+			global::MarcTron.Plugin.Resource.Id.CTRL = global::SalveminiApp.Droid.Resource.Id.CTRL;
+			global::MarcTron.Plugin.Resource.Id.custom = global::SalveminiApp.Droid.Resource.Id.custom;
+			global::MarcTron.Plugin.Resource.Id.customPanel = global::SalveminiApp.Droid.Resource.Id.customPanel;
+			global::MarcTron.Plugin.Resource.Id.decor_content_parent = global::SalveminiApp.Droid.Resource.Id.decor_content_parent;
+			global::MarcTron.Plugin.Resource.Id.default_activity_button = global::SalveminiApp.Droid.Resource.Id.default_activity_button;
+			global::MarcTron.Plugin.Resource.Id.design_bottom_sheet = global::SalveminiApp.Droid.Resource.Id.design_bottom_sheet;
+			global::MarcTron.Plugin.Resource.Id.design_menu_item_action_area = global::SalveminiApp.Droid.Resource.Id.design_menu_item_action_area;
+			global::MarcTron.Plugin.Resource.Id.design_menu_item_action_area_stub = global::SalveminiApp.Droid.Resource.Id.design_menu_item_action_area_stub;
+			global::MarcTron.Plugin.Resource.Id.design_menu_item_text = global::SalveminiApp.Droid.Resource.Id.design_menu_item_text;
+			global::MarcTron.Plugin.Resource.Id.design_navigation_view = global::SalveminiApp.Droid.Resource.Id.design_navigation_view;
+			global::MarcTron.Plugin.Resource.Id.disableHome = global::SalveminiApp.Droid.Resource.Id.disableHome;
+			global::MarcTron.Plugin.Resource.Id.edit_query = global::SalveminiApp.Droid.Resource.Id.edit_query;
+			global::MarcTron.Plugin.Resource.Id.end = global::SalveminiApp.Droid.Resource.Id.end;
+			global::MarcTron.Plugin.Resource.Id.end_padder = global::SalveminiApp.Droid.Resource.Id.end_padder;
+			global::MarcTron.Plugin.Resource.Id.enterAlways = global::SalveminiApp.Droid.Resource.Id.enterAlways;
+			global::MarcTron.Plugin.Resource.Id.enterAlwaysCollapsed = global::SalveminiApp.Droid.Resource.Id.enterAlwaysCollapsed;
+			global::MarcTron.Plugin.Resource.Id.exitUntilCollapsed = global::SalveminiApp.Droid.Resource.Id.exitUntilCollapsed;
+			global::MarcTron.Plugin.Resource.Id.expanded_menu = global::SalveminiApp.Droid.Resource.Id.expanded_menu;
+			global::MarcTron.Plugin.Resource.Id.expand_activities_button = global::SalveminiApp.Droid.Resource.Id.expand_activities_button;
+			global::MarcTron.Plugin.Resource.Id.fill = global::SalveminiApp.Droid.Resource.Id.fill;
+			global::MarcTron.Plugin.Resource.Id.filled = global::SalveminiApp.Droid.Resource.Id.filled;
+			global::MarcTron.Plugin.Resource.Id.fill_horizontal = global::SalveminiApp.Droid.Resource.Id.fill_horizontal;
+			global::MarcTron.Plugin.Resource.Id.fill_vertical = global::SalveminiApp.Droid.Resource.Id.fill_vertical;
+			global::MarcTron.Plugin.Resource.Id.@fixed = global::SalveminiApp.Droid.Resource.Id.@fixed;
+			global::MarcTron.Plugin.Resource.Id.flyoutcontent_appbar = global::SalveminiApp.Droid.Resource.Id.flyoutcontent_appbar;
+			global::MarcTron.Plugin.Resource.Id.flyoutcontent_recycler = global::SalveminiApp.Droid.Resource.Id.flyoutcontent_recycler;
+			global::MarcTron.Plugin.Resource.Id.forever = global::SalveminiApp.Droid.Resource.Id.forever;
+			global::MarcTron.Plugin.Resource.Id.FUNCTION = global::SalveminiApp.Droid.Resource.Id.FUNCTION;
+			global::MarcTron.Plugin.Resource.Id.ghost_view = global::SalveminiApp.Droid.Resource.Id.ghost_view;
+			global::MarcTron.Plugin.Resource.Id.group_divider = global::SalveminiApp.Droid.Resource.Id.group_divider;
+			global::MarcTron.Plugin.Resource.Id.home = global::SalveminiApp.Droid.Resource.Id.home;
+			global::MarcTron.Plugin.Resource.Id.homeAsUp = global::SalveminiApp.Droid.Resource.Id.homeAsUp;
+			global::MarcTron.Plugin.Resource.Id.icon = global::SalveminiApp.Droid.Resource.Id.icon;
+			global::MarcTron.Plugin.Resource.Id.icon_group = global::SalveminiApp.Droid.Resource.Id.icon_group;
+			global::MarcTron.Plugin.Resource.Id.ifRoom = global::SalveminiApp.Droid.Resource.Id.ifRoom;
+			global::MarcTron.Plugin.Resource.Id.image = global::SalveminiApp.Droid.Resource.Id.image;
+			global::MarcTron.Plugin.Resource.Id.info = global::SalveminiApp.Droid.Resource.Id.info;
+			global::MarcTron.Plugin.Resource.Id.italic = global::SalveminiApp.Droid.Resource.Id.italic;
+			global::MarcTron.Plugin.Resource.Id.item_touch_helper_previous_elevation = global::SalveminiApp.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::MarcTron.Plugin.Resource.Id.labeled = global::SalveminiApp.Droid.Resource.Id.labeled;
+			global::MarcTron.Plugin.Resource.Id.largeLabel = global::SalveminiApp.Droid.Resource.Id.largeLabel;
+			global::MarcTron.Plugin.Resource.Id.left = global::SalveminiApp.Droid.Resource.Id.left;
+			global::MarcTron.Plugin.Resource.Id.line1 = global::SalveminiApp.Droid.Resource.Id.line1;
+			global::MarcTron.Plugin.Resource.Id.line3 = global::SalveminiApp.Droid.Resource.Id.line3;
+			global::MarcTron.Plugin.Resource.Id.listMode = global::SalveminiApp.Droid.Resource.Id.listMode;
+			global::MarcTron.Plugin.Resource.Id.list_item = global::SalveminiApp.Droid.Resource.Id.list_item;
+			global::MarcTron.Plugin.Resource.Id.main_appbar = global::SalveminiApp.Droid.Resource.Id.main_appbar;
+			global::MarcTron.Plugin.Resource.Id.main_tablayout = global::SalveminiApp.Droid.Resource.Id.main_tablayout;
+			global::MarcTron.Plugin.Resource.Id.main_toolbar = global::SalveminiApp.Droid.Resource.Id.main_toolbar;
+			global::MarcTron.Plugin.Resource.Id.masked = global::SalveminiApp.Droid.Resource.Id.masked;
+			global::MarcTron.Plugin.Resource.Id.media_actions = global::SalveminiApp.Droid.Resource.Id.media_actions;
+			global::MarcTron.Plugin.Resource.Id.message = global::SalveminiApp.Droid.Resource.Id.message;
+			global::MarcTron.Plugin.Resource.Id.META = global::SalveminiApp.Droid.Resource.Id.META;
+			global::MarcTron.Plugin.Resource.Id.middle = global::SalveminiApp.Droid.Resource.Id.middle;
+			global::MarcTron.Plugin.Resource.Id.mini = global::SalveminiApp.Droid.Resource.Id.mini;
+			global::MarcTron.Plugin.Resource.Id.mr_art = global::SalveminiApp.Droid.Resource.Id.mr_art;
+			global::MarcTron.Plugin.Resource.Id.mr_cast_checkbox = global::SalveminiApp.Droid.Resource.Id.mr_cast_checkbox;
+			global::MarcTron.Plugin.Resource.Id.mr_cast_close_button = global::SalveminiApp.Droid.Resource.Id.mr_cast_close_button;
+			global::MarcTron.Plugin.Resource.Id.mr_cast_group_icon = global::SalveminiApp.Droid.Resource.Id.mr_cast_group_icon;
+			global::MarcTron.Plugin.Resource.Id.mr_cast_group_name = global::SalveminiApp.Droid.Resource.Id.mr_cast_group_name;
+			global::MarcTron.Plugin.Resource.Id.mr_cast_list = global::SalveminiApp.Droid.Resource.Id.mr_cast_list;
+			global::MarcTron.Plugin.Resource.Id.mr_cast_meta = global::SalveminiApp.Droid.Resource.Id.mr_cast_meta;
+			global::MarcTron.Plugin.Resource.Id.mr_cast_meta_art = global::SalveminiApp.Droid.Resource.Id.mr_cast_meta_art;
+			global::MarcTron.Plugin.Resource.Id.mr_cast_meta_subtitle = global::SalveminiApp.Droid.Resource.Id.mr_cast_meta_subtitle;
+			global::MarcTron.Plugin.Resource.Id.mr_cast_meta_title = global::SalveminiApp.Droid.Resource.Id.mr_cast_meta_title;
+			global::MarcTron.Plugin.Resource.Id.mr_cast_route_icon = global::SalveminiApp.Droid.Resource.Id.mr_cast_route_icon;
+			global::MarcTron.Plugin.Resource.Id.mr_cast_route_name = global::SalveminiApp.Droid.Resource.Id.mr_cast_route_name;
+			global::MarcTron.Plugin.Resource.Id.mr_cast_stop_button = global::SalveminiApp.Droid.Resource.Id.mr_cast_stop_button;
+			global::MarcTron.Plugin.Resource.Id.mr_cast_volume_layout = global::SalveminiApp.Droid.Resource.Id.mr_cast_volume_layout;
+			global::MarcTron.Plugin.Resource.Id.mr_cast_volume_slider = global::SalveminiApp.Droid.Resource.Id.mr_cast_volume_slider;
+			global::MarcTron.Plugin.Resource.Id.mr_chooser_list = global::SalveminiApp.Droid.Resource.Id.mr_chooser_list;
+			global::MarcTron.Plugin.Resource.Id.mr_chooser_route_desc = global::SalveminiApp.Droid.Resource.Id.mr_chooser_route_desc;
+			global::MarcTron.Plugin.Resource.Id.mr_chooser_route_icon = global::SalveminiApp.Droid.Resource.Id.mr_chooser_route_icon;
+			global::MarcTron.Plugin.Resource.Id.mr_chooser_route_name = global::SalveminiApp.Droid.Resource.Id.mr_chooser_route_name;
+			global::MarcTron.Plugin.Resource.Id.mr_chooser_title = global::SalveminiApp.Droid.Resource.Id.mr_chooser_title;
+			global::MarcTron.Plugin.Resource.Id.mr_close = global::SalveminiApp.Droid.Resource.Id.mr_close;
+			global::MarcTron.Plugin.Resource.Id.mr_control_divider = global::SalveminiApp.Droid.Resource.Id.mr_control_divider;
+			global::MarcTron.Plugin.Resource.Id.mr_control_playback_ctrl = global::SalveminiApp.Droid.Resource.Id.mr_control_playback_ctrl;
+			global::MarcTron.Plugin.Resource.Id.mr_control_subtitle = global::SalveminiApp.Droid.Resource.Id.mr_control_subtitle;
+			global::MarcTron.Plugin.Resource.Id.mr_control_title = global::SalveminiApp.Droid.Resource.Id.mr_control_title;
+			global::MarcTron.Plugin.Resource.Id.mr_control_title_container = global::SalveminiApp.Droid.Resource.Id.mr_control_title_container;
+			global::MarcTron.Plugin.Resource.Id.mr_custom_control = global::SalveminiApp.Droid.Resource.Id.mr_custom_control;
+			global::MarcTron.Plugin.Resource.Id.mr_default_control = global::SalveminiApp.Droid.Resource.Id.mr_default_control;
+			global::MarcTron.Plugin.Resource.Id.mr_dialog_area = global::SalveminiApp.Droid.Resource.Id.mr_dialog_area;
+			global::MarcTron.Plugin.Resource.Id.mr_dialog_header_name = global::SalveminiApp.Droid.Resource.Id.mr_dialog_header_name;
+			global::MarcTron.Plugin.Resource.Id.mr_expandable_area = global::SalveminiApp.Droid.Resource.Id.mr_expandable_area;
+			global::MarcTron.Plugin.Resource.Id.mr_group_expand_collapse = global::SalveminiApp.Droid.Resource.Id.mr_group_expand_collapse;
+			global::MarcTron.Plugin.Resource.Id.mr_group_volume_route_name = global::SalveminiApp.Droid.Resource.Id.mr_group_volume_route_name;
+			global::MarcTron.Plugin.Resource.Id.mr_group_volume_slider = global::SalveminiApp.Droid.Resource.Id.mr_group_volume_slider;
+			global::MarcTron.Plugin.Resource.Id.mr_media_main_control = global::SalveminiApp.Droid.Resource.Id.mr_media_main_control;
+			global::MarcTron.Plugin.Resource.Id.mr_name = global::SalveminiApp.Droid.Resource.Id.mr_name;
+			global::MarcTron.Plugin.Resource.Id.mr_picker_close_button = global::SalveminiApp.Droid.Resource.Id.mr_picker_close_button;
+			global::MarcTron.Plugin.Resource.Id.mr_picker_list = global::SalveminiApp.Droid.Resource.Id.mr_picker_list;
+			global::MarcTron.Plugin.Resource.Id.mr_picker_route_icon = global::SalveminiApp.Droid.Resource.Id.mr_picker_route_icon;
+			global::MarcTron.Plugin.Resource.Id.mr_picker_route_name = global::SalveminiApp.Droid.Resource.Id.mr_picker_route_name;
+			global::MarcTron.Plugin.Resource.Id.mr_playback_control = global::SalveminiApp.Droid.Resource.Id.mr_playback_control;
+			global::MarcTron.Plugin.Resource.Id.mr_title_bar = global::SalveminiApp.Droid.Resource.Id.mr_title_bar;
+			global::MarcTron.Plugin.Resource.Id.mr_volume_control = global::SalveminiApp.Droid.Resource.Id.mr_volume_control;
+			global::MarcTron.Plugin.Resource.Id.mr_volume_group_list = global::SalveminiApp.Droid.Resource.Id.mr_volume_group_list;
+			global::MarcTron.Plugin.Resource.Id.mr_volume_item_icon = global::SalveminiApp.Droid.Resource.Id.mr_volume_item_icon;
+			global::MarcTron.Plugin.Resource.Id.mr_volume_slider = global::SalveminiApp.Droid.Resource.Id.mr_volume_slider;
+			global::MarcTron.Plugin.Resource.Id.mtrl_child_content_container = global::SalveminiApp.Droid.Resource.Id.mtrl_child_content_container;
+			global::MarcTron.Plugin.Resource.Id.mtrl_internal_children_alpha_tag = global::SalveminiApp.Droid.Resource.Id.mtrl_internal_children_alpha_tag;
+			global::MarcTron.Plugin.Resource.Id.multiply = global::SalveminiApp.Droid.Resource.Id.multiply;
+			global::MarcTron.Plugin.Resource.Id.navigation_header_container = global::SalveminiApp.Droid.Resource.Id.navigation_header_container;
+			global::MarcTron.Plugin.Resource.Id.never = global::SalveminiApp.Droid.Resource.Id.never;
+			global::MarcTron.Plugin.Resource.Id.none = global::SalveminiApp.Droid.Resource.Id.none;
+			global::MarcTron.Plugin.Resource.Id.normal = global::SalveminiApp.Droid.Resource.Id.normal;
+			global::MarcTron.Plugin.Resource.Id.notification_background = global::SalveminiApp.Droid.Resource.Id.notification_background;
+			global::MarcTron.Plugin.Resource.Id.notification_main_column = global::SalveminiApp.Droid.Resource.Id.notification_main_column;
+			global::MarcTron.Plugin.Resource.Id.notification_main_column_container = global::SalveminiApp.Droid.Resource.Id.notification_main_column_container;
+			global::MarcTron.Plugin.Resource.Id.outline = global::SalveminiApp.Droid.Resource.Id.outline;
+			global::MarcTron.Plugin.Resource.Id.parallax = global::SalveminiApp.Droid.Resource.Id.parallax;
+			global::MarcTron.Plugin.Resource.Id.parentPanel = global::SalveminiApp.Droid.Resource.Id.parentPanel;
+			global::MarcTron.Plugin.Resource.Id.parent_matrix = global::SalveminiApp.Droid.Resource.Id.parent_matrix;
+			global::MarcTron.Plugin.Resource.Id.pin = global::SalveminiApp.Droid.Resource.Id.pin;
+			global::MarcTron.Plugin.Resource.Id.progress_circular = global::SalveminiApp.Droid.Resource.Id.progress_circular;
+			global::MarcTron.Plugin.Resource.Id.progress_horizontal = global::SalveminiApp.Droid.Resource.Id.progress_horizontal;
+			global::MarcTron.Plugin.Resource.Id.radio = global::SalveminiApp.Droid.Resource.Id.radio;
+			global::MarcTron.Plugin.Resource.Id.right = global::SalveminiApp.Droid.Resource.Id.right;
+			global::MarcTron.Plugin.Resource.Id.right_icon = global::SalveminiApp.Droid.Resource.Id.right_icon;
+			global::MarcTron.Plugin.Resource.Id.right_side = global::SalveminiApp.Droid.Resource.Id.right_side;
+			global::MarcTron.Plugin.Resource.Id.save_image_matrix = global::SalveminiApp.Droid.Resource.Id.save_image_matrix;
+			global::MarcTron.Plugin.Resource.Id.save_non_transition_alpha = global::SalveminiApp.Droid.Resource.Id.save_non_transition_alpha;
+			global::MarcTron.Plugin.Resource.Id.save_scale_type = global::SalveminiApp.Droid.Resource.Id.save_scale_type;
+			global::MarcTron.Plugin.Resource.Id.screen = global::SalveminiApp.Droid.Resource.Id.screen;
+			global::MarcTron.Plugin.Resource.Id.scroll = global::SalveminiApp.Droid.Resource.Id.scroll;
+			global::MarcTron.Plugin.Resource.Id.scrollable = global::SalveminiApp.Droid.Resource.Id.scrollable;
+			global::MarcTron.Plugin.Resource.Id.scrollIndicatorDown = global::SalveminiApp.Droid.Resource.Id.scrollIndicatorDown;
+			global::MarcTron.Plugin.Resource.Id.scrollIndicatorUp = global::SalveminiApp.Droid.Resource.Id.scrollIndicatorUp;
+			global::MarcTron.Plugin.Resource.Id.scrollView = global::SalveminiApp.Droid.Resource.Id.scrollView;
+			global::MarcTron.Plugin.Resource.Id.search_badge = global::SalveminiApp.Droid.Resource.Id.search_badge;
+			global::MarcTron.Plugin.Resource.Id.search_bar = global::SalveminiApp.Droid.Resource.Id.search_bar;
+			global::MarcTron.Plugin.Resource.Id.search_button = global::SalveminiApp.Droid.Resource.Id.search_button;
+			global::MarcTron.Plugin.Resource.Id.search_close_btn = global::SalveminiApp.Droid.Resource.Id.search_close_btn;
+			global::MarcTron.Plugin.Resource.Id.search_edit_frame = global::SalveminiApp.Droid.Resource.Id.search_edit_frame;
+			global::MarcTron.Plugin.Resource.Id.search_go_btn = global::SalveminiApp.Droid.Resource.Id.search_go_btn;
+			global::MarcTron.Plugin.Resource.Id.search_mag_icon = global::SalveminiApp.Droid.Resource.Id.search_mag_icon;
+			global::MarcTron.Plugin.Resource.Id.search_plate = global::SalveminiApp.Droid.Resource.Id.search_plate;
+			global::MarcTron.Plugin.Resource.Id.search_src_text = global::SalveminiApp.Droid.Resource.Id.search_src_text;
+			global::MarcTron.Plugin.Resource.Id.search_voice_btn = global::SalveminiApp.Droid.Resource.Id.search_voice_btn;
+			global::MarcTron.Plugin.Resource.Id.selected = global::SalveminiApp.Droid.Resource.Id.selected;
+			global::MarcTron.Plugin.Resource.Id.select_dialog_listview = global::SalveminiApp.Droid.Resource.Id.select_dialog_listview;
+			global::MarcTron.Plugin.Resource.Id.shellcontent_appbar = global::SalveminiApp.Droid.Resource.Id.shellcontent_appbar;
+			global::MarcTron.Plugin.Resource.Id.shellcontent_toolbar = global::SalveminiApp.Droid.Resource.Id.shellcontent_toolbar;
+			global::MarcTron.Plugin.Resource.Id.SHIFT = global::SalveminiApp.Droid.Resource.Id.SHIFT;
+			global::MarcTron.Plugin.Resource.Id.shortcut = global::SalveminiApp.Droid.Resource.Id.shortcut;
+			global::MarcTron.Plugin.Resource.Id.showCustom = global::SalveminiApp.Droid.Resource.Id.showCustom;
+			global::MarcTron.Plugin.Resource.Id.showHome = global::SalveminiApp.Droid.Resource.Id.showHome;
+			global::MarcTron.Plugin.Resource.Id.showTitle = global::SalveminiApp.Droid.Resource.Id.showTitle;
+			global::MarcTron.Plugin.Resource.Id.smallLabel = global::SalveminiApp.Droid.Resource.Id.smallLabel;
+			global::MarcTron.Plugin.Resource.Id.snackbar_action = global::SalveminiApp.Droid.Resource.Id.snackbar_action;
+			global::MarcTron.Plugin.Resource.Id.snackbar_text = global::SalveminiApp.Droid.Resource.Id.snackbar_text;
+			global::MarcTron.Plugin.Resource.Id.snap = global::SalveminiApp.Droid.Resource.Id.snap;
+			global::MarcTron.Plugin.Resource.Id.snapMargins = global::SalveminiApp.Droid.Resource.Id.snapMargins;
+			global::MarcTron.Plugin.Resource.Id.spacer = global::SalveminiApp.Droid.Resource.Id.spacer;
+			global::MarcTron.Plugin.Resource.Id.split_action_bar = global::SalveminiApp.Droid.Resource.Id.split_action_bar;
+			global::MarcTron.Plugin.Resource.Id.src_atop = global::SalveminiApp.Droid.Resource.Id.src_atop;
+			global::MarcTron.Plugin.Resource.Id.src_in = global::SalveminiApp.Droid.Resource.Id.src_in;
+			global::MarcTron.Plugin.Resource.Id.src_over = global::SalveminiApp.Droid.Resource.Id.src_over;
+			global::MarcTron.Plugin.Resource.Id.start = global::SalveminiApp.Droid.Resource.Id.start;
+			global::MarcTron.Plugin.Resource.Id.status_bar_latest_event_content = global::SalveminiApp.Droid.Resource.Id.status_bar_latest_event_content;
+			global::MarcTron.Plugin.Resource.Id.stretch = global::SalveminiApp.Droid.Resource.Id.stretch;
+			global::MarcTron.Plugin.Resource.Id.submenuarrow = global::SalveminiApp.Droid.Resource.Id.submenuarrow;
+			global::MarcTron.Plugin.Resource.Id.submit_area = global::SalveminiApp.Droid.Resource.Id.submit_area;
+			global::MarcTron.Plugin.Resource.Id.SYM = global::SalveminiApp.Droid.Resource.Id.SYM;
+			global::MarcTron.Plugin.Resource.Id.tabMode = global::SalveminiApp.Droid.Resource.Id.tabMode;
+			global::MarcTron.Plugin.Resource.Id.tag_transition_group = global::SalveminiApp.Droid.Resource.Id.tag_transition_group;
+			global::MarcTron.Plugin.Resource.Id.tag_unhandled_key_event_manager = global::SalveminiApp.Droid.Resource.Id.tag_unhandled_key_event_manager;
+			global::MarcTron.Plugin.Resource.Id.tag_unhandled_key_listeners = global::SalveminiApp.Droid.Resource.Id.tag_unhandled_key_listeners;
+			global::MarcTron.Plugin.Resource.Id.text = global::SalveminiApp.Droid.Resource.Id.text;
+			global::MarcTron.Plugin.Resource.Id.text2 = global::SalveminiApp.Droid.Resource.Id.text2;
+			global::MarcTron.Plugin.Resource.Id.textinput_counter = global::SalveminiApp.Droid.Resource.Id.textinput_counter;
+			global::MarcTron.Plugin.Resource.Id.textinput_error = global::SalveminiApp.Droid.Resource.Id.textinput_error;
+			global::MarcTron.Plugin.Resource.Id.textinput_helper_text = global::SalveminiApp.Droid.Resource.Id.textinput_helper_text;
+			global::MarcTron.Plugin.Resource.Id.textSpacerNoButtons = global::SalveminiApp.Droid.Resource.Id.textSpacerNoButtons;
+			global::MarcTron.Plugin.Resource.Id.textSpacerNoTitle = global::SalveminiApp.Droid.Resource.Id.textSpacerNoTitle;
+			global::MarcTron.Plugin.Resource.Id.textStart = global::SalveminiApp.Droid.Resource.Id.textStart;
+			global::MarcTron.Plugin.Resource.Id.text_input_password_toggle = global::SalveminiApp.Droid.Resource.Id.text_input_password_toggle;
+			global::MarcTron.Plugin.Resource.Id.time = global::SalveminiApp.Droid.Resource.Id.time;
+			global::MarcTron.Plugin.Resource.Id.title = global::SalveminiApp.Droid.Resource.Id.title;
+			global::MarcTron.Plugin.Resource.Id.titleDividerNoCustom = global::SalveminiApp.Droid.Resource.Id.titleDividerNoCustom;
+			global::MarcTron.Plugin.Resource.Id.title_template = global::SalveminiApp.Droid.Resource.Id.title_template;
+			global::MarcTron.Plugin.Resource.Id.top = global::SalveminiApp.Droid.Resource.Id.top;
+			global::MarcTron.Plugin.Resource.Id.topPanel = global::SalveminiApp.Droid.Resource.Id.topPanel;
+			global::MarcTron.Plugin.Resource.Id.touch_outside = global::SalveminiApp.Droid.Resource.Id.touch_outside;
+			global::MarcTron.Plugin.Resource.Id.transition_current_scene = global::SalveminiApp.Droid.Resource.Id.transition_current_scene;
+			global::MarcTron.Plugin.Resource.Id.transition_layout_save = global::SalveminiApp.Droid.Resource.Id.transition_layout_save;
+			global::MarcTron.Plugin.Resource.Id.transition_position = global::SalveminiApp.Droid.Resource.Id.transition_position;
+			global::MarcTron.Plugin.Resource.Id.transition_scene_layoutid_cache = global::SalveminiApp.Droid.Resource.Id.transition_scene_layoutid_cache;
+			global::MarcTron.Plugin.Resource.Id.transition_transform = global::SalveminiApp.Droid.Resource.Id.transition_transform;
+			global::MarcTron.Plugin.Resource.Id.uniform = global::SalveminiApp.Droid.Resource.Id.uniform;
+			global::MarcTron.Plugin.Resource.Id.unlabeled = global::SalveminiApp.Droid.Resource.Id.unlabeled;
+			global::MarcTron.Plugin.Resource.Id.up = global::SalveminiApp.Droid.Resource.Id.up;
+			global::MarcTron.Plugin.Resource.Id.useLogo = global::SalveminiApp.Droid.Resource.Id.useLogo;
+			global::MarcTron.Plugin.Resource.Id.view_offset_helper = global::SalveminiApp.Droid.Resource.Id.view_offset_helper;
+			global::MarcTron.Plugin.Resource.Id.visible = global::SalveminiApp.Droid.Resource.Id.visible;
+			global::MarcTron.Plugin.Resource.Id.volume_item_container = global::SalveminiApp.Droid.Resource.Id.volume_item_container;
+			global::MarcTron.Plugin.Resource.Id.withText = global::SalveminiApp.Droid.Resource.Id.withText;
+			global::MarcTron.Plugin.Resource.Id.wrap_content = global::SalveminiApp.Droid.Resource.Id.wrap_content;
+			global::MarcTron.Plugin.Resource.Integer.abc_config_activityDefaultDur = global::SalveminiApp.Droid.Resource.Integer.abc_config_activityDefaultDur;
+			global::MarcTron.Plugin.Resource.Integer.abc_config_activityShortDur = global::SalveminiApp.Droid.Resource.Integer.abc_config_activityShortDur;
+			global::MarcTron.Plugin.Resource.Integer.app_bar_elevation_anim_duration = global::SalveminiApp.Droid.Resource.Integer.app_bar_elevation_anim_duration;
+			global::MarcTron.Plugin.Resource.Integer.bottom_sheet_slide_duration = global::SalveminiApp.Droid.Resource.Integer.bottom_sheet_slide_duration;
+			global::MarcTron.Plugin.Resource.Integer.cancel_button_image_alpha = global::SalveminiApp.Droid.Resource.Integer.cancel_button_image_alpha;
+			global::MarcTron.Plugin.Resource.Integer.config_tooltipAnimTime = global::SalveminiApp.Droid.Resource.Integer.config_tooltipAnimTime;
+			global::MarcTron.Plugin.Resource.Integer.design_snackbar_text_max_lines = global::SalveminiApp.Droid.Resource.Integer.design_snackbar_text_max_lines;
+			global::MarcTron.Plugin.Resource.Integer.design_tab_indicator_anim_duration_ms = global::SalveminiApp.Droid.Resource.Integer.design_tab_indicator_anim_duration_ms;
+			global::MarcTron.Plugin.Resource.Integer.google_play_services_version = global::SalveminiApp.Droid.Resource.Integer.google_play_services_version;
+			global::MarcTron.Plugin.Resource.Integer.hide_password_duration = global::SalveminiApp.Droid.Resource.Integer.hide_password_duration;
+			global::MarcTron.Plugin.Resource.Integer.mr_controller_volume_group_list_animation_duration_ms = global::SalveminiApp.Droid.Resource.Integer.mr_controller_volume_group_list_animation_duration_ms;
+			global::MarcTron.Plugin.Resource.Integer.mr_controller_volume_group_list_fade_in_duration_ms = global::SalveminiApp.Droid.Resource.Integer.mr_controller_volume_group_list_fade_in_duration_ms;
+			global::MarcTron.Plugin.Resource.Integer.mr_controller_volume_group_list_fade_out_duration_ms = global::SalveminiApp.Droid.Resource.Integer.mr_controller_volume_group_list_fade_out_duration_ms;
+			global::MarcTron.Plugin.Resource.Integer.mr_update_routes_delay_ms = global::SalveminiApp.Droid.Resource.Integer.mr_update_routes_delay_ms;
+			global::MarcTron.Plugin.Resource.Integer.mtrl_btn_anim_delay_ms = global::SalveminiApp.Droid.Resource.Integer.mtrl_btn_anim_delay_ms;
+			global::MarcTron.Plugin.Resource.Integer.mtrl_btn_anim_duration_ms = global::SalveminiApp.Droid.Resource.Integer.mtrl_btn_anim_duration_ms;
+			global::MarcTron.Plugin.Resource.Integer.mtrl_chip_anim_duration = global::SalveminiApp.Droid.Resource.Integer.mtrl_chip_anim_duration;
+			global::MarcTron.Plugin.Resource.Integer.mtrl_tab_indicator_anim_duration_ms = global::SalveminiApp.Droid.Resource.Integer.mtrl_tab_indicator_anim_duration_ms;
+			global::MarcTron.Plugin.Resource.Integer.show_password_duration = global::SalveminiApp.Droid.Resource.Integer.show_password_duration;
+			global::MarcTron.Plugin.Resource.Integer.status_bar_notification_info_maxnum = global::SalveminiApp.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::MarcTron.Plugin.Resource.Interpolator.mr_fast_out_slow_in = global::SalveminiApp.Droid.Resource.Interpolator.mr_fast_out_slow_in;
+			global::MarcTron.Plugin.Resource.Interpolator.mr_linear_out_slow_in = global::SalveminiApp.Droid.Resource.Interpolator.mr_linear_out_slow_in;
+			global::MarcTron.Plugin.Resource.Interpolator.mtrl_fast_out_linear_in = global::SalveminiApp.Droid.Resource.Interpolator.mtrl_fast_out_linear_in;
+			global::MarcTron.Plugin.Resource.Interpolator.mtrl_fast_out_slow_in = global::SalveminiApp.Droid.Resource.Interpolator.mtrl_fast_out_slow_in;
+			global::MarcTron.Plugin.Resource.Interpolator.mtrl_linear = global::SalveminiApp.Droid.Resource.Interpolator.mtrl_linear;
+			global::MarcTron.Plugin.Resource.Interpolator.mtrl_linear_out_slow_in = global::SalveminiApp.Droid.Resource.Interpolator.mtrl_linear_out_slow_in;
+			global::MarcTron.Plugin.Resource.Layout.abc_action_bar_title_item = global::SalveminiApp.Droid.Resource.Layout.abc_action_bar_title_item;
+			global::MarcTron.Plugin.Resource.Layout.abc_action_bar_up_container = global::SalveminiApp.Droid.Resource.Layout.abc_action_bar_up_container;
+			global::MarcTron.Plugin.Resource.Layout.abc_action_menu_item_layout = global::SalveminiApp.Droid.Resource.Layout.abc_action_menu_item_layout;
+			global::MarcTron.Plugin.Resource.Layout.abc_action_menu_layout = global::SalveminiApp.Droid.Resource.Layout.abc_action_menu_layout;
+			global::MarcTron.Plugin.Resource.Layout.abc_action_mode_bar = global::SalveminiApp.Droid.Resource.Layout.abc_action_mode_bar;
+			global::MarcTron.Plugin.Resource.Layout.abc_action_mode_close_item_material = global::SalveminiApp.Droid.Resource.Layout.abc_action_mode_close_item_material;
+			global::MarcTron.Plugin.Resource.Layout.abc_activity_chooser_view = global::SalveminiApp.Droid.Resource.Layout.abc_activity_chooser_view;
+			global::MarcTron.Plugin.Resource.Layout.abc_activity_chooser_view_list_item = global::SalveminiApp.Droid.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::MarcTron.Plugin.Resource.Layout.abc_alert_dialog_button_bar_material = global::SalveminiApp.Droid.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::MarcTron.Plugin.Resource.Layout.abc_alert_dialog_material = global::SalveminiApp.Droid.Resource.Layout.abc_alert_dialog_material;
+			global::MarcTron.Plugin.Resource.Layout.abc_alert_dialog_title_material = global::SalveminiApp.Droid.Resource.Layout.abc_alert_dialog_title_material;
+			global::MarcTron.Plugin.Resource.Layout.abc_cascading_menu_item_layout = global::SalveminiApp.Droid.Resource.Layout.abc_cascading_menu_item_layout;
+			global::MarcTron.Plugin.Resource.Layout.abc_dialog_title_material = global::SalveminiApp.Droid.Resource.Layout.abc_dialog_title_material;
+			global::MarcTron.Plugin.Resource.Layout.abc_expanded_menu_layout = global::SalveminiApp.Droid.Resource.Layout.abc_expanded_menu_layout;
+			global::MarcTron.Plugin.Resource.Layout.abc_list_menu_item_checkbox = global::SalveminiApp.Droid.Resource.Layout.abc_list_menu_item_checkbox;
+			global::MarcTron.Plugin.Resource.Layout.abc_list_menu_item_icon = global::SalveminiApp.Droid.Resource.Layout.abc_list_menu_item_icon;
+			global::MarcTron.Plugin.Resource.Layout.abc_list_menu_item_layout = global::SalveminiApp.Droid.Resource.Layout.abc_list_menu_item_layout;
+			global::MarcTron.Plugin.Resource.Layout.abc_list_menu_item_radio = global::SalveminiApp.Droid.Resource.Layout.abc_list_menu_item_radio;
+			global::MarcTron.Plugin.Resource.Layout.abc_popup_menu_header_item_layout = global::SalveminiApp.Droid.Resource.Layout.abc_popup_menu_header_item_layout;
+			global::MarcTron.Plugin.Resource.Layout.abc_popup_menu_item_layout = global::SalveminiApp.Droid.Resource.Layout.abc_popup_menu_item_layout;
+			global::MarcTron.Plugin.Resource.Layout.abc_screen_content_include = global::SalveminiApp.Droid.Resource.Layout.abc_screen_content_include;
+			global::MarcTron.Plugin.Resource.Layout.abc_screen_simple = global::SalveminiApp.Droid.Resource.Layout.abc_screen_simple;
+			global::MarcTron.Plugin.Resource.Layout.abc_screen_simple_overlay_action_mode = global::SalveminiApp.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::MarcTron.Plugin.Resource.Layout.abc_screen_toolbar = global::SalveminiApp.Droid.Resource.Layout.abc_screen_toolbar;
+			global::MarcTron.Plugin.Resource.Layout.abc_search_dropdown_item_icons_2line = global::SalveminiApp.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::MarcTron.Plugin.Resource.Layout.abc_search_view = global::SalveminiApp.Droid.Resource.Layout.abc_search_view;
+			global::MarcTron.Plugin.Resource.Layout.abc_select_dialog_material = global::SalveminiApp.Droid.Resource.Layout.abc_select_dialog_material;
+			global::MarcTron.Plugin.Resource.Layout.abc_tooltip = global::SalveminiApp.Droid.Resource.Layout.abc_tooltip;
+			global::MarcTron.Plugin.Resource.Layout.BottomTabLayout = global::SalveminiApp.Droid.Resource.Layout.BottomTabLayout;
+			global::MarcTron.Plugin.Resource.Layout.browser_actions_context_menu_page = global::SalveminiApp.Droid.Resource.Layout.browser_actions_context_menu_page;
+			global::MarcTron.Plugin.Resource.Layout.browser_actions_context_menu_row = global::SalveminiApp.Droid.Resource.Layout.browser_actions_context_menu_row;
+			global::MarcTron.Plugin.Resource.Layout.design_bottom_navigation_item = global::SalveminiApp.Droid.Resource.Layout.design_bottom_navigation_item;
+			global::MarcTron.Plugin.Resource.Layout.design_bottom_sheet_dialog = global::SalveminiApp.Droid.Resource.Layout.design_bottom_sheet_dialog;
+			global::MarcTron.Plugin.Resource.Layout.design_layout_snackbar = global::SalveminiApp.Droid.Resource.Layout.design_layout_snackbar;
+			global::MarcTron.Plugin.Resource.Layout.design_layout_snackbar_include = global::SalveminiApp.Droid.Resource.Layout.design_layout_snackbar_include;
+			global::MarcTron.Plugin.Resource.Layout.design_layout_tab_icon = global::SalveminiApp.Droid.Resource.Layout.design_layout_tab_icon;
+			global::MarcTron.Plugin.Resource.Layout.design_layout_tab_text = global::SalveminiApp.Droid.Resource.Layout.design_layout_tab_text;
+			global::MarcTron.Plugin.Resource.Layout.design_menu_item_action_area = global::SalveminiApp.Droid.Resource.Layout.design_menu_item_action_area;
+			global::MarcTron.Plugin.Resource.Layout.design_navigation_item = global::SalveminiApp.Droid.Resource.Layout.design_navigation_item;
+			global::MarcTron.Plugin.Resource.Layout.design_navigation_item_header = global::SalveminiApp.Droid.Resource.Layout.design_navigation_item_header;
+			global::MarcTron.Plugin.Resource.Layout.design_navigation_item_separator = global::SalveminiApp.Droid.Resource.Layout.design_navigation_item_separator;
+			global::MarcTron.Plugin.Resource.Layout.design_navigation_item_subheader = global::SalveminiApp.Droid.Resource.Layout.design_navigation_item_subheader;
+			global::MarcTron.Plugin.Resource.Layout.design_navigation_menu = global::SalveminiApp.Droid.Resource.Layout.design_navigation_menu;
+			global::MarcTron.Plugin.Resource.Layout.design_navigation_menu_item = global::SalveminiApp.Droid.Resource.Layout.design_navigation_menu_item;
+			global::MarcTron.Plugin.Resource.Layout.design_text_input_password_icon = global::SalveminiApp.Droid.Resource.Layout.design_text_input_password_icon;
+			global::MarcTron.Plugin.Resource.Layout.FlyoutContent = global::SalveminiApp.Droid.Resource.Layout.FlyoutContent;
+			global::MarcTron.Plugin.Resource.Layout.mr_cast_dialog = global::SalveminiApp.Droid.Resource.Layout.mr_cast_dialog;
+			global::MarcTron.Plugin.Resource.Layout.mr_cast_group_item = global::SalveminiApp.Droid.Resource.Layout.mr_cast_group_item;
+			global::MarcTron.Plugin.Resource.Layout.mr_cast_group_volume_item = global::SalveminiApp.Droid.Resource.Layout.mr_cast_group_volume_item;
+			global::MarcTron.Plugin.Resource.Layout.mr_cast_media_metadata = global::SalveminiApp.Droid.Resource.Layout.mr_cast_media_metadata;
+			global::MarcTron.Plugin.Resource.Layout.mr_cast_route_item = global::SalveminiApp.Droid.Resource.Layout.mr_cast_route_item;
+			global::MarcTron.Plugin.Resource.Layout.mr_chooser_dialog = global::SalveminiApp.Droid.Resource.Layout.mr_chooser_dialog;
+			global::MarcTron.Plugin.Resource.Layout.mr_chooser_list_item = global::SalveminiApp.Droid.Resource.Layout.mr_chooser_list_item;
+			global::MarcTron.Plugin.Resource.Layout.mr_controller_material_dialog_b = global::SalveminiApp.Droid.Resource.Layout.mr_controller_material_dialog_b;
+			global::MarcTron.Plugin.Resource.Layout.mr_controller_volume_item = global::SalveminiApp.Droid.Resource.Layout.mr_controller_volume_item;
+			global::MarcTron.Plugin.Resource.Layout.mr_dialog_header_item = global::SalveminiApp.Droid.Resource.Layout.mr_dialog_header_item;
+			global::MarcTron.Plugin.Resource.Layout.mr_picker_dialog = global::SalveminiApp.Droid.Resource.Layout.mr_picker_dialog;
+			global::MarcTron.Plugin.Resource.Layout.mr_picker_route_item = global::SalveminiApp.Droid.Resource.Layout.mr_picker_route_item;
+			global::MarcTron.Plugin.Resource.Layout.mr_playback_control = global::SalveminiApp.Droid.Resource.Layout.mr_playback_control;
+			global::MarcTron.Plugin.Resource.Layout.mr_volume_control = global::SalveminiApp.Droid.Resource.Layout.mr_volume_control;
+			global::MarcTron.Plugin.Resource.Layout.mtrl_layout_snackbar = global::SalveminiApp.Droid.Resource.Layout.mtrl_layout_snackbar;
+			global::MarcTron.Plugin.Resource.Layout.mtrl_layout_snackbar_include = global::SalveminiApp.Droid.Resource.Layout.mtrl_layout_snackbar_include;
+			global::MarcTron.Plugin.Resource.Layout.notification_action = global::SalveminiApp.Droid.Resource.Layout.notification_action;
+			global::MarcTron.Plugin.Resource.Layout.notification_action_tombstone = global::SalveminiApp.Droid.Resource.Layout.notification_action_tombstone;
+			global::MarcTron.Plugin.Resource.Layout.notification_media_action = global::SalveminiApp.Droid.Resource.Layout.notification_media_action;
+			global::MarcTron.Plugin.Resource.Layout.notification_media_cancel_action = global::SalveminiApp.Droid.Resource.Layout.notification_media_cancel_action;
+			global::MarcTron.Plugin.Resource.Layout.notification_template_big_media = global::SalveminiApp.Droid.Resource.Layout.notification_template_big_media;
+			global::MarcTron.Plugin.Resource.Layout.notification_template_big_media_custom = global::SalveminiApp.Droid.Resource.Layout.notification_template_big_media_custom;
+			global::MarcTron.Plugin.Resource.Layout.notification_template_big_media_narrow = global::SalveminiApp.Droid.Resource.Layout.notification_template_big_media_narrow;
+			global::MarcTron.Plugin.Resource.Layout.notification_template_big_media_narrow_custom = global::SalveminiApp.Droid.Resource.Layout.notification_template_big_media_narrow_custom;
+			global::MarcTron.Plugin.Resource.Layout.notification_template_custom_big = global::SalveminiApp.Droid.Resource.Layout.notification_template_custom_big;
+			global::MarcTron.Plugin.Resource.Layout.notification_template_icon_group = global::SalveminiApp.Droid.Resource.Layout.notification_template_icon_group;
+			global::MarcTron.Plugin.Resource.Layout.notification_template_lines_media = global::SalveminiApp.Droid.Resource.Layout.notification_template_lines_media;
+			global::MarcTron.Plugin.Resource.Layout.notification_template_media = global::SalveminiApp.Droid.Resource.Layout.notification_template_media;
+			global::MarcTron.Plugin.Resource.Layout.notification_template_media_custom = global::SalveminiApp.Droid.Resource.Layout.notification_template_media_custom;
+			global::MarcTron.Plugin.Resource.Layout.notification_template_part_chronometer = global::SalveminiApp.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::MarcTron.Plugin.Resource.Layout.notification_template_part_time = global::SalveminiApp.Droid.Resource.Layout.notification_template_part_time;
+			global::MarcTron.Plugin.Resource.Layout.RootLayout = global::SalveminiApp.Droid.Resource.Layout.RootLayout;
+			global::MarcTron.Plugin.Resource.Layout.select_dialog_item_material = global::SalveminiApp.Droid.Resource.Layout.select_dialog_item_material;
+			global::MarcTron.Plugin.Resource.Layout.select_dialog_multichoice_material = global::SalveminiApp.Droid.Resource.Layout.select_dialog_multichoice_material;
+			global::MarcTron.Plugin.Resource.Layout.select_dialog_singlechoice_material = global::SalveminiApp.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::MarcTron.Plugin.Resource.Layout.ShellContent = global::SalveminiApp.Droid.Resource.Layout.ShellContent;
+			global::MarcTron.Plugin.Resource.Layout.support_simple_spinner_dropdown_item = global::SalveminiApp.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::MarcTron.Plugin.Resource.String.abc_action_bar_home_description = global::SalveminiApp.Droid.Resource.String.abc_action_bar_home_description;
+			global::MarcTron.Plugin.Resource.String.abc_action_bar_up_description = global::SalveminiApp.Droid.Resource.String.abc_action_bar_up_description;
+			global::MarcTron.Plugin.Resource.String.abc_action_menu_overflow_description = global::SalveminiApp.Droid.Resource.String.abc_action_menu_overflow_description;
+			global::MarcTron.Plugin.Resource.String.abc_action_mode_done = global::SalveminiApp.Droid.Resource.String.abc_action_mode_done;
+			global::MarcTron.Plugin.Resource.String.abc_activitychooserview_choose_application = global::SalveminiApp.Droid.Resource.String.abc_activitychooserview_choose_application;
+			global::MarcTron.Plugin.Resource.String.abc_activity_chooser_view_see_all = global::SalveminiApp.Droid.Resource.String.abc_activity_chooser_view_see_all;
+			global::MarcTron.Plugin.Resource.String.abc_capital_off = global::SalveminiApp.Droid.Resource.String.abc_capital_off;
+			global::MarcTron.Plugin.Resource.String.abc_capital_on = global::SalveminiApp.Droid.Resource.String.abc_capital_on;
+			global::MarcTron.Plugin.Resource.String.abc_font_family_body_1_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_body_1_material;
+			global::MarcTron.Plugin.Resource.String.abc_font_family_body_2_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_body_2_material;
+			global::MarcTron.Plugin.Resource.String.abc_font_family_button_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_button_material;
+			global::MarcTron.Plugin.Resource.String.abc_font_family_caption_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_caption_material;
+			global::MarcTron.Plugin.Resource.String.abc_font_family_display_1_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_display_1_material;
+			global::MarcTron.Plugin.Resource.String.abc_font_family_display_2_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_display_2_material;
+			global::MarcTron.Plugin.Resource.String.abc_font_family_display_3_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_display_3_material;
+			global::MarcTron.Plugin.Resource.String.abc_font_family_display_4_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_display_4_material;
+			global::MarcTron.Plugin.Resource.String.abc_font_family_headline_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_headline_material;
+			global::MarcTron.Plugin.Resource.String.abc_font_family_menu_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_menu_material;
+			global::MarcTron.Plugin.Resource.String.abc_font_family_subhead_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_subhead_material;
+			global::MarcTron.Plugin.Resource.String.abc_font_family_title_material = global::SalveminiApp.Droid.Resource.String.abc_font_family_title_material;
+			global::MarcTron.Plugin.Resource.String.abc_menu_alt_shortcut_label = global::SalveminiApp.Droid.Resource.String.abc_menu_alt_shortcut_label;
+			global::MarcTron.Plugin.Resource.String.abc_menu_ctrl_shortcut_label = global::SalveminiApp.Droid.Resource.String.abc_menu_ctrl_shortcut_label;
+			global::MarcTron.Plugin.Resource.String.abc_menu_delete_shortcut_label = global::SalveminiApp.Droid.Resource.String.abc_menu_delete_shortcut_label;
+			global::MarcTron.Plugin.Resource.String.abc_menu_enter_shortcut_label = global::SalveminiApp.Droid.Resource.String.abc_menu_enter_shortcut_label;
+			global::MarcTron.Plugin.Resource.String.abc_menu_function_shortcut_label = global::SalveminiApp.Droid.Resource.String.abc_menu_function_shortcut_label;
+			global::MarcTron.Plugin.Resource.String.abc_menu_meta_shortcut_label = global::SalveminiApp.Droid.Resource.String.abc_menu_meta_shortcut_label;
+			global::MarcTron.Plugin.Resource.String.abc_menu_shift_shortcut_label = global::SalveminiApp.Droid.Resource.String.abc_menu_shift_shortcut_label;
+			global::MarcTron.Plugin.Resource.String.abc_menu_space_shortcut_label = global::SalveminiApp.Droid.Resource.String.abc_menu_space_shortcut_label;
+			global::MarcTron.Plugin.Resource.String.abc_menu_sym_shortcut_label = global::SalveminiApp.Droid.Resource.String.abc_menu_sym_shortcut_label;
+			global::MarcTron.Plugin.Resource.String.abc_prepend_shortcut_label = global::SalveminiApp.Droid.Resource.String.abc_prepend_shortcut_label;
+			global::MarcTron.Plugin.Resource.String.abc_searchview_description_clear = global::SalveminiApp.Droid.Resource.String.abc_searchview_description_clear;
+			global::MarcTron.Plugin.Resource.String.abc_searchview_description_query = global::SalveminiApp.Droid.Resource.String.abc_searchview_description_query;
+			global::MarcTron.Plugin.Resource.String.abc_searchview_description_search = global::SalveminiApp.Droid.Resource.String.abc_searchview_description_search;
+			global::MarcTron.Plugin.Resource.String.abc_searchview_description_submit = global::SalveminiApp.Droid.Resource.String.abc_searchview_description_submit;
+			global::MarcTron.Plugin.Resource.String.abc_searchview_description_voice = global::SalveminiApp.Droid.Resource.String.abc_searchview_description_voice;
+			global::MarcTron.Plugin.Resource.String.abc_search_hint = global::SalveminiApp.Droid.Resource.String.abc_search_hint;
+			global::MarcTron.Plugin.Resource.String.abc_shareactionprovider_share_with = global::SalveminiApp.Droid.Resource.String.abc_shareactionprovider_share_with;
+			global::MarcTron.Plugin.Resource.String.abc_shareactionprovider_share_with_application = global::SalveminiApp.Droid.Resource.String.abc_shareactionprovider_share_with_application;
+			global::MarcTron.Plugin.Resource.String.abc_toolbar_collapse_description = global::SalveminiApp.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::MarcTron.Plugin.Resource.String.appbar_scrolling_view_behavior = global::SalveminiApp.Droid.Resource.String.appbar_scrolling_view_behavior;
+			global::MarcTron.Plugin.Resource.String.bottom_sheet_behavior = global::SalveminiApp.Droid.Resource.String.bottom_sheet_behavior;
+			global::MarcTron.Plugin.Resource.String.character_counter_content_description = global::SalveminiApp.Droid.Resource.String.character_counter_content_description;
+			global::MarcTron.Plugin.Resource.String.character_counter_pattern = global::SalveminiApp.Droid.Resource.String.character_counter_pattern;
+			global::MarcTron.Plugin.Resource.String.common_google_play_services_unknown_issue = global::SalveminiApp.Droid.Resource.String.common_google_play_services_unknown_issue;
+			global::MarcTron.Plugin.Resource.String.fab_transformation_scrim_behavior = global::SalveminiApp.Droid.Resource.String.fab_transformation_scrim_behavior;
+			global::MarcTron.Plugin.Resource.String.fab_transformation_sheet_behavior = global::SalveminiApp.Droid.Resource.String.fab_transformation_sheet_behavior;
+			global::MarcTron.Plugin.Resource.String.hide_bottom_view_on_scroll_behavior = global::SalveminiApp.Droid.Resource.String.hide_bottom_view_on_scroll_behavior;
+			global::MarcTron.Plugin.Resource.String.mr_button_content_description = global::SalveminiApp.Droid.Resource.String.mr_button_content_description;
+			global::MarcTron.Plugin.Resource.String.mr_cast_button_connected = global::SalveminiApp.Droid.Resource.String.mr_cast_button_connected;
+			global::MarcTron.Plugin.Resource.String.mr_cast_button_connecting = global::SalveminiApp.Droid.Resource.String.mr_cast_button_connecting;
+			global::MarcTron.Plugin.Resource.String.mr_cast_button_disconnected = global::SalveminiApp.Droid.Resource.String.mr_cast_button_disconnected;
+			global::MarcTron.Plugin.Resource.String.mr_cast_dialog_title_view_placeholder = global::SalveminiApp.Droid.Resource.String.mr_cast_dialog_title_view_placeholder;
+			global::MarcTron.Plugin.Resource.String.mr_chooser_searching = global::SalveminiApp.Droid.Resource.String.mr_chooser_searching;
+			global::MarcTron.Plugin.Resource.String.mr_chooser_title = global::SalveminiApp.Droid.Resource.String.mr_chooser_title;
+			global::MarcTron.Plugin.Resource.String.mr_controller_album_art = global::SalveminiApp.Droid.Resource.String.mr_controller_album_art;
+			global::MarcTron.Plugin.Resource.String.mr_controller_casting_screen = global::SalveminiApp.Droid.Resource.String.mr_controller_casting_screen;
+			global::MarcTron.Plugin.Resource.String.mr_controller_close_description = global::SalveminiApp.Droid.Resource.String.mr_controller_close_description;
+			global::MarcTron.Plugin.Resource.String.mr_controller_collapse_group = global::SalveminiApp.Droid.Resource.String.mr_controller_collapse_group;
+			global::MarcTron.Plugin.Resource.String.mr_controller_disconnect = global::SalveminiApp.Droid.Resource.String.mr_controller_disconnect;
+			global::MarcTron.Plugin.Resource.String.mr_controller_expand_group = global::SalveminiApp.Droid.Resource.String.mr_controller_expand_group;
+			global::MarcTron.Plugin.Resource.String.mr_controller_no_info_available = global::SalveminiApp.Droid.Resource.String.mr_controller_no_info_available;
+			global::MarcTron.Plugin.Resource.String.mr_controller_no_media_selected = global::SalveminiApp.Droid.Resource.String.mr_controller_no_media_selected;
+			global::MarcTron.Plugin.Resource.String.mr_controller_pause = global::SalveminiApp.Droid.Resource.String.mr_controller_pause;
+			global::MarcTron.Plugin.Resource.String.mr_controller_play = global::SalveminiApp.Droid.Resource.String.mr_controller_play;
+			global::MarcTron.Plugin.Resource.String.mr_controller_stop = global::SalveminiApp.Droid.Resource.String.mr_controller_stop;
+			global::MarcTron.Plugin.Resource.String.mr_controller_stop_casting = global::SalveminiApp.Droid.Resource.String.mr_controller_stop_casting;
+			global::MarcTron.Plugin.Resource.String.mr_controller_volume_slider = global::SalveminiApp.Droid.Resource.String.mr_controller_volume_slider;
+			global::MarcTron.Plugin.Resource.String.mr_dialog_device_header = global::SalveminiApp.Droid.Resource.String.mr_dialog_device_header;
+			global::MarcTron.Plugin.Resource.String.mr_dialog_route_header = global::SalveminiApp.Droid.Resource.String.mr_dialog_route_header;
+			global::MarcTron.Plugin.Resource.String.mr_system_route_name = global::SalveminiApp.Droid.Resource.String.mr_system_route_name;
+			global::MarcTron.Plugin.Resource.String.mr_user_route_category_name = global::SalveminiApp.Droid.Resource.String.mr_user_route_category_name;
+			global::MarcTron.Plugin.Resource.String.mtrl_chip_close_icon_content_description = global::SalveminiApp.Droid.Resource.String.mtrl_chip_close_icon_content_description;
+			global::MarcTron.Plugin.Resource.String.password_toggle_content_description = global::SalveminiApp.Droid.Resource.String.password_toggle_content_description;
+			global::MarcTron.Plugin.Resource.String.path_password_eye = global::SalveminiApp.Droid.Resource.String.path_password_eye;
+			global::MarcTron.Plugin.Resource.String.path_password_eye_mask_strike_through = global::SalveminiApp.Droid.Resource.String.path_password_eye_mask_strike_through;
+			global::MarcTron.Plugin.Resource.String.path_password_eye_mask_visible = global::SalveminiApp.Droid.Resource.String.path_password_eye_mask_visible;
+			global::MarcTron.Plugin.Resource.String.path_password_strike_through = global::SalveminiApp.Droid.Resource.String.path_password_strike_through;
+			global::MarcTron.Plugin.Resource.String.search_menu_title = global::SalveminiApp.Droid.Resource.String.search_menu_title;
+			global::MarcTron.Plugin.Resource.String.status_bar_notification_info_overflow = global::SalveminiApp.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::MarcTron.Plugin.Resource.Style.AlertDialog_AppCompat = global::SalveminiApp.Droid.Resource.Style.AlertDialog_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.AlertDialog_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::MarcTron.Plugin.Resource.Style.Animation_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Animation_AppCompat_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Animation_AppCompat_DropDownUp = global::SalveminiApp.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::MarcTron.Plugin.Resource.Style.Animation_AppCompat_Tooltip = global::SalveminiApp.Droid.Resource.Style.Animation_AppCompat_Tooltip;
+			global::MarcTron.Plugin.Resource.Style.Animation_Design_BottomSheetDialog = global::SalveminiApp.Droid.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::MarcTron.Plugin.Resource.Style.Base_AlertDialog_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_AlertDialog_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.Base_AlertDialog_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::MarcTron.Plugin.Resource.Style.Base_Animation_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::SalveminiApp.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::MarcTron.Plugin.Resource.Style.Base_Animation_AppCompat_Tooltip = global::SalveminiApp.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip;
+			global::MarcTron.Plugin.Resource.Style.Base_CardView = global::SalveminiApp.Droid.Resource.Style.Base_CardView;
+			global::MarcTron.Plugin.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.Base_DialogWindowTitle_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Button = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Large = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Small = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Title = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Tooltip = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Tooltip;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::MarcTron.Plugin.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::SalveminiApp.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::MarcTron.Plugin.Resource.Style.Base_ThemeOverlay_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::MarcTron.Plugin.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::MarcTron.Plugin.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::MarcTron.Plugin.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
+			global::MarcTron.Plugin.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::MarcTron.Plugin.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_MaterialComponents = global::SalveminiApp.Droid.Resource.Style.Base_Theme_MaterialComponents;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_MaterialComponents_Bridge = global::SalveminiApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Bridge;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_MaterialComponents_CompactMenu = global::SalveminiApp.Droid.Resource.Style.Base_Theme_MaterialComponents_CompactMenu;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_MaterialComponents_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize = global::SalveminiApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_MaterialComponents_Light = global::SalveminiApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Light;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_MaterialComponents_Light_Bridge = global::SalveminiApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Bridge;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar = global::SalveminiApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::SalveminiApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize = global::SalveminiApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize;
+			global::MarcTron.Plugin.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::MarcTron.Plugin.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::MarcTron.Plugin.Resource.Style.Base_V14_Theme_MaterialComponents = global::SalveminiApp.Droid.Resource.Style.Base_V14_Theme_MaterialComponents;
+			global::MarcTron.Plugin.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge = global::SalveminiApp.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge;
+			global::MarcTron.Plugin.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Base_V14_Theme_MaterialComponents_Light = global::SalveminiApp.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light;
+			global::MarcTron.Plugin.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge = global::SalveminiApp.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge;
+			global::MarcTron.Plugin.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::SalveminiApp.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::MarcTron.Plugin.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Base_V21_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_V21_Theme_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Base_V21_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::MarcTron.Plugin.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Base_V22_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_V22_Theme_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.Base_V22_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::MarcTron.Plugin.Resource.Style.Base_V23_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_V23_Theme_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.Base_V23_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::MarcTron.Plugin.Resource.Style.Base_V26_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_V26_Theme_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.Base_V26_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light;
+			global::MarcTron.Plugin.Resource.Style.Base_V26_Widget_AppCompat_Toolbar = global::SalveminiApp.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar;
+			global::MarcTron.Plugin.Resource.Style.Base_V28_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_V28_Theme_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.Base_V28_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_V28_Theme_AppCompat_Light;
+			global::MarcTron.Plugin.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Base_V7_Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Base_V7_Theme_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Base_V7_Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::MarcTron.Plugin.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::SalveminiApp.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::SalveminiApp.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::MarcTron.Plugin.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::SalveminiApp.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::MarcTron.Plugin.Resource.Style.Base_V7_Widget_AppCompat_Toolbar = global::SalveminiApp.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ActionBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ActionButton = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ActionMode = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_Button = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Button;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_Button_Small = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_EditText = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ImageButton = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ListView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_RatingBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_SearchView = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_SeekBar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_Spinner = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_Toolbar = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::SalveminiApp.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_Design_TabLayout = global::SalveminiApp.Droid.Resource.Style.Base_Widget_Design_TabLayout;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_MaterialComponents_Chip = global::SalveminiApp.Droid.Resource.Style.Base_Widget_MaterialComponents_Chip;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText = global::SalveminiApp.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText;
+			global::MarcTron.Plugin.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout = global::SalveminiApp.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout;
+			global::MarcTron.Plugin.Resource.Style.CardView = global::SalveminiApp.Droid.Resource.Style.CardView;
+			global::MarcTron.Plugin.Resource.Style.CardView_Dark = global::SalveminiApp.Droid.Resource.Style.CardView_Dark;
+			global::MarcTron.Plugin.Resource.Style.CardView_Light = global::SalveminiApp.Droid.Resource.Style.CardView_Light;
+			global::MarcTron.Plugin.Resource.Style.Platform_AppCompat = global::SalveminiApp.Droid.Resource.Style.Platform_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.Platform_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Platform_AppCompat_Light;
+			global::MarcTron.Plugin.Resource.Style.Platform_MaterialComponents = global::SalveminiApp.Droid.Resource.Style.Platform_MaterialComponents;
+			global::MarcTron.Plugin.Resource.Style.Platform_MaterialComponents_Dialog = global::SalveminiApp.Droid.Resource.Style.Platform_MaterialComponents_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Platform_MaterialComponents_Light = global::SalveminiApp.Droid.Resource.Style.Platform_MaterialComponents_Light;
+			global::MarcTron.Plugin.Resource.Style.Platform_MaterialComponents_Light_Dialog = global::SalveminiApp.Droid.Resource.Style.Platform_MaterialComponents_Light_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Platform_ThemeOverlay_AppCompat = global::SalveminiApp.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::SalveminiApp.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::MarcTron.Plugin.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::MarcTron.Plugin.Resource.Style.Platform_V21_AppCompat = global::SalveminiApp.Droid.Resource.Style.Platform_V21_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.Platform_V21_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Platform_V21_AppCompat_Light;
+			global::MarcTron.Plugin.Resource.Style.Platform_V25_AppCompat = global::SalveminiApp.Droid.Resource.Style.Platform_V25_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.Platform_V25_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Platform_V25_AppCompat_Light;
+			global::MarcTron.Plugin.Resource.Style.Platform_Widget_AppCompat_Spinner = global::SalveminiApp.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::MarcTron.Plugin.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::MarcTron.Plugin.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::MarcTron.Plugin.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::MarcTron.Plugin.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::MarcTron.Plugin.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut;
+			global::MarcTron.Plugin.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow;
+			global::MarcTron.Plugin.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::MarcTron.Plugin.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Title = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Title;
+			global::MarcTron.Plugin.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::MarcTron.Plugin.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::MarcTron.Plugin.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::MarcTron.Plugin.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::MarcTron.Plugin.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::MarcTron.Plugin.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::SalveminiApp.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::MarcTron.Plugin.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::SalveminiApp.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::MarcTron.Plugin.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::SalveminiApp.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Body1 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Body2 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Button = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Button;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Caption = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Display1 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Display2 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Display3 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Display4 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Headline = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Large = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Large;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Medium = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Menu = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Small = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Small;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Subhead = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Title;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Tooltip = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Tooltip;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::SalveminiApp.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Compat_Notification = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Compat_Notification_Info = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Compat_Notification_Media = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Media;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Compat_Notification_Time = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Compat_Notification_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Design_Counter = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_Counter;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Design_Counter_Overflow = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Design_Error = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_Error;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Design_HelperText = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_HelperText;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Design_Hint = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_Hint;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Design_Snackbar_Message = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Design_Tab = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Design_Tab;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_MaterialComponents_Body1 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Body1;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_MaterialComponents_Body2 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Body2;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_MaterialComponents_Button = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Button;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_MaterialComponents_Caption = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Caption;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_MaterialComponents_Chip = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Chip;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_MaterialComponents_Headline1 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline1;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_MaterialComponents_Headline2 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline2;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_MaterialComponents_Headline3 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline3;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_MaterialComponents_Headline4 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline4;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_MaterialComponents_Headline5 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline5;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_MaterialComponents_Headline6 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline6;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_MaterialComponents_Overline = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Overline;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_MaterialComponents_Subtitle1 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle1;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_MaterialComponents_Subtitle2 = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle2;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_MaterialComponents_Tab = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MaterialComponents_Tab;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_MediaRouter_PrimaryText = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MediaRouter_PrimaryText;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_MediaRouter_SecondaryText = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MediaRouter_SecondaryText;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_MediaRouter_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_MediaRouter_Title;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::MarcTron.Plugin.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::SalveminiApp.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_AppCompat = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_AppCompat_Dark = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_MaterialComponents = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_MaterialComponents_Dark = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_MaterialComponents_Dialog = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_MaterialComponents_Light = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Light;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_MediaRouter_Dark = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_MediaRouter_Dark;
+			global::MarcTron.Plugin.Resource.Style.ThemeOverlay_MediaRouter_Light = global::SalveminiApp.Droid.Resource.Style.ThemeOverlay_MediaRouter_Light;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_CompactMenu = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_DayNight = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_Dialog = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_Light = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_Light_Dialog = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::MarcTron.Plugin.Resource.Style.Theme_AppCompat_NoActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::MarcTron.Plugin.Resource.Style.Theme_Design = global::SalveminiApp.Droid.Resource.Style.Theme_Design;
+			global::MarcTron.Plugin.Resource.Style.Theme_Design_BottomSheetDialog = global::SalveminiApp.Droid.Resource.Style.Theme_Design_BottomSheetDialog;
+			global::MarcTron.Plugin.Resource.Style.Theme_Design_Light = global::SalveminiApp.Droid.Resource.Style.Theme_Design_Light;
+			global::MarcTron.Plugin.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::SalveminiApp.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog;
+			global::MarcTron.Plugin.Resource.Style.Theme_Design_Light_NoActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_Design_Light_NoActionBar;
+			global::MarcTron.Plugin.Resource.Style.Theme_Design_NoActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_Design_NoActionBar;
+			global::MarcTron.Plugin.Resource.Style.Theme_IAPTheme = global::SalveminiApp.Droid.Resource.Style.Theme_IAPTheme;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_BottomSheetDialog = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_BottomSheetDialog;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_Bridge = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_Bridge;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_CompactMenu = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_CompactMenu;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_Dialog = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_DialogWhenLarge;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_Light = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_Light;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_Light_Bridge = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_Light_Bridge;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_Light_Dialog = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_Light_NoActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_NoActionBar = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar;
+			global::MarcTron.Plugin.Resource.Style.Theme_MaterialComponents_NoActionBar_Bridge = global::SalveminiApp.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar_Bridge;
+			global::MarcTron.Plugin.Resource.Style.Theme_MediaRouter = global::SalveminiApp.Droid.Resource.Style.Theme_MediaRouter;
+			global::MarcTron.Plugin.Resource.Style.Theme_MediaRouter_Light = global::SalveminiApp.Droid.Resource.Style.Theme_MediaRouter_Light;
+			global::MarcTron.Plugin.Resource.Style.Theme_MediaRouter_LightControlPanel = global::SalveminiApp.Droid.Resource.Style.Theme_MediaRouter_LightControlPanel;
+			global::MarcTron.Plugin.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel = global::SalveminiApp.Droid.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ActionBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionBar;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ActionButton = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionButton;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ActionMode = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActionMode;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ActivityChooserView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Button = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Button;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ButtonBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Button_Borderless = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Button_Colored = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Button_Small = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Button_Small;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_EditText = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_EditText;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ImageButton = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ImageButton;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_ActionBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_ActionButton = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_SearchView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ListMenuView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ListMenuView;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ListPopupWindow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ListView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ListView;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ListView_DropDown = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ListView_Menu = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_PopupMenu = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_PopupWindow = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ProgressBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_RatingBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_RatingBar;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_RatingBar_Small = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_SearchView = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_SearchView;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_SeekBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_SeekBar;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Spinner = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Spinner;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Toolbar = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Toolbar;
+			global::MarcTron.Plugin.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::SalveminiApp.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::MarcTron.Plugin.Resource.Style.Widget_Compat_NotificationActionContainer = global::SalveminiApp.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::MarcTron.Plugin.Resource.Style.Widget_Compat_NotificationActionText = global::SalveminiApp.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::MarcTron.Plugin.Resource.Style.Widget_Design_AppBarLayout = global::SalveminiApp.Droid.Resource.Style.Widget_Design_AppBarLayout;
+			global::MarcTron.Plugin.Resource.Style.Widget_Design_BottomNavigationView = global::SalveminiApp.Droid.Resource.Style.Widget_Design_BottomNavigationView;
+			global::MarcTron.Plugin.Resource.Style.Widget_Design_BottomSheet_Modal = global::SalveminiApp.Droid.Resource.Style.Widget_Design_BottomSheet_Modal;
+			global::MarcTron.Plugin.Resource.Style.Widget_Design_CollapsingToolbar = global::SalveminiApp.Droid.Resource.Style.Widget_Design_CollapsingToolbar;
+			global::MarcTron.Plugin.Resource.Style.Widget_Design_FloatingActionButton = global::SalveminiApp.Droid.Resource.Style.Widget_Design_FloatingActionButton;
+			global::MarcTron.Plugin.Resource.Style.Widget_Design_NavigationView = global::SalveminiApp.Droid.Resource.Style.Widget_Design_NavigationView;
+			global::MarcTron.Plugin.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::SalveminiApp.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
+			global::MarcTron.Plugin.Resource.Style.Widget_Design_Snackbar = global::SalveminiApp.Droid.Resource.Style.Widget_Design_Snackbar;
+			global::MarcTron.Plugin.Resource.Style.Widget_Design_TabLayout = global::SalveminiApp.Droid.Resource.Style.Widget_Design_TabLayout;
+			global::MarcTron.Plugin.Resource.Style.Widget_Design_TextInputLayout = global::SalveminiApp.Droid.Resource.Style.Widget_Design_TextInputLayout;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_BottomAppBar = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_BottomNavigationView = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_Button = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_Button;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_Button_Icon = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_Button_Icon;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_Button_TextButton = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_CardView = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_CardView;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_ChipGroup = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_ChipGroup;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_Chip_Action = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_Chip_Action;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_Chip_Choice = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_Chip_Choice;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_Chip_Entry = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_Chip_Entry;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_Chip_Filter = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_Chip_Filter;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_FloatingActionButton = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_FloatingActionButton;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_NavigationView = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_NavigationView;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_Snackbar = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_Snackbar;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_TabLayout = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_TabLayout;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_TabLayout_Colored = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_TabLayout_Colored;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense;
+			global::MarcTron.Plugin.Resource.Style.Widget_MaterialComponents_Toolbar = global::SalveminiApp.Droid.Resource.Style.Widget_MaterialComponents_Toolbar;
+			global::MarcTron.Plugin.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton = global::SalveminiApp.Droid.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton;
+			global::MarcTron.Plugin.Resource.Style.Widget_MediaRouter_MediaRouteButton = global::SalveminiApp.Droid.Resource.Style.Widget_MediaRouter_MediaRouteButton;
+			global::MarcTron.Plugin.Resource.Style.Widget_Support_CoordinatorLayout = global::SalveminiApp.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar = global::SalveminiApp.Droid.Resource.Styleable.ActionBar;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBarLayout = global::SalveminiApp.Droid.Resource.Styleable.ActionBarLayout;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::SalveminiApp.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_background = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_background;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_backgroundSplit = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_backgroundSplit;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_backgroundStacked = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_backgroundStacked;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_contentInsetEnd = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_contentInsetLeft = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_contentInsetRight = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_contentInsetRight;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_contentInsetStart = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_contentInsetStart;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_customNavigationLayout = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_displayOptions = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_displayOptions;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_divider = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_divider;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_elevation = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_elevation;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_height = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_height;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_hideOnContentScroll = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_homeAsUpIndicator = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_homeLayout = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_homeLayout;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_icon = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_icon;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_itemPadding = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_itemPadding;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_logo = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_logo;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_navigationMode = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_navigationMode;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_popupTheme = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_popupTheme;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_progressBarPadding = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_progressBarPadding;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_progressBarStyle = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_progressBarStyle;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_subtitle = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_subtitle;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_subtitleTextStyle = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_title = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_title;
+			global::MarcTron.Plugin.Resource.Styleable.ActionBar_titleTextStyle = global::SalveminiApp.Droid.Resource.Styleable.ActionBar_titleTextStyle;
+			global::MarcTron.Plugin.Resource.Styleable.ActionMenuItemView = global::SalveminiApp.Droid.Resource.Styleable.ActionMenuItemView;
+			global::MarcTron.Plugin.Resource.Styleable.ActionMenuItemView_android_minWidth = global::SalveminiApp.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::MarcTron.Plugin.Resource.Styleable.ActionMenuView = global::SalveminiApp.Droid.Resource.Styleable.ActionMenuView;
+			global::MarcTron.Plugin.Resource.Styleable.ActionMode = global::SalveminiApp.Droid.Resource.Styleable.ActionMode;
+			global::MarcTron.Plugin.Resource.Styleable.ActionMode_background = global::SalveminiApp.Droid.Resource.Styleable.ActionMode_background;
+			global::MarcTron.Plugin.Resource.Styleable.ActionMode_backgroundSplit = global::SalveminiApp.Droid.Resource.Styleable.ActionMode_backgroundSplit;
+			global::MarcTron.Plugin.Resource.Styleable.ActionMode_closeItemLayout = global::SalveminiApp.Droid.Resource.Styleable.ActionMode_closeItemLayout;
+			global::MarcTron.Plugin.Resource.Styleable.ActionMode_height = global::SalveminiApp.Droid.Resource.Styleable.ActionMode_height;
+			global::MarcTron.Plugin.Resource.Styleable.ActionMode_subtitleTextStyle = global::SalveminiApp.Droid.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::MarcTron.Plugin.Resource.Styleable.ActionMode_titleTextStyle = global::SalveminiApp.Droid.Resource.Styleable.ActionMode_titleTextStyle;
+			global::MarcTron.Plugin.Resource.Styleable.ActivityChooserView = global::SalveminiApp.Droid.Resource.Styleable.ActivityChooserView;
+			global::MarcTron.Plugin.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::SalveminiApp.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::MarcTron.Plugin.Resource.Styleable.ActivityChooserView_initialActivityCount = global::SalveminiApp.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::MarcTron.Plugin.Resource.Styleable.AdsAttrs = global::SalveminiApp.Droid.Resource.Styleable.AdsAttrs;
+			global::MarcTron.Plugin.Resource.Styleable.AdsAttrs_adSize = global::SalveminiApp.Droid.Resource.Styleable.AdsAttrs_adSize;
+			global::MarcTron.Plugin.Resource.Styleable.AdsAttrs_adSizes = global::SalveminiApp.Droid.Resource.Styleable.AdsAttrs_adSizes;
+			global::MarcTron.Plugin.Resource.Styleable.AdsAttrs_adUnitId = global::SalveminiApp.Droid.Resource.Styleable.AdsAttrs_adUnitId;
+			global::MarcTron.Plugin.Resource.Styleable.AlertDialog = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog;
+			global::MarcTron.Plugin.Resource.Styleable.AlertDialog_android_layout = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_android_layout;
+			global::MarcTron.Plugin.Resource.Styleable.AlertDialog_buttonIconDimen = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_buttonIconDimen;
+			global::MarcTron.Plugin.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::MarcTron.Plugin.Resource.Styleable.AlertDialog_listItemLayout = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_listItemLayout;
+			global::MarcTron.Plugin.Resource.Styleable.AlertDialog_listLayout = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_listLayout;
+			global::MarcTron.Plugin.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::MarcTron.Plugin.Resource.Styleable.AlertDialog_showTitle = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_showTitle;
+			global::MarcTron.Plugin.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::SalveminiApp.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::MarcTron.Plugin.Resource.Styleable.AnimatedStateListDrawableCompat = global::SalveminiApp.Droid.Resource.Styleable.AnimatedStateListDrawableCompat;
+			global::MarcTron.Plugin.Resource.Styleable.AnimatedStateListDrawableCompat_android_constantSize = global::SalveminiApp.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_constantSize;
+			global::MarcTron.Plugin.Resource.Styleable.AnimatedStateListDrawableCompat_android_dither = global::SalveminiApp.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_dither;
+			global::MarcTron.Plugin.Resource.Styleable.AnimatedStateListDrawableCompat_android_enterFadeDuration = global::SalveminiApp.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_enterFadeDuration;
+			global::MarcTron.Plugin.Resource.Styleable.AnimatedStateListDrawableCompat_android_exitFadeDuration = global::SalveminiApp.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_exitFadeDuration;
+			global::MarcTron.Plugin.Resource.Styleable.AnimatedStateListDrawableCompat_android_variablePadding = global::SalveminiApp.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_variablePadding;
+			global::MarcTron.Plugin.Resource.Styleable.AnimatedStateListDrawableCompat_android_visible = global::SalveminiApp.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_visible;
+			global::MarcTron.Plugin.Resource.Styleable.AnimatedStateListDrawableItem = global::SalveminiApp.Droid.Resource.Styleable.AnimatedStateListDrawableItem;
+			global::MarcTron.Plugin.Resource.Styleable.AnimatedStateListDrawableItem_android_drawable = global::SalveminiApp.Droid.Resource.Styleable.AnimatedStateListDrawableItem_android_drawable;
+			global::MarcTron.Plugin.Resource.Styleable.AnimatedStateListDrawableItem_android_id = global::SalveminiApp.Droid.Resource.Styleable.AnimatedStateListDrawableItem_android_id;
+			global::MarcTron.Plugin.Resource.Styleable.AnimatedStateListDrawableTransition = global::SalveminiApp.Droid.Resource.Styleable.AnimatedStateListDrawableTransition;
+			global::MarcTron.Plugin.Resource.Styleable.AnimatedStateListDrawableTransition_android_drawable = global::SalveminiApp.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_drawable;
+			global::MarcTron.Plugin.Resource.Styleable.AnimatedStateListDrawableTransition_android_fromId = global::SalveminiApp.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_fromId;
+			global::MarcTron.Plugin.Resource.Styleable.AnimatedStateListDrawableTransition_android_reversible = global::SalveminiApp.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_reversible;
+			global::MarcTron.Plugin.Resource.Styleable.AnimatedStateListDrawableTransition_android_toId = global::SalveminiApp.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_toId;
+			global::MarcTron.Plugin.Resource.Styleable.AppBarLayout = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout;
+			global::MarcTron.Plugin.Resource.Styleable.AppBarLayoutStates = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayoutStates;
+			global::MarcTron.Plugin.Resource.Styleable.AppBarLayoutStates_state_collapsed = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed;
+			global::MarcTron.Plugin.Resource.Styleable.AppBarLayoutStates_state_collapsible = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible;
+			global::MarcTron.Plugin.Resource.Styleable.AppBarLayoutStates_state_liftable = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayoutStates_state_liftable;
+			global::MarcTron.Plugin.Resource.Styleable.AppBarLayoutStates_state_lifted = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayoutStates_state_lifted;
+			global::MarcTron.Plugin.Resource.Styleable.AppBarLayout_android_background = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_android_background;
+			global::MarcTron.Plugin.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster;
+			global::MarcTron.Plugin.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus;
+			global::MarcTron.Plugin.Resource.Styleable.AppBarLayout_elevation = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_elevation;
+			global::MarcTron.Plugin.Resource.Styleable.AppBarLayout_expanded = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_expanded;
+			global::MarcTron.Plugin.Resource.Styleable.AppBarLayout_Layout = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_Layout;
+			global::MarcTron.Plugin.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
+			global::MarcTron.Plugin.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
+			global::MarcTron.Plugin.Resource.Styleable.AppBarLayout_liftOnScroll = global::SalveminiApp.Droid.Resource.Styleable.AppBarLayout_liftOnScroll;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatImageView = global::SalveminiApp.Droid.Resource.Styleable.AppCompatImageView;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatImageView_android_src = global::SalveminiApp.Droid.Resource.Styleable.AppCompatImageView_android_src;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatImageView_srcCompat = global::SalveminiApp.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatImageView_tint = global::SalveminiApp.Droid.Resource.Styleable.AppCompatImageView_tint;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatImageView_tintMode = global::SalveminiApp.Droid.Resource.Styleable.AppCompatImageView_tintMode;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatSeekBar = global::SalveminiApp.Droid.Resource.Styleable.AppCompatSeekBar;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatSeekBar_android_thumb = global::SalveminiApp.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatSeekBar_tickMark = global::SalveminiApp.Droid.Resource.Styleable.AppCompatSeekBar_tickMark;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::SalveminiApp.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::SalveminiApp.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextHelper = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextView = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextView_android_textAppearance = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextView_fontFamily = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextView_lineHeight = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_lineHeight;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTextView_textAllCaps = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionBarDivider = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionBarSize = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionBarStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionBarTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionModeBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionModeStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_buttonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_checkboxStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_colorAccent = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_colorControlActivated = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_colorControlNormal = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_colorError = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorError;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_colorPrimary = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_controlBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_dialogCornerRadius = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dialogCornerRadius;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_dialogTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_dividerVertical = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_editTextBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_editTextColor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_editTextStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_panelBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_searchViewStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_seekBarStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_spinnerStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_switchStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_toolbarStyle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_tooltipForegroundColor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_tooltipForegroundColor;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_tooltipFrameBackground = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_tooltipFrameBackground;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_viewInflaterClass = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_viewInflaterClass;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_windowActionBar = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::MarcTron.Plugin.Resource.Styleable.AppCompatTheme_windowNoTitle = global::SalveminiApp.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::MarcTron.Plugin.Resource.Styleable.BottomAppBar = global::SalveminiApp.Droid.Resource.Styleable.BottomAppBar;
+			global::MarcTron.Plugin.Resource.Styleable.BottomAppBar_backgroundTint = global::SalveminiApp.Droid.Resource.Styleable.BottomAppBar_backgroundTint;
+			global::MarcTron.Plugin.Resource.Styleable.BottomAppBar_fabAlignmentMode = global::SalveminiApp.Droid.Resource.Styleable.BottomAppBar_fabAlignmentMode;
+			global::MarcTron.Plugin.Resource.Styleable.BottomAppBar_fabCradleMargin = global::SalveminiApp.Droid.Resource.Styleable.BottomAppBar_fabCradleMargin;
+			global::MarcTron.Plugin.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius = global::SalveminiApp.Droid.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius;
+			global::MarcTron.Plugin.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset = global::SalveminiApp.Droid.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset;
+			global::MarcTron.Plugin.Resource.Styleable.BottomAppBar_hideOnScroll = global::SalveminiApp.Droid.Resource.Styleable.BottomAppBar_hideOnScroll;
+			global::MarcTron.Plugin.Resource.Styleable.BottomNavigationView = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView;
+			global::MarcTron.Plugin.Resource.Styleable.BottomNavigationView_elevation = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_elevation;
+			global::MarcTron.Plugin.Resource.Styleable.BottomNavigationView_itemBackground = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_itemBackground;
+			global::MarcTron.Plugin.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled;
+			global::MarcTron.Plugin.Resource.Styleable.BottomNavigationView_itemIconSize = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_itemIconSize;
+			global::MarcTron.Plugin.Resource.Styleable.BottomNavigationView_itemIconTint = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_itemIconTint;
+			global::MarcTron.Plugin.Resource.Styleable.BottomNavigationView_itemTextAppearanceActive = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_itemTextAppearanceActive;
+			global::MarcTron.Plugin.Resource.Styleable.BottomNavigationView_itemTextAppearanceInactive = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_itemTextAppearanceInactive;
+			global::MarcTron.Plugin.Resource.Styleable.BottomNavigationView_itemTextColor = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_itemTextColor;
+			global::MarcTron.Plugin.Resource.Styleable.BottomNavigationView_labelVisibilityMode = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_labelVisibilityMode;
+			global::MarcTron.Plugin.Resource.Styleable.BottomNavigationView_menu = global::SalveminiApp.Droid.Resource.Styleable.BottomNavigationView_menu;
+			global::MarcTron.Plugin.Resource.Styleable.BottomSheetBehavior_Layout = global::SalveminiApp.Droid.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::MarcTron.Plugin.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents = global::SalveminiApp.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents;
+			global::MarcTron.Plugin.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::SalveminiApp.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
+			global::MarcTron.Plugin.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::SalveminiApp.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::MarcTron.Plugin.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::SalveminiApp.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::MarcTron.Plugin.Resource.Styleable.ButtonBarLayout = global::SalveminiApp.Droid.Resource.Styleable.ButtonBarLayout;
+			global::MarcTron.Plugin.Resource.Styleable.ButtonBarLayout_allowStacking = global::SalveminiApp.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::MarcTron.Plugin.Resource.Styleable.CardView = global::SalveminiApp.Droid.Resource.Styleable.CardView;
+			global::MarcTron.Plugin.Resource.Styleable.CardView_android_minHeight = global::SalveminiApp.Droid.Resource.Styleable.CardView_android_minHeight;
+			global::MarcTron.Plugin.Resource.Styleable.CardView_android_minWidth = global::SalveminiApp.Droid.Resource.Styleable.CardView_android_minWidth;
+			global::MarcTron.Plugin.Resource.Styleable.CardView_cardBackgroundColor = global::SalveminiApp.Droid.Resource.Styleable.CardView_cardBackgroundColor;
+			global::MarcTron.Plugin.Resource.Styleable.CardView_cardCornerRadius = global::SalveminiApp.Droid.Resource.Styleable.CardView_cardCornerRadius;
+			global::MarcTron.Plugin.Resource.Styleable.CardView_cardElevation = global::SalveminiApp.Droid.Resource.Styleable.CardView_cardElevation;
+			global::MarcTron.Plugin.Resource.Styleable.CardView_cardMaxElevation = global::SalveminiApp.Droid.Resource.Styleable.CardView_cardMaxElevation;
+			global::MarcTron.Plugin.Resource.Styleable.CardView_cardPreventCornerOverlap = global::SalveminiApp.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap;
+			global::MarcTron.Plugin.Resource.Styleable.CardView_cardUseCompatPadding = global::SalveminiApp.Droid.Resource.Styleable.CardView_cardUseCompatPadding;
+			global::MarcTron.Plugin.Resource.Styleable.CardView_contentPadding = global::SalveminiApp.Droid.Resource.Styleable.CardView_contentPadding;
+			global::MarcTron.Plugin.Resource.Styleable.CardView_contentPaddingBottom = global::SalveminiApp.Droid.Resource.Styleable.CardView_contentPaddingBottom;
+			global::MarcTron.Plugin.Resource.Styleable.CardView_contentPaddingLeft = global::SalveminiApp.Droid.Resource.Styleable.CardView_contentPaddingLeft;
+			global::MarcTron.Plugin.Resource.Styleable.CardView_contentPaddingRight = global::SalveminiApp.Droid.Resource.Styleable.CardView_contentPaddingRight;
+			global::MarcTron.Plugin.Resource.Styleable.CardView_contentPaddingTop = global::SalveminiApp.Droid.Resource.Styleable.CardView_contentPaddingTop;
+			global::MarcTron.Plugin.Resource.Styleable.Chip = global::SalveminiApp.Droid.Resource.Styleable.Chip;
+			global::MarcTron.Plugin.Resource.Styleable.ChipGroup = global::SalveminiApp.Droid.Resource.Styleable.ChipGroup;
+			global::MarcTron.Plugin.Resource.Styleable.ChipGroup_checkedChip = global::SalveminiApp.Droid.Resource.Styleable.ChipGroup_checkedChip;
+			global::MarcTron.Plugin.Resource.Styleable.ChipGroup_chipSpacing = global::SalveminiApp.Droid.Resource.Styleable.ChipGroup_chipSpacing;
+			global::MarcTron.Plugin.Resource.Styleable.ChipGroup_chipSpacingHorizontal = global::SalveminiApp.Droid.Resource.Styleable.ChipGroup_chipSpacingHorizontal;
+			global::MarcTron.Plugin.Resource.Styleable.ChipGroup_chipSpacingVertical = global::SalveminiApp.Droid.Resource.Styleable.ChipGroup_chipSpacingVertical;
+			global::MarcTron.Plugin.Resource.Styleable.ChipGroup_singleLine = global::SalveminiApp.Droid.Resource.Styleable.ChipGroup_singleLine;
+			global::MarcTron.Plugin.Resource.Styleable.ChipGroup_singleSelection = global::SalveminiApp.Droid.Resource.Styleable.ChipGroup_singleSelection;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_android_checkable = global::SalveminiApp.Droid.Resource.Styleable.Chip_android_checkable;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_android_ellipsize = global::SalveminiApp.Droid.Resource.Styleable.Chip_android_ellipsize;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_android_maxWidth = global::SalveminiApp.Droid.Resource.Styleable.Chip_android_maxWidth;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_android_text = global::SalveminiApp.Droid.Resource.Styleable.Chip_android_text;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_android_textAppearance = global::SalveminiApp.Droid.Resource.Styleable.Chip_android_textAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_checkedIcon = global::SalveminiApp.Droid.Resource.Styleable.Chip_checkedIcon;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_checkedIconEnabled = global::SalveminiApp.Droid.Resource.Styleable.Chip_checkedIconEnabled;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_checkedIconVisible = global::SalveminiApp.Droid.Resource.Styleable.Chip_checkedIconVisible;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_chipBackgroundColor = global::SalveminiApp.Droid.Resource.Styleable.Chip_chipBackgroundColor;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_chipCornerRadius = global::SalveminiApp.Droid.Resource.Styleable.Chip_chipCornerRadius;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_chipEndPadding = global::SalveminiApp.Droid.Resource.Styleable.Chip_chipEndPadding;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_chipIcon = global::SalveminiApp.Droid.Resource.Styleable.Chip_chipIcon;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_chipIconEnabled = global::SalveminiApp.Droid.Resource.Styleable.Chip_chipIconEnabled;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_chipIconSize = global::SalveminiApp.Droid.Resource.Styleable.Chip_chipIconSize;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_chipIconTint = global::SalveminiApp.Droid.Resource.Styleable.Chip_chipIconTint;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_chipIconVisible = global::SalveminiApp.Droid.Resource.Styleable.Chip_chipIconVisible;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_chipMinHeight = global::SalveminiApp.Droid.Resource.Styleable.Chip_chipMinHeight;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_chipStartPadding = global::SalveminiApp.Droid.Resource.Styleable.Chip_chipStartPadding;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_chipStrokeColor = global::SalveminiApp.Droid.Resource.Styleable.Chip_chipStrokeColor;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_chipStrokeWidth = global::SalveminiApp.Droid.Resource.Styleable.Chip_chipStrokeWidth;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_closeIcon = global::SalveminiApp.Droid.Resource.Styleable.Chip_closeIcon;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_closeIconEnabled = global::SalveminiApp.Droid.Resource.Styleable.Chip_closeIconEnabled;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_closeIconEndPadding = global::SalveminiApp.Droid.Resource.Styleable.Chip_closeIconEndPadding;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_closeIconSize = global::SalveminiApp.Droid.Resource.Styleable.Chip_closeIconSize;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_closeIconStartPadding = global::SalveminiApp.Droid.Resource.Styleable.Chip_closeIconStartPadding;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_closeIconTint = global::SalveminiApp.Droid.Resource.Styleable.Chip_closeIconTint;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_closeIconVisible = global::SalveminiApp.Droid.Resource.Styleable.Chip_closeIconVisible;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_hideMotionSpec = global::SalveminiApp.Droid.Resource.Styleable.Chip_hideMotionSpec;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_iconEndPadding = global::SalveminiApp.Droid.Resource.Styleable.Chip_iconEndPadding;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_iconStartPadding = global::SalveminiApp.Droid.Resource.Styleable.Chip_iconStartPadding;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_rippleColor = global::SalveminiApp.Droid.Resource.Styleable.Chip_rippleColor;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_showMotionSpec = global::SalveminiApp.Droid.Resource.Styleable.Chip_showMotionSpec;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_textEndPadding = global::SalveminiApp.Droid.Resource.Styleable.Chip_textEndPadding;
+			global::MarcTron.Plugin.Resource.Styleable.Chip_textStartPadding = global::SalveminiApp.Droid.Resource.Styleable.Chip_textStartPadding;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_Layout = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_title = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_title;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
+			global::MarcTron.Plugin.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::SalveminiApp.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
+			global::MarcTron.Plugin.Resource.Styleable.ColorStateListItem = global::SalveminiApp.Droid.Resource.Styleable.ColorStateListItem;
+			global::MarcTron.Plugin.Resource.Styleable.ColorStateListItem_alpha = global::SalveminiApp.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::MarcTron.Plugin.Resource.Styleable.ColorStateListItem_android_alpha = global::SalveminiApp.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::MarcTron.Plugin.Resource.Styleable.ColorStateListItem_android_color = global::SalveminiApp.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::MarcTron.Plugin.Resource.Styleable.CompoundButton = global::SalveminiApp.Droid.Resource.Styleable.CompoundButton;
+			global::MarcTron.Plugin.Resource.Styleable.CompoundButton_android_button = global::SalveminiApp.Droid.Resource.Styleable.CompoundButton_android_button;
+			global::MarcTron.Plugin.Resource.Styleable.CompoundButton_buttonTint = global::SalveminiApp.Droid.Resource.Styleable.CompoundButton_buttonTint;
+			global::MarcTron.Plugin.Resource.Styleable.CompoundButton_buttonTintMode = global::SalveminiApp.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::MarcTron.Plugin.Resource.Styleable.CoordinatorLayout = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout;
+			global::MarcTron.Plugin.Resource.Styleable.CoordinatorLayout_keylines = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::MarcTron.Plugin.Resource.Styleable.CoordinatorLayout_Layout = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout;
+			global::MarcTron.Plugin.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::MarcTron.Plugin.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::MarcTron.Plugin.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::MarcTron.Plugin.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::MarcTron.Plugin.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::MarcTron.Plugin.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::MarcTron.Plugin.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::MarcTron.Plugin.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::SalveminiApp.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::MarcTron.Plugin.Resource.Styleable.DesignTheme = global::SalveminiApp.Droid.Resource.Styleable.DesignTheme;
+			global::MarcTron.Plugin.Resource.Styleable.DesignTheme_bottomSheetDialogTheme = global::SalveminiApp.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme;
+			global::MarcTron.Plugin.Resource.Styleable.DesignTheme_bottomSheetStyle = global::SalveminiApp.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle;
+			global::MarcTron.Plugin.Resource.Styleable.DrawerArrowToggle = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle;
+			global::MarcTron.Plugin.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::MarcTron.Plugin.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::MarcTron.Plugin.Resource.Styleable.DrawerArrowToggle_barLength = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::MarcTron.Plugin.Resource.Styleable.DrawerArrowToggle_color = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_color;
+			global::MarcTron.Plugin.Resource.Styleable.DrawerArrowToggle_drawableSize = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::MarcTron.Plugin.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::MarcTron.Plugin.Resource.Styleable.DrawerArrowToggle_spinBars = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::MarcTron.Plugin.Resource.Styleable.DrawerArrowToggle_thickness = global::SalveminiApp.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::MarcTron.Plugin.Resource.Styleable.FloatingActionButton = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton;
+			global::MarcTron.Plugin.Resource.Styleable.FloatingActionButton_backgroundTint = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
+			global::MarcTron.Plugin.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
+			global::MarcTron.Plugin.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout;
+			global::MarcTron.Plugin.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::MarcTron.Plugin.Resource.Styleable.FloatingActionButton_borderWidth = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
+			global::MarcTron.Plugin.Resource.Styleable.FloatingActionButton_elevation = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_elevation;
+			global::MarcTron.Plugin.Resource.Styleable.FloatingActionButton_fabCustomSize = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_fabCustomSize;
+			global::MarcTron.Plugin.Resource.Styleable.FloatingActionButton_fabSize = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_fabSize;
+			global::MarcTron.Plugin.Resource.Styleable.FloatingActionButton_hideMotionSpec = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_hideMotionSpec;
+			global::MarcTron.Plugin.Resource.Styleable.FloatingActionButton_hoveredFocusedTranslationZ = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_hoveredFocusedTranslationZ;
+			global::MarcTron.Plugin.Resource.Styleable.FloatingActionButton_maxImageSize = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_maxImageSize;
+			global::MarcTron.Plugin.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
+			global::MarcTron.Plugin.Resource.Styleable.FloatingActionButton_rippleColor = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::MarcTron.Plugin.Resource.Styleable.FloatingActionButton_showMotionSpec = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_showMotionSpec;
+			global::MarcTron.Plugin.Resource.Styleable.FloatingActionButton_useCompatPadding = global::SalveminiApp.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding;
+			global::MarcTron.Plugin.Resource.Styleable.FlowLayout = global::SalveminiApp.Droid.Resource.Styleable.FlowLayout;
+			global::MarcTron.Plugin.Resource.Styleable.FlowLayout_itemSpacing = global::SalveminiApp.Droid.Resource.Styleable.FlowLayout_itemSpacing;
+			global::MarcTron.Plugin.Resource.Styleable.FlowLayout_lineSpacing = global::SalveminiApp.Droid.Resource.Styleable.FlowLayout_lineSpacing;
+			global::MarcTron.Plugin.Resource.Styleable.FontFamily = global::SalveminiApp.Droid.Resource.Styleable.FontFamily;
+			global::MarcTron.Plugin.Resource.Styleable.FontFamilyFont = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont;
+			global::MarcTron.Plugin.Resource.Styleable.FontFamilyFont_android_font = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::MarcTron.Plugin.Resource.Styleable.FontFamilyFont_android_fontStyle = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::MarcTron.Plugin.Resource.Styleable.FontFamilyFont_android_fontVariationSettings = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_android_fontVariationSettings;
+			global::MarcTron.Plugin.Resource.Styleable.FontFamilyFont_android_fontWeight = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::MarcTron.Plugin.Resource.Styleable.FontFamilyFont_android_ttcIndex = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_android_ttcIndex;
+			global::MarcTron.Plugin.Resource.Styleable.FontFamilyFont_font = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::MarcTron.Plugin.Resource.Styleable.FontFamilyFont_fontStyle = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::MarcTron.Plugin.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings;
+			global::MarcTron.Plugin.Resource.Styleable.FontFamilyFont_fontWeight = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::MarcTron.Plugin.Resource.Styleable.FontFamilyFont_ttcIndex = global::SalveminiApp.Droid.Resource.Styleable.FontFamilyFont_ttcIndex;
+			global::MarcTron.Plugin.Resource.Styleable.FontFamily_fontProviderAuthority = global::SalveminiApp.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::MarcTron.Plugin.Resource.Styleable.FontFamily_fontProviderCerts = global::SalveminiApp.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::MarcTron.Plugin.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::SalveminiApp.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::MarcTron.Plugin.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::SalveminiApp.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::MarcTron.Plugin.Resource.Styleable.FontFamily_fontProviderPackage = global::SalveminiApp.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::MarcTron.Plugin.Resource.Styleable.FontFamily_fontProviderQuery = global::SalveminiApp.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::MarcTron.Plugin.Resource.Styleable.ForegroundLinearLayout = global::SalveminiApp.Droid.Resource.Styleable.ForegroundLinearLayout;
+			global::MarcTron.Plugin.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::SalveminiApp.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground;
+			global::MarcTron.Plugin.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::SalveminiApp.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
+			global::MarcTron.Plugin.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::SalveminiApp.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::MarcTron.Plugin.Resource.Styleable.GradientColor = global::SalveminiApp.Droid.Resource.Styleable.GradientColor;
+			global::MarcTron.Plugin.Resource.Styleable.GradientColorItem = global::SalveminiApp.Droid.Resource.Styleable.GradientColorItem;
+			global::MarcTron.Plugin.Resource.Styleable.GradientColorItem_android_color = global::SalveminiApp.Droid.Resource.Styleable.GradientColorItem_android_color;
+			global::MarcTron.Plugin.Resource.Styleable.GradientColorItem_android_offset = global::SalveminiApp.Droid.Resource.Styleable.GradientColorItem_android_offset;
+			global::MarcTron.Plugin.Resource.Styleable.GradientColor_android_centerColor = global::SalveminiApp.Droid.Resource.Styleable.GradientColor_android_centerColor;
+			global::MarcTron.Plugin.Resource.Styleable.GradientColor_android_centerX = global::SalveminiApp.Droid.Resource.Styleable.GradientColor_android_centerX;
+			global::MarcTron.Plugin.Resource.Styleable.GradientColor_android_centerY = global::SalveminiApp.Droid.Resource.Styleable.GradientColor_android_centerY;
+			global::MarcTron.Plugin.Resource.Styleable.GradientColor_android_endColor = global::SalveminiApp.Droid.Resource.Styleable.GradientColor_android_endColor;
+			global::MarcTron.Plugin.Resource.Styleable.GradientColor_android_endX = global::SalveminiApp.Droid.Resource.Styleable.GradientColor_android_endX;
+			global::MarcTron.Plugin.Resource.Styleable.GradientColor_android_endY = global::SalveminiApp.Droid.Resource.Styleable.GradientColor_android_endY;
+			global::MarcTron.Plugin.Resource.Styleable.GradientColor_android_gradientRadius = global::SalveminiApp.Droid.Resource.Styleable.GradientColor_android_gradientRadius;
+			global::MarcTron.Plugin.Resource.Styleable.GradientColor_android_startColor = global::SalveminiApp.Droid.Resource.Styleable.GradientColor_android_startColor;
+			global::MarcTron.Plugin.Resource.Styleable.GradientColor_android_startX = global::SalveminiApp.Droid.Resource.Styleable.GradientColor_android_startX;
+			global::MarcTron.Plugin.Resource.Styleable.GradientColor_android_startY = global::SalveminiApp.Droid.Resource.Styleable.GradientColor_android_startY;
+			global::MarcTron.Plugin.Resource.Styleable.GradientColor_android_tileMode = global::SalveminiApp.Droid.Resource.Styleable.GradientColor_android_tileMode;
+			global::MarcTron.Plugin.Resource.Styleable.GradientColor_android_type = global::SalveminiApp.Droid.Resource.Styleable.GradientColor_android_type;
+			global::MarcTron.Plugin.Resource.Styleable.LinearLayoutCompat = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat;
+			global::MarcTron.Plugin.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::MarcTron.Plugin.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::MarcTron.Plugin.Resource.Styleable.LinearLayoutCompat_android_gravity = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::MarcTron.Plugin.Resource.Styleable.LinearLayoutCompat_android_orientation = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::MarcTron.Plugin.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::MarcTron.Plugin.Resource.Styleable.LinearLayoutCompat_divider = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_divider;
+			global::MarcTron.Plugin.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::MarcTron.Plugin.Resource.Styleable.LinearLayoutCompat_Layout = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::MarcTron.Plugin.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::MarcTron.Plugin.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::MarcTron.Plugin.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::MarcTron.Plugin.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::MarcTron.Plugin.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::MarcTron.Plugin.Resource.Styleable.LinearLayoutCompat_showDividers = global::SalveminiApp.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::MarcTron.Plugin.Resource.Styleable.ListPopupWindow = global::SalveminiApp.Droid.Resource.Styleable.ListPopupWindow;
+			global::MarcTron.Plugin.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::SalveminiApp.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::MarcTron.Plugin.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::SalveminiApp.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialButton = global::SalveminiApp.Droid.Resource.Styleable.MaterialButton;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialButton_android_insetBottom = global::SalveminiApp.Droid.Resource.Styleable.MaterialButton_android_insetBottom;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialButton_android_insetLeft = global::SalveminiApp.Droid.Resource.Styleable.MaterialButton_android_insetLeft;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialButton_android_insetRight = global::SalveminiApp.Droid.Resource.Styleable.MaterialButton_android_insetRight;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialButton_android_insetTop = global::SalveminiApp.Droid.Resource.Styleable.MaterialButton_android_insetTop;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialButton_backgroundTint = global::SalveminiApp.Droid.Resource.Styleable.MaterialButton_backgroundTint;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialButton_backgroundTintMode = global::SalveminiApp.Droid.Resource.Styleable.MaterialButton_backgroundTintMode;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialButton_cornerRadius = global::SalveminiApp.Droid.Resource.Styleable.MaterialButton_cornerRadius;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialButton_icon = global::SalveminiApp.Droid.Resource.Styleable.MaterialButton_icon;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialButton_iconGravity = global::SalveminiApp.Droid.Resource.Styleable.MaterialButton_iconGravity;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialButton_iconPadding = global::SalveminiApp.Droid.Resource.Styleable.MaterialButton_iconPadding;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialButton_iconSize = global::SalveminiApp.Droid.Resource.Styleable.MaterialButton_iconSize;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialButton_iconTint = global::SalveminiApp.Droid.Resource.Styleable.MaterialButton_iconTint;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialButton_iconTintMode = global::SalveminiApp.Droid.Resource.Styleable.MaterialButton_iconTintMode;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialButton_rippleColor = global::SalveminiApp.Droid.Resource.Styleable.MaterialButton_rippleColor;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialButton_strokeColor = global::SalveminiApp.Droid.Resource.Styleable.MaterialButton_strokeColor;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialButton_strokeWidth = global::SalveminiApp.Droid.Resource.Styleable.MaterialButton_strokeWidth;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialCardView = global::SalveminiApp.Droid.Resource.Styleable.MaterialCardView;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialCardView_strokeColor = global::SalveminiApp.Droid.Resource.Styleable.MaterialCardView_strokeColor;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialCardView_strokeWidth = global::SalveminiApp.Droid.Resource.Styleable.MaterialCardView_strokeWidth;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_bottomSheetDialogTheme = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_bottomSheetDialogTheme;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_bottomSheetStyle = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_bottomSheetStyle;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_chipGroupStyle = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_chipGroupStyle;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_chipStandaloneStyle = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_chipStandaloneStyle;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_chipStyle = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_chipStyle;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_colorAccent = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_colorAccent;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_colorBackgroundFloating = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_colorBackgroundFloating;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_colorPrimary = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_colorPrimary;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_colorPrimaryDark = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_colorPrimaryDark;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_colorSecondary = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_colorSecondary;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_editTextStyle = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_editTextStyle;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_floatingActionButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_floatingActionButtonStyle;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_materialButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_materialButtonStyle;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_materialCardViewStyle = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_materialCardViewStyle;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_navigationViewStyle = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_navigationViewStyle;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_scrimBackground = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_scrimBackground;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_snackbarButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_snackbarButtonStyle;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_tabStyle = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_tabStyle;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_textAppearanceBody1 = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceBody1;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_textAppearanceBody2 = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceBody2;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_textAppearanceButton = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceButton;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_textAppearanceCaption = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceCaption;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline1 = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline1;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline2 = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline2;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline3 = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline3;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline4 = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline4;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline5 = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline5;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline6 = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline6;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_textAppearanceOverline = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceOverline;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_textAppearanceSubtitle1 = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceSubtitle1;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_textAppearanceSubtitle2 = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceSubtitle2;
+			global::MarcTron.Plugin.Resource.Styleable.MaterialComponentsTheme_textInputStyle = global::SalveminiApp.Droid.Resource.Styleable.MaterialComponentsTheme_textInputStyle;
+			global::MarcTron.Plugin.Resource.Styleable.MediaRouteButton = global::SalveminiApp.Droid.Resource.Styleable.MediaRouteButton;
+			global::MarcTron.Plugin.Resource.Styleable.MediaRouteButton_android_minHeight = global::SalveminiApp.Droid.Resource.Styleable.MediaRouteButton_android_minHeight;
+			global::MarcTron.Plugin.Resource.Styleable.MediaRouteButton_android_minWidth = global::SalveminiApp.Droid.Resource.Styleable.MediaRouteButton_android_minWidth;
+			global::MarcTron.Plugin.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable = global::SalveminiApp.Droid.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable;
+			global::MarcTron.Plugin.Resource.Styleable.MediaRouteButton_mediaRouteButtonTint = global::SalveminiApp.Droid.Resource.Styleable.MediaRouteButton_mediaRouteButtonTint;
+			global::MarcTron.Plugin.Resource.Styleable.MenuGroup = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup;
+			global::MarcTron.Plugin.Resource.Styleable.MenuGroup_android_checkableBehavior = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::MarcTron.Plugin.Resource.Styleable.MenuGroup_android_enabled = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup_android_enabled;
+			global::MarcTron.Plugin.Resource.Styleable.MenuGroup_android_id = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup_android_id;
+			global::MarcTron.Plugin.Resource.Styleable.MenuGroup_android_menuCategory = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::MarcTron.Plugin.Resource.Styleable.MenuGroup_android_orderInCategory = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::MarcTron.Plugin.Resource.Styleable.MenuGroup_android_visible = global::SalveminiApp.Droid.Resource.Styleable.MenuGroup_android_visible;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem = global::SalveminiApp.Droid.Resource.Styleable.MenuItem;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_actionLayout = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_actionLayout;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_actionProviderClass = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_actionProviderClass;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_actionViewClass = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_actionViewClass;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_alphabeticModifiers = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_alphabeticModifiers;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_android_checkable = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_checkable;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_android_checked = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_checked;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_android_enabled = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_enabled;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_android_icon = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_icon;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_android_id = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_id;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_android_menuCategory = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_menuCategory;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_android_numericShortcut = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_android_onClick = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_onClick;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_android_orderInCategory = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_android_title = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_title;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_android_titleCondensed = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_android_visible = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_android_visible;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_contentDescription = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_contentDescription;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_iconTint = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_iconTint;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_iconTintMode = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_iconTintMode;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_numericModifiers = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_numericModifiers;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_showAsAction = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_showAsAction;
+			global::MarcTron.Plugin.Resource.Styleable.MenuItem_tooltipText = global::SalveminiApp.Droid.Resource.Styleable.MenuItem_tooltipText;
+			global::MarcTron.Plugin.Resource.Styleable.MenuView = global::SalveminiApp.Droid.Resource.Styleable.MenuView;
+			global::MarcTron.Plugin.Resource.Styleable.MenuView_android_headerBackground = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_headerBackground;
+			global::MarcTron.Plugin.Resource.Styleable.MenuView_android_horizontalDivider = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::MarcTron.Plugin.Resource.Styleable.MenuView_android_itemBackground = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_itemBackground;
+			global::MarcTron.Plugin.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::MarcTron.Plugin.Resource.Styleable.MenuView_android_itemTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.MenuView_android_verticalDivider = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_verticalDivider;
+			global::MarcTron.Plugin.Resource.Styleable.MenuView_android_windowAnimationStyle = global::SalveminiApp.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::MarcTron.Plugin.Resource.Styleable.MenuView_preserveIconSpacing = global::SalveminiApp.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::MarcTron.Plugin.Resource.Styleable.MenuView_subMenuArrow = global::SalveminiApp.Droid.Resource.Styleable.MenuView_subMenuArrow;
+			global::MarcTron.Plugin.Resource.Styleable.NavigationView = global::SalveminiApp.Droid.Resource.Styleable.NavigationView;
+			global::MarcTron.Plugin.Resource.Styleable.NavigationView_android_background = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_android_background;
+			global::MarcTron.Plugin.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows;
+			global::MarcTron.Plugin.Resource.Styleable.NavigationView_android_maxWidth = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_android_maxWidth;
+			global::MarcTron.Plugin.Resource.Styleable.NavigationView_elevation = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_elevation;
+			global::MarcTron.Plugin.Resource.Styleable.NavigationView_headerLayout = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_headerLayout;
+			global::MarcTron.Plugin.Resource.Styleable.NavigationView_itemBackground = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_itemBackground;
+			global::MarcTron.Plugin.Resource.Styleable.NavigationView_itemHorizontalPadding = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_itemHorizontalPadding;
+			global::MarcTron.Plugin.Resource.Styleable.NavigationView_itemIconPadding = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_itemIconPadding;
+			global::MarcTron.Plugin.Resource.Styleable.NavigationView_itemIconTint = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_itemIconTint;
+			global::MarcTron.Plugin.Resource.Styleable.NavigationView_itemTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_itemTextAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.NavigationView_itemTextColor = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_itemTextColor;
+			global::MarcTron.Plugin.Resource.Styleable.NavigationView_menu = global::SalveminiApp.Droid.Resource.Styleable.NavigationView_menu;
+			global::MarcTron.Plugin.Resource.Styleable.PopupWindow = global::SalveminiApp.Droid.Resource.Styleable.PopupWindow;
+			global::MarcTron.Plugin.Resource.Styleable.PopupWindowBackgroundState = global::SalveminiApp.Droid.Resource.Styleable.PopupWindowBackgroundState;
+			global::MarcTron.Plugin.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::SalveminiApp.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::MarcTron.Plugin.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::SalveminiApp.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
+			global::MarcTron.Plugin.Resource.Styleable.PopupWindow_android_popupBackground = global::SalveminiApp.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::MarcTron.Plugin.Resource.Styleable.PopupWindow_overlapAnchor = global::SalveminiApp.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::MarcTron.Plugin.Resource.Styleable.RecycleListView = global::SalveminiApp.Droid.Resource.Styleable.RecycleListView;
+			global::MarcTron.Plugin.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::SalveminiApp.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
+			global::MarcTron.Plugin.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::SalveminiApp.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
+			global::MarcTron.Plugin.Resource.Styleable.RecyclerView = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView;
+			global::MarcTron.Plugin.Resource.Styleable.RecyclerView_android_descendantFocusability = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
+			global::MarcTron.Plugin.Resource.Styleable.RecyclerView_android_orientation = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_android_orientation;
+			global::MarcTron.Plugin.Resource.Styleable.RecyclerView_fastScrollEnabled = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled;
+			global::MarcTron.Plugin.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable;
+			global::MarcTron.Plugin.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable;
+			global::MarcTron.Plugin.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable;
+			global::MarcTron.Plugin.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable;
+			global::MarcTron.Plugin.Resource.Styleable.RecyclerView_layoutManager = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_layoutManager;
+			global::MarcTron.Plugin.Resource.Styleable.RecyclerView_reverseLayout = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_reverseLayout;
+			global::MarcTron.Plugin.Resource.Styleable.RecyclerView_spanCount = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_spanCount;
+			global::MarcTron.Plugin.Resource.Styleable.RecyclerView_stackFromEnd = global::SalveminiApp.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::MarcTron.Plugin.Resource.Styleable.ScrimInsetsFrameLayout = global::SalveminiApp.Droid.Resource.Styleable.ScrimInsetsFrameLayout;
+			global::MarcTron.Plugin.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::SalveminiApp.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
+			global::MarcTron.Plugin.Resource.Styleable.ScrollingViewBehavior_Layout = global::SalveminiApp.Droid.Resource.Styleable.ScrollingViewBehavior_Layout;
+			global::MarcTron.Plugin.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::SalveminiApp.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
+			global::MarcTron.Plugin.Resource.Styleable.SearchView = global::SalveminiApp.Droid.Resource.Styleable.SearchView;
+			global::MarcTron.Plugin.Resource.Styleable.SearchView_android_focusable = global::SalveminiApp.Droid.Resource.Styleable.SearchView_android_focusable;
+			global::MarcTron.Plugin.Resource.Styleable.SearchView_android_imeOptions = global::SalveminiApp.Droid.Resource.Styleable.SearchView_android_imeOptions;
+			global::MarcTron.Plugin.Resource.Styleable.SearchView_android_inputType = global::SalveminiApp.Droid.Resource.Styleable.SearchView_android_inputType;
+			global::MarcTron.Plugin.Resource.Styleable.SearchView_android_maxWidth = global::SalveminiApp.Droid.Resource.Styleable.SearchView_android_maxWidth;
+			global::MarcTron.Plugin.Resource.Styleable.SearchView_closeIcon = global::SalveminiApp.Droid.Resource.Styleable.SearchView_closeIcon;
+			global::MarcTron.Plugin.Resource.Styleable.SearchView_commitIcon = global::SalveminiApp.Droid.Resource.Styleable.SearchView_commitIcon;
+			global::MarcTron.Plugin.Resource.Styleable.SearchView_defaultQueryHint = global::SalveminiApp.Droid.Resource.Styleable.SearchView_defaultQueryHint;
+			global::MarcTron.Plugin.Resource.Styleable.SearchView_goIcon = global::SalveminiApp.Droid.Resource.Styleable.SearchView_goIcon;
+			global::MarcTron.Plugin.Resource.Styleable.SearchView_iconifiedByDefault = global::SalveminiApp.Droid.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::MarcTron.Plugin.Resource.Styleable.SearchView_layout = global::SalveminiApp.Droid.Resource.Styleable.SearchView_layout;
+			global::MarcTron.Plugin.Resource.Styleable.SearchView_queryBackground = global::SalveminiApp.Droid.Resource.Styleable.SearchView_queryBackground;
+			global::MarcTron.Plugin.Resource.Styleable.SearchView_queryHint = global::SalveminiApp.Droid.Resource.Styleable.SearchView_queryHint;
+			global::MarcTron.Plugin.Resource.Styleable.SearchView_searchHintIcon = global::SalveminiApp.Droid.Resource.Styleable.SearchView_searchHintIcon;
+			global::MarcTron.Plugin.Resource.Styleable.SearchView_searchIcon = global::SalveminiApp.Droid.Resource.Styleable.SearchView_searchIcon;
+			global::MarcTron.Plugin.Resource.Styleable.SearchView_submitBackground = global::SalveminiApp.Droid.Resource.Styleable.SearchView_submitBackground;
+			global::MarcTron.Plugin.Resource.Styleable.SearchView_suggestionRowLayout = global::SalveminiApp.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::MarcTron.Plugin.Resource.Styleable.SearchView_voiceIcon = global::SalveminiApp.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::MarcTron.Plugin.Resource.Styleable.Snackbar = global::SalveminiApp.Droid.Resource.Styleable.Snackbar;
+			global::MarcTron.Plugin.Resource.Styleable.SnackbarLayout = global::SalveminiApp.Droid.Resource.Styleable.SnackbarLayout;
+			global::MarcTron.Plugin.Resource.Styleable.SnackbarLayout_android_maxWidth = global::SalveminiApp.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::MarcTron.Plugin.Resource.Styleable.SnackbarLayout_elevation = global::SalveminiApp.Droid.Resource.Styleable.SnackbarLayout_elevation;
+			global::MarcTron.Plugin.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::SalveminiApp.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
+			global::MarcTron.Plugin.Resource.Styleable.Snackbar_snackbarButtonStyle = global::SalveminiApp.Droid.Resource.Styleable.Snackbar_snackbarButtonStyle;
+			global::MarcTron.Plugin.Resource.Styleable.Snackbar_snackbarStyle = global::SalveminiApp.Droid.Resource.Styleable.Snackbar_snackbarStyle;
+			global::MarcTron.Plugin.Resource.Styleable.Spinner = global::SalveminiApp.Droid.Resource.Styleable.Spinner;
+			global::MarcTron.Plugin.Resource.Styleable.Spinner_android_dropDownWidth = global::SalveminiApp.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::MarcTron.Plugin.Resource.Styleable.Spinner_android_entries = global::SalveminiApp.Droid.Resource.Styleable.Spinner_android_entries;
+			global::MarcTron.Plugin.Resource.Styleable.Spinner_android_popupBackground = global::SalveminiApp.Droid.Resource.Styleable.Spinner_android_popupBackground;
+			global::MarcTron.Plugin.Resource.Styleable.Spinner_android_prompt = global::SalveminiApp.Droid.Resource.Styleable.Spinner_android_prompt;
+			global::MarcTron.Plugin.Resource.Styleable.Spinner_popupTheme = global::SalveminiApp.Droid.Resource.Styleable.Spinner_popupTheme;
+			global::MarcTron.Plugin.Resource.Styleable.StateListDrawable = global::SalveminiApp.Droid.Resource.Styleable.StateListDrawable;
+			global::MarcTron.Plugin.Resource.Styleable.StateListDrawableItem = global::SalveminiApp.Droid.Resource.Styleable.StateListDrawableItem;
+			global::MarcTron.Plugin.Resource.Styleable.StateListDrawableItem_android_drawable = global::SalveminiApp.Droid.Resource.Styleable.StateListDrawableItem_android_drawable;
+			global::MarcTron.Plugin.Resource.Styleable.StateListDrawable_android_constantSize = global::SalveminiApp.Droid.Resource.Styleable.StateListDrawable_android_constantSize;
+			global::MarcTron.Plugin.Resource.Styleable.StateListDrawable_android_dither = global::SalveminiApp.Droid.Resource.Styleable.StateListDrawable_android_dither;
+			global::MarcTron.Plugin.Resource.Styleable.StateListDrawable_android_enterFadeDuration = global::SalveminiApp.Droid.Resource.Styleable.StateListDrawable_android_enterFadeDuration;
+			global::MarcTron.Plugin.Resource.Styleable.StateListDrawable_android_exitFadeDuration = global::SalveminiApp.Droid.Resource.Styleable.StateListDrawable_android_exitFadeDuration;
+			global::MarcTron.Plugin.Resource.Styleable.StateListDrawable_android_variablePadding = global::SalveminiApp.Droid.Resource.Styleable.StateListDrawable_android_variablePadding;
+			global::MarcTron.Plugin.Resource.Styleable.StateListDrawable_android_visible = global::SalveminiApp.Droid.Resource.Styleable.StateListDrawable_android_visible;
+			global::MarcTron.Plugin.Resource.Styleable.SwitchCompat = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat;
+			global::MarcTron.Plugin.Resource.Styleable.SwitchCompat_android_textOff = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_android_textOff;
+			global::MarcTron.Plugin.Resource.Styleable.SwitchCompat_android_textOn = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_android_textOn;
+			global::MarcTron.Plugin.Resource.Styleable.SwitchCompat_android_thumb = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_android_thumb;
+			global::MarcTron.Plugin.Resource.Styleable.SwitchCompat_showText = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_showText;
+			global::MarcTron.Plugin.Resource.Styleable.SwitchCompat_splitTrack = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_splitTrack;
+			global::MarcTron.Plugin.Resource.Styleable.SwitchCompat_switchMinWidth = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::MarcTron.Plugin.Resource.Styleable.SwitchCompat_switchPadding = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_switchPadding;
+			global::MarcTron.Plugin.Resource.Styleable.SwitchCompat_switchTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.SwitchCompat_thumbTextPadding = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::MarcTron.Plugin.Resource.Styleable.SwitchCompat_thumbTint = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_thumbTint;
+			global::MarcTron.Plugin.Resource.Styleable.SwitchCompat_thumbTintMode = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_thumbTintMode;
+			global::MarcTron.Plugin.Resource.Styleable.SwitchCompat_track = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_track;
+			global::MarcTron.Plugin.Resource.Styleable.SwitchCompat_trackTint = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_trackTint;
+			global::MarcTron.Plugin.Resource.Styleable.SwitchCompat_trackTintMode = global::SalveminiApp.Droid.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::MarcTron.Plugin.Resource.Styleable.TabItem = global::SalveminiApp.Droid.Resource.Styleable.TabItem;
+			global::MarcTron.Plugin.Resource.Styleable.TabItem_android_icon = global::SalveminiApp.Droid.Resource.Styleable.TabItem_android_icon;
+			global::MarcTron.Plugin.Resource.Styleable.TabItem_android_layout = global::SalveminiApp.Droid.Resource.Styleable.TabItem_android_layout;
+			global::MarcTron.Plugin.Resource.Styleable.TabItem_android_text = global::SalveminiApp.Droid.Resource.Styleable.TabItem_android_text;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout = global::SalveminiApp.Droid.Resource.Styleable.TabLayout;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabBackground = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabBackground;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabContentStart = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabContentStart;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabGravity = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabGravity;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabIconTint = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabIconTint;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabIconTintMode = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabIconTintMode;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabIndicator = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabIndicator;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabIndicatorAnimationDuration = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabIndicatorAnimationDuration;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabIndicatorColor = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabIndicatorColor;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabIndicatorFullWidth = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabIndicatorFullWidth;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabIndicatorGravity = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabIndicatorGravity;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabIndicatorHeight = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabInlineLabel = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabInlineLabel;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabMaxWidth = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabMaxWidth;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabMinWidth = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabMinWidth;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabMode = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabMode;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabPadding = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabPadding;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabPaddingBottom = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabPaddingBottom;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabPaddingEnd = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabPaddingEnd;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabPaddingStart = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabPaddingStart;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabPaddingTop = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabPaddingTop;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabRippleColor = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabRippleColor;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabSelectedTextColor = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabTextAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabTextColor = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabTextColor;
+			global::MarcTron.Plugin.Resource.Styleable.TabLayout_tabUnboundedRipple = global::SalveminiApp.Droid.Resource.Styleable.TabLayout_tabUnboundedRipple;
+			global::MarcTron.Plugin.Resource.Styleable.TextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.TextAppearance_android_fontFamily = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_fontFamily;
+			global::MarcTron.Plugin.Resource.Styleable.TextAppearance_android_shadowColor = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::MarcTron.Plugin.Resource.Styleable.TextAppearance_android_shadowDx = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::MarcTron.Plugin.Resource.Styleable.TextAppearance_android_shadowDy = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::MarcTron.Plugin.Resource.Styleable.TextAppearance_android_shadowRadius = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::MarcTron.Plugin.Resource.Styleable.TextAppearance_android_textColor = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_textColor;
+			global::MarcTron.Plugin.Resource.Styleable.TextAppearance_android_textColorHint = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_textColorHint;
+			global::MarcTron.Plugin.Resource.Styleable.TextAppearance_android_textColorLink = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::MarcTron.Plugin.Resource.Styleable.TextAppearance_android_textSize = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_textSize;
+			global::MarcTron.Plugin.Resource.Styleable.TextAppearance_android_textStyle = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_textStyle;
+			global::MarcTron.Plugin.Resource.Styleable.TextAppearance_android_typeface = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_android_typeface;
+			global::MarcTron.Plugin.Resource.Styleable.TextAppearance_fontFamily = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_fontFamily;
+			global::MarcTron.Plugin.Resource.Styleable.TextAppearance_textAllCaps = global::SalveminiApp.Droid.Resource.Styleable.TextAppearance_textAllCaps;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_android_hint = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_android_hint;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_android_textColorHint = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_boxBackgroundColor = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_boxBackgroundColor;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_boxBackgroundMode = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_boxBackgroundMode;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_boxCollapsedPaddingTop = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_boxCollapsedPaddingTop;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomEnd = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomEnd;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomStart = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomStart;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_boxCornerRadiusTopEnd = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopEnd;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_boxStrokeColor = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_boxStrokeColor;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_boxStrokeWidth = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_boxStrokeWidth;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_counterEnabled = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_counterEnabled;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_counterMaxLength = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_counterMaxLength;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_counterTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_errorEnabled = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_errorTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_helperText = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_helperText;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_helperTextEnabled = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_helperTextEnabled;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_helperTextTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_helperTextTextAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_hintEnabled = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_hintEnabled;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_hintTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_passwordToggleTint = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint;
+			global::MarcTron.Plugin.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::SalveminiApp.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::MarcTron.Plugin.Resource.Styleable.ThemeEnforcement = global::SalveminiApp.Droid.Resource.Styleable.ThemeEnforcement;
+			global::MarcTron.Plugin.Resource.Styleable.ThemeEnforcement_android_textAppearance = global::SalveminiApp.Droid.Resource.Styleable.ThemeEnforcement_android_textAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme = global::SalveminiApp.Droid.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme;
+			global::MarcTron.Plugin.Resource.Styleable.ThemeEnforcement_enforceTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.ThemeEnforcement_enforceTextAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar = global::SalveminiApp.Droid.Resource.Styleable.Toolbar;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_android_gravity = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_android_gravity;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_android_minHeight = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_android_minHeight;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_buttonGravity = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_buttonGravity;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_collapseContentDescription = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_collapseIcon = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_collapseIcon;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_contentInsetEnd = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_contentInsetLeft = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_contentInsetRight = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_contentInsetRight;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_contentInsetStart = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_contentInsetStart;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_logo = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_logo;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_logoDescription = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_logoDescription;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_maxButtonHeight = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_navigationContentDescription = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_navigationIcon = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_navigationIcon;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_popupTheme = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_popupTheme;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_subtitle = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_subtitle;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_subtitleTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_subtitleTextColor = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_title = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_title;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_titleMargin = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleMargin;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_titleMarginBottom = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_titleMarginEnd = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_titleMargins = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleMargins;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_titleMarginStart = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleMarginStart;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_titleMarginTop = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleMarginTop;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_titleTextAppearance = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::MarcTron.Plugin.Resource.Styleable.Toolbar_titleTextColor = global::SalveminiApp.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::MarcTron.Plugin.Resource.Styleable.View = global::SalveminiApp.Droid.Resource.Styleable.View;
+			global::MarcTron.Plugin.Resource.Styleable.ViewBackgroundHelper = global::SalveminiApp.Droid.Resource.Styleable.ViewBackgroundHelper;
+			global::MarcTron.Plugin.Resource.Styleable.ViewBackgroundHelper_android_background = global::SalveminiApp.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::MarcTron.Plugin.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::SalveminiApp.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::MarcTron.Plugin.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::SalveminiApp.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::MarcTron.Plugin.Resource.Styleable.ViewStubCompat = global::SalveminiApp.Droid.Resource.Styleable.ViewStubCompat;
+			global::MarcTron.Plugin.Resource.Styleable.ViewStubCompat_android_id = global::SalveminiApp.Droid.Resource.Styleable.ViewStubCompat_android_id;
+			global::MarcTron.Plugin.Resource.Styleable.ViewStubCompat_android_inflatedId = global::SalveminiApp.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::MarcTron.Plugin.Resource.Styleable.ViewStubCompat_android_layout = global::SalveminiApp.Droid.Resource.Styleable.ViewStubCompat_android_layout;
+			global::MarcTron.Plugin.Resource.Styleable.View_android_focusable = global::SalveminiApp.Droid.Resource.Styleable.View_android_focusable;
+			global::MarcTron.Plugin.Resource.Styleable.View_android_theme = global::SalveminiApp.Droid.Resource.Styleable.View_android_theme;
+			global::MarcTron.Plugin.Resource.Styleable.View_paddingEnd = global::SalveminiApp.Droid.Resource.Styleable.View_paddingEnd;
+			global::MarcTron.Plugin.Resource.Styleable.View_paddingStart = global::SalveminiApp.Droid.Resource.Styleable.View_paddingStart;
+			global::MarcTron.Plugin.Resource.Styleable.View_theme = global::SalveminiApp.Droid.Resource.Styleable.View_theme;
 			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_fade_in = global::SalveminiApp.Droid.Resource.Animation.abc_fade_in;
 			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_fade_out = global::SalveminiApp.Droid.Resource.Animation.abc_fade_out;
 			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_grow_fade_in_from_bottom = global::SalveminiApp.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -13533,2182 +16440,2191 @@ namespace SalveminiApp.Droid
 			public const int activityChooserViewStyle = 2130903074;
 			
 			// aapt resource value: 0x7F030023
-			public const int ahBarColor = 2130903075;
+			public const int adSize = 2130903075;
 			
 			// aapt resource value: 0x7F030024
-			public const int ahBarLength = 2130903076;
+			public const int adSizes = 2130903076;
 			
 			// aapt resource value: 0x7F030025
-			public const int ahBarWidth = 2130903077;
+			public const int adUnitId = 2130903077;
 			
 			// aapt resource value: 0x7F030026
-			public const int ahCircleColor = 2130903078;
+			public const int ahBarColor = 2130903078;
 			
 			// aapt resource value: 0x7F030027
-			public const int ahDelayMillis = 2130903079;
+			public const int ahBarLength = 2130903079;
 			
 			// aapt resource value: 0x7F030028
-			public const int ahRadius = 2130903080;
+			public const int ahBarWidth = 2130903080;
 			
 			// aapt resource value: 0x7F030029
-			public const int ahRimColor = 2130903081;
+			public const int ahCircleColor = 2130903081;
 			
 			// aapt resource value: 0x7F03002A
-			public const int ahRimWidth = 2130903082;
+			public const int ahDelayMillis = 2130903082;
 			
 			// aapt resource value: 0x7F03002B
-			public const int ahSpinSpeed = 2130903083;
+			public const int ahRadius = 2130903083;
 			
 			// aapt resource value: 0x7F03002C
-			public const int ahText = 2130903084;
+			public const int ahRimColor = 2130903084;
 			
 			// aapt resource value: 0x7F03002D
-			public const int ahTextColor = 2130903085;
+			public const int ahRimWidth = 2130903085;
 			
 			// aapt resource value: 0x7F03002E
-			public const int ahTextSize = 2130903086;
+			public const int ahSpinSpeed = 2130903086;
 			
 			// aapt resource value: 0x7F03002F
-			public const int alertDialogButtonGroupStyle = 2130903087;
+			public const int ahText = 2130903087;
 			
 			// aapt resource value: 0x7F030030
-			public const int alertDialogCenterButtons = 2130903088;
+			public const int ahTextColor = 2130903088;
 			
 			// aapt resource value: 0x7F030031
-			public const int alertDialogStyle = 2130903089;
+			public const int ahTextSize = 2130903089;
 			
 			// aapt resource value: 0x7F030032
-			public const int alertDialogTheme = 2130903090;
+			public const int alertDialogButtonGroupStyle = 2130903090;
 			
 			// aapt resource value: 0x7F030033
-			public const int allowStacking = 2130903091;
+			public const int alertDialogCenterButtons = 2130903091;
 			
 			// aapt resource value: 0x7F030034
-			public const int alpha = 2130903092;
+			public const int alertDialogStyle = 2130903092;
 			
 			// aapt resource value: 0x7F030035
-			public const int alphabeticModifiers = 2130903093;
+			public const int alertDialogTheme = 2130903093;
 			
 			// aapt resource value: 0x7F030036
-			public const int arrowBgColor = 2130903094;
+			public const int allowStacking = 2130903094;
 			
 			// aapt resource value: 0x7F030037
-			public const int arrowColor = 2130903095;
+			public const int alpha = 2130903095;
 			
 			// aapt resource value: 0x7F030038
-			public const int arrowHeadLength = 2130903096;
+			public const int alphabeticModifiers = 2130903096;
 			
 			// aapt resource value: 0x7F030039
-			public const int arrowRadius = 2130903097;
+			public const int arrowBgColor = 2130903097;
 			
 			// aapt resource value: 0x7F03003A
-			public const int arrowShaftLength = 2130903098;
-			
-			// aapt resource value: 0x7F030041
-			public const int autocompleteBorderColor = 2130903105;
-			
-			// aapt resource value: 0x7F030042
-			public const int autocompleteClearButtonColor = 2130903106;
-			
-			// aapt resource value: 0x7F030043
-			public const int autocompleteDisplayMemberPath = 2130903107;
-			
-			// aapt resource value: 0x7F030044
-			public const int autocompleteDropDownBackgroundColor = 2130903108;
-			
-			// aapt resource value: 0x7F030045
-			public const int autocompleteDropDownCornerRadius = 2130903109;
-			
-			// aapt resource value: 0x7F030046
-			public const int autocompleteDropDownFooterViewHeight = 2130903110;
-			
-			// aapt resource value: 0x7F030047
-			public const int autocompleteDropDownHeaderViewHeight = 2130903111;
-			
-			// aapt resource value: 0x7F030048
-			public const int autocompleteDropDownItemHeight = 2130903112;
-			
-			// aapt resource value: 0x7F030049
-			public const int autocompleteDropDownOpen = 2130903113;
-			
-			// aapt resource value: 0x7F03004A
-			public const int autocompleteDropDownTextColor = 2130903114;
-			
-			// aapt resource value: 0x7F03004B
-			public const int autocompleteDropDownTextSize = 2130903115;
-			
-			// aapt resource value: 0x7F03004C
-			public const int autocompleteEnableSelectionIndicator = 2130903116;
-			
-			// aapt resource value: 0x7F03004D
-			public const int autocompleteHighlightedTextColor = 2130903117;
-			
-			// aapt resource value: 0x7F03004E
-			public const int autocompleteIgnoreDiacritic = 2130903118;
-			
-			// aapt resource value: 0x7F03004F
-			public const int autocompleteImageMemberPath = 2130903119;
-			
-			// aapt resource value: 0x7F030050
-			public const int autocompleteIndicatorText = 2130903120;
-			
-			// aapt resource value: 0x7F030051
-			public const int autocompleteIndicatorTextColor = 2130903121;
-			
-			// aapt resource value: 0x7F030052
-			public const int autocompleteIndicatorTextSize = 2130903122;
-			
-			// aapt resource value: 0x7F030053
-			public const int autocompleteIsFocused = 2130903123;
-			
-			// aapt resource value: 0x7F030054
-			public const int autocompleteIsSelectedItemsVisibleInDropDown = 2130903124;
-			
-			// aapt resource value: 0x7F030055
-			public const int autocompleteLoadMoreText = 2130903125;
-			
-			// aapt resource value: 0x7F030056
-			public const int autocompleteMaximumDropDownHeight = 2130903126;
-			
-			// aapt resource value: 0x7F030057
-			public const int autocompleteMaximumSuggestion = 2130903127;
-			
-			// aapt resource value: 0x7F030058
-			public const int autocompleteMinimumPrefixCharacters = 2130903128;
-			
-			// aapt resource value: 0x7F030059
-			public const int autocompleteMode = 2130903129;
-			
-			// aapt resource value: 0x7F03005A
-			public const int autocompleteMultiSelectMode = 2130903130;
-			
-			// aapt resource value: 0x7F03005B
-			public const int autocompleteNoResultsFoundText = 2130903131;
-			
-			// aapt resource value: 0x7F03005C
-			public const int autocompletePopUpDelay = 2130903132;
-			
-			// aapt resource value: 0x7F03005D
-			public const int autocompleteSelectedIndex = 2130903133;
-			
-			// aapt resource value: 0x7F03005E
-			public const int autocompleteShowBorder = 2130903134;
-			
-			// aapt resource value: 0x7F03005F
-			public const int autocompleteShowClearButton = 2130903135;
-			
-			// aapt resource value: 0x7F030060
-			public const int autocompleteShowDropDownFooterView = 2130903136;
-			
-			// aapt resource value: 0x7F030061
-			public const int autocompleteShowDropDownHeaderView = 2130903137;
-			
-			// aapt resource value: 0x7F030062
-			public const int autocompleteShowSuggestionsOnFocus = 2130903138;
-			
-			// aapt resource value: 0x7F030063
-			public const int autocompleteSuggestionBoxPlacement = 2130903139;
-			
-			// aapt resource value: 0x7F030064
-			public const int autocompleteSuggestionMode = 2130903140;
-			
-			// aapt resource value: 0x7F030065
-			public const int autocompleteText = 2130903141;
-			
-			// aapt resource value: 0x7F030066
-			public const int autocompleteTextColor = 2130903142;
-			
-			// aapt resource value: 0x7F030067
-			public const int autocompleteTextSize = 2130903143;
+			public const int arrowColor = 2130903098;
 			
 			// aapt resource value: 0x7F03003B
-			public const int autoCompleteTextViewStyle = 2130903099;
-			
-			// aapt resource value: 0x7F030068
-			public const int autocompleteTokensWrapMode = 2130903144;
-			
-			// aapt resource value: 0x7F030069
-			public const int autocompleteWatermark = 2130903145;
-			
-			// aapt resource value: 0x7F03006A
-			public const int autocompleteWatermarkColor = 2130903146;
+			public const int arrowHeadLength = 2130903099;
 			
 			// aapt resource value: 0x7F03003C
-			public const int autoSizeMaxTextSize = 2130903100;
+			public const int arrowRadius = 2130903100;
 			
 			// aapt resource value: 0x7F03003D
-			public const int autoSizeMinTextSize = 2130903101;
+			public const int arrowShaftLength = 2130903101;
+			
+			// aapt resource value: 0x7F030044
+			public const int autocompleteBorderColor = 2130903108;
+			
+			// aapt resource value: 0x7F030045
+			public const int autocompleteClearButtonColor = 2130903109;
+			
+			// aapt resource value: 0x7F030046
+			public const int autocompleteDisplayMemberPath = 2130903110;
+			
+			// aapt resource value: 0x7F030047
+			public const int autocompleteDropDownBackgroundColor = 2130903111;
+			
+			// aapt resource value: 0x7F030048
+			public const int autocompleteDropDownCornerRadius = 2130903112;
+			
+			// aapt resource value: 0x7F030049
+			public const int autocompleteDropDownFooterViewHeight = 2130903113;
+			
+			// aapt resource value: 0x7F03004A
+			public const int autocompleteDropDownHeaderViewHeight = 2130903114;
+			
+			// aapt resource value: 0x7F03004B
+			public const int autocompleteDropDownItemHeight = 2130903115;
+			
+			// aapt resource value: 0x7F03004C
+			public const int autocompleteDropDownOpen = 2130903116;
+			
+			// aapt resource value: 0x7F03004D
+			public const int autocompleteDropDownTextColor = 2130903117;
+			
+			// aapt resource value: 0x7F03004E
+			public const int autocompleteDropDownTextSize = 2130903118;
+			
+			// aapt resource value: 0x7F03004F
+			public const int autocompleteEnableSelectionIndicator = 2130903119;
+			
+			// aapt resource value: 0x7F030050
+			public const int autocompleteHighlightedTextColor = 2130903120;
+			
+			// aapt resource value: 0x7F030051
+			public const int autocompleteIgnoreDiacritic = 2130903121;
+			
+			// aapt resource value: 0x7F030052
+			public const int autocompleteImageMemberPath = 2130903122;
+			
+			// aapt resource value: 0x7F030053
+			public const int autocompleteIndicatorText = 2130903123;
+			
+			// aapt resource value: 0x7F030054
+			public const int autocompleteIndicatorTextColor = 2130903124;
+			
+			// aapt resource value: 0x7F030055
+			public const int autocompleteIndicatorTextSize = 2130903125;
+			
+			// aapt resource value: 0x7F030056
+			public const int autocompleteIsFocused = 2130903126;
+			
+			// aapt resource value: 0x7F030057
+			public const int autocompleteIsSelectedItemsVisibleInDropDown = 2130903127;
+			
+			// aapt resource value: 0x7F030058
+			public const int autocompleteLoadMoreText = 2130903128;
+			
+			// aapt resource value: 0x7F030059
+			public const int autocompleteMaximumDropDownHeight = 2130903129;
+			
+			// aapt resource value: 0x7F03005A
+			public const int autocompleteMaximumSuggestion = 2130903130;
+			
+			// aapt resource value: 0x7F03005B
+			public const int autocompleteMinimumPrefixCharacters = 2130903131;
+			
+			// aapt resource value: 0x7F03005C
+			public const int autocompleteMode = 2130903132;
+			
+			// aapt resource value: 0x7F03005D
+			public const int autocompleteMultiSelectMode = 2130903133;
+			
+			// aapt resource value: 0x7F03005E
+			public const int autocompleteNoResultsFoundText = 2130903134;
+			
+			// aapt resource value: 0x7F03005F
+			public const int autocompletePopUpDelay = 2130903135;
+			
+			// aapt resource value: 0x7F030060
+			public const int autocompleteSelectedIndex = 2130903136;
+			
+			// aapt resource value: 0x7F030061
+			public const int autocompleteShowBorder = 2130903137;
+			
+			// aapt resource value: 0x7F030062
+			public const int autocompleteShowClearButton = 2130903138;
+			
+			// aapt resource value: 0x7F030063
+			public const int autocompleteShowDropDownFooterView = 2130903139;
+			
+			// aapt resource value: 0x7F030064
+			public const int autocompleteShowDropDownHeaderView = 2130903140;
+			
+			// aapt resource value: 0x7F030065
+			public const int autocompleteShowSuggestionsOnFocus = 2130903141;
+			
+			// aapt resource value: 0x7F030066
+			public const int autocompleteSuggestionBoxPlacement = 2130903142;
+			
+			// aapt resource value: 0x7F030067
+			public const int autocompleteSuggestionMode = 2130903143;
+			
+			// aapt resource value: 0x7F030068
+			public const int autocompleteText = 2130903144;
+			
+			// aapt resource value: 0x7F030069
+			public const int autocompleteTextColor = 2130903145;
+			
+			// aapt resource value: 0x7F03006A
+			public const int autocompleteTextSize = 2130903146;
 			
 			// aapt resource value: 0x7F03003E
-			public const int autoSizePresetSizes = 2130903102;
-			
-			// aapt resource value: 0x7F03003F
-			public const int autoSizeStepGranularity = 2130903103;
-			
-			// aapt resource value: 0x7F030040
-			public const int autoSizeTextType = 2130903104;
+			public const int autoCompleteTextViewStyle = 2130903102;
 			
 			// aapt resource value: 0x7F03006B
-			public const int background = 2130903147;
+			public const int autocompleteTokensWrapMode = 2130903147;
 			
 			// aapt resource value: 0x7F03006C
-			public const int backgroundSplit = 2130903148;
+			public const int autocompleteWatermark = 2130903148;
 			
 			// aapt resource value: 0x7F03006D
-			public const int backgroundStacked = 2130903149;
+			public const int autocompleteWatermarkColor = 2130903149;
+			
+			// aapt resource value: 0x7F03003F
+			public const int autoSizeMaxTextSize = 2130903103;
+			
+			// aapt resource value: 0x7F030040
+			public const int autoSizeMinTextSize = 2130903104;
+			
+			// aapt resource value: 0x7F030041
+			public const int autoSizePresetSizes = 2130903105;
+			
+			// aapt resource value: 0x7F030042
+			public const int autoSizeStepGranularity = 2130903106;
+			
+			// aapt resource value: 0x7F030043
+			public const int autoSizeTextType = 2130903107;
 			
 			// aapt resource value: 0x7F03006E
-			public const int backgroundTint = 2130903150;
+			public const int background = 2130903150;
 			
 			// aapt resource value: 0x7F03006F
-			public const int backgroundTintMode = 2130903151;
+			public const int backgroundSplit = 2130903151;
 			
 			// aapt resource value: 0x7F030070
-			public const int barLength = 2130903152;
+			public const int backgroundStacked = 2130903152;
 			
 			// aapt resource value: 0x7F030071
-			public const int baseCardViewStyle = 2130903153;
+			public const int backgroundTint = 2130903153;
 			
 			// aapt resource value: 0x7F030072
-			public const int behavior_autoHide = 2130903154;
+			public const int backgroundTintMode = 2130903154;
 			
 			// aapt resource value: 0x7F030073
-			public const int behavior_fitToContents = 2130903155;
+			public const int barLength = 2130903155;
 			
 			// aapt resource value: 0x7F030074
-			public const int behavior_hideable = 2130903156;
+			public const int baseCardViewStyle = 2130903156;
 			
 			// aapt resource value: 0x7F030075
-			public const int behavior_overlapTop = 2130903157;
+			public const int behavior_autoHide = 2130903157;
 			
 			// aapt resource value: 0x7F030076
-			public const int behavior_peekHeight = 2130903158;
+			public const int behavior_fitToContents = 2130903158;
 			
 			// aapt resource value: 0x7F030077
-			public const int behavior_skipCollapsed = 2130903159;
-			
-			// aapt resource value: 0x7F030079
-			public const int borderlessButtonStyle = 2130903161;
+			public const int behavior_hideable = 2130903159;
 			
 			// aapt resource value: 0x7F030078
-			public const int borderWidth = 2130903160;
+			public const int behavior_overlapTop = 2130903160;
+			
+			// aapt resource value: 0x7F030079
+			public const int behavior_peekHeight = 2130903161;
 			
 			// aapt resource value: 0x7F03007A
-			public const int bottomAppBarStyle = 2130903162;
-			
-			// aapt resource value: 0x7F03007B
-			public const int bottomNavigationStyle = 2130903163;
+			public const int behavior_skipCollapsed = 2130903162;
 			
 			// aapt resource value: 0x7F03007C
-			public const int bottomSheetDialogTheme = 2130903164;
+			public const int borderlessButtonStyle = 2130903164;
+			
+			// aapt resource value: 0x7F03007B
+			public const int borderWidth = 2130903163;
 			
 			// aapt resource value: 0x7F03007D
-			public const int bottomSheetStyle = 2130903165;
+			public const int bottomAppBarStyle = 2130903165;
 			
 			// aapt resource value: 0x7F03007E
-			public const int boxBackgroundColor = 2130903166;
+			public const int bottomNavigationStyle = 2130903166;
 			
 			// aapt resource value: 0x7F03007F
-			public const int boxBackgroundMode = 2130903167;
+			public const int bottomSheetDialogTheme = 2130903167;
 			
 			// aapt resource value: 0x7F030080
-			public const int boxCollapsedPaddingTop = 2130903168;
+			public const int bottomSheetStyle = 2130903168;
 			
 			// aapt resource value: 0x7F030081
-			public const int boxCornerRadiusBottomEnd = 2130903169;
+			public const int boxBackgroundColor = 2130903169;
 			
 			// aapt resource value: 0x7F030082
-			public const int boxCornerRadiusBottomStart = 2130903170;
+			public const int boxBackgroundMode = 2130903170;
 			
 			// aapt resource value: 0x7F030083
-			public const int boxCornerRadiusTopEnd = 2130903171;
+			public const int boxCollapsedPaddingTop = 2130903171;
 			
 			// aapt resource value: 0x7F030084
-			public const int boxCornerRadiusTopStart = 2130903172;
+			public const int boxCornerRadiusBottomEnd = 2130903172;
 			
 			// aapt resource value: 0x7F030085
-			public const int boxStrokeColor = 2130903173;
+			public const int boxCornerRadiusBottomStart = 2130903173;
 			
 			// aapt resource value: 0x7F030086
-			public const int boxStrokeWidth = 2130903174;
+			public const int boxCornerRadiusTopEnd = 2130903174;
 			
 			// aapt resource value: 0x7F030087
-			public const int browsePaddingBottom = 2130903175;
+			public const int boxCornerRadiusTopStart = 2130903175;
 			
 			// aapt resource value: 0x7F030088
-			public const int browsePaddingEnd = 2130903176;
+			public const int boxStrokeColor = 2130903176;
 			
 			// aapt resource value: 0x7F030089
-			public const int browsePaddingStart = 2130903177;
+			public const int boxStrokeWidth = 2130903177;
 			
 			// aapt resource value: 0x7F03008A
-			public const int browsePaddingTop = 2130903178;
+			public const int browsePaddingBottom = 2130903178;
 			
 			// aapt resource value: 0x7F03008B
-			public const int browseRowsFadingEdgeLength = 2130903179;
+			public const int browsePaddingEnd = 2130903179;
 			
 			// aapt resource value: 0x7F03008C
-			public const int browseRowsMarginStart = 2130903180;
+			public const int browsePaddingStart = 2130903180;
 			
 			// aapt resource value: 0x7F03008D
-			public const int browseRowsMarginTop = 2130903181;
+			public const int browsePaddingTop = 2130903181;
 			
 			// aapt resource value: 0x7F03008E
-			public const int browseTitleIconStyle = 2130903182;
+			public const int browseRowsFadingEdgeLength = 2130903182;
 			
 			// aapt resource value: 0x7F03008F
-			public const int browseTitleTextStyle = 2130903183;
+			public const int browseRowsMarginStart = 2130903183;
 			
 			// aapt resource value: 0x7F030090
-			public const int browseTitleViewLayout = 2130903184;
+			public const int browseRowsMarginTop = 2130903184;
 			
 			// aapt resource value: 0x7F030091
-			public const int browseTitleViewStyle = 2130903185;
+			public const int browseTitleIconStyle = 2130903185;
 			
 			// aapt resource value: 0x7F030092
-			public const int buttonBarButtonStyle = 2130903186;
+			public const int browseTitleTextStyle = 2130903186;
 			
 			// aapt resource value: 0x7F030093
-			public const int buttonBarNegativeButtonStyle = 2130903187;
+			public const int browseTitleViewLayout = 2130903187;
 			
 			// aapt resource value: 0x7F030094
-			public const int buttonBarNeutralButtonStyle = 2130903188;
+			public const int browseTitleViewStyle = 2130903188;
 			
 			// aapt resource value: 0x7F030095
-			public const int buttonBarPositiveButtonStyle = 2130903189;
+			public const int buttonBarButtonStyle = 2130903189;
 			
 			// aapt resource value: 0x7F030096
-			public const int buttonBarStyle = 2130903190;
+			public const int buttonBarNegativeButtonStyle = 2130903190;
 			
 			// aapt resource value: 0x7F030097
-			public const int buttonGravity = 2130903191;
+			public const int buttonBarNeutralButtonStyle = 2130903191;
 			
 			// aapt resource value: 0x7F030098
-			public const int buttonIconDimen = 2130903192;
+			public const int buttonBarPositiveButtonStyle = 2130903192;
 			
 			// aapt resource value: 0x7F030099
-			public const int buttonPanelSideLayout = 2130903193;
+			public const int buttonBarStyle = 2130903193;
 			
 			// aapt resource value: 0x7F03009A
-			public const int buttonSize = 2130903194;
+			public const int buttonGravity = 2130903194;
 			
 			// aapt resource value: 0x7F03009B
-			public const int buttonStyle = 2130903195;
+			public const int buttonIconDimen = 2130903195;
 			
 			// aapt resource value: 0x7F03009C
-			public const int buttonStyleSmall = 2130903196;
+			public const int buttonPanelSideLayout = 2130903196;
 			
 			// aapt resource value: 0x7F03009D
-			public const int buttonTint = 2130903197;
+			public const int buttonSize = 2130903197;
 			
 			// aapt resource value: 0x7F03009E
-			public const int buttonTintMode = 2130903198;
+			public const int buttonStyle = 2130903198;
 			
 			// aapt resource value: 0x7F03009F
-			public const int cardBackground = 2130903199;
+			public const int buttonStyleSmall = 2130903199;
 			
 			// aapt resource value: 0x7F0300A0
-			public const int cardBackgroundColor = 2130903200;
+			public const int buttonTint = 2130903200;
 			
 			// aapt resource value: 0x7F0300A1
-			public const int cardCornerRadius = 2130903201;
+			public const int buttonTintMode = 2130903201;
 			
 			// aapt resource value: 0x7F0300A2
-			public const int cardElevation = 2130903202;
+			public const int cardBackground = 2130903202;
 			
 			// aapt resource value: 0x7F0300A3
-			public const int cardForeground = 2130903203;
+			public const int cardBackgroundColor = 2130903203;
 			
 			// aapt resource value: 0x7F0300A4
-			public const int cardMaxElevation = 2130903204;
+			public const int cardCornerRadius = 2130903204;
 			
 			// aapt resource value: 0x7F0300A5
-			public const int cardPreventCornerOverlap = 2130903205;
+			public const int cardElevation = 2130903205;
 			
 			// aapt resource value: 0x7F0300A6
-			public const int cardType = 2130903206;
+			public const int cardForeground = 2130903206;
 			
 			// aapt resource value: 0x7F0300A7
-			public const int cardUseCompatPadding = 2130903207;
+			public const int cardMaxElevation = 2130903207;
 			
 			// aapt resource value: 0x7F0300A8
-			public const int cardViewStyle = 2130903208;
+			public const int cardPreventCornerOverlap = 2130903208;
 			
 			// aapt resource value: 0x7F0300A9
-			public const int carouselAllowLoadMore = 2130903209;
+			public const int cardType = 2130903209;
 			
 			// aapt resource value: 0x7F0300AA
-			public const int carouselDuration = 2130903210;
+			public const int cardUseCompatPadding = 2130903210;
 			
 			// aapt resource value: 0x7F0300AB
-			public const int carouselEnableVirtualization = 2130903211;
+			public const int cardViewStyle = 2130903211;
 			
 			// aapt resource value: 0x7F0300AC
-			public const int carouselItemHeight = 2130903212;
+			public const int carouselAllowLoadMore = 2130903212;
 			
 			// aapt resource value: 0x7F0300AD
-			public const int carouselItemSpacing = 2130903213;
+			public const int carouselDuration = 2130903213;
 			
 			// aapt resource value: 0x7F0300AE
-			public const int carouselItemWidth = 2130903214;
+			public const int carouselEnableVirtualization = 2130903214;
 			
 			// aapt resource value: 0x7F0300AF
-			public const int carouselLoadMoreItemsCount = 2130903215;
+			public const int carouselItemHeight = 2130903215;
 			
 			// aapt resource value: 0x7F0300B0
-			public const int carouselOffset = 2130903216;
+			public const int carouselItemSpacing = 2130903216;
 			
 			// aapt resource value: 0x7F0300B1
-			public const int carouselRotationAngle = 2130903217;
+			public const int carouselItemWidth = 2130903217;
 			
 			// aapt resource value: 0x7F0300B2
-			public const int carouselScaleOffset = 2130903218;
+			public const int carouselLoadMoreItemsCount = 2130903218;
 			
 			// aapt resource value: 0x7F0300B3
-			public const int carouselSelectedIndex = 2130903219;
+			public const int carouselOffset = 2130903219;
 			
 			// aapt resource value: 0x7F0300B4
-			public const int carouselSelectedItemOffset = 2130903220;
+			public const int carouselRotationAngle = 2130903220;
 			
 			// aapt resource value: 0x7F0300B5
-			public const int carouselViewMode = 2130903221;
+			public const int carouselScaleOffset = 2130903221;
 			
 			// aapt resource value: 0x7F0300B6
-			public const int checkboxStyle = 2130903222;
+			public const int carouselSelectedIndex = 2130903222;
 			
 			// aapt resource value: 0x7F0300B7
-			public const int checkedChip = 2130903223;
+			public const int carouselSelectedItemOffset = 2130903223;
 			
 			// aapt resource value: 0x7F0300B8
-			public const int checkedIcon = 2130903224;
+			public const int carouselViewMode = 2130903224;
 			
 			// aapt resource value: 0x7F0300B9
-			public const int checkedIconEnabled = 2130903225;
+			public const int checkboxStyle = 2130903225;
 			
 			// aapt resource value: 0x7F0300BA
-			public const int checkedIconVisible = 2130903226;
+			public const int checkedChip = 2130903226;
 			
 			// aapt resource value: 0x7F0300BB
-			public const int checkedTextViewStyle = 2130903227;
+			public const int checkedIcon = 2130903227;
 			
 			// aapt resource value: 0x7F0300BC
-			public const int chipBackgroundColor = 2130903228;
+			public const int checkedIconEnabled = 2130903228;
 			
 			// aapt resource value: 0x7F0300BD
-			public const int chipCornerRadius = 2130903229;
+			public const int checkedIconVisible = 2130903229;
 			
 			// aapt resource value: 0x7F0300BE
-			public const int chipEndPadding = 2130903230;
+			public const int checkedTextViewStyle = 2130903230;
 			
 			// aapt resource value: 0x7F0300BF
-			public const int chipGroupStyle = 2130903231;
+			public const int chipBackgroundColor = 2130903231;
 			
 			// aapt resource value: 0x7F0300C0
-			public const int chipIcon = 2130903232;
+			public const int chipCornerRadius = 2130903232;
 			
 			// aapt resource value: 0x7F0300C1
-			public const int chipIconEnabled = 2130903233;
+			public const int chipEndPadding = 2130903233;
 			
 			// aapt resource value: 0x7F0300C2
-			public const int chipIconSize = 2130903234;
+			public const int chipGroupStyle = 2130903234;
 			
 			// aapt resource value: 0x7F0300C3
-			public const int chipIconTint = 2130903235;
+			public const int chipIcon = 2130903235;
 			
 			// aapt resource value: 0x7F0300C4
-			public const int chipIconVisible = 2130903236;
+			public const int chipIconEnabled = 2130903236;
 			
 			// aapt resource value: 0x7F0300C5
-			public const int chipMinHeight = 2130903237;
+			public const int chipIconSize = 2130903237;
 			
 			// aapt resource value: 0x7F0300C6
-			public const int chipSpacing = 2130903238;
+			public const int chipIconTint = 2130903238;
 			
 			// aapt resource value: 0x7F0300C7
-			public const int chipSpacingHorizontal = 2130903239;
+			public const int chipIconVisible = 2130903239;
 			
 			// aapt resource value: 0x7F0300C8
-			public const int chipSpacingVertical = 2130903240;
+			public const int chipMinHeight = 2130903240;
 			
 			// aapt resource value: 0x7F0300C9
-			public const int chipStandaloneStyle = 2130903241;
+			public const int chipSpacing = 2130903241;
 			
 			// aapt resource value: 0x7F0300CA
-			public const int chipStartPadding = 2130903242;
+			public const int chipSpacingHorizontal = 2130903242;
 			
 			// aapt resource value: 0x7F0300CB
-			public const int chipStrokeColor = 2130903243;
+			public const int chipSpacingVertical = 2130903243;
 			
 			// aapt resource value: 0x7F0300CC
-			public const int chipStrokeWidth = 2130903244;
+			public const int chipStandaloneStyle = 2130903244;
 			
 			// aapt resource value: 0x7F0300CD
-			public const int chipStyle = 2130903245;
+			public const int chipStartPadding = 2130903245;
 			
 			// aapt resource value: 0x7F0300CE
-			public const int circleCrop = 2130903246;
-			
-			// aapt resource value: 0x7F0300D7
-			public const int closed_captioning = 2130903255;
+			public const int chipStrokeColor = 2130903246;
 			
 			// aapt resource value: 0x7F0300CF
-			public const int closeIcon = 2130903247;
+			public const int chipStrokeWidth = 2130903247;
 			
 			// aapt resource value: 0x7F0300D0
-			public const int closeIconEnabled = 2130903248;
+			public const int chipStyle = 2130903248;
 			
 			// aapt resource value: 0x7F0300D1
-			public const int closeIconEndPadding = 2130903249;
-			
-			// aapt resource value: 0x7F0300D2
-			public const int closeIconSize = 2130903250;
-			
-			// aapt resource value: 0x7F0300D3
-			public const int closeIconStartPadding = 2130903251;
-			
-			// aapt resource value: 0x7F0300D4
-			public const int closeIconTint = 2130903252;
-			
-			// aapt resource value: 0x7F0300D5
-			public const int closeIconVisible = 2130903253;
-			
-			// aapt resource value: 0x7F0300D6
-			public const int closeItemLayout = 2130903254;
-			
-			// aapt resource value: 0x7F0300D8
-			public const int collapseContentDescription = 2130903256;
+			public const int circleCrop = 2130903249;
 			
 			// aapt resource value: 0x7F0300DA
-			public const int collapsedTitleGravity = 2130903258;
+			public const int closed_captioning = 2130903258;
 			
-			// aapt resource value: 0x7F0300DB
-			public const int collapsedTitleTextAppearance = 2130903259;
+			// aapt resource value: 0x7F0300D2
+			public const int closeIcon = 2130903250;
+			
+			// aapt resource value: 0x7F0300D3
+			public const int closeIconEnabled = 2130903251;
+			
+			// aapt resource value: 0x7F0300D4
+			public const int closeIconEndPadding = 2130903252;
+			
+			// aapt resource value: 0x7F0300D5
+			public const int closeIconSize = 2130903253;
+			
+			// aapt resource value: 0x7F0300D6
+			public const int closeIconStartPadding = 2130903254;
+			
+			// aapt resource value: 0x7F0300D7
+			public const int closeIconTint = 2130903255;
+			
+			// aapt resource value: 0x7F0300D8
+			public const int closeIconVisible = 2130903256;
 			
 			// aapt resource value: 0x7F0300D9
-			public const int collapseIcon = 2130903257;
+			public const int closeItemLayout = 2130903257;
 			
-			// aapt resource value: 0x7F0300DC
-			public const int color = 2130903260;
+			// aapt resource value: 0x7F0300DB
+			public const int collapseContentDescription = 2130903259;
 			
 			// aapt resource value: 0x7F0300DD
-			public const int colorAccent = 2130903261;
+			public const int collapsedTitleGravity = 2130903261;
 			
 			// aapt resource value: 0x7F0300DE
-			public const int colorBackgroundFloating = 2130903262;
+			public const int collapsedTitleTextAppearance = 2130903262;
+			
+			// aapt resource value: 0x7F0300DC
+			public const int collapseIcon = 2130903260;
 			
 			// aapt resource value: 0x7F0300DF
-			public const int colorButtonNormal = 2130903263;
+			public const int color = 2130903263;
 			
 			// aapt resource value: 0x7F0300E0
-			public const int colorControlActivated = 2130903264;
+			public const int colorAccent = 2130903264;
 			
 			// aapt resource value: 0x7F0300E1
-			public const int colorControlHighlight = 2130903265;
+			public const int colorBackgroundFloating = 2130903265;
 			
 			// aapt resource value: 0x7F0300E2
-			public const int colorControlNormal = 2130903266;
+			public const int colorButtonNormal = 2130903266;
 			
 			// aapt resource value: 0x7F0300E3
-			public const int colorError = 2130903267;
+			public const int colorControlActivated = 2130903267;
 			
 			// aapt resource value: 0x7F0300E4
-			public const int colorPrimary = 2130903268;
+			public const int colorControlHighlight = 2130903268;
 			
 			// aapt resource value: 0x7F0300E5
-			public const int colorPrimaryDark = 2130903269;
+			public const int colorControlNormal = 2130903269;
 			
 			// aapt resource value: 0x7F0300E6
-			public const int colorScheme = 2130903270;
+			public const int colorError = 2130903270;
 			
 			// aapt resource value: 0x7F0300E7
-			public const int colorSecondary = 2130903271;
+			public const int colorPrimary = 2130903271;
 			
 			// aapt resource value: 0x7F0300E8
-			public const int colorSwitchThumbNormal = 2130903272;
+			public const int colorPrimaryDark = 2130903272;
 			
 			// aapt resource value: 0x7F0300E9
-			public const int columnWidth = 2130903273;
+			public const int colorScheme = 2130903273;
 			
 			// aapt resource value: 0x7F0300EA
-			public const int commitIcon = 2130903274;
+			public const int colorSecondary = 2130903274;
 			
 			// aapt resource value: 0x7F0300EB
-			public const int contentDescription = 2130903275;
+			public const int colorSwitchThumbNormal = 2130903275;
 			
 			// aapt resource value: 0x7F0300EC
-			public const int contentInsetEnd = 2130903276;
+			public const int columnWidth = 2130903276;
 			
 			// aapt resource value: 0x7F0300ED
-			public const int contentInsetEndWithActions = 2130903277;
+			public const int commitIcon = 2130903277;
 			
 			// aapt resource value: 0x7F0300EE
-			public const int contentInsetLeft = 2130903278;
+			public const int contentDescription = 2130903278;
 			
 			// aapt resource value: 0x7F0300EF
-			public const int contentInsetRight = 2130903279;
+			public const int contentInsetEnd = 2130903279;
 			
 			// aapt resource value: 0x7F0300F0
-			public const int contentInsetStart = 2130903280;
+			public const int contentInsetEndWithActions = 2130903280;
 			
 			// aapt resource value: 0x7F0300F1
-			public const int contentInsetStartWithNavigation = 2130903281;
+			public const int contentInsetLeft = 2130903281;
 			
 			// aapt resource value: 0x7F0300F2
-			public const int contentPadding = 2130903282;
+			public const int contentInsetRight = 2130903282;
 			
 			// aapt resource value: 0x7F0300F3
-			public const int contentPaddingBottom = 2130903283;
+			public const int contentInsetStart = 2130903283;
 			
 			// aapt resource value: 0x7F0300F4
-			public const int contentPaddingLeft = 2130903284;
+			public const int contentInsetStartWithNavigation = 2130903284;
 			
 			// aapt resource value: 0x7F0300F5
-			public const int contentPaddingRight = 2130903285;
+			public const int contentPadding = 2130903285;
 			
 			// aapt resource value: 0x7F0300F6
-			public const int contentPaddingTop = 2130903286;
+			public const int contentPaddingBottom = 2130903286;
 			
 			// aapt resource value: 0x7F0300F7
-			public const int contentScrim = 2130903287;
+			public const int contentPaddingLeft = 2130903287;
 			
 			// aapt resource value: 0x7F0300F8
-			public const int controlBackground = 2130903288;
+			public const int contentPaddingRight = 2130903288;
 			
 			// aapt resource value: 0x7F0300F9
-			public const int coordinatorLayoutStyle = 2130903289;
+			public const int contentPaddingTop = 2130903289;
 			
 			// aapt resource value: 0x7F0300FA
-			public const int cornerRadius = 2130903290;
+			public const int contentScrim = 2130903290;
 			
 			// aapt resource value: 0x7F0300FB
-			public const int counterEnabled = 2130903291;
+			public const int controlBackground = 2130903291;
 			
 			// aapt resource value: 0x7F0300FC
-			public const int counterMaxLength = 2130903292;
+			public const int coordinatorLayoutStyle = 2130903292;
 			
 			// aapt resource value: 0x7F0300FD
-			public const int counterOverflowTextAppearance = 2130903293;
+			public const int cornerRadius = 2130903293;
 			
 			// aapt resource value: 0x7F0300FE
-			public const int counterTextAppearance = 2130903294;
+			public const int counterEnabled = 2130903294;
 			
 			// aapt resource value: 0x7F0300FF
-			public const int customNavigationLayout = 2130903295;
+			public const int counterMaxLength = 2130903295;
 			
 			// aapt resource value: 0x7F030100
-			public const int datePickerFormat = 2130903296;
+			public const int counterOverflowTextAppearance = 2130903296;
 			
 			// aapt resource value: 0x7F030101
-			public const int defaultBrandColor = 2130903297;
+			public const int counterTextAppearance = 2130903297;
 			
 			// aapt resource value: 0x7F030102
-			public const int defaultBrandColorDark = 2130903298;
+			public const int customNavigationLayout = 2130903298;
 			
 			// aapt resource value: 0x7F030103
-			public const int defaultQueryHint = 2130903299;
+			public const int datePickerFormat = 2130903299;
 			
 			// aapt resource value: 0x7F030104
-			public const int defaultSearchBrightColor = 2130903300;
+			public const int defaultBrandColor = 2130903300;
 			
 			// aapt resource value: 0x7F030105
-			public const int defaultSearchColor = 2130903301;
+			public const int defaultBrandColorDark = 2130903301;
 			
 			// aapt resource value: 0x7F030106
-			public const int defaultSearchIcon = 2130903302;
+			public const int defaultQueryHint = 2130903302;
 			
 			// aapt resource value: 0x7F030107
-			public const int defaultSearchIconColor = 2130903303;
+			public const int defaultSearchBrightColor = 2130903303;
 			
 			// aapt resource value: 0x7F030108
-			public const int defaultSectionHeaderColor = 2130903304;
+			public const int defaultSearchColor = 2130903304;
 			
 			// aapt resource value: 0x7F030109
-			public const int detailsActionButtonStyle = 2130903305;
+			public const int defaultSearchIcon = 2130903305;
 			
 			// aapt resource value: 0x7F03010A
-			public const int detailsDescriptionBodyStyle = 2130903306;
+			public const int defaultSearchIconColor = 2130903306;
 			
 			// aapt resource value: 0x7F03010B
-			public const int detailsDescriptionSubtitleStyle = 2130903307;
+			public const int defaultSectionHeaderColor = 2130903307;
 			
 			// aapt resource value: 0x7F03010C
-			public const int detailsDescriptionTitleStyle = 2130903308;
+			public const int detailsActionButtonStyle = 2130903308;
 			
 			// aapt resource value: 0x7F03010D
-			public const int dialogCornerRadius = 2130903309;
+			public const int detailsDescriptionBodyStyle = 2130903309;
 			
 			// aapt resource value: 0x7F03010E
-			public const int dialogPreferredPadding = 2130903310;
+			public const int detailsDescriptionSubtitleStyle = 2130903310;
 			
 			// aapt resource value: 0x7F03010F
-			public const int dialogTheme = 2130903311;
+			public const int detailsDescriptionTitleStyle = 2130903311;
 			
 			// aapt resource value: 0x7F030110
-			public const int displayOptions = 2130903312;
+			public const int dialogCornerRadius = 2130903312;
 			
 			// aapt resource value: 0x7F030111
-			public const int divider = 2130903313;
+			public const int dialogPreferredPadding = 2130903313;
 			
 			// aapt resource value: 0x7F030112
-			public const int dividerHorizontal = 2130903314;
+			public const int dialogTheme = 2130903314;
 			
 			// aapt resource value: 0x7F030113
-			public const int dividerPadding = 2130903315;
+			public const int displayOptions = 2130903315;
 			
 			// aapt resource value: 0x7F030114
-			public const int dividerVertical = 2130903316;
+			public const int divider = 2130903316;
 			
 			// aapt resource value: 0x7F030115
-			public const int dotBgColor = 2130903317;
+			public const int dividerHorizontal = 2130903317;
 			
 			// aapt resource value: 0x7F030116
-			public const int dotToArrowGap = 2130903318;
+			public const int dividerPadding = 2130903318;
 			
 			// aapt resource value: 0x7F030117
-			public const int dotToDotGap = 2130903319;
+			public const int dividerVertical = 2130903319;
 			
 			// aapt resource value: 0x7F030118
-			public const int drawableSize = 2130903320;
+			public const int dotBgColor = 2130903320;
 			
 			// aapt resource value: 0x7F030119
-			public const int drawerArrowStyle = 2130903321;
-			
-			// aapt resource value: 0x7F03011B
-			public const int dropdownListPreferredItemHeight = 2130903323;
+			public const int dotToArrowGap = 2130903321;
 			
 			// aapt resource value: 0x7F03011A
-			public const int dropDownListViewStyle = 2130903322;
+			public const int dotToDotGap = 2130903322;
+			
+			// aapt resource value: 0x7F03011B
+			public const int drawableSize = 2130903323;
 			
 			// aapt resource value: 0x7F03011C
-			public const int editTextBackground = 2130903324;
-			
-			// aapt resource value: 0x7F03011D
-			public const int editTextColor = 2130903325;
+			public const int drawerArrowStyle = 2130903324;
 			
 			// aapt resource value: 0x7F03011E
-			public const int editTextStyle = 2130903326;
+			public const int dropdownListPreferredItemHeight = 2130903326;
+			
+			// aapt resource value: 0x7F03011D
+			public const int dropDownListViewStyle = 2130903325;
 			
 			// aapt resource value: 0x7F03011F
-			public const int elevation = 2130903327;
+			public const int editTextBackground = 2130903327;
 			
 			// aapt resource value: 0x7F030120
-			public const int enforceMaterialTheme = 2130903328;
+			public const int editTextColor = 2130903328;
 			
 			// aapt resource value: 0x7F030121
-			public const int enforceTextAppearance = 2130903329;
+			public const int editTextStyle = 2130903329;
 			
 			// aapt resource value: 0x7F030122
-			public const int errorEnabled = 2130903330;
+			public const int elevation = 2130903330;
 			
 			// aapt resource value: 0x7F030123
-			public const int errorMessageStyle = 2130903331;
+			public const int enforceMaterialTheme = 2130903331;
 			
 			// aapt resource value: 0x7F030124
-			public const int errorTextAppearance = 2130903332;
+			public const int enforceTextAppearance = 2130903332;
 			
 			// aapt resource value: 0x7F030125
-			public const int expandActivityOverflowButtonDrawable = 2130903333;
+			public const int errorEnabled = 2130903333;
 			
 			// aapt resource value: 0x7F030126
-			public const int expanded = 2130903334;
+			public const int errorMessageStyle = 2130903334;
 			
 			// aapt resource value: 0x7F030127
-			public const int expandedTitleGravity = 2130903335;
+			public const int errorTextAppearance = 2130903335;
 			
 			// aapt resource value: 0x7F030128
-			public const int expandedTitleMargin = 2130903336;
+			public const int expandActivityOverflowButtonDrawable = 2130903336;
 			
 			// aapt resource value: 0x7F030129
-			public const int expandedTitleMarginBottom = 2130903337;
+			public const int expanded = 2130903337;
 			
 			// aapt resource value: 0x7F03012A
-			public const int expandedTitleMarginEnd = 2130903338;
+			public const int expandedTitleGravity = 2130903338;
 			
 			// aapt resource value: 0x7F03012B
-			public const int expandedTitleMarginStart = 2130903339;
+			public const int expandedTitleMargin = 2130903339;
 			
 			// aapt resource value: 0x7F03012C
-			public const int expandedTitleMarginTop = 2130903340;
+			public const int expandedTitleMarginBottom = 2130903340;
 			
 			// aapt resource value: 0x7F03012D
-			public const int expandedTitleTextAppearance = 2130903341;
+			public const int expandedTitleMarginEnd = 2130903341;
 			
 			// aapt resource value: 0x7F03012E
-			public const int externalRouteEnabledDrawable = 2130903342;
+			public const int expandedTitleMarginStart = 2130903342;
 			
 			// aapt resource value: 0x7F03012F
-			public const int extraVisibility = 2130903343;
+			public const int expandedTitleMarginTop = 2130903343;
 			
 			// aapt resource value: 0x7F030130
-			public const int fabAlignmentMode = 2130903344;
+			public const int expandedTitleTextAppearance = 2130903344;
 			
 			// aapt resource value: 0x7F030131
-			public const int fabCradleMargin = 2130903345;
+			public const int externalRouteEnabledDrawable = 2130903345;
 			
 			// aapt resource value: 0x7F030132
-			public const int fabCradleRoundedCornerRadius = 2130903346;
+			public const int extraVisibility = 2130903346;
 			
 			// aapt resource value: 0x7F030133
-			public const int fabCradleVerticalOffset = 2130903347;
+			public const int fabAlignmentMode = 2130903347;
 			
 			// aapt resource value: 0x7F030134
-			public const int fabCustomSize = 2130903348;
+			public const int fabCradleMargin = 2130903348;
 			
 			// aapt resource value: 0x7F030135
-			public const int fabSize = 2130903349;
+			public const int fabCradleRoundedCornerRadius = 2130903349;
 			
 			// aapt resource value: 0x7F030136
-			public const int fastScrollEnabled = 2130903350;
+			public const int fabCradleVerticalOffset = 2130903350;
 			
 			// aapt resource value: 0x7F030137
-			public const int fastScrollHorizontalThumbDrawable = 2130903351;
+			public const int fabCustomSize = 2130903351;
 			
 			// aapt resource value: 0x7F030138
-			public const int fastScrollHorizontalTrackDrawable = 2130903352;
+			public const int fabSize = 2130903352;
 			
 			// aapt resource value: 0x7F030139
-			public const int fastScrollVerticalThumbDrawable = 2130903353;
+			public const int fastScrollEnabled = 2130903353;
 			
 			// aapt resource value: 0x7F03013A
-			public const int fastScrollVerticalTrackDrawable = 2130903354;
+			public const int fastScrollHorizontalThumbDrawable = 2130903354;
 			
 			// aapt resource value: 0x7F03013B
-			public const int fast_forward = 2130903355;
+			public const int fastScrollHorizontalTrackDrawable = 2130903355;
 			
 			// aapt resource value: 0x7F03013C
-			public const int firstBaselineToTopHeight = 2130903356;
+			public const int fastScrollVerticalThumbDrawable = 2130903356;
 			
 			// aapt resource value: 0x7F03013D
-			public const int floatingActionButtonStyle = 2130903357;
+			public const int fastScrollVerticalTrackDrawable = 2130903357;
 			
 			// aapt resource value: 0x7F03013E
-			public const int focusOutEnd = 2130903358;
+			public const int fast_forward = 2130903358;
 			
 			// aapt resource value: 0x7F03013F
-			public const int focusOutFront = 2130903359;
+			public const int firstBaselineToTopHeight = 2130903359;
 			
 			// aapt resource value: 0x7F030140
-			public const int focusOutSideEnd = 2130903360;
+			public const int floatingActionButtonStyle = 2130903360;
 			
 			// aapt resource value: 0x7F030141
-			public const int focusOutSideStart = 2130903361;
+			public const int focusOutEnd = 2130903361;
 			
 			// aapt resource value: 0x7F030142
-			public const int font = 2130903362;
+			public const int focusOutFront = 2130903362;
 			
 			// aapt resource value: 0x7F030143
-			public const int fontFamily = 2130903363;
+			public const int focusOutSideEnd = 2130903363;
 			
 			// aapt resource value: 0x7F030144
-			public const int fontProviderAuthority = 2130903364;
+			public const int focusOutSideStart = 2130903364;
 			
 			// aapt resource value: 0x7F030145
-			public const int fontProviderCerts = 2130903365;
+			public const int font = 2130903365;
 			
 			// aapt resource value: 0x7F030146
-			public const int fontProviderFetchStrategy = 2130903366;
+			public const int fontFamily = 2130903366;
 			
 			// aapt resource value: 0x7F030147
-			public const int fontProviderFetchTimeout = 2130903367;
+			public const int fontProviderAuthority = 2130903367;
 			
 			// aapt resource value: 0x7F030148
-			public const int fontProviderPackage = 2130903368;
+			public const int fontProviderCerts = 2130903368;
 			
 			// aapt resource value: 0x7F030149
-			public const int fontProviderQuery = 2130903369;
+			public const int fontProviderFetchStrategy = 2130903369;
 			
 			// aapt resource value: 0x7F03014A
-			public const int fontStyle = 2130903370;
+			public const int fontProviderFetchTimeout = 2130903370;
 			
 			// aapt resource value: 0x7F03014B
-			public const int fontVariationSettings = 2130903371;
+			public const int fontProviderPackage = 2130903371;
 			
 			// aapt resource value: 0x7F03014C
-			public const int fontWeight = 2130903372;
+			public const int fontProviderQuery = 2130903372;
 			
 			// aapt resource value: 0x7F03014D
-			public const int foregroundInsidePadding = 2130903373;
+			public const int fontStyle = 2130903373;
 			
 			// aapt resource value: 0x7F03014E
-			public const int gapBetweenBars = 2130903374;
+			public const int fontVariationSettings = 2130903374;
 			
 			// aapt resource value: 0x7F03014F
-			public const int goIcon = 2130903375;
+			public const int fontWeight = 2130903375;
 			
 			// aapt resource value: 0x7F030150
-			public const int guidanceBreadcrumbStyle = 2130903376;
+			public const int foregroundInsidePadding = 2130903376;
 			
 			// aapt resource value: 0x7F030151
-			public const int guidanceContainerStyle = 2130903377;
+			public const int gapBetweenBars = 2130903377;
 			
 			// aapt resource value: 0x7F030152
-			public const int guidanceDescriptionStyle = 2130903378;
+			public const int goIcon = 2130903378;
 			
 			// aapt resource value: 0x7F030153
-			public const int guidanceEntryAnimation = 2130903379;
+			public const int guidanceBreadcrumbStyle = 2130903379;
 			
 			// aapt resource value: 0x7F030154
-			public const int guidanceIconStyle = 2130903380;
+			public const int guidanceContainerStyle = 2130903380;
 			
 			// aapt resource value: 0x7F030155
-			public const int guidanceTitleStyle = 2130903381;
+			public const int guidanceDescriptionStyle = 2130903381;
 			
 			// aapt resource value: 0x7F030156
-			public const int guidedActionCheckedAnimation = 2130903382;
+			public const int guidanceEntryAnimation = 2130903382;
 			
 			// aapt resource value: 0x7F030157
-			public const int guidedActionContentWidth = 2130903383;
+			public const int guidanceIconStyle = 2130903383;
 			
 			// aapt resource value: 0x7F030158
-			public const int guidedActionContentWidthNoIcon = 2130903384;
+			public const int guidanceTitleStyle = 2130903384;
 			
 			// aapt resource value: 0x7F030159
-			public const int guidedActionContentWidthWeight = 2130903385;
+			public const int guidedActionCheckedAnimation = 2130903385;
 			
 			// aapt resource value: 0x7F03015A
-			public const int guidedActionContentWidthWeightTwoPanels = 2130903386;
+			public const int guidedActionContentWidth = 2130903386;
 			
 			// aapt resource value: 0x7F03015B
-			public const int guidedActionDescriptionMinLines = 2130903387;
+			public const int guidedActionContentWidthNoIcon = 2130903387;
 			
 			// aapt resource value: 0x7F03015C
-			public const int guidedActionDisabledChevronAlpha = 2130903388;
+			public const int guidedActionContentWidthWeight = 2130903388;
 			
 			// aapt resource value: 0x7F03015D
-			public const int guidedActionEnabledChevronAlpha = 2130903389;
+			public const int guidedActionContentWidthWeightTwoPanels = 2130903389;
 			
 			// aapt resource value: 0x7F03015E
-			public const int guidedActionItemCheckmarkStyle = 2130903390;
+			public const int guidedActionDescriptionMinLines = 2130903390;
 			
 			// aapt resource value: 0x7F03015F
-			public const int guidedActionItemChevronStyle = 2130903391;
+			public const int guidedActionDisabledChevronAlpha = 2130903391;
 			
 			// aapt resource value: 0x7F030160
-			public const int guidedActionItemContainerStyle = 2130903392;
+			public const int guidedActionEnabledChevronAlpha = 2130903392;
 			
 			// aapt resource value: 0x7F030161
-			public const int guidedActionItemContentStyle = 2130903393;
+			public const int guidedActionItemCheckmarkStyle = 2130903393;
 			
 			// aapt resource value: 0x7F030162
-			public const int guidedActionItemDescriptionStyle = 2130903394;
+			public const int guidedActionItemChevronStyle = 2130903394;
 			
 			// aapt resource value: 0x7F030163
-			public const int guidedActionItemIconStyle = 2130903395;
+			public const int guidedActionItemContainerStyle = 2130903395;
 			
 			// aapt resource value: 0x7F030164
-			public const int guidedActionItemTitleStyle = 2130903396;
+			public const int guidedActionItemContentStyle = 2130903396;
 			
 			// aapt resource value: 0x7F030165
-			public const int guidedActionPressedAnimation = 2130903397;
-			
-			// aapt resource value: 0x7F03016B
-			public const int guidedActionsBackground = 2130903403;
-			
-			// aapt resource value: 0x7F03016C
-			public const int guidedActionsBackgroundDark = 2130903404;
-			
-			// aapt resource value: 0x7F03016D
-			public const int guidedActionsContainerStyle = 2130903405;
-			
-			// aapt resource value: 0x7F03016E
-			public const int guidedActionsElevation = 2130903406;
-			
-			// aapt resource value: 0x7F03016F
-			public const int guidedActionsEntryAnimation = 2130903407;
-			
-			// aapt resource value: 0x7F030170
-			public const int guidedActionsListStyle = 2130903408;
-			
-			// aapt resource value: 0x7F030171
-			public const int guidedActionsSelectorDrawable = 2130903409;
-			
-			// aapt resource value: 0x7F030172
-			public const int guidedActionsSelectorHideAnimation = 2130903410;
-			
-			// aapt resource value: 0x7F030173
-			public const int guidedActionsSelectorShowAnimation = 2130903411;
-			
-			// aapt resource value: 0x7F030174
-			public const int guidedActionsSelectorStyle = 2130903412;
+			public const int guidedActionItemDescriptionStyle = 2130903397;
 			
 			// aapt resource value: 0x7F030166
-			public const int guidedActionTitleMaxLines = 2130903398;
+			public const int guidedActionItemIconStyle = 2130903398;
 			
 			// aapt resource value: 0x7F030167
-			public const int guidedActionTitleMinLines = 2130903399;
+			public const int guidedActionItemTitleStyle = 2130903399;
 			
 			// aapt resource value: 0x7F030168
-			public const int guidedActionUncheckedAnimation = 2130903400;
+			public const int guidedActionPressedAnimation = 2130903400;
 			
-			// aapt resource value: 0x7F030169
-			public const int guidedActionUnpressedAnimation = 2130903401;
+			// aapt resource value: 0x7F03016E
+			public const int guidedActionsBackground = 2130903406;
 			
-			// aapt resource value: 0x7F03016A
-			public const int guidedActionVerticalPadding = 2130903402;
+			// aapt resource value: 0x7F03016F
+			public const int guidedActionsBackgroundDark = 2130903407;
+			
+			// aapt resource value: 0x7F030170
+			public const int guidedActionsContainerStyle = 2130903408;
+			
+			// aapt resource value: 0x7F030171
+			public const int guidedActionsElevation = 2130903409;
+			
+			// aapt resource value: 0x7F030172
+			public const int guidedActionsEntryAnimation = 2130903410;
+			
+			// aapt resource value: 0x7F030173
+			public const int guidedActionsListStyle = 2130903411;
+			
+			// aapt resource value: 0x7F030174
+			public const int guidedActionsSelectorDrawable = 2130903412;
 			
 			// aapt resource value: 0x7F030175
-			public const int guidedButtonActionsListStyle = 2130903413;
+			public const int guidedActionsSelectorHideAnimation = 2130903413;
 			
 			// aapt resource value: 0x7F030176
-			public const int guidedButtonActionsWidthWeight = 2130903414;
+			public const int guidedActionsSelectorShowAnimation = 2130903414;
 			
 			// aapt resource value: 0x7F030177
-			public const int guidedStepBackground = 2130903415;
+			public const int guidedActionsSelectorStyle = 2130903415;
+			
+			// aapt resource value: 0x7F030169
+			public const int guidedActionTitleMaxLines = 2130903401;
+			
+			// aapt resource value: 0x7F03016A
+			public const int guidedActionTitleMinLines = 2130903402;
+			
+			// aapt resource value: 0x7F03016B
+			public const int guidedActionUncheckedAnimation = 2130903403;
+			
+			// aapt resource value: 0x7F03016C
+			public const int guidedActionUnpressedAnimation = 2130903404;
+			
+			// aapt resource value: 0x7F03016D
+			public const int guidedActionVerticalPadding = 2130903405;
 			
 			// aapt resource value: 0x7F030178
-			public const int guidedStepEntryAnimation = 2130903416;
+			public const int guidedButtonActionsListStyle = 2130903416;
 			
 			// aapt resource value: 0x7F030179
-			public const int guidedStepExitAnimation = 2130903417;
+			public const int guidedButtonActionsWidthWeight = 2130903417;
 			
 			// aapt resource value: 0x7F03017A
-			public const int guidedStepHeightWeight = 2130903418;
+			public const int guidedStepBackground = 2130903418;
 			
 			// aapt resource value: 0x7F03017B
-			public const int guidedStepImeAppearingAnimation = 2130903419;
+			public const int guidedStepEntryAnimation = 2130903419;
 			
 			// aapt resource value: 0x7F03017C
-			public const int guidedStepImeDisappearingAnimation = 2130903420;
+			public const int guidedStepExitAnimation = 2130903420;
 			
 			// aapt resource value: 0x7F03017D
-			public const int guidedStepKeyline = 2130903421;
+			public const int guidedStepHeightWeight = 2130903421;
 			
 			// aapt resource value: 0x7F03017E
-			public const int guidedStepReentryAnimation = 2130903422;
+			public const int guidedStepImeAppearingAnimation = 2130903422;
 			
 			// aapt resource value: 0x7F03017F
-			public const int guidedStepReturnAnimation = 2130903423;
+			public const int guidedStepImeDisappearingAnimation = 2130903423;
 			
 			// aapt resource value: 0x7F030180
-			public const int guidedStepTheme = 2130903424;
+			public const int guidedStepKeyline = 2130903424;
 			
 			// aapt resource value: 0x7F030181
-			public const int guidedStepThemeFlag = 2130903425;
+			public const int guidedStepReentryAnimation = 2130903425;
 			
 			// aapt resource value: 0x7F030182
-			public const int guidedSubActionsListStyle = 2130903426;
+			public const int guidedStepReturnAnimation = 2130903426;
 			
 			// aapt resource value: 0x7F030183
-			public const int headerLayout = 2130903427;
+			public const int guidedStepTheme = 2130903427;
 			
 			// aapt resource value: 0x7F030184
-			public const int headerStyle = 2130903428;
+			public const int guidedStepThemeFlag = 2130903428;
 			
 			// aapt resource value: 0x7F030185
-			public const int headersVerticalGridStyle = 2130903429;
+			public const int guidedSubActionsListStyle = 2130903429;
 			
 			// aapt resource value: 0x7F030186
-			public const int height = 2130903430;
+			public const int headerLayout = 2130903430;
 			
 			// aapt resource value: 0x7F030187
-			public const int helperText = 2130903431;
+			public const int headerStyle = 2130903431;
 			
 			// aapt resource value: 0x7F030188
-			public const int helperTextEnabled = 2130903432;
+			public const int headersVerticalGridStyle = 2130903432;
 			
 			// aapt resource value: 0x7F030189
-			public const int helperTextTextAppearance = 2130903433;
+			public const int height = 2130903433;
 			
 			// aapt resource value: 0x7F03018A
-			public const int hideMotionSpec = 2130903434;
+			public const int helperText = 2130903434;
 			
 			// aapt resource value: 0x7F03018B
-			public const int hideOnContentScroll = 2130903435;
+			public const int helperTextEnabled = 2130903435;
 			
 			// aapt resource value: 0x7F03018C
-			public const int hideOnScroll = 2130903436;
+			public const int helperTextTextAppearance = 2130903436;
 			
 			// aapt resource value: 0x7F03018D
-			public const int high_quality = 2130903437;
+			public const int hideMotionSpec = 2130903437;
 			
 			// aapt resource value: 0x7F03018E
-			public const int hintAnimationEnabled = 2130903438;
+			public const int hideOnContentScroll = 2130903438;
 			
 			// aapt resource value: 0x7F03018F
-			public const int hintEnabled = 2130903439;
+			public const int hideOnScroll = 2130903439;
 			
 			// aapt resource value: 0x7F030190
-			public const int hintTextAppearance = 2130903440;
+			public const int high_quality = 2130903440;
 			
 			// aapt resource value: 0x7F030191
-			public const int homeAsUpIndicator = 2130903441;
+			public const int hintAnimationEnabled = 2130903441;
 			
 			// aapt resource value: 0x7F030192
-			public const int homeLayout = 2130903442;
+			public const int hintEnabled = 2130903442;
 			
 			// aapt resource value: 0x7F030193
-			public const int horizontalMargin = 2130903443;
+			public const int hintTextAppearance = 2130903443;
 			
 			// aapt resource value: 0x7F030194
-			public const int hoveredFocusedTranslationZ = 2130903444;
+			public const int homeAsUpIndicator = 2130903444;
 			
 			// aapt resource value: 0x7F030195
-			public const int icon = 2130903445;
+			public const int homeLayout = 2130903445;
 			
 			// aapt resource value: 0x7F030196
-			public const int iconEndPadding = 2130903446;
+			public const int horizontalMargin = 2130903446;
 			
 			// aapt resource value: 0x7F030197
-			public const int iconGravity = 2130903447;
-			
-			// aapt resource value: 0x7F03019D
-			public const int iconifiedByDefault = 2130903453;
+			public const int hoveredFocusedTranslationZ = 2130903447;
 			
 			// aapt resource value: 0x7F030198
-			public const int iconPadding = 2130903448;
+			public const int icon = 2130903448;
 			
 			// aapt resource value: 0x7F030199
-			public const int iconSize = 2130903449;
+			public const int iconEndPadding = 2130903449;
 			
 			// aapt resource value: 0x7F03019A
-			public const int iconStartPadding = 2130903450;
-			
-			// aapt resource value: 0x7F03019B
-			public const int iconTint = 2130903451;
-			
-			// aapt resource value: 0x7F03019C
-			public const int iconTintMode = 2130903452;
-			
-			// aapt resource value: 0x7F03019E
-			public const int imageAspectRatio = 2130903454;
-			
-			// aapt resource value: 0x7F03019F
-			public const int imageAspectRatioAdjust = 2130903455;
+			public const int iconGravity = 2130903450;
 			
 			// aapt resource value: 0x7F0301A0
-			public const int imageButtonStyle = 2130903456;
+			public const int iconifiedByDefault = 2130903456;
+			
+			// aapt resource value: 0x7F03019B
+			public const int iconPadding = 2130903451;
+			
+			// aapt resource value: 0x7F03019C
+			public const int iconSize = 2130903452;
+			
+			// aapt resource value: 0x7F03019D
+			public const int iconStartPadding = 2130903453;
+			
+			// aapt resource value: 0x7F03019E
+			public const int iconTint = 2130903454;
+			
+			// aapt resource value: 0x7F03019F
+			public const int iconTintMode = 2130903455;
 			
 			// aapt resource value: 0x7F0301A1
-			public const int imageCardViewBadgeStyle = 2130903457;
+			public const int imageAspectRatio = 2130903457;
 			
 			// aapt resource value: 0x7F0301A2
-			public const int imageCardViewContentStyle = 2130903458;
+			public const int imageAspectRatioAdjust = 2130903458;
 			
 			// aapt resource value: 0x7F0301A3
-			public const int imageCardViewImageStyle = 2130903459;
+			public const int imageButtonStyle = 2130903459;
 			
 			// aapt resource value: 0x7F0301A4
-			public const int imageCardViewInfoAreaStyle = 2130903460;
+			public const int imageCardViewBadgeStyle = 2130903460;
 			
 			// aapt resource value: 0x7F0301A5
-			public const int imageCardViewStyle = 2130903461;
+			public const int imageCardViewContentStyle = 2130903461;
 			
 			// aapt resource value: 0x7F0301A6
-			public const int imageCardViewTitleStyle = 2130903462;
+			public const int imageCardViewImageStyle = 2130903462;
 			
 			// aapt resource value: 0x7F0301A7
-			public const int indeterminateProgressStyle = 2130903463;
+			public const int imageCardViewInfoAreaStyle = 2130903463;
 			
 			// aapt resource value: 0x7F0301A8
-			public const int infoAreaBackground = 2130903464;
+			public const int imageCardViewStyle = 2130903464;
 			
 			// aapt resource value: 0x7F0301A9
-			public const int infoVisibility = 2130903465;
+			public const int imageCardViewTitleStyle = 2130903465;
 			
 			// aapt resource value: 0x7F0301AA
-			public const int initialActivityCount = 2130903466;
+			public const int indeterminateProgressStyle = 2130903466;
 			
 			// aapt resource value: 0x7F0301AB
-			public const int insetForeground = 2130903467;
+			public const int infoAreaBackground = 2130903467;
 			
 			// aapt resource value: 0x7F0301AC
-			public const int is24HourFormat = 2130903468;
+			public const int infoVisibility = 2130903468;
 			
 			// aapt resource value: 0x7F0301AD
-			public const int isLightTheme = 2130903469;
+			public const int initialActivityCount = 2130903469;
 			
 			// aapt resource value: 0x7F0301AE
-			public const int itemBackground = 2130903470;
+			public const int insetForeground = 2130903470;
 			
 			// aapt resource value: 0x7F0301AF
-			public const int itemHorizontalPadding = 2130903471;
+			public const int is24HourFormat = 2130903471;
 			
 			// aapt resource value: 0x7F0301B0
-			public const int itemHorizontalTranslationEnabled = 2130903472;
+			public const int isLightTheme = 2130903472;
 			
 			// aapt resource value: 0x7F0301B1
-			public const int itemIconPadding = 2130903473;
+			public const int itemBackground = 2130903473;
 			
 			// aapt resource value: 0x7F0301B2
-			public const int itemIconSize = 2130903474;
+			public const int itemHorizontalPadding = 2130903474;
 			
 			// aapt resource value: 0x7F0301B3
-			public const int itemIconTint = 2130903475;
+			public const int itemHorizontalTranslationEnabled = 2130903475;
 			
 			// aapt resource value: 0x7F0301B4
-			public const int itemPadding = 2130903476;
+			public const int itemIconPadding = 2130903476;
 			
 			// aapt resource value: 0x7F0301B5
-			public const int itemSpacing = 2130903477;
-			
-			// aapt resource value: 0x7F0301BA
-			public const int itemsVerticalGridStyle = 2130903482;
+			public const int itemIconSize = 2130903477;
 			
 			// aapt resource value: 0x7F0301B6
-			public const int itemTextAppearance = 2130903478;
+			public const int itemIconTint = 2130903478;
 			
 			// aapt resource value: 0x7F0301B7
-			public const int itemTextAppearanceActive = 2130903479;
+			public const int itemPadding = 2130903479;
 			
 			// aapt resource value: 0x7F0301B8
-			public const int itemTextAppearanceInactive = 2130903480;
-			
-			// aapt resource value: 0x7F0301B9
-			public const int itemTextColor = 2130903481;
-			
-			// aapt resource value: 0x7F0301BB
-			public const int keylines = 2130903483;
-			
-			// aapt resource value: 0x7F0301BC
-			public const int labelVisibilityMode = 2130903484;
+			public const int itemSpacing = 2130903480;
 			
 			// aapt resource value: 0x7F0301BD
-			public const int lastBaselineToBottomHeight = 2130903485;
+			public const int itemsVerticalGridStyle = 2130903485;
+			
+			// aapt resource value: 0x7F0301B9
+			public const int itemTextAppearance = 2130903481;
+			
+			// aapt resource value: 0x7F0301BA
+			public const int itemTextAppearanceActive = 2130903482;
+			
+			// aapt resource value: 0x7F0301BB
+			public const int itemTextAppearanceInactive = 2130903483;
+			
+			// aapt resource value: 0x7F0301BC
+			public const int itemTextColor = 2130903484;
 			
 			// aapt resource value: 0x7F0301BE
-			public const int layout = 2130903486;
+			public const int keylines = 2130903486;
 			
 			// aapt resource value: 0x7F0301BF
-			public const int layoutManager = 2130903487;
+			public const int labelVisibilityMode = 2130903487;
 			
 			// aapt resource value: 0x7F0301C0
-			public const int layout_anchor = 2130903488;
+			public const int lastBaselineToBottomHeight = 2130903488;
 			
 			// aapt resource value: 0x7F0301C1
-			public const int layout_anchorGravity = 2130903489;
+			public const int layout = 2130903489;
 			
 			// aapt resource value: 0x7F0301C2
-			public const int layout_behavior = 2130903490;
+			public const int layoutManager = 2130903490;
 			
 			// aapt resource value: 0x7F0301C3
-			public const int layout_collapseMode = 2130903491;
+			public const int layout_anchor = 2130903491;
 			
 			// aapt resource value: 0x7F0301C4
-			public const int layout_collapseParallaxMultiplier = 2130903492;
+			public const int layout_anchorGravity = 2130903492;
 			
 			// aapt resource value: 0x7F0301C5
-			public const int layout_dodgeInsetEdges = 2130903493;
+			public const int layout_behavior = 2130903493;
 			
 			// aapt resource value: 0x7F0301C6
-			public const int layout_insetEdge = 2130903494;
+			public const int layout_collapseMode = 2130903494;
 			
 			// aapt resource value: 0x7F0301C7
-			public const int layout_keyline = 2130903495;
+			public const int layout_collapseParallaxMultiplier = 2130903495;
 			
 			// aapt resource value: 0x7F0301C8
-			public const int layout_scrollFlags = 2130903496;
+			public const int layout_dodgeInsetEdges = 2130903496;
 			
 			// aapt resource value: 0x7F0301C9
-			public const int layout_scrollInterpolator = 2130903497;
+			public const int layout_insetEdge = 2130903497;
 			
 			// aapt resource value: 0x7F0301CA
-			public const int layout_viewType = 2130903498;
+			public const int layout_keyline = 2130903498;
 			
 			// aapt resource value: 0x7F0301CB
-			public const int lbDotRadius = 2130903499;
+			public const int layout_scrollFlags = 2130903499;
 			
 			// aapt resource value: 0x7F0301CC
-			public const int lbImageCardViewType = 2130903500;
+			public const int layout_scrollInterpolator = 2130903500;
 			
 			// aapt resource value: 0x7F0301CD
-			public const int lb_slideEdge = 2130903501;
+			public const int layout_viewType = 2130903501;
 			
 			// aapt resource value: 0x7F0301CE
-			public const int liftOnScroll = 2130903502;
+			public const int lbDotRadius = 2130903502;
 			
 			// aapt resource value: 0x7F0301CF
-			public const int lineHeight = 2130903503;
+			public const int lbImageCardViewType = 2130903503;
 			
 			// aapt resource value: 0x7F0301D0
-			public const int lineSpacing = 2130903504;
+			public const int lb_slideEdge = 2130903504;
 			
 			// aapt resource value: 0x7F0301D1
-			public const int listChoiceBackgroundIndicator = 2130903505;
+			public const int liftOnScroll = 2130903505;
 			
 			// aapt resource value: 0x7F0301D2
-			public const int listDividerAlertDialog = 2130903506;
+			public const int lineHeight = 2130903506;
 			
 			// aapt resource value: 0x7F0301D3
-			public const int listItemLayout = 2130903507;
+			public const int lineSpacing = 2130903507;
 			
 			// aapt resource value: 0x7F0301D4
-			public const int listLayout = 2130903508;
+			public const int listChoiceBackgroundIndicator = 2130903508;
 			
 			// aapt resource value: 0x7F0301D5
-			public const int listMenuViewStyle = 2130903509;
+			public const int listDividerAlertDialog = 2130903509;
 			
 			// aapt resource value: 0x7F0301D6
-			public const int listPopupWindowStyle = 2130903510;
+			public const int listItemLayout = 2130903510;
 			
 			// aapt resource value: 0x7F0301D7
-			public const int listPreferredItemHeight = 2130903511;
+			public const int listLayout = 2130903511;
 			
 			// aapt resource value: 0x7F0301D8
-			public const int listPreferredItemHeightLarge = 2130903512;
+			public const int listMenuViewStyle = 2130903512;
 			
 			// aapt resource value: 0x7F0301D9
-			public const int listPreferredItemHeightSmall = 2130903513;
+			public const int listPopupWindowStyle = 2130903513;
 			
 			// aapt resource value: 0x7F0301DA
-			public const int listPreferredItemPaddingLeft = 2130903514;
+			public const int listPreferredItemHeight = 2130903514;
 			
 			// aapt resource value: 0x7F0301DB
-			public const int listPreferredItemPaddingRight = 2130903515;
+			public const int listPreferredItemHeightLarge = 2130903515;
 			
 			// aapt resource value: 0x7F0301DC
-			public const int logo = 2130903516;
+			public const int listPreferredItemHeightSmall = 2130903516;
 			
 			// aapt resource value: 0x7F0301DD
-			public const int logoDescription = 2130903517;
+			public const int listPreferredItemPaddingLeft = 2130903517;
 			
 			// aapt resource value: 0x7F0301DE
-			public const int lottie_autoPlay = 2130903518;
+			public const int listPreferredItemPaddingRight = 2130903518;
 			
 			// aapt resource value: 0x7F0301DF
-			public const int lottie_cacheStrategy = 2130903519;
+			public const int logo = 2130903519;
 			
 			// aapt resource value: 0x7F0301E0
-			public const int lottie_colorFilter = 2130903520;
+			public const int logoDescription = 2130903520;
 			
 			// aapt resource value: 0x7F0301E1
-			public const int lottie_enableMergePathsForKitKatAndAbove = 2130903521;
+			public const int lottie_autoPlay = 2130903521;
 			
 			// aapt resource value: 0x7F0301E2
-			public const int lottie_fileName = 2130903522;
+			public const int lottie_cacheStrategy = 2130903522;
 			
 			// aapt resource value: 0x7F0301E3
-			public const int lottie_imageAssetsFolder = 2130903523;
+			public const int lottie_colorFilter = 2130903523;
 			
 			// aapt resource value: 0x7F0301E4
-			public const int lottie_loop = 2130903524;
+			public const int lottie_enableMergePathsForKitKatAndAbove = 2130903524;
 			
 			// aapt resource value: 0x7F0301E5
-			public const int lottie_progress = 2130903525;
+			public const int lottie_fileName = 2130903525;
 			
 			// aapt resource value: 0x7F0301E6
-			public const int lottie_rawRes = 2130903526;
+			public const int lottie_imageAssetsFolder = 2130903526;
 			
 			// aapt resource value: 0x7F0301E7
-			public const int lottie_repeatCount = 2130903527;
+			public const int lottie_loop = 2130903527;
 			
 			// aapt resource value: 0x7F0301E8
-			public const int lottie_repeatMode = 2130903528;
+			public const int lottie_progress = 2130903528;
 			
 			// aapt resource value: 0x7F0301E9
-			public const int lottie_scale = 2130903529;
+			public const int lottie_rawRes = 2130903529;
 			
 			// aapt resource value: 0x7F0301EA
-			public const int lottie_url = 2130903530;
+			public const int lottie_repeatCount = 2130903530;
 			
 			// aapt resource value: 0x7F0301EB
-			public const int maintainLineSpacing = 2130903531;
+			public const int lottie_repeatMode = 2130903531;
 			
 			// aapt resource value: 0x7F0301EC
-			public const int materialButtonStyle = 2130903532;
+			public const int lottie_scale = 2130903532;
 			
 			// aapt resource value: 0x7F0301ED
-			public const int materialCardViewStyle = 2130903533;
+			public const int lottie_url = 2130903533;
 			
 			// aapt resource value: 0x7F0301EE
-			public const int maxActionInlineWidth = 2130903534;
+			public const int maintainLineSpacing = 2130903534;
 			
 			// aapt resource value: 0x7F0301EF
-			public const int maxButtonHeight = 2130903535;
+			public const int materialButtonStyle = 2130903535;
 			
 			// aapt resource value: 0x7F0301F0
-			public const int maxImageSize = 2130903536;
+			public const int materialCardViewStyle = 2130903536;
 			
 			// aapt resource value: 0x7F0301F1
-			public const int measureWithLargestChild = 2130903537;
+			public const int maxActionInlineWidth = 2130903537;
 			
 			// aapt resource value: 0x7F0301F2
-			public const int mediaRouteAudioTrackDrawable = 2130903538;
+			public const int maxButtonHeight = 2130903538;
 			
 			// aapt resource value: 0x7F0301F3
-			public const int mediaRouteButtonStyle = 2130903539;
+			public const int maxImageSize = 2130903539;
 			
 			// aapt resource value: 0x7F0301F4
-			public const int mediaRouteButtonTint = 2130903540;
+			public const int measureWithLargestChild = 2130903540;
 			
 			// aapt resource value: 0x7F0301F5
-			public const int mediaRouteCloseDrawable = 2130903541;
+			public const int mediaRouteAudioTrackDrawable = 2130903541;
 			
 			// aapt resource value: 0x7F0301F6
-			public const int mediaRouteControlPanelThemeOverlay = 2130903542;
+			public const int mediaRouteButtonStyle = 2130903542;
 			
 			// aapt resource value: 0x7F0301F7
-			public const int mediaRouteDefaultIconDrawable = 2130903543;
+			public const int mediaRouteButtonTint = 2130903543;
 			
 			// aapt resource value: 0x7F0301F8
-			public const int mediaRoutePauseDrawable = 2130903544;
+			public const int mediaRouteCloseDrawable = 2130903544;
 			
 			// aapt resource value: 0x7F0301F9
-			public const int mediaRoutePlayDrawable = 2130903545;
+			public const int mediaRouteControlPanelThemeOverlay = 2130903545;
 			
 			// aapt resource value: 0x7F0301FA
-			public const int mediaRouteSpeakerGroupIconDrawable = 2130903546;
+			public const int mediaRouteDefaultIconDrawable = 2130903546;
 			
 			// aapt resource value: 0x7F0301FB
-			public const int mediaRouteSpeakerIconDrawable = 2130903547;
+			public const int mediaRoutePauseDrawable = 2130903547;
 			
 			// aapt resource value: 0x7F0301FC
-			public const int mediaRouteStopDrawable = 2130903548;
+			public const int mediaRoutePlayDrawable = 2130903548;
 			
 			// aapt resource value: 0x7F0301FD
-			public const int mediaRouteTheme = 2130903549;
+			public const int mediaRouteSpeakerGroupIconDrawable = 2130903549;
 			
 			// aapt resource value: 0x7F0301FE
-			public const int mediaRouteTvIconDrawable = 2130903550;
+			public const int mediaRouteSpeakerIconDrawable = 2130903550;
 			
 			// aapt resource value: 0x7F0301FF
-			public const int menu = 2130903551;
+			public const int mediaRouteStopDrawable = 2130903551;
 			
 			// aapt resource value: 0x7F030200
-			public const int multiChoiceItemLayout = 2130903552;
+			public const int mediaRouteTheme = 2130903552;
 			
 			// aapt resource value: 0x7F030201
-			public const int navigationContentDescription = 2130903553;
+			public const int mediaRouteTvIconDrawable = 2130903553;
 			
 			// aapt resource value: 0x7F030202
-			public const int navigationIcon = 2130903554;
+			public const int menu = 2130903554;
 			
 			// aapt resource value: 0x7F030203
-			public const int navigationMode = 2130903555;
+			public const int multiChoiceItemLayout = 2130903555;
 			
 			// aapt resource value: 0x7F030204
-			public const int navigationViewStyle = 2130903556;
+			public const int navigationContentDescription = 2130903556;
 			
 			// aapt resource value: 0x7F030205
-			public const int numberOfColumns = 2130903557;
+			public const int navigationIcon = 2130903557;
 			
 			// aapt resource value: 0x7F030206
-			public const int numberOfRows = 2130903558;
+			public const int navigationMode = 2130903558;
 			
 			// aapt resource value: 0x7F030207
-			public const int numericModifiers = 2130903559;
+			public const int navigationViewStyle = 2130903559;
 			
 			// aapt resource value: 0x7F030208
-			public const int onboardingDescriptionStyle = 2130903560;
+			public const int numberOfColumns = 2130903560;
 			
 			// aapt resource value: 0x7F030209
-			public const int onboardingHeaderStyle = 2130903561;
+			public const int numberOfRows = 2130903561;
 			
 			// aapt resource value: 0x7F03020A
-			public const int onboardingLogoStyle = 2130903562;
+			public const int numericModifiers = 2130903562;
 			
 			// aapt resource value: 0x7F03020B
-			public const int onboardingMainIconStyle = 2130903563;
+			public const int onboardingDescriptionStyle = 2130903563;
 			
 			// aapt resource value: 0x7F03020C
-			public const int onboardingNavigatorContainerStyle = 2130903564;
+			public const int onboardingHeaderStyle = 2130903564;
 			
 			// aapt resource value: 0x7F03020D
-			public const int onboardingPageIndicatorStyle = 2130903565;
+			public const int onboardingLogoStyle = 2130903565;
 			
 			// aapt resource value: 0x7F03020E
-			public const int onboardingStartButtonStyle = 2130903566;
+			public const int onboardingMainIconStyle = 2130903566;
 			
 			// aapt resource value: 0x7F03020F
-			public const int onboardingTheme = 2130903567;
+			public const int onboardingNavigatorContainerStyle = 2130903567;
 			
 			// aapt resource value: 0x7F030210
-			public const int onboardingTitleStyle = 2130903568;
+			public const int onboardingPageIndicatorStyle = 2130903568;
 			
 			// aapt resource value: 0x7F030211
-			public const int overlapAnchor = 2130903569;
+			public const int onboardingStartButtonStyle = 2130903569;
 			
 			// aapt resource value: 0x7F030212
-			public const int overlayDimActiveLevel = 2130903570;
+			public const int onboardingTheme = 2130903570;
 			
 			// aapt resource value: 0x7F030213
-			public const int overlayDimDimmedLevel = 2130903571;
+			public const int onboardingTitleStyle = 2130903571;
 			
 			// aapt resource value: 0x7F030214
-			public const int overlayDimMaskColor = 2130903572;
+			public const int overlapAnchor = 2130903572;
 			
 			// aapt resource value: 0x7F030215
-			public const int paddingBottomNoButtons = 2130903573;
+			public const int overlayDimActiveLevel = 2130903573;
 			
 			// aapt resource value: 0x7F030216
-			public const int paddingEnd = 2130903574;
+			public const int overlayDimDimmedLevel = 2130903574;
 			
 			// aapt resource value: 0x7F030217
-			public const int paddingStart = 2130903575;
+			public const int overlayDimMaskColor = 2130903575;
 			
 			// aapt resource value: 0x7F030218
-			public const int paddingTopNoTitle = 2130903576;
+			public const int paddingBottomNoButtons = 2130903576;
 			
 			// aapt resource value: 0x7F030219
-			public const int panelBackground = 2130903577;
+			public const int paddingEnd = 2130903577;
 			
 			// aapt resource value: 0x7F03021A
-			public const int panelMenuListTheme = 2130903578;
+			public const int paddingStart = 2130903578;
 			
 			// aapt resource value: 0x7F03021B
-			public const int panelMenuListWidth = 2130903579;
+			public const int paddingTopNoTitle = 2130903579;
 			
 			// aapt resource value: 0x7F03021C
-			public const int passwordToggleContentDescription = 2130903580;
+			public const int panelBackground = 2130903580;
 			
 			// aapt resource value: 0x7F03021D
-			public const int passwordToggleDrawable = 2130903581;
+			public const int panelMenuListTheme = 2130903581;
 			
 			// aapt resource value: 0x7F03021E
-			public const int passwordToggleEnabled = 2130903582;
+			public const int panelMenuListWidth = 2130903582;
 			
 			// aapt resource value: 0x7F03021F
-			public const int passwordToggleTint = 2130903583;
+			public const int passwordToggleContentDescription = 2130903583;
 			
 			// aapt resource value: 0x7F030220
-			public const int passwordToggleTintMode = 2130903584;
+			public const int passwordToggleDrawable = 2130903584;
 			
 			// aapt resource value: 0x7F030221
-			public const int pause = 2130903585;
+			public const int passwordToggleEnabled = 2130903585;
 			
 			// aapt resource value: 0x7F030222
-			public const int picture_in_picture = 2130903586;
+			public const int passwordToggleTint = 2130903586;
 			
 			// aapt resource value: 0x7F030223
-			public const int play = 2130903587;
+			public const int passwordToggleTintMode = 2130903587;
 			
 			// aapt resource value: 0x7F030224
-			public const int playbackControlButtonLabelStyle = 2130903588;
+			public const int pause = 2130903588;
 			
 			// aapt resource value: 0x7F030225
-			public const int playbackControlsActionIcons = 2130903589;
+			public const int picture_in_picture = 2130903589;
 			
 			// aapt resource value: 0x7F030226
-			public const int playbackControlsAutoHideTickleTimeout = 2130903590;
+			public const int play = 2130903590;
 			
 			// aapt resource value: 0x7F030227
-			public const int playbackControlsAutoHideTimeout = 2130903591;
+			public const int playbackControlButtonLabelStyle = 2130903591;
 			
 			// aapt resource value: 0x7F030228
-			public const int playbackControlsButtonStyle = 2130903592;
+			public const int playbackControlsActionIcons = 2130903592;
 			
 			// aapt resource value: 0x7F030229
-			public const int playbackControlsIconHighlightColor = 2130903593;
+			public const int playbackControlsAutoHideTickleTimeout = 2130903593;
 			
 			// aapt resource value: 0x7F03022A
-			public const int playbackControlsTimeStyle = 2130903594;
+			public const int playbackControlsAutoHideTimeout = 2130903594;
 			
 			// aapt resource value: 0x7F03022B
-			public const int playbackMediaItemDetailsStyle = 2130903595;
+			public const int playbackControlsButtonStyle = 2130903595;
 			
 			// aapt resource value: 0x7F03022C
-			public const int playbackMediaItemDurationStyle = 2130903596;
+			public const int playbackControlsIconHighlightColor = 2130903596;
 			
 			// aapt resource value: 0x7F03022D
-			public const int playbackMediaItemNameStyle = 2130903597;
+			public const int playbackControlsTimeStyle = 2130903597;
 			
 			// aapt resource value: 0x7F03022E
-			public const int playbackMediaItemNumberStyle = 2130903598;
+			public const int playbackMediaItemDetailsStyle = 2130903598;
 			
 			// aapt resource value: 0x7F03022F
-			public const int playbackMediaItemNumberViewFlipperLayout = 2130903599;
+			public const int playbackMediaItemDurationStyle = 2130903599;
 			
 			// aapt resource value: 0x7F030230
-			public const int playbackMediaItemNumberViewFlipperStyle = 2130903600;
+			public const int playbackMediaItemNameStyle = 2130903600;
 			
 			// aapt resource value: 0x7F030231
-			public const int playbackMediaItemPaddingStart = 2130903601;
+			public const int playbackMediaItemNumberStyle = 2130903601;
 			
 			// aapt resource value: 0x7F030232
-			public const int playbackMediaItemRowStyle = 2130903602;
+			public const int playbackMediaItemNumberViewFlipperLayout = 2130903602;
 			
 			// aapt resource value: 0x7F030233
-			public const int playbackMediaItemSeparatorStyle = 2130903603;
+			public const int playbackMediaItemNumberViewFlipperStyle = 2130903603;
 			
 			// aapt resource value: 0x7F030234
-			public const int playbackMediaListHeaderStyle = 2130903604;
+			public const int playbackMediaItemPaddingStart = 2130903604;
 			
 			// aapt resource value: 0x7F030235
-			public const int playbackMediaListHeaderTitleStyle = 2130903605;
+			public const int playbackMediaItemRowStyle = 2130903605;
 			
 			// aapt resource value: 0x7F030236
-			public const int playbackPaddingEnd = 2130903606;
+			public const int playbackMediaItemSeparatorStyle = 2130903606;
 			
 			// aapt resource value: 0x7F030237
-			public const int playbackPaddingStart = 2130903607;
+			public const int playbackMediaListHeaderStyle = 2130903607;
 			
 			// aapt resource value: 0x7F030238
-			public const int playbackProgressPrimaryColor = 2130903608;
+			public const int playbackMediaListHeaderTitleStyle = 2130903608;
 			
 			// aapt resource value: 0x7F030239
-			public const int playbackProgressSecondaryColor = 2130903609;
+			public const int playbackPaddingEnd = 2130903609;
 			
 			// aapt resource value: 0x7F03023A
-			public const int popupMenuStyle = 2130903610;
+			public const int playbackPaddingStart = 2130903610;
 			
 			// aapt resource value: 0x7F03023B
-			public const int popupTheme = 2130903611;
+			public const int playbackProgressPrimaryColor = 2130903611;
 			
 			// aapt resource value: 0x7F03023C
-			public const int popupWindowStyle = 2130903612;
+			public const int playbackProgressSecondaryColor = 2130903612;
 			
 			// aapt resource value: 0x7F03023D
-			public const int preserveIconSpacing = 2130903613;
+			public const int popupMenuStyle = 2130903613;
 			
 			// aapt resource value: 0x7F03023E
-			public const int pressedTranslationZ = 2130903614;
+			public const int popupTheme = 2130903614;
 			
 			// aapt resource value: 0x7F03023F
-			public const int progressBarPadding = 2130903615;
+			public const int popupWindowStyle = 2130903615;
 			
 			// aapt resource value: 0x7F030240
-			public const int progressBarStyle = 2130903616;
+			public const int preserveIconSpacing = 2130903616;
 			
 			// aapt resource value: 0x7F030241
-			public const int queryBackground = 2130903617;
+			public const int pressedTranslationZ = 2130903617;
 			
 			// aapt resource value: 0x7F030242
-			public const int queryHint = 2130903618;
+			public const int progressBarPadding = 2130903618;
 			
 			// aapt resource value: 0x7F030243
-			public const int radioButtonStyle = 2130903619;
+			public const int progressBarStyle = 2130903619;
 			
 			// aapt resource value: 0x7F030244
-			public const int ratingBarStyle = 2130903620;
+			public const int queryBackground = 2130903620;
 			
 			// aapt resource value: 0x7F030245
-			public const int ratingBarStyleIndicator = 2130903621;
+			public const int queryHint = 2130903621;
 			
 			// aapt resource value: 0x7F030246
-			public const int ratingBarStyleSmall = 2130903622;
+			public const int radioButtonStyle = 2130903622;
 			
 			// aapt resource value: 0x7F030247
-			public const int repeat = 2130903623;
+			public const int ratingBarStyle = 2130903623;
 			
 			// aapt resource value: 0x7F030248
-			public const int repeat_one = 2130903624;
-			
-			// aapt resource value: 0x7F03024A
-			public const int resizedPaddingAdjustmentBottom = 2130903626;
-			
-			// aapt resource value: 0x7F03024B
-			public const int resizedPaddingAdjustmentTop = 2130903627;
-			
-			// aapt resource value: 0x7F03024C
-			public const int resizedTextSize = 2130903628;
+			public const int ratingBarStyleIndicator = 2130903624;
 			
 			// aapt resource value: 0x7F030249
-			public const int resizeTrigger = 2130903625;
+			public const int ratingBarStyleSmall = 2130903625;
+			
+			// aapt resource value: 0x7F03024A
+			public const int repeat = 2130903626;
+			
+			// aapt resource value: 0x7F03024B
+			public const int repeat_one = 2130903627;
 			
 			// aapt resource value: 0x7F03024D
-			public const int reverseLayout = 2130903629;
+			public const int resizedPaddingAdjustmentBottom = 2130903629;
 			
 			// aapt resource value: 0x7F03024E
-			public const int rewind = 2130903630;
+			public const int resizedPaddingAdjustmentTop = 2130903630;
 			
 			// aapt resource value: 0x7F03024F
-			public const int rippleColor = 2130903631;
+			public const int resizedTextSize = 2130903631;
+			
+			// aapt resource value: 0x7F03024C
+			public const int resizeTrigger = 2130903628;
 			
 			// aapt resource value: 0x7F030250
-			public const int rowHeaderDescriptionStyle = 2130903632;
+			public const int reverseLayout = 2130903632;
 			
 			// aapt resource value: 0x7F030251
-			public const int rowHeaderDockStyle = 2130903633;
+			public const int rewind = 2130903633;
 			
 			// aapt resource value: 0x7F030252
-			public const int rowHeaderStyle = 2130903634;
+			public const int rippleColor = 2130903634;
 			
 			// aapt resource value: 0x7F030253
-			public const int rowHeight = 2130903635;
+			public const int rowHeaderDescriptionStyle = 2130903635;
 			
 			// aapt resource value: 0x7F030254
-			public const int rowHorizontalGridStyle = 2130903636;
+			public const int rowHeaderDockStyle = 2130903636;
 			
 			// aapt resource value: 0x7F030255
-			public const int rowHoverCardDescriptionStyle = 2130903637;
+			public const int rowHeaderStyle = 2130903637;
 			
 			// aapt resource value: 0x7F030256
-			public const int rowHoverCardTitleStyle = 2130903638;
+			public const int rowHeight = 2130903638;
 			
 			// aapt resource value: 0x7F030257
-			public const int rowsVerticalGridStyle = 2130903639;
+			public const int rowHorizontalGridStyle = 2130903639;
 			
 			// aapt resource value: 0x7F030258
-			public const int scopeUris = 2130903640;
+			public const int rowHoverCardDescriptionStyle = 2130903640;
 			
 			// aapt resource value: 0x7F030259
-			public const int scrimAnimationDuration = 2130903641;
+			public const int rowHoverCardTitleStyle = 2130903641;
 			
 			// aapt resource value: 0x7F03025A
-			public const int scrimBackground = 2130903642;
+			public const int rowsVerticalGridStyle = 2130903642;
 			
 			// aapt resource value: 0x7F03025B
-			public const int scrimVisibleHeightTrigger = 2130903643;
+			public const int scopeUris = 2130903643;
 			
 			// aapt resource value: 0x7F03025C
-			public const int searchHintIcon = 2130903644;
+			public const int scrimAnimationDuration = 2130903644;
 			
 			// aapt resource value: 0x7F03025D
-			public const int searchIcon = 2130903645;
+			public const int scrimBackground = 2130903645;
 			
 			// aapt resource value: 0x7F03025E
-			public const int searchOrbBrightColor = 2130903646;
+			public const int scrimVisibleHeightTrigger = 2130903646;
 			
 			// aapt resource value: 0x7F03025F
-			public const int searchOrbColor = 2130903647;
+			public const int searchHintIcon = 2130903647;
 			
 			// aapt resource value: 0x7F030260
-			public const int searchOrbIcon = 2130903648;
+			public const int searchIcon = 2130903648;
 			
 			// aapt resource value: 0x7F030261
-			public const int searchOrbIconColor = 2130903649;
+			public const int searchOrbBrightColor = 2130903649;
 			
 			// aapt resource value: 0x7F030262
-			public const int searchOrbViewStyle = 2130903650;
+			public const int searchOrbColor = 2130903650;
 			
 			// aapt resource value: 0x7F030263
-			public const int searchViewStyle = 2130903651;
+			public const int searchOrbIcon = 2130903651;
 			
 			// aapt resource value: 0x7F030264
-			public const int sectionHeaderStyle = 2130903652;
+			public const int searchOrbIconColor = 2130903652;
 			
 			// aapt resource value: 0x7F030265
-			public const int seekBarStyle = 2130903653;
+			public const int searchOrbViewStyle = 2130903653;
 			
 			// aapt resource value: 0x7F030266
-			public const int selectableItemBackground = 2130903654;
+			public const int searchViewStyle = 2130903654;
 			
 			// aapt resource value: 0x7F030267
-			public const int selectableItemBackgroundBorderless = 2130903655;
+			public const int sectionHeaderStyle = 2130903655;
 			
 			// aapt resource value: 0x7F030268
-			public const int selectedAnimationDelay = 2130903656;
+			public const int seekBarStyle = 2130903656;
 			
 			// aapt resource value: 0x7F030269
-			public const int selectedAnimationDuration = 2130903657;
+			public const int selectableItemBackground = 2130903657;
 			
 			// aapt resource value: 0x7F03026A
-			public const int showAsAction = 2130903658;
+			public const int selectableItemBackgroundBorderless = 2130903658;
 			
 			// aapt resource value: 0x7F03026B
-			public const int showDividers = 2130903659;
+			public const int selectedAnimationDelay = 2130903659;
 			
 			// aapt resource value: 0x7F03026C
-			public const int showMotionSpec = 2130903660;
+			public const int selectedAnimationDuration = 2130903660;
 			
 			// aapt resource value: 0x7F03026D
-			public const int showText = 2130903661;
+			public const int showAsAction = 2130903661;
 			
 			// aapt resource value: 0x7F03026E
-			public const int showTitle = 2130903662;
+			public const int showDividers = 2130903662;
 			
 			// aapt resource value: 0x7F03026F
-			public const int shuffle = 2130903663;
+			public const int showMotionSpec = 2130903663;
 			
 			// aapt resource value: 0x7F030270
-			public const int singleChoiceItemLayout = 2130903664;
+			public const int showText = 2130903664;
 			
 			// aapt resource value: 0x7F030271
-			public const int singleLine = 2130903665;
+			public const int showTitle = 2130903665;
 			
 			// aapt resource value: 0x7F030272
-			public const int singleSelection = 2130903666;
+			public const int shuffle = 2130903666;
 			
 			// aapt resource value: 0x7F030273
-			public const int skip_next = 2130903667;
+			public const int singleChoiceItemLayout = 2130903667;
 			
 			// aapt resource value: 0x7F030274
-			public const int skip_previous = 2130903668;
+			public const int singleLine = 2130903668;
 			
 			// aapt resource value: 0x7F030275
-			public const int snackbarButtonStyle = 2130903669;
+			public const int singleSelection = 2130903669;
 			
 			// aapt resource value: 0x7F030276
-			public const int snackbarStyle = 2130903670;
+			public const int skip_next = 2130903670;
 			
 			// aapt resource value: 0x7F030277
-			public const int spanCount = 2130903671;
+			public const int skip_previous = 2130903671;
 			
 			// aapt resource value: 0x7F030278
-			public const int spinBars = 2130903672;
+			public const int snackbarButtonStyle = 2130903672;
 			
 			// aapt resource value: 0x7F030279
-			public const int spinnerDropDownItemStyle = 2130903673;
+			public const int snackbarStyle = 2130903673;
 			
 			// aapt resource value: 0x7F03027A
-			public const int spinnerStyle = 2130903674;
+			public const int spanCount = 2130903674;
 			
 			// aapt resource value: 0x7F03027B
-			public const int splitTrack = 2130903675;
+			public const int spinBars = 2130903675;
 			
 			// aapt resource value: 0x7F03027C
-			public const int srcCompat = 2130903676;
+			public const int spinnerDropDownItemStyle = 2130903676;
 			
 			// aapt resource value: 0x7F03027D
-			public const int stackFromEnd = 2130903677;
+			public const int spinnerStyle = 2130903677;
 			
 			// aapt resource value: 0x7F03027E
-			public const int state_above_anchor = 2130903678;
+			public const int splitTrack = 2130903678;
 			
 			// aapt resource value: 0x7F03027F
-			public const int state_collapsed = 2130903679;
+			public const int srcCompat = 2130903679;
 			
 			// aapt resource value: 0x7F030280
-			public const int state_collapsible = 2130903680;
+			public const int stackFromEnd = 2130903680;
 			
 			// aapt resource value: 0x7F030281
-			public const int state_liftable = 2130903681;
+			public const int state_above_anchor = 2130903681;
 			
 			// aapt resource value: 0x7F030282
-			public const int state_lifted = 2130903682;
+			public const int state_collapsed = 2130903682;
 			
 			// aapt resource value: 0x7F030283
-			public const int statusBarBackground = 2130903683;
+			public const int state_collapsible = 2130903683;
 			
 			// aapt resource value: 0x7F030284
-			public const int statusBarScrim = 2130903684;
+			public const int state_liftable = 2130903684;
 			
 			// aapt resource value: 0x7F030285
-			public const int strokeColor = 2130903685;
+			public const int state_lifted = 2130903685;
 			
 			// aapt resource value: 0x7F030286
-			public const int strokeWidth = 2130903686;
+			public const int statusBarBackground = 2130903686;
 			
 			// aapt resource value: 0x7F030287
-			public const int subMenuArrow = 2130903687;
+			public const int statusBarScrim = 2130903687;
 			
 			// aapt resource value: 0x7F030288
-			public const int submitBackground = 2130903688;
+			public const int strokeColor = 2130903688;
 			
 			// aapt resource value: 0x7F030289
-			public const int subtitle = 2130903689;
+			public const int strokeWidth = 2130903689;
 			
 			// aapt resource value: 0x7F03028A
-			public const int subtitleTextAppearance = 2130903690;
+			public const int subMenuArrow = 2130903690;
 			
 			// aapt resource value: 0x7F03028B
-			public const int subtitleTextColor = 2130903691;
+			public const int submitBackground = 2130903691;
 			
 			// aapt resource value: 0x7F03028C
-			public const int subtitleTextStyle = 2130903692;
+			public const int subtitle = 2130903692;
 			
 			// aapt resource value: 0x7F03028D
-			public const int suggestionRowLayout = 2130903693;
+			public const int subtitleTextAppearance = 2130903693;
 			
 			// aapt resource value: 0x7F03028E
-			public const int switchMinWidth = 2130903694;
+			public const int subtitleTextColor = 2130903694;
 			
 			// aapt resource value: 0x7F03028F
-			public const int switchPadding = 2130903695;
+			public const int subtitleTextStyle = 2130903695;
 			
 			// aapt resource value: 0x7F030290
-			public const int switchStyle = 2130903696;
+			public const int suggestionRowLayout = 2130903696;
 			
 			// aapt resource value: 0x7F030291
-			public const int switchTextAppearance = 2130903697;
+			public const int switchMinWidth = 2130903697;
 			
 			// aapt resource value: 0x7F030292
-			public const int tabBackground = 2130903698;
+			public const int switchPadding = 2130903698;
 			
 			// aapt resource value: 0x7F030293
-			public const int tabContentStart = 2130903699;
+			public const int switchStyle = 2130903699;
 			
 			// aapt resource value: 0x7F030294
-			public const int tabGravity = 2130903700;
+			public const int switchTextAppearance = 2130903700;
 			
 			// aapt resource value: 0x7F030295
-			public const int tabIconTint = 2130903701;
+			public const int tabBackground = 2130903701;
 			
 			// aapt resource value: 0x7F030296
-			public const int tabIconTintMode = 2130903702;
+			public const int tabContentStart = 2130903702;
 			
 			// aapt resource value: 0x7F030297
-			public const int tabIndicator = 2130903703;
+			public const int tabGravity = 2130903703;
 			
 			// aapt resource value: 0x7F030298
-			public const int tabIndicatorAnimationDuration = 2130903704;
+			public const int tabIconTint = 2130903704;
 			
 			// aapt resource value: 0x7F030299
-			public const int tabIndicatorColor = 2130903705;
+			public const int tabIconTintMode = 2130903705;
 			
 			// aapt resource value: 0x7F03029A
-			public const int tabIndicatorFullWidth = 2130903706;
+			public const int tabIndicator = 2130903706;
 			
 			// aapt resource value: 0x7F03029B
-			public const int tabIndicatorGravity = 2130903707;
+			public const int tabIndicatorAnimationDuration = 2130903707;
 			
 			// aapt resource value: 0x7F03029C
-			public const int tabIndicatorHeight = 2130903708;
+			public const int tabIndicatorColor = 2130903708;
 			
 			// aapt resource value: 0x7F03029D
-			public const int tabInlineLabel = 2130903709;
+			public const int tabIndicatorFullWidth = 2130903709;
 			
 			// aapt resource value: 0x7F03029E
-			public const int tabMaxWidth = 2130903710;
+			public const int tabIndicatorGravity = 2130903710;
 			
 			// aapt resource value: 0x7F03029F
-			public const int tabMinWidth = 2130903711;
+			public const int tabIndicatorHeight = 2130903711;
 			
 			// aapt resource value: 0x7F0302A0
-			public const int tabMode = 2130903712;
+			public const int tabInlineLabel = 2130903712;
 			
 			// aapt resource value: 0x7F0302A1
-			public const int tabPadding = 2130903713;
+			public const int tabMaxWidth = 2130903713;
 			
 			// aapt resource value: 0x7F0302A2
-			public const int tabPaddingBottom = 2130903714;
+			public const int tabMinWidth = 2130903714;
 			
 			// aapt resource value: 0x7F0302A3
-			public const int tabPaddingEnd = 2130903715;
+			public const int tabMode = 2130903715;
 			
 			// aapt resource value: 0x7F0302A4
-			public const int tabPaddingStart = 2130903716;
+			public const int tabPadding = 2130903716;
 			
 			// aapt resource value: 0x7F0302A5
-			public const int tabPaddingTop = 2130903717;
+			public const int tabPaddingBottom = 2130903717;
 			
 			// aapt resource value: 0x7F0302A6
-			public const int tabRippleColor = 2130903718;
+			public const int tabPaddingEnd = 2130903718;
 			
 			// aapt resource value: 0x7F0302A7
-			public const int tabSelectedTextColor = 2130903719;
+			public const int tabPaddingStart = 2130903719;
 			
 			// aapt resource value: 0x7F0302A8
-			public const int tabStyle = 2130903720;
+			public const int tabPaddingTop = 2130903720;
 			
 			// aapt resource value: 0x7F0302A9
-			public const int tabTextAppearance = 2130903721;
+			public const int tabRippleColor = 2130903721;
 			
 			// aapt resource value: 0x7F0302AA
-			public const int tabTextColor = 2130903722;
+			public const int tabSelectedTextColor = 2130903722;
 			
 			// aapt resource value: 0x7F0302AB
-			public const int tabUnboundedRipple = 2130903723;
+			public const int tabStyle = 2130903723;
 			
 			// aapt resource value: 0x7F0302AC
-			public const int textAllCaps = 2130903724;
+			public const int tabTextAppearance = 2130903724;
 			
 			// aapt resource value: 0x7F0302AD
-			public const int textAppearanceBody1 = 2130903725;
+			public const int tabTextColor = 2130903725;
 			
 			// aapt resource value: 0x7F0302AE
-			public const int textAppearanceBody2 = 2130903726;
+			public const int tabUnboundedRipple = 2130903726;
 			
 			// aapt resource value: 0x7F0302AF
-			public const int textAppearanceButton = 2130903727;
+			public const int textAllCaps = 2130903727;
 			
 			// aapt resource value: 0x7F0302B0
-			public const int textAppearanceCaption = 2130903728;
+			public const int textAppearanceBody1 = 2130903728;
 			
 			// aapt resource value: 0x7F0302B1
-			public const int textAppearanceHeadline1 = 2130903729;
+			public const int textAppearanceBody2 = 2130903729;
 			
 			// aapt resource value: 0x7F0302B2
-			public const int textAppearanceHeadline2 = 2130903730;
+			public const int textAppearanceButton = 2130903730;
 			
 			// aapt resource value: 0x7F0302B3
-			public const int textAppearanceHeadline3 = 2130903731;
+			public const int textAppearanceCaption = 2130903731;
 			
 			// aapt resource value: 0x7F0302B4
-			public const int textAppearanceHeadline4 = 2130903732;
+			public const int textAppearanceHeadline1 = 2130903732;
 			
 			// aapt resource value: 0x7F0302B5
-			public const int textAppearanceHeadline5 = 2130903733;
+			public const int textAppearanceHeadline2 = 2130903733;
 			
 			// aapt resource value: 0x7F0302B6
-			public const int textAppearanceHeadline6 = 2130903734;
+			public const int textAppearanceHeadline3 = 2130903734;
 			
 			// aapt resource value: 0x7F0302B7
-			public const int textAppearanceLargePopupMenu = 2130903735;
+			public const int textAppearanceHeadline4 = 2130903735;
 			
 			// aapt resource value: 0x7F0302B8
-			public const int textAppearanceListItem = 2130903736;
+			public const int textAppearanceHeadline5 = 2130903736;
 			
 			// aapt resource value: 0x7F0302B9
-			public const int textAppearanceListItemSecondary = 2130903737;
+			public const int textAppearanceHeadline6 = 2130903737;
 			
 			// aapt resource value: 0x7F0302BA
-			public const int textAppearanceListItemSmall = 2130903738;
+			public const int textAppearanceLargePopupMenu = 2130903738;
 			
 			// aapt resource value: 0x7F0302BB
-			public const int textAppearanceOverline = 2130903739;
+			public const int textAppearanceListItem = 2130903739;
 			
 			// aapt resource value: 0x7F0302BC
-			public const int textAppearancePopupMenuHeader = 2130903740;
+			public const int textAppearanceListItemSecondary = 2130903740;
 			
 			// aapt resource value: 0x7F0302BD
-			public const int textAppearanceSearchResultSubtitle = 2130903741;
+			public const int textAppearanceListItemSmall = 2130903741;
 			
 			// aapt resource value: 0x7F0302BE
-			public const int textAppearanceSearchResultTitle = 2130903742;
+			public const int textAppearanceOverline = 2130903742;
 			
 			// aapt resource value: 0x7F0302BF
-			public const int textAppearanceSmallPopupMenu = 2130903743;
+			public const int textAppearancePopupMenuHeader = 2130903743;
 			
 			// aapt resource value: 0x7F0302C0
-			public const int textAppearanceSubtitle1 = 2130903744;
+			public const int textAppearanceSearchResultSubtitle = 2130903744;
 			
 			// aapt resource value: 0x7F0302C1
-			public const int textAppearanceSubtitle2 = 2130903745;
+			public const int textAppearanceSearchResultTitle = 2130903745;
 			
 			// aapt resource value: 0x7F0302C2
-			public const int textColorAlertDialogListItem = 2130903746;
+			public const int textAppearanceSmallPopupMenu = 2130903746;
 			
 			// aapt resource value: 0x7F0302C3
-			public const int textColorSearchUrl = 2130903747;
+			public const int textAppearanceSubtitle1 = 2130903747;
 			
 			// aapt resource value: 0x7F0302C4
-			public const int textEndPadding = 2130903748;
+			public const int textAppearanceSubtitle2 = 2130903748;
 			
 			// aapt resource value: 0x7F0302C5
-			public const int textInputStyle = 2130903749;
+			public const int textColorAlertDialogListItem = 2130903749;
 			
 			// aapt resource value: 0x7F0302C6
-			public const int textStartPadding = 2130903750;
+			public const int textColorSearchUrl = 2130903750;
 			
 			// aapt resource value: 0x7F0302C7
-			public const int theme = 2130903751;
+			public const int textEndPadding = 2130903751;
 			
 			// aapt resource value: 0x7F0302C8
-			public const int thickness = 2130903752;
+			public const int textInputStyle = 2130903752;
 			
 			// aapt resource value: 0x7F0302C9
-			public const int thumbTextPadding = 2130903753;
+			public const int textStartPadding = 2130903753;
 			
 			// aapt resource value: 0x7F0302CA
-			public const int thumbTint = 2130903754;
+			public const int theme = 2130903754;
 			
 			// aapt resource value: 0x7F0302CB
-			public const int thumbTintMode = 2130903755;
+			public const int thickness = 2130903755;
 			
 			// aapt resource value: 0x7F0302CC
-			public const int thumb_down = 2130903756;
+			public const int thumbTextPadding = 2130903756;
 			
 			// aapt resource value: 0x7F0302CD
-			public const int thumb_down_outline = 2130903757;
+			public const int thumbTint = 2130903757;
 			
 			// aapt resource value: 0x7F0302CE
-			public const int thumb_up = 2130903758;
+			public const int thumbTintMode = 2130903758;
 			
 			// aapt resource value: 0x7F0302CF
-			public const int thumb_up_outline = 2130903759;
+			public const int thumb_down = 2130903759;
 			
 			// aapt resource value: 0x7F0302D0
-			public const int tickMark = 2130903760;
+			public const int thumb_down_outline = 2130903760;
 			
 			// aapt resource value: 0x7F0302D1
-			public const int tickMarkTint = 2130903761;
+			public const int thumb_up = 2130903761;
 			
 			// aapt resource value: 0x7F0302D2
-			public const int tickMarkTintMode = 2130903762;
+			public const int thumb_up_outline = 2130903762;
 			
 			// aapt resource value: 0x7F0302D3
-			public const int tint = 2130903763;
+			public const int tickMark = 2130903763;
 			
 			// aapt resource value: 0x7F0302D4
-			public const int tintMode = 2130903764;
+			public const int tickMarkTint = 2130903764;
 			
 			// aapt resource value: 0x7F0302D5
-			public const int title = 2130903765;
+			public const int tickMarkTintMode = 2130903765;
 			
 			// aapt resource value: 0x7F0302D6
-			public const int titleEnabled = 2130903766;
+			public const int tint = 2130903766;
 			
 			// aapt resource value: 0x7F0302D7
-			public const int titleMargin = 2130903767;
+			public const int tintMode = 2130903767;
 			
 			// aapt resource value: 0x7F0302D8
-			public const int titleMarginBottom = 2130903768;
+			public const int title = 2130903768;
 			
 			// aapt resource value: 0x7F0302D9
-			public const int titleMarginEnd = 2130903769;
-			
-			// aapt resource value: 0x7F0302DC
-			public const int titleMargins = 2130903772;
+			public const int titleEnabled = 2130903769;
 			
 			// aapt resource value: 0x7F0302DA
-			public const int titleMarginStart = 2130903770;
+			public const int titleMargin = 2130903770;
 			
 			// aapt resource value: 0x7F0302DB
-			public const int titleMarginTop = 2130903771;
+			public const int titleMarginBottom = 2130903771;
 			
-			// aapt resource value: 0x7F0302DD
-			public const int titleTextAppearance = 2130903773;
-			
-			// aapt resource value: 0x7F0302DE
-			public const int titleTextColor = 2130903774;
+			// aapt resource value: 0x7F0302DC
+			public const int titleMarginEnd = 2130903772;
 			
 			// aapt resource value: 0x7F0302DF
-			public const int titleTextStyle = 2130903775;
+			public const int titleMargins = 2130903775;
+			
+			// aapt resource value: 0x7F0302DD
+			public const int titleMarginStart = 2130903773;
+			
+			// aapt resource value: 0x7F0302DE
+			public const int titleMarginTop = 2130903774;
 			
 			// aapt resource value: 0x7F0302E0
-			public const int toolbarId = 2130903776;
+			public const int titleTextAppearance = 2130903776;
 			
 			// aapt resource value: 0x7F0302E1
-			public const int toolbarNavigationButtonStyle = 2130903777;
+			public const int titleTextColor = 2130903777;
 			
 			// aapt resource value: 0x7F0302E2
-			public const int toolbarStyle = 2130903778;
+			public const int titleTextStyle = 2130903778;
 			
 			// aapt resource value: 0x7F0302E3
-			public const int tooltipForegroundColor = 2130903779;
+			public const int toolbarId = 2130903779;
 			
 			// aapt resource value: 0x7F0302E4
-			public const int tooltipFrameBackground = 2130903780;
+			public const int toolbarNavigationButtonStyle = 2130903780;
 			
 			// aapt resource value: 0x7F0302E5
-			public const int tooltipText = 2130903781;
+			public const int toolbarStyle = 2130903781;
 			
 			// aapt resource value: 0x7F0302E6
-			public const int track = 2130903782;
+			public const int tooltipForegroundColor = 2130903782;
 			
 			// aapt resource value: 0x7F0302E7
-			public const int trackTint = 2130903783;
+			public const int tooltipFrameBackground = 2130903783;
 			
 			// aapt resource value: 0x7F0302E8
-			public const int trackTintMode = 2130903784;
+			public const int tooltipText = 2130903784;
 			
 			// aapt resource value: 0x7F0302E9
-			public const int ttcIndex = 2130903785;
+			public const int track = 2130903785;
 			
 			// aapt resource value: 0x7F0302EA
-			public const int useCompatPadding = 2130903786;
+			public const int trackTint = 2130903786;
 			
 			// aapt resource value: 0x7F0302EB
-			public const int useCurrentTime = 2130903787;
+			public const int trackTintMode = 2130903787;
 			
 			// aapt resource value: 0x7F0302EC
-			public const int verticalMargin = 2130903788;
+			public const int ttcIndex = 2130903788;
 			
 			// aapt resource value: 0x7F0302ED
-			public const int viewInflaterClass = 2130903789;
+			public const int useCompatPadding = 2130903789;
 			
 			// aapt resource value: 0x7F0302EE
-			public const int voiceIcon = 2130903790;
+			public const int useCurrentTime = 2130903790;
 			
 			// aapt resource value: 0x7F0302EF
-			public const int windowActionBar = 2130903791;
+			public const int verticalMargin = 2130903791;
 			
 			// aapt resource value: 0x7F0302F0
-			public const int windowActionBarOverlay = 2130903792;
+			public const int viewInflaterClass = 2130903792;
 			
 			// aapt resource value: 0x7F0302F1
-			public const int windowActionModeOverlay = 2130903793;
+			public const int voiceIcon = 2130903793;
 			
 			// aapt resource value: 0x7F0302F2
-			public const int windowFixedHeightMajor = 2130903794;
+			public const int windowActionBar = 2130903794;
 			
 			// aapt resource value: 0x7F0302F3
-			public const int windowFixedHeightMinor = 2130903795;
+			public const int windowActionBarOverlay = 2130903795;
 			
 			// aapt resource value: 0x7F0302F4
-			public const int windowFixedWidthMajor = 2130903796;
+			public const int windowActionModeOverlay = 2130903796;
 			
 			// aapt resource value: 0x7F0302F5
-			public const int windowFixedWidthMinor = 2130903797;
+			public const int windowFixedHeightMajor = 2130903797;
 			
 			// aapt resource value: 0x7F0302F6
-			public const int windowMinWidthMajor = 2130903798;
+			public const int windowFixedHeightMinor = 2130903798;
 			
 			// aapt resource value: 0x7F0302F7
-			public const int windowMinWidthMinor = 2130903799;
+			public const int windowFixedWidthMajor = 2130903799;
 			
 			// aapt resource value: 0x7F0302F8
-			public const int windowNoTitle = 2130903800;
+			public const int windowFixedWidthMinor = 2130903800;
+			
+			// aapt resource value: 0x7F0302F9
+			public const int windowMinWidthMajor = 2130903801;
+			
+			// aapt resource value: 0x7F0302FA
+			public const int windowMinWidthMinor = 2130903802;
+			
+			// aapt resource value: 0x7F0302FB
+			public const int windowNoTitle = 2130903803;
 			
 			static Attribute()
 			{
@@ -22370,8 +25286,8 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 0x7F1000C5
 			public const int CardView_Light = 2131755205;
 			
-			// aapt resource value: 0x7F100271
-			public const int collectionViewStyle = 2131755633;
+			// aapt resource value: 0x7F100272
+			public const int collectionViewStyle = 2131755634;
 			
 			// aapt resource value: 0x7F1000C6
 			public const int MainTheme = 2131755206;
@@ -22805,68 +25721,68 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 0x7F100155
 			public const int TextAppearance_Widget_AppCompat_Toolbar_Title = 2131755349;
 			
-			// aapt resource value: 0x7F100195
-			public const int ThemeOverlay_AppCompat = 2131755413;
-			
 			// aapt resource value: 0x7F100196
-			public const int ThemeOverlay_AppCompat_ActionBar = 2131755414;
+			public const int ThemeOverlay_AppCompat = 2131755414;
 			
 			// aapt resource value: 0x7F100197
-			public const int ThemeOverlay_AppCompat_Dark = 2131755415;
+			public const int ThemeOverlay_AppCompat_ActionBar = 2131755415;
 			
 			// aapt resource value: 0x7F100198
-			public const int ThemeOverlay_AppCompat_Dark_ActionBar = 2131755416;
+			public const int ThemeOverlay_AppCompat_Dark = 2131755416;
 			
 			// aapt resource value: 0x7F100199
-			public const int ThemeOverlay_AppCompat_Dialog = 2131755417;
+			public const int ThemeOverlay_AppCompat_Dark_ActionBar = 2131755417;
 			
 			// aapt resource value: 0x7F10019A
-			public const int ThemeOverlay_AppCompat_Dialog_Alert = 2131755418;
+			public const int ThemeOverlay_AppCompat_Dialog = 2131755418;
 			
 			// aapt resource value: 0x7F10019B
-			public const int ThemeOverlay_AppCompat_Light = 2131755419;
+			public const int ThemeOverlay_AppCompat_Dialog_Alert = 2131755419;
 			
 			// aapt resource value: 0x7F10019C
-			public const int ThemeOverlay_MaterialComponents = 2131755420;
+			public const int ThemeOverlay_AppCompat_Light = 2131755420;
 			
 			// aapt resource value: 0x7F10019D
-			public const int ThemeOverlay_MaterialComponents_ActionBar = 2131755421;
+			public const int ThemeOverlay_MaterialComponents = 2131755421;
 			
 			// aapt resource value: 0x7F10019E
-			public const int ThemeOverlay_MaterialComponents_Dark = 2131755422;
+			public const int ThemeOverlay_MaterialComponents_ActionBar = 2131755422;
 			
 			// aapt resource value: 0x7F10019F
-			public const int ThemeOverlay_MaterialComponents_Dark_ActionBar = 2131755423;
+			public const int ThemeOverlay_MaterialComponents_Dark = 2131755423;
 			
 			// aapt resource value: 0x7F1001A0
-			public const int ThemeOverlay_MaterialComponents_Dialog = 2131755424;
+			public const int ThemeOverlay_MaterialComponents_Dark_ActionBar = 2131755424;
 			
 			// aapt resource value: 0x7F1001A1
-			public const int ThemeOverlay_MaterialComponents_Dialog_Alert = 2131755425;
+			public const int ThemeOverlay_MaterialComponents_Dialog = 2131755425;
 			
 			// aapt resource value: 0x7F1001A2
-			public const int ThemeOverlay_MaterialComponents_Light = 2131755426;
+			public const int ThemeOverlay_MaterialComponents_Dialog_Alert = 2131755426;
 			
 			// aapt resource value: 0x7F1001A3
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText = 2131755427;
+			public const int ThemeOverlay_MaterialComponents_Light = 2131755427;
 			
 			// aapt resource value: 0x7F1001A4
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = 2131755428;
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText = 2131755428;
 			
 			// aapt resource value: 0x7F1001A5
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131755429;
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = 2131755429;
 			
 			// aapt resource value: 0x7F1001A6
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = 2131755430;
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131755430;
 			
 			// aapt resource value: 0x7F1001A7
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131755431;
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = 2131755431;
 			
 			// aapt resource value: 0x7F1001A8
-			public const int ThemeOverlay_MediaRouter_Dark = 2131755432;
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131755432;
 			
 			// aapt resource value: 0x7F1001A9
-			public const int ThemeOverlay_MediaRouter_Light = 2131755433;
+			public const int ThemeOverlay_MediaRouter_Dark = 2131755433;
+			
+			// aapt resource value: 0x7F1001AA
+			public const int ThemeOverlay_MediaRouter_Light = 2131755434;
 			
 			// aapt resource value: 0x7F100156
 			public const int Theme_AppCompat = 2131755350;
@@ -22950,709 +25866,712 @@ namespace SalveminiApp.Droid
 			public const int Theme_Design_NoActionBar = 2131755376;
 			
 			// aapt resource value: 0x7F100171
-			public const int Theme_Leanback = 2131755377;
-			
-			// aapt resource value: 0x7F10017B
-			public const int Theme_LeanbackBase = 2131755387;
+			public const int Theme_IAPTheme = 2131755377;
 			
 			// aapt resource value: 0x7F100172
-			public const int Theme_Leanback_Browse = 2131755378;
-			
-			// aapt resource value: 0x7F100173
-			public const int Theme_Leanback_Details = 2131755379;
-			
-			// aapt resource value: 0x7F100174
-			public const int Theme_Leanback_Details_NoSharedElementTransition = 2131755380;
-			
-			// aapt resource value: 0x7F100175
-			public const int Theme_Leanback_GuidedStep = 2131755381;
-			
-			// aapt resource value: 0x7F100178
-			public const int Theme_Leanback_GuidedStepBase = 2131755384;
-			
-			// aapt resource value: 0x7F100176
-			public const int Theme_Leanback_GuidedStep_Half = 2131755382;
-			
-			// aapt resource value: 0x7F100177
-			public const int Theme_Leanback_GuidedStep_HalfBase = 2131755383;
-			
-			// aapt resource value: 0x7F100179
-			public const int Theme_Leanback_Onboarding = 2131755385;
-			
-			// aapt resource value: 0x7F10017A
-			public const int Theme_Leanback_VerticalGrid = 2131755386;
+			public const int Theme_Leanback = 2131755378;
 			
 			// aapt resource value: 0x7F10017C
-			public const int Theme_MaterialComponents = 2131755388;
+			public const int Theme_LeanbackBase = 2131755388;
+			
+			// aapt resource value: 0x7F100173
+			public const int Theme_Leanback_Browse = 2131755379;
+			
+			// aapt resource value: 0x7F100174
+			public const int Theme_Leanback_Details = 2131755380;
+			
+			// aapt resource value: 0x7F100175
+			public const int Theme_Leanback_Details_NoSharedElementTransition = 2131755381;
+			
+			// aapt resource value: 0x7F100176
+			public const int Theme_Leanback_GuidedStep = 2131755382;
+			
+			// aapt resource value: 0x7F100179
+			public const int Theme_Leanback_GuidedStepBase = 2131755385;
+			
+			// aapt resource value: 0x7F100177
+			public const int Theme_Leanback_GuidedStep_Half = 2131755383;
+			
+			// aapt resource value: 0x7F100178
+			public const int Theme_Leanback_GuidedStep_HalfBase = 2131755384;
+			
+			// aapt resource value: 0x7F10017A
+			public const int Theme_Leanback_Onboarding = 2131755386;
+			
+			// aapt resource value: 0x7F10017B
+			public const int Theme_Leanback_VerticalGrid = 2131755387;
 			
 			// aapt resource value: 0x7F10017D
-			public const int Theme_MaterialComponents_BottomSheetDialog = 2131755389;
+			public const int Theme_MaterialComponents = 2131755389;
 			
 			// aapt resource value: 0x7F10017E
-			public const int Theme_MaterialComponents_Bridge = 2131755390;
+			public const int Theme_MaterialComponents_BottomSheetDialog = 2131755390;
 			
 			// aapt resource value: 0x7F10017F
-			public const int Theme_MaterialComponents_CompactMenu = 2131755391;
+			public const int Theme_MaterialComponents_Bridge = 2131755391;
 			
 			// aapt resource value: 0x7F100180
-			public const int Theme_MaterialComponents_Dialog = 2131755392;
-			
-			// aapt resource value: 0x7F100183
-			public const int Theme_MaterialComponents_DialogWhenLarge = 2131755395;
+			public const int Theme_MaterialComponents_CompactMenu = 2131755392;
 			
 			// aapt resource value: 0x7F100181
-			public const int Theme_MaterialComponents_Dialog_Alert = 2131755393;
-			
-			// aapt resource value: 0x7F100182
-			public const int Theme_MaterialComponents_Dialog_MinWidth = 2131755394;
+			public const int Theme_MaterialComponents_Dialog = 2131755393;
 			
 			// aapt resource value: 0x7F100184
-			public const int Theme_MaterialComponents_Light = 2131755396;
+			public const int Theme_MaterialComponents_DialogWhenLarge = 2131755396;
+			
+			// aapt resource value: 0x7F100182
+			public const int Theme_MaterialComponents_Dialog_Alert = 2131755394;
+			
+			// aapt resource value: 0x7F100183
+			public const int Theme_MaterialComponents_Dialog_MinWidth = 2131755395;
 			
 			// aapt resource value: 0x7F100185
-			public const int Theme_MaterialComponents_Light_BottomSheetDialog = 2131755397;
+			public const int Theme_MaterialComponents_Light = 2131755397;
 			
 			// aapt resource value: 0x7F100186
-			public const int Theme_MaterialComponents_Light_Bridge = 2131755398;
+			public const int Theme_MaterialComponents_Light_BottomSheetDialog = 2131755398;
 			
 			// aapt resource value: 0x7F100187
-			public const int Theme_MaterialComponents_Light_DarkActionBar = 2131755399;
+			public const int Theme_MaterialComponents_Light_Bridge = 2131755399;
 			
 			// aapt resource value: 0x7F100188
-			public const int Theme_MaterialComponents_Light_DarkActionBar_Bridge = 2131755400;
+			public const int Theme_MaterialComponents_Light_DarkActionBar = 2131755400;
 			
 			// aapt resource value: 0x7F100189
-			public const int Theme_MaterialComponents_Light_Dialog = 2131755401;
-			
-			// aapt resource value: 0x7F10018C
-			public const int Theme_MaterialComponents_Light_DialogWhenLarge = 2131755404;
+			public const int Theme_MaterialComponents_Light_DarkActionBar_Bridge = 2131755401;
 			
 			// aapt resource value: 0x7F10018A
-			public const int Theme_MaterialComponents_Light_Dialog_Alert = 2131755402;
-			
-			// aapt resource value: 0x7F10018B
-			public const int Theme_MaterialComponents_Light_Dialog_MinWidth = 2131755403;
+			public const int Theme_MaterialComponents_Light_Dialog = 2131755402;
 			
 			// aapt resource value: 0x7F10018D
-			public const int Theme_MaterialComponents_Light_NoActionBar = 2131755405;
+			public const int Theme_MaterialComponents_Light_DialogWhenLarge = 2131755405;
+			
+			// aapt resource value: 0x7F10018B
+			public const int Theme_MaterialComponents_Light_Dialog_Alert = 2131755403;
+			
+			// aapt resource value: 0x7F10018C
+			public const int Theme_MaterialComponents_Light_Dialog_MinWidth = 2131755404;
 			
 			// aapt resource value: 0x7F10018E
-			public const int Theme_MaterialComponents_Light_NoActionBar_Bridge = 2131755406;
+			public const int Theme_MaterialComponents_Light_NoActionBar = 2131755406;
 			
 			// aapt resource value: 0x7F10018F
-			public const int Theme_MaterialComponents_NoActionBar = 2131755407;
+			public const int Theme_MaterialComponents_Light_NoActionBar_Bridge = 2131755407;
 			
 			// aapt resource value: 0x7F100190
-			public const int Theme_MaterialComponents_NoActionBar_Bridge = 2131755408;
+			public const int Theme_MaterialComponents_NoActionBar = 2131755408;
 			
 			// aapt resource value: 0x7F100191
-			public const int Theme_MediaRouter = 2131755409;
+			public const int Theme_MaterialComponents_NoActionBar_Bridge = 2131755409;
 			
 			// aapt resource value: 0x7F100192
-			public const int Theme_MediaRouter_Light = 2131755410;
-			
-			// aapt resource value: 0x7F100194
-			public const int Theme_MediaRouter_LightControlPanel = 2131755412;
+			public const int Theme_MediaRouter = 2131755410;
 			
 			// aapt resource value: 0x7F100193
-			public const int Theme_MediaRouter_Light_DarkControlPanel = 2131755411;
+			public const int Theme_MediaRouter_Light = 2131755411;
 			
-			// aapt resource value: 0x7F1001AA
-			public const int Widget_AppCompat_ActionBar = 2131755434;
+			// aapt resource value: 0x7F100195
+			public const int Theme_MediaRouter_LightControlPanel = 2131755413;
+			
+			// aapt resource value: 0x7F100194
+			public const int Theme_MediaRouter_Light_DarkControlPanel = 2131755412;
 			
 			// aapt resource value: 0x7F1001AB
-			public const int Widget_AppCompat_ActionBar_Solid = 2131755435;
+			public const int Widget_AppCompat_ActionBar = 2131755435;
 			
 			// aapt resource value: 0x7F1001AC
-			public const int Widget_AppCompat_ActionBar_TabBar = 2131755436;
+			public const int Widget_AppCompat_ActionBar_Solid = 2131755436;
 			
 			// aapt resource value: 0x7F1001AD
-			public const int Widget_AppCompat_ActionBar_TabText = 2131755437;
+			public const int Widget_AppCompat_ActionBar_TabBar = 2131755437;
 			
 			// aapt resource value: 0x7F1001AE
-			public const int Widget_AppCompat_ActionBar_TabView = 2131755438;
+			public const int Widget_AppCompat_ActionBar_TabText = 2131755438;
 			
 			// aapt resource value: 0x7F1001AF
-			public const int Widget_AppCompat_ActionButton = 2131755439;
+			public const int Widget_AppCompat_ActionBar_TabView = 2131755439;
 			
 			// aapt resource value: 0x7F1001B0
-			public const int Widget_AppCompat_ActionButton_CloseMode = 2131755440;
+			public const int Widget_AppCompat_ActionButton = 2131755440;
 			
 			// aapt resource value: 0x7F1001B1
-			public const int Widget_AppCompat_ActionButton_Overflow = 2131755441;
+			public const int Widget_AppCompat_ActionButton_CloseMode = 2131755441;
 			
 			// aapt resource value: 0x7F1001B2
-			public const int Widget_AppCompat_ActionMode = 2131755442;
+			public const int Widget_AppCompat_ActionButton_Overflow = 2131755442;
 			
 			// aapt resource value: 0x7F1001B3
-			public const int Widget_AppCompat_ActivityChooserView = 2131755443;
+			public const int Widget_AppCompat_ActionMode = 2131755443;
 			
 			// aapt resource value: 0x7F1001B4
-			public const int Widget_AppCompat_AutoCompleteTextView = 2131755444;
+			public const int Widget_AppCompat_ActivityChooserView = 2131755444;
 			
 			// aapt resource value: 0x7F1001B5
-			public const int Widget_AppCompat_Button = 2131755445;
-			
-			// aapt resource value: 0x7F1001BB
-			public const int Widget_AppCompat_ButtonBar = 2131755451;
-			
-			// aapt resource value: 0x7F1001BC
-			public const int Widget_AppCompat_ButtonBar_AlertDialog = 2131755452;
+			public const int Widget_AppCompat_AutoCompleteTextView = 2131755445;
 			
 			// aapt resource value: 0x7F1001B6
-			public const int Widget_AppCompat_Button_Borderless = 2131755446;
+			public const int Widget_AppCompat_Button = 2131755446;
 			
-			// aapt resource value: 0x7F1001B7
-			public const int Widget_AppCompat_Button_Borderless_Colored = 2131755447;
-			
-			// aapt resource value: 0x7F1001B8
-			public const int Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131755448;
-			
-			// aapt resource value: 0x7F1001B9
-			public const int Widget_AppCompat_Button_Colored = 2131755449;
-			
-			// aapt resource value: 0x7F1001BA
-			public const int Widget_AppCompat_Button_Small = 2131755450;
+			// aapt resource value: 0x7F1001BC
+			public const int Widget_AppCompat_ButtonBar = 2131755452;
 			
 			// aapt resource value: 0x7F1001BD
-			public const int Widget_AppCompat_CompoundButton_CheckBox = 2131755453;
+			public const int Widget_AppCompat_ButtonBar_AlertDialog = 2131755453;
+			
+			// aapt resource value: 0x7F1001B7
+			public const int Widget_AppCompat_Button_Borderless = 2131755447;
+			
+			// aapt resource value: 0x7F1001B8
+			public const int Widget_AppCompat_Button_Borderless_Colored = 2131755448;
+			
+			// aapt resource value: 0x7F1001B9
+			public const int Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131755449;
+			
+			// aapt resource value: 0x7F1001BA
+			public const int Widget_AppCompat_Button_Colored = 2131755450;
+			
+			// aapt resource value: 0x7F1001BB
+			public const int Widget_AppCompat_Button_Small = 2131755451;
 			
 			// aapt resource value: 0x7F1001BE
-			public const int Widget_AppCompat_CompoundButton_RadioButton = 2131755454;
+			public const int Widget_AppCompat_CompoundButton_CheckBox = 2131755454;
 			
 			// aapt resource value: 0x7F1001BF
-			public const int Widget_AppCompat_CompoundButton_Switch = 2131755455;
+			public const int Widget_AppCompat_CompoundButton_RadioButton = 2131755455;
 			
 			// aapt resource value: 0x7F1001C0
-			public const int Widget_AppCompat_DrawerArrowToggle = 2131755456;
+			public const int Widget_AppCompat_CompoundButton_Switch = 2131755456;
 			
 			// aapt resource value: 0x7F1001C1
-			public const int Widget_AppCompat_DropDownItem_Spinner = 2131755457;
+			public const int Widget_AppCompat_DrawerArrowToggle = 2131755457;
 			
 			// aapt resource value: 0x7F1001C2
-			public const int Widget_AppCompat_EditText = 2131755458;
+			public const int Widget_AppCompat_DropDownItem_Spinner = 2131755458;
 			
 			// aapt resource value: 0x7F1001C3
-			public const int Widget_AppCompat_ImageButton = 2131755459;
+			public const int Widget_AppCompat_EditText = 2131755459;
 			
 			// aapt resource value: 0x7F1001C4
-			public const int Widget_AppCompat_Light_ActionBar = 2131755460;
+			public const int Widget_AppCompat_ImageButton = 2131755460;
 			
 			// aapt resource value: 0x7F1001C5
-			public const int Widget_AppCompat_Light_ActionBar_Solid = 2131755461;
+			public const int Widget_AppCompat_Light_ActionBar = 2131755461;
 			
 			// aapt resource value: 0x7F1001C6
-			public const int Widget_AppCompat_Light_ActionBar_Solid_Inverse = 2131755462;
+			public const int Widget_AppCompat_Light_ActionBar_Solid = 2131755462;
 			
 			// aapt resource value: 0x7F1001C7
-			public const int Widget_AppCompat_Light_ActionBar_TabBar = 2131755463;
+			public const int Widget_AppCompat_Light_ActionBar_Solid_Inverse = 2131755463;
 			
 			// aapt resource value: 0x7F1001C8
-			public const int Widget_AppCompat_Light_ActionBar_TabBar_Inverse = 2131755464;
+			public const int Widget_AppCompat_Light_ActionBar_TabBar = 2131755464;
 			
 			// aapt resource value: 0x7F1001C9
-			public const int Widget_AppCompat_Light_ActionBar_TabText = 2131755465;
+			public const int Widget_AppCompat_Light_ActionBar_TabBar_Inverse = 2131755465;
 			
 			// aapt resource value: 0x7F1001CA
-			public const int Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131755466;
+			public const int Widget_AppCompat_Light_ActionBar_TabText = 2131755466;
 			
 			// aapt resource value: 0x7F1001CB
-			public const int Widget_AppCompat_Light_ActionBar_TabView = 2131755467;
+			public const int Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131755467;
 			
 			// aapt resource value: 0x7F1001CC
-			public const int Widget_AppCompat_Light_ActionBar_TabView_Inverse = 2131755468;
+			public const int Widget_AppCompat_Light_ActionBar_TabView = 2131755468;
 			
 			// aapt resource value: 0x7F1001CD
-			public const int Widget_AppCompat_Light_ActionButton = 2131755469;
+			public const int Widget_AppCompat_Light_ActionBar_TabView_Inverse = 2131755469;
 			
 			// aapt resource value: 0x7F1001CE
-			public const int Widget_AppCompat_Light_ActionButton_CloseMode = 2131755470;
+			public const int Widget_AppCompat_Light_ActionButton = 2131755470;
 			
 			// aapt resource value: 0x7F1001CF
-			public const int Widget_AppCompat_Light_ActionButton_Overflow = 2131755471;
+			public const int Widget_AppCompat_Light_ActionButton_CloseMode = 2131755471;
 			
 			// aapt resource value: 0x7F1001D0
-			public const int Widget_AppCompat_Light_ActionMode_Inverse = 2131755472;
+			public const int Widget_AppCompat_Light_ActionButton_Overflow = 2131755472;
 			
 			// aapt resource value: 0x7F1001D1
-			public const int Widget_AppCompat_Light_ActivityChooserView = 2131755473;
+			public const int Widget_AppCompat_Light_ActionMode_Inverse = 2131755473;
 			
 			// aapt resource value: 0x7F1001D2
-			public const int Widget_AppCompat_Light_AutoCompleteTextView = 2131755474;
+			public const int Widget_AppCompat_Light_ActivityChooserView = 2131755474;
 			
 			// aapt resource value: 0x7F1001D3
-			public const int Widget_AppCompat_Light_DropDownItem_Spinner = 2131755475;
+			public const int Widget_AppCompat_Light_AutoCompleteTextView = 2131755475;
 			
 			// aapt resource value: 0x7F1001D4
-			public const int Widget_AppCompat_Light_ListPopupWindow = 2131755476;
+			public const int Widget_AppCompat_Light_DropDownItem_Spinner = 2131755476;
 			
 			// aapt resource value: 0x7F1001D5
-			public const int Widget_AppCompat_Light_ListView_DropDown = 2131755477;
+			public const int Widget_AppCompat_Light_ListPopupWindow = 2131755477;
 			
 			// aapt resource value: 0x7F1001D6
-			public const int Widget_AppCompat_Light_PopupMenu = 2131755478;
+			public const int Widget_AppCompat_Light_ListView_DropDown = 2131755478;
 			
 			// aapt resource value: 0x7F1001D7
-			public const int Widget_AppCompat_Light_PopupMenu_Overflow = 2131755479;
+			public const int Widget_AppCompat_Light_PopupMenu = 2131755479;
 			
 			// aapt resource value: 0x7F1001D8
-			public const int Widget_AppCompat_Light_SearchView = 2131755480;
+			public const int Widget_AppCompat_Light_PopupMenu_Overflow = 2131755480;
 			
 			// aapt resource value: 0x7F1001D9
-			public const int Widget_AppCompat_Light_Spinner_DropDown_ActionBar = 2131755481;
+			public const int Widget_AppCompat_Light_SearchView = 2131755481;
 			
 			// aapt resource value: 0x7F1001DA
-			public const int Widget_AppCompat_ListMenuView = 2131755482;
+			public const int Widget_AppCompat_Light_Spinner_DropDown_ActionBar = 2131755482;
 			
 			// aapt resource value: 0x7F1001DB
-			public const int Widget_AppCompat_ListPopupWindow = 2131755483;
+			public const int Widget_AppCompat_ListMenuView = 2131755483;
 			
 			// aapt resource value: 0x7F1001DC
-			public const int Widget_AppCompat_ListView = 2131755484;
+			public const int Widget_AppCompat_ListPopupWindow = 2131755484;
 			
 			// aapt resource value: 0x7F1001DD
-			public const int Widget_AppCompat_ListView_DropDown = 2131755485;
+			public const int Widget_AppCompat_ListView = 2131755485;
 			
 			// aapt resource value: 0x7F1001DE
-			public const int Widget_AppCompat_ListView_Menu = 2131755486;
+			public const int Widget_AppCompat_ListView_DropDown = 2131755486;
 			
 			// aapt resource value: 0x7F1001DF
-			public const int Widget_AppCompat_PopupMenu = 2131755487;
+			public const int Widget_AppCompat_ListView_Menu = 2131755487;
 			
 			// aapt resource value: 0x7F1001E0
-			public const int Widget_AppCompat_PopupMenu_Overflow = 2131755488;
+			public const int Widget_AppCompat_PopupMenu = 2131755488;
 			
 			// aapt resource value: 0x7F1001E1
-			public const int Widget_AppCompat_PopupWindow = 2131755489;
+			public const int Widget_AppCompat_PopupMenu_Overflow = 2131755489;
 			
 			// aapt resource value: 0x7F1001E2
-			public const int Widget_AppCompat_ProgressBar = 2131755490;
+			public const int Widget_AppCompat_PopupWindow = 2131755490;
 			
 			// aapt resource value: 0x7F1001E3
-			public const int Widget_AppCompat_ProgressBar_Horizontal = 2131755491;
+			public const int Widget_AppCompat_ProgressBar = 2131755491;
 			
 			// aapt resource value: 0x7F1001E4
-			public const int Widget_AppCompat_RatingBar = 2131755492;
+			public const int Widget_AppCompat_ProgressBar_Horizontal = 2131755492;
 			
 			// aapt resource value: 0x7F1001E5
-			public const int Widget_AppCompat_RatingBar_Indicator = 2131755493;
+			public const int Widget_AppCompat_RatingBar = 2131755493;
 			
 			// aapt resource value: 0x7F1001E6
-			public const int Widget_AppCompat_RatingBar_Small = 2131755494;
+			public const int Widget_AppCompat_RatingBar_Indicator = 2131755494;
 			
 			// aapt resource value: 0x7F1001E7
-			public const int Widget_AppCompat_SearchView = 2131755495;
+			public const int Widget_AppCompat_RatingBar_Small = 2131755495;
 			
 			// aapt resource value: 0x7F1001E8
-			public const int Widget_AppCompat_SearchView_ActionBar = 2131755496;
+			public const int Widget_AppCompat_SearchView = 2131755496;
 			
 			// aapt resource value: 0x7F1001E9
-			public const int Widget_AppCompat_SeekBar = 2131755497;
+			public const int Widget_AppCompat_SearchView_ActionBar = 2131755497;
 			
 			// aapt resource value: 0x7F1001EA
-			public const int Widget_AppCompat_SeekBar_Discrete = 2131755498;
+			public const int Widget_AppCompat_SeekBar = 2131755498;
 			
 			// aapt resource value: 0x7F1001EB
-			public const int Widget_AppCompat_Spinner = 2131755499;
+			public const int Widget_AppCompat_SeekBar_Discrete = 2131755499;
 			
 			// aapt resource value: 0x7F1001EC
-			public const int Widget_AppCompat_Spinner_DropDown = 2131755500;
+			public const int Widget_AppCompat_Spinner = 2131755500;
 			
 			// aapt resource value: 0x7F1001ED
-			public const int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131755501;
+			public const int Widget_AppCompat_Spinner_DropDown = 2131755501;
 			
 			// aapt resource value: 0x7F1001EE
-			public const int Widget_AppCompat_Spinner_Underlined = 2131755502;
+			public const int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131755502;
 			
 			// aapt resource value: 0x7F1001EF
-			public const int Widget_AppCompat_TextView_SpinnerItem = 2131755503;
+			public const int Widget_AppCompat_Spinner_Underlined = 2131755503;
 			
 			// aapt resource value: 0x7F1001F0
-			public const int Widget_AppCompat_Toolbar = 2131755504;
+			public const int Widget_AppCompat_TextView_SpinnerItem = 2131755504;
 			
 			// aapt resource value: 0x7F1001F1
-			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131755505;
+			public const int Widget_AppCompat_Toolbar = 2131755505;
 			
 			// aapt resource value: 0x7F1001F2
-			public const int Widget_Compat_NotificationActionContainer = 2131755506;
+			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131755506;
 			
 			// aapt resource value: 0x7F1001F3
-			public const int Widget_Compat_NotificationActionText = 2131755507;
+			public const int Widget_Compat_NotificationActionContainer = 2131755507;
 			
 			// aapt resource value: 0x7F1001F4
-			public const int Widget_Design_AppBarLayout = 2131755508;
+			public const int Widget_Compat_NotificationActionText = 2131755508;
 			
 			// aapt resource value: 0x7F1001F5
-			public const int Widget_Design_BottomNavigationView = 2131755509;
+			public const int Widget_Design_AppBarLayout = 2131755509;
 			
 			// aapt resource value: 0x7F1001F6
-			public const int Widget_Design_BottomSheet_Modal = 2131755510;
+			public const int Widget_Design_BottomNavigationView = 2131755510;
 			
 			// aapt resource value: 0x7F1001F7
-			public const int Widget_Design_CollapsingToolbar = 2131755511;
+			public const int Widget_Design_BottomSheet_Modal = 2131755511;
 			
 			// aapt resource value: 0x7F1001F8
-			public const int Widget_Design_FloatingActionButton = 2131755512;
+			public const int Widget_Design_CollapsingToolbar = 2131755512;
 			
 			// aapt resource value: 0x7F1001F9
-			public const int Widget_Design_NavigationView = 2131755513;
+			public const int Widget_Design_FloatingActionButton = 2131755513;
 			
 			// aapt resource value: 0x7F1001FA
-			public const int Widget_Design_ScrimInsetsFrameLayout = 2131755514;
+			public const int Widget_Design_NavigationView = 2131755514;
 			
 			// aapt resource value: 0x7F1001FB
-			public const int Widget_Design_Snackbar = 2131755515;
+			public const int Widget_Design_ScrimInsetsFrameLayout = 2131755515;
 			
 			// aapt resource value: 0x7F1001FC
-			public const int Widget_Design_TabLayout = 2131755516;
+			public const int Widget_Design_Snackbar = 2131755516;
 			
 			// aapt resource value: 0x7F1001FD
-			public const int Widget_Design_TextInputLayout = 2131755517;
+			public const int Widget_Design_TabLayout = 2131755517;
 			
 			// aapt resource value: 0x7F1001FE
-			public const int Widget_Leanback = 2131755518;
-			
-			// aapt resource value: 0x7F100249
-			public const int Widget_LeanbackBase = 2131755593;
+			public const int Widget_Design_TextInputLayout = 2131755518;
 			
 			// aapt resource value: 0x7F1001FF
-			public const int Widget_Leanback_BaseCardViewStyle = 2131755519;
-			
-			// aapt resource value: 0x7F100200
-			public const int Widget_Leanback_DetailsActionButtonStyle = 2131755520;
-			
-			// aapt resource value: 0x7F100201
-			public const int Widget_Leanback_DetailsActionButtonStyleBase = 2131755521;
-			
-			// aapt resource value: 0x7F100202
-			public const int Widget_Leanback_DetailsDescriptionBodyStyle = 2131755522;
-			
-			// aapt resource value: 0x7F100203
-			public const int Widget_Leanback_DetailsDescriptionSubtitleStyle = 2131755523;
-			
-			// aapt resource value: 0x7F100204
-			public const int Widget_Leanback_DetailsDescriptionTitleStyle = 2131755524;
-			
-			// aapt resource value: 0x7F100205
-			public const int Widget_Leanback_ErrorMessageStyle = 2131755525;
-			
-			// aapt resource value: 0x7F100206
-			public const int Widget_Leanback_GridItems = 2131755526;
-			
-			// aapt resource value: 0x7F100207
-			public const int Widget_Leanback_GridItems_VerticalGridView = 2131755527;
-			
-			// aapt resource value: 0x7F100208
-			public const int Widget_Leanback_GuidanceBreadcrumbStyle = 2131755528;
-			
-			// aapt resource value: 0x7F100209
-			public const int Widget_Leanback_GuidanceContainerStyle = 2131755529;
-			
-			// aapt resource value: 0x7F10020A
-			public const int Widget_Leanback_GuidanceDescriptionStyle = 2131755530;
-			
-			// aapt resource value: 0x7F10020B
-			public const int Widget_Leanback_GuidanceIconStyle = 2131755531;
-			
-			// aapt resource value: 0x7F10020C
-			public const int Widget_Leanback_GuidanceTitleStyle = 2131755532;
-			
-			// aapt resource value: 0x7F10020D
-			public const int Widget_Leanback_GuidedActionItemCheckmarkStyle = 2131755533;
-			
-			// aapt resource value: 0x7F10020E
-			public const int Widget_Leanback_GuidedActionItemChevronStyle = 2131755534;
-			
-			// aapt resource value: 0x7F10020F
-			public const int Widget_Leanback_GuidedActionItemContainerStyle = 2131755535;
-			
-			// aapt resource value: 0x7F100210
-			public const int Widget_Leanback_GuidedActionItemContentStyle = 2131755536;
-			
-			// aapt resource value: 0x7F100211
-			public const int Widget_Leanback_GuidedActionItemDescriptionStyle = 2131755537;
-			
-			// aapt resource value: 0x7F100212
-			public const int Widget_Leanback_GuidedActionItemIconStyle = 2131755538;
-			
-			// aapt resource value: 0x7F100213
-			public const int Widget_Leanback_GuidedActionItemTitleStyle = 2131755539;
-			
-			// aapt resource value: 0x7F100214
-			public const int Widget_Leanback_GuidedActionsContainerStyle = 2131755540;
-			
-			// aapt resource value: 0x7F100215
-			public const int Widget_Leanback_GuidedActionsListStyle = 2131755541;
-			
-			// aapt resource value: 0x7F100216
-			public const int Widget_Leanback_GuidedActionsSelectorStyle = 2131755542;
-			
-			// aapt resource value: 0x7F100217
-			public const int Widget_Leanback_GuidedButtonActionsListStyle = 2131755543;
-			
-			// aapt resource value: 0x7F100218
-			public const int Widget_Leanback_GuidedSubActionsListStyle = 2131755544;
-			
-			// aapt resource value: 0x7F100219
-			public const int Widget_Leanback_Header = 2131755545;
-			
-			// aapt resource value: 0x7F10021B
-			public const int Widget_Leanback_Headers = 2131755547;
-			
-			// aapt resource value: 0x7F10021C
-			public const int Widget_Leanback_Headers_VerticalGridView = 2131755548;
-			
-			// aapt resource value: 0x7F10021A
-			public const int Widget_Leanback_Header_Section = 2131755546;
-			
-			// aapt resource value: 0x7F10021D
-			public const int Widget_Leanback_ImageCardView = 2131755549;
-			
-			// aapt resource value: 0x7F100223
-			public const int Widget_Leanback_ImageCardViewStyle = 2131755555;
-			
-			// aapt resource value: 0x7F10021E
-			public const int Widget_Leanback_ImageCardView_BadgeStyle = 2131755550;
-			
-			// aapt resource value: 0x7F10021F
-			public const int Widget_Leanback_ImageCardView_ContentStyle = 2131755551;
-			
-			// aapt resource value: 0x7F100220
-			public const int Widget_Leanback_ImageCardView_ImageStyle = 2131755552;
-			
-			// aapt resource value: 0x7F100221
-			public const int Widget_Leanback_ImageCardView_InfoAreaStyle = 2131755553;
-			
-			// aapt resource value: 0x7F100222
-			public const int Widget_Leanback_ImageCardView_TitleStyle = 2131755554;
-			
-			// aapt resource value: 0x7F100224
-			public const int Widget_Leanback_OnboardingDescriptionStyle = 2131755556;
-			
-			// aapt resource value: 0x7F100225
-			public const int Widget_Leanback_OnboardingHeaderStyle = 2131755557;
-			
-			// aapt resource value: 0x7F100226
-			public const int Widget_Leanback_OnboardingLogoStyle = 2131755558;
-			
-			// aapt resource value: 0x7F100227
-			public const int Widget_Leanback_OnboardingMainIconStyle = 2131755559;
-			
-			// aapt resource value: 0x7F100228
-			public const int Widget_Leanback_OnboardingNavigatorContainerStyle = 2131755560;
-			
-			// aapt resource value: 0x7F100229
-			public const int Widget_Leanback_OnboardingPageIndicatorStyle = 2131755561;
-			
-			// aapt resource value: 0x7F10022A
-			public const int Widget_Leanback_OnboardingStartButtonStyle = 2131755562;
-			
-			// aapt resource value: 0x7F10022B
-			public const int Widget_Leanback_OnboardingStartButtonStyleBase = 2131755563;
-			
-			// aapt resource value: 0x7F10022C
-			public const int Widget_Leanback_OnboardingTitleStyle = 2131755564;
-			
-			// aapt resource value: 0x7F10022D
-			public const int Widget_Leanback_PlaybackControlLabelStyle = 2131755565;
-			
-			// aapt resource value: 0x7F10022E
-			public const int Widget_Leanback_PlaybackControlsActionIconsStyle = 2131755566;
-			
-			// aapt resource value: 0x7F10022F
-			public const int Widget_Leanback_PlaybackControlsButtonStyle = 2131755567;
-			
-			// aapt resource value: 0x7F100230
-			public const int Widget_Leanback_PlaybackControlsTimeStyle = 2131755568;
-			
-			// aapt resource value: 0x7F100231
-			public const int Widget_Leanback_PlaybackMediaItemDetailsStyle = 2131755569;
-			
-			// aapt resource value: 0x7F100232
-			public const int Widget_Leanback_PlaybackMediaItemDurationStyle = 2131755570;
-			
-			// aapt resource value: 0x7F100233
-			public const int Widget_Leanback_PlaybackMediaItemNameStyle = 2131755571;
-			
-			// aapt resource value: 0x7F100234
-			public const int Widget_Leanback_PlaybackMediaItemNumberStyle = 2131755572;
-			
-			// aapt resource value: 0x7F100235
-			public const int Widget_Leanback_PlaybackMediaItemNumberViewFlipperStyle = 2131755573;
-			
-			// aapt resource value: 0x7F100236
-			public const int Widget_Leanback_PlaybackMediaItemRowStyle = 2131755574;
-			
-			// aapt resource value: 0x7F100237
-			public const int Widget_Leanback_PlaybackMediaItemSeparatorStyle = 2131755575;
-			
-			// aapt resource value: 0x7F100238
-			public const int Widget_Leanback_PlaybackMediaListHeaderStyle = 2131755576;
-			
-			// aapt resource value: 0x7F100239
-			public const int Widget_Leanback_PlaybackMediaListHeaderTitleStyle = 2131755577;
-			
-			// aapt resource value: 0x7F10023A
-			public const int Widget_Leanback_PlaybackRow = 2131755578;
-			
-			// aapt resource value: 0x7F10023B
-			public const int Widget_Leanback_Row = 2131755579;
-			
-			// aapt resource value: 0x7F100242
-			public const int Widget_Leanback_Rows = 2131755586;
-			
-			// aapt resource value: 0x7F100243
-			public const int Widget_Leanback_Rows_VerticalGridView = 2131755587;
-			
-			// aapt resource value: 0x7F10023C
-			public const int Widget_Leanback_Row_Header = 2131755580;
-			
-			// aapt resource value: 0x7F10023E
-			public const int Widget_Leanback_Row_HeaderDock = 2131755582;
-			
-			// aapt resource value: 0x7F10023D
-			public const int Widget_Leanback_Row_Header_Description = 2131755581;
-			
-			// aapt resource value: 0x7F10023F
-			public const int Widget_Leanback_Row_HorizontalGridView = 2131755583;
-			
-			// aapt resource value: 0x7F100240
-			public const int Widget_Leanback_Row_HoverCardDescription = 2131755584;
-			
-			// aapt resource value: 0x7F100241
-			public const int Widget_Leanback_Row_HoverCardTitle = 2131755585;
-			
-			// aapt resource value: 0x7F100244
-			public const int Widget_Leanback_SearchOrbViewStyle = 2131755588;
-			
-			// aapt resource value: 0x7F100245
-			public const int Widget_Leanback_Title = 2131755589;
-			
-			// aapt resource value: 0x7F100248
-			public const int Widget_Leanback_TitleView = 2131755592;
-			
-			// aapt resource value: 0x7F100246
-			public const int Widget_Leanback_Title_Icon = 2131755590;
-			
-			// aapt resource value: 0x7F100247
-			public const int Widget_Leanback_Title_Text = 2131755591;
+			public const int Widget_Leanback = 2131755519;
 			
 			// aapt resource value: 0x7F10024A
-			public const int Widget_MaterialComponents_BottomAppBar = 2131755594;
+			public const int Widget_LeanbackBase = 2131755594;
+			
+			// aapt resource value: 0x7F100200
+			public const int Widget_Leanback_BaseCardViewStyle = 2131755520;
+			
+			// aapt resource value: 0x7F100201
+			public const int Widget_Leanback_DetailsActionButtonStyle = 2131755521;
+			
+			// aapt resource value: 0x7F100202
+			public const int Widget_Leanback_DetailsActionButtonStyleBase = 2131755522;
+			
+			// aapt resource value: 0x7F100203
+			public const int Widget_Leanback_DetailsDescriptionBodyStyle = 2131755523;
+			
+			// aapt resource value: 0x7F100204
+			public const int Widget_Leanback_DetailsDescriptionSubtitleStyle = 2131755524;
+			
+			// aapt resource value: 0x7F100205
+			public const int Widget_Leanback_DetailsDescriptionTitleStyle = 2131755525;
+			
+			// aapt resource value: 0x7F100206
+			public const int Widget_Leanback_ErrorMessageStyle = 2131755526;
+			
+			// aapt resource value: 0x7F100207
+			public const int Widget_Leanback_GridItems = 2131755527;
+			
+			// aapt resource value: 0x7F100208
+			public const int Widget_Leanback_GridItems_VerticalGridView = 2131755528;
+			
+			// aapt resource value: 0x7F100209
+			public const int Widget_Leanback_GuidanceBreadcrumbStyle = 2131755529;
+			
+			// aapt resource value: 0x7F10020A
+			public const int Widget_Leanback_GuidanceContainerStyle = 2131755530;
+			
+			// aapt resource value: 0x7F10020B
+			public const int Widget_Leanback_GuidanceDescriptionStyle = 2131755531;
+			
+			// aapt resource value: 0x7F10020C
+			public const int Widget_Leanback_GuidanceIconStyle = 2131755532;
+			
+			// aapt resource value: 0x7F10020D
+			public const int Widget_Leanback_GuidanceTitleStyle = 2131755533;
+			
+			// aapt resource value: 0x7F10020E
+			public const int Widget_Leanback_GuidedActionItemCheckmarkStyle = 2131755534;
+			
+			// aapt resource value: 0x7F10020F
+			public const int Widget_Leanback_GuidedActionItemChevronStyle = 2131755535;
+			
+			// aapt resource value: 0x7F100210
+			public const int Widget_Leanback_GuidedActionItemContainerStyle = 2131755536;
+			
+			// aapt resource value: 0x7F100211
+			public const int Widget_Leanback_GuidedActionItemContentStyle = 2131755537;
+			
+			// aapt resource value: 0x7F100212
+			public const int Widget_Leanback_GuidedActionItemDescriptionStyle = 2131755538;
+			
+			// aapt resource value: 0x7F100213
+			public const int Widget_Leanback_GuidedActionItemIconStyle = 2131755539;
+			
+			// aapt resource value: 0x7F100214
+			public const int Widget_Leanback_GuidedActionItemTitleStyle = 2131755540;
+			
+			// aapt resource value: 0x7F100215
+			public const int Widget_Leanback_GuidedActionsContainerStyle = 2131755541;
+			
+			// aapt resource value: 0x7F100216
+			public const int Widget_Leanback_GuidedActionsListStyle = 2131755542;
+			
+			// aapt resource value: 0x7F100217
+			public const int Widget_Leanback_GuidedActionsSelectorStyle = 2131755543;
+			
+			// aapt resource value: 0x7F100218
+			public const int Widget_Leanback_GuidedButtonActionsListStyle = 2131755544;
+			
+			// aapt resource value: 0x7F100219
+			public const int Widget_Leanback_GuidedSubActionsListStyle = 2131755545;
+			
+			// aapt resource value: 0x7F10021A
+			public const int Widget_Leanback_Header = 2131755546;
+			
+			// aapt resource value: 0x7F10021C
+			public const int Widget_Leanback_Headers = 2131755548;
+			
+			// aapt resource value: 0x7F10021D
+			public const int Widget_Leanback_Headers_VerticalGridView = 2131755549;
+			
+			// aapt resource value: 0x7F10021B
+			public const int Widget_Leanback_Header_Section = 2131755547;
+			
+			// aapt resource value: 0x7F10021E
+			public const int Widget_Leanback_ImageCardView = 2131755550;
+			
+			// aapt resource value: 0x7F100224
+			public const int Widget_Leanback_ImageCardViewStyle = 2131755556;
+			
+			// aapt resource value: 0x7F10021F
+			public const int Widget_Leanback_ImageCardView_BadgeStyle = 2131755551;
+			
+			// aapt resource value: 0x7F100220
+			public const int Widget_Leanback_ImageCardView_ContentStyle = 2131755552;
+			
+			// aapt resource value: 0x7F100221
+			public const int Widget_Leanback_ImageCardView_ImageStyle = 2131755553;
+			
+			// aapt resource value: 0x7F100222
+			public const int Widget_Leanback_ImageCardView_InfoAreaStyle = 2131755554;
+			
+			// aapt resource value: 0x7F100223
+			public const int Widget_Leanback_ImageCardView_TitleStyle = 2131755555;
+			
+			// aapt resource value: 0x7F100225
+			public const int Widget_Leanback_OnboardingDescriptionStyle = 2131755557;
+			
+			// aapt resource value: 0x7F100226
+			public const int Widget_Leanback_OnboardingHeaderStyle = 2131755558;
+			
+			// aapt resource value: 0x7F100227
+			public const int Widget_Leanback_OnboardingLogoStyle = 2131755559;
+			
+			// aapt resource value: 0x7F100228
+			public const int Widget_Leanback_OnboardingMainIconStyle = 2131755560;
+			
+			// aapt resource value: 0x7F100229
+			public const int Widget_Leanback_OnboardingNavigatorContainerStyle = 2131755561;
+			
+			// aapt resource value: 0x7F10022A
+			public const int Widget_Leanback_OnboardingPageIndicatorStyle = 2131755562;
+			
+			// aapt resource value: 0x7F10022B
+			public const int Widget_Leanback_OnboardingStartButtonStyle = 2131755563;
+			
+			// aapt resource value: 0x7F10022C
+			public const int Widget_Leanback_OnboardingStartButtonStyleBase = 2131755564;
+			
+			// aapt resource value: 0x7F10022D
+			public const int Widget_Leanback_OnboardingTitleStyle = 2131755565;
+			
+			// aapt resource value: 0x7F10022E
+			public const int Widget_Leanback_PlaybackControlLabelStyle = 2131755566;
+			
+			// aapt resource value: 0x7F10022F
+			public const int Widget_Leanback_PlaybackControlsActionIconsStyle = 2131755567;
+			
+			// aapt resource value: 0x7F100230
+			public const int Widget_Leanback_PlaybackControlsButtonStyle = 2131755568;
+			
+			// aapt resource value: 0x7F100231
+			public const int Widget_Leanback_PlaybackControlsTimeStyle = 2131755569;
+			
+			// aapt resource value: 0x7F100232
+			public const int Widget_Leanback_PlaybackMediaItemDetailsStyle = 2131755570;
+			
+			// aapt resource value: 0x7F100233
+			public const int Widget_Leanback_PlaybackMediaItemDurationStyle = 2131755571;
+			
+			// aapt resource value: 0x7F100234
+			public const int Widget_Leanback_PlaybackMediaItemNameStyle = 2131755572;
+			
+			// aapt resource value: 0x7F100235
+			public const int Widget_Leanback_PlaybackMediaItemNumberStyle = 2131755573;
+			
+			// aapt resource value: 0x7F100236
+			public const int Widget_Leanback_PlaybackMediaItemNumberViewFlipperStyle = 2131755574;
+			
+			// aapt resource value: 0x7F100237
+			public const int Widget_Leanback_PlaybackMediaItemRowStyle = 2131755575;
+			
+			// aapt resource value: 0x7F100238
+			public const int Widget_Leanback_PlaybackMediaItemSeparatorStyle = 2131755576;
+			
+			// aapt resource value: 0x7F100239
+			public const int Widget_Leanback_PlaybackMediaListHeaderStyle = 2131755577;
+			
+			// aapt resource value: 0x7F10023A
+			public const int Widget_Leanback_PlaybackMediaListHeaderTitleStyle = 2131755578;
+			
+			// aapt resource value: 0x7F10023B
+			public const int Widget_Leanback_PlaybackRow = 2131755579;
+			
+			// aapt resource value: 0x7F10023C
+			public const int Widget_Leanback_Row = 2131755580;
+			
+			// aapt resource value: 0x7F100243
+			public const int Widget_Leanback_Rows = 2131755587;
+			
+			// aapt resource value: 0x7F100244
+			public const int Widget_Leanback_Rows_VerticalGridView = 2131755588;
+			
+			// aapt resource value: 0x7F10023D
+			public const int Widget_Leanback_Row_Header = 2131755581;
+			
+			// aapt resource value: 0x7F10023F
+			public const int Widget_Leanback_Row_HeaderDock = 2131755583;
+			
+			// aapt resource value: 0x7F10023E
+			public const int Widget_Leanback_Row_Header_Description = 2131755582;
+			
+			// aapt resource value: 0x7F100240
+			public const int Widget_Leanback_Row_HorizontalGridView = 2131755584;
+			
+			// aapt resource value: 0x7F100241
+			public const int Widget_Leanback_Row_HoverCardDescription = 2131755585;
+			
+			// aapt resource value: 0x7F100242
+			public const int Widget_Leanback_Row_HoverCardTitle = 2131755586;
+			
+			// aapt resource value: 0x7F100245
+			public const int Widget_Leanback_SearchOrbViewStyle = 2131755589;
+			
+			// aapt resource value: 0x7F100246
+			public const int Widget_Leanback_Title = 2131755590;
+			
+			// aapt resource value: 0x7F100249
+			public const int Widget_Leanback_TitleView = 2131755593;
+			
+			// aapt resource value: 0x7F100247
+			public const int Widget_Leanback_Title_Icon = 2131755591;
+			
+			// aapt resource value: 0x7F100248
+			public const int Widget_Leanback_Title_Text = 2131755592;
 			
 			// aapt resource value: 0x7F10024B
-			public const int Widget_MaterialComponents_BottomAppBar_Colored = 2131755595;
+			public const int Widget_MaterialComponents_BottomAppBar = 2131755595;
 			
 			// aapt resource value: 0x7F10024C
-			public const int Widget_MaterialComponents_BottomNavigationView = 2131755596;
+			public const int Widget_MaterialComponents_BottomAppBar_Colored = 2131755596;
 			
 			// aapt resource value: 0x7F10024D
-			public const int Widget_MaterialComponents_BottomNavigationView_Colored = 2131755597;
+			public const int Widget_MaterialComponents_BottomNavigationView = 2131755597;
 			
 			// aapt resource value: 0x7F10024E
-			public const int Widget_MaterialComponents_BottomSheet_Modal = 2131755598;
+			public const int Widget_MaterialComponents_BottomNavigationView_Colored = 2131755598;
 			
 			// aapt resource value: 0x7F10024F
-			public const int Widget_MaterialComponents_Button = 2131755599;
+			public const int Widget_MaterialComponents_BottomSheet_Modal = 2131755599;
 			
 			// aapt resource value: 0x7F100250
-			public const int Widget_MaterialComponents_Button_Icon = 2131755600;
+			public const int Widget_MaterialComponents_Button = 2131755600;
 			
 			// aapt resource value: 0x7F100251
-			public const int Widget_MaterialComponents_Button_OutlinedButton = 2131755601;
+			public const int Widget_MaterialComponents_Button_Icon = 2131755601;
 			
 			// aapt resource value: 0x7F100252
-			public const int Widget_MaterialComponents_Button_OutlinedButton_Icon = 2131755602;
+			public const int Widget_MaterialComponents_Button_OutlinedButton = 2131755602;
 			
 			// aapt resource value: 0x7F100253
-			public const int Widget_MaterialComponents_Button_TextButton = 2131755603;
+			public const int Widget_MaterialComponents_Button_OutlinedButton_Icon = 2131755603;
 			
 			// aapt resource value: 0x7F100254
-			public const int Widget_MaterialComponents_Button_TextButton_Dialog = 2131755604;
+			public const int Widget_MaterialComponents_Button_TextButton = 2131755604;
 			
 			// aapt resource value: 0x7F100255
-			public const int Widget_MaterialComponents_Button_TextButton_Dialog_Icon = 2131755605;
+			public const int Widget_MaterialComponents_Button_TextButton_Dialog = 2131755605;
 			
 			// aapt resource value: 0x7F100256
-			public const int Widget_MaterialComponents_Button_TextButton_Icon = 2131755606;
+			public const int Widget_MaterialComponents_Button_TextButton_Dialog_Icon = 2131755606;
 			
 			// aapt resource value: 0x7F100257
-			public const int Widget_MaterialComponents_Button_UnelevatedButton = 2131755607;
+			public const int Widget_MaterialComponents_Button_TextButton_Icon = 2131755607;
 			
 			// aapt resource value: 0x7F100258
-			public const int Widget_MaterialComponents_Button_UnelevatedButton_Icon = 2131755608;
+			public const int Widget_MaterialComponents_Button_UnelevatedButton = 2131755608;
 			
 			// aapt resource value: 0x7F100259
-			public const int Widget_MaterialComponents_CardView = 2131755609;
-			
-			// aapt resource value: 0x7F10025E
-			public const int Widget_MaterialComponents_ChipGroup = 2131755614;
+			public const int Widget_MaterialComponents_Button_UnelevatedButton_Icon = 2131755609;
 			
 			// aapt resource value: 0x7F10025A
-			public const int Widget_MaterialComponents_Chip_Action = 2131755610;
-			
-			// aapt resource value: 0x7F10025B
-			public const int Widget_MaterialComponents_Chip_Choice = 2131755611;
-			
-			// aapt resource value: 0x7F10025C
-			public const int Widget_MaterialComponents_Chip_Entry = 2131755612;
-			
-			// aapt resource value: 0x7F10025D
-			public const int Widget_MaterialComponents_Chip_Filter = 2131755613;
+			public const int Widget_MaterialComponents_CardView = 2131755610;
 			
 			// aapt resource value: 0x7F10025F
-			public const int Widget_MaterialComponents_FloatingActionButton = 2131755615;
+			public const int Widget_MaterialComponents_ChipGroup = 2131755615;
+			
+			// aapt resource value: 0x7F10025B
+			public const int Widget_MaterialComponents_Chip_Action = 2131755611;
+			
+			// aapt resource value: 0x7F10025C
+			public const int Widget_MaterialComponents_Chip_Choice = 2131755612;
+			
+			// aapt resource value: 0x7F10025D
+			public const int Widget_MaterialComponents_Chip_Entry = 2131755613;
+			
+			// aapt resource value: 0x7F10025E
+			public const int Widget_MaterialComponents_Chip_Filter = 2131755614;
 			
 			// aapt resource value: 0x7F100260
-			public const int Widget_MaterialComponents_NavigationView = 2131755616;
+			public const int Widget_MaterialComponents_FloatingActionButton = 2131755616;
 			
 			// aapt resource value: 0x7F100261
-			public const int Widget_MaterialComponents_Snackbar = 2131755617;
+			public const int Widget_MaterialComponents_NavigationView = 2131755617;
 			
 			// aapt resource value: 0x7F100262
-			public const int Widget_MaterialComponents_Snackbar_FullWidth = 2131755618;
+			public const int Widget_MaterialComponents_Snackbar = 2131755618;
 			
 			// aapt resource value: 0x7F100263
-			public const int Widget_MaterialComponents_TabLayout = 2131755619;
+			public const int Widget_MaterialComponents_Snackbar_FullWidth = 2131755619;
 			
 			// aapt resource value: 0x7F100264
-			public const int Widget_MaterialComponents_TabLayout_Colored = 2131755620;
+			public const int Widget_MaterialComponents_TabLayout = 2131755620;
 			
 			// aapt resource value: 0x7F100265
-			public const int Widget_MaterialComponents_TextInputEditText_FilledBox = 2131755621;
+			public const int Widget_MaterialComponents_TabLayout_Colored = 2131755621;
 			
 			// aapt resource value: 0x7F100266
-			public const int Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131755622;
+			public const int Widget_MaterialComponents_TextInputEditText_FilledBox = 2131755622;
 			
 			// aapt resource value: 0x7F100267
-			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox = 2131755623;
+			public const int Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131755623;
 			
 			// aapt resource value: 0x7F100268
-			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131755624;
+			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox = 2131755624;
 			
 			// aapt resource value: 0x7F100269
-			public const int Widget_MaterialComponents_TextInputLayout_FilledBox = 2131755625;
+			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131755625;
 			
 			// aapt resource value: 0x7F10026A
-			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = 2131755626;
+			public const int Widget_MaterialComponents_TextInputLayout_FilledBox = 2131755626;
 			
 			// aapt resource value: 0x7F10026B
-			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox = 2131755627;
+			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = 2131755627;
 			
 			// aapt resource value: 0x7F10026C
-			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = 2131755628;
+			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox = 2131755628;
 			
 			// aapt resource value: 0x7F10026D
-			public const int Widget_MaterialComponents_Toolbar = 2131755629;
+			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = 2131755629;
 			
 			// aapt resource value: 0x7F10026E
-			public const int Widget_MediaRouter_Light_MediaRouteButton = 2131755630;
+			public const int Widget_MaterialComponents_Toolbar = 2131755630;
 			
 			// aapt resource value: 0x7F10026F
-			public const int Widget_MediaRouter_MediaRouteButton = 2131755631;
+			public const int Widget_MediaRouter_Light_MediaRouteButton = 2131755631;
 			
 			// aapt resource value: 0x7F100270
-			public const int Widget_Support_CoordinatorLayout = 2131755632;
+			public const int Widget_MediaRouter_MediaRouteButton = 2131755632;
+			
+			// aapt resource value: 0x7F100271
+			public const int Widget_Support_CoordinatorLayout = 2131755633;
 			
 			static Style()
 			{
@@ -23667,37 +26586,37 @@ namespace SalveminiApp.Droid
 		public partial class Styleable
 		{
 			
-			// aapt resource value: { 0x7F03006B,0x7F03006C,0x7F03006D,0x7F0300EC,0x7F0300ED,0x7F0300EE,0x7F0300EF,0x7F0300F0,0x7F0300F1,0x7F0300FF,0x7F030110,0x7F030111,0x7F03011F,0x7F030186,0x7F03018B,0x7F030191,0x7F030192,0x7F030195,0x7F0301A7,0x7F0301B4,0x7F0301DC,0x7F030203,0x7F03023B,0x7F03023F,0x7F030240,0x7F030289,0x7F03028C,0x7F0302D5,0x7F0302DF }
+			// aapt resource value: { 0x7F03006E,0x7F03006F,0x7F030070,0x7F0300EF,0x7F0300F0,0x7F0300F1,0x7F0300F2,0x7F0300F3,0x7F0300F4,0x7F030102,0x7F030113,0x7F030114,0x7F030122,0x7F030189,0x7F03018E,0x7F030194,0x7F030195,0x7F030198,0x7F0301AA,0x7F0301B7,0x7F0301DF,0x7F030206,0x7F03023E,0x7F030242,0x7F030243,0x7F03028C,0x7F03028F,0x7F0302D8,0x7F0302E2 }
 			public static int[] ActionBar = new int[] {
-					2130903147,
-					2130903148,
-					2130903149,
-					2130903276,
-					2130903277,
-					2130903278,
+					2130903150,
+					2130903151,
+					2130903152,
 					2130903279,
 					2130903280,
 					2130903281,
-					2130903295,
-					2130903312,
-					2130903313,
-					2130903327,
-					2130903430,
-					2130903435,
-					2130903441,
-					2130903442,
+					2130903282,
+					2130903283,
+					2130903284,
+					2130903298,
+					2130903315,
+					2130903316,
+					2130903330,
+					2130903433,
+					2130903438,
+					2130903444,
 					2130903445,
-					2130903463,
-					2130903476,
-					2130903516,
-					2130903555,
-					2130903611,
-					2130903615,
-					2130903616,
-					2130903689,
+					2130903448,
+					2130903466,
+					2130903479,
+					2130903519,
+					2130903558,
+					2130903614,
+					2130903618,
+					2130903619,
 					2130903692,
-					2130903765,
-					2130903775};
+					2130903695,
+					2130903768,
+					2130903778};
 			
 			// aapt resource value: { 0x10100B3 }
 			public static int[] ActionBarLayout = new int[] {
@@ -23804,14 +26723,14 @@ namespace SalveminiApp.Droid
 			public static int[] ActionMenuView = new int[] {
 					-1};
 			
-			// aapt resource value: { 0x7F03006B,0x7F03006C,0x7F0300D6,0x7F030186,0x7F03028C,0x7F0302DF }
+			// aapt resource value: { 0x7F03006E,0x7F03006F,0x7F0300D9,0x7F030189,0x7F03028F,0x7F0302E2 }
 			public static int[] ActionMode = new int[] {
-					2130903147,
-					2130903148,
-					2130903254,
-					2130903430,
-					2130903692,
-					2130903775};
+					2130903150,
+					2130903151,
+					2130903257,
+					2130903433,
+					2130903695,
+					2130903778};
 			
 			// aapt resource value: 0
 			public const int ActionMode_background = 0;
@@ -23831,10 +26750,10 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 5
 			public const int ActionMode_titleTextStyle = 5;
 			
-			// aapt resource value: { 0x7F030125,0x7F0301AA }
+			// aapt resource value: { 0x7F030128,0x7F0301AD }
 			public static int[] ActivityChooserView = new int[] {
-					2130903333,
-					2130903466};
+					2130903336,
+					2130903469};
 			
 			// aapt resource value: 0
 			public const int ActivityChooserView_expandActivityOverflowButtonDrawable = 0;
@@ -23842,16 +26761,31 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int ActivityChooserView_initialActivityCount = 1;
 			
-			// aapt resource value: { 0x10100F2,0x7F030098,0x7F030099,0x7F0301D3,0x7F0301D4,0x7F030200,0x7F03026E,0x7F030270 }
+			// aapt resource value: { 0x7F030023,0x7F030024,0x7F030025 }
+			public static int[] AdsAttrs = new int[] {
+					2130903075,
+					2130903076,
+					2130903077};
+			
+			// aapt resource value: 0
+			public const int AdsAttrs_adSize = 0;
+			
+			// aapt resource value: 1
+			public const int AdsAttrs_adSizes = 1;
+			
+			// aapt resource value: 2
+			public const int AdsAttrs_adUnitId = 2;
+			
+			// aapt resource value: { 0x10100F2,0x7F03009B,0x7F03009C,0x7F0301D6,0x7F0301D7,0x7F030203,0x7F030271,0x7F030273 }
 			public static int[] AlertDialog = new int[] {
 					16842994,
-					2130903192,
-					2130903193,
-					2130903507,
-					2130903508,
-					2130903552,
-					2130903662,
-					2130903664};
+					2130903195,
+					2130903196,
+					2130903510,
+					2130903511,
+					2130903555,
+					2130903665,
+					2130903667};
 			
 			// aapt resource value: 0
 			public const int AlertDialog_android_layout = 0;
@@ -23934,21 +26868,21 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int AnimatedStateListDrawableTransition_android_toId = 1;
 			
-			// aapt resource value: { 0x10100D4,0x101048F,0x1010540,0x7F03011F,0x7F030126,0x7F0301CE }
+			// aapt resource value: { 0x10100D4,0x101048F,0x1010540,0x7F030122,0x7F030129,0x7F0301D1 }
 			public static int[] AppBarLayout = new int[] {
 					16842964,
 					16843919,
 					16844096,
-					2130903327,
-					2130903334,
-					2130903502};
+					2130903330,
+					2130903337,
+					2130903505};
 			
-			// aapt resource value: { 0x7F03027F,0x7F030280,0x7F030281,0x7F030282 }
+			// aapt resource value: { 0x7F030282,0x7F030283,0x7F030284,0x7F030285 }
 			public static int[] AppBarLayoutStates = new int[] {
-					2130903679,
-					2130903680,
-					2130903681,
-					2130903682};
+					2130903682,
+					2130903683,
+					2130903684,
+					2130903685};
 			
 			// aapt resource value: 0
 			public const int AppBarLayoutStates_state_collapsed = 0;
@@ -23977,10 +26911,10 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 4
 			public const int AppBarLayout_expanded = 4;
 			
-			// aapt resource value: { 0x7F0301C8,0x7F0301C9 }
+			// aapt resource value: { 0x7F0301CB,0x7F0301CC }
 			public static int[] AppBarLayout_Layout = new int[] {
-					2130903496,
-					2130903497};
+					2130903499,
+					2130903500};
 			
 			// aapt resource value: 0
 			public const int AppBarLayout_Layout_layout_scrollFlags = 0;
@@ -23991,12 +26925,12 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 5
 			public const int AppBarLayout_liftOnScroll = 5;
 			
-			// aapt resource value: { 0x1010119,0x7F03027C,0x7F0302D3,0x7F0302D4 }
+			// aapt resource value: { 0x1010119,0x7F03027F,0x7F0302D6,0x7F0302D7 }
 			public static int[] AppCompatImageView = new int[] {
 					16843033,
-					2130903676,
-					2130903763,
-					2130903764};
+					2130903679,
+					2130903766,
+					2130903767};
 			
 			// aapt resource value: 0
 			public const int AppCompatImageView_android_src = 0;
@@ -24010,12 +26944,12 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 3
 			public const int AppCompatImageView_tintMode = 3;
 			
-			// aapt resource value: { 0x1010142,0x7F0302D0,0x7F0302D1,0x7F0302D2 }
+			// aapt resource value: { 0x1010142,0x7F0302D3,0x7F0302D4,0x7F0302D5 }
 			public static int[] AppCompatSeekBar = new int[] {
 					16843074,
-					2130903760,
-					2130903761,
-					2130903762};
+					2130903763,
+					2130903764,
+					2130903765};
 			
 			// aapt resource value: 0
 			public const int AppCompatSeekBar_android_thumb = 0;
@@ -24060,19 +26994,19 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 0
 			public const int AppCompatTextHelper_android_textAppearance = 0;
 			
-			// aapt resource value: { 0x1010034,0x7F03003C,0x7F03003D,0x7F03003E,0x7F03003F,0x7F030040,0x7F03013C,0x7F030143,0x7F0301BD,0x7F0301CF,0x7F0302AC }
+			// aapt resource value: { 0x1010034,0x7F03003F,0x7F030040,0x7F030041,0x7F030042,0x7F030043,0x7F03013F,0x7F030146,0x7F0301C0,0x7F0301D2,0x7F0302AF }
 			public static int[] AppCompatTextView = new int[] {
 					16842804,
-					2130903100,
-					2130903101,
-					2130903102,
 					2130903103,
 					2130903104,
-					2130903356,
-					2130903363,
-					2130903485,
-					2130903503,
-					2130903724};
+					2130903105,
+					2130903106,
+					2130903107,
+					2130903359,
+					2130903366,
+					2130903488,
+					2130903506,
+					2130903727};
 			
 			// aapt resource value: 0
 			public const int AppCompatTextView_android_textAppearance = 0;
@@ -24107,7 +27041,7 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 10
 			public const int AppCompatTextView_textAllCaps = 10;
 			
-			// aapt resource value: { 0x1010057,0x10100AE,0x7F030000,0x7F030001,0x7F030002,0x7F030003,0x7F030004,0x7F030005,0x7F030006,0x7F030007,0x7F030008,0x7F030009,0x7F03000A,0x7F03000B,0x7F03000C,0x7F03000E,0x7F03000F,0x7F030010,0x7F030011,0x7F030012,0x7F030013,0x7F030014,0x7F030015,0x7F030016,0x7F030017,0x7F030018,0x7F030019,0x7F03001A,0x7F03001B,0x7F03001C,0x7F03001D,0x7F03001E,0x7F030022,0x7F03002F,0x7F030030,0x7F030031,0x7F030032,0x7F03003B,0x7F030079,0x7F030092,0x7F030093,0x7F030094,0x7F030095,0x7F030096,0x7F03009B,0x7F03009C,0x7F0300B6,0x7F0300BB,0x7F0300DD,0x7F0300DE,0x7F0300DF,0x7F0300E0,0x7F0300E1,0x7F0300E2,0x7F0300E3,0x7F0300E4,0x7F0300E5,0x7F0300E8,0x7F0300F8,0x7F03010D,0x7F03010E,0x7F03010F,0x7F030112,0x7F030114,0x7F03011A,0x7F03011B,0x7F03011C,0x7F03011D,0x7F03011E,0x7F030191,0x7F0301A0,0x7F0301D1,0x7F0301D2,0x7F0301D5,0x7F0301D6,0x7F0301D7,0x7F0301D8,0x7F0301D9,0x7F0301DA,0x7F0301DB,0x7F030219,0x7F03021A,0x7F03021B,0x7F03023A,0x7F03023C,0x7F030243,0x7F030244,0x7F030245,0x7F030246,0x7F030263,0x7F030265,0x7F030266,0x7F030267,0x7F030279,0x7F03027A,0x7F030290,0x7F0302B7,0x7F0302B8,0x7F0302B9,0x7F0302BA,0x7F0302BC,0x7F0302BD,0x7F0302BE,0x7F0302BF,0x7F0302C2,0x7F0302C3,0x7F0302E1,0x7F0302E2,0x7F0302E3,0x7F0302E4,0x7F0302ED,0x7F0302EF,0x7F0302F0,0x7F0302F1,0x7F0302F2,0x7F0302F3,0x7F0302F4,0x7F0302F5,0x7F0302F6,0x7F0302F7,0x7F0302F8 }
+			// aapt resource value: { 0x1010057,0x10100AE,0x7F030000,0x7F030001,0x7F030002,0x7F030003,0x7F030004,0x7F030005,0x7F030006,0x7F030007,0x7F030008,0x7F030009,0x7F03000A,0x7F03000B,0x7F03000C,0x7F03000E,0x7F03000F,0x7F030010,0x7F030011,0x7F030012,0x7F030013,0x7F030014,0x7F030015,0x7F030016,0x7F030017,0x7F030018,0x7F030019,0x7F03001A,0x7F03001B,0x7F03001C,0x7F03001D,0x7F03001E,0x7F030022,0x7F030032,0x7F030033,0x7F030034,0x7F030035,0x7F03003E,0x7F03007C,0x7F030095,0x7F030096,0x7F030097,0x7F030098,0x7F030099,0x7F03009E,0x7F03009F,0x7F0300B9,0x7F0300BE,0x7F0300E0,0x7F0300E1,0x7F0300E2,0x7F0300E3,0x7F0300E4,0x7F0300E5,0x7F0300E6,0x7F0300E7,0x7F0300E8,0x7F0300EB,0x7F0300FB,0x7F030110,0x7F030111,0x7F030112,0x7F030115,0x7F030117,0x7F03011D,0x7F03011E,0x7F03011F,0x7F030120,0x7F030121,0x7F030194,0x7F0301A3,0x7F0301D4,0x7F0301D5,0x7F0301D8,0x7F0301D9,0x7F0301DA,0x7F0301DB,0x7F0301DC,0x7F0301DD,0x7F0301DE,0x7F03021C,0x7F03021D,0x7F03021E,0x7F03023D,0x7F03023F,0x7F030246,0x7F030247,0x7F030248,0x7F030249,0x7F030266,0x7F030268,0x7F030269,0x7F03026A,0x7F03027C,0x7F03027D,0x7F030293,0x7F0302BA,0x7F0302BB,0x7F0302BC,0x7F0302BD,0x7F0302BF,0x7F0302C0,0x7F0302C1,0x7F0302C2,0x7F0302C5,0x7F0302C6,0x7F0302E4,0x7F0302E5,0x7F0302E6,0x7F0302E7,0x7F0302F0,0x7F0302F2,0x7F0302F3,0x7F0302F4,0x7F0302F5,0x7F0302F6,0x7F0302F7,0x7F0302F8,0x7F0302F9,0x7F0302FA,0x7F0302FB }
 			public static int[] AppCompatTheme = new int[] {
 					16842839,
 					16842926,
@@ -24142,94 +27076,94 @@ namespace SalveminiApp.Droid
 					2130903069,
 					2130903070,
 					2130903074,
-					2130903087,
-					2130903088,
-					2130903089,
 					2130903090,
-					2130903099,
-					2130903161,
-					2130903186,
-					2130903187,
-					2130903188,
+					2130903091,
+					2130903092,
+					2130903093,
+					2130903102,
+					2130903164,
 					2130903189,
 					2130903190,
-					2130903195,
-					2130903196,
-					2130903222,
-					2130903227,
-					2130903261,
-					2130903262,
-					2130903263,
+					2130903191,
+					2130903192,
+					2130903193,
+					2130903198,
+					2130903199,
+					2130903225,
+					2130903230,
 					2130903264,
 					2130903265,
 					2130903266,
 					2130903267,
 					2130903268,
 					2130903269,
+					2130903270,
+					2130903271,
 					2130903272,
-					2130903288,
-					2130903309,
-					2130903310,
-					2130903311,
+					2130903275,
+					2130903291,
+					2130903312,
+					2130903313,
 					2130903314,
-					2130903316,
-					2130903322,
-					2130903323,
-					2130903324,
+					2130903317,
+					2130903319,
 					2130903325,
 					2130903326,
-					2130903441,
-					2130903456,
-					2130903505,
-					2130903506,
+					2130903327,
+					2130903328,
+					2130903329,
+					2130903444,
+					2130903459,
+					2130903508,
 					2130903509,
-					2130903510,
-					2130903511,
 					2130903512,
 					2130903513,
 					2130903514,
 					2130903515,
-					2130903577,
-					2130903578,
-					2130903579,
-					2130903610,
-					2130903612,
-					2130903619,
-					2130903620,
-					2130903621,
+					2130903516,
+					2130903517,
+					2130903518,
+					2130903580,
+					2130903581,
+					2130903582,
+					2130903613,
+					2130903615,
 					2130903622,
-					2130903651,
-					2130903653,
+					2130903623,
+					2130903624,
+					2130903625,
 					2130903654,
-					2130903655,
-					2130903673,
-					2130903674,
-					2130903696,
-					2130903735,
-					2130903736,
-					2130903737,
+					2130903656,
+					2130903657,
+					2130903658,
+					2130903676,
+					2130903677,
+					2130903699,
 					2130903738,
+					2130903739,
 					2130903740,
 					2130903741,
-					2130903742,
 					2130903743,
+					2130903744,
+					2130903745,
 					2130903746,
-					2130903747,
-					2130903777,
-					2130903778,
-					2130903779,
+					2130903749,
+					2130903750,
 					2130903780,
-					2130903789,
-					2130903791,
+					2130903781,
+					2130903782,
+					2130903783,
 					2130903792,
-					2130903793,
 					2130903794,
 					2130903795,
 					2130903796,
 					2130903797,
 					2130903798,
 					2130903799,
-					2130903800};
+					2130903800,
+					2130903801,
+					2130903802,
+					2130903803};
 			
 			// aapt resource value: 2
 			public const int AppCompatTheme_actionBarDivider = 2;
@@ -24594,14 +27528,14 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 120
 			public const int AppCompatTheme_windowNoTitle = 120;
 			
-			// aapt resource value: { 0x7F03006E,0x7F030130,0x7F030131,0x7F030132,0x7F030133,0x7F03018C }
+			// aapt resource value: { 0x7F030071,0x7F030133,0x7F030134,0x7F030135,0x7F030136,0x7F03018F }
 			public static int[] BottomAppBar = new int[] {
-					2130903150,
-					2130903344,
-					2130903345,
-					2130903346,
+					2130903153,
 					2130903347,
-					2130903436};
+					2130903348,
+					2130903349,
+					2130903350,
+					2130903439};
 			
 			// aapt resource value: 0
 			public const int BottomAppBar_backgroundTint = 0;
@@ -24621,18 +27555,18 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 5
 			public const int BottomAppBar_hideOnScroll = 5;
 			
-			// aapt resource value: { 0x7F03011F,0x7F0301AE,0x7F0301B0,0x7F0301B2,0x7F0301B3,0x7F0301B7,0x7F0301B8,0x7F0301B9,0x7F0301BC,0x7F0301FF }
+			// aapt resource value: { 0x7F030122,0x7F0301B1,0x7F0301B3,0x7F0301B5,0x7F0301B6,0x7F0301BA,0x7F0301BB,0x7F0301BC,0x7F0301BF,0x7F030202 }
 			public static int[] BottomNavigationView = new int[] {
-					2130903327,
-					2130903470,
-					2130903472,
-					2130903474,
+					2130903330,
+					2130903473,
 					2130903475,
-					2130903479,
-					2130903480,
-					2130903481,
+					2130903477,
+					2130903478,
+					2130903482,
+					2130903483,
 					2130903484,
-					2130903551};
+					2130903487,
+					2130903554};
 			
 			// aapt resource value: 0
 			public const int BottomNavigationView_elevation = 0;
@@ -24664,12 +27598,12 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 9
 			public const int BottomNavigationView_menu = 9;
 			
-			// aapt resource value: { 0x7F030073,0x7F030074,0x7F030076,0x7F030077 }
+			// aapt resource value: { 0x7F030076,0x7F030077,0x7F030079,0x7F03007A }
 			public static int[] BottomSheetBehavior_Layout = new int[] {
-					2130903155,
-					2130903156,
 					2130903158,
-					2130903159};
+					2130903159,
+					2130903161,
+					2130903162};
 			
 			// aapt resource value: 0
 			public const int BottomSheetBehavior_Layout_behavior_fitToContents = 0;
@@ -24683,28 +27617,28 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 3
 			public const int BottomSheetBehavior_Layout_behavior_skipCollapsed = 3;
 			
-			// aapt resource value: { 0x7F030033 }
+			// aapt resource value: { 0x7F030036 }
 			public static int[] ButtonBarLayout = new int[] {
-					2130903091};
+					2130903094};
 			
 			// aapt resource value: 0
 			public const int ButtonBarLayout_allowStacking = 0;
 			
-			// aapt resource value: { 0x101013F,0x1010140,0x7F0300A0,0x7F0300A1,0x7F0300A2,0x7F0300A4,0x7F0300A5,0x7F0300A7,0x7F0300F2,0x7F0300F3,0x7F0300F4,0x7F0300F5,0x7F0300F6 }
+			// aapt resource value: { 0x101013F,0x1010140,0x7F0300A3,0x7F0300A4,0x7F0300A5,0x7F0300A7,0x7F0300A8,0x7F0300AA,0x7F0300F5,0x7F0300F6,0x7F0300F7,0x7F0300F8,0x7F0300F9 }
 			public static int[] CardView = new int[] {
 					16843071,
 					16843072,
-					2130903200,
-					2130903201,
-					2130903202,
+					2130903203,
 					2130903204,
 					2130903205,
 					2130903207,
-					2130903282,
-					2130903283,
-					2130903284,
+					2130903208,
+					2130903210,
 					2130903285,
-					2130903286};
+					2130903286,
+					2130903287,
+					2130903288,
+					2130903289};
 			
 			// aapt resource value: 1
 			public const int CardView_android_minHeight = 1;
@@ -24745,51 +27679,51 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 12
 			public const int CardView_contentPaddingTop = 12;
 			
-			// aapt resource value: { 0x1010034,0x10100AB,0x101011F,0x101014F,0x10101E5,0x7F0300B8,0x7F0300B9,0x7F0300BA,0x7F0300BC,0x7F0300BD,0x7F0300BE,0x7F0300C0,0x7F0300C1,0x7F0300C2,0x7F0300C3,0x7F0300C4,0x7F0300C5,0x7F0300CA,0x7F0300CB,0x7F0300CC,0x7F0300CF,0x7F0300D0,0x7F0300D1,0x7F0300D2,0x7F0300D3,0x7F0300D4,0x7F0300D5,0x7F03018A,0x7F030196,0x7F03019A,0x7F03024F,0x7F03026C,0x7F0302C4,0x7F0302C6 }
+			// aapt resource value: { 0x1010034,0x10100AB,0x101011F,0x101014F,0x10101E5,0x7F0300BB,0x7F0300BC,0x7F0300BD,0x7F0300BF,0x7F0300C0,0x7F0300C1,0x7F0300C3,0x7F0300C4,0x7F0300C5,0x7F0300C6,0x7F0300C7,0x7F0300C8,0x7F0300CD,0x7F0300CE,0x7F0300CF,0x7F0300D2,0x7F0300D3,0x7F0300D4,0x7F0300D5,0x7F0300D6,0x7F0300D7,0x7F0300D8,0x7F03018D,0x7F030199,0x7F03019D,0x7F030252,0x7F03026F,0x7F0302C7,0x7F0302C9 }
 			public static int[] Chip = new int[] {
 					16842804,
 					16842923,
 					16843039,
 					16843087,
 					16843237,
-					2130903224,
-					2130903225,
-					2130903226,
+					2130903227,
 					2130903228,
 					2130903229,
-					2130903230,
+					2130903231,
 					2130903232,
 					2130903233,
-					2130903234,
 					2130903235,
 					2130903236,
 					2130903237,
-					2130903242,
-					2130903243,
-					2130903244,
+					2130903238,
+					2130903239,
+					2130903240,
+					2130903245,
+					2130903246,
 					2130903247,
-					2130903248,
-					2130903249,
 					2130903250,
 					2130903251,
 					2130903252,
 					2130903253,
-					2130903434,
-					2130903446,
-					2130903450,
-					2130903631,
-					2130903660,
-					2130903748,
-					2130903750};
+					2130903254,
+					2130903255,
+					2130903256,
+					2130903437,
+					2130903449,
+					2130903453,
+					2130903634,
+					2130903663,
+					2130903751,
+					2130903753};
 			
-			// aapt resource value: { 0x7F0300B7,0x7F0300C6,0x7F0300C7,0x7F0300C8,0x7F030271,0x7F030272 }
+			// aapt resource value: { 0x7F0300BA,0x7F0300C9,0x7F0300CA,0x7F0300CB,0x7F030274,0x7F030275 }
 			public static int[] ChipGroup = new int[] {
-					2130903223,
-					2130903238,
-					2130903239,
-					2130903240,
-					2130903665,
-					2130903666};
+					2130903226,
+					2130903241,
+					2130903242,
+					2130903243,
+					2130903668,
+					2130903669};
 			
 			// aapt resource value: 0
 			public const int ChipGroup_checkedChip = 0;
@@ -24911,24 +27845,24 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 33
 			public const int Chip_textStartPadding = 33;
 			
-			// aapt resource value: { 0x7F0300DA,0x7F0300DB,0x7F0300F7,0x7F030127,0x7F030128,0x7F030129,0x7F03012A,0x7F03012B,0x7F03012C,0x7F03012D,0x7F030259,0x7F03025B,0x7F030284,0x7F0302D5,0x7F0302D6,0x7F0302E0 }
+			// aapt resource value: { 0x7F0300DD,0x7F0300DE,0x7F0300FA,0x7F03012A,0x7F03012B,0x7F03012C,0x7F03012D,0x7F03012E,0x7F03012F,0x7F030130,0x7F03025C,0x7F03025E,0x7F030287,0x7F0302D8,0x7F0302D9,0x7F0302E3 }
 			public static int[] CollapsingToolbarLayout = new int[] {
-					2130903258,
-					2130903259,
-					2130903287,
-					2130903335,
-					2130903336,
-					2130903337,
+					2130903261,
+					2130903262,
+					2130903290,
 					2130903338,
 					2130903339,
 					2130903340,
 					2130903341,
-					2130903641,
-					2130903643,
-					2130903684,
-					2130903765,
-					2130903766,
-					2130903776};
+					2130903342,
+					2130903343,
+					2130903344,
+					2130903644,
+					2130903646,
+					2130903687,
+					2130903768,
+					2130903769,
+					2130903779};
 			
 			// aapt resource value: 0
 			public const int CollapsingToolbarLayout_collapsedTitleGravity = 0;
@@ -24960,10 +27894,10 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 9
 			public const int CollapsingToolbarLayout_expandedTitleTextAppearance = 9;
 			
-			// aapt resource value: { 0x7F0301C3,0x7F0301C4 }
+			// aapt resource value: { 0x7F0301C6,0x7F0301C7 }
 			public static int[] CollapsingToolbarLayout_Layout = new int[] {
-					2130903491,
-					2130903492};
+					2130903494,
+					2130903495};
 			
 			// aapt resource value: 0
 			public const int CollapsingToolbarLayout_Layout_layout_collapseMode = 0;
@@ -24989,11 +27923,11 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 15
 			public const int CollapsingToolbarLayout_toolbarId = 15;
 			
-			// aapt resource value: { 0x10101A5,0x101031F,0x7F030034 }
+			// aapt resource value: { 0x10101A5,0x101031F,0x7F030037 }
 			public static int[] ColorStateListItem = new int[] {
 					16843173,
 					16843551,
-					2130903092};
+					2130903095};
 			
 			// aapt resource value: 2
 			public const int ColorStateListItem_alpha = 2;
@@ -25004,11 +27938,11 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 0
 			public const int ColorStateListItem_android_color = 0;
 			
-			// aapt resource value: { 0x1010107,0x7F03009D,0x7F03009E }
+			// aapt resource value: { 0x1010107,0x7F0300A0,0x7F0300A1 }
 			public static int[] CompoundButton = new int[] {
 					16843015,
-					2130903197,
-					2130903198};
+					2130903200,
+					2130903201};
 			
 			// aapt resource value: 0
 			public const int CompoundButton_android_button = 0;
@@ -25019,23 +27953,23 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int CompoundButton_buttonTintMode = 2;
 			
-			// aapt resource value: { 0x7F0301BB,0x7F030283 }
+			// aapt resource value: { 0x7F0301BE,0x7F030286 }
 			public static int[] CoordinatorLayout = new int[] {
-					2130903483,
-					2130903683};
+					2130903486,
+					2130903686};
 			
 			// aapt resource value: 0
 			public const int CoordinatorLayout_keylines = 0;
 			
-			// aapt resource value: { 0x10100B3,0x7F0301C0,0x7F0301C1,0x7F0301C2,0x7F0301C5,0x7F0301C6,0x7F0301C7 }
+			// aapt resource value: { 0x10100B3,0x7F0301C3,0x7F0301C4,0x7F0301C5,0x7F0301C8,0x7F0301C9,0x7F0301CA }
 			public static int[] CoordinatorLayout_Layout = new int[] {
 					16842931,
-					2130903488,
-					2130903489,
-					2130903490,
+					2130903491,
+					2130903492,
 					2130903493,
-					2130903494,
-					2130903495};
+					2130903496,
+					2130903497,
+					2130903498};
 			
 			// aapt resource value: 0
 			public const int CoordinatorLayout_Layout_android_layout_gravity = 0;
@@ -25061,10 +27995,10 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int CoordinatorLayout_statusBarBackground = 1;
 			
-			// aapt resource value: { 0x7F03007C,0x7F03007D }
+			// aapt resource value: { 0x7F03007F,0x7F030080 }
 			public static int[] DesignTheme = new int[] {
-					2130903164,
-					2130903165};
+					2130903167,
+					2130903168};
 			
 			// aapt resource value: 0
 			public const int DesignTheme_bottomSheetDialogTheme = 0;
@@ -25072,16 +28006,16 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int DesignTheme_bottomSheetStyle = 1;
 			
-			// aapt resource value: { 0x7F030038,0x7F03003A,0x7F030070,0x7F0300DC,0x7F030118,0x7F03014E,0x7F030278,0x7F0302C8 }
+			// aapt resource value: { 0x7F03003B,0x7F03003D,0x7F030073,0x7F0300DF,0x7F03011B,0x7F030151,0x7F03027B,0x7F0302CB }
 			public static int[] DrawerArrowToggle = new int[] {
-					2130903096,
-					2130903098,
-					2130903152,
-					2130903260,
-					2130903320,
-					2130903374,
-					2130903672,
-					2130903752};
+					2130903099,
+					2130903101,
+					2130903155,
+					2130903263,
+					2130903323,
+					2130903377,
+					2130903675,
+					2130903755};
 			
 			// aapt resource value: 0
 			public const int DrawerArrowToggle_arrowHeadLength = 0;
@@ -25107,21 +28041,21 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 7
 			public const int DrawerArrowToggle_thickness = 7;
 			
-			// aapt resource value: { 0x7F03006E,0x7F03006F,0x7F030078,0x7F03011F,0x7F030134,0x7F030135,0x7F03018A,0x7F030194,0x7F0301F0,0x7F03023E,0x7F03024F,0x7F03026C,0x7F0302EA }
+			// aapt resource value: { 0x7F030071,0x7F030072,0x7F03007B,0x7F030122,0x7F030137,0x7F030138,0x7F03018D,0x7F030197,0x7F0301F3,0x7F030241,0x7F030252,0x7F03026F,0x7F0302ED }
 			public static int[] FloatingActionButton = new int[] {
-					2130903150,
-					2130903151,
-					2130903160,
-					2130903327,
-					2130903348,
-					2130903349,
-					2130903434,
-					2130903444,
-					2130903536,
-					2130903614,
-					2130903631,
-					2130903660,
-					2130903786};
+					2130903153,
+					2130903154,
+					2130903163,
+					2130903330,
+					2130903351,
+					2130903352,
+					2130903437,
+					2130903447,
+					2130903539,
+					2130903617,
+					2130903634,
+					2130903663,
+					2130903789};
 			
 			// aapt resource value: 0
 			public const int FloatingActionButton_backgroundTint = 0;
@@ -25129,9 +28063,9 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int FloatingActionButton_backgroundTintMode = 1;
 			
-			// aapt resource value: { 0x7F030072 }
+			// aapt resource value: { 0x7F030075 }
 			public static int[] FloatingActionButton_Behavior_Layout = new int[] {
-					2130903154};
+					2130903157};
 			
 			// aapt resource value: 0
 			public const int FloatingActionButton_Behavior_Layout_behavior_autoHide = 0;
@@ -25169,10 +28103,10 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 12
 			public const int FloatingActionButton_useCompatPadding = 12;
 			
-			// aapt resource value: { 0x7F0301B5,0x7F0301D0 }
+			// aapt resource value: { 0x7F0301B8,0x7F0301D3 }
 			public static int[] FlowLayout = new int[] {
-					2130903477,
-					2130903504};
+					2130903480,
+					2130903507};
 			
 			// aapt resource value: 0
 			public const int FlowLayout_itemSpacing = 0;
@@ -25180,27 +28114,27 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int FlowLayout_lineSpacing = 1;
 			
-			// aapt resource value: { 0x7F030144,0x7F030145,0x7F030146,0x7F030147,0x7F030148,0x7F030149 }
+			// aapt resource value: { 0x7F030147,0x7F030148,0x7F030149,0x7F03014A,0x7F03014B,0x7F03014C }
 			public static int[] FontFamily = new int[] {
-					2130903364,
-					2130903365,
-					2130903366,
 					2130903367,
 					2130903368,
-					2130903369};
+					2130903369,
+					2130903370,
+					2130903371,
+					2130903372};
 			
-			// aapt resource value: { 0x1010532,0x1010533,0x101053F,0x101056F,0x1010570,0x7F030142,0x7F03014A,0x7F03014B,0x7F03014C,0x7F0302E9 }
+			// aapt resource value: { 0x1010532,0x1010533,0x101053F,0x101056F,0x1010570,0x7F030145,0x7F03014D,0x7F03014E,0x7F03014F,0x7F0302EC }
 			public static int[] FontFamilyFont = new int[] {
 					16844082,
 					16844083,
 					16844095,
 					16844143,
 					16844144,
-					2130903362,
-					2130903370,
-					2130903371,
-					2130903372,
-					2130903785};
+					2130903365,
+					2130903373,
+					2130903374,
+					2130903375,
+					2130903788};
 			
 			// aapt resource value: 0
 			public const int FontFamilyFont_android_font = 0;
@@ -25250,11 +28184,11 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 5
 			public const int FontFamily_fontProviderQuery = 5;
 			
-			// aapt resource value: { 0x1010109,0x1010200,0x7F03014D }
+			// aapt resource value: { 0x1010109,0x1010200,0x7F030150 }
 			public static int[] ForegroundLinearLayout = new int[] {
 					16843017,
 					16843264,
-					2130903373};
+					2130903376};
 			
 			// aapt resource value: 0
 			public const int ForegroundLinearLayout_android_foreground = 0;
@@ -25327,16 +28261,16 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int GradientColor_android_type = 2;
 			
-			// aapt resource value: { 0x7F030021,0x7F03009F,0x7F0300A3,0x7F0300A6,0x7F03012F,0x7F0301A9,0x7F030268,0x7F030269 }
+			// aapt resource value: { 0x7F030021,0x7F0300A2,0x7F0300A6,0x7F0300A9,0x7F030132,0x7F0301AC,0x7F03026B,0x7F03026C }
 			public static int[] lbBaseCardView = new int[] {
 					2130903073,
-					2130903199,
-					2130903203,
+					2130903202,
 					2130903206,
-					2130903343,
-					2130903465,
-					2130903656,
-					2130903657};
+					2130903209,
+					2130903346,
+					2130903468,
+					2130903659,
+					2130903660};
 			
 			// aapt resource value: 0
 			public const int lbBaseCardView_activatedAnimationDuration = 0;
@@ -25356,9 +28290,9 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 5
 			public const int lbBaseCardView_infoVisibility = 5;
 			
-			// aapt resource value: { 0x7F0301CA }
+			// aapt resource value: { 0x7F0301CD }
 			public static int[] lbBaseCardView_Layout = new int[] {
-					2130903498};
+					2130903501};
 			
 			// aapt resource value: 0
 			public const int lbBaseCardView_Layout_layout_viewType = 0;
@@ -25369,17 +28303,17 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 7
 			public const int lbBaseCardView_selectedAnimationDuration = 7;
 			
-			// aapt resource value: { 0x10100AF,0x1010114,0x1010115,0x7F03013E,0x7F03013F,0x7F030140,0x7F030141,0x7F030193,0x7F0302EC }
+			// aapt resource value: { 0x10100AF,0x1010114,0x1010115,0x7F030141,0x7F030142,0x7F030143,0x7F030144,0x7F030196,0x7F0302EF }
 			public static int[] lbBaseGridView = new int[] {
 					16842927,
 					16843028,
 					16843029,
-					2130903358,
-					2130903359,
-					2130903360,
 					2130903361,
-					2130903443,
-					2130903788};
+					2130903362,
+					2130903363,
+					2130903364,
+					2130903446,
+					2130903791};
 			
 			// aapt resource value: 0
 			public const int lbBaseGridView_android_gravity = 0;
@@ -25408,11 +28342,11 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 8
 			public const int lbBaseGridView_verticalMargin = 8;
 			
-			// aapt resource value: { 0x101033F,0x1010340,0x7F030100 }
+			// aapt resource value: { 0x101033F,0x1010340,0x7F030103 }
 			public static int[] lbDatePicker = new int[] {
 					16843583,
 					16843584,
-					2130903296};
+					2130903299};
 			
 			// aapt resource value: 1
 			public const int lbDatePicker_android_maxDate = 1;
@@ -25423,10 +28357,10 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int lbDatePicker_datePickerFormat = 2;
 			
-			// aapt resource value: { 0x7F030206,0x7F030253 }
+			// aapt resource value: { 0x7F030209,0x7F030256 }
 			public static int[] lbHorizontalGridView = new int[] {
-					2130903558,
-					2130903635};
+					2130903561,
+					2130903638};
 			
 			// aapt resource value: 0
 			public const int lbHorizontalGridView_numberOfRows = 0;
@@ -25434,10 +28368,10 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int lbHorizontalGridView_rowHeight = 1;
 			
-			// aapt resource value: { 0x7F0301A8,0x7F0301CC }
+			// aapt resource value: { 0x7F0301AB,0x7F0301CF }
 			public static int[] lbImageCardView = new int[] {
-					2130903464,
-					2130903500};
+					2130903467,
+					2130903503};
 			
 			// aapt resource value: 0
 			public const int lbImageCardView_infoAreaBackground = 0;
@@ -25445,24 +28379,24 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int lbImageCardView_lbImageCardViewType = 1;
 			
-			// aapt resource value: { 0x7F0300D7,0x7F03013B,0x7F03018D,0x7F030221,0x7F030222,0x7F030223,0x7F030247,0x7F030248,0x7F03024E,0x7F03026F,0x7F030273,0x7F030274,0x7F0302CC,0x7F0302CD,0x7F0302CE,0x7F0302CF }
+			// aapt resource value: { 0x7F0300DA,0x7F03013E,0x7F030190,0x7F030224,0x7F030225,0x7F030226,0x7F03024A,0x7F03024B,0x7F030251,0x7F030272,0x7F030276,0x7F030277,0x7F0302CF,0x7F0302D0,0x7F0302D1,0x7F0302D2 }
 			public static int[] lbPlaybackControlsActionIcons = new int[] {
-					2130903255,
-					2130903355,
-					2130903437,
-					2130903585,
-					2130903586,
-					2130903587,
-					2130903623,
-					2130903624,
-					2130903630,
-					2130903663,
-					2130903667,
-					2130903668,
-					2130903756,
-					2130903757,
-					2130903758,
-					2130903759};
+					2130903258,
+					2130903358,
+					2130903440,
+					2130903588,
+					2130903589,
+					2130903590,
+					2130903626,
+					2130903627,
+					2130903633,
+					2130903666,
+					2130903670,
+					2130903671,
+					2130903759,
+					2130903760,
+					2130903761,
+					2130903762};
 			
 			// aapt resource value: 0
 			public const int lbPlaybackControlsActionIcons_closed_captioning = 0;
@@ -25512,13 +28446,13 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 15
 			public const int lbPlaybackControlsActionIcons_thumb_up_outline = 15;
 			
-			// aapt resource value: { 0x7F0301EB,0x7F030249,0x7F03024A,0x7F03024B,0x7F03024C }
+			// aapt resource value: { 0x7F0301EE,0x7F03024C,0x7F03024D,0x7F03024E,0x7F03024F }
 			public static int[] lbResizingTextView = new int[] {
-					2130903531,
-					2130903625,
-					2130903626,
-					2130903627,
-					2130903628};
+					2130903534,
+					2130903628,
+					2130903629,
+					2130903630,
+					2130903631};
 			
 			// aapt resource value: 0
 			public const int lbResizingTextView_maintainLineSpacing = 0;
@@ -25535,12 +28469,12 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int lbResizingTextView_resizeTrigger = 1;
 			
-			// aapt resource value: { 0x7F03025E,0x7F03025F,0x7F030260,0x7F030261 }
+			// aapt resource value: { 0x7F030261,0x7F030262,0x7F030263,0x7F030264 }
 			public static int[] lbSearchOrbView = new int[] {
-					2130903646,
-					2130903647,
-					2130903648,
-					2130903649};
+					2130903649,
+					2130903650,
+					2130903651,
+					2130903652};
 			
 			// aapt resource value: 0
 			public const int lbSearchOrbView_searchOrbBrightColor = 0;
@@ -25554,12 +28488,12 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 3
 			public const int lbSearchOrbView_searchOrbIconColor = 3;
 			
-			// aapt resource value: { 0x1010141,0x1010198,0x10103E2,0x7F0301CD }
+			// aapt resource value: { 0x1010141,0x1010198,0x10103E2,0x7F0301D0 }
 			public static int[] lbSlide = new int[] {
 					16843073,
 					16843160,
 					16843746,
-					2130903501};
+					2130903504};
 			
 			// aapt resource value: 1
 			public const int lbSlide_android_duration = 1;
@@ -25573,10 +28507,10 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 3
 			public const int lbSlide_lb_slideEdge = 3;
 			
-			// aapt resource value: { 0x7F0301AC,0x7F0302EB }
+			// aapt resource value: { 0x7F0301AF,0x7F0302EE }
 			public static int[] lbTimePicker = new int[] {
-					2130903468,
-					2130903787};
+					2130903471,
+					2130903790};
 			
 			// aapt resource value: 0
 			public const int lbTimePicker_is24HourFormat = 0;
@@ -25584,10 +28518,10 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int lbTimePicker_useCurrentTime = 1;
 			
-			// aapt resource value: { 0x7F0300E9,0x7F030205 }
+			// aapt resource value: { 0x7F0300EC,0x7F030208 }
 			public static int[] lbVerticalGridView = new int[] {
-					2130903273,
-					2130903557};
+					2130903276,
+					2130903560};
 			
 			// aapt resource value: 0
 			public const int lbVerticalGridView_columnWidth = 0;
@@ -25595,11 +28529,8 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int lbVerticalGridView_numberOfColumns = 1;
 			
-			// aapt resource value: { 0x7F030150,0x7F030151,0x7F030152,0x7F030153,0x7F030154,0x7F030155,0x7F030156,0x7F030157,0x7F030158,0x7F030159,0x7F03015A,0x7F03015B,0x7F03015C,0x7F03015D,0x7F03015E,0x7F03015F,0x7F030160,0x7F030161,0x7F030162,0x7F030163,0x7F030164,0x7F030165,0x7F030166,0x7F030167,0x7F030168,0x7F030169,0x7F03016A,0x7F03016B,0x7F03016C,0x7F03016D,0x7F03016E,0x7F03016F,0x7F030170,0x7F030171,0x7F030172,0x7F030173,0x7F030174,0x7F030175,0x7F030176,0x7F030177,0x7F030178,0x7F030179,0x7F03017A,0x7F03017B,0x7F03017C,0x7F03017D,0x7F03017E,0x7F03017F,0x7F030180,0x7F030181,0x7F030182 }
+			// aapt resource value: { 0x7F030153,0x7F030154,0x7F030155,0x7F030156,0x7F030157,0x7F030158,0x7F030159,0x7F03015A,0x7F03015B,0x7F03015C,0x7F03015D,0x7F03015E,0x7F03015F,0x7F030160,0x7F030161,0x7F030162,0x7F030163,0x7F030164,0x7F030165,0x7F030166,0x7F030167,0x7F030168,0x7F030169,0x7F03016A,0x7F03016B,0x7F03016C,0x7F03016D,0x7F03016E,0x7F03016F,0x7F030170,0x7F030171,0x7F030172,0x7F030173,0x7F030174,0x7F030175,0x7F030176,0x7F030177,0x7F030178,0x7F030179,0x7F03017A,0x7F03017B,0x7F03017C,0x7F03017D,0x7F03017E,0x7F03017F,0x7F030180,0x7F030181,0x7F030182,0x7F030183,0x7F030184,0x7F030185 }
 			public static int[] LeanbackGuidedStepTheme = new int[] {
-					2130903376,
-					2130903377,
-					2130903378,
 					2130903379,
 					2130903380,
 					2130903381,
@@ -25647,7 +28578,10 @@ namespace SalveminiApp.Droid
 					2130903423,
 					2130903424,
 					2130903425,
-					2130903426};
+					2130903426,
+					2130903427,
+					2130903428,
+					2130903429};
 			
 			// aapt resource value: 0
 			public const int LeanbackGuidedStepTheme_guidanceBreadcrumbStyle = 0;
@@ -25802,17 +28736,17 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 50
 			public const int LeanbackGuidedStepTheme_guidedSubActionsListStyle = 50;
 			
-			// aapt resource value: { 0x7F030208,0x7F030209,0x7F03020A,0x7F03020B,0x7F03020C,0x7F03020D,0x7F03020E,0x7F03020F,0x7F030210 }
+			// aapt resource value: { 0x7F03020B,0x7F03020C,0x7F03020D,0x7F03020E,0x7F03020F,0x7F030210,0x7F030211,0x7F030212,0x7F030213 }
 			public static int[] LeanbackOnboardingTheme = new int[] {
-					2130903560,
-					2130903561,
-					2130903562,
 					2130903563,
 					2130903564,
 					2130903565,
 					2130903566,
 					2130903567,
-					2130903568};
+					2130903568,
+					2130903569,
+					2130903570,
+					2130903571};
 			
 			// aapt resource value: 0
 			public const int LeanbackOnboardingTheme_onboardingDescriptionStyle = 0;
@@ -25841,12 +28775,9 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 8
 			public const int LeanbackOnboardingTheme_onboardingTitleStyle = 8;
 			
-			// aapt resource value: { 0x7F030071,0x7F030087,0x7F030088,0x7F030089,0x7F03008A,0x7F03008B,0x7F03008C,0x7F03008D,0x7F03008E,0x7F03008F,0x7F030090,0x7F030091,0x7F030101,0x7F030102,0x7F030104,0x7F030105,0x7F030106,0x7F030107,0x7F030108,0x7F030109,0x7F03010A,0x7F03010B,0x7F03010C,0x7F030123,0x7F030184,0x7F030185,0x7F0301A1,0x7F0301A2,0x7F0301A3,0x7F0301A4,0x7F0301A5,0x7F0301A6,0x7F0301BA,0x7F030212,0x7F030213,0x7F030214,0x7F030224,0x7F030225,0x7F030226,0x7F030227,0x7F030228,0x7F030229,0x7F03022A,0x7F03022B,0x7F03022C,0x7F03022D,0x7F03022E,0x7F03022F,0x7F030230,0x7F030231,0x7F030232,0x7F030233,0x7F030234,0x7F030235,0x7F030236,0x7F030237,0x7F030238,0x7F030239,0x7F030250,0x7F030251,0x7F030252,0x7F030254,0x7F030255,0x7F030256,0x7F030257,0x7F030262,0x7F030264 }
+			// aapt resource value: { 0x7F030074,0x7F03008A,0x7F03008B,0x7F03008C,0x7F03008D,0x7F03008E,0x7F03008F,0x7F030090,0x7F030091,0x7F030092,0x7F030093,0x7F030094,0x7F030104,0x7F030105,0x7F030107,0x7F030108,0x7F030109,0x7F03010A,0x7F03010B,0x7F03010C,0x7F03010D,0x7F03010E,0x7F03010F,0x7F030126,0x7F030187,0x7F030188,0x7F0301A4,0x7F0301A5,0x7F0301A6,0x7F0301A7,0x7F0301A8,0x7F0301A9,0x7F0301BD,0x7F030215,0x7F030216,0x7F030217,0x7F030227,0x7F030228,0x7F030229,0x7F03022A,0x7F03022B,0x7F03022C,0x7F03022D,0x7F03022E,0x7F03022F,0x7F030230,0x7F030231,0x7F030232,0x7F030233,0x7F030234,0x7F030235,0x7F030236,0x7F030237,0x7F030238,0x7F030239,0x7F03023A,0x7F03023B,0x7F03023C,0x7F030253,0x7F030254,0x7F030255,0x7F030257,0x7F030258,0x7F030259,0x7F03025A,0x7F030265,0x7F030267 }
 			public static int[] LeanbackTheme = new int[] {
-					2130903153,
-					2130903175,
-					2130903176,
-					2130903177,
+					2130903156,
 					2130903178,
 					2130903179,
 					2130903180,
@@ -25855,33 +28786,33 @@ namespace SalveminiApp.Droid
 					2130903183,
 					2130903184,
 					2130903185,
-					2130903297,
-					2130903298,
+					2130903186,
+					2130903187,
+					2130903188,
 					2130903300,
 					2130903301,
-					2130903302,
 					2130903303,
 					2130903304,
 					2130903305,
 					2130903306,
 					2130903307,
 					2130903308,
-					2130903331,
-					2130903428,
-					2130903429,
-					2130903457,
-					2130903458,
-					2130903459,
+					2130903309,
+					2130903310,
+					2130903311,
+					2130903334,
+					2130903431,
+					2130903432,
 					2130903460,
 					2130903461,
 					2130903462,
-					2130903482,
-					2130903570,
-					2130903571,
-					2130903572,
-					2130903588,
-					2130903589,
-					2130903590,
+					2130903463,
+					2130903464,
+					2130903465,
+					2130903485,
+					2130903573,
+					2130903574,
+					2130903575,
 					2130903591,
 					2130903592,
 					2130903593,
@@ -25901,15 +28832,18 @@ namespace SalveminiApp.Droid
 					2130903607,
 					2130903608,
 					2130903609,
-					2130903632,
-					2130903633,
-					2130903634,
+					2130903610,
+					2130903611,
+					2130903612,
+					2130903635,
 					2130903636,
 					2130903637,
-					2130903638,
 					2130903639,
-					2130903650,
-					2130903652};
+					2130903640,
+					2130903641,
+					2130903642,
+					2130903653,
+					2130903655};
 			
 			// aapt resource value: 0
 			public const int LeanbackTheme_baseCardViewStyle = 0;
@@ -26112,17 +29046,17 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 66
 			public const int LeanbackTheme_sectionHeaderStyle = 66;
 			
-			// aapt resource value: { 0x10100AF,0x10100C4,0x1010126,0x1010127,0x1010128,0x7F030111,0x7F030113,0x7F0301F1,0x7F03026B }
+			// aapt resource value: { 0x10100AF,0x10100C4,0x1010126,0x1010127,0x1010128,0x7F030114,0x7F030116,0x7F0301F4,0x7F03026E }
 			public static int[] LinearLayoutCompat = new int[] {
 					16842927,
 					16842948,
 					16843046,
 					16843047,
 					16843048,
-					2130903313,
-					2130903315,
-					2130903537,
-					2130903659};
+					2130903316,
+					2130903318,
+					2130903540,
+					2130903662};
 			
 			// aapt resource value: 2
 			public const int LinearLayoutCompat_android_baselineAligned = 2;
@@ -26181,11 +29115,11 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int ListPopupWindow_android_dropDownVerticalOffset = 1;
 			
-			// aapt resource value: { 0x7F0300CE,0x7F03019E,0x7F03019F }
+			// aapt resource value: { 0x7F0300D1,0x7F0301A1,0x7F0301A2 }
 			public static int[] LoadingImageView = new int[] {
-					2130903246,
-					2130903454,
-					2130903455};
+					2130903249,
+					2130903457,
+					2130903458};
 			
 			// aapt resource value: 0
 			public const int LoadingImageView_circleCrop = 0;
@@ -26196,11 +29130,8 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int LoadingImageView_imageAspectRatioAdjust = 2;
 			
-			// aapt resource value: { 0x7F0301DE,0x7F0301DF,0x7F0301E0,0x7F0301E1,0x7F0301E2,0x7F0301E3,0x7F0301E4,0x7F0301E5,0x7F0301E6,0x7F0301E7,0x7F0301E8,0x7F0301E9,0x7F0301EA }
+			// aapt resource value: { 0x7F0301E1,0x7F0301E2,0x7F0301E3,0x7F0301E4,0x7F0301E5,0x7F0301E6,0x7F0301E7,0x7F0301E8,0x7F0301E9,0x7F0301EA,0x7F0301EB,0x7F0301EC,0x7F0301ED }
 			public static int[] LottieAnimationView = new int[] {
-					2130903518,
-					2130903519,
-					2130903520,
 					2130903521,
 					2130903522,
 					2130903523,
@@ -26210,7 +29141,10 @@ namespace SalveminiApp.Droid
 					2130903527,
 					2130903528,
 					2130903529,
-					2130903530};
+					2130903530,
+					2130903531,
+					2130903532,
+					2130903533};
 			
 			// aapt resource value: 0
 			public const int LottieAnimationView_lottie_autoPlay = 0;
@@ -26251,24 +29185,24 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 12
 			public const int LottieAnimationView_lottie_url = 12;
 			
-			// aapt resource value: { 0x10101B7,0x10101B8,0x10101B9,0x10101BA,0x7F03006E,0x7F03006F,0x7F0300FA,0x7F030195,0x7F030197,0x7F030198,0x7F030199,0x7F03019B,0x7F03019C,0x7F03024F,0x7F030285,0x7F030286 }
+			// aapt resource value: { 0x10101B7,0x10101B8,0x10101B9,0x10101BA,0x7F030071,0x7F030072,0x7F0300FD,0x7F030198,0x7F03019A,0x7F03019B,0x7F03019C,0x7F03019E,0x7F03019F,0x7F030252,0x7F030288,0x7F030289 }
 			public static int[] MaterialButton = new int[] {
 					16843191,
 					16843192,
 					16843193,
 					16843194,
-					2130903150,
-					2130903151,
-					2130903290,
-					2130903445,
-					2130903447,
+					2130903153,
+					2130903154,
+					2130903293,
 					2130903448,
-					2130903449,
+					2130903450,
 					2130903451,
 					2130903452,
-					2130903631,
-					2130903685,
-					2130903686};
+					2130903454,
+					2130903455,
+					2130903634,
+					2130903688,
+					2130903689};
 			
 			// aapt resource value: 3
 			public const int MaterialButton_android_insetBottom = 3;
@@ -26318,10 +29252,10 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 15
 			public const int MaterialButton_strokeWidth = 15;
 			
-			// aapt resource value: { 0x7F030285,0x7F030286 }
+			// aapt resource value: { 0x7F030288,0x7F030289 }
 			public static int[] MaterialCardView = new int[] {
-					2130903685,
-					2130903686};
+					2130903688,
+					2130903689};
 			
 			// aapt resource value: 0
 			public const int MaterialCardView_strokeColor = 0;
@@ -26329,29 +29263,26 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int MaterialCardView_strokeWidth = 1;
 			
-			// aapt resource value: { 0x7F03007C,0x7F03007D,0x7F0300BF,0x7F0300C9,0x7F0300CD,0x7F0300DD,0x7F0300DE,0x7F0300E4,0x7F0300E5,0x7F0300E7,0x7F03011E,0x7F03013D,0x7F0301EC,0x7F0301ED,0x7F030204,0x7F03025A,0x7F030275,0x7F0302A8,0x7F0302AD,0x7F0302AE,0x7F0302AF,0x7F0302B0,0x7F0302B1,0x7F0302B2,0x7F0302B3,0x7F0302B4,0x7F0302B5,0x7F0302B6,0x7F0302BB,0x7F0302C0,0x7F0302C1,0x7F0302C5 }
+			// aapt resource value: { 0x7F03007F,0x7F030080,0x7F0300C2,0x7F0300CC,0x7F0300D0,0x7F0300E0,0x7F0300E1,0x7F0300E7,0x7F0300E8,0x7F0300EA,0x7F030121,0x7F030140,0x7F0301EF,0x7F0301F0,0x7F030207,0x7F03025D,0x7F030278,0x7F0302AB,0x7F0302B0,0x7F0302B1,0x7F0302B2,0x7F0302B3,0x7F0302B4,0x7F0302B5,0x7F0302B6,0x7F0302B7,0x7F0302B8,0x7F0302B9,0x7F0302BE,0x7F0302C3,0x7F0302C4,0x7F0302C8 }
 			public static int[] MaterialComponentsTheme = new int[] {
-					2130903164,
-					2130903165,
-					2130903231,
-					2130903241,
-					2130903245,
-					2130903261,
-					2130903262,
-					2130903268,
-					2130903269,
+					2130903167,
+					2130903168,
+					2130903234,
+					2130903244,
+					2130903248,
+					2130903264,
+					2130903265,
 					2130903271,
-					2130903326,
-					2130903357,
-					2130903532,
-					2130903533,
-					2130903556,
-					2130903642,
-					2130903669,
-					2130903720,
-					2130903725,
-					2130903726,
-					2130903727,
+					2130903272,
+					2130903274,
+					2130903329,
+					2130903360,
+					2130903535,
+					2130903536,
+					2130903559,
+					2130903645,
+					2130903672,
+					2130903723,
 					2130903728,
 					2130903729,
 					2130903730,
@@ -26359,10 +29290,13 @@ namespace SalveminiApp.Droid
 					2130903732,
 					2130903733,
 					2130903734,
-					2130903739,
-					2130903744,
-					2130903745,
-					2130903749};
+					2130903735,
+					2130903736,
+					2130903737,
+					2130903742,
+					2130903747,
+					2130903748,
+					2130903752};
 			
 			// aapt resource value: 0
 			public const int MaterialComponentsTheme_bottomSheetDialogTheme = 0;
@@ -26460,12 +29394,12 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 31
 			public const int MaterialComponentsTheme_textInputStyle = 31;
 			
-			// aapt resource value: { 0x101013F,0x1010140,0x7F03012E,0x7F0301F4 }
+			// aapt resource value: { 0x101013F,0x1010140,0x7F030131,0x7F0301F7 }
 			public static int[] MediaRouteButton = new int[] {
 					16843071,
 					16843072,
-					2130903342,
-					2130903540};
+					2130903345,
+					2130903543};
 			
 			// aapt resource value: 1
 			public const int MediaRouteButton_android_minHeight = 1;
@@ -26506,7 +29440,7 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int MenuGroup_android_visible = 2;
 			
-			// aapt resource value: { 0x1010002,0x101000E,0x10100D0,0x1010106,0x1010194,0x10101DE,0x10101DF,0x10101E1,0x10101E2,0x10101E3,0x10101E4,0x10101E5,0x101026F,0x7F03000D,0x7F03001F,0x7F030020,0x7F030035,0x7F0300EB,0x7F03019B,0x7F03019C,0x7F030207,0x7F03026A,0x7F0302E5 }
+			// aapt resource value: { 0x1010002,0x101000E,0x10100D0,0x1010106,0x1010194,0x10101DE,0x10101DF,0x10101E1,0x10101E2,0x10101E3,0x10101E4,0x10101E5,0x101026F,0x7F03000D,0x7F03001F,0x7F030020,0x7F030038,0x7F0300EE,0x7F03019E,0x7F03019F,0x7F03020A,0x7F03026D,0x7F0302E8 }
 			public static int[] MenuItem = new int[] {
 					16842754,
 					16842766,
@@ -26524,13 +29458,13 @@ namespace SalveminiApp.Droid
 					2130903053,
 					2130903071,
 					2130903072,
-					2130903093,
-					2130903275,
-					2130903451,
-					2130903452,
-					2130903559,
-					2130903658,
-					2130903781};
+					2130903096,
+					2130903278,
+					2130903454,
+					2130903455,
+					2130903562,
+					2130903661,
+					2130903784};
 			
 			// aapt resource value: 13
 			public const int MenuItem_actionLayout = 13;
@@ -26601,7 +29535,7 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 22
 			public const int MenuItem_tooltipText = 22;
 			
-			// aapt resource value: { 0x10100AE,0x101012C,0x101012D,0x101012E,0x101012F,0x1010130,0x1010131,0x7F03023D,0x7F030287 }
+			// aapt resource value: { 0x10100AE,0x101012C,0x101012D,0x101012E,0x101012F,0x1010130,0x1010131,0x7F030240,0x7F03028A }
 			public static int[] MenuView = new int[] {
 					16842926,
 					16843052,
@@ -26610,8 +29544,8 @@ namespace SalveminiApp.Droid
 					16843055,
 					16843056,
 					16843057,
-					2130903613,
-					2130903687};
+					2130903616,
+					2130903690};
 			
 			// aapt resource value: 4
 			public const int MenuView_android_headerBackground = 4;
@@ -26640,20 +29574,20 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 8
 			public const int MenuView_subMenuArrow = 8;
 			
-			// aapt resource value: { 0x10100D4,0x10100DD,0x101011F,0x7F03011F,0x7F030183,0x7F0301AE,0x7F0301AF,0x7F0301B1,0x7F0301B3,0x7F0301B6,0x7F0301B9,0x7F0301FF }
+			// aapt resource value: { 0x10100D4,0x10100DD,0x101011F,0x7F030122,0x7F030186,0x7F0301B1,0x7F0301B2,0x7F0301B4,0x7F0301B6,0x7F0301B9,0x7F0301BC,0x7F030202 }
 			public static int[] NavigationView = new int[] {
 					16842964,
 					16842973,
 					16843039,
-					2130903327,
-					2130903427,
-					2130903470,
-					2130903471,
+					2130903330,
+					2130903430,
 					2130903473,
-					2130903475,
+					2130903474,
+					2130903476,
 					2130903478,
 					2130903481,
-					2130903551};
+					2130903484,
+					2130903554};
 			
 			// aapt resource value: 0
 			public const int NavigationView_android_background = 0;
@@ -26691,15 +29625,15 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 11
 			public const int NavigationView_menu = 11;
 			
-			// aapt resource value: { 0x7F030036,0x7F030037,0x7F030039,0x7F030115,0x7F030116,0x7F030117,0x7F0301CB }
+			// aapt resource value: { 0x7F030039,0x7F03003A,0x7F03003C,0x7F030118,0x7F030119,0x7F03011A,0x7F0301CE }
 			public static int[] PagingIndicator = new int[] {
-					2130903094,
-					2130903095,
 					2130903097,
-					2130903317,
-					2130903318,
-					2130903319,
-					2130903499};
+					2130903098,
+					2130903100,
+					2130903320,
+					2130903321,
+					2130903322,
+					2130903502};
 			
 			// aapt resource value: 0
 			public const int PagingIndicator_arrowBgColor = 0;
@@ -26722,15 +29656,15 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 6
 			public const int PagingIndicator_lbDotRadius = 6;
 			
-			// aapt resource value: { 0x1010176,0x10102C9,0x7F030211 }
+			// aapt resource value: { 0x1010176,0x10102C9,0x7F030214 }
 			public static int[] PopupWindow = new int[] {
 					16843126,
 					16843465,
-					2130903569};
+					2130903572};
 			
-			// aapt resource value: { 0x7F03027E }
+			// aapt resource value: { 0x7F030281 }
 			public static int[] PopupWindowBackgroundState = new int[] {
-					2130903678};
+					2130903681};
 			
 			// aapt resource value: 0
 			public const int PopupWindowBackgroundState_state_above_anchor = 0;
@@ -26744,11 +29678,8 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int PopupWindow_overlapAnchor = 2;
 			
-			// aapt resource value: { 0x7F030023,0x7F030024,0x7F030025,0x7F030026,0x7F030027,0x7F030028,0x7F030029,0x7F03002A,0x7F03002B,0x7F03002C,0x7F03002D,0x7F03002E }
+			// aapt resource value: { 0x7F030026,0x7F030027,0x7F030028,0x7F030029,0x7F03002A,0x7F03002B,0x7F03002C,0x7F03002D,0x7F03002E,0x7F03002F,0x7F030030,0x7F030031 }
 			public static int[] ProgressWheel = new int[] {
-					2130903075,
-					2130903076,
-					2130903077,
 					2130903078,
 					2130903079,
 					2130903080,
@@ -26757,7 +29688,10 @@ namespace SalveminiApp.Droid
 					2130903083,
 					2130903084,
 					2130903085,
-					2130903086};
+					2130903086,
+					2130903087,
+					2130903088,
+					2130903089};
 			
 			// aapt resource value: 0
 			public const int ProgressWheel_ahBarColor = 0;
@@ -26795,10 +29729,10 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 11
 			public const int ProgressWheel_ahTextSize = 11;
 			
-			// aapt resource value: { 0x7F030215,0x7F030218 }
+			// aapt resource value: { 0x7F030218,0x7F03021B }
 			public static int[] RecycleListView = new int[] {
-					2130903573,
-					2130903576};
+					2130903576,
+					2130903579};
 			
 			// aapt resource value: 0
 			public const int RecycleListView_paddingBottomNoButtons = 0;
@@ -26806,19 +29740,19 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int RecycleListView_paddingTopNoTitle = 1;
 			
-			// aapt resource value: { 0x10100C4,0x10100F1,0x7F030136,0x7F030137,0x7F030138,0x7F030139,0x7F03013A,0x7F0301BF,0x7F03024D,0x7F030277,0x7F03027D }
+			// aapt resource value: { 0x10100C4,0x10100F1,0x7F030139,0x7F03013A,0x7F03013B,0x7F03013C,0x7F03013D,0x7F0301C2,0x7F030250,0x7F03027A,0x7F030280 }
 			public static int[] RecyclerView = new int[] {
 					16842948,
 					16842993,
-					2130903350,
-					2130903351,
-					2130903352,
 					2130903353,
 					2130903354,
-					2130903487,
-					2130903629,
-					2130903671,
-					2130903677};
+					2130903355,
+					2130903356,
+					2130903357,
+					2130903490,
+					2130903632,
+					2130903674,
+					2130903680};
 			
 			// aapt resource value: 1
 			public const int RecyclerView_android_descendantFocusability = 1;
@@ -26853,39 +29787,39 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 10
 			public const int RecyclerView_stackFromEnd = 10;
 			
-			// aapt resource value: { 0x7F0301AB }
+			// aapt resource value: { 0x7F0301AE }
 			public static int[] ScrimInsetsFrameLayout = new int[] {
-					2130903467};
+					2130903470};
 			
 			// aapt resource value: 0
 			public const int ScrimInsetsFrameLayout_insetForeground = 0;
 			
-			// aapt resource value: { 0x7F030075 }
+			// aapt resource value: { 0x7F030078 }
 			public static int[] ScrollingViewBehavior_Layout = new int[] {
-					2130903157};
+					2130903160};
 			
 			// aapt resource value: 0
 			public const int ScrollingViewBehavior_Layout_behavior_overlapTop = 0;
 			
-			// aapt resource value: { 0x10100DA,0x101011F,0x1010220,0x1010264,0x7F0300CF,0x7F0300EA,0x7F030103,0x7F03014F,0x7F03019D,0x7F0301BE,0x7F030241,0x7F030242,0x7F03025C,0x7F03025D,0x7F030288,0x7F03028D,0x7F0302EE }
+			// aapt resource value: { 0x10100DA,0x101011F,0x1010220,0x1010264,0x7F0300D2,0x7F0300ED,0x7F030106,0x7F030152,0x7F0301A0,0x7F0301C1,0x7F030244,0x7F030245,0x7F03025F,0x7F030260,0x7F03028B,0x7F030290,0x7F0302F1 }
 			public static int[] SearchView = new int[] {
 					16842970,
 					16843039,
 					16843296,
 					16843364,
-					2130903247,
-					2130903274,
-					2130903299,
-					2130903375,
-					2130903453,
-					2130903486,
-					2130903617,
-					2130903618,
-					2130903644,
-					2130903645,
-					2130903688,
-					2130903693,
-					2130903790};
+					2130903250,
+					2130903277,
+					2130903302,
+					2130903378,
+					2130903456,
+					2130903489,
+					2130903620,
+					2130903621,
+					2130903647,
+					2130903648,
+					2130903691,
+					2130903696,
+					2130903793};
 			
 			// aapt resource value: 0
 			public const int SearchView_android_focusable = 0;
@@ -26938,11 +29872,8 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 16
 			public const int SearchView_voiceIcon = 16;
 			
-			// aapt resource value: { 0x7F030041,0x7F030042,0x7F030043,0x7F030044,0x7F030045,0x7F030046,0x7F030047,0x7F030048,0x7F030049,0x7F03004A,0x7F03004B,0x7F03004C,0x7F03004D,0x7F03004E,0x7F03004F,0x7F030050,0x7F030051,0x7F030052,0x7F030053,0x7F030054,0x7F030055,0x7F030056,0x7F030057,0x7F030058,0x7F030059,0x7F03005A,0x7F03005B,0x7F03005C,0x7F03005D,0x7F03005E,0x7F03005F,0x7F030060,0x7F030061,0x7F030062,0x7F030063,0x7F030064,0x7F030065,0x7F030066,0x7F030067,0x7F030068,0x7F030069,0x7F03006A }
+			// aapt resource value: { 0x7F030044,0x7F030045,0x7F030046,0x7F030047,0x7F030048,0x7F030049,0x7F03004A,0x7F03004B,0x7F03004C,0x7F03004D,0x7F03004E,0x7F03004F,0x7F030050,0x7F030051,0x7F030052,0x7F030053,0x7F030054,0x7F030055,0x7F030056,0x7F030057,0x7F030058,0x7F030059,0x7F03005A,0x7F03005B,0x7F03005C,0x7F03005D,0x7F03005E,0x7F03005F,0x7F030060,0x7F030061,0x7F030062,0x7F030063,0x7F030064,0x7F030065,0x7F030066,0x7F030067,0x7F030068,0x7F030069,0x7F03006A,0x7F03006B,0x7F03006C,0x7F03006D }
 			public static int[] SfAutoComplete = new int[] {
-					2130903105,
-					2130903106,
-					2130903107,
 					2130903108,
 					2130903109,
 					2130903110,
@@ -26981,7 +29912,10 @@ namespace SalveminiApp.Droid
 					2130903143,
 					2130903144,
 					2130903145,
-					2130903146};
+					2130903146,
+					2130903147,
+					2130903148,
+					2130903149};
 			
 			// aapt resource value: 0
 			public const int SfAutoComplete_autocompleteBorderColor = 0;
@@ -27109,11 +30043,8 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 41
 			public const int SfAutoComplete_autocompleteWatermarkColor = 41;
 			
-			// aapt resource value: { 0x7F0300A9,0x7F0300AA,0x7F0300AB,0x7F0300AC,0x7F0300AD,0x7F0300AE,0x7F0300AF,0x7F0300B0,0x7F0300B1,0x7F0300B2,0x7F0300B3,0x7F0300B4,0x7F0300B5 }
+			// aapt resource value: { 0x7F0300AC,0x7F0300AD,0x7F0300AE,0x7F0300AF,0x7F0300B0,0x7F0300B1,0x7F0300B2,0x7F0300B3,0x7F0300B4,0x7F0300B5,0x7F0300B6,0x7F0300B7,0x7F0300B8 }
 			public static int[] SfCarousel = new int[] {
-					2130903209,
-					2130903210,
-					2130903211,
 					2130903212,
 					2130903213,
 					2130903214,
@@ -27123,7 +30054,10 @@ namespace SalveminiApp.Droid
 					2130903218,
 					2130903219,
 					2130903220,
-					2130903221};
+					2130903221,
+					2130903222,
+					2130903223,
+					2130903224};
 			
 			// aapt resource value: 0
 			public const int SfCarousel_carouselAllowLoadMore = 0;
@@ -27164,11 +30098,11 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 12
 			public const int SfCarousel_carouselViewMode = 12;
 			
-			// aapt resource value: { 0x7F03009A,0x7F0300E6,0x7F030258 }
+			// aapt resource value: { 0x7F03009D,0x7F0300E9,0x7F03025B }
 			public static int[] SignInButton = new int[] {
-					2130903194,
-					2130903270,
-					2130903640};
+					2130903197,
+					2130903273,
+					2130903643};
 			
 			// aapt resource value: 0
 			public const int SignInButton_buttonSize = 0;
@@ -27179,16 +30113,16 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int SignInButton_scopeUris = 2;
 			
-			// aapt resource value: { 0x7F030275,0x7F030276 }
+			// aapt resource value: { 0x7F030278,0x7F030279 }
 			public static int[] Snackbar = new int[] {
-					2130903669,
-					2130903670};
+					2130903672,
+					2130903673};
 			
-			// aapt resource value: { 0x101011F,0x7F03011F,0x7F0301EE }
+			// aapt resource value: { 0x101011F,0x7F030122,0x7F0301F1 }
 			public static int[] SnackbarLayout = new int[] {
 					16843039,
-					2130903327,
-					2130903534};
+					2130903330,
+					2130903537};
 			
 			// aapt resource value: 0
 			public const int SnackbarLayout_android_maxWidth = 0;
@@ -27205,13 +30139,13 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int Snackbar_snackbarStyle = 1;
 			
-			// aapt resource value: { 0x10100B2,0x1010176,0x101017B,0x1010262,0x7F03023B }
+			// aapt resource value: { 0x10100B2,0x1010176,0x101017B,0x1010262,0x7F03023E }
 			public static int[] Spinner = new int[] {
 					16842930,
 					16843126,
 					16843131,
 					16843362,
-					2130903611};
+					2130903614};
 			
 			// aapt resource value: 3
 			public const int Spinner_android_dropDownWidth = 3;
@@ -27262,22 +30196,22 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 1
 			public const int StateListDrawable_android_visible = 1;
 			
-			// aapt resource value: { 0x1010124,0x1010125,0x1010142,0x7F03026D,0x7F03027B,0x7F03028E,0x7F03028F,0x7F030291,0x7F0302C9,0x7F0302CA,0x7F0302CB,0x7F0302E6,0x7F0302E7,0x7F0302E8 }
+			// aapt resource value: { 0x1010124,0x1010125,0x1010142,0x7F030270,0x7F03027E,0x7F030291,0x7F030292,0x7F030294,0x7F0302CC,0x7F0302CD,0x7F0302CE,0x7F0302E9,0x7F0302EA,0x7F0302EB }
 			public static int[] SwitchCompat = new int[] {
 					16843044,
 					16843045,
 					16843074,
-					2130903661,
-					2130903675,
-					2130903694,
-					2130903695,
+					2130903664,
+					2130903678,
 					2130903697,
-					2130903753,
-					2130903754,
-					2130903755,
-					2130903782,
-					2130903783,
-					2130903784};
+					2130903698,
+					2130903700,
+					2130903756,
+					2130903757,
+					2130903758,
+					2130903785,
+					2130903786,
+					2130903787};
 			
 			// aapt resource value: 1
 			public const int SwitchCompat_android_textOff = 1;
@@ -27336,11 +30270,8 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int TabItem_android_text = 2;
 			
-			// aapt resource value: { 0x7F030292,0x7F030293,0x7F030294,0x7F030295,0x7F030296,0x7F030297,0x7F030298,0x7F030299,0x7F03029A,0x7F03029B,0x7F03029C,0x7F03029D,0x7F03029E,0x7F03029F,0x7F0302A0,0x7F0302A1,0x7F0302A2,0x7F0302A3,0x7F0302A4,0x7F0302A5,0x7F0302A6,0x7F0302A7,0x7F0302A9,0x7F0302AA,0x7F0302AB }
+			// aapt resource value: { 0x7F030295,0x7F030296,0x7F030297,0x7F030298,0x7F030299,0x7F03029A,0x7F03029B,0x7F03029C,0x7F03029D,0x7F03029E,0x7F03029F,0x7F0302A0,0x7F0302A1,0x7F0302A2,0x7F0302A3,0x7F0302A4,0x7F0302A5,0x7F0302A6,0x7F0302A7,0x7F0302A8,0x7F0302A9,0x7F0302AA,0x7F0302AC,0x7F0302AD,0x7F0302AE }
 			public static int[] TabLayout = new int[] {
-					2130903698,
-					2130903699,
-					2130903700,
 					2130903701,
 					2130903702,
 					2130903703,
@@ -27360,9 +30291,12 @@ namespace SalveminiApp.Droid
 					2130903717,
 					2130903718,
 					2130903719,
+					2130903720,
 					2130903721,
 					2130903722,
-					2130903723};
+					2130903724,
+					2130903725,
+					2130903726};
 			
 			// aapt resource value: 0
 			public const int TabLayout_tabBackground = 0;
@@ -27439,7 +30373,7 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 24
 			public const int TabLayout_tabUnboundedRipple = 24;
 			
-			// aapt resource value: { 0x1010095,0x1010096,0x1010097,0x1010098,0x101009A,0x101009B,0x1010161,0x1010162,0x1010163,0x1010164,0x10103AC,0x7F030143,0x7F0302AC }
+			// aapt resource value: { 0x1010095,0x1010096,0x1010097,0x1010098,0x101009A,0x101009B,0x1010161,0x1010162,0x1010163,0x1010164,0x10103AC,0x7F030146,0x7F0302AF }
 			public static int[] TextAppearance = new int[] {
 					16842901,
 					16842902,
@@ -27452,8 +30386,8 @@ namespace SalveminiApp.Droid
 					16843107,
 					16843108,
 					16843692,
-					2130903363,
-					2130903724};
+					2130903366,
+					2130903727};
 			
 			// aapt resource value: 10
 			public const int TextAppearance_android_fontFamily = 10;
@@ -27494,36 +30428,36 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 12
 			public const int TextAppearance_textAllCaps = 12;
 			
-			// aapt resource value: { 0x101009A,0x1010150,0x7F03007E,0x7F03007F,0x7F030080,0x7F030081,0x7F030082,0x7F030083,0x7F030084,0x7F030085,0x7F030086,0x7F0300FB,0x7F0300FC,0x7F0300FD,0x7F0300FE,0x7F030122,0x7F030124,0x7F030187,0x7F030188,0x7F030189,0x7F03018E,0x7F03018F,0x7F030190,0x7F03021C,0x7F03021D,0x7F03021E,0x7F03021F,0x7F030220 }
+			// aapt resource value: { 0x101009A,0x1010150,0x7F030081,0x7F030082,0x7F030083,0x7F030084,0x7F030085,0x7F030086,0x7F030087,0x7F030088,0x7F030089,0x7F0300FE,0x7F0300FF,0x7F030100,0x7F030101,0x7F030125,0x7F030127,0x7F03018A,0x7F03018B,0x7F03018C,0x7F030191,0x7F030192,0x7F030193,0x7F03021F,0x7F030220,0x7F030221,0x7F030222,0x7F030223 }
 			public static int[] TextInputLayout = new int[] {
 					16842906,
 					16843088,
-					2130903166,
-					2130903167,
-					2130903168,
 					2130903169,
 					2130903170,
 					2130903171,
 					2130903172,
 					2130903173,
 					2130903174,
-					2130903291,
-					2130903292,
-					2130903293,
+					2130903175,
+					2130903176,
+					2130903177,
 					2130903294,
-					2130903330,
-					2130903332,
-					2130903431,
-					2130903432,
-					2130903433,
-					2130903438,
-					2130903439,
-					2130903440,
-					2130903580,
-					2130903581,
-					2130903582,
+					2130903295,
+					2130903296,
+					2130903297,
+					2130903333,
+					2130903335,
+					2130903434,
+					2130903435,
+					2130903436,
+					2130903441,
+					2130903442,
+					2130903443,
 					2130903583,
-					2130903584};
+					2130903584,
+					2130903585,
+					2130903586,
+					2130903587};
 			
 			// aapt resource value: 1
 			public const int TextInputLayout_android_hint = 1;
@@ -27609,11 +30543,11 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 27
 			public const int TextInputLayout_passwordToggleTintMode = 27;
 			
-			// aapt resource value: { 0x1010034,0x7F030120,0x7F030121 }
+			// aapt resource value: { 0x1010034,0x7F030123,0x7F030124 }
 			public static int[] ThemeEnforcement = new int[] {
 					16842804,
-					2130903328,
-					2130903329};
+					2130903331,
+					2130903332};
 			
 			// aapt resource value: 0
 			public const int ThemeEnforcement_android_textAppearance = 0;
@@ -27624,37 +30558,37 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 2
 			public const int ThemeEnforcement_enforceTextAppearance = 2;
 			
-			// aapt resource value: { 0x10100AF,0x1010140,0x7F030097,0x7F0300D8,0x7F0300D9,0x7F0300EC,0x7F0300ED,0x7F0300EE,0x7F0300EF,0x7F0300F0,0x7F0300F1,0x7F0301DC,0x7F0301DD,0x7F0301EF,0x7F030201,0x7F030202,0x7F03023B,0x7F030289,0x7F03028A,0x7F03028B,0x7F0302D5,0x7F0302D7,0x7F0302D8,0x7F0302D9,0x7F0302DA,0x7F0302DB,0x7F0302DC,0x7F0302DD,0x7F0302DE }
+			// aapt resource value: { 0x10100AF,0x1010140,0x7F03009A,0x7F0300DB,0x7F0300DC,0x7F0300EF,0x7F0300F0,0x7F0300F1,0x7F0300F2,0x7F0300F3,0x7F0300F4,0x7F0301DF,0x7F0301E0,0x7F0301F2,0x7F030204,0x7F030205,0x7F03023E,0x7F03028C,0x7F03028D,0x7F03028E,0x7F0302D8,0x7F0302DA,0x7F0302DB,0x7F0302DC,0x7F0302DD,0x7F0302DE,0x7F0302DF,0x7F0302E0,0x7F0302E1 }
 			public static int[] Toolbar = new int[] {
 					16842927,
 					16843072,
-					2130903191,
-					2130903256,
-					2130903257,
-					2130903276,
-					2130903277,
-					2130903278,
+					2130903194,
+					2130903259,
+					2130903260,
 					2130903279,
 					2130903280,
 					2130903281,
-					2130903516,
-					2130903517,
-					2130903535,
-					2130903553,
-					2130903554,
-					2130903611,
-					2130903689,
-					2130903690,
-					2130903691,
-					2130903765,
-					2130903767,
+					2130903282,
+					2130903283,
+					2130903284,
+					2130903519,
+					2130903520,
+					2130903538,
+					2130903556,
+					2130903557,
+					2130903614,
+					2130903692,
+					2130903693,
+					2130903694,
 					2130903768,
-					2130903769,
 					2130903770,
 					2130903771,
 					2130903772,
 					2130903773,
-					2130903774};
+					2130903774,
+					2130903775,
+					2130903776,
+					2130903777};
 			
 			// aapt resource value: 0
 			public const int Toolbar_android_gravity = 0;
@@ -27743,19 +30677,19 @@ namespace SalveminiApp.Droid
 			// aapt resource value: 28
 			public const int Toolbar_titleTextColor = 28;
 			
-			// aapt resource value: { 0x1010000,0x10100DA,0x7F030216,0x7F030217,0x7F0302C7 }
+			// aapt resource value: { 0x1010000,0x10100DA,0x7F030219,0x7F03021A,0x7F0302CA }
 			public static int[] View = new int[] {
 					16842752,
 					16842970,
-					2130903574,
-					2130903575,
-					2130903751};
+					2130903577,
+					2130903578,
+					2130903754};
 			
-			// aapt resource value: { 0x10100D4,0x7F03006E,0x7F03006F }
+			// aapt resource value: { 0x10100D4,0x7F030071,0x7F030072 }
 			public static int[] ViewBackgroundHelper = new int[] {
 					16842964,
-					2130903150,
-					2130903151};
+					2130903153,
+					2130903154};
 			
 			// aapt resource value: 0
 			public const int ViewBackgroundHelper_android_background = 0;
