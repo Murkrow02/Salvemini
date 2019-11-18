@@ -37,7 +37,7 @@ namespace SalveminiApi.Controllers
         }
 
         [Route("{id}")]
-        [HttpDelete]
+        [HttpGet]
         public HttpResponseMessage deleteProfilePic(string id)
         {
             var authorize = new Helpers.Utility();

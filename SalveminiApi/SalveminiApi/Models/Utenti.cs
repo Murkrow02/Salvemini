@@ -31,6 +31,9 @@ namespace SalveminiApi.Models
         public int Stato { get; set; }
         public System.DateTime Creazione { get; set; }
         public string ArgoToken { get; set; }
+        public int sCoin { get; set; }
+        public int AdsWatched { internal get; set; }
+        public Nullable<System.DateTime> LastAdWatched { internal get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Avvisi> Avvisi { internal get; set; }

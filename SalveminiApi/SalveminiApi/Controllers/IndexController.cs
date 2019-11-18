@@ -29,6 +29,8 @@ namespace SalveminiApi.Controllers
             //Check Auth
             var authorize = new Helpers.Utility();
             bool authorized = authorize.authorized(Request);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
             //Prendi parametri utente da chiamata
             var id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
@@ -57,6 +59,8 @@ namespace SalveminiApi.Controllers
             returnModel.AppVersion = 1.0M;
             returnModel.OrarioTrasportiVersion = 1;
 
+            //sCoin
+            returnModel.sCoin = utente.sCoin;
 
             //Prendi ultimo avviso
             try

@@ -1,0 +1,8 @@
+System.IO.DirectoryNotFoundException: Impossibile trovare una parte del percorso 'C:\Users\Marco\Desktop\salveminiapp-3.0\SalveminiApi\SalveminiApi\Orari\Classi\4fcam.txt'.
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   in System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   in System.IO.File.ReadAllText(String path)
+   in SalveminiApi.Controllers.DownloadOrariController.getOrarioSiri(String classe) in C:\Users\Marco\Desktop\salveminiapp-3.0\SalveminiApi\SalveminiApi\Controllers\DownloadOrariController.cs:riga 107
