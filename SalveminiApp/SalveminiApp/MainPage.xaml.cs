@@ -843,7 +843,7 @@ namespace SalveminiApp
                     return; //Pre ios 12 can't use this :(
 
                 //Check if intent is already added or user doesen't want to add it
-                if (Preferences.Get("OrarioSiriSet", false) || appearedTimes < 2) //Show on second appearing
+                if (Preferences.Get("OrarioSiriSet", false) ) 
                     return;
 
                 //Save values for siri intent
@@ -874,9 +874,10 @@ namespace SalveminiApp
             }
         }
 
-
+        //todo enable this
         public void sCoin_Tapped(object sender, EventArgs e)
         {
+            return;
             Navigation.PushModalAsync(new SecondaryViews.SalveminiCoin());
         }
 

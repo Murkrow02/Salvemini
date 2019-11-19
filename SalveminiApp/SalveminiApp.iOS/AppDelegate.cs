@@ -16,7 +16,7 @@ using Xamarin.Forms;
 using PanCardView.iOS;
 using System.Threading.Tasks;
 using IntentsUI;
-using Google.MobileAds;
+//using Google.MobileAds;
 
 namespace SalveminiApp.iOS
 {
@@ -97,7 +97,7 @@ namespace SalveminiApp.iOS
 
 
             //Initialize ads
-            MobileAds.SharedInstance.Start(CompletionHandler);
+            //MobileAds.SharedInstance.Start(CompletionHandler);
 
 
             LoadApplication(new App());
@@ -127,7 +127,7 @@ namespace SalveminiApp.iOS
         }
 
         //Ads stuff
-        private void CompletionHandler(InitializationStatus status) { }
+        //private void CompletionHandler(InitializationStatus status) { }
 
 
 

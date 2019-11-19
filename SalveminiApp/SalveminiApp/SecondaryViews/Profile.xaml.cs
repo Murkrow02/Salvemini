@@ -8,9 +8,11 @@ using Plugin.Media.Abstractions;
 using FFImageLoading;
 using FFImageLoading.Cache;
 using FFImageLoading.Forms;
-using Intents;
+
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using Intents;
+using Foundation;
 using UIKit;
 #endif
 
@@ -51,9 +53,18 @@ namespace SalveminiApp.SecondaryViews
 #if __IOS__
             if (UIDevice.CurrentDevice.CheckSystemVersion(12, 0))
             {
-                var siriShortcuts = new Helpers.PushCell { Title = "Scorciatoie di Siri", Separator = "si" };
-                siriShortcuts.GestureRecognizers.Add(tapGestureRecognizer);
-                persLayout.Children.Add(siriShortcuts);
+                //Check if downloaded orario
+                var defaults = new NSUserDefaults("group.com.codex.SalveminiApp", NSUserDefaultsType.SuiteName);
+                defaults.AddSuite("group.com.codex.SalveminiApp");
+                bool exists = !string.IsNullOrEmpty(defaults.StringForKey("SiriClass"));
+
+                if (exists) //Orario saved
+                {
+                    //Exists, add shortcut cell
+                    var siriShortcuts = new Helpers.PushCell { Title = "Scorciatoie di Siri", Separator = "si" };
+                    siriShortcuts.GestureRecognizers.Add(tapGestureRecognizer);
+                    persLayout.Children.Add(siriShortcuts);
+                }
             }
 
 #endif
