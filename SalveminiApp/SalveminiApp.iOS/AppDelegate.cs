@@ -20,7 +20,6 @@ using Google.MobileAds;
 
 namespace SalveminiApp.iOS
 {
-    
     [Register("AppDelegate")]
     public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
@@ -62,12 +61,6 @@ namespace SalveminiApp.iOS
                 HasNotch = false;
                 Console.WriteLine("Error homebar");
             }
-
-            //User defaults playground
-            var defaults = new NSUserDefaults("group.com.codex.SalveminiApp");
-            defaults.SetValueForKey(new NSString("asd"), new NSString("pedo"));
-
-            var asd = defaults.StringForKey(new NSString("pedo"));
 
             //Initialize Processes
             DependencyService.Register<ToastNotification>();
@@ -111,7 +104,7 @@ namespace SalveminiApp.iOS
             }
 
 
-         
+
 
 
             return base.FinishedLaunching(app, options);
@@ -122,27 +115,28 @@ namespace SalveminiApp.iOS
 
 
 
-        //public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
-        //{
-        //    var intent = userActivity.GetInteraction()?.Intent as TrainIntent;
-        //    if (!(intent is null))
-        //    {
-        //        HandleIntent(intent);
-        //        return true;
-        //    }
-        //    else if (userActivity.ActivityType == TrainKit.Support.NSUserActivityHelper.ViewMenuActivityType)
-        //    {
-        //        HandleUserActivity();
-        //        return true;
-        //    }
-        //    return false;
-        //}
+        public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
+        {
+            try
+            {
+                var intent = userActivity.GetInteraction()?.Intent;
+                if (intent.GetType() == new TrenoIntent().GetType())
+                {
+                    Xamarin.Forms.Application.Current.MainPage.Navigation.PushModalAsync(new SecondaryViews.Trasporti.Treni());
+                }
+            }
+            catch
+            {
+
+            }
+            return false;
+        }
 
 
 
         public static async void hapticVibration()
         {
-            Device.BeginInvokeOnMainThread(async() =>
+            Device.BeginInvokeOnMainThread(async () =>
             {
                 var impact = new UIImpactFeedbackGenerator(UIImpactFeedbackStyle.Medium);
                 impact.Prepare();
@@ -150,7 +144,7 @@ namespace SalveminiApp.iOS
                 await Task.Delay(200);
                 impact.ImpactOccurred();
             });
-            
+
         }
     }
 }
