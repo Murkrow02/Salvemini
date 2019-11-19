@@ -314,7 +314,6 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Bacheca.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\WholeModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Argo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\NewSondaggio.xaml.cs">
       <DependentUpon>NewSondaggio.xaml</DependentUpon>
     </Compile>

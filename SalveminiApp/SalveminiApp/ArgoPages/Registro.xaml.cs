@@ -256,7 +256,7 @@ namespace SalveminiApp.ArgoPages
                         titleLayout.Children.Add(teacherLabel);
 
                         //Mark Label
-                        var markLabel = new Xamarin.Forms.Label { FontAttributes = FontAttributes.Bold, TextColor = voto.markColor, Text = voto.codVoto, HorizontalOptions = LayoutOptions.EndAndExpand, FontSize = 20 };
+                        var markLabel = new Forms9Patch.Label { FontAttributes = FontAttributes.Bold, TextColor = voto.markColor, Fit = LabelFit.Width, MaxLines= 1, Text = voto.codVoto, HorizontalOptions = LayoutOptions.FillAndExpand, FontSize = 30 };
 
                         //Add childrens to main layout
                         layout.Children.Add(titleLayout);
@@ -285,7 +285,7 @@ namespace SalveminiApp.ArgoPages
                         titleLayout.Children.Add(teacherLabel);
 
                         //Argomento lezione label
-                        var argumentLabel = new Forms9Patch.Label { FontSize = 15, Lines = 3, Text = argomento.Contenuto, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.FillAndExpand };
+                        var argumentLabel = new Forms9Patch.Label { FontSize = 15, Lines = 8, Text = argomento.Contenuto, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.FillAndExpand };
 
                         //Add childrens to main layout
                         layout.Children.Add(titleLayout);
@@ -314,7 +314,7 @@ namespace SalveminiApp.ArgoPages
                         titleLayout.Children.Add(teacherLabel);
 
                         //Argomento lezione label
-                        var argumentLabel = new Forms9Patch.Label { FontSize = 15, Lines = 3, Text = compito.Contenuto, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.FillAndExpand };
+                        var argumentLabel = new Forms9Patch.Label { FontSize = 15, Lines = 8, Text = compito.Contenuto, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.FillAndExpand };
 
                         //Add childrens to main layout
                         layout.Children.Add(titleLayout);
