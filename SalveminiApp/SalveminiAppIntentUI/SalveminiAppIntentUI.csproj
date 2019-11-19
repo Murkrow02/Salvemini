@@ -111,6 +111,7 @@
       <DependentUpon>IntentViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="RestApi\Models\Treno.cs" />
+    <Compile Include="RestApi\Models\Lezione.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IntentsKit\IntentsKit.csproj">
