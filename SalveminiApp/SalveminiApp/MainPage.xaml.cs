@@ -147,8 +147,9 @@ namespace SalveminiApp
 
 
             //Show loading
-            userRefreshed = false; homeLoading.IsRefreshing = true; 
+            userRefreshed = false; homeLoading.IsRefreshing = true; userRefreshed = true;
 
+            var timer = new Stopwatch(); timer.Start();
             //Sempre meglio mettere il try lol
             try
             {
@@ -297,7 +298,8 @@ namespace SalveminiApp
                     //Update widgets order
                     OrderWidgets(false);
                     homeLoading.IsRefreshing = false;
-
+                    timer.Stop();
+                    Debug.WriteLine(timer.ElapsedMilliseconds);
                     //Get banner ad
                     if (Index.Ads != null && Index.Ads.Count > 0)
                     {
@@ -336,7 +338,7 @@ namespace SalveminiApp
                     Costants.showToast("connection");
                 }
 
-
+               
                 forceAppearing = false;
             }
             catch (Exception ex) //Errore sconosciuto :0
@@ -352,11 +354,7 @@ namespace SalveminiApp
         {
             //Fix bcause this event is triggered even if is refreshed by code
             if (!userRefreshed)
-            {
-                userRefreshed = true;
                 return;
-
-            }
 
             forceAppearing = true;
             OnAppearing();
@@ -877,7 +875,6 @@ namespace SalveminiApp
         //todo enable this
         public void sCoin_Tapped(object sender, EventArgs e)
         {
-            return;
             Navigation.PushModalAsync(new SecondaryViews.SalveminiCoin());
         }
 

@@ -105,6 +105,13 @@ namespace SalveminiApp.FirstAccess
                 Preferences.Set("savedStation", station);
                 Preferences.Set("savedDirection", direction);
 
+#if __IOS__
+                //Save values for siri intent
+                var defaults = new NSUserDefaults("group.com.codex.SalveminiApp", NSUserDefaultsType.SuiteName);
+                defaults.AddSuite("group.com.codex.SalveminiApp");
+                defaults.SetInt(station, new NSString("SiriStation"));
+                defaults.SetBool(direction, new NSString("SiriDirection"));
+#endif
             }
             else
             {

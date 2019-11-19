@@ -16,23 +16,14 @@ using Xamarin.Forms;
 using PanCardView.iOS;
 using System.Threading.Tasks;
 using IntentsUI;
-//using Google.MobileAds;
+using Google.MobileAds;
 
 namespace SalveminiApp.iOS
 {
-    // The UIApplicationDelegate for the application. This class is responsible for launching the 
-    // User Interface of the application, as well as listening (and optionally responding) to 
-    // application events from iOS.
+    
     [Register("AppDelegate")]
     public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
-        //
-        // This method is invoked when the application has loaded and is ready to run. In this 
-        // method you should instantiate the window, load the UI into it and then make the window
-        // visible.
-        //
-        // You have 17 seconds to return from this method, or iOS will terminate your application.
-        //
         public static bool HasNotch = false;
 
 
@@ -97,7 +88,7 @@ namespace SalveminiApp.iOS
 
 
             //Initialize ads
-            //MobileAds.SharedInstance.Start(CompletionHandler);
+            MobileAds.SharedInstance.Start(CompletionHandler);
 
 
             LoadApplication(new App());
@@ -127,7 +118,7 @@ namespace SalveminiApp.iOS
         }
 
         //Ads stuff
-        //private void CompletionHandler(InitializationStatus status) { }
+        private void CompletionHandler(InitializationStatus status) { }
 
 
 

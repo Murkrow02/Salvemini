@@ -4,11 +4,12 @@ using System.Linq;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using UIKit;
-
+using Foundation;
 #endif
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using Plugin.Iconize;
+
 
 namespace SalveminiApp.SecondaryViews.Trasporti
 {
@@ -137,9 +138,21 @@ namespace SalveminiApp.SecondaryViews.Trasporti
             if (stationPicker.SelectedItem != null && TrenoSegment.SelectedSegment != -1)
             {
                 (sender as IconButton).Text = "check-circle";
-                Preferences.Set("savedStation", Costants.Stazioni.FirstOrDefault(x => x.Value == stationPicker.SelectedItem.ToString()).Key);
-                bool direction = Convert.ToBoolean(TrenoSegment.SelectedSegment);
+
+                var station = Costants.Stazioni.FirstOrDefault(x => x.Value == stationPicker.SelectedItem.ToString()).Key;
+                var direction = Convert.ToBoolean(TrenoSegment.SelectedSegment);
+
+                //Save new preferences
+                Preferences.Set("savedStation", station);
                 Preferences.Set("savedDirection", direction);
+
+#if __IOS__
+                //Save values for siri intent
+                var defaults = new NSUserDefaults("group.com.codex.SalveminiApp", NSUserDefaultsType.SuiteName);
+                defaults.AddSuite("group.com.codex.SalveminiApp");
+                defaults.SetInt(station, new NSString("SiriStation"));
+                defaults.SetBool(direction, new NSString("SiriDirection"));
+#endif
             }
         }
     }

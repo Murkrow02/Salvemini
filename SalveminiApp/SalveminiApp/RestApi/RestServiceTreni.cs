@@ -87,6 +87,18 @@ namespace SalveminiApp.RestApi
                 //Remove Campania Express
                 Trains = Trains.Where(x => x.Importanza != "EXP").ToList();
 
+                //Filter by Variations
+                if (DateTime.Today.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    //Remove Feriali if sunday
+                    Trains = Trains.Where(x => x.Variazioni != "FER").ToList();
+                }
+                else
+                {
+                    //Remove Festivi if not sunday
+                    Trains = Trains.Where(x => x.Variazioni != "FES").ToList();
+                }
+
                 //Check if there are more trains
                 if (Trains[Trains.Count - 1].LeaveTime > new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0))
                 {
@@ -99,17 +111,7 @@ namespace SalveminiApp.RestApi
                     return Trains[0];
                 }
 
-                //Filter by Variations
-                if (DateTime.Today.DayOfWeek == DayOfWeek.Sunday)
-                {
-                    //Remove Feriali if sunday
-                    Trains = Trains.Where(x => x.Variazioni != "FER").ToList();
-                }
-                else
-                {
-                    //Remove Festivi if not sunday
-                    Trains = Trains.Where(x => x.Variazioni != "FES").ToList();
-                }
+               
 
                 NextTrain = Trains[0];
             }
