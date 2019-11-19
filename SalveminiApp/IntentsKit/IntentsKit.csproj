@@ -41,10 +41,13 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Base.lproj\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IntentHandler.cs" />
+    <Compile Include="Models\Treno.cs" />
+    <Compile Include="Registro.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Base.lproj\Intents.intentdefinition" />
