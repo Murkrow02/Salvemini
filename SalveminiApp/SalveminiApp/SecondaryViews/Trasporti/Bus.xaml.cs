@@ -57,6 +57,16 @@ namespace SalveminiApp.SecondaryViews.Trasporti
             linePicker.ItemsSource = e.NewValue == 0 ? SitaSource : EavSource;
         }
 
+        private void StationPicker_Unfocused(object sender, FocusEventArgs e)
+        {
+            //Check if a start station is selected
+            if (stationPicker.SelectedItem != null)
+            {
+                //Enable direction segment control
+                directionSegment.IsEnabled = true;
+            }
+        }
+
         void linePicker_Unfocused(object sender, FocusEventArgs e)
         {
             //Check line is selected
@@ -70,6 +80,10 @@ namespace SalveminiApp.SecondaryViews.Trasporti
 
                 //Re-enable the picker
                 stationPicker.IsEnabled = true;
+
+                //Set values to the direction segmented control
+                directionSegment.Children[0].Text = data.Stazioni[0];
+                directionSegment.Children[1].Text = data.Stazioni[data.Stazioni.Count - 1];
             }
         }
     }

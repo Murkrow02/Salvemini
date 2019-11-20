@@ -6,7 +6,7 @@
             <StackLayout  x:Name="fullLayout" Spacing="15" Padding="20, 10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
                 <StackLayout Orientation="Horizontal">
                     <Label HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="White" Text="Assenze" FontSize="40" FontAttributes="Bold" />
-                    <iconize:IconButton Margin="0,0,-10,0" TextColor="White" FontSize="30" BackgroundColor="Transparent" Text="fas-info-circle" Clicked="Info_Tapped" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>
+                    <iconize:IconButton Margin="0,0,-10,0" TextColor="White" FontSize="30" BackgroundColor="Transparent" Text="fas-info-circle" Clicked="Info_Tapped" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" />
                 </StackLayout>
                 <Frame IsClippedToBounds="true" Padding="0" VerticalOptions="Start" HasShadow="false" CornerRadius="15">
                     <Grid>
@@ -28,7 +28,14 @@
                                                     <Label Text="{Binding Professore}" TextColor="{x:Static local:Styles.TextGray}" FontSize="Small" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" />
                                                 </StackLayout>
                                             </StackLayout>
-                                            <local:DashedBorderFrame IsVisible="{Binding SeparatorVisibility}" Padding="0" Margin="-10" HeightRequest="0.1" />
+                                            <local:DashedBorderFrame IsVisible="{Binding SeparatorVisibility}" Padding="0" Margin="-10">
+                                                <local:DashedBorderFrame.HeightRequest>
+                                                    <OnPlatform x:TypeArguments="x:Double">
+                                                        <On Platform="iOS">0.1</On>
+                                                        <On Platform="Android,Windows">0.5</On>
+                                                    </OnPlatform>
+                                                </local:DashedBorderFrame.HeightRequest>
+                                            </local:DashedBorderFrame>
                                         </StackLayout>
                                     </ViewCell>
                                 </DataTemplate>
@@ -46,7 +53,7 @@
                     <Label x:Name="usciteLabel" TextColor="White" FontAttributes="None" FontSize="Large" />
                 </StackLayout>
                 <Frame VerticalOptions="EndAndExpand" HasShadow="false" HorizontalOptions="Center" x:Name="buttonFrame" Padding="0">
-                    <iconize:IconButton BackgroundColor="Transparent"  Clicked="Close_Clicked" Text="fas-times" FontSize="30" TextColor="#FF7272" />
+                    <iconize:IconButton BackgroundColor="Transparent" Clicked="Close_Clicked" Text="fas-times" FontSize="30" TextColor="#FF7272" />
                 </Frame>
             </StackLayout>
         </AbsoluteLayout>
