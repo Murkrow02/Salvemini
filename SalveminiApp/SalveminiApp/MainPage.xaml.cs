@@ -836,7 +836,7 @@ namespace SalveminiApp
                     return; //Pre ios 12 can't use this :(
 
                 //Check if intent is already added or user doesen't want to add it
-                if (Preferences.Get("OrarioSiriSet", false) ) 
+                if (Preferences.Get("OrarioSiriSet", false) || Preferences.Get("DontShowSiriWidget", false)) 
                     return;
 
                 //Save values for siri intent
@@ -852,7 +852,7 @@ namespace SalveminiApp
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     var vc = UIApplication.SharedApplication.KeyWindow.RootViewController;
-                    var popup = new iOS.SiriShortcutPopup(shortcut, "Orario");
+                    var popup = new iOS.SiriShortcutPopup(shortcut, "Orario", false);
                     vc.PresentViewController(popup, true, null);
 
                     //vc.View.AddSubview(popup.View);

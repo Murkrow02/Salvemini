@@ -2,6 +2,7 @@
 using Intents;
 using IntentsUI;
 using UIKit;
+using Xamarin.Essentials;
 using Xamarin.Forms.Platform.iOS;
 
 namespace SalveminiApp.iOS
@@ -10,11 +11,13 @@ namespace SalveminiApp.iOS
     {
         INShortcut shortcut;
         string tipo;
+        bool fromSettings;
 
-        public SiriShortcutPopup(INShortcut shortcut_, string tipo_)
+        public SiriShortcutPopup(INShortcut shortcut_, string tipo_, bool fromSettings_ = true)
         {
             shortcut = shortcut_;
             tipo = tipo_;
+            fromSettings = fromSettings_;
             ModalPresentationStyle = UIModalPresentationStyle.PageSheet;
             View.BackgroundColor = UIColor.White;
         }
@@ -59,9 +62,24 @@ namespace SalveminiApp.iOS
 
             layout.AddArrangedSubview(siriButton);
 
+            var dontshowButton = new UIButton(UIButtonType.System) { TintColor = new UIColor(red: 0.52f, green: 0.52f, blue: 0.52f, alpha: 1.0f) };
+            dontshowButton.SetTitle("Non mostrare più", UIControlState.Normal);
+            dontshowButton.TouchUpInside += DontshowButton_Clicked;
+
+            if (!fromSettings)
+            {
+                layout.AddArrangedSubview(dontshowButton);
+            }
+
             layout.Axis = UILayoutConstraintAxis.Vertical;
             layout.Spacing = 20;
             layout.TranslatesAutoresizingMaskIntoConstraints = false;
+            var closeButton = new UIButton(new CoreGraphics.CGRect(View.Bounds.X + 5, View.Bounds.Y + 5, 30, 30));
+            closeButton.SetTitleColor(UIColor.Red, UIControlState.Normal);
+            closeButton.SetImage(new UIImage("close_image"), UIControlState.Normal);
+            closeButton.TouchUpInside += Close_Clicked;
+
+            layout.Add(closeButton);
 
             View.AddSubview(layout);
 
@@ -75,8 +93,17 @@ namespace SalveminiApp.iOS
             layout.CenterXAnchor.ConstraintEqualTo(View.CenterXAnchor).Active = true;
 
 
-           
+        }
 
+        private void DontshowButton_Clicked(object sender, EventArgs e)
+        {
+            Preferences.Set("DontShowSiriWidget", true);
+            DismissModalViewController(true);
+        }
+
+        private void Close_Clicked(object sender, EventArgs e)
+        {
+            DismissModalViewController(true);
         }
     }
 }
