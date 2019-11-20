@@ -36,7 +36,7 @@ namespace SalveminiApp
         string classeCorso;
         //Giorni popover
         BubblePopup dayPopOver = new Helpers.PopOvers().defaultPopOver;
-        Xamarin.Forms.ListView giorniList = new Xamarin.Forms.ListView { VerticalScrollBarVisibility = ScrollBarVisibility.Never, Footer = "", BackgroundColor = Color.Transparent, SeparatorColor = Color.Gray, WidthRequest = App.ScreenWidth / 4, HeightRequest = App.ScreenHeight / 5 };
+        Xamarin.Forms.ListView giorniList = new Xamarin.Forms.ListView { VerticalScrollBarVisibility = ScrollBarVisibility.Never, Footer = "", BackgroundColor = Color.Transparent, SeparatorColor = Color.Gray, WidthRequest = App.ScreenWidth / 2.8, HeightRequest = App.ScreenHeight / 5 };
         //Fix close modal bug
         public static bool isSelectingImage;
         //Do not update orario if already cached
@@ -129,7 +129,7 @@ namespace SalveminiApp
         }
 
         //Detect if onappearing must be triggered
-        bool forceAppearing; bool userRefreshed = true;
+        public static bool forceAppearing; bool userRefreshed = true;
         protected async override void OnAppearing()
         {
             base.OnAppearing();
@@ -875,7 +875,7 @@ namespace SalveminiApp
         //todo enable this
         public void sCoin_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new SecondaryViews.SalveminiCoin());
+           // Navigation.PushModalAsync(new SecondaryViews.SalveminiCoin());
         }
 
     }

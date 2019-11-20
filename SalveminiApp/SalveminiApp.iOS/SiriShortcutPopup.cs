@@ -38,6 +38,7 @@ namespace SalveminiApp.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
             View.Layer.CornerRadius = 20;
 
             var layout = new UIStackView();
