@@ -70,48 +70,62 @@ namespace SalveminiApp.ArgoPages
             }
             else //No connection
             {
-                Costants.showToast("connection");
+                Costants.showToast("Non è stato possibile scaricare l'allegato, controlla la tua connessione e riprova");
+                return;
             }
 
-            //Create page with webview
-            var content = new ContentPage { Title = (e.SelectedItem as RestApi.Models.Bacheca).formattedTitle, Content = new WebView { Source = (e.SelectedItem as RestApi.Models.Bacheca).Allegati[0].fullUrl } };
-            bool haftaClose = true;
-
-            //Add toolbaritems to the page
-            var barItem = new ToolbarItem { Text = "Chiudi", };
-            barItem.Clicked += (object mandatore, EventArgs f) =>
+            try
             {
-                haftaClose = false;
-                Navigation.PopModalAsync();
-            };
-            content.ToolbarItems.Add(barItem);
+                //Android does not load pdf in web view, open view in default browser
+#if __ANDROID__
+                await Launcher.OpenAsync(new Uri("http://drive.google.com/viewer?url=" + (e.SelectedItem as RestApi.Models.Bacheca).Allegati[0].fullUrl));
+                return;
+#endif
 
-            //Make it navigable
-            var webPage = new Xamarin.Forms.NavigationPage(content) { BarTextColor = Styles.TextColor };
+                //Create page with webview
+                var content = new ContentPage { Title = (e.SelectedItem as RestApi.Models.Bacheca).formattedTitle, Content = new WebView { Source = (e.SelectedItem as RestApi.Models.Bacheca).Allegati[0].fullUrl } };
+                bool haftaClose = true;
 
-            //iOS 13 modal bug
-            webPage.Disappearing += (object disappearer, EventArgs g) =>
-            {
-                try
+                //Add toolbaritems to the page
+                var barItem = new ToolbarItem { Text = "Chiudi", };
+                barItem.Clicked += (object mandatore, EventArgs f) =>
                 {
-                    if (haftaClose)
-                    {
-                        Navigation.PopModalAsync();
-                    }
-                    if (!data.presaVisione)
-                    {
-                        OnAppearing();
-                    }
-                }
-                catch { }
-            };
+                    haftaClose = false;
+                    Navigation.PopModalAsync();
+                };
+                content.ToolbarItems.Add(barItem);
 
-            //Set the presentation to formsheet
+                //Make it navigable
+                var webPage = new Xamarin.Forms.NavigationPage(content) { BarTextColor = Styles.TextColor };
+
+                //iOS 13 modal bug
+                webPage.Disappearing += (object disappearer, EventArgs g) =>
+                {
+                    try
+                    {
+                        if (haftaClose)
+                        {
+                            Navigation.PopModalAsync();
+                        }
+                        if (!data.presaVisione)
+                        {
+                            OnAppearing();
+                        }
+                    }
+                    catch { }
+                };
+
+                //Set the presentation to formsheet
 #if __IOS__
             webPage.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
 #endif
-            //Push there
-            await Navigation.PushModalAsync(webPage);
+                //Push there
+                await Navigation.PushModalAsync(webPage);
+            }
+            catch
+            {
+                Costants.showToast("Non è stato possibile aprire l'allegato");
+            }
         }
 
         protected async override void OnAppearing()

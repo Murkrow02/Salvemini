@@ -168,6 +168,9 @@
     <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie">
       <Version>2.6.3</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Build.Download">
+      <Version>0.4.11</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

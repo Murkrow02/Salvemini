@@ -13,8 +13,8 @@
             </StackLayout>
             <!--Middle label-->
             <StackLayout Spacing="1" HorizontalOptions="CenterAndExpand">
-                <Label x:Name="todayLbl" FontSize="Medium" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" />
-                <Label Text="SalveminiApp internal beta v1" TextColor="#9c9c9c" FontSize="Small" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
+                <Label x:Name="todayLbl" FontSize="Medium" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontAttributes="Bold" />
+                <!--<Label Text="SalveminiApp internal beta v1" TextColor="#9c9c9c" FontSize="Small" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />-->
             </StackLayout>
             <!--Profile Image-->
             <ffimageloading:CachedImage Margin="-2" x:Name="userImg" LoadingPlaceholder="imagePlaceholder" HorizontalOptions="EndAndExpand">

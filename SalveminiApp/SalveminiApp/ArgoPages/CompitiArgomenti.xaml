@@ -26,18 +26,18 @@
 
                 <!--Lista-->
                 <Frame x:Name="listFrame" IsClippedToBounds="true" Padding="0" VerticalOptions="FillAndExpand" HasShadow="false" CornerRadius="15">
-                    <StackLayout Spacing="0">
+                    <StackLayout Spacing="0" Padding="0,0,0,5" BackgroundColor="#f5f5f5">
                         <!--Header-->
                         <StackLayout Spacing="1">
-                            <Grid Padding="6,0" BackgroundColor="#fcfcfc">
+                            <Grid Padding="8,0" >
                                 <!--Filters Label-->
-                                <StackLayout>
-                                    <Label Margin="0" FontSize="22" TextColor="{x:Static local:Styles.TextGray}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" x:Name="clockLabel" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" />
-                                    <Label Margin="0,0,0,5" Text="Dal più recente" FontSize="Small" x:Name="filtersLbl" TextColor="#c7c7c7" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
-                                </StackLayout>
+                                <Label FontSize="20" TextColor="{x:Static local:Styles.TextGray}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" x:Name="clockLabel" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" />
+
                                 <!--Clock icon-->
-                                <iconize:IconButton Margin="0" BackgroundColor="Transparent" Text="fas-history" FontSize="22" HorizontalOptions="End" x:Name="clockButton" TextColor="#333333" Clicked="ShowAll" VerticalOptions="FillAndExpand"/>
+                                <iconize:IconButton Padding="0" Margin="0" BackgroundColor="Transparent" Text="fas-history" FontSize="22" HorizontalOptions="End" x:Name="clockButton" TextColor="{x:Static local:Styles.TextColor}" Clicked="ShowAll" VerticalOptions="FillAndExpand"/>
                             </Grid>
+                            <!--Order label-->
+                            <Label Text="Dal più recente" FontSize="Small" x:Name="filtersLbl" TextColor="#c7c7c7" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
                         </StackLayout>
                         <Grid VerticalOptions="FillAndExpand" >
                             <ListView SelectionMode="None" HasUnevenRows="true" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None" x:Name="lista" VerticalOptions="StartAndExpand">

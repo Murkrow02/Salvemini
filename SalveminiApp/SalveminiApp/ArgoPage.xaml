@@ -59,7 +59,7 @@
                                         <chart:NumericalAxis Minimum="0" Interval="2" Maximum="10">
                                         </chart:NumericalAxis>
                                     </chart:SfChart.SecondaryAxis>
-                                    <chart:PolarSeries EnableTooltip="true" x:Name="radarChartA" Color="#F9CF6F" DrawType="Area" XBindingPath="Materia" YBindingPath="Media">
+                                    <chart:PolarSeries EnableAnimation="True" EnableTooltip="true" x:Name="radarChartA" Color="#F9CF6F" DrawType="Area" XBindingPath="Materia" YBindingPath="Media">
                                         <chart:PolarSeries.DataMarker>
                                             <chart:ChartDataMarker ShowLabel="False" />
                                         </chart:PolarSeries.DataMarker>
