@@ -4,7 +4,7 @@
     <NavigationPage.TitleView>
         <Grid HorizontalOptions="FillAndExpand" Padding="5">
             <!--Coin-->
-            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+            <StackLayout IsVisible="false" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
                 <Image Source="SalveminiCoin.png" x:Name="coinImage"/>
                 <Label x:Name="sCoinLbl" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center"  />
                 <StackLayout.GestureRecognizers>
@@ -71,7 +71,7 @@
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Sponsorizzato -" HorizontalOptions="Start" VerticalTextAlignment="Center" TextColor="{x:Static local:Styles.TextColor}" />
                         <Label x:Name="adTitle" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="Start" />
-                        <iconize:IconButton Text="fas-info-circle" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold" HorizontalOptions="EndAndExpand" />
+                        <!--<iconize:IconButton Text="fas-info-circle" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold" HorizontalOptions="EndAndExpand" />-->
                     </StackLayout>
                     <!--Image-->
                     <Frame HasShadow="False" CornerRadius="8" IsClippedToBounds="True" Padding="0">

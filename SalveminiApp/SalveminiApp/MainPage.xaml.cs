@@ -870,6 +870,7 @@ namespace SalveminiApp
         //todo enable this
         public void sCoin_Tapped(object sender, EventArgs e)
         {
+
            // Navigation.PushModalAsync(new SecondaryViews.SalveminiCoin());
         }
 
