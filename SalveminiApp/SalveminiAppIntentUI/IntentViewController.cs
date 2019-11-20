@@ -88,7 +88,7 @@ namespace SalveminiAppIntentUI
                 var firstlayout = new UIStackView();
 
                 var firststartspacingview = new UIView();
- 
+
                 var firsticon = new UIImageView(new UIImage("train.png"));
 
                 var firstlabel = new UILabel { Text = firstExists ? Treni[0].Partenza : null, Font = UIFont.SystemFontOfSize(19), TextAlignment = UITextAlignment.Left };
@@ -242,16 +242,79 @@ namespace SalveminiAppIntentUI
                 mainLayout.WidthAnchor.ConstraintEqualTo(View.WidthAnchor).Active = true;
                 mainLayout.CenterXAnchor.ConstraintEqualTo(View.CenterXAnchor).Active = true;
 
+                completion(DesiredSize());
+            }
+            else
+            {
+                var Lezioni = new List<RestApi.Models.Lezione>();
+                Lezioni.Add(new RestApi.Models.Lezione { Materia = "Italiano", numOre = 5 });
+                Lezioni.Add(new RestApi.Models.Lezione { Materia = "Matematica", numOre = 2 });
+                Lezioni.Add(new RestApi.Models.Lezione { Materia = "Inglese", numOre = 2 });
 
+                var colori = new Dictionary<string, UIColor>();
+
+                colori.Add(Lezioni.ElementAtOrDefault(0) != null && !colori.ContainsKey(Lezioni[0].Materia) ? Lezioni[0].Materia : "nil0", new UIColor(red: 0.49f, green: 0.47f, blue: 1.00f, alpha: 1.0f));
+                colori.Add(Lezioni.ElementAtOrDefault(1) != null && !colori.ContainsKey(Lezioni[1].Materia) ? Lezioni[1].Materia : "nil1", new UIColor(red: 0.36f, green: 0.69f, blue: 0.90f, alpha: 1.0f));
+                colori.Add(Lezioni.ElementAtOrDefault(2) != null && !colori.ContainsKey(Lezioni[2].Materia) ? Lezioni[2].Materia : "nil2", new UIColor(red: 1.00f, green: 0.73f, blue: 0.31f, alpha: 1.0f));
+                colori.Add(Lezioni.ElementAtOrDefault(3) != null && !colori.ContainsKey(Lezioni[3].Materia) ? Lezioni[3].Materia : "nil3", new UIColor(red: 1.00f, green: 0.44f, blue: 0.39f, alpha: 1.0f));
+                colori.Add(Lezioni.ElementAtOrDefault(4) != null && !colori.ContainsKey(Lezioni[4].Materia) ? Lezioni[4].Materia : "nil4", new UIColor(red: 0.92f, green: 0.35f, blue: 0.92f, alpha: 1.0f));
+                colori.Add(Lezioni.ElementAtOrDefault(5) != null && !colori.ContainsKey(Lezioni[5].Materia) ? Lezioni[5].Materia : "nil5", new UIColor(red: 0.28f, green: 0.92f, blue: 0.60f, alpha: 1.0f));
+                colori.Add(Lezioni.ElementAtOrDefault(6) != null && !colori.ContainsKey(Lezioni[6].Materia) ? Lezioni[6].Materia : "nil6", new UIColor(red: 0.28f, green: 0.92f, blue: 0.60f, alpha: 1.0f));
+
+                int increment = 30;
+                Add(new UILabel(new CGRect(View.Bounds.X + 13, View.Bounds.Y, View.Bounds.Width, 20)) { Text = "Domani", Font = UIFont.BoldSystemFontOfSize(20), TextAlignment = UITextAlignment.Left });
+                foreach (var lesson in Lezioni)
+                {
+                    var cell = new UIView(new CGRect((View.Bounds.Width / 2) - ((View.Bounds.Width * 0.47) / 1), View.Bounds.Y + increment, View.Bounds.Width * 0.9f, 30 * lesson.numOre));
+                    cell.BackgroundColor = colori[lesson.Materia];
+                    cell.Layer.CornerRadius = lesson.numOre > 1 ? 10 : 7;
+                    var label = new UILabel(new CGRect(View.Bounds.X + 5, (cell.Bounds.Height / 2) - 15, View.Bounds.Width * 0.9f, 30)) { Text = lesson.Materia, TextColor = UIColor.White, Font = UIFont.SystemFontOfSize(15), TextAlignment = UITextAlignment.Left };
+                    cell.Add(label);
+                    Add(cell);
+                    increment += (5 + 30 * lesson.numOre);
+                }
+
+                completion(DesiredSize(increment));
             }
 
-            if (completion != null)
-                completion(DesiredSize());
+
+            
         }
 
-        CGSize DesiredSize()
+        CGSize DesiredSize(float size = 180)
         {
-            return new CGSize(this.ExtensionContext?.GetHostedViewMaximumAllowedSize().Width ?? 320, 180);
+            return new CGSize(this.ExtensionContext?.GetHostedViewMaximumAllowedSize().Width ?? 320, size);
+        }
+    }
+
+    public class TableSource : UITableViewSource
+    {
+
+        string[] TableItems;
+        string CellIdentifier = "TableCell";
+
+        public TableSource(string[] items)
+        {
+            TableItems = items;
+        }
+
+        public override nint RowsInSection(UITableView tableview, nint section)
+        {
+            return TableItems.Length;
+        }
+
+        public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
+        {
+            UITableViewCell cell = tableView.DequeueReusableCell(CellIdentifier);
+            string item = TableItems[indexPath.Row];
+
+            //---- if there are no cells to reuse, create a new one
+            if (cell == null)
+            { cell = new UITableViewCell(UITableViewCellStyle.Default, CellIdentifier); }
+
+            cell.TextLabel.Text = item;
+
+            return cell;
         }
     }
 }
