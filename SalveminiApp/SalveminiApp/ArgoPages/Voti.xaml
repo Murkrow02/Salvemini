@@ -4,14 +4,17 @@
         <AbsoluteLayout>
             <ffimageloadingsvg:SvgCachedImage Source="VotiShadow.svg" x:Name="shadowImage" BackgroundColor="Transparent" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1.5, -0.1" />
             <StackLayout x:Name="fullLayout" Spacing="15" Padding="20, 10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+                <!--Title-->
                 <Label HorizontalOptions="Start" TextColor="White" Text="Voti" FontSize="40" FontAttributes="Bold" />
+                <!--Voti list-->
                 <Frame IsClippedToBounds="true" Padding="0" VerticalOptions="Start" HasShadow="false" CornerRadius="15">
                     <Grid>
                         <ListView x:Name="votiList" IsGroupingEnabled="True" BackgroundColor="White" HasUnevenRows="True" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None">
                             <ListView.GroupHeaderTemplate>
                                 <DataTemplate>
                                     <ViewCell>
-                                        <StackLayout Padding="10, 0" Orientation="Horizontal">
+                                        <!--Header-->
+                                        <StackLayout Padding="10, 5" Orientation="Horizontal" BackgroundColor="{x:Static local:Styles.ObjectGray}">
                                             <Label HorizontalOptions="Start" VerticalOptions="Center">
                                                 <Label.FormattedText>
                                                     <FormattedString>
@@ -21,7 +24,7 @@
                                                     </FormattedString>
                                                 </Label.FormattedText>
                                             </Label>
-                                            <iconize:IconButton Text="far-chart-bar" TextColor="{x:Static local:Styles.TextColor}" VerticalOptions="Center" IsVisible="{Binding chartVisibility}" HorizontalOptions="EndAndExpand" Clicked="Chart_Clicked" />
+                                            <iconize:IconButton BackgroundColor="Transparent" Text="far-chart-bar" TextColor="{x:Static local:Styles.TextColor}" VerticalOptions="Center" IsVisible="{Binding chartVisibility}" HorizontalOptions="EndAndExpand" Clicked="Chart_Clicked" />
                                         </StackLayout>
                                     </ViewCell>
                                 </DataTemplate>
@@ -29,6 +32,7 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
+                                        <!--Non fa media hidden button-->
                                         <ViewCell.ContextActions>
                                             <MenuItem Text="{Binding MenuItemText}" IsDestructive="{Binding Distructive}" Clicked="NonFaMedia_Clicked" Command="{Binding FaMedia}" CommandParameter="{Binding .}" />
                                         </ViewCell.ContextActions>
@@ -40,6 +44,7 @@
                                                 <StackLayout Orientation="Horizontal">
                                                     <Label Text="{Binding codVoto}" TextColor="{Binding markColor}" FontSize="32" HorizontalOptions="Start" VerticalOptions="Center" FontAttributes="Bold" />
                                                     <Label Text="Non fa media" FontSize="Small" TextColor="{x:Static local:Styles.TextColor}" IsVisible="{Binding NonFaMedia}" VerticalOptions="Center" />
+                                                    <!--Three points-->
                                                     <StackLayout IsVisible="{Binding dotsVisibility}" Orientation="Horizontal" Spacing="1" VerticalOptions="Start" HorizontalOptions="EndAndExpand">
                                                         <iconize:IconLabel Text="fas-circle" FontSize="5" TextColor="#989696" />
                                                         <iconize:IconLabel Text="fas-circle" FontSize="5" TextColor="#C1C1C1" />
@@ -58,6 +63,7 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
+                        <!--Empty layout-->
                         <StackLayout IsVisible="false" x:Name="emptyLayout" VerticalOptions="Center">
                             <iconize:IconLabel Text="fas-chart-line" VerticalOptions="Center" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" FontSize="40" />
                             <Label HorizontalTextAlignment="Center" x:Name="placeholderLabel" Text="Non hai ancora nessun voto" VerticalOptions="Center" Margin="20, 0" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" />

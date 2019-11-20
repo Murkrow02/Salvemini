@@ -38,7 +38,7 @@
                 </StackLayout>
                 <!--Orario-->
                 <Frame x:Name="orarioFrame" IsVisible="False" Padding="20, 0,20,5" VerticalOptions="Start" IsClippedToBounds="True" BackgroundColor="White" CornerRadius="15" HasShadow="False">
-                    <StackLayout  x:Name="orarioLayout" BackgroundColor="White" Spacing="0">
+                    <StackLayout BackgroundColor="White" Spacing="0">
                         <!--Header-->
                         <StackLayout Orientation="Horizontal" Margin="-5, 0" x:Name="orarioHeader">
                             <!--Oggi + arrow-->
@@ -58,14 +58,6 @@
                 </Frame>
                 <!--WidgetList-->
                 <StackLayout VerticalOptions="Start">
-                    <!--Personalizza-->
-                    <!--<StackLayout Orientation="Horizontal">
-                    <Label Text="Personalizza" TextColor="{x:Static local:Styles.TextColor}" />
-                    <iconize:IconLabel Text="fas-edit" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" />
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="editWidget_Tapped" NumberOfTapsRequired="1" />
-                    </StackLayout.GestureRecognizers>
-                </StackLayout>-->
                     <!--Widgets-->
                     <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Margin="-15,0" x:Name="widgetCollection">
                         <StackLayout x:Name="widgetsLayout" Orientation="Horizontal" Spacing="10">

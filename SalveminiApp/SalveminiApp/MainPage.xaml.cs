@@ -536,11 +536,6 @@ namespace SalveminiApp
             }
         }
 
-        //todo edit widget order
-        void editWidget_Tapped(object sender, System.EventArgs e)
-        {
-        }
-
         //Update orario list (-1 = today)
         public async void changeDay(int day)
         {
@@ -811,7 +806,7 @@ namespace SalveminiApp
                     if (data.Message == "L'orario della classe non è stato trovato")
                     {
                         emptyLayout.IsVisible = true;
-                        orarioLayout.IsVisible = false;
+                        orarioFrame.IsVisible = false;
                     }
                 });
             }

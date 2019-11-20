@@ -27,6 +27,12 @@ namespace SalveminiApp.SecondaryViews.Trasporti
             {
                 UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, true);
             }
+                        //IphoneX optimization
+
+              if (iOS.AppDelegate.HasNotch)
+            {
+                mainLayout.Padding = new Thickness(20, 42);
+            }
 #endif
             //Fill picker
             stationPicker.ItemsSource = Stazioni;
@@ -34,23 +40,13 @@ namespace SalveminiApp.SecondaryViews.Trasporti
             //Try intelligent autoselect
             try
             {
-                var a = Preferences.Get("savedStation", "");
                 stationPicker.SelectedIndex = Preferences.Get("savedStation", -1);
                 TrenoSegment.SelectedSegment = Convert.ToInt32(Preferences.Get("savedDirection", false));
             }
-            catch
+            catch(Exception ex)
             {
                 //Fa niente
             }
-
-            //IphoneX optimization
-#if __IOS__
-            if (iOS.AppDelegate.HasNotch)
-            {
-                mainLayout.Padding = new Thickness(20, 50);
-            }
-#endif
-
         }
 
         protected override void OnAppearing()
