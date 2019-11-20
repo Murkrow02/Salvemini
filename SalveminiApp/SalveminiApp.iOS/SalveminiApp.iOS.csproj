@@ -72,6 +72,8 @@
     <CodesignKey>iPhone Distribution: Marco Coppola (NP46PS7Q98)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>SalveminiAppStore</CodesignProvision>
+    <MtouchLink>Full</MtouchLink>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -149,9 +151,6 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.2</Version>
     </PackageReference>
-    <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout">
-      <Version>17.2.0.49</Version>
-    </PackageReference>
     <PackageReference Include="Xam.Plugin.Iconize">
       <Version>3.5.0.129</Version>
     </PackageReference>
@@ -181,12 +180,6 @@
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
       <Version>2.4.11.982</Version>
-    </PackageReference>
-    <PackageReference Include="PluginsPopup">
-      <Version>1.1.1</Version>
-    </PackageReference>
-    <PackageReference Include="Plugin.Toast">
-      <Version>2.1.2</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfChart">
       <Version>17.2.0.49</Version>
@@ -223,9 +216,6 @@
     </PackageReference>
     <PackageReference Include="Xam.Plugin.Iconize.FontAwesomePro">
       <Version>3.5.0.129</Version>
-    </PackageReference>
-    <PackageReference Include="Syncfusion.Xamarin.SfBadgeView">
-      <Version>17.3.0.19</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfAutoComplete">
       <Version>17.3.0.19</Version>

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Essentials;
-using Syncfusion.XForms.PopupLayout;
 using Plugin.Iconize;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
