@@ -36,7 +36,7 @@ namespace SalveminiApp
         string classeCorso;
         //Giorni popover
         BubblePopup dayPopOver = new Helpers.PopOvers().defaultPopOver;
-        Xamarin.Forms.ListView giorniList = new Xamarin.Forms.ListView { VerticalScrollBarVisibility = ScrollBarVisibility.Never, Footer = "", BackgroundColor = Color.Transparent, SeparatorColor = Color.Gray, WidthRequest = App.ScreenWidth / 2.8, HeightRequest = App.ScreenHeight / 5 };
+        Xamarin.Forms.ListView giorniList = new Xamarin.Forms.ListView { VerticalScrollBarVisibility = ScrollBarVisibility.Never, Footer = "", BackgroundColor = Color.Transparent, SeparatorColor = Color.Gray, WidthRequest = App.ScreenWidth / 3.8, HeightRequest = App.ScreenHeight / 3.8 };
         //Fix close modal bug
         public static bool isSelectingImage;
         //Do not update orario if already cached
