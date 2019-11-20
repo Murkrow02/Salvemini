@@ -4,12 +4,13 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Forms9Patch;
 using System.Linq;
-using UIKit;
-using Intents;
-using IntentsUI;
+
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Foundation;
+using UIKit;
+using Intents;
+using IntentsUI;
 #endif
 
 namespace SalveminiApp.FirstAccess

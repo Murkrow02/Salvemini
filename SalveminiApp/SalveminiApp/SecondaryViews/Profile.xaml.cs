@@ -422,18 +422,5 @@ namespace SalveminiApp.SecondaryViews
         }
     }
 
-    public class UIAlertControllerExtension : UIAlertController
-    {
-        public override void ViewDidLoad()
-        {
-            base.ViewDidLoad();
-            Create("Quale scorciatoia vuoi modificare", null, UIAlertControllerStyle.Alert);
-        }
-
-        public override void ViewDidLayoutSubviews()
-        {
-            base.ViewDidLayoutSubviews();
-            View.TintColor = UIColor.Black;
-        }
-    }
+    
 }

@@ -153,6 +153,9 @@ namespace SalveminiApp.SecondaryViews.Trasporti
                 defaults.SetInt(station, new NSString("SiriStation"));
                 defaults.SetBool(direction, new NSString("SiriDirection"));
 #endif
+
+                //Reload main page
+                MainPage.forceAppearing = true;
             }
         }
     }

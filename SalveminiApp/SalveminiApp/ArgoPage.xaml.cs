@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Xamarin.Essentials;
 using MonkeyCache.SQLite;
 using Syncfusion.SfChart.XForms;
+using System.Linq;
 #if __IOS__
 using UIKit;
 #endif
@@ -37,13 +38,11 @@ namespace SalveminiApp
                     //Get new medie
                     var newMedie = dates.Data as List<RestApi.Models.Pentagono>;
 
-                    //If new medie are different from cache update them
-                    if (newMedie != Medie)
-                    {
-                        //Fill medie list
-                        Medie = newMedie;
-                        showChart();
-                    }
+
+                    //Fill medie list
+                    Medie = newMedie;
+                    showChart();
+
                 }
                 catch //Random error
                 {
@@ -68,9 +67,9 @@ namespace SalveminiApp
         //Fix chart label too long
         private void Chart_LabelCreated(object sender, ChartAxisLabelEventArgs e)
         {
-            if (e.LabelContent.Length > 8)
+            if (e.LabelContent.Length > 12)
             {
-                e.LabelContent = e.LabelContent.Remove(8);
+                e.LabelContent = e.LabelContent.Remove(12) + ".";
             }
         }
 
@@ -79,14 +78,19 @@ namespace SalveminiApp
         {
             if (Medie.Count >= 3)
             {
-                chart.IsVisible = true;
+                chartA.IsVisible = true;
+                chartI.IsVisible = true;
+
                 noSubjectsLayout.IsVisible = false;
-                radarChart.ItemsSource = Medie;
+                radarChartA.ItemsSource = Medie;
+                radarChartI.ItemsSource = Medie;
+
             }
             else
             {
                 //Non abbastanza :(
-                chart.IsVisible = false;
+                chartA.IsVisible = false;
+                chartI.IsVisible = false;
                 noSubjectsLayout.IsVisible = true;
             }
         }
@@ -95,6 +99,9 @@ namespace SalveminiApp
         {
             InitializeComponent();
 
+            //Set heights
+           // widgetsGrid.RowSpacing = App.ScreenHeight / 100;
+
             //Hide Navigation Bar
             NavigationPage.SetHasNavigationBar(this, false);
 
@@ -102,8 +109,9 @@ namespace SalveminiApp
 #if __IOS__
             if (iOS.AppDelegate.HasNotch)
             {
-                mainLayout.Padding = new Thickness(0, 40);
+                mainLayout.Padding = new Thickness(20, 18, 20, 30);
             }
+            //secondRowWidgets.Margin = new Thickness ( 0, 0, 0, 5 );
 #endif
 
             //Cache Grafico
@@ -111,7 +119,9 @@ namespace SalveminiApp
             if (cachedMedie != null)
             {
                 Medie = cachedMedie;
-                radarChart.ItemsSource = Medie;
+                radarChartA.ItemsSource = Medie;
+                radarChartI.ItemsSource = Medie;
+
             }
 
             //Set Sizes
@@ -138,11 +148,11 @@ namespace SalveminiApp
             var note = new ArgoWidget { Title = "Note", Icon = "NoteDisciplinari.svg", StartColor = "F86095", EndColor = "FF6073", Push = new ArgoPages.Note() };
             note.GestureRecognizers.Add(gestureRecognizer);
             firstRowWidgets.Children.Clear();
-            firstRowWidgets.Children.Add(new ContentView { WidthRequest = -30 });
+            firstRowWidgets.Children.Add(new ContentView { WidthRequest = -20 });
             firstRowWidgets.Children.AddRange(new List<ArgoWidget> { assenze, voti, promemoria, bacheca });
             firstRowWidgets.Children.Add(new ContentView { WidthRequest = 0 });
             secondRowWidgets.Children.Clear();
-            secondRowWidgets.Children.Add(new ContentView { WidthRequest = -30 });
+            secondRowWidgets.Children.Add(new ContentView { WidthRequest = -20 });
             secondRowWidgets.Children.AddRange(new List<ArgoWidget> { scrutinio, compiti, argomenti, note });
             secondRowWidgets.Children.Add(new ContentView { WidthRequest = 0 });
         }
