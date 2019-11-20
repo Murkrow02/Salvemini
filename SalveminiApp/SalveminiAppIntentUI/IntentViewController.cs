@@ -39,6 +39,20 @@ namespace SalveminiAppIntentUI
         }
 
         List<RestApi.Models.Treno> Treni = new List<RestApi.Models.Treno>();
+        List<RestApi.Models.Lezione> Lezioni = new List<RestApi.Models.Lezione>();
+
+        void getOrario()
+        {
+            //Get direction and station
+            var defaults = new NSUserDefaults("group.com.codex.SalveminiApp", NSUserDefaultsType.SuiteName);
+            defaults.AddSuite("group.com.codex.SalveminiApp");
+            var classe = defaults.StringForKey(new NSString("SiriClass"));
+
+            //Download strings
+            WebClient wc = new WebClient();
+            var json = wc.DownloadString("https://www.mysalvemini.me/api/orari/siri/oggi/" + classe);
+            Lezioni = JsonConvert.DeserializeObject<List<RestApi.Models.Lezione>>(json);
+        }
 
         void getTrains()
         {
@@ -246,10 +260,12 @@ namespace SalveminiAppIntentUI
             }
             else
             {
-                var Lezioni = new List<RestApi.Models.Lezione>();
-                Lezioni.Add(new RestApi.Models.Lezione { Materia = "Italiano", numOre = 5 });
-                Lezioni.Add(new RestApi.Models.Lezione { Materia = "Matematica", numOre = 2 });
-                Lezioni.Add(new RestApi.Models.Lezione { Materia = "Inglese", numOre = 2 });
+                getOrario();
+
+                if (Lezioni == null || DateTime.Today.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    return;
+                }
 
                 var colori = new Dictionary<string, UIColor>();
 
@@ -261,8 +277,8 @@ namespace SalveminiAppIntentUI
                 colori.Add(Lezioni.ElementAtOrDefault(5) != null && !colori.ContainsKey(Lezioni[5].Materia) ? Lezioni[5].Materia : "nil5", new UIColor(red: 0.28f, green: 0.92f, blue: 0.60f, alpha: 1.0f));
                 colori.Add(Lezioni.ElementAtOrDefault(6) != null && !colori.ContainsKey(Lezioni[6].Materia) ? Lezioni[6].Materia : "nil6", new UIColor(red: 0.28f, green: 0.92f, blue: 0.60f, alpha: 1.0f));
 
-                int increment = 30;
-                Add(new UILabel(new CGRect(View.Bounds.X + 13, View.Bounds.Y, View.Bounds.Width, 20)) { Text = "Domani", Font = UIFont.BoldSystemFontOfSize(20), TextAlignment = UITextAlignment.Left });
+                int increment = 40;
+                Add(new UILabel(new CGRect(View.Bounds.X + 13, View.Bounds.Y + 5, View.Bounds.Width, 25)) { Text = "Invece oggi", Font = UIFont.BoldSystemFontOfSize(20), TextAlignment = UITextAlignment.Left, TextColor = new UIColor(red: 0.24f, green: 0.18f, blue: 0.18f, alpha: 1.0f) });
                 foreach (var lesson in Lezioni)
                 {
                     var cell = new UIView(new CGRect((View.Bounds.Width / 2) - ((View.Bounds.Width * 0.47) / 1), View.Bounds.Y + increment, View.Bounds.Width * 0.9f, 30 * lesson.numOre));
@@ -278,7 +294,7 @@ namespace SalveminiAppIntentUI
             }
 
 
-            
+
         }
 
         CGSize DesiredSize(float size = 180)
