@@ -26,7 +26,7 @@
 
                 <!--Lista-->
                 <Frame x:Name="listFrame" IsClippedToBounds="true" Padding="0" VerticalOptions="FillAndExpand" HasShadow="false" CornerRadius="15">
-                    <StackLayout Spacing="0" Padding="0,0,0,5" BackgroundColor="#f5f5f5">
+                    <StackLayout Spacing="0" BackgroundColor="#f5f5f5">
                         <!--Header-->
                         <StackLayout Spacing="1">
                             <Grid Padding="8,0" >
@@ -37,7 +37,7 @@
                                 <iconize:IconButton Padding="0" Margin="0" BackgroundColor="Transparent" Text="fas-history" FontSize="22" HorizontalOptions="End" x:Name="clockButton" TextColor="{x:Static local:Styles.TextColor}" Clicked="ShowAll" VerticalOptions="FillAndExpand"/>
                             </Grid>
                             <!--Order label-->
-                            <Label Text="Dal più recente" FontSize="Small" x:Name="filtersLbl" TextColor="#c7c7c7" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
+                            <Label Margin="0,0,0,5" Text="Dal più recente" FontSize="Small" x:Name="filtersLbl" TextColor="#c7c7c7" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
                         </StackLayout>
                         <Grid VerticalOptions="FillAndExpand" >
                             <ListView SelectionMode="None" HasUnevenRows="true" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None" x:Name="lista" VerticalOptions="StartAndExpand">
