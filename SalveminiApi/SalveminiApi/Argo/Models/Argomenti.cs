@@ -11,17 +11,12 @@ namespace SalveminiApi.Argo.Models
         public string desMateria { get; set; }
         public string desArgomento { get; set; }
         public string docente { get; set; }
-        //public string codMin { get; set; }
-        //public int numAnno { get; set; }
-        //public int prgMateria { get; set; }
-        //public int prgClasse { get; set; }
-        //public int prgScuola { get; set; }
 
       public string Materia
         {
             get
             {
-                return Helpers.Utility.FirstCharToUpper(desMateria.ToLower());
+                return Costants.ShortSubject(desMateria);
             }
         }
         

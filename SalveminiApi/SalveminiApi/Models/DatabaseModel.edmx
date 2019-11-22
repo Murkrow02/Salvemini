@@ -23,7 +23,6 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Tipo" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Mese" Type="date" Nullable="false" />
           <Property Name="Valore" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Avvisi">
@@ -125,6 +124,14 @@
           <Property Name="Utente" Type="int" Nullable="false" />
           <Property Name="Voto" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="AppInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="AppVersion" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="OrariVersion" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="id" Type="int" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Avvisi_Utenti">
           <End Role="Utenti" Type="Self.Utenti" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -219,6 +226,7 @@
           <EntitySet Name="Sondaggi" EntityType="Self.Sondaggi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Utenti" EntityType="Self.Utenti" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VotiSondaggi" EntityType="Self.VotiSondaggi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AppInfo" EntityType="Self.AppInfo" Schema="Root_DB" store:Type="Tables" />
           <AssociationSet Name="FK_Avvisi_Utenti" Association="Self.FK_Avvisi_Utenti">
             <End Role="Utenti" EntitySet="Utenti" />
             <End Role="Avvisi" EntitySet="Avvisi" />
@@ -264,10 +272,9 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <Property Name="Tipo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Valore" Type="Int32" Nullable="false" />
-          <Property Name="Mese" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="Avvisi">
           <Key>
@@ -508,6 +515,7 @@
             <End Role="VotiSondaggi" EntitySet="VotiSondaggi" />
           </AssociationSet>
           <EntitySet Name="EventsLog" EntityType="SalveminiModel.EventsLog" />
+          <EntitySet Name="AppInfo" EntityType="SalveminiModel.AppInfo" />
         </EntityContainer>
         <EntityType Name="EventsLog">
           <Key>
@@ -516,6 +524,14 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Evento" Type="String" Nullable="false" MaxLength="3000" FixedLength="false" Unicode="true" />
           <Property Name="Data" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="AppInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="AppVersion" Type="Decimal" Precision="10" Scale="1" Nullable="false" />
+          <Property Name="OrariVersion" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -539,7 +555,6 @@
           <EntitySetMapping Name="Analytics">
             <EntityTypeMapping TypeName="SalveminiModel.Analytics">
               <MappingFragment StoreEntitySet="Analytics">
-                <ScalarProperty Name="Mese" ColumnName="Mese" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
                 <ScalarProperty Name="Valore" ColumnName="Valore" />
@@ -651,6 +666,15 @@
                 <ScalarProperty Name="Data" ColumnName="Data" />
                 <ScalarProperty Name="Evento" ColumnName="Evento" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppInfo">
+            <EntityTypeMapping TypeName="SalveminiModel.AppInfo">
+              <MappingFragment StoreEntitySet="AppInfo">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="OrariVersion" ColumnName="OrariVersion" />
+                <ScalarProperty Name="AppVersion" ColumnName="AppVersion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

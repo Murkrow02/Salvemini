@@ -435,6 +435,7 @@
     <Compile Include="Controllers\SalveminiCardController.cs" />
     <Compile Include="Controllers\SondaggisController.cs" />
     <Compile Include="Controllers\UtentiController.cs" />
+    <Compile Include="Controllers\UtilityController.cs" />
     <Compile Include="Gestione\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -462,6 +463,9 @@
     <Compile Include="Models\Analytics.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AppInfo.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Avvisi.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -471,6 +475,7 @@
     <Compile Include="Models\BookUtenti.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Treno.cs" />
     <Compile Include="Models\DatabaseModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -554,7 +559,6 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
       <LastGenOutput>DatabaseModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Orari\Classi\4FCAM.txt" />
     <Content Include="Orari\OrariTreni.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -650,6 +654,7 @@
     <Folder Include="Helpers\Crashes\Client\" />
     <Folder Include="Images\sondaggi\" />
     <Folder Include="Images\users\" />
+    <Folder Include="Orari\Classi\" />
     <Folder Include="Views\Auth\" />
     <Folder Include="Views\Images\" />
   </ItemGroup>

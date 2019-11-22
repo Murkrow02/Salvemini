@@ -27,7 +27,15 @@ namespace SalveminiApi.Controllers
             if (!authorized)
                 throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
-            return db.Analytics.ToList();
+            var fullAnalytics = new List<Analytics>();
+
+            //Add db saved analytics
+            fullAnalytics.AddRange(db.Analytics.ToList());
+
+            //Add user count
+            fullAnalytics.Add(new Analytics { Tipo = "UtentiCount", Valore = db.Utenti.Count() });
+
+            return fullAnalytics;
         }
 
         [Route("console")]

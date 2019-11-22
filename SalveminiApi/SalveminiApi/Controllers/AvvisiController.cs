@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -29,10 +30,20 @@ namespace SalveminiApi.Controllers
             if (!authorized)
                 throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
+           
+
             //Prendi avvisi
             try
             {
                 var avvisi = db.Avvisi.OrderByDescending(x => x.Creazione).ToList();
+
+                //Aggiungi visualizzazione ad analytics
+                if (avvisi == null || avvisi.Count < 1)
+                    throw new HttpResponseException(HttpStatusCode.NotFound);
+
+                //Add avviso view to analytics
+                Helpers.Utility.addToAnalytics("UltimoAvviso");
+
                 return avvisi;
             }
             catch(Exception ex)
@@ -62,6 +73,8 @@ namespace SalveminiApi.Controllers
                 //Aggiungi avviso al database
                 avviso.Creazione = Helpers.Utility.italianTime();
                 db.Avvisi.Add(avviso);
+                //Remove previous avvisi visual
+                try { db.Analytics.ToList().RemoveAll(x => x.Tipo == "UltimoAvviso"); } catch { }
                 db.SaveChanges();
             }
             catch(Exception ex)
@@ -94,7 +107,7 @@ namespace SalveminiApi.Controllers
                     return new HttpResponseMessage(HttpStatusCode.OK);
                 }
             }
-           
+
 
             //Add to console log
             Helpers.Utility.saveEvent(mittente.Nome + "(" + avviso.idCreatore + ")" + " ha creato l'avviso " + avviso.Titolo + "(" + avviso.id + ")");
@@ -124,6 +137,13 @@ namespace SalveminiApi.Controllers
             {
                 //Elimina avviso
                 db.Avvisi.Remove(avviso);
+
+                //Delete images
+                var images = avviso.Immagini.Split(',').ToList();
+                foreach(var image in images)
+                {
+                    File.Delete(HttpContext.Current.Server.MapPath("~/Images/avvisi/" + image + ".png"));
+                }
                 db.SaveChanges();
             }
             catch(Exception ex)

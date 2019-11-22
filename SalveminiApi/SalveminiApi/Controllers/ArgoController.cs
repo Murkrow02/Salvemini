@@ -270,7 +270,7 @@ namespace SalveminiApi.Controllers
                 foreach (var voto in votiGrouped[i])
                 {
                     listaVoti.Add(voto);
-                    groupedMateria.Materia = voto.desMateria;
+                    groupedMateria.Materia = voto.Materia;
                 }
 
 

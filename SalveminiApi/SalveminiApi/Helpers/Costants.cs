@@ -15,5 +15,48 @@ namespace SalveminiApi
             return "https://www.portaleargo.it/famiglia/api/rest/messaggiobachecanuova?id=FFFSS16836EEEII0000" + prgAllegato + "00000000" + prgMessaggio + "{token}" + argoKey;
         }
 
+        //Return our dictionary's subject or a formatted string if there isn't one
+        public static string ShortSubject(string subject)
+        {
+            if (SubjectsList.ContainsKey(subject))
+            {
+                return SubjectsList[subject];
+            }
+            else
+            {
+               return Helpers.Utility.FirstCharToUpper(subject.ToLower());
+            }
+        }
+
+        //Dizionario materie privato ARGO FA SCHIFO
+        public static Dictionary<string, string> SubjectsList = new Dictionary<string, string>
+        {
+            {"LINGUA e LETTERATURA ITALIANA","Letteratura" },
+            { "DISEGNO E STORIA DELL'ARTE","Arte e Disegno" },
+            { "FILOSOFIA","Filosofia" },
+            { "LINGUA E CULTURA STRANIERA(INGLESE)","Inglese" },
+            { "MATEMATICA","Matematica" },
+            { "FISICA","Fisica" },
+            { "INFORMATICA","Informatica" },
+            { "STORIA","Storia" },
+            { "SCIENZE NATURALI","Scienze" },
+            { "LINGUA E CULTURA STRANIERA(FRANCESE)","Francese" },
+            { "LINGUA E CULTURA STRANIERA(SPAGNOLO)","Spagnolo" },
+            { "CONVERSAZIONE IN LINGUA STRANIERA (FRANCESE)","Francese" },
+            { "STORIA DELL'ARTE","Arte" },
+            { "Biology nei corsi Cambridge","Biology" },
+            { "LINGUA e CULTURA LATINA","Latino" },
+            { "RELIGIONE","Religione" },
+            { "SCIENZE MOTORIE E SPORTIVE","Ed. Fisica" },
+            { "History nei corsi Cambridge","History" },
+            { "LINGUA E CULTURA STRANIERA(TEDESCO)","Tedesco" },
+            { "English Literature nei corsi Cambridge","Literature" },
+            { "CONVERSAZIONE IN LINGUA STRANIERA (SPAGNOLO)","Spagnolo" },
+            { "STORIA E GEOGRAFIA","Storia e Geografia" },
+            { "MATEMATICA (CON INFORMATICA)","Matematica e informatica" },
+
+
+        };
+
     }
 }

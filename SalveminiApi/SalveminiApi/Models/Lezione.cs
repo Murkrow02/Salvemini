@@ -11,5 +11,7 @@ namespace SalveminiApi.Models
             public int Ora { get; set; }
             public string Materia { get; set; }
             public string Sede { get; set; }
+            public int numOre { get; set; }
+            public bool toRemove {internal get; set; }
         }
 }
