@@ -10,7 +10,7 @@ namespace SalveminiApp
         public static Page pushPage;
 
         //Title
-        public static readonly BindableProperty TitleProperty = BindableProperty.Create(nameof(Title), typeof(string), typeof(WidgetGradient), default(string), Xamarin.Forms.BindingMode.OneWay);
+        public static readonly BindableProperty TitleProperty = BindableProperty.Create(nameof(Title), typeof(string), typeof(ArgoWidget), default(string), Xamarin.Forms.BindingMode.OneWay);
         public string Title
         {
             get
@@ -25,7 +25,7 @@ namespace SalveminiApp
         }
 
         //Icon
-        public static readonly BindableProperty IconProperty = BindableProperty.Create(nameof(Icon), typeof(string), typeof(WidgetGradient), default(string), Xamarin.Forms.BindingMode.OneWay);
+        public static readonly BindableProperty IconProperty = BindableProperty.Create(nameof(Icon), typeof(string), typeof(ArgoWidget), default(string), Xamarin.Forms.BindingMode.OneWay);
         public string Icon
         {
             get
@@ -40,7 +40,7 @@ namespace SalveminiApp
         }
 
         //StartColor
-        public static readonly BindableProperty StartColorProperty = BindableProperty.Create(nameof(StartColor), typeof(string), typeof(WidgetGradient), default(string), Xamarin.Forms.BindingMode.OneWay);
+        public static readonly BindableProperty StartColorProperty = BindableProperty.Create(nameof(StartColor), typeof(string), typeof(ArgoWidget), default(string), Xamarin.Forms.BindingMode.OneWay);
         public string StartColor
         {
             get
@@ -55,7 +55,7 @@ namespace SalveminiApp
         }
 
         //EndColor
-        public static readonly BindableProperty EndColorProperty = BindableProperty.Create(nameof(EndColor), typeof(string), typeof(WidgetGradient), default(string), Xamarin.Forms.BindingMode.OneWay);
+        public static readonly BindableProperty EndColorProperty = BindableProperty.Create(nameof(EndColor), typeof(string), typeof(ArgoWidget), default(string), Xamarin.Forms.BindingMode.OneWay);
         public string EndColor
         {
             get
@@ -70,7 +70,7 @@ namespace SalveminiApp
         }
 
         //PushTo
-        public static readonly BindableProperty PushProperty = BindableProperty.Create(nameof(Push), typeof(Page), typeof(WidgetGradient), default(Page), Xamarin.Forms.BindingMode.OneWay);
+        public static readonly BindableProperty PushProperty = BindableProperty.Create(nameof(Push), typeof(Page), typeof(ArgoWidget), default(Page), Xamarin.Forms.BindingMode.OneWay);
         public Page Push
         {
             get
@@ -85,7 +85,7 @@ namespace SalveminiApp
         }
 
         //Order
-        public static readonly BindableProperty OrderProperty = BindableProperty.Create(nameof(Order), typeof(int), typeof(WidgetGradient), default(int), Xamarin.Forms.BindingMode.OneWay);
+        public static readonly BindableProperty OrderProperty = BindableProperty.Create(nameof(Order), typeof(int), typeof(ArgoWidget), default(int), Xamarin.Forms.BindingMode.OneWay);
         public int Order
         {
             get
