@@ -5,6 +5,7 @@
             <ActivityIndicator x:Name="loading" VerticalOptions="Center"/>
             <Label x:Name="accessiLbl" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
             <Label x:Name="avvisiLbl" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
+                        <Label x:Name="utentiLbl" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

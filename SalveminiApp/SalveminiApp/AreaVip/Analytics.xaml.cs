@@ -25,17 +25,23 @@ namespace SalveminiApp.AreaVip
             var analytics = await App.Analytics.GetAnalytics();
 
             //Take accessi count
-            var accessi = analytics.Where(x => x.Tipo == "Accessi").ToList();
+            var accessi = analytics.FirstOrDefault(x => x.Tipo == "Accessi");
 
             //Take last avviso visual count
-            var avvisi = analytics.Where(x => x.Tipo == "UltimoAvviso").ToList();
+            var avvisi = analytics.FirstOrDefault(x => x.Tipo == "UltimoAvviso");
+
+            //Take user count
+            var utenti = analytics.FirstOrDefault(x => x.Tipo == "UtentiCount");
 
             //Show in label
-            if (accessi.Count > 0)
-                accessiLbl.Text = "Accessi totali: " + accessi[0].Valore;
+            if (accessi != null)
+                accessiLbl.Text = "Accessi totali: " + accessi.Valore;
 
-            if (avvisi.Count > 0)
-                avvisiLbl.Text = "Visualizzazioni ultimo avviso: " + avvisi[0].Valore;
+            if (accessi != null)
+                avvisiLbl.Text = "Visualizzazioni ultimo avviso: " + avvisi.Valore;
+
+            if (accessi != null)
+                utentiLbl.Text = "Utenti: " + utenti.Valore;
 
             loading.IsRunning = false;
 
