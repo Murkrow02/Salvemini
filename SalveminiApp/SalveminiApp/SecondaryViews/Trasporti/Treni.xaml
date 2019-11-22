@@ -3,7 +3,8 @@
     <ContentPage.Content>
         <yummy:PancakeView BackgroundGradientStartColor="#FA8265" BackgroundGradientEndColor="#FF430A">
             <StackLayout Spacing="20" x:Name="mainLayout" Padding="20, 10">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="0" Margin="-10,0">
+                <StackLayout x:Name="headerLayout" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="0" Margin="-10,0">
+
                     <!--X-->
                     <iconize:IconButton BackgroundColor="Transparent" Text="fas-times" Clicked="Close_Page" TextColor="White" FontAttributes="Bold" HorizontalOptions="Start" FontSize="30" />
                     <!--Title-->
@@ -12,11 +13,12 @@
                     <iconize:IconButton BackgroundColor="Transparent" x:Name="starButton" Clicked="Starred_Clicked" Text="far-star" TextColor="White" FontAttributes="Bold" HorizontalOptions="End" FontSize="30" />
                     <!--Safari icon-->
                     <iconize:IconButton BackgroundColor="Transparent" Text="far-compass" TextColor="White" FontAttributes="Bold" HorizontalOptions="End" FontSize="30" Clicked="Safari_Clicked"/>
+                  
                 </StackLayout>
                 <StackLayout Spacing="10" Margin="20 ,0">
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label HorizontalOptions="Start" Text="Da:" TextColor="White" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
-                        <Frame x:Name="stationFrame" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, -1">
+                        <Frame x:Name="stationFrame" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="2, -1">
                             <Picker Unfocused="picker_Unfocused" TextColor="{x:Static local:Styles.TextColor}" x:Name="stationPicker" HeightRequest="50" TitleColor="#EAEAEA"  HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
                         </Frame>
                     </StackLayout>

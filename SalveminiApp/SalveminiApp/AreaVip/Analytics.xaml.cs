@@ -15,16 +15,30 @@ namespace SalveminiApp.AreaVip
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            int accessi = 0;
+            int accessiCount = 0;
+            int avvisiCount = 0;
+
+            //Show loading
+            loading.IsRunning = true;
+
+            //Download data
             var analytics = await App.Analytics.GetAnalytics();
-            var questoMese = analytics.Where(x => x.Mese.Month == DateTime.Today.Month && x.Tipo == "Accessi").ToList();
 
-            foreach(RestApi.Models.Analytics accesso in analytics)
-            {
-                accessi += accesso.Valore;
-            }
+            //Take accessi count
+            var accessi = analytics.Where(x => x.Tipo == "Accessi").ToList();
 
-            accessiLbl.Text = "Questo mese ci sono stati " + accessi.ToString() + " accessi";
+            //Take last avviso visual count
+            var avvisi = analytics.Where(x => x.Tipo == "UltimoAvviso").ToList();
+
+            //Show in label
+            if (accessi.Count > 0)
+                accessiLbl.Text = "Accessi totali: " + accessi[0].Valore;
+
+            if (avvisi.Count > 0)
+                avvisiLbl.Text = "Visualizzazioni ultimo avviso: " + avvisi[0].Valore;
+
+            loading.IsRunning = false;
+
         }
     }
 }

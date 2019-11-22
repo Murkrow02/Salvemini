@@ -11,6 +11,7 @@ using Plugin.Toasts;
 using PanCardView.Droid;
 using Acr.UserDialogs;
 using Xamarin.Forms;
+using Android.Gms.Ads;
 
 namespace SalveminiApp.Droid
 {
@@ -47,12 +48,16 @@ namespace SalveminiApp.Droid
             Syncfusion.XForms.Android.PopupLayout.SfPopupLayoutRenderer.Init();
             Plugin.Iconize.Iconize.Init(Resource.Id.toolbar, Resource.Id.sliding_tabs);
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
-            DependencyService.Register<ToastNotification>(); // Register your dependency
+            DependencyService.Register<ToastNotification>(); //Register your dependency
             ToastNotification.Init(this);
             UserDialogs.Init(this);
             Forms9Patch.Droid.Settings.Initialize(this);
             CardsViewRenderer.Preserve();
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
+
+            //Initialize ads
+            MobileAds.Initialize(ApplicationContext, "ca-app-pub-2688730930606353~9126211172");
+
 
             LoadApplication(new App());
         }

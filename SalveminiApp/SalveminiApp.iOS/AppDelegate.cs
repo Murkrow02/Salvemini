@@ -100,16 +100,17 @@ namespace SalveminiApp.iOS
 
                 app.RegisterUserNotificationSettings(notificationSettings);
             }
-
-
-
-
-
             return base.FinishedLaunching(app, options);
         }
 
-        //Ads stuff
-        private void CompletionHandler(InitializationStatus status) { }
+		[Export("oneSignalApplicationDidBecomeActive:")]
+		public void OneSignalApplicationDidBecomeActive(UIApplication application)
+		{
+			Console.WriteLine("oneSignalApplicationDidBecomeActive:");
+		}
+
+		//Ads stuff
+		private void CompletionHandler(InitializationStatus status) { }
 
 
 

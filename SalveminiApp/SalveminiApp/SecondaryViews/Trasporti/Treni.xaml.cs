@@ -33,6 +33,10 @@ namespace SalveminiApp.SecondaryViews.Trasporti
             {
                 mainLayout.Padding = new Thickness(20, 42);
             }
+
+              //Fix spacing only on iOS
+            headerLayout.Spacing = 15;
+            headerLayout.Margin = new Thickness(0);
 #endif
             //Fill picker
             stationPicker.ItemsSource = Stazioni;

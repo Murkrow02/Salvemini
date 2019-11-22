@@ -1,18 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Xamarin.Essentials;
 
 namespace SalveminiApp.RestApi
 {
-    public class RestServiceAnalytics: IRestServiceAnalytics
+    public class RestServiceAnalytics : IRestServiceAnalytics
     {
         HttpClient client;
         public List<Models.Analytics> Analytics = new List<Models.Analytics>();
         public List<Models.EventLog> ConsoleEvents = new List<Models.EventLog>();
+        public Models.AppInfo info = new Models.AppInfo();
 
         public RestServiceAnalytics()
         {
@@ -62,9 +65,57 @@ namespace SalveminiApp.RestApi
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(@"              ERROR {0}", ex.Message);
+                Debug.WriteLine(@"Error getting console", ex.Message);
             }
             return ConsoleEvents;
+        }
+
+        public async Task<Models.AppInfo> GetAppInfo()
+        {
+            info = new Models.AppInfo();
+
+            var uri = Costants.Uri("utility/appinfo");
+
+            try
+            {
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    info = JsonConvert.DeserializeObject<Models.AppInfo>(content);
+                }
+                else return null;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@" Error getting app info", ex.Message);
+                return null;
+            }
+            return info;
+        }
+
+        public async Task<bool> PostAppInfo(Models.AppInfo newInfo)
+        {
+
+            var uri = Costants.Uri("utility/newappinfo");
+
+            try
+            {
+                var json = JsonConvert.SerializeObject(newInfo);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await client.PostAsync(uri, content);
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+                else return false;
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Errore post new app info", ex.Message);
+                return false;
+            }
+
         }
     }
 
@@ -72,6 +123,8 @@ namespace SalveminiApp.RestApi
     {
         Task<List<Models.Analytics>> GetAnalytics();
         Task<List<Models.EventLog>> GetConsole();
+        Task<Models.AppInfo> GetAppInfo();
+        Task<bool> PostAppInfo(Models.AppInfo info);
 
     }
 
@@ -94,5 +147,14 @@ namespace SalveminiApp.RestApi
             return restServiceAnalytics.GetConsole();
         }
 
+        public Task<Models.AppInfo> GetAppInfo()
+        {
+            return restServiceAnalytics.GetAppInfo();
+        }
+
+       public Task<bool> PostAppInfo(Models.AppInfo info)
+        {
+            return restServiceAnalytics.PostAppInfo(info);
+        }
     }
 }

@@ -48,9 +48,11 @@ namespace SalveminiApp
         {
             InitializeComponent();
 
-            //Set profile image size
+            //Set sizes
             userImg.WidthRequest = App.ScreenWidth / 8.8;
             coinImage.WidthRequest = App.ScreenWidth / 13;
+            hintOrario.WidthRequest = App.ScreenWidth / 13;
+            hintOrario.HeightRequest = App.ScreenWidth / 13;
 
             //Set navigation view
             todayLbl.Text = DateTime.Now.ToString("dddd").FirstCharToUpper();
@@ -90,7 +92,9 @@ namespace SalveminiApp
                 RemoveBadge(tipo);
             });
 
-
+            //Hide or show hints
+            if (!Preferences.Get("showHintOrario", true))
+                hintOrario.IsVisible = false;
 
             ////Get orario cached
             //var orarioCached = CacheHelper.GetCache<List<RestApi.Models.Lezione>>("orario" + Preferences.Get("Classe", 0) + Preferences.Get("Corso", ""));
@@ -327,7 +331,7 @@ namespace SalveminiApp
                     }
 
                     //Check app version
-                    var appversion = Convert.ToDecimal(VersionTracking.CurrentVersion);
+                    var appversion = Convert.ToDecimal(VersionTracking.CurrentBuild);
                     if (Index.AppVersion > appversion)
                         newVersion(); //New version detected
 
@@ -405,6 +409,10 @@ namespace SalveminiApp
         //Show popover with daylist
         void ChangeDay_Clicked(object sender, System.EventArgs e)
         {
+            //Hide initial hint
+            Preferences.Set("showHintOrario", false);
+            hintOrario.IsVisible = false;
+
             //Create new popover
             dayPopOver = new Helpers.PopOvers().defaultPopOver;
             dayPopOver.Content = giorniList;
@@ -771,7 +779,7 @@ namespace SalveminiApp
         public async void newVersion()
         {
             //Check App Version
-            var appversion = Convert.ToDecimal(VersionTracking.CurrentVersion);
+            var appversion = Convert.ToDecimal(VersionTracking.CurrentBuild);
             if (Index.AppVersion > appversion && appearedTimes % 2 == 0) //Show this only 1/2
             {
                 bool choice = await DisplayAlert("Buone notizie!", "È disponibile un aggiornamento dell'app, recati sullo store per effettuarlo!", "Aggiorna", "Chiudi");

@@ -47,6 +47,9 @@ namespace SalveminiApp.SecondaryViews
             var tapGestureRecognizer = new TapGestureRecognizer();
             tapGestureRecognizer.Tapped += TapGestureRecognizer_Tapped;
 
+            //Set version label
+            versionLabel.Text = "Versione " + VersionTracking.CurrentBuild;
+
             //Fill lists
             //Personalizza
 
@@ -116,6 +119,9 @@ namespace SalveminiApp.SecondaryViews
             var deleteAvvisi = new Helpers.PushCell { Title = "Elimina avviso", Separator = "si", Push = new AreaVip.EliminaAvviso() };
             deleteAvvisi.GestureRecognizers.Add(tapGestureRecognizer);
             superVipLayout.Children.Add(deleteAvvisi);
+            var appInfo = new Helpers.PushCell { Title = "App Info", Separator = "si", Push = new AreaVip.AppInfo() };
+            appInfo.GestureRecognizers.Add(tapGestureRecognizer);
+            superVipLayout.Children.Add(appInfo);
             var accediCon = new Helpers.PushCell { Title = "Controlla utenti", Separator = "no", Push = new AreaVip.UtentiList(true) };
             accediCon.GestureRecognizers.Add(tapGestureRecognizer);
             superVipLayout.Children.Add(accediCon);
@@ -371,6 +377,12 @@ namespace SalveminiApp.SecondaryViews
                     //Treni Button
                     var TreniAction = UIAlertAction.Create("Treni", UIAlertActionStyle.Default, (action) =>
                     {
+                        if(Preferences.Get("savedStation",-1) == -1 && Preferences.Get("savedDirection",false) == false)
+                        {
+                            DisplayAlert("Attenzione", "Non hai salvato una stazione preferita. Per farlo vai alla home e clicca sul widget treni, apri la sezione treni e clicca sulla stella per salvare la tratta che preferisci", "Ok");
+                            return;
+                        }
+
                         //Create intent
                         var trenoIntent = new TrenoIntent();
                         trenoIntent.SuggestedInvocationPhrase = "Prossimo treno";
@@ -393,10 +405,6 @@ namespace SalveminiApp.SecondaryViews
 
                     //Display Cool Alert
                     var controller = UIAlertController.Create("Quale scorciatoia vuoi modificare", null, UIAlertControllerStyle.Alert);
-                    //if (utente.id != 2106)
-                    //{
-                    //    controller.View.TintColor = UIColor.Black;
-                    //}
                     controller.AddAction(TreniAction);
                     controller.AddAction(OrarioAction);
                     controller.AddAction(UIAlertAction.Create("Annulla", UIAlertActionStyle.Cancel, null));
@@ -422,5 +430,5 @@ namespace SalveminiApp.SecondaryViews
         }
     }
 
-    
+
 }

@@ -25,7 +25,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>x86_64</MtouchArch>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
     <CodesignKey>iPhone Developer</CodesignKey>
@@ -72,8 +72,8 @@
     <CodesignKey>iPhone Distribution: Marco Coppola (NP46PS7Q98)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>SalveminiAppStore</CodesignProvision>
-    <MtouchLink>Full</MtouchLink>
-    <MtouchUseLlvm>true</MtouchUseLlvm>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchExtraArgs>--optimize=-remove-dynamic-registrar</MtouchExtraArgs>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />

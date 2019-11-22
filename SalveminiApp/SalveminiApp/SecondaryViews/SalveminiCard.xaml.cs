@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using MonkeyCache.SQLite;
 using Xamarin.Essentials;
 using System.Diagnostics;
+using System.Threading.Tasks;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using UIKit;
@@ -25,7 +26,7 @@ namespace SalveminiApp.SecondaryViews
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
             if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0) && !iOS.AppDelegate.HasNotch)
             {
-                mainLayout.Padding = new Thickness(25, 20,25, 0);
+                mainLayout.Padding = new Thickness(25, 20, 25, 0);
             }
             //UIApplication.SharedApplication.StatusBarHidden = true;
 #endif
@@ -46,27 +47,48 @@ namespace SalveminiApp.SecondaryViews
                 UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, true);
             }
 #endif
-            //Animation
-            await card.RotateYTo(0, 600, Easing.BounceOut);
+            //Start refereshing
+            offersList.IsRefreshing = true;
 
-            //Download offerte
+            //Download offers in background
+            await Task.Run((Action)DownloadOfferte);
+
+            //Animation
+            await card.RotateYTo(0, 800, Easing.BounceOut);
+
+        }
+
+
+        async void DownloadOfferte()
+        {
+            //Check connection
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                var offerte_ = await App.Card.GetOfferte();
-                if (offerte_.Count < 1)
-                {
-                    //Non possibile caricare nuove offerte
-                }
-                else
-                {
-                    offersList.ItemsSource = offerte_;
-                }
-            }
-            else
-            {
-                Costants.showToast("connection");
-            }
+                //Download offerte
+                offerte = await App.Card.GetOfferte();
 
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    if (offerte.Count < 1)
+                    {
+                        //Non possibile caricare nuove offerte
+                    }
+                    else
+                    {
+                        offersList.ItemsSource = offerte;
+                        offersList.IsRefreshing = false;
+                    }
+                });
+
+            }
+            else //No connection
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    Costants.showToast("connection");
+                    offersList.IsRefreshing = false;
+                });
+            }
         }
 
         protected override void OnDisappearing()

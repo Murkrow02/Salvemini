@@ -70,7 +70,7 @@ namespace SalveminiApp.iOS
             UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
 
             //Display response to user
-            Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Comando aggiunto!", "Prova a dire \"Ehi Siri, " + voiceShortcut.InvocationPhrase + "\"", "Provo subito!");
+            Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Comando aggiunto!", "Richiama Siri e chiedi \"" + voiceShortcut.InvocationPhrase + "\"", "Provo subito!");
 
         }
     }
@@ -112,7 +112,7 @@ namespace SalveminiApp.iOS
             UIApplication.SharedApplication.KeyWindow.RootViewController.DismissModalViewController(true);
 
             //Display response to user
-            Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Comando aggiornato!", "Prova a dire \"Ehi Siri, " + voiceShortcut.InvocationPhrase + "\"", "Provo subito!");
+            Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Comando aggiornato!", "Richiama Siri e chiedi \"" + voiceShortcut.InvocationPhrase + "\"", "Provo subito!");
 
         }
     }

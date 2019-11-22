@@ -115,6 +115,7 @@ namespace SalveminiApp.ArgoPages
             //Deselect Animation
             if (e.SelectedItem == null)
                 return;
+
             assenzeList.SelectedItem = null;
 
             //Push to giustifica if possible

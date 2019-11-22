@@ -25,25 +25,33 @@ namespace SalveminiApp.Helpers.Popups
 
         async void Giustifica_Clicked(object sender, System.EventArgs e)
         {
+            try
+            {
+                var giustificaModel = new RestApi.Models.AssenzaModel();
+                giustificaModel.listaAssenze = new List<RestApi.Models.ListaAssenze>() { new RestApi.Models.ListaAssenze { binUid = Assenza.binUid, datAssenza = Convert.ToDateTime(Assenza.datAssenza).ToString("dd/MM/yyyy") } };
+
+                giustificaModel.motivazione = !string.IsNullOrEmpty(giustifica.Text) ? giustifica.Text : "";
+
+                var success = await App.Argo.GiustificaAssenza(giustificaModel);
+
+                if (string.IsNullOrEmpty(success.Message))
+                {
+                    MessagingCenter.Send((App)Application.Current, "ReloadAssenze");
+                    await Navigation.PopPopupAsync();
+                }
+                else
+                {
+                    giustificaEntry.ErrorText = success.Message;
+                }
+            }
+            catch
+            {
+
+            }
             loadingIndicator.IsRunning = true;
             loadingIndicator.IsVisible = true;
 
-            var giustificaModel = new RestApi.Models.AssenzaModel();
-            giustificaModel.listaAssenze = new List<RestApi.Models.ListaAssenze>() { new RestApi.Models.ListaAssenze { binUid = Assenza.binUid, datAssenza = Convert.ToDateTime(Assenza.datAssenza).ToString("dd/MM/yyyy") } };
-
-            giustificaModel.motivazione = !string.IsNullOrEmpty(giustifica.Text) ? giustifica.Text : "";
-
-            var success = await App.Argo.GiustificaAssenza(giustificaModel);
-
-            if (string.IsNullOrEmpty(success.Message))
-            {
-                MessagingCenter.Send((App)Application.Current, "ReloadAssenze");
-                await Navigation.PopPopupAsync();
-            }
-            else
-            {
-                giustificaEntry.ErrorText = success.Message;
-            }
+           
 
             loadingIndicator.IsVisible = false;
             loadingIndicator.IsRunning = false;

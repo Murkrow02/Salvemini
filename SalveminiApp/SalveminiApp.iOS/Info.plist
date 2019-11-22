@@ -69,9 +69,7 @@
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
 	<key>CFBundleShortVersionString</key>
-	<string>16</string>
-	<key>CFBundleVersion</key>
-	<string>3.7</string>
+	<string>19</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-2688730930606353~1053541819</string>
 	<key>GADIsAdManagerApp</key>
@@ -80,5 +78,7 @@
 	<string>Salvemini ha bisogno di verificare la tua posizione per attivare il codice</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Salvemini ha bisogno di verificare la tua posizione per attivare il codice</string>
+	<key>CFBundleVersion</key>
+	<string>4.0</string>
 </dict>
 </plist>

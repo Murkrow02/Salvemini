@@ -83,6 +83,7 @@
                     <Button Clicked="esci_Clicked" BackgroundColor="Transparent" FontSize="Large" Text="Esci" TextColor="#FF4D4D" HorizontalOptions="FillAndExpand" />
                 </Frame>
             </StackLayout>
+            <Label x:Name="versionLabel" TextColor="{x:Static local:Styles.TextGray}" FontSize="Small" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
         </StackLayout>
 
     </ScrollView>

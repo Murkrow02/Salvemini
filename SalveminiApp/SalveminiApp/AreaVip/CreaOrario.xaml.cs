@@ -41,6 +41,7 @@ namespace SalveminiApp.AreaVip
                 classEntry.Text = classe;
                 classEntry.IsEnabled = false;
             }
+            else { giornoLibero.IsEnabled = true; }
 
         }
 
@@ -110,11 +111,8 @@ namespace SalveminiApp.AreaVip
                 //Create 7 autocomplete entries
                 for (int i = 1; i <= 7; i++)
                 {
-                   
+
                     //Get int of the day
-
-                    //var dayInt = Convert.ToInt32((DayOfWeek)Enum.Parse(typeof(DayOfWeek), Costants.Giorni.FirstOrDefault(x => x.Value == giorno).Key));
-
                     var dayInt = Costants.Giorni.Values.ToList().IndexOf(giorno);
 
                     //Initialize list
@@ -126,7 +124,7 @@ namespace SalveminiApp.AreaVip
                     }
 
                     layout.Children.Add(new Label { Text = i.ToString() + "a ora" });
-                    layout.Children.Add(new Syncfusion.SfAutoComplete.XForms.SfAutoComplete { Text = orario != null && list.ElementAtOrDefault(i - 1) != null ? list[i - 1].Materia : null, AutoCompleteMode = Syncfusion.SfAutoComplete.XForms.AutoCompleteMode.Append, DataSource = materie });
+                    layout.Children.Add(new Entry { Text = orario != null && list.ElementAtOrDefault(i - 1) != null ? list[i - 1].Materia : null });
 
                 }
             }
@@ -170,7 +168,10 @@ namespace SalveminiApp.AreaVip
                 {
                     //Skip free day
                     if (giorno == daySkipped)
+                    {
+                        giorno++;
                         continue;
+                    }
 
                     //Get value from segmented
                     if (input == layout.Children.ToList()[segmentedIndex])
@@ -181,10 +182,10 @@ namespace SalveminiApp.AreaVip
                     }
 
                     //Get autocomplete view
-                    var autoComplete = input as Syncfusion.SfAutoComplete.XForms.SfAutoComplete;
+                    var entry = input as Entry;
 
                     //Get value from autocomplete
-                    var materia = autoComplete.Text;
+                    var materia = entry.Text;
 
                     //Add lezione to list
                     var lezione = new RestApi.Models.newOrario { Ora = ora, Giorno = giorno, Materia = materia, Sede = sede };

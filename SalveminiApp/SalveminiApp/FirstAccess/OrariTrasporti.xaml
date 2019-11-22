@@ -10,19 +10,11 @@
                     <Label FontSize="18" TextColor="{x:Static local:Styles.TextGray}" Text="Seleziona la tua tratta preferita" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
                 </StackLayout>
 
-                <!--ChooseMezzo-->
-                <!--<control:SegmentedControl VerticalOptions="StartAndExpand" x:Name="MezzoSegment" OnSegmentSelected="ChoseMezzo" TintColor="White" SelectedTextColor="{x:Static local:Styles.TextColor}">
-                    <control:SegmentedControl.Children>
-                        <control:SegmentedControlOption Text="Treno" />
-                        <control:SegmentedControlOption Text="Bus" />
-                    </control:SegmentedControl.Children>
-                </control:SegmentedControl>-->
-
                 <!--Treno-->
                 <StackLayout VerticalOptions="CenterAndExpand" Spacing="15" x:Name="trenoLayout">
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label HorizontalOptions="Start" Text="Da:" TextColor="{x:Static local:Styles.TextGray}" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
-                        <Frame x:Name="stationFrame" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, 0" BorderColor="{x:Static local:Styles.ObjectGray}">
+                        <Frame x:Name="stationFrame" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="2, 0" BorderColor="{x:Static local:Styles.ObjectGray}">
                             <Picker Unfocused="picker_Unfocused" x:Name="trainStationPicker" HeightRequest="50" TitleColor="#EAEAEA" HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
                         </Frame>
                     </StackLayout>
@@ -36,40 +28,6 @@
                         </control:SegmentedControl>
                     </StackLayout>
                 </StackLayout>
-
-                <!--Bus-->
-                <!--<StackLayout VerticalOptions="CenterAndExpand" Spacing="15" x:Name="busLayout">
-
-
-                    <StackLayout HorizontalOptions="FillAndExpand">
-                        <control:SegmentedControl  x:Name="eavSitaSegment" TintColor="White" SelectedTextColor="{x:Static local:Styles.TextColor}">
-                            <control:SegmentedControl.Children>
-                                <control:SegmentedControlOption Text="EAV" />
-                                <control:SegmentedControlOption Text="Sita" />
-                            </control:SegmentedControl.Children>
-                        </control:SegmentedControl>
-
-
-                        <Frame HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, 0" BorderColor="{x:Static local:Styles.ObjectGray}">
-                            <Picker x:Name="lineaPicker" HeightRequest="50" TitleColor="#EAEAEA" HorizontalOptions="FillAndExpand" FontSize="25" Title="Linea" />
-                        </Frame>
-
-                        <StackLayout HorizontalOptions="FillAndExpand">
-                            <Label HorizontalOptions="Start" Text="Da:" TextColor="{x:Static local:Styles.TextGray}" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
-                            <Frame HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, 0" BorderColor="{x:Static local:Styles.ObjectGray}">
-                                <Picker x:Name="busStartPicker" HeightRequest="50" TitleColor="#EAEAEA" HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
-                            </Frame>
-                        </StackLayout>
-                        <StackLayout HorizontalOptions="FillAndExpand">
-                            <Label HorizontalOptions="Start" Text="Verso:" TextColor="{x:Static local:Styles.TextGray}" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
-                            <Frame HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, 0" BorderColor="{x:Static local:Styles.ObjectGray}">
-                                <Picker x:Name="busEndPicker" HeightRequest="50" TitleColor="#EAEAEA" HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
-                            </Frame>
-                        </StackLayout>
-
-                    </StackLayout>
-
-                </StackLayout>-->
             </StackLayout>
         </ScrollView>
 

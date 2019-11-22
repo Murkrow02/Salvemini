@@ -191,6 +191,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)AreaVip\AppInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -380,6 +384,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\AdCostants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceAds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AreaVip\AppInfo.xaml.cs">
+      <DependentUpon>AppInfo.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
