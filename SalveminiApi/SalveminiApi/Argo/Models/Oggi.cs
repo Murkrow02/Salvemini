@@ -64,7 +64,7 @@ namespace SalveminiApi.Argo.Models
         {
             get
             {
-                try { return Helpers.Utility.FirstCharToUpper(desMateria.ToLower()); } catch { return desMateria; }
+                return Costants.ShortSubject(desMateria);
             }
         }
 

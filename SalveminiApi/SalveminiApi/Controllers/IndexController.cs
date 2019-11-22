@@ -56,8 +56,12 @@ namespace SalveminiApi.Controllers
             }
 
             //Versioni
-            returnModel.AppVersion = 1.0M;
-            returnModel.OrarioTrasportiVersion = 1;
+            var appInfo = db.AppInfo.Find(0);if(appInfo != null)
+            {
+                returnModel.AppVersion = appInfo.AppVersion;
+                returnModel.OrarioTrasportiVersion = appInfo.OrariVersion;
+            }
+           
 
             //sCoin
             returnModel.sCoin = utente.sCoin;
@@ -291,7 +295,7 @@ namespace SalveminiApi.Controllers
                             break;
                         case "COM":
                             //COMPITI
-                            listaRandom.Add(new string[] { "Compiti da " + notizia.dati.docente.Replace("(","").Replace(")","") + ": ", notizia.dati.desCompiti });
+                            listaRandom.Add(new string[] { "Compiti da " + notizia.dati.docente.Replace("(","").Replace(")","") + ": ", notizia.dati.Materia });
                             break;
                         case "ARG":
                             //ARGOMENTI
@@ -299,7 +303,7 @@ namespace SalveminiApi.Controllers
                             break;
                         case "VOT":
                             //VOTI
-                            listaRandom.Add(new string[] { "", "Hai preso " + notizia.dati.codVoto + " di " + notizia.dati.desMateria });
+                            listaRandom.Add(new string[] { "", "Hai preso " + notizia.dati.codVoto + " di " + notizia.dati.Materia });
                             break;
                         case "PRO":
                             //PROMEMORIA

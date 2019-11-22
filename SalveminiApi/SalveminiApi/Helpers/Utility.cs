@@ -18,7 +18,7 @@ namespace SalveminiApi.Helpers
         public static DateTime italianTime()
         {
             var todayDate = DateTime.UtcNow;
-            var italianDate = todayDate.AddHours(2);
+            var italianDate = todayDate.AddHours(1);
             return italianDate;
         }
 
@@ -161,7 +161,7 @@ namespace SalveminiApi.Helpers
         {
             try
             {
-                var dataInizioFile = "##" + italianTime().ToString("dddd-MM-yyyy") + "##";
+                var dataInizioFile = "##" + italianTime().ToString("dd-MM-yyyy") + "##";
                 var path = HttpContext.Current.Server.MapPath("~/Helpers/Crashes/API/" + dataInizioFile + name + ".txt");
                 File.WriteAllText(path, info);
             }
@@ -204,16 +204,16 @@ namespace SalveminiApi.Helpers
 
             try
             {
-                //get italian tipe
+                //Get italian date
                 var data = italianTime();
 
                 //Check if type exists for that month
-                var esiste = db2.Analytics.FirstOrDefault(x => x.Mese.Month == data.Month && x.Tipo == valore);
+                var esiste = db2.Analytics.FirstOrDefault(x=> x.Tipo == valore);
 
-                if (esiste != null) //No
+                if (esiste == null) //No
                 {
                     //Create new data for that month
-                    var accesso = new Analytics { Mese = data, Tipo = valore, Valore = 1 };
+                    var accesso = new Analytics {Tipo = valore, Valore = 1 };
                     db2.Analytics.Add(accesso);
                 }
                 else //Yes
@@ -221,6 +221,7 @@ namespace SalveminiApi.Helpers
                     //Update value
                     esiste.Valore = esiste.Valore + 1;
                 }
+
                 db2.SaveChanges();
             }
             catch (Exception ex)

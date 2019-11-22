@@ -78,6 +78,9 @@ namespace SalveminiApi.Controllers
             //Save changes
             db.SaveChanges();
 
+            //Add to console log new user created
+           Helpers.Utility.saveEvent(utente.Nome + " " + utente.Cognome + " (" + utente.id + ")" + " ha guadagnato una sCoin tramite Ad");
+
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 

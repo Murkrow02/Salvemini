@@ -12,10 +12,10 @@ namespace SalveminiApi.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Analytics
+    public partial class AppInfo
     {
-        public int id { internal get; set; }
-        public string Tipo { get; set; }
-        public int Valore { get; set; }
+        public decimal AppVersion { get; set; }
+        public int OrariVersion { get; set; }
+        public int id { get; set; }
     }
 }

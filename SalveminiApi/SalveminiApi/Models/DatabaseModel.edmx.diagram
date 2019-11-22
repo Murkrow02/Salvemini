@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="656d5e6cc7b34332b656b707faaae8ec" Name="Diagram1">
         <EntityTypeShape EntityType="SalveminiModel.Ads" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SalveminiModel.Analytics" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalveminiModel.Analytics" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SalveminiModel.Avvisi" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SalveminiModel.BookLibri" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="SalveminiModel.BookUtenti" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
@@ -23,6 +23,7 @@
         <AssociationConnector Association="SalveminiModel.FK_VotiSondaggi_Sondaggi" ManuallyRouted="false" />
         <AssociationConnector Association="SalveminiModel.FK_VotiSondaggi_Utenti" ManuallyRouted="false" />
         <EntityTypeShape EntityType="SalveminiModel.EventsLog" Width="1.5" PointX="8.375" PointY="6.75" />
+        <EntityTypeShape EntityType="SalveminiModel.AppInfo" Width="1.5" PointX="10.125" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
