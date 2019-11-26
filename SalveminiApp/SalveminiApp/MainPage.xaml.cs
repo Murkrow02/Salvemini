@@ -1,4 +1,4 @@
-﻿refrusing System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -300,8 +300,8 @@ namespace SalveminiApp
                     //Update widgets order
                     OrderWidgets(false);
                     homeLoading.IsRefreshing = false;
-                    timer.Stop();
-                    Debug.WriteLine(timer.ElapsedMilliseconds);
+                    
+                    
                     //Get banner ad
                     if (Index.Ads != null && Index.Ads.Count > 0)
                     {

@@ -39,9 +39,9 @@ namespace SalveminiApp.ArgoPages
             datepicker.MinimumDate = DateTime.Now.AddYears(-1);
 
 #if __IOS__
-            if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0) && !iOS.AppDelegate.HasNotch)
+            if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0) && iOS.AppDelegate.HasNotch)
             {
-                mainLayout.Padding = new Thickness(0, 20, 0, 0);
+                mainLayout.Padding = new Thickness(0, 30, 0, 0);
             }
 #endif
         }

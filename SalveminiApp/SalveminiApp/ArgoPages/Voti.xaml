@@ -20,7 +20,7 @@
                                                     <FormattedString>
                                                         <Span Text="{Binding Materia}" FontAttributes="Bold" TextColor="#4baee0" />
                                                         <Span Text=": " TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold" />
-                                                        <Span Text="{Binding Media}" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold" />
+                                                        <Span Text="{Binding Media, StringFormat='{0:0.00}'}" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold" />
                                                     </FormattedString>
                                                 </Label.FormattedText>
                                             </Label>
