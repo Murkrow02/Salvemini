@@ -98,6 +98,7 @@
     <Compile Include="ToastIos\XHUD.cs" />
     <Compile Include="AddVoiceShortcutView.cs" />
     <Compile Include="SiriShortcutPopup.cs" />
+    <None Include="Info.plist" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
