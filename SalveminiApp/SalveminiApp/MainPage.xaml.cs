@@ -1,4 +1,4 @@
-﻿using System;
+﻿refrusing System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -152,8 +152,6 @@ namespace SalveminiApp
 
             //Show loading
             userRefreshed = false; homeLoading.IsRefreshing = true; userRefreshed = true;
-
-            var timer = new Stopwatch(); timer.Start();
             //Sempre meglio mettere il try lol
             try
             {
