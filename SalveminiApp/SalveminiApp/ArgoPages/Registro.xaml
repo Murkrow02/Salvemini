@@ -3,20 +3,24 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout x:Name="mainLayout">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                    <iconize:IconButton BackgroundColor="Transparent" VerticalOptions="Center" Clicked="Close_Clicked" TextColor="{x:Static local:Styles.TextColor}" Text="far-times" HorizontalOptions="Start" FontSize="Large" />
+                <!--Header-->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="8,0">
+                    <iconize:IconButton BackgroundColor="Transparent" VerticalOptions="Center" Clicked="Close_Clicked" TextColor="{x:Static local:Styles.TextColor}" Text="fal-times" HorizontalOptions="Start" FontSize="Large" />
                     <StackLayout Spacing="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                         <Button BackgroundColor="Transparent" x:Name="todayButton" Clicked="ChangeDate_Clicked" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Center" FontSize="Large" />
                         <iconize:IconButton BackgroundColor="Transparent" Clicked="ChangeDate_Clicked" TextColor="{x:Static local:Styles.TextColor}" Text="fas-caret-down" HorizontalOptions="Center" FontSize="Large" />
                     </StackLayout>
                     <ActivityIndicator Margin="10, 0" x:Name="loadingIndicator" IsRunning="False" HorizontalOptions="End" />
                 </StackLayout>
+                <!--Widgets oggi-->
                 <StackLayout x:Name="widgetsLayout" Spacing="20" Padding="20">
                 </StackLayout>
+                <!--Empty layout-->
                 <StackLayout IsVisible="false" Spacing="15" x:Name="nothingLayout" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
                     <iconize:IconLabel HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="fal-calendar-alt" TextColor="{x:Static local:Styles.TextGray}" FontSize="50" />
                     <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" x:Name="placeholderLabel" FontSize="Medium" Text="Oggi non è successo niente"/>
                 </StackLayout>
+                <!--Hidden picker-->
                 <DatePicker BackgroundColor="Transparent" Focused="Picker_Focused" VerticalOptions="End" DateSelected="Picker_SelectedDate" Unfocused="Picker_Unfocused" HeightRequest="0" x:Name="datepicker" />
             </StackLayout>
         </ScrollView>

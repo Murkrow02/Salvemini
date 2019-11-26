@@ -387,6 +387,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AreaVip\AppInfo.xaml.cs">
       <DependentUpon>AppInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Giornalino.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

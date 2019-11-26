@@ -31,6 +31,7 @@ namespace SalveminiApp.Helpers
             ImageCarousel.ItemsSource = Urls;
             Images = Urls;
             FullUrl = Urls[0];
+            MainPage.isSelectingImage = true;
         }
 
         private void Image_SelectionChanged(object sender, Syncfusion.SfCarousel.XForms.SelectionChangedEventArgs e)
@@ -72,6 +73,10 @@ namespace SalveminiApp.Helpers
                 await DisplayAlert(null, "Connettiti ad internet per salvare le foto", "Ok");
                 return;
             }
+
+
+
+
         //ACCESS CAMERA
         var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);              if (status != PermissionStatus.Granted)             {                 if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Camera))                 { 
 #if __IOS__                     new UIAlertView("Errore", "Non abbiamo il permesso di accedere alle foto",null, "OK",null).Show();
@@ -110,6 +115,12 @@ someImage.SaveToPhotosAlbum((image, error) => {                         var o 
 #endif 
           
 
+        }          protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+
+            //iOS 13 bug
+            MainPage.isSelectingImage = false;
         } 
     }
 }

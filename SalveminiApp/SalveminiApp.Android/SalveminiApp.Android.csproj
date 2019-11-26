@@ -185,6 +185,9 @@
     <PackageReference Include="Xamarin.GooglePlayServices.Ads.Lite">
       <Version>71.1720.1</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Plugin.FilePicker">
+      <Version>2.1.34</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

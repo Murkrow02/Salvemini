@@ -4,7 +4,7 @@
         <StackLayout Spacing="40" Padding="20" x:Name="mainLayout">
             <!--TITLE-->
             <StackLayout Spacing="10" Orientation="Horizontal">
-                <iconize:IconButton BackgroundColor="Transparent" Clicked="Close_Clicked" VerticalOptions="Center" HorizontalOptions="Start" Text="fas-times" FontSize="Title" TextColor="{x:Static local:Styles.TextColor}" />
+                <iconize:IconButton BackgroundColor="Transparent" Clicked="Close_Clicked" VerticalOptions="Center" HorizontalOptions="Start" Text="fal-times" FontSize="Title" TextColor="{x:Static local:Styles.TextColor}" />
                 <Label VerticalOptions="Center" HorizontalOptions="Start" Text="Avvisi" TextColor="{x:Static local:Styles.TextColor}" FontSize="Title" FontAttributes="Bold" />
                 <iconize:IconButton IsVisible="false" BackgroundColor="Transparent" Clicked="Menu_Clicked" x:Name="menuButton" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Text="fas-bars" FontSize="Title" TextColor="{x:Static local:Styles.TextColor}" />
             </StackLayout>

@@ -150,5 +150,10 @@ namespace SalveminiApp.Helpers
                 return;
             }
         }
+
+        public void image_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new Helpers.ImageViewer(new List<string>() { Image }));
+        }
     }
 }

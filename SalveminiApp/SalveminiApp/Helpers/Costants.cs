@@ -6,7 +6,10 @@ using System.Globalization;
 using System.Linq;
 using MonkeyCache.SQLite;
 using Xamarin.Essentials;
-
+using Xamarin.Forms;
+#if __IOS__
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+#endif
 namespace SalveminiApp
 {
     public class Costants
@@ -14,9 +17,9 @@ namespace SalveminiApp
         //Api Url
         public static string Uri(string next, bool api = true)
         {
-        if(api)
-            return "https://www.mysalvemini.me/api/" + next;
-        else
+            if (api)
+                return "https://www.mysalvemini.me/api/" + next;
+            else
                 return "https://www.mysalvemini.me/" + next;
 
         }
@@ -61,7 +64,8 @@ namespace SalveminiApp
 
         public static void ClearColors()
         {
-            try{
+            try
+            {
                 var colori = Preferences.Get("matlist", "");
                 var listaColori = colori.Split(',').ToList();
                 foreach (var colore in listaColori)
@@ -136,7 +140,7 @@ namespace SalveminiApp
             {32, "Napoli Porta Nolana"},
         };
 
-        
+
 
         public static Dictionary<string, string> Giorni = new Dictionary<string, string>
         {
@@ -165,7 +169,7 @@ namespace SalveminiApp
         {
             //Clear preferences except firsttime
             Preferences.Clear();
-            Preferences.Set("veryFirstTime",false); Preferences.Set("isFirstTime",false);
+            Preferences.Set("veryFirstTime", false); Preferences.Set("isFirstTime", false);
 
             //Clear cache
             Barrel.Current.EmptyAll();
@@ -207,7 +211,8 @@ namespace SalveminiApp
         }
 
 
-        public static string RewardId() {
+        public static string RewardId()
+        {
 #if DEBUG
             return "ca-app-pub-3940256099942544/5224354917";
 #else
@@ -215,6 +220,63 @@ namespace SalveminiApp
 #endif
 
         }
+
+
+
+        public static void OpenPdf(string url, string title)
+        {
+            try
+            {
+#if __ANDROID__
+                await Launcher.OpenAsync(new Uri("http://drive.google.com/viewer?url=" + url);
+                return;
+#endif
+
+                //Create page with webview
+                var content = new ContentPage { Title = title, Content = new WebView { Source = url } };
+
+                //Add toolbaritems to the page
+                var barItem = new ToolbarItem { Text = "Chiudi", };
+                barItem.Clicked += (object mandatore, EventArgs f) =>
+                {
+                    Xamarin.Forms.Application.Current.MainPage.Navigation.PopModalAsync();
+                };
+                content.ToolbarItems.Add(barItem);
+
+                //Make it navigable
+                var webPage = new Xamarin.Forms.NavigationPage(content) { BarTextColor = Styles.TextColor };
+
+                //iOS 13 modal bug
+                //webPage.Disappearing += (object disappearer, EventArgs g) =>
+                //{
+                //    try
+                //    {
+                //        //  if (haftaClose)
+                //        //  {
+                //        webPage.Navigation.PopModalAsync();
+                //        // }
+                //        //if (!data.presaVisione)
+                //        //{
+                //        //    OnAppearing();
+                //        //}
+                //    }
+                //    catch { }
+                //};
+
+                //Set the presentation to formsheet
+                //#if __IOS__
+                //                  webPage.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
+                //#endif
+                //Push there
+                Xamarin.Forms.Application.Current.MainPage.Navigation.PushModalAsync(webPage);
+            }
+            catch
+            {
+                showToast("Impossibile aprire il file");
+            }
+
+        }
+
     }
 
     public static class Extensions
@@ -222,6 +284,28 @@ namespace SalveminiApp
         public static ObservableCollection<T> ToObservableCollection<T>(this IEnumerable<T> col)
         {
             return new ObservableCollection<T>(col);
+        }
+
+        /// <summary>
+        /// Gets the page to which an element belongs
+        /// </summary>
+        /// <returns>The page.</returns>
+        /// <param name="element">Element.</param>
+        public static Xamarin.Forms.Page GetParentPage(this Xamarin.Forms.VisualElement element)
+        {
+            if (element != null)
+            {
+                var parent = element.Parent;
+                while (parent != null)
+                {
+                    if (parent is Xamarin.Forms.Page)
+                    {
+                        return parent as Xamarin.Forms.Page;
+                    }
+                    parent = parent.Parent;
+                }
+            }
+            return null;
         }
     }
 }
