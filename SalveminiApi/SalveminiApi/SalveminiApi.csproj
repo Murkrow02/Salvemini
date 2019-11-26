@@ -430,6 +430,7 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\AvvisiController.cs" />
     <Compile Include="Controllers\DownloadOrariController.cs" />
+    <Compile Include="Controllers\FilesController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\SalveminiCardController.cs" />
@@ -473,6 +474,9 @@
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\BookUtenti.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Giornalino.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Treno.cs" />
@@ -596,6 +600,7 @@
     <Content Include="Models\DatabaseModel.edmx.diagram">
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Giornalino\2.pdf" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\fastclick.js" />

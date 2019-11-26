@@ -114,13 +114,13 @@ namespace SalveminiApi.Controllers
                 //    "Etudiar todo el dia, nutrirme sanamente, " +
                 //    "EL PENE" };
 
+                //Detect sunday
+                if (intOggi == 6)
+                    return new string[] { "Domani non", "niente, è domenica!" };
+
                 //Handle errors
                 if (orarioDomani == null || orarioDomani.Count < 1)
                     throw new HttpResponseException(System.Net.HttpStatusCode.NotFound);
-
-                //Detect sunday
-                if (intOggi == 0)
-                    return new string[] { "Domani non", "niente, è domenica!" };
 
                 //Detect freeday
                 if (orarioDomani[0].Materia == "Libero")

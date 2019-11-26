@@ -13,6 +13,7 @@ namespace SalveminiApi.Models
         public Avvisi ultimoAvviso { get; set; }
         public Sondaggi ultimoSondaggio { get; set; }
         public List<Ads> Ads { get; set; }
+        public Giornalino Giornalino { get; set; }
         public int Authorized { get; set; }
         public bool VotedSondaggio { get; set; }
         public int sCoin { get; set; }
