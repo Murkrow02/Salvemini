@@ -140,10 +140,13 @@ namespace SalveminiApp.SecondaryViews
 
         async void closePage(object sender, EventArgs e)
         {
+            (sender as Button).IsEnabled = false;
             //Already voted
             if (Preferences.Get("voted" + sondaggio.id, false))
             {
                 await Navigation.PopModalAsync();
+                (sender as Button).IsEnabled = true;
+
                 return;
             }
 
@@ -155,8 +158,12 @@ namespace SalveminiApp.SecondaryViews
             {
                 Preferences.Set("skipPoll" + sondaggio.id, true);
                 await Navigation.PopModalAsync();
+                (sender as Button).IsEnabled = true;
+
 
             }
+                (sender as Button).IsEnabled = true;
+
         }
 
         protected override async void OnAppearing()

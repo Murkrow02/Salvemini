@@ -79,7 +79,6 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
-    <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renders.cs" />
     <Compile Include="ToastIos\BTProgressHUD.cs" />
@@ -99,6 +98,7 @@
     <Compile Include="ToastIos\XHUD.cs" />
     <Compile Include="AddVoiceShortcutView.cs" />
     <Compile Include="SiriShortcutPopup.cs" />
+    <None Include="Info.plist" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

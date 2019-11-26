@@ -325,10 +325,6 @@ namespace SalveminiApp.RestApi
                         var content = await response.Content.ReadAsStringAsync();
                         Voti = JsonConvert.DeserializeObject<List<Models.Voti>>(content);
 
-                        //Voti.Clear();
-                        //Voti.Add(new Models.Voti { Materia = "LINGUA e LETTERATURA ITALIANA", codVoto = "9", datGiorno = "2019-11-05", decValore = 9, desMateria = "LINGUA e LETTERATURA ITALIANA", codVotoPratico = "9", desCommento = "prova", desProva = "Compito", docente = "Marialuigia Ruggiero" });
-                        //Voti.Add(new Models.Voti { Materia = "LINGUA e LETTERATURA ITALIANA", codVoto = "6", datGiorno = "2019-10-05", decValore = 6, desMateria = "LINGUA e LETTERATURA ITALIANA", codVotoPratico = "6", desCommento = "prova", desProva = "Compito", docente = "Marialuigia Ruggiero" });
-
                         //Get voti filtered by subject from api call
                         var groupedBySubject = Voti.GroupBy(x => x.Materia).Select(y => y.ToList()).ToList();
 
@@ -347,6 +343,13 @@ namespace SalveminiApp.RestApi
                             {
                                 for (int i = tempVoti.Count - 1; i >= 0; i--)
                                 {
+                                    //Check if the mark is a giustifica or an assenza
+                                    if (tempVoti[i].codVoto.All(char.IsDigit))
+                                    {
+                                        tempVoti.RemoveAt(i);
+                                        continue;
+                                    }
+
                                     foreach (var nocount in noCountVoti)
                                     {
                                         if (tempVoti[i].decValore == nocount.decValore && tempVoti[i].Materia == nocount.Materia && tempVoti[i].datGiorno == nocount.datGiorno)
@@ -358,8 +361,6 @@ namespace SalveminiApp.RestApi
                                     }
                                 }
                             }
-                           
-
 
                             //Calculate media
                             var media = tempVoti.Sum(x => x.decValore) / tempVoti.Count();
@@ -373,6 +374,7 @@ namespace SalveminiApp.RestApi
                             //Add GroupedVoti into the list
                             GroupedVoti.Add(groupOfMarks);
                         }
+
                         Data.Data = GroupedVoti;
                         Barrel.Current.Add("Voti", GroupedVoti, TimeSpan.FromDays(7));
                         break;
