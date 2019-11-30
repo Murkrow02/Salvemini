@@ -90,7 +90,7 @@ namespace SalveminiApp.AreaVip
                     fillLayout(callOrario);
                 }
             }
-            catch
+            catch(Exception ex)
             {
 
             }
@@ -137,7 +137,7 @@ namespace SalveminiApp.AreaVip
                     }
 
                     layout.Children.Add(new Label { Text = i.ToString() + "a ora" });
-                    layout.Children.Add(new Syncfusion.XForms.ComboBox.SfComboBox {ShowSuggestionsOnFocus = true, SuggestionBoxPlacement = Syncfusion.XForms.ComboBox.SuggestionBoxPlacement.Top, DataSource = materieFull, Text = orario != null && list.ElementAtOrDefault(i - 1) != null ? list[i - 1].Materia : null,  DisplayMemberPath = "Materia", IsEditableMode = true, SuggestionMode = Syncfusion.XForms.ComboBox.SuggestionMode.Contains, HighlightedTextFontAttributes = FontAttributes.Bold, AllowFiltering = true, TextHighlightMode = Syncfusion.XForms.ComboBox.OccurrenceMode.MultipleOccurrence, HighlightedTextColor = Styles.PrimaryColor  });
+                    layout.Children.Add(new Syncfusion.XForms.ComboBox.SfComboBox {ShowSuggestionsOnFocus = true, SuggestionBoxPlacement = Syncfusion.XForms.ComboBox.SuggestionBoxPlacement.Top, DataSource = materieFull, Text = orario != null && list.ElementAtOrDefault(i - 1) != null ? list[i - 1].Materia : null,  DisplayMemberPath = "sureMateria", IsEditableMode = true, SuggestionMode = Syncfusion.XForms.ComboBox.SuggestionMode.Contains, HighlightedTextFontAttributes = FontAttributes.Bold, AllowFiltering = true, TextHighlightMode = Syncfusion.XForms.ComboBox.OccurrenceMode.MultipleOccurrence, HighlightedTextColor = Styles.PrimaryColor  });
                     //layout.Children.Add(new XfxComboBox { ItemsSource = materie, SortingAlgorithm = SortingAlgorithm });
                     //layout.Children.Add(new Entry { Text = orario != null && list.ElementAtOrDefault(i - 1) != null ? list[i - 1].Materia : null });
 
@@ -264,11 +264,6 @@ namespace SalveminiApp.AreaVip
             lezioni.Clear();
         }
 
-        //SortingAlgorithm ComboBox
-        public Func<string, ICollection<string>, ICollection<string>> SortingAlgorithm { get; } = (text, values) => values
-        .Where(x => x.StartsWith(text, StringComparison.CurrentCultureIgnoreCase))
-        .OrderBy(x => x)
-        .ToList();
 
     }
 }

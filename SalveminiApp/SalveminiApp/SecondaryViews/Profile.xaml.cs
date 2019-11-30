@@ -94,7 +94,7 @@ namespace SalveminiApp.SecondaryViews
             contactLayout.Children.Add(Mail);
 
             //Rappresentanti
-            var orariClasse = new Helpers.PushCell { Title = "Crea orario", Separator = "no", Push = new AreaVip.CreaOrario(Preferences.Get("Classe", 0).ToString() + Preferences.Get("Corso", "")) };
+            var orariClasse = new Helpers.PushCell { Title = "Modifica orario", Separator = "no", Push = new AreaVip.CreaOrario(Preferences.Get("Classe", 0).ToString() + Preferences.Get("Corso", "")) };
             orariClasse.GestureRecognizers.Add(tapGestureRecognizer);
             rapprLayout.Children.Add(orariClasse);
 
