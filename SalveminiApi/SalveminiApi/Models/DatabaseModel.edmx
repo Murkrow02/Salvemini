@@ -25,6 +25,14 @@
           <Property Name="Tipo" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Valore" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="AppInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="AppVersion" Type="decimal" Precision="10" Scale="1" Nullable="false" />
+          <Property Name="OrariVersion" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Avvisi">
           <Key>
             <PropertyRef Name="id" />
@@ -68,6 +76,13 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Evento" Type="nvarchar" MaxLength="3000" Nullable="false" />
+          <Property Name="Data" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Giornalino">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Data" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="OggettiSondaggi">
@@ -123,14 +138,6 @@
           <Property Name="idSondaggio" Type="int" Nullable="false" />
           <Property Name="Utente" Type="int" Nullable="false" />
           <Property Name="Voto" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="AppInfo">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="AppVersion" Type="decimal" Precision="10" Scale="1" />
-          <Property Name="OrariVersion" Type="decimal" Precision="10" Scale="1" />
-          <Property Name="id" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Avvisi_Utenti">
           <End Role="Utenti" Type="Self.Utenti" Multiplicity="1">
@@ -217,16 +224,17 @@
         <EntityContainer Name="SalveminiModelStoreContainer">
           <EntitySet Name="Ads" EntityType="Self.Ads" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Analytics" EntityType="Self.Analytics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AppInfo" EntityType="Self.AppInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Avvisi" EntityType="Self.Avvisi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BookLibri" EntityType="Self.BookLibri" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BookUtenti" EntityType="Self.BookUtenti" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EventsLog" EntityType="Self.EventsLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Giornalino" EntityType="Self.Giornalino" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OggettiSondaggi" EntityType="Self.OggettiSondaggi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SalveminiCard" EntityType="Self.SalveminiCard" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sondaggi" EntityType="Self.Sondaggi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Utenti" EntityType="Self.Utenti" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VotiSondaggi" EntityType="Self.VotiSondaggi" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AppInfo" EntityType="Self.AppInfo" Schema="Root_DB" store:Type="Tables" />
           <AssociationSet Name="FK_Avvisi_Utenti" Association="Self.FK_Avvisi_Utenti">
             <End Role="Utenti" EntitySet="Utenti" />
             <End Role="Avvisi" EntitySet="Avvisi" />
@@ -516,6 +524,7 @@
           </AssociationSet>
           <EntitySet Name="EventsLog" EntityType="SalveminiModel.EventsLog" />
           <EntitySet Name="AppInfo" EntityType="SalveminiModel.AppInfo" />
+          <EntitySet Name="Giornalino" EntityType="SalveminiModel.Giornalino" />
         </EntityContainer>
         <EntityType Name="EventsLog">
           <Key>
@@ -529,9 +538,16 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="AppVersion" Type="Decimal" Precision="10" Scale="1" Nullable="false" />
+          <Property Name="AppVersion" Type="Decimal" Nullable="false" Precision="10" Scale="1" />
           <Property Name="OrariVersion" Type="Int32" Nullable="false" />
           <Property Name="id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Giornalino">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Data" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -675,6 +691,14 @@
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="OrariVersion" ColumnName="OrariVersion" />
                 <ScalarProperty Name="AppVersion" ColumnName="AppVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Giornalino">
+            <EntityTypeMapping TypeName="SalveminiModel.Giornalino">
+              <MappingFragment StoreEntitySet="Giornalino">
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

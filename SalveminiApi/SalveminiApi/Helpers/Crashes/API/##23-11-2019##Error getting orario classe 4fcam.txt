@@ -1,0 +1,2 @@
+System.Web.Http.HttpResponseException: L'elaborazione della richiesta HTTP ha determinato la generazione di un'eccezione. Per informazioni, vedere la risposta HTTP restituita dalla proprietà 'Response' di questa eccezione.
+   in SalveminiApi.Controllers.DownloadOrariController.getOrarioSiri(String classe) in C:\Users\Marco\Desktop\salveminiapp-3.0\SalveminiApi\SalveminiApi\Controllers\DownloadOrariController.cs:riga 123
