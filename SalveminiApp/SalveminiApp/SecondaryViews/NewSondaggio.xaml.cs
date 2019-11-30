@@ -106,7 +106,7 @@ namespace SalveminiApp.SecondaryViews
                 {
                     Preferences.Set("voted" + sondaggio.id, true);
                     MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "RemoveBadge", "Sondaggi");
-
+                    MainPage.forceAppearing = true;
                     //Remove vote btn
                     try
                     {
