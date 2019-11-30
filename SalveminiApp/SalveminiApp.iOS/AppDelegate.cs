@@ -17,6 +17,7 @@ using PanCardView.iOS;
 using System.Threading.Tasks;
 using IntentsUI;
 using Google.MobileAds;
+using Xfx;
 
 namespace SalveminiApp.iOS
 {
@@ -30,7 +31,7 @@ namespace SalveminiApp.iOS
         {
             //Init Plugins
             Rg.Plugins.Popup.Popup.Init();
-            new Syncfusion.SfAutoComplete.XForms.iOS.SfAutoCompleteRenderer();
+            new Syncfusion.XForms.iOS.ComboBox.SfComboBoxRenderer();
 
             global::Xamarin.Forms.Forms.Init();
 

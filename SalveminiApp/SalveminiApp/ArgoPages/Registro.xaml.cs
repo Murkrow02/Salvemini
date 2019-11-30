@@ -91,6 +91,11 @@ namespace SalveminiApp.ArgoPages
             {
                 getValues(DateTime.Today);
             }
+            else
+            {
+                //No internet
+                Costants.showToast("connection");
+            }
 
             //Remove badge
             MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "RemoveBadge", "Registro");

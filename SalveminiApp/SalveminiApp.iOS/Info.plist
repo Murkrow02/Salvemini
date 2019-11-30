@@ -55,7 +55,7 @@
 	<key>Custom Property</key>
 	<string></string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
+	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Salvemini ha bisogno di accedere alla fotocamera per aggiungere una foto</string>
 	<key>NSPhotoLibraryUsageDescription</key>
@@ -68,8 +68,6 @@
 	<string>Salvemini ha bisogno di accedere al tuo calendario per prendere l&apos;orario odierno</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
-	<key>CFBundleShortVersionString</key>
-	<string>19</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-2688730930606353~1053541819</string>
 	<key>GADIsAdManagerApp</key>
@@ -79,6 +77,8 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Salvemini ha bisogno di verificare la tua posizione per attivare il codice</string>
 	<key>CFBundleVersion</key>
-	<string>4.0</string>
+	<string>4.2</string>
+	<key>CFBundleShortVersionString</key>
+	<string>21</string>
 </dict>
 </plist>

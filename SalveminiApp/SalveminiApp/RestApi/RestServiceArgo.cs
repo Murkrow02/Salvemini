@@ -344,7 +344,7 @@ namespace SalveminiApp.RestApi
                                 for (int i = tempVoti.Count - 1; i >= 0; i--)
                                 {
                                     //Check if the mark is a giustifica or an assenza
-                                    if (tempVoti[i].codVoto.All(char.IsDigit))
+                                    if (!tempVoti[i].codVoto.Any(char.IsDigit))
                                     {
                                         tempVoti.RemoveAt(i);
                                         continue;

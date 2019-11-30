@@ -2,8 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:countdown="clr-namespace:SalveminiApp.Helpers" xmlns:local="clr-namespace:SalveminiApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Extra">
     <ContentPage.Content>
         <StackLayout x:Name="mainLayout" Spacing="8">
-            <!--Close X button-->
-            <iconize:IconButton Text="fal-times" BackgroundColor="Transparent" FontSize="30" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="EndAndExpand" Clicked="closePage" VerticalOptions="Start" />
+            <!--TITLE-->
+            <StackLayout Spacing="8" Padding="5" Orientation="Horizontal">
+                <iconize:IconButton BackgroundColor="Transparent" Clicked="closePage" VerticalOptions="Center" HorizontalOptions="Start" Text="fal-times" FontSize="Title" TextColor="{x:Static local:Styles.TextColor}" />
+                <Label VerticalOptions="Center" HorizontalOptions="Start" Text="Extra" TextColor="{x:Static local:Styles.TextColor}" FontSize="Title" FontAttributes="Bold" />
+            </StackLayout>
             <!--CountDown-->
             <StackLayout x:Name="secondLayout" Spacing="25">
                 <Label Margin="0,20,0,0" Text="Mancano" TextColor="{x:Static local:Styles.TextGray}" FontAttributes="Bold" FontSize="35" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />

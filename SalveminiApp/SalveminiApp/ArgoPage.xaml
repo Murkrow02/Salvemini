@@ -16,6 +16,9 @@
                 </ScrollView>
             </StackLayout>
 
+            
+            <Button Text="Agenda" BackgroundColor="Black" TextColor="White" HorizontalOptions="FillAndExpand" Clicked="agenda_Clicked"/>
+
             <!--Grafico Materie-->
             <StackLayout>
                 <Label Text="Grafico Materie"  FontAttributes="Bold"  TextColor="{x:Static local:Styles.TextColor}" FontSize="Large" />

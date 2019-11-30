@@ -54,9 +54,8 @@ namespace SalveminiApp.SecondaryViews
 
             //Fill lists
             //Personalizza
-
 #if __IOS__
-            if (UIDevice.CurrentDevice.CheckSystemVersion(12, 0))
+            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
             {
                 //Check if downloaded orario
                 var defaults = new NSUserDefaults("group.com.codex.SalveminiApp", NSUserDefaultsType.SuiteName);
@@ -71,7 +70,10 @@ namespace SalveminiApp.SecondaryViews
                     persLayout.Children.Add(siriShortcuts);
                 }
             }
-
+            else
+            {
+                persLayout.Children.Add(new Label { Text = "Aggiorna ad iOS 13 per usare le scorciatoie di Siri", Margin = 5, TextColor = Styles.TextGray, FontSize = 10, HorizontalTextAlignment = TextAlignment.Center });
+            }
 #endif
             var countdown = new Helpers.PushCell { Title = "Countdown", Separator = "si", Push = new SecondaryViews.CountdownSettings() };
             countdown.GestureRecognizers.Add(tapGestureRecognizer);
@@ -79,6 +81,8 @@ namespace SalveminiApp.SecondaryViews
             var profileImg = new Helpers.PushCell { Title = "Immagine di profilo", Separator = "No" };
             profileImg.GestureRecognizers.Add(tapGestureRecognizer);
             persLayout.Children.Add(profileImg);
+
+
 
 
             //Contattaci

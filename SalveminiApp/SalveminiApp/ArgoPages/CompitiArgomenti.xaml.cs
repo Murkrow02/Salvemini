@@ -8,6 +8,8 @@ using Xamarin.Essentials;
 using System.Linq;
 using Plugin.Toasts;
 using MonkeyCache.SQLite;
+using System.IO;
+using Newtonsoft.Json;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using UIKit;
@@ -230,6 +232,7 @@ namespace SalveminiApp.ArgoPages
                     {
                         lista.ItemsSource = Compitis;
                         emptyLayout.IsVisible = true;
+                        lista.IsVisible = false;
                         filterBtn.IsEnabled = false;
                         sortBtn.IsEnabled = false;
                     }
@@ -257,6 +260,7 @@ namespace SalveminiApp.ArgoPages
                     }
                     else
                     {
+                        lista.IsVisible = false;
                         lista.ItemsSource = Argomentis;
                         placeholderLabel.Text = noArgomenti;
                         emptyLayout.IsVisible = true;
@@ -435,6 +439,7 @@ namespace SalveminiApp.ArgoPages
                     emptyLayout.IsVisible = true;
                     filterBtn.IsEnabled = false;
                     sortBtn.IsEnabled = false;
+                    lista.IsVisible = false;
                 }
             }
             else
@@ -456,6 +461,8 @@ namespace SalveminiApp.ArgoPages
                     emptyLayout.IsVisible = true;
                     filterBtn.IsEnabled = false;
                     sortBtn.IsEnabled = false;
+                    lista.IsVisible = false;
+
                 }
             }
 
@@ -525,5 +532,26 @@ namespace SalveminiApp.ArgoPages
             showingAll = false;
             reversed = false;
         }
+
+
+        //Add to agenda list item selected
+        public void compito_Selected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            //Deselect Animation
+            if (e.SelectedItem == null)
+                return;
+            lista.SelectedItem = null;
+            if (type != "compiti") //If not compiti return
+                return;
+
+
+            var compito = e.SelectedItem as RestApi.Models.Compiti;
+          //  var json = JsonConvert.deser
+
+            //File.WriteAllText();
+
+        }
+
+
     }
 }

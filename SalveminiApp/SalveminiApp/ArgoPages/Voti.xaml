@@ -42,7 +42,7 @@
                                             </StackLayout.GestureRecognizers>
                                             <StackLayout Spacing="0" VerticalOptions="Start">
                                                 <StackLayout Orientation="Horizontal">
-                                                    <Label Text="{Binding codVoto}" TextColor="{Binding markColor}" FontSize="32" HorizontalOptions="Start" VerticalOptions="Center" FontAttributes="Bold" />
+                                                    <Label Text="{Binding Voto}" TextColor="{Binding markColor}" FontSize="32" HorizontalOptions="Start" VerticalOptions="Center" FontAttributes="Bold" />
                                                     <Label Text="Non fa media" FontSize="Small" TextColor="{x:Static local:Styles.TextColor}" IsVisible="{Binding NonFaMedia}" VerticalOptions="Center" />
                                                     <!--Three points-->
                                                     <StackLayout IsVisible="{Binding dotsVisibility}" Orientation="Horizontal" Spacing="1" VerticalOptions="Start" HorizontalOptions="EndAndExpand">

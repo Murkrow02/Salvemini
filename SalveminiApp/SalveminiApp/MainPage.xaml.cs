@@ -150,8 +150,7 @@ namespace SalveminiApp
                 return;
 
 
-            //Show loading
-            userRefreshed = false; homeLoading.IsRefreshing = true; userRefreshed = true;
+          
             //Sempre meglio mettere il try lol
             try
             {
@@ -201,6 +200,8 @@ namespace SalveminiApp
                 //Check Internet
                 if (Connectivity.NetworkAccess == NetworkAccess.Internet)
                 {
+                    //Show loading
+                    userRefreshed = false; homeLoading.IsRefreshing = true; userRefreshed = true;
 
                     //Argo index in background
                     await Task.Run((Action)GetArgoIndex);
@@ -210,8 +211,6 @@ namespace SalveminiApp
 
                     //Get index from api call
                     var tempIndex = await App.Index.GetIndex();
-
-
 
                     //Checks in downloaded index
                     if (tempIndex != null)
@@ -862,8 +861,8 @@ namespace SalveminiApp
 
 #if __IOS__
                 //Add siri shortcut
-                if (!UIDevice.CurrentDevice.CheckSystemVersion(12, 0))
-                    return; //Pre ios 12 can't use this :(
+                if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+                    return; //Pre ios 13 can't use this :(
 
                 //Check if intent is already added or user doesen't want to add it
                 if (Preferences.Get("OrarioSiriSet", false) || Preferences.Get("DontShowSiriWidget", false))

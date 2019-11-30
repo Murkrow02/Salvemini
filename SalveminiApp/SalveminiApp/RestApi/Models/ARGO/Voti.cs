@@ -16,7 +16,7 @@ namespace SalveminiApp.RestApi.Models
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        
+
         internal Voti(bool nonfamedia)
         {
             this.nonFaMedia_ = nonfamedia;
@@ -56,6 +56,16 @@ namespace SalveminiApp.RestApi.Models
             get
             {
                 return !NonFaMedia;
+            }
+        }
+
+        public string Voto
+        {
+            get
+            {
+                if (codVoto == "G")
+                    return "Giustifica";
+                else return codVoto;
             }
         }
 
@@ -109,7 +119,7 @@ namespace SalveminiApp.RestApi.Models
         public bool SeparatorVisibility { get; set; } = true;
         public Thickness CellPadding { get; set; } = new Thickness(10);
 
-        
+
         void calculateMedia(List<CachedVoto> cache, Voti arg)
         {
             var votiDellaMateria = ArgoPages.Voti.GroupedVoti.FirstOrDefault(x => x.Materia == arg.Materia).ToList();

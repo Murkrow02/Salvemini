@@ -165,7 +165,7 @@ namespace SalveminiApp.FirstAccess
                         var view = new StackLayout { Orientation = StackOrientation.Horizontal, HorizontalOptions = LayoutOptions.FillAndExpand };
                         view.Children.Add(new Label { Text = utente.Nome, VerticalOptions = LayoutOptions.Center, VerticalTextAlignment = TextAlignment.Center, FontSize = 20, HorizontalOptions = LayoutOptions.Start });
                         var GoButton = new IconButton { Text = "fas-arrow-circle-right", TextColor = Styles.PrimaryColor, FontSize = 20, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.EndAndExpand };
-                        GoButton.Clicked += (object sender2, EventArgs f) => { success(UtentiLogin.IndexOf(utente)); popover.IsVisible = true; };
+                        GoButton.Clicked += (object sender2, EventArgs f) => { success(UtentiLogin.IndexOf(utente)); popover.IsVisible = false; };
                         view.Children.Add(GoButton);
                         content.Children.Add(view);
                     }

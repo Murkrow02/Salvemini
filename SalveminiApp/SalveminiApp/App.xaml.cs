@@ -33,6 +33,7 @@ namespace SalveminiApp
         public static RestApi.ItemManagerCard Card { get; private set; }
         public static RestApi.SondaggiManager Sondaggi { get; private set; }
         public static RestApi.AdsManager Ads { get; private set; }
+        public static RestApi.AgendaManager Agenda { get; private set; }
 
 
         public App()
@@ -96,6 +97,7 @@ namespace SalveminiApp
             Card = new RestApi.ItemManagerCard(new RestApi.RestServiceCard());
             Sondaggi = new RestApi.SondaggiManager(new RestApi.RestServiceSondaggi());
             Ads = new RestApi.AdsManager(new RestApi.RestServiceAds());
+            Agenda = new RestApi.AgendaManager(new RestApi.RestServiceAgenda());
         }
 
         private static async void HandleNotificationReceived(OSNotification notification)

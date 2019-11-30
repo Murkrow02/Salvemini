@@ -30,18 +30,18 @@ namespace SalveminiApp
             "#5BB0E5", "#7D77FF", "#FFBB4E" ,"#FF7064",  "#EA5AEA","#48EB9A","#FF5A1D","#3F83E0","#A346E8","#C73636","#C73679","#36C7C7"
         };
 
-        public static string SetColors(string materia)
+        public static string SetColors(int idMateria)
         {
             try
             {
                 //Index of colors
                 var index = Preferences.Get("colorLoop", 0);
 
-                if (Preferences.Get("mat" + materia, "#802891") == "#802891") //Empty color
+                if (Preferences.Get("mat" + idMateria, "#802891") == "#802891") //Empty color
                 {
                     //save new color
-                    Preferences.Set("mat" + materia, Colors[index]);
-                    Preferences.Set("matlist", Preferences.Get("matlist", "") + " mat" + materia + ",");
+                    Preferences.Set("mat" + idMateria, Colors[index]);
+                    Preferences.Set("matlist", Preferences.Get("matlist", "") + " mat" + idMateria + ",");
                     //reset index to prevent crashes
                     if (index == Colors.Count())
                         Preferences.Set("colorLoop", 0);
@@ -49,16 +49,16 @@ namespace SalveminiApp
                         Preferences.Set("colorLoop", index + 1);
 
                     //Return generated color
-                    return Preferences.Get("mat" + materia, "#802891");
+                    return Preferences.Get("mat" + idMateria, "#802891");
                 }
                 else
                 {
-                    return Preferences.Get("mat" + materia, "#802891");
+                    return Preferences.Get("mat" + idMateria, "#802891");
                 }
             }
             catch
             {
-                return Preferences.Get("mat" + materia, "#802891");
+                return Preferences.Get("mat" + idMateria, "#802891");
             }
         }
 
@@ -223,12 +223,12 @@ namespace SalveminiApp
 
 
 
-        public static void OpenPdf(string url, string title)
+        public static async void OpenPdf(string url, string title)
         {
             try
             {
 #if __ANDROID__
-                await Launcher.OpenAsync(new Uri("http://drive.google.com/viewer?url=" + url);
+                await Launcher.OpenAsync(new Uri("http://drive.google.com/viewer?url=" + url));
                 return;
 #endif
 

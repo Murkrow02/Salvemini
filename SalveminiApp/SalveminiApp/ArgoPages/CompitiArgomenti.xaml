@@ -39,7 +39,7 @@
                             <!--Order label-->
                             <Label Margin="0,0,0,5" Text="Dal più recente" FontSize="Small" x:Name="filtersLbl" TextColor="#c7c7c7" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
                         </StackLayout>
-                            <ListView SelectionMode="None" HasUnevenRows="true" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None" x:Name="lista" VerticalOptions="FillAndExpand">
+                            <ListView ItemSelected="compito_Selected" HasUnevenRows="true" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None" x:Name="lista" VerticalOptions="FillAndExpand">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <ViewCell>
@@ -58,7 +58,8 @@
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
-                            <StackLayout IsVisible="false" x:Name="emptyLayout" VerticalOptions="Center">
+                        <!--Empty layout-->
+                            <StackLayout IsVisible="false" x:Name="emptyLayout" VerticalOptions="CenterAndExpand">
                                 <iconize:IconLabel Text="far-sticky-note" VerticalOptions="Center" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" FontSize="40" />
                                 <Label x:Name="placeholderLabel" VerticalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="CenterAndExpand" Margin="5"/>
                             </StackLayout>

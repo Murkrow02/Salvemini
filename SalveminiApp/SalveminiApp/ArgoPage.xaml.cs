@@ -159,5 +159,10 @@ namespace SalveminiApp
             secondRowWidgets.Children.AddRange(new List<ArgoWidget> { scrutinio, compiti, argomenti, note });
             secondRowWidgets.Children.Add(new ContentView { WidthRequest = 0 });
         }
+
+        public void agenda_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ArgoPages.Agenda());
+        }
     }
 }

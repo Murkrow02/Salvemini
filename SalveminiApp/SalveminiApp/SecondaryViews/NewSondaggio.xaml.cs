@@ -185,7 +185,7 @@ namespace SalveminiApp.SecondaryViews
             }
 
             //Connect to SignalR hub
-            connection.InitilizeHub();
+            await Task.Run((Action)connection.InitilizeHub); 
 
             //Handle new voto
             connection.hubProxy.On("UpdateVoti", () =>
