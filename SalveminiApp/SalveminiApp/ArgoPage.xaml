@@ -17,7 +17,7 @@
             </StackLayout>
 
             <!--Agenda-->
-            <yummy:PancakeView CornerRadius="10,0,10,0" BackgroundColor="#FF7474" Padding="25,5" HorizontalOptions="EndAndExpand" Margin="-21,0">
+            <yummy:PancakeView x:Name="agendaFrame" IsVisible="false" CornerRadius="10,0,10,0" BackgroundColor="#FF7474" Padding="25,5" HorizontalOptions="EndAndExpand" Margin="-21,0">
                 <Label FontSize="24" Text="Agenda" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                 <yummy:PancakeView.GestureRecognizers>
                     <TapGestureRecognizer Tapped="agenda_Clicked"/>

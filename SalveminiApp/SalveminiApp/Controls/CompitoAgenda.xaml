@@ -1,17 +1,20 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.Controls.CompitoAgenda">
-    <StackLayout Padding="10,0" Spacing="5" Orientation="Horizontal" x:Name="fullLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+    <StackLayout Padding="10,0" Spacing="5" Orientation="Horizontal" x:Name="fullLayout" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
         <!--Frame grande-->
         <Frame HasShadow="False" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="view" Padding="10" CornerRadius="10">
             <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
                 <!--Titolo e descrizione-->
                 <StackLayout>
-                    <patch:Label x:Name="TitleLbl" Text="asdasd" FontSize="Title" TextColor="White" Lines="1" AutoFit="Width" HorizontalTextAlignment="Start" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" />
-                    <patch:Label x:Name="DescLbl" Text="asdoabfabsfiuasubasigbasiugbasuigbasiugbsiuabgaiusbgaisubgaiub" TextColor="White" MinFontSize="15" Lines="5" AutoFit="Width" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" />
+                    <patch:Label x:Name="TitleLbl" FontSize="Title" TextColor="White" Lines="1" AutoFit="Width" HorizontalTextAlignment="Start" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <patch:Label x:Name="DescLbl" TextColor="White" MinFontSize="15" Lines="5" AutoFit="Width" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" />
                 </StackLayout>
                 <!--Frame con x per chiudere-->
                 <Frame HasShadow="False" HorizontalOptions="EndAndExpand" x:Name="closeFrame" Padding="0" VerticalOptions="CenterAndExpand" >
-                    <iconize:IconButton Clicked="delete_Clicked" Text="fas-times" x:Name="deleteButton"/>
+                    <iconize:IconLabel HorizontalOptions="CenterAndExpand" Text="fas-times" x:Name="deleteButton" FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="delete_Clicked"/>
+                    </Frame.GestureRecognizers>
                 </Frame>
             </StackLayout>
             <Frame.GestureRecognizers>
@@ -21,7 +24,7 @@
         </Frame>
         <!--Bottone conferma nascosto-->
         <Frame VerticalOptions="FillAndExpand" WidthRequest="0" HorizontalOptions="End" HasShadow="False" x:Name="hiddenBtn" Padding="0" BackgroundColor="#FE7474">
-            <Button Clicked="delete_Confirmed" Text="Elimina" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" x:Name="confirmTxt" Opacity="0"/>
+            <Button BackgroundColor="Transparent" Clicked="delete_Confirmed" Text="Elimina" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" x:Name="confirmTxt" Opacity="0"/>
         </Frame>
     </StackLayout>
 

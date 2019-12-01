@@ -19,6 +19,10 @@ namespace SalveminiApp
         {
             base.OnAppearing();
 
+            //Show agenda only if orario downloaded
+            if (Preferences.Get("OrarioSaved", false))
+                agendaFrame.IsVisible = true;
+
             //Check internet status
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
@@ -100,8 +104,8 @@ namespace SalveminiApp
         {
             InitializeComponent();
 
-            //Set heights
-           // widgetsGrid.RowSpacing = App.ScreenHeight / 100;
+         
+
 
             //Hide Navigation Bar
             NavigationPage.SetHasNavigationBar(this, false);

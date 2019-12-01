@@ -9,8 +9,8 @@
         </StackLayout>
 
         <!--Lista-->
-        <StackLayout Padding="20,0">
-            <ListView  Scrolled="listScroll" Margin="-25,0" Footer="" SeparatorVisibility="None" x:Name="offersList" HasUnevenRows="true" ItemSelected="offerSelected">
+        <StackLayout Padding="20,0" VerticalOptions="FillAndExpand">
+            <ListView VerticalOptions="FillAndExpand"  Scrolled="listScroll" Margin="-25,0" Footer="" SeparatorVisibility="None" x:Name="offersList" HasUnevenRows="true" ItemSelected="offerSelected">
                 <ListView.Header>
                     <StackLayout Padding="25,0" Spacing="2">
                         <!--Card image-->
