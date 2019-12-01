@@ -4,7 +4,7 @@
         <ScrollView>
             <StackLayout x:Name="mainLayout">
                 <!--Header-->
-                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="8,0">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="8,0" Margin="0,5,0,0" >
                 <iconize:IconButton BackgroundColor="Transparent" Text="fal-times" FontSize="30" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Start" Clicked="Close_Clicked" VerticalOptions="CenterAndExpand"/>
                     <StackLayout Spacing="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                         <Button BackgroundColor="Transparent" x:Name="todayButton" Clicked="ChangeDate_Clicked" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Center" FontSize="Large" />

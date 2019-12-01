@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using UIKit;
 using Xamarin.Forms;
 
 namespace SalveminiApp.ArgoPages
@@ -11,7 +11,14 @@ namespace SalveminiApp.ArgoPages
         {
             InitializeComponent();
 
-            days.ItemsSource = Costants.getDays();
+#if __IOS__
+            if (iOS.AppDelegate.HasNotch)
+            {
+                mainLayout.Padding = new Thickness(0, 30, 0, 0);
+            }
+#endif
+
+            days.DataSource = Costants.getDays();
         }
 
 

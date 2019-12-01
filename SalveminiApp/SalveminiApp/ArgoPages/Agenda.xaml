@@ -1,7 +1,16 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.ArgoPages.Agenda">
-    <StackLayout>
-        <Picker x:Name="days" Unfocused="picker_Unfocused"/> 
+<ContentPage xmlns:local="clr-namespace:SalveminiApp" xmlns:ComboBox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.ArgoPages.Agenda">
+    <StackLayout x:Name="mainLayout">
+        <!--TitleView-->
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start" Padding="8,0">
+            <Label Text="Agenda" TextColor="{x:Static local:Styles.TextColor}" HorizontalTextAlignment="Start" FontSize="30" FontAttributes="Bold"/>
+            <Label Text="Sono riportati i possibili compiti assegnati per il giorno selezionato" HorizontalTextAlignment="Start" TextColor="{x:Static local:Styles.TextGray}" FontSize="18"/>
+        </StackLayout>
+
+        <!--Picker-->
+        <ComboBox:SfComboBox x:Name="days" IsEditableMode="False" AllowFiltering="False" HorizontalOptions="FillAndExpand"/>
+
+        <Picker  Unfocused="picker_Unfocused"/> 
         <ListView  HasUnevenRows="true" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None" x:Name="compitiList" VerticalOptions="Start">
             <ListView.ItemTemplate>
                 <DataTemplate>

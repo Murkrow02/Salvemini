@@ -162,7 +162,7 @@ namespace SalveminiApp
 
         public void agenda_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ArgoPages.Agenda());
+            Navigation.PushModalAsync(new ArgoPages.Agenda());
         }
     }
 }
