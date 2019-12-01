@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage Title="Argo" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:local="clr-namespace:SalveminiApp" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.ArgoPage">
     <ScrollView>
-        <StackLayout x:Name="mainLayout" Spacing="8" Padding="20,15,20,0">
+        <StackLayout x:Name="mainLayout" Spacing="15" Padding="20,15,20,0">
 
             <!--WidgetList-->
             <StackLayout Margin="-20,0" VerticalOptions="FillAndExpand">
@@ -16,12 +16,17 @@
                 </ScrollView>
             </StackLayout>
 
-            
-            <Button Text="Agenda" BackgroundColor="Black" TextColor="White" HorizontalOptions="FillAndExpand" Clicked="agenda_Clicked"/>
+            <!--Agenda-->
+            <yummy:PancakeView CornerRadius="10,0,10,0" BackgroundColor="#FF7474" Padding="25,5" HorizontalOptions="EndAndExpand" Margin="-21,0">
+                <Label FontSize="24" Text="Agenda" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <yummy:PancakeView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="agenda_Clicked"/>
+                </yummy:PancakeView.GestureRecognizers>
+            </yummy:PancakeView>
 
             <!--Grafico Materie-->
             <StackLayout>
-                <Label Text="Grafico Materie"  FontAttributes="Bold"  TextColor="{x:Static local:Styles.TextColor}" FontSize="Large" />
+                <Label Text="Grafico Materie"  FontAttributes="Bold" HorizontalTextAlignment="Center"  TextColor="{x:Static local:Styles.TextColor}" FontSize="30" />
                 <Frame BackgroundColor="White" HasShadow="False" CornerRadius="20" Padding="0">
                     <StackLayout>
                         <!--Switch polar chart on ios and android-->

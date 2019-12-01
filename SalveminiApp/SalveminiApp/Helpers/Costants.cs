@@ -80,6 +80,18 @@ namespace SalveminiApp
             }
         }
 
+        public static Xamarin.Forms.Color ColorLoop(int index)
+        {
+            try
+            {
+                return Xamarin.Forms.Color.FromHex(Colors[index - Convert.ToInt32((index / Colors.Count) * Colors.Count)]);
+            }
+            catch
+            {
+                return Xamarin.Forms.Color.FromHex(Colors[0]);
+            }
+        }
+
         public static Dictionary<int, string> Ore = new Dictionary<int, string>
         {
             {1, " 8:00" },
