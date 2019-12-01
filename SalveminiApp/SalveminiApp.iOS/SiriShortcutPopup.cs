@@ -20,6 +20,7 @@ namespace SalveminiApp.iOS
             fromSettings = fromSettings_;
             ModalPresentationStyle = UIModalPresentationStyle.PageSheet;
             View.BackgroundColor = UIColor.White;
+            //ParentViewController.View.BackgroundColor = UIColor.Red;
         }
 
 

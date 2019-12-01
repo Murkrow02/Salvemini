@@ -1,37 +1,42 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:local="clr-namespace:SalveminiApp" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.NewSondaggio">
-    <StackLayout Padding="25,0" Spacing="10" x:Name="mainLayout">
-
-        <!--Header-->
-        <Grid  Margin="-20,0" Padding="0,5">
-            <StackLayout Spacing="2" VerticalOptions="CenterAndExpand">
-                <Label Text="Sondaggio" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontSize="Title" />
-                <Label x:Name="headerDesc" Text="Vota per visualizzare i risultati" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.TextGray}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontSize="12" />
-            </StackLayout>
-            <iconize:IconButton BackgroundColor="Transparent" Text="fal-times" FontSize="25" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="EndAndExpand" Clicked="closePage" VerticalOptions="CenterAndExpand" />
-        </Grid>
-        <!--Poll question-->
-        <patch:Label x:Name="questionLbl" TextColor="{x:Static local:Styles.TextColor}" MinFontSize="12" Lines="4" AutoFit="Width" VerticalOptions="Start" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
-
-        <!--Options-->
-        <ScrollView VerticalOptions="StartAndExpand" Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Margin="-25,0" x:Name="widgetCollection">
-            <StackLayout x:Name="widgetsLayout" Orientation="Horizontal" Spacing="10">
-            </StackLayout>
-        </ScrollView>
-
-        <!--Creator-->
-        <Label x:Name="creatorLbl" TextColor="{x:Static local:Styles.TextGray}" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand" FontSize="Medium" VerticalTextAlignment="Center"/>
-
-        <!--Results-->
-        <Label Opacity="0" x:Name="loadingLbl" Text="Carico i risultati..." TextColor="{x:Static local:Styles.TextGray}" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand" FontSize="Medium" VerticalTextAlignment="Center"/>
-        <Frame HasShadow="False" x:Name="resultsFrame" Opacity="0" TranslationY="300" VerticalOptions="End">
-            <!--300-->
-            <ScrollView>
-                <StackLayout x:Name="resultsLayout">
-
+    <ScrollView>
+        <StackLayout Spacing="8" x:Name="mainLayout">
+            <!--Header-->
+            <StackLayout Spacing="8" Padding="5" Orientation="Horizontal">
+                <iconize:IconButton BackgroundColor="Transparent" Text="fal-times" FontSize="30" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Start" Clicked="closePage" VerticalOptions="CenterAndExpand"/>
+                <StackLayout Spacing="2" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                    <Label HorizontalTextAlignment="Start" Text="Sondaggio" FontAttributes="Bold" HorizontalOptions="StartAndExpand" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontSize="Title" />
+                    <Label HorizontalTextAlignment="Start" x:Name="headerDesc" Text="Vota per visualizzare i risultati" HorizontalOptions="StartAndExpand" TextColor="{x:Static local:Styles.TextGray}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontSize="12" />
                 </StackLayout>
-            </ScrollView>
+            </StackLayout>
 
-        </Frame>
-    </StackLayout>
+            <StackLayout Padding="20,0">
+                <!--Poll question-->
+                <patch:Label x:Name="questionLbl" TextColor="{x:Static local:Styles.TextColor}" FontSize="25" Lines="4" AutoFit="Width" VerticalOptions="Start" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+
+                <!--Options-->
+                <ScrollView VerticalOptions="StartAndExpand" Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Margin="-25,0" x:Name="widgetCollection">
+                    <StackLayout x:Name="widgetsLayout" Orientation="Horizontal" Spacing="10">
+                    </StackLayout>
+                </ScrollView>
+
+                <!--Creator-->
+                <Label x:Name="creatorLbl" TextColor="{x:Static local:Styles.TextGray}" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand" FontSize="Medium" VerticalTextAlignment="Center"/>
+
+                <!--Results-->
+                <Label Opacity="0" x:Name="loadingLbl" Text="Carico i risultati..." TextColor="{x:Static local:Styles.TextGray}" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand" FontSize="Medium" VerticalTextAlignment="Center"/>
+                <Frame HasShadow="False" x:Name="resultsFrame" Opacity="0" TranslationY="300" VerticalOptions="End">
+                    <!--300-->
+                    <ScrollView>
+                        <StackLayout x:Name="resultsLayout">
+
+                        </StackLayout>
+                    </ScrollView>
+
+                </Frame>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

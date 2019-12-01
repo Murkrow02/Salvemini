@@ -74,58 +74,10 @@ namespace SalveminiApp.ArgoPages
                 return;
             }
 
-            try
-            {
-                //Android does not load pdf in web view, open view in default browser
-#if __ANDROID__
-                await Launcher.OpenAsync(new Uri("http://drive.google.com/viewer?url=" + (e.SelectedItem as RestApi.Models.Bacheca).Allegati[0].fullUrl));
-                return;
-#endif
-
-                //Create page with webview
-                var content = new ContentPage { Title = (e.SelectedItem as RestApi.Models.Bacheca).formattedTitle, Content = new WebView { Source = (e.SelectedItem as RestApi.Models.Bacheca).Allegati[0].fullUrl } };
-                bool haftaClose = true;
-
-                //Add toolbaritems to the page
-                var barItem = new ToolbarItem { Text = "Chiudi", };
-                barItem.Clicked += (object mandatore, EventArgs f) =>
-                {
-                    haftaClose = false;
-                    Navigation.PopModalAsync();
-                };
-                content.ToolbarItems.Add(barItem);
-
-                //Make it navigable
-                var webPage = new Xamarin.Forms.NavigationPage(content) { BarTextColor = Styles.TextColor };
-
-                //iOS 13 modal bug
-                webPage.Disappearing += (object disappearer, EventArgs g) =>
-                {
-                    try
-                    {
-                        if (haftaClose)
-                        {
-                            Navigation.PopModalAsync();
-                        }
-                        if (!data.presaVisione)
-                        {
-                            OnAppearing();
-                        }
-                    }
-                    catch { }
-                };
-
-                //Set the presentation to formsheet
-#if __IOS__
-            webPage.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
-#endif
-                //Push there
-                await Navigation.PushModalAsync(webPage);
-            }
-            catch
-            {
-                Costants.showToast("Non è stato possibile aprire l'allegato");
-            }
+                //Show weview
+                var title = (e.SelectedItem as RestApi.Models.Bacheca).formattedTitle;
+                var link = (e.SelectedItem as RestApi.Models.Bacheca).Allegati[0].fullUrl;
+                Costants.OpenPdf(link, title);
         }
 
         protected async override void OnAppearing()

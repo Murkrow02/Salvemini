@@ -13,7 +13,7 @@ using System.Drawing;
 [assembly: ExportRenderer(typeof(SalveminiApp.TransparentGradient), typeof(TransparentGradient))]
 [assembly: ExportRenderer(typeof(SalveminiApp.DashedBorderFrame), typeof(DashedBorderFrame))]
 [assembly: ExportRenderer(typeof(TabbedPage), typeof(TabbedPageRenderer))]
-
+[assembly: ExportRenderer(typeof(WebView), typeof(CustomWebViewRenderer))]
 namespace SalveminiApp.iOS
 {
     public static class ImageExtensions
@@ -36,6 +36,20 @@ namespace SalveminiApp.iOS
             UIGraphics.EndImageContext();
             return croppedImg;
         }
+    }
+
+    public class CustomWebViewRenderer : WebViewRenderer
+    {
+
+        protected override void OnElementChanged(VisualElementChangedEventArgs e)
+        {
+            base.OnElementChanged(e);
+            var view = (UIWebView)NativeView;
+            view.ScrollView.ScrollEnabled = true;
+            view.ScalesPageToFit = true;
+            
+        }
+
     }
 
     public class DashedBorderFrame : FrameRenderer

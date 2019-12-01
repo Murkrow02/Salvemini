@@ -10,6 +10,7 @@ namespace SalveminiApp.RestApi.Models
         public int Ora { get; set; }
         public string Materia { get; set; }
         public string Sede { get; set; }
+        public int idMateria { get; set; }
 
         //Internal Parameters
         public int numOre { get; set; }
@@ -31,7 +32,7 @@ namespace SalveminiApp.RestApi.Models
         {
             get
             {
-                return Costants.SetColors(Materia);
+                return Costants.SetColors(idMateria);
             }
         }
 
@@ -48,9 +49,9 @@ namespace SalveminiApp.RestApi.Models
     {
         public int Giorno { get; set; }
         public int Ora { get; set; }
-        public string Materia { get; set; }
+        public string Materia { get; }
         public string Sede { get; set; }
-
+        public int idMateria { get; set; }
     }
 
    public static class extension

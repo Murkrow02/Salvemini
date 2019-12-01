@@ -37,5 +37,7 @@ namespace SalveminiApi.Models
         public virtual DbSet<VotiSondaggi> VotiSondaggi { get; set; }
         public virtual DbSet<EventsLog> EventsLog { get; set; }
         public virtual DbSet<AppInfo> AppInfo { get; set; }
+        public virtual DbSet<Giornalino> Giornalino { get; set; }
+        public virtual DbSet<Materie> Materie { get; set; }
     }
 }

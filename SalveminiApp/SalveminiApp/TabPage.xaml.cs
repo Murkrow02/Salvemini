@@ -30,7 +30,7 @@ namespace SalveminiApp
         {
             BarTextColor = Styles.PrimaryColor,
             BarBackgroundColor = Color.White,
-            Title = "Argo",
+            Title = "Registro",
             IconImageSource = "tabBarArgo.png"
         };
 

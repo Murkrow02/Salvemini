@@ -112,6 +112,10 @@ namespace SalveminiApi.Controllers
             var interstitial = db.Ads.Where(x => x.Tipo == 1).ToList();
             var banner = db.Ads.Where(x => x.Tipo == 0).ToList();
 
+            //Giornalino
+            var Giornalini = db.Giornalino.OrderByDescending(x => x.Data).ToList();
+            returnModel.Giornalino = Giornalini.FirstOrDefault();
+
             //Get banner
             if (banner.Count > 0)
             {

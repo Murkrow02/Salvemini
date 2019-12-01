@@ -7,7 +7,10 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Web;
+using Newtonsoft.Json;
+using SalveminiApi.Argo.Models;
 using SalveminiApi.Models;
+using SalveminiApi.Utility;
 
 namespace SalveminiApi.Helpers
 {
@@ -22,7 +25,7 @@ namespace SalveminiApi.Helpers
             return italianDate;
         }
 
-       
+
 
         public bool authorized(HttpRequestMessage re, int minStatus = 0)
         {
@@ -37,7 +40,8 @@ namespace SalveminiApi.Helpers
                 if (string.IsNullOrEmpty(token))
                     return false;
 
-                if (headers.Contains("x-user-id")){
+                if (headers.Contains("x-user-id"))
+                {
                     id = headers.GetValues("x-user-id").First();
 
                     //Null id
@@ -70,7 +74,7 @@ namespace SalveminiApi.Helpers
             }
         }
 
-         public static void ReduceImageSize(double scaleFactor, Stream sourcePath, string targetPath)
+        public static void ReduceImageSize(double scaleFactor, Stream sourcePath, string targetPath)
         {
             using (var image = System.Drawing.Image.FromStream(sourcePath))
             {
@@ -165,7 +169,7 @@ namespace SalveminiApi.Helpers
                 var path = HttpContext.Current.Server.MapPath("~/Helpers/Crashes/API/" + dataInizioFile + name + ".txt");
                 File.WriteAllText(path, info);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //Fa niente
             }
@@ -188,11 +192,11 @@ namespace SalveminiApi.Helpers
                     eventi.RemoveAt(0);
 
                 //Add event to log console
-                db2.EventsLog.Add(new EventsLog { Data = italianTime(), Evento = name});
+                db2.EventsLog.Add(new EventsLog { Data = italianTime(), Evento = name });
 
                 db2.SaveChanges();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //Fa niente
             }
@@ -208,12 +212,12 @@ namespace SalveminiApi.Helpers
                 var data = italianTime();
 
                 //Check if type exists for that month
-                var esiste = db2.Analytics.FirstOrDefault(x=> x.Tipo == valore);
+                var esiste = db2.Analytics.FirstOrDefault(x => x.Tipo == valore);
 
                 if (esiste == null) //No
                 {
                     //Create new data for that month
-                    var accesso = new Analytics {Tipo = valore, Valore = 1 };
+                    var accesso = new Analytics { Tipo = valore, Valore = 1 };
                     db2.Analytics.Add(accesso);
                 }
                 else //Yes
@@ -229,6 +233,7 @@ namespace SalveminiApi.Helpers
                 //Fa niente
             }
         }
+
 
         public static string FirstCharToUpper(string value)
         {
@@ -258,7 +263,8 @@ namespace SalveminiApi.Helpers
 
     }
 
-    public static class Extensions {
+    public static class Extensions
+    {
 
         public static ObservableCollection<T> ToObservableCollection<T>(this IEnumerable<T> col)
         {

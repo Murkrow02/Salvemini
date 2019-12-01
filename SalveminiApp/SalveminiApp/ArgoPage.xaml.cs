@@ -80,7 +80,8 @@ namespace SalveminiApp
             {
                 chartA.IsVisible = true;
                 chartI.IsVisible = true;
-
+                chartI.Opacity = 1;
+                chartA.Opacity = 1;
                 noSubjectsLayout.IsVisible = false;
                 radarChartA.ItemsSource = Medie;
                 radarChartI.ItemsSource = Medie;
@@ -118,6 +119,8 @@ namespace SalveminiApp
             var cachedMedie = CacheHelper.GetCache<List<RestApi.Models.Pentagono>>("Medie");
             if (cachedMedie != null)
             {
+                chartA.IsVisible = true;
+                chartI.IsVisible = true;
                 Medie = cachedMedie;
                 radarChartA.ItemsSource = Medie;
                 radarChartI.ItemsSource = Medie;
@@ -155,6 +158,11 @@ namespace SalveminiApp
             secondRowWidgets.Children.Add(new ContentView { WidthRequest = -20 });
             secondRowWidgets.Children.AddRange(new List<ArgoWidget> { scrutinio, compiti, argomenti, note });
             secondRowWidgets.Children.Add(new ContentView { WidthRequest = 0 });
+        }
+
+        public void agenda_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ArgoPages.Agenda());
         }
     }
 }

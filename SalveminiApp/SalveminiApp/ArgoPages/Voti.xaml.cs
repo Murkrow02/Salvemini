@@ -27,8 +27,8 @@ namespace SalveminiApp.ArgoPages
         {
             InitializeComponent();
 #if __IOS__
-           // On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
-           // UIApplication.SharedApplication.StatusBarHidden = true;
+            // On<Xamarin.Forms.PlatformConfiguration.iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True);
+            // UIApplication.SharedApplication.StatusBarHidden = true;
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FullScreen);
             if (iOS.AppDelegate.HasNotch)
                 fullLayout.Padding = new Thickness(20, 35, 20, 25);
@@ -176,7 +176,7 @@ namespace SalveminiApp.ArgoPages
             chart.SecondaryAxis = secondaryAxis;
 
 
-            SplineSeries series = new SplineSeries();
+            SplineSeries series = new SplineSeries() { EnableAnimation = true };
             series.StrokeWidth = 3;
             series.EnableTooltip = true;
             series.ItemsSource = source;
@@ -226,12 +226,17 @@ namespace SalveminiApp.ArgoPages
 
         string stonks(double? primoVoto, double? secondoVoto)
         {
-            if (secondoVoto > primoVoto)
+            if (secondoVoto > primoVoto + 3)
+                return "Extra stonks";
+            else if (secondoVoto > primoVoto)
                 return "Stonks";
             else if (secondoVoto == primoVoto)
-                return "";
-            else
+                return "Medium stonks";
+            else if (secondoVoto < primoVoto - 3)
+                return "Mega not stonks";
+            else if (secondoVoto < primoVoto)
                 return "Not stonks";
+            else return "";
         }
     }
 }

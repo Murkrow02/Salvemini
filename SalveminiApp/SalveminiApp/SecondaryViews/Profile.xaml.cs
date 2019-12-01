@@ -8,6 +8,8 @@ using Plugin.Media.Abstractions;
 using FFImageLoading;
 using FFImageLoading.Cache;
 using FFImageLoading.Forms;
+using Plugin.FilePicker.Abstractions;
+using Plugin.FilePicker;
 
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
@@ -52,9 +54,8 @@ namespace SalveminiApp.SecondaryViews
 
             //Fill lists
             //Personalizza
-
 #if __IOS__
-            if (UIDevice.CurrentDevice.CheckSystemVersion(12, 0))
+            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
             {
                 //Check if downloaded orario
                 var defaults = new NSUserDefaults("group.com.codex.SalveminiApp", NSUserDefaultsType.SuiteName);
@@ -69,7 +70,10 @@ namespace SalveminiApp.SecondaryViews
                     persLayout.Children.Add(siriShortcuts);
                 }
             }
-
+            else
+            {
+                persLayout.Children.Add(new Label { Text = "Aggiorna ad iOS 13 per usare le scorciatoie di Siri", Margin = 5, TextColor = Styles.TextGray, FontSize = 10, HorizontalTextAlignment = TextAlignment.Center });
+            }
 #endif
             var countdown = new Helpers.PushCell { Title = "Countdown", Separator = "si", Push = new SecondaryViews.CountdownSettings() };
             countdown.GestureRecognizers.Add(tapGestureRecognizer);
@@ -77,6 +81,8 @@ namespace SalveminiApp.SecondaryViews
             var profileImg = new Helpers.PushCell { Title = "Immagine di profilo", Separator = "No" };
             profileImg.GestureRecognizers.Add(tapGestureRecognizer);
             persLayout.Children.Add(profileImg);
+
+
 
 
             //Contattaci
@@ -88,7 +94,7 @@ namespace SalveminiApp.SecondaryViews
             contactLayout.Children.Add(Mail);
 
             //Rappresentanti
-            var orariClasse = new Helpers.PushCell { Title = "Crea orario", Separator = "no", Push = new AreaVip.CreaOrario(Preferences.Get("Classe", 0).ToString() + Preferences.Get("Corso", "")) };
+            var orariClasse = new Helpers.PushCell { Title = "Modifica orario", Separator = "no", Push = new AreaVip.CreaOrario(Preferences.Get("Classe", 0).ToString() + Preferences.Get("Corso", "")) };
             orariClasse.GestureRecognizers.Add(tapGestureRecognizer);
             rapprLayout.Children.Add(orariClasse);
 
@@ -122,6 +128,9 @@ namespace SalveminiApp.SecondaryViews
             var appInfo = new Helpers.PushCell { Title = "App Info", Separator = "si", Push = new AreaVip.AppInfo() };
             appInfo.GestureRecognizers.Add(tapGestureRecognizer);
             superVipLayout.Children.Add(appInfo);
+            var giornalino = new Helpers.PushCell { Title = "Carica giornalino", Separator = "si" };
+            giornalino.GestureRecognizers.Add(tapGestureRecognizer);
+            superVipLayout.Children.Add(giornalino);
             var accediCon = new Helpers.PushCell { Title = "Controlla utenti", Separator = "no", Push = new AreaVip.UtentiList(true) };
             accediCon.GestureRecognizers.Add(tapGestureRecognizer);
             superVipLayout.Children.Add(accediCon);
@@ -370,6 +379,12 @@ namespace SalveminiApp.SecondaryViews
                     changePic(null, null);
                 }
 
+                //Profile image
+                if (cell.Title == "Carica giornalino")
+                {
+                    uploadGiornalino();
+                }
+
                 //Siri shortcuts
                 if (cell.Title == "Scorciatoie di Siri")
                 {
@@ -377,7 +392,7 @@ namespace SalveminiApp.SecondaryViews
                     //Treni Button
                     var TreniAction = UIAlertAction.Create("Treni", UIAlertActionStyle.Default, (action) =>
                     {
-                        if(Preferences.Get("savedStation",-1) == -1 && Preferences.Get("savedDirection",false) == false)
+                        if (Preferences.Get("savedStation", -1) == -1 && Preferences.Get("savedDirection", false) == false)
                         {
                             DisplayAlert("Attenzione", "Non hai salvato una stazione preferita. Per farlo vai alla home e clicca sul widget treni, apri la sezione treni e clicca sulla stella per salvare la tratta che preferisci", "Ok");
                             return;
@@ -426,6 +441,25 @@ namespace SalveminiApp.SecondaryViews
             {
                 //Page not set or some random error, sticazzi
                 return;
+            }
+        }
+
+        public async void uploadGiornalino()
+        {
+            try
+            {
+                FileData fileData = await CrossFilePicker.Current.PickFile();
+                if (fileData == null)
+                    return; // user canceled file picking
+
+                string fileName = fileData.FileName;
+                //string contents = System.Text.Encoding.UTF8.GetString(fileData.DataArray);
+                bool successo = await App.Immagini.UploadGiornalinoAsync(fileData.GetStream());
+                await DisplayAlert("successo", successo.ToString(), "Chiudi");
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Errore", ex.ToString(), "Chiudi");
             }
         }
     }

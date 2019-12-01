@@ -44,7 +44,7 @@ namespace SalveminiApp.SecondaryViews
             sondaggio = sondaggio_;
 
             //Save that user viewed last sondaggio
-           // Preferences.Set("LastSondaggio", sondaggio.id);
+            // Preferences.Set("LastSondaggio", sondaggio.id);
 
             //Add initial space
             widgetsLayout.Children.Add(new Xamarin.Forms.ContentView { WidthRequest = 5 });
@@ -54,7 +54,7 @@ namespace SalveminiApp.SecondaryViews
             {
                 //Create new layout to add a vote button under the option
                 var layout = new StackLayout { Spacing = 2, VerticalOptions = LayoutOptions.FillAndExpand };
-                var votaBtn = new Button { Text = "Vota", BackgroundColor = Color.Transparent, FontSize = 15, Margin = 0, VerticalOptions = LayoutOptions.Start };
+                var votaBtn = new Button { Text = "Vota", BackgroundColor = Styles.TextGray, Padding = 0, TextColor = Color.White, FontSize = 18, Margin = 0, VerticalOptions = LayoutOptions.Start, };
                 votaBtn.Clicked += VotaBtn_Clicked;
 
                 //Detect images
@@ -106,15 +106,16 @@ namespace SalveminiApp.SecondaryViews
                 {
                     Preferences.Set("voted" + sondaggio.id, true);
                     MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "RemoveBadge", "Sondaggi");
-
+                    MainPage.forceAppearing = true;
                     //Remove vote btn
                     try
                     {
-                       var layouts = widgetsLayout.Children.ToList();
-                        foreach(var stack in layouts)
+                        var layouts = widgetsLayout.Children.ToList();
+                        foreach (var stack in layouts)
                         {
-                           var stack_ = stack as StackLayout;
-                            try {
+                            var stack_ = stack as StackLayout;
+                            try
+                            {
                                 var buttonVote = stack_.Children[1] as Button;
                                 stack_.Children.Remove(buttonVote);
                             }
@@ -184,7 +185,7 @@ namespace SalveminiApp.SecondaryViews
             }
 
             //Connect to SignalR hub
-            connection.InitilizeHub();
+            await Task.Run((Action)connection.InitilizeHub); 
 
             //Handle new voto
             connection.hubProxy.On("UpdateVoti", () =>
@@ -200,8 +201,8 @@ namespace SalveminiApp.SecondaryViews
         public async void showResults()
         {
             //Show loading label
-            if(!showingResults)
-            await loadingLbl.FadeTo(1,200);
+            if (!showingResults)
+                await loadingLbl.FadeTo(1, 200);
 
             //Get new results
             Risultati = await App.Sondaggi.ReturnRisultati(sondaggio.id);
@@ -228,12 +229,12 @@ namespace SalveminiApp.SecondaryViews
             }
 
             //Hide loading label
-            if(!showingResults)
+            if (!showingResults)
                 await loadingLbl.FadeTo(0, 200);
 
             //Show frame
             if (!showingResults)
-            await Task.WhenAll(resultsFrame.FadeTo(1, 1000, Easing.CubicInOut), resultsFrame.TranslateTo(0, 0, 1500, Easing.CubicOut));
+                await Task.WhenAll(resultsFrame.FadeTo(1, 1000, Easing.CubicInOut), resultsFrame.TranslateTo(0, 0, 1500, Easing.CubicOut));
             showingResults = true;
         }
 
@@ -252,7 +253,11 @@ namespace SalveminiApp.SecondaryViews
             //Ios 13 bug
             try
             {
-                Navigation.PopModalAsync();
+                if (!MainPage.isSelectingImage)
+                {
+                    Navigation.PopModalAsync();
+                    MainPage.isSelectingImage = false;
+                }
             }
             catch
             {

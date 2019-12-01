@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage BackgroundColor="{x:Static local:Styles.BGColor}" Title="Crea sondaggio" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.AreaVip.CreaSondaggio">
+<ContentPage  BackgroundColor="{x:Static local:Styles.BGColor}" Title="Crea sondaggio" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.AreaVip.CreaSondaggio">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Crea" Clicked="Crea_Clicked" x:Name="createBtn" />
     </ContentPage.ToolbarItems>

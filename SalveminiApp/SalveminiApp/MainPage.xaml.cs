@@ -150,8 +150,7 @@ namespace SalveminiApp
                 return;
 
 
-            //Show loading
-            userRefreshed = false; homeLoading.IsRefreshing = true; userRefreshed = true;
+          
             //Sempre meglio mettere il try lol
             try
             {
@@ -187,11 +186,12 @@ namespace SalveminiApp
                     widgets.Add(trasporti);
                 }
                 //Card
-                var card = new WidgetGradient { Title = "SalveminiCard", SubTitle = "Visualizza tutti i vantaggi esclusivi per gli studenti del Salvemini", Icon = "fas-credit-card", StartColor = "B487FD", EndColor = "FA6FFA", Push = new SecondaryViews.SalveminiCard(), Order = 6 };
+                var card = new WidgetGradient { Title = "SalveminiCard", SubTitle = "Visualizza tutti i vantaggi esclusivi per gli studenti del Salvemini", Icon = "fas-credit-card", StartColor = "B487FD", EndColor = "FA6FFA", Push = new SecondaryViews.SalveminiCard(), Order = 7 };
                 card.GestureRecognizers.Add(tapGestureRecognizer);
                 //Extra
-                var extra = new WidgetGradient { Title = "Extra", SubTitle = "Esplora funzioni aggiuntive", Icon = "fas-star", StartColor = "B487FD", EndColor = "FA6FFA", Order = 5, Push = new SecondaryViews.Extra() };
+                var extra = new WidgetGradient { Title = "Extra", SubTitle = "Esplora funzioni aggiuntive", Icon = "fas-star", StartColor = "B487FD", EndColor = "FA6FFA", Order = 6, Push = new SecondaryViews.Extra() };
                 extra.GestureRecognizers.Add(tapGestureRecognizer);
+
 
                 //Initialize list with first widgets
                 widgets.Add(registro); widgets.Add(card); widgets.Add(extra);
@@ -200,6 +200,8 @@ namespace SalveminiApp
                 //Check Internet
                 if (Connectivity.NetworkAccess == NetworkAccess.Internet)
                 {
+                    //Show loading
+                    userRefreshed = false; homeLoading.IsRefreshing = true; userRefreshed = true;
 
                     //Argo index in background
                     await Task.Run((Action)GetArgoIndex);
@@ -209,8 +211,6 @@ namespace SalveminiApp
 
                     //Get index from api call
                     var tempIndex = await App.Index.GetIndex();
-
-
 
                     //Checks in downloaded index
                     if (tempIndex != null)
@@ -292,16 +292,31 @@ namespace SalveminiApp
                             positionAvvisi = -2;
                         }
                         //Create avviso widget
-                        var avvisi = new WidgetGradient { Order = positionAvvisi, Title = "Avvisi", SubTitle = Index.ultimoAvviso.Titolo, Icon = "fas-exclamation-triangle", StartColor = "FDD487", EndColor = "FA6F6F", Push = new SecondaryViews.Avvisi(), Badge = nuovoAvviso };
+                        var avvisi = new WidgetGradient { Order = positionAvvisi, Title = "Avvisi", SubTitle = Index.ultimoAvviso.Titolo, Icon = "fas-exclamation-triangle", StartColor = "FACA6F", EndColor = "FA6F6F", Push = new SecondaryViews.Avvisi(), Badge = nuovoAvviso };
                         avvisi.GestureRecognizers.Add(tapGestureRecognizer);
                         widgets.Add(avvisi);
+                    }
+
+                    //Get giornalino
+                    if (Index.Giornalino != null)
+                    {
+                        //Add giornalino widget
+                        string nuovoGiornalino = "no";
+                        int positionGiornalino = 5;
+                        if (Preferences.Get("LastGiornalino", 0) != Index.Giornalino.id) //New giornalino detected
+                        {
+                            nuovoGiornalino = "si";
+                            positionGiornalino = 0;
+                        }
+
+                        var giornalino = new WidgetGradient { Title = "Giornalino", SubTitle = "Edizione di " + Index.Giornalino.Data.ToString("MMMM"), Icon = "fas-book-open", StartColor = "B487FD", EndColor = "6F8AFA", Order = positionGiornalino, Badge = nuovoGiornalino };
+                        giornalino.GestureRecognizers.Add(tapGestureRecognizer);
+                        widgets.Add(giornalino);
                     }
 
                     //Update widgets order
                     OrderWidgets(false);
                     homeLoading.IsRefreshing = false;
-                    
-                    
                     //Get banner ad
                     if (Index.Ads != null && Index.Ads.Count > 0)
                     {
@@ -340,7 +355,7 @@ namespace SalveminiApp
                     Costants.showToast("connection");
                 }
 
-               
+
                 forceAppearing = false;
             }
             catch (Exception ex) //Errore sconosciuto :0
@@ -386,6 +401,14 @@ namespace SalveminiApp
 #endif
                         Navigation.PushModalAsync(widget.Push); //Modal
                     }
+                }
+
+                //Giornalino
+                if (widget.Title == "Giornalino")
+                {
+                    Preferences.Set("LastGiornalino", Index.Giornalino.id);
+                    Costants.OpenPdf(Index.Giornalino.Url, "Giornalino"); //Show webpage
+                    RemoveBadge("Giornalino");
                 }
             }
             catch (Exception ex)
@@ -838,11 +861,11 @@ namespace SalveminiApp
 
 #if __IOS__
                 //Add siri shortcut
-                if (!UIDevice.CurrentDevice.CheckSystemVersion(12, 0))
-                    return; //Pre ios 12 can't use this :(
+                if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+                    return; //Pre ios 13 can't use this :(
 
                 //Check if intent is already added or user doesen't want to add it
-                if (Preferences.Get("OrarioSiriSet", false) || Preferences.Get("DontShowSiriWidget", false)) 
+                if (Preferences.Get("OrarioSiriSet", false) || Preferences.Get("DontShowSiriWidget", false))
                     return;
 
                 //Save values for siri intent
@@ -877,7 +900,7 @@ namespace SalveminiApp
         public void sCoin_Tapped(object sender, EventArgs e)
         {
 
-           // Navigation.PushModalAsync(new SecondaryViews.SalveminiCoin());
+            // Navigation.PushModalAsync(new SecondaryViews.SalveminiCoin());
         }
 
     }

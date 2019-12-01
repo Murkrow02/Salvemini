@@ -11,6 +11,7 @@ namespace SalveminiApp.RestApi.Models
         public Sondaggi ultimoSondaggio { get; set; }
         public List<WholeModel> Oggi { get; set; }
         public List<Ad> Ads { get; set; }
+        public Giornalino Giornalino { get; set; }
         public int Authorized { get; set; }
         public bool VotedSondaggio { get; set; }
         public int sCoin { get; set; }

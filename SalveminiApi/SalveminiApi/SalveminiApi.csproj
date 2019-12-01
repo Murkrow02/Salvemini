@@ -425,11 +425,13 @@
       <DependentUpon>SearchUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AdsController.cs" />
+    <Compile Include="Controllers\AgendaController.cs" />
     <Compile Include="Controllers\AnalyticsController.cs" />
     <Compile Include="Controllers\ArgoController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\AvvisiController.cs" />
     <Compile Include="Controllers\DownloadOrariController.cs" />
+    <Compile Include="Controllers\FilesController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\SalveminiCardController.cs" />
@@ -473,6 +475,12 @@
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\BookUtenti.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Giornalino.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Materie.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Treno.cs" />
@@ -559,6 +567,7 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
       <LastGenOutput>DatabaseModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Orari\Classi\4FCAM.txt" />
     <Content Include="Orari\OrariTreni.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -596,6 +605,7 @@
     <Content Include="Models\DatabaseModel.edmx.diagram">
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Giornalino\2.pdf" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\fastclick.js" />
@@ -654,7 +664,6 @@
     <Folder Include="Helpers\Crashes\Client\" />
     <Folder Include="Images\sondaggi\" />
     <Folder Include="Images\users\" />
-    <Folder Include="Orari\Classi\" />
     <Folder Include="Views\Auth\" />
     <Folder Include="Views\Images\" />
   </ItemGroup>

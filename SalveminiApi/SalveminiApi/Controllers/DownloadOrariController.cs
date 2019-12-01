@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using Newtonsoft.Json;
+using SalveminiApi.Models;
 
 namespace SalveminiApi.Controllers
 {
@@ -13,6 +14,9 @@ namespace SalveminiApi.Controllers
     [RoutePrefix("api/orari")]
     public class DownloadOrariController : ApiController
     {
+
+        private DatabaseString db = new DatabaseString();
+
         [Route("treni")]
         [HttpGet]
         public string getOrari()
@@ -96,6 +100,28 @@ namespace SalveminiApi.Controllers
             }
         }
 
+        [Route("materie")]
+        [HttpGet]
+        public List<Models.Materie> getMaterie()
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+
+            //Get materie
+            try
+            {
+                return db.Materie.ToList();
+            }
+            catch (Exception ex)
+            {
+                Helpers.Utility.saveCrash("Error getting materie", ex.ToString());
+                throw new HttpResponseException(System.Net.HttpStatusCode.NotFound);
+            }
+        }
+
         [Route("siri/{classe}")]
         [HttpGet]
         public string[] getOrarioSiri(string classe)
@@ -114,13 +140,13 @@ namespace SalveminiApi.Controllers
                 //    "Etudiar todo el dia, nutrirme sanamente, " +
                 //    "EL PENE" };
 
+                //Detect sunday
+                if (intOggi == 6)
+                    return new string[] { "Domani non", "niente, è domenica!" };
+
                 //Handle errors
                 if (orarioDomani == null || orarioDomani.Count < 1)
                     throw new HttpResponseException(System.Net.HttpStatusCode.NotFound);
-
-                //Detect sunday
-                if (intOggi == 0)
-                    return new string[] { "Domani non", "niente, è domenica!" };
 
                 //Detect freeday
                 if (orarioDomani[0].Materia == "Libero")

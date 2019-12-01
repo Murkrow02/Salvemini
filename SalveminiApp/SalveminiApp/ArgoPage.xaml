@@ -16,6 +16,9 @@
                 </ScrollView>
             </StackLayout>
 
+            
+            <Button Text="Agenda" BackgroundColor="Black" TextColor="White" HorizontalOptions="FillAndExpand" Clicked="agenda_Clicked"/>
+
             <!--Grafico Materie-->
             <StackLayout>
                 <Label Text="Grafico Materie"  FontAttributes="Bold"  TextColor="{x:Static local:Styles.TextColor}" FontSize="Large" />
@@ -25,7 +28,7 @@
                         <OnPlatform x:TypeArguments="View">
                             <!--IOS-->
                             <OnPlatform.iOS>
-                                <chart:SfChart x:Name="chartI">
+                                <chart:SfChart x:Name="chartI" Opacity="0">
                                     <chart:SfChart.ChartBehaviors>
                                     </chart:SfChart.ChartBehaviors>
                                     <chart:SfChart.PrimaryAxis>
@@ -50,7 +53,7 @@
 
                             <!--ANDROID-->
                             <OnPlatform.Android>
-                                <chart:SfChart VerticalOptions="Start" x:Name="chartA" AreaBorderColor="Red">
+                                <chart:SfChart VerticalOptions="Start" x:Name="chartA" Opacity="0">
                                     <chart:SfChart.PrimaryAxis>
                                         <chart:CategoryAxis LabelCreated="Chart_LabelCreated">
                                         </chart:CategoryAxis>

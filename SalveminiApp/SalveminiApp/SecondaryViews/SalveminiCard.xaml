@@ -1,38 +1,36 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.SalveminiCard">
-    <StackLayout Padding="25,0" Spacing="5" x:Name="mainLayout">
+    <StackLayout Spacing="8" x:Name="mainLayout">
 
-        <Grid  Margin="-20,0" Padding="0,5">
-            <Image HeightRequest="25" HorizontalOptions="CenterAndExpand" Source="SalveminiCard.png" x:Name="lilCard" Opacity="0" />
-            <iconize:IconButton BackgroundColor="Transparent" Text="fal-times" FontSize="30" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="EndAndExpand" Clicked="closePage" VerticalOptions="CenterAndExpand"/>
-        </Grid>
+        <!--Header-->
+        <StackLayout Spacing="8" Padding="5" Orientation="Horizontal">
+            <iconize:IconButton BackgroundColor="Transparent" Text="fal-times" FontSize="30" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Start" Clicked="closePage" VerticalOptions="CenterAndExpand"/>
+            <Image HeightRequest="25" HorizontalOptions="StartAndExpand" Source="SalveminiCard.png" x:Name="lilCard" Opacity="0" />
+        </StackLayout>
+
         <!--Lista-->
-        <ListView  Scrolled="listScroll" Margin="-25,0" Footer="" SeparatorVisibility="None" x:Name="offersList" HasUnevenRows="true" ItemSelected="offerSelected">
-            <ListView.Header>
-                <StackLayout Padding="25,0" Spacing="2">
-                    <!--Card image-->
-
-                    <Image  Source="SalveminiCard.png" Margin="0,20" RotationY="15" x:Name="card" />
-                    <Label Text="Offerte" FontSize="35" TextColor="{x:Static local:Styles.TextColor}" />
-
-
-                </StackLayout>
-            </ListView.Header>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <local:ShadowFrame Margin="25,8" HasShadow="True" Padding="8" CornerRadius="12">
-                            <StackLayout Orientation="Horizontal">
-                                <Label TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="End" FontSize="Medium" Text="{Binding Nome}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" />
-                                <ffimageloading:CachedImage DownsampleToViewSize="True" CacheDuration="90" LoadingPlaceholder="imagePlaceholder.png" CacheType="Disk" ErrorPlaceholder="imagePlaceholder.png" Source="{Binding FullImmagine}" HeightRequest="60" HorizontalOptions="EndAndExpand" />
-                            </StackLayout>
-                        </local:ShadowFrame>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackLayout Padding="20,0">
+            <ListView  Scrolled="listScroll" Margin="-25,0" Footer="" SeparatorVisibility="None" x:Name="offersList" HasUnevenRows="true" ItemSelected="offerSelected">
+                <ListView.Header>
+                    <StackLayout Padding="25,0" Spacing="2">
+                        <!--Card image-->
+                        <Image Source="SalveminiCard.png" Margin="0,20" RotationY="15" x:Name="card"/>
+                        <Label Text="Offerte" FontSize="35" TextColor="{x:Static local:Styles.TextColor}"/>
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <local:ShadowFrame Margin="25,8" HasShadow="True" Padding="8" CornerRadius="12">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="End" FontSize="Medium" Text="{Binding Nome}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" />
+                                    <ffimageloading:CachedImage DownsampleToViewSize="True" CacheDuration="90" LoadingPlaceholder="imagePlaceholder.png" CacheType="Disk" ErrorPlaceholder="imagePlaceholder.png" Source="{Binding FullImmagine}" HeightRequest="60" HorizontalOptions="EndAndExpand" />
+                                </StackLayout>
+                            </local:ShadowFrame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </StackLayout>
-
-
-
 </ContentPage>

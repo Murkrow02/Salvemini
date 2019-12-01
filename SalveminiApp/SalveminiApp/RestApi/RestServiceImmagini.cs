@@ -76,13 +76,43 @@ namespace SalveminiApp.RestApi
                 return new string[] { "Errore", "Si è verificato un errore sconosciuto, riprova più tardi o contattaci se il problema persiste" };
             }
         }
+
+        public async Task<bool> UploadGiornalinoAsync(Stream file)
+        {
+            try
+            {
+                var url = Costants.Uri("giornalino/upload");
+                HttpContent fileStreamContent = new StreamContent(file);
+                fileStreamContent.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("form-data") { Name = "pdf", FileName = "giornalino" };
+                fileStreamContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
+
+                using (var formData = new MultipartFormDataContent())
+                {
+                    formData.Add(fileStreamContent);
+                    var response = await client.PostAsync(url, formData);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
     }
 
     public interface ImageService
     {
         Task<bool> UploadImageAsync(Stream image, string fileName, string percorso);
         Task<string[]> DeleteImage();
-
+        Task<bool> UploadGiornalinoAsync(Stream file);
     }
 
     public class ImageManager
@@ -98,6 +128,11 @@ namespace SalveminiApp.RestApi
         public Task<bool> uploadImages(Stream image, string fileName, string percorso)
         {
             return apiService.UploadImageAsync(image, fileName, percorso);
+        }
+
+        public Task<bool> UploadGiornalinoAsync(Stream file)
+        {
+            return apiService.UploadGiornalinoAsync(file);
         }
 
         public Task<string[]> DeleteImage()

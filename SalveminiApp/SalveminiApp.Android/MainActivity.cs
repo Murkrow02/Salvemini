@@ -56,7 +56,7 @@ namespace SalveminiApp.Droid
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
             //Initialize ads
-            MobileAds.Initialize(ApplicationContext, "ca-app-pub-2688730930606353~9126211172");
+            //MobileAds.Initialize(ApplicationContext, "ca-app-pub-2688730930606353~9126211172");
 
 
             LoadApplication(new App());

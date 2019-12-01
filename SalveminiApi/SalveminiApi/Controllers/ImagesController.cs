@@ -36,6 +36,8 @@ namespace SalveminiApi.Controllers
             }
         }
 
+
+
         [Route("{id}")]
         [HttpGet]
         public HttpResponseMessage deleteProfilePic(string id)
