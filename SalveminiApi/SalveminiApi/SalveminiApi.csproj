@@ -425,6 +425,7 @@
       <DependentUpon>SearchUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AdsController.cs" />
+    <Compile Include="Controllers\AgendaController.cs" />
     <Compile Include="Controllers\AnalyticsController.cs" />
     <Compile Include="Controllers\ArgoController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
@@ -477,6 +478,9 @@
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Giornalino.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Materie.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Treno.cs" />
@@ -563,6 +567,7 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
       <LastGenOutput>DatabaseModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Orari\Classi\4FCAM.txt" />
     <Content Include="Orari\OrariTreni.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -659,7 +664,6 @@
     <Folder Include="Helpers\Crashes\Client\" />
     <Folder Include="Images\sondaggi\" />
     <Folder Include="Images\users\" />
-    <Folder Include="Orari\Classi\" />
     <Folder Include="Views\Auth\" />
     <Folder Include="Views\Images\" />
   </ItemGroup>

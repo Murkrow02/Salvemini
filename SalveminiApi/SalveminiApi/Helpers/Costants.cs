@@ -7,6 +7,7 @@ namespace SalveminiApi
 {
     public class Costants
     {
+
         //Argo static cose
         public static string argoVersion = "2.1.0";
         public static string argoKey = "ax6542sdru3217t4eesd9";
@@ -18,7 +19,10 @@ namespace SalveminiApi
         //Return our dictionary's subject or a formatted string if there isn't one
         public static string ShortSubject(string subject)
         {
-            if (SubjectsList.ContainsKey(subject))
+                     Models.DatabaseString db = new Models.DatabaseString();
+
+        var materia = db.Materie.SingleOrDefault(x=> x.desMateria == subject);
+            if (materia != null)
             {
                 return SubjectsList[subject];
             }

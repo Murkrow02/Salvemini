@@ -85,6 +85,14 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Data" Type="datetime" Nullable="false" />
         </EntityType>
+        <EntityType Name="Materie">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="desMateria" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Materia" Type="nvarchar" MaxLength="200" />
+        </EntityType>
         <EntityType Name="OggettiSondaggi">
           <Key>
             <PropertyRef Name="id" />
@@ -230,6 +238,7 @@
           <EntitySet Name="BookUtenti" EntityType="Self.BookUtenti" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EventsLog" EntityType="Self.EventsLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Giornalino" EntityType="Self.Giornalino" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Materie" EntityType="Self.Materie" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OggettiSondaggi" EntityType="Self.OggettiSondaggi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SalveminiCard" EntityType="Self.SalveminiCard" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sondaggi" EntityType="Self.Sondaggi" Schema="dbo" store:Type="Tables" />
@@ -525,6 +534,7 @@
           <EntitySet Name="EventsLog" EntityType="SalveminiModel.EventsLog" />
           <EntitySet Name="AppInfo" EntityType="SalveminiModel.AppInfo" />
           <EntitySet Name="Giornalino" EntityType="SalveminiModel.Giornalino" />
+          <EntitySet Name="Materie" EntityType="SalveminiModel.Materie" />
         </EntityContainer>
         <EntityType Name="EventsLog">
           <Key>
@@ -548,6 +558,14 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Data" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Materie">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="desMateria" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Materia" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -698,6 +716,15 @@
             <EntityTypeMapping TypeName="SalveminiModel.Giornalino">
               <MappingFragment StoreEntitySet="Giornalino">
                 <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Materie">
+            <EntityTypeMapping TypeName="SalveminiModel.Materie">
+              <MappingFragment StoreEntitySet="Materie">
+                <ScalarProperty Name="Materia" ColumnName="Materia" />
+                <ScalarProperty Name="desMateria" ColumnName="desMateria" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

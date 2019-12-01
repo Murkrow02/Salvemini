@@ -31,29 +31,38 @@ namespace SalveminiApi.Controllers
             if (!authorized)
                 throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
-            var materie = new List<string>();
-
+            var newMaterie = new List<string>();
+            var currentMaterie = db.Materie.ToList();
             var utenti = db.Utenti.ToList();
-
+            //Scan through each user
             foreach(var utente in utenti)
             {
+                //Download compiti
                 var argoUtils = new ArgoUtils();
                 var argoClient = argoUtils.ArgoClient(utente.id, utente.ArgoToken);
                 var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/compiti");
-                if (!argoResponse.IsSuccessStatusCode)
+                if (!argoResponse.IsSuccessStatusCode) //Argo fail 
                     continue;
                 var argoContent = await argoResponse.Content.ReadAsStringAsync();
+
+                //Compiti
                 var compiti = JsonConvert.DeserializeObject<compitiList>(argoContent).dati;
                
                 foreach(var compito in compiti)
                 {
-                    if (!materie.Contains(compito.desMateria))
-                        materie.Add(compito.desMateria);
+                    //Check if materia already exists
+                    var conflict = currentMaterie.SingleOrDefault(x=> x.desMateria == compito.desMateria);
+                    if (conflict == null && !newMaterie.Contains(compito.desMateria))  //New materia found
+
+                    {
+                        newMaterie.Add(compito.desMateria);
+                        db.Materie.Add(new Materie { desMateria = compito.desMateria });
+                        db.SaveChanges();
+                    }
                 }
 
             }
-
-            return materie;
+            return newMaterie;
         }
 
    

@@ -269,6 +269,8 @@ namespace SalveminiApi.Controllers
 
                 foreach (var voto in votiGrouped[i])
                 {
+
+
                     listaVoti.Add(voto);
                     groupedMateria.Materia = voto.Materia;
                 }
@@ -281,9 +283,8 @@ namespace SalveminiApi.Controllers
                 {
 
                     //Controlla se è una giustifica
-                    if (voto.decValore == null)
+                    if (voto.decValore == null || !voto.codVoto.Any(char.IsDigit))
                     {
-                        voto.codVoto = "G";
                         continue;
                     }
 
@@ -303,6 +304,8 @@ namespace SalveminiApi.Controllers
 
             }
 
+            //Remove results with 0 (probably got with giustifica)
+            groupedCollection.RemoveAll(x => x.Media == 0);
 
             return groupedCollection;
         }

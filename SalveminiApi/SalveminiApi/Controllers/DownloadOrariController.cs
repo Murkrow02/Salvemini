@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using Newtonsoft.Json;
+using SalveminiApi.Models;
 
 namespace SalveminiApi.Controllers
 {
@@ -13,6 +14,9 @@ namespace SalveminiApi.Controllers
     [RoutePrefix("api/orari")]
     public class DownloadOrariController : ApiController
     {
+
+        private DatabaseString db = new DatabaseString();
+
         [Route("treni")]
         [HttpGet]
         public string getOrari()
@@ -92,6 +96,28 @@ namespace SalveminiApi.Controllers
             catch (Exception ex)
             {
                 Helpers.Utility.saveCrash("Error getting orario classe " + classe, ex.ToString());
+                throw new HttpResponseException(System.Net.HttpStatusCode.NotFound);
+            }
+        }
+
+        [Route("materie")]
+        [HttpGet]
+        public List<Models.Materie> getMaterie()
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+
+            //Get materie
+            try
+            {
+                return db.Materie.ToList();
+            }
+            catch (Exception ex)
+            {
+                Helpers.Utility.saveCrash("Error getting materie", ex.ToString());
                 throw new HttpResponseException(System.Net.HttpStatusCode.NotFound);
             }
         }
