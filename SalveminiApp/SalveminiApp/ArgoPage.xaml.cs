@@ -19,6 +19,10 @@ namespace SalveminiApp
         {
             base.OnAppearing();
 
+            //Show agenda only if orario downloaded
+            if (Preferences.Get("OrarioSaved", false))
+                agendaFrame.IsVisible = true;
+
             //Check internet status
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
@@ -100,8 +104,8 @@ namespace SalveminiApp
         {
             InitializeComponent();
 
-            //Set heights
-           // widgetsGrid.RowSpacing = App.ScreenHeight / 100;
+         
+
 
             //Hide Navigation Bar
             NavigationPage.SetHasNavigationBar(this, false);
@@ -160,9 +164,12 @@ namespace SalveminiApp
             secondRowWidgets.Children.Add(new ContentView { WidthRequest = 0 });
         }
 
-        public void agenda_Clicked(object sender, EventArgs e)
+        public async void agenda_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ArgoPages.Agenda());
+            var view = sender as Xamarin.Forms.PancakeView.PancakeView;
+            await view.TranslateTo(App.ScreenWidth, 0, 700);
+            await Navigation.PushModalAsync(new ArgoPages.Agenda());
+            await view.TranslateTo(0, 0, 0);
         }
     }
 }

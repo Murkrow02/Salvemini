@@ -77,8 +77,8 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Salvemini ha bisogno di verificare la tua posizione per attivare il codice</string>
 	<key>CFBundleVersion</key>
-	<string>4.2</string>
+	<string>4.3</string>
 	<key>CFBundleShortVersionString</key>
-	<string>21</string>
+	<string>22</string>
 </dict>
 </plist>

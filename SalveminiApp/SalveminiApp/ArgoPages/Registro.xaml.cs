@@ -41,7 +41,7 @@ namespace SalveminiApp.ArgoPages
 #if __IOS__
             if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0) && iOS.AppDelegate.HasNotch)
             {
-                mainLayout.Padding = new Thickness(0, 30, 0, 0);
+                mainLayout.Padding = new Thickness(0, 35, 0, 0);
             }
 #endif
         }

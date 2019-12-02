@@ -1,15 +1,30 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.ArgoPages.Agenda">
-    <StackLayout>
-        <Picker x:Name="days" Unfocused="picker_Unfocused"/> 
-        <ListView  HasUnevenRows="true" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None" x:Name="compitiList" VerticalOptions="Start">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Label Text="{Binding desCompiti}"/>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+<ContentPage xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:local="clr-namespace:SalveminiApp" xmlns:ComboBox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.ArgoPages.Agenda">
+    <StackLayout x:Name="mainLayout" Spacing="12">
+        <!--TitleView-->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="8,0" Margin="0,5,0,0" >
+            <StackLayout Spacing="1" HorizontalOptions="Start" VerticalOptions="Start" x:Name="titleLayout">
+                <Label Text="Agenda" TextColor="{x:Static local:Styles.TextColor}" HorizontalTextAlignment="Start" FontSize="35" FontAttributes="Bold"/>
+                <Label Text="Sono riportati i possibili compiti assegnati per il giorno selezionato" HorizontalTextAlignment="Start" TextColor="{x:Static local:Styles.TextGray}" FontSize="18"/>
+            </StackLayout>
+            <iconize:IconButton BackgroundColor="Transparent" Text="fal-times" FontSize="30" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="EndAndExpand" Clicked="Close_Clicked" VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+
+        <StackLayout Padding="12,0" Spacing="12">
+            <!--Picker e ripristina-->
+            <StackLayout Orientation="Horizontal" Spacing="2">
+                <ComboBox:SfComboBox SelectionChanged="giorno_Selected" x:Name="days" IsEditableMode="False" AllowFiltering="False" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Ripristina eliminati" TextColor="{x:Static local:Styles.Apple}" HorizontalOptions="End" BackgroundColor="Transparent" Clicked="reset_Cached"/>
+            </StackLayout>
+            <!--Loading-->
+            <ActivityIndicator IsVisible="false" IsRunning="False" x:Name="loading" HorizontalOptions="CenterAndExpand"/>
+            <!--Compiti-->
+            <ScrollView Margin="-12,0">
+                <StackLayout x:Name="compitiLayout" Spacing="15">
+
+                </StackLayout>
+            </ScrollView>
+
+        </StackLayout>
     </StackLayout>
 </ContentPage>

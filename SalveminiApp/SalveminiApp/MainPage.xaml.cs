@@ -859,6 +859,7 @@ namespace SalveminiApp
                     });
                 }
 
+                Preferences.Set("OrarioSaved", true);
 #if __IOS__
                 //Add siri shortcut
                 if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
