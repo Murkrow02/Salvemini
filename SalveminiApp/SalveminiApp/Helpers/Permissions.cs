@@ -17,6 +17,7 @@ namespace SalveminiApp.Helpers
             if (status != PermissionStatus.Granted)
             {
                 var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Location);
+
                 //Best practice to always check that the key exists
                 if (results.ContainsKey(Permission.Location))
                 {

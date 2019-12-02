@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UIKit;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
@@ -15,6 +16,7 @@ namespace SalveminiApp.SalveminiCoin
         public RedeemCode()
         {
             InitializeComponent();
+
 
 #if __IOS__
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
@@ -47,11 +49,43 @@ namespace SalveminiApp.SalveminiCoin
 
         private async void Confirm_Clicked(object sender, EventArgs e)
         {
-            await Task.WhenAll(arrowLabel.FadeTo(0, 300), bgArrowFrame.ColorTo(Color.FromHex("#E3E3E3"), Color.FromHex("#529FFF"), x => bgArrowFrame.BackgroundColor = x, 500), exitButton.ColorTo(exitButton.BackgroundColor, Color.FromHex("#529FFF"), x => exitButton.BackgroundColor = x, 500));
-            arrowLabel.Text = "check";
-            exitButton.Text = "Fatto";
-            arrowLabel.TextColor = Color.White;
-            await arrowLabel.FadeTo(1, 300);
+            if (string.IsNullOrEmpty(codeEntry.Text))
+            {
+                return;
+            }
+
+            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+            {
+                //Check location permissions
+                var garanted = await Helpers.Permissions.locationPermission();
+                if (!garanted) return; //No permission to localize
+
+                //Get location
+                var location = await Geolocation.GetLocationAsync();
+                if (location == null) //Error localizing
+                {
+                    await DisplayAlert("Errore", "Non è stato possibile localizzare il dispositivo, controlla la tua copertura e riprova", "Ok");
+                    return;
+                }
+                //Check accuracy
+                var validityMessage = await Helpers.Permissions.positionValidity(location);
+                if (!string.IsNullOrEmpty(validityMessage))
+                {
+                    await DisplayAlert("Attenzione", validityMessage, "Ok");
+                    return;
+                }
+
+                string response = await App.Coins.PostCode(new RestApi.Models.PostCode { xPosition = 14.374786m, yPosition = 40.626893m, Codice = Convert.ToInt32(codeEntry.Text)});
+                if (response.ToLower().Contains("scoin"))
+                {
+                    infoLabel.Text = response;
+                    await Task.WhenAll(arrowLabel.FadeTo(0, 300), bgArrowFrame.ColorTo(Color.FromHex("#E3E3E3"), Color.FromHex("#529FFF"), x => bgArrowFrame.BackgroundColor = x, 500), exitButton.ColorTo(exitButton.BackgroundColor, Color.FromHex("#529FFF"), x => exitButton.BackgroundColor = x, 500));
+                    arrowLabel.Text = "check";
+                    exitButton.Text = "Fatto";
+                    arrowLabel.TextColor = Color.White;
+                    await arrowLabel.FadeTo(1, 300);
+                }
+            }
         }
 
         private void Code_TextChanged(object sender, TextChangedEventArgs e)

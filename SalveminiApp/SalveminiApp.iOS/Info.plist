@@ -80,5 +80,7 @@
 	<string>4.3</string>
 	<key>CFBundleShortVersionString</key>
 	<string>22</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Salvemini ha bisogno di verificare la tua posizione per attivare il codice</string>
 </dict>
 </plist>

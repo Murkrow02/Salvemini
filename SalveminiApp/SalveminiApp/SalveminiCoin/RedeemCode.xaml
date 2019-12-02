@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage Padding="20" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SalveminiCoin.RedeemCode">
     <ContentPage.Content>
-        <StackLayout Spacing="30">
+         <StackLayout Spacing="30">
             <Frame x:Name="bgArrowFrame" HorizontalOptions="Center" WidthRequest="180" HeightRequest="180" Padding="0" CornerRadius="90" IsClippedToBounds="True" HasShadow="False" BackgroundColor="#E3E3E3">
                 <iconize:IconLabel x:Name="arrowLabel" TextColor="{x:Static local:Styles.TextColor}" Text="fas-arrow-up" HorizontalOptions="Center" VerticalOptions="Center" FontSize="100" />
             </Frame>
             <StackLayout Spacing="15">
-                <Label Text="Inserisci il codice che ti è&#x0a;stato fornito" HorizontalOptions="Center" FontAttributes="Bold" TextColor="#696162" FontSize="Large" HorizontalTextAlignment="Center" />
+                <Label x:Name="infoLabel" Text="Inserisci il codice che ti è&#x0a;stato fornito" HorizontalOptions="Center" FontAttributes="Bold" TextColor="#696162" FontSize="Large" HorizontalTextAlignment="Center" />
                 <Frame x:Name="stationFrame" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="10" Margin="60, 0" HasShadow="False" Padding="2, -1">
-                    <Entry HorizontalTextAlignment="Center" TextChanged="Code_TextChanged" Margin="-5, 0" TextColor="{x:Static local:Styles.TextColor}" x:Name="stationPicker" HorizontalOptions="FillAndExpand" FontSize="20" Placeholder="Codice" />
+                    <Entry x:Name="codeEntry" HorizontalTextAlignment="Center" TextChanged="Code_TextChanged" Margin="-5, 0" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="FillAndExpand" FontSize="20" Placeholder="Codice" />
                 </Frame>
             </StackLayout>
-            <Button x:Name="confirmButton" Text="Conferma" Clicked="Confirm_Clicked" IsEnabled="False" TextColor="White" BackgroundColor="#66ED8A" FontSize="Large" CornerRadius="20" Padding="10" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Button x:Name="confirmButton" Text="Conferma" Clicked="Confirm_Clicked" IsEnabled="False" TextColor="White" BackgroundColor="#E3E3E3" FontSize="Large" CornerRadius="20" Padding="10" FontAttributes="Bold" HorizontalOptions="Center" />
             <Button x:Name="exitButton" Text="Esci" Clicked="Close_Clicked" TextColor="White" BackgroundColor="#EC6666" FontSize="Large" FontAttributes="Bold" CornerRadius="10" Margin="20,0" VerticalOptions="EndAndExpand" />
         </StackLayout>
     </ContentPage.Content>

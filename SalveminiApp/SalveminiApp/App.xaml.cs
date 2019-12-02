@@ -34,7 +34,7 @@ namespace SalveminiApp
         public static RestApi.SondaggiManager Sondaggi { get; private set; }
         public static RestApi.AdsManager Ads { get; private set; }
         public static RestApi.AgendaManager Agenda { get; private set; }
-
+        public static RestApi.ItemManagerCoins Coins { get; private set; }
 
         public App()
         {
@@ -98,6 +98,7 @@ namespace SalveminiApp
             Sondaggi = new RestApi.SondaggiManager(new RestApi.RestServiceSondaggi());
             Ads = new RestApi.AdsManager(new RestApi.RestServiceAds());
             Agenda = new RestApi.AgendaManager(new RestApi.RestServiceAgenda());
+            Coins = new RestApi.ItemManagerCoins(new RestApi.RestServiceCoins());
         }
 
         private static async void HandleNotificationReceived(OSNotification notification)

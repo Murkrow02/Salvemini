@@ -207,6 +207,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SalveminiCoin\CoinMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SalveminiCoin\RedeemCode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -411,6 +419,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)AreaVip\AddEvento.xaml.cs">
       <DependentUpon>AddEvento.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SalveminiCoin\CoinMenu.xaml.cs">
+      <DependentUpon>CoinMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SalveminiCoin\RedeemCode.xaml.cs">
+      <DependentUpon>RedeemCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceCoins.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Coins.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
@@ -427,6 +443,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Controls\" />
     <Folder Include="$(MSBuildThisFileDirectory)RestApi\SignalR\" />
     <Folder Include="$(MSBuildThisFileDirectory)SignalR\" />
+    <Folder Include="$(MSBuildThisFileDirectory)SalveminiCoin\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Helpers\Preferences.txt" />

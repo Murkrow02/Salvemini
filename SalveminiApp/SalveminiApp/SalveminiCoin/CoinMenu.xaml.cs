@@ -15,6 +15,7 @@ namespace SalveminiApp.SalveminiCoin
         {
             InitializeComponent();
 
+
 #if __IOS__
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
 #endif
