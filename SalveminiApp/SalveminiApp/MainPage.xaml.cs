@@ -901,7 +901,7 @@ namespace SalveminiApp
         public void sCoin_Tapped(object sender, EventArgs e)
         {
 
-            // Navigation.PushModalAsync(new SecondaryViews.SalveminiCoin());
+            Navigation.PushModalAsync(new SalveminiCoin.CoinMenu() );
         }
 
     }
