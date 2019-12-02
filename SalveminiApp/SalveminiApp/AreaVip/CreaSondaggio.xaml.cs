@@ -168,7 +168,7 @@ namespace SalveminiApp.AreaVip
             }
 
             //Check permissions
-            bool garanted = await Helpers.CameraPermissions.checkPermissions();
+            bool garanted = await Helpers.Permissions.checkPermissions();
             if (!garanted)
                 await DisplayAlert("Attenzione", "Non ci hai permesso di accedere alla tua fotocamera o alla tua galleria", "Ok");
 

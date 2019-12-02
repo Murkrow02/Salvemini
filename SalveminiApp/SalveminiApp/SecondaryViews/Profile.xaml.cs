@@ -108,6 +108,9 @@ namespace SalveminiApp.SecondaryViews
             var utenti = new Helpers.PushCell { Title = "Controlla utenti", Separator = "si", Push = new AreaVip.UtentiList(false) };
             utenti.GestureRecognizers.Add(tapGestureRecognizer);
             vipLayout.Children.Add(utenti);
+            var evento = new Helpers.PushCell { Title = "Crea evento sCoin", Separator = "si", Push = new AreaVip.AddEvento() };
+            evento.GestureRecognizers.Add(tapGestureRecognizer);
+            vipLayout.Children.Add(evento);
             var sondaggio = new Helpers.PushCell { Title = "Crea sondaggio", Separator = "no", Push = new AreaVip.CreaSondaggio() };
             sondaggio.GestureRecognizers.Add(tapGestureRecognizer);
             vipLayout.Children.Add(sondaggio);
@@ -242,7 +245,7 @@ namespace SalveminiApp.SecondaryViews
             MainPage.isSelectingImage = true;
 
             //Check permissions
-            bool garanted = await Helpers.CameraPermissions.checkPermissions();
+            bool garanted = await Helpers.Permissions.checkPermissions();
             if (!garanted)
                 await DisplayAlert("Attenzione", "Non ci hai permesso di accedere alla tua fotocamera o alla tua galleria", "Ok");
 
