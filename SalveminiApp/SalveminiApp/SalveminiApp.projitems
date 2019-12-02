@@ -203,6 +203,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)AreaVip\AddEvento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -368,7 +372,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AreaVip\CreaOfferta.xaml.cs">
       <DependentUpon>CreaOfferta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\CameraPermissions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Permissions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\Note.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ArgoPages\Note.xaml.cs">
       <DependentUpon>Note.xaml</DependentUpon>
@@ -403,6 +407,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceAgenda.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\CompitoAgenda.xaml.cs">
       <DependentUpon>CompitoAgenda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)AreaVip\AddEvento.xaml.cs">
+      <DependentUpon>AddEvento.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

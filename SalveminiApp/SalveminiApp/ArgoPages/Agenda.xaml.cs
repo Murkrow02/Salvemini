@@ -79,8 +79,11 @@ namespace SalveminiApp.ArgoPages
         }
 
 
-        void reset_Cached(object sender, EventArgs e)
+       async void reset_Cached(object sender, EventArgs e)
         {
+            var choice = await DisplayAlert("Attenzione", "Sei sicuro di voler ripristinare i compiti che hai eliminato?", "Si", "No");
+            if (!choice)
+                return;
             Barrel.Current.Empty("deletedCompiti");
             downloadCompiti(days.SelectedIndex + 1);
             Costants.showToast("I compiti che avevi eliminato sono stati riaggiunti");

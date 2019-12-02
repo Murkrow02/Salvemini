@@ -64,7 +64,7 @@ namespace SalveminiApp.RestApi
                     Utente = JsonConvert.DeserializeObject<Utente>(content);
 
                     //Save Cache
-                    Barrel.Current.Add("utente" + id.ToString(), Utenti, TimeSpan.FromDays(10));
+                    Barrel.Current.Add("utente" + id.ToString(), Utente, TimeSpan.FromDays(10));
                 }
                 else
                 {
