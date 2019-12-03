@@ -31,10 +31,10 @@ namespace SalveminiApp.RestApi
                 var json = JsonConvert.SerializeObject(model);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 var response = await client.PostAsync(uri, content);
-
+                var sContent = await response.Content.ReadAsStringAsync();
                 if (response.IsSuccessStatusCode)
                 {
-                    return await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<string>(sContent);
                 }
                 else
                 {
@@ -79,6 +79,7 @@ namespace SalveminiApp.RestApi
     public interface IRestServiceCoins
     {
         Task<string> PostCode(Models.PostCode model);
+        Task<string[]> PostEvento(Models.Evento model);
     }
 
     public class ItemManagerCoins
@@ -94,6 +95,11 @@ namespace SalveminiApp.RestApi
         public Task<string> PostCode(Models.PostCode model)
         {
             return restServiceCoins.PostCode(model);
+        }
+
+        public Task<string[]> PostEvento(Models.Evento model)
+        {
+            return restServiceCoins.PostEvento(model);
         }
     }
 }

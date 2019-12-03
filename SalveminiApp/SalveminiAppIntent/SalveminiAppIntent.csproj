@@ -81,6 +81,7 @@
     <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <MtouchVerbosity></MtouchVerbosity>
+    <CodesignProvision>SalveminiAppIntent</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

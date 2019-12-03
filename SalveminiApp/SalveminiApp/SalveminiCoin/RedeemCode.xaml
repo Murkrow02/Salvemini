@@ -7,7 +7,7 @@
             </Frame>
             <StackLayout Spacing="15">
                 <Label x:Name="infoLabel" Text="Inserisci il codice che ti è&#x0a;stato fornito" HorizontalOptions="Center" FontAttributes="Bold" TextColor="#696162" FontSize="Large" HorizontalTextAlignment="Center" />
-                <StackLayout Spacing="10" Orientation="Horizontal">
+                <StackLayout Margin="40, 0"  Spacing="10" Orientation="Horizontal">
                     <Frame x:Name="stationFrame" VerticalOptions="Center" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="10" Margin="0, 0" HasShadow="False" Padding="2, -1">
                         <Entry Keyboard="Numeric" x:Name="codeEntry" HorizontalTextAlignment="Center" TextChanged="Code_TextChanged" Margin="-5, 0" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="FillAndExpand" FontSize="20" Placeholder="Codice" />
                     </Frame>
