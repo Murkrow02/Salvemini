@@ -13,7 +13,7 @@ namespace SalveminiApp.RestApi
     public class RestServiceCoins : IRestServiceCoins
     {
         HttpClient client;
-        
+
         public RestServiceCoins()
         {
             client = new HttpClient();
@@ -45,6 +45,33 @@ namespace SalveminiApp.RestApi
             {
                 Debug.WriteLine(@"Crea offerta", ex.Message);
                 return "Si è verificato un errore sconosciuto, riprova più tardi o contattaci se il problema persiste";
+            }
+        }
+
+        public async Task<string[]> PostEvento(Models.Evento model)
+        {
+            var uri = Costants.Uri("scoin/addevento");
+
+            try
+            {
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await client.PostAsync(uri, content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return new string[] { "Successo", "L'evento è stato creato con il codice MAMMT" };
+                }
+                else
+                {
+                    return new string[] { "Errore", "Si è verificato un errore" };
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Crea offerta", ex.Message);
+                return new string[] { "Errore", "Si è verificato un errore" };
             }
         }
     }

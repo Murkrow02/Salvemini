@@ -21,6 +21,16 @@ namespace SalveminiApp.SalveminiCoin
 #if __IOS__
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
 #endif
+
+           
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            confirmFrame.HeightRequest = stationFrame.Height;
+            confirmFrame.WidthRequest = stationFrame.Height;
+            confirmFrame.CornerRadius = (float)stationFrame.Height / 2;
         }
 
         protected override void OnDisappearing()
@@ -74,12 +84,12 @@ namespace SalveminiApp.SalveminiCoin
                     await DisplayAlert("Attenzione", validityMessage, "Ok");
                     return;
                 }
-
-                string response = await App.Coins.PostCode(new RestApi.Models.PostCode { xPosition = 14.374786m, yPosition = 40.626893m, Codice = Convert.ToInt32(codeEntry.Text)});
+                string response = await App.Coins.PostCode(new RestApi.Models.PostCode { xPosition = (decimal)location.Longitude, yPosition = (decimal)location.Latitude, Codice = Convert.ToInt32(codeEntry.Text) });
                 if (response.ToLower().Contains("scoin"))
                 {
                     infoLabel.Text = response;
-                    await Task.WhenAll(arrowLabel.FadeTo(0, 300), bgArrowFrame.ColorTo(Color.FromHex("#E3E3E3"), Color.FromHex("#529FFF"), x => bgArrowFrame.BackgroundColor = x, 500), exitButton.ColorTo(exitButton.BackgroundColor, Color.FromHex("#529FFF"), x => exitButton.BackgroundColor = x, 500));
+                    await Task.WhenAll(bgArrowFrame.ColorTo(Color.FromHex("#E3E3E3"), Color.FromHex("#529FFF"), x => bgArrowFrame.BackgroundColor = x, 300), exitButton.ColorTo(exitButton.BackgroundColor, Color.FromHex("#529FFF"), x => exitButton.BackgroundColor = x, 300));
+                    await arrowLabel.FadeTo(0, 300);
                     arrowLabel.Text = "check";
                     exitButton.Text = "Fatto";
                     arrowLabel.TextColor = Color.White;
