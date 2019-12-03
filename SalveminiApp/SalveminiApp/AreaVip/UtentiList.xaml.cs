@@ -71,13 +71,15 @@ namespace SalveminiApp.AreaVip
 
         async void userSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            //Deselect cell
-            if (e.SelectedItem == null)
-                return;
-            utentiListCtrl.SelectedItem = null;
+           
 
             //Get user selcted
             var data = (sender as Xamarin.Forms.ListView).SelectedItem as RestApi.Models.Utente;
+
+             //Deselect cell
+            if (e.SelectedItem == null)
+                return;
+            utentiListCtrl.SelectedItem = null;
 
             //Access with feature if super vip
             if (superVip)
