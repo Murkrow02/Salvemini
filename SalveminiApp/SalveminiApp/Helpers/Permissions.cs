@@ -33,11 +33,11 @@ namespace SalveminiApp.Helpers
 
         public static async Task<string> positionValidity(Xamarin.Essentials.Location location)
         {
-            if (location.Accuracy > 30)
-                return "La tua posizione non è abbastanza accurata, riprova";
+            //if (location.Accuracy > 30)
+            //    return "La tua posizione non è abbastanza accurata, riprova";
          //   if (location.IsFromMockProvider)
             //    return "Cooooooosa? Qualcuno sta cercando di imbrogliare qua? Non è stato possibile verificare l'autenticità della tua posizione, disattiva i servizi di localizzazione falsi";
-            else return "";
+             return "";
         }
 
         public static async Task<bool> checkPermissions()

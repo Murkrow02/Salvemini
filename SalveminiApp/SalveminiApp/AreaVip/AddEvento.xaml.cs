@@ -49,7 +49,7 @@ namespace SalveminiApp.AreaVip
             }
 
             //All right, create event
-            var evento = new RestApi.Models.Evento { idCreatore = Preferences.Get("UserId", -1), Nome = eventName.Text, Raggio = Convert.ToDecimal(raggioPicker.SelectedItem.ToString()), Valore = (int)valorePicker.SelectedItem, xAttivazione = (decimal)location.Latitude, yAttivazione = (decimal)location.Longitude };
+            var evento = new RestApi.Models.Evento { idCreatore = Preferences.Get("UserId", -1), Nome = eventName.Text, Raggio = Convert.ToDecimal(raggioPicker.SelectedItem.ToString()), Valore = (int)valorePicker.SelectedItem, xAttivazione = (decimal)location.Longitude, yAttivazione = (decimal)location.Latitude };
             var response = await App.Coins.PostEvento(evento);
 
             //Show response

@@ -137,11 +137,8 @@ namespace SalveminiApp.RestApi
     {
         Task<string> PostCode(Models.PostCode model);
         Task<string[]> PostEvento(Models.Evento model);
-<<<<<<< HEAD
-=======
         Task<List<Models.Evento>> ListaEventi();
         Task<string[]> ToggleEvento(int id);
->>>>>>> 0d5e992504ed43d9f69af84720640171b31c7278
     }
 
     public class ItemManagerCoins
@@ -163,8 +160,6 @@ namespace SalveminiApp.RestApi
         {
             return restServiceCoins.PostEvento(model);
         }
-<<<<<<< HEAD
-=======
 
         public Task<List<Models.Evento>> ListaEventi()
         {
@@ -175,6 +170,5 @@ namespace SalveminiApp.RestApi
         {
             return restServiceCoins.ToggleEvento(id);
         }
->>>>>>> 0d5e992504ed43d9f69af84720640171b31c7278
     }
 }
