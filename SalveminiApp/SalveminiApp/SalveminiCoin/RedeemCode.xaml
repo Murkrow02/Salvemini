@@ -11,7 +11,7 @@
                     <Frame x:Name="stationFrame" VerticalOptions="Center" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="10" Margin="0, 0" HasShadow="False" Padding="2, -1">
                         <Entry Keyboard="Numeric" x:Name="codeEntry" HorizontalTextAlignment="Center" TextChanged="Code_TextChanged" Margin="-5, 0" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="FillAndExpand" FontSize="20" Placeholder="Codice" />
                     </Frame>
-                    <Frame Padding="0" x:Name="confirmFrame" BackgroundColor="#529FFF" HorizontalOptions="End" VerticalOptions="Center" HasShadow="False">
+                    <Frame Opacity="0" Padding="0" x:Name="confirmFrame" BackgroundColor="#529FFF" HorizontalOptions="End" VerticalOptions="Center" HasShadow="False">
                         <iconize:IconButton x:Name="confirmButton" Text="fas-arrow-right" Clicked="Confirm_Clicked" IsEnabled="False" TextColor="White" BackgroundColor="Transparent" FontSize="Large" CornerRadius="20" FontAttributes="Bold" HorizontalOptions="Center" />
                     </Frame>
                 </StackLayout>
