@@ -36,6 +36,7 @@ namespace SalveminiApp.SalveminiCoin
             confirmFrame.HeightRequest = stationFrame.Height;
             confirmFrame.WidthRequest = stationFrame.Height;
             confirmFrame.CornerRadius = (float)stationFrame.Height / 2;
+            confirmFrame.FadeTo(1, 300);
             try
             {
                 Compass.Start(SensorSpeed.UI);
