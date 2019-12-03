@@ -21,6 +21,7 @@ namespace SalveminiApp.AreaVip
 
         public async void save_Clicked(object sender, EventArgs e)
         {
+            (sender as Button).IsEnabled = false;
             //Check values
             if (string.IsNullOrEmpty(eventName.Text) || valorePicker.SelectedItem == null || raggioPicker.SelectedItem == null)
             {
@@ -48,7 +49,12 @@ namespace SalveminiApp.AreaVip
             }
 
             //All right, create event
-           
+            var evento = new RestApi.Models.Evento { idCreatore = Preferences.Get("UserId", -1), Nome = eventName.Text, Raggio = Convert.ToDecimal(raggioPicker.SelectedItem.ToString()), Valore = (int)valorePicker.SelectedItem, xAttivazione = (decimal)location.Latitude, yAttivazione = (decimal)location.Longitude };
+            var response = await App.Coins.PostEvento(evento);
+
+            //Show response
+            (sender as Button).IsEnabled = true;
+            await DisplayAlert(response[0], response[1], "Ok");
         }
 
 
