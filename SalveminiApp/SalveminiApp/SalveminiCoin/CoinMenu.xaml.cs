@@ -29,19 +29,19 @@ namespace SalveminiApp.SalveminiCoin
             var tapGestureRecognizer = new TapGestureRecognizer();
             tapGestureRecognizer.Tapped += TapGestureRecognizer_Tapped;
 
-            //Set childrens
+            //Set children
+            //Guadagna
             var codeButton = new Helpers.PushCell { Title = "Riscatta codice", IsEnabled = true, Separator = "si", Push = new RedeemCode() };
             codeButton.GestureRecognizers.Add(tapGestureRecognizer);
             gainLayout.Children.Add(codeButton);
-
             var gainButton = new Helpers.PushCell { Title = "Ottieni sCoins gratis", IsEnabled = true, Separator = "no" };
             gainButton.GestureRecognizers.Add(tapGestureRecognizer);
             gainLayout.Children.Add(gainButton);
 
-            var activeButton = new Helpers.PushCell { Title = "Codici attivati", IsEnabled = true, Separator = "si" };
+            //Cronologia
+            var activeButton = new Helpers.PushCell { Title = "Codici attivati", IsEnabled = true, Separator = "si", Push = new AreaVip.ListaEventi(false) };
             activeButton.GestureRecognizers.Add(tapGestureRecognizer);
             historyLayout.Children.Add(activeButton);
-
             var prizeButton = new Helpers.PushCell { Title = "Premi riscattati", IsEnabled = true, Separator = "no" };
             prizeButton.GestureRecognizers.Add(tapGestureRecognizer);
             historyLayout.Children.Add(prizeButton);

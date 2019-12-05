@@ -111,7 +111,7 @@ namespace SalveminiApp.SecondaryViews
             var evento = new Helpers.PushCell { Title = "Crea evento sCoin", Separator = "si", Push = new AreaVip.AddEvento() };
             evento.GestureRecognizers.Add(tapGestureRecognizer);
             vipLayout.Children.Add(evento);
-            var eventi = new Helpers.PushCell { Title = "Visualizza eventi sCoin", Separator = "si", Push = new AreaVip.ListaEventi() };
+            var eventi = new Helpers.PushCell { Title = "Visualizza eventi sCoin", Separator = "si", Push = new AreaVip.ListaEventi(true) };
             eventi.GestureRecognizers.Add(tapGestureRecognizer);
             vipLayout.Children.Add(eventi);
             var sondaggio = new Helpers.PushCell { Title = "Crea sondaggio", Separator = "no", Push = new AreaVip.CreaSondaggio() };
