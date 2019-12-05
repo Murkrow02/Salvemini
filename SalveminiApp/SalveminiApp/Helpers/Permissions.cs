@@ -51,7 +51,7 @@ namespace SalveminiApp.Helpers
             {
                // if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Camera))
                // {
-                    await currentPage.DisplayAlert("Errore", "Non abbiamo il permesso di accedere alla fotocamera", "OK");
+                   // await currentPage.DisplayAlert("Errore", "Non abbiamo il permesso di accedere alla fotocamera", "OK");
                // }
 
                 var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Camera);
@@ -75,7 +75,7 @@ namespace SalveminiApp.Helpers
             {
                 if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Photos))
                 {
-                    await currentPage.DisplayAlert("Errore", "Non abbiamo il permesso di accedere alle tue foto", "OK");
+                //    await currentPage.DisplayAlert("Errore", "Non abbiamo il permesso di accedere alle tue foto", "OK");
                 }
 
                 var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Camera);
@@ -100,7 +100,7 @@ namespace SalveminiApp.Helpers
             {
                 if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Storage))
                 {
-                 await currentPage.DisplayAlert("Errore", "Non abbiamo il permesso di accedere alle tue foto", "OK");
+               //  await currentPage.DisplayAlert("Errore", "Non abbiamo il permesso di accedere alle tue foto", "OK");
                 }
 
                 var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Storage);

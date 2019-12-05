@@ -4,7 +4,7 @@
     <NavigationPage.TitleView>
         <Grid HorizontalOptions="FillAndExpand" Padding="5">
             <!--Coin-->
-            <StackLayout IsVisible="true" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+            <StackLayout IsVisible="false" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
                 <Image Source="SalveminiCoin.png" x:Name="coinImage"/>
                 <Label x:Name="sCoinLbl" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center"  />
                 <StackLayout.GestureRecognizers>

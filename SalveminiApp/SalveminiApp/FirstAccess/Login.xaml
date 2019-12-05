@@ -17,7 +17,7 @@
                        HorizontalOptions="Center"
                        FontSize="40" />
                 <StackLayout HorizontalOptions="Center"
-                             Orientation="Horizontal">
+                             Orientation="Vertical">
                     <Label HorizontalTextAlignment="Center"
                            x:Name="loginInfoLabel"
                            TextColor="{x:Static local:Styles.TextGray}"
@@ -30,7 +30,7 @@
 
             <!--Entries-->
             <StackLayout Spacing="0"
-                         Padding="40, 0" x:Name="entryStack"
+                         Padding="30, 0" x:Name="entryStack"
                          VerticalOptions="CenterAndExpand">
                 <inputLayout:SfTextInputLayout  x:Name="usernameEntry"
                                                 FocusedColor="{x:Static local:Styles.PrimaryColor}"
@@ -40,7 +40,7 @@
                     <Entry x:Name="username"
                            MaxLength="100"
                            IsSpellCheckEnabled="False"
-                           TextChanged="Username_TextChanged" />
+                           TextChanged="Username_TextChanged" IsTextPredictionEnabled="False" IsTabStop="False"/>
 
                 </inputLayout:SfTextInputLayout>
                 <inputLayout:SfTextInputLayout x:Name="passwordEntry"

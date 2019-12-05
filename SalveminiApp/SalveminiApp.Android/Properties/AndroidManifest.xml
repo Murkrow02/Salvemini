@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.codex.salveminiapp" android:versionName="22" android:versionCode="4.3">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.codex.salveminiapp" android:versionName="23.1" android:versionCode="5">
 	<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="28" />
 	<application android:label="Salvemini" android:networkSecurityConfig="@xml/network_security_config">
 		<receiver android:name="com.onesignal.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">

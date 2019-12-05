@@ -344,7 +344,7 @@ namespace SalveminiApp
                     }
 
                     //Check app version
-                    var appversion = Convert.ToDecimal(VersionTracking.CurrentBuild);
+                    var appversion = Convert.ToDecimal(VersionTracking.CurrentVersion);
                     if (Index.AppVersion > appversion)
                         newVersion(); //New version detected
 
@@ -800,8 +800,8 @@ namespace SalveminiApp
         public async void newVersion()
         {
             //Check App Version
-            var appversion = Convert.ToDecimal(VersionTracking.CurrentBuild);
-            if (Index.AppVersion > appversion && appearedTimes % 2 == 0) //Show this only 1/2
+            var appversion = Convert.ToDecimal(VersionTracking.CurrentVersion);
+            if (Index.AppVersion > appversion && appearedTimes % 2 != 0) //Show this only 1/2
             {
                 bool choice = await DisplayAlert("Buone notizie!", "È disponibile un aggiornamento dell'app, recati sullo store per effettuarlo!", "Aggiorna", "Chiudi");
                 if (choice)

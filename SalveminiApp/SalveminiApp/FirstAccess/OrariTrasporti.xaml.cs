@@ -28,8 +28,12 @@ namespace SalveminiApp.FirstAccess
             //Set Safe Area
 #if __IOS__
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
+            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+            {
+             TrenoSegment.TintColor = Color.White;
+            TrenoSegment.SelectedTextColor = Styles.TextColor;
+            }
 #endif
-
             //Set heights
             topImage.WidthRequest = App.ScreenWidth / 1.9;
 
@@ -42,7 +46,7 @@ namespace SalveminiApp.FirstAccess
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-
+           
             //Check connection and download orari
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {

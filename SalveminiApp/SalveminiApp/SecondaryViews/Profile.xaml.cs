@@ -50,7 +50,7 @@ namespace SalveminiApp.SecondaryViews
             tapGestureRecognizer.Tapped += TapGestureRecognizer_Tapped;
 
             //Set version label
-            versionLabel.Text = "Versione " + VersionTracking.CurrentBuild;
+            versionLabel.Text = VersionTracking.CurrentVersion;
 
             //Fill lists
             //Personalizza

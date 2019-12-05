@@ -122,6 +122,7 @@ namespace SalveminiApp.ArgoPages
         async void getValues(DateTime date)
         {
             loadingIndicator.IsRunning = true;
+            loadingIndicator.IsVisible = true;
 
             var response = await App.Argo.GetOggi(date);
             if (string.IsNullOrEmpty(response.Message))
@@ -139,6 +140,7 @@ namespace SalveminiApp.ArgoPages
                 await DisplayAlert("Errore", response.Message, "Ok");
             }
             loadingIndicator.IsRunning = false;
+            loadingIndicator.IsVisible = false;
         }
 
         void callSetLayout(bool isToday)

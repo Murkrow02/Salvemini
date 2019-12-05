@@ -17,7 +17,7 @@
             <Frame BackgroundColor="{x:Static local:Styles.ObjectGray}" VerticalOptions="Start" HasShadow="false" Padding="10, -5" IsClippedToBounds="true" HorizontalOptions="EndAndExpand" CornerRadius="10">
                 <StackLayout Orientation="Horizontal" Spacing="2">
                     <ActivityIndicator x:Name="loadingIndicator" IsRunning="false" IsVisible="false" Scale="0.8" Margin="-2, 0, 0, 0" HorizontalOptions="EndAndExpand" />
-                    <Button Clicked="Giustifica_Clicked" Text="Giustifica" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                    <Button BackgroundColor="Transparent" Clicked="Giustifica_Clicked" Text="Giustifica" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontAttributes="Bold" />
                 </StackLayout>
             </Frame>
         </StackLayout>

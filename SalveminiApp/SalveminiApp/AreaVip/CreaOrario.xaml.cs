@@ -119,7 +119,12 @@ namespace SalveminiApp.AreaVip
                 //Add day label
                 layout.Children.Add(new Label { Text = giorno, FontSize = 25, FontAttributes = FontAttributes.Bold, TextColor = Styles.TextColor });
                 //Add segmented control
+#if __ANDROID__
+                layout.Children.Add(new SegmentedControl { Children = sedi, SelectedTextColor = Color.White, TintColor = Styles.TextColor });
+#endif
+#if __IOS__
                 layout.Children.Add(new SegmentedControl { Children = sedi, SelectedTextColor = Color.Black, TintColor = Color.White });
+#endif
 
                 //Create 7 autocomplete entries
                 for (int i = 1; i <= 7; i++)
