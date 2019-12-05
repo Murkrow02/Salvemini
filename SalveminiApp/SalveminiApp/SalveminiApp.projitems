@@ -219,6 +219,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SalveminiCoin\HandleEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Controls\RadarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -433,6 +441,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Coins.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AreaVip\ListaEventi.xaml.cs">
       <DependentUpon>ListaEventi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SalveminiCoin\HandleEvent.xaml.cs">
+      <DependentUpon>HandleEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\RadarView.xaml.cs">
+      <DependentUpon>RadarView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

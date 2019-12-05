@@ -34,7 +34,7 @@ namespace SalveminiApp.SalveminiCoin
             codeButton.GestureRecognizers.Add(tapGestureRecognizer);
             gainLayout.Children.Add(codeButton);
 
-            var gainButton = new Helpers.PushCell { Title = "Ottieni sCoins gratis", IsEnabled = true, Separator = "no" };
+            var gainButton = new Helpers.PushCell { Title = "Ottieni sCoins gratis", IsEnabled = true, Separator = "no", Push = new HandleEvent() };
             gainButton.GestureRecognizers.Add(tapGestureRecognizer);
             gainLayout.Children.Add(gainButton);
 
