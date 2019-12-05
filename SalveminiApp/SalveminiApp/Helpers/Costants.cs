@@ -93,6 +93,13 @@ namespace SalveminiApp
             }
         }
 
+        public static Xamarin.Forms.Color RandomColor()
+        {
+            Random rnd = new Random();
+            int colorIndex = rnd.Next(0, Colors.Count - 1);
+            return Xamarin.Forms.Color.FromHex(Colors[colorIndex]);
+        }
+
         public static Dictionary<int, string> Ore = new Dictionary<int, string>
         {
             {1, " 8:00" },
@@ -234,7 +241,12 @@ namespace SalveminiApp
 
         }
 
-
+        public static DateTime GetNextWeekday(DayOfWeek day)
+        {
+            var start = DateTime.Now;
+            int daysToAdd = ((int)day - (int)start.DayOfWeek + 7) % 7;
+            return start.AddDays(daysToAdd);
+        }
 
         public static async void OpenPdf(string url, string title)
         {

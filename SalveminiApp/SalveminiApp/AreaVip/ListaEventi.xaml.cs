@@ -1,15 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using UIKit;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+#if __IOS__
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+#endif
 
 namespace SalveminiApp.AreaVip
 {
     public partial class ListaEventi : ContentPage
     {
-        public ListaEventi()
+
+        public static bool ShowInfo = false;
+        bool closedFromButton = false;
+        public ListaEventi(bool ShowInfo_)
         {
             InitializeComponent();
+
+            ShowInfo = ShowInfo_;
+            if (!ShowInfo)
+            {
+                modalTitle.IsVisible = true;
+#if __IOS__
+                On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
+#endif
+            }
         }
 
         protected async override void OnAppearing()
@@ -23,7 +39,14 @@ namespace SalveminiApp.AreaVip
 
             //Download eventi
             eventsList.IsRefreshing = true;
-            var eventi = await App.Coins.ListaEventi();
+            var eventi = new List<RestApi.Models.Evento>();
+            //My events or all
+            if (ShowInfo) //All
+                eventi = await App.Coins.ListaEventi();
+            else //Redeemed
+                eventi = await App.Coins.RedeemedCodes();
+
+            //Show result
             eventsList.IsRefreshing = false;
             if (eventi == null)
             {
@@ -37,6 +60,10 @@ namespace SalveminiApp.AreaVip
 
         async void eventSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
+            //Don't do this if not from vip
+            if (!ShowInfo)
+                return;
+
             //Get event selcted
             var data = e.SelectedItem as RestApi.Models.Evento;
 
@@ -57,6 +84,38 @@ namespace SalveminiApp.AreaVip
             await DisplayAlert(response[0], response[1], "Ok");
         }
 
+        private void Close_Clicked(object sender, EventArgs e)
+        {
+            closedFromButton = true;
+            Navigation.PopModalAsync();
+        }
 
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            //Ios 13 bug
+            try
+            {
+#if __IOS__
+                if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+                {
+                    if (!closedFromButton)
+                    {
+                        Navigation.PopModalAsync();
+                    }
+                    else
+                    {
+                        closedFromButton = false;
+                    }
+                }
+#endif
+            }
+            catch
+            {
+                //fa nient
+            }
+        }
     }
+
+
 }

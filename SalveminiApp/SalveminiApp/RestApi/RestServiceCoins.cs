@@ -106,6 +106,35 @@ namespace SalveminiApp.RestApi
             }
         }
 
+        public async Task<List<Models.Evento>> RedeemedCodes()
+        {
+            var uri = Costants.Uri("scoin/redeemed");
+
+            try
+            {
+                //Get response
+                var response = await client.GetAsync(uri);
+
+                //Risposta
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    var eventi = JsonConvert.DeserializeObject<List<Models.Evento>>(content);
+                    return eventi;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Lista eventi riscattati", ex.Message);
+                return null;
+            }
+        }
+
         public async Task<string[]> ToggleEvento(int id)
         {
             var uri = Costants.Uri("scoin/event/" + id);
@@ -138,6 +167,7 @@ namespace SalveminiApp.RestApi
         Task<string> PostCode(Models.PostCode model);
         Task<string[]> PostEvento(Models.Evento model);
         Task<List<Models.Evento>> ListaEventi();
+        Task<List<Models.Evento>> RedeemedCodes();
         Task<string[]> ToggleEvento(int id);
     }
 
@@ -164,6 +194,11 @@ namespace SalveminiApp.RestApi
         public Task<List<Models.Evento>> ListaEventi()
         {
             return restServiceCoins.ListaEventi();
+        }
+
+        public Task<List<Models.Evento>> RedeemedCodes()
+        {
+            return restServiceCoins.RedeemedCodes();
         }
 
         public Task<string[]> ToggleEvento(int id)
