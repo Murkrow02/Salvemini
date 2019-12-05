@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using MonkeyCache.SQLite;
+using Rg.Plugins.Popup.Extensions;
 #if __IOS__
 using UIKit;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
@@ -58,8 +59,16 @@ namespace SalveminiApp.ArgoPages
             }
 
             //Success
-            compitiLayout.Children.Clear(); //Clear previous children
+            var nextDay = Costants.GetNextWeekday((DayOfWeek)(Enum.Parse(typeof(DayOfWeek), (days.SelectedIndex + 1).ToString()))); //Get next day occourrence
             var deletedList = CacheHelper.GetCache<List<string>>("deletedCompiti"); //Get deleted materie
+            var customAdded = CacheHelper.GetCache<List<CustomCompito>>("customAdded" + nextDay.ToString("ddMMyyyy")); //Get custom added materie
+            //Fill with custom
+            if(customAdded != null)
+            {
+                foreach (var custom in customAdded) { compiti.Add(new RestApi.Models.Compiti { Materia = custom.Materia, desCompiti = custom.Compiti }); }
+            }
+            //Fill layout
+            compitiLayout.Children.Clear(); //Clear previous children
             for (int i = 0; i < compiti.Count; i++)
             {
                 if (deletedList == null || !deletedList.Contains(compiti[i].Materia + compiti[i].desCompiti)) //Remove deleted materie
@@ -94,6 +103,15 @@ namespace SalveminiApp.ArgoPages
             Navigation.PopModalAsync();
         }
 
+        public void add_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushPopupAsync(new Helpers.Popups.AggiungiCompitoAgenda(days.SelectedIndex + 1, compitiLayout));
+        }
+    }
 
+    public class CustomCompito
+    {
+        public string Materia { get; set; }
+        public string Compiti { get; set; }
     }
 }

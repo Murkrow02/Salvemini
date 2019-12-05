@@ -219,6 +219,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Helpers\Popups\AggiungiCompitoAgenda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -433,6 +437,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Coins.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AreaVip\ListaEventi.xaml.cs">
       <DependentUpon>ListaEventi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Popups\AggiungiCompitoAgenda.xaml.cs">
+      <DependentUpon>AggiungiCompitoAgenda.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

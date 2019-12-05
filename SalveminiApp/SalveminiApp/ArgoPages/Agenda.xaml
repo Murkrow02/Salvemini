@@ -11,10 +11,15 @@
         </StackLayout>
 
         <StackLayout Padding="12,0" Spacing="12">
-            <!--Picker e ripristina-->
+            <!--Picker-->
+            <ComboBox:SfComboBox SelectionChanged="giorno_Selected" x:Name="days" IsEditableMode="False" AllowFiltering="False" HorizontalOptions="FillAndExpand"/>
+
+            <!--Add button and delete button-->
             <StackLayout Orientation="Horizontal" Spacing="8">
-                <ComboBox:SfComboBox SelectionChanged="giorno_Selected" x:Name="days" IsEditableMode="False" AllowFiltering="False" HorizontalOptions="FillAndExpand"/>
-                <iconize:IconButton Text="fas-trash-restore" VerticalOptions="FillAndExpand" BackgroundColor="#c9c9c9" HorizontalOptions="End" TextColor="White" Clicked="reset_Cached"/>
+
+                <iconize:IconButton HorizontalOptions="FillAndExpand" Clicked="add_Clicked" TextColor="White" FontSize="25"  Text="fas-calendar-plus" BackgroundColor="#c9c9c9"/>
+                <iconize:IconButton HorizontalOptions="FillAndExpand" Text="fas-trash-restore"  BackgroundColor="#c9c9c9"  FontSize="25"  TextColor="White" Clicked="reset_Cached"/>
+
             </StackLayout>
             <!--Loading-->
             <ActivityIndicator IsVisible="false" IsRunning="False" x:Name="loading" HorizontalOptions="CenterAndExpand"/>

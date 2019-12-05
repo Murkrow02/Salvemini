@@ -5,7 +5,7 @@
         <Frame HasShadow="False" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="view" Padding="10" CornerRadius="10">
             <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
                 <!--Titolo e descrizione-->
-                <StackLayout>
+                <StackLayout HorizontalOptions="StartAndExpand" x:Name="titleDesc">
                     <patch:Label x:Name="TitleLbl" FontSize="Title" TextColor="White" Lines="1" AutoFit="Width" HorizontalTextAlignment="Start" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" />
                     <patch:Label x:Name="DescLbl" TextColor="White" MinFontSize="15" Lines="5" AutoFit="Width" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" />
                 </StackLayout>
