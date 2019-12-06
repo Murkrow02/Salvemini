@@ -27,7 +27,7 @@
             </ffimageloading:CachedImage>
         </Grid>
     </NavigationPage.TitleView>
-    <RefreshView Refreshing="refreshHome" x:Name="homeLoading">
+    <RefreshView Refreshing="refreshHome" x:Name="homeLoading" RefreshColor="{x:Static local:Styles.TextColor}" >
         <ScrollView>
             <!--Layout-->
             <StackLayout Padding="15,10,15,20" Spacing="15" x:Name="fullLayout">

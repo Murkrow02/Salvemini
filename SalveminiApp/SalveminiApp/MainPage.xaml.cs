@@ -179,7 +179,7 @@ namespace SalveminiApp
                 registro.GestureRecognizers.Add(tapGestureRecognizer);
 
                 //Trasporti
-                if (Preferences.Get("OrarioTrasportiVersion", 0) > 0) //Add this only if orario is downloaded
+                if (Costants.DownloadedOrariTrasporti()) //Add this only if orario is downloaded
                 {
                     var trasporti = new WidgetGradient { Title = "Treni", SubTitle = await getNextTrain(), Icon = "fas-subway", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order = 3 };
                     trasporti.GestureRecognizers.Add(tapGestureRecognizer);
@@ -317,6 +317,7 @@ namespace SalveminiApp
                     //Update widgets order
                     OrderWidgets(false);
                     homeLoading.IsRefreshing = false;
+
                     //Get banner ad
                     if (Index.Ads != null && Index.Ads.Count > 0)
                     {
@@ -529,7 +530,8 @@ namespace SalveminiApp
         {
             //Create new navigation page
             var modalPush = new Xamarin.Forms.NavigationPage(new SecondaryViews.Profile());
-
+            modalPush.BarTextColor = Styles.TextColor;
+            modalPush.BarBackgroundColor = Styles.BGColor;
             //Add disappearing event
             modalPush.Disappearing += ModalPush_Disappearing;
 

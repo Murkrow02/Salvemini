@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using MonkeyCache.SQLite;
@@ -302,6 +303,12 @@ namespace SalveminiApp
 
         }
 
+
+        public static bool DownloadedOrariTrasporti()
+        {
+            var filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "OrariTreni.txt");
+            if (File.Exists(filename)) return true; return false;
+        }
     }
 
     public static class Extensions

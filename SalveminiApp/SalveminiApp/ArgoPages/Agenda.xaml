@@ -7,7 +7,7 @@
                 <Label Text="Agenda" TextColor="{x:Static local:Styles.TextColor}" HorizontalTextAlignment="Start" FontSize="35" FontAttributes="Bold"/>
                 <Label Text="Sono riportati i possibili compiti assegnati per il giorno selezionato" HorizontalTextAlignment="Start" TextColor="{x:Static local:Styles.TextGray}" FontSize="Small"/>
             </StackLayout>
-            <iconize:IconButton BackgroundColor="Transparent" Text="fal-times" FontSize="30" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="EndAndExpand" Clicked="Close_Clicked" VerticalOptions="CenterAndExpand"/>
+            <iconize:IconButton BackgroundColor="Transparent" Text="fal-times" FontSize="30" WidthRequest="45" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="EndAndExpand" Clicked="Close_Clicked" VerticalOptions="CenterAndExpand"/>
         </StackLayout>
 
         <StackLayout Padding="12,0" Spacing="12">
