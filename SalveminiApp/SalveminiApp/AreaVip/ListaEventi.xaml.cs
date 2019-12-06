@@ -4,7 +4,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
-using UIKit;11
+using UIKit;
 #endif
 
 namespace SalveminiApp.AreaVip

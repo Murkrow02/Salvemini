@@ -22,8 +22,7 @@ namespace SalveminiApp
     [DesignTimeVisible(true)]
     public partial class MainPage : ContentPage
     {
-        //Full orario list, all days
-        public List<RestApi.Models.Lezione> Orario = new List<RestApi.Models.Lezione>();
+
         //Index informations, such as app version, avvisi, sondaggi
         public RestApi.Models.Index Index = new RestApi.Models.Index();
         //Argo index, how many notizie etc.
@@ -34,9 +33,6 @@ namespace SalveminiApp
         List<WidgetGradient> widgets = new List<WidgetGradient>();
         //User's class and course e.g. 4FCAM
         string classeCorso;
-        //Giorni popover
-        BubblePopup dayPopOver = new Helpers.PopOvers().defaultPopOver;
-        Xamarin.Forms.ListView giorniList = new Xamarin.Forms.ListView { VerticalScrollBarVisibility = ScrollBarVisibility.Never, Footer = "", BackgroundColor = Color.Transparent, SeparatorColor = Color.Gray, WidthRequest = App.ScreenWidth / 3.8, HeightRequest = App.ScreenHeight / 3.8 };
         //Fix close modal bug
         public static bool isSelectingImage;
         //Do not update orario if already cached
@@ -51,22 +47,12 @@ namespace SalveminiApp
             //Set sizes
             userImg.WidthRequest = App.ScreenWidth / 8.8;
             coinImage.WidthRequest = App.ScreenWidth / 13;
-            hintOrario.WidthRequest = App.ScreenWidth / 13;
-            hintOrario.HeightRequest = App.ScreenWidth / 13;
+
 
             //Set navigation view
             todayLbl.Text = DateTime.Now.ToString("dddd").FirstCharToUpper();
 
-            //Create daylist for orario popover
-            giorniList.ItemSelected += GiorniList_ItemSelected;
-            giorniList.ItemTemplate = new DataTemplate(() =>
-            {
-                var cell = new ViewCell();
-                var giorno = new Forms9Patch.Label { TextColor = Color.White, HorizontalTextAlignment = TextAlignment.Center, VerticalTextAlignment = TextAlignment.Center, MaxLines = 1, AutoFit = AutoFit.Width };
-                cell.View = giorno;
-                giorno.SetBinding(Xamarin.Forms.Label.TextProperty, ".");
-                return cell;
-            });
+
 
             //Subscribe to messaging center
             //Refresh image cache
@@ -92,19 +78,9 @@ namespace SalveminiApp
                 RemoveBadge(tipo);
             });
 
-            //Hide or show hints
-            if (!Preferences.Get("showHintOrario", true))
-                hintOrario.IsVisible = false;
-
-            ////Get orario cached
-            //var orarioCached = CacheHelper.GetCache<List<RestApi.Models.Lezione>>("orario" + Preferences.Get("Classe", 0) + Preferences.Get("Corso", ""));
-            //if (orarioCached != null)
-            //{
-            //    Orario = orarioCached;
-            //    changeDay(-1);
-            //}
-
-
+            //Get orario cached
+            classeCorso = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
+            orario.ClasseCorso = classeCorso;
 
             //Get index cache
             var IndexCache = CacheHelper.GetCache<RestApi.Models.Index>("Index");
@@ -141,16 +117,13 @@ namespace SalveminiApp
             //Increment number of appeared times
             appearedTimes++;
 
-            //Get classe e corso
-            classeCorso = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
-
             //Do Appearing only every 5 times or from pull to refresh or connection lost or first
             var lastDigit = appearedTimes % 10;
             if (lastDigit != 0 && lastDigit != 5 && !forceAppearing && appearedTimes != 1)
                 return;
 
 
-          
+
             //Sempre meglio mettere il try lol
             try
             {
@@ -160,14 +133,6 @@ namespace SalveminiApp
 
                 //Remove modals bug
                 ModalPush_Disappearing(null, null);
-
-                //Get cached orario
-                Orario = CacheHelper.GetCache<List<RestApi.Models.Lezione>>("orario" + classeCorso);
-                if (!orarioFromCached && Orario != null) //already got today from initialize component
-                {
-                    changeDay(-1);
-                    orarioFromCached = false;
-                }
 
                 //Create static widgets
                 widgets.Clear();
@@ -428,22 +393,7 @@ namespace SalveminiApp
             return result;
         }
 
-        //Show popover with daylist
-        void ChangeDay_Clicked(object sender, System.EventArgs e)
-        {
-            //Hide initial hint
-            Preferences.Set("showHintOrario", false);
-            hintOrario.IsVisible = false;
 
-            //Create new popover
-            dayPopOver = new Helpers.PopOvers().defaultPopOver;
-            dayPopOver.Content = giorniList;
-            dayPopOver.PointerDirection = PointerDirection.Up;
-            dayPopOver.PreferredPointerDirection = PointerDirection.Up;
-            dayPopOver.Target = arrowDown;
-            dayPopOver.BackgroundColor = Color.FromHex("202020");
-            dayPopOver.IsVisible = true;
-        }
 
         //Get argo index
         async void GetArgoIndex()
@@ -501,28 +451,7 @@ namespace SalveminiApp
             }
         }
 
-        //Selected day from popover
-        private void GiorniList_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
-        {
-            //Deselect Animation
-            if (e.SelectedItem == null)
-                return;
-            giorniList.SelectedItem = null;
 
-            //Get current day name
-            var giorno = e.SelectedItem as string;
-
-            //Find index from that name
-            var giorni = Costants.getDays();
-            giorni = giorni.ConvertAll(x => x.ToLower());
-            var intGiorno = giorni.IndexOf(giorno.ToLower()) + 1;
-
-            //Get timetables
-            changeDay(intGiorno);
-
-            //Hide popover
-            dayPopOver.IsVisible = false;
-        }
 
 
         //Push to profile page
@@ -567,141 +496,10 @@ namespace SalveminiApp
             }
         }
 
-        //Update orario list (-1 = today)
-        public async void changeDay(int day)
-        {
-            bool today = day == -1; //Today is selected
-
-            if (today)
-                day = (int)DateTime.Now.DayOfWeek; //Reset current day
-
-            int daySkipped = 0;
-
-            try
-            {
-                if (Orario != null)
-                {
-                    //Detect freeday
-                    var freedayInt = Orario.FirstOrDefault(x => x.Materia == "Libero").Giorno;
-
-                    //Save freeday
-                    Preferences.Set("FreedayInt", freedayInt);
 
 
 
-                    //intelligent auto skip if dopo le 2
-                    if (today && DateTime.Now.Hour > 14 && day != 6 && day != freedayInt)
-                    {
-                        daySkipped++;
-                        day = SkipDay(day);
-                    }
 
-                    //Skip freeday (if saturday)
-                    if (day == freedayInt)
-                    {
-                        daySkipped++;
-                        day = SkipDay(day);
-                    }
-
-                    //Detect Sunday
-                    if (day == 0)
-                    {
-                        day++;
-                        daySkipped++;
-                    }
-
-                    //Skip freeday (if monday)
-                    if (day == freedayInt)
-                    {
-                        daySkipped++;
-                        day = SkipDay(day);
-                    }
-
-                    //get only today lessons
-                    var orarioOggi = await App.Orari.GetOrarioDay(day, Orario);
-
-                    //Set day label
-                    if (day == (int)DateTime.Now.DayOfWeek)
-                    {
-                        orarioDay.Text = "Oggi";
-                    }
-                    else if (daySkipped == 1 && today)
-                    {
-                        orarioDay.Text = "Domani";
-                    }
-                    else
-                    {
-                        orarioDay.Text = Costants.getDays()[day - 1].FirstCharToUpper(); //Other day
-                    }
-
-                    //Set sede label
-                    try
-                    {
-                        sedeLbl.Text = orarioOggi[0].Sede;
-                    }
-                    catch
-                    {
-                        //Fa niente
-                    }
-
-                    showOrario(orarioOggi, freedayInt);
-                }
-                else
-                {
-                    await DisplayAlert("Errore", "Non è stato possibile recuperare l'orario, contattaci se il problema persiste", "Ok");
-                    materieLayout.IsVisible = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                materieLayout.IsVisible = false;
-                await DisplayAlert("Errore", "Non è stato possibile recuperare l'orario, contattaci se il problema persiste", "Ok");
-            }
-
-        }
-
-
-        public void showOrario(List<RestApi.Models.Lezione> orario, int freeday)
-        {
-            //Orario is not empty
-            emptyLayout.IsVisible = false;
-
-            try
-            {
-                //Remove freeday from list
-                var allDays = Costants.getDays();
-                allDays.RemoveAt(freeday - 1);
-                giorniList.ItemsSource = allDays;
-
-                //Fill list with lezioni
-                materieLayout.Children.Clear();
-                foreach (var lezione in orario)
-                {
-                    //Horizontal stack layout
-                    var stack = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, Spacing = 0 };
-                    //Ora
-                    var oraLbl = new Xamarin.Forms.Label { FontSize = 10, HorizontalOptions = LayoutOptions.Start, Text = lezione.oraLezione, TextColor = Styles.TextGray, VerticalOptions = LayoutOptions.Start };
-                    //Materia
-                    var materiaFrame = new Xamarin.Forms.Frame { HasShadow = false, BackgroundColor = Color.FromHex(lezione.Colore), CornerRadius = lezione.OrarioFrameRadius, Margin = lezione.OrarioFrameMargin, Padding = new Thickness(10, 0), VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.FillAndExpand, HeightRequest = lezione.OrarioFrameHeight };
-                    materiaFrame.Content = new Xamarin.Forms.Label { TextColor = Color.White, Text = lezione.Materia, VerticalOptions = LayoutOptions.Center };
-
-                    //Add to final layout
-                    stack.Children.Add(oraLbl); stack.Children.Add(materiaFrame);
-                    materieLayout.Children.Add(stack);
-                }
-
-
-
-                //Show orario
-                orarioFrame.IsVisible = true;
-            }
-            catch
-            {
-                //From constructor, get full orario to fix this
-                orarioFromCached = false;
-            }
-
-        }
 
         //Update widget list
         public async void OrderWidgets(bool animate)
@@ -773,16 +571,67 @@ namespace SalveminiApp
 
         }
 
-        public int SkipDay(int day)
-        {
-            int newDay = day;
-            newDay++;
-            if (newDay == 7)
-                return 0;
-            else
-                return newDay;
-        }
 
+        public async void updateOrario()
+        {
+            //Download orario
+            var data = await App.Orari.GetOrario(classeCorso);
+
+            //Failed to get
+            if (data.Message != null)
+            {
+                if (data.Message == "L'orario della classe non è stato trovato")
+                {
+                    orario.ShowPlaceholder = true;
+                    return;
+                }
+                Costants.showToast(data.Message);
+                orario.ShowPlaceholder = false;
+                orario.Lezioni = new List<RestApi.Models.Lezione>(); return;
+            }
+
+            //Set null if error occourred
+            if (data.Data == null) { orario.Lezioni = new List<RestApi.Models.Lezione>(); return; }
+
+            //Update lezioni
+            Preferences.Set("OrarioSaved", true);
+            orario.Lezioni = data.Data as List<RestApi.Models.Lezione>;
+
+#if __IOS__
+            //Add siri shortcut
+            if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+                return; //Pre ios 13 can't use this :(
+
+            //Check if intent is already added or user doesen't want to add it
+            if (Preferences.Get("OrarioSiriSet", false) || Preferences.Get("DontShowSiriWidget", false))
+                return;
+
+            //Save values for siri intent
+            var defaults = new NSUserDefaults("group.com.codex.SalveminiApp", NSUserDefaultsType.SuiteName);
+            defaults.AddSuite("group.com.codex.SalveminiApp");
+            defaults.SetString(classeCorso, new NSString("SiriClass"));
+
+            //Create intent
+            var orarioIntent = new OrarioIntent();
+            orarioIntent.SuggestedInvocationPhrase = "Orario di domani";
+            INShortcut shortcut = new INShortcut(orarioIntent);
+
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                var vc = UIApplication.SharedApplication.KeyWindow.RootViewController;
+                var popup = new iOS.SiriShortcutPopup(shortcut, "Orario", false);
+                vc.PresentViewController(popup, true, null);
+
+                //vc.View.AddSubview(popup.View);
+                popup.DidMoveToParentViewController(vc);
+
+                var height = vc.View.Frame.Height;
+                var width = vc.View.Frame.Width;
+                popup.View.Frame = new CoreGraphics.CGRect(0, vc.View.Frame.Y, width, height);
+
+            });
+#endif
+        }
 
 
 
@@ -822,88 +671,13 @@ namespace SalveminiApp
         }
 
 
-        public async void updateOrario()
-        {
-            //Download orario
-            var data = await App.Orari.GetOrario(classeCorso);
 
-            //Failed to get
-            if (data.Message != null)
-            {
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    Costants.showToast(data.Message);
-
-                    if (data.Message == "L'orario della classe non è stato trovato")
-                    {
-                        emptyLayout.IsVisible = true;
-                        orarioFrame.IsVisible = false;
-                    }
-                });
-            }
-            else
-            {
-                //Delete last color palette
-                Costants.ClearColors();
-
-                var _orario = data.Data as List<RestApi.Models.Lezione>;
-
-                //Check if success and if there are updates
-                if (_orario != null && Orario != _orario && !orarioFromCached)
-                {
-                    //Update with new orario
-                    Orario = _orario;
-
-                    //Use main thread to prevent crashes
-                    Device.BeginInvokeOnMainThread(() =>
-                    {
-                        changeDay(-1);
-                    });
-                }
-
-                Preferences.Set("OrarioSaved", true);
-#if __IOS__
-                //Add siri shortcut
-                if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
-                    return; //Pre ios 13 can't use this :(
-
-                //Check if intent is already added or user doesen't want to add it
-                if (Preferences.Get("OrarioSiriSet", false) || Preferences.Get("DontShowSiriWidget", false))
-                    return;
-
-                //Save values for siri intent
-                var defaults = new NSUserDefaults("group.com.codex.SalveminiApp", NSUserDefaultsType.SuiteName);
-                defaults.AddSuite("group.com.codex.SalveminiApp");
-                defaults.SetString(classeCorso, new NSString("SiriClass"));
-
-                //Create intent
-                var orarioIntent = new OrarioIntent();
-                orarioIntent.SuggestedInvocationPhrase = "Orario di domani";
-                INShortcut shortcut = new INShortcut(orarioIntent);
-
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    var vc = UIApplication.SharedApplication.KeyWindow.RootViewController;
-                    var popup = new iOS.SiriShortcutPopup(shortcut, "Orario", false);
-                    vc.PresentViewController(popup, true, null);
-
-                    //vc.View.AddSubview(popup.View);
-                    popup.DidMoveToParentViewController(vc);
-
-                    var height = vc.View.Frame.Height;
-                    var width = vc.View.Frame.Width;
-                    popup.View.Frame = new CoreGraphics.CGRect(0, vc.View.Frame.Y, width, height);
-
-                });
-#endif
-            }
-        }
 
         //todo enable this
         public void sCoin_Tapped(object sender, EventArgs e)
         {
 
-            Navigation.PushModalAsync(new SalveminiCoin.CoinMenu() );
+            Navigation.PushModalAsync(new SalveminiCoin.CoinMenu());
         }
 
     }

@@ -223,6 +223,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Controls\Orario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -440,6 +444,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Popups\AggiungiCompitoAgenda.xaml.cs">
       <DependentUpon>AggiungiCompitoAgenda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Orario.xaml.cs">
+      <DependentUpon>Orario.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
