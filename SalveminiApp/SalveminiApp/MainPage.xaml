@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage x:Name="page" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SalveminiApp" x:Class="SalveminiApp.MainPage">
+<ContentPage x:Name="page" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SalveminiApp" xmlns:Controls="clr-namespace:SalveminiApp.Controls" x:Class="SalveminiApp.MainPage">
     <!--Navigation Bar-->
     <NavigationPage.TitleView>
         <Grid HorizontalOptions="FillAndExpand" Padding="5">
             <!--Coin-->
-            <StackLayout IsVisible="true" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+            <StackLayout IsVisible="false" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
                 <Image Source="SalveminiCoin.png" x:Name="coinImage"/>
                 <Label x:Name="sCoinLbl" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center"  />
                 <StackLayout.GestureRecognizers>
@@ -17,7 +17,7 @@
                 <!--<Label Text="SalveminiApp internal beta v1" TextColor="#9c9c9c" FontSize="Small" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />-->
             </StackLayout>
             <!--Profile Image-->
-            <ffimageloading:CachedImage Margin="-2" x:Name="userImg" LoadingPlaceholder="imagePlaceholder" HorizontalOptions="EndAndExpand">
+            <ffimageloading:CachedImage Margin="-2" CacheType="Memory" x:Name="userImg" LoadingPlaceholder="imagePlaceholder" HorizontalOptions="EndAndExpand">
                 <ffimageloading:CachedImage.Transformations>
                     <fftransformations:CircleTransformation />
                 </ffimageloading:CachedImage.Transformations>
@@ -27,38 +27,12 @@
             </ffimageloading:CachedImage>
         </Grid>
     </NavigationPage.TitleView>
-    <RefreshView Refreshing="refreshHome" x:Name="homeLoading">
+    <RefreshView Refreshing="refreshHome" x:Name="homeLoading" RefreshColor="{x:Static local:Styles.TextColor}" >
         <ScrollView>
             <!--Layout-->
             <StackLayout Padding="15,10,15,20" Spacing="15" x:Name="fullLayout">
-                <!--Empty layout-->
-                <StackLayout Padding="8" IsVisible="false" x:Name="emptyLayout" VerticalOptions="Center">
-                    <iconize:IconLabel Text="far-clock" VerticalOptions="Center" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" FontSize="40" />
-                    <Label FontSize="Small" Text="L'orario della tua classe non è stato trovato, chiedi ai tuoi rappresentanti di aggiungerlo o contattaci se sei un rappresentante" VerticalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="CenterAndExpand" Margin="5"/>
-                </StackLayout>
-                <!--Orario-->
-                <Frame x:Name="orarioFrame" IsVisible="False" Padding="20, 0,20,5" VerticalOptions="Start" IsClippedToBounds="True" BackgroundColor="White" CornerRadius="15" HasShadow="False">
-                    <StackLayout BackgroundColor="White" Spacing="0">
-                        <!--Header-->
-                        <StackLayout Orientation="Horizontal" Margin="-5, 0" x:Name="orarioHeader">
-                            <!--Oggi + arrow-->
-                            <StackLayout Orientation="Horizontal" Spacing="5" Padding="0,20">
-                                <Label Text="Oggi" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" x:Name="orarioDay" />
-                                <iconize:IconLabel Text="fas-caret-down" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.TextColor}" FontSize="Large" x:Name="arrowDown"/>
-                                <lottie:AnimationView x:Name="hintOrario" Rotation="180" BackgroundColor="Transparent" HorizontalOptions="Start" Animation="Lotties/rightArrow.json" Loop="true" AutoPlay="true" />
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="ChangeDay_Clicked"/>
-                                </StackLayout.GestureRecognizers>
-                            </StackLayout>
-                            <!--Sede-->
-                            <Label x:Name="sedeLbl" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" />
-                        </StackLayout>
-                        <!--Lista Materie-->
-                        <StackLayout x:Name="materieLayout" Spacing="2">
-
-                        </StackLayout>
-                    </StackLayout>
-                </Frame>
+               <!--Orario-->
+               <Controls:Orario x:Name="orario"/>
                 <!--WidgetList-->
                 <StackLayout VerticalOptions="Start">
                     <!--Widgets-->

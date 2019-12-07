@@ -50,7 +50,7 @@ namespace SalveminiApp.SecondaryViews
             tapGestureRecognizer.Tapped += TapGestureRecognizer_Tapped;
 
             //Set version label
-            versionLabel.Text = "Versione " + VersionTracking.CurrentBuild;
+            versionLabel.Text = VersionTracking.CurrentVersion;
 
             //Fill lists
             //Personalizza
@@ -250,7 +250,7 @@ namespace SalveminiApp.SecondaryViews
             //Check permissions
             bool garanted = await Helpers.Permissions.checkPermissions();
             if (!garanted)
-                await DisplayAlert("Attenzione", "Non ci hai permesso di accedere alla tua fotocamera o alla tua galleria", "Ok");
+                return;
 
             try
             {

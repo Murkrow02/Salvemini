@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+#if __IOS__
 using UIKit;
+#endif
 using Xamarin.Forms;
 using Xamarin.Essentials;
 

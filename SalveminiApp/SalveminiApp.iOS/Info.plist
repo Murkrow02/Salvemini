@@ -76,11 +76,11 @@
 	<string>Salvemini ha bisogno di verificare la tua posizione per attivare il codice</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Salvemini ha bisogno di verificare la tua posizione per attivare il codice</string>
-	<key>CFBundleVersion</key>
-	<string>4.4</string>
 	<key>CFBundleShortVersionString</key>
-	<string>23</string>
+	<string>23.1</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Salvemini ha bisogno di verificare la tua posizione per attivare il codice</string>
+	<key>CFBundleVersion</key>
+	<string>5</string>
 </dict>
 </plist>

@@ -14,7 +14,7 @@
                                 <DataTemplate>
                                     <ViewCell>
                                         <!--Header-->
-                                        <StackLayout Padding="10, 5" Orientation="Horizontal" BackgroundColor="{x:Static local:Styles.ObjectGray}">
+                                        <StackLayout Padding="{Binding Thickness}" Orientation="Horizontal" BackgroundColor="{x:Static local:Styles.ObjectGray}">
                                             <Label HorizontalOptions="Start" VerticalOptions="Center">
                                                 <Label.FormattedText>
                                                     <FormattedString>
@@ -24,7 +24,7 @@
                                                     </FormattedString>
                                                 </Label.FormattedText>
                                             </Label>
-                                            <iconize:IconButton BackgroundColor="Transparent" Text="far-chart-bar" TextColor="{x:Static local:Styles.TextColor}" VerticalOptions="Center" IsVisible="{Binding chartVisibility}" HorizontalOptions="EndAndExpand" Clicked="Chart_Clicked" />
+                                            <iconize:IconButton BackgroundColor="Transparent" Text="far-chart-bar" TextColor="{x:Static local:Styles.TextColor}" VerticalOptions="Center" IsVisible="{Binding chartVisibility}" WidthRequest="45" FontSize="18" HeightRequest="40" HorizontalOptions="EndAndExpand" Clicked="Chart_Clicked" />
                                         </StackLayout>
                                     </ViewCell>
                                 </DataTemplate>

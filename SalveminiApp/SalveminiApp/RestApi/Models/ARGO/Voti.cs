@@ -240,6 +240,14 @@ namespace SalveminiApp.RestApi.Models
             }
         }
 
+        public Thickness Thickness
+        {
+            get
+            {
+                if (Voti.Count >= 2) return new Thickness(10, 0);return new Thickness(10, 5);
+            }
+        }
+
     }
 
     //Pentagono

@@ -5,7 +5,7 @@
             <StackLayout Spacing="50" x:Name="mainLayout" Padding="20, 10">
                 <!--Header-->
                 <StackLayout Orientation="Horizontal" Spacing="20">
-                    <iconize:IconButton VerticalOptions="Center" Text="fas-times" Clicked="Close_Page" TextColor="White" FontAttributes="Bold" HorizontalOptions="Start" FontSize="30" />
+                    <iconize:IconButton VerticalOptions="Center" Text="fas-times" Clicked="Close_Page" TextColor="White"  HorizontalOptions="Start" FontSize="30" WidthRequest="45" />
                     <Label VerticalOptions="Center" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontAttributes="Bold" TextColor="White" Text="Aliscafi" FontSize="50" HorizontalOptions="StartAndExpand" />
                 </StackLayout>
                 <StackLayout Spacing="15">

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using UIKit;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using UIKit;
 #endif
 
 namespace SalveminiApp.AreaVip

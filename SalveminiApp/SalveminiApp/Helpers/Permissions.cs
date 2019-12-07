@@ -35,9 +35,9 @@ namespace SalveminiApp.Helpers
         {
             //if (location.Accuracy > 30)
             //    return "La tua posizione non è abbastanza accurata, riprova";
-         //   if (location.IsFromMockProvider)
+            //   if (location.IsFromMockProvider)
             //    return "Cooooooosa? Qualcuno sta cercando di imbrogliare qua? Non è stato possibile verificare l'autenticità della tua posizione, disattiva i servizi di localizzazione falsi";
-             return "";
+            return "";
         }
 
         public static async Task<bool> checkPermissions()
@@ -49,23 +49,21 @@ namespace SalveminiApp.Helpers
 
             if (status != PermissionStatus.Granted)
             {
-               // if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Camera))
-               // {
-                    await currentPage.DisplayAlert("Errore", "Non abbiamo il permesso di accedere alla fotocamera", "OK");
-               // }
+                //if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Camera))
+                //{
+                //}
 
                 var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Camera);
                 //Best practice to always check that the key exists
                 if (results.ContainsKey(Permission.Camera))
                 {
                     status = results[Permission.Camera];
-                    Console.WriteLine("Success");
-                    return true;
                 }
-            }
-            else
-            {
-                return true;
+                else
+                {
+                    await currentPage.DisplayAlert("Errore", "Non abbiamo il permesso di accedere alla fotocamera", "Ok");
+                    return false;
+                }
             }
 
             //ACCESS GALLERY
@@ -73,52 +71,55 @@ namespace SalveminiApp.Helpers
 
             if (status2 != PermissionStatus.Granted)
             {
-                if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Photos))
-                {
-                    await currentPage.DisplayAlert("Errore", "Non abbiamo il permesso di accedere alle tue foto", "OK");
-                }
+                //if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Photos))
+                //{
+                //    await currentPage.DisplayAlert("Errore", "Non abbiamo il permesso di accedere alle tue foto", "OK");
+                //}
 
-                var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Camera);
+                var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Photos);
                 //Best practice to always check that the key exists
                 if (results.ContainsKey(Permission.Photos))
                 {
                     status2 = results[Permission.Photos];
-                    Console.WriteLine("Success");
-                    return true;
+                }
+                else
+                {
+                    await currentPage.DisplayAlert("Errore", "Non abbiamo il permesso di accedere alle tue foto", "Ok");
+                    return false;
                 }
 
-            }
-            else
-            {
-                return true;
             }
 #if __ANDROID__
-             //ACCESS CAMERA
-            var status1 = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage);
-
-            if (status1 != PermissionStatus.Granted)
+            try
             {
-                if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Storage))
+                //ACCESS CAMERA
+                var status1 = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage);
+
+                if (status1 != PermissionStatus.Granted)
                 {
-                 await currentPage.DisplayAlert("Errore", "Non abbiamo il permesso di accedere alle tue foto", "OK");
+                    //if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Storage))
+                    //{
+                    //}
+
+                    var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Storage);
+                    //Best practice to always check that the key exists
+                    if (results.ContainsKey(Permission.Storage))
+                    {
+                        status1 = results[Permission.Storage];
+
+                    }
+                    else
+                    {
+                        await currentPage.DisplayAlert("Errore", "Non abbiamo il permesso di accedere alle tue foto", "OK");
+                        return false;
+                    }
                 }
-
-                var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Storage);
-                //Best practice to always check that the key exists
-                if (results.ContainsKey(Permission.Storage))
-                {
-                    status1 = results[Permission.Storage];
-                    System.Console.WriteLine("Success");
-                                        return true;
-
-                }
-
-                } else
-            {
-                return true;
             }
+            catch { }
+           
 #endif
-            return false;
+           
+            return true;
         }
     }
 }

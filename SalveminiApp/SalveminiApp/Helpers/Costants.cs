@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using MonkeyCache.SQLite;
@@ -28,7 +29,7 @@ namespace SalveminiApp
         //Materie Dictionary
         public static List<string> Colors = new List<string>
         {
-            "#5BB0E5", "#7D77FF", "#FFBB4E" ,"#FF7064",  "#EA5AEA","#48EB9A","#FF5A1D","#3F83E0","#A346E8","#C73636","#C73679","#36C7C7"
+            "#5BB0E5", "#7D77FF", "#FFBB4E" ,"#FF7064",  "#EA5AEA","#48EB9A","#FF5A1D","#3F83E0","#A346E8","#C73636","#C73679","#36C7C7"  ,"#47C736","#C77E36","#195AD5","#3FA398","#B4708D","#3FA398"
         };
 
         public static string SetColors(int idMateria)
@@ -302,6 +303,12 @@ namespace SalveminiApp
 
         }
 
+
+        public static bool DownloadedOrariTrasporti()
+        {
+            var filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "OrariTreni.txt");
+            if (File.Exists(filename)) return true; return false;
+        }
     }
 
     public static class Extensions

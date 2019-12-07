@@ -4,7 +4,7 @@
 
         <!--Header-->
         <StackLayout Spacing="8" Padding="5" Orientation="Horizontal">
-            <iconize:IconButton BackgroundColor="Transparent" Text="fal-times" FontSize="30" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Start" Clicked="closePage" VerticalOptions="CenterAndExpand"/>
+            <iconize:IconButton BackgroundColor="Transparent" Text="fal-times" FontSize="30" WidthRequest="45" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Start" Clicked="closePage" VerticalOptions="CenterAndExpand"/>
             <Image HeightRequest="25" HorizontalOptions="StartAndExpand" Source="SalveminiCard.png" x:Name="lilCard" Opacity="0" />
         </StackLayout>
 

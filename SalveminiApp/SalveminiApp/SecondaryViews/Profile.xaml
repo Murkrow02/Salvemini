@@ -6,7 +6,7 @@
             <!--Profile view-->
             <StackLayout>
                 <!--Image-->
-                <ffimageloading:CachedImage x:Name="userImg" LoadingPlaceholder="imagePlaceholder">
+                <ffimageloading:CachedImage x:Name="userImg" LoadingPlaceholder="imagePlaceholder" CacheType="Memory" >
                     <ffimageloading:CachedImage.Transformations>
                         <fftransformations:CircleTransformation />
                     </ffimageloading:CachedImage.Transformations>
@@ -40,7 +40,7 @@
                 </Frame>
             </StackLayout>
 
-              <!--Rappresentanti-->
+            <!--Rappresentanti-->
             <StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <iconize:IconLabel Text="fas-users" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" />
@@ -62,7 +62,7 @@
                 </Frame>
             </StackLayout>
 
-             <!--SuperVip-->
+            <!--SuperVip-->
             <StackLayout x:Name="superVip" IsVisible="false">
                 <StackLayout Orientation="Horizontal">
                     <iconize:IconLabel Text="fas-user-astronaut" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" />

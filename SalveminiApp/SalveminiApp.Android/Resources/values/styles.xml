@@ -10,9 +10,9 @@
         <item name="windowActionBar">false</item>
         <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette -->
         <!-- colorPrimary is used for the default action bar background -->
-        <item name="colorPrimary">#cfcfcf</item>
+        <item name="colorPrimary">#f0f0f0</item>
         <!-- colorPrimaryDark is used for the status bar -->
-        <item name="colorPrimaryDark">#cfcfcf</item>
+        <item name="colorPrimaryDark">#2b2b2b</item>
         <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
         <item name="colorAccent">#4f4f4f</item>
@@ -22,6 +22,12 @@
         <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
     </style>
     <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
-        <item name="colorAccent">#a1a1a1</item>
+        <item name="colorAccent">#4f4f4f</item>
     </style>
+
+
+    <style name="ToolbarStyle" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Customize color of navigation drawer icon and back arrow -->
+    <item name="colorControlNormal">#2b2b2b</item>
+  </style>
 </resources>

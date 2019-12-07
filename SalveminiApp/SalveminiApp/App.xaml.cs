@@ -11,7 +11,6 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-
 namespace SalveminiApp
 {
     public partial class App : Application

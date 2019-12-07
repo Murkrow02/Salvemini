@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage x:Name="mainLayout" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:siri="clr-namespace:IntentsUI;assembly=Xamarin.iOS" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:control="clr-namespace:Plugin.Segmented.Control;assembly=Plugin.Segmented" xmlns:local="clr-namespace:SalveminiApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.FirstAccess.OrariTrasporti">
+<ContentPage x:Name="mainLayout" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:control="clr-namespace:Plugin.Segmented.Control;assembly=Plugin.Segmented" xmlns:local="clr-namespace:SalveminiApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.FirstAccess.OrariTrasporti">
     <StackLayout Padding="25,8" Spacing="10" >
         <ScrollView>
             <StackLayout>
@@ -20,7 +20,7 @@
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label HorizontalOptions="Start" Text="Verso:" TextColor="{x:Static local:Styles.TextGray}" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
-                        <control:SegmentedControl OnSegmentSelected="TrenoSegment_OnSegmentSelected" SelectedSegment="0" x:Name="TrenoSegment" TintColor="White" SelectedTextColor="{x:Static local:Styles.TextColor}">
+                        <control:SegmentedControl OnSegmentSelected="TrenoSegment_OnSegmentSelected" SelectedSegment="0" x:Name="TrenoSegment" TintColor="{x:Static local:Styles.TextColor}" SelectedTextColor="White">
                             <control:SegmentedControl.Children>
                                 <control:SegmentedControlOption Text="Sorrento" />
                                 <control:SegmentedControlOption Text="Napoli" />
@@ -43,8 +43,8 @@
 
         <!--EndLayout-->
         <StackLayout VerticalOptions="EndAndExpand">
-            <Label FontSize="18" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" Text="Sono stati scaricati gli orari più recenti" />
-            <Button x:Name="doneBtn" Opacity="0.8" IsEnabled="False" Clicked="Continue_Clicked" Text="Prosegui" TextColor="White" FontSize="Title" CornerRadius="10" BackgroundColor="Black" />
+            <!--<Label FontSize="18" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" Text="Sono stati scaricati gli orari più recenti" />-->
+            <Button x:Name="doneBtn" Opacity="0.8" IsEnabled="False" Clicked="Continue_Clicked" Text="Prosegui" TextColor="White" FontSize="Title" CornerRadius="10" BackgroundColor="{x:Static local:Styles.TextColor}" />
             <Button Text="Salta" TextColor="{x:Static local:Styles.TextGray}" BackgroundColor="Transparent" FontSize="Medium" Margin="-2" Clicked="skipClicked" VerticalOptions="End"/>
         </StackLayout>
     </StackLayout>

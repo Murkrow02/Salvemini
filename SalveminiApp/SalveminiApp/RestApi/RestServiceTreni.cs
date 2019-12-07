@@ -40,11 +40,6 @@ namespace SalveminiApp.RestApi
                 {
                    client2.DownloadFile( Costants.Uri("Orari/OrariTreni.txt", false) , filename);
                 }
-                //var content = await response.Content.ReadAsStringAsync();
-                //var assembly = typeof(RestServiceTreni).GetTypeInfo().Assembly;
-                //var manifest = assembly.GetManifestResourceNames();
-
-                //File.WriteAllText(filename, content);
                 return true;
 
             }
