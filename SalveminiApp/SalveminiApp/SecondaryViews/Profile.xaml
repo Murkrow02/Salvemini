@@ -1,24 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<ContentPage Title="Profilo" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns:local="clr-namespace:SalveminiApp" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Profile">
+<ContentPage Title="Profilo" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:controls="clr-namespace:SalveminiApp.Controls" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns:local="clr-namespace:SalveminiApp" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Profile">
     <ScrollView VerticalScrollBarVisibility="Never" Padding="15,10,15,5">
         <StackLayout Spacing="30">
-            <!--Profile view-->
-            <StackLayout>
-                <!--Image-->
-                <ffimageloading:CachedImage x:Name="userImg" LoadingPlaceholder="imagePlaceholder" CacheType="Memory" >
-                    <ffimageloading:CachedImage.Transformations>
-                        <fftransformations:CircleTransformation />
-                    </ffimageloading:CachedImage.Transformations>
-                    <ffimageloading:CachedImage.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="changePic"/>
-                    </ffimageloading:CachedImage.GestureRecognizers>
-                </ffimageloading:CachedImage>
-                <!--Nome-->
-                <patch:Label  x:Name="nameLbl" FontSize="Title" TextColor="{x:Static local:Styles.TextColor}" Lines="1" AutoFit="Width" HorizontalTextAlignment="Center" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
-                <!--Classe-->
-                <Label x:Name="classLbl" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" />
-            </StackLayout>
+            <!--Image, name and class-->
+            <controls:UserImageNameClass x:Name="userInfo"/>
             <!--Personalizza-->
             <StackLayout>
                 <StackLayout Orientation="Horizontal">

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns:controls="clr-namespace:SalveminiApp.Controls" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.ProfileView">
+    <ScrollView>
+        <StackLayout Spacing="15" Padding="20,0"  x:Name="mainLayout">
+            <!--Close X-->
+            <iconize:IconButton Margin="-18,0" Clicked="closePage" BackgroundColor="Transparent" Text="fal-times" FontSize="30" WidthRequest="45" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Start"  VerticalOptions="Start"/>
+            <!--User name, image and class-->
+            <controls:UserImageNameClass x:Name="userInfo" VerticalOptions="FillAndExpand"/>
+            <!--Orario-->
+            <controls:Orario x:Name="orario" VerticalOptions="Start"/>
+
+            <!--Ruolo-->
+            <StackLayout VerticalOptions="FillAndExpand" Spacing="20">
+                <StackLayout x:Name="roleLayout" Spacing="2" IsVisible="false">
+                    <StackLayout Orientation="Horizontal">
+                        <iconize:IconLabel Text="fas-user-tag" HorizontalOptions="Start" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}"/>
+                        <Label Text="Ruolo" TextColor="{x:Static local:Styles.TextColor}" FontSize="Large" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <Label x:Name="roleLbl" FontSize="Large" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
+                </StackLayout>
+
+                <!--Copleanno-->
+                <StackLayout Spacing="2">
+                    <StackLayout Orientation="Horizontal">
+                        <iconize:IconLabel Text="fas-birthday-cake" HorizontalOptions="Start" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}"/>
+                        <Label Text="Compleanno" TextColor="{x:Static local:Styles.TextColor}" FontSize="Large" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <Label x:Name="compleannoLbl" FontSize="Large" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
+                </StackLayout>
+
+                <!--Comune-->
+                <StackLayout Spacing="2">
+                    <StackLayout Orientation="Horizontal">
+                        <iconize:IconLabel Text="fas-map-pin" HorizontalOptions="Start" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}"/>
+                        <Label Text="Comune" TextColor="{x:Static local:Styles.TextColor}" FontSize="Large" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <Label x:Name="comuneLbl" FontSize="Large" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

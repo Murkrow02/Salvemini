@@ -31,19 +31,9 @@ namespace SalveminiApp.SecondaryViews
         {
             InitializeComponent();
 
+            //Load info from cached
+            userInfo.CachedUserId = Preferences.Get("UserId", 0);
 
-            //Get cache
-            var cachedUtente = CacheHelper.GetCache<RestApi.Models.Utente>("utenteLoggato");
-            if (cachedUtente != null)
-            {
-                utente = cachedUtente;
-                nameLbl.Text = utente.nomeCognome;
-                classLbl.Text = utente.classeCorso;
-                userImg.Source = utente.Immagine;
-            }
-
-            //Set dimensions
-            userImg.WidthRequest = App.ScreenWidth / 3.5;
 
             //Create tapped gesture
             var tapGestureRecognizer = new TapGestureRecognizer();
@@ -165,11 +155,8 @@ namespace SalveminiApp.SecondaryViews
                     var user = await App.Utenti.GetUtente(Preferences.Get("UserId", 0));
                     if (user != null)
                     {
-                        //Display user details
                         utente = user;
-                        nameLbl.Text = utente.nomeCognome;
-                        classLbl.Text = utente.classeCorso;
-                        userImg.Source = utente.Immagine;
+                        userInfo.User = utente;
 
                         //Show areas according to user status
                         switch (utente.Stato)
@@ -200,8 +187,8 @@ namespace SalveminiApp.SecondaryViews
                                 break;
                         }
 
-                        //Save cache
-                        Barrel.Current.Add("utenteLoggato", user, TimeSpan.FromDays(10));
+                        ////Save cache
+                        //Barrel.Current.Add("utenteLoggato", user, TimeSpan.FromDays(10));
                     }
                     else //No user returned
                     {
@@ -345,16 +332,16 @@ namespace SalveminiApp.SecondaryViews
 
         public async void reloadImage()
         {
-            //Remove cache
-            await ImageService.Instance.InvalidateCacheEntryAsync(utente.Immagine, CacheType.All, removeSimilar: true);
-            userImg.Source = "";
-            userImg.Source = utente.Immagine;
-            userImg.ReloadImage();
-            userImg.WidthRequest = App.ScreenWidth / 3.5;
-            userImg.HeightRequest = App.ScreenWidth / 3.5;
+            ////Remove cache
+            //await ImageService.Instance.InvalidateCacheEntryAsync(utente.Immagine, CacheType.All, removeSimilar: true);
+            //userImg.Source = "";
+            //userImg.Source = utente.Immagine;
+            //userImg.ReloadImage();
+            //userImg.WidthRequest = App.ScreenWidth / 3.5;
+            //userImg.HeightRequest = App.ScreenWidth / 3.5;
 
-            //Remove cached home profile pic
-            MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "ReloadUserPic");
+            ////Remove cached home profile pic
+            //MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "ReloadUserPic");
         }
 
         //Handle cell tapped

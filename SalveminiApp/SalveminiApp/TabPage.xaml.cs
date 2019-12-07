@@ -34,6 +34,15 @@ namespace SalveminiApp
             IconImageSource = "tabBarArgo.png"
         };
 
+        public static Helpers.CustomNavigationPage Family = new Helpers.CustomNavigationPage(new Family())
+        {
+            BarTextColor = Styles.PrimaryColor,
+            BarBackgroundColor = Color.White,
+            Title = "Family",
+            IconImageSource = "tabBarArgo.png"
+        };
+
+
         public TabPage()
         {
             InitializeComponent();
@@ -44,6 +53,8 @@ namespace SalveminiApp
             //Add Children
             Children.Add(Home);
             Children.Add(Argo);
+            Children.Add(Family);
+
 
 #if __IOS__
             SelectedTabColor = Styles.TextColor;

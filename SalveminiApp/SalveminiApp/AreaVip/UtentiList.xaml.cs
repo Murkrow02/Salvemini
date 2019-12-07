@@ -81,6 +81,11 @@ namespace SalveminiApp.AreaVip
                 return;
             utentiListCtrl.SelectedItem = null;
 
+
+
+            //await Navigation.PushAsync(new SecondaryViews.ProfileView(data));
+            //return;
+
             //Access with feature if super vip
             if (superVip)
             {
