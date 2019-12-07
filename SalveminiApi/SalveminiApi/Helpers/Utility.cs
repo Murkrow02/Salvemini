@@ -6,6 +6,8 @@ using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using Newtonsoft.Json;
 using SalveminiApi.Argo.Models;
@@ -261,7 +263,28 @@ namespace SalveminiApi.Helpers
             return new string(array);
         }
 
+        //Token Generator 
+        public static string CreateToken(int size)
+        {
+              var charSet = "1234567890";
+
+            var chars = charSet.ToCharArray();
+            var data = new byte[1];
+            var crypto = new RNGCryptoServiceProvider();
+            crypto.GetNonZeroBytes(data);
+            data = new byte[size];
+            crypto.GetNonZeroBytes(data);
+            var result = new StringBuilder(size);
+            foreach (var b in data)
+            {
+                result.Append(chars[b % (chars.Length)]);
+            }
+            return result.ToString();
+        }
+
     }
+
+    
 
     public static class Extensions
     {
@@ -272,4 +295,5 @@ namespace SalveminiApi.Helpers
         }
     }
 
+  
 }

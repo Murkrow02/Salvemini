@@ -66,7 +66,7 @@ namespace SalveminiApi.Controllers
                         //Find materia with id in lezione
                         var Materia = db.Materie.Find(lezione.idMateria).Materia;
                         //Find similar materie (e.g. Matematica & Matematica con informatica)
-                        var materieSimili = db.Materie.Where(x => x.Materia.ToLower().Contains(Materia.ToLower()) || Materia.ToLower().Contains(x.Materia.ToLower())).ToList();
+                        var materieSimili = db.Materie.Where(x => x.Materia.ToLower().StartsWith(Materia.ToLower()) || Materia.ToLower().StartsWith(x.Materia.ToLower())).ToList();
                         var desMaterie = new List<string>();
                         //Create a list with subjects
                         foreach (var materia in materieSimili) { desMaterie.Add(materia.desMateria); };

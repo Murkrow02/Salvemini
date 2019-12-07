@@ -70,6 +70,28 @@
           <Property Name="Creazione" Type="datetime" Nullable="false" />
           <Property Name="IG" Type="bit" />
         </EntityType>
+        <EntityType Name="Coupon">
+          <Key>
+            <PropertyRef Name="Codice" />
+          </Key>
+          <Property Name="Codice" Type="int" Nullable="false" />
+          <Property Name="xAttivazione" Type="decimal" Precision="18" Scale="8" />
+          <Property Name="yAttivazione" Type="decimal" Precision="18" Scale="8" />
+          <Property Name="Raggio" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="idCreatore" Type="int" Nullable="false" />
+          <Property Name="Valore" Type="int" Nullable="false" />
+          <Property Name="Creazione" Type="datetime" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Attivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CouponAttivi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUtente" Type="int" Nullable="false" />
+          <Property Name="idCoupon" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="EventsLog">
           <Key>
             <PropertyRef Name="id" />
@@ -137,6 +159,8 @@
           <Property Name="sCoin" Type="int" Nullable="false" />
           <Property Name="AdsWatched" Type="int" Nullable="false" />
           <Property Name="LastAdWatched" Type="datetime" />
+          <Property Name="Compleanno" Type="datetime" />
+          <Property Name="Residenza" Type="nvarchar" MaxLength="300" />
         </EntityType>
         <EntityType Name="VotiSondaggi">
           <Key>
@@ -171,6 +195,46 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="BookLibri">
+              <PropertyRef Name="idUtente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Coupon_Utenti">
+          <End Role="Utenti" Type="Self.Utenti" Multiplicity="1" />
+          <End Role="Coupon" Type="Self.Coupon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Coupon">
+              <PropertyRef Name="idCreatore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CouponAttivi_Coupon">
+          <End Role="Coupon" Type="Self.Coupon" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CouponAttivi" Type="Self.CouponAttivi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coupon">
+              <PropertyRef Name="Codice" />
+            </Principal>
+            <Dependent Role="CouponAttivi">
+              <PropertyRef Name="idCoupon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CouponAttivi_Utenti">
+          <End Role="Utenti" Type="Self.Utenti" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CouponAttivi" Type="Self.CouponAttivi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CouponAttivi">
               <PropertyRef Name="idUtente" />
             </Dependent>
           </ReferentialConstraint>
@@ -236,6 +300,8 @@
           <EntitySet Name="Avvisi" EntityType="Self.Avvisi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BookLibri" EntityType="Self.BookLibri" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BookUtenti" EntityType="Self.BookUtenti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Coupon" EntityType="Self.Coupon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CouponAttivi" EntityType="Self.CouponAttivi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EventsLog" EntityType="Self.EventsLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Giornalino" EntityType="Self.Giornalino" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Materie" EntityType="Self.Materie" Schema="dbo" store:Type="Tables" />
@@ -251,6 +317,18 @@
           <AssociationSet Name="FK_BookLibri_BookUtenti" Association="Self.FK_BookLibri_BookUtenti">
             <End Role="BookUtenti" EntitySet="BookUtenti" />
             <End Role="BookLibri" EntitySet="BookLibri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Coupon_Utenti" Association="Self.FK_Coupon_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="Coupon" EntitySet="Coupon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CouponAttivi_Coupon" Association="Self.FK_CouponAttivi_Coupon">
+            <End Role="Coupon" EntitySet="Coupon" />
+            <End Role="CouponAttivi" EntitySet="CouponAttivi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CouponAttivi_Utenti" Association="Self.FK_CouponAttivi_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="CouponAttivi" EntitySet="CouponAttivi" />
           </AssociationSet>
           <AssociationSet Name="FK_OggettiSondaggi_Sondaggi" Association="Self.FK_OggettiSondaggi_Sondaggi">
             <End Role="Sondaggi" EntitySet="Sondaggi" />
@@ -385,6 +463,10 @@
           <Property Name="sCoin" Type="Int32" Nullable="false" />
           <Property Name="AdsWatched" Type="Int32" Nullable="false" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <Property Name="LastAdWatched" Type="DateTime" Precision="3" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="Coupon" Relationship="SalveminiModel.FK_Coupon_Utenti" FromRole="Utenti" ToRole="Coupon" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="CouponAttivi" Relationship="SalveminiModel.FK_CouponAttivi_Utenti" FromRole="Utenti" ToRole="CouponAttivi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Name="Compleanno" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="Residenza" Type="String" MaxLength="300" Unicode="true" FixedLength="false" Nullable="false" />
         </EntityType>
         <EntityType Name="VotiSondaggi">
           <Key>
@@ -535,6 +617,20 @@
           <EntitySet Name="AppInfo" EntityType="SalveminiModel.AppInfo" />
           <EntitySet Name="Giornalino" EntityType="SalveminiModel.Giornalino" />
           <EntitySet Name="Materie" EntityType="SalveminiModel.Materie" />
+          <EntitySet Name="Coupon" EntityType="SalveminiModel.Coupon" />
+          <EntitySet Name="CouponAttivi" EntityType="SalveminiModel.CouponAttivi" />
+          <AssociationSet Name="FK_Coupon_Utenti" Association="SalveminiModel.FK_Coupon_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="Coupon" EntitySet="Coupon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CouponAttivi_Coupon" Association="SalveminiModel.FK_CouponAttivi_Coupon">
+            <End Role="Coupon" EntitySet="Coupon" />
+            <End Role="CouponAttivi" EntitySet="CouponAttivi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CouponAttivi_Utenti" Association="SalveminiModel.FK_CouponAttivi_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="CouponAttivi" EntitySet="CouponAttivi" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="EventsLog">
           <Key>
@@ -567,6 +663,72 @@
           <Property Name="desMateria" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Materia" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="true" />
         </EntityType>
+        <EntityType Name="Coupon">
+          <Key>
+            <PropertyRef Name="Codice" />
+          </Key>
+          <Property Name="Codice" Type="Int32" Nullable="false" />
+          <Property Name="xAttivazione" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="yAttivazione" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="Raggio" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="idCreatore" Type="Int32" Nullable="false" />
+          <Property Name="Valore" Type="Int32" Nullable="false" />
+          <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Utenti" Relationship="SalveminiModel.FK_Coupon_Utenti" FromRole="Coupon" ToRole="Utenti" />
+          <NavigationProperty Name="CouponAttivi" Relationship="SalveminiModel.FK_CouponAttivi_Coupon" FromRole="Coupon" ToRole="CouponAttivi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Name="Attivo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CouponAttivi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUtente" Type="Int32" Nullable="false" />
+          <Property Name="idCoupon" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Coupon" Relationship="SalveminiModel.FK_CouponAttivi_Coupon" FromRole="CouponAttivi" ToRole="Coupon" />
+          <NavigationProperty Name="Utenti" Relationship="SalveminiModel.FK_CouponAttivi_Utenti" FromRole="CouponAttivi" ToRole="Utenti" />
+        </EntityType>
+        <Association Name="FK_Coupon_Utenti">
+          <End Type="SalveminiModel.Utenti" Role="Utenti" Multiplicity="1" />
+          <End Type="SalveminiModel.Coupon" Role="Coupon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Coupon">
+              <PropertyRef Name="idCreatore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CouponAttivi_Coupon">
+          <End Type="SalveminiModel.Coupon" Role="Coupon" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SalveminiModel.CouponAttivi" Role="CouponAttivi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coupon">
+              <PropertyRef Name="Codice" />
+            </Principal>
+            <Dependent Role="CouponAttivi">
+              <PropertyRef Name="idCoupon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CouponAttivi_Utenti">
+          <End Type="SalveminiModel.Utenti" Role="Utenti" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SalveminiModel.CouponAttivi" Role="CouponAttivi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CouponAttivi">
+              <PropertyRef Name="idUtente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -669,6 +831,8 @@
           <EntitySetMapping Name="Utenti">
             <EntityTypeMapping TypeName="SalveminiModel.Utenti">
               <MappingFragment StoreEntitySet="Utenti">
+                <ScalarProperty Name="Residenza" ColumnName="Residenza" />
+                <ScalarProperty Name="Compleanno" ColumnName="Compleanno" />
                 <ScalarProperty Name="LastAdWatched" ColumnName="LastAdWatched" />
                 <ScalarProperty Name="AdsWatched" ColumnName="AdsWatched" />
                 <ScalarProperty Name="sCoin" ColumnName="sCoin" />
@@ -725,6 +889,30 @@
               <MappingFragment StoreEntitySet="Materie">
                 <ScalarProperty Name="Materia" ColumnName="Materia" />
                 <ScalarProperty Name="desMateria" ColumnName="desMateria" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Coupon">
+            <EntityTypeMapping TypeName="SalveminiModel.Coupon">
+              <MappingFragment StoreEntitySet="Coupon">
+                <ScalarProperty Name="Attivo" ColumnName="Attivo" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Creazione" ColumnName="Creazione" />
+                <ScalarProperty Name="Valore" ColumnName="Valore" />
+                <ScalarProperty Name="idCreatore" ColumnName="idCreatore" />
+                <ScalarProperty Name="Raggio" ColumnName="Raggio" />
+                <ScalarProperty Name="yAttivazione" ColumnName="yAttivazione" />
+                <ScalarProperty Name="xAttivazione" ColumnName="xAttivazione" />
+                <ScalarProperty Name="Codice" ColumnName="Codice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CouponAttivi">
+            <EntityTypeMapping TypeName="SalveminiModel.CouponAttivi">
+              <MappingFragment StoreEntitySet="CouponAttivi">
+                <ScalarProperty Name="idCoupon" ColumnName="idCoupon" />
+                <ScalarProperty Name="idUtente" ColumnName="idUtente" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

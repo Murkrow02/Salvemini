@@ -430,6 +430,7 @@
     <Compile Include="Controllers\ArgoController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\AvvisiController.cs" />
+    <Compile Include="Controllers\CouponsController.cs" />
     <Compile Include="Controllers\DownloadOrariController.cs" />
     <Compile Include="Controllers\FilesController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
@@ -477,10 +478,29 @@
     <Compile Include="Models\BookUtenti.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Coupon.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CouponAttivi.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EventsLog.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Giornalino.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\GpsUtils.cs" />
     <Compile Include="Models\Materie.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OggettiSondaggi.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SalveminiCard.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sondaggi.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Treno.cs" />
@@ -499,20 +519,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\EventsLog.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\IndexModel.cs" />
     <Compile Include="Models\Lezione.cs" />
-    <Compile Include="Models\OggettiSondaggi.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SalveminiCard.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Sondaggi.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\SondaggiResult.cs" />
     <Compile Include="Models\Utenti.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
@@ -567,7 +575,6 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
       <LastGenOutput>DatabaseModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Orari\Classi\4FCAM.txt" />
     <Content Include="Orari\OrariTreni.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -664,6 +671,7 @@
     <Folder Include="Helpers\Crashes\Client\" />
     <Folder Include="Images\sondaggi\" />
     <Folder Include="Images\users\" />
+    <Folder Include="Orari\Classi\" />
     <Folder Include="Views\Auth\" />
     <Folder Include="Views\Images\" />
   </ItemGroup>

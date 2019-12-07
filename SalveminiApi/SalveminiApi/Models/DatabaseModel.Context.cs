@@ -39,5 +39,7 @@ namespace SalveminiApi.Models
         public virtual DbSet<AppInfo> AppInfo { get; set; }
         public virtual DbSet<Giornalino> Giornalino { get; set; }
         public virtual DbSet<Materie> Materie { get; set; }
+        public virtual DbSet<Coupon> Coupon { get; set; }
+        public virtual DbSet<CouponAttivi> CouponAttivi { get; set; }
     }
 }

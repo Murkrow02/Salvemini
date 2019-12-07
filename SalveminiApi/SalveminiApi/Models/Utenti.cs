@@ -20,6 +20,8 @@ namespace SalveminiApi.Models
             this.Avvisi = new HashSet<Avvisi>();
             this.Sondaggi = new HashSet<Sondaggi>();
             this.VotiSondaggi = new HashSet<VotiSondaggi>();
+            this.Coupon = new HashSet<Coupon>();
+            this.CouponAttivi = new HashSet<CouponAttivi>();
         }
     
         public int id { get; set; }
@@ -34,6 +36,8 @@ namespace SalveminiApi.Models
         public int sCoin { get; set; }
         public int AdsWatched { internal get; set; }
         public Nullable<System.DateTime> LastAdWatched { internal get; set; }
+        public System.DateTime Compleanno { get; set; }
+        public string Residenza { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Avvisi> Avvisi { internal get; set; }
@@ -41,5 +45,9 @@ namespace SalveminiApi.Models
         public virtual ICollection<Sondaggi> Sondaggi { internal get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VotiSondaggi> VotiSondaggi { internal get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Coupon> Coupon { internal get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CouponAttivi> CouponAttivi { internal get; set; }
     }
 }

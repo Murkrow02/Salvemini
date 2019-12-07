@@ -50,9 +50,10 @@ namespace SalveminiApi.Controllers
             }
 
             //Token cambiato
-            if (!authorized)
+            if (!authorized || utente == null)
             {
                 returnModel.Authorized = -1;
+                return returnModel;
             }
 
             //Versioni

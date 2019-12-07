@@ -9,6 +9,8 @@ using Newtonsoft.Json;
 using SalveminiApi.Models;
 using System.Linq;
 using SalveminiApi.Helpers;
+using System.Globalization;
+
 namespace UlysseApi.Controllers
 {
     [RoutePrefix("api")]
@@ -96,7 +98,9 @@ namespace UlysseApi.Controllers
                     newUser.Corso = utente.desCorso;
                     newUser.Creazione = Utility.italianTime();
                     newUser.ArgoToken = Token;
-                    newUser.Stato = 0;
+                    newUser.Stato = 1;
+                    try { newUser.Compleanno = DateTime.ParseExact(utente.alunno.datNascita, "yyyy-MM-dd", new CultureInfo("it-IT")); } catch { newUser.Compleanno = new DateTime(2069,04,20); };
+                    newUser.Residenza = utente.alunno.desComuneResidenza;
                     db.Utenti.Add(newUser);
                     db.SaveChanges();
                     returnList.Add(newUser);

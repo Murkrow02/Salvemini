@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="656d5e6cc7b34332b656b707faaae8ec" Name="Diagram1">
+      <Diagram DiagramId="656d5e6cc7b34332b656b707faaae8ec" Name="Diagram1" ZoomLevel="80">
         <EntityTypeShape EntityType="SalveminiModel.Ads" Width="1.5" PointX="5.625" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SalveminiModel.Analytics" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SalveminiModel.Avvisi" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
@@ -26,6 +26,11 @@
         <EntityTypeShape EntityType="SalveminiModel.AppInfo" Width="1.5" PointX="10" PointY="6.75" />
         <EntityTypeShape EntityType="SalveminiModel.Giornalino" Width="1.5" PointX="8.375" PointY="9.75" />
         <EntityTypeShape EntityType="SalveminiModel.Materie" Width="1.5" PointX="9.375" PointY="4.125" />
+        <EntityTypeShape EntityType="SalveminiModel.Coupon" Width="1.5" PointX="3" PointY="12" />
+        <EntityTypeShape EntityType="SalveminiModel.CouponAttivi" Width="1.5" PointX="5.25" PointY="11.75" />
+        <AssociationConnector Association="SalveminiModel.FK_Coupon_Utenti" />
+        <AssociationConnector Association="SalveminiModel.FK_CouponAttivi_Coupon" />
+        <AssociationConnector Association="SalveminiModel.FK_CouponAttivi_Utenti" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

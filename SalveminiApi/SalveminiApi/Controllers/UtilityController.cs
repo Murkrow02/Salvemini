@@ -9,6 +9,7 @@ using System.Web.Http;
 using SalveminiApi.Models;
 using Newtonsoft.Json;
 using SalveminiApi.Argo.Models;
+using System.Globalization;
 
 namespace SalveminiApi.Controllers
 {
@@ -35,7 +36,7 @@ namespace SalveminiApi.Controllers
             var currentMaterie = db.Materie.ToList();
             var utenti = db.Utenti.ToList();
             //Scan through each user
-            foreach(var utente in utenti)
+            foreach (var utente in utenti)
             {
                 //Download compiti
                 var argoUtils = new ArgoUtils();
@@ -47,11 +48,11 @@ namespace SalveminiApi.Controllers
 
                 //Compiti
                 var compiti = JsonConvert.DeserializeObject<compitiList>(argoContent).dati;
-               
-                foreach(var compito in compiti)
+
+                foreach (var compito in compiti)
                 {
                     //Check if materia already exists
-                    var conflict = currentMaterie.SingleOrDefault(x=> x.desMateria == compito.desMateria);
+                    var conflict = currentMaterie.SingleOrDefault(x => x.desMateria == compito.desMateria);
                     if (conflict == null && !newMaterie.Contains(compito.desMateria))  //New materia found
 
                     {
@@ -65,7 +66,7 @@ namespace SalveminiApi.Controllers
             return newMaterie;
         }
 
-   
+
         [Route("appinfo")]
         [HttpGet]
         public AppInfo getAppInfo() {
@@ -95,6 +96,57 @@ namespace SalveminiApi.Controllers
             db.SaveChanges();
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
+
+        //Returns all the subjects existing in ARGO
+        [Route("updateinfo")]
+        [HttpGet]
+        public async Task a()
+        {
+
+            var utenti = db.Utenti.ToList();
+
+            //Scan through each user
+            foreach (var utente in utenti)
+            {
+                try
+                {
+                    //Download compiti
+                    var argoUtils = new ArgoUtils();
+                    var argoClient = argoUtils.ArgoClient(utente.id, utente.ArgoToken);
+                    var argoResponse = await  argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/schede");
+                    var schedeContent = await argoResponse.Content.ReadAsStringAsync();
+                    var ArgoUser = new List<Utente>();
+                    try
+                    {
+                        ArgoUser = JsonConvert.DeserializeObject<List<Utente>>(schedeContent);
+                    }
+                    catch
+                    {
+                        continue;
+                    }
+
+                    foreach (Utente argouser in ArgoUser)
+                    {
+                        try
+                        {
+                            utente.Residenza = Helpers.Utility.FirstCharToUpper(argouser.alunno.desComuneResidenza.ToLower());
+                            utente.Compleanno = DateTime.ParseExact(argouser.alunno.datNascita, "yyyy-MM-dd", new CultureInfo("it-IT"));
+                        }
+                        catch
+                        {
+                            continue;
+                        }
+
+                    }
+
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            db.SaveChanges();
+            } 
 
     }
 }
