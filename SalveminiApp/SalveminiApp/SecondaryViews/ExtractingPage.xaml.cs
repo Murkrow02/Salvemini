@@ -33,7 +33,6 @@ namespace SalveminiApp.SecondaryViews
         {
             //Disable button
             var bottone = sender as Button;
-            bottone.IsEnabled = false;
 
             //Restart
             if(bottone.Text == "Ricomincia")
@@ -47,9 +46,12 @@ namespace SalveminiApp.SecondaryViews
             if (daEstrarre.Count < 1)
             {
                 bottone.Text = "Ricomincia";
-                toExtract.Text = "Hai estratto tutti";
+                //toExtract.Text = "Hai estratto tutti";
                 return;
             }
+
+            //Disable button
+            bottone.IsEnabled = false;
 
             //Extract random user
             var random = new Random();
@@ -87,6 +89,13 @@ namespace SalveminiApp.SecondaryViews
             {
                 toExtract.Text = "Utenti estratti:" + Estratti.Count + "/" + Utenti.Count;
                 daEstrarre.RemoveAt(extracted);
+            }
+
+            //Finished
+            if (daEstrarre.Count < 1)
+            {
+                bottone.Text = "Ricomincia";
+                //toExtract.Text = "Hai estratto tutti";
             }
 
             //Enable button

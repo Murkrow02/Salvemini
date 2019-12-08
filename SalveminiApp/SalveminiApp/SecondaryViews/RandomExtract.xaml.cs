@@ -4,6 +4,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using System.Linq;
 using Rg.Plugins.Popup.Extensions;
+using MonkeyCache.SQLite;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 #endif
@@ -52,6 +53,10 @@ namespace SalveminiApp.SecondaryViews
                 //Create simple list
                 utenti.Clear();
                 foreach (var utente in utentiList) { utenti.Add(new ExtractUser { Nome = utente.cognomeNome, Immagine = utente.Immagine }); }
+                //Get custom from cache
+                var utentiSalvati = CacheHelper.GetCache<List<ExtractUser>>("extractCustomUsers");
+                if (utentiSalvati != null)
+                    foreach (var utente in utentiSalvati) { utenti.Add(new ExtractUser { Nome = utente.Nome }); }
                 UpdateList();
             }
             else
@@ -76,6 +81,12 @@ namespace SalveminiApp.SecondaryViews
             utenti.Insert(0, newUser);
             UpdateList();
 
+            //Add user custom to cache
+            var utentiSalvati = CacheHelper.GetCache<List<ExtractUser>>("extractCustomUsers");
+            if (utentiSalvati == null) utentiSalvati = new List<ExtractUser>();
+            utentiSalvati.Add(newUser);
+            Barrel.Current.Add<List<ExtractUser>>("extractCustomUsers", utentiSalvati, TimeSpan.FromDays(1000));
+
             //Clear text
             customUser.Text = "";
         }
@@ -91,9 +102,18 @@ namespace SalveminiApp.SecondaryViews
                 return;
             utentiListCtrl.SelectedItem = null;
 
-            bool confirm = await DisplayAlert("Sicuro", "Vuoi rimuovere questo utente?", "Si", "No");
+            //Remove from list
+            bool confirm = await DisplayAlert("Sicuro?", "Vuoi rimuovere questo utente?", "Si", "No");
             if (confirm) utenti.Remove(data);
             UpdateList();
+
+
+            //Remove user custom from cache
+            var utentiSalvati = CacheHelper.GetCache<List<ExtractUser>>("extractCustomUsers");
+            if (utentiSalvati == null) return;
+            utentiSalvati.RemoveAll(x => x.Nome == data.Nome);
+            Barrel.Current.Add<List<ExtractUser>>("extractCustomUsers", utentiSalvati, TimeSpan.FromDays(1000));
+
         }
 
 
@@ -101,7 +121,7 @@ namespace SalveminiApp.SecondaryViews
         {
             //Update list and count
             utentiListCtrl.ItemsSource = null;
-            utentiListCtrl.ItemsSource = utenti;
+            utentiListCtrl.ItemsSource = utenti.OrderBy(x => x.Nome);
             utentiCountLbl.Text = utenti.Count.ToString();
         }
 

@@ -149,12 +149,11 @@ namespace SalveminiApp
                 registro.GestureRecognizers.Add(tapGestureRecognizer);
 
                 //Trasporti
-                if (Costants.DownloadedOrariTrasporti()) //Add this only if orario is downloaded
-                {
-                    var trasporti = new WidgetGradient { Title = "Treni", SubTitle = await getNextTrain(), Icon = "fas-subway", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order = 3 };
-                    trasporti.GestureRecognizers.Add(tapGestureRecognizer);
-                    widgets.Add(trasporti);
-                }
+                var trasporti = new WidgetGradient { Title = "Trasporti", SubTitle = await getNextTrain(), Icon = "fas-subway", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order = 3 };
+                trasporti.GestureRecognizers.Add(tapGestureRecognizer);
+                widgets.Add(trasporti);
+
+
                 //Card
                 var card = new WidgetGradient { Title = "SalveminiCard", SubTitle = "Visualizza tutti i vantaggi esclusivi per gli studenti del Salvemini", Icon = "fas-credit-card", StartColor = "B487FD", EndColor = "FA6FFA", Push = new SecondaryViews.SalveminiCard(), Order = 7 };
                 card.GestureRecognizers.Add(tapGestureRecognizer);
@@ -310,7 +309,7 @@ namespace SalveminiApp
                         if (successTreni)
                         {
                             Preferences.Set("OrarioTrasportiVersion", Index.OrarioTrasportiVersion);
-                            await getNextTrain();
+                            //await getNextTrain();
                         }
                     }
 
@@ -360,9 +359,13 @@ namespace SalveminiApp
                 //Push to selected page
                 if (widget.Push != null)
                 {
-                    if (widget.Title == "Treni")
+                    if (widget.Title == "Trasporti")
                     {
-                        Navigation.PushAsync(widget.Push); //Push
+                        if (!Costants.DownloadedOrariTrasporti() || Preferences.Get("firstTimeTrasporti",true))
+                            Navigation.PushModalAsync(new FirstAccess.OrariTrasporti());
+
+                        else
+                            Navigation.PushAsync(widget.Push); //Push to pullman, treni, ali
                     }
                     else
                     {
@@ -399,6 +402,8 @@ namespace SalveminiApp
         public async Task<string> getNextTrain()
         {
             var NextTrain = await App.Treni.GetNextTrain(Preferences.Get("savedStation", 0), Preferences.Get("savedDirection", true));
+            if (NextTrain == null)
+                return "Visualizza gli orari di treni, bus e aliscafi";
             string result = "<p>Il prossimo treno per <strong>" + NextTrain.DirectionString + "</strong> partirà alle <strong>" + NextTrain.Partenza + "</strong> da <strong>" + Costants.Stazioni[NextTrain.Stazione] + "</strong></p>";
             return result;
         }

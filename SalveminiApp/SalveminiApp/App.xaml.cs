@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Threading.Tasks;
 using Com.OneSignal;
 using Com.OneSignal.Abstractions;
 using DLToolkit.Forms.Controls;
@@ -82,7 +83,7 @@ namespace SalveminiApp
             Barrel.Current.EmptyExpired();
         }
 
-        public static void refreshCalls()
+        public static async Task refreshCalls()
         {
             Login = new RestApi.ItemManagerLogin(new RestApi.RestServiceLogin());
             Orari = new RestApi.ItemManagerOrari(new RestApi.RestServiceOrari());

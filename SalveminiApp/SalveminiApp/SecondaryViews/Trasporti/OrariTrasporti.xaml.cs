@@ -30,8 +30,8 @@ namespace SalveminiApp.FirstAccess
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
             if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
             {
-             TrenoSegment.TintColor = Color.White;
-            TrenoSegment.SelectedTextColor = Styles.TextColor;
+                TrenoSegment.TintColor = Color.White;
+                TrenoSegment.SelectedTextColor = Styles.TextColor;
             }
 #endif
             //Set heights
@@ -46,7 +46,7 @@ namespace SalveminiApp.FirstAccess
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-           
+
             //Check connection and download orari
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
@@ -85,7 +85,7 @@ namespace SalveminiApp.FirstAccess
             retry.IsVisible = true;
             downlaodStatus.Text = "Non è stato possibile scaricare gli orari";
             progress.ProgressTo(0, 500, Easing.CubicInOut);
-
+            Navigation.PopModalAsync();
         }
 
         void Retry_Clicked(object sender, System.EventArgs e)
@@ -124,15 +124,17 @@ namespace SalveminiApp.FirstAccess
                 return;
             }
 
-            if (Preferences.Get("isFirstTime", true))
-            {
-                Xamarin.Forms.Application.Current.MainPage = new TabPage();
-                Preferences.Set("isFirstTime", false);
-            }
-            else
-            {
-                await Navigation.PopModalAsync();
-            }
+            goToMenu();
+        }
+
+        public void goToMenu()
+        {
+            Navigation.PopModalAsync();
+            var TabPage = Xamarin.Forms.Application.Current.MainPage as TabPage;
+            var MainPage = TabPage.Children.SingleOrDefault(x => x.Title == "Home");
+            if (MainPage == null) return;
+            MainPage.Navigation.PushAsync(new SecondaryViews.BusAndTrains());
+            Preferences.Set("firstTimeTrasporti", false);
         }
 
         private void TrenoSegment_OnSegmentSelected(object sender, Plugin.Segmented.Event.SegmentSelectEventArgs e)
@@ -171,17 +173,7 @@ namespace SalveminiApp.FirstAccess
 
         public void skipClicked(object sender, System.EventArgs e)
         {
-            if (Preferences.Get("isFirstTime", true))
-            {
-                Xamarin.Forms.Application.Current.MainPage = new TabPage();
-                //Remove Pages behind MainPage
-                //Navigation.RemovePage(Navigation.NavigationStack[0]);
-                Preferences.Set("isFirstTime", false);
-            }
-            else
-            {
-                Navigation.PopModalAsync();
-            }
+            goToMenu();
         }
 
     }

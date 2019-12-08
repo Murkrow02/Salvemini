@@ -30,7 +30,7 @@
 
             <!--Entries-->
             <StackLayout Spacing="0"
-                         Padding="30, 0" x:Name="entryStack"
+                         Padding="40, 0" x:Name="entryStack"
                          VerticalOptions="CenterAndExpand">
                 <inputLayout:SfTextInputLayout  x:Name="usernameEntry"
                                                 FocusedColor="{x:Static local:Styles.PrimaryColor}"

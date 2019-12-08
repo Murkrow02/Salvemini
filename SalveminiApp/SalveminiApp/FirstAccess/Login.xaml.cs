@@ -210,16 +210,17 @@ namespace SalveminiApp.FirstAccess
             Preferences.Set("Corso", UtentiLogin[id].Corso);
 
 
-            if (Preferences.Get("isFirstTime", true))
-            {
-                Navigation.PushModalAsync(new OrariTrasporti());
-            }
-            else
-            {
-                Xamarin.Forms.Application.Current.MainPage = new TabPage();
-            }
+            //if (Preferences.Get("isFirstTime", true))
+            //{
+            //    Navigation.PushModalAsync(new OrariTrasporti());
+            //}
+            //else
+            //{
+            Preferences.Get("isFirstTime", false);
+            await App.refreshCalls();
+            Xamarin.Forms.Application.Current.MainPage = new TabPage();
+            //  }
 
-            App.refreshCalls();
         }
         void Username_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
         {

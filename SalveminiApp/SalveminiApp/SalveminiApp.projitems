@@ -55,14 +55,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\BusAndTrains.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)FirstAccess\OrariTrasporti.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\SalveminiCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -247,6 +239,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\OrariTrasporti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\BusAndTrains.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -312,12 +312,6 @@
       <DependentUpon>VotiScrutinio.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\ARGO\VotiScrutinio.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\BusAndTrains.xaml.cs">
-      <DependentUpon>BusAndTrains.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)FirstAccess\OrariTrasporti.xaml.cs">
-      <DependentUpon>OrariTrasporti.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\SalveminiCard.xaml.cs">
       <DependentUpon>SalveminiCard.xaml</DependentUpon>
     </Compile>
@@ -482,6 +476,12 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\ExtractingPage.xaml.cs">
       <DependentUpon>ExtractingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\OrariTrasporti.xaml.cs">
+      <DependentUpon>OrariTrasporti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\BusAndTrains.xaml.cs">
+      <DependentUpon>BusAndTrains.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
