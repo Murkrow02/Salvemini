@@ -23,7 +23,7 @@ namespace SalveminiApp.SecondaryViews
             }
 #endif
 
-           
+
 
         }
 
@@ -31,20 +31,7 @@ namespace SalveminiApp.SecondaryViews
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-#if __IOS__
-            UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.DarkContent, true);
-#endif
             secondLayout.Children.RemoveAt(1);
-            //Ios 13 bug
-            try
-            {
-
-                Navigation.PopModalAsync();
-            }
-            catch
-            {
-                //fa nient
-            }
         }
 
         protected override void OnAppearing()
@@ -83,6 +70,12 @@ namespace SalveminiApp.SecondaryViews
         void closePage(object sender, EventArgs e)
         {
             Navigation.PopModalAsync();
+        }
+
+        void random_Clicked(object sender, EventArgs e)
+        {
+            //Navigation.PopModalAsync();
+            Navigation.PushAsync(new RandomExtract());
         }
     }
 }

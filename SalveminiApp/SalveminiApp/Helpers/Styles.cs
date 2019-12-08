@@ -15,7 +15,7 @@ namespace SalveminiApp
         public static Color ObjectGray = Color.FromHex("#ededed");
 
         //Black not black OLD 3d2d2d
-        public static Color TextColor = Color.FromHex("#2b2b2b");
+        public static Color TextColor = Color.FromHex("#333333");
 
         //Apple default
         public static Color Apple = Color.FromHex("#007aff");

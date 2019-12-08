@@ -26,10 +26,11 @@ namespace SalveminiApp.RestApi
             client.DefaultRequestHeaders.Add("x-auth-token", Preferences.Get("Token", ""));
         }
 
-        public async Task<List<Models.Utente>> GetUtenti()
+        public async Task<List<Models.Utente>> GetUtenti(bool classFiltered)
         {
             Utenti = new List<Models.Utente>();
-            var uri = Costants.Uri("utenti/all");
+            string uri = Costants.Uri("utenti/all");
+            if (classFiltered) uri = Costants.Uri("utenti/classe"); //Get only class users
 
             try
             {
@@ -49,6 +50,8 @@ namespace SalveminiApp.RestApi
             }
             return Utenti;
         }
+
+
 
         public async Task<Models.Utente> GetUtente(int id)
         {
@@ -144,7 +147,7 @@ namespace SalveminiApp.RestApi
 
     public interface IRestServiceUtenti
     {
-        Task<List<Utente>> GetUtenti();
+        Task<List<Utente>> GetUtenti(bool classFiltered);
         Task<Utente> GetUtente(int id);
         Task<string[]> ChangeStatus(int idUtente, int stato);
         Task<Models.ResponseModel> ChangePwd(Models.changeBlock changeData);
@@ -161,9 +164,9 @@ namespace SalveminiApp.RestApi
             restServiceUtenti = serviceUtenti;
         }
 
-        public Task<List<Utente>> GetUtenti()
+        public Task<List<Utente>> GetUtenti(bool classFiltered = false)
         {
-            return restServiceUtenti.GetUtenti();
+            return restServiceUtenti.GetUtenti(classFiltered);
         }
 
         public Task<Utente> GetUtente(int id)

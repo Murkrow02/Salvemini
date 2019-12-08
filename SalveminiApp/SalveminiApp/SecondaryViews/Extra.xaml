@@ -3,15 +3,18 @@
     <ContentPage.Content>
         <StackLayout x:Name="mainLayout" Spacing="8">
             <!--TITLE-->
-            <StackLayout Spacing="8" Padding="5" Orientation="Horizontal">
+            <!--<StackLayout Spacing="8" Padding="5" Orientation="Horizontal">
                 <iconize:IconButton BackgroundColor="Transparent" Clicked="closePage" VerticalOptions="Center" HorizontalOptions="Start" Text="fal-times" FontSize="30" WidthRequest="45" TextColor="{x:Static local:Styles.TextColor}" />
                 <Label VerticalOptions="Center" HorizontalOptions="Start" Text="Extra" TextColor="{x:Static local:Styles.TextColor}" FontSize="Title" FontAttributes="Bold" />
-            </StackLayout>
+            </StackLayout>-->
             <!--CountDown-->
             <StackLayout x:Name="secondLayout" Spacing="25">
                 <Label Margin="0,20,0,0" Text="Mancano" TextColor="{x:Static local:Styles.TextGray}" FontAttributes="Bold" FontSize="35" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
                 <Label x:Name="wenEta" TextColor="{x:Static local:Styles.TextGray}" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
             </StackLayout>
+
+
+            <Button Text="Random" Clicked="random_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

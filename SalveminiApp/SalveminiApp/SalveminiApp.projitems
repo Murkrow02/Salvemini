@@ -239,6 +239,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\RandomExtract.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\ExtractingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -468,6 +476,12 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Family.xaml.cs">
       <DependentUpon>Family.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\RandomExtract.xaml.cs">
+      <DependentUpon>RandomExtract.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\ExtractingPage.xaml.cs">
+      <DependentUpon>ExtractingPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

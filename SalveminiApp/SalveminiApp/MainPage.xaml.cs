@@ -159,7 +159,7 @@ namespace SalveminiApp
                 var card = new WidgetGradient { Title = "SalveminiCard", SubTitle = "Visualizza tutti i vantaggi esclusivi per gli studenti del Salvemini", Icon = "fas-credit-card", StartColor = "B487FD", EndColor = "FA6FFA", Push = new SecondaryViews.SalveminiCard(), Order = 7 };
                 card.GestureRecognizers.Add(tapGestureRecognizer);
                 //Extra
-                var extra = new WidgetGradient { Title = "Extra", SubTitle = "Esplora funzioni aggiuntive", Icon = "fas-star", StartColor = "B487FD", EndColor = "FA6FFA", Order = 6, Push = new SecondaryViews.Extra() };
+                var extra = new WidgetGradient { Title = "Extra", SubTitle = "Esplora funzioni aggiuntive", Icon = "fas-star", StartColor = "B487FD", EndColor = "FA6FFA", Order = 6 };
                 extra.GestureRecognizers.Add(tapGestureRecognizer);
 
 
@@ -381,6 +381,11 @@ namespace SalveminiApp
                     Costants.OpenPdf(Index.Giornalino.Url, "Giornalino"); //Show webpage
                     RemoveBadge("Giornalino");
                 }
+                //Extra
+                if (widget.Title == "Extra")
+                {
+                    extraPush();
+                }
             }
             catch (Exception ex)
             {
@@ -464,6 +469,29 @@ namespace SalveminiApp
         {
             //Create new navigation page
             var modalPush = new Xamarin.Forms.NavigationPage(new SecondaryViews.Profile());
+            modalPush.BarTextColor = Styles.TextColor;
+            modalPush.BarBackgroundColor = Styles.BGColor;
+            //Add disappearing event
+            modalPush.Disappearing += ModalPush_Disappearing;
+
+            //Add toolbaritem to close page
+            var close = new ToolbarItem { Text = "Annulla" };
+            close.Clicked += ModalPush_Disappearing;
+            modalPush.ToolbarItems.Add(close);
+
+            //Modal figo
+#if __IOS__
+            modalPush.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
+#endif
+            modalPush.BarTextColor = Styles.TextColor;
+            Navigation.PushModalAsync(modalPush);
+        }
+
+        //Push to extra page
+        void extraPush()
+        {
+            //Create new navigation page
+            var modalPush = new Xamarin.Forms.NavigationPage(new SecondaryViews.Extra());
             modalPush.BarTextColor = Styles.TextColor;
             modalPush.BarBackgroundColor = Styles.BGColor;
             //Add disappearing event

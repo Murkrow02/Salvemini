@@ -23,6 +23,15 @@ namespace SalveminiApp.RestApi.Models
                 return Nome + " " + Cognome;
             }
         }
+
+        public string cognomeNome
+        {
+            get
+            {
+                return Cognome + " " + Nome;
+            }
+        }
+
         public string classeCorso
         {
             get
