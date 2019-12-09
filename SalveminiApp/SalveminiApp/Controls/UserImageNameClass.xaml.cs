@@ -51,11 +51,12 @@ namespace SalveminiApp.Controls
 
             try
             {
-                //Title
+                //User
                 if (propertyName == UserProperty.PropertyName)
                 {
                     if (User != null)
                     {
+                        loading.IsRunning = false; loading.IsVisible = false;
                         //Display name image and class
                         nameLbl.Text = User.nomeCognome;
                         classLbl.Text = User.classeCorso;
@@ -69,6 +70,7 @@ namespace SalveminiApp.Controls
                     var cachedUtente = CacheHelper.GetCache<RestApi.Models.Utente>("utente" + CachedUserId);
                     if (cachedUtente != null)
                     {
+                        loading.IsRunning = false; loading.IsVisible = false;
                         nameLbl.Text = cachedUtente.nomeCognome;
                         classLbl.Text = cachedUtente.classeCorso;
                         userImg.Source = cachedUtente.Immagine;

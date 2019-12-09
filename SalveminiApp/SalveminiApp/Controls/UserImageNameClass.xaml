@@ -11,6 +11,7 @@
                 <TapGestureRecognizer />
             </ffimageloading:CachedImage.GestureRecognizers>
         </ffimageloading:CachedImage>
+        <ActivityIndicator IsRunning="True" x:Name="loading"/>
         <!--Nome-->
         <patch:Label  x:Name="nameLbl" FontSize="Title" TextColor="{x:Static local:Styles.TextColor}" Lines="1" AutoFit="Width" HorizontalTextAlignment="Center" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
         <!--Classe-->

@@ -83,10 +83,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\Extra.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\Aliscafi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -247,6 +243,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Controls\ExtraWidget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\Extra.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -342,9 +346,6 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Team.xaml.cs">
       <DependentUpon>Team.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Extra.xaml.cs">
-      <DependentUpon>Extra.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\Aliscafi.xaml.cs">
       <DependentUpon>Aliscafi.xaml</DependentUpon>
@@ -482,6 +483,12 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Trasporti\BusAndTrains.xaml.cs">
       <DependentUpon>BusAndTrains.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ExtraWidget.xaml.cs">
+      <DependentUpon>ExtraWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Extra.xaml.cs">
+      <DependentUpon>Extra.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

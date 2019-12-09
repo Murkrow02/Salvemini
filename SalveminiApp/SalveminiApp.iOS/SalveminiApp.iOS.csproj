@@ -287,6 +287,8 @@
     <BundleResource Include="Resources\SalveminiCoin.png" />
     <BundleResource Include="Resources\close_image.png" />
     <BundleResource Include="Lotties\rightArrow.json" />
+    <BundleResource Include="Resources\dices.png" />
+    <BundleResource Include="Resources\flappy.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lotties\" />

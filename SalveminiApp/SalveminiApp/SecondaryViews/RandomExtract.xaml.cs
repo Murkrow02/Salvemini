@@ -58,6 +58,7 @@ namespace SalveminiApp.SecondaryViews
                 if (utentiSalvati != null)
                     foreach (var utente in utentiSalvati) { utenti.Add(new ExtractUser { Nome = utente.Nome }); }
                 UpdateList();
+                startBtn.IsEnabled = true;
             }
             else
             {

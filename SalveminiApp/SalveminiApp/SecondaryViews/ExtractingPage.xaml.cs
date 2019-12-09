@@ -59,11 +59,11 @@ namespace SalveminiApp.SecondaryViews
             var extractedUser = daEstrarre[extracted];
 
             //Delay
-            var tempo = (uint)(TimeSpan.FromSeconds((double)1 / (double)daEstrarre.Count).Milliseconds);
+            var tempo = (uint)(TimeSpan.FromSeconds((double)1 / (double)daEstrarre.Count).Milliseconds) + 70;
 
             //Shuffle animation
             var shuffleList = new List<ExtractUser>();
-            if (daEstrarre.Count > 7) shuffleList.AddRange(daEstrarre.Take(7)); else shuffleList.AddRange(daEstrarre);
+            if (daEstrarre.Count > 6) shuffleList.AddRange(daEstrarre.Take(6)); else shuffleList.AddRange(daEstrarre);
             foreach (var utente in shuffleList)
             {
                 await Task.WhenAll(nameLbl.TranslateTo(App.ScreenWidth, 0, tempo), nameLbl.FadeTo(0, tempo));

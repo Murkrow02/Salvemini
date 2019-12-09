@@ -26,6 +26,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button CornerRadius="12" HeightRequest="35" Text="Avvia" Clicked="start_Clicked" BackgroundColor="#529FFF" TextColor="White" FontSize="25" Margin="45,0"/>
+        <Button IsEnabled="False" x:Name="startBtn" CornerRadius="12" HeightRequest="35" Text="Avvia" Clicked="start_Clicked" BackgroundColor="#529FFF" TextColor="White" FontSize="25" Margin="45,0"/>
     </StackLayout>
 </ContentPage>

@@ -216,7 +216,7 @@ namespace SalveminiApp.FirstAccess
             //}
             //else
             //{
-            Preferences.Get("isFirstTime", false);
+            Preferences.Set("isFirstTime", false);
             await App.refreshCalls();
             Xamarin.Forms.Application.Current.MainPage = new TabPage();
             //  }
