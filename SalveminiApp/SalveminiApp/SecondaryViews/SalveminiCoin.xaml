@@ -2,7 +2,7 @@
 <ContentPage  xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.SalveminiCoin">
     <ContentPage.Content>
         <StackLayout>
-            <!--<Button x:Name="showRewardBtn" Text="Guadagna una sCoin" TextColor="Red" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Clicked="adShow"/>-->
+            <Button x:Name="showRewardBtn" Text="Guadagna una sCoin" TextColor="Red" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Clicked="adShow"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

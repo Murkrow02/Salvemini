@@ -17,7 +17,6 @@ using PanCardView.iOS;
 using System.Threading.Tasks;
 using IntentsUI;
 using Google.MobileAds;
-using Xfx;
 
 namespace SalveminiApp.iOS
 {

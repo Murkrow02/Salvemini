@@ -16,7 +16,7 @@ using Foundation;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using System.Linq;
-using Syncfusion.SfCarousel.XForms;
+//using Syncfusion.SfCarousel.XForms;
 
 namespace SalveminiApp.Helpers
 {
@@ -28,16 +28,16 @@ namespace SalveminiApp.Helpers
         public ImageViewer(List<string> Urls)
         {
             InitializeComponent();
-            ImageCarousel.ItemsSource = Urls;
+            //ImageCarousel.ItemsSource = Urls;
             Images = Urls;
             FullUrl = Urls[0];
             MainPage.isSelectingImage = true;
         }
 
-        private void Image_SelectionChanged(object sender, Syncfusion.SfCarousel.XForms.SelectionChangedEventArgs e)
-        {
-            FullUrl = Images[e.SelectedIndex];
-        }
+        //private void Image_SelectionChanged(object sender, Syncfusion.SfCarousel.XForms.SelectionChangedEventArgs e)
+        //{
+        //    FullUrl = Images[e.SelectedIndex];
+        //}
 
         void Close_Clicked(object sender, EventArgs e)
         {
@@ -48,10 +48,10 @@ namespace SalveminiApp.Helpers
         {
             if (e.Direction == SwipeDirection.Left)
             {
-                if (Images.ElementAtOrDefault(ImageCarousel.SelectedIndex + 1) != null)
-                {
-                    ImageCarousel.SelectedIndex++;
-                }
+                //if (Images.ElementAtOrDefault(ImageCarousel.SelectedIndex + 1) != null)
+                //{
+                //    ImageCarousel.SelectedIndex++;
+                //}
             }
         }
 
@@ -59,10 +59,10 @@ namespace SalveminiApp.Helpers
         {
             if (e.Direction == SwipeDirection.Right)
             {
-                if (Images.ElementAtOrDefault(ImageCarousel.SelectedIndex - 1) != null)
-                {
-                    ImageCarousel.SelectedIndex--;
-                }
+                //if (Images.ElementAtOrDefault(ImageCarousel.SelectedIndex - 1) != null)
+                //{
+                //    ImageCarousel.SelectedIndex--;
+                //}
             }
         }
 

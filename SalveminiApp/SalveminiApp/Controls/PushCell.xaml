@@ -3,8 +3,9 @@
     <ContentView.Content>
         <StackLayout x:Name="cell" BackgroundColor="White" VerticalOptions="Start"  Padding="10,10" Spacing="8">
             <StackLayout Orientation="Horizontal">
-                <Label x:Name="TitleLbl" Text="asd" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Center" />
-                <iconize:IconLabel Text="fas-chevron-right" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="Center" />
+                <Label x:Name="TitleLbl" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Center" />
+                <iconize:IconLabel x:Name="arrow" Text="fas-chevron-right" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="Center" />
+                <ActivityIndicator x:Name="loading"  HorizontalOptions="EndAndExpand" IsVisible="false" />
             </StackLayout>
             <Frame Margin="0,0,-10,-10" x:Name="separator" HasShadow="False" BackgroundColor="{x:Static local:Styles.ObjectGray}" HeightRequest="1" Padding="0" VerticalOptions="EndAndExpand"/>
         </StackLayout>

@@ -22,7 +22,7 @@ namespace SalveminiApp.Helpers
                 SetValue(TitleProperty, value);
             }
         }
-        //Badge
+        //Separator
         public static readonly BindableProperty SeparatorProperty = BindableProperty.Create(nameof(Separator), typeof(string), typeof(WidgetGradient), default(string), Xamarin.Forms.BindingMode.OneWay);
         public string Separator
         {
@@ -34,6 +34,21 @@ namespace SalveminiApp.Helpers
             set
             {
                 SetValue(SeparatorProperty, value);
+            }
+        }
+
+        //IsLoading
+        public static readonly BindableProperty LoadingProperty = BindableProperty.Create(nameof(Loading), typeof(bool), typeof(WidgetGradient), default(bool), Xamarin.Forms.BindingMode.OneWay);
+        public bool Loading
+        {
+            get
+            {
+                return (bool)GetValue(LoadingProperty);
+            }
+
+            set
+            {
+                SetValue(LoadingProperty, value);
             }
         }
 
@@ -89,6 +104,25 @@ namespace SalveminiApp.Helpers
                 if (propertyName == PushProperty.PropertyName)
                 {
                     pushPage = Push;
+                }
+
+                //Loading
+                if (propertyName == LoadingProperty.PropertyName)
+                {
+                    if (Loading)
+                    {
+                        loading.IsRunning = true;
+                        loading.IsVisible = true;
+                        arrow.IsVisible = false;
+                        TitleLbl.Opacity = 0.7;
+                    }
+                    else
+                    {
+                        loading.IsRunning = false;
+                        loading.IsVisible = false;
+                        arrow.IsVisible = true;
+                        TitleLbl.Opacity = 1;
+                    }
                 }
             }
             catch

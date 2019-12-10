@@ -34,9 +34,9 @@
 	</dict>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
-	<key>CFBundleVersion</key>
-	<string>4.4</string>
 	<key>CFBundleShortVersionString</key>
 	<string>23</string>
+	<key>CFBundleVersion</key>
+	<string>5</string>
 </dict>
 </plist>

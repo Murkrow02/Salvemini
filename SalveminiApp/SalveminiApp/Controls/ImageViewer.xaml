@@ -1,19 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms" xmlns:proc="clr-namespace:PanCardView.Processors;assembly=PanCardView" xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView" xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView" xmlns:res="clr-namespace:PanCardView.Resources;assembly=PanCardView" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.Helpers.ImageViewer">
+<ContentPage xmlns:proc="clr-namespace:PanCardView.Processors;assembly=PanCardView" xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView" xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView" xmlns:res="clr-namespace:PanCardView.Resources;assembly=PanCardView" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.Helpers.ImageViewer">
     <ContentPage.Content>
         <AbsoluteLayout BackgroundColor="Black">
-            <carousel:SfCarousel SelectionChanged="Image_SelectionChanged" x:Name="ImageCarousel" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5, .5, 1, .8">
-                <carousel:SfCarousel.ItemTemplate>
-                    <DataTemplate>
-                        <local:ZoomImage LoadingPlaceholder="imagePlaceholder.png" Aspect="AspectFill" Source="{Binding .}" x:Name="imageView">
-                            <local:ZoomImage.GestureRecognizers>
-                                <SwipeGestureRecognizer Direction="Left" Swiped="ImageSwipedLeft" />
-                                <SwipeGestureRecognizer Direction="Right" Swiped="ImageSwipedRight" />
-                            </local:ZoomImage.GestureRecognizers>
-                        </local:ZoomImage>
-                    </DataTemplate>
-                </carousel:SfCarousel.ItemTemplate>
-            </carousel:SfCarousel>
+           
 
             <StackLayout Orientation="Horizontal" AbsoluteLayout.LayoutBounds=".5, .01, 1, .1" AbsoluteLayout.LayoutFlags="All" Padding="10, 0">
                 <iconize:IconButton Text="fas-times" TextColor="White" Clicked="Close_Clicked" BackgroundColor="Transparent" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Start" />

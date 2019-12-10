@@ -26,7 +26,7 @@
         <StackLayout>
             <Label Text="Utenti estratti:"  x:Name="toExtract" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}"/>
             <Frame IsClippedToBounds="True" Padding="0" Margin="0,0,0,15" HasShadow="False"  CornerRadius="10" VerticalOptions="Start">
-                <ListView  VerticalScrollBarVisibility="Never" x:Name="utentiListCtrl" Header="" Footer="">
+                <ListView SelectionMode="None" VerticalScrollBarVisibility="Never" x:Name="utentiListCtrl" Header="" Footer="">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

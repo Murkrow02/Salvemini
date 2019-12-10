@@ -14,7 +14,7 @@ namespace SalveminiApp.Helpers
             defaultPopOver.PointerTipRadius = 3;
             defaultPopOver.HasShadow = false;
             defaultPopOver.IsAnimationEnabled = true;
-            defaultPopOver.Animation = new Rg.Plugins.Popup.Animations.ScaleAnimation();
+            //defaultPopOver.Animation = (Forms9Patch.Elements.Popups.Core.IPopupAnimation)new Rg.Plugins.Popup.Animations.ScaleAnimation();
             defaultPopOver.BorderRadius = 10;
         }
 

@@ -42,7 +42,6 @@ namespace SalveminiApp.Droid
             //Initialize Components
             DependencyService.Register<ToastNotification>();
             ToastNotification.Init(this, new PlatformOptions() { SmallIconDrawable = Android.Resource.Drawable.IcDialogInfo });
-            Syncfusion.XForms.Android.PopupLayout.SfPopupLayoutRenderer.Init();
             Plugin.Iconize.Iconize.Init(Resource.Id.toolbar, Resource.Id.sliding_tabs);
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             DependencyService.Register<ToastNotification>(); //Register your dependency
@@ -53,7 +52,7 @@ namespace SalveminiApp.Droid
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
             //Initialize ads
-            //MobileAds.Initialize(ApplicationContext, "ca-app-pub-2688730930606353~9126211172");
+            MobileAds.Initialize(ApplicationContext, "ca-app-pub-2688730930606353~9126211172");
 
 
             LoadApplication(new App());
