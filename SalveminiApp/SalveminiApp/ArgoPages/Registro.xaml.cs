@@ -211,14 +211,14 @@ namespace SalveminiApp.ArgoPages
                         var titleLayout = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, HorizontalOptions = LayoutOptions.Start };
 
                         //Title Label
-                        var titleLabel = new Xamarin.Forms.Label { FontSize = 20, Text = bacheca.formattedTitle, FontAttributes = FontAttributes.Bold, HorizontalOptions = LayoutOptions.Start };
+                        var titleLabel = new Xamarin.Forms.Label { FontSize = 20, Text = bacheca.formattedTitle, FontAttributes = FontAttributes.Bold, HorizontalOptions = LayoutOptions.Start, TextColor = Styles.TextColor };
                         titleLayout.Children.Add(titleLabel);
 
                         //File icon
-                        titleLayout.Children.Add(new Plugin.Iconize.IconLabel { FontSize = 20, Text = "far-file-alt", HorizontalOptions = LayoutOptions.Start });
+                        titleLayout.Children.Add(new Plugin.Iconize.IconLabel { FontSize = 20, Text = "far-file-alt", HorizontalOptions = LayoutOptions.Start, TextColor = Styles.TextColor });
 
                         //Pdf name
-                        var descriptionLabel = new Forms9Patch.Label { Lines = 1, Text = bacheca.desMessaggio, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.FillAndExpand };
+                        var descriptionLabel = new Forms9Patch.Label { Lines = 1, Text = bacheca.desMessaggio, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.FillAndExpand ,TextColor = Styles.TextColor };
 
                         //Add childrens to main layout
                         layout.Children.Add(titleLayout);
@@ -255,15 +255,15 @@ namespace SalveminiApp.ArgoPages
                         var titleLayout = new Xamarin.Forms.StackLayout { HorizontalOptions = LayoutOptions.Start };
 
                         //Subject Label
-                        var subjectLabel = new Forms9Patch.Label { FontSize = 20, Text = voto.formattedSubject, FontAttributes = FontAttributes.Bold, Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.StartAndExpand };
+                        var subjectLabel = new Forms9Patch.Label { FontSize = 20, Text = voto.formattedSubject, FontAttributes = FontAttributes.Bold, Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.StartAndExpand, TextColor = Styles.TextColor };
                         titleLayout.Children.Add(subjectLabel);
 
                         //Teacher Label
-                        var teacherLabel = new Xamarin.Forms.Label { FontSize = 15, Text = voto.formattedTeacher, TextColor = Styles.TextGray, HorizontalOptions = LayoutOptions.Start };
+                        var teacherLabel = new Xamarin.Forms.Label { FontSize = 15, Text = voto.formattedTeacher, TextColor = Styles.TextGray, HorizontalOptions = LayoutOptions.Start,  };
                         titleLayout.Children.Add(teacherLabel);
 
                         //Mark Label
-                        var markLabel = new Forms9Patch.Label { FontAttributes = FontAttributes.Bold, TextColor = voto.markColor, Fit = LabelFit.Width, MaxLines= 1, Text = voto.codVoto, HorizontalOptions = LayoutOptions.FillAndExpand, FontSize = 30 };
+                        var markLabel = new Forms9Patch.Label { FontAttributes = FontAttributes.Bold, TextColor = voto.markColor, Fit = LabelFit.Width, MaxLines= 1, Text = voto.codVoto, HorizontalOptions = LayoutOptions.EndAndExpand, FontSize = 30 };
 
                         //Add childrens to main layout
                         layout.Children.Add(titleLayout);
@@ -284,7 +284,7 @@ namespace SalveminiApp.ArgoPages
                         var titleLayout = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, HorizontalOptions = LayoutOptions.FillAndExpand };
 
                         //Subject Label
-                        var subjectLabel = new Forms9Patch.Label { FontSize = 20, VerticalOptions = LayoutOptions.Center, Text = argomento.Materia, FontAttributes = FontAttributes.Bold, Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.StartAndExpand };
+                        var subjectLabel = new Forms9Patch.Label { FontSize = 20, TextColor = Styles.TextColor, VerticalOptions = LayoutOptions.Center, Text = argomento.Materia, FontAttributes = FontAttributes.Bold, Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.StartAndExpand };
                         titleLayout.Children.Add(subjectLabel);
 
                         //Teacher Label
@@ -292,7 +292,7 @@ namespace SalveminiApp.ArgoPages
                         titleLayout.Children.Add(teacherLabel);
 
                         //Argomento lezione label
-                        var argumentLabel = new Forms9Patch.Label { FontSize = 15, Lines = 8, Text = argomento.Contenuto, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.FillAndExpand };
+                        var argumentLabel = new Forms9Patch.Label { TextColor = Styles.TextColor, FontSize = 15, Lines = 8, Text = argomento.Contenuto, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.FillAndExpand };
 
                         //Add childrens to main layout
                         layout.Children.Add(titleLayout);
@@ -313,7 +313,7 @@ namespace SalveminiApp.ArgoPages
                         var titleLayout = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, HorizontalOptions = LayoutOptions.FillAndExpand };
 
                         //Subject Label
-                        var subjectLabel = new Forms9Patch.Label { FontSize = 20, VerticalOptions = LayoutOptions.Center, Text = compito.Materia, FontAttributes = FontAttributes.Bold, Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.StartAndExpand };
+                        var subjectLabel = new Forms9Patch.Label { FontSize = 20, VerticalOptions = LayoutOptions.Center, Text = compito.Materia, FontAttributes = FontAttributes.Bold, Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.StartAndExpand, TextColor = Styles.TextColor };
                         titleLayout.Children.Add(subjectLabel);
 
                         //Teacher Label
@@ -321,7 +321,7 @@ namespace SalveminiApp.ArgoPages
                         titleLayout.Children.Add(teacherLabel);
 
                         //Argomento lezione label
-                        var argumentLabel = new Forms9Patch.Label { FontSize = 15, Lines = 8, Text = compito.Contenuto, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.FillAndExpand };
+                        var argumentLabel = new Forms9Patch.Label { FontSize = 15, Lines = 8, Text = compito.Contenuto, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.FillAndExpand, TextColor = Styles.TextColor };
 
                         //Add childrens to main layout
                         layout.Children.Add(titleLayout);
@@ -339,7 +339,7 @@ namespace SalveminiApp.ArgoPages
                         var layout = new Xamarin.Forms.StackLayout { HorizontalOptions = LayoutOptions.FillAndExpand, Padding = new Thickness(10), Spacing = 5, VerticalOptions = LayoutOptions.FillAndExpand };
 
                         //Promemoria Label
-                        var reminderLabel = new Forms9Patch.Label { FontSize = 20, VerticalOptions = LayoutOptions.Center, Text = promemoria.desAnnotazioni, FontAttributes = FontAttributes.Bold, Lines = 3, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.StartAndExpand };
+                        var reminderLabel = new Forms9Patch.Label { FontSize = 20, VerticalOptions = LayoutOptions.Center, Text = promemoria.desAnnotazioni, FontAttributes = FontAttributes.Bold, Lines = 3, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.StartAndExpand, TextColor = Styles.TextColor };
 
                         //Teacher Label
                         var teacherLabel = new Forms9Patch.Label { FontSize = 10, Lines = 1, AutoFit = AutoFit.Width, Text = promemoria.desMittente, TextColor = Styles.TextGray, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.End, HorizontalTextAlignment = TextAlignment.End };
@@ -351,7 +351,7 @@ namespace SalveminiApp.ArgoPages
                     }
                     break;
                 case "ASS":
-                    title = "Assenza";
+                    title = "Assenze";
                     color = "FFD800";
                     IsExpanded = Assenze.Count == 1;
                     foreach (var assenza in Assenze)
@@ -360,7 +360,7 @@ namespace SalveminiApp.ArgoPages
                         var layout = new Xamarin.Forms.StackLayout { HorizontalOptions = LayoutOptions.FillAndExpand, Padding = new Thickness(10), Orientation = StackOrientation.Horizontal, Spacing = 5, VerticalOptions = LayoutOptions.FillAndExpand };
 
                         //Assenza Label
-                        var assenzaLabel = new Forms9Patch.Label { FontSize = 20, VerticalOptions = LayoutOptions.Center, Text = assenza.FormattedInfo, FontAttributes = FontAttributes.Bold, Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.StartAndExpand };
+                        var assenzaLabel = new Forms9Patch.Label { FontSize = 20, VerticalOptions = LayoutOptions.Center, Text = assenza.FormattedInfo, FontAttributes = FontAttributes.Bold, Lines = 1, AutoFit = AutoFit.Width, HorizontalTextAlignment = TextAlignment.Start, HorizontalOptions = LayoutOptions.StartAndExpand, TextColor = Styles.TextColor };
 
                         //Layout with status and teacher
                         var statusLayout = new Xamarin.Forms.StackLayout { VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.End };
