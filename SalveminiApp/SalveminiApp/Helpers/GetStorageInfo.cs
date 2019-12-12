@@ -14,31 +14,44 @@ namespace SalveminiApp.Helpers
     public class GetStorageInfo
     {
 
-        public Task<ulong[]> storageInfo(bool delete)
+        public static Task<ulong[]> storageInfo(bool delete)
         {
-            //Create list
-            ulong[] sInfo;
-
-            //Get Size of specific Path
-            long DirSize(DirectoryInfo d)
+            try
             {
-                long size = 0;
+                //Create list
+                ulong[] sInfo;
 
-                // Add file sizes.
-                FileInfo[] fis = d.GetFiles();
-                if (d.Name != "com.apple.metal" || d.Name != "fsCachedData")
+                //Get Size of specific Path
+                long DirSize(DirectoryInfo d)
                 {
+                    long size = 0;
 
-                    foreach (FileInfo fi in fis)
+                    // Add file sizes.
+                    FileInfo[] fis = d.GetFiles();
+                    if (d.Name != "com.apple.metal" || d.Name != "fsCachedData")
                     {
 
-                        if (delete)
+                        foreach (FileInfo fi in fis)
                         {
 
+                            if (delete)
+                            {
+
+                                try
+                                {
+                                    fi.Delete();
+                                    continue;
+                                }
+                                catch
+                                {
+                                    continue;
+                                }
+
+                            }
                             try
                             {
-                                fi.Delete();
-                                continue;
+
+                                size += fi.Length;
                             }
                             catch
                             {
@@ -46,49 +59,38 @@ namespace SalveminiApp.Helpers
                             }
 
                         }
+                    }
+
+                    // Add subdirectory sizes.
+                    DirectoryInfo[] dis = d.GetDirectories();
+                    foreach (DirectoryInfo di in dis)
+                    {
                         try
                         {
-
-                            size += fi.Length;
+                            size += DirSize(di);
                         }
                         catch
                         {
                             continue;
                         }
-
                     }
+                    return size;
                 }
 
-                // Add subdirectory sizes.
-                DirectoryInfo[] dis = d.GetDirectories();
-                foreach (DirectoryInfo di in dis)
-                {
-                    try
-                    {
-                        size += DirSize(di);
-                    }
-                    catch
-                    {
-                        continue;
-                    }
-                }
-                return size;
-            }
-
-            string cacheFolder = "";
-            ulong freeSpace = 0;
-            ulong totalSpace = 0;
+                string cacheFolder = "";
+                ulong freeSpace = 0;
+                ulong totalSpace = 0;
 #if __IOS__
 
 
-            //Cache Path
-            cacheFolder = NSSearchPath.GetDirectories(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomain.User)[0];
+                //Cache Path
+                cacheFolder = NSSearchPath.GetDirectories(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomain.User)[0];
 
-            //FreeSpace (GB)
-            freeSpace = NSFileManager.DefaultManager.GetFileSystemAttributes(Environment.GetFolderPath(Environment.SpecialFolder.Personal)).FreeSize;
+                //FreeSpace (GB)
+                freeSpace = NSFileManager.DefaultManager.GetFileSystemAttributes(Environment.GetFolderPath(Environment.SpecialFolder.Personal)).FreeSize;
 
-            //TotalSpace (GB)
-            totalSpace = NSFileManager.DefaultManager.GetFileSystemAttributes(Environment.GetFolderPath(Environment.SpecialFolder.Personal)).Size;
+                //TotalSpace (GB)
+                totalSpace = NSFileManager.DefaultManager.GetFileSystemAttributes(Environment.GetFolderPath(Environment.SpecialFolder.Personal)).Size;
 #endif
 
 #if __ANDROID__
@@ -99,13 +101,19 @@ namespace SalveminiApp.Helpers
             totalSpace = (ulong)((long)statFs.BlockCount * (long)statFs.BlockSize);
             freeSpace = (ulong)(statFs.AvailableBlocks * (long)statFs.BlockSize);
 #endif
-            DirectoryInfo info = new DirectoryInfo(cacheFolder);
+                DirectoryInfo info = new DirectoryInfo(cacheFolder);
 
-            var cacheSize = (ulong)DirSize(info);
+                var cacheSize = (ulong)DirSize(info);
 
-            sInfo = new ulong[] { cacheSize, freeSpace, totalSpace };
+                sInfo = new ulong[] { cacheSize, freeSpace, totalSpace };
 
-            return Task.FromResult(sInfo);
+                return Task.FromResult(sInfo);
+            }
+            catch
+            {
+                return null;
+            }
+          
 
         }
 

@@ -12,6 +12,7 @@ using PanCardView.Droid;
 using Acr.UserDialogs;
 using Xamarin.Forms;
 using Android.Gms.Ads;
+using SaturdayMP.XPlugins.Notifications.Droid;
 
 namespace SalveminiApp.Droid
 {
@@ -50,6 +51,10 @@ namespace SalveminiApp.Droid
             Forms9Patch.Droid.Settings.Initialize(this);
             CardsViewRenderer.Preserve();
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
+
+            // Register the notification dependency.
+            DependencyService.Register<NotificationScheduler>();
+
 
             //Initialize ads
             MobileAds.Initialize(ApplicationContext, "ca-app-pub-2688730930606353~9126211172");

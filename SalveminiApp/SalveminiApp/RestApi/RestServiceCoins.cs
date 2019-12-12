@@ -77,6 +77,31 @@ namespace SalveminiApp.RestApi
             }
         }
 
+        public async Task<int?> UserCoins()
+        {
+            var uri = Costants.Uri("scoin/usercoins");
+
+            try
+            {
+                var response = await client.GetAsync(uri);
+
+                //Risposta
+                if (response.IsSuccessStatusCode)
+                {
+                    return JsonConvert.DeserializeObject<int>(await response.Content.ReadAsStringAsync());
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Get user coins", ex.Message);
+                return null;
+            }
+        }
+
         public async Task<List<Models.Evento>> ListaEventi()
         {
             var uri = Costants.Uri("scoin/events");
@@ -169,6 +194,7 @@ namespace SalveminiApp.RestApi
         Task<List<Models.Evento>> ListaEventi();
         Task<List<Models.Evento>> RedeemedCodes();
         Task<string[]> ToggleEvento(int id);
+        Task<int?> UserCoins();
     }
 
     public class ItemManagerCoins
@@ -204,6 +230,11 @@ namespace SalveminiApp.RestApi
         public Task<string[]> ToggleEvento(int id)
         {
             return restServiceCoins.ToggleEvento(id);
+        }
+
+        public Task<int?> UserCoins()
+        {
+            return restServiceCoins.UserCoins();
         }
     }
 }

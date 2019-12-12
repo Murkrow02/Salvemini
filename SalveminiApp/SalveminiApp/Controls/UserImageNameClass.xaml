@@ -3,7 +3,7 @@
     <!--Profile view-->
     <StackLayout>
         <!--Image-->
-        <ffimageloading:CachedImage x:Name="userImg" LoadingPlaceholder="imagePlaceholder" CacheType="Memory" >
+        <ffimageloading:CachedImage x:Name="userImg" LoadingPlaceholder="imagePlaceholder" CacheType="All" >
             <ffimageloading:CachedImage.Transformations>
                 <fftransformations:CircleTransformation />
             </ffimageloading:CachedImage.Transformations>

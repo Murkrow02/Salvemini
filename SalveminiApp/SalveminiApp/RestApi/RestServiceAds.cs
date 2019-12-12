@@ -4,7 +4,9 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using SaturdayMP.XPlugins.Notifications;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace SalveminiApp.RestApi
 {
@@ -31,6 +33,15 @@ namespace SalveminiApp.RestApi
                 switch (response.StatusCode)
                 {
                     case System.Net.HttpStatusCode.OK:
+                        var count = JsonConvert.DeserializeObject<int>(await response.Content.ReadAsStringAsync());
+
+                        //Alert user next time with push notification
+                        if (count == 3)
+                        {
+                            var notificationScheduler = DependencyService.Get<INotificationScheduler>();
+                            notificationScheduler.Create("sCoin gratis 🤑", "Il tuo premio giornaliero ti sta aspettando, che aspetti? Prendi le tue sCoin GRATIS!!!", DateTime.Now.AddDays(1));
+                        }
+
                         return new Models.ResponseModel { Data = true, Message = "" };
                     case System.Net.HttpStatusCode.NotAcceptable:
                         return new Models.ResponseModel { Data = false, Message = "Hai guadagnato già abbastanza sCoin per oggi, ritorna domani per prenderne di nuove!" };

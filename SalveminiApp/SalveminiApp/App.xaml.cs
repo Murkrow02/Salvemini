@@ -71,6 +71,7 @@ namespace SalveminiApp
             //Register OneSignal License
             OneSignal.Current.StartInit("a85553ca-c1fe-4d93-a02f-d30bf30e2a2a").InFocusDisplaying(OSInFocusDisplayOption.None)
                 .HandleNotificationReceived(HandleNotificationReceived)
+                .HandleNotificationOpened(HandleNotificationOpened)
                 .EndInit();
 
             //Initialize Iconize
@@ -109,7 +110,7 @@ namespace SalveminiApp
                 OSNotificationPayload payload = notification.payload;
               //  Dictionary<string, object> additionalData = payload.additionalData;
                 string message = payload.body;
-
+                //Route from push to inApp notification
                 var notificator = DependencyService.Get<IToastNotificator>();
                 var options = new NotificationOptions()
                 {
@@ -122,6 +123,13 @@ namespace SalveminiApp
             {
                 Debug.WriteLine("Error handling push notification");
             }
+        }
+
+        private static async void HandleNotificationOpened(OSNotificationOpenedResult result)
+        {
+            try
+            { }
+            catch { }
         }
 
 

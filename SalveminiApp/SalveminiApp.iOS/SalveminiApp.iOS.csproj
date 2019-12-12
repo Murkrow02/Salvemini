@@ -238,6 +238,9 @@
     <PackageReference Include="Syncfusion.Xamarin.SfCarousel">
       <Version>17.3.0.29</Version>
     </PackageReference>
+    <PackageReference Include="SaturdayMP.XPlugin.Notifications">
+      <Version>0.3.0-rc0002</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\argoLogo.png" />

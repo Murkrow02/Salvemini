@@ -56,26 +56,24 @@ namespace SalveminiApp
 
             //Subscribe to messaging center
             //Refresh image cache
-            MessagingCenter.Subscribe<App>(this, "ReloadUserPic", (sender) =>
+            MessagingCenter.Subscribe<App,string>(this, "ReloadUserPic", (sender, arg) =>
             {
-                try
-                {
-                    ImageService.Instance.InvalidateCacheEntryAsync(Costants.Uri("images/users/") + Preferences.Get("UserId", ""), CacheType.All, removeSimilar: true);
                     userImg.Source = "";
-                    userImg.Source = Costants.Uri("images/users/") + Preferences.Get("UserId", "");
+                    userImg.Source = arg;
                     userImg.ReloadImage();
                     userImg.WidthRequest = App.ScreenWidth / 8.8;
-                }
-                catch
-                {
-
-                }
             });
 
             //Remove avvisi badge
             MessagingCenter.Subscribe<App, string>(this, "RemoveBadge", (sender, tipo) =>
             {
                 RemoveBadge(tipo);
+            });
+
+            //Remove avvisi badge
+            MessagingCenter.Subscribe<App, int>(this, "UpdateCoins", (sender, tipo) =>
+            {
+                sCoinLbl.Text = tipo.ToString();
             });
 
             //Get orario cached

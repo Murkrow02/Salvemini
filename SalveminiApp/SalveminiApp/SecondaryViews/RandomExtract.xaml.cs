@@ -52,7 +52,7 @@ namespace SalveminiApp.SecondaryViews
 
                 //Create simple list
                 utenti.Clear();
-                foreach (var utente in utentiList) { utenti.Add(new ExtractUser { Nome = utente.cognomeNome, Immagine = utente.Immagine }); }
+                foreach (var utente in utentiList) { utenti.Add(new ExtractUser { Nome = utente.cognomeNome, Immagine = utente.fullImmagine }); }
                 //Get custom from cache
                 var utentiSalvati = CacheHelper.GetCache<List<ExtractUser>>("extractCustomUsers");
                 if (utentiSalvati != null)

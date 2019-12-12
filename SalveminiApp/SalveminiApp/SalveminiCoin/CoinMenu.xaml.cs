@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using System.Diagnostics;
 using MarcTron.Plugin;
 using MarcTron.Plugin.CustomEventArgs;
+using Xamarin.Essentials;
 
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
@@ -78,9 +79,33 @@ namespace SalveminiApp.SalveminiCoin
             }
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
+
+            if(Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                Costants.showToast("connection");
+                coinCount.Opacity = 0;
+                return;
+            }
+
+            //Get user coins
+            var coins = await App.Coins.UserCoins();
+            if (coins == null)
+            {
+                coinCount.Opacity = 0;
+                Costants.showToast("Non è stato possibile caricare le tue sCoin");
+            }
+            else
+            {
+                //Display new value
+                coinCount.Text = coins.ToString();
+                coinCount.FadeTo(1, 400);
+
+                //Update home value
+                MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "UpdateCoins", coins);
+            }
 
             //Load ad video
             gainButton.Loading = true;

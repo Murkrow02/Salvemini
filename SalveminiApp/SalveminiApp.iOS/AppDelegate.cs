@@ -17,6 +17,7 @@ using PanCardView.iOS;
 using System.Threading.Tasks;
 using IntentsUI;
 using Google.MobileAds;
+using SaturdayMP.XPlugins.Notifications.iOS;
 
 namespace SalveminiApp.iOS
 {
@@ -77,6 +78,8 @@ namespace SalveminiApp.iOS
             AnimationViewRenderer.Init();
             new SfCarouselRenderer();
 
+            // Register the notification dependency.  Don't forget to do this.
+            DependencyService.Register<NotificationScheduler>();
 
             //Initialize ads
             MobileAds.SharedInstance.Start(CompletionHandler);

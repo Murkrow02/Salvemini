@@ -15,6 +15,7 @@ namespace SalveminiApp.RestApi.Models
         public int sCoin { get; set; }
         public string Residenza { get; set; }
         public DateTime Compleanno { get; set; }
+        public string Immagine { get; set; }
 
         public string nomeCognome
         {
@@ -40,11 +41,11 @@ namespace SalveminiApp.RestApi.Models
             }
         }
 
-        public string Immagine
+        public string fullImmagine
         {
             get
             {
-                return Costants.Uri("images/users/") + id;
+                return Costants.Uri("images/users/") + Immagine;
             }
         }
 

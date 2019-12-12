@@ -11,7 +11,7 @@
             <!--Balance + image-->
             <StackLayout Spacing="5">
                 <svg:SvgCachedImage Source="sCoin.svg" x:Name="coinImage"/>
-                <Label Text="100" HorizontalOptions="Center" FontSize="35" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold"/>
+                <Label Text="..." x:Name="coinCount" Opacity="0" HorizontalOptions="Center" FontSize="35" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold"/>
             </StackLayout>
 
             <!--Guadagna-->

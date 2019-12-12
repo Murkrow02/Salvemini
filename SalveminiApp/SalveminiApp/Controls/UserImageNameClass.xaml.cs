@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using FFImageLoading;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace SalveminiApp.Controls
@@ -45,7 +48,7 @@ namespace SalveminiApp.Controls
         }
 
         //Update values
-        protected override void OnPropertyChanged(string propertyName = null)
+        protected override async void OnPropertyChanged(string propertyName = null)
         {
             base.OnPropertyChanged(propertyName);
 
@@ -60,7 +63,8 @@ namespace SalveminiApp.Controls
                         //Display name image and class
                         nameLbl.Text = User.nomeCognome;
                         classLbl.Text = User.classeCorso;
-                        userImg.Source = User.Immagine;
+                        userImg.Source = User.fullImmagine;
+
                     }
                 }
 
@@ -73,7 +77,7 @@ namespace SalveminiApp.Controls
                         loading.IsRunning = false; loading.IsVisible = false;
                         nameLbl.Text = cachedUtente.nomeCognome;
                         classLbl.Text = cachedUtente.classeCorso;
-                        userImg.Source = cachedUtente.Immagine;
+                        userImg.Source = cachedUtente.fullImmagine;
                     }
 
                 }
@@ -86,5 +90,7 @@ namespace SalveminiApp.Controls
             }
 
         }
+
+
     }
 }

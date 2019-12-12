@@ -155,8 +155,14 @@ namespace SalveminiApp.SecondaryViews
                     var user = await App.Utenti.GetUtente(Preferences.Get("UserId", 0));
                     if (user != null)
                     {
+                        //Save in global variable
                         utente = user;
+
+                        //Update user widget
                         userInfo.User = utente;
+
+                        //Update home image
+                        MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "ReloadUserPic", utente.fullImmagine);
 
                         //Show areas according to user status
                         switch (utente.Stato)
@@ -186,9 +192,6 @@ namespace SalveminiApp.SecondaryViews
                                 superVip.IsVisible = false;
                                 break;
                         }
-
-                        ////Save cache
-                        //Barrel.Current.Add("utenteLoggato", user, TimeSpan.FromDays(10));
                     }
                     else //No user returned
                     {
@@ -332,16 +335,9 @@ namespace SalveminiApp.SecondaryViews
 
         public async void reloadImage()
         {
-            ////Remove cache
-            //await ImageService.Instance.InvalidateCacheEntryAsync(utente.Immagine, CacheType.All, removeSimilar: true);
-            //userImg.Source = "";
-            //userImg.Source = utente.Immagine;
-            //userImg.ReloadImage();
-            //userImg.WidthRequest = App.ScreenWidth / 3.5;
-            //userImg.HeightRequest = App.ScreenWidth / 3.5;
+            OnAppearing();
 
-            ////Remove cached home profile pic
-            //MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "ReloadUserPic");
+           
         }
 
         //Handle cell tapped

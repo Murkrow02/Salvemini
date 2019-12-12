@@ -186,14 +186,14 @@ namespace SalveminiApp
             return Days;
         }
 
-        public static void Logout(bool fromSuperVip = false)
+        public static async void Logout(bool fromSuperVip = false)
         {
             //Clear preferences except firsttime
             Preferences.Clear();
             Preferences.Set("veryFirstTime", false); Preferences.Set("isFirstTime", false);
 
             //Clear cache
-            Barrel.Current.EmptyAll();
+            Helpers.GetStorageInfo.storageInfo(true); FFImageLoading.ImageService.Instance.InvalidateCacheAsync(FFImageLoading.Cache.CacheType.All); Barrel.Current.EmptyAll();
 
             //Push to login only if triggered from super vip page
             if (!fromSuperVip)

@@ -15,6 +15,7 @@ namespace SalveminiApp
     {
         public List<RestApi.Models.Pentagono> Medie = new List<RestApi.Models.Pentagono>();
 
+
         protected async override void OnAppearing()
         {
             base.OnAppearing();
