@@ -51,9 +51,11 @@ namespace SalveminiApp.Droid
             Forms9Patch.Droid.Settings.Initialize(this);
             CardsViewRenderer.Preserve();
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
+            Stormlion.PhotoBrowser.Droid.Platform.Init(this);
 
             // Register the notification dependency.
             DependencyService.Register<NotificationScheduler>();
+            DependencyService.Register<PhotoBrowserImplementation>();
 
 
             //Initialize ads

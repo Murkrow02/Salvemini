@@ -97,10 +97,33 @@ namespace SalveminiApp.SecondaryViews
         private void ImageList_ItemSelected(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
             MainPage.isSelectingImage = true;
-            var a = sender as FlowListView;
-            var b = a.FlowItemsSource as List<string>;
             canRefresh = false;
-            Navigation.PushModalAsync(new Helpers.ImageViewer(b));
+
+            try
+            {
+                //Get images
+                var listView = sender as FlowListView;
+                var immagini = listView.FlowItemsSource as List<string>;
+                var selected = sender as string;
+                //Get selected item
+
+                //Get avviso title
+                var title = "";
+                try { title = ((listView.Parent as Xamarin.Forms.StackLayout).Children[0] as Xamarin.Forms.Label).Text; } catch { };
+
+                //Create stormlion image list
+                var imageList = new List<PhotoBrowser.Photo>();
+                int index = 1; foreach (var immagine in immagini) { imageList.Add(new PhotoBrowser.Photo { Title = title + " " + index + "/" + immagini.Count, URL = immagine }); index++; }
+                var imageViewer = new PhotoBrowser.PhotoBrowser();
+                imageViewer.Photos = imageList;
+                imageViewer.StartIndex = immagini.IndexOf(selected);
+                imageViewer.Show();
+            }
+            catch
+            {
+                Costants.showToast("Non è stato possibile caricare le immagini, riprova più tardi");
+            }
+          
         }
 
         //Show more text

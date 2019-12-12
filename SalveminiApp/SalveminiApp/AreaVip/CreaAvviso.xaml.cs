@@ -178,7 +178,7 @@ namespace SalveminiApp.AreaVip
             }
             if (imageStatus == "view")
             {
-                //   Navigation.PushPopupAsync(new PopUps.FullImage(selectedImage.imageSource));
+                //Navigation.PushPopupAsync(new PopUps.FullImage(selectedImage.imageSource));
             }
         }
 

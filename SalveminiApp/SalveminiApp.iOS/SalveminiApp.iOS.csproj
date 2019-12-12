@@ -99,6 +99,7 @@
     <Compile Include="AddVoiceShortcutView.cs" />
     <Compile Include="SiriShortcutPopup.cs" />
     <None Include="Info.plist" />
+    <Compile Include="ImageViewer.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -235,11 +236,14 @@
     <PackageReference Include="Syncfusion.Xamarin.SfComboBox">
       <Version>17.3.0.29</Version>
     </PackageReference>
-    <PackageReference Include="Syncfusion.Xamarin.SfCarousel">
-      <Version>17.3.0.29</Version>
-    </PackageReference>
     <PackageReference Include="SaturdayMP.XPlugin.Notifications">
       <Version>0.3.0-rc0002</Version>
+    </PackageReference>
+    <PackageReference Include="Ricardo.MWPhotoBrowser.iOS">
+      <Version>2.1.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="Ricardo.SDWebImage.iOS">
+      <Version>4.2.2.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -269,7 +273,7 @@
     <BundleResource Include="Resources\CompitiShadow.svg" />
     <BundleResource Include="Resources\trasportiSmall.png" />
     <BundleResource Include="Resources\scrutinioShadow.svg" />
-    <BundleResource Include="Resources\imagePlaceholder.png" />
+    <BundleResource Include="Resources\userPlaceholder.png" />
     <BundleResource Include="Resources\logoNuovo.png" />
     <BundleResource Include="Resources\iconize-fontawesome-pro-brands.ttf" />
     <BundleResource Include="Resources\iconize-fontawesome-pro-light.ttf" />
@@ -290,6 +294,7 @@
     <BundleResource Include="Resources\flappy.png" />
     <BundleResource Include="Resources\sCoin.svg" />
     <BundleResource Include="Resources\SalveminiCoin.png" />
+    <BundleResource Include="Resources\imagePlaceholder.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lotties\" />

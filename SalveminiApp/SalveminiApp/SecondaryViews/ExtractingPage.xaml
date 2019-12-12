@@ -4,7 +4,7 @@
         <!--Layout-->
         <StackLayout  VerticalOptions="Center">
             <!--Image-->
-            <ffimageloading:CachedImage x:Name="userImg" Source="imagePlaceholder" LoadingPlaceholder="imagePlaceholder" CacheType="Memory" >
+            <ffimageloading:CachedImage x:Name="userImg" Source="userPlaceholder" LoadingPlaceholder="imagePlaceholder" CacheType="Memory" >
                 <ffimageloading:CachedImage.Transformations>
                     <fftransformations:CircleTransformation />
                 </ffimageloading:CachedImage.Transformations>

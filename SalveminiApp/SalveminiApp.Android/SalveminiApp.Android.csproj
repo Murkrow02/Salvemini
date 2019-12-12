@@ -169,12 +169,16 @@
     <PackageReference Include="SaturdayMP.XPlugin.Notifications">
       <Version>0.3.0-rc0002</Version>
     </PackageReference>
+    <PackageReference Include="PhotoBrowser.Forms">
+      <Version>0.1.4</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Toast.cs" />
+    <Compile Include="ImageViewer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -264,7 +268,7 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable-xxhdpi\imagePlaceholder.png">
+    <AndroidResource Include="Resources\drawable-xxhdpi\userPlaceholder.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
@@ -341,6 +345,10 @@
       <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Toolbar.axml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\imagePlaceholder.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>

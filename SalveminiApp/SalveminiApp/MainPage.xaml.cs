@@ -112,11 +112,6 @@ namespace SalveminiApp
         {
             base.OnAppearing();
 
-
-            //var utente = await App.Utenti.GetUtente(Preferences.Get("UserId",0));
-            //await Navigation.PushModalAsync(new SecondaryViews.ProfileView(utente));
-
-            //return;
             //Increment number of appeared times
             appearedTimes++;
 

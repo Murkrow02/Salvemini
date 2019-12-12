@@ -131,10 +131,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Controls\ImageViewer.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Controls\PollOption.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -384,9 +380,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controls\CustomNavigationPage.xaml.cs">
       <DependentUpon>..\Helpers\Controls\CustomNavigationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Controls\ImageViewer.xaml.cs">
-      <DependentUpon>..\Helpers\Controls\ImageViewer.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Controls\PollOption.xaml.cs">
       <DependentUpon>..\Helpers\Controls\PollOption.xaml</DependentUpon>
     </Compile>
@@ -490,6 +483,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\Extra.xaml.cs">
       <DependentUpon>Extra.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\PhotoBrowser.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

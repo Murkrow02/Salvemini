@@ -153,7 +153,11 @@ namespace SalveminiApp.Helpers
 
         public void image_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Helpers.ImageViewer(new List<string>() { Image }));
+            //Create stormlion image list
+            var imageList = new List<PhotoBrowser.Photo> { new PhotoBrowser.Photo { Title = Title, URL = Image} };
+            var imageViewer = new PhotoBrowser.PhotoBrowser();
+            imageViewer.Photos = imageList;
+            imageViewer.Show();
         }
     }
 }

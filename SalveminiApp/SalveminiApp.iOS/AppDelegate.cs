@@ -8,7 +8,6 @@ using Foundation;
 using Intents;
 using Lottie.Forms.iOS.Renderers;
 using Plugin.Segmented.Control.iOS;
-using Syncfusion.SfCarousel.XForms.iOS;
 using UIKit;
 using UserNotifications;
 using Plugin.Toasts;
@@ -76,8 +75,7 @@ namespace SalveminiApp.iOS
             SegmentedControlRenderer.Initialize();
             CardsViewRenderer.Preserve();
             AnimationViewRenderer.Init();
-            new SfCarouselRenderer();
-
+            DependencyService.Register<PhotoBrowserImplementation>();
             // Register the notification dependency.  Don't forget to do this.
             DependencyService.Register<NotificationScheduler>();
 
