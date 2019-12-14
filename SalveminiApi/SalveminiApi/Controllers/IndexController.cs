@@ -222,7 +222,7 @@ namespace SalveminiApi.Controllers
                             break;
                         case "ASS":
                             //ASSENZE
-                            assenze.Add(new Assenze { datAssenza = notizia.dati.datAssenza, binUid = notizia.dati.binUid, datGiustificazione = notizia.dati.datGiustificazione, desAssenza = notizia.dati.desAssenza, flgDaGiustificare = notizia.dati.flgDaGiustificare, giustificataDa = notizia.dati.giustificataDa, numOra = notizia.dati.numOra, oraAssenza = notizia.dati.oraAssenza, registrataDa = notizia.dati.registrataDa });
+                            assenze.Add(new Assenze { datAssenza = notizia.dati.datAssenza, codEvento = notizia.dati.codEvento, binUid = notizia.dati.binUid, datGiustificazione = notizia.dati.datGiustificazione, desAssenza = notizia.dati.desAssenza, flgDaGiustificare = notizia.dati.flgDaGiustificare, giustificataDa = notizia.dati.giustificataDa, numOra = notizia.dati.numOra, oraAssenza = notizia.dati.oraAssenza, registrataDa = notizia.dati.registrataDa });
                             break;
                     }
 

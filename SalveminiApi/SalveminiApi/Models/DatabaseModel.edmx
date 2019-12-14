@@ -159,8 +159,9 @@
           <Property Name="sCoin" Type="int" Nullable="false" />
           <Property Name="AdsWatched" Type="int" Nullable="false" />
           <Property Name="LastAdWatched" Type="datetime" />
-          <Property Name="Compleanno" Type="datetime" />
-          <Property Name="Residenza" Type="nvarchar" MaxLength="300" />
+          <Property Name="Compleanno" Type="datetime" Nullable="false" />
+          <Property Name="Residenza" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Immagine" Type="nvarchar" MaxLength="300" Nullable="false" />
         </EntityType>
         <EntityType Name="VotiSondaggi">
           <Key>
@@ -467,6 +468,7 @@
           <NavigationProperty Name="CouponAttivi" Relationship="SalveminiModel.FK_CouponAttivi_Utenti" FromRole="Utenti" ToRole="CouponAttivi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <Property Name="Compleanno" Type="DateTime" Precision="3" Nullable="false" />
           <Property Name="Residenza" Type="String" MaxLength="300" Unicode="true" FixedLength="false" Nullable="false" />
+          <Property Name="Immagine" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="VotiSondaggi">
           <Key>
@@ -831,6 +833,7 @@
           <EntitySetMapping Name="Utenti">
             <EntityTypeMapping TypeName="SalveminiModel.Utenti">
               <MappingFragment StoreEntitySet="Utenti">
+                <ScalarProperty Name="Immagine" ColumnName="Immagine" />
                 <ScalarProperty Name="Residenza" ColumnName="Residenza" />
                 <ScalarProperty Name="Compleanno" ColumnName="Compleanno" />
                 <ScalarProperty Name="LastAdWatched" ColumnName="LastAdWatched" />

@@ -23,7 +23,7 @@ namespace SalveminiApi.Controllers
 
         [Route("canWatchAd")]
         [HttpGet]
-        public HttpResponseMessage canWatchAd()
+        public int canWatchAd()
         {
             //Check Auth
             var authorize = new Helpers.Utility();
@@ -46,9 +46,9 @@ namespace SalveminiApi.Controllers
 
             //Check how many ads watched
             if (utente.AdsWatched <= 3)
-                return new HttpResponseMessage(HttpStatusCode.OK);
+                return utente.AdsWatched;
             else
-                return new HttpResponseMessage(HttpStatusCode.NotAcceptable);
+                throw new HttpResponseException(HttpStatusCode.NotAcceptable);
         }
 
         [Route("watchedAd")]

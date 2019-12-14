@@ -38,96 +38,119 @@ namespace SalveminiApi.Controllers
 
 
 
-        [Route("{id}")]
+        [Route("deletepic")]
         [HttpGet]
-        public HttpResponseMessage deleteProfilePic(string id)
+        public HttpResponseMessage deleteProfilePic()
         {
             var authorize = new Helpers.Utility();
             bool authorized = authorize.authorized(Request);
             if (!authorized)
                 throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
-            //Trying to delete someone else image bruh?
-            if (Request.Headers.Contains("x-user-id"))
-            {
-                var _id = Request.Headers.GetValues("x-user-id").First();
-                if (id != _id)
-                    throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
-            }
+            //Get id from headers
+            var _id = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
+
+            //Find user
+            Models.DatabaseString db = new Models.DatabaseString();
+            var utente = db.Utenti.Find(_id);
+            if (utente == null)
+                throw new HttpResponseException(System.Net.HttpStatusCode.NotFound);
 
             //Delete image
             try
             {
-                File.Delete(HttpContext.Current.Server.MapPath("~/Images/users/" + id + ".png"));
+                File.Delete(HttpContext.Current.Server.MapPath("~/Images/users/" + utente.Immagine + ".png"));
+                utente.Immagine = "";
+                db.SaveChanges();
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }
             catch
             {
                 throw new HttpResponseException(System.Net.HttpStatusCode.NotFound);
             }
-        }
+        
+    }
 
-        [Route("upload/{path}/{id}")]
-        [HttpPost]
-        public async Task<HttpResponseMessage> PostImmagine(string path, string id)
+    [Route("upload/{path}/{id}")]
+    [HttpPost]
+    public async Task<HttpResponseMessage> PostImmagine(string path, string id)
+    {
+        //Check Auth
+        var authorize = new Helpers.Utility();
+        bool authorized = authorize.authorized(Request);
+        if (!authorized)
+            throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+
+        Dictionary<string, object> dict = new Dictionary<string, object>();
+        try
         {
-            //Check Auth
-            var authorize = new Helpers.Utility();
-            bool authorized = authorize.authorized(Request);
-            if (!authorized)
-                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
-            Dictionary<string, object> dict = new Dictionary<string, object>();
-            try
+            var httpRequest = HttpContext.Current.Request;
+
+            foreach (string file in httpRequest.Files)
             {
+                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created);
 
-                var httpRequest = HttpContext.Current.Request;
-
-                foreach (string file in httpRequest.Files)
+                var postedFile = httpRequest.Files[file];
+                if (postedFile != null && postedFile.ContentLength > 0)
                 {
-                    HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created);
 
-                    var postedFile = httpRequest.Files[file];
-                    if (postedFile != null && postedFile.ContentLength > 0)
+                    int MaxContentLength = 1024 * 1024 * 20; //Size = 20 MB  
+
+                    if (postedFile.ContentLength > MaxContentLength)
                     {
 
-                        int MaxContentLength = 1024 * 1024 * 20; //Size = 20 MB  
+                        var message = string.Format("I file devono pesare meno di 15MB.");
 
-                        if (postedFile.ContentLength > MaxContentLength)
+                        dict.Add("error", message);
+                        return Request.CreateResponse(HttpStatusCode.BadRequest, dict);
+                    }
+                    else
+                    {
+                        //Create write directory
+                        var directory = HttpContext.Current.Server.MapPath("~/Images/" + path);
+
+                        //Create directory if doesn't exist
+                        if (!Directory.Exists(directory))
+                            Directory.CreateDirectory(directory);
+
+                        //Create file path
+                        var filePath = directory + "/" + id + ".png";
+
+                        if (path == "users")
                         {
+                            var userId = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
 
-                            var message = string.Format("I file devono pesare meno di 15MB.");
-
-                            dict.Add("error", message);
-                            return Request.CreateResponse(HttpStatusCode.BadRequest, dict);
-                        }
-                        else
-                        {
-                            var filePath = HttpContext.Current.Server.MapPath("~/Images/" + path + "/" + id + ".png");
+                            //Create image with date
+                            Models.DatabaseString db = new Models.DatabaseString();
+                            var imageName = userId + "_" + Helpers.Utility.italianTime().ToString("ddMMyyyyHHmmss");
+                            db.Utenti.Find(Convert.ToInt32(userId)).Immagine = imageName;
+                            filePath = directory + "/" + imageName + ".png";
+                            db.SaveChanges();
 
                             //Reduce image size if users
-                            if (path == "users")
-                                Helpers.Utility.CropImage(postedFile.InputStream, 320, 320, filePath);
-                            else
-                                postedFile.SaveAs(filePath);
+                            Helpers.Utility.CropImage(postedFile.InputStream, 320, 320, filePath);
                         }
+                        else
+                            postedFile.SaveAs(filePath);
                     }
-
-                    var message1 = string.Format("Immagine caricata con successo.");
-                    return Request.CreateErrorResponse(HttpStatusCode.Created, message1); ;
                 }
-                var res = string.Format("Nessun file selezionato.");
-                dict.Add("error", res);
-                return Request.CreateResponse(HttpStatusCode.NotFound, dict);
+
+                var message1 = string.Format("Immagine caricata con successo.");
+                return Request.CreateErrorResponse(HttpStatusCode.Created, message1); ;
             }
-            catch (Exception ex)
-            {
-                var res = string.Format("Errore Interno");
-                dict.Add("error", res);
-                return Request.CreateResponse(HttpStatusCode.NotFound, dict);
-            }
+            var res = string.Format("Nessun file selezionato.");
+            dict.Add("error", res);
+            return Request.CreateResponse(HttpStatusCode.NotFound, dict);
         }
-
-
+        catch (Exception ex)
+        {
+            var res = string.Format("Errore Interno");
+            dict.Add("error", res);
+            return Request.CreateResponse(HttpStatusCode.NotFound, dict);
+        }
     }
+
+
+}
 }

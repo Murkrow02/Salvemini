@@ -430,7 +430,7 @@
     <Compile Include="Controllers\ArgoController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\AvvisiController.cs" />
-    <Compile Include="Controllers\CouponsController.cs" />
+    <Compile Include="Controllers\sCoinsController.cs" />
     <Compile Include="Controllers\DownloadOrariController.cs" />
     <Compile Include="Controllers\FilesController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />

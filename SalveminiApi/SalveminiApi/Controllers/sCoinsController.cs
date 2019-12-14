@@ -17,7 +17,7 @@ namespace SalveminiApi.Controllers
 {
 
     [RoutePrefix("api/scoin")]
-    public class CouponsController : ApiController
+    public class sCoinsController : ApiController
     {
         DatabaseString db = new DatabaseString();
 
@@ -184,6 +184,28 @@ namespace SalveminiApi.Controllers
             var attivi = db.CouponAttivi.Where(x => x.idUtente == userId).ToList();
             foreach (var attivo in attivi) { var coupon = db.Coupon.Find(attivo.idCoupon); returnList.Add(coupon); };
             return returnList;
+        }
+
+        [Route("usercoins")]
+        [HttpGet]
+        public int UserCoins()
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+
+            //Find user
+            var userId = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
+            var utente = db.Utenti.Find(userId);
+
+            //User not found
+            if (utente == null)
+                throw new HttpResponseException(System.Net.HttpStatusCode.NotFound);
+
+            //Success
+            return utente.sCoin;
         }
     }
 }

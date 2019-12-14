@@ -38,6 +38,7 @@ namespace SalveminiApi.Models
         public Nullable<System.DateTime> LastAdWatched { internal get; set; }
         public System.DateTime Compleanno { get; set; }
         public string Residenza { get; set; }
+        public string Immagine { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Avvisi> Avvisi { internal get; set; }
