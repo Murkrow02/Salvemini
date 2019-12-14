@@ -324,6 +324,7 @@ namespace SalveminiApp.SecondaryViews
                 {
                     var success = await App.Immagini.DeleteImage();
                     await DisplayAlert(success[0], success[1], "Ok");
+                    reloadImage();
                 }
             }
             catch(Exception ex)

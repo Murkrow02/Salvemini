@@ -7,7 +7,7 @@
                 <Label TextColor="White" Text="Promemoria" FontSize="40" FontAttributes="Bold" />
                 <Frame IsClippedToBounds="true" Padding="0" VerticalOptions="Start" HasShadow="false" CornerRadius="15">
                     <Grid>
-                        <ListView SelectionMode="None" HasUnevenRows="true" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None" x:Name="promemoriaList" VerticalOptions="Start">
+                        <ListView IsPullToRefreshEnabled="True" Refreshing="updateList" SelectionMode="None" HasUnevenRows="true" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None" x:Name="promemoriaList" VerticalOptions="Start">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>

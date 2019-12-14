@@ -158,7 +158,6 @@ namespace SalveminiApp.Controls
 
         public async void HideConfirm(uint speed)
         {
-            await confirmTxt.FadeTo(0, speed);
             var animate = new Animation(d => hiddenBtn.WidthRequest = d, App.ScreenWidth / 4, 0);
             animate.Commit(hiddenBtn, "ConfirmHide", 16, speed);
         }

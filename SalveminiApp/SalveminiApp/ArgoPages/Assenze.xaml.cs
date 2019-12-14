@@ -22,7 +22,7 @@ namespace SalveminiApp.ArgoPages
             InitializeComponent();
 
 #if __IOS__
-           
+
             if (iOS.AppDelegate.HasNotch)
                 fullLayout.Padding = new Thickness(20, 35, 20, 25);
 #endif
@@ -147,10 +147,6 @@ namespace SalveminiApp.ArgoPages
 
         public void updateList(object sender, EventArgs e)
         {
-            ////Fix bcause this event is triggered even if is refreshed by code
-            //if (!userRefreshed)
-            //    return;
-
             OnAppearing();
         }
     }

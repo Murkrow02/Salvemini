@@ -36,7 +36,7 @@ namespace SalveminiApp.SecondaryViews
             pointerSegment.SelectedSegment = pointerInt;
 
             //Toggle switch to count holydays
-            holydaysSwitch.IsToggled = !Preferences.Get("CountHolidays", false);
+            holydaysSwitch.IsChecked = !Preferences.Get("CountHolidays", false);
         }
 
         bool firstSelection = true;
@@ -54,20 +54,14 @@ namespace SalveminiApp.SecondaryViews
                 case 0:
                     //Fine della scuola
                     dateToSave = FineDellaScuola;
-                    holydaysSwitch.IsEnabled = true;
+                    //holydaysSwitch.IsEnabled = true;
 
                     break;
-                //case 1:
-                //    //Natale
-                //    dateToSave = Natale;
-                //    holydaysSwitch.IsToggled = false;
-                //    holydaysSwitch.IsEnabled = false;
-                //    break;
                 case 1:
                     //Pasqua
                     dateToSave = Pasqua;
-                    holydaysSwitch.IsToggled = false;
-                    holydaysSwitch.IsEnabled = false;
+                    //holydaysSwitch.IsToggled = false;
+                    //holydaysSwitch.IsEnabled = false;
                     break;
             }
 
@@ -75,7 +69,7 @@ namespace SalveminiApp.SecondaryViews
             Preferences.Set("DateToPoint", dateToSave);
         }
 
-        public void HolydaysSwitch_Toggled(object sender, ToggledEventArgs e)
+        public void HolydaysSwitch_Toggled(object sender, CheckedChangedEventArgs e)
         {
             Preferences.Set("CountHolidays", !e.Value);
         }

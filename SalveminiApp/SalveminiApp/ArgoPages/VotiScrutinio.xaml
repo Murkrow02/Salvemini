@@ -17,7 +17,7 @@
                         </Frame>
                         <!--Lista-->
                         <Grid>
-                            <ListView SelectionMode="None" HasUnevenRows="true" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None" x:Name="votiList" VerticalOptions="Start">
+                            <ListView IsPullToRefreshEnabled="True" Refreshing="updateList" SelectionMode="None" HasUnevenRows="true" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None" x:Name="votiList" VerticalOptions="Start">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <ViewCell>

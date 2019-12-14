@@ -2,15 +2,12 @@
 <ContentPage Title="Extra" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:countdown="clr-namespace:SalveminiApp.Helpers" xmlns:local="clr-namespace:SalveminiApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Extra">
     <ScrollView>
         <StackLayout x:Name="mainLayout" Spacing="15">
-            <!--TITLE-->
-            <!--<StackLayout Spacing="8" Padding="5" Orientation="Horizontal">
-                <iconize:IconButton BackgroundColor="Transparent" Clicked="closePage" VerticalOptions="Center" HorizontalOptions="Start" Text="fal-times" FontSize="30" WidthRequest="45" TextColor="{x:Static local:Styles.TextColor}" />
-                <Label VerticalOptions="Center" HorizontalOptions="Start" Text="Extra" TextColor="{x:Static local:Styles.TextColor}" FontSize="Title" FontAttributes="Bold" />
-            </StackLayout>-->
+
             <!--CountDown-->
-            <StackLayout x:Name="secondLayout" Spacing="25">
-                <Label Margin="0,20,0,0" Text="Mancano" TextColor="{x:Static local:Styles.TextGray}" FontAttributes="Bold" FontSize="35" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
+            <StackLayout x:Name="secondLayout" Spacing="10" Margin="0,8">
+                <Label Text="Mancano" TextColor="{x:Static local:Styles.TextGray}" FontAttributes="Bold" FontSize="35" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
                 <Label x:Name="wenEta" TextColor="{x:Static local:Styles.TextGray}" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
+                <Label Text="Sono esclusi i giorni festivi come le domeniche e le altre feste" x:Name="noFestivi" TextColor="{x:Static local:Styles.TextGray}" FontSize="10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
             </StackLayout>
 
             <!--Random-->

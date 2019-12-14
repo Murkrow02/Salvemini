@@ -126,6 +126,11 @@ namespace SalveminiApp.ArgoPages
             bachecaList.IsRefreshing = false;
         }
 
+        public void updateList(object sender, EventArgs e)
+        {
+            OnAppearing();
+        }
+
         void Close_Clicked(object sender, System.EventArgs e)
         {
             Navigation.PopModalAsync();

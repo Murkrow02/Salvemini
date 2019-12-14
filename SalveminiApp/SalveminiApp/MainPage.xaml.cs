@@ -83,30 +83,30 @@ namespace SalveminiApp
             orario.ClasseCorso = classeCorso;
 
             //var stopwatch = new Stopwatch(); stopwatch.Start();
-            ////Get index cache
-            //var IndexCache = CacheHelper.GetCache<RestApi.Models.Index>("Index");
+            //Get index cache
+            var IndexCache = CacheHelper.GetCache<RestApi.Models.Index>("Index");
 
-            ////Failed to get
-            //if (IndexCache == null)
-            //    return;
+            //Failed to get
+            if (IndexCache == null)
+                return;
 
-            ////SalveminiCoin
-            //sCoinLbl.Text = IndexCache.sCoin.ToString();
+            //SalveminiCoin
+            sCoinLbl.Text = IndexCache.sCoin.ToString();
 
-            ////Get banner cache
-            //if (IndexCache.Ads != null && IndexCache.Ads.Count > 0)
-            //{
-            //    //Find a banner
-            //    var banner = IndexCache.Ads.Where(x => x.Tipo == 0).ToList();
-            //    if (banner.Count > 0)
-            //    {
-            //        //Found
-            //        Ad = banner[0];
-            //        adTitle.Text = Ad.Nome;
-            //        adImage.Source = Ad.FullImmagine;
-            //        adLayout.Opacity = 1;
-            //    }
-            //}
+            //Get banner cache
+            if (IndexCache.Ads != null && IndexCache.Ads.Count > 0)
+            {
+                //Find a banner
+                var banner = IndexCache.Ads.Where(x => x.Tipo == 0).ToList();
+                if (banner.Count > 0)
+                {
+                    //Found
+                    Ad = banner[0];
+                    adTitle.Text = Ad.Nome;
+                    adImage.Source = Ad.FullImmagine;
+                    adLayout.Opacity = 1;
+                }
+            }
 
         }
 

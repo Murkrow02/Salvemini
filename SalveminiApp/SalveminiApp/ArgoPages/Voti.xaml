@@ -9,7 +9,7 @@
                 <!--Voti list-->
                 <Frame IsClippedToBounds="true" Padding="0" VerticalOptions="Start" HasShadow="false" CornerRadius="15">
                     <Grid>
-                        <ListView x:Name="votiList" IsGroupingEnabled="True" BackgroundColor="White" HasUnevenRows="True" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None">
+                        <ListView IsPullToRefreshEnabled="True" Refreshing="updateList" x:Name="votiList" IsGroupingEnabled="True" BackgroundColor="White" HasUnevenRows="True" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None">
                             <ListView.GroupHeaderTemplate>
                                 <DataTemplate>
                                     <ViewCell>

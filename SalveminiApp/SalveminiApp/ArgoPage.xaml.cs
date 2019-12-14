@@ -16,7 +16,7 @@ namespace SalveminiApp
     {
         public List<RestApi.Models.Pentagono> Medie = new List<RestApi.Models.Pentagono>();
 
-
+        int appearedTimes;
         protected async override void OnAppearing()
         {
             base.OnAppearing();
@@ -24,6 +24,14 @@ namespace SalveminiApp
             //Show agenda only if orario downloaded
             if (Preferences.Get("OrarioSaved", false))
                 agendaFrame.IsVisible = true;
+
+            //Increment number of appeared times
+            appearedTimes++;
+
+            //Do Appearing only every 5 times or from pull to refresh or connection lost or first
+            var lastDigit = appearedTimes % 10;
+            if (lastDigit != 0 && lastDigit != 5 && appearedTimes != 1)
+                return;
 
             //Check internet status
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)

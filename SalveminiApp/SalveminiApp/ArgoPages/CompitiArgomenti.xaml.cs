@@ -552,6 +552,11 @@ namespace SalveminiApp.ArgoPages
 
         }
 
+        public void updateList(object sender, EventArgs e)
+        {
+            OnAppearing();
+        }
+
 
     }
 }

@@ -10,7 +10,7 @@
                 </StackLayout>
                 <Frame IsClippedToBounds="true" Padding="0" VerticalOptions="Start" HasShadow="false" CornerRadius="15">
                     <Grid>
-                        <ListView Refreshing="updateList"  ItemSelected="Assenza_Selected" HasUnevenRows="true" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None" x:Name="assenzeList" VerticalOptions="Start">
+                        <ListView IsPullToRefreshEnabled="True" Refreshing="updateList"  ItemSelected="Assenza_Selected" HasUnevenRows="true" HorizontalScrollBarVisibility="Never" SeparatorVisibility="None" x:Name="assenzeList" VerticalOptions="Start">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>

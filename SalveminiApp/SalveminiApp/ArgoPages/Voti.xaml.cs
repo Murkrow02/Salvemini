@@ -238,5 +238,11 @@ namespace SalveminiApp.ArgoPages
                 return "Not stonks";
             else return "";
         }
+
+        public void updateList(object sender, EventArgs e)
+        {
+            OnAppearing();
+        }
+
     }
 }

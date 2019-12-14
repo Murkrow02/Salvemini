@@ -13,9 +13,9 @@
             </segmented:SegmentedControl>
         </StackLayout>
         <!--Switch to Count Holidays-->
-        <StackLayout Orientation="Horizontal">
-            <Label FontSize="Small" VerticalOptions="Center" VerticalTextAlignment="Center" Text="Vuoi escludere i giorni festivi dal countdown?"/>
-            <Switch Toggled="HolydaysSwitch_Toggled" VerticalOptions="Center" x:Name="holydaysSwitch"/>
+        <StackLayout Orientation="Horizontal" Spacing="2" HorizontalOptions="CenterAndExpand">
+            <Label FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" VerticalTextAlignment="Center" Text="Escludi giorni festivi dal countdown"/>
+            <CheckBox CheckedChanged="HolydaysSwitch_Toggled" x:Name="holydaysSwitch" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>
