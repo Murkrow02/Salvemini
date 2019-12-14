@@ -53,7 +53,7 @@ namespace SalveminiApp.RestApi
 
         public async Task<string[]> DeleteImage()
         {
-            var uri = Costants.Uri("images/" + Preferences.Get("UserId", -1));
+            var uri = Costants.Uri("images/deletepic");
 
             try
             {
