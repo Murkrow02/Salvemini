@@ -422,7 +422,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\SalveminiCoin.xaml.cs">
       <DependentUpon>SalveminiCoin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\AdCostants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceAds.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AreaVip\AppInfo.xaml.cs">
       <DependentUpon>AppInfo.xaml</DependentUpon>

@@ -30,4 +30,15 @@
     <!-- Customize color of navigation drawer icon and back arrow -->
     <item name="colorControlNormal">#2b2b2b</item>
   </style>
+
+ <style name="splashscreen" parent="Theme.AppCompat.Light.NoActionBar">
+       <item name="android:windowBackground">@drawable/splash_theme</item>
+        <item name="android:windowNoTitle">true</item>  
+    <item name="android:windowFullscreen">true</item>  
+    <item name="android:windowContentOverlay">@null</item>  
+    <item name="android:windowActionBar">true</item>  
+  </style>
+
+<color name="white">#ffffff</color>
+
 </resources>

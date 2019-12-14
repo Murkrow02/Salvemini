@@ -221,7 +221,7 @@ namespace SalveminiApp
             {
                 Vibration.Vibrate();
 
-                var duration = TimeSpan.FromMilliseconds(200);
+                var duration = TimeSpan.FromMilliseconds(100);
                 Vibration.Vibrate(duration);
             }
             catch (FeatureNotSupportedException ex)
@@ -234,11 +234,16 @@ namespace SalveminiApp
 
         public static string RewardId()
         {
-#if DEBUG
-            return "ca-app-pub-3940256099942544/5224354917";
-#else
+//#if DEBUG
+//            return "ca-app-pub-3940256099942544/5224354917";
+//#else
+#if __IOS__
             return "ca-app-pub-2688730930606353/4691822196";
 #endif
+#if __ANDROID__
+            return "ca-app-pub-2688730930606353/7086530178";
+#endif
+//#endif
 
         }
 

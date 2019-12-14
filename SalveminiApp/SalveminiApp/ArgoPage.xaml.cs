@@ -6,6 +6,7 @@ using Xamarin.Essentials;
 using MonkeyCache.SQLite;
 using Syncfusion.SfChart.XForms;
 using System.Linq;
+using System.Diagnostics;
 #if __IOS__
 using UIKit;
 #endif
@@ -105,8 +106,8 @@ namespace SalveminiApp
         {
             InitializeComponent();
 
-         
 
+            var stopwatch = new Stopwatch(); stopwatch.Start();
 
             //Hide Navigation Bar
             NavigationPage.SetHasNavigationBar(this, false);
@@ -120,6 +121,28 @@ namespace SalveminiApp
             //secondRowWidgets.Margin = new Thickness ( 0, 0, 0, 5 );
 #endif
 
+
+
+            //Show agenda fix
+            MessagingCenter.Subscribe<App>(this, "showAgenda", (sender) =>
+            {
+                agendaFrame.IsVisible = true;
+            });
+
+            stopwatch.Stop();
+            System.Diagnostics.Debug.WriteLine(stopwatch.ElapsedMilliseconds);
+        }
+
+        public async void agenda_Clicked(object sender, EventArgs e)
+        {
+            var view = sender as Xamarin.Forms.PancakeView.PancakeView;
+            await view.TranslateTo(App.ScreenWidth, 0, 700);
+            await Navigation.PushModalAsync(new ArgoPages.Agenda());
+            await view.TranslateTo(0, 0, 0);
+        }
+
+        public void initializeInterface()
+        {
             //Cache Grafico
             var cachedMedie = CacheHelper.GetCache<List<RestApi.Models.Pentagono>>("Medie");
             if (cachedMedie != null)
@@ -131,10 +154,6 @@ namespace SalveminiApp
                 radarChartI.ItemsSource = Medie;
 
             }
-
-            //Set Sizes
-            //chart.WidthRequest = App.ScreenWidth;
-            //chart.HeightRequest = App.ScreenHeight / 3;
 
             //Add widgets
             var gestureRecognizer = new TapGestureRecognizer();
@@ -163,14 +182,6 @@ namespace SalveminiApp
             secondRowWidgets.Children.Add(new ContentView { WidthRequest = -20 });
             secondRowWidgets.Children.AddRange(new List<ArgoWidget> { scrutinio, compiti, argomenti, note });
             secondRowWidgets.Children.Add(new ContentView { WidthRequest = 0 });
-        }
-
-        public async void agenda_Clicked(object sender, EventArgs e)
-        {
-            var view = sender as Xamarin.Forms.PancakeView.PancakeView;
-            await view.TranslateTo(App.ScreenWidth, 0, 700);
-            await Navigation.PushModalAsync(new ArgoPages.Agenda());
-            await view.TranslateTo(0, 0, 0);
         }
     }
 }

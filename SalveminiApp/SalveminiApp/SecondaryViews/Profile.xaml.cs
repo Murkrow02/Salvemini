@@ -326,7 +326,7 @@ namespace SalveminiApp.SecondaryViews
                     await DisplayAlert(success[0], success[1], "Ok");
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 await DisplayAlert("Errore", "Non è stato possibile completare l'azione, contattaci se il problema persiste", "Ok");
             }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Plugin.Media.Abstractions;
+using Plugin.Media;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using Xamarin.Forms;
@@ -24,7 +26,9 @@ namespace SalveminiApp.Helpers
                     return true;
                 }
 
-                await currentPage.DisplayAlert("Errore", "Non ci hai concesso di accedere alla tua posizione, apri l'app impostazioni del tuo telefono e consenti l'accesso per Salvemini", "OK");
+               bool openSettings = await currentPage.DisplayAlert("Errore", "Non ci hai concesso di accedere alla tua posizione, apri l'app impostazioni del tuo telefono e consenti l'accesso per Salvemini", "Impostazioni","Chiudi");
+                if (openSettings)
+                    CrossPermissions.Current.OpenAppSettings();
                 return false;
             }
             return true;
@@ -44,82 +48,27 @@ namespace SalveminiApp.Helpers
         {
             var currentPage = Application.Current.MainPage;
 
-            //ACCESS CAMERA
-            var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
+            var cameraStatus = await CrossPermissions.Current.CheckPermissionStatusAsync<CameraPermission>();
+            var storageStatus = await CrossPermissions.Current.CheckPermissionStatusAsync<StoragePermission>();
 
-            if (status != PermissionStatus.Granted)
+            if (cameraStatus != PermissionStatus.Granted || storageStatus != PermissionStatus.Granted)
             {
-                //if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Camera))
-                //{
-                //}
-
-                var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Camera);
-                //Best practice to always check that the key exists
-                if (results.ContainsKey(Permission.Camera))
-                {
-                    status = results[Permission.Camera];
-                }
-                else
-                {
-                    await currentPage.DisplayAlert("Errore", "Non abbiamo il permesso di accedere alla fotocamera", "Ok");
-                    return false;
-                }
+                cameraStatus = await CrossPermissions.Current.RequestPermissionAsync<CameraPermission>();
+                storageStatus = await CrossPermissions.Current.RequestPermissionAsync<StoragePermission>();
             }
 
-            //ACCESS GALLERY
-            var status2 = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Photos);
-
-            if (status2 != PermissionStatus.Granted)
+            if (cameraStatus == PermissionStatus.Granted && storageStatus == PermissionStatus.Granted)
             {
-                //if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Photos))
-                //{
-                //    await currentPage.DisplayAlert("Errore", "Non abbiamo il permesso di accedere alle tue foto", "OK");
-                //}
-
-                var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Photos);
-                //Best practice to always check that the key exists
-                if (results.ContainsKey(Permission.Photos))
-                {
-                    status2 = results[Permission.Photos];
-                }
-                else
-                {
-                    await currentPage.DisplayAlert("Errore", "Non abbiamo il permesso di accedere alle tue foto", "Ok");
-                    return false;
-                }
-
+                return true;
             }
-#if __ANDROID__
-            try
+            else
             {
-                //ACCESS CAMERA
-                var status1 = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage);
+                bool openSettings = await currentPage.DisplayAlert("Errore", "Non ci hai concesso di accedere alla fotocamera ed alle tue foto, apri le impostazioni per continuare", "Impostazioni", "Chiudi");
+                if (openSettings)
+                    CrossPermissions.Current.OpenAppSettings();
 
-                if (status1 != PermissionStatus.Granted)
-                {
-                    //if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Storage))
-                    //{
-                    //}
-
-                    var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Storage);
-                    //Best practice to always check that the key exists
-                    if (results.ContainsKey(Permission.Storage))
-                    {
-                        status1 = results[Permission.Storage];
-
-                    }
-                    else
-                    {
-                        await currentPage.DisplayAlert("Errore", "Non abbiamo il permesso di accedere alle tue foto", "OK");
-                        return false;
-                    }
-                }
+                return false;
             }
-            catch { }
-           
-#endif
-           
-            return true;
         }
     }
 }

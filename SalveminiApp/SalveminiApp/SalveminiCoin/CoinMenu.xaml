@@ -1,45 +1,48 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns:svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SalveminiCoin.CoinMenu">
     <ContentPage.Content>
-        <StackLayout Spacing="30" Padding="0, 20">
+        <StackLayout Spacing="2">
             <!--Header-->
-             <StackLayout Spacing="8" Padding="0,-20" Orientation="Horizontal">
+            <StackLayout Spacing="8" Orientation="Horizontal" VerticalOptions="Start"> 
                 <iconize:IconButton BackgroundColor="Transparent" Clicked="Close_Clicked" VerticalOptions="Center" HorizontalOptions="Start" Text="fal-times" FontSize="30" WidthRequest="45" TextColor="{x:Static local:Styles.TextColor}" />
-                <Label VerticalOptions="Center" HorizontalOptions="Start" Text="SalveminiCoin" TextColor="{x:Static local:Styles.TextColor}" FontSize="Title" FontAttributes="Bold" />
+                <Label VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Text="SalveminiCoin" TextColor="{x:Static local:Styles.TextColor}" FontSize="Title" FontAttributes="Bold" />
             </StackLayout>
+            <ScrollView>
+                <StackLayout Spacing="30" Padding="0, 20">
+                    <!--Balance + image-->
+                    <StackLayout Spacing="5" Margin="0,0,0,-20">
+                        <svg:SvgCachedImage Source="sCoin.svg" x:Name="coinImage"/>
+                        <Label Text="..." x:Name="coinCount" Opacity="0" HorizontalOptions="Center" FontSize="35" TextColor="{x:Static local:Styles.TextGray}" FontAttributes="Bold"/>
+                    </StackLayout>
 
-            <!--Balance + image-->
-            <StackLayout Spacing="5">
-                <svg:SvgCachedImage Source="sCoin.svg" x:Name="coinImage"/>
-                <Label Text="..." x:Name="coinCount" Opacity="0" HorizontalOptions="Center" FontSize="35" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold"/>
-            </StackLayout>
+                    <!--Guadagna-->
+                    <StackLayout Padding="20, 0">
+                        <StackLayout Orientation="Horizontal">
+                            <iconize:IconLabel Text="far-coins" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" />
+                            <Label Text="Guadagna" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" FontAttributes="Bold" />
+                        </StackLayout>
+                        <Frame Padding="0" BackgroundColor="White" IsClippedToBounds="True" HasShadow="False" CornerRadius="12" VerticalOptions="Start">
+                            <StackLayout x:Name="gainLayout" Spacing="0" IsEnabled="True" Opacity="1" />
+                        </Frame>
+                    </StackLayout>
 
-            <!--Guadagna-->
-            <StackLayout Padding="20, 0">
-                <StackLayout Orientation="Horizontal">
-                    <iconize:IconLabel Text="far-coins" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" />
-                    <Label Text="Guadagna" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" FontAttributes="Bold" />
+                    <!--Cronologia-->
+                    <StackLayout Padding="20, 0">
+                        <StackLayout Orientation="Horizontal">
+                            <iconize:IconLabel Text="far-history" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" />
+                            <Label Text="Cronologia" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" FontAttributes="Bold" />
+                        </StackLayout>
+                        <Frame Padding="0" BackgroundColor="White" IsClippedToBounds="True" HasShadow="False" CornerRadius="12" VerticalOptions="Start">
+                            <StackLayout x:Name="historyLayout" Spacing="0" IsEnabled="True" Opacity="1" />
+                        </Frame>
+                    </StackLayout>
+
+                    <!--Info-->
+                    <Frame Margin="20, 0" Padding="10, 0" IsClippedToBounds="True" HasShadow="False" CornerRadius="12" VerticalOptions="Start">
+                        <Button Clicked="coinsInfo_Clicked" BackgroundColor="Transparent" FontSize="18" Text="Cosa sono le sCoins?" TextColor="{x:Static local:Styles.Apple}" HorizontalOptions="CenterAndExpand" />
+                    </Frame>
                 </StackLayout>
-                <Frame Padding="0" BackgroundColor="White" IsClippedToBounds="True" HasShadow="False" CornerRadius="12" VerticalOptions="Start">
-                    <StackLayout x:Name="gainLayout" Spacing="0" IsEnabled="True" Opacity="1" />
-                </Frame>
-            </StackLayout>
-
-            <!--Cronologia-->
-            <StackLayout Padding="20, 0">
-                <StackLayout Orientation="Horizontal">
-                    <iconize:IconLabel Text="far-history" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" />
-                    <Label Text="Cronologia" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" FontAttributes="Bold" />
-                </StackLayout>
-                <Frame Padding="0" BackgroundColor="White" IsClippedToBounds="True" HasShadow="False" CornerRadius="12" VerticalOptions="Start">
-                    <StackLayout x:Name="historyLayout" Spacing="0" IsEnabled="True" Opacity="1" />
-                </Frame>
-            </StackLayout>
-
-            <!--Info-->
-            <Frame Margin="20, 0" Padding="10, 0" IsClippedToBounds="True" HasShadow="False" CornerRadius="12" VerticalOptions="Start">
-                <Button BackgroundColor="Transparent" FontSize="18" Text="Cosa sono le sCoins?" TextColor="{x:Static local:Styles.Apple}" HorizontalOptions="Start" />
-            </Frame>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

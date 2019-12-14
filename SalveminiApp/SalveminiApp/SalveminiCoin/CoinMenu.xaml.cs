@@ -109,6 +109,7 @@ namespace SalveminiApp.SalveminiCoin
 
             //Load ad video
             gainButton.Loading = true;
+            //CrossMTAdmob.Current.TestDevices = new List<string> { "60394458335F479CE5061737251AC261" }; Telefn e patm
             CrossMTAdmob.Current.LoadRewardedVideo(Costants.RewardId());
             isShowingAd = false;
         }
@@ -148,7 +149,7 @@ namespace SalveminiApp.SalveminiCoin
                 //Reload reward video
                 gainButton.Loading = true;
                 CrossMTAdmob.Current.LoadRewardedVideo(Costants.RewardId());
-                Costants.showToast("Nessun video disponibile, riprova tra un po'");
+                Costants.showToast("Nessun video disponibile, riprova tra qualche secondo");
             }
 
             //Check if he can watch a reward video
@@ -188,6 +189,12 @@ namespace SalveminiApp.SalveminiCoin
 
             //Show success
             await DisplayAlert("Grande", "La sCoin è stata aggiunta al tuo account", "Chiudi");
+        }
+
+
+        public void coinsInfo_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("sCoin", "La SalveminiCoin è una moneta digitale presente nella SalveminiApp che puo' essere utilizzata per l'acquisto di biglietti di eventi organizzati dal Salvemini (come il makπ), sconti su gadget o incontri della scuola o l'acquisto di materiale digitale all'interno dell'app (Personaggi per i giochi, potenziamenti...)", "Ok");
         }
 
         #region Events from Ads

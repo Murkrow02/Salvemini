@@ -12,7 +12,7 @@
 
         <StackLayout Padding="12,0" Spacing="12">
             <!--Picker-->
-            <ComboBox:SfComboBox SelectionChanged="giorno_Selected" x:Name="days" IsEditableMode="False" AllowFiltering="False" HorizontalOptions="FillAndExpand"/>
+            <ComboBox:SfComboBox  SelectionChanged="giorno_Selected" x:Name="days" IsEditableMode="False" AllowFiltering="False" HorizontalOptions="FillAndExpand"/>
 
             <!--Add button and delete button-->
             <StackLayout Orientation="Horizontal" Spacing="8">

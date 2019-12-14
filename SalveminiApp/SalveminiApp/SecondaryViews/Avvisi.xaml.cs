@@ -104,7 +104,7 @@ namespace SalveminiApp.SecondaryViews
                 //Get images
                 var listView = sender as FlowListView;
                 var immagini = listView.FlowItemsSource as List<string>;
-                var selected = sender as string;
+                var selected = e.Item as string;
                 //Get selected item
 
                 //Get avviso title

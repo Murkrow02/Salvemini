@@ -8,8 +8,8 @@
                 <!--Title and filters-->
                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                     <patch:Label Lines="1" AutoFit="Width" TextColor="White" x:Name="TitleLbl" FontSize="40" HorizontalOptions="StartAndExpand" FontAttributes="Bold" />
-                    <iconize:IconButton Padding="0" BackgroundColor="Transparent" Text="fas-filter" TextColor="White" FontSize="Large" VerticalOptions="Start" HorizontalOptions="End" x:Name="filterBtn" Clicked="filterSubject" />
-                    <iconize:IconButton Padding="0" BackgroundColor="Transparent" Text="fas-sort" TextColor="White" x:Name="sortBtn" Clicked="ShowOrder" FontSize="Large" VerticalOptions="Start" HorizontalOptions="End" />
+                    <iconize:IconButton Padding="0" BackgroundColor="Transparent" Text="fas-filter" TextColor="White" FontSize="30" WidthRequest="45" VerticalOptions="Start" HorizontalOptions="End" x:Name="filterBtn" Clicked="filterSubject" />
+                    <iconize:IconButton Padding="0" BackgroundColor="Transparent" Text="fas-sort" TextColor="White" x:Name="sortBtn" Clicked="ShowOrder" FontSize="30" WidthRequest="45" VerticalOptions="Start" HorizontalOptions="End" />
                 </StackLayout>
 
                 <!--SearchBar-->

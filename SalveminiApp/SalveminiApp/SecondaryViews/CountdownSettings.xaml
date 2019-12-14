@@ -7,7 +7,7 @@
             <segmented:SegmentedControl Margin="-10,0" x:Name="pointerSegment" HorizontalOptions="FillAndExpand" VerticalOptions="Start" OnSegmentSelected="DateSegment_SelectionChanged" TintColor="White" SelectedTextColor="{x:Static local:Styles.TextColor}">
                 <segmented:SegmentedControl.Children>
                     <segmented:SegmentedControlOption Text="Fine della scuola" />
-                    <segmented:SegmentedControlOption Text="Natale" />
+                    <!--<segmented:SegmentedControlOption Text="Natale" />-->
                     <segmented:SegmentedControlOption Text="Pasqua" />
                 </segmented:SegmentedControl.Children>
             </segmented:SegmentedControl>

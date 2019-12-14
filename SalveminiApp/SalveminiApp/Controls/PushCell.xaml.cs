@@ -111,6 +111,7 @@ namespace SalveminiApp.Helpers
                 {
                     if (Loading)
                     {
+                        loading.HeightRequest = TitleLbl.Height;
                         loading.IsRunning = true;
                         loading.IsVisible = true;
                         arrow.IsVisible = false;

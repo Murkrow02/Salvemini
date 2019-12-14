@@ -12,6 +12,8 @@ namespace SalveminiApp.SecondaryViews
         public CambiaPassword()
         {
             InitializeComponent();
+
+            argoLogo.WidthRequest = App.ScreenWidth / 3;
         }
 
         void EntryEye_Tapped(object sender, EventArgs e)

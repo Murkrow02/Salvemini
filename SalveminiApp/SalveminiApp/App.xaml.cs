@@ -46,11 +46,28 @@ namespace SalveminiApp
             //Initialize FlowListView
             FlowListView.Init();
 
+            //Initialize Iconize
+            Plugin.Iconize.Iconize.With(new Plugin.Iconize.Fonts.FontAwesomeProBrandsModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProLightModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProRegularModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProSolidModule()).With(new Plugin.Iconize.Fonts.FontAwesomeBrandsModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProBrandsModule());
+
             //Cache Folder
+            var stopwatch = new Stopwatch(); stopwatch.Start();
             Barrel.ApplicationId = "com.codex.salveminiapp";
+
+            //Remove expired cache
+            Barrel.Current.EmptyExpired();
+            System.Diagnostics.Debug.WriteLine(stopwatch.ElapsedMilliseconds);
+            stopwatch.Restart();
+
+            //Register OneSignal License
+            OneSignal.Current.StartInit("a85553ca-c1fe-4d93-a02f-d30bf30e2a2a").InFocusDisplaying(OSInFocusDisplayOption.None)
+                .HandleNotificationReceived(HandleNotificationReceived)
+                .HandleNotificationOpened(HandleNotificationOpened)
+                .EndInit();
 
             //Fix if upgraded from salveminiapp 2.0
             if (Preferences.Get("veryFirstTime", true)) { Preferences.Clear(); Preferences.Set("isFirstTime", true); Preferences.Set("veryFirstTime", false); }
+
+           
 
             //Set MainPage
             if (Preferences.Get("isFirstTime", true)) //First time
@@ -59,29 +76,18 @@ namespace SalveminiApp
             }
             else if (Preferences.Get("Token", "") == "" || Preferences.Get("UserId", 0) == 0) //Not logged
             {
-                MainPage = new FirstAccess.Login(); 
+                MainPage = new FirstAccess.Login();
             }
             else //Logged
             {
                 MainPage = new TabPage();
             }
 
-            //MainPage = new AreaVip.AddEvento();
-
-            //Register OneSignal License
-            OneSignal.Current.StartInit("a85553ca-c1fe-4d93-a02f-d30bf30e2a2a").InFocusDisplaying(OSInFocusDisplayOption.None)
-                .HandleNotificationReceived(HandleNotificationReceived)
-                .HandleNotificationOpened(HandleNotificationOpened)
-                .EndInit();
-
-            //Initialize Iconize
-            Plugin.Iconize.Iconize.With(new Plugin.Iconize.Fonts.FontAwesomeProBrandsModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProLightModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProRegularModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProSolidModule()).With(new Plugin.Iconize.Fonts.FontAwesomeBrandsModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProBrandsModule());
-
             //Reload Calls
             refreshCalls();
 
-            //Remove expired cache
-            Barrel.Current.EmptyExpired();
+      
+
         }
 
         public static async Task refreshCalls()
@@ -108,13 +114,13 @@ namespace SalveminiApp
             {
 
                 OSNotificationPayload payload = notification.payload;
-              //  Dictionary<string, object> additionalData = payload.additionalData;
+                //  Dictionary<string, object> additionalData = payload.additionalData;
                 string message = payload.body;
                 //Route from push to inApp notification
                 var notificator = DependencyService.Get<IToastNotificator>();
                 var options = new NotificationOptions()
                 {
-                    Description = message.Replace(", apri l'app per saperne di più!", "").Replace(", apri l'app per votare","")
+                    Description = message.Replace(", apri l'app per saperne di più!", "").Replace(", apri l'app per votare", "")
                 };
 
                 var result = await notificator.Notify(options);

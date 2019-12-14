@@ -17,13 +17,15 @@ namespace SalveminiApp.Droid
     public class PhotoBrowserImplementation : PhotoBrowser.IPhotoBrowser
     {
 
-        public void Show(SalveminiApp.PhotoBrowser.PhotoBrowser photoBrowser)
+        public void Show(PhotoBrowser.PhotoBrowser photoBrowser)
         {
-            var a = new Stormlion.PhotoBrowser.PhotoBrowser();
-            var photos = new List<Stormlion.PhotoBrowser.Photo>();
-            foreach (var foto in photoBrowser.Photos) { photos.Add(new Stormlion.PhotoBrowser.Photo { Title = foto.Title, URL = foto.URL }); }
-            a.Photos = photos;
-            a.Show();
+            //Convert custom stormlion to native stormlion
+            var realStormlion = new Stormlion.PhotoBrowser.PhotoBrowser();
+            var realPhotos = new List<Stormlion.PhotoBrowser.Photo>();
+            foreach (var foto in photoBrowser.Photos) { realPhotos.Add(new Stormlion.PhotoBrowser.Photo { Title = foto.Title, URL = foto.URL }); }
+            realStormlion.Photos = realPhotos;
+            realStormlion.StartIndex = photoBrowser.StartIndex;
+            realStormlion.Show();
         }
 
         public void Close()

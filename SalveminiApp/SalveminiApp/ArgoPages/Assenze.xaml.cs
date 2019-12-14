@@ -144,5 +144,14 @@ namespace SalveminiApp.ArgoPages
             //Close Page
             Navigation.PopModalAsync();
         }
+
+        public void updateList(object sender, EventArgs e)
+        {
+            ////Fix bcause this event is triggered even if is refreshed by code
+            //if (!userRefreshed)
+            //    return;
+
+            OnAppearing();
+        }
     }
 }

@@ -9,6 +9,7 @@ using Forms9Patch;
 using FFImageLoading;
 using FFImageLoading.Cache;
 using System.Diagnostics;
+using Plugin.Permissions;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using UIKit;
@@ -39,10 +40,13 @@ namespace SalveminiApp
         public bool orarioFromCached;
         //How many times the page loaded onAppearing
         public int appearedTimes;
+        //Load profile page to be faster
+        public Xamarin.Forms.NavigationPage profilePage;
 
         public MainPage()
         {
             InitializeComponent();
+
 
             //Set sizes
             userImg.WidthRequest = App.ScreenWidth / 8.8;
@@ -52,17 +56,15 @@ namespace SalveminiApp
             //Set navigation view
             todayLbl.Text = DateTime.Now.ToString("dddd").FirstCharToUpper();
 
-
-
             //Subscribe to messaging center
             //Refresh image cache
-            MessagingCenter.Subscribe<App,string>(this, "ReloadUserPic", (sender, arg) =>
-            {
-                    userImg.Source = "";
-                    userImg.Source = arg;
-                    userImg.ReloadImage();
-                    userImg.WidthRequest = App.ScreenWidth / 8.8;
-            });
+            MessagingCenter.Subscribe<App, string>(this, "ReloadUserPic", (sender, arg) =>
+             {
+                 userImg.Source = "";
+                 userImg.Source = arg;
+                 userImg.ReloadImage();
+                 userImg.WidthRequest = App.ScreenWidth / 8.8;
+             });
 
             //Remove avvisi badge
             MessagingCenter.Subscribe<App, string>(this, "RemoveBadge", (sender, tipo) =>
@@ -80,30 +82,32 @@ namespace SalveminiApp
             classeCorso = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
             orario.ClasseCorso = classeCorso;
 
-            //Get index cache
-            var IndexCache = CacheHelper.GetCache<RestApi.Models.Index>("Index");
+            //var stopwatch = new Stopwatch(); stopwatch.Start();
+            ////Get index cache
+            //var IndexCache = CacheHelper.GetCache<RestApi.Models.Index>("Index");
 
-            //Failed to get
-            if (IndexCache == null)
-                return;
+            ////Failed to get
+            //if (IndexCache == null)
+            //    return;
 
-            //SalveminiCoin
-            sCoinLbl.Text = IndexCache.sCoin.ToString();
+            ////SalveminiCoin
+            //sCoinLbl.Text = IndexCache.sCoin.ToString();
 
-            //Get banner cache
-            if (IndexCache.Ads != null && IndexCache.Ads.Count > 0)
-            {
-                //Find a banner
-                var banner = IndexCache.Ads.Where(x => x.Tipo == 0).ToList();
-                if (banner.Count > 0)
-                {
-                    //Found
-                    Ad = banner[0];
-                    adTitle.Text = Ad.Nome;
-                    adImage.Source = Ad.FullImmagine;
-                    adLayout.Opacity = 1;
-                }
-            }
+            ////Get banner cache
+            //if (IndexCache.Ads != null && IndexCache.Ads.Count > 0)
+            //{
+            //    //Find a banner
+            //    var banner = IndexCache.Ads.Where(x => x.Tipo == 0).ToList();
+            //    if (banner.Count > 0)
+            //    {
+            //        //Found
+            //        Ad = banner[0];
+            //        adTitle.Text = Ad.Nome;
+            //        adImage.Source = Ad.FullImmagine;
+            //        adLayout.Opacity = 1;
+            //    }
+            //}
+
         }
 
         //Detect if onappearing must be triggered
@@ -111,6 +115,9 @@ namespace SalveminiApp
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+
+            if (appearedTimes == 0)
+                (TabPage.Argo.RootPage as ArgoPage).initializeInterface();
 
             //Increment number of appeared times
             appearedTimes++;
@@ -120,7 +127,8 @@ namespace SalveminiApp
             if (lastDigit != 0 && lastDigit != 5 && !forceAppearing && appearedTimes != 1)
                 return;
 
-
+            //Load profile page to be faster
+            await Task.Run((Action)loadProfilePage);
 
             //Sempre meglio mettere il try lol
             try
@@ -354,7 +362,7 @@ namespace SalveminiApp
                 {
                     if (widget.Title == "Trasporti")
                     {
-                        if (!Costants.DownloadedOrariTrasporti() || Preferences.Get("firstTimeTrasporti",true))
+                        if (!Costants.DownloadedOrariTrasporti() || Preferences.Get("firstTimeTrasporti", true))
                             Navigation.PushModalAsync(new FirstAccess.OrariTrasporti());
 
                         else
@@ -465,24 +473,7 @@ namespace SalveminiApp
         //Push to profile page
         void profilePush(object sender, System.EventArgs e)
         {
-            //Create new navigation page
-            var modalPush = new Xamarin.Forms.NavigationPage(new SecondaryViews.Profile());
-            modalPush.BarTextColor = Styles.TextColor;
-            modalPush.BarBackgroundColor = Styles.BGColor;
-            //Add disappearing event
-            modalPush.Disappearing += ModalPush_Disappearing;
-
-            //Add toolbaritem to close page
-            var close = new ToolbarItem { Text = "Annulla" };
-            close.Clicked += ModalPush_Disappearing;
-            modalPush.ToolbarItems.Add(close);
-
-            //Modal figo
-#if __IOS__
-            modalPush.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
-#endif
-            modalPush.BarTextColor = Styles.TextColor;
-            Navigation.PushModalAsync(modalPush);
+            Navigation.PushModalAsync(profilePage);
         }
 
         //Push to extra page
@@ -628,6 +619,9 @@ namespace SalveminiApp
             Preferences.Set("OrarioSaved", true);
             orario.Lezioni = data.Data as List<RestApi.Models.Lezione>;
 
+            //Show agenda if hidden bug (usually on first time)
+            MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "showAgenda");
+
 #if __IOS__
             //Add siri shortcut
             if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
@@ -701,14 +695,31 @@ namespace SalveminiApp
             }
         }
 
-
-
-
-        //todo enable this
         public void sCoin_Tapped(object sender, EventArgs e)
         {
 
             Navigation.PushModalAsync(new SalveminiCoin.CoinMenu());
+        }
+
+        async void loadProfilePage()
+        {
+            //Create new navigation page
+            profilePage = new Xamarin.Forms.NavigationPage(new SecondaryViews.Profile());
+            profilePage.BarTextColor = Styles.TextColor;
+            profilePage.BarBackgroundColor = Styles.BGColor;
+            //Add disappearing event
+            profilePage.Disappearing += ModalPush_Disappearing;
+
+            //Add toolbaritem to close page
+            var close = new ToolbarItem { Text = "Annulla" };
+            close.Clicked += ModalPush_Disappearing;
+            profilePage.ToolbarItems.Add(close);
+
+            //Modal figo
+#if __IOS__
+            profilePage.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
+#endif
+            profilePage.BarTextColor = Styles.TextColor;
         }
 
     }

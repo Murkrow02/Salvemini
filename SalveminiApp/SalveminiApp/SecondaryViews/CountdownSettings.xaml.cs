@@ -23,10 +23,10 @@ namespace SalveminiApp.SecondaryViews
             int pointerInt = 0;
             switch (Preferences.Get("DateToPoint", FineDellaScuola).ToString("dd-MM-yyyy"))
             {
-                case "25-12-2019":
-                    //Natale
-                    pointerInt = 1;
-                    break;
+                //case "25-12-2019":
+                //    //Natale
+                //    pointerInt = 1;
+                //    break;
                 case "12-04-2020":
                     //Pasqua
                     pointerInt = 2;
@@ -57,13 +57,13 @@ namespace SalveminiApp.SecondaryViews
                     holydaysSwitch.IsEnabled = true;
 
                     break;
+                //case 1:
+                //    //Natale
+                //    dateToSave = Natale;
+                //    holydaysSwitch.IsToggled = false;
+                //    holydaysSwitch.IsEnabled = false;
+                //    break;
                 case 1:
-                    //Natale
-                    dateToSave = Natale;
-                    holydaysSwitch.IsToggled = false;
-                    holydaysSwitch.IsEnabled = false;
-                    break;
-                case 2:
                     //Pasqua
                     dateToSave = Pasqua;
                     holydaysSwitch.IsToggled = false;
