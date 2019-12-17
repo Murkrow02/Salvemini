@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage BackgroundColor="{x:Static local:Styles.BGColor}" Title="Transazioni" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SalveminiApp" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" x:Class="SalveminiApp.SalveminiCoin.Transazioni">
+    <StackLayout Spacing="0" Padding="10,5,10,0" VerticalOptions="FillAndExpand">
+        <!--Lista-->
+        <ListView BackgroundColor="Transparent" x:Name="eventsList" HasUnevenRows="true" Header="" Footer="" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame CornerRadius="12" Padding="4" HasShadow="False" BackgroundColor="White" Margin="5">
+                            <StackLayout Spacing="1" Padding="5" Orientation="Horizontal">
+                                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                                    <!--Desc-->
+                                    <Label Text="{Binding Description}" VerticalOptions="Center" FontSize="25" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" HorizontalTextAlignment="Start"/>
+                                    <!--Attivazione-->
+                                    <Label VerticalOptions="Center" VerticalTextAlignment="Center" Text="{Binding formattedDate}" FontSize="10" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" TextColor="{x:Static local:Styles.TextGray}"/>
+                                </StackLayout>
+                                <!--Value-->
+                                <patch:Label Text="{Binding Amount}" TextColor="{Binding color}" FontSize="35" Lines="1" AutoFit="Width" HorizontalTextAlignment="End"  VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

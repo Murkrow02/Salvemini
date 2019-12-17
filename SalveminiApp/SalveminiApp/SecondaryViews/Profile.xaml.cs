@@ -24,7 +24,6 @@ namespace SalveminiApp.SecondaryViews
     {
 
         public RestApi.Models.Utente utente = new RestApi.Models.Utente();
-        public bool shouldClose = true;
         public MediaFile newPic;
 
         public Profile()
@@ -226,7 +225,6 @@ namespace SalveminiApp.SecondaryViews
         private void ChangePwd_Clicked(object sender, EventArgs e)
         {
             //Push to changePwd Page
-            shouldClose = false;
             Navigation.PushAsync(new CambiaPassword());
         }
 
@@ -423,7 +421,6 @@ namespace SalveminiApp.SecondaryViews
                 if (cell.Push != null)
                 {
                     //Other
-                    shouldClose = false;
                     Navigation.PushAsync(cell.Push); //Push
                 }
             }

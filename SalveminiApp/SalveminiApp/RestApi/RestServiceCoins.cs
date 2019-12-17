@@ -7,6 +7,7 @@ using MonkeyCache.SQLite;
 using Xamarin.Essentials;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace SalveminiApp.RestApi
 {
@@ -185,6 +186,39 @@ namespace SalveminiApp.RestApi
                 return new string[] { "Errore", "Si è verificato un errore, riprova più tardi" };
             }
         }
+
+        public async Task<List<Models.Transaction>> Transazioni()
+        {
+            var uri = Costants.Uri("scoin/transactions");
+
+            try
+            {
+                //Get response
+                var response = await client.GetAsync(uri);
+
+                //Risposta
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    var transazioni = JsonConvert.DeserializeObject<List<Models.Transaction>>(content);
+
+                    //Add to cache
+                    Barrel.Current.Add("transazioni", transazioni.TakeLast(30), TimeSpan.FromDays(30));
+                    return transazioni;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Lista eventi", ex.Message);
+                return null;
+            }
+        }
+
     }
 
     public interface IRestServiceCoins
@@ -193,6 +227,7 @@ namespace SalveminiApp.RestApi
         Task<string[]> PostEvento(Models.Evento model);
         Task<List<Models.Evento>> ListaEventi();
         Task<List<Models.Evento>> RedeemedCodes();
+        Task<List<Models.Transaction>> Transazioni();
         Task<string[]> ToggleEvento(int id);
         Task<int?> UserCoins();
     }
@@ -210,6 +245,11 @@ namespace SalveminiApp.RestApi
         public Task<string> PostCode(Models.PostCode model)
         {
             return restServiceCoins.PostCode(model);
+        }
+
+        public Task<List<Models.Transaction>> Transazioni()
+        {
+            return restServiceCoins.Transazioni();
         }
 
         public Task<string[]> PostEvento(Models.Evento model)

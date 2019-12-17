@@ -53,7 +53,7 @@ namespace SalveminiApp.RestApi
             catch (Exception ex)
             {
                 Debug.WriteLine(@"Errore can watch ad api", ex.Message);
-                return new Models.ResponseModel { Data = false, Message = "Si è verificato un errore durante la richiesta, constrolla la tua connessione e riprova" };
+                return new Models.ResponseModel { Data = false, Message = "Si è verificato un errore durante la richiesta, controlla la tua connessione e riprova" };
             }
         }
 
@@ -78,7 +78,7 @@ namespace SalveminiApp.RestApi
             catch (Exception ex)
             {
                 Debug.WriteLine(@"Errore can watch ad api", ex.Message);
-                return new Models.ResponseModel { Data = false, Message = "Si è verificato un errore durante la richiesta, constrolla la tua connessione e riprova" };
+                return new Models.ResponseModel { Data = false, Message = "Si è verificato un errore durante la richiesta, controlla la tua connessione e riprova" };
             }
         }
     }

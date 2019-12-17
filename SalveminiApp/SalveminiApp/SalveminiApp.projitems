@@ -171,10 +171,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\SalveminiCoin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)AreaVip\AppInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -244,6 +240,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)SecondaryViews\Extra.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SalveminiCoin\Transazioni.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -419,9 +419,6 @@
       <DependentUpon>CountdownSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\Bus.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SecondaryViews\SalveminiCoin.xaml.cs">
-      <DependentUpon>SalveminiCoin.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceAds.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AreaVip\AppInfo.xaml.cs">
       <DependentUpon>AppInfo.xaml</DependentUpon>
@@ -483,6 +480,9 @@
       <DependentUpon>Extra.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Controls\PhotoBrowser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SalveminiCoin\Transazioni.xaml.cs">
+      <DependentUpon>Transazioni.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

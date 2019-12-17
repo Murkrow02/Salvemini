@@ -56,27 +56,7 @@ namespace SalveminiApp.SalveminiCoin
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            //Ios 13 bug
-            try
-            {
-#if __IOS__
-                if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
-                {
-                    if (!closedFromButton)
-                    {
-                        Navigation.PopModalAsync();
-                    }
-                    else
-                    {
-                        closedFromButton = false;
-                    }
-                }
-#endif
-            }
-            catch
-            {
-                //fa nient
-            }
+         
         }
 
         private void Close_Clicked(object sender, EventArgs e)

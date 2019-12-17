@@ -50,13 +50,11 @@ namespace SalveminiApp
             Plugin.Iconize.Iconize.With(new Plugin.Iconize.Fonts.FontAwesomeProBrandsModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProLightModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProRegularModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProSolidModule()).With(new Plugin.Iconize.Fonts.FontAwesomeBrandsModule()).With(new Plugin.Iconize.Fonts.FontAwesomeProBrandsModule());
 
             //Cache Folder
-            var stopwatch = new Stopwatch(); stopwatch.Start();
             Barrel.ApplicationId = "com.codex.salveminiapp";
 
             //Remove expired cache
             Barrel.Current.EmptyExpired();
-            System.Diagnostics.Debug.WriteLine(stopwatch.ElapsedMilliseconds);
-            stopwatch.Restart();
+
 
             //Register OneSignal License
             OneSignal.Current.StartInit("a85553ca-c1fe-4d93-a02f-d30bf30e2a2a").InFocusDisplaying(OSInFocusDisplayOption.None)
@@ -67,8 +65,8 @@ namespace SalveminiApp
             //Fix if upgraded from salveminiapp 2.0
             if (Preferences.Get("veryFirstTime", true)) { Preferences.Clear(); Preferences.Set("isFirstTime", true); Preferences.Set("veryFirstTime", false); }
 
-           
 
+            var stopwatch = new Stopwatch(); stopwatch.Start();
             //Set MainPage
             if (Preferences.Get("isFirstTime", true)) //First time
             {
@@ -82,11 +80,13 @@ namespace SalveminiApp
             {
                 MainPage = new TabPage();
             }
+            stopwatch.Stop();
+            Debug.WriteLine(stopwatch.ElapsedMilliseconds);
 
             //Reload Calls
             refreshCalls();
 
-      
+
 
         }
 

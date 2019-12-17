@@ -193,7 +193,9 @@ namespace SalveminiApp
             Preferences.Set("veryFirstTime", false); Preferences.Set("isFirstTime", false);
 
             //Clear cache
-            Helpers.GetStorageInfo.storageInfo(true); FFImageLoading.ImageService.Instance.InvalidateCacheAsync(FFImageLoading.Cache.CacheType.All); Barrel.Current.EmptyAll();
+            Barrel.Current.EmptyAll();
+            //Helpers.GetStorageInfo.storageInfo(true);
+            FFImageLoading.ImageService.Instance.InvalidateCacheAsync(FFImageLoading.Cache.CacheType.All);
 
             //Push to login only if triggered from super vip page
             if (!fromSuperVip)
@@ -202,14 +204,17 @@ namespace SalveminiApp
 
         public static void showToast(string message)
         {
-            //Costants
-            if (message == "connection") message = "Nessuna connessione rilevata";
-#if __IOS__
-            //Show toast
-            BigTed2.BTProgressHUD2.ShowToast(message, BigTed2.ProgressHUD2.MaskType.None, false, 3000);
+            Device.BeginInvokeOnMainThread(() =>
+            {
 
-            //Vibrate
-            iOS.AppDelegate.hapticVibration();
+                //Costants
+                if (message == "connection") message = "Nessuna connessione rilevata";
+#if __IOS__
+                //Show toast
+                BigTed2.BTProgressHUD2.ShowToast(message, BigTed2.ProgressHUD2.MaskType.None, false, 3000);
+
+                //Vibrate
+                iOS.AppDelegate.hapticVibration();
 #endif
 
 #if __ANDROID__
@@ -229,21 +234,24 @@ namespace SalveminiApp
                 Console.WriteLine("Not supported");
             }
 #endif
+            });
         }
+
+
 
 
         public static string RewardId()
         {
-//#if DEBUG
-//            return "ca-app-pub-3940256099942544/5224354917";
-//#else
+#if DEBUG
+            return "ca-app-pub-3940256099942544/5224354917";
+            #else
 #if __IOS__
             return "ca-app-pub-2688730930606353/4691822196";
 #endif
 #if __ANDROID__
             return "ca-app-pub-2688730930606353/7086530178";
 #endif
-//#endif
+            #endif
 
         }
 
@@ -365,5 +373,28 @@ namespace SalveminiApp
 
             return taskCompletionSource.Task;
         }
+
+
+    }
+
+    //Upper only first letter
+    public static class StringExtensions
+    {
+        public static string FirstCharToUpper(this string input)
+        {
+            switch (input)
+            {
+                case null: throw new ArgumentNullException(nameof(input));
+                case "": throw new ArgumentException($"{nameof(input)} cannot be empty", nameof(input));
+                default: return input.First().ToString().ToUpper() + input.Substring(1);
+            }
+        }
+
+        public static string Truncate(this string value, int maxLength)
+        {
+            if (string.IsNullOrEmpty(value)) return value;
+            return value.Length <= maxLength ? value : value.Substring(0, maxLength) + "...";
+        }
+
     }
 }

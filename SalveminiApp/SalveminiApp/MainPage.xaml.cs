@@ -40,8 +40,9 @@ namespace SalveminiApp
         public bool orarioFromCached;
         //How many times the page loaded onAppearing
         public int appearedTimes;
-        //Load profile page to be faster
+        //Load navigation pages to be faster
         public Xamarin.Forms.NavigationPage profilePage;
+        public Helpers.CustomNavigationPage scoinPage;
 
         public MainPage()
         {
@@ -51,10 +52,6 @@ namespace SalveminiApp
             //Set sizes
             userImg.WidthRequest = App.ScreenWidth / 8.8;
             coinImage.WidthRequest = App.ScreenWidth / 13;
-
-
-            //Set navigation view
-            todayLbl.Text = DateTime.Now.ToString("dddd").FirstCharToUpper();
 
             //Subscribe to messaging center
             //Refresh image cache
@@ -80,33 +77,10 @@ namespace SalveminiApp
 
             //Get orario cached
             classeCorso = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
-            orario.ClasseCorso = classeCorso;
 
-            //var stopwatch = new Stopwatch(); stopwatch.Start();
-            //Get index cache
-            var IndexCache = CacheHelper.GetCache<RestApi.Models.Index>("Index");
-
-            //Failed to get
-            if (IndexCache == null)
-                return;
-
-            //SalveminiCoin
-            sCoinLbl.Text = IndexCache.sCoin.ToString();
-
-            //Get banner cache
-            if (IndexCache.Ads != null && IndexCache.Ads.Count > 0)
-            {
-                //Find a banner
-                var banner = IndexCache.Ads.Where(x => x.Tipo == 0).ToList();
-                if (banner.Count > 0)
-                {
-                    //Found
-                    Ad = banner[0];
-                    adTitle.Text = Ad.Nome;
-                    adImage.Source = Ad.FullImmagine;
-                    adLayout.Opacity = 1;
-                }
-            }
+#if __IOS__
+            loadIndexCache();
+#endif
 
         }
 
@@ -116,19 +90,21 @@ namespace SalveminiApp
         {
             base.OnAppearing();
 
+            //Load navigation pages to be faster
+            await Task.Run((Action)loadNavigationPages);
+
             if (appearedTimes == 0)
                 (TabPage.Argo.RootPage as ArgoPage).initializeInterface();
 
-            //Increment number of appeared times
-            appearedTimes++;
+            //Set navigation view
+            todayLbl.Text = DateTime.Now.ToString("dddd").FirstCharToUpper();
 
             //Do Appearing only every 5 times or from pull to refresh or connection lost or first
             var lastDigit = appearedTimes % 10;
             if (lastDigit != 0 && lastDigit != 5 && !forceAppearing && appearedTimes != 1)
                 return;
 
-            //Load profile page to be faster
-            await Task.Run((Action)loadProfilePage);
+
 
             //Sempre meglio mettere il try lol
             try
@@ -168,164 +144,169 @@ namespace SalveminiApp
                 OrderWidgets(false); //uncomment to fast load initial widgets
 
                 //Check Internet
-                if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+                if (Connectivity.NetworkAccess != NetworkAccess.Internet)
                 {
-                    //Show loading
-                    userRefreshed = false; homeLoading.IsRefreshing = true; userRefreshed = true;
+                    //Nessuna connessione
+#if __ANDROID__
+                    if(appearedTimes == 0)
+                    loadIndexCache();
+#endif
+                    Costants.showToast("connection");
+                    appearedTimes = 5; //Repeat this every time
+                    return;
+                }
 
-                    //Argo index in background
-                    await Task.Run((Action)GetArgoIndex);
+                //Increment number of appeared times
+                appearedTimes++;
 
-                    //Update orario in background
-                    await Task.Run((Action)updateOrario);
+                //Show loading
+                userRefreshed = false; homeLoading.IsRefreshing = true; userRefreshed = true;
 
-                    //Get index from api call
-                    var tempIndex = await App.Index.GetIndex();
+                //Argo index in background
+                await Task.Run((Action)GetArgoIndex);
 
-                    //Checks in downloaded index
-                    if (tempIndex != null)
+                //Update orario in background
+                await Task.Run((Action)updateOrario);
+
+                //Get index from api call
+                var tempIndex = await App.Index.GetIndex();
+
+                //Checks in downloaded index
+                if (tempIndex != null)
+                {
+                    //Save new index
+                    Index = tempIndex;
+
+                    //Can use the app?
+                    switch (Index.Authorized)
                     {
-                        //Save new index
-                        Index = tempIndex;
-
-                        //Can use the app?
-                        switch (Index.Authorized)
-                        {
-                            case -1: //Banned
-                                await DisplayAlert("Accesso all'app non autorizzato", "Ooops, tuo account è stato disabilitato! Contatta gli sviluppatori se ritieni si tratti di un errore!", "Ok");
-                                Costants.Logout();
-                                break;
-                            case -2: //Argo unauthorized
-                                await DisplayAlert("Accesso all'app non autorizzato", "La sessione di ARGO è scaduta, probabilmente la password è stata cambiata, rieffettua l'accesso per continuare", "Ok");
-                                Costants.Logout();
-                                break;
-                        }
+                        case -1: //Banned
+                            await DisplayAlert("Accesso all'app non autorizzato", "Ooops, tuo account è stato disabilitato! Contatta gli sviluppatori se ritieni si tratti di un errore!", "Ok");
+                            Costants.Logout();
+                            break;
+                        case -2: //Argo unauthorized
+                            await DisplayAlert("Accesso all'app non autorizzato", "La sessione di ARGO è scaduta, probabilmente la password è stata cambiata, rieffettua l'accesso per continuare", "Ok");
+                            Costants.Logout();
+                            break;
                     }
-                    else
-                    {
-                        //Chiamata api fallita
-                        Costants.showToast("Non è stato possibile connettersi al server");
-
-                        //Anche la cache è nulla, stacca stacca
-                        if (Index != null)
-                        {
-                            homeLoading.IsRefreshing = false;
-                            forceAppearing = false;
-                            return;
-                        }
-                    }
-
-                    //Save salveminiCoin value
-                    sCoinLbl.Text = Index.sCoin.ToString();
-
-                    //Get last sondaggio
-                    if (Index.ultimoSondaggio != null) //New sondaggio detected
-                    {
-                        string nuovoSondaggio = "no";
-                        int positionSondaggio = 4;
-                        if (!Index.VotedSondaggio) //User did not vote
-                        {
-                            //Save that user has not voted
-                            Preferences.Set("voted" + Index.ultimoSondaggio.id, false);
-
-                            //Set badges on widget
-                            nuovoSondaggio = "si";
-                            positionSondaggio = -1;
-
-                            //If user decided not to vote don't show popup
-                            if (!Preferences.Get("skipPoll" + Index.ultimoSondaggio.id, false)) //Push to vote
-                                await Navigation.PushModalAsync(new SecondaryViews.NewSondaggio(Index.ultimoSondaggio));
-                        }
-                        else
-                        {
-                            //save that he voted
-                            Preferences.Set("voted" + Index.ultimoSondaggio.id, true);
-                        }
-
-
-
-                        //Create sondaggio widget
-                        var sondaggi = new WidgetGradient { Order = positionSondaggio, Title = "Sondaggi", SubTitle = Index.ultimoSondaggio.Nome.Truncate(50), Icon = "fas-poll", StartColor = "FD8787", EndColor = "F56FFA", Badge = nuovoSondaggio, Push = new SecondaryViews.NewSondaggio(Index.ultimoSondaggio) };
-                        sondaggi.GestureRecognizers.Add(tapGestureRecognizer);
-                        widgets.Add(sondaggi);
-
-                    }
-
-                    //Get last avviso
-                    if (Index.ultimoAvviso != null)
-                    {
-                        string nuovoAvviso = "no";
-                        int positionAvvisi = 2;
-                        if (Preferences.Get("LastAvviso", 0) != Index.ultimoAvviso.id) //New avviso detected
-                        {
-                            nuovoAvviso = "si";
-                            positionAvvisi = -2;
-                        }
-                        //Create avviso widget
-                        var avvisi = new WidgetGradient { Order = positionAvvisi, Title = "Avvisi", SubTitle = Index.ultimoAvviso.Titolo, Icon = "fas-exclamation-triangle", StartColor = "FACA6F", EndColor = "FA6F6F", Push = new SecondaryViews.Avvisi(), Badge = nuovoAvviso };
-                        avvisi.GestureRecognizers.Add(tapGestureRecognizer);
-                        widgets.Add(avvisi);
-                    }
-
-                    //Get giornalino
-                    if (Index.Giornalino != null)
-                    {
-                        //Add giornalino widget
-                        string nuovoGiornalino = "no";
-                        int positionGiornalino = 5;
-                        if (Preferences.Get("LastGiornalino", 0) != Index.Giornalino.id) //New giornalino detected
-                        {
-                            nuovoGiornalino = "si";
-                            positionGiornalino = 0;
-                        }
-
-                        var giornalino = new WidgetGradient { Title = "Giornalino", SubTitle = "Edizione di " + Index.Giornalino.Data.ToString("MMMM"), Icon = "fas-book-open", StartColor = "B487FD", EndColor = "6F8AFA", Order = positionGiornalino, Badge = nuovoGiornalino };
-                        giornalino.GestureRecognizers.Add(tapGestureRecognizer);
-                        widgets.Add(giornalino);
-                    }
-
-                    //Update widgets order
-                    OrderWidgets(false);
-                    homeLoading.IsRefreshing = false;
-
-                    //Get banner ad
-                    if (Index.Ads != null && Index.Ads.Count > 0)
-                    {
-                        //Find a banner
-                        var banner = Index.Ads.Where(x => x.Tipo == 0).ToList();
-                        if (banner.Count > 0)
-                        {
-                            //Found
-                            Ad = banner[0];
-                            adTitle.Text = Ad.Nome;
-                            adImage.Source = Ad.FullImmagine;
-                            await adLayout.FadeTo(1, 300, Easing.CubicInOut);
-                        }
-                    }
-
-                    //Update orari if new version detected
-                    if (Index.OrarioTrasportiVersion > Preferences.Get("OrarioTrasportiVersion", 0))
-                    {
-                        bool successTreni = await App.Treni.GetTrainJson();
-                        if (successTreni)
-                        {
-                            Preferences.Set("OrarioTrasportiVersion", Index.OrarioTrasportiVersion);
-                            //await getNextTrain();
-                        }
-                    }
-
-                    //Check app version
-                    var appversion = Convert.ToDecimal(VersionTracking.CurrentVersion);
-                    if (Index.AppVersion > appversion)
-                        newVersion(); //New version detected
-
                 }
                 else
                 {
-                    //Nessuna connessione
-                    Costants.showToast("connection");
+                    //Chiamata api fallita
+                    Costants.showToast("Non è stato possibile connettersi al server");
+
+                    //Anche la cache è nulla, stacca stacca
+                    if (Index != null)
+                    {
+                        homeLoading.IsRefreshing = false;
+                        forceAppearing = false;
+                        return;
+                    }
                 }
 
+                //Save salveminiCoin value
+                sCoinLbl.Text = Index.sCoin.ToString();
+
+                //Get last sondaggio
+                if (Index.ultimoSondaggio != null) //New sondaggio detected
+                {
+                    string nuovoSondaggio = "no";
+                    int positionSondaggio = 4;
+                    if (!Index.VotedSondaggio) //User did not vote
+                    {
+                        //Save that user has not voted
+                        Preferences.Set("voted" + Index.ultimoSondaggio.id, false);
+
+                        //Set badges on widget
+                        nuovoSondaggio = "si";
+                        positionSondaggio = -1;
+
+                        //If user decided not to vote don't show popup
+                        if (!Preferences.Get("skipPoll" + Index.ultimoSondaggio.id, false)) //Push to vote
+                            await Navigation.PushModalAsync(new SecondaryViews.NewSondaggio(Index.ultimoSondaggio));
+                    }
+                    else
+                    {
+                        //save that he voted
+                        Preferences.Set("voted" + Index.ultimoSondaggio.id, true);
+                    }
+
+
+
+                    //Create sondaggio widget
+                    var sondaggi = new WidgetGradient { Order = positionSondaggio, Title = "Sondaggi", SubTitle = Index.ultimoSondaggio.Nome.Truncate(50), Icon = "fas-poll", StartColor = "FD8787", EndColor = "F56FFA", Badge = nuovoSondaggio, Push = new SecondaryViews.NewSondaggio(Index.ultimoSondaggio) };
+                    sondaggi.GestureRecognizers.Add(tapGestureRecognizer);
+                    widgets.Add(sondaggi);
+
+                }
+
+                //Get last avviso
+                if (Index.ultimoAvviso != null)
+                {
+                    string nuovoAvviso = "no";
+                    int positionAvvisi = 2;
+                    if (Preferences.Get("LastAvviso", 0) != Index.ultimoAvviso.id) //New avviso detected
+                    {
+                        nuovoAvviso = "si";
+                        positionAvvisi = -2;
+                    }
+                    //Create avviso widget
+                    var avvisi = new WidgetGradient { Order = positionAvvisi, Title = "Avvisi", SubTitle = Index.ultimoAvviso.Titolo, Icon = "fas-exclamation-triangle", StartColor = "FACA6F", EndColor = "FA6F6F", Push = new SecondaryViews.Avvisi(), Badge = nuovoAvviso };
+                    avvisi.GestureRecognizers.Add(tapGestureRecognizer);
+                    widgets.Add(avvisi);
+                }
+
+                //Get giornalino
+                if (Index.Giornalino != null)
+                {
+                    //Add giornalino widget
+                    string nuovoGiornalino = "no";
+                    int positionGiornalino = 5;
+                    if (Preferences.Get("LastGiornalino", 0) != Index.Giornalino.id) //New giornalino detected
+                    {
+                        nuovoGiornalino = "si";
+                        positionGiornalino = 0;
+                    }
+
+                    var giornalino = new WidgetGradient { Title = "Giornalino", SubTitle = "Edizione di " + Index.Giornalino.Data.ToString("MMMM"), Icon = "fas-book-open", StartColor = "B487FD", EndColor = "6F8AFA", Order = positionGiornalino, Badge = nuovoGiornalino };
+                    giornalino.GestureRecognizers.Add(tapGestureRecognizer);
+                    widgets.Add(giornalino);
+                }
+
+                //Update widgets order
+                OrderWidgets(false);
+                homeLoading.IsRefreshing = false;
+
+                //Get banner ad
+                if (Index.Ads != null && Index.Ads.Count > 0)
+                {
+                    //Find a banner
+                    var banner = Index.Ads.Where(x => x.Tipo == 0).ToList();
+                    if (banner.Count > 0)
+                    {
+                        //Found
+                        Ad = banner[0];
+                        adTitle.Text = Ad.Nome;
+                        adImage.Source = Ad.FullImmagine;
+                        await adLayout.FadeTo(1, 300, Easing.CubicInOut);
+                    }
+                }
+
+                //Update orari if new version detected
+                if (Index.OrarioTrasportiVersion > Preferences.Get("OrarioTrasportiVersion", 0))
+                {
+                    bool successTreni = await App.Treni.GetTrainJson();
+                    if (successTreni)
+                    {
+                        Preferences.Set("OrarioTrasportiVersion", Index.OrarioTrasportiVersion);
+                        //await getNextTrain();
+                    }
+                }
+
+                //Check app version
+                var appversion = Convert.ToDecimal(VersionTracking.CurrentVersion);
+                if (Index.AppVersion > appversion)
+                    newVersion(); //New version detected
 
                 forceAppearing = false;
             }
@@ -542,6 +523,7 @@ namespace SalveminiApp
             widgetsLayout.Children.AddRange(widgets);
             //Add final space
             widgetsLayout.Children.Add(new Xamarin.Forms.ContentView { WidthRequest = 5 });
+
             //Fade animation
             if (animate)
                 await widgetCollection.FadeTo(1, 300, Easing.CubicInOut);
@@ -697,16 +679,16 @@ namespace SalveminiApp
 
         public void sCoin_Tapped(object sender, EventArgs e)
         {
-
-            Navigation.PushModalAsync(new SalveminiCoin.CoinMenu());
+            Navigation.PushModalAsync(scoinPage);
         }
 
-        async void loadProfilePage()
+        async void loadNavigationPages()
         {
             //Create new navigation page
             profilePage = new Xamarin.Forms.NavigationPage(new SecondaryViews.Profile());
             profilePage.BarTextColor = Styles.TextColor;
             profilePage.BarBackgroundColor = Styles.BGColor;
+
             //Add disappearing event
             profilePage.Disappearing += ModalPush_Disappearing;
 
@@ -720,6 +702,53 @@ namespace SalveminiApp
             profilePage.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
 #endif
             profilePage.BarTextColor = Styles.TextColor;
+
+
+            //Create new navigation page
+            scoinPage = new Helpers.CustomNavigationPage(new SalveminiCoin.CoinMenu());
+            scoinPage.BarTextColor = Styles.TextColor;
+            scoinPage.BarBackgroundColor = Styles.BGColor;
+
+            //Add disappearing event
+            scoinPage.Disappearing += ModalPush_Disappearing;
+
+            //Add toolbaritem to close page
+            scoinPage.ToolbarItems.Add(close);
+
+            //Modal figo
+#if __IOS__
+            scoinPage.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
+#endif
+            scoinPage.BarTextColor = Styles.TextColor;
+        }
+        public void loadIndexCache()
+        {
+            orario.ClasseCorso = classeCorso;
+
+            //Get index cache
+            var IndexCache = CacheHelper.GetCache<RestApi.Models.Index>("Index");
+
+            //Failed to get
+            if (IndexCache == null)
+                return;
+
+            //SalveminiCoin
+            sCoinLbl.Text = IndexCache.sCoin.ToString();
+
+            //Get banner cache
+            if (IndexCache.Ads != null && IndexCache.Ads.Count > 0)
+            {
+                //Find a banner
+                var banner = IndexCache.Ads.Where(x => x.Tipo == 0).ToList();
+                if (banner.Count > 0)
+                {
+                    //Found
+                    Ad = banner[0];
+                    adTitle.Text = Ad.Nome;
+                    adImage.Source = Ad.FullImmagine;
+                    adLayout.Opacity = 1;
+                }
+            }
         }
 
     }
@@ -744,27 +773,5 @@ namespace SalveminiApp
                 }
             }
         }
-    }
-
-
-    //Upper only first letter
-    public static class StringExtensions
-    {
-        public static string FirstCharToUpper(this string input)
-        {
-            switch (input)
-            {
-                case null: throw new ArgumentNullException(nameof(input));
-                case "": throw new ArgumentException($"{nameof(input)} cannot be empty", nameof(input));
-                default: return input.First().ToString().ToUpper() + input.Substring(1);
-            }
-        }
-
-        public static string Truncate(this string value, int maxLength)
-        {
-            if (string.IsNullOrEmpty(value)) return value;
-            return value.Length <= maxLength ? value : value.Substring(0, maxLength) + "...";
-        }
-
     }
 }

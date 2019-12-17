@@ -10,6 +10,20 @@ namespace SalveminiApp.Helpers
 {
     public partial class CountDown : ContentView
     {
+        //Orario not found
+        public static readonly BindableProperty StartCountDownProperty = BindableProperty.Create(nameof(StartCountDown), typeof(bool), typeof(CountDown), default(bool), Xamarin.Forms.BindingMode.OneWay);
+        public bool StartCountDown
+        {
+            get
+            {
+                return (bool)GetValue(StartCountDownProperty);
+            }
+
+            set
+            {
+                SetValue(StartCountDownProperty, value);
+            }
+        }
 
         public static List<DateTime> datesToSkip = new List<DateTime>
         {
@@ -52,8 +66,7 @@ namespace SalveminiApp.Helpers
 
             //Get estimated time
             dateToStart = getEstimatedTime();
-
-            updateTime();
+            resetValues();
         }
 
         public static TimeSpan dateToStart;
@@ -64,6 +77,7 @@ namespace SalveminiApp.Helpers
             var startDate = DateTime.Now;
             var endDate = Preferences.Get("DateToPoint", new DateTime(2020, 6, 6, 13, 40, 0));
             var tempToSkip = new List<DateTime>();
+            var freeDay = Preferences.Get("FreedayInt", 6);
 
             if (!Preferences.Get("CountHolidays", false))
             {
@@ -71,7 +85,7 @@ namespace SalveminiApp.Helpers
                 for (var i = 0; i <= (endDate - startDate).Days; i++)
                 {
                     //Check if is freeday or sunday
-                    if (startDate.AddDays(i).DayOfWeek == DayOfWeek.Sunday || startDate.AddDays(i).DayOfWeek == DayOfWeek.Saturday)
+                    if (startDate.AddDays(i).DayOfWeek == DayOfWeek.Sunday || startDate.AddDays(i).DayOfWeek == (DayOfWeek)freeDay)
                     {
                         //Check if daystoskip already contains this day
                         if (!tempToSkip.Contains(startDate.AddDays(i)))
@@ -97,9 +111,7 @@ namespace SalveminiApp.Helpers
         string s1val = "0";
         string s2val = "0";
 
-
-
-        async void updateTime()
+        public void resetValues()
         {
             //Set Default Values
             d1.Text = "0";
@@ -112,12 +124,25 @@ namespace SalveminiApp.Helpers
             s1.Text = "0";
             s2.Text = "0";
 
+        }
+
+        async void updateTime()
+        {
+            resetValues();
+        
             //Speed cycle
             uint speedCicle = 200;
 
             //Ciclo meglio sostituirlo con un bel timer
             for (int i = 0; ; i++)
             {
+                //Stopped animation
+                if (!StartCountDown)
+                {
+                    resetValues();
+                    return;
+                }
+
                 //Stopwatch to elapse 1 second
                 Stopwatch watch = new Stopwatch();
 
@@ -267,6 +292,28 @@ namespace SalveminiApp.Helpers
                     d1.TranslationY = 10;
                 }
             }
+        }
+
+        //Update values
+        protected override void OnPropertyChanged(string propertyName = null)
+        {
+            base.OnPropertyChanged(propertyName);
+
+            try
+            {
+                //Show hidden placeholder
+                if (propertyName == StartCountDownProperty.PropertyName)
+                {
+                    if (StartCountDown)
+                        updateTime();
+                }
+            }
+            catch (Exception ex)
+            {
+                //Boh per sicurezza a volte fa cose strane
+                return;
+            }
+
         }
     }
 }

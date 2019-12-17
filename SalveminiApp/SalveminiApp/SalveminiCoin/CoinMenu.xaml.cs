@@ -51,7 +51,7 @@ namespace SalveminiApp.SalveminiCoin
             var activeButton = new Helpers.PushCell { Title = "Codici attivati", IsEnabled = true, Separator = "si", Push = new AreaVip.ListaEventi(false) };
             activeButton.GestureRecognizers.Add(tapGestureRecognizer);
             historyLayout.Children.Add(activeButton);
-            var prizeButton = new Helpers.PushCell { Title = "Premi riscattati", IsEnabled = true, Separator = "no" };
+            var prizeButton = new Helpers.PushCell { Title = "Transazioni", IsEnabled = true, Separator = "no", Push = new Transazioni() };
             prizeButton.GestureRecognizers.Add(tapGestureRecognizer);
             historyLayout.Children.Add(prizeButton);
         }
@@ -68,10 +68,13 @@ namespace SalveminiApp.SalveminiCoin
                 if (cell.Push != null)
                 {
                     //Push
-                    await Navigation.PushModalAsync(cell.Push);
+                    await Navigation.PushAsync(cell.Push);
                 }
                 if (cell.Title == "Ottieni sCoins gratis")
+                {
+                    MainPage.isSelectingImage = true;
                     adShow();
+                }
             }
             catch (Exception ex)
             {
@@ -83,7 +86,10 @@ namespace SalveminiApp.SalveminiCoin
         {
             base.OnAppearing();
 
-            if(Connectivity.NetworkAccess != NetworkAccess.Internet)
+            //Prevent ios 13 modal bug
+            MainPage.isSelectingImage = false;
+
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
                 Costants.showToast("connection");
                 coinCount.Opacity = 0;
@@ -118,20 +124,6 @@ namespace SalveminiApp.SalveminiCoin
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            //Ios 13 bug
-            try
-            {
-#if __IOS__
-                if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0) && !isShowingAd)
-                {
-                    Navigation.PopModalAsync();
-                }
-#endif
-            }
-            catch
-            {
-                //fa nient
-            }
         }
         public void Close_Clicked(object sender, EventArgs e)
         {
@@ -170,7 +162,6 @@ namespace SalveminiApp.SalveminiCoin
             //Show video
             isShowingAd = true;
             CrossMTAdmob.Current.ShowRewardedVideo();
-
             gainButton.IsEnabled = true;
         }
 

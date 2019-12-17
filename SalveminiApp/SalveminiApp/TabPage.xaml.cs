@@ -19,13 +19,15 @@ namespace SalveminiApp
     public partial class TabPage : Xamarin.Forms.TabbedPage
     {
         //Home
-        public static Helpers.CustomNavigationPage Home = new Helpers.CustomNavigationPage(new MainPage())
+        public Helpers.CustomNavigationPage Home = new Helpers.CustomNavigationPage(new MainPage())
         {
             BarTextColor = Styles.TextColor,
             BarBackgroundColor = Styles.BGColor,
             Title = "Home",
             IconImageSource = "fillTabBarHome.png"
         };
+
+        //Argo
         public static Helpers.CustomNavigationPage Argo = new Helpers.CustomNavigationPage(new ArgoPage())
         {
             BarTextColor = Styles.PrimaryColor,

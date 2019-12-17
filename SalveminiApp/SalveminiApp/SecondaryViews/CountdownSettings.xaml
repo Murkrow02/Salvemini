@@ -17,5 +17,6 @@
             <Label FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" VerticalTextAlignment="Center" Text="Escludi giorni festivi dal countdown"/>
             <CheckBox CheckedChanged="HolydaysSwitch_Toggled" x:Name="holydaysSwitch" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
         </StackLayout>
+        <Label Margin="0,-25,0,0"  Text="Spuntando la casella verrano esclusi dal conteggio i tuoi giorni di rotazione, le domeniche e le altre feste indicate dal calendario scolastico ufficiale" x:Name="noFestivi" TextColor="{x:Static local:Styles.TextGray}" FontSize="12" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
     </StackLayout>
 </ContentPage>

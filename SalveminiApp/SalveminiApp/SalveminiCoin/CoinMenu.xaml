@@ -1,12 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns:svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SalveminiCoin.CoinMenu">
+<ContentPage Title="sCoin" xmlns:svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SalveminiCoin.CoinMenu">
     <ContentPage.Content>
         <StackLayout Spacing="2">
-            <!--Header-->
-            <StackLayout Spacing="8" Orientation="Horizontal" VerticalOptions="Start"> 
-                <iconize:IconButton BackgroundColor="Transparent" Clicked="Close_Clicked" VerticalOptions="Center" HorizontalOptions="Start" Text="fal-times" FontSize="30" WidthRequest="45" TextColor="{x:Static local:Styles.TextColor}" />
-                <Label VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Text="SalveminiCoin" TextColor="{x:Static local:Styles.TextColor}" FontSize="Title" FontAttributes="Bold" />
-            </StackLayout>
             <ScrollView>
                 <StackLayout Spacing="30" Padding="0, 20">
                     <!--Balance + image-->

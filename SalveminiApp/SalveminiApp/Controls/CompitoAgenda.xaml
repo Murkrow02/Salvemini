@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.Controls.CompitoAgenda">
-        <StackLayout Padding="10,0" Spacing="5" Orientation="Horizontal" x:Name="fullLayout" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-    <!--Frame grande-->
+    <StackLayout Padding="10,0" Spacing="5" Orientation="Horizontal" x:Name="fullLayout" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+        <!--Frame grande-->
         <Frame HasShadow="False" HorizontalOptions="FillAndExpand" VerticalOptions="Center" x:Name="view" Padding="10" CornerRadius="10">
             <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
                 <!--Titolo e descrizione-->
@@ -26,5 +26,5 @@
         <Frame VerticalOptions="FillAndExpand"  WidthRequest="0" HorizontalOptions="End" HasShadow="False" x:Name="hiddenBtn" Padding="0" BackgroundColor="#FE7474">
             <Button HeightRequest="30" BackgroundColor="Transparent" Clicked="delete_Confirmed" Text="Elimina" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" x:Name="confirmTxt" Opacity="0"/>
         </Frame>
-          </StackLayout>
+    </StackLayout>
 </ContentView>

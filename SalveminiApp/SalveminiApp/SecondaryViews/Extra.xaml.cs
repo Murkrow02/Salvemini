@@ -32,20 +32,15 @@ namespace SalveminiApp.SecondaryViews
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            secondLayout.Children.RemoveAt(1);
+            countDown.StartCountDown = false;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            //Status bar color
-#if __IOS__
-            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
-            {
-                UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, true);
-            }
-#endif
-            secondLayout.Children.Insert(1, new Helpers.CountDown());
+
+            //Show countdown animation
+            countDown.StartCountDown = true;
 
             string etaText = "A";
             switch (Preferences.Get("DateToPoint", new DateTime(2020, 6, 6, 13, 40, 0)).ToString("dd-MM-yyyy"))
@@ -62,6 +57,7 @@ namespace SalveminiApp.SecondaryViews
                     etaText += "lla fine della scuola";
                     break;
             }
+
             if(Preferences.Get("CountHolidays", false))
                 noFestivi.IsVisible = false;
 

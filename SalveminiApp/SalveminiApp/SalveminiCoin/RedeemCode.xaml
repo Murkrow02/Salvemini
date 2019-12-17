@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage Padding="20" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SalveminiCoin.RedeemCode">
+<ContentPage Title="Riscatta codice" Padding="20" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SalveminiCoin.RedeemCode">
     <ContentPage.Content>
         <StackLayout Spacing="30">
             <Frame x:Name="bgArrowFrame" HorizontalOptions="Center" WidthRequest="180" HeightRequest="180" Padding="0" CornerRadius="90" IsClippedToBounds="True" HasShadow="False" BackgroundColor="#E3E3E3">
