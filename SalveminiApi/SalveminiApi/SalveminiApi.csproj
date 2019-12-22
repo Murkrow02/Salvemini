@@ -430,12 +430,14 @@
     <Compile Include="Controllers\ArgoController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\AvvisiController.cs" />
+    <Compile Include="Controllers\FlappyController.cs" />
     <Compile Include="Controllers\sCoinsController.cs" />
     <Compile Include="Controllers\DownloadOrariController.cs" />
     <Compile Include="Controllers\FilesController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\SalveminiCardController.cs" />
+    <Compile Include="Controllers\SecretsController.cs" />
     <Compile Include="Controllers\SondaggisController.cs" />
     <Compile Include="Controllers\UtentiController.cs" />
     <Compile Include="Controllers\UtilityController.cs" />
@@ -478,15 +480,38 @@
     <Compile Include="Models\BookUtenti.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CoinGuadagnate.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CoinSpese.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Commenti.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Coupon.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CouponAttivi.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Domande.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DomandeReturn.cs" />
     <Compile Include="Models\EventsLog.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FlappyClassifica.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FlappyMonete.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FlappySkin.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FlappyReturn.cs" />
     <Compile Include="Models\Giornalino.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>

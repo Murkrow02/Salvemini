@@ -22,6 +22,9 @@ namespace SalveminiApi.Models
             this.VotiSondaggi = new HashSet<VotiSondaggi>();
             this.Coupon = new HashSet<Coupon>();
             this.CouponAttivi = new HashSet<CouponAttivi>();
+            this.CoinGuadagnate = new HashSet<CoinGuadagnate>();
+            this.CoinSpese = new HashSet<CoinSpese>();
+            this.Commenti = new HashSet<Commenti>();
         }
     
         public int id { get; set; }
@@ -50,5 +53,12 @@ namespace SalveminiApi.Models
         public virtual ICollection<Coupon> Coupon { internal get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CouponAttivi> CouponAttivi { internal get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CoinGuadagnate> CoinGuadagnate { internal get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CoinSpese> CoinSpese { internal get; set; }
+        public virtual FlappyClassifica FlappyClassifica { internal get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Commenti> Commenti { internal get; set; }
     }
 }

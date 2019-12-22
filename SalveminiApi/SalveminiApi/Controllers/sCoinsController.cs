@@ -66,7 +66,10 @@ namespace SalveminiApi.Controllers
                 if (offset == 0)
                 {
                     //Is in circle
-                    //db.CouponAttivi.Add(new CouponAttivi { idCoupon = coupon.Codice, idUtente = utente.id }); //Save that user used that code
+                    //Save that user used that code so that cannot be used twice
+                    db.CouponAttivi.Add(new CouponAttivi { idCoupon = coupon.Codice, idUtente = utente.id }); 
+                    //Save in his history that he gained coins
+                    db.CoinGuadagnate.Add(new CoinGuadagnate { idUtente = utente.id, Quantità = coupon.Valore, Descrizione = "Evento " + coupon.Nome, Attivazione = Helpers.Utility.italianTime() });
                     utente.sCoin += coupon.Valore; //Add sCoin to that user
                     db.SaveChanges();
                     Helpers.Utility.saveEvent(utente.Nome + " " + utente.Cognome + " (" + utente.id + ")" + " ha riscattato " + coupon.Valore + " sCoin dall'evento " + coupon.Nome + " (" + coupon.Codice + ")");
@@ -207,5 +210,44 @@ namespace SalveminiApi.Controllers
             //Success
             return utente.sCoin;
         }
+
+
+        [Route("transactions")]
+        [HttpGet]
+        public List<Transaction> Transactions()
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+
+            //Find user
+            var userId = Convert.ToInt32(Request.Headers.GetValues("x-user-id").First());
+            var utente = db.Utenti.Find(userId);
+
+            //User not found
+            if (utente == null)
+                throw new HttpResponseException(System.Net.HttpStatusCode.NotFound);
+
+            var returnList = new List<Transaction>();
+            //Add entrate
+            var entrate = db.CoinGuadagnate.Where(x => x.idUtente == userId).ToList();
+            foreach (var entrata in entrate) { returnList.Add(new Transaction { Amount = entrata.Quantità, Description = entrata.Descrizione, Date = entrata.Attivazione }); }
+            //Add uscite with negative amount
+            var uscite = db.CoinSpese.Where(x => x.idUtente == userId).ToList();
+            foreach (var uscita in uscite) { returnList.Add(new Transaction { Amount = -uscita.Quantità, Description = uscita.Descrizione, Date = uscita.Attivazione }); }
+
+            //Success
+            returnList.OrderByDescending(x => x.Date);
+            return returnList;
+        }
+    }
+
+    public class Transaction
+    {
+        public int Amount { get; set; }
+        public string Description { get; set; }
+        public DateTime Date { get; set; }
     }
 }

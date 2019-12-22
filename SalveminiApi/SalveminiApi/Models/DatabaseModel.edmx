@@ -70,6 +70,39 @@
           <Property Name="Creazione" Type="datetime" Nullable="false" />
           <Property Name="IG" Type="bit" />
         </EntityType>
+        <EntityType Name="CoinGuadagnate">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descrizione" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Quantità" Type="int" Nullable="false" />
+          <Property Name="idUtente" Type="int" Nullable="false" />
+          <Property Name="Attivazione" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CoinSpese">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tipo" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="idOggetto" Type="int" />
+          <Property Name="Attivazione" Type="datetime" Nullable="false" />
+          <Property Name="idUtente" Type="int" Nullable="false" />
+          <Property Name="Quantità" Type="int" Nullable="false" />
+          <Property Name="Descrizione" Type="nvarchar" MaxLength="1000" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Commenti">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Commento" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Creazione" Type="datetime" Nullable="false" />
+          <Property Name="idUtente" Type="int" Nullable="false" />
+          <Property Name="idPost" Type="int" Nullable="false" />
+          <Property Name="Anonimo" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="Coupon">
           <Key>
             <PropertyRef Name="Codice" />
@@ -92,6 +125,17 @@
           <Property Name="idUtente" Type="int" Nullable="false" />
           <Property Name="idCoupon" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="Domande">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Domanda" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="Approvata" Type="bit" Nullable="false" />
+          <Property Name="idUtente" Type="int" Nullable="false" />
+          <Property Name="Impressions" Type="int" Nullable="false" />
+          <Property Name="Creazione" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="EventsLog">
           <Key>
             <PropertyRef Name="id" />
@@ -99,6 +143,31 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Evento" Type="nvarchar" MaxLength="3000" Nullable="false" />
           <Property Name="Data" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FlappyClassifica">
+          <Key>
+            <PropertyRef Name="idUtente" />
+          </Key>
+          <Property Name="idUtente" Type="int" Nullable="false" />
+          <Property Name="Punteggio" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FlappyMonete">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ValoreMonete" Type="int" Nullable="false" />
+          <Property Name="Descrizione" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Costo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FlappySkin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Immagini" Type="nvarchar" MaxLength="550" Nullable="false" />
+          <Property Name="Costo" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Giornalino">
           <Key>
@@ -200,6 +269,62 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_CoinGuadagnate_Utenti">
+          <End Role="Utenti" Type="Self.Utenti" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CoinGuadagnate" Type="Self.CoinGuadagnate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CoinGuadagnate">
+              <PropertyRef Name="idUtente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoinSpese_Utenti">
+          <End Role="Utenti" Type="Self.Utenti" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CoinSpese" Type="Self.CoinSpese" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CoinSpese">
+              <PropertyRef Name="idUtente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Commenti_Domande">
+          <End Role="Domande" Type="Self.Domande" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Commenti" Type="Self.Commenti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domande">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Commenti">
+              <PropertyRef Name="idPost" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Commenti_Utenti">
+          <End Role="Utenti" Type="Self.Utenti" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Commenti" Type="Self.Commenti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Commenti">
+              <PropertyRef Name="idUtente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Coupon_Utenti">
           <End Role="Utenti" Type="Self.Utenti" Multiplicity="1" />
           <End Role="Coupon" Type="Self.Coupon" Multiplicity="*" />
@@ -236,6 +361,20 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="CouponAttivi">
+              <PropertyRef Name="idUtente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FlappyClassifica_Utenti">
+          <End Role="Utenti" Type="Self.Utenti" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FlappyClassifica" Type="Self.FlappyClassifica" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="FlappyClassifica">
               <PropertyRef Name="idUtente" />
             </Dependent>
           </ReferentialConstraint>
@@ -301,9 +440,16 @@
           <EntitySet Name="Avvisi" EntityType="Self.Avvisi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BookLibri" EntityType="Self.BookLibri" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BookUtenti" EntityType="Self.BookUtenti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoinGuadagnate" EntityType="Self.CoinGuadagnate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoinSpese" EntityType="Self.CoinSpese" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Commenti" EntityType="Self.Commenti" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Coupon" EntityType="Self.Coupon" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CouponAttivi" EntityType="Self.CouponAttivi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Domande" EntityType="Self.Domande" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EventsLog" EntityType="Self.EventsLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FlappyClassifica" EntityType="Self.FlappyClassifica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FlappyMonete" EntityType="Self.FlappyMonete" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FlappySkin" EntityType="Self.FlappySkin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Giornalino" EntityType="Self.Giornalino" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Materie" EntityType="Self.Materie" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OggettiSondaggi" EntityType="Self.OggettiSondaggi" Schema="dbo" store:Type="Tables" />
@@ -319,6 +465,22 @@
             <End Role="BookUtenti" EntitySet="BookUtenti" />
             <End Role="BookLibri" EntitySet="BookLibri" />
           </AssociationSet>
+          <AssociationSet Name="FK_CoinGuadagnate_Utenti" Association="Self.FK_CoinGuadagnate_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="CoinGuadagnate" EntitySet="CoinGuadagnate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoinSpese_Utenti" Association="Self.FK_CoinSpese_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="CoinSpese" EntitySet="CoinSpese" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Commenti_Domande" Association="Self.FK_Commenti_Domande">
+            <End Role="Domande" EntitySet="Domande" />
+            <End Role="Commenti" EntitySet="Commenti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Commenti_Utenti" Association="Self.FK_Commenti_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="Commenti" EntitySet="Commenti" />
+          </AssociationSet>
           <AssociationSet Name="FK_Coupon_Utenti" Association="Self.FK_Coupon_Utenti">
             <End Role="Utenti" EntitySet="Utenti" />
             <End Role="Coupon" EntitySet="Coupon" />
@@ -330,6 +492,10 @@
           <AssociationSet Name="FK_CouponAttivi_Utenti" Association="Self.FK_CouponAttivi_Utenti">
             <End Role="Utenti" EntitySet="Utenti" />
             <End Role="CouponAttivi" EntitySet="CouponAttivi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FlappyClassifica_Utenti" Association="Self.FK_FlappyClassifica_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="FlappyClassifica" EntitySet="FlappyClassifica" />
           </AssociationSet>
           <AssociationSet Name="FK_OggettiSondaggi_Sondaggi" Association="Self.FK_OggettiSondaggi_Sondaggi">
             <End Role="Sondaggi" EntitySet="Sondaggi" />
@@ -469,6 +635,10 @@
           <Property Name="Compleanno" Type="DateTime" Precision="3" Nullable="false" />
           <Property Name="Residenza" Type="String" MaxLength="300" Unicode="true" FixedLength="false" Nullable="false" />
           <Property Name="Immagine" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CoinGuadagnate" Relationship="SalveminiModel.FK_CoinGuadagnate_Utenti" FromRole="Utenti" ToRole="CoinGuadagnate" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="CoinSpese" Relationship="SalveminiModel.FK_CoinSpese_Utenti" FromRole="Utenti" ToRole="CoinSpese" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="FlappyClassifica" Relationship="SalveminiModel.FK_FlappyClassifica_Utenti" FromRole="Utenti" ToRole="FlappyClassifica" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="Commenti" Relationship="SalveminiModel.FK_Commenti_Utenti" FromRole="Utenti" ToRole="Commenti" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
         <EntityType Name="VotiSondaggi">
           <Key>
@@ -633,6 +803,33 @@
             <End Role="Utenti" EntitySet="Utenti" />
             <End Role="CouponAttivi" EntitySet="CouponAttivi" />
           </AssociationSet>
+          <EntitySet Name="CoinGuadagnate" EntityType="SalveminiModel.CoinGuadagnate" />
+          <EntitySet Name="CoinSpese" EntityType="SalveminiModel.CoinSpese" />
+          <AssociationSet Name="FK_CoinGuadagnate_Utenti" Association="SalveminiModel.FK_CoinGuadagnate_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="CoinGuadagnate" EntitySet="CoinGuadagnate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoinSpese_Utenti" Association="SalveminiModel.FK_CoinSpese_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="CoinSpese" EntitySet="CoinSpese" />
+          </AssociationSet>
+          <EntitySet Name="FlappySkin" EntityType="SalveminiModel.FlappySkin" />
+          <EntitySet Name="FlappyMonete" EntityType="SalveminiModel.FlappyMonete" />
+          <EntitySet Name="FlappyClassifica" EntityType="SalveminiModel.FlappyClassifica" />
+          <AssociationSet Name="FK_FlappyClassifica_Utenti" Association="SalveminiModel.FK_FlappyClassifica_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="FlappyClassifica" EntitySet="FlappyClassifica" />
+          </AssociationSet>
+          <EntitySet Name="Commenti" EntityType="SalveminiModel.Commenti" />
+          <EntitySet Name="Domande" EntityType="SalveminiModel.Domande" />
+          <AssociationSet Name="FK_Commenti_Domande" Association="SalveminiModel.FK_Commenti_Domande">
+            <End Role="Domande" EntitySet="Domande" />
+            <End Role="Commenti" EntitySet="Commenti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Commenti_Utenti" Association="SalveminiModel.FK_Commenti_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="Commenti" EntitySet="Commenti" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="EventsLog">
           <Key>
@@ -727,6 +924,151 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="CouponAttivi">
+              <PropertyRef Name="idUtente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CoinGuadagnate">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descrizione" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Quantità" Type="Int32" Nullable="false" />
+          <Property Name="idUtente" Type="Int32" Nullable="false" />
+          <Property Name="Attivazione" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Utenti" Relationship="SalveminiModel.FK_CoinGuadagnate_Utenti" FromRole="CoinGuadagnate" ToRole="Utenti" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        </EntityType>
+        <EntityType Name="CoinSpese">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="idOggetto" Type="Int32" />
+          <Property Name="Attivazione" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="idUtente" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Utenti" Relationship="SalveminiModel.FK_CoinSpese_Utenti" FromRole="CoinSpese" ToRole="Utenti" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Name="Quantità" Type="Int32" Nullable="false" />
+          <Property Name="Descrizione" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CoinGuadagnate_Utenti">
+          <End Type="SalveminiModel.Utenti" Role="Utenti" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SalveminiModel.CoinGuadagnate" Role="CoinGuadagnate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CoinGuadagnate">
+              <PropertyRef Name="idUtente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoinSpese_Utenti">
+          <End Type="SalveminiModel.Utenti" Role="Utenti" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SalveminiModel.CoinSpese" Role="CoinSpese" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CoinSpese">
+              <PropertyRef Name="idUtente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FlappySkin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Immagini" Type="String" Nullable="false" MaxLength="550" FixedLength="false" Unicode="true" />
+          <Property Name="Costo" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FlappyMonete">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ValoreMonete" Type="Int32" Nullable="false" />
+          <Property Name="Descrizione" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Costo" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FlappyClassifica">
+          <Key>
+            <PropertyRef Name="idUtente" />
+          </Key>
+          <Property Name="idUtente" Type="Int32" Nullable="false" />
+          <Property Name="Punteggio" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Utenti" Relationship="SalveminiModel.FK_FlappyClassifica_Utenti" FromRole="FlappyClassifica" ToRole="Utenti" />
+        </EntityType>
+        <Association Name="FK_FlappyClassifica_Utenti">
+          <End Type="SalveminiModel.Utenti" Role="Utenti" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SalveminiModel.FlappyClassifica" Role="FlappyClassifica" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="FlappyClassifica">
+              <PropertyRef Name="idUtente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Commenti">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Commento" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="idUtente" Type="Int32" Nullable="false" />
+          <Property Name="idPost" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Domande" Relationship="SalveminiModel.FK_Commenti_Domande" FromRole="Commenti" ToRole="Domande" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="Utenti" Relationship="SalveminiModel.FK_Commenti_Utenti" FromRole="Commenti" ToRole="Utenti" />
+          <Property Name="Anonimo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Domande">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Domanda" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Approvata" Type="Boolean" Nullable="false" />
+          <Property Name="idUtente" Type="Int32" Nullable="false" />
+          <Property Name="Impressions" Type="Int32" Nullable="false" />
+          <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Commenti" Relationship="SalveminiModel.FK_Commenti_Domande" FromRole="Domande" ToRole="Commenti" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        </EntityType>
+        <Association Name="FK_Commenti_Domande">
+          <End Type="SalveminiModel.Domande" Role="Domande" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SalveminiModel.Commenti" Role="Commenti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domande">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Commenti">
+              <PropertyRef Name="idPost" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Commenti_Utenti">
+          <End Type="SalveminiModel.Utenti" Role="Utenti" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SalveminiModel.Commenti" Role="Commenti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Commenti">
               <PropertyRef Name="idUtente" />
             </Dependent>
           </ReferentialConstraint>
@@ -916,6 +1258,82 @@
               <MappingFragment StoreEntitySet="CouponAttivi">
                 <ScalarProperty Name="idCoupon" ColumnName="idCoupon" />
                 <ScalarProperty Name="idUtente" ColumnName="idUtente" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoinGuadagnate">
+            <EntityTypeMapping TypeName="SalveminiModel.CoinGuadagnate">
+              <MappingFragment StoreEntitySet="CoinGuadagnate">
+                <ScalarProperty Name="Attivazione" ColumnName="Attivazione" />
+                <ScalarProperty Name="idUtente" ColumnName="idUtente" />
+                <ScalarProperty Name="Quantità" ColumnName="Quantità" />
+                <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoinSpese">
+            <EntityTypeMapping TypeName="SalveminiModel.CoinSpese">
+              <MappingFragment StoreEntitySet="CoinSpese">
+                <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+                <ScalarProperty Name="Quantità" ColumnName="Quantità" />
+                <ScalarProperty Name="idUtente" ColumnName="idUtente" />
+                <ScalarProperty Name="Attivazione" ColumnName="Attivazione" />
+                <ScalarProperty Name="idOggetto" ColumnName="idOggetto" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FlappySkin">
+            <EntityTypeMapping TypeName="SalveminiModel.FlappySkin">
+              <MappingFragment StoreEntitySet="FlappySkin">
+                <ScalarProperty Name="Costo" ColumnName="Costo" />
+                <ScalarProperty Name="Immagini" ColumnName="Immagini" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FlappyMonete">
+            <EntityTypeMapping TypeName="SalveminiModel.FlappyMonete">
+              <MappingFragment StoreEntitySet="FlappyMonete">
+                <ScalarProperty Name="Costo" ColumnName="Costo" />
+                <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+                <ScalarProperty Name="ValoreMonete" ColumnName="ValoreMonete" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FlappyClassifica">
+            <EntityTypeMapping TypeName="SalveminiModel.FlappyClassifica">
+              <MappingFragment StoreEntitySet="FlappyClassifica">
+                <ScalarProperty Name="Punteggio" ColumnName="Punteggio" />
+                <ScalarProperty Name="idUtente" ColumnName="idUtente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Commenti">
+            <EntityTypeMapping TypeName="SalveminiModel.Commenti">
+              <MappingFragment StoreEntitySet="Commenti">
+                <ScalarProperty Name="Anonimo" ColumnName="Anonimo" />
+                <ScalarProperty Name="idPost" ColumnName="idPost" />
+                <ScalarProperty Name="idUtente" ColumnName="idUtente" />
+                <ScalarProperty Name="Creazione" ColumnName="Creazione" />
+                <ScalarProperty Name="Commento" ColumnName="Commento" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Domande">
+            <EntityTypeMapping TypeName="SalveminiModel.Domande">
+              <MappingFragment StoreEntitySet="Domande">
+                <ScalarProperty Name="Creazione" ColumnName="Creazione" />
+                <ScalarProperty Name="Impressions" ColumnName="Impressions" />
+                <ScalarProperty Name="idUtente" ColumnName="idUtente" />
+                <ScalarProperty Name="Approvata" ColumnName="Approvata" />
+                <ScalarProperty Name="Domanda" ColumnName="Domanda" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
