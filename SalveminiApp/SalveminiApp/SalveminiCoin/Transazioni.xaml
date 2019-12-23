@@ -15,7 +15,7 @@
                                     <Label VerticalOptions="Center" VerticalTextAlignment="Center" Text="{Binding formattedDate}" FontSize="10" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" TextColor="{x:Static local:Styles.TextGray}"/>
                                 </StackLayout>
                                 <!--Value-->
-                                <patch:Label Text="{Binding Amount}" TextColor="{Binding color}" FontSize="35" Lines="1" AutoFit="Width" HorizontalTextAlignment="End"  VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
+                                <patch:Label Text="{Binding Quota}" TextColor="{Binding color}" FontSize="35" Lines="1" AutoFit="Width" HorizontalTextAlignment="End"  VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
                             </StackLayout>
                         </Frame>
                     </ViewCell>

@@ -30,12 +30,16 @@ namespace SalveminiApp.RestApi.Models
         public int Amount { get; set; }
         public string Description { get; set; }
         public DateTime Date { get; set; }
+
+
+        public string Quota { get { return Amount >= 0 ? "+" + Amount.ToString() : Amount.ToString(); }  }
+
         public Color color
         {
             get
             {
                 //Return red if negative or green if positive
-                return Amount >= 0 ? Color.FromHex("3ae040") : Color.FromHex("f22e2e");
+                return Amount >= 0 ? Color.FromHex("00c90a") : Color.FromHex("f22e2e");
             }
         }
 
