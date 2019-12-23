@@ -48,7 +48,7 @@ namespace SalveminiApi.Controllers
             if (!authorized)
                 throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
 
-            return db.EventsLog.OrderByDescending(x => x.Data).ToList();
+            return db.EventsLog.OrderByDescending(x => x.Data).Take(500).ToList();
         }
 
         protected override void Dispose(bool disposing)

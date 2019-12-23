@@ -41,5 +41,12 @@ namespace SalveminiApi.Models
         public virtual DbSet<Materie> Materie { get; set; }
         public virtual DbSet<Coupon> Coupon { get; set; }
         public virtual DbSet<CouponAttivi> CouponAttivi { get; set; }
+        public virtual DbSet<CoinGuadagnate> CoinGuadagnate { get; set; }
+        public virtual DbSet<CoinSpese> CoinSpese { get; set; }
+        public virtual DbSet<FlappySkin> FlappySkin { get; set; }
+        public virtual DbSet<FlappyMonete> FlappyMonete { get; set; }
+        public virtual DbSet<FlappyClassifica> FlappyClassifica { get; set; }
+        public virtual DbSet<Commenti> Commenti { get; set; }
+        public virtual DbSet<Domande> Domande { get; set; }
     }
 }

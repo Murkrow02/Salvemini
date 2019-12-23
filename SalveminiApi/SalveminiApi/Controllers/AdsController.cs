@@ -72,14 +72,18 @@ namespace SalveminiApi.Controllers
 
             //Save ad watch count
             utente.AdsWatched++;
+
             //Add new coin to balance
             utente.sCoin++;
+
+            //Save in his history that he gained coins
+            db.CoinGuadagnate.Add(new CoinGuadagnate { idUtente = utente.id, Quantità = 1, Descrizione = "Pubblicità giornaliera", Attivazione = Helpers.Utility.italianTime() });
 
             //Save changes
             db.SaveChanges();
 
             //Add to console log new user created
-           Helpers.Utility.saveEvent(utente.Nome + " " + utente.Cognome + " (" + utente.id + ")" + " ha guadagnato una sCoin tramite Ad");
+            Helpers.Utility.saveEvent(utente.Nome + " " + utente.Cognome + " (" + utente.id + ")" + " ha guadagnato una sCoin tramite Ad");
 
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
