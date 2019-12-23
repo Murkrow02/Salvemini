@@ -77,5 +77,12 @@ namespace SalveminiApp.SecondaryViews
             //Navigation.PopModalAsync();
             Navigation.PushAsync(new RandomExtract());
         }
+
+        void Flappy_Clicked(object sender, EventArgs e)
+        {
+            MainPage.isSelectingImage = true;
+            countDown.StartCountDown = false;
+            Navigation.PushModalAsync(new FlappyMimmo.FlappyHome());
+        }
     }
 }

@@ -247,6 +247,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)FlappyMimmo\Shop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)FlappyMimmo\FlappyHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -483,6 +491,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)SalveminiCoin\Transazioni.xaml.cs">
       <DependentUpon>Transazioni.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)FlappyMimmo\Shop.xaml.cs">
+      <DependentUpon>Shop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\FlappyMimmo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FlappyMimmo\FlappyHome.xaml.cs">
+      <DependentUpon>FlappyHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceFlappy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
@@ -500,6 +516,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)RestApi\SignalR\" />
     <Folder Include="$(MSBuildThisFileDirectory)SignalR\" />
     <Folder Include="$(MSBuildThisFileDirectory)SalveminiCoin\" />
+    <Folder Include="$(MSBuildThisFileDirectory)FlappyMimmo\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Helpers\Preferences.txt" />

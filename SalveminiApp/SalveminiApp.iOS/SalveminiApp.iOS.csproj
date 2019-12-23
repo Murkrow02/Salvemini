@@ -298,6 +298,7 @@
     <BundleResource Include="Resources\sCoin.svg" />
     <BundleResource Include="Resources\SalveminiCoin.png" />
     <BundleResource Include="Resources\imagePlaceholder.png" />
+    <BundleResource Include="Resources\flappyBoard.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lotties\" />
