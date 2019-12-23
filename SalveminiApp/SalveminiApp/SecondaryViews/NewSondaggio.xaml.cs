@@ -99,7 +99,8 @@ namespace SalveminiApp.SecondaryViews
                 var response = await App.Sondaggi.PostVoto(voto);
 
                 //Notify the user success or failure
-                await DisplayAlert(response[0], response[1], "Ok");
+                Costants.showToast(response[1]);
+                //await DisplayAlert(response[0], response[1], "Ok");
 
                 //Success
                 if (response[0] == "Grazie!")

@@ -15,8 +15,8 @@ namespace SalveminiApp.RestApi
     public class RestServiceUtenti : IRestServiceUtenti
     {
         HttpClient client;
-        public List<Models.Utente> Utenti { get; private set; }
-        public Models.Utente Utente { get; private set; }
+        public List<Models.Utenti> Utenti { get; private set; }
+        public Models.Utenti Utente { get; private set; }
 
         public RestServiceUtenti()
         {
@@ -26,9 +26,9 @@ namespace SalveminiApp.RestApi
             client.DefaultRequestHeaders.Add("x-auth-token", Preferences.Get("Token", ""));
         }
 
-        public async Task<List<Models.Utente>> GetUtenti(bool classFiltered)
+        public async Task<List<Models.Utenti>> GetUtenti(bool classFiltered)
         {
-            Utenti = new List<Models.Utente>();
+            Utenti = new List<Models.Utenti>();
             string uri = Costants.Uri("utenti/all");
             if (classFiltered) uri = Costants.Uri("utenti/classe"); //Get only class users
 
@@ -38,7 +38,7 @@ namespace SalveminiApp.RestApi
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    Utenti = JsonConvert.DeserializeObject<List<Models.Utente>>(content);
+                    Utenti = JsonConvert.DeserializeObject<List<Models.Utenti>>(content);
 
                     //Save Cache
                     Barrel.Current.Add("utentilist", Utenti, TimeSpan.FromDays(10));
@@ -53,9 +53,9 @@ namespace SalveminiApp.RestApi
 
 
 
-        public async Task<Models.Utente> GetUtente(int id)
+        public async Task<Models.Utenti> GetUtente(int id)
         {
-            Utente = new Models.Utente();
+            Utente = new Models.Utenti();
             var uri = Costants.Uri("utenti/") + id;
 
             try
@@ -64,14 +64,14 @@ namespace SalveminiApp.RestApi
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    Utente = JsonConvert.DeserializeObject<Utente>(content);
+                    Utente = JsonConvert.DeserializeObject<Utenti>(content);
 
                     //Save Cache
                     Barrel.Current.Add("utente" + id.ToString(), Utente, TimeSpan.FromDays(10));
                 }
                 else
                 {
-                    return CacheHelper.GetCache<Models.Utente>("utente" + id.ToString());
+                    return CacheHelper.GetCache<Models.Utenti>("utente" + id.ToString());
                 }
 
             }
@@ -147,8 +147,8 @@ namespace SalveminiApp.RestApi
 
     public interface IRestServiceUtenti
     {
-        Task<List<Utente>> GetUtenti(bool classFiltered);
-        Task<Utente> GetUtente(int id);
+        Task<List<Utenti>> GetUtenti(bool classFiltered);
+        Task<Utenti> GetUtente(int id);
         Task<string[]> ChangeStatus(int idUtente, int stato);
         Task<Models.ResponseModel> ChangePwd(Models.changeBlock changeData);
 
@@ -164,12 +164,12 @@ namespace SalveminiApp.RestApi
             restServiceUtenti = serviceUtenti;
         }
 
-        public Task<List<Utente>> GetUtenti(bool classFiltered = false)
+        public Task<List<Utenti>> GetUtenti(bool classFiltered = false)
         {
             return restServiceUtenti.GetUtenti(classFiltered);
         }
 
-        public Task<Utente> GetUtente(int id)
+        public Task<Utenti> GetUtente(int id)
         {
             return restServiceUtenti.GetUtente(id);
         }

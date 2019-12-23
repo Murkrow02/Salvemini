@@ -26,5 +26,12 @@ namespace SalveminiApp
         //Grey BG
         public static Color BGColor = Color.FromHex("#F3F4F7");
 
+
+        //Secrets primary
+        public static Color SecretsPrimary = Color.FromHex("#212121");
+
+        //Secrets secondary
+        public static Color SecretsSecondary = Color.FromHex("#363636");
+
     }
 }

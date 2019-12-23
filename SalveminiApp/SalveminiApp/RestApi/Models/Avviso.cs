@@ -13,7 +13,7 @@ namespace SalveminiApp.RestApi.Models
         public int idCreatore { get; set; }
         public DateTime Creazione { get; set; }
         public bool SendNotification { get; set; }
-        public Utente Utenti { get; set; } 
+        public Utenti Utenti { get; set; } 
 
         public List<string> FullImmagini
         {

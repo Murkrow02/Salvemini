@@ -23,7 +23,7 @@ namespace SalveminiApp.SecondaryViews
     public partial class Profile : ContentPage
     {
 
-        public RestApi.Models.Utente utente = new RestApi.Models.Utente();
+        public RestApi.Models.Utenti utente = new RestApi.Models.Utenti();
         public MediaFile newPic;
 
         public Profile()

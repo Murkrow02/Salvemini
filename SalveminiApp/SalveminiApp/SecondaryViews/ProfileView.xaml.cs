@@ -11,9 +11,9 @@ namespace SalveminiApp.SecondaryViews
 {
     public partial class ProfileView : ContentPage
     {
-        public RestApi.Models.Utente utente;
+        public RestApi.Models.Utenti utente;
 
-        public ProfileView(RestApi.Models.Utente utente_)
+        public ProfileView(RestApi.Models.Utenti utente_)
         {
             InitializeComponent();
 

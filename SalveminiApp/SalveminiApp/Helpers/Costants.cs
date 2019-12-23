@@ -6,6 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
 using MonkeyCache.SQLite;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -244,14 +245,14 @@ namespace SalveminiApp
         {
 #if DEBUG
             return "ca-app-pub-3940256099942544/5224354917";
-            #else
+#else
 #if __IOS__
             return "ca-app-pub-2688730930606353/4691822196";
 #endif
 #if __ANDROID__
             return "ca-app-pub-2688730930606353/7086530178";
 #endif
-            #endif
+#endif
 
         }
 
@@ -272,41 +273,32 @@ namespace SalveminiApp
 #endif
 
                 //Create page with webview
-                var content = new ContentPage { Title = title, Content = new WebView { Source = url } };
-
+                var webView = new WebView() { Source = url }; webView.Navigating += WebView_Navigating; webView.Navigated += WebView_Navigated;
+                var contentPage = new ContentPage { Title = title };
+                contentPage.Content = webView;
                 //Add toolbaritems to the page
                 var barItem = new ToolbarItem { Text = "Chiudi", };
                 barItem.Clicked += (object mandatore, EventArgs f) =>
                 {
                     Xamarin.Forms.Application.Current.MainPage.Navigation.PopModalAsync();
                 };
-                content.ToolbarItems.Add(barItem);
+                contentPage.ToolbarItems.Add(barItem);
 
                 //Make it navigable
-                var webPage = new Xamarin.Forms.NavigationPage(content) { BarTextColor = Styles.TextColor };
+                var webPage = new Xamarin.Forms.NavigationPage(contentPage) { BarTextColor = Styles.TextColor };
 
-                //iOS 13 modal bug
-                //webPage.Disappearing += (object disappearer, EventArgs g) =>
-                //{
-                //    try
-                //    {
-                //        //  if (haftaClose)
-                //        //  {
-                //        webPage.Navigation.PopModalAsync();
-                //        // }
-                //        //if (!data.presaVisione)
-                //        //{
-                //        //    OnAppearing();
-                //        //}
-                //    }
-                //    catch { }
-                //};
+                //Show or hide loading page
+                void WebView_Navigating(object sender, WebNavigatingEventArgs e)
+                {
+                  UserDialogs.Instance.ShowLoading("Caricamento ...", MaskType.Black);
+                
+                }
+                void WebView_Navigated(object sender, WebNavigatedEventArgs e)
+                {
+                    UserDialogs.Instance.HideLoading();
+                }
 
-                //Set the presentation to formsheet
-                //#if __IOS__
-                //                  webPage.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
-                //#endif
-                //Push there
+
                 Xamarin.Forms.Application.Current.MainPage.Navigation.PushModalAsync(webPage);
             }
             catch
@@ -315,7 +307,6 @@ namespace SalveminiApp
             }
 
         }
-
 
         public static bool DownloadedOrariTrasporti()
         {
