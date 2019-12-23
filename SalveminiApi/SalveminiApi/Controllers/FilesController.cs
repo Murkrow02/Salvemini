@@ -66,7 +66,14 @@ namespace SalveminiApi.Controllers
                     var postedFile = httpRequest.Files[file];
                     if (postedFile != null && postedFile.ContentLength > 0)
                     {
-                            var filePath = HttpContext.Current.Server.MapPath("~/Giornalino/" + giornalino.id + ".pdf");
+                        //Create write directory
+                        var directory = HttpContext.Current.Server.MapPath("~/Giornalino");
+
+                        //Create directory if doesn't exist
+                        if (!Directory.Exists(directory))
+                            Directory.CreateDirectory(directory);
+
+                        var filePath = directory + "/" + giornalino.id + ".pdf";
                         postedFile.SaveAs(filePath);
                     }
                     else
@@ -84,7 +91,7 @@ namespace SalveminiApi.Controllers
             {
                 var res = string.Format("Errore Interno");
                 dict.Add("error", res);
-                return Request.CreateResponse(HttpStatusCode.NotFound, dict);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, dict);
             }
         }
     }
