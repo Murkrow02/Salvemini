@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage BackgroundColor="{x:Static local:Styles.SecretsPrimary}" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" x:Class="SalveminiApp.iCringe.Home">
+    <!--Navigation Bar-->
+    <NavigationPage.TitleView>
+        <Grid HorizontalOptions="FillAndExpand" Padding="5">
+            <!--Notifiche-->
+            <iconize:IconButton HorizontalOptions="StartAndExpand" Text="fal-bell" TextColor="{x:Static local:Styles.BGColor}" FontSize="26" WidthRequest="45"/>
+            <!--Middle label-->
+            <Label Text="iCringe" x:Name="todayLbl" FontSize="Medium" TextColor="{x:Static local:Styles.BGColor}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontAttributes="Bold" />
+            <!--Add post-->
+            <iconize:IconButton HorizontalOptions="EndAndExpand" Text="fal-plus" TextColor="{x:Static local:Styles.BGColor}" FontSize="26" WidthRequest="45" Clicked="newPost_Clicked"/>
+        </Grid>
+    </NavigationPage.TitleView>
+
+
+    <!--Post list-->
+    <ListView BackgroundColor="Transparent" x:Name="postsList" HasUnevenRows="true" Header="" Footer="" SeparatorVisibility="None">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <StackLayout>
+                            <!--Domanda-->
+                            <StackLayout BackgroundColor="{x:Static local:Styles.SecretsSecondary}" Padding="10,20,10,5" Spacing="18">
+                                <!--Titolo-->
+                                <Label Text="{Binding Domanda}" FontSize="25" TextColor="{x:Static local:Styles.BGColor}" />
+                                <StackLayout Orientation="Horizontal">
+                                    <!--Data-->
+                                    <patch:Label Text="{Binding Elapsed}" TextColor="{x:Static local:Styles.BGColor}" FontSize="15" Lines="1" AutoFit="Width" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" />
+                                    <!--Commenti-->
+                                    <patch:Label Text="{Binding CommentiString}" TextColor="{x:Static local:Styles.BGColor}" FontSize="15" Lines="1" AutoFit="Width" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" />
+                                </StackLayout>
+                            </StackLayout>
+                            <!--Commenti-->
+                            <Button BackgroundColor="Transparent" Text="Vedi altri 10 commenti" HorizontalOptions="Start" TextColor="{x:Static local:Styles.BGColor}" FontSize="15"/>
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+
+</ContentPage>

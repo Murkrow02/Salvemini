@@ -18,12 +18,12 @@ namespace SalveminiApp.Controls
         }
 
         //User
-        public static readonly BindableProperty UserProperty = BindableProperty.Create(nameof(User), typeof(RestApi.Models.Utente), typeof(UserImageNameClass), default(RestApi.Models.Utente), Xamarin.Forms.BindingMode.OneWay);
-        public RestApi.Models.Utente User
+        public static readonly BindableProperty UserProperty = BindableProperty.Create(nameof(User), typeof(RestApi.Models.Utenti), typeof(UserImageNameClass), default(RestApi.Models.Utenti), Xamarin.Forms.BindingMode.OneWay);
+        public RestApi.Models.Utenti User
         {
             get
             {
-                return (RestApi.Models.Utente)GetValue(UserProperty);
+                return (RestApi.Models.Utenti)GetValue(UserProperty);
             }
 
             set
@@ -71,7 +71,7 @@ namespace SalveminiApp.Controls
                 //Get cached
                 if (propertyName == CachedUserIdProperty.PropertyName)
                 {
-                    var cachedUtente = CacheHelper.GetCache<RestApi.Models.Utente>("utente" + CachedUserId);
+                    var cachedUtente = CacheHelper.GetCache<RestApi.Models.Utenti>("utente" + CachedUserId);
                     if (cachedUtente != null)
                     {
                         loading.IsRunning = false; loading.IsVisible = false;

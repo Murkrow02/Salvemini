@@ -1,7 +1,7 @@
 ﻿using System;
 namespace SalveminiApp.RestApi.Models
 {
-    public class Utente
+    public class Utenti
     {
         public int id { get; set; }
         public string Nome { get; set; }

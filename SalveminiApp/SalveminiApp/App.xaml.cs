@@ -34,6 +34,7 @@ namespace SalveminiApp
         public static RestApi.SondaggiManager Sondaggi { get; private set; }
         public static RestApi.AdsManager Ads { get; private set; }
         public static RestApi.AgendaManager Agenda { get; private set; }
+        public static RestApi.CringeManager Cringe { get; private set; }
         public static RestApi.ItemManagerCoins Coins { get; private set; }
 
         public App()
@@ -80,6 +81,11 @@ namespace SalveminiApp
             {
                 MainPage = new TabPage();
             }
+
+            var navigation = new NavigationPage(new iCringe.Home());
+            navigation.BarBackgroundColor = Styles.SecretsPrimary;
+            MainPage = navigation;
+
             stopwatch.Stop();
             Debug.WriteLine(stopwatch.ElapsedMilliseconds);
 
@@ -106,6 +112,7 @@ namespace SalveminiApp
             Ads = new RestApi.AdsManager(new RestApi.RestServiceAds());
             Agenda = new RestApi.AgendaManager(new RestApi.RestServiceAgenda());
             Coins = new RestApi.ItemManagerCoins(new RestApi.RestServiceCoins());
+            Cringe = new RestApi.CringeManager(new RestApi.RestServiceCringe());
         }
 
         private static async void HandleNotificationReceived(OSNotification notification)

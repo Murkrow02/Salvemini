@@ -13,7 +13,7 @@ namespace SalveminiApp.RestApi.Models
         public DateTime Creazione { get; set; }
         public List<OggettiSondaggi> OggettiSondaggi { get; set; }
         public List<VotoSondaggio> VotiSondaggi { get; set; }
-        public Utente Utenti { get; set; }
+        public Utenti Utenti { get; set; }
     }
 
     public class VotoSondaggio

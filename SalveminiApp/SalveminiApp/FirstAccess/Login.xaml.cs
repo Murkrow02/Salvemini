@@ -11,7 +11,7 @@ namespace SalveminiApp.FirstAccess
 {
     public partial class Login : ContentPage
     {
-        public List<RestApi.Models.Utente> UtentiLogin = new List<RestApi.Models.Utente>();
+        public List<RestApi.Models.Utenti> UtentiLogin = new List<RestApi.Models.Utenti>();
 
         //First tip
         Forms9Patch.BubblePopup firstPopUp = new Helpers.PopOvers().defaultPopOver;
@@ -133,7 +133,7 @@ namespace SalveminiApp.FirstAccess
             else
             {
                 //Success
-                UtentiLogin = Response.Data as List<RestApi.Models.Utente>;
+                UtentiLogin = Response.Data as List<RestApi.Models.Utenti>;
             }
 
             //Error getting users

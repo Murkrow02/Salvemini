@@ -18,7 +18,7 @@ namespace SalveminiApp.AreaVip
             superVip = superVip_;
         }
 
-        public List<RestApi.Models.Utente> utentiList = new List<RestApi.Models.Utente>();
+        public List<RestApi.Models.Utenti> utentiList = new List<RestApi.Models.Utenti>();
 
         async void Search_Action(object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
@@ -74,7 +74,7 @@ namespace SalveminiApp.AreaVip
            
 
             //Get user selcted
-            var data = (sender as Xamarin.Forms.ListView).SelectedItem as RestApi.Models.Utente;
+            var data = (sender as Xamarin.Forms.ListView).SelectedItem as RestApi.Models.Utenti;
 
              //Deselect cell
             if (e.SelectedItem == null)

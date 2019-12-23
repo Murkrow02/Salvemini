@@ -13,7 +13,7 @@ namespace SalveminiApp.RestApi
     public class RestServiceLogin : IRestServiceLogin
     {
         HttpClient client;
-        public List<Models.Utente> UtentiLogin { get; private set; }
+        public List<Models.Utenti> UtentiLogin { get; private set; }
         public RestServiceLogin()
         {
             client = new HttpClient();
@@ -22,7 +22,7 @@ namespace SalveminiApp.RestApi
 
         public async Task<Models.ResponseModel> Login(Models.LoginForm loginData)
         {
-            UtentiLogin = new List<Models.Utente>();
+            UtentiLogin = new List<Models.Utenti>();
             Models.ResponseModel Data = new Models.ResponseModel();
             var uri = Costants.Uri("login");
 
@@ -36,7 +36,7 @@ namespace SalveminiApp.RestApi
                 {
                     case HttpStatusCode.OK:
                         var responseContent = await response.Content.ReadAsStringAsync();
-                        UtentiLogin = JsonConvert.DeserializeObject<List<Models.Utente>>(responseContent);
+                        UtentiLogin = JsonConvert.DeserializeObject<List<Models.Utenti>>(responseContent);
                         Data.Data = UtentiLogin;
                         break;
                     case HttpStatusCode.Unauthorized:
