@@ -66,7 +66,7 @@ namespace SalveminiApp.Controls
 #if __IOS__
                 modalPush.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
 #endif
-               await parentPage.Navigation.PushModalAsync(modalPush);
+                await parentPage.Navigation.PushModalAsync(modalPush);
 
                 iCringe.Commenti.Pushed = false;
             }
