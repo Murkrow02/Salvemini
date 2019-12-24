@@ -248,6 +248,12 @@
     <PackageReference Include="Plugin.Permissions">
       <Version>5.0.0-beta</Version>
     </PackageReference>
+    <PackageReference Include="CocosSharp">
+      <Version>1.7.1</Version>
+    </PackageReference>
+    <PackageReference Include="CocosSharp.Forms">
+      <Version>1.7.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\argoLogo.png" />
@@ -299,10 +305,27 @@
     <BundleResource Include="Resources\SalveminiCoin.png" />
     <BundleResource Include="Resources\imagePlaceholder.png" />
     <BundleResource Include="Resources\flappyBoard.png" />
+    <BundleResource Include="Content\Images\bottom_pipe.png" />
+    <BundleResource Include="Content\Images\flappy.png" />
+    <BundleResource Include="Content\Images\top_pipe.png" />
+    <BundleResource Include="Content\Images\background.png" />
+    <BundleResource Include="Content\Images\gold_1.png" />
+    <BundleResource Include="Content\Images\gold_2.png" />
+    <BundleResource Include="Content\Images\gold_3.png" />
+    <BundleResource Include="Content\Images\gold_4.png" />
+    <BundleResource Include="Content\Images\ground.png" />
+    <BundleResource Include="Content\Images\spark.png" />
+    <BundleResource Include="Content\Images\textGameOver.png" />
+    <BundleResource Include="Content\Images\textGetReady.png" />
+    <BundleResource Include="Content\Images\player-1.png" />
+    <BundleResource Include="Content\Images\player-2.png" />
+    <BundleResource Include="Content\Images\player-3.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lotties\" />
     <Folder Include="ToastIos\" />
+    <Folder Include="Content\" />
+    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IntentsBindings\IntentsBindings.csproj">

@@ -259,6 +259,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)FlappyMimmo\Shop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)FlappyMimmo\FlappyHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -506,6 +514,17 @@
     <Compile Include="$(MSBuildThisFileDirectory)iCringe\NewPost.xaml.cs">
       <DependentUpon>NewPost.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\RestServiceFlappy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestApi\Models\FlappyMimmo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FlappyMimmo\Shop.xaml.cs">
+      <DependentUpon>Shop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)FlappyMimmo\FlappyHome.xaml.cs">
+      <DependentUpon>FlappyHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)FlappyMimmo\GamePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FlappyMimmo\Menus\GameOverLayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FlappyMimmo\SingleGameLayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
@@ -524,6 +543,8 @@
     <Folder Include="$(MSBuildThisFileDirectory)SignalR\" />
     <Folder Include="$(MSBuildThisFileDirectory)SalveminiCoin\" />
     <Folder Include="$(MSBuildThisFileDirectory)iCringe\" />
+    <Folder Include="$(MSBuildThisFileDirectory)FlappyMimmo\" />
+    <Folder Include="$(MSBuildThisFileDirectory)FlappyMimmo\Menus\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Helpers\Preferences.txt" />
