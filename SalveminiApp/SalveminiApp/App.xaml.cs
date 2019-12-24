@@ -36,6 +36,7 @@ namespace SalveminiApp
         public static RestApi.AgendaManager Agenda { get; private set; }
         public static RestApi.CringeManager Cringe { get; private set; }
         public static RestApi.ItemManagerCoins Coins { get; private set; }
+        public static RestApi.ItemManagerFlappy Flappy { get; private set; }
 
         public App()
         {
@@ -82,9 +83,7 @@ namespace SalveminiApp
                 MainPage = new TabPage();
             }
 
-            var navigation = new NavigationPage(new iCringe.Home());
-            navigation.BarBackgroundColor = Styles.SecretsPrimary;
-            MainPage = navigation;
+           
 
             stopwatch.Stop();
             Debug.WriteLine(stopwatch.ElapsedMilliseconds);
@@ -110,6 +109,7 @@ namespace SalveminiApp
             Agenda = new RestApi.AgendaManager(new RestApi.RestServiceAgenda());
             Coins = new RestApi.ItemManagerCoins(new RestApi.RestServiceCoins());
             Cringe = new RestApi.CringeManager(new RestApi.RestServiceCringe());
+            Flappy = new RestApi.ItemManagerFlappy(new RestApi.RestServiceFlappy());
         }
 
         private static async void HandleNotificationReceived(OSNotification notification)

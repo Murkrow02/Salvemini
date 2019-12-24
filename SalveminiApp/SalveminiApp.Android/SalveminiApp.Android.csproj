@@ -178,6 +178,12 @@
         <PackageReference Include="Plugin.Permissions">
             <Version>5.0.0-beta</Version>
         </PackageReference>
+        <PackageReference Include="CocosSharp">
+          <Version>1.7.1</Version>
+        </PackageReference>
+        <PackageReference Include="CocosSharp.Forms">
+          <Version>1.7.1</Version>
+        </PackageReference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="MainActivity.cs" />
@@ -450,6 +456,7 @@
         <Folder Include="Assets\Lotties\" />
         <Folder Include="Resources\xml\" />
         <Folder Include="Resources\drawable-xxhdpi\" />
+        <Folder Include="Assets\Content\" />
     </ItemGroup>
     <ItemGroup>
         <AndroidAsset Include="Assets\iconize-fontawesome-brands.ttf" />
@@ -463,6 +470,21 @@
         <AndroidAsset Include="Assets\Lotties\Pulse.json" />
         <AndroidAsset Include="Assets\Lotties\redPulse.json" />
         <AndroidAsset Include="Assets\Lotties\rightArrow.json" />
+        <AndroidAsset Include="Assets\Content\Images\background.png" />
+        <AndroidAsset Include="Assets\Content\Images\bottom_pipe.png" />
+        <AndroidAsset Include="Assets\Content\Images\flappy.png" />
+        <AndroidAsset Include="Assets\Content\Images\gold_1.png" />
+        <AndroidAsset Include="Assets\Content\Images\gold_2.png" />
+        <AndroidAsset Include="Assets\Content\Images\gold_3.png" />
+        <AndroidAsset Include="Assets\Content\Images\gold_4.png" />
+        <AndroidAsset Include="Assets\Content\Images\ground.png" />
+        <AndroidAsset Include="Assets\Content\Images\spark.png" />
+        <AndroidAsset Include="Assets\Content\Images\textGameOver.png" />
+        <AndroidAsset Include="Assets\Content\Images\textGetReady.png" />
+        <AndroidAsset Include="Assets\Content\Images\top_pipe.png" />
+        <AndroidAsset Include="Assets\Content\Images\player-1.png" />
+        <AndroidAsset Include="Assets\Content\Images\player-2.png" />
+        <AndroidAsset Include="Assets\Content\Images\player-3.png" />
     </ItemGroup>
     <ItemGroup>
         <ProguardConfiguration Include="proguard.cfg" />

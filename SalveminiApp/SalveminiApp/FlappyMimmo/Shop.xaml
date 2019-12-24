@@ -4,19 +4,24 @@
         <StackLayout Spacing="20">
             <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
                 <Label FontSize="25" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Start" Text="Negozio"/>
-                <iconize:IconLabel FontSize="25" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="EndAndExpand" Text="fas-times-circle"/>
+                <iconize:IconLabel FontSize="25" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="EndAndExpand" Text="fas-times-circle">
+                    <iconize:IconLabel.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Close_Tapped"/>
+                    </iconize:IconLabel.GestureRecognizers>
+                </iconize:IconLabel>
             </StackLayout>
-            <flv:FlowListView IsVisible="{Binding ListVisibility}" FlowItemsSource="{Binding FullImmagini}" SeparatorColor="Black" BackgroundColor="Transparent"  FlowColumnExpand="ProportionalLast" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="false" RowHeight="100">
+            <flv:FlowListView x:Name="skinsList" BackgroundColor="Transparent"  FlowColumnExpand="ProportionalLast" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="false">
                 <flv:FlowListView.FlowColumnTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout>
+                                <Label HorizontalOptions="Center" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" Text="{Binding Nome}"/>
                                 <Frame CornerRadius="20" HasShadow="False" HorizontalOptions="Center">
-                                    <Image Source="instaLogo" WidthRequest="100"/>
+                                    <Image Source="{Binding Immagini[0]}" WidthRequest="100"/>
                                 </Frame>
                                 <Frame Padding="10, 5" CornerRadius="10" HorizontalOptions="Center" HasShadow="False">
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Text="100" FontSize="Large" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}"/>
+                                        <Label Text="{Binding Costo}" FontSize="Large" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}"/>
                                         <Image Source="SalveminiCoin.png" WidthRequest="20"/>
                                     </StackLayout>
                                 </Frame>
