@@ -78,12 +78,39 @@ namespace SalveminiApp.RestApi
                 return "Si è verificato un errore";
             }
         }
+
+        public async Task<string> PostScore(int score)
+        {
+            var uri = Costants.Uri("flappy/postscore");
+            try
+            {
+                var json = JsonConvert.SerializeObject(score);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                //Get from url
+                var response = await client.PostAsync(uri, content);
+                if (!response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadAsStringAsync();
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Errore GET indexargo", ex.Message);
+                return "Si è verificato un errore";
+            }
+        }
     }
 
     public interface IRestServiceFlappy
     {
         Task<List<Models.FlappySkinReturn>> GetSkins();
         Task<string> BuySkin(int id);
+        Task<string> PostScore(int score);
     }
 
     public class ItemManagerFlappy
@@ -103,6 +130,11 @@ namespace SalveminiApp.RestApi
         public Task<string> BuySkin(int id)
         {
             return restServiceFlappy.BuySkin(id);
+        }
+
+        public Task<string> PostScore(int score)
+        {
+            return restServiceFlappy.PostScore(score);
         }
     }
 }

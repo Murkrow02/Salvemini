@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using CocosSharp;
 using System.Linq;
 using System.Diagnostics;
+using Xamarin.Essentials;
 
 namespace SalveminiApp.FlappyMimmo
 {
@@ -131,7 +132,7 @@ namespace SalveminiApp.FlappyMimmo
                     if (coin != null && coin.Visible && player.BoundingBoxTransformedToWorld.IntersectsRect(coin.BoundingBoxTransformedToWorld))
                     {
                         coin.Visible = false;
-                        score += 2;
+                        score += 4;
                     }
 
                     scoreLabel.Text = string.Format("Score: {0}", score / 2);
@@ -145,12 +146,18 @@ namespace SalveminiApp.FlappyMimmo
             }
         }
 
-        void EndGame()
+        async void EndGame()
         {
             // Stop scheduled events as we transition to game over scene
             UnscheduleAll();
-            CCAudioEngine.SharedEngine.StopBackgroundMusic();
-
+            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+            {
+                string postScore = await App.Flappy.PostScore(score / 2);
+                if (postScore != null)
+                {
+                    Costants.showToast(postScore);
+                }
+            }
             CCScene gameOverScene = new CCScene(GameView);
             var transitionToGameOver = new CCTransitionRotoZoom(1.0f, gameOverScene);
             gameOverScene.AddLayer(new GameOverLayer(score / 2));
