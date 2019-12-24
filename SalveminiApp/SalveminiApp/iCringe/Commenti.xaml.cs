@@ -8,15 +8,15 @@ using UIKit;
 #endif
 namespace SalveminiApp.iCringe
 {
-	public partial class Commenti : ContentPage
-	{
-		public RestApi.Models.CommentiReturn commenti = new RestApi.Models.CommentiReturn();
-		int idPost;
-		public static bool Pushed;
+    public partial class Commenti : ContentPage
+    {
+        public RestApi.Models.CommentiReturn commenti = new RestApi.Models.CommentiReturn();
+        int idPost;
+        public static bool Pushed;
 
-		public Commenti(int idPost_, string cachedQuestion = null)
-		{
-			InitializeComponent();
+        public Commenti(int idPost_, string cachedQuestion = null)
+        {
+            InitializeComponent();
 
 #if __IOS__
             if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0) && !iOS.AppDelegate.HasNotch)
@@ -24,21 +24,21 @@ namespace SalveminiApp.iCringe
                 mainLayout.Padding = new Thickness(0, 20, 0, 0);
             }
 #endif
-			chatEntry.WidthRequest = App.ScreenWidth - 70;
+            chatEntry.WidthRequest = App.ScreenWidth - 70;
 
-			idPost = idPost_;
+            idPost = idPost_;
 
-			//Get from cache
-			var cachedCommenti = CacheHelper.GetCache<RestApi.Models.CommentiReturn>("commenti" + idPost_);
-			if (cachedCommenti != null)
-			{
-				commentsList.ItemsSource = cachedCommenti.Commenti;
-				header.Text = cachedCommenti.Domanda;
-			}
+            //Get from cache
+            var cachedCommenti = CacheHelper.GetCache<RestApi.Models.CommentiReturn>("commenti" + idPost_);
+            if (cachedCommenti != null)
+            {
+                commentsList.ItemsSource = cachedCommenti.Commenti;
+                header.Text = cachedCommenti.Domanda;
+            }
 
-			//Get from push
-			if (!string.IsNullOrEmpty(cachedQuestion))
-				header.Text = cachedQuestion;
+            //Get from push
+            if (!string.IsNullOrEmpty(cachedQuestion))
+                header.Text = cachedQuestion;
 
 #if __IOS__
             //Handle keyboard animation
@@ -56,64 +56,99 @@ namespace SalveminiApp.iCringe
                 // list.ScaleHeightTo(listHeight, (uint)(e.AnimationDuration * 1000));
             });
 #endif
-		}
+        }
 
 
-		protected override async void OnAppearing()
-		{
-			base.OnAppearing();
-			Pushed = false;
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            Pushed = false;
 
-			//Detect internet connection
-			if (Connectivity.NetworkAccess != NetworkAccess.Internet)
-			{
-				Costants.showToast("connection");
-				return;
-			}
+            //Detect internet connection
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                Costants.showToast("connection");
+                return;
+            }
 
-			//Refresh list
-			commentsList.IsRefreshing = true;
+            //Refresh list
+            commentsList.IsRefreshing = true;
 
-			//Download posts
-			commenti = await App.Cringe.GetCommenti(idPost);
+            //Download posts
+            commenti = await App.Cringe.GetCommenti(idPost);
 
-			//Error
-			if (commenti == null)
-			{
-				Costants.showToast("Si è verificato un errore, riprova più tardi o contattaci se il problema persiste");
-				commentsList.IsRefreshing = false;
-				return;
-			}
+            //Error
+            if (commenti == null)
+            {
+                Costants.showToast("Si è verificato un errore, riprova più tardi o contattaci se il problema persiste");
+                commentsList.IsRefreshing = false;
+                return;
+            }
 
-			//Update list
-			commentsList.ItemsSource = commenti.Commenti;
-			header.Text = commenti.Domanda;
-			commentsList.IsRefreshing = false;
-		}
+            //Update list
+            commentsList.ItemsSource = commenti.Commenti;
+            header.Text = commenti.Domanda;
+            commentsList.IsRefreshing = false;
+        }
 
-		public void comments_Refreshing(object sender, EventArgs e)
-		{
-			OnAppearing();
-		}
+        public void comments_Refreshing(object sender, EventArgs e)
+        {
+            OnAppearing();
+        }
 
-		protected override void OnDisappearing()
-		{
-			base.OnDisappearing();
+        public async void postCommento_Clicked(object sender, EventArgs e)
+        {
+            //Detect internet connection
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                Costants.showToast("connection");
+                return;
+            }
 
-			//Ios 13 bug
-			try
-			{
+            //Create commento
+            var commento = new RestApi.Models.Commenti { Anonimo = anonimo.IsToggled, Commento = chatEntry.Text, idPost = idPost };
+            //Post commento
+            var response = await App.Cringe.PostCommento(commento);
+            if (response[0] == "Successo")
+            {
+                OnAppearing(); //Refresh if success
+            }
+            Costants.showToast(response[1]);
+        }
 
-				if (!Pushed)
-					Navigation.PopModalAsync();
-				else
-					Pushed = false;
-			}
-			catch
-			{
-				//fa nient
-			}
+        public void checkText(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(chatEntry.Text) || string.IsNullOrWhiteSpace(chatEntry.Text))
+            {
+                sendButton.IsEnabled = false;
+                sendButton.Opacity = 0.8;
+            }
+            else
+            {
+                sendButton.IsEnabled = true;
+                sendButton.Opacity = 1;
+            }
+        }
 
-		}
-	}
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+
+            //Ios 13 bug
+            try
+            {
+
+                if (!Pushed)
+                    Navigation.PopModalAsync();
+                else
+                    Pushed = false;
+            }
+            catch
+            {
+                //fa nient
+            }
+
+        }
+    }
 }

@@ -83,7 +83,9 @@ namespace SalveminiApp
                 MainPage = new TabPage();
             }
 
-            //MainPage = new NavigationPage(new iCringe.Home());
+            //var navigationPage = new NavigationPage(new iCringe.Home());
+            //navigationPage.BackgroundColor = Styles.SecretsPrimary;
+            //MainPage = navigationPage;
 
             stopwatch.Stop();
             Debug.WriteLine(stopwatch.ElapsedMilliseconds);

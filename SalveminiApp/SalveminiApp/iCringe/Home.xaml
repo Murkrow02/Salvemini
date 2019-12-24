@@ -4,7 +4,7 @@
     <NavigationPage.TitleView>
         <Grid HorizontalOptions="FillAndExpand" Padding="5">
             <!--Notifiche-->
-            <iconize:IconButton Clicked="notifiche_Clicked" HorizontalOptions="StartAndExpand" Text="fal-bell" TextColor="{x:Static local:Styles.BGColor}" FontSize="26" WidthRequest="45"/>
+            <iconize:IconButton x:Name="bell" Clicked="notifiche_Clicked" HorizontalOptions="StartAndExpand" Text="fal-bell" TextColor="{x:Static local:Styles.BGColor}" FontSize="26" WidthRequest="45"/>
             <!--Middle label-->
             <Label Text="iCringe" x:Name="todayLbl" FontSize="Medium" TextColor="{x:Static local:Styles.BGColor}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontAttributes="Bold" />
             <!--Add post-->

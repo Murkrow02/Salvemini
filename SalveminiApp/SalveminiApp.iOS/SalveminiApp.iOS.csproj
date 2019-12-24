@@ -320,6 +320,7 @@
     <BundleResource Include="Content\Images\player-1.png" />
     <BundleResource Include="Content\Images\player-2.png" />
     <BundleResource Include="Content\Images\player-3.png" />
+    <BundleResource Include="Resources\bbar2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lotties\" />

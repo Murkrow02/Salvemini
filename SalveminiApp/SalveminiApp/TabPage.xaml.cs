@@ -36,13 +36,13 @@ namespace SalveminiApp
             IconImageSource = "tabBarArgo.png"
         };
 
-        //public static Helpers.CustomNavigationPage Family = new Helpers.CustomNavigationPage(new Family())
-        //{
-        //    BarTextColor = Styles.PrimaryColor,
-        //    BarBackgroundColor = Color.White,
-        //    Title = "Family",
-        //    IconImageSource = "tabBarArgo.png"
-        //};
+        public static Helpers.CustomNavigationPage Family = new Helpers.CustomNavigationPage(new iCringe.Home())
+        {
+            BarTextColor = Styles.BGColor,
+            BarBackgroundColor = Styles.SecretsPrimary,
+            Title = "iCringe",
+            IconImageSource = "tabBarArgo.png"
+        };
 
 
         public TabPage()
@@ -53,10 +53,11 @@ namespace SalveminiApp
             BarTextColor = Styles.TextColor;
 
             //Add Children
+            Children.Add(Family);
             Children.Add(Home);
             Children.Add(Argo);
-            //Children.Add(Family);
 
+            CurrentPage = Home;
 
 #if __IOS__
             SelectedTabColor = Styles.TextColor;
@@ -75,21 +76,25 @@ namespace SalveminiApp
             base.OnCurrentPageChanged();
             var index = Children.IndexOf(CurrentPage);
 
+#if __IOS__
+            MessagingCenter.Send<App>((App)Xamarin.Forms.Application.Current, "changeBg");
+#endif
+
             switch (index)
             {
-                case 0:
+                case 1:
                     //Home
                     (Children[index] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
-                    if (Children.ElementAtOrDefault(1) != null)
+                    if (Children.ElementAtOrDefault(2) != null)
                     {
-                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
+                        (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
                     }
                     break;
 
-                case 1:
-                    //Home
+                case 2:
+                    //Argo
                     (Children[index] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarArgo.png";
-                    (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
+                    (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
                     break;
             }
         }

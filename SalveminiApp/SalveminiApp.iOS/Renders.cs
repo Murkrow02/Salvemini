@@ -87,14 +87,8 @@ namespace SalveminiApp.iOS
         public override void ViewWillLayoutSubviews()
         {
             base.ViewWillLayoutSubviews();
-            var image = UIImage.FromBundle("bbar.jpg");
-            image = image.Crop(0,
-                (int)(image.CGImage.Height - TabBar.Frame.Height),
-                (int)image.CGImage.Width,
-                (int)TabBar.Frame.Height);
-            image = image.Scale(new CGSize(TabBar.Frame.Width, TabBar.Frame.Height));
-            TabBar.BackgroundImage = image;
 
+            CropBg("bbar.jpg");
             if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
             {
                 TabBar.BarStyle = UIBarStyle.Black;
@@ -111,7 +105,21 @@ namespace SalveminiApp.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            
+            MessagingCenter.Subscribe<App>(this, "changeBg", (sender) =>
+            {
+                CropBg("bbar2.jpg");
+            });
+        }
+
+        public void CropBg(string image_)
+        {
+            var image = UIImage.FromBundle(image_);
+            image = image.Crop(0,
+                (int)(image.CGImage.Height - TabBar.Frame.Height),
+                (int)image.CGImage.Width,
+                (int)TabBar.Frame.Height);
+            image = image.Scale(new CGSize(TabBar.Frame.Width, TabBar.Frame.Height));
+            TabBar.BackgroundImage = image;
         }
     }
 
