@@ -2,19 +2,20 @@
 <pages:PopupPage Padding="20, 0" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:local="clr-namespace:SalveminiApp"  xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" x:Class="SalveminiApp.iCringe.NewPost">
 
     <Frame CornerRadius="20" HasShadow="false" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="{x:Static local:Styles.SecretsPrimary}">
-        <StackLayout Spacing="15">
+        <StackLayout Spacing="20">
+
             <!--Title-->
             <patch:Label Text="Nuovo post" TextColor="{x:Static local:Styles.BGColor}" FontSize="32" Lines="1" AutoFit="Width" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
 
             <StackLayout>
                 <!--Anonimo?-->
-                <StackLayout Orientation="Horizontal">
-                    <patch:Label Text="Pubblica in forma anonima" TextColor="{x:Static local:Styles.BGColor}" FontSize="15" Lines="1" AutoFit="Width" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" />
-                    <Switch IsToggled="True"/>
+                <StackLayout Orientation="Horizontal" Spacing="2">
+                    <patch:Label Text="Pubblica in forma anonima" VerticalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.BGColor}" FontSize="18" Lines="1" AutoFit="Width" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" />
+                    <Switch OnColor="#00cbe6" IsToggled="True" VerticalOptions="CenterAndExpand"/>
                 </StackLayout>
                 <!--Domanda-->
-                <inputLayout:SfTextInputLayout UnfocusedColor="{x:Static local:Styles.BGColor}" ShowCharCount="true" CharMaxLength="500" x:Name="compitiEntry" FocusedColor="{x:Static local:Styles.BGColor}" InputViewPadding="10, 5" OutlineCornerRadius="15" Hint="Tutto quello che vuoi" ContainerType="Outlined">
-                    <Editor AutoSize="TextChanges" TextColor="Black" PlaceholderColor="Gray" x:Name="compiti"/>
+                <inputLayout:SfTextInputLayout UnfocusedColor="{x:Static local:Styles.BGColor}" ShowCharCount="true" CharMaxLength="2000" x:Name="compitiEntry" FocusedColor="{x:Static local:Styles.BGColor}" InputViewPadding="10, 5" OutlineCornerRadius="15" Hint="Tutto quello che vuoi" ContainerType="Outlined">
+                    <Editor AutoSize="TextChanges" TextColor="{x:Static local:Styles.BGColor}"  PlaceholderColor="Gray" x:Name="domanda"/>
                 </inputLayout:SfTextInputLayout>
             </StackLayout>
 
@@ -24,7 +25,7 @@
             <Frame BackgroundColor="{x:Static local:Styles.BGColor}" VerticalOptions="EndAndExpand" HasShadow="false" Padding="10, -5" IsClippedToBounds="true" HorizontalOptions="EndAndExpand" CornerRadius="10">
                 <StackLayout Orientation="Horizontal" Spacing="2">
                     <ActivityIndicator x:Name="loadingIndicator" IsRunning="false" IsVisible="false" Scale="0.8" Margin="-2, 0, 0, 0" HorizontalOptions="EndAndExpand" />
-                    <Button BackgroundColor="Transparent" Clicked="send_Clicked" Text="Invia" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold" />
+                    <Button x:Name="sendBtn" BackgroundColor="Transparent" Clicked="send_Clicked" Text="Invia" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold" />
                 </StackLayout>
             </Frame>
 

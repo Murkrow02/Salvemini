@@ -91,9 +91,6 @@ namespace SalveminiApp
 
             //Reload Calls
             refreshCalls();
-
-
-
         }
 
         public static async Task refreshCalls()

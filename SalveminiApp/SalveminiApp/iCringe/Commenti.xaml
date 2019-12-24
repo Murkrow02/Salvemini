@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage BackgroundColor="{x:Static local:Styles.SecretsPrimary}" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:SalveminiApp.Controls" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" x:Class="SalveminiApp.iCringe.Commenti">
+    <StackLayout x:Name="mainLayout">
+        <Frame CornerRadius="0" BackgroundColor="{x:Static local:Styles.SecretsSecondary}" Padding="2,12" HasShadow="False">
+            <Label FontAttributes="Bold" Text="Commenti" TextColor="{x:Static local:Styles.BGColor}" HorizontalTextAlignment="Center" FontSize="25"/>
+        </Frame>
+        <!--Commenti list-->
+        <ListView SelectionMode="None" Refreshing="comments_Refreshing" IsPullToRefreshEnabled="True" RefreshControlColor="{x:Static local:Styles.BGColor}" BackgroundColor="Transparent" x:Name="commentsList" HasUnevenRows="true" Footer="" SeparatorVisibility="None">
+            <!--Header-->
+            <ListView.Header>
+                <StackLayout Spacing="4">
+                    <!--Domanda-->
+                    <patch:Label Margin="10" x:Name="header" FontSize="25" TextColor="{x:Static local:Styles.BGColor}" Lines="4" AutoFit="Width"/>
+                    <Frame Padding="0" BackgroundColor="{x:Static local:Styles.BGColor}" HeightRequest="2" CornerRadius="1" Margin="20,0" Opacity="0.6"/>
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <controls:Commento Comment="{Binding .}"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Rg.Plugins.Popup.Extensions;
 using Rg.Plugins.Popup.Pages;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace SalveminiApp.iCringe
@@ -16,9 +17,42 @@ namespace SalveminiApp.iCringe
            
         }
 
-        public void send_Clicked(object sender, EventArgs e)
+        public async void send_Clicked(object sender, EventArgs e)
         {
+            //Check internet
+            if(Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                Costants.showToast("connection");
+                return;
+            }
 
+            if (string.IsNullOrEmpty(domanda.Text))
+            {
+                Costants.showToast("Scrivi qualcosa!");
+                return;
+            }
+
+            //Show loading
+            loadingIndicator.IsRunning = true;
+            loadingIndicator.IsVisible = true;
+            sendBtn.IsEnabled = false;
+
+            //Post question
+            var response = await App.Cringe.PostDomanda(domanda.Text);
+            if(response[0] == "Successo")
+            {
+                 DisplayAlert("Successo", response[1], "Ok");
+                 Navigation.PopPopupAsync();
+            }
+            else
+            {
+                Costants.showToast(response[1]);
+            }
+
+                //Hide loading
+            loadingIndicator.IsRunning = false;
+            loadingIndicator.IsVisible = false;
+            sendBtn.IsEnabled = true;
         }
 
 

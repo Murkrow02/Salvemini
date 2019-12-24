@@ -25,6 +25,9 @@ namespace SalveminiApp.Helpers.Popups
 
         async void Giustifica_Clicked(object sender, System.EventArgs e)
         {
+            loadingIndicator.IsRunning = true;
+            loadingIndicator.IsVisible = true;
+            sendBtn.IsEnabled = false;
             try
             {
                 var giustificaModel = new RestApi.Models.AssenzaModel();
@@ -46,13 +49,10 @@ namespace SalveminiApp.Helpers.Popups
             }
             catch
             {
-
+                Costants.showToast("Si è verificato un errore");
             }
-            loadingIndicator.IsRunning = true;
-            loadingIndicator.IsVisible = true;
 
-           
-
+            sendBtn.IsEnabled = true;
             loadingIndicator.IsVisible = false;
             loadingIndicator.IsRunning = false;
         }
