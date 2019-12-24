@@ -267,6 +267,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)iCringe\Notifiche.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)iCringe\Commenti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Controls\Commento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)AreaVip\ApprovaCringe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -525,6 +541,18 @@
     <Compile Include="$(MSBuildThisFileDirectory)FlappyMimmo\GamePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FlappyMimmo\Menus\GameOverLayer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FlappyMimmo\SingleGameLayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)iCringe\Notifiche.xaml.cs">
+      <DependentUpon>Notifiche.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)iCringe\Commenti.xaml.cs">
+      <DependentUpon>Commenti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Commento.xaml.cs">
+      <DependentUpon>Commento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)AreaVip\ApprovaCringe.xaml.cs">
+      <DependentUpon>ApprovaCringe.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

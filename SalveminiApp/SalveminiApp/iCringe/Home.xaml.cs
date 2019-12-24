@@ -4,6 +4,10 @@ using Rg.Plugins.Popup.Extensions;
 using Xamarin.Forms;
 using SalveminiApp.RestApi.Models;
 using Xamarin.Essentials;
+using System.Threading.Tasks;
+using Forms9Patch;
+using System.Linq;
+using Plugin.Iconize;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 #endif
@@ -39,6 +43,9 @@ namespace SalveminiApp.iCringe
             //Refresh list
             postsList.IsRefreshing = true;
 
+            //Check new notifications in BG
+            await Task.Run((Action)checkNotifications);
+
             //Download posts
             Posts = await App.Cringe.GetFeed(-1);
 
@@ -56,7 +63,7 @@ namespace SalveminiApp.iCringe
         }
 
 
-      
+
 
         void Post_Selected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
@@ -91,6 +98,63 @@ namespace SalveminiApp.iCringe
         public void newPost_Clicked(object sender, EventArgs e)
         {
             Navigation.PushPopupAsync(new iCringe.NewPost());
+        }
+
+        public async void checkNotifications()
+        {
+            var lastNotifica = Preferences.Get("lastNotifica", 0);
+
+            var nuove = await App.Cringe.GetNotifiche(true, 0);
+
+            //No new notifications
+            if (nuove == null || nuove.Count < 1)
+                return;
+
+            //Popover notifiche
+            var notifichePopup = new Helpers.PopOvers().defaultPopOver;
+            notifichePopup.PointerDirection = PointerDirection.Up;
+            notifichePopup.PreferredPointerDirection = PointerDirection.Up;
+            notifichePopup.Target = bell;
+            notifichePopup.BackgroundColor = Styles.BGColor;
+
+            //Crea contenuto
+            var layout = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, Spacing = 8};
+            var commentiCount = nuove.Where(x => x.Tipo == 2).Count();
+            var accettateCount = nuove.Where(x => x.Tipo == 1).Count();
+            var rifiutateCount = nuove.Where(x => x.Tipo == 0).Count();
+
+            //Add custom
+            if(commentiCount > 0)
+            {
+                var stack = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, Spacing = 5};
+                var text = new Xamarin.Forms.Label { TextColor = Styles.SecretsPrimary, FontSize = 16, Text = commentiCount.ToString(), FontAttributes = FontAttributes.Bold, HorizontalTextAlignment = TextAlignment.Center };
+                var icon = new IconLabel { TextColor = Styles.SecretsPrimary, FontSize = 18, Text = "fas-comment", FontAttributes = FontAttributes.Bold ,HorizontalTextAlignment = TextAlignment.Center};
+                stack.Children.Add(text); stack.Children.Add(icon);
+                layout.Children.Add(stack);
+            }
+            if (accettateCount > 0)
+            {
+                var stack = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, Spacing = 5 };
+                var text = new Xamarin.Forms.Label { TextColor = Styles.SecretsPrimary, FontSize = 16, Text = accettateCount.ToString(), FontAttributes = FontAttributes.Bold, HorizontalTextAlignment = TextAlignment.Center };
+                var icon = new IconLabel { TextColor = Styles.SecretsPrimary, FontSize = 18, Text = "fas-check", FontAttributes = FontAttributes.Bold, HorizontalTextAlignment = TextAlignment.Center };
+                stack.Children.Add(text); stack.Children.Add(icon);
+                layout.Children.Add(stack);
+            }
+            if (rifiutateCount > 0)
+            {
+                var stack = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, Spacing = 5 };
+                var text = new Xamarin.Forms.Label { TextColor = Styles.SecretsPrimary, FontSize = 16, Text = rifiutateCount.ToString(), FontAttributes = FontAttributes.Bold, HorizontalTextAlignment = TextAlignment.Center };
+                var icon = new IconLabel { TextColor = Styles.SecretsPrimary, FontSize = 18, Text = "fas-times", FontAttributes = FontAttributes.Bold, HorizontalTextAlignment = TextAlignment.Center };
+                stack.Children.Add(text); stack.Children.Add(icon);
+                layout.Children.Add(stack);
+            }
+
+            notifichePopup.Content = layout;
+
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                notifichePopup.IsVisible = true;
+            });
         }
 
         public void notifiche_Clicked(object sender, EventArgs e)

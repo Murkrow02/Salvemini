@@ -236,7 +236,7 @@ namespace SalveminiApp.RestApi
         Task<CommentiReturn> GetCommenti(int id);
         Task<string[]> PostDomanda(string domanda);
         Task<string[]> PostCommento(Commenti commento);
-        Task<List<Notifiche>> GetNotifiche();
+        Task<List<Notifiche>> GetNotifiche(bool nuove, int id = 0);
         Task<List<Domande>> approveList();
         Task<string[]> ApprovaDomanda(int id, bool stato);
     }
@@ -260,9 +260,9 @@ namespace SalveminiApp.RestApi
             return restServiceCringe.GetCommenti(id);
         }
 
-        public Task<List<Notifiche>> GetNotifiche()
+        public Task<List<Notifiche>> GetNotifiche(bool nuove, int id = 0)
         {
-            return restServiceCringe.GetNotifiche();
+            return restServiceCringe.GetNotifiche(nuove, id);
         }
 
         public Task<string[]> PostDomanda(string domanda)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using SalveminiApp.RestApi.Models;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using System.Linq;
 #if __IOS__
 using UIKit;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
@@ -24,6 +25,11 @@ namespace SalveminiApp.iCringe
                 mainLayout.Padding = new Thickness(0, 20, 0, 0);
             }
 #endif
+
+            //Get from cache
+            var cachedNotifiche = CacheHelper.GetCache<List<RestApi.Models.Notifiche>>("cringenotifiche");
+            if (cachedNotifiche != null)
+                notificheList.ItemsSource = cachedNotifiche;
         }
 
         protected override async void OnAppearing()
@@ -41,7 +47,7 @@ namespace SalveminiApp.iCringe
             notificheList.IsRefreshing = true;
 
             //Download posts
-            notifiche = await App.Cringe.GetNotifiche();
+            notifiche = await App.Cringe.GetNotifiche(false);
 
             //Error
             if (notifiche == null)
@@ -50,6 +56,10 @@ namespace SalveminiApp.iCringe
                 notificheList.IsRefreshing = false;
                 return;
             }
+
+            //Save last
+            if (notifiche.Count > 0)
+                Preferences.Set("lastNotifica", notifiche.First().id);
 
             //Update list
             notificheList.ItemsSource = notifiche;
@@ -73,7 +83,7 @@ namespace SalveminiApp.iCringe
             var selectedPost = e.SelectedItem as RestApi.Models.Notifiche;
 
             //Prevent error
-            if (selectedPost == null)
+            if (selectedPost == null || selectedPost.Tipo == 0)
                 return;
 
             //Create push

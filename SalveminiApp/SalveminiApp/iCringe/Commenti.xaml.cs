@@ -96,6 +96,41 @@ namespace SalveminiApp.iCringe
             OnAppearing();
         }
 
+        public async void postCommento_Clicked(object sender, EventArgs e)
+        {
+            //Detect internet connection
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                Costants.showToast("connection");
+                return;
+            }
+
+            //Create commento
+            var commento = new RestApi.Models.Commenti { Anonimo = anonimo.IsToggled, Commento = chatEntry.Text, idPost = idPost };
+            //Post commento
+            var response = await App.Cringe.PostCommento(commento);
+            if (response[0] == "Successo")
+            {
+                OnAppearing(); //Refresh if success
+            }
+            Costants.showToast(response[1]);
+        }
+
+        public void checkText(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(chatEntry.Text) || string.IsNullOrWhiteSpace(chatEntry.Text))
+            {
+                sendButton.IsEnabled = false;
+                sendButton.Opacity = 0.8;
+            }
+            else
+            {
+                sendButton.IsEnabled = true;
+                sendButton.Opacity = 1;
+            }
+        }
+
+
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
