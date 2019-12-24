@@ -115,10 +115,38 @@ namespace SalveminiApp.RestApi
             }
         }
 
-        public async Task<List<Notifiche>> GetNotifiche()
+        public async Task<string[]> PostCommento(Commenti commento)
+        {
+            var uri = Costants.Uri("icringe/postcommento");
+
+            try
+            {
+                var json = JsonConvert.SerializeObject(commento);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await client.PostAsync(uri, content);
+                var messaggio = await response.Content.ReadAsStringAsync();
+
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                        return new string[] { "Successo", messaggio };
+                    default:
+                        return new string[] { "Errore", messaggio };
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Errore post commento", ex.Message);
+                return new string[] { "Errore", "Si è verificato un errore sconosciuto, riprova più tardi o contattaci se il problema persiste" };
+            }
+        }
+
+        public async Task<List<Notifiche>> GetNotifiche(bool nuove, int id = 0)
         {
             notifiche = new List<Notifiche>();
-            var uri = Costants.Uri("icringe/getnotifiche");
+            string uri;
+            uri = (nuove ? Costants.Uri("icringe/getnotifiche") : Costants.Uri("icringe/getnewnotifiche/" + id));
 
             try
             {
@@ -129,12 +157,16 @@ namespace SalveminiApp.RestApi
                     notifiche = JsonConvert.DeserializeObject<List<Notifiche>>(content);
 
                     //Save Cache
-                    Barrel.Current.Add("cringenotifiche", notifiche, TimeSpan.FromDays(20));
+                    if (!nuove)
+                        Barrel.Current.Add("cringenotifiche", notifiche, TimeSpan.FromDays(20));
                 }
                 else
                 {
                     //Return cache if error
-                    return CacheHelper.GetCache<List<Notifiche>>("cringenotifiche");
+                    if (!nuove)
+                        return CacheHelper.GetCache<List<Notifiche>>("cringenotifiche");
+                    else
+                        return null;
                 }
             }
             catch (Exception ex)
@@ -203,6 +235,7 @@ namespace SalveminiApp.RestApi
         Task<List<DomandeReturn>> GetFeed(int id);
         Task<CommentiReturn> GetCommenti(int id);
         Task<string[]> PostDomanda(string domanda);
+        Task<string[]> PostCommento(Commenti commento);
         Task<List<Notifiche>> GetNotifiche();
         Task<List<Domande>> approveList();
         Task<string[]> ApprovaDomanda(int id, bool stato);
@@ -235,6 +268,11 @@ namespace SalveminiApp.RestApi
         public Task<string[]> PostDomanda(string domanda)
         {
             return restServiceCringe.PostDomanda(domanda);
+        }
+
+        public Task<string[]> PostCommento(Commenti commento)
+        {
+            return restServiceCringe.PostCommento(commento);
         }
 
         public Task<List<Domande>> approveList()
