@@ -11,7 +11,7 @@ namespace SalveminiApp.iCringe
 {
     public partial class Notifiche : ContentPage
     {
-
+        public static bool Pushed;
         public List<RestApi.Models.Notifiche> notifiche = new List<RestApi.Models.Notifiche>();
 
         public Notifiche()
@@ -95,10 +95,10 @@ namespace SalveminiApp.iCringe
             try
             {
 
-             //   if (!Pushed)
+                if (!Pushed)
                     Navigation.PopModalAsync();
-              //  else
-               //     Pushed = false;
+                else
+                    Pushed = false;
             }
             catch
             {

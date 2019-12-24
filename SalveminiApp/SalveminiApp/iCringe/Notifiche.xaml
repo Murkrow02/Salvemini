@@ -9,10 +9,10 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" Spacing="15" Margin="10,5">
+                        <StackLayout Orientation="Horizontal" Spacing="15" Margin="10">
                             <StackLayout HorizontalOptions="Start" Spacing="2">
                                 <!--Text-->
-                                <iconize:IconLabel Text="{Binding Descrizione}" FontSize="16" TextColor="{x:Static local:Styles.BGColor}"/>
+                                <iconize:IconLabel Text="{Binding Descrizione}" FontSize="20" TextColor="{x:Static local:Styles.BGColor}"/>
                                 <!--QUanto fa-->
                                 <Label Text="10 min fa" FontSize="15" TextColor="{x:Static local:Styles.BGColor}" Opacity="0.8"/>
                             </StackLayout>
