@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage BackgroundColor="{x:Static local:Styles.SecretsPrimary}" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:SalveminiApp.Controls" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" x:Class="SalveminiApp.iCringe.Commenti">
+<ContentPage BackgroundColor="{x:Static local:Styles.SecretsPrimary}" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:SalveminiApp.Controls" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" x:Class="SalveminiApp.iCringe.Commenti">
     <StackLayout x:Name="mainLayout">
         <Frame CornerRadius="0" BackgroundColor="{x:Static local:Styles.SecretsSecondary}" Padding="2,12" HasShadow="False">
             <Label FontAttributes="Bold" Text="Commenti" TextColor="{x:Static local:Styles.BGColor}" HorizontalTextAlignment="Center" FontSize="25"/>
@@ -22,6 +22,26 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Frame x:Name="entryFrame" BackgroundColor="{x:Static local:Styles.SecretsSecondary}" HasShadow="False" CornerRadius="0" VerticalOptions="EndAndExpand">
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label VerticalOptions="Center" Text="Pubblica in forma anonima" TextColor="White" HorizontalOptions="Start"/>
+                    <Switch IsToggled="True" OnColor="#00cbe6" Scale="0.8" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+                <Frame VerticalOptions="FillAndExpand" BackgroundColor="{x:Static local:Styles.SecretsPrimary}" HasShadow="False" Padding="0" IsClippedToBounds="True" CornerRadius="12">
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <local:ChatEntry BackgroundColor="{x:Static local:Styles.SecretsPrimary}" Grid.Row="0" Grid.Column="0" x:Name="chatEntry" VerticalOptions="CenterAndExpand" FontSize="18" AutoSize="TextChanges" Placeholder="Aggiungi un commento" HorizontalOptions="FillAndExpand"/>
+                        <iconize:IconButton x:Name="sendButton" TextColor="White" WidthRequest="30" Grid.Column="1" VerticalOptions="End" FontSize="25" Text="fas-arrow-circle-up" />
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </Frame>
     </StackLayout>
-
 </ContentPage>
