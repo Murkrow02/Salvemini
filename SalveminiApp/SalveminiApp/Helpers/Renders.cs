@@ -19,6 +19,17 @@ namespace SalveminiApp
 
     }
 
+    public class ChatEntry : Editor
+    {
+        public ChatEntry()
+        {
+            this.TextChanged += (sender, e) =>
+            {
+                this.InvalidateMeasure();
+            };
+        }
+    }
+
     public class ZoomImage : FFImageLoading.Forms.CachedImage
     {
         private const double MIN_SCALE = 1;

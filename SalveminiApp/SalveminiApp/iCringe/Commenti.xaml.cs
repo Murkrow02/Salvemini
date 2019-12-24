@@ -24,6 +24,7 @@ namespace SalveminiApp.iCringe
                 mainLayout.Padding = new Thickness(0, 20, 0, 0);
             }
 #endif
+            chatEntry.WidthRequest = App.ScreenWidth - 70;
 
             idPost = idPost_;
 
@@ -38,6 +39,23 @@ namespace SalveminiApp.iCringe
             //Get from push
             if (!string.IsNullOrEmpty(cachedQuestion))
                 header.Text = cachedQuestion;
+
+#if __IOS__
+            //Handle keyboard animation
+            UIKit.UIKeyboard.Notifications.ObserveWillShow((s, e) =>
+            {
+                var r = UIKit.UIKeyboard.FrameEndFromNotification(e.Notification);
+                entryFrame.TranslateTo(0, -r.Height, (uint)(e.AnimationDuration * 1000));
+                //  list.ScaleHeightTo(list.Height - r.Height, (uint)(e.AnimationDuration * 1000));
+            });
+
+            UIKit.UIKeyboard.Notifications.ObserveWillHide((s, e) =>
+            {
+                var r = UIKit.UIKeyboard.FrameBeginFromNotification(e.Notification);
+                entryFrame.TranslateTo(0, 0, (uint)(e.AnimationDuration * 1000));
+                // list.ScaleHeightTo(listHeight, (uint)(e.AnimationDuration * 1000));
+            });
+#endif
         }
 
 

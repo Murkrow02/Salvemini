@@ -12,10 +12,21 @@ using System.Drawing;
 [assembly: ExportRenderer(typeof(SalveminiApp.ShadowFrame), typeof(ShadowFrame))]
 [assembly: ExportRenderer(typeof(SalveminiApp.TransparentGradient), typeof(TransparentGradient))]
 [assembly: ExportRenderer(typeof(SalveminiApp.DashedBorderFrame), typeof(DashedBorderFrame))]
+[assembly: ExportRenderer(typeof(SalveminiApp.ChatEntry), typeof(ChatEntryViewRenderer))]
 [assembly: ExportRenderer(typeof(TabbedPage), typeof(TabbedPageRenderer))]
 [assembly: ExportRenderer(typeof(WebView), typeof(CustomWebViewRenderer))]
+
 namespace SalveminiApp.iOS
 {
+    public class ChatEntryViewRenderer : EditorRenderer
+    {
+        protected override void OnElementChanged(ElementChangedEventArgs<Editor> e)
+        {
+            base.OnElementChanged(e);
+            Control.InputAccessoryView = null;
+        }
+    }
+
     public static class ImageExtensions
     {
         public static UIImage Crop(this UIImage image, int x, int y, int width, int height)
