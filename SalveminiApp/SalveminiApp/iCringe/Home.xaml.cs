@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using Forms9Patch;
 using System.Linq;
 using Plugin.Iconize;
+using System.Collections.ObjectModel;
+using MarcTron.Plugin.Controls;
+using MarcTron.Plugin;
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 #endif
@@ -15,8 +18,7 @@ namespace SalveminiApp.iCringe
 {
     public partial class Home : ContentPage
     {
-        List<DomandeReturn> Posts = new List<DomandeReturn>();
-
+        ObservableCollection<DomandeReturn> Posts = new ObservableCollection<DomandeReturn>();
 
         public Home()
         {
@@ -26,12 +28,24 @@ namespace SalveminiApp.iCringe
             var cachedPosts = CacheHelper.GetCache<List<DomandeReturn>>("cringefeed");
             if (cachedPosts != null)
                 postsList.ItemsSource = cachedPosts;
-        }
 
+            //Set ad source
+            MTAdView ad = new MTAdView { AdsId = AdsHelper.BannerId(), PersonalizedAds = true };
+            mainLayout.Children.Insert(0, ad);
+
+            //Android custom color
+#if __ANDROID__
+            postsList.RefreshControlColor = Styles.TextColor;
+#endif
+        }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+
+            //Detect firstTime
+            if (Preferences.Get("firstTimeCringe", true))
+                await Navigation.PushModalAsync(new iCringe.WelcomePage());
 
             //Detect internet connection
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
@@ -47,7 +61,8 @@ namespace SalveminiApp.iCringe
             await Task.Run((Action)checkNotifications);
 
             //Download posts
-            Posts = await App.Cringe.GetFeed(-1);
+            var posts_ = await App.Cringe.GetFeed(-1);
+            Posts = posts_.ToObservableCollection();
 
             //Error
             if (Posts == null)
@@ -100,11 +115,54 @@ namespace SalveminiApp.iCringe
             Navigation.PushPopupAsync(new iCringe.NewPost());
         }
 
+        public async void user_tapped(object sender, EventArgs e)
+        {
+            //Get domanda
+            var domanda = ((sender as Xamarin.Forms.StackLayout).Children[2] as Xamarin.Forms.Button).CommandParameter as DomandeReturn;
+
+            //Prevent error
+            if (domanda == null)
+                return;
+
+            //Push to user page
+            //Create push
+            if (domanda.Utente == null)
+                return;
+
+            var modalPush = new SecondaryViews.ProfileView(domanda.Utente);
+
+            //Modal figo
+#if __IOS__
+            modalPush.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
+#endif
+            await Navigation.PushModalAsync(modalPush);
+        }
+
+        public async void deletePost_Clicked(object sender, EventArgs e)
+        {
+            //Get domanda
+            var domanda = (sender as IconButton).CommandParameter as DomandeReturn;
+
+            //Conferma
+            bool confirm = await this.GetParentPage().DisplayAlert("Sei sicuro?", "Vuoi eliminare questo post?", "Elimina", "Annulla");
+            if (!confirm)
+                return;
+
+            //Elimina
+            var successo = await App.Cringe.DeletePost(domanda.id);
+            if (successo[0] == "Successo")
+            {
+                //Refresh list
+                Posts.Remove(domanda);
+            }
+            Costants.showToast(successo[1]);
+        }
+
         public async void checkNotifications()
         {
             var lastNotifica = Preferences.Get("lastNotifica", 0);
 
-            var nuove = await App.Cringe.GetNotifiche(true, 0);
+            var nuove = await App.Cringe.GetNotifiche(true, lastNotifica);
 
             //No new notifications
             if (nuove == null || nuove.Count < 1)
@@ -118,17 +176,17 @@ namespace SalveminiApp.iCringe
             notifichePopup.BackgroundColor = Styles.BGColor;
 
             //Crea contenuto
-            var layout = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, Spacing = 8};
+            var layout = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, Spacing = 8 };
             var commentiCount = nuove.Where(x => x.Tipo == 2).Count();
             var accettateCount = nuove.Where(x => x.Tipo == 1).Count();
             var rifiutateCount = nuove.Where(x => x.Tipo == 0).Count();
 
             //Add custom
-            if(commentiCount > 0)
+            if (commentiCount > 0)
             {
-                var stack = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, Spacing = 5};
+                var stack = new Xamarin.Forms.StackLayout { Orientation = StackOrientation.Horizontal, Spacing = 5 };
                 var text = new Xamarin.Forms.Label { TextColor = Styles.SecretsPrimary, FontSize = 16, Text = commentiCount.ToString(), FontAttributes = FontAttributes.Bold, HorizontalTextAlignment = TextAlignment.Center };
-                var icon = new IconLabel { TextColor = Styles.SecretsPrimary, FontSize = 18, Text = "fas-comment", FontAttributes = FontAttributes.Bold ,HorizontalTextAlignment = TextAlignment.Center};
+                var icon = new IconLabel { TextColor = Styles.SecretsPrimary, FontSize = 18, Text = "fas-comment", FontAttributes = FontAttributes.Bold, HorizontalTextAlignment = TextAlignment.Center };
                 stack.Children.Add(text); stack.Children.Add(icon);
                 layout.Children.Add(stack);
             }

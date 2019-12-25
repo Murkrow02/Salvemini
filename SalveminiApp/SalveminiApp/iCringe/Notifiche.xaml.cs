@@ -4,6 +4,7 @@ using SalveminiApp.RestApi.Models;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using System.Linq;
+using Com.OneSignal;
 #if __IOS__
 using UIKit;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
@@ -35,6 +36,7 @@ namespace SalveminiApp.iCringe
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+            Pushed = false;
 
             //Detect internet connection
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
@@ -42,6 +44,9 @@ namespace SalveminiApp.iCringe
                 Costants.showToast("connection");
                 return;
             }
+
+            //Switch toggled?
+            notificheSwitch.IsToggled = Preferences.Get("iCringePush", false);
 
             //Refresh list
             notificheList.IsRefreshing = true;
@@ -66,10 +71,28 @@ namespace SalveminiApp.iCringe
             notificheList.IsRefreshing = false;
         }
 
+        public void switch_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (e.Value) //Toggled
+            {
+                Preferences.Set("iCringePush", true);
+                OneSignal.Current.SendTag("Secrets", Preferences.Get("UserId", 0).ToString());
+            }
+            else //Not toggled
+            {
+                Preferences.Set("iCringePush", false);
+                OneSignal.Current.DeleteTag("Secrets");
+            }
+        }
 
         public void Refreshing(object sender, EventArgs e)
         {
             OnAppearing();
+        }
+
+        public void Close_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
         }
 
         void item_Selected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
@@ -93,6 +116,7 @@ namespace SalveminiApp.iCringe
 #if __IOS__
             modalPush.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
 #endif
+            Commenti.fromNotifiche = true;
             Navigation.PushModalAsync(modalPush);
 
         }

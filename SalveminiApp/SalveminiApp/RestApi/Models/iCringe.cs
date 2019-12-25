@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using Xamarin.Essentials;
 
 namespace SalveminiApp.RestApi.Models
 {
@@ -13,39 +15,39 @@ namespace SalveminiApp.RestApi.Models
         public Utenti Utente { get; set; }
         public List<Commenti> Commenti { get; set; }
 
+        public string UserImage
+        {
+            get
+            {
+                return Utente != null ? Utente.fullImmagine : "Anonimo";
+            }
+        }
+
+        public bool canDelete
+        {
+            get
+            {
+                if (SecondaryViews.Profile.superVip_)
+                    return true;
+                if (Utente == null)
+                    return false;
+                return Utente.id == Preferences.Get("UserId", 0);
+            }
+        }
+
+        public string UserName
+        {
+            get
+            {
+                return Utente != null ? Utente.nomeCognome : "Anonimo";
+            }
+        }
+
         public string Elapsed
         {
             get
             {
-                //Anni fa
-                if (Data.Days > 365)
-                    return (Data.Days / 365).ToString() + (Data.Days / 365 == 1 ? " anno fa" : " anni fa");
-
-                //Mesi
-                if (Data.Days > 30)
-                    return (Data.Days / 30).ToString() + (Data.Days / 30 == 1 ? " mese fa" : " mesi fa");
-
-                //Giorni
-                if (Data.Days >= 7)
-                    return (Data.Days / 7).ToString() + (Data.Days / 7 == 1 ? " settimana fa" : " settimane fa");
-
-                //Giorni
-                if (Data.Days > 1)
-                    return (Data.Days).ToString() + (Data.Days == 1 ? " giorno fa" : " giorni fa");
-
-                //Ore
-                if (Data.Hours > 1)
-                    return (Data.Hours).ToString() + (Data.Hours == 1 ? " ora fa" : " ore fa");
-
-                //Minuti
-                if (Data.Minutes > 1)
-                    return (Data.Minutes).ToString() + (Data.Minutes == 1 ? " minuto fa" : " minuti fa");
-
-                //Secondi
-                if (Data.Seconds > 1)
-                    return (Data.Seconds).ToString() + (Data.Seconds == 1 ? " secondo fa" : " secondi fa");
-
-                return "";
+                return Costants.SpanString(Data);
             }
         }
 
@@ -69,7 +71,7 @@ namespace SalveminiApp.RestApi.Models
                     return "Vedi un altro commento";
                 //Più di 1
                 else if (CommentiCount > 3)
-                    return "Vedi altri " + CommentiCount.ToString() + " commenti";
+                    return "Vedi altri " + (CommentiCount - 2).ToString() + " commenti";
                 else //Niente
                     return "";
             }
@@ -132,7 +134,7 @@ namespace SalveminiApp.RestApi.Models
         public int id { get; set; }
         public string Commento { get; set; }
         public System.DateTime Creazione { get; set; }
-        public int idUtente { get; set; }
+        //public int idUtente { get; set; }
         public int idPost { get; set; }
         public Utenti Utenti { get; set; }
         public bool Anonimo { get; set; }
@@ -152,12 +154,33 @@ namespace SalveminiApp.RestApi.Models
                 return Utenti != null ? Utenti.fullImmagine : "Anonimo";
             }
         }
+
+        public string Elapsed
+        {
+            get
+            {
+                return Costants.SpanString(DateTime.Now - Creazione);
+            }
+        }
+
+        public bool canDelete
+        {
+            get
+            {
+                if (SecondaryViews.Profile.superVip_)
+                    return true;
+                if (Utenti == null)
+                    return false;
+                return Utenti.id == Preferences.Get("UserId", 0);
+            }
+        }
     }
 
     public class CommentiReturn
     {
         public string Domanda { get; set; }
-        public List<Commenti> Commenti { get; set; }
+        //public List<Commenti> Commenti { get; set; }
+        public ObservableCollection<Commenti> Commenti { get; set; }
     }
 
     public class Domande
@@ -180,7 +203,8 @@ namespace SalveminiApp.RestApi.Models
         public int idUtente { get; set; }
         public int Tipo { get; set; }
 
-        public string Icon {
+        public string Icon
+        {
             get
             {
                 switch (Tipo)
@@ -195,7 +219,15 @@ namespace SalveminiApp.RestApi.Models
                     default: //Boh
                         return "";
                 }
-                    
+
+            }
+        }
+
+        public string Elapsed
+        {
+            get
+            {
+                return Costants.SpanString(DateTime.Now - Creazione);
             }
         }
     }

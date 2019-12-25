@@ -26,6 +26,9 @@ namespace SalveminiApp.SecondaryViews
         public RestApi.Models.Utenti utente = new RestApi.Models.Utenti();
         public MediaFile newPic;
 
+        //Save in this session if is super vip
+        public static bool superVip_;
+
         public Profile()
         {
             InitializeComponent();
@@ -185,6 +188,7 @@ namespace SalveminiApp.SecondaryViews
                                 vipLayout.IsEnabled = true;
                                 vipLayout.Opacity = 1;
                                 superVip.IsVisible = true;
+                                superVip_ = true;
                                 break;
                             default: //Hide everything
                                 rapprLayout.IsEnabled = false;

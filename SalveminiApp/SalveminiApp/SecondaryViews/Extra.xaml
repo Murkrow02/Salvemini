@@ -11,7 +11,7 @@
                 <Label Text="Sono esclusi dal conteggio i tuoi giorni di rotazione, le domeniche e le altre feste indicate dal calendario scolastico ufficiale" x:Name="noFestivi" TextColor="{x:Static local:Styles.TextGray}" FontSize="10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
             </StackLayout>
 
-            <Button Text="Flappy mimmo" Clicked="Flappy_Clicked"/>
+            <!--<Button Text="Flappy mimmo" Clicked="Flappy_Clicked"/>-->
 
             <!--Random-->
             <ScrollView>

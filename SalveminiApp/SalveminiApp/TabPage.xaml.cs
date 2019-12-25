@@ -79,24 +79,36 @@ namespace SalveminiApp
 #if __IOS__
             MessagingCenter.Send<App>((App)Xamarin.Forms.Application.Current, "changeBg");
 #endif
-
-            switch (index)
+            try
             {
-                case 1:
-                    //Home
-                    (Children[index] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
-                    if (Children.ElementAtOrDefault(2) != null)
-                    {
+                switch (index)
+                {
+                    case 0:
+                        //Home
+                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
+                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
                         (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
-                    }
-                    break;
+                        break;
+                    case 1:
+                        //Home
+                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
+                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
+                        (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
+                        break;
 
-                case 2:
-                    //Argo
-                    (Children[index] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarArgo.png";
-                    (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
-                    break;
+                    case 2:
+                        //Argo
+                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
+                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
+                        (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarArgo.png";
+                        break;
+                }
             }
+            catch
+            {
+
+            }
+            
         }
     }
 }

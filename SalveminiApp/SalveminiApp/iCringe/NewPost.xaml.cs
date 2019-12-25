@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using MarcTron.Plugin;
 using Rg.Plugins.Popup.Extensions;
 using Rg.Plugins.Popup.Pages;
 using Xamarin.Essentials;
@@ -13,14 +15,13 @@ namespace SalveminiApp.iCringe
         public NewPost()
         {
             InitializeComponent();
-
-           
+            CrossMTAdmob.Current.LoadInterstitial(AdsHelper.InterstitialId());
         }
 
         public async void send_Clicked(object sender, EventArgs e)
         {
             //Check internet
-            if(Connectivity.NetworkAccess != NetworkAccess.Internet)
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
                 Costants.showToast("connection");
                 return;
@@ -39,23 +40,29 @@ namespace SalveminiApp.iCringe
 
             //Post question
             var response = await App.Cringe.PostDomanda(domanda.Text);
-            if(response[0] == "Successo")
+            if (response[0] == "Successo")
             {
-                 DisplayAlert("Successo", response[1], "Ok");
-                 Navigation.PopPopupAsync();
+                await DisplayAlert("Successo", response[1], "Ok");
+                await Navigation.PopPopupAsync();
+
+                //Show ad
+                await showAd();
             }
             else
             {
                 Costants.showToast(response[1]);
             }
 
-                //Hide loading
+            //Hide loading
             loadingIndicator.IsRunning = false;
             loadingIndicator.IsVisible = false;
             sendBtn.IsEnabled = true;
         }
 
-
+        async Task showAd()
+        {
+            CrossMTAdmob.Current.ShowInterstitial();
+        }
 
     }
 }

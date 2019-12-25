@@ -1,23 +1,32 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage BackgroundColor="{x:Static local:Styles.SecretsPrimary}" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.iCringe.Notifiche">
     <StackLayout x:Name="mainLayout">
-        <Frame CornerRadius="0" BackgroundColor="{x:Static local:Styles.SecretsSecondary}" Padding="2,12" HasShadow="False">
-            <Label FontAttributes="Bold" Text="Notifiche" TextColor="{x:Static local:Styles.BGColor}" HorizontalTextAlignment="Center" FontSize="25"/>
+        <!--Title-->
+        <Frame CornerRadius="0" BackgroundColor="{x:Static local:Styles.SecretsSecondary}" Padding="2,10" HasShadow="False">
+            <StackLayout Orientation="Horizontal" Spacing="5">
+                <iconize:IconButton BackgroundColor="Transparent" Clicked="Close_Clicked" VerticalOptions="Center" HorizontalOptions="Start" Text="fal-times" FontSize="30" WidthRequest="45" TextColor="{x:Static local:Styles.BGColor}" />
+                <Label VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontAttributes="Bold" Text="Notifiche" HorizontalOptions="StartAndExpand" TextColor="{x:Static local:Styles.BGColor}" HorizontalTextAlignment="Start" FontSize="25"/>
+            </StackLayout>
         </Frame>
+        <!--Switch-->
+        <StackLayout Orientation="Horizontal" Padding="10,0">
+            <Label VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontAttributes="Bold" Text="Ricevi notifiche push" HorizontalOptions="StartAndExpand" TextColor="{x:Static local:Styles.BGColor}" HorizontalTextAlignment="Start" FontSize="20"/>
+            <Switch x:Name="notificheSwitch" Toggled="switch_Toggled" IsToggled="True" OnColor="#00cbe6" Scale="0.8" HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
         <!--Notifiche list-->
         <ListView ItemSelected="item_Selected" Refreshing="Refreshing" IsPullToRefreshEnabled="True" RefreshControlColor="{x:Static local:Styles.BGColor}" BackgroundColor="Transparent" x:Name="notificheList" HasUnevenRows="true" Header="" Footer="" SeparatorVisibility="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" Spacing="15" Margin="10">
-                            <StackLayout HorizontalOptions="Start" Spacing="2">
-                                <!--Text-->
-                                <iconize:IconLabel Text="{Binding Descrizione}" FontSize="20" TextColor="{x:Static local:Styles.BGColor}"/>
-                                <!--QUanto fa-->
-                                <Label Text="10 min fa" FontSize="15" TextColor="{x:Static local:Styles.BGColor}" Opacity="0.8"/>
-                            </StackLayout>
                             <!--Icon-->
-                            <iconize:IconLabel VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" Text="{Binding Icon}" HorizontalTextAlignment="Center" HorizontalOptions="End" FontSize="26" TextColor="{x:Static local:Styles.BGColor}"/>
+                            <iconize:IconLabel VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" Text="{Binding Icon}" HorizontalTextAlignment="Center" HorizontalOptions="Start" FontSize="26" TextColor="{x:Static local:Styles.BGColor}"/>
+                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="2">
+                                <!--Text-->
+                                <Label Text="{Binding Descrizione}" FontSize="20" TextColor="{x:Static local:Styles.BGColor}"/>
+                                <!--Quanto fa-->
+                                <Label Text="{Binding Elapsed}" FontSize="15" TextColor="{x:Static local:Styles.BGColor}" Opacity="0.8"/>
+                            </StackLayout>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

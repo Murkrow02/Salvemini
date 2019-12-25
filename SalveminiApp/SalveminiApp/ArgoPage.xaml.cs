@@ -36,11 +36,11 @@ namespace SalveminiApp
                 //Nessuna connessione
                 Costants.showToast("connection");
                 appearedTimes = 5; //Repeat this every time
-                //if (Medie.IsNullOrEmpty()) { chartLayout.IsVisible = false; }
-                //else
-                //{
-                //    showChart(); //Got from cache
-                //}
+                if (Medie.IsNullOrEmpty()) { chartLayout.IsVisible = false; }
+                else
+                {
+                    showChart(); //Got from cache
+                }
                 return;
             }
 
@@ -49,7 +49,7 @@ namespace SalveminiApp
 
             try
             {
-      //          chartLoading.IsRunning = true; chartLoading.IsVisible = true;
+                chartLoading.IsRunning = true; chartLoading.IsVisible = true;
                 //Get values from pentagono api
                 var dates = await App.Argo.GetPentagono();
 
@@ -67,13 +67,13 @@ namespace SalveminiApp
 
                 //Fill medie list
                 Medie = newMedie;
-           //     showChart();
+                showChart();
 
                 //If previously hidden from no connection
-            //    chartLayout.IsVisible = true;
+                chartLayout.IsVisible = true;
 
                 //Stop activityindicator
-         //       chartLoading.IsRunning = false; chartLoading.IsVisible = false;
+                chartLoading.IsRunning = false; chartLoading.IsVisible = false;
             }
             catch //Random error
             {
@@ -100,23 +100,23 @@ namespace SalveminiApp
             }
         }
 
-        ////Shows the chart if abbastanza materie
-        //public void showChart()
-        //{
-        //    if (Medie.Count >= 3)
-        //    {
-        //        chart.IsVisible = true;
-        //        chart.Opacity = 1;
-        //        noSubjectsLayout.IsVisible = false;
-        //        radarChart.ItemsSource = Medie;
-        //    }
-        //    else
-        //    {
-        //        //Non abbastanza :(
-        //        chart.IsVisible = false;
-        //        noSubjectsLayout.IsVisible = true;
-        //    }
-        //}
+        //Shows the chart if abbastanza materie
+        public void showChart()
+        {
+            if (Medie.Count >= 3)
+            {
+                chart.IsVisible = true;
+                chart.Opacity = 1;
+                noSubjectsLayout.IsVisible = false;
+                radarChart.ItemsSource = Medie;
+            }
+            else
+            {
+                //Non abbastanza :(
+                chart.IsVisible = false;
+                noSubjectsLayout.IsVisible = true;
+            }
+        }
 
         public ArgoPage()
         {
@@ -155,9 +155,9 @@ namespace SalveminiApp
             var cachedMedie = CacheHelper.GetCache<List<RestApi.Models.Pentagono>>("Medie");
             if (cachedMedie != null)
             {
-       //         chart.IsVisible = true;
+                chart.IsVisible = true;
                 Medie = cachedMedie;
-                //radarChart.ItemsSource = Medie;
+                radarChart.ItemsSource = Medie;
             }
 
             //Add widgets

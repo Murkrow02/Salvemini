@@ -90,6 +90,8 @@ namespace SalveminiApp
         {
             base.OnAppearing();
 
+       
+
             //Load navigation pages to be faster
             await Task.Run((Action)loadNavigationPages);
 

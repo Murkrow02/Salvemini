@@ -72,22 +72,41 @@ namespace SalveminiApp.Controls
 			}
 		}
 
-		//Update values
-		protected override void OnPropertyChanged(string propertyName = null)
+        public async void deleteComment_Clicked(object sender, EventArgs e)
+        {
+            //Conferma
+            bool confirm = await this.GetParentPage().DisplayAlert("Sei sicuro?", "Vuoi eliminare il tuo commento da questo post?", "Elimina", "Annulla");
+            if (!confirm)
+                return;
+
+            //Elimina
+            var successo = await App.Cringe.DeleteCommento(Comment.id);
+            if(successo[0] == "Successo")
+            {
+                //Refresh list
+                MessagingCenter.Send<App,RestApi.Models.Commenti>((App)Xamarin.Forms.Application.Current, "removeCommento", Comment);
+            }
+            Costants.showToast(successo[1]);
+        }
+
+        //Update values
+        protected override void OnPropertyChanged(string propertyName = null)
 		{
 			base.OnPropertyChanged(propertyName);
 
 			try
 			{
-				//Title
+				//Commento
 				if (propertyName == CommentProperty.PropertyName)
 				{
 					userName.Text = Comment.UserName;
 					userImg.Source = Comment.UserImage;
 					commentLbl.Text = Comment.Commento;
-				}
+                    elapsed.Text = Costants.SpanString(DateTime.Now - Comment.Creazione);
 
-				//Title
+                }
+
+				//No padding
 				if (propertyName == NoPaddingProperty.PropertyName)
 				{
 					if (NoPadding)
