@@ -4,7 +4,7 @@
         <!--Title-->
         <StackLayout>
             <iconize:IconLabel Text="fal-user-secret" TextColor="{x:Static local:Styles.BGColor}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" FontSize="90"/>
-            <Label Text="Benvenuto su ??????????" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.BGColor}" FontSize="30" HorizontalTextAlignment="Center"/>
+            <Label Text="Benvenuto su iCringe" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.BGColor}" FontSize="30" HorizontalTextAlignment="Center"/>
         </StackLayout>
 
         <!--Privacy-->

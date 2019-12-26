@@ -21,6 +21,9 @@ namespace SalveminiApp
         {
             base.OnAppearing();
 
+            if (((this.Parent as Helpers.CustomNavigationPage).Parent as TabbedPage).CurrentPage != this.Parent as Helpers.CustomNavigationPage)
+                return;
+
             //Show agenda only if orario downloaded
             if (Preferences.Get("OrarioSaved", false))
                 agendaFrame.IsVisible = true;

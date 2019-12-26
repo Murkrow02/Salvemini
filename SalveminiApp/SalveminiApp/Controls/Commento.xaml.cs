@@ -40,7 +40,22 @@ namespace SalveminiApp.Controls
 			}
 		}
 
-		public Commento()
+        //Hide Trash
+        public static readonly BindableProperty HideTrashProperty = BindableProperty.Create(nameof(HideTrash), typeof(bool), typeof(Commento), default(bool), Xamarin.Forms.BindingMode.OneWay);
+        public bool HideTrash
+        {
+            get
+            {
+                return (bool)GetValue(HideTrashProperty);
+            }
+
+            set
+            {
+                SetValue(HideTrashProperty, value);
+            }
+        }
+
+        public Commento()
 		{
 			InitializeComponent();
 
@@ -114,7 +129,14 @@ namespace SalveminiApp.Controls
 					else
 						mainLayout.Margin = new Thickness(10);
 				}
-			}
+
+                //Hide trash
+                if (propertyName == HideTrashProperty.PropertyName)
+                {
+                    if (HideTrash)
+                        trash.IsVisible = false;
+                }
+            }
 			catch
 			{
 				//Boh per sicurezza a volte fa cose strane

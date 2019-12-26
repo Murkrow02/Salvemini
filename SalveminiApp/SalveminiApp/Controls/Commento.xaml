@@ -25,6 +25,6 @@
             <Label x:Name="elapsed" FontSize="15" TextColor="{x:Static local:Styles.BGColor}" Opacity="0.8"/>
         </StackLayout>
         <!--Delete icon-->
-        <iconize:IconButton WidthRequest="40" TextColor="{x:Static local:Styles.BGColor}" IsVisible="{Binding canDelete}" Clicked="deleteComment_Clicked" Text="fal-trash" FontSize="20" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent"/>
+        <iconize:IconButton x:Name="trash" WidthRequest="40" TextColor="{x:Static local:Styles.BGColor}" IsVisible="{Binding canDelete}" Clicked="deleteComment_Clicked" Text="fal-trash" FontSize="20" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent"/>
     </StackLayout>
 </ContentView>

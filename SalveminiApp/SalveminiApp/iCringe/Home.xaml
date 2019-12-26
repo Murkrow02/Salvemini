@@ -53,8 +53,8 @@
                                     </StackLayout>
                                 </StackLayout>
                                 <!--Commenti-->
-                                <controls:Commento NoPadding="True" Comment="{Binding FirstComment}" IsVisible="{Binding FirstCommentVisible}"/>
-                                <controls:Commento NoPadding="True" Comment="{Binding SecondComment}" IsVisible="{Binding SecondCommentVisible}"/>
+                                <controls:Commento HideTrash="True" NoPadding="True" Comment="{Binding FirstComment}" IsVisible="{Binding FirstCommentVisible}"/>
+                                <controls:Commento HideTrash="True" NoPadding="True" Comment="{Binding SecondComment}" IsVisible="{Binding SecondCommentVisible}"/>
                                 <!--Altri commenti-->
                                 <Label Margin="10,0,0,0" IsVisible="{Binding AltriCommentiVisible}" Text="{Binding AltriCommentiString}" HorizontalOptions="Start" TextColor="{x:Static local:Styles.BGColor}" FontSize="15"/>
                             </StackLayout>

@@ -90,7 +90,8 @@ namespace SalveminiApp
         {
             base.OnAppearing();
 
-       
+            if (((this.Parent as Helpers.CustomNavigationPage).Parent as TabbedPage).CurrentPage != this.Parent as Helpers.CustomNavigationPage)
+                return;
 
             //Load navigation pages to be faster
             await Task.Run((Action)loadNavigationPages);

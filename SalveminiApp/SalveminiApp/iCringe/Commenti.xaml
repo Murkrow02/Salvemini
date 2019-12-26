@@ -42,8 +42,8 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <local:ChatEntry TextColor="{x:Static local:Styles.BGColor}" TextChanged="checkText" BackgroundColor="{x:Static local:Styles.SecretsPrimary}" Grid.Row="0" Grid.Column="0" x:Name="chatEntry" VerticalOptions="CenterAndExpand" FontSize="18" AutoSize="TextChanges" Placeholder="Aggiungi un commento" HorizontalOptions="FillAndExpand"/>
-                        <iconize:IconButton IsEnabled="False" Opacity="0.8" Clicked="postCommento_Clicked" x:Name="sendButton" TextColor="White" WidthRequest="30" Grid.Column="1" VerticalOptions="End" FontSize="25" Text="fas-arrow-circle-up" />
+                        <local:ChatEntry TextColor="{x:Static local:Styles.BGColor}" PlaceholderColor="{x:Static local:Styles.BGColor}" TextChanged="checkText" BackgroundColor="{x:Static local:Styles.SecretsPrimary}" Grid.Row="0" Grid.Column="0" x:Name="chatEntry" VerticalOptions="CenterAndExpand" FontSize="18" AutoSize="TextChanges" Placeholder="Aggiungi un commento" HorizontalOptions="FillAndExpand"/>
+                        <iconize:IconButton BackgroundColor="Transparent" TextColor="{x:Static local:Styles.BGColor}" IsEnabled="False" Opacity="0.8" Clicked="postCommento_Clicked" x:Name="sendButton" WidthRequest="50" Grid.Column="1" VerticalOptions="End" FontSize="25" Text="fas-arrow-circle-up" />
                     </Grid>
                 </Frame>
             </StackLayout>

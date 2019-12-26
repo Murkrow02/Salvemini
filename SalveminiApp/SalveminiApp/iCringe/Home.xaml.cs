@@ -20,6 +20,7 @@ namespace SalveminiApp.iCringe
     {
         ObservableCollection<DomandeReturn> Posts = new ObservableCollection<DomandeReturn>();
 
+
         public Home()
         {
             InitializeComponent();
@@ -42,6 +43,10 @@ namespace SalveminiApp.iCringe
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+
+
+            if (((this.Parent as Helpers.CustomNavigationPage).Parent as TabbedPage).CurrentPage != this.Parent as Helpers.CustomNavigationPage)
+                return;
 
             //Detect firstTime
             if (Preferences.Get("firstTimeCringe", true))

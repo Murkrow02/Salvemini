@@ -133,8 +133,10 @@ namespace SalveminiApp.iCringe
 
             //Create commento
             var commento = new RestApi.Models.Commenti { Anonimo = anonimo.IsToggled, Commento = chatEntry.Text, idPost = idPost };
+
             //Post commento
             var response = await App.Cringe.PostCommento(commento);
+
             if (response[0] == "Successo")
             {
                 //Empty bar
@@ -158,9 +160,11 @@ namespace SalveminiApp.iCringe
                 //Show response
                 Costants.showToast(response[1]);
             }
-
-            //Error
-            await DisplayAlert("Errore", response[1], "Ok");
+            else
+            {
+                //Error
+                await DisplayAlert("Errore", response[1], "Ok");
+            }
         }
 
         public void checkText(object sender, TextChangedEventArgs e)
