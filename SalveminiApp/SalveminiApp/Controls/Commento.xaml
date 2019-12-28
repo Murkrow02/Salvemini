@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:SalveminiApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" x:Class="SalveminiApp.Controls.Commento">
-    <StackLayout x:Name="mainLayout" Orientation="Horizontal" Margin="10" Spacing="5">
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:SalveminiApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" x:Class="SalveminiApp.Controls.Commento">
+    <StackLayout x:Name="mainLayout" Orientation="Horizontal" Margin="10" Spacing="10">
         <!--Profile Image-->
-        <ffimageloading:CachedImage WidthRequest="25" x:Name="userImg" Margin="0" CacheType="All" LoadingPlaceholder="userPlaceholder" HorizontalOptions="Start">
+        <ffimageloading:CachedImage VerticalOptions="CenterAndExpand" WidthRequest="28" x:Name="userImg" Margin="0" CacheType="All" LoadingPlaceholder="userPlaceholder" HorizontalOptions="Start">
             <ffimageloading:CachedImage.Transformations>
                 <fftransformations:CircleTransformation />
             </ffimageloading:CachedImage.Transformations>
@@ -11,8 +11,8 @@
             </ffimageloading:CachedImage.GestureRecognizers>
         </ffimageloading:CachedImage>
         <!--Commento-->
-        <StackLayout Spacing="2">
-            <Label>
+        <StackLayout Spacing="1">
+            <Label VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span x:Name="userName" FontAttributes="Bold" FontSize="16" TextColor="{x:Static local:Styles.BGColor}"/>
@@ -22,7 +22,9 @@
                 </Label.FormattedText>
             </Label>
             <!--Quanto tempo fa-->
-            <Label Text="10 min fa" FontSize="15" TextColor="{x:Static local:Styles.BGColor}" Opacity="0.8"/>
+            <Label x:Name="elapsed" FontSize="15" TextColor="{x:Static local:Styles.BGColor}" Opacity="0.8"/>
         </StackLayout>
+        <!--Delete icon-->
+        <iconize:IconButton x:Name="trash" WidthRequest="40" TextColor="{x:Static local:Styles.BGColor}" IsVisible="{Binding canDelete}" Clicked="deleteComment_Clicked" Text="fal-trash" FontSize="20" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent"/>
     </StackLayout>
 </ContentView>

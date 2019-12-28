@@ -4,7 +4,7 @@
         <!--Title-->
         <StackLayout>
             <iconize:IconLabel Text="fal-user-secret" TextColor="{x:Static local:Styles.BGColor}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" FontSize="90"/>
-            <Label Text="Benvenuto su ??????????" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.BGColor}" FontSize="30" HorizontalTextAlignment="Center"/>
+            <Label Text="Benvenuto su iCringe" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.BGColor}" FontSize="30" HorizontalTextAlignment="Center"/>
         </StackLayout>
 
         <!--Privacy-->
@@ -12,12 +12,12 @@
             <Label Text="Normative sulla privacy" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.BGColor}" FontSize="20" HorizontalTextAlignment="Center"/>
             <Frame HasShadow="False" CornerRadius="12" Padding="8,0" VerticalOptions="FillAndExpand">
                 <ScrollView>
-                    <Label Text="&#x0a;asofbasgbasgaisubgiuabsiugabaasogboiasbgiosabgioasbiogbaiosgbioasioiosagiobagsbioagsbioagsbiagosagsaosagsagosbosiagbioagsiboagsbioagsgaobsigooigasbioasbioasbioagsbioagsboisagbioasgbiobgioagoiboagsbioagsiboagsboiagsboiagsbioagsbioagsbioagsbioasgoiasbsiugbasiubgasuibgaisubguaisbaiusbaisubgaiusbgiuasbgiuasbgiuaiusbguisabiugabsuigbasuigbasuigbaisubgaiusbgaiusbgiuasbgaiusbgaiusbgaiusbgaisubgaisubgasiubgaisubgiusabgauisbgiasbgiuasbgiuasbgiuasbgiausbgiuasiugabsgiuabsuigab"/>
+                    <Label x:Name="privacyLabel"/>
                 </ScrollView>
             </Frame>
         </StackLayout>
 
         <!--Continue-->
-        <Button Text="Accetta e continua" FontSize="Large" BackgroundColor="{x:Static local:Styles.BGColor}" VerticalOptions="EndAndExpand" TextColor="{x:Static local:Styles.TextColor}" CornerRadius="12"/>
+        <Button Clicked="close_Clicked" Text="Accetta e continua" FontSize="Large" BackgroundColor="{x:Static local:Styles.BGColor}" VerticalOptions="EndAndExpand" TextColor="{x:Static local:Styles.TextColor}" CornerRadius="12"/>
     </StackLayout>
 </ContentPage>

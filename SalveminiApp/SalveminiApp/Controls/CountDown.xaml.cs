@@ -124,6 +124,17 @@ namespace SalveminiApp.Helpers
             s1.Text = "0";
             s2.Text = "0";
 
+             data = "";
+             d1val = "0";
+             d2val = "0";
+             d3val = "0";
+             h1val = "0";
+             h2val = "0";
+             m1val = "0";
+             m2val = "0";
+             s1val = "0";
+             s2val = "0";
+
         }
 
         async void updateTime()

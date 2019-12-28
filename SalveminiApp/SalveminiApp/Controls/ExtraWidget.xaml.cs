@@ -31,7 +31,16 @@ namespace SalveminiApp.Controls
                 try
                 {
                     var ExtraPage = this.GetParentPage();
+
+                    if (TitleLbl.Text == "Flappy Mimmo")
+                    {
+                        MainPage.isSelectingImage = true;
+                        ExtraPage.Navigation.PushModalAsync(new FlappyMimmo.FlappyHome());
+                        return;
+                    }
+
                     ExtraPage.Navigation.PushAsync(pushPage);
+
                 }
                 catch { }
             }

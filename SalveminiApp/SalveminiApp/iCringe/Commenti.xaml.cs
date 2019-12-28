@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using SalveminiApp.RestApi;
+using MarcTron.Plugin;
+using System.Diagnostics;
+using System.Threading.Tasks;
 #if __IOS__
 using UIKit;
 #endif
@@ -13,6 +16,7 @@ namespace SalveminiApp.iCringe
         public RestApi.Models.CommentiReturn commenti = new RestApi.Models.CommentiReturn();
         int idPost;
         public static bool Pushed;
+        public static bool fromNotifiche;
 
         public Commenti(int idPost_, string cachedQuestion = null)
         {
@@ -56,9 +60,18 @@ namespace SalveminiApp.iCringe
                 // list.ScaleHeightTo(listHeight, (uint)(e.AnimationDuration * 1000));
             });
 #endif
+
+            MessagingCenter.Subscribe<App, RestApi.Models.Commenti>(this, "removeCommento", (sender, commento) =>
+             {
+                 try
+                 {
+                     commenti.Commenti.Remove(commento);
+                 }
+                 catch { }
+             });
         }
 
-
+        bool fromNewComment;
         protected override async void OnAppearing()
         {
             base.OnAppearing();
@@ -69,6 +82,14 @@ namespace SalveminiApp.iCringe
             {
                 Costants.showToast("connection");
                 return;
+            }
+
+            //load interstitial
+            if (!fromNewComment)
+            {
+                CrossMTAdmob.Current.LoadInterstitial(AdsHelper.InterstitialId());
+                CrossMTAdmob.Current.OnInterstitialLoaded += Current_OnInterstitialLoaded;
+                fromNewComment = false;
             }
 
             //Refresh list
@@ -91,6 +112,11 @@ namespace SalveminiApp.iCringe
             commentsList.IsRefreshing = false;
         }
 
+        private void Current_OnInterstitialLoaded(object sender, EventArgs e)
+        {
+            Debug.WriteLine("Loaded ad");
+        }
+
         public void comments_Refreshing(object sender, EventArgs e)
         {
             OnAppearing();
@@ -107,13 +133,38 @@ namespace SalveminiApp.iCringe
 
             //Create commento
             var commento = new RestApi.Models.Commenti { Anonimo = anonimo.IsToggled, Commento = chatEntry.Text, idPost = idPost };
+
             //Post commento
             var response = await App.Cringe.PostCommento(commento);
+
             if (response[0] == "Successo")
             {
-                OnAppearing(); //Refresh if success
+                //Empty bar
+                chatEntry.Text = "";
+
+                //Refresh if success
+                fromNewComment = true;
+                OnAppearing();
+
+                //Show interstitial
+                if (CrossMTAdmob.Current.IsInterstitialLoaded())
+                {
+                    Pushed = true;
+                    CrossMTAdmob.Current.ShowInterstitial(); return;
+                }
+                else
+                {
+                    CrossMTAdmob.Current.LoadInterstitial(AdsHelper.InterstitialId());
+                }
+
+                //Show response
+                Costants.showToast(response[1]);
             }
-            Costants.showToast(response[1]);
+            else
+            {
+                //Error
+                await DisplayAlert("Errore", response[1], "Ok");
+            }
         }
 
         public void checkText(object sender, TextChangedEventArgs e)
@@ -130,6 +181,10 @@ namespace SalveminiApp.iCringe
             }
         }
 
+        public void Close_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
+        }
 
         protected override void OnDisappearing()
         {
@@ -138,11 +193,16 @@ namespace SalveminiApp.iCringe
             //Ios 13 bug
             try
             {
-
+                if (fromNotifiche)
+                    return;
+                else
+                    fromNotifiche = false;
                 if (!Pushed)
                     Navigation.PopModalAsync();
                 else
+                {
                     Pushed = false;
+                }
             }
             catch
             {

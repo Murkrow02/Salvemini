@@ -102,9 +102,9 @@ namespace SalveminiApp.RestApi
                 switch (response.StatusCode)
                 {
                     case HttpStatusCode.OK:
-                        return new string[] { "Successo", messaggio };
+                        return new string[] { "Successo", messaggio.Replace("\"", "") };
                     default:
-                        return new string[] { "Errore", messaggio };
+                        return new string[] { "Errore", messaggio.Replace("\"", "") };
                 }
 
             }
@@ -129,9 +129,9 @@ namespace SalveminiApp.RestApi
                 switch (response.StatusCode)
                 {
                     case HttpStatusCode.OK:
-                        return new string[] { "Successo", messaggio };
+                        return new string[] { "Successo", messaggio.Replace("\"", "") };
                     default:
-                        return new string[] { "Errore", messaggio };
+                        return new string[] { "Errore", messaggio.Replace("\"", "") };
                 }
 
             }
@@ -142,11 +142,61 @@ namespace SalveminiApp.RestApi
             }
         }
 
+        public async Task<string[]> DeleteCommento(int id)
+        {
+            var uri = Costants.Uri("icringe/removecommento/" + id);
+
+            try
+            {
+                var response = await client.GetAsync(uri);
+                var messaggio = await response.Content.ReadAsStringAsync();
+
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                        return new string[] { "Successo", messaggio.Replace("\"", "") };
+                    default:
+                        return new string[] { "Errore", messaggio.Replace("\"", "") };
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Errore delete commento", ex.Message);
+                return new string[] { "Errore", "Si è verificato un errore sconosciuto, riprova più tardi o contattaci se il problema persiste" };
+            }
+        }
+
+        public async Task<string[]> DeletePost(int id)
+        {
+            var uri = Costants.Uri("icringe/removepost/" + id);
+
+            try
+            {
+                var response = await client.GetAsync(uri);
+                var messaggio = await response.Content.ReadAsStringAsync();
+
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                        return new string[] { "Successo", messaggio.Replace("\"", "") };
+                    default:
+                        return new string[] { "Errore", messaggio.Replace("\"", "") };
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Errore delete post", ex.Message);
+                return new string[] { "Errore", "Si è verificato un errore sconosciuto, riprova più tardi o contattaci se il problema persiste" };
+            }
+        }
+
         public async Task<List<Notifiche>> GetNotifiche(bool nuove, int id = 0)
         {
             notifiche = new List<Notifiche>();
             string uri;
-            uri = (nuove ? Costants.Uri("icringe/getnotifiche") : Costants.Uri("icringe/getnewnotifiche/" + id));
+            uri = nuove ? Costants.Uri("icringe/getnewnotifiche/" + id) : Costants.Uri("icringe/getnotifiche");
 
             try
             {
@@ -216,9 +266,9 @@ namespace SalveminiApp.RestApi
                 switch (response.StatusCode)
                 {
                     case HttpStatusCode.OK:
-                        return new string[] { "Successo", messaggio };
+                        return new string[] { "Successo", messaggio.Replace("\"","")};
                     default:
-                        return new string[] { "Errore", messaggio };
+                        return new string[] { "Errore", messaggio.Replace("\"", "") };
                 }
 
             }
@@ -236,6 +286,8 @@ namespace SalveminiApp.RestApi
         Task<CommentiReturn> GetCommenti(int id);
         Task<string[]> PostDomanda(string domanda);
         Task<string[]> PostCommento(Commenti commento);
+        Task<string[]> DeleteCommento(int id);
+        Task<string[]> DeletePost(int id);
         Task<List<Notifiche>> GetNotifiche(bool nuove, int id = 0);
         Task<List<Domande>> approveList();
         Task<string[]> ApprovaDomanda(int id, bool stato);
@@ -273,6 +325,16 @@ namespace SalveminiApp.RestApi
         public Task<string[]> PostCommento(Commenti commento)
         {
             return restServiceCringe.PostCommento(commento);
+        }
+
+        public Task<string[]> DeleteCommento(int id)
+        {
+            return restServiceCringe.DeleteCommento(id);
+        }
+
+        public Task<string[]> DeletePost(int id)
+        {
+            return restServiceCringe.DeletePost(id);
         }
 
         public Task<List<Domande>> approveList()

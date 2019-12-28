@@ -241,20 +241,6 @@ namespace SalveminiApp
 
 
 
-        public static string RewardId()
-        {
-#if DEBUG
-            return "ca-app-pub-3940256099942544/5224354917";
-#else
-#if __IOS__
-            return "ca-app-pub-2688730930606353/4691822196";
-#endif
-#if __ANDROID__
-            return "ca-app-pub-2688730930606353/7086530178";
-#endif
-#endif
-
-        }
 
         public static DateTime GetNextWeekday(DayOfWeek day)
         {
@@ -313,6 +299,39 @@ namespace SalveminiApp
             var filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "OrariTreni.txt");
             if (File.Exists(filename)) return true; return false;
         }
+
+        public static string SpanString(TimeSpan Data)
+        {
+            //Anni fa
+            if (Data.Days >= 365)
+                return (Data.Days / 365).ToString() + (Data.Days / 365 == 1 ? " anno fa" : " anni fa");
+
+            //Mesi
+            if (Data.Days >= 30)
+                return (Data.Days / 30).ToString() + (Data.Days / 30 == 1 ? " mese fa" : " mesi fa");
+
+            //Giorni
+            if (Data.Days >= 7)
+                return (Data.Days / 7).ToString() + (Data.Days / 7 == 1 ? " settimana fa" : " settimane fa");
+
+            //Giorni
+            if (Data.Days >= 1)
+                return (Data.Days).ToString() + (Data.Days == 1 ? " giorno fa" : " giorni fa");
+
+            //Ore
+            if (Data.Hours >= 1)
+                return (Data.Hours).ToString() + (Data.Hours == 1 ? " ora fa" : " ore fa");
+
+            //Minuti
+            if (Data.Minutes >= 1)
+                return (Data.Minutes).ToString() + (Data.Minutes == 1 ? " minuto fa" : " minuti fa");
+
+            //Secondi
+            if (Data.Seconds >= 1)
+                return (Data.Seconds).ToString() + (Data.Seconds == 1 ? " secondo fa" : " secondi fa");
+
+            return "Ora";
+        }
     }
 
     public static class Extensions
@@ -337,6 +356,28 @@ namespace SalveminiApp
                     if (parent is Xamarin.Forms.Page)
                     {
                         return parent as Xamarin.Forms.Page;
+                    }
+                    parent = parent.Parent;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Gets the page to which an element belongs
+        /// </summary>
+        /// <returns>The page.</returns>
+        /// <param name="element">Element.</param>
+        public static Xamarin.Forms.ListView GetParentList(this Xamarin.Forms.VisualElement element)
+        {
+            if (element != null)
+            {
+                var parent = element.Parent;
+                while (parent != null)
+                {
+                    if (parent is Xamarin.Forms.ListView)
+                    {
+                        return parent as Xamarin.Forms.ListView;
                     }
                     parent = parent.Parent;
                 }

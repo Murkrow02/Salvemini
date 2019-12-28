@@ -116,7 +116,7 @@ namespace SalveminiApp.SalveminiCoin
             //Load ad video
             gainButton.Loading = true;
             //CrossMTAdmob.Current.TestDevices = new List<string> { "60394458335F479CE5061737251AC261" }; Telefn e patm
-            CrossMTAdmob.Current.LoadRewardedVideo(Costants.RewardId());
+            CrossMTAdmob.Current.LoadRewardedVideo(AdsHelper.RewardId());
             isShowingAd = false;
         }
 
@@ -140,7 +140,7 @@ namespace SalveminiApp.SalveminiCoin
             {
                 //Reload reward video
                 gainButton.Loading = true;
-                CrossMTAdmob.Current.LoadRewardedVideo(Costants.RewardId());
+                CrossMTAdmob.Current.LoadRewardedVideo(AdsHelper.RewardId());
                 Costants.showToast("Nessun video disponibile, riprova tra qualche secondo");
             }
 
