@@ -11,13 +11,14 @@ using System.IO;
 using System.Reflection;
 using System.Linq;
 using MonkeyCache.SQLite;
+using System.Collections.ObjectModel;
 
 namespace SalveminiApp.RestApi
 {
     public class RestServiceFlappy : IRestServiceFlappy
     {
         HttpClient client;
-        public List<Models.FlappySkinReturn> Skins { get; private set; }
+        public ObservableCollection<Models.FlappySkinReturn> Skins { get; private set; }
 
         public RestServiceFlappy()
         {
@@ -27,9 +28,9 @@ namespace SalveminiApp.RestApi
             client.DefaultRequestHeaders.Add("x-auth-token", Preferences.Get("Token", ""));
         }
 
-        public async Task<List<Models.FlappySkinReturn>> GetSkins()
+        public async Task<ObservableCollection<Models.FlappySkinReturn>> GetSkins()
         {
-            Skins = new List<Models.FlappySkinReturn>();
+            Skins = new ObservableCollection<Models.FlappySkinReturn>();
             var uri = Costants.Uri("flappy/getskins");
             try
             {
@@ -38,8 +39,9 @@ namespace SalveminiApp.RestApi
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    Skins = JsonConvert.DeserializeObject<List<Models.FlappySkinReturn>>(content);
+                    Skins = JsonConvert.DeserializeObject<ObservableCollection<Models.FlappySkinReturn>>(content);
 
+                    Skins.Insert(0, new Models.FlappySkinReturn { Comprata = true, Costo = 0, Immagini = new List<string> { "default1", "default2", "default3" } });
                     //Save Cache
                     Barrel.Current.Add("Skins", Skins, TimeSpan.FromDays(10));
                 }
@@ -54,6 +56,30 @@ namespace SalveminiApp.RestApi
                 Debug.WriteLine(@"Errore GET indexargo", ex.Message);
             }
             return Skins;
+        }
+
+        public async Task<string> Upgrade(int idUpgrade)
+        {
+            var uri = Costants.Uri("api/flappy/buyUpgrade/" + idUpgrade);
+            try
+            {
+                //Get from url
+                var response = await client.GetAsync(uri);
+                if (!response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadAsStringAsync();
+                }
+                else
+                {
+                    Preferences.Set("multiplier", idUpgrade);
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Errore GET indexargo", ex.Message);
+                return "Si è verificato un errore";
+            }
         }
 
         public async Task<string> BuySkin(int id)
@@ -89,9 +115,10 @@ namespace SalveminiApp.RestApi
 
                 //Get from url
                 var response = await client.PostAsync(uri, content);
-                if (!response.IsSuccessStatusCode)
+                var returnValue = await response.Content.ReadAsStringAsync();
+                if (returnValue != "Punteggio caricato")
                 {
-                    return await response.Content.ReadAsStringAsync();
+                    return returnValue;
                 }
                 else
                 {
@@ -108,9 +135,10 @@ namespace SalveminiApp.RestApi
 
     public interface IRestServiceFlappy
     {
-        Task<List<Models.FlappySkinReturn>> GetSkins();
+        Task<ObservableCollection<Models.FlappySkinReturn>> GetSkins();
         Task<string> BuySkin(int id);
         Task<string> PostScore(int score);
+        Task<string> Upgrade(int idUpgrade);
     }
 
     public class ItemManagerFlappy
@@ -122,7 +150,7 @@ namespace SalveminiApp.RestApi
             restServiceFlappy = serviceFlappy;
         }
 
-        public Task<List<Models.FlappySkinReturn>> GetSkins()
+        public Task<ObservableCollection<Models.FlappySkinReturn>> GetSkins()
         {
             return restServiceFlappy.GetSkins();
         }
@@ -135,6 +163,11 @@ namespace SalveminiApp.RestApi
         public Task<string> PostScore(int score)
         {
             return restServiceFlappy.PostScore(score);
+        }
+
+        public Task<string> Upgrade(int idUpgrade)
+        {
+            return restServiceFlappy.Upgrade(idUpgrade);
         }
     }
 }
