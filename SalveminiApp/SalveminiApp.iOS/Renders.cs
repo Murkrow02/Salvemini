@@ -106,7 +106,6 @@ namespace SalveminiApp.iOS
             base.ViewDidLoad();
 
             CropBg("bbar.jpg");
-
             MessagingCenter.Subscribe<App, string>(this, "changeBg", (sender, image) =>
             {
                 CropBg(image);

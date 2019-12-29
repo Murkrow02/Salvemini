@@ -43,17 +43,22 @@
                 </StackLayout>
 
                 <!--Ad-->
-                <StackLayout VerticalOptions="Start" x:Name="adLayout" Opacity="0" Spacing="2">
+                <StackLayout VerticalOptions="Start" x:Name="adLayout" Opacity="0" Spacing="5">
                     <!--Ad header-->
-                    <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
                         <Label Text="Sponsorizzato -" HorizontalOptions="Start" VerticalTextAlignment="Center" TextColor="{x:Static local:Styles.TextColor}" />
                         <Label x:Name="adTitle" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="Start" />
                         <!--<iconize:IconButton Text="fas-info-circle" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold" HorizontalOptions="EndAndExpand" />-->
                     </StackLayout>
                     <!--Image-->
-                    <Frame HasShadow="False" CornerRadius="8" IsClippedToBounds="True" Padding="0">
-                        <ffimageloading:CachedImage x:Name="adImage" CacheType="All" />
-                    </Frame>
+                    <!--    <Frame HasShadow="False" HorizontalOptions="Center"  CornerRadius="8" IsClippedToBounds="True" Padding="0">-->
+                    <ffimageloading:CachedImage x:Name="adImage" CacheType="All" HorizontalOptions="Start">
+                        <ffimageloading:CachedImage.Transformations>
+                            <fftransformations:RoundedTransformation CropHeightRatio="0" CropWidthRatio="0"/>
+                        </ffimageloading:CachedImage.Transformations>
+                    </ffimageloading:CachedImage>
+
+                    <!--  </Frame>-->
                     <!--Frame tapped-->
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ad_Tapped" />

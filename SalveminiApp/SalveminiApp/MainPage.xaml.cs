@@ -39,10 +39,11 @@ namespace SalveminiApp
         //Do not update orario if already cached
         public bool orarioFromCached;
         //How many times the page loaded onAppearing
-        public int appearedTimes;
+        public static int appearedTimes;
         //Load navigation pages to be faster
-        public Xamarin.Forms.NavigationPage profilePage;
-        public Helpers.CustomNavigationPage scoinPage;
+        public Xamarin.Forms.NavigationPage profilePage = null;
+        public Helpers.CustomNavigationPage scoinPage = null;
+        public Xamarin.Forms.NavigationPage extraPage = null;
 
         public MainPage()
         {
@@ -108,14 +109,14 @@ namespace SalveminiApp
             if (lastDigit != 0 && lastDigit != 5 && !forceAppearing && appearedTimes != 1)
                 return;
 
-
+            //Increment number of appeared times
+            appearedTimes++;
 
             //Sempre meglio mettere il try lol
             try
             {
-
                 //Set image profile url
-                userImg.Source = Costants.Uri("images/users/") + Preferences.Get("UserId", 0).ToString();
+                userImg.Source = Costants.Uri("images/users/") + Preferences.Get("UserImage", "");
 
                 //Remove modals bug
                 ModalPush_Disappearing(null, null);
@@ -138,6 +139,7 @@ namespace SalveminiApp
                 //Card
                 var card = new WidgetGradient { Title = "SalveminiCard", SubTitle = "Visualizza tutti i vantaggi esclusivi per gli studenti del Salvemini", Icon = "fas-credit-card", StartColor = "B487FD", EndColor = "FA6FFA", Push = new SecondaryViews.SalveminiCard(), Order = 7 };
                 card.GestureRecognizers.Add(tapGestureRecognizer);
+
                 //Extra
                 var extra = new WidgetGradient { Title = "Extra", SubTitle = "Esplora funzioni aggiuntive", Icon = "fas-star", StartColor = "B487FD", EndColor = "FA6FFA", Order = 6 };
                 extra.GestureRecognizers.Add(tapGestureRecognizer);
@@ -150,6 +152,7 @@ namespace SalveminiApp
                 //Check Internet
                 if (Connectivity.NetworkAccess != NetworkAccess.Internet)
                 {
+
                     //Nessuna connessione
 #if __ANDROID__
                     if(appearedTimes == 0)
@@ -159,9 +162,6 @@ namespace SalveminiApp
                     appearedTimes = 5; //Repeat this every time
                     return;
                 }
-
-                //Increment number of appeared times
-                appearedTimes++;
 
                 //Show loading
                 userRefreshed = false; homeLoading.IsRefreshing = true; userRefreshed = true;
@@ -373,7 +373,7 @@ namespace SalveminiApp
                 //Extra
                 if (widget.Title == "Extra")
                 {
-                    extraPush();
+                    Navigation.PushModalAsync(extraPage);
                 }
             }
             catch (Exception ex)
@@ -459,29 +459,6 @@ namespace SalveminiApp
         void profilePush(object sender, System.EventArgs e)
         {
             Navigation.PushModalAsync(profilePage);
-        }
-
-        //Push to extra page
-        void extraPush()
-        {
-            //Create new navigation page
-            var modalPush = new Xamarin.Forms.NavigationPage(new SecondaryViews.Extra());
-            modalPush.BarTextColor = Styles.TextColor;
-            modalPush.BarBackgroundColor = Styles.BGColor;
-            //Add disappearing event
-            modalPush.Disappearing += ModalPush_Disappearing;
-
-            //Add toolbaritem to close page
-            var close = new ToolbarItem { Text = "Annulla" };
-            close.Clicked += ModalPush_Disappearing;
-            modalPush.ToolbarItems.Add(close);
-
-            //Modal figo
-#if __IOS__
-            modalPush.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
-#endif
-            modalPush.BarTextColor = Styles.TextColor;
-            Navigation.PushModalAsync(modalPush);
         }
 
         //Fix bug on ios 13 that doesen t close modal automatically
@@ -688,6 +665,11 @@ namespace SalveminiApp
 
         async void loadNavigationPages()
         {
+
+            if (extraPage != null && profilePage != null && scoinPage != null) //All loaded, nothing to do
+                return;
+
+            //PROFILE
             //Create new navigation page
             profilePage = new Xamarin.Forms.NavigationPage(new SecondaryViews.Profile());
             profilePage.BarTextColor = Styles.TextColor;
@@ -707,7 +689,7 @@ namespace SalveminiApp
 #endif
             profilePage.BarTextColor = Styles.TextColor;
 
-
+            //COIN
             //Create new navigation page
             scoinPage = new Helpers.CustomNavigationPage(new SalveminiCoin.CoinMenu());
             scoinPage.BarTextColor = Styles.TextColor;
@@ -724,7 +706,26 @@ namespace SalveminiApp
             scoinPage.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
 #endif
             scoinPage.BarTextColor = Styles.TextColor;
+
+            //EXTRA
+            //Create new navigation page
+            extraPage = new Xamarin.Forms.NavigationPage(new SecondaryViews.Extra());
+            extraPage.BarTextColor = Styles.TextColor;
+            extraPage.BarBackgroundColor = Styles.BGColor;
+            //Add disappearing event
+            extraPage.Disappearing += ModalPush_Disappearing;
+
+            //Add toolbaritem to close page
+            extraPage.ToolbarItems.Add(close);
+
+            //Modal figo
+#if __IOS__
+            extraPage.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
+#endif
+            extraPage.BarTextColor = Styles.TextColor;
+
         }
+
         public void loadIndexCache()
         {
             orario.ClasseCorso = classeCorso;

@@ -30,9 +30,10 @@ namespace SalveminiApp.iCringe
             if (cachedPosts != null)
                 postsList.ItemsSource = cachedPosts;
 
-            ////Set ad source
-            //MTAdView ad = new MTAdView { AdsId = AdsHelper.BannerId(), PersonalizedAds = true };
-            //mainLayout.Children.Insert(0, ad);
+            //Set ad source
+            MTAdView ad = new MTAdView { AdsId = AdsHelper.BannerId(), PersonalizedAds = true };
+            mainLayout.Children.Insert(0, ad);
+            
 
             //Android custom color
 #if __ANDROID__
@@ -40,17 +41,19 @@ namespace SalveminiApp.iCringe
 #endif
         }
 
+        int appearedTimes = 0;
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-
-
+            
             if (((this.Parent as Helpers.CustomNavigationPage).Parent as TabbedPage).CurrentPage != this.Parent as Helpers.CustomNavigationPage)
                 return;
 
+            appearedTimes++;
+
             //Detect firstTime
             if (Preferences.Get("firstTimeCringe", true))
-                await Navigation.PushModalAsync(new iCringe.WelcomePage());
+                await Navigation.PushModalAsync(new WelcomePage());
 
             //Detect internet connection
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
@@ -230,6 +233,14 @@ namespace SalveminiApp.iCringe
             modalPush.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
 #endif
             Navigation.PushModalAsync(modalPush);
+        }
+
+        public void AndroidFix()
+        {
+            if(appearedTimes == 0)
+            {
+                OnAppearing();
+            }
         }
     }
 }

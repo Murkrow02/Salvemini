@@ -325,6 +325,8 @@
     <BundleResource Include="Resources\default1.png" />
     <BundleResource Include="Resources\default2.png" />
     <BundleResource Include="Resources\default3.png" />
+    <BundleResource Include="Resources\iCringe%402x.png" />
+    <BundleResource Include="Resources\iCringeFill%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lotties\" />

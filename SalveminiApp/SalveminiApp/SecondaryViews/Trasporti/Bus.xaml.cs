@@ -38,6 +38,7 @@ namespace SalveminiApp.SecondaryViews.Trasporti
                     {4, "Torca"}
                 }
             });
+
             EavSource.Add(new RestApi.Models.Linea { Name = "S.Agata-Massa-PEDO", Buses = new List<RestApi.Models.Bus> { new RestApi.Models.Bus { Partenza = "PEDOFILO", Stazione = 0, Direzione = true, Variazioni = "F" } } });
 
             linePicker.ItemsSource = SitaSource;

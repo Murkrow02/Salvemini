@@ -6,7 +6,6 @@ using Xamarin.Essentials;
 using MonkeyCache.SQLite;
 using Syncfusion.SfChart.XForms;
 using System.Linq;
-using System.Diagnostics;
 #if __IOS__
 using UIKit;
 #endif
@@ -16,73 +15,55 @@ namespace SalveminiApp
     {
         public List<RestApi.Models.Pentagono> Medie = new List<RestApi.Models.Pentagono>();
 
-        int appearedTimes;
+        int appearedTimes = 0;
         protected async override void OnAppearing()
         {
             base.OnAppearing();
 
-            if (((this.Parent as Helpers.CustomNavigationPage).Parent as TabbedPage).CurrentPage != this.Parent as Helpers.CustomNavigationPage)
+            //Return if triggered from error
+            if (((Parent as Helpers.CustomNavigationPage).Parent as TabbedPage).CurrentPage != this.Parent as Helpers.CustomNavigationPage)
                 return;
+
+            appearedTimes++;
 
             //Show agenda only if orario downloaded
             if (Preferences.Get("OrarioSaved", false))
                 agendaFrame.IsVisible = true;
 
-            //Do Appearing only every 5 times or from pull to refresh or connection lost or first
-            var lastDigit = appearedTimes % 10;
-            if (lastDigit != 0 && lastDigit != 5 && appearedTimes != 1)
-                return;
-
-            //Check Internet
-            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            //Check internet status
+            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                //Nessuna connessione
-                Costants.showToast("connection");
-                appearedTimes = 5; //Repeat this every time
-                if (Medie.IsNullOrEmpty()) { chartLayout.IsVisible = false; }
-                else
+                try
                 {
-                    showChart(); //Got from cache
+                    //Get values from pentagono api
+                    var dates = await App.Argo.GetPentagono();
+
+                    //Detect if call returned a message of error
+                    if (!string.IsNullOrEmpty(dates.Message))
+                    {
+                        //Error occourred, notify the user
+                        Costants.showToast(dates.Message);
+                        return;
+                    }
+
+                    //Get new medie
+                    var newMedie = dates.Data as List<RestApi.Models.Pentagono>;
+
+
+                    //Fill medie list
+                    Medie = newMedie;
+                    showChart();
+
                 }
-                return;
-            }
-
-            //Increment number of appeared times
-            appearedTimes++;
-
-            try
-            {
-                chartLoading.IsRunning = true; chartLoading.IsVisible = true;
-                //Get values from pentagono api
-                var dates = await App.Argo.GetPentagono();
-
-                //Detect if call returned a message of error
-                if (!string.IsNullOrEmpty(dates.Message))
+                catch //Random error
                 {
-                    //Error occourred, notify the user
-                    Costants.showToast(dates.Message);
-                    return;
+                    Costants.showToast("Non è stato possibile aggiornare il tuo grafico");
                 }
-
-                //Get new medie
-                var newMedie = dates.Data as List<RestApi.Models.Pentagono>;
-
-
-                //Fill medie list
-                Medie = newMedie;
-                showChart();
-
-                //If previously hidden from no connection
-                chartLayout.IsVisible = true;
-
-                //Stop activityindicator
-                chartLoading.IsRunning = false; chartLoading.IsVisible = false;
             }
-            catch //Random error
+            else //No internet
             {
-                Costants.showToast("Non è stato possibile aggiornare il tuo grafico");
+                //Costants.showToast("connection");
             }
-
         }
 
         //Push from widget to argo page
@@ -108,15 +89,20 @@ namespace SalveminiApp
         {
             if (Medie.Count >= 3)
             {
-                chart.IsVisible = true;
-                chart.Opacity = 1;
+                chartA.IsVisible = true;
+                chartI.IsVisible = true;
+                chartI.Opacity = 1;
+                chartA.Opacity = 1;
                 noSubjectsLayout.IsVisible = false;
-                radarChart.ItemsSource = Medie;
+                radarChartA.ItemsSource = Medie;
+                radarChartI.ItemsSource = Medie;
+
             }
             else
             {
                 //Non abbastanza :(
-                chart.IsVisible = false;
+                chartA.IsVisible = false;
+                chartI.IsVisible = false;
                 noSubjectsLayout.IsVisible = true;
             }
         }
@@ -124,6 +110,9 @@ namespace SalveminiApp
         public ArgoPage()
         {
             InitializeComponent();
+
+
+
 
             //Hide Navigation Bar
             NavigationPage.SetHasNavigationBar(this, false);
@@ -137,11 +126,19 @@ namespace SalveminiApp
             //secondRowWidgets.Margin = new Thickness ( 0, 0, 0, 5 );
 #endif
 
-            //Show agenda fix
-            MessagingCenter.Subscribe<App>(this, "showAgenda", (sender) =>
+            //Cache Grafico
+            var cachedMedie = CacheHelper.GetCache<List<RestApi.Models.Pentagono>>("Medie");
+            if (cachedMedie != null)
             {
-                agendaFrame.IsVisible = true;
-            });
+                chartA.IsVisible = true;
+                chartI.IsVisible = true;
+                Medie = cachedMedie;
+                radarChartA.ItemsSource = Medie;
+                radarChartI.ItemsSource = Medie;
+
+            }
+
+         
         }
 
         public async void agenda_Clicked(object sender, EventArgs e)
@@ -158,9 +155,11 @@ namespace SalveminiApp
             var cachedMedie = CacheHelper.GetCache<List<RestApi.Models.Pentagono>>("Medie");
             if (cachedMedie != null)
             {
-                chart.IsVisible = true;
+                chartA.IsVisible = true;
+                chartI.IsVisible = true;
                 Medie = cachedMedie;
-                radarChart.ItemsSource = Medie;
+                radarChartA.ItemsSource = Medie;
+                radarChartI.ItemsSource = Medie;
             }
 
             //Add widgets
@@ -191,6 +190,14 @@ namespace SalveminiApp
             secondRowWidgets.Children.AddRange(new List<ArgoWidget> { scrutinio, compiti, argomenti, note });
             secondRowWidgets.Children.Add(new ContentView { WidthRequest = 0 });
            
+        }
+
+        public void AndroidFix()
+        {
+            if (appearedTimes < 1)
+            {
+                OnAppearing();
+            }
         }
     }
 }
