@@ -6,30 +6,30 @@
                 <!--Close Button-->
                 <iconize:IconButton BackgroundColor="Transparent" Clicked="Close_Clicked" Text="fas-times" TextColor="White" FontAttributes="Bold" HorizontalOptions="Start" FontSize="30" />
                 <!--Sita/EAV segment-->
-                <control:SegmentedControl OnSegmentSelected="TypeChanged" HorizontalOptions="FillAndExpand" SelectedSegment="0" TintColor="White" SelectedTextColor="{x:Static local:Styles.TextColor}">
+                <!--<control:SegmentedControl OnSegmentSelected="TypeChanged" HorizontalOptions="FillAndExpand" SelectedSegment="0" TintColor="White" SelectedTextColor="{x:Static local:Styles.TextColor}">
                     <control:SegmentedControl.Children>
                         <control:SegmentedControlOption Text="Sita" />
                         <control:SegmentedControlOption Text="EAV" />
                     </control:SegmentedControl.Children>
-                </control:SegmentedControl>
+                </control:SegmentedControl>-->
                 <!--Site Button-->
-                <iconize:IconButton BackgroundColor="Transparent" Text="far-compass" TextColor="White" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="30" />
+                <!--<iconize:IconButton BackgroundColor="Transparent" Text="far-compass" TextColor="White" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="30" />-->
             </StackLayout>
-            <StackLayout Spacing="10" Margin="20 ,0">
-                <!--Linea Picker-->
+            <!-- <StackLayout Spacing="10" Margin="20 ,0">
+                Linea Picker
                 <Frame x:Name="lineFrame" HorizontalOptions="Fill" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, -1">
                     <Picker Unfocused="linePicker_Unfocused" TextColor="{x:Static local:Styles.TextColor}" x:Name="linePicker" ItemDisplayBinding="{Binding Name}" HeightRequest="50" TitleColor="#EAEAEA" HorizontalOptions="FillAndExpand" FontSize="25" Title="Linea" />
                 </Frame>
                 <StackLayout HorizontalOptions="FillAndExpand">
                     <Label HorizontalOptions="Start" Text="Da:" TextColor="White" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
-                    <!--Stazione Picker-->
+                    Stazione Picker
                     <Frame x:Name="stationFrame" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="0, -1">
                         <Picker Unfocused="StationPicker_Unfocused"  TextColor="{x:Static local:Styles.TextColor}" IsEnabled="False" ItemDisplayBinding="{Binding .}" x:Name="stationPicker" HeightRequest="50" TitleColor="#EAEAEA" HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
                     </Frame>
                 </StackLayout>
                 <StackLayout HorizontalOptions="FillAndExpand">
                     <Label HorizontalOptions="Start" Text="Verso:" TextColor="White" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
-                    <!--Direzione Segmented-->
+                    Direzione Segmented
                     <control:SegmentedControl SelectedSegment="0" IsEnabled="False" x:Name="directionSegment" TintColor="White" SelectedTextColor="{x:Static local:Styles.TextColor}">
                         <control:SegmentedControl.Children>
                             <control:SegmentedControlOption Text="Partenza" />
@@ -65,7 +65,10 @@
                         <Label Text="Seleziona degli orari" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" />
                     </StackLayout>
                 </Grid>
-            </Frame>
+            </Frame>-->
+            <WebView HorizontalOptions="FillAndExpand" Source="https://www.sitasudtrasporti.it/archivio/Download/corse/sitasud/Campania/Salerno/59dea928-1ba0-466f-b319-e0d2bb46b266_5070_inv_2019-2020.pdf/0" VerticalOptions="FillAndExpand">
+
+            </WebView>
         </StackLayout>
 
     </yummy:PancakeView>

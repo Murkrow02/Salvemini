@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:controls="clr-namespace:SalveminiApp.Controls" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.FlappyMimmo.Classifica">
+    <ContentPage.Content>
+        <StackLayout>
+            <ContentView BackgroundColor="White">
+                <StackLayout>
+                    <StackLayout Padding="10, 20" Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                        <Label FontSize="25" VerticalOptions="Center" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Start" Text="Classifica"/>
+                        <iconize:IconLabel VerticalOptions="Center" FontSize="22" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="EndAndExpand" Text="fas-times-circle">
+                            <iconize:IconLabel.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Close_Tapped"/>
+                            </iconize:IconLabel.GestureRecognizers>
+                        </iconize:IconLabel>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="20, 0, 20, 10">
+                        <StackLayout VerticalOptions="End" HorizontalOptions="Start">
+                            <Label Text="2" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                            <!--Image-->
+                            <ffimageloading:CachedImage WidthRequest="60" HeightRequest="60" x:Name="secondImage" LoadingPlaceholder="userPlaceholder" CacheType="All" >
+                                <ffimageloading:CachedImage.Transformations>
+                                    <fftransformations:CircleTransformation />
+                                </ffimageloading:CachedImage.Transformations>
+                                <ffimageloading:CachedImage.GestureRecognizers>
+                                    <TapGestureRecognizer />
+                                </ffimageloading:CachedImage.GestureRecognizers>
+                            </ffimageloading:CachedImage>
+                            <Label x:Name="secondName" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                            <Label x:Name="secondScore" HorizontalOptions="Center"/>
+                        </StackLayout>
+
+                        <StackLayout VerticalOptions="End" HorizontalOptions="CenterAndExpand">
+                            <iconize:IconLabel HorizontalOptions="Center" Text="fas-crown" TextColor="#FFD629" FontSize="24"/>
+                            <!--Image-->
+                            <ffimageloading:CachedImage WidthRequest="85" HeightRequest="85" VerticalOptions="Start" x:Name="firstImage" LoadingPlaceholder="userPlaceholder" CacheType="All" >
+                                <ffimageloading:CachedImage.Transformations>
+                                    <fftransformations:CircleTransformation />
+                                </ffimageloading:CachedImage.Transformations>
+                                <ffimageloading:CachedImage.GestureRecognizers>
+                                    <TapGestureRecognizer />
+                                </ffimageloading:CachedImage.GestureRecognizers>
+                            </ffimageloading:CachedImage>
+                            <Label x:Name="firstName" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                            <Label x:Name="firstScore" HorizontalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout VerticalOptions="End" HorizontalOptions="End">
+                            <Label Text="3" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                            <!--Image-->
+                            <ffimageloading:CachedImage WidthRequest="60" HeightRequest="60" x:Name="thirdImage" LoadingPlaceholder="userPlaceholder" CacheType="All" >
+                                <ffimageloading:CachedImage.Transformations>
+                                    <fftransformations:CircleTransformation />
+                                </ffimageloading:CachedImage.Transformations>
+                                <ffimageloading:CachedImage.GestureRecognizers>
+                                    <TapGestureRecognizer />
+                                </ffimageloading:CachedImage.GestureRecognizers>
+                            </ffimageloading:CachedImage>
+                            <Label x:Name="thirdName" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                            <Label x:Name="thirdScore" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ContentView>
+            <ListView x:Name="scoreList" BackgroundColor="Transparent">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="20, 0" Orientation="Horizontal">
+                                <Label VerticalOptions="Center" HorizontalOptions="Start" Text="{Binding NomeCognome}" FontSize="17" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}"/>
+                                <Label VerticalOptions="Center" HorizontalOptions="EndAndExpand"  FontSize="17" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding Punteggio}"/>
+                                            <Span Text="pt"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

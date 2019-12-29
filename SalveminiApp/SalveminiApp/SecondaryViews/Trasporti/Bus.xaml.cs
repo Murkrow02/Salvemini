@@ -38,9 +38,9 @@ namespace SalveminiApp.SecondaryViews.Trasporti
                     {4, "Torca"}
                 }
             });
-            EavSource.Add(new RestApi.Models.Linea { Name = "S.Agata-Massa-PEDO", Buses = new List<RestApi.Models.Bus> { new RestApi.Models.Bus { Partenza = "PEDOFILO", Stazione = 0, Direzione = true, Variazioni = "F" } } });
+            //EavSource.Add(new RestApi.Models.Linea { Name = "S.Agata-Massa-PEDO", Buses = new List<RestApi.Models.Bus> { new RestApi.Models.Bus { Partenza = "PEDOFILO", Stazione = 0, Direzione = true, Variazioni = "F" } } });
 
-            linePicker.ItemsSource = SitaSource;
+            //linePicker.ItemsSource = SitaSource;
         }
 
         void Close_Clicked(object sender, EventArgs e)
@@ -50,41 +50,41 @@ namespace SalveminiApp.SecondaryViews.Trasporti
 
         void TypeChanged(object sender, SegmentSelectEventArgs e)
         {
-            stationPicker.IsEnabled = false;
-            directionSegment.IsEnabled = false;
+            //stationPicker.IsEnabled = false;
+            //directionSegment.IsEnabled = false;
 
-            //Set itemssource of lines basing on segment
-            linePicker.ItemsSource = e.NewValue == 0 ? SitaSource : EavSource;
+            ////Set itemssource of lines basing on segment
+            //linePicker.ItemsSource = e.NewValue == 0 ? SitaSource : EavSource;
         }
 
         private void StationPicker_Unfocused(object sender, FocusEventArgs e)
         {
-            //Check if a start station is selected
-            if (stationPicker.SelectedItem != null)
-            {
-                //Enable direction segment control
-                directionSegment.IsEnabled = true;
-            }
+            ////Check if a start station is selected
+            //if (stationPicker.SelectedItem != null)
+            //{
+            //    //Enable direction segment control
+            //    directionSegment.IsEnabled = true;
+            //}
         }
 
         void linePicker_Unfocused(object sender, FocusEventArgs e)
         {
-            //Check line is selected
-            if (linePicker.SelectedItem != null && (linePicker.SelectedItem as RestApi.Models.Linea).Stazioni != null)
-            {
-                //Cast the selection as line
-                var data = linePicker.SelectedItem as RestApi.Models.Linea;
+            ////Check line is selected
+            //if (linePicker.SelectedItem != null && (linePicker.SelectedItem as RestApi.Models.Linea).Stazioni != null)
+            //{
+            //    //Cast the selection as line
+            //    var data = linePicker.SelectedItem as RestApi.Models.Linea;
 
-                //Fill the picker with stations
-                stationPicker.ItemsSource = data.Stazioni.Values.ToList();
+            //    //Fill the picker with stations
+            //    stationPicker.ItemsSource = data.Stazioni.Values.ToList();
 
-                //Re-enable the picker
-                stationPicker.IsEnabled = true;
+            //    //Re-enable the picker
+            //    stationPicker.IsEnabled = true;
 
-                //Set values to the direction segmented control
-                directionSegment.Children[0].Text = data.Stazioni[0];
-                directionSegment.Children[1].Text = data.Stazioni[data.Stazioni.Count - 1];
-            }
+            //    //Set values to the direction segmented control
+            //    directionSegment.Children[0].Text = data.Stazioni[0];
+            //    directionSegment.Children[1].Text = data.Stazioni[data.Stazioni.Count - 1];
+            //}
         }
     }
 }

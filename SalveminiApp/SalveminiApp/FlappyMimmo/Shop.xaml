@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<pages:PopupPage Padding="20, 70"  xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"  xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" CloseWhenBackgroundIsClicked="True" xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.FlappyMimmo.Shop">
+<pages:PopupPage Padding="20, 70" xmlns:fmodel="clr-namespace:SalveminiApp.RestApi.Models" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"  xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" CloseWhenBackgroundIsClicked="True" xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.FlappyMimmo.Shop">
     <Frame  IsClippedToBounds="True" HasShadow="False" BackgroundColor="{x:Static local:Styles.BGColor}" Padding="10, 15" HorizontalOptions="FillAndExpand" CornerRadius="20">
         <StackLayout Spacing="20">
             <!--Title-->
@@ -10,40 +10,24 @@
                         <TapGestureRecognizer Tapped="Close_Tapped"/>
                     </iconize:IconLabel.GestureRecognizers>
                 </iconize:IconLabel>
-            </StackLayout> 
+            </StackLayout>
             <!--SKIN LIST-->
-            <flv:FlowListView ItemSelected="Skin_Selected" RowHeight="200" x:Name="skinsList" BackgroundColor="Transparent" FlowColumnExpand="ProportionalLast" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="false">
-                <flv:FlowListView.FlowColumnTemplate>
-                    <DataTemplate>
-                        <StackLayout>
-                            <Label HorizontalOptions="Center" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" Text="{Binding Nome}"/>
-                            <Frame CornerRadius="20" Padding="15" HasShadow="False" HorizontalOptions="Center">
-                                <Image Source="{Binding DisplayImage}" WidthRequest="100" HeightRequest="100"/>
-                            </Frame>
-                            <Frame Padding="10, 5" CornerRadius="10" HorizontalOptions="Center" HasShadow="False">
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding Costo}" FontSize="Large" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}"/>
-                                    <Image Source="SalveminiCoin.png" WidthRequest="20"/>
-                                </StackLayout>
-                            </Frame>
-                        </StackLayout>
-                    </DataTemplate>
-                </flv:FlowListView.FlowColumnTemplate>
+            <flv:FlowListView FlowColumnTemplate="{StaticResource skinDataTemplateSelector}" FlowItemTapped="Item_Tapped" RowHeight="200" x:Name="skinsList" BackgroundColor="Transparent" FlowColumnExpand="ProportionalLast" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="false">
                 <flv:FlowListView.Footer>
                     <Label Text="Altre skin presto in arrivo!" FontAttributes="Bold" HorizontalOptions="Center" TextColor="#C4C2C4"/>
                 </flv:FlowListView.Footer>
             </flv:FlowListView>
             <!--Multiplier-->
-            <Frame Padding="15, 15" BackgroundColor="White" CornerRadius="0" HasShadow="False" Margin="-10, -15">
+            <Frame Padding="15, 15" VerticalOptions="End" BackgroundColor="White" CornerRadius="0" HasShadow="False" Margin="-10, -15">
                 <StackLayout Spacing="5" Orientation="Horizontal">
-                    <Label VerticalOptions="Center" Text="Moltiplicatore punti" HorizontalOptions="Start" FontSize="17" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold"/>
+                    <Label VerticalOptions="Center" x:Name="powerLabel" Text="Moltiplicatore punti" HorizontalOptions="Start" FontSize="17" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold"/>
                     <Label VerticalOptions="Center" HorizontalOptions="EndAndExpand" TextColor="{x:Static local:Styles.TextColor}" x:Name="multiplierValue" Text="x1" FontSize="17" FontAttributes="Bold"/>
-                    <Frame CornerRadius="8" HasShadow="False" BackgroundColor="#4BE095" VerticalOptions="Center" HeightRequest="30" Padding="5, 0">
+                    <Frame x:Name="priceFrame" CornerRadius="8" HasShadow="False" BackgroundColor="#4BE095" VerticalOptions="Center" HeightRequest="30" Padding="5, 0">
                         <StackLayout Spacing="5" Orientation="Horizontal">
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="BuyMultiplier_Tapped"/>
                             </StackLayout.GestureRecognizers>
-                            <Label VerticalOptions="Center" TextColor="White" Text="200"/>
+                            <Label VerticalOptions="Center" TextColor="White" x:Name="multiplierPrice"/>
                             <Image Source="SalveminiCoin.png" WidthRequest="20"/>
                         </StackLayout>
                     </Frame>
@@ -51,4 +35,34 @@
             </Frame>
         </StackLayout>
     </Frame>
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="NormalSkinTemplate">
+                <StackLayout>
+                    <Label HorizontalOptions="Center" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" Text="{Binding Nome}"/>
+                    <Frame CornerRadius="20" Padding="15" HasShadow="False" HorizontalOptions="Center">
+                        <Image Source="{Binding DisplayImage}" WidthRequest="100" HeightRequest="100"/>
+                    </Frame>
+                    <Frame Padding="10, 5" CornerRadius="10" HorizontalOptions="Center" HasShadow="False">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Costo}" FontSize="Large" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}"/>
+                            <Image Source="SalveminiCoin.png" WidthRequest="20"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="OwnedSkinTemplate">
+                <StackLayout>
+                    <Label HorizontalOptions="Center" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" Text="{Binding Nome}"/>
+                    <Frame BackgroundColor="{Binding BgColor}" BorderColor="#4BE095" CornerRadius="20" Padding="15" HasShadow="False"  HorizontalOptions="Center">
+                        <Image Source="{Binding DisplayImage}" WidthRequest="100" HeightRequest="100"/>
+                    </Frame>
+                    <Frame Padding="10, 5" CornerRadius="10" HorizontalOptions="Center" HasShadow="False">
+                        <iconize:IconLabel Text="fas-check" FontSize="17" HorizontalOptions="Center" TextColor="#4BE095"/>
+                    </Frame>
+                </StackLayout>
+            </DataTemplate>
+            <fmodel:SkinDataTemplateSelector x:Key="skinDataTemplateSelector" NormalSkinTemplate="{StaticResource NormalSkinTemplate}" OwnedSkinTemplate="{StaticResource OwnedSkinTemplate}"/>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
 </pages:PopupPage>

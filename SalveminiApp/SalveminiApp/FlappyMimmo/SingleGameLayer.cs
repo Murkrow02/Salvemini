@@ -133,10 +133,10 @@ namespace SalveminiApp.FlappyMimmo
                     if (coin != null && coin.Visible && player.BoundingBoxTransformedToWorld.IntersectsRect(coin.BoundingBoxTransformedToWorld))
                     {
                         coin.Visible = false;
-                        score += 4;
+                        score += (Preferences.Get("multiplier", 1) * 2);
                     }
 
-                    scoreLabel.Text = string.Format("Score: {0}", score / 2 * Preferences.Get("multiplier", 1));
+                    scoreLabel.Text = string.Format("Score: {0}", score / 2);
 
                     if (player.BoundingBoxTransformedToWorld.IntersectsRect(topPipe.BoundingBoxTransformedToWorld) || player.BoundingBoxTransformedToWorld.IntersectsRect(bottomPipe.BoundingBoxTransformedToWorld) ||
                         player.PositionY <= VisibleBoundsWorldspace.MinY + player.ContentSize.Height)
@@ -157,7 +157,7 @@ namespace SalveminiApp.FlappyMimmo
             Director.ReplaceScene(transitionToGameOver);
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                string postScore = await App.Flappy.PostScore(score / 2 * Preferences.Get("multiplier", 1));
+                string postScore = await App.Flappy.PostScore(score / 2);
                 if (postScore != null)
                 {
                     Costants.showToast(postScore);
@@ -173,12 +173,15 @@ namespace SalveminiApp.FlappyMimmo
             this.ReorderChild(player, 10);
 
             CCAnimation playerAnimation = new CCAnimation();
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
-            var a = Environment.GetFolderPath(Environment.SpecialFolder.CommonDocuments);
-            for (int i = 1; i <= 3; i++)
+            for (int i = 1; i < 4; i++)
             {
-                var path = Path.Combine(a, Preferences.Get("flappySkin", "default") + i);
-                playerAnimation.AddSpriteFrame(new CCSprite(path));
+                var path = Path.Combine(documentsPath, Preferences.Get("flappySkin", "classicMimmo") + i + ".png");
+                var bytes = File.ReadAllBytes(path);
+                
+                CCTexture2D sprite = new CCTexture2D(bytes);
+                playerAnimation.AddSpriteFrame(new CCSprite(sprite));
             }
             playerAnimation.AddSpriteFrame(playerAnimation.Frames[1].SpriteFrame);
             playerAnimation.DelayPerUnit = 0.1f;

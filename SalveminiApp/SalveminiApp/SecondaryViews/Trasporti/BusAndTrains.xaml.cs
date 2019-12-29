@@ -19,8 +19,8 @@ namespace SalveminiApp.SecondaryViews
 
         void bus_tapped(object sender, EventArgs e)
         {
-            DisplayAlert("Attenzione", "Gli orari dei bus non sono ancora pronti", "Ok");
-          //  Navigation.PushModalAsync(new Trasporti.Bus());
+            //DisplayAlert("Attenzione", "Gli orari dei bus non sono ancora pronti", "Ok");
+            Navigation.PushModalAsync(new Trasporti.Bus());
         }
 
         void ali_tapped(object sender, EventArgs e)

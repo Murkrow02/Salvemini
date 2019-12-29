@@ -10,7 +10,7 @@
                     </iconize:IconLabel.GestureRecognizers>
                 </iconize:IconLabel>
             </StackLayout>
-            <Grid Padding="10, 0">
+            <Grid Padding="10, 0" >
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Play_Tapped"/>
                 </Grid.GestureRecognizers>
@@ -21,6 +21,9 @@
             </Grid>
 
             <Grid Padding="10, 0">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Score_Tapped"/>
+                </Grid.GestureRecognizers>
                 <Frame CornerRadius="20" Padding="15, 10" HasShadow="False" BackgroundColor="{x:Static local:Styles.BGColor}">
                     <Label Margin="0, 0, 0, 60" Text="Classifica" FontSize="33" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}"/>
                 </Frame>

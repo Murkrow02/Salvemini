@@ -1,43 +1,21 @@
 ﻿using System;
+using System.Net;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using Rg.Plugins.Popup.Extensions;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace SalveminiApp.FlappyMimmo
 {
     public partial class FlappyHome : ContentPage
     {
+        public RestApi.Models.FlappyMoneteReturn Potenziamento = new RestApi.Models.FlappyMoneteReturn();
+
         public FlappyHome()
         {
             InitializeComponent();
-
-            //Save Flappy default image in documents
-            var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-
-            byte[] imageBytes;
-            for (int i = 1; i < 4; i++)
-            {
-                var filename = Path.Combine(documents, "default" + i + ".png");
-                bool doesExist = File.Exists(filename);
-
-                if (!doesExist)
-                {
-                    var image = new Image { Source = "default" + i + ".png" };
-                    StreamImageSource streamImageSource = (StreamImageSource)image.Source;
-                    System.Threading.CancellationToken cancellationToken = System.Threading.CancellationToken.None;
-                    Task<Stream> task = streamImageSource.Stream(cancellationToken);
-                    Stream stream = task.Result;
-                    using (MemoryStream ms = new MemoryStream())
-                    {
-                        stream.CopyTo(ms);
-                        imageBytes = ms.ToArray();
-                    }
-                    File.WriteAllBytes(filename, imageBytes);
-                }
-
-            }
 
             //Set Sizes
             buttonFrame.WidthRequest = App.ScreenWidth / 6;
@@ -49,9 +27,54 @@ namespace SalveminiApp.FlappyMimmo
             boardImage.HeightRequest = App.ScreenWidth * 0.35;
         }
 
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            //Check connection
+            if (Connectivity.NetworkAccess != Xamarin.Essentials.NetworkAccess.Internet)
+            {
+                Costants.showToast("connection");
+                return;
+            }
+
+            //Get current multiplier
+            Potenziamento = await App.Flappy.GetUpgrade();
+            if (Potenziamento != null)
+            {
+                Preferences.Set("multiplier", Potenziamento.Valore - 1);
+            }
+
+
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            if (!File.Exists(Path.Combine(documentsPath, "classicMimmo1.png")) || !File.Exists(Path.Combine(documentsPath, "classicMimmo2.png")) || !File.Exists(Path.Combine(documentsPath, "classicMimmo3.png")))
+            {
+                canPlay = false;
+                var skin = await App.Flappy.BuySkin(1);
+                //Download skin if is not downloaded
+                for (int i = 1; i < 4; i++)
+                {
+                    using (WebClient client = new WebClient())
+                    {
+                        client.DownloadFile(Costants.Uri("images/flappyskin/classicMimmo" + i), Path.Combine(documentsPath, "classicMimmo" + i + ".png"));
+                    }
+                }
+                canPlay = true;
+            }
+        }
+
+        bool canPlay = true;
         void Play_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new GamePage());
+            if (canPlay)
+            {
+                Navigation.PushModalAsync(new GamePage());
+            }
+        }
+
+        void Score_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new Classifica());
         }
 
         void Shop_Tapped(object sender, EventArgs e)

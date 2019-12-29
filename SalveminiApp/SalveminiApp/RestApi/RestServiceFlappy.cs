@@ -19,6 +19,8 @@ namespace SalveminiApp.RestApi
     {
         HttpClient client;
         public ObservableCollection<Models.FlappySkinReturn> Skins { get; private set; }
+        public Models.FlappyMoneteReturn Multiplier { get; private set; }
+        public List<Models.UtentiClassifica> Scores { get; private set; }
 
         public RestServiceFlappy()
         {
@@ -41,7 +43,6 @@ namespace SalveminiApp.RestApi
                     var content = await response.Content.ReadAsStringAsync();
                     Skins = JsonConvert.DeserializeObject<ObservableCollection<Models.FlappySkinReturn>>(content);
 
-                    Skins.Insert(0, new Models.FlappySkinReturn { Comprata = true, Costo = 0, Immagini = new List<string> { "default1", "default2", "default3" } });
                     //Save Cache
                     Barrel.Current.Add("Skins", Skins, TimeSpan.FromDays(10));
                 }
@@ -58,9 +59,38 @@ namespace SalveminiApp.RestApi
             return Skins;
         }
 
+        public async Task<List<Models.UtentiClassifica>> GetScores()
+        {
+            Scores = new List<Models.UtentiClassifica>();
+            var uri = Costants.Uri("flappy/getscores");
+            try
+            {
+                //Get from url
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    Scores = JsonConvert.DeserializeObject<List<Models.UtentiClassifica>>(content);
+
+                    //Save Cache
+                    Barrel.Current.Add("Scores", Scores, TimeSpan.FromDays(10));
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Errore GET indexargo", ex.Message);
+            }
+            return Scores;
+        }
+
         public async Task<string> Upgrade(int idUpgrade)
         {
-            var uri = Costants.Uri("api/flappy/buyUpgrade/" + idUpgrade);
+            var uri = Costants.Uri("flappy/buyUpgrade/" + idUpgrade);
             try
             {
                 //Get from url
@@ -80,6 +110,41 @@ namespace SalveminiApp.RestApi
                 Debug.WriteLine(@"Errore GET indexargo", ex.Message);
                 return "Si è verificato un errore";
             }
+        }
+
+        public async Task<Models.FlappyMoneteReturn> GetUpgrade()
+        {
+            var uri = Costants.Uri("flappy/getUpgrade");
+            try
+            {
+                Multiplier = new Models.FlappyMoneteReturn();
+
+                //Get from url
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    Multiplier = JsonConvert.DeserializeObject<Models.FlappyMoneteReturn>(content);
+
+                    //No more power ups
+                    if (Multiplier == null)
+                    {
+                        Preferences.Set("multiplier", 10);
+                    }
+
+                    return Multiplier;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Errore GET indexargo", ex.Message);
+                return null;
+            }
+
         }
 
         public async Task<string> BuySkin(int id)
@@ -116,7 +181,7 @@ namespace SalveminiApp.RestApi
                 //Get from url
                 var response = await client.PostAsync(uri, content);
                 var returnValue = await response.Content.ReadAsStringAsync();
-                if (returnValue != "Punteggio caricato")
+                if (returnValue != "\"Punteggio caricato\"")
                 {
                     return returnValue;
                 }
@@ -139,6 +204,8 @@ namespace SalveminiApp.RestApi
         Task<string> BuySkin(int id);
         Task<string> PostScore(int score);
         Task<string> Upgrade(int idUpgrade);
+        Task<Models.FlappyMoneteReturn> GetUpgrade();
+        Task<List<Models.UtentiClassifica>> GetScores();
     }
 
     public class ItemManagerFlappy
@@ -168,6 +235,16 @@ namespace SalveminiApp.RestApi
         public Task<string> Upgrade(int idUpgrade)
         {
             return restServiceFlappy.Upgrade(idUpgrade);
+        }
+
+        public Task<Models.FlappyMoneteReturn> GetUpgrade()
+        {
+            return restServiceFlappy.GetUpgrade();
+        }
+
+        public Task<List<Models.UtentiClassifica>> GetScores()
+        {
+            return restServiceFlappy.GetScores();
         }
     }
 }
