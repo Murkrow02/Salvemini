@@ -17,7 +17,7 @@ namespace SalveminiApi.Models
         public int id { get; set; }
         public string Commento { get; set; }
         public System.DateTime Creazione { get; set; }
-        public int idUtente { get; set; }
+        public int idUtente { internal get; set; }
         public int idPost { get; set; }
         public bool Anonimo { get; set; }
     

@@ -1,0 +1,2 @@
+System.NullReferenceException: Riferimento a un oggetto non impostato su un'istanza di oggetto.
+   in SalveminiApi.Controllers.SecretsController.postQuestion(String domanda_) in C:\Users\Marco\Desktop\salveminiapp-3.0\SalveminiApi\SalveminiApi\Controllers\SecretsController.cs:riga 34

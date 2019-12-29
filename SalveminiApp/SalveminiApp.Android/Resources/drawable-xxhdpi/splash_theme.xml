@@ -3,7 +3,7 @@
     <item android:drawable="@color/white"/>
     <item>
  <bitmap
-        android:src="@drawable/logoNuovo"
+        android:src="@drawable/splashScreen"
         android:tileMode="disabled"
         android:gravity="center"/>
   </item>   

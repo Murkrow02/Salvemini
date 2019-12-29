@@ -135,6 +135,7 @@
           <Property Name="idUtente" Type="int" Nullable="false" />
           <Property Name="Impressions" Type="int" Nullable="false" />
           <Property Name="Creazione" Type="datetime" Nullable="false" />
+          <Property Name="Anonimo" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="EventsLog">
           <Key>
@@ -183,6 +184,17 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="desMateria" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="Materia" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Notifiche">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descrizione" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Creazione" Type="datetime" Nullable="false" />
+          <Property Name="idPost" Type="int" />
+          <Property Name="idUtente" Type="int" Nullable="false" />
+          <Property Name="Tipo" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="OggettiSondaggi">
           <Key>
@@ -379,6 +391,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Notifiche_Utenti">
+          <End Role="Utenti" Type="Self.Utenti" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Notifiche" Type="Self.Notifiche" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Notifiche">
+              <PropertyRef Name="idUtente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_OggettiSondaggi_Sondaggi">
           <End Role="Sondaggi" Type="Self.Sondaggi" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -452,6 +478,7 @@
           <EntitySet Name="FlappySkin" EntityType="Self.FlappySkin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Giornalino" EntityType="Self.Giornalino" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Materie" EntityType="Self.Materie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notifiche" EntityType="Self.Notifiche" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OggettiSondaggi" EntityType="Self.OggettiSondaggi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SalveminiCard" EntityType="Self.SalveminiCard" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sondaggi" EntityType="Self.Sondaggi" Schema="dbo" store:Type="Tables" />
@@ -496,6 +523,10 @@
           <AssociationSet Name="FK_FlappyClassifica_Utenti" Association="Self.FK_FlappyClassifica_Utenti">
             <End Role="Utenti" EntitySet="Utenti" />
             <End Role="FlappyClassifica" EntitySet="FlappyClassifica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notifiche_Utenti" Association="Self.FK_Notifiche_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="Notifiche" EntitySet="Notifiche" />
           </AssociationSet>
           <AssociationSet Name="FK_OggettiSondaggi_Sondaggi" Association="Self.FK_OggettiSondaggi_Sondaggi">
             <End Role="Sondaggi" EntitySet="Sondaggi" />
@@ -622,7 +653,7 @@
           <Property Name="Classe" Type="Int32" Nullable="false" />
           <Property Name="Corso" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Stato" Type="Int32" Nullable="false" />
-          <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <Property Name="ArgoToken" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Avvisi" Relationship="Self.FK_Avvisi_Utenti" FromRole="Utenti" ToRole="Avvisi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <NavigationProperty Name="Sondaggi" Relationship="Self.FK_Sondaggi_Utenti" FromRole="Utenti" ToRole="Sondaggi" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
@@ -639,6 +670,7 @@
           <NavigationProperty Name="CoinSpese" Relationship="SalveminiModel.FK_CoinSpese_Utenti" FromRole="Utenti" ToRole="CoinSpese" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <NavigationProperty Name="FlappyClassifica" Relationship="SalveminiModel.FK_FlappyClassifica_Utenti" FromRole="Utenti" ToRole="FlappyClassifica" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <NavigationProperty Name="Commenti" Relationship="SalveminiModel.FK_Commenti_Utenti" FromRole="Utenti" ToRole="Commenti" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="Notifiche" Relationship="SalveminiModel.FK_Notifiche_Utenti" FromRole="Utenti" ToRole="Notifiche" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
         <EntityType Name="VotiSondaggi">
           <Key>
@@ -830,7 +862,12 @@
             <End Role="Utenti" EntitySet="Utenti" />
             <End Role="Commenti" EntitySet="Commenti" />
           </AssociationSet>
-        </EntityContainer>
+          <EntitySet Name="Notifiche" EntityType="SalveminiModel.Notifiche" />
+          <AssociationSet Name="FK_Notifiche_Utenti" Association="SalveminiModel.FK_Notifiche_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="Notifiche" EntitySet="Notifiche" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="EventsLog">
           <Key>
             <PropertyRef Name="id" />
@@ -1027,7 +1064,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Commento" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="idUtente" Type="Int32" Nullable="false" />
+          <Property Name="idUtente" Type="Int32" Nullable="false" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <Property Name="idPost" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Domande" Relationship="SalveminiModel.FK_Commenti_Domande" FromRole="Commenti" ToRole="Domande" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <NavigationProperty Name="Utenti" Relationship="SalveminiModel.FK_Commenti_Utenti" FromRole="Commenti" ToRole="Utenti" />
@@ -1044,6 +1081,7 @@
           <Property Name="Impressions" Type="Int32" Nullable="false" />
           <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Commenti" Relationship="SalveminiModel.FK_Commenti_Domande" FromRole="Domande" ToRole="Commenti" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Name="Anonimo" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="FK_Commenti_Domande">
           <End Type="SalveminiModel.Domande" Role="Domande" Multiplicity="1">
@@ -1073,7 +1111,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <EntityType Name="Notifiche">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descrizione" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Creazione" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="idPost" Type="Int32" Nullable="false" />
+          <Property Name="idUtente" Type="Int32" Nullable="false" />
+          <Property Name="Tipo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Utenti" Relationship="SalveminiModel.FK_Notifiche_Utenti" FromRole="Notifiche" ToRole="Utenti" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        </EntityType>
+        <Association Name="FK_Notifiche_Utenti">
+          <End Type="SalveminiModel.Utenti" Role="Utenti" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SalveminiModel.Notifiche" Role="Notifiche" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Notifiche">
+              <PropertyRef Name="idUtente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -1329,11 +1393,24 @@
           <EntitySetMapping Name="Domande">
             <EntityTypeMapping TypeName="SalveminiModel.Domande">
               <MappingFragment StoreEntitySet="Domande">
+                <ScalarProperty Name="Anonimo" ColumnName="Anonimo" />
                 <ScalarProperty Name="Creazione" ColumnName="Creazione" />
                 <ScalarProperty Name="Impressions" ColumnName="Impressions" />
                 <ScalarProperty Name="idUtente" ColumnName="idUtente" />
                 <ScalarProperty Name="Approvata" ColumnName="Approvata" />
                 <ScalarProperty Name="Domanda" ColumnName="Domanda" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notifiche">
+            <EntityTypeMapping TypeName="SalveminiModel.Notifiche">
+              <MappingFragment StoreEntitySet="Notifiche">
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="idUtente" ColumnName="idUtente" />
+                <ScalarProperty Name="idPost" ColumnName="idPost" />
+                <ScalarProperty Name="Creazione" ColumnName="Creazione" />
+                <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

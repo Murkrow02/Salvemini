@@ -12,7 +12,7 @@
         </Grid>
     </NavigationPage.TitleView>
 
-    <StackLayout x:Name="mainLayout" VerticalOptions="FillAndExpand">
+    <StackLayout Spacing="0" x:Name="mainLayout" VerticalOptions="FillAndExpand">
         <!--Post list-->
         <ListView VerticalOptions="FillAndExpand" ItemSelected="Post_Selected" Refreshing="posts_Refreshing" IsPullToRefreshEnabled="True" RefreshControlColor="{x:Static local:Styles.BGColor}" BackgroundColor="Transparent" x:Name="postsList" HasUnevenRows="true" Header="" Footer="" SeparatorVisibility="None">
             <ListView.ItemTemplate>

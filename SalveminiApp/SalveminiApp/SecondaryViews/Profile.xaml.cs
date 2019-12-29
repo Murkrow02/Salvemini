@@ -160,6 +160,9 @@ namespace SalveminiApp.SecondaryViews
                     var user = await App.Utenti.GetUtente(Preferences.Get("UserId", 0));
                     if (user != null)
                     {
+                        //Save new image for home
+                        Preferences.Set("UserImage", user.Immagine);
+
                         //Save in global variable
                         utente = user;
 

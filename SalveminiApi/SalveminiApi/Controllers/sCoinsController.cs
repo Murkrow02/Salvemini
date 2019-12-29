@@ -239,8 +239,7 @@ namespace SalveminiApi.Controllers
             foreach (var uscita in uscite) { returnList.Add(new Transaction { Amount = -uscita.Quantità, Description = uscita.Descrizione, Date = uscita.Attivazione }); }
 
             //Success
-            returnList.OrderByDescending(x => x.Date);
-            return returnList;
+            return returnList.OrderByDescending(x => x.Date).ToList();
         }
     }
 

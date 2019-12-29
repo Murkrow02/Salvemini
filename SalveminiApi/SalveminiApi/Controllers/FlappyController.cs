@@ -34,7 +34,7 @@ namespace SalveminiApi.Controllers
                 foreach (var skin in allSkins)
                 {
                     //Comprata?
-                    bool comprata = db.CoinSpese.FirstOrDefault(x => x.idOggetto == skin.id) != null;
+                    bool comprata = db.CoinSpese.FirstOrDefault(x => x.idOggetto == skin.id && x.Tipo == "FlappySkin") != null;
 
                     //Create image list separated by commma
                     var immagini = skin.Immagini.Split(',').ToList();
@@ -85,7 +85,7 @@ namespace SalveminiApi.Controllers
             }
             catch (Exception ex)
             {
-                Helpers.Utility.saveCrash("Errore GET lista skin flappy", ex.ToString());
+                Helpers.Utility.saveCrash("Errore GET lista upgrade flappy", ex.ToString());
                 throw new HttpResponseException(HttpStatusCode.InternalServerError);
             }
         }
@@ -123,9 +123,13 @@ namespace SalveminiApi.Controllers
                     return Request.CreateResponse(HttpStatusCode.Conflict, "Hai già comprato questa skin");
 
                 //Buy skin
-                utente.sCoin -= skin.Costo;
-                db.CoinSpese.Add(new CoinSpese { Attivazione = Helpers.Utility.italianTime(), idOggetto = skin.id, idUtente = idUtente, Quantità = skin.Costo, Tipo = "FlappySkin", Descrizione = "Skin di FlappyMimmo " + "\"" + skin.Nome + "\"" });
-                db.SaveChanges();
+                if(skin.Costo > 0)
+                {
+                    utente.sCoin -= skin.Costo;
+                    db.CoinSpese.Add(new CoinSpese { Attivazione = Helpers.Utility.italianTime(), idOggetto = skin.id, idUtente = idUtente, Quantità = skin.Costo, Tipo = "FlappySkin", Descrizione = "Skin di FlappyMimmo " + "\"" + skin.Nome + "\"" });
+                    db.SaveChanges();
+                }
+               
 
                 //Save event in console
                 Helpers.Utility.saveEvent(utente.Nome + " " + utente.Cognome + " (" + utente.id + ")" + " ha comprato la skin di flappy " + skin.Nome + " (" + skin.id + ")");
@@ -191,7 +195,7 @@ namespace SalveminiApi.Controllers
 
         [Route("postScore")]
         [HttpPost]
-        public HttpResponseMessage PostScore(int score)
+        public HttpResponseMessage PostScore([FromBody]int score)
         {
             //Check Auth
             var authorize = new Helpers.Utility();
@@ -206,13 +210,26 @@ namespace SalveminiApi.Controllers
             {
                 //Find if has already a score
                 var conflict = db.FlappyClassifica.Find(idUtente);
-                if (conflict != null && score > conflict.Punteggio)
-                    conflict.Punteggio = score; //Update existing score
+                if (conflict != null)
+                {
+                    if (score > conflict.Punteggio)
+                    {
+                        conflict.Punteggio = score;
+                        db.SaveChanges();
+                        return Request.CreateResponse(HttpStatusCode.OK, "Hai appena fatto un nuovo record personale!");
+                    }
+                    else
+                    {
+                        return Request.CreateResponse(HttpStatusCode.OK, "Punteggio caricato");
+                    }
+                }
                 else
+                {
                     db.FlappyClassifica.Add(new FlappyClassifica { idUtente = idUtente, Punteggio = score }); //Add to database
+                    db.SaveChanges();
+                    return Request.CreateResponse(HttpStatusCode.OK, "Punteggio caricato");
+                }
 
-                db.SaveChanges();
-                return Request.CreateResponse(HttpStatusCode.OK, "Punteggio caricato con successo");
             }
             catch (Exception ex)
             {
@@ -222,8 +239,8 @@ namespace SalveminiApi.Controllers
         }
 
         [Route("getScores")]
-        [HttpPost]
-        public List<FlappyClassifica> Classifica()
+        [HttpGet]
+        public List<UtentiClassifica> Classifica()
         {
             //Check Auth
             var authorize = new Helpers.Utility();
@@ -236,13 +253,32 @@ namespace SalveminiApi.Controllers
 
             try
             {
-                return db.FlappyClassifica.OrderByDescending(x => x.Punteggio).Take(10).ToList();
+                var returnModel = new List<UtentiClassifica>();
+
+                //Take first 10 users
+                var utenti =  db.FlappyClassifica.OrderByDescending(x => x.Punteggio).Take(10).ToList();
+
+                //Return dictionary of User-Points
+                foreach(var utente in utenti)
+                {
+                    var utente_ = db.Utenti.Find(utente.idUtente);
+                    returnModel.Add(new UtentiClassifica { id = utente_.id, Image = utente_.Immagine, NomeCognome = utente_.Nome + " " + utente_.Cognome, Punteggio = utente.Punteggio});
+                }
+                return returnModel;
             }
             catch (Exception ex)
             {
                 Helpers.Utility.saveCrash("Errore GET lista classifica flappy", ex.ToString());
                 throw new HttpResponseException(HttpStatusCode.InternalServerError);
             }
+        }
+
+        public class UtentiClassifica
+        {
+            public string NomeCognome { get; set; }
+            public string Image { get; set; }
+            public int Punteggio { get; set; }
+            public int id { get; set; }
         }
     }
 }

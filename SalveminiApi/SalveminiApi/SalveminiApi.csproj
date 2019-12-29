@@ -498,7 +498,7 @@
     <Compile Include="Models\Domande.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DomandeReturn.cs" />
+    <Compile Include="Models\iCringe.cs" />
     <Compile Include="Models\EventsLog.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -517,6 +517,9 @@
     </Compile>
     <Compile Include="Helpers\GpsUtils.cs" />
     <Compile Include="Models\Materie.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Notifiche.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OggettiSondaggi.cs">

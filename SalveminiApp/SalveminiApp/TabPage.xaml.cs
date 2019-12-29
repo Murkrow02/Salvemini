@@ -36,12 +36,13 @@ namespace SalveminiApp
             IconImageSource = "tabBarArgo.png"
         };
 
+        //iCringe
         public static Helpers.CustomNavigationPage Family = new Helpers.CustomNavigationPage(new iCringe.Home())
         {
             BarTextColor = Styles.BGColor,
             BarBackgroundColor = Styles.SecretsPrimary,
             Title = "iCringe",
-            IconImageSource = "tabBarArgo.png"
+            IconImageSource = "iCringe.png"
         };
 
 
@@ -86,8 +87,12 @@ namespace SalveminiApp
 #if __IOS__
                         MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar2.jpg");
 #endif
+#if __ANDROID__
+                        if(MainPage.appearedTimes > 0)
+                        ((Children[0] as Helpers.CustomNavigationPage).RootPage as iCringe.Home).AndroidFix();
+#endif
+                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "iCringeFill.png";
                         (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
-                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
                         (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
                         break;
                     case 1:
@@ -95,7 +100,7 @@ namespace SalveminiApp
 #if __IOS__
                         MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg","bbar.jpg");
 #endif
-                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
+                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "iCringe.png";
                         (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
                         (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
                         break;
@@ -105,10 +110,15 @@ namespace SalveminiApp
 #if __IOS__
                         MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar.jpg");
 #endif
-                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
+#if __ANDROID__
+                        if (MainPage.appearedTimes > 0)
+                            ((Children[2] as Helpers.CustomNavigationPage).RootPage as ArgoPage).AndroidFix();
+#endif
+                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "iCringe.png";
                         (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
                         (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarArgo.png";
                         break;
+
                 }
             }
             catch

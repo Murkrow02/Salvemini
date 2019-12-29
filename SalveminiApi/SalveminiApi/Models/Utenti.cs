@@ -25,6 +25,7 @@ namespace SalveminiApi.Models
             this.CoinGuadagnate = new HashSet<CoinGuadagnate>();
             this.CoinSpese = new HashSet<CoinSpese>();
             this.Commenti = new HashSet<Commenti>();
+            this.Notifiche = new HashSet<Notifiche>();
         }
     
         public int id { get; set; }
@@ -34,7 +35,7 @@ namespace SalveminiApi.Models
         public int Classe { get; set; }
         public string Corso { get; set; }
         public int Stato { get; set; }
-        public System.DateTime Creazione { get; set; }
+        public System.DateTime Creazione { internal get; set; }
         public string ArgoToken { get; set; }
         public int sCoin { get; set; }
         public int AdsWatched { internal get; set; }
@@ -60,5 +61,7 @@ namespace SalveminiApi.Models
         public virtual FlappyClassifica FlappyClassifica { internal get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Commenti> Commenti { internal get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Notifiche> Notifiche { internal get; set; }
     }
 }
