@@ -4,6 +4,7 @@ using CocosSharp;
 using System.Linq;
 using System.Diagnostics;
 using Xamarin.Essentials;
+using System.IO;
 
 namespace SalveminiApp.FlappyMimmo
 {
@@ -135,7 +136,7 @@ namespace SalveminiApp.FlappyMimmo
                         score += 4;
                     }
 
-                    scoreLabel.Text = string.Format("Score: {0}", score / 2);
+                    scoreLabel.Text = string.Format("Score: {0}", score / 2 * Preferences.Get("multiplier", 1));
 
                     if (player.BoundingBoxTransformedToWorld.IntersectsRect(topPipe.BoundingBoxTransformedToWorld) || player.BoundingBoxTransformedToWorld.IntersectsRect(bottomPipe.BoundingBoxTransformedToWorld) ||
                         player.PositionY <= VisibleBoundsWorldspace.MinY + player.ContentSize.Height)
@@ -150,19 +151,20 @@ namespace SalveminiApp.FlappyMimmo
         {
             // Stop scheduled events as we transition to game over scene
             UnscheduleAll();
+            CCScene gameOverScene = new CCScene(GameView);
+            var transitionToGameOver = new CCTransitionRotoZoom(1.0f, gameOverScene);
+            gameOverScene.AddLayer(new GameOverLayer(score / 2));
+            Director.ReplaceScene(transitionToGameOver);
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                string postScore = await App.Flappy.PostScore(score / 2);
+                string postScore = await App.Flappy.PostScore(score / 2 * Preferences.Get("multiplier", 1));
                 if (postScore != null)
                 {
                     Costants.showToast(postScore);
                 }
             }
-            CCScene gameOverScene = new CCScene(GameView);
-            var transitionToGameOver = new CCTransitionRotoZoom(1.0f, gameOverScene);
-            gameOverScene.AddLayer(new GameOverLayer(score / 2));
-            Director.ReplaceScene(transitionToGameOver);
         }
+
         void CreatePlayer()
         {
             player.Name = "player";
@@ -172,9 +174,11 @@ namespace SalveminiApp.FlappyMimmo
 
             CCAnimation playerAnimation = new CCAnimation();
 
+            var a = Environment.GetFolderPath(Environment.SpecialFolder.CommonDocuments);
             for (int i = 1; i <= 3; i++)
             {
-                playerAnimation.AddSpriteFrame(new CCSprite(string.Format("player-{0}", i)));
+                var path = Path.Combine(a, Preferences.Get("flappySkin", "default") + i);
+                playerAnimation.AddSpriteFrame(new CCSprite(path));
             }
             playerAnimation.AddSpriteFrame(playerAnimation.Frames[1].SpriteFrame);
             playerAnimation.DelayPerUnit = 0.1f;
