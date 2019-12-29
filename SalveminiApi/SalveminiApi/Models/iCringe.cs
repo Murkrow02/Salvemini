@@ -9,8 +9,15 @@ namespace SalveminiApi.Models
     {
         public int id { get; set; }
         public string Domanda { get; set; }
-        public DateTime Data { get; set; }
+        public TimeSpan Data { get; set; }
         public int CommentiCount { get; set; }
+        public Utenti Utente { get; set; }
         public List<Commenti> Commenti {get;set;}
+    }
+
+    public class CommentiReturn
+    {
+        public string Domanda { get; set; }
+        public List<Commenti> Commenti { get; set; }
     }
 }

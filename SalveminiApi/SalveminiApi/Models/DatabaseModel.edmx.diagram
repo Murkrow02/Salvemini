@@ -34,16 +34,24 @@
         <EntityTypeShape EntityType="SalveminiModel.CoinGuadagnate" Width="1.5" PointX="5.125" PointY="14.5" />
         <EntityTypeShape EntityType="SalveminiModel.CoinSpese" Width="1.5" PointX="7.75" PointY="13.875" />
         <AssociationConnector Association="SalveminiModel.FK_CoinGuadagnate_Utenti" />
-        <AssociationConnector Association="SalveminiModel.FK_CoinSpese_Utenti" />
+        <AssociationConnector Association="SalveminiModel.FK_CoinSpese_Utenti" ManuallyRouted="true" >
+          <ConnectorPoint PointX="1.80859675" PointY="7.3263151041666656" />
+          <ConnectorPoint PointX="1.80859675" PointY="7.75" />
+          <ConnectorPoint PointX="7.375" PointY="7.75" />
+          <ConnectorPoint PointX="7.375" PointY="15.153595377604166" />
+          <ConnectorPoint PointX="7.75" PointY="15.153595377604166" />
+        </AssociationConnector>
         <EntityTypeShape EntityType="SalveminiModel.FlappySkin" Width="1.5" PointX="10" PointY="12.125" />
         <EntityTypeShape EntityType="SalveminiModel.FlappyMonete" Width="1.5" PointX="10.25" PointY="9.375" />
         <EntityTypeShape EntityType="SalveminiModel.FlappyClassifica" Width="1.5" PointX="0.875" PointY="14.375" />
         <AssociationConnector Association="SalveminiModel.FK_FlappyClassifica_Utenti" />
         <EntityTypeShape EntityType="SalveminiModel.Commenti" Width="1.5" PointX="10.375" PointY="0.75" />
-        <EntityTypeShape EntityType="SalveminiModel.Domande" Width="1.5" PointX="13.25" PointY="3.125" />
+        <EntityTypeShape EntityType="SalveminiModel.Domande" Width="1.5" PointX="13.5" PointY="3.875" />
         <AssociationConnector Association="SalveminiModel.FK_Commenti_Domande" />
         <AssociationConnector Association="SalveminiModel.FK_Commenti_Utenti" />
-      </Diagram>
+        <EntityTypeShape EntityType="SalveminiModel.Notifiche" Width="1.5" PointX="13.5" PointY="0.875" />
+        <AssociationConnector Association="SalveminiModel.FK_Notifiche_Utenti" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

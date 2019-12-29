@@ -48,5 +48,6 @@ namespace SalveminiApi.Models
         public virtual DbSet<FlappyClassifica> FlappyClassifica { get; set; }
         public virtual DbSet<Commenti> Commenti { get; set; }
         public virtual DbSet<Domande> Domande { get; set; }
+        public virtual DbSet<Notifiche> Notifiche { get; set; }
     }
 }

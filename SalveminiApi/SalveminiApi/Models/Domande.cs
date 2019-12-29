@@ -26,6 +26,7 @@ namespace SalveminiApi.Models
         public int idUtente { get; set; }
         public int Impressions { get; set; }
         public System.DateTime Creazione { get; set; }
+        public bool Anonimo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Commenti> Commenti { internal get; set; }

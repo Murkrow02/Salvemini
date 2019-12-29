@@ -12,16 +12,15 @@ namespace SalveminiApi.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Commenti
+    public partial class Notifiche
     {
         public int id { get; set; }
-        public string Commento { get; set; }
+        public string Descrizione { get; set; }
         public System.DateTime Creazione { get; set; }
-        public int idUtente { internal get; set; }
         public int idPost { get; set; }
-        public bool Anonimo { get; set; }
+        public int idUtente { get; set; }
+        public int Tipo { get; set; }
     
-        public virtual Domande Domande { internal get; set; }
-        public virtual Utenti Utenti { get; set; }
+        public virtual Utenti Utenti { internal get; set; }
     }
 }
