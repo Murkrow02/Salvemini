@@ -39,7 +39,7 @@ namespace SalveminiApp.iCringe
             sendBtn.IsEnabled = false;
 
             //Post question
-            var response = await App.Cringe.PostDomanda(domanda.Text);
+            var response = await App.Cringe.PostDomanda(domanda.Text, switchAnonimo.IsToggled);
             if (response[0] == "Successo")
             {
                 await DisplayAlert("Successo", response[1], "Ok");

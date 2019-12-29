@@ -50,8 +50,8 @@ namespace SalveminiApp
 
 
             //Set sizes
-            userImg.WidthRequest = App.ScreenWidth / 8.8;
-            coinImage.WidthRequest = App.ScreenWidth / 13;
+            //userImg.WidthRequest = App.ScreenWidth / 8.8;
+            //coinImage.WidthRequest = App.ScreenWidth / 13;
 
             //Subscribe to messaging center
             //Refresh image cache
@@ -90,7 +90,8 @@ namespace SalveminiApp
         {
             base.OnAppearing();
 
-            if (((this.Parent as Helpers.CustomNavigationPage).Parent as TabbedPage).CurrentPage != this.Parent as Helpers.CustomNavigationPage)
+            //Return if triggered from error
+            if (((Parent as Helpers.CustomNavigationPage).Parent as TabbedPage).CurrentPage != this.Parent as Helpers.CustomNavigationPage)
                 return;
 
             //Load navigation pages to be faster

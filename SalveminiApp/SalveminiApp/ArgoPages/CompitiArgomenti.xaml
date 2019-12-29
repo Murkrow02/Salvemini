@@ -3,7 +3,7 @@
     <yummy:PancakeView BackgroundGradientAngle="135" CornerRadius="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" x:Name="gradient">
         <AbsoluteLayout>
             <ffimageloadingsvg:SvgCachedImage x:Name="shadowImage" BackgroundColor="Transparent" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1.5, -0.2" />
-            <StackLayout x:Name="fullLayout" Spacing="5" Padding="20, 10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <StackLayout x:Name="fullLayout" Spacing="5"  Padding="25, 20,25,5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
 
                 <!--Title and filters-->
                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
@@ -67,7 +67,7 @@
                 </Frame>
 
                 <!--Chiudi-->
-                <Frame VerticalOptions="EndAndExpand" HasShadow="false" HorizontalOptions="Center" x:Name="buttonFrame" Padding="0">
+                <Frame WidthRequest="62" HeightRequest="62" CornerRadius="31" VerticalOptions="EndAndExpand" HasShadow="false" HorizontalOptions="Center" x:Name="buttonFrame" Padding="0">
                     <iconize:IconButton Clicked="Close_Clicked" Text="fas-times" FontSize="30" x:Name="xClose" BackgroundColor="Transparent"/>
                 </Frame>
             </StackLayout>

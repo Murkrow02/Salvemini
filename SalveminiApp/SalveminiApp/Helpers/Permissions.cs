@@ -26,7 +26,7 @@ namespace SalveminiApp.Helpers
                     return true;
                 }
 
-               bool openSettings = await currentPage.DisplayAlert("Errore", "Non ci hai concesso di accedere alla tua posizione, apri l'app impostazioni del tuo telefono e consenti l'accesso per Salvemini", "Impostazioni","Chiudi");
+                bool openSettings = await currentPage.DisplayAlert("Errore", "Non ci hai concesso di accedere alla tua posizione, apri l'app impostazioni del tuo telefono e consenti l'accesso per Salvemini", "Impostazioni", "Chiudi");
                 if (openSettings)
                     CrossPermissions.Current.OpenAppSettings();
                 return false;
@@ -39,8 +39,8 @@ namespace SalveminiApp.Helpers
         {
             //if (location.Accuracy > 30)
             //    return "La tua posizione non è abbastanza accurata, riprova";
-            //   if (location.IsFromMockProvider)
-            //    return "Cooooooosa? Qualcuno sta cercando di imbrogliare qua? Non è stato possibile verificare l'autenticità della tua posizione, disattiva i servizi di localizzazione falsi";
+            if (location.IsFromMockProvider)
+                return "Cooooooosa? Qualcuno sta cercando di imbrogliare qua? Non è stato possibile verificare l'autenticità della tua posizione, disattiva i servizi di localizzazione falsi";
             return "";
         }
 

@@ -89,7 +89,8 @@ namespace SalveminiApp.RestApi.Models
         {
             get
             {
-                return App.ScreenWidth / 20;
+                //return App.ScreenWidth / 20;
+                return 18;
             }
         }
 
@@ -99,7 +100,8 @@ namespace SalveminiApp.RestApi.Models
         {
             get
             {
-                return (float)(App.ScreenWidth / 20) / 2;
+                //return (float)(App.ScreenWidth / 20) / 2;
+                return 9;
             }
         }
 
@@ -107,7 +109,8 @@ namespace SalveminiApp.RestApi.Models
         {
             get
             {
-                return App.ScreenWidth / 25;
+                //return App.ScreenWidth / 25;
+                return 15;
             }
         }
 
@@ -115,7 +118,8 @@ namespace SalveminiApp.RestApi.Models
         {
             get
             {
-                return (float)(App.ScreenWidth / 25) / 2;
+                //return (float)(App.ScreenWidth / 25) / 2;
+                return 7.5f;
             }
         }
 

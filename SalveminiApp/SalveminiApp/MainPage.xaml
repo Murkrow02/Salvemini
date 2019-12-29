@@ -5,7 +5,7 @@
         <Grid HorizontalOptions="FillAndExpand" Padding="5">
             <!--Coin-->
             <StackLayout IsVisible="true" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-                <Image Source="SalveminiCoin.png" x:Name="coinImage"/>
+                <Image Source="SalveminiCoin.png" WidthRequest="35" x:Name="coinImage"/>
                 <Label x:Name="sCoinLbl" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center"  />
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Tapped="sCoin_Tapped"/>
@@ -17,7 +17,7 @@
                 <!--<Label Text="SalveminiApp internal beta v1" TextColor="#9c9c9c" FontSize="Small" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />-->
             </StackLayout>
             <!--Profile Image-->
-            <ffimageloading:CachedImage Margin="0" CacheType="All" x:Name="userImg" LoadingPlaceholder="userPlaceholder" HorizontalOptions="EndAndExpand">
+            <ffimageloading:CachedImage WidthRequest="40" Margin="0" CacheType="All" x:Name="userImg" LoadingPlaceholder="userPlaceholder" HorizontalOptions="EndAndExpand">
                 <ffimageloading:CachedImage.Transformations>
                     <fftransformations:CircleTransformation />
                 </ffimageloading:CachedImage.Transformations>
@@ -31,8 +31,8 @@
         <ScrollView>
             <!--Layout-->
             <StackLayout Padding="15,10,15,20" Spacing="15" x:Name="fullLayout">
-               <!--Orario-->
-               <Controls:Orario x:Name="orario"/>
+                <!--Orario-->
+                <Controls:Orario x:Name="orario"/>
                 <!--WidgetList-->
                 <StackLayout VerticalOptions="Start">
                     <!--Widgets-->

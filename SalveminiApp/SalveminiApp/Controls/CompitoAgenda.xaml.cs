@@ -63,9 +63,9 @@ namespace SalveminiApp.Controls
             layout = layout_;
 
             //Set dimensions
-            closeFrame.WidthRequest = App.ScreenWidth * 0.058;
-            closeFrame.HeightRequest = App.ScreenWidth * 0.058;
-            closeFrame.CornerRadius = (float)(App.ScreenWidth * 0.058f) / 2;
+            //closeFrame.WidthRequest = App.ScreenWidth * 0.058;
+            //closeFrame.HeightRequest = App.ScreenWidth * 0.058;
+            //closeFrame.CornerRadius = (float)(App.ScreenWidth * 0.058f) / 2;
             titleDesc.WidthRequest = App.ScreenWidth * 0.8;
 
         }

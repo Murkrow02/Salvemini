@@ -23,8 +23,8 @@ namespace SalveminiApp.SecondaryViews
             Utenti = utenti;
             daEstrarre.AddRange(Utenti);
 
-            userImg.WidthRequest = App.ScreenWidth / 3;
-            userImg.HeightRequest = App.ScreenWidth / 3;
+            //userImg.WidthRequest = App.ScreenWidth / 3;
+            //userImg.HeightRequest = App.ScreenWidth / 3;
         }
 
 

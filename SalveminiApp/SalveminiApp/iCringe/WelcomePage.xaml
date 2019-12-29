@@ -12,7 +12,7 @@
             <Label Text="Normative sulla privacy" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.BGColor}" FontSize="20" HorizontalTextAlignment="Center"/>
             <Frame HasShadow="False" CornerRadius="12" Padding="8,0" VerticalOptions="FillAndExpand">
                 <ScrollView>
-                    <Label x:Name="privacyLabel"/>
+                    <Label x:Name="privacyLabel" HorizontalTextAlignment="Center"/>
                 </ScrollView>
             </Frame>
         </StackLayout>

@@ -14,8 +14,8 @@
                     <!--Oggi + arrow-->
                     <StackLayout Orientation="Horizontal" Spacing="5" Padding="0,20">
                         <Label Text="Oggi" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" x:Name="orarioDay" />
-                        <iconize:IconLabel Text="fas-caret-down" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.TextColor}" FontSize="Large" x:Name="arrowDown"/>
-                        <lottie:AnimationView x:Name="hintOrario" Rotation="180" BackgroundColor="Transparent" HorizontalOptions="Start" Animation="Lotties/rightArrow.json" Loop="true" AutoPlay="true" />
+                        <iconize:IconLabel VerticalOptions="CenterAndExpand" Text="fas-caret-down" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.TextColor}" FontSize="Large" x:Name="arrowDown"/>
+                        <lottie:AnimationView WidthRequest="26" HeightRequest="26" x:Name="hintOrario" Rotation="180" BackgroundColor="Transparent" HorizontalOptions="Start" Animation="Lotties/rightArrow.json" Loop="true" AutoPlay="true" />
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="ChangeDay_Clicked"/>
                         </StackLayout.GestureRecognizers>

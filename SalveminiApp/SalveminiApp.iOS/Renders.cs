@@ -88,7 +88,6 @@ namespace SalveminiApp.iOS
         {
             base.ViewWillLayoutSubviews();
 
-            CropBg("bbar.jpg");
             if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
             {
                 TabBar.BarStyle = UIBarStyle.Black;
@@ -106,9 +105,11 @@ namespace SalveminiApp.iOS
         {
             base.ViewDidLoad();
 
-            MessagingCenter.Subscribe<App>(this, "changeBg", (sender) =>
+            CropBg("bbar.jpg");
+
+            MessagingCenter.Subscribe<App, string>(this, "changeBg", (sender, image) =>
             {
-                CropBg("bbar2.jpg");
+                CropBg(image);
             });
         }
 

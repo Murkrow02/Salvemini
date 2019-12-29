@@ -6,7 +6,7 @@
                 <StackLayout Spacing="30" Padding="0, 20">
                     <!--Balance + image-->
                     <StackLayout Spacing="5" Margin="0,0,0,-20">
-                        <svg:SvgCachedImage Source="sCoin.svg" x:Name="coinImage"/>
+                        <svg:SvgCachedImage HeightRequest="125" WidthRequest="125" Source="sCoin.svg" x:Name="coinImage"/>
                         <Label Text="..." x:Name="coinCount" Opacity="0" HorizontalOptions="Center" FontSize="35" TextColor="{x:Static local:Styles.TextGray}" FontAttributes="Bold"/>
                     </StackLayout>
 

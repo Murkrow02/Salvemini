@@ -76,21 +76,25 @@ namespace SalveminiApp
             base.OnCurrentPageChanged();
             var index = Children.IndexOf(CurrentPage);
 
-#if __IOS__
-            MessagingCenter.Send<App>((App)Xamarin.Forms.Application.Current, "changeBg");
-#endif
+
             try
             {
                 switch (index)
                 {
                     case 0:
-                        //Home
+                        //iCringe
+#if __IOS__
+                        MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar2.jpg");
+#endif
                         (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
                         (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
                         (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
                         break;
                     case 1:
                         //Home
+#if __IOS__
+                        MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg","bbar.jpg");
+#endif
                         (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
                         (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
                         (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
@@ -98,6 +102,9 @@ namespace SalveminiApp
 
                     case 2:
                         //Argo
+#if __IOS__
+                        MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar.jpg");
+#endif
                         (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
                         (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
                         (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarArgo.png";

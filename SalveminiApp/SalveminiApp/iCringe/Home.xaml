@@ -12,9 +12,9 @@
         </Grid>
     </NavigationPage.TitleView>
 
-    <StackLayout x:Name="mainLayout">
+    <StackLayout x:Name="mainLayout" VerticalOptions="FillAndExpand">
         <!--Post list-->
-        <ListView ItemSelected="Post_Selected" Refreshing="posts_Refreshing" IsPullToRefreshEnabled="True" RefreshControlColor="{x:Static local:Styles.BGColor}" BackgroundColor="Transparent" x:Name="postsList" HasUnevenRows="true" Header="" Footer="" SeparatorVisibility="None">
+        <ListView VerticalOptions="FillAndExpand" ItemSelected="Post_Selected" Refreshing="posts_Refreshing" IsPullToRefreshEnabled="True" RefreshControlColor="{x:Static local:Styles.BGColor}" BackgroundColor="Transparent" x:Name="postsList" HasUnevenRows="true" Header="" Footer="" SeparatorVisibility="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

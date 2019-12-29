@@ -1,10 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage Title="iCringe" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.AreaVip.ApprovaCringe">
-    <ListView  Refreshing="domande_Refreshing" ItemSelected="domanda_Selected" IsPullToRefreshEnabled="True" BackgroundColor="Transparent" x:Name="domandeList" HasUnevenRows="true" Footer="" SeparatorVisibility="Default">
+    <ListView  Refreshing="domande_Refreshing" ItemSelected="domanda_Selected" IsPullToRefreshEnabled="True" BackgroundColor="Transparent" x:Name="domandeList" HasUnevenRows="true" Header="" Footer="" SeparatorVisibility="Default">
         <!--Header-->
-        <ListView.Header>
-
-        </ListView.Header>
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>

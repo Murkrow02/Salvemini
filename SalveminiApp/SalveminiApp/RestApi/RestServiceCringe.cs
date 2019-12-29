@@ -88,9 +88,9 @@ namespace SalveminiApp.RestApi
             return commenti;
         }
 
-        public async Task<string[]> PostDomanda(string domanda)
+        public async Task<string[]> PostDomanda(string domanda,bool anonimo)
         {
-            var uri = Costants.Uri("icringe/postdomanda");
+            var uri = Costants.Uri("icringe/postdomanda/" + anonimo);
 
             try
             {
@@ -102,9 +102,9 @@ namespace SalveminiApp.RestApi
                 switch (response.StatusCode)
                 {
                     case HttpStatusCode.OK:
-                        return new string[] { "Successo", messaggio.Replace("\"", "") };
+                        return new string[] { "Successo", messaggio  };
                     default:
-                        return new string[] { "Errore", messaggio.Replace("\"", "") };
+                        return new string[] { "Errore", messaggio  };
                 }
 
             }
@@ -129,9 +129,9 @@ namespace SalveminiApp.RestApi
                 switch (response.StatusCode)
                 {
                     case HttpStatusCode.OK:
-                        return new string[] { "Successo", messaggio.Replace("\"", "") };
+                        return new string[] { "Successo", messaggio  };
                     default:
-                        return new string[] { "Errore", messaggio.Replace("\"", "") };
+                        return new string[] { "Errore", messaggio  };
                 }
 
             }
@@ -154,9 +154,9 @@ namespace SalveminiApp.RestApi
                 switch (response.StatusCode)
                 {
                     case HttpStatusCode.OK:
-                        return new string[] { "Successo", messaggio.Replace("\"", "") };
+                        return new string[] { "Successo", messaggio  };
                     default:
-                        return new string[] { "Errore", messaggio.Replace("\"", "") };
+                        return new string[] { "Errore", messaggio  };
                 }
 
             }
@@ -179,9 +179,9 @@ namespace SalveminiApp.RestApi
                 switch (response.StatusCode)
                 {
                     case HttpStatusCode.OK:
-                        return new string[] { "Successo", messaggio.Replace("\"", "") };
+                        return new string[] { "Successo", messaggio  };
                     default:
-                        return new string[] { "Errore", messaggio.Replace("\"", "") };
+                        return new string[] { "Errore", messaggio  };
                 }
 
             }
@@ -266,9 +266,9 @@ namespace SalveminiApp.RestApi
                 switch (response.StatusCode)
                 {
                     case HttpStatusCode.OK:
-                        return new string[] { "Successo", messaggio.Replace("\"","")};
+                        return new string[] { "Successo", messaggio != null ? messaggio : ""};
                     default:
-                        return new string[] { "Errore", messaggio.Replace("\"", "") };
+                        return new string[] { "Errore", messaggio != null ? messaggio : "" };
                 }
 
             }
@@ -284,7 +284,7 @@ namespace SalveminiApp.RestApi
     {
         Task<List<DomandeReturn>> GetFeed(int id);
         Task<CommentiReturn> GetCommenti(int id);
-        Task<string[]> PostDomanda(string domanda);
+        Task<string[]> PostDomanda(string domanda,bool anonimo);
         Task<string[]> PostCommento(Commenti commento);
         Task<string[]> DeleteCommento(int id);
         Task<string[]> DeletePost(int id);
@@ -317,9 +317,9 @@ namespace SalveminiApp.RestApi
             return restServiceCringe.GetNotifiche(nuove, id);
         }
 
-        public Task<string[]> PostDomanda(string domanda)
+        public Task<string[]> PostDomanda(string domanda, bool anonimo)
         {
-            return restServiceCringe.PostDomanda(domanda);
+            return restServiceCringe.PostDomanda(domanda,anonimo);
         }
 
         public Task<string[]> PostCommento(Commenti commento)

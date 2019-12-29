@@ -3,7 +3,7 @@
     <yummy:PancakeView BackgroundGradientAngle="135" BackgroundGradientStartColor="#03F829" BackgroundGradientEndColor="#20B4C7" CornerRadius="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <AbsoluteLayout>
             <ffimageloadingsvg:SvgCachedImage Source="PromemoriaShadow.svg" x:Name="shadowImage" BackgroundColor="Transparent" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1.5, -0.1" />
-            <StackLayout x:Name="fullLayout" Padding="20, 10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <StackLayout x:Name="fullLayout" Padding="25, 20,25,5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
                 <Label TextColor="White" Text="Bacheca" FontSize="40" FontAttributes="Bold" />
                 <Frame IsClippedToBounds="true" Padding="0" VerticalOptions="Start" HasShadow="false" CornerRadius="15">
                     <Grid>
@@ -34,7 +34,7 @@
                         </StackLayout>
                     </Grid>
                 </Frame>
-                <Frame VerticalOptions="EndAndExpand" HasShadow="false" HorizontalOptions="Center" x:Name="buttonFrame" Padding="0">
+                <Frame WidthRequest="62" HeightRequest="62" CornerRadius="31" VerticalOptions="EndAndExpand" HasShadow="false" HorizontalOptions="Center" x:Name="buttonFrame" Padding="0">
                     <iconize:IconButton BackgroundColor="Transparent" Clicked="Close_Clicked" Text="fas-times" FontSize="30" TextColor="#03F829" />
                 </Frame>
             </StackLayout>

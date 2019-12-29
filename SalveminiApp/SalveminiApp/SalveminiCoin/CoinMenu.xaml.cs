@@ -30,9 +30,9 @@ namespace SalveminiApp.SalveminiCoin
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
 #endif
 
-            //Set sizes
-            coinImage.WidthRequest = App.ScreenWidth * 0.4;
-            coinImage.HeightRequest = App.ScreenWidth * 0.4;
+            ////Set sizes
+            //coinImage.WidthRequest = App.ScreenWidth * 0.4;
+            //coinImage.HeightRequest = App.ScreenWidth * 0.4;
 
             //Create tapped gesture
             var tapGestureRecognizer = new TapGestureRecognizer();

@@ -24,8 +24,8 @@ namespace SalveminiApp.Controls
             if (!Preferences.Get("showHintOrario", true))
                 hintOrario.IsVisible = false;
 
-            hintOrario.WidthRequest = App.ScreenWidth / 14;
-            hintOrario.HeightRequest = App.ScreenWidth / 14;
+            //hintOrario.WidthRequest = App.ScreenWidth / 14;
+            //hintOrario.HeightRequest = App.ScreenWidth / 14;
 
             //Create daylist for orario popover
             giorniList.ItemSelected += GiorniList_ItemSelected;

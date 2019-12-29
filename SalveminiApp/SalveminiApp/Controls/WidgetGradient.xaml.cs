@@ -134,9 +134,9 @@ namespace SalveminiApp
             InitializeComponent();
 
             //Set dimensions
-            view.WidthRequest = App.ScreenWidth / 3;
-            animationView.WidthRequest = App.ScreenWidth / 10;
-            animationView.HeightRequest = App.ScreenWidth / 10;
+            //view.WidthRequest = App.ScreenWidth / 3;
+            //animationView.WidthRequest = App.ScreenWidth / 10;
+            //animationView.HeightRequest = App.ScreenWidth / 10;
         }
 
         //Update values

@@ -105,12 +105,12 @@ namespace SalveminiApp
             InitializeComponent();
 
             //Set dimensions
-            image.WidthRequest = App.ScreenWidth / 4;
-            image.HeightRequest = App.ScreenWidth / 4;
-            view.WidthRequest = App.ScreenWidth / 3.5;
-            view.HeightRequest = App.ScreenWidth / 3.5;
-            mainLayout.WidthRequest = App.ScreenWidth / 3.5;
-            mainLayout.HeightRequest = App.ScreenWidth / 3.5;
+            //image.WidthRequest = App.ScreenWidth / 4;
+            //image.HeightRequest = App.ScreenWidth / 4;
+            //view.WidthRequest = App.ScreenWidth / 3.5;
+            //view.HeightRequest = App.ScreenWidth / 3.5;
+            //mainLayout.WidthRequest = App.ScreenWidth / 3.5;
+            //mainLayout.HeightRequest = App.ScreenWidth / 3.5;
 
         }
 

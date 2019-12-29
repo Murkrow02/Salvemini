@@ -73,7 +73,7 @@ namespace SalveminiApp.iCringe
 
         public void switch_Toggled(object sender, ToggledEventArgs e)
         {
-            if (e.Value) //Toggled
+            if (notificheSwitch.IsToggled) //Toggled
             {
                 Preferences.Set("iCringePush", true);
                 OneSignal.Current.SendTag("Secrets", Preferences.Get("UserId", 0).ToString());

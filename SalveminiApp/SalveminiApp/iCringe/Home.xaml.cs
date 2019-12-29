@@ -30,9 +30,9 @@ namespace SalveminiApp.iCringe
             if (cachedPosts != null)
                 postsList.ItemsSource = cachedPosts;
 
-            //Set ad source
-            MTAdView ad = new MTAdView { AdsId = AdsHelper.BannerId(), PersonalizedAds = true };
-            mainLayout.Children.Insert(0, ad);
+            ////Set ad source
+            //MTAdView ad = new MTAdView { AdsId = AdsHelper.BannerId(), PersonalizedAds = true };
+            //mainLayout.Children.Insert(0, ad);
 
             //Android custom color
 #if __ANDROID__
