@@ -276,7 +276,7 @@ namespace SalveminiApp
                 //Show or hide loading page
                 void WebView_Navigating(object sender, WebNavigatingEventArgs e)
                 {
-                  UserDialogs.Instance.ShowLoading("Caricamento ...", MaskType.Black);
+                  UserDialogs.Instance.ShowLoading("Caricamento...", MaskType.Black);
                 
                 }
                 void WebView_Navigated(object sender, WebNavigatedEventArgs e)

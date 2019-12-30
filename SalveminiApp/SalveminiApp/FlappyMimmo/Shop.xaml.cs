@@ -105,10 +105,12 @@ namespace SalveminiApp.FlappyMimmo
             }
 
             //Get Skins
+            loading.IsVisible = true;loading.IsRunning = true;
             Skins = await App.Flappy.GetSkins();
             if (Skins != null)
             {
                 skinsList.ItemsSource = Skins;
+                footer.IsVisible = true;
             }
 
             //Get current multiplier
@@ -126,6 +128,8 @@ namespace SalveminiApp.FlappyMimmo
                 multiplierValue.IsVisible = false;
                 powerLabel.Text = "Hai comprato tutti i potenziamenti";
             }
+            
+            loading.IsVisible = false; loading.IsRunning = false;
         }
 
         async void BuyMultiplier_Tapped(object sender, EventArgs e)

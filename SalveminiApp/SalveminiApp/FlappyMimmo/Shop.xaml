@@ -12,9 +12,12 @@
                 </iconize:IconLabel>
             </StackLayout>
             <!--SKIN LIST-->
-            <ListView x:Name="skinsList" BackgroundColor="Transparent" ItemTemplate="{StaticResource skinDataTemplateSelector}" ItemSelected="Skin_Selected" HasUnevenRows="True" SeparatorVisibility="None">
-              <ListView.Footer>
-                  <Label Text="Altre skin in arrivo!" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center"/>
+             <ListView x:Name="skinsList" BackgroundColor="Transparent" ItemTemplate="{StaticResource skinDataTemplateSelector}" ItemSelected="Skin_Selected" HasUnevenRows="True" SeparatorVisibility="None">
+                <ListView.Header>
+                    <ActivityIndicator x:Name="loading" HorizontalOptions="CenterAndExpand" IsRunning="False" IsVisible="false"/>
+                </ListView.Header>
+                <ListView.Footer>
+                  <Label x:Name="footer" Text="Altre skin in arrivo!" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center"/>
               </ListView.Footer>
             </ListView>
             <!--Multiplier-->

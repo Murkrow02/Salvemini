@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
+using Acr.UserDialogs;
 using Plugin.Segmented.Control;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -24,7 +25,7 @@ namespace SalveminiApp.AreaVip
             InitializeComponent();
 
             //Fill picker with days of week
-            giornoLibero.ItemsSource = Costants.getDays();
+            dayPicker.ItemsSource = Costants.getDays();
 
             //Add sedi source to segmented controls
             var centrale = new SegmentedControlOption { Text = "Centrale" };
@@ -33,12 +34,13 @@ namespace SalveminiApp.AreaVip
             sedi.Add(succursale);
 
             //Detect if super vip or restrict to class
-            if (!string.IsNullOrEmpty(classe))
+            if (!string.IsNullOrEmpty(classe)) 
             {
+                //NON SUPER VIP
                 classEntry.Text = classe;
                 classEntry.IsEnabled = false;
             }
-            else { giornoLibero.IsEnabled = true; }
+           
 
         }
 
@@ -48,10 +50,12 @@ namespace SalveminiApp.AreaVip
             base.OnAppearing();
 
             //Check internet connection
-            giornoLibero.IsEnabled = false;
+            giornoLibero.IsVisible = false;
+            UserDialogs.Instance.ShowLoading("Caricamento...", MaskType.Black);
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
                 Costants.showToast("connection");
+                UserDialogs.Instance.HideLoading();
                 return;
             }
 
@@ -60,7 +64,8 @@ namespace SalveminiApp.AreaVip
             if (response.Message != null)
             {
                 await DisplayAlert("Errore", response.Message, "Ok");
-                await Navigation.PopModalAsync();
+                UserDialogs.Instance.HideLoading();
+                            await Navigation.PopModalAsync();
                 return;
             }
 
@@ -69,7 +74,12 @@ namespace SalveminiApp.AreaVip
 
             //Auto fill entries
             if (string.IsNullOrEmpty(classEntry.Text))
+            {
+                giornoLibero.IsVisible = true;
+                UserDialogs.Instance.HideLoading();
+
                 return;
+            }
 
             var classeCorso = classEntry.Text;
             var orario = await App.Orari.GetOrario(classeCorso);
@@ -85,7 +95,8 @@ namespace SalveminiApp.AreaVip
                     var freeday = Costants.Giorni[((DayOfWeek)callOrario.FirstOrDefault(x => x.Materia == "Libero").Giorno).ToString()];
 
                     //Select freeday
-                    giornoLibero.SelectedItem = freeday;
+                    giornoLibero.IsVisible = true;
+                    dayPicker.SelectedItem = freeday;
 
                     //Fill layout with old values
                     fillLayout(callOrario);
@@ -96,7 +107,8 @@ namespace SalveminiApp.AreaVip
 
             }
             
-            giornoLibero.IsEnabled = true;
+            giornoLibero.IsVisible = true;
+            UserDialogs.Instance.HideLoading();
 
         }
 
@@ -104,14 +116,14 @@ namespace SalveminiApp.AreaVip
         void fillLayout(List<RestApi.Models.Lezione> orario = null)
         {
             //get int of day skipped
-            daySkipped = Costants.getDays().IndexOf(giornoLibero.SelectedItem.ToString()) + 1;
+            daySkipped = Costants.getDays().IndexOf(dayPicker.SelectedItem.ToString()) + 1;
 
             //Show save button
             saveBtn.IsVisible = true;
 
             //Remove free day from daylist
             availableDays = Costants.getDays();
-            availableDays.Remove(giornoLibero.SelectedItem.ToString());
+            availableDays.Remove(dayPicker.SelectedItem.ToString());
 
             //Generate 5 view, one for each day
             layout.Children.Clear();
@@ -155,7 +167,7 @@ namespace SalveminiApp.AreaVip
         private void picker_Unfocused(object sender, FocusEventArgs e)
         {
             //No day selected, return
-            if (string.IsNullOrEmpty(giornoLibero.SelectedItem?.ToString()))
+            if (string.IsNullOrEmpty(dayPicker.SelectedItem?.ToString()))
             {
                 saveBtn.IsVisible = false;
                 return;

@@ -14,7 +14,7 @@
 
     <StackLayout Spacing="0" x:Name="mainLayout" VerticalOptions="FillAndExpand">
         <!--Post list-->
-        <ListView VerticalOptions="FillAndExpand" ItemSelected="Post_Selected" Refreshing="posts_Refreshing" IsPullToRefreshEnabled="True" RefreshControlColor="{x:Static local:Styles.BGColor}" BackgroundColor="Transparent" x:Name="postsList" HasUnevenRows="true" Header="" Footer="" SeparatorVisibility="None">
+        <ListView CachingStrategy="RecycleElement" ItemAppearing="ItemAppearing" VerticalOptions="FillAndExpand" ItemSelected="Post_Selected" Refreshing="posts_Refreshing" IsPullToRefreshEnabled="True" RefreshControlColor="{x:Static local:Styles.BGColor}" BackgroundColor="Transparent" x:Name="postsList" HasUnevenRows="true" Header="" SeparatorVisibility="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -62,6 +62,10 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
+            <ListView.Footer>
+                <!--Loading footer-->
+                <ActivityIndicator Color="{x:Static local:Styles.BGColor}" x:Name="loading" IsVisible="false" IsRunning="False" HorizontalOptions="CenterAndExpand"/>
+            </ListView.Footer>
         </ListView>
     </StackLayout>
 </ContentPage>

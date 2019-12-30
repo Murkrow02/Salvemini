@@ -16,9 +16,9 @@
             <inputLayout:SfTextInputLayout 
                                                 FocusedColor="{x:Static local:Styles.TextColor}"
                                                 Hint="Scegli giorno libero"
-                                                ContainerType="Outlined"
-                                                OutlineCornerRadius="12">
-                <Picker x:Name="giornoLibero" IsEnabled="False" Unfocused="picker_Unfocused" TitleColor="{x:Static local:Styles.TextColor}"/>
+                                                ContainerType="Outlined" IsVisible="false"
+                                                OutlineCornerRadius="12" x:Name="giornoLibero">
+                <Picker x:Name="dayPicker"  Unfocused="picker_Unfocused" TitleColor="{x:Static local:Styles.TextColor}"/>
             </inputLayout:SfTextInputLayout>
 
             <!--Entry stack-->

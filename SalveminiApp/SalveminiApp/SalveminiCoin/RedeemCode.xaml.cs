@@ -9,6 +9,7 @@ using Xamarin.Essentials;
 
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using Plugin.Permissions;
 #endif
 
 namespace SalveminiApp.SalveminiCoin
@@ -20,17 +21,17 @@ namespace SalveminiApp.SalveminiCoin
         {
             InitializeComponent();
 
-            Compass.ReadingChanged += Compass_ReadingChanged;
+            //Compass.ReadingChanged += Compass_ReadingChanged;
 
 #if __IOS__
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
 #endif
         }
 
-        private void Compass_ReadingChanged(object sender, CompassChangedEventArgs e)
-        {
-            Console.WriteLine(e.Reading.HeadingMagneticNorth);
-        }
+        //private void Compass_ReadingChanged(object sender, CompassChangedEventArgs e)
+        //{
+        //    Console.WriteLine(e.Reading.HeadingMagneticNorth);
+        //}
 
         protected override void OnAppearing()
         {
@@ -56,14 +57,14 @@ namespace SalveminiApp.SalveminiCoin
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-         
+
         }
 
-        private void Close_Clicked(object sender, EventArgs e)
-        {
-            closedFromButton = true;
-            Navigation.PopModalAsync();
-        }
+        //private void Close_Clicked(object sender, EventArgs e)
+        //{
+        //    closedFromButton = true;
+        //    Navigation.PopModalAsync();
+        //}
 
         private async void Confirm_Clicked(object sender, EventArgs e)
         {
@@ -72,7 +73,12 @@ namespace SalveminiApp.SalveminiCoin
                 return;
             }
 
-            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                Costants.showToast("connection");
+            }
+
+            try
             {
                 //Check location permissions
                 var garanted = await Helpers.Permissions.locationPermission();
@@ -97,10 +103,10 @@ namespace SalveminiApp.SalveminiCoin
                 infoLabel.Text = response;
                 if (response.ToLower().Contains("scoin"))
                 {
-                    await Task.WhenAll(bgArrowFrame.ColorTo(bgArrowFrame.BackgroundColor, Color.FromHex("#529FFF"), x => bgArrowFrame.BackgroundColor = x, 300), exitButton.ColorTo(exitButton.BackgroundColor, Color.FromHex("#529FFF"), x => exitButton.BackgroundColor = x, 300));
+                    await Task.WhenAll(bgArrowFrame.ColorTo(bgArrowFrame.BackgroundColor, Color.FromHex("#529FFF"), x => bgArrowFrame.BackgroundColor = x, 300));
                     await arrowLabel.FadeTo(0, 300);
                     arrowLabel.Text = "check";
-                    exitButton.Text = "Fatto";
+                    //exitButton.Text = "Fatto";
                     arrowLabel.TextColor = Color.White;
                     await arrowLabel.FadeTo(1, 300);
                 }
@@ -113,12 +119,20 @@ namespace SalveminiApp.SalveminiCoin
                     await arrowLabel.FadeTo(1, 300);
                 }
             }
+            catch
+            {
+                bool decision = await DisplayAlert("Errore", "Si è verificato un errore durante la localizzazione del dispositivo, probabilmente non ci hai concesso i permessi di localizzazione", "Apri impostazioni", "Chiudi");
+                if (decision)
+                    CrossPermissions.Current.OpenAppSettings();
+            }
+
+
         }
 
         private void Code_TextChanged(object sender, TextChangedEventArgs e)
         {
             //Check if lenght of code is 6 numbers
-            if (e.NewTextValue.Length == 6)
+            if (e.NewTextValue.Length > 0)
             {
                 confirmButton.IsEnabled = true;
             }

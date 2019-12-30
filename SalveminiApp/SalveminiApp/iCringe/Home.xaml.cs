@@ -33,11 +33,13 @@ namespace SalveminiApp.iCringe
             //Set ad source
             MTAdView ad = new MTAdView { AdsId = AdsHelper.BannerId(), PersonalizedAds = true };
             mainLayout.Children.Insert(0, ad);
-            
+
+            postsList.HeightRequest = App.ScreenHeight;
 
             //Android custom color
 #if __ANDROID__
             postsList.RefreshControlColor = Styles.TextColor;
+                        loading.Color = Styles.TextColor;
 #endif
         }
 
@@ -45,7 +47,7 @@ namespace SalveminiApp.iCringe
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            
+
             if (((this.Parent as Helpers.CustomNavigationPage).Parent as TabbedPage).CurrentPage != this.Parent as Helpers.CustomNavigationPage)
                 return;
 
@@ -70,7 +72,6 @@ namespace SalveminiApp.iCringe
 
             //Download posts
             var posts_ = await App.Cringe.GetFeed(-1);
-            Posts = posts_.ToObservableCollection();
 
             //Error
             if (Posts == null)
@@ -81,6 +82,8 @@ namespace SalveminiApp.iCringe
             }
 
             //Update list
+            Posts.Clear();
+            Posts = posts_.ToObservableCollection();
             postsList.ItemsSource = Posts;
             postsList.IsRefreshing = false;
         }
@@ -237,10 +240,51 @@ namespace SalveminiApp.iCringe
 
         public void AndroidFix()
         {
-            if(appearedTimes == 0)
+            if (appearedTimes == 0)
             {
                 OnAppearing();
             }
+        }
+
+        //Infinite scroll
+        private async void ItemAppearing(object sender, ItemVisibilityEventArgs e)
+        {
+            //Get appeared item
+            var appearedItem = e.Item as DomandeReturn;
+
+            //Check if is last post
+            if (Posts.LastOrDefault() != appearedItem)
+                return;
+
+            //Show loading
+            loading.IsVisible = true;
+            loading.IsRunning = true;
+
+            //Get new posts
+            var newPosts = await App.Cringe.GetFeed(appearedItem.id);
+
+            //Error
+            if (newPosts == null)
+            {
+                Costants.showToast("Si è verificato un errore durante il download dei post precedenti, riprova più tardi o contattaci se il problema persiste");
+                loading.IsVisible = false;
+                loading.IsRunning = false;
+                return;
+            }
+
+            //No older
+            if (newPosts.Count < 1)
+            {
+                Costants.showToast("Non ci sono post precedenti");
+                loading.IsVisible = false;
+                loading.IsRunning = false;
+                return;
+            }
+
+            //Add new posts
+            Posts.AddRange(newPosts);
+
+
         }
     }
 }

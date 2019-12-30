@@ -12,18 +12,18 @@ namespace SalveminiApp.AreaVip
     public partial class ListaEventi : ContentPage
     {
 
-        public static bool ShowInfo = false;
-        bool closedFromButton = false;
+        public static bool ShowInfo;
+        public bool fromProfile;
         public ListaEventi(bool ShowInfo_)
         {
             InitializeComponent();
-
-            ShowInfo = ShowInfo_;
+            fromProfile = ShowInfo_;
         }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+            ShowInfo = fromProfile;
 
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
@@ -75,17 +75,6 @@ namespace SalveminiApp.AreaVip
             //Show result
             OnAppearing();
             await DisplayAlert(response[0], response[1], "Ok");
-        }
-
-        private void Close_Clicked(object sender, EventArgs e)
-        {
-            closedFromButton = true;
-            Navigation.PopModalAsync();
-        }
-
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
         }
     }
 

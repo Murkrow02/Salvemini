@@ -79,10 +79,10 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Salvemini ha bisogno di verificare la tua posizione per attivare il codice</string>
 	<key>CFBundleShortVersionString</key>
-	<string>24</string>
+	<string>25</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Salvemini ha bisogno di verificare la tua posizione per attivare il codice</string>
 	<key>CFBundleVersion</key>
-	<string>6</string>
+	<string>7</string>
 </dict>
 </plist>

@@ -208,7 +208,7 @@ namespace SalveminiApp.FirstAccess
             Preferences.Set("Token", UtentiLogin[id].ArgoToken);
             Preferences.Set("Classe", UtentiLogin[id].Classe);
             Preferences.Set("Corso", UtentiLogin[id].Corso);
-
+            Preferences.Set("UserImage", UtentiLogin[id].Immagine);
 
             //if (Preferences.Get("isFirstTime", true))
             //{
