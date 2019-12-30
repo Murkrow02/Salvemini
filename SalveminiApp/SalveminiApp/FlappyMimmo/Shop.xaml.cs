@@ -21,7 +21,9 @@ namespace SalveminiApp.FlappyMimmo
             InitializeComponent();
         }
 
-        private async void Item_Tapped(object sender, ItemTappedEventArgs e)
+      
+
+        private async void Skin_Selected(object sender, SelectedItemChangedEventArgs e)
         {
             //Check connection
             if (Connectivity.NetworkAccess != Xamarin.Essentials.NetworkAccess.Internet)
@@ -30,7 +32,7 @@ namespace SalveminiApp.FlappyMimmo
                 return;
             }
 
-            var data = e.Item as RestApi.Models.FlappySkinReturn;
+            var data = e.SelectedItem as RestApi.Models.FlappySkinReturn;
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
             if (!data.Comprata)
@@ -55,8 +57,9 @@ namespace SalveminiApp.FlappyMimmo
                     }
 
                     Skins[Skins.IndexOf(data)].Comprata = true;
-                    isLoading = false;
+                    skinsList.ItemsSource = null;
                     skinsList.ItemsSource = Skins;
+                    isLoading = false;
                 }
             }
             else
@@ -78,7 +81,15 @@ namespace SalveminiApp.FlappyMimmo
                 }
 
                 Preferences.Set("flappySkin", data.Immagini[0].Remove(data.Immagini[0].Length - 1));
-                await Navigation.PopPopupAsync();
+                var previous = Skins.FirstOrDefault(x => x.isSelected);
+                Skins[Skins.IndexOf(data)].isSelected = true;
+                Skins[Skins.IndexOf(data)].BgColor = Color.FromHex("#5A99FF");
+                Skins[Skins.IndexOf(previous)].isSelected = false;
+                Skins[Skins.IndexOf(previous)].BgColor = Color.White;
+                skinsList.ItemsSource = null;
+                skinsList.ItemsSource = Skins;
+                //skinsList.ItemsSource = skin
+                //await Navigation.PopPopupAsync();
             }
         }
 
@@ -97,7 +108,7 @@ namespace SalveminiApp.FlappyMimmo
             Skins = await App.Flappy.GetSkins();
             if (Skins != null)
             {
-                skinsList.FlowItemsSource = Skins;
+                skinsList.ItemsSource = Skins;
             }
 
             //Get current multiplier
