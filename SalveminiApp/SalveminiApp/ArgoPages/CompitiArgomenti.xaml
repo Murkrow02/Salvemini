@@ -34,7 +34,7 @@
                                 <Label FontSize="20" TextColor="{x:Static local:Styles.TextGray}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" x:Name="clockLabel" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" />
 
                                 <!--Clock icon-->
-                                <iconize:IconButton Padding="0" Margin="0" BackgroundColor="Transparent" Text="fas-history" FontSize="22" HorizontalOptions="End" x:Name="clockButton" TextColor="{x:Static local:Styles.TextColor}" Clicked="ShowAll" VerticalOptions="FillAndExpand"/>
+                                <iconize:IconButton Padding="0" Margin="0" BackgroundColor="Transparent" Text="fas-history" WidthRequest="42" FontSize="22" HorizontalOptions="End" x:Name="clockButton" TextColor="{x:Static local:Styles.TextColor}" Clicked="ShowAll" VerticalOptions="FillAndExpand"/>
                             </Grid>
                             <!--Order label-->
                             <Label Margin="0,0,0,5" Text="Dal più recente" FontSize="Small" x:Name="filtersLbl" TextColor="#c7c7c7" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />

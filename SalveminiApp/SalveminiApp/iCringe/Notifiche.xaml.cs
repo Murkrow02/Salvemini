@@ -130,7 +130,10 @@ namespace SalveminiApp.iCringe
             {
 
                 if (!Pushed)
+                {
                     Navigation.PopModalAsync();
+                    Navigation.PopModalAsync();
+                }
                 else
                     Pushed = false;
             }

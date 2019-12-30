@@ -11,11 +11,11 @@ namespace SalveminiApp.Controls
             InitializeComponent();
 
             //Set image sizes
-            image.WidthRequest = App.ScreenWidth / 7;
-            image.HeightRequest = App.ScreenWidth / 7;
+            //image.WidthRequest = App.ScreenWidth / 7;
+            //image.HeightRequest = App.ScreenWidth / 7;
 
-            iconImg.WidthRequest = App.ScreenWidth / 12;
-            iconImg.HeightRequest = App.ScreenWidth / 12;
+            //iconImg.WidthRequest = App.ScreenWidth / 12;
+            //iconImg.HeightRequest = App.ScreenWidth / 12;
         }
 
         //Title

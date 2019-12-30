@@ -3,7 +3,7 @@
     <Frame HasShadow="False" VerticalOptions="Start" CornerRadius="20" Padding="10,15">
         <StackLayout Orientation="Horizontal" Spacing="25">
             <!--Profile pic-->
-            <ffimageloading:CachedImage LoadingPlaceholder="imagePlaceholder.png"  x:Name="image" HorizontalOptions="Start" VerticalOptions="CenterAndExpand">
+            <ffimageloading:CachedImage WidthRequest="53" HeightRequest="53" LoadingPlaceholder="imagePlaceholder.png"  x:Name="image" HorizontalOptions="Start" VerticalOptions="CenterAndExpand">
                 <ffimageloading:CachedImage.Transformations>
                     <fftransformations:CircleTransformation  BorderSize="15" BorderHexColor="efefef"/>
                 </ffimageloading:CachedImage.Transformations>
@@ -14,7 +14,7 @@
                 <patch:Label x:Name="subTitleLbl"  Text="Backend e frontend developer" TextColor="{x:Static local:Styles.TextGray}" FontSize="13" Lines="1" AutoFit="Width" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" />
             </StackLayout>
             <!--Safari, insta logos-->
-            <Image x:Name="iconImg" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand"/>
+            <Image x:Name="iconImg" HeightRequest="31" WidthRequest="31" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand"/>
         </StackLayout>
         <!--Tapped-->
         <Frame.GestureRecognizers>

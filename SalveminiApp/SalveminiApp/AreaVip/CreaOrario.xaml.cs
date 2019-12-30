@@ -48,6 +48,7 @@ namespace SalveminiApp.AreaVip
             base.OnAppearing();
 
             //Check internet connection
+            giornoLibero.IsEnabled = false;
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
                 Costants.showToast("connection");

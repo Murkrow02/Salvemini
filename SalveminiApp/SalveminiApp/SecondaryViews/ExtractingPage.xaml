@@ -15,7 +15,7 @@
             <!--Nome-->
             <patch:Label Text="Premi estrai per iniziare" x:Name="nameLbl" FontSize="Title" TextColor="{x:Static local:Styles.TextGray}" Lines="1" AutoFit="Width" HorizontalTextAlignment="Center" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
             <!--Next-->
-            <Button CornerRadius="12" HeightRequest="35" Text="Estrai" Clicked="extract_Clicked" BackgroundColor="#529FFF" TextColor="White" FontSize="25" Margin="45,0"/>
+            <Button Padding="0" CornerRadius="12" HeightRequest="35" Text="Estrai" Clicked="extract_Clicked" BackgroundColor="#529FFF" TextColor="White" FontSize="25" Margin="45,0"/>
         </StackLayout>
         <!--Remove checkbox-->
         <StackLayout  Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="5">

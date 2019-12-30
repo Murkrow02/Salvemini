@@ -194,13 +194,17 @@ namespace SalveminiApp.iCringe
             try
             {
                 if (fromNotifiche)
+                {
+                    Pushed = false;
                     return;
+                }
                 else
                     fromNotifiche = false;
                 if (!Pushed)
                     Navigation.PopModalAsync();
                 else
                 {
+                    fromNotifiche = false;
                     Pushed = false;
                 }
             }
