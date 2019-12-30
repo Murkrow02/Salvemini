@@ -25,6 +25,14 @@ namespace SalveminiApp.FlappyMimmo
             singleImage.HeightRequest = App.ScreenWidth * 0.35;
             boardImage.WidthRequest = App.ScreenWidth * 0.58;
             boardImage.HeightRequest = App.ScreenWidth * 0.35;
+
+            //IphoneX optimization
+#if __IOS__
+            if (iOS.AppDelegate.HasNotch)
+            {
+                mainLayout.Padding = new Thickness(20, 50);
+            }
+#endif
         }
 
         protected async override void OnAppearing()

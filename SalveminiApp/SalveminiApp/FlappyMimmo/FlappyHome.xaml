@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.FlappyMimmo.FlappyHome">
-    <yummy:PancakeView Padding="10, 50" BackgroundGradientStartColor="#F88E00" BackgroundGradientEndColor="#FDB300">
+    <yummy:PancakeView Padding="10, 20" x:Name="mainLayout" BackgroundGradientStartColor="#F88E00" BackgroundGradientEndColor="#FDB300">
         <StackLayout Spacing="40">
             <StackLayout Orientation="Horizontal">
                 <Label Text="Flappy Mimmo" FontAttributes="Bold" TextColor="White" FontSize="35"/>
@@ -17,7 +17,7 @@
                 <Frame CornerRadius="20" Padding="15, 10" HasShadow="False" BackgroundColor="{x:Static local:Styles.BGColor}">
                     <Label Margin="0, 0, 0, 60" Text="Gioca" FontSize="33" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}"/>
                 </Frame>
-                <Image x:Name="singleImage" Source="flappy.png" Scale="1.2" HorizontalOptions="End" VerticalOptions="End" TranslationY="40" Rotation="70"/>
+                <Image x:Name="singleImage" Source="flappy" Scale="1.2" HorizontalOptions="End" VerticalOptions="End" TranslationY="40" />
             </Grid>
 
             <Grid Padding="10, 0">

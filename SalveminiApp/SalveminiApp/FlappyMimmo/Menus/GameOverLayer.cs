@@ -29,7 +29,7 @@ namespace SalveminiApp.FlappyMimmo
             scoreLabel.Position = new CCPoint(ContentSize.Width / 2, ContentSize.Height / 2 + background.ContentSize.Height);
 
             homeLabel.Color = CCColor3B.White;
-            homeLabel.Position = new CCPoint(VisibleBoundsWorldspace.MaxX / 2, 100);
+            homeLabel.Position = new CCPoint(VisibleBoundsWorldspace.MaxX / 2, 140);
             AddChild(homeLabel);
 
             var startLabel = new CCLabel("Tocca per ricominciare", "Arial", 40, CCLabelFormat.SystemFont);

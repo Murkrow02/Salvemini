@@ -6,10 +6,10 @@ using UIKit;
 #endif
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using Plugin.Permissions;
 
 #if __IOS__
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
-using Plugin.Permissions;
 #endif
 
 namespace SalveminiApp.SalveminiCoin
@@ -83,7 +83,7 @@ namespace SalveminiApp.SalveminiCoin
                 //Check location permissions
                 var garanted = await Helpers.Permissions.locationPermission();
                 if (!garanted) return; //No permission to localize
-
+               
                 //Get location
                 var location = await Geolocation.GetLocationAsync();
                 if (location == null) //Error localizing
@@ -119,11 +119,28 @@ namespace SalveminiApp.SalveminiCoin
                     await arrowLabel.FadeTo(1, 300);
                 }
             }
-            catch
+            catch (FeatureNotSupportedException fnsEx)
             {
-                bool decision = await DisplayAlert("Errore", "Si è verificato un errore durante la localizzazione del dispositivo, probabilmente non ci hai concesso i permessi di localizzazione", "Apri impostazioni", "Chiudi");
+                // Handle not supported on device exception
+                await DisplayAlert("Errore", "Il tuo dispositivo non supporta la localizzazione", "Chiudi");
+            }
+            catch (FeatureNotEnabledException fneEx)
+            {
+                // Handle not enabled on device exception
+                await DisplayAlert("Errore", "I servizi di localizzazione sono spenti, accendi il GPS per continuare", "Chiudi");
+
+            }
+            catch (PermissionException pEx)
+            {
+                // Handle permission exception
+                bool decision = await DisplayAlert("Errore", "Non ci hai concesso di accedere alla tua posizione", "Apri impostazioni", "Chiudi");
                 if (decision)
                     CrossPermissions.Current.OpenAppSettings();
+            }
+            catch (Exception ex)
+            {
+                // Unable to get location
+                await DisplayAlert("Errore", "Si è verificato un errore sconosciuto, contattaci se il problema persiste", "Chiudi");
             }
 
 

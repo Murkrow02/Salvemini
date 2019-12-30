@@ -25,7 +25,8 @@ namespace SalveminiApp.Helpers
                 {
                     return true;
                 }
-
+                
+                
                 bool openSettings = await currentPage.DisplayAlert("Errore", "Non ci hai concesso di accedere alla tua posizione, apri l'app impostazioni del tuo telefono e consenti l'accesso per Salvemini", "Impostazioni", "Chiudi");
                 if (openSettings)
                     CrossPermissions.Current.OpenAppSettings();

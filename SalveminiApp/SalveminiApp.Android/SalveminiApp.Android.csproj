@@ -483,11 +483,11 @@
           <SubType></SubType>
           <Generator></Generator>
         </AndroidResource>
-        <AndroidResource Include="Resources\drawable-xxhdpi\flappy.png">
+        <AndroidResource Include="Resources\drawable-xxhdpi\flappyBoard.png">
           <SubType></SubType>
           <Generator></Generator>
         </AndroidResource>
-        <AndroidResource Include="Resources\drawable-xxhdpi\flappyBoard.png">
+        <AndroidResource Include="Resources\drawable-xxhdpi\flappy.png">
           <SubType></SubType>
           <Generator></Generator>
         </AndroidResource>
