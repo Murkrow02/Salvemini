@@ -6,10 +6,19 @@ using Xamarin.Forms;
 
 namespace SalveminiApp.RestApi.Models
 {
-    public class FlappySkinReturn 
+    public class FlappySkinReturn : INotifyPropertyChanged
     {
 
-      
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
 
         public int id { get; set; }
         public string Nome { get; set; }
@@ -25,7 +34,7 @@ namespace SalveminiApp.RestApi.Models
             }
             set
             {
-
+                OnPropertyChanged("isSelected");
             }
         }
 
@@ -37,7 +46,7 @@ namespace SalveminiApp.RestApi.Models
             }
             set
             {
-
+                OnPropertyChanged("BgColor");
             }
         }
 
@@ -61,6 +70,7 @@ namespace SalveminiApp.RestApi.Models
                 return FullImmagini[0];
             }
         }
+
     }
 
     public class FlappyMoneteReturn
