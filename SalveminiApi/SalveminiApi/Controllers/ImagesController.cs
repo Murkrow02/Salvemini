@@ -24,10 +24,33 @@ namespace SalveminiApi.Controllers
                 var stream = File.OpenRead(HttpContext.Current.Server.MapPath("~/Images/" + path + "/" + id + ".png"));
                 var response = new HttpResponseMessage(HttpStatusCode.OK);
                 response.Content = new StreamContent(stream);
-
                 response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
                 response.Content.Headers.ContentLength = stream.Length;
+                return ResponseMessage(response);
+            }
+            catch
+            {
+                throw new HttpResponseException(System.Net.HttpStatusCode.NotFound);
+            }
+        }
 
+        //Take profile pic from id
+        [Route("fastuser/{id}")]
+        [HttpGet]
+        public IHttpActionResult getUser(int id)
+        {
+
+            try
+            {
+                var db = new Models.DatabaseString();
+                var utente = db.Utenti.Find(id);
+                if (utente == null)
+                    throw new HttpResponseException(HttpStatusCode.InternalServerError);
+                var stream = File.OpenRead(HttpContext.Current.Server.MapPath("~/Images/users/" + utente.Immagine + ".png"));
+                var response = new HttpResponseMessage(HttpStatusCode.OK);
+                response.Content = new StreamContent(stream);
+                response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
+                response.Content.Headers.ContentLength = stream.Length;
                 return ResponseMessage(response);
             }
             catch

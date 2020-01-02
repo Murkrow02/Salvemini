@@ -167,8 +167,15 @@ namespace SalveminiApi.Helpers
         {
             try
             {
+                //Create write directory
+                var directory = HttpContext.Current.Server.MapPath("~/Helpers/Crashes/API");
+
+                //Create directory if doesn't exist
+                if (!Directory.Exists(directory))
+                    Directory.CreateDirectory(directory);
+
                 var dataInizioFile = "##" + italianTime().ToString("dd-MM-yyyy") + "##";
-                var path = HttpContext.Current.Server.MapPath("~/Helpers/Crashes/API/" + dataInizioFile + name + ".txt");
+                var path = directory + "/" + dataInizioFile + name + ".txt";
                 File.WriteAllText(path, info);
             }
             catch (Exception ex)

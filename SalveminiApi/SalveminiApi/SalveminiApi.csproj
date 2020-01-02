@@ -584,7 +584,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Gestione\Login.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Helpers\Crashes\API\placeholder.txt" />
     <Content Include="icons\responsivenav.svg" />
     <Content Include="Images\ads\ulysseBanner.png" />
     <Content Include="Images\avvisi\1.png" />
@@ -696,6 +695,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Helpers\Crashes\API\" />
     <Folder Include="Helpers\Crashes\Client\" />
     <Folder Include="Images\sondaggi\" />
     <Folder Include="Images\users\" />

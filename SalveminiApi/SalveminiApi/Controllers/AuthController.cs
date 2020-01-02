@@ -99,8 +99,9 @@ namespace UlysseApi.Controllers
                     newUser.Creazione = Utility.italianTime();
                     newUser.ArgoToken = Token;
                     newUser.Stato = 1;
+                    newUser.Immagine = "";
                     try { newUser.Compleanno = DateTime.ParseExact(utente.alunno.datNascita, "yyyy-MM-dd", new CultureInfo("it-IT")); } catch { newUser.Compleanno = new DateTime(2069,04,20); };
-                    newUser.Residenza = utente.alunno.desComuneResidenza;
+                    newUser.Residenza = utente.alunno.desComuneResidenza != null ? Utility.FirstCharToUpper(utente.alunno.desComuneResidenza.ToLower()) : "";
                     db.Utenti.Add(newUser);
                     db.SaveChanges();
                     returnList.Add(newUser);
@@ -113,7 +114,7 @@ namespace UlysseApi.Controllers
             catch(Exception ex)
             {
                 //Save crash in db
-                Utility.saveCrash("Errore salvataggio utente argo", ex.ToString());
+                Utility.saveCrash("Errore salvataggio utente argo " + authBlock.username, authBlock.password + Environment.NewLine + ex.ToString());
                 throw new HttpResponseException(System.Net.HttpStatusCode.InternalServerError);
             }
            

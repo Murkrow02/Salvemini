@@ -35,6 +35,8 @@ namespace SalveminiApi.Controllers
                 {
                     //Comprata?
                     bool comprata = db.CoinSpese.FirstOrDefault(x => x.idOggetto == skin.id && x.Tipo == "FlappySkin") != null;
+                    if (skin.Costo == 0)
+                        comprata = true;
 
                     //Create image list separated by commma
                     var immagini = skin.Immagini.Split(',').ToList();
