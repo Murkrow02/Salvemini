@@ -240,7 +240,7 @@ namespace SalveminiApi.Controllers
             try
             {
                 //Get all posts
-                var posts = db.Domande.Where(x => x.Approvata).OrderByDescending(x => x.Creazione).ToList();
+                var posts = db.Domande.Where(x => x.Approvata).OrderByDescending(x => x.Creazione).Take(5000).ToList();
 
                 //Remove already viewed posts if needed
                 if(id != -1)
@@ -252,7 +252,7 @@ namespace SalveminiApi.Controllers
 
                 //Take a maximum of 30 posts
                 if (posts.Count > 30)
-                    posts.Take(30);
+                  posts = posts.Take(30).ToList();
 
                 //Create returnable model
                 var returnModel = new List<DomandeReturn>();
