@@ -94,7 +94,7 @@ namespace SalveminiApp
             base.OnAppearing();
 
             //Push on notification page clicked
-            if(NotificationPage != null)
+            if (NotificationPage != null)
             {
                 Navigation.PushModalAsync(NotificationPage);
                 NotificationPage = null;
@@ -344,7 +344,7 @@ namespace SalveminiApp
 
 
         //Handle widget redirections
-        void widget_Tapped(object sender, System.EventArgs e)
+        async void widget_Tapped(object sender, System.EventArgs e)
         {
             try
             {
@@ -375,9 +375,36 @@ namespace SalveminiApp
                 //Giornalino
                 if (widget.Title == "Giornalino")
                 {
-                    Preferences.Set("LastGiornalino", Index.Giornalino.id);
-                    Costants.OpenPdf(Index.Giornalino.Url, "Giornalino"); //Show webpage
-                    RemoveBadge("Giornalino");
+                    //Last or other editions?
+                    string decision = await DisplayActionSheet("Che edizione del giornalino vuoi leggere?", "Chiudi", null, Index.Giornalino.Data.ToString("MMMM").FirstCharToUpper() + " (ultima)", "Vedi altre");
+                    if (decision != "Vedi altre")
+                    {
+                        //Last
+                        Preferences.Set("LastGiornalino", Index.Giornalino.id);
+                        Costants.OpenPdf(Index.Giornalino.Url, "Giornalino"); //Show webpage
+                        RemoveBadge("Giornalino");
+                    }
+                    else
+                    {
+                        //Download others
+                        Acr.UserDialogs.UserDialogs.Instance.ShowLoading("Attendi", Acr.UserDialogs.MaskType.Black);
+                        var versioni = await App.Index.GetGiornalini();
+                        if (versioni == null || versioni.Count <= 1)
+                        {
+                            Acr.UserDialogs.UserDialogs.Instance.HideLoading();
+                            Costants.showToast("Non ci sono altre edizioni disponibili del giornalino!");
+                            return;
+                        }
+                        Acr.UserDialogs.UserDialogs.Instance.HideLoading();
+
+                        //Create new list of editions
+                        var versioni_ = new List<string>();
+                        foreach (var versione in versioni) { versioni_.Add(versione.Data.ToString("MMMM").FirstCharToUpper()); }
+                        string decision_ = await DisplayActionSheet("Che edizione del giornalino vuoi leggere?", "Chiudi", null, versioni_.ToArray());
+                        if (versioni_.Contains(decision_))
+                            Costants.OpenPdf(versioni[versioni_.IndexOf(decision_)].Url, "Giornalino"); //Show webpage
+                    }
+
                 }
                 //Extra
                 if (widget.Title == "Extra")
