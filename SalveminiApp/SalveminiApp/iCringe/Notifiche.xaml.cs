@@ -52,7 +52,7 @@ namespace SalveminiApp.iCringe
             notificheList.IsRefreshing = true;
 
             //Download posts
-            notifiche = await App.Cringe.GetNotifiche(false);
+            notifiche = await App.Cringe.GetNotifiche();
 
             //Error
             if (notifiche == null)

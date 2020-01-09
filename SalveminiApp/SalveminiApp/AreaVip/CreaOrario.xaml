@@ -13,13 +13,14 @@
 
             <!--Freeday picker-->
             <!--<Label Text="Giorno libero" TextColor="{x:Static local:Styles.TextColor}"/>-->
-            <inputLayout:SfTextInputLayout 
+            <!--<inputLayout:SfTextInputLayout 
                                                 FocusedColor="{x:Static local:Styles.TextColor}"
                                                 Hint="Scegli giorno libero"
-                                                ContainerType="Outlined" IsVisible="false"
+                                                ContainerType="Outlined" 
                                                 OutlineCornerRadius="12" x:Name="giornoLibero">
-                <Picker x:Name="dayPicker"  Unfocused="picker_Unfocused" TitleColor="{x:Static local:Styles.TextColor}"/>
-            </inputLayout:SfTextInputLayout>
+            </inputLayout:SfTextInputLayout>-->
+            <Label Text="Giorno libero" FontSize="15" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Start" HorizontalTextAlignment="Start"/>
+            <Picker x:Name="dayPicker"  Unfocused="picker_Unfocused" TitleColor="{x:Static local:Styles.TextColor}"/>
 
             <!--Entry stack-->
             <StackLayout x:Name="layout" >

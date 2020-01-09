@@ -18,6 +18,7 @@ namespace SalveminiApp.RestApi
         List<DomandeReturn> domande = new List<DomandeReturn>();
         CommentiReturn commenti = new CommentiReturn();
         List<Notifiche> notifiche = new List<Notifiche>();
+        List<NewNotifiche> newNotifiche = new List<NewNotifiche>();
 
         public RestServiceCringe()
         {
@@ -192,11 +193,12 @@ namespace SalveminiApp.RestApi
             }
         }
 
-        public async Task<List<Notifiche>> GetNotifiche(bool nuove, int id = 0)
+        public async Task<List<Notifiche>> GetNotifiche()
         {
             notifiche = new List<Notifiche>();
             string uri;
-            uri = nuove ? Costants.Uri("icringe/getnewnotifiche/" + id) : Costants.Uri("icringe/getnotifiche");
+            uri = Costants.Uri("icringe/getnotifiche");
+            //nuove ? Costants.Uri("icringe/getnewnotifiche/" + id) : 
 
             try
             {
@@ -207,16 +209,13 @@ namespace SalveminiApp.RestApi
                     notifiche = JsonConvert.DeserializeObject<List<Notifiche>>(content);
 
                     //Save Cache
-                    if (!nuove)
                         Barrel.Current.Add("cringenotifiche", notifiche, TimeSpan.FromDays(20));
                 }
                 else
                 {
                     //Return cache if error
-                    if (!nuove)
                         return CacheHelper.GetCache<List<Notifiche>>("cringenotifiche");
-                    else
-                        return null;
+     
                 }
             }
             catch (Exception ex)
@@ -225,6 +224,33 @@ namespace SalveminiApp.RestApi
                 return null;
             }
             return notifiche;
+        }
+
+        public async Task<List<NewNotifiche>> GetNewNotifiche(int id)
+        {
+            newNotifiche = new List<NewNotifiche>();
+            string uri;
+            uri = Costants.Uri("icringe/getnewnotifiche/" + id);
+
+            try
+            {
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    newNotifiche = JsonConvert.DeserializeObject<List<NewNotifiche>>(content);
+                }
+                else
+                {
+                        return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Errore new notifiche", ex.Message);
+                return null;
+            }
+            return newNotifiche;
         }
 
 
@@ -288,7 +314,8 @@ namespace SalveminiApp.RestApi
         Task<string[]> PostCommento(Commenti commento);
         Task<string[]> DeleteCommento(int id);
         Task<string[]> DeletePost(int id);
-        Task<List<Notifiche>> GetNotifiche(bool nuove, int id = 0);
+        Task<List<Notifiche>> GetNotifiche();
+        Task<List<NewNotifiche>> GetNewNotifiche(int id);
         Task<List<Domande>> approveList();
         Task<string[]> ApprovaDomanda(int id, bool stato);
     }
@@ -312,9 +339,14 @@ namespace SalveminiApp.RestApi
             return restServiceCringe.GetCommenti(id);
         }
 
-        public Task<List<Notifiche>> GetNotifiche(bool nuove, int id = 0)
+        public Task<List<Notifiche>> GetNotifiche()
         {
-            return restServiceCringe.GetNotifiche(nuove, id);
+            return restServiceCringe.GetNotifiche();
+        }
+
+        public Task<List<NewNotifiche>> GetNewNotifiche(int id)
+        {
+            return restServiceCringe.GetNewNotifiche(id);
         }
 
         public Task<string[]> PostDomanda(string domanda, bool anonimo)

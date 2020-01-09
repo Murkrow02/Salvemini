@@ -20,6 +20,8 @@
                     <cards:CarouselView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout VerticalOptions="CenterAndExpand" Padding="12, 0" Spacing="15">
+                                <!--Creatore-->
+                                <Label Text="{Binding fullData}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" VerticalOptions="StartAndExpand"/>
                                 <!--Frame avviso-->
                                 <Frame CornerRadius="12" BackgroundColor="White" HasShadow="False" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="8,12">
                                     <StackLayout Spacing="3">
@@ -48,7 +50,6 @@
 
                                     </StackLayout>
                                 </Frame>
-
                                 <!--Creatore-->
                                 <Label Text="{Binding nomeCreatore}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" VerticalOptions="EndAndExpand"/>
                             </StackLayout>

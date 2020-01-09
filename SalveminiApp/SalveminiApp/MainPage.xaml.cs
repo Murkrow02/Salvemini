@@ -40,6 +40,8 @@ namespace SalveminiApp
         public bool orarioFromCached;
         //How many times the page loaded onAppearing
         public static int appearedTimes;
+        //Page loaded from notification tapped
+        public static Xamarin.Forms.Page NotificationPage = null;
         //Load navigation pages to be faster
         public Xamarin.Forms.NavigationPage profilePage = null;
         public Helpers.CustomNavigationPage scoinPage = null;
@@ -71,7 +73,7 @@ namespace SalveminiApp
             });
 
             //Remove avvisi badge
-            MessagingCenter.Subscribe<App, int>(this, "UpdateCoins", (sender, tipo) =>
+            MessagingCenter.Subscribe<App, int?>(this, "UpdateCoins", (sender, tipo) =>
             {
                 sCoinLbl.Text = tipo.ToString();
             });
@@ -90,6 +92,13 @@ namespace SalveminiApp
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+
+            //Push on notification page clicked
+            if(NotificationPage != null)
+            {
+                Navigation.PushModalAsync(NotificationPage);
+                NotificationPage = null;
+            }
 
             //Return if triggered from error
             if (((Parent as Helpers.CustomNavigationPage).Parent as TabbedPage).CurrentPage != this.Parent as Helpers.CustomNavigationPage)

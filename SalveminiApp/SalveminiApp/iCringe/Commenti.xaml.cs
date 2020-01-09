@@ -101,7 +101,7 @@ namespace SalveminiApp.iCringe
             //Error
             if (commenti == null)
             {
-                Costants.showToast("Si è verificato un errore, riprova più tardi o contattaci se il problema persiste");
+                Costants.showToast("Si è verificato un errore, il post potrebbe essere stato eliminato, riprova più tardi o contattaci se il problema persiste");
                 commentsList.IsRefreshing = false;
                 return;
             }

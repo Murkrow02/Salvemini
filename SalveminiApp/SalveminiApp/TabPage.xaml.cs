@@ -24,7 +24,7 @@ namespace SalveminiApp
             BarTextColor = Styles.TextColor,
             BarBackgroundColor = Styles.BGColor,
             Title = "Home",
-            IconImageSource = "fillTabBarHome.png"
+            IconImageSource = "tabBarHome.png"
         };
 
         //Argo
@@ -46,7 +46,7 @@ namespace SalveminiApp
         };
 
 
-        public TabPage()
+        public TabPage(int selectedPage = 1)
         {
             InitializeComponent();
 
@@ -58,7 +58,8 @@ namespace SalveminiApp
             Children.Add(Home);
             Children.Add(Argo);
 
-            CurrentPage = Home;
+            CurrentPage = Children[selectedPage];
+            ColorSelected(selectedPage);
 
 #if __IOS__
             SelectedTabColor = Styles.TextColor;
@@ -98,7 +99,7 @@ namespace SalveminiApp
                     case 1:
                         //Home
 #if __IOS__
-                        MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg","bbar.jpg");
+                        MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar.jpg");
 #endif
                         (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "iCringe.png";
                         (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
@@ -125,7 +126,24 @@ namespace SalveminiApp
             {
 
             }
-            
+
+        }
+
+        public void ColorSelected(int i)
+        {
+            switch (i)
+            {
+                case 0:
+                    (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "iCringeFill.png";
+                    break;
+                case 1:
+                    (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
+
+                    break;
+                case 2:
+                    (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarArgo.png";
+                    break;
+            }
         }
     }
 }

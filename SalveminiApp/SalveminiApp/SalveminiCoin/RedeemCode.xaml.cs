@@ -91,6 +91,7 @@ namespace SalveminiApp.SalveminiCoin
                     await DisplayAlert("Errore", "Non è stato possibile localizzare il dispositivo, controlla la tua copertura e riprova", "Ok");
                     return;
                 }
+
                 //Check accuracy
                 var validityMessage = await Helpers.Permissions.positionValidity(location);
                 if (!string.IsNullOrEmpty(validityMessage))
@@ -98,6 +99,9 @@ namespace SalveminiApp.SalveminiCoin
                     await DisplayAlert("Attenzione", validityMessage, "Ok");
                     return;
                 }
+
+                //Authenticate with API
+                confirmButton.IsEnabled = false;
                 string response = await App.Coins.PostCode(new RestApi.Models.PostCode { xPosition = (decimal)location.Longitude, yPosition = (decimal)location.Latitude, Codice = Convert.ToInt32(codeEntry.Text) });
 
                 infoLabel.Text = response;
@@ -143,6 +147,7 @@ namespace SalveminiApp.SalveminiCoin
                 await DisplayAlert("Errore", "Si è verificato un errore sconosciuto, contattaci se il problema persiste", "Chiudi");
             }
 
+            confirmButton.IsEnabled = true;
 
         }
 
