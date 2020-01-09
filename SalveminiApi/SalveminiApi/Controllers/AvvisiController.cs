@@ -95,10 +95,10 @@ namespace SalveminiApi.Controllers
                     var notifica = new NotificationModel();
                     var titolo = new Localized { en = avviso.Titolo };
                     var dettagli = new Localized { en = "Nuovo avviso da " + mittente.Nome + " " + mittente.Cognome + ", apri l'app per saperne di più!" };
-                    //var data = new AdditionalData { tipo = "push", id = "avviso" };
+                    var data = new AdditionalData { tipo = "push", id = "Avvisi" }; 
                     notifica.headings = titolo;
                     notifica.contents = dettagli;
-                    //notifica.data = data;
+                    notifica.data = data;
                     NotificationService.sendNotification(notifica);
                 }
                 catch
@@ -108,6 +108,8 @@ namespace SalveminiApi.Controllers
                 }
             }
 
+            //Remove previous avviso analytics
+            Helpers.Utility.clearAnalytics("UltimoAvviso");
 
             //Add to console log
             Helpers.Utility.saveEvent(mittente.Nome + "(" + avviso.idCreatore + ")" + " ha creato l'avviso " + avviso.Titolo + "(" + avviso.id + ")");

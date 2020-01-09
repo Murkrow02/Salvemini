@@ -147,6 +147,20 @@ namespace SalveminiApi.Controllers
             return returnModel;
         }
 
+
+        [Route("giornalini")]
+        [HttpGet]
+        public List<Giornalino> GetGiornalini()
+        {
+            //Check Auth
+            var authorize = new Helpers.Utility();
+            bool authorized = authorize.authorized(Request);
+            if (!authorized)
+                throw new HttpResponseException(System.Net.HttpStatusCode.Unauthorized);
+
+            return db.Giornalino.OrderByDescending(x => x.Data).Take(30).ToList();
+        }
+
         [Route("oggi/{giorno}")]
         [HttpGet]
         public async Task<WholeModel> argoOggi(string giorno)

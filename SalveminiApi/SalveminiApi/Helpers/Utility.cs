@@ -217,9 +217,6 @@ namespace SalveminiApi.Helpers
 
             try
             {
-                //Get italian date
-                var data = italianTime();
-
                 //Check if type exists for that month
                 var esiste = db2.Analytics.FirstOrDefault(x => x.Tipo == valore);
 
@@ -235,6 +232,21 @@ namespace SalveminiApi.Helpers
                     esiste.Valore = esiste.Valore + 1;
                 }
 
+                db2.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                //Fa niente
+            }
+        }
+
+        public static void clearAnalytics(string valore)
+        {
+            DatabaseString db2 = new DatabaseString();
+
+            try
+            {
+                db2.Analytics.RemoveRange(x => x.Tipo == valore);
                 db2.SaveChanges();
             }
             catch (Exception ex)
@@ -300,6 +312,20 @@ namespace SalveminiApi.Helpers
         {
             return new ObservableCollection<T>(col);
         }
+
+    
+            public static void RemoveRange<TEntity>(
+                this System.Data.Entity.DbSet<TEntity> entities,
+                System.Linq.Expressions.Expression<Func<TEntity, bool>> predicate)
+                where TEntity : class
+            {
+                var records = entities
+                    .Where(predicate)
+                    .ToList();
+                if (records.Count > 0)
+                    entities.RemoveRange(records);
+            }
+        
     }
 
   

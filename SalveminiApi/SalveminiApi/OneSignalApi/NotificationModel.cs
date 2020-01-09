@@ -31,6 +31,6 @@ namespace SalveminiApi.OneSignalApi
     public class AdditionalData
     {
         public string tipo { get; set; }
-        public int id { get; set; }
+        public string id { get; set; }
     }
 }
