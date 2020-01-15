@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.codex.salveminiapp" android:versionName="25" android:versionCode="16">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.codex.salveminiapp" android:versionName="26" android:versionCode="17">
 	<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="28" />
 	<application android:label="SalveminiApp">
 		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
