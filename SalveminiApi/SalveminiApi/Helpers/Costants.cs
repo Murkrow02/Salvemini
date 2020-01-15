@@ -24,7 +24,8 @@ namespace SalveminiApi
         var materia = db.Materie.SingleOrDefault(x=> x.desMateria == subject);
             if (materia != null)
             {
-                return SubjectsList[subject];
+                //return SubjectsList[subject];
+                return materia.Materia;
             }
             else
             {
