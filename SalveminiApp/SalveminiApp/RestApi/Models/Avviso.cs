@@ -71,5 +71,17 @@ namespace SalveminiApp.RestApi.Models
                 try { return "Creato da " + Utenti.nomeCognome; } catch { return ""; }
             }
         }
+
+        [JsonIgnore]
+        public string fullData
+        {
+            get
+            {
+                try { return Creazione.ToString("dddd, dd MMMM yyyy"); } catch { return ""; }
+            }
+        }
+
+
+        
     }
 }

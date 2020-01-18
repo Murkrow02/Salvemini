@@ -22,7 +22,7 @@ namespace SalveminiApi.Controllers
         public List<Utenti> getAllUtenti()
         {
             var authorize = new Helpers.Utility();
-            bool authorized = authorize.authorized(Request, 2);
+            bool authorized = authorize.authorized(Request);
             if (!authorized)
                 throw new HttpResponseException(HttpStatusCode.Unauthorized);
 

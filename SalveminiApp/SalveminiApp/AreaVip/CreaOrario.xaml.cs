@@ -48,9 +48,9 @@ namespace SalveminiApp.AreaVip
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-
+            
             //Check internet connection
-            giornoLibero.IsVisible = false;
+            dayPicker.IsVisible = false;
             UserDialogs.Instance.ShowLoading("Caricamento...", MaskType.Black);
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
@@ -75,7 +75,7 @@ namespace SalveminiApp.AreaVip
             //Auto fill entries
             if (string.IsNullOrEmpty(classEntry.Text))
             {
-                giornoLibero.IsVisible = true;
+                dayPicker.IsVisible = true;
                 UserDialogs.Instance.HideLoading();
 
                 return;
@@ -89,13 +89,14 @@ namespace SalveminiApp.AreaVip
             {
                 if (orario.Data != null)
                 {
+                    dayPicker.IsVisible = true;
+
                     callOrario = (orario.Data as List<RestApi.Models.Lezione>).OrderBy(x => x.Giorno).ToList();
 
                     //Get freeday
                     var freeday = Costants.Giorni[((DayOfWeek)callOrario.FirstOrDefault(x => x.Materia == "Libero").Giorno).ToString()];
 
                     //Select freeday
-                    giornoLibero.IsVisible = true;
                     dayPicker.SelectedItem = freeday;
 
                     //Fill layout with old values
@@ -106,8 +107,8 @@ namespace SalveminiApp.AreaVip
             {
 
             }
-            
-            giornoLibero.IsVisible = true;
+
+            dayPicker.IsVisible = true;
             UserDialogs.Instance.HideLoading();
 
         }

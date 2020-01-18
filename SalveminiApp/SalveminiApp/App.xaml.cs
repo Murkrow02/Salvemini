@@ -10,11 +10,13 @@ using MonkeyCache.SQLite;
 using Plugin.Toasts;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
+using System.Globalization;
+#if __IOS__
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+#endif
 namespace SalveminiApp
 {
-    public partial class App : Application
+    public partial class App : Xamarin.Forms.Application
     {
         //Screen Size
         public static double ScreenWidth = 0;
@@ -72,7 +74,7 @@ namespace SalveminiApp
             //Set MainPage
             if (Preferences.Get("isFirstTime", true)) //First time
             {
-                MainPage = new NavigationPage(new FirstAccess.WelcomePage());
+                MainPage = new Xamarin.Forms.NavigationPage(new FirstAccess.WelcomePage());
             }
             else if (Preferences.Get("Token", "") == "" || Preferences.Get("UserId", 0) == 0) //Not logged
             {
@@ -89,6 +91,9 @@ namespace SalveminiApp
 
             stopwatch.Stop();
             Debug.WriteLine(stopwatch.ElapsedMilliseconds);
+
+            //Set italian as default culture
+            CultureInfo.CurrentCulture = new CultureInfo("it-IT");
 
             //Reload Calls
             refreshCalls();
@@ -140,7 +145,45 @@ namespace SalveminiApp
         private static async void HandleNotificationOpened(OSNotificationOpenedResult result)
         {
             try
-            { }
+            {
+                //Get payload
+                OSNotificationPayload payload = result.notification.payload;
+                Dictionary<string, object> additionalData = payload.additionalData;
+
+                //No push info
+                if (additionalData == null)
+                    return;
+
+                string pushValue = "";
+                if (additionalData.ContainsKey("tipo") && additionalData.ContainsKey("id"))
+                {
+                    if (additionalData["tipo"].ToString() == "push")
+                        pushValue = additionalData["id"].ToString();
+                }
+
+                //string pushPage = "";
+                //if (additionalData != null)
+                //{
+                //    if (additionalData.ContainsKey("id"))
+                //    {
+                //        idValue = additionalData["id"].ToString());
+                //    }
+                //}
+                switch (pushValue)
+                {
+                    case "iCringe":
+                        Xamarin.Forms.Application.Current.MainPage = new TabPage(0);
+                        break;
+                    case "Avvisi":
+                        Xamarin.Forms.Application.Current.MainPage = new TabPage(1);
+                        var avvisiPage = new SecondaryViews.Avvisi();
+#if __IOS__
+                        avvisiPage.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
+#endif
+                        SalveminiApp.MainPage.NotificationPage = avvisiPage;
+                        break;
+                }
+            }
             catch { }
         }
 

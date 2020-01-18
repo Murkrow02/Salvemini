@@ -75,6 +75,8 @@ namespace SalveminiApp.Controls
             {
                 if (Lezioni != null)
                 {
+                    materieLayout.IsVisible = true;
+
                     //Detect freeday
                     var freedayInt = Lezioni.FirstOrDefault(x => x.Materia == "Libero").Giorno;
 
@@ -299,6 +301,7 @@ namespace SalveminiApp.Controls
                     Device.BeginInvokeOnMainThread(() =>
                     {
                         changeDay(-1);
+                        this.IsVisible = true;
                     });
                 }
 

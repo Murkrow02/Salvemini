@@ -167,8 +167,15 @@ namespace SalveminiApi.Helpers
         {
             try
             {
+                //Create write directory
+                var directory = HttpContext.Current.Server.MapPath("~/Helpers/Crashes/API");
+
+                //Create directory if doesn't exist
+                if (!Directory.Exists(directory))
+                    Directory.CreateDirectory(directory);
+
                 var dataInizioFile = "##" + italianTime().ToString("dd-MM-yyyy") + "##";
-                var path = HttpContext.Current.Server.MapPath("~/Helpers/Crashes/API/" + dataInizioFile + name + ".txt");
+                var path = directory + "/" + dataInizioFile + name + ".txt";
                 File.WriteAllText(path, info);
             }
             catch (Exception ex)
@@ -210,9 +217,6 @@ namespace SalveminiApi.Helpers
 
             try
             {
-                //Get italian date
-                var data = italianTime();
-
                 //Check if type exists for that month
                 var esiste = db2.Analytics.FirstOrDefault(x => x.Tipo == valore);
 
@@ -228,6 +232,21 @@ namespace SalveminiApi.Helpers
                     esiste.Valore = esiste.Valore + 1;
                 }
 
+                db2.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                //Fa niente
+            }
+        }
+
+        public static void clearAnalytics(string valore)
+        {
+            DatabaseString db2 = new DatabaseString();
+
+            try
+            {
+                db2.Analytics.RemoveRange(x => x.Tipo == valore);
                 db2.SaveChanges();
             }
             catch (Exception ex)
@@ -293,6 +312,20 @@ namespace SalveminiApi.Helpers
         {
             return new ObservableCollection<T>(col);
         }
+
+    
+            public static void RemoveRange<TEntity>(
+                this System.Data.Entity.DbSet<TEntity> entities,
+                System.Linq.Expressions.Expression<Func<TEntity, bool>> predicate)
+                where TEntity : class
+            {
+                var records = entities
+                    .Where(predicate)
+                    .ToList();
+                if (records.Count > 0)
+                    entities.RemoveRange(records);
+            }
+        
     }
 
   

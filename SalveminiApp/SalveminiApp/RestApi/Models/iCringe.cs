@@ -231,5 +231,10 @@ namespace SalveminiApp.RestApi.Models
             }
         }
     }
+    public class NewNotifiche
+    {
+        public int Tipo { get; set; }
+        public string Count { get; set; }
+    }
 
-}
+    }

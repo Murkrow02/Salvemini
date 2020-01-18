@@ -19,6 +19,7 @@ namespace SalveminiApp.RestApi
         HttpClient client;
         public Models.Index Index { get; private set; }
         public Models.IndexArgo IndexArgo { get; private set; }
+        public List<Models.Giornalino> Giornalini { get; private set; }
 
         public RestServiceIndex()
         {
@@ -57,6 +58,32 @@ namespace SalveminiApp.RestApi
             return Index;
         }
 
+        public async Task<List<Models.Giornalino>> GetGiornalini()
+        {
+            Index = new Models.Index();
+            var uri = Costants.Uri("giornalini");
+            try
+            {
+                //Get from url
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    Giornalini = JsonConvert.DeserializeObject<List<Models.Giornalino>>(content);
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Errore GET index", ex.Message);
+            }
+            return Giornalini;
+        }
+
         public async Task<Models.IndexArgo> GetIndexArgo()
         {
             IndexArgo = new Models.IndexArgo();
@@ -92,6 +119,7 @@ namespace SalveminiApp.RestApi
     {
         Task<Models.Index> GetIndex();
         Task<Models.IndexArgo> GetIndexArgo();
+        Task<List<Models.Giornalino>> GetGiornalini();
 
     }
 
@@ -109,6 +137,12 @@ namespace SalveminiApp.RestApi
         {
             return restServiceIndex.GetIndex();
         }
+
+       public Task<List<Models.Giornalino>> GetGiornalini()
+        {
+            return restServiceIndex.GetGiornalini();
+        }
+
 
         public Task<Models.IndexArgo> GetIndexArgo()
         {

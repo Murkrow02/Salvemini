@@ -110,7 +110,7 @@ namespace SalveminiApp.SalveminiCoin
                 coinCount.FadeTo(1, 400);
 
                 //Update home value
-                MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "UpdateCoins", coins);
+                MessagingCenter.Send<App,int?>((App)Xamarin.Forms.Application.Current, "UpdateCoins", coins);
             }
 
             //Load ad video

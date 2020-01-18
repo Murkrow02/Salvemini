@@ -53,8 +53,8 @@ namespace SalveminiApp.SecondaryViews
             foreach (var opzione in sondaggio.OggettiSondaggi)
             {
                 //Create new layout to add a vote button under the option
-                var layout = new StackLayout { Spacing = 2, VerticalOptions = LayoutOptions.FillAndExpand };
-                var votaBtn = new Button { Text = "Vota", BackgroundColor = Styles.TextGray, Padding = 0, TextColor = Color.White, FontSize = 18, Margin = 0, VerticalOptions = LayoutOptions.Start, };
+                var layout = new StackLayout { Spacing = 5, VerticalOptions = LayoutOptions.FillAndExpand };
+                var votaBtn = new Button { Text = "Vota", BackgroundColor = Color.FromHex("#bdbdbd"), HeightRequest = 25, Padding = 0, TextColor = Color.White, FontSize = 18, Margin = 0, VerticalOptions = LayoutOptions.Start, };
                 votaBtn.Clicked += VotaBtn_Clicked;
 
                 //Detect images

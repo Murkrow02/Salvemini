@@ -20,4 +20,10 @@ namespace SalveminiApi.Models
         public string Domanda { get; set; }
         public List<Commenti> Commenti { get; set; }
     }
+
+    public class NewNotifiche
+    {
+        public int Tipo { get; set; }
+        public string Count { get; set; }
+    }
 }

@@ -117,11 +117,10 @@ namespace SalveminiApi.Controllers
                     var dettagli = new Localized { en = desc };
                     var filter = new Tags { field = "tag", key = "Secrets", relation = "=", value = post.idUtente.ToString() };
                     var tags = new List<Tags>();
-                    //var data = new AdditionalData { tipo = "chatIstr", id = admin.id };
-                    tags.Add(filter);
+                    var data = new AdditionalData { tipo = "push", id = "iCringe"}; tags.Add(filter);
                     notifica.headings = titolo;
                     notifica.contents = dettagli;
-                    //notifica.data = data;
+                    notifica.data = data;
                     notifica.filters = tags;
                     NotificationService.sendNotification(notifica);
                 }
@@ -240,7 +239,7 @@ namespace SalveminiApi.Controllers
             try
             {
                 //Get all posts
-                var posts = db.Domande.Where(x => x.Approvata).OrderByDescending(x => x.Creazione).ToList();
+                var posts = db.Domande.Where(x => x.Approvata).OrderByDescending(x => x.Creazione).Take(5000).ToList();
 
                 //Remove already viewed posts if needed
                 if(id != -1)
@@ -252,7 +251,7 @@ namespace SalveminiApi.Controllers
 
                 //Take a maximum of 30 posts
                 if (posts.Count > 30)
-                    posts.Take(30);
+                  posts = posts.Take(30).ToList();
 
                 //Create returnable model
                 var returnModel = new List<DomandeReturn>();
@@ -359,7 +358,7 @@ namespace SalveminiApi.Controllers
 
         [Route("getnewnotifiche/{id}")]
         [HttpGet]
-        public List<Notifiche> getNewNotifiche(int id)
+        public List<NewNotifiche> getNewNotifiche(int id)
         {
             //Check Auth
             var authorize = new Helpers.Utility();
@@ -376,7 +375,16 @@ namespace SalveminiApi.Controllers
                 var lastNotifica = db.Notifiche.Find(id);
                 var lastNotificaIndex = notifiche.IndexOf(lastNotifica);
                 notifiche = notifiche.Skip(lastNotificaIndex + 1).ToList();
-                return notifiche;
+
+                //Add only the count of each noticiation type
+                var returnModel = new List<NewNotifiche>();
+                var nonApprovato = notifiche.Where(x => x.Tipo == 0).Count();
+                var approvato = notifiche.Where(x => x.Tipo == 1).Count();
+                var commenti = notifiche.Where(x => x.Tipo == 2).Count();
+                returnModel.Add(new NewNotifiche { Tipo = 0, Count = nonApprovato > 9 ? "9+" : nonApprovato.ToString() });
+                returnModel.Add(new NewNotifiche { Tipo = 1, Count = approvato > 9 ? "9+" : approvato.ToString() });
+                returnModel.Add(new NewNotifiche { Tipo = 2, Count = commenti > 9 ? "9+" : commenti.ToString() });
+                return returnModel;
             }
             catch (Exception ex)
             {
@@ -443,10 +451,10 @@ namespace SalveminiApi.Controllers
                 var tags = new List<Tags>();
                 //var data = new AdditionalData { tipo = "chatIstr", id = admin.id };
                 tags.Add(filter);
+                var data = new AdditionalData { tipo = "push", id = "iCringe" }; tags.Add(filter);
                 notifica.headings = titolo;
                 notifica.contents = dettagli;
-                //notifica.data = data;
-                notifica.filters = tags;
+                notifica.data = data;
                 NotificationService.sendNotification(notifica);
 
                 db.SaveChanges();

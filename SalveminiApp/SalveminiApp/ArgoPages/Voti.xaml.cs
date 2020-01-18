@@ -40,7 +40,7 @@ namespace SalveminiApp.ArgoPages
             votiList.HeightRequest = App.ScreenHeight / 1.5;
             //buttonFrame.WidthRequest = App.ScreenWidth / 6;
             //buttonFrame.HeightRequest = App.ScreenWidth / 6;
-            //buttonFrame.CornerRadius = (float)(App.ScreenWidth / 6) / 2;
+            //buttonFrame.CornerRadius = (float)(App.ScreenWisidth / 6) / 2;
 
             //Get cache
             var cachedVoti = CacheHelper.GetCache<ObservableCollection<RestApi.Models.GroupedVoti>>("Voti");
