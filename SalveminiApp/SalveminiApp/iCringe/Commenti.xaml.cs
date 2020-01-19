@@ -76,7 +76,7 @@ namespace SalveminiApp.iCringe
         {
             base.OnAppearing();
             Pushed = false;
-
+            this.ForceLayout();
             //Detect internet connection
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {

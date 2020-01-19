@@ -28,9 +28,8 @@
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>Apple Development: Marco Coppola (94823TJK2J)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>SalveminiApp</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -70,9 +69,9 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Distribution: Marco Coppola (NP46PS7Q98)</CodesignKey>
+    <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>SalveminiAppStore</CodesignProvision>
+    <CodesignProvision>SalveminiAppStoreValex</CodesignProvision>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchExtraArgs>--optimize=-remove-dynamic-registrar</MtouchExtraArgs>
   </PropertyGroup>

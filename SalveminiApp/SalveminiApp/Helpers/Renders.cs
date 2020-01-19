@@ -23,10 +23,10 @@ namespace SalveminiApp
     {
         public ChatEntry()
         {
-            this.TextChanged += (sender, e) =>
-            {
-                this.InvalidateMeasure();
-            };
+           // this.TextChanged += (sender, e) =>
+           // {
+          //      this.InvalidateMeasure();
+           // };
         }
     }
 

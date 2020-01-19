@@ -377,6 +377,8 @@ namespace SalveminiApp
                 {
                     //Last or other editions?
                     string decision = await DisplayActionSheet("Che edizione del giornalino vuoi leggere?", "Chiudi", null, Index.Giornalino.Data.ToString("MMMM").FirstCharToUpper() + " (ultima)", "Vedi altre");
+                    if (decision == "Chiudi")
+                        return;
                     if (decision != "Vedi altre")
                     {
                         //Last
