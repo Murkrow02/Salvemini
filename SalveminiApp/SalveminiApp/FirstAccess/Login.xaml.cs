@@ -62,6 +62,29 @@ namespace SalveminiApp.FirstAccess
             firstPopUp.IsVisible = false;
         }
 
+        void Checked_Changed(object sender, EventArgs e)
+        {
+            if (permissionCheckBox.IsChecked)
+            {
+                confirmButton.IsEnabled = true;
+            }
+            else
+            {
+                confirmButton.IsEnabled = false;
+            }
+        }
+
+        void CheckLabel_Tapped(object sender, EventArgs e)
+        {
+            if (permissionCheckBox.IsChecked)
+            {
+                permissionCheckBox.IsChecked = false;
+            }
+            else
+            {
+                permissionCheckBox.IsChecked = true;
+            }
+        }
         async void Continue_Clicked(object sender, System.EventArgs e)
         {
             //ShowLoading();
@@ -96,6 +119,12 @@ namespace SalveminiApp.FirstAccess
             //No password errror
             passwordEntry.HasError = false;
 
+            //Permission
+            bool confirm = await DisplayAlert("Attenzione", "Effettuando l'accesso verranno memorizzati esclusivamente il tuo nome, il tuo cognome, sesso e classe. Procedendo acconsenti al salvataggio di questi dati sul nostro database", "Conferma", "Annulla");
+            if (!confirm)
+            {
+                return;
+            }
             //Start Loading
             loading.IsRunning = true;
             loading.IsVisible = true;

@@ -54,6 +54,16 @@
                            x:Name="password"
                            MaxLength="200" />
                 </inputLayout:SfTextInputLayout>
+
+
+                <StackLayout Orientation="Horizontal" Spacing="2" HorizontalOptions="CenterAndExpand">
+                    <Label FontSize="Medium" TextColor="{x:Static local:Styles.TextColor}" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" VerticalTextAlignment="Center" Text="Ho il permesso dei miei genitori o tutori per utilizzare l'app">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="CheckLabel_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <CheckBox CheckedChanged="Checked_Changed" x:Name="permissionCheckBox" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+                </StackLayout>
             </StackLayout>
 
             <!--Buttons-->
@@ -62,10 +72,11 @@
                 <!--Continua-->
                 <StackLayout Spacing="10" Padding="40,0"
                              VerticalOptions="Start" Orientation="Vertical">
-                    
+
                     <Button x:Name="confirmButton"
                             Clicked="Continue_Clicked"
                             Text="Continua"
+                            IsEnabled="False"
                             Padding="10"
                             BackgroundColor="{x:Static local:Styles.PrimaryColor}"
                             TextColor="white"
@@ -84,16 +95,16 @@
 
                 <!--Altri-->
                 <StackLayout Spacing="0" VerticalOptions="End">
-                     <Button Text="Ho dimenticato la password" Margin="0,10,0,0"
+                    <Button Text="Ho dimenticato la password" Margin="0,10,0,0"
                         Clicked="forgotPwd_clicked" BackgroundColor="Transparent"
                         TextColor="{x:Static local:Styles.PrimaryColor}" />
 
-                <Button Text="Non riesco ad accedere"
+                    <Button Text="Non riesco ad accedere"
                         BackgroundColor="Transparent"
                         Clicked="help_clicked"
                         TextColor="{x:Static local:Styles.PrimaryColor}" />
                 </StackLayout>
-               
+
 
             </StackLayout>
 

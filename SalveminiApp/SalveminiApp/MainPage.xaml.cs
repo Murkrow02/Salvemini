@@ -794,6 +794,11 @@ namespace SalveminiApp
             }
         }
 
+        void AdInfo_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Info Sponsor", "Il liceo Salvemini non lucra in alcun modo da questo progetto, tutto il guadagno è indirizzato agli sviluppatori dell'app", "Ok");
+        }
+
     }
 
     //Add range to iList

@@ -46,7 +46,7 @@ namespace SalveminiApp
         };
 
 
-        public TabPage(int selectedPage = 1)
+        public TabPage(int selectedPage = 0)
         {
             InitializeComponent();
 
@@ -54,7 +54,7 @@ namespace SalveminiApp
             BarTextColor = Styles.TextColor;
 
             //Add Children
-            Children.Add(Family);
+            //Children.Add(Family);
             Children.Add(Home);
             Children.Add(Argo);
 
@@ -83,42 +83,66 @@ namespace SalveminiApp
             {
                 switch (index)
                 {
+
                     case 0:
-                        //iCringe
-#if __IOS__
-                        MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar2.jpg");
-#endif
-#if __ANDROID__
-                        if(MainPage.appearedTimes > 0)
-                        ((Children[0] as Helpers.CustomNavigationPage).RootPage as iCringe.Home).AndroidFix();
-#endif
-                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "iCringeFill.png";
-                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
-                        (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
-                        break;
-                    case 1:
                         //Home
 #if __IOS__
                         MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar.jpg");
 #endif
-                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "iCringe.png";
-                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
-                        (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
+#if __ANDROID__
+                        //if(MainPage.appearedTimes > 0)
+                        //((Children[0] as Helpers.CustomNavigationPage).RootPage as MainPage).AndroidFix();
+#endif
+                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
+                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
                         break;
-
-                    case 2:
+                    case 1:
                         //Argo
 #if __IOS__
                         MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar.jpg");
 #endif
-#if __ANDROID__
-                        if (MainPage.appearedTimes > 0)
-                            ((Children[2] as Helpers.CustomNavigationPage).RootPage as ArgoPage).AndroidFix();
-#endif
-                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "iCringe.png";
-                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
-                        (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarArgo.png";
+                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
+                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarArgo.png";
                         break;
+
+
+
+                        //                    case 0:
+                        //                        //iCringe
+                        //#if __IOS__
+                        //                        MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar2.jpg");
+                        //#endif
+                        //#if __ANDROID__
+                        //                        if(MainPage.appearedTimes > 0)
+                        //                        ((Children[0] as Helpers.CustomNavigationPage).RootPage as iCringe.Home).AndroidFix();
+                        //#endif
+                        //                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "iCringeFill.png";
+                        //                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
+                        //                        (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
+                        //                        break;
+                        //                    case 1:
+                        //                        //Home
+                        //#if __IOS__
+                        //                        MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar.jpg");
+                        //#endif
+                        //                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "iCringe.png";
+                        //                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
+                        //                        (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
+                        //                        break;
+
+                        //                    case 2:
+                        //                        //Argo
+                        //#if __IOS__
+                        //                        MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar.jpg");
+                        //#endif
+                        //#if __ANDROID__
+                        //                        if (MainPage.appearedTimes > 0)
+                        //                            ((Children[2] as Helpers.CustomNavigationPage).RootPage as ArgoPage).AndroidFix();
+                        //#endif
+                        //                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "iCringe.png";
+                        //                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
+                        //                        (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarArgo.png";
+                        //                        break;
 
                 }
             }
@@ -134,15 +158,22 @@ namespace SalveminiApp
             switch (i)
             {
                 case 0:
-                    (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "iCringeFill.png";
+                    (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
                     break;
                 case 1:
-                    (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
+                    
+                    (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarArgo.png";
+                    break;
+                    //case 0:
+                    //    (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "iCringeFill.png";
+                    //    break;
+                    //case 1:
+                    //    (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
 
-                    break;
-                case 2:
-                    (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarArgo.png";
-                    break;
+                    //    break;
+                    //case 2:
+                    //    (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarArgo.png";
+                    //    break;
             }
         }
     }
