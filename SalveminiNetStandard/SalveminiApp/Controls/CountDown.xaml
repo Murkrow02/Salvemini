@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.Helpers.CountDown">
+<StackLayout Padding="15,0"
+                 Spacing="5"
+                 Orientation="Horizontal"
+                 HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="CenterAndExpand">
+
+        <!--Giorni-->
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal" Spacing="5">
+            <Frame x:Name="d1c"
+               BackgroundColor="#efefef"
+               CornerRadius="5"
+               Padding="5"
+               HasShadow="False"
+               HorizontalOptions="Center">
+            <Label  FontSize="30"
+                    x:Name="d1"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="Transparent"
+                    FontAttributes="Bold" Text="0"/>
+        </Frame>
+        <Frame x:Name="d2c"
+               BackgroundColor="#efefef"
+               CornerRadius="5"
+               Padding="5"
+               HasShadow="False" HorizontalOptions="Center">
+            <Label  FontSize="30"
+                    x:Name="d2"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="Transparent"
+                    FontAttributes="Bold" />
+        </Frame>
+        <Frame x:Name="d3c"
+               BackgroundColor="#efefef"
+               CornerRadius="5"
+               Padding="5"
+               HasShadow="False"  HorizontalOptions="Center">
+            <Label  FontSize="30"
+                    x:Name="d3"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="Transparent"
+                    FontAttributes="Bold" />
+        </Frame>
+                </StackLayout>
+            <Label Text="Giorni"/>
+        </StackLayout>
+                <!--Ore-->
+             <Label Text=":" VerticalTextAlignment="Start" HorizontalTextAlignment="Center" VerticalOptions="Start" FontAttributes="Bold" FontSize="35"/>
+         <StackLayout Orientation="Vertical">
+
+            <StackLayout Orientation="Horizontal" Spacing="5">
+        <Frame x:Name="h1c"
+               BackgroundColor="#efefef"
+               CornerRadius="5"
+               Padding="5"
+               HasShadow="False" HorizontalOptions="Center">
+            <Label  FontSize="30"
+                    x:Name="h1"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="Transparent"
+                    FontAttributes="Bold" />
+        </Frame>
+        <Frame x:Name="h2c"
+               BackgroundColor="#efefef"
+               CornerRadius="5"
+               Padding="5"
+               HasShadow="False"  HorizontalOptions="Center">
+            <Label  FontSize="30"
+                    x:Name="h2"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="Transparent"
+                    FontAttributes="Bold" />
+        </Frame>
+                  </StackLayout>
+            <Label Text="Ore"/>
+        </StackLayout>
+
+                <!--Minuti-->
+             <Label Text=":" VerticalTextAlignment="Start" HorizontalTextAlignment="Center" VerticalOptions="Start" FontAttributes="Bold" FontSize="35"/>
+        <StackLayout Orientation="Vertical">
+
+            <StackLayout Orientation="Horizontal" Spacing="5">
+        <Frame x:Name="m1c"
+               BackgroundColor="#efefef"
+               CornerRadius="5"
+               Padding="5"
+               HasShadow="False"  HorizontalOptions="Center">
+
+            <Label  FontSize="30"
+                    x:Name="m1"  HorizontalTextAlignment="
+                    Center" HorizontalOptions="
+                    FillAndExpand" BackgroundColor="
+                    Transparent" FontAttributes="
+                    Bold"/>
+        </Frame>
+           <Frame x:Name="m2c" BackgroundColor="#efefef" CornerRadius="5" Padding="5" HasShadow="False"  HorizontalOptions="Center">
+                <Label  FontSize="30"
+                        x:Name="m2"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Transparent"
+                        FontAttributes="Bold" />
+        </Frame>
+          </StackLayout>
+            <Label Text="Minuti"/>
+        </StackLayout>
+
+                <!--Secondi-->
+             <Label Text=":" VerticalTextAlignment="Start" HorizontalTextAlignment="Center" VerticalOptions="Start" FontAttributes="Bold" FontSize="35"/>
+        <StackLayout Orientation="Vertical">
+
+            <StackLayout Orientation="Horizontal" Spacing="5">
+        <Frame x:Name="s1c"
+               BackgroundColor="#efefef"
+               CornerRadius="5"
+               Padding="5"
+               HasShadow="False"  HorizontalOptions="Center">
+
+            <Label  FontSize="30"
+                    x:Name="s1"  HorizontalTextAlignment="
+                    Center" HorizontalOptions="
+                    FillAndExpand" BackgroundColor="
+                    Transparent" FontAttributes="
+                    Bold"/>
+        </Frame>
+           <Frame x:Name="s2c" BackgroundColor="#efefef" CornerRadius="5" Padding="5" HasShadow="False"  HorizontalOptions="Center">
+                <Label  FontSize="30"
+                        x:Name="s2"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Transparent"
+                        FontAttributes="Bold" />
+        </Frame>
+  </StackLayout>
+            <Label Text="Secondi"/>
+        </StackLayout>
+
+    </StackLayout>
+</ContentView>

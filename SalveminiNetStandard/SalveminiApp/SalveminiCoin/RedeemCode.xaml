@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Riscatta codice" Padding="20" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SalveminiCoin.RedeemCode">
+    <ScrollView>
+        <StackLayout Spacing="30">
+            <Frame x:Name="bgArrowFrame" HorizontalOptions="Center" WidthRequest="180" HeightRequest="180" Padding="0" CornerRadius="90" IsClippedToBounds="True" HasShadow="False" BackgroundColor="#E3E3E3">
+                <iconize:IconLabel x:Name="arrowLabel" TextColor="{x:Static local:Styles.TextColor}" Text="fas-arrow-up" HorizontalOptions="Center" VerticalOptions="Center" FontSize="100" />
+            </Frame>
+            <StackLayout Spacing="15">
+                <Label x:Name="infoLabel" Text="Inserisci il codice che ti è&#x0a;stato fornito" HorizontalOptions="Center" FontAttributes="Bold" TextColor="#696162" FontSize="Large" HorizontalTextAlignment="Center" />
+                <StackLayout Margin="40, 0"  Spacing="10" Orientation="Horizontal">
+                    <Frame x:Name="stationFrame" VerticalOptions="Center" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="10" Margin="0, 0" HasShadow="False" Padding="2, -1">
+                        <Entry Keyboard="Numeric" x:Name="codeEntry" HorizontalTextAlignment="Center" TextChanged="Code_TextChanged" Margin="-5, 0" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="FillAndExpand" FontSize="20" Placeholder="Codice" />
+                    </Frame>
+                    <Frame Opacity="0" Padding="0" x:Name="confirmFrame" BackgroundColor="#529FFF" HorizontalOptions="End" VerticalOptions="Center" HasShadow="False">
+                        <iconize:IconButton x:Name="confirmButton" Text="fas-arrow-right" Clicked="Confirm_Clicked" IsEnabled="False" TextColor="White" BackgroundColor="Transparent" FontSize="Large" CornerRadius="20" FontAttributes="Bold" HorizontalOptions="Center" />
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+            <!--<Button x:Name="exitButton" Text="Esci" Clicked="Close_Clicked" TextColor="White" BackgroundColor="#EC6666" FontSize="Large" FontAttributes="Bold" CornerRadius="10" Margin="20,0" VerticalOptions="EndAndExpand" />-->
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

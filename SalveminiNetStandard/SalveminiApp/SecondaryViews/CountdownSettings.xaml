@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Impostazioni Countdown" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:segmented="clr-namespace:Plugin.Segmented.Control;assembly=Plugin.Segmented" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.CountdownSettings">
+    <StackLayout Padding="15" Spacing="30">
+        <!--Cowntdown Pointer-->
+        <StackLayout>
+            <Label Text="A che data deve riferirsi il countdown?" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold" />
+            <segmented:SegmentedControl Margin="-10,0" x:Name="pointerSegment" HorizontalOptions="FillAndExpand" VerticalOptions="Start" OnSegmentSelected="DateSegment_SelectionChanged" TintColor="White" SelectedTextColor="{x:Static local:Styles.TextColor}">
+                <segmented:SegmentedControl.Children>
+                    <segmented:SegmentedControlOption Text="Fine della scuola" />
+                    <!--<segmented:SegmentedControlOption Text="Natale" />-->
+                    <segmented:SegmentedControlOption Text="Pasqua" />
+                </segmented:SegmentedControl.Children>
+            </segmented:SegmentedControl>
+        </StackLayout>
+        <!--Switch to Count Holidays-->
+        <StackLayout Orientation="Horizontal" Spacing="2" HorizontalOptions="CenterAndExpand">
+            <Label FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" VerticalTextAlignment="Center" Text="Escludi giorni festivi dal countdown"/>
+            <CheckBox CheckedChanged="HolydaysSwitch_Toggled" x:Name="holydaysSwitch" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+        </StackLayout>
+        <Label Margin="0,-25,0,0"  Text="Spuntando la casella verrano esclusi dal conteggio i tuoi giorni di rotazione, le domeniche e le altre feste indicate dal calendario scolastico ufficiale" x:Name="noFestivi" TextColor="{x:Static local:Styles.TextGray}" FontSize="12" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
+    </StackLayout>
+</ContentPage>

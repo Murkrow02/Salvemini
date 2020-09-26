@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch"  xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView" xmlns:proc="clr-namespace:PanCardView.Processors;assembly=PanCardView" xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView" xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:local="clr-namespace:SalveminiApp" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Avvisi">
+    <ContentPage.Content>
+        <StackLayout Spacing="40" x:Name="mainLayout">
+            <!--TITLE-->
+            <StackLayout Spacing="8" Padding="5" Orientation="Horizontal">
+                <iconize:IconButton BackgroundColor="Transparent" Clicked="Close_Clicked" VerticalOptions="Center" HorizontalOptions="Start" Text="fal-times" FontSize="30" WidthRequest="45" TextColor="{x:Static local:Styles.TextColor}" />
+                <Label VerticalOptions="Center" HorizontalOptions="Start" Text="Avvisi" TextColor="{x:Static local:Styles.TextColor}" FontSize="Title" FontAttributes="Bold" />
+                <iconize:IconButton IsVisible="false" BackgroundColor="Transparent" Clicked="Menu_Clicked" x:Name="menuButton" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Text="fas-bars" FontSize="Title" TextColor="{x:Static local:Styles.TextColor}" />
+            </StackLayout>
+            <StackLayout Padding="20,0" VerticalOptions="FillAndExpand">
+                <!--Loading spinner-->
+                <ActivityIndicator x:Name="loading" IsRunning="True"/>
+                <!--CAROUSEL-->
+                <cards:CarouselView VerticalOptions="FillAndExpand" x:Name="avvisiCarousel">
+                    <x:Arguments>
+                        <proc:BaseCarouselFrontViewProcessor ScaleFactor="0.5" OpacityFactor="0" RotationFactor="0.1" />
+                        <proc:BaseCarouselBackViewProcessor ScaleFactor="0.5" OpacityFactor="0" RotationFactor="0.1" />
+                    </x:Arguments>
+                    <cards:CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout VerticalOptions="CenterAndExpand" Padding="12, 0" Spacing="15">
+                                <!--Creatore-->
+                                <Label Text="{Binding fullData}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" VerticalOptions="StartAndExpand"/>
+                                <!--Frame avviso-->
+                                <Frame CornerRadius="12" BackgroundColor="White" HasShadow="False" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="8,12">
+                                    <StackLayout Spacing="3">
+                                        <!--Titolo-->
+                                        <patch:Label Lines="1" AutoFit="Width" Text="{Binding Titolo}" TextColor="{x:Static local:Styles.TextColor}" FontSize="30" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" />
+                                        <!--Immagini-->
+                                        <flv:FlowListView IsVisible="{Binding ListVisibility}" FlowItemTapped="ImageList_ItemSelected" FlowItemsSource="{Binding FullImmagini}" SeparatorColor="Black" BackgroundColor="Transparent"  FlowColumnExpand="ProportionalLast" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="false" RowHeight="100">
+                                            <flv:FlowListView.FlowColumnTemplate>
+                                                <DataTemplate>
+                                                    <Grid Padding="2">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="*" />
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="*" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <ffimageloading:CachedImage BitmapOptimizations="true" DownsampleToViewSize="true" LoadingPlaceholder="imagePlaceholder.png" Aspect="AspectFill" Source="{Binding .}" />
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </flv:FlowListView.FlowColumnTemplate>
+                                        </flv:FlowListView>
+                                        <!--Descrizione-->
+                                        <Label Text="{Binding CorrectDescription}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" />
+                                        <!--Mostra altro-->
+                                        <Button BackgroundColor="Transparent" TextColor="{x:Static local:Styles.Apple}" Clicked="ShowMore_Clicked" Text="Mostra altro" IsVisible="{Binding ShowMoreVisibility}" />
+
+                                    </StackLayout>
+                                </Frame>
+                                <!--Creatore-->
+                                <Label Text="{Binding nomeCreatore}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" VerticalOptions="EndAndExpand"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </cards:CarouselView.ItemTemplate>
+                    <controls:IndicatorsControl SelectedIndicatorStyle="{StaticResource ActiveIndicator}" UnselectedIndicatorStyle="{StaticResource InactiveIndicator}" />
+                </cards:CarouselView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ActiveIndicator" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{x:Static local:Styles.TextColor}" />
+            </Style>
+            <Style x:Key="InactiveIndicator" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="OutlineColor" Value="{x:Static local:Styles.TextColor}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+</ContentPage>

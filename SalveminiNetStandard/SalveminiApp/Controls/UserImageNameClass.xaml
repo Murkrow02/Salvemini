@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:SalveminiApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" x:Class="SalveminiApp.Controls.UserImageNameClass">
+    <!--Profile view-->
+    <StackLayout>
+        <!--Image-->
+        <ffimageloading:CachedImage x:Name="userImg" LoadingPlaceholder="userPlaceholder" CacheType="All" >
+            <ffimageloading:CachedImage.Transformations>
+                <fftransformations:CircleTransformation />
+            </ffimageloading:CachedImage.Transformations>
+            <ffimageloading:CachedImage.GestureRecognizers>
+                <TapGestureRecognizer />
+            </ffimageloading:CachedImage.GestureRecognizers>
+        </ffimageloading:CachedImage>
+        <ActivityIndicator IsRunning="True" x:Name="loading"/>
+        <!--Nome-->
+        <patch:Label  x:Name="nameLbl" FontSize="Title" TextColor="{x:Static local:Styles.TextColor}" Lines="1" AutoFit="Width" HorizontalTextAlignment="Center" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+        <!--Classe-->
+        <Label x:Name="classLbl" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" />
+    </StackLayout>
+</ContentView>

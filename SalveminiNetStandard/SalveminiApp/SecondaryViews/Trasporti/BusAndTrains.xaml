@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Padding="20,10" Title="Trasporti" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.BusAndTrains">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="40">
+                <Frame IsClippedToBounds="True" HasShadow="False" Padding="10,0" CornerRadius="12" VerticalOptions="Start">
+                    <StackLayout Spacing="0" >
+                        <!--Bus-->
+                        <StackLayout Margin="-10,0" Padding="15"  Orientation="Horizontal">
+                            <Label FontSize="Large" Text="Bus" TextColor="{x:Static local:Styles.TextColor}" />
+                            <iconize:IconLabel Text="fas-bus" FontSize="Large" HorizontalOptions="EndAndExpand" TextColor="#F8BF03" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="bus_tapped" NumberOfTapsRequired="1"/>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                        <Frame HasShadow="False" BackgroundColor="{x:Static local:Styles.ObjectGray}" HeightRequest="1" Padding="0" />
+                        <!--Treni-->
+                        <StackLayout Margin="-10,0" Padding="15"  Orientation="Horizontal">
+                            <Label FontSize="Large" Text="Treni" TextColor="{x:Static local:Styles.TextColor}" />
+                            <iconize:IconLabel Text="fas-subway" FontSize="Large" HorizontalOptions="EndAndExpand" TextColor="#FC511A" />
+                             <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="treni_tapped" NumberOfTapsRequired="1"/>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                        <Frame HasShadow="False" BackgroundColor="{x:Static local:Styles.ObjectGray}" HeightRequest="1" Padding="0" />
+                        <!--Aliscafi-->
+                        <StackLayout  Margin="-10,0" Padding="15" Orientation="Horizontal">
+                            <Label FontSize="Large" Text="Aliscafi" TextColor="{x:Static local:Styles.TextColor}" />
+                            <iconize:IconLabel Text="fas-ship" FontSize="Large" HorizontalOptions="EndAndExpand" TextColor="#246BF2" />
+                             <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ali_tapped" NumberOfTapsRequired="1"/>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <!--<Frame HasShadow="False" CornerRadius="12" VerticalOptions="Start" Padding="2">
+                    <Button Clicked="changePref_Clicked" FontSize="Large" Text="Modifica tratta preferita" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.Apple}"/>
+                    </Frame>-->
+            </StackLayout>
+        </ScrollView>
+
+
+    </ContentPage.Content>
+</ContentPage>

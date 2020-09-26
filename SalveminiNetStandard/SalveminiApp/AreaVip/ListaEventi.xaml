@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" Title="Eventi sCoin" xmlns:local="clr-namespace:SalveminiApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  xmlns:this="clr-namespace:SalveminiApp.AreaVip" x:Class="SalveminiApp.AreaVip.ListaEventi">
+    <StackLayout Spacing="0" Padding="10,0" VerticalOptions="FillAndExpand">
+        <!--Lista-->
+        <ListView x:Name="eventsList" HasUnevenRows="true" ItemSelected="eventSelected" Header="" Footer="">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="5">
+                            <!--Title-->
+                            <Label Text="{Binding Nome}" FontSize="30" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" HorizontalTextAlignment="Start"/>
+                            <!--Valore-->
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Valore: " FontSize="Medium" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}"/>
+                                        <Span Text="{Binding Valore}" FontSize="Medium" TextColor="{x:Static local:Styles.TextColor}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <!--Attivo-->
+                            <Label IsVisible="{x:Static this:ListaEventi.ShowInfo}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Stato: " FontSize="Medium" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}"/>
+                                        <Span Text="{Binding AttivoString}" FontSize="Medium" TextColor="{x:Static local:Styles.TextColor}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <!--Codice-->
+                            <Label IsVisible="{x:Static this:ListaEventi.ShowInfo}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Codice: " FontSize="Medium" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}"/>
+                                        <Span Text="{Binding Codice}" FontSize="Medium" TextColor="{x:Static local:Styles.TextColor}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

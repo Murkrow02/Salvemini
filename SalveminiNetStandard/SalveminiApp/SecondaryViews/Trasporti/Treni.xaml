@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns:local="clr-namespace:SalveminiApp" xmlns:control="clr-namespace:Plugin.Segmented.Control;assembly=Plugin.Segmented" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Trasporti.Treni">
+    <ContentPage.Content>
+        <yummy:PancakeView BackgroundGradientStartColor="#FA8265" BackgroundGradientEndColor="#FF430A">
+            <StackLayout Spacing="20" x:Name="mainLayout" Padding="20, 10">
+                <StackLayout x:Name="headerLayout" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="0" Margin="-10,0">
+
+                    <!--X-->
+                    <iconize:IconButton BackgroundColor="Transparent" Text="fal-times" Clicked="Close_Page" TextColor="White" FontSize="30" WidthRequest="45" HorizontalOptions="Start"  />
+                    <!--Title-->
+                    <Label FontAttributes="Bold" TextColor="White" Text="Treni" FontSize="40" HorizontalOptions="FillAndExpand" />
+                    <!--Preferiti-->
+                    <iconize:IconButton BackgroundColor="Transparent" x:Name="starButton" Clicked="Starred_Clicked" Text="far-star" TextColor="White" FontSize="30" WidthRequest="55" HorizontalOptions="End" />
+                    <!--Safari icon-->
+                    <iconize:IconButton BackgroundColor="Transparent" Text="far-compass" TextColor="White" FontSize="30" WidthRequest="55" HorizontalOptions="End" Clicked="Safari_Clicked"/>
+                  
+                </StackLayout>
+                <StackLayout Spacing="10" Margin="20 ,0">
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Label HorizontalOptions="Start" Text="Da:" TextColor="White" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
+                        <Frame x:Name="stationFrame" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" CornerRadius="15" HasShadow="False" Padding="2, -1">
+                            <Picker Unfocused="picker_Unfocused" TextColor="{x:Static local:Styles.TextColor}" x:Name="stationPicker" HeightRequest="50" TitleColor="{x:Static local:Styles.TextColor}"  HorizontalOptions="FillAndExpand" FontSize="25" Title="Stazione" />
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Label HorizontalOptions="Start" Text="Verso:" TextColor="White" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
+                        <control:SegmentedControl OnSegmentSelected="TrenoSegment_OnSegmentSelected" SelectedSegment="0" x:Name="TrenoSegment" TintColor="White" SelectedTextColor="{x:Static local:Styles.TextColor}" >
+                            <control:SegmentedControl.Children>
+                                <control:SegmentedControlOption Text="Sorrento" />
+                                <control:SegmentedControlOption Text="Napoli" />
+                            </control:SegmentedControl.Children>
+                        </control:SegmentedControl>
+                    </StackLayout>
+                </StackLayout>
+                <Frame HasShadow="False" Padding="0" IsClippedToBounds="True" VerticalOptions="FillAndExpand" Margin="20 ,0" CornerRadius="20">
+                    <Grid>
+                        <ListView SeparatorVisibility="None" IsVisible="False" x:Name="treniList">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Padding="20, 0" Orientation="Horizontal">
+                                            <Label FontSize="25" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" Text="{Binding Partenza}" TextColor="{x:Static local:Styles.TextColor}" />
+                                            <StackLayout HorizontalOptions="Start" Spacing="1" Orientation="Horizontal">
+                                                <Frame CornerRadius="10" VerticalOptions="Center" Padding="5, 1" HasShadow="False" BackgroundColor="{x:Static local:Styles.ObjectGray}">
+                                                    <Label Text="D" HorizontalOptions="Center" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                                                </Frame>
+                                                <Frame IsVisible="{Binding DDVisibility}" CornerRadius="10" VerticalOptions="Center" Padding="5, 1" HasShadow="False" BackgroundColor="{x:Static local:Styles.ObjectGray}">
+                                                    <Label Text="D" HorizontalOptions="Center" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                                                </Frame>
+                                            </StackLayout>
+                                            <Label Text="{Binding FullVariazioni}" HorizontalOptions="EndAndExpand" VerticalOptions="Center" FontSize="15" FontAttributes="Bold" TextColor="{Binding VariazioniColor}" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <StackLayout x:Name="noTrainLayout" VerticalOptions="Center">
+                            <iconize:IconLabel Text="fas-subway" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" FontSize="40" />
+                            <Label Text="Seleziona degli orari" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" />
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </yummy:PancakeView>
+    </ContentPage.Content>
+</ContentPage>

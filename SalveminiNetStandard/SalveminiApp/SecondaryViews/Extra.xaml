@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Extra" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:countdown="clr-namespace:SalveminiApp.Helpers" xmlns:local="clr-namespace:SalveminiApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Extra">
+    <ScrollView>
+        <StackLayout x:Name="mainLayout" Spacing="15">
+
+            <!--CountDown-->
+            <StackLayout x:Name="secondLayout" Spacing="10" Margin="0,8">
+                <Label Text="Mancano" TextColor="{x:Static local:Styles.TextGray}" FontAttributes="Bold" FontSize="35" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
+                <countdown:CountDown x:Name="countDown"/>
+                <Label x:Name="wenEta" TextColor="{x:Static local:Styles.TextGray}" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
+                <Label Text="Sono esclusi dal conteggio i tuoi giorni di rotazione, le domeniche e le altre feste indicate dal calendario scolastico ufficiale" x:Name="noFestivi" TextColor="{x:Static local:Styles.TextGray}" FontSize="10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
+            </StackLayout>
+
+            <!--<Button Text="Flappy mimmo" Clicked="Flappy_Clicked"/>-->
+
+            <!--Random-->
+            <ScrollView>
+                <StackLayout Padding="20,0" Spacing="12" x:Name="widgetsLayout">
+
+                </StackLayout>
+            </ScrollView>
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

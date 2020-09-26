@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Nuovo evento" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:SalveminiApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.AreaVip.AddEvento">
+    <ScrollView>
+
+        <StackLayout Padding="10,15,10,0" Spacing="8">
+            <!--Event name-->
+            <Label Text="Nome dell'evento" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" HorizontalTextAlignment="Start"/>
+            <Entry Placeholder="Esempio: Assemblea 3 aprile" MaxLength="140" x:Name="eventName"/>
+            <!--Range-->
+            <Label Text="Raggio di attivazione" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" HorizontalTextAlignment="Start"/>
+            <Picker Title="Raggio di validità in metri" x:Name="raggioPicker" />
+            <!--Value-->
+            <Label Text="Valore in sCoin" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" HorizontalTextAlignment="Start"/>
+            <Picker Title="Quanto riceveranno gli utenti?" x:Name="valorePicker" />
+            <!--Confirm-->
+            <Button Text="Crea" BackgroundColor="{x:Static local:Styles.TextColor}" TextColor="White" Clicked="save_Clicked"/>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

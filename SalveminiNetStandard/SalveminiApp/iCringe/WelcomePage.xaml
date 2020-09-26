@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage BackgroundColor="{x:Static local:Styles.SecretsPrimary}" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.iCringe.WelcomePage">
+    <StackLayout Spacing="30" Padding="40,15,50,8">
+        <!--Title-->
+        <StackLayout>
+            <iconize:IconLabel Text="fal-user-secret" TextColor="{x:Static local:Styles.BGColor}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" FontSize="90"/>
+            <Label Text="Benvenuto su iCringe" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.BGColor}" FontSize="30" HorizontalTextAlignment="Center"/>
+        </StackLayout>
+
+        <!--Privacy-->
+        <StackLayout VerticalOptions="FillAndExpand">
+            <Label Text="Normative sulla privacy" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.BGColor}" FontSize="20" HorizontalTextAlignment="Center"/>
+            <Frame HasShadow="False" CornerRadius="12" Padding="8,0" VerticalOptions="FillAndExpand">
+                <ScrollView>
+                    <Label x:Name="privacyLabel" HorizontalTextAlignment="Center"/>
+                </ScrollView>
+            </Frame>
+        </StackLayout>
+
+        <!--Continue-->
+        <Button Clicked="close_Clicked" Text="Accetta e continua" FontSize="Large" BackgroundColor="{x:Static local:Styles.BGColor}" VerticalOptions="EndAndExpand" TextColor="{x:Static local:Styles.TextColor}" CornerRadius="12"/>
+    </StackLayout>
+</ContentPage>

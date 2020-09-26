@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Chi siamo" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.Team">
+    <ScrollView>
+        <StackLayout x:Name="layout" Spacing="10" Padding="10,10,10,0">
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Utenti" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:SalveminiApp" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.AreaVip.UtentiList">
+    <StackLayout Spacing="0" Padding="10,0" VerticalOptions="FillAndExpand">
+        <!--Search bar-->
+        <SearchBar Placeholder="Cerca utenti" VerticalOptions="Start" x:Name="searchBar" TextChanged="Search_Action" IsSpellCheckEnabled="False" />
+        <ContentView VerticalOptions="FillAndExpand">
+            <!--Lista-->
+            <ListView x:Name="utentiListCtrl" HasUnevenRows="true" ItemSelected="userSelected" Header="" Footer="">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout Padding="5" Orientation="Vertical">
+                                    <!--Nome-->
+                                    <Label FontSize="Medium" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="StartAndExpand" Text="{Binding nomeCognome}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" />
+                                    <!--Classe-->
+                                    <Label FontSize="Small" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="StartAndExpand" Text="{Binding classeCorso}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" />
+                                </StackLayout>
+                                <!--Stato-->
+                                <Label FontSize="Small" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="EndAndExpand" Text="{Binding StatoLabel}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentView>
+    </StackLayout>
+</ContentPage>

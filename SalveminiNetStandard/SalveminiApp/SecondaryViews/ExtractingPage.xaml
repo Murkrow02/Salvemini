@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Estrazione" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:patch="clr-namespace:Forms9Patch;assembly=Forms9Patch"  xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:local="clr-namespace:SalveminiApp"  xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" x:Class="SalveminiApp.SecondaryViews.ExtractingPage">
+    <StackLayout Spacing="30" x:Name="mainLayout" Padding="25,15,25,10">
+        <!--Layout-->
+        <StackLayout  VerticalOptions="Center">
+            <!--Image-->
+            <ffimageloading:CachedImage HeightRequest="125" WidthRequest="125" x:Name="userImg" Source="userPlaceholder" LoadingPlaceholder="imagePlaceholder" CacheType="Memory" >
+                <ffimageloading:CachedImage.Transformations>
+                    <fftransformations:CircleTransformation />
+                </ffimageloading:CachedImage.Transformations>
+                <ffimageloading:CachedImage.GestureRecognizers>
+                    <TapGestureRecognizer />
+                </ffimageloading:CachedImage.GestureRecognizers>
+            </ffimageloading:CachedImage>
+            <!--Nome-->
+            <patch:Label Text="Premi estrai per iniziare" x:Name="nameLbl" FontSize="Title" TextColor="{x:Static local:Styles.TextGray}" Lines="1" AutoFit="Width" HorizontalTextAlignment="Center" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+            <!--Next-->
+            <Button Padding="0" CornerRadius="12" HeightRequest="35" Text="Estrai" Clicked="extract_Clicked" BackgroundColor="#529FFF" TextColor="White" FontSize="25" Margin="45,0"/>
+        </StackLayout>
+        <!--Remove checkbox-->
+        <StackLayout  Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="5">
+            <patch:Label  Text="Ogni utente può essere estratto una sola volta" FontSize="18" TextColor="{x:Static local:Styles.TextColor}" Lines="1" AutoFit="Width" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+            <CheckBox CheckedChanged="switch_Toggled" x:Name="removeSwitch" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" IsChecked="True"/>
+        </StackLayout>
+        <!--Extracted list-->
+        <StackLayout>
+            <Label Text="Utenti estratti:"  x:Name="toExtract" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}"/>
+            <Frame IsClippedToBounds="True" Padding="0" Margin="0,0,0,15" HasShadow="False"  CornerRadius="10" VerticalOptions="Start">
+                <ListView SelectionMode="None" VerticalScrollBarVisibility="Never" x:Name="utentiListCtrl" Header="" Footer="">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="10">
+                                    <!--Nome-->
+                                    <Label FontSize="Medium" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="StartAndExpand" Text="{Binding Nome}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

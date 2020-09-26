@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Crea avviso" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.AreaVip.CreaAvviso">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Crea" Clicked="Crea_Clicked" x:Name="createBtn" />
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <StackLayout Padding="25,20,25,0">
+            <!--Notifica-->
+            <StackLayout Orientation="Horizontal">
+                <Label HorizontalOptions="FillAndExpand" Text="Invia notifica" FontSize="Title" TextColor="{x:Static local:Styles.TextColor}" />
+                <Switch HorizontalOptions="End" IsToggled="True" x:Name="pushSwitch" />
+            </StackLayout>
+            <!--Titolo-->
+            <inputLayout:SfTextInputLayout  x:Name="titoloEntry" FocusedColor="{x:Static local:Styles.VipPrimary}" Hint="Titolo" ContainerType="Outlined" OutlineCornerRadius="12">
+                <Entry x:Name="title" MaxLength="30" />
+            </inputLayout:SfTextInputLayout>
+            <!--Descrizione-->
+            <inputLayout:SfTextInputLayout  x:Name="descEntry" IsHintAlwaysFloated="True" FocusedColor="{x:Static local:Styles.VipPrimary}" Hint="Descrizione" ContainerType="Outlined" OutlineCornerRadius="12">
+                <Editor HeightRequest="200" x:Name="desc" MaxLength="3000" />
+            </inputLayout:SfTextInputLayout>
+            <!--Allegati-->
+            <Label HorizontalOptions="FillAndExpand" Text="Allegati" FontSize="Title" TextColor="{x:Static local:Styles.TextColor}" />
+            <Button Text="Aggiungi" TextColor="{x:Static local:Styles.Apple}" BackgroundColor="Transparent" HorizontalOptions="Start" Clicked="choosePhoto" />
+            <Label x:Name="imageLimitLbl" Text="Puoi aggiungere fino a 10 immagini!" FontSize="Medium" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.TextColor}" />
+            <Frame Padding="0" HasShadow="false" CornerRadius="13" BackgroundColor="#efefef" VerticalOptions="EndAndExpand">
+                <StackLayout VerticalOptions="FillAndExpand" Spacing="1">
+                    <iconize:IconButton Margin="10" x:Name="deleteView" Clicked="deleteOrView" FontSize="Large" HorizontalOptions="End" VerticalOptions="Start" Text="fas-trash" BackgroundColor="Transparent" TextColor="#e80000" />
+                    <ContentView VerticalOptions="FillAndExpand" Padding="5,0,5,0">
+                        <flv:FlowListView BackgroundColor="#efefef" FlowItemTapped="detailedPicture" VerticalOptions="End" FlowColumnCount="2" x:Name="imageAttach" SeparatorVisibility="None" HasUnevenRows="false" RowHeight="200" FlowColumnExpand="ProportionalLast">
+                            <flv:FlowListView.FlowColumnTemplate>
+                                <DataTemplate>
+                                    <ffimageloading:CachedImage DownsampleToViewSize="true" Source="{Binding imageSource}" Aspect="AspectFit" HorizontalOptions="FillAndExpand">
+                                        <ffimageloading:CachedImage.Transformations>
+                                            <fftransformations:RoundedTransformation Radius="15" CropWidthRatio="0" CropHeightRatio="0" BorderSize="4" BorderHexColor="efefef" />
+                                        </ffimageloading:CachedImage.Transformations>
+                                    </ffimageloading:CachedImage>
+                                </DataTemplate>
+                            </flv:FlowListView.FlowColumnTemplate>
+                        </flv:FlowListView>
+                    </ContentView>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

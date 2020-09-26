@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:SalveminiApp" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.Controls.Orario">
+    <StackLayout>
+        <!--Empty layout-->
+        <StackLayout Padding="8" IsVisible="false" x:Name="emptyLayout" VerticalOptions="Center">
+            <iconize:IconLabel Text="far-clock" VerticalOptions="Center"  TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="Center" FontSize="40" />
+            <Label FontSize="Small" Text="L'orario della tua classe non è stato trovato, chiedi ai tuoi rappresentanti di aggiungerlo o contattaci se sei un rappresentante" VerticalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="CenterAndExpand" Margin="5"/>
+        </StackLayout>
+        <!--Orario-->
+        <Frame x:Name="orarioFrame" IsVisible="False" Padding="20, 0,20,5" VerticalOptions="Start" IsClippedToBounds="True" BackgroundColor="White" CornerRadius="15" HasShadow="False">
+            <StackLayout BackgroundColor="White" Spacing="0">
+                <!--Header-->
+                <StackLayout Orientation="Horizontal" Margin="-5, 0" x:Name="orarioHeader">
+                    <!--Oggi + arrow-->
+                    <StackLayout Orientation="Horizontal" Spacing="5" Padding="0,20">
+                        <Label Text="Oggi" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" x:Name="orarioDay" />
+                        <iconize:IconLabel VerticalOptions="CenterAndExpand" Text="fas-caret-down" BackgroundColor="Transparent" TextColor="{x:Static local:Styles.TextColor}" FontSize="Large" x:Name="arrowDown"/>
+                        <lottie:AnimationView WidthRequest="26" HeightRequest="26" x:Name="hintOrario" Rotation="180" BackgroundColor="Transparent" HorizontalOptions="Start" Animation="Lotties/rightArrow.json"  AutoPlay="true" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ChangeDay_Clicked"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <!--Sede-->
+                    <Label x:Name="sedeLbl" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" />
+                </StackLayout>
+                <!--Lista Materie-->
+                <StackLayout x:Name="materieLayout" Spacing="2">
+
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentView>
