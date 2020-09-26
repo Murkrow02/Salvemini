@@ -34,6 +34,7 @@
     <AndroidLinkMode>None</AndroidLinkMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+<<<<<<< HEAD
     <DebugType>
     </DebugType>
     <Optimize>true</Optimize>
@@ -56,6 +57,16 @@
     <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidSupportedAbis>armeabi-v7a;arm64-v8a;x86;x86_64</AndroidSupportedAbis>
+=======
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+>>>>>>> parent of ef6d991... Check2
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -110,6 +121,7 @@
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <ProjectReference Include="..\SalveminiApp\SalveminiApp.csproj">
       <Project>{7283F303-F900-4E5E-AC42-24FE61D2F793}</Project>
@@ -262,3 +274,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
+=======
+ <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+</Project>
+>>>>>>> parent of ef6d991... Check2
