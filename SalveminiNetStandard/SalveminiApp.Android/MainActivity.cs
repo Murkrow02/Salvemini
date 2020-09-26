@@ -27,15 +27,15 @@ namespace SalveminiApp.Droid
             base.Window.RequestFeature(WindowFeatures.ActionBar);
             // Name of the MainActivity theme you had there before.
             // Or you can use global::Android.Resource.Style.ThemeHoloLight
-            base.SetTheme(Salvemini.Droid.Resource.Style.MainTheme);
+            base.SetTheme(SalveminiApp.Droid.Resource.Style.MainTheme);
 
             //Get Screen Size
             var metrics = Resources.DisplayMetrics;
             App.ScreenHeight = ConvertPixelsToDp(metrics.HeightPixels);
             App.ScreenWidth = ConvertPixelsToDp(metrics.WidthPixels);
 
-            TabLayoutResource = Salvemini.Droid.Resource.Layout.Tabbar;
-            ToolbarResource = Salvemini.Droid.Resource.Layout.Toolbar;    
+            TabLayoutResource = SalveminiApp.Droid.Resource.Layout.Tabbar;
+            ToolbarResource = SalveminiApp.Droid.Resource.Layout.Toolbar;    
 
             base.OnCreate(savedInstanceState);
 
