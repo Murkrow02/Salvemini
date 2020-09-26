@@ -34,15 +34,26 @@
     <AndroidLinkMode>None</AndroidLinkMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>portable</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AndroidManagedSymbols>true</AndroidManagedSymbols>
-    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-  </PropertyGroup>
+   <DebugType></DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+        <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+        <AndroidDexTool>d8</AndroidDexTool>
+        <AndroidLinkTool>r8</AndroidLinkTool>
+        <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+        <BundleAssemblies>True</BundleAssemblies>
+        <AotAssemblies>True</AotAssemblies>
+        <EnableLLVM>True</EnableLLVM>
+        <AndroidPackageFormat>aab</AndroidPackageFormat>
+        <AndroidEnableProguard>True</AndroidEnableProguard>
+        <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
+        <AndroidUseAapt2>true</AndroidUseAapt2>
+        <AndroidSupportedAbis>armeabi-v7a;arm64-v8a;x86;x86_64</AndroidSupportedAbis>
+    </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="System" />
@@ -86,6 +97,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SalveminiApp\SalveminiApp.csproj">
+      <Project>{7283F303-F900-4E5E-AC42-24FE61D2F793}</Project>
+      <Name>SalveminiApp</Name>
+    </ProjectReference>
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
