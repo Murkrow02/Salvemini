@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using MarcTron.Plugin;
 using Rg.Plugins.Popup.Extensions;
 using Rg.Plugins.Popup.Pages;
 using Xamarin.Essentials;
@@ -15,7 +14,6 @@ namespace SalveminiApp.iCringe
         public NewPost()
         {
             InitializeComponent();
-            CrossMTAdmob.Current.LoadInterstitial(AdsHelper.InterstitialId());
         }
 
         public async void send_Clicked(object sender, EventArgs e)
@@ -39,14 +37,12 @@ namespace SalveminiApp.iCringe
             sendBtn.IsEnabled = false;
 
             //Post question
-            var response = await App.Cringe.PostDomanda(domanda.Text, switchAnonimo.IsToggled);
+            var response = await App.Cringe.PostDomanda(domanda.Text);
             if (response[0] == "Successo")
             {
                 await DisplayAlert("Successo", response[1], "Ok");
                 await Navigation.PopPopupAsync();
 
-                //Show ad
-                await showAd();
             }
             else
             {
@@ -57,11 +53,6 @@ namespace SalveminiApp.iCringe
             loadingIndicator.IsRunning = false;
             loadingIndicator.IsVisible = false;
             sendBtn.IsEnabled = true;
-        }
-
-        async Task showAd()
-        {
-            CrossMTAdmob.Current.ShowInterstitial();
         }
 
     }

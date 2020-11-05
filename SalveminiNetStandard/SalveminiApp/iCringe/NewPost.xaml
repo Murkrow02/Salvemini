@@ -8,11 +8,7 @@
             <patch:Label Text="Nuovo post" TextColor="{x:Static local:Styles.BGColor}" FontSize="32" Lines="1" AutoFit="Width" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
 
             <StackLayout>
-                <!--Anonimo?-->
-                <StackLayout Orientation="Horizontal" Spacing="2">
-                    <patch:Label Text="Pubblica in forma anonima" VerticalOptions="CenterAndExpand" TextColor="{x:Static local:Styles.BGColor}" FontSize="18" Lines="1" AutoFit="Width" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" />
-                    <Switch x:Name="switchAnonimo" OnColor="#00cbe6" IsToggled="True" VerticalOptions="CenterAndExpand"/>
-                </StackLayout>
+             
                 <!--Domanda-->
                 <inputLayout:SfTextInputLayout UnfocusedColor="{x:Static local:Styles.BGColor}" ShowCharCount="true" CharMaxLength="2000" x:Name="compitiEntry" FocusedColor="{x:Static local:Styles.BGColor}" InputViewPadding="10, 5" OutlineCornerRadius="15" Hint="Tutto quello che vuoi" ContainerType="Outlined">
                     <Editor AutoSize="TextChanges" TextColor="{x:Static local:Styles.BGColor}"  PlaceholderColor="Gray" x:Name="domanda"/>

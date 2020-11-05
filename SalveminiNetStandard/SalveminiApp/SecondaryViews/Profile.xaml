@@ -27,7 +27,7 @@
             </StackLayout>
 
             <!--Rappresentanti-->
-            <StackLayout>
+            <!--<StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <iconize:IconLabel Text="fas-users" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" />
                     <Label Text="Rappresentanti di classe" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center" FontAttributes="Bold" />
@@ -35,7 +35,7 @@
                 <Frame Padding="0" IsClippedToBounds="True" HasShadow="False" CornerRadius="12" VerticalOptions="Start">
                     <StackLayout x:Name="rapprLayout" Spacing="0" IsEnabled="False" Opacity="0.6" />
                 </Frame>
-            </StackLayout>
+            </StackLayout>-->
 
             <!--Vip-->
             <StackLayout>

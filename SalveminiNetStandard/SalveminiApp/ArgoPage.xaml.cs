@@ -24,8 +24,8 @@ namespace SalveminiApp
             appearedTimes++;
 
             //Show agenda only if orario downloaded
-            if (Preferences.Get("OrarioSaved", false))
-                agendaFrame.IsVisible = true;
+            //if (Preferences.Get("OrarioSaved", false))
+            //    agendaFrame.IsVisible = true;
 
             //Check internet status
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)

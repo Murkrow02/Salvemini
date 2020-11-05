@@ -11,7 +11,6 @@ using Plugin.Toasts;
 using PanCardView.Droid;
 using Acr.UserDialogs;
 using Xamarin.Forms;
-using Android.Gms.Ads;
 using System.Diagnostics;
 using Plugin.Permissions;
 using Stormlion.PhotoBrowser.Droid;
@@ -35,15 +34,15 @@ namespace SalveminiApp.Droid
             App.ScreenWidth = ConvertPixelsToDp(metrics.WidthPixels);
 
             TabLayoutResource = SalveminiApp.Droid.Resource.Layout.Tabbar;
-            ToolbarResource = SalveminiApp.Droid.Resource.Layout.Toolbar;    
+            ToolbarResource = SalveminiApp.Droid.Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
 
             //Register OneSignal License
             OneSignal.Current.StartInit("a85553ca-c1fe-4d93-a02f-d30bf30e2a2a").EndInit();
 
-             
-             
+
+
 
             //Init Popups
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
@@ -68,11 +67,6 @@ namespace SalveminiApp.Droid
             //DependencyService.Register<NotificationScheduler>();
             DependencyService.Register<PhotoBrowserImplementation>();
 
-
-            //Initialize ads
-            MobileAds.Initialize(ApplicationContext, "ca-app-pub-2688730930606353~9126211172");
-
-
             LoadApplication(new App());
         }
 
@@ -85,10 +79,10 @@ namespace SalveminiApp.Droid
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
- 
+
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        
+
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }

@@ -32,7 +32,6 @@
             <!--Layout-->
             <StackLayout Padding="15,10,15,20" Spacing="15" x:Name="fullLayout">
                 <!--Orario-->
-                <Controls:Orario x:Name="orario"/>
                 <!--WidgetList-->
                 <StackLayout VerticalOptions="Start">
                     <!--Widgets-->

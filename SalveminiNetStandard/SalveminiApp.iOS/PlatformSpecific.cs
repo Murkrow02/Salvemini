@@ -109,8 +109,8 @@ namespace SalveminiApp.iOS
         //        });
         //    }
 
-        //    public void SetTabBar(IconTabbedPage tabpage)
-        //    { }
+           public void SetTabBar(Xamarin.Forms.TabbedPage tabpage)
+           { }
 
         //    public float GetBottomSafeAreInset()
         //    {

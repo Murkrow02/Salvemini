@@ -59,9 +59,9 @@ namespace SalveminiApp.SecondaryViews
             //    persLayout.Children.Add(new Label { Text = "Aggiorna ad iOS 13 per usare le scorciatoie di Siri", Margin = 5, TextColor = Styles.TextGray, FontSize = 10, HorizontalTextAlignment = TextAlignment.Center });
             //}
 
-            var countdown = new Helpers.PushCell { Title = "Countdown", Separator = "si", Push = new SecondaryViews.CountdownSettings() };
-            countdown.GestureRecognizers.Add(tapGestureRecognizer);
-            persLayout.Children.Add(countdown);
+            //var countdown = new Helpers.PushCell { Title = "Countdown", Separator = "si", Push = new SecondaryViews.CountdownSettings() };
+            //countdown.GestureRecognizers.Add(tapGestureRecognizer);
+            //persLayout.Children.Add(countdown);
             var profileImg = new Helpers.PushCell { Title = "Immagine di profilo", Separator = "No" };
             profileImg.GestureRecognizers.Add(tapGestureRecognizer);
             persLayout.Children.Add(profileImg);
@@ -78,9 +78,9 @@ namespace SalveminiApp.SecondaryViews
             contactLayout.Children.Add(Mail);
 
             //Rappresentanti
-            var orariClasse = new Helpers.PushCell { Title = "Modifica orario", Separator = "no", Push = new AreaVip.CreaOrario(Preferences.Get("Classe", 0).ToString() + Preferences.Get("Corso", "")) };
-            orariClasse.GestureRecognizers.Add(tapGestureRecognizer);
-            rapprLayout.Children.Add(orariClasse);
+            //var orariClasse = new Helpers.PushCell { Title = "Modifica orario", Separator = "no", Push = new AreaVip.CreaOrario(Preferences.Get("Classe", 0).ToString() + Preferences.Get("Corso", "")) };
+            //orariClasse.GestureRecognizers.Add(tapGestureRecognizer);
+            //rapprLayout.Children.Add(orariClasse);
 
             //Vip
             var avviso = new Helpers.PushCell { Title = "Crea avviso", Separator = "si", Push = new AreaVip.CreaAvviso() };
@@ -92,20 +92,20 @@ namespace SalveminiApp.SecondaryViews
             var utenti = new Helpers.PushCell { Title = "Controlla utenti", Separator = "si", Push = new AreaVip.UtentiList(false) };
             utenti.GestureRecognizers.Add(tapGestureRecognizer);
             vipLayout.Children.Add(utenti);
-            var evento = new Helpers.PushCell { Title = "Crea evento sCoin", Separator = "si", Push = new AreaVip.AddEvento() };
-            evento.GestureRecognizers.Add(tapGestureRecognizer);
-            vipLayout.Children.Add(evento);
-            var eventi = new Helpers.PushCell { Title = "Visualizza eventi sCoin", Separator = "si", Push = new AreaVip.ListaEventi(true) };
-            eventi.GestureRecognizers.Add(tapGestureRecognizer);
-            vipLayout.Children.Add(eventi);
+            //var evento = new Helpers.PushCell { Title = "Crea evento sCoin", Separator = "si", Push = new AreaVip.AddEvento() };
+            //evento.GestureRecognizers.Add(tapGestureRecognizer);
+            //vipLayout.Children.Add(evento);
+            //var eventi = new Helpers.PushCell { Title = "Visualizza eventi sCoin", Separator = "si", Push = new AreaVip.ListaEventi(true) };
+            //eventi.GestureRecognizers.Add(tapGestureRecognizer);
+            //vipLayout.Children.Add(eventi);
             var sondaggio = new Helpers.PushCell { Title = "Crea sondaggio", Separator = "no", Push = new AreaVip.CreaSondaggio() };
             sondaggio.GestureRecognizers.Add(tapGestureRecognizer);
             vipLayout.Children.Add(sondaggio);
 
             //SuperVip
-            var orari = new Helpers.PushCell { Title = "Crea orario", Separator = "si", Push = new AreaVip.CreaOrario() };
-            orari.GestureRecognizers.Add(tapGestureRecognizer);
-            superVipLayout.Children.Add(orari);
+            //var orari = new Helpers.PushCell { Title = "Crea orario", Separator = "si", Push = new AreaVip.CreaOrario() };
+            //orari.GestureRecognizers.Add(tapGestureRecognizer);
+            //superVipLayout.Children.Add(orari);
             var offerta = new Helpers.PushCell { Title = "Crea offerta", Separator = "si", Push = new AreaVip.CreaOfferta() };
             offerta.GestureRecognizers.Add(tapGestureRecognizer);
             superVipLayout.Children.Add(offerta);
@@ -121,9 +121,9 @@ namespace SalveminiApp.SecondaryViews
             var giornalino = new Helpers.PushCell { Title = "Carica giornalino", Separator = "si" };
             giornalino.GestureRecognizers.Add(tapGestureRecognizer);
             superVipLayout.Children.Add(giornalino);
-            var iCringe = new Helpers.PushCell { Title = "iCringe", Separator = "si", Push = new AreaVip.ApprovaCringe() };
-            iCringe.GestureRecognizers.Add(tapGestureRecognizer);
-            superVipLayout.Children.Add(iCringe);
+            //var iCringe = new Helpers.PushCell { Title = "iCringe", Separator = "si", Push = new AreaVip.ApprovaCringe() };
+            //iCringe.GestureRecognizers.Add(tapGestureRecognizer);
+            //superVipLayout.Children.Add(iCringe);
             //var accediCon = new Helpers.PushCell { Title = "Controlla utenti", Separator = "no", Push = new AreaVip.UtentiList(true) };
             //accediCon.GestureRecognizers.Add(tapGestureRecognizer);
             //superVipLayout.Children.Add(accediCon);

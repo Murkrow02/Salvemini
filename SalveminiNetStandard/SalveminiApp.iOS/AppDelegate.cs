@@ -14,7 +14,6 @@ using Xamarin.Forms;
 using PanCardView.iOS;
 using System.Threading.Tasks;
 using IntentsUI;
-using Google.MobileAds;
 
 namespace SalveminiApp.iOS
 {
@@ -77,8 +76,7 @@ namespace SalveminiApp.iOS
             // Register the notification dependency.  Don't forget to do this.
             //DependencyService.Register<NotificationScheduler>();
 
-            //Initialize ads
-            MobileAds.SharedInstance.Start(CompletionHandler);
+      
 
 
             LoadApplication(new App());
@@ -101,10 +99,6 @@ namespace SalveminiApp.iOS
             }
             return base.FinishedLaunching(app, options);
         }
-
-		//Ads stuff
-		private void CompletionHandler(InitializationStatus status) { }
-
 
 
         //public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)

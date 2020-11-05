@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using SalveminiApp.RestApi;
-using MarcTron.Plugin;
 using System.Diagnostics;
 using System.Threading.Tasks;
 namespace SalveminiApp.iCringe
@@ -79,13 +78,7 @@ namespace SalveminiApp.iCringe
                 return;
             }
 
-            //load interstitial
-            if (!fromNewComment)
-            {
-                CrossMTAdmob.Current.LoadInterstitial(AdsHelper.InterstitialId());
-                CrossMTAdmob.Current.OnInterstitialLoaded += Current_OnInterstitialLoaded;
-                fromNewComment = false;
-            }
+           
 
             //Refresh list
             commentsList.IsRefreshing = true;
@@ -140,17 +133,6 @@ namespace SalveminiApp.iCringe
                 //Refresh if success
                 fromNewComment = true;
                 OnAppearing();
-
-                //Show interstitial
-                if (CrossMTAdmob.Current.IsInterstitialLoaded())
-                {
-                    Pushed = true;
-                    CrossMTAdmob.Current.ShowInterstitial(); return;
-                }
-                else
-                {
-                    CrossMTAdmob.Current.LoadInterstitial(AdsHelper.InterstitialId());
-                }
 
                 //Show response
                 Costants.showToast(response[1]);

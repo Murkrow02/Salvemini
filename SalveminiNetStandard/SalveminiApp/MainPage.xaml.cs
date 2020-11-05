@@ -67,7 +67,7 @@ namespace SalveminiApp
             });
 
             //Get orario cached
-            classeCorso = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
+            //classeCorso = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
 
             loadIndexCache();
 
@@ -91,7 +91,7 @@ namespace SalveminiApp
                 return;
 
             //Load navigation pages to be faster
-            await Task.Run((Action)loadNavigationPages);
+          //  await Task.Run((Action)loadNavigationPages);
 
             if (appearedTimes == 0)
                 (TabPage.Argo.RootPage as ArgoPage).initializeInterface();
@@ -126,22 +126,22 @@ namespace SalveminiApp
                 registro.GestureRecognizers.Add(tapGestureRecognizer);
 
                 //Trasporti
-                var trasporti = new WidgetGradient { Title = "Trasporti", SubTitle = await getNextTrain(), Icon = "fas-subway", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order = 3 };
-                trasporti.GestureRecognizers.Add(tapGestureRecognizer);
-                widgets.Add(trasporti);
+                //var trasporti = new WidgetGradient { Title = "Trasporti", SubTitle = await getNextTrain(), Icon = "fas-subway", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order = 3 };
+                //trasporti.GestureRecognizers.Add(tapGestureRecognizer);
+                //widgets.Add(trasporti);
 
 
                 //Card
-                var card = new WidgetGradient { Title = "SalveminiCard", SubTitle = "Visualizza tutti i vantaggi esclusivi per gli studenti del Salvemini", Icon = "fas-credit-card", StartColor = "B487FD", EndColor = "FA6FFA", Push = new SecondaryViews.SalveminiCard(), Order = 7 };
-                card.GestureRecognizers.Add(tapGestureRecognizer);
+                //var card = new WidgetGradient { Title = "SalveminiCard", SubTitle = "Visualizza tutti i vantaggi esclusivi per gli studenti del Salvemini", Icon = "fas-credit-card", StartColor = "B487FD", EndColor = "FA6FFA", Push = new SecondaryViews.SalveminiCard(), Order = 7 };
+                //card.GestureRecognizers.Add(tapGestureRecognizer);
 
                 //Extra
-                var extra = new WidgetGradient { Title = "Extra", SubTitle = "Esplora funzioni aggiuntive", Icon = "fas-star", StartColor = "B487FD", EndColor = "FA6FFA", Order = 6 };
-                extra.GestureRecognizers.Add(tapGestureRecognizer);
+                //var extra = new WidgetGradient { Title = "Extra", SubTitle = "Esplora funzioni aggiuntive", Icon = "fas-star", StartColor = "B487FD", EndColor = "FA6FFA", Order = 6 };
+                //extra.GestureRecognizers.Add(tapGestureRecognizer);
 
 
                 //Initialize list with first widgets
-                widgets.Add(registro); widgets.Add(card); widgets.Add(extra);
+                widgets.Add(registro); 
                 OrderWidgets(false); //uncomment to fast load initial widgets
 
                 //Check Internet
@@ -166,7 +166,7 @@ namespace SalveminiApp
                 await Task.Run((Action)GetArgoIndex);
 
                 //Update orario in background
-                await Task.Run((Action)updateOrario);
+                //await Task.Run((Action)updateOrario);
 
                 //Get index from api call
                 var tempIndex = await App.Index.GetIndex();
@@ -293,15 +293,15 @@ namespace SalveminiApp
                 }
 
                 //Update orari if new version detected
-                if (Index.OrarioTrasportiVersion > Preferences.Get("OrarioTrasportiVersion", 0))
-                {
-                    bool successTreni = await App.Treni.GetTrainJson();
-                    if (successTreni)
-                    {
-                        Preferences.Set("OrarioTrasportiVersion", Index.OrarioTrasportiVersion);
-                        //await getNextTrain();
-                    }
-                }
+                //if (Index.OrarioTrasportiVersion > Preferences.Get("OrarioTrasportiVersion", 0))
+                //{
+                //    bool successTreni = await App.Treni.GetTrainJson();
+                //    if (successTreni)
+                //    {
+                //        Preferences.Set("OrarioTrasportiVersion", Index.OrarioTrasportiVersion);
+                //        //await getNextTrain();
+                //    }
+                //}
 
                 //Check app version
                 var appversion = Convert.ToDecimal(VersionTracking.CurrentVersion);
@@ -479,6 +479,21 @@ namespace SalveminiApp
         //Push to profile page
         void profilePush(object sender, System.EventArgs e)
         {
+            //PROFILE
+            //Create new navigation page
+            profilePage = new Xamarin.Forms.NavigationPage(new SecondaryViews.Profile());
+            profilePage.BarTextColor = Styles.TextColor;
+            profilePage.BarBackgroundColor = Styles.BGColor;
+
+            //Add disappearing event
+            profilePage.Disappearing += ModalPush_Disappearing;
+
+            //Add toolbaritem to close page
+            var close = new ToolbarItem { Text = "Annulla" };
+            close.Clicked += ModalPush_Disappearing;
+            profilePage.ToolbarItems.Add(close);
+
+            profilePage.BarTextColor = Styles.TextColor;
             Navigation.PushModalAsync(profilePage);
         }
 
@@ -512,7 +527,7 @@ namespace SalveminiApp
             //Order by user order
             widgets = widgets.OrderBy(x => x.Order).ToList();
             //Add widgets to list
-            widgetsLayout.Children.AddRange(widgets);
+            widgetsLayout.Children.AddRange(widgets.ToList());
             //Add final space
             widgetsLayout.Children.Add(new Xamarin.Forms.ContentView { WidthRequest = 5 });
 
@@ -568,69 +583,69 @@ namespace SalveminiApp
         }
 
 
-        public async void updateOrario()
-        {
-            //Download orario
-            var data = await App.Orari.GetOrario(classeCorso);
+        //public async void updateOrario()
+        //{
+        //    //Download orario
+        //    var data = await App.Orari.GetOrario(classeCorso);
 
-            //Failed to get
-            if (data.Message != null)
-            {
-                if (data.Message == "L'orario della classe non è stato trovato")
-                {
-                    orario.ShowPlaceholder = true;
-                    return;
-                }
-                Costants.showToast(data.Message);
-                orario.ShowPlaceholder = false;
-                orario.Lezioni = new List<RestApi.Models.Lezione>(); return;
-            }
+        //    //Failed to get
+        //    if (data.Message != null)
+        //    {
+        //        if (data.Message == "L'orario della classe non è stato trovato")
+        //        {
+        //            orario.ShowPlaceholder = true;
+        //            return;
+        //        }
+        //        Costants.showToast(data.Message);
+        //        orario.ShowPlaceholder = false;
+        //        orario.Lezioni = new List<RestApi.Models.Lezione>(); return;
+        //    }
 
-            //Set null if error occourred
-            if (data.Data == null) { orario.Lezioni = new List<RestApi.Models.Lezione>(); return; }
+        //    //Set null if error occourred
+        //    if (data.Data == null) { orario.Lezioni = new List<RestApi.Models.Lezione>(); return; }
 
-            //Update lezioni
-            Preferences.Set("OrarioSaved", true);
-            orario.Lezioni = data.Data as List<RestApi.Models.Lezione>;
+        //    //Update lezioni
+        //    Preferences.Set("OrarioSaved", true);
+        //    orario.Lezioni = data.Data as List<RestApi.Models.Lezione>;
 
-            //Show agenda if hidden bug (usually on first time)
-            MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "showAgenda");
+        //    //Show agenda if hidden bug (usually on first time)
+        //    MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "showAgenda");
 
 
-            ////Add siri shortcut
-            //if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
-            //    return; //Pre ios 13 can't use this :(
+        //    ////Add siri shortcut
+        //    //if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+        //    //    return; //Pre ios 13 can't use this :(
 
-            ////Check if intent is already added or user doesen't want to add it
-            //if (Preferences.Get("OrarioSiriSet", false) || Preferences.Get("DontShowSiriWidget", false))
-            //    return;
+        //    ////Check if intent is already added or user doesen't want to add it
+        //    //if (Preferences.Get("OrarioSiriSet", false) || Preferences.Get("DontShowSiriWidget", false))
+        //    //    return;
 
-            ////Save values for siri intent
-            //var defaults = new NSUserDefaults("group.com.codex.SalveminiApp", NSUserDefaultsType.SuiteName);
-            //defaults.AddSuite("group.com.codex.SalveminiApp");
-            //defaults.SetString(classeCorso, new NSString("SiriClass"));
+        //    ////Save values for siri intent
+        //    //var defaults = new NSUserDefaults("group.com.codex.SalveminiApp", NSUserDefaultsType.SuiteName);
+        //    //defaults.AddSuite("group.com.codex.SalveminiApp");
+        //    //defaults.SetString(classeCorso, new NSString("SiriClass"));
 
-            ////Create intent
-            //var orarioIntent = new OrarioIntent();
-            //orarioIntent.SuggestedInvocationPhrase = "Orario di domani";
-            //INShortcut shortcut = new INShortcut(orarioIntent);
+        //    ////Create intent
+        //    //var orarioIntent = new OrarioIntent();
+        //    //orarioIntent.SuggestedInvocationPhrase = "Orario di domani";
+        //    //INShortcut shortcut = new INShortcut(orarioIntent);
 
-            //Device.BeginInvokeOnMainThread(() =>
-            //{
-            //    var vc = UIApplication.SharedApplication.KeyWindow.RootViewController;
-            //    var popup = new iOS.SiriShortcutPopup(shortcut, "Orario", false);
-            //    vc.PresentViewController(popup, true, null);
+        //    //Device.BeginInvokeOnMainThread(() =>
+        //    //{
+        //    //    var vc = UIApplication.SharedApplication.KeyWindow.RootViewController;
+        //    //    var popup = new iOS.SiriShortcutPopup(shortcut, "Orario", false);
+        //    //    vc.PresentViewController(popup, true, null);
 
-            //    //vc.View.AddSubview(popup.View);
-            //    popup.DidMoveToParentViewController(vc);
+        //    //    //vc.View.AddSubview(popup.View);
+        //    //    popup.DidMoveToParentViewController(vc);
 
-            //    var height = vc.View.Frame.Height;
-            //    var width = vc.View.Frame.Width;
-            //    popup.View.Frame = new CoreGraphics.CGRect(0, vc.View.Frame.Y, width, height);
+        //    //    var height = vc.View.Frame.Height;
+        //    //    var width = vc.View.Frame.Width;
+        //    //    popup.View.Frame = new CoreGraphics.CGRect(0, vc.View.Frame.Y, width, height);
 
-            //});
+        //    //});
 
-        }
+        //}
 
 
 
@@ -723,7 +738,7 @@ namespace SalveminiApp
 
         public void loadIndexCache()
         {
-            orario.ClasseCorso = classeCorso;
+            //orario.ClasseCorso = classeCorso;
 
             //Get index cache
             var IndexCache = CacheHelper.GetCache<RestApi.Models.Index>("Index");

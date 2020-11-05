@@ -9,8 +9,6 @@ using Forms9Patch;
 using System.Linq;
 using Plugin.Iconize;
 using System.Collections.ObjectModel;
-using MarcTron.Plugin.Controls;
-using MarcTron.Plugin;
 namespace SalveminiApp.iCringe
 {
     public partial class Home : ContentPage
@@ -27,9 +25,6 @@ namespace SalveminiApp.iCringe
             if (cachedPosts != null)
                 postsList.ItemsSource = cachedPosts;
 
-            //Set ad source
-            MTAdView ad = new MTAdView { AdsId = AdsHelper.BannerId(), PersonalizedAds = true };
-            mainLayout.Children.Insert(0, ad);
 
             postsList.HeightRequest = App.ScreenHeight;
 
@@ -52,8 +47,8 @@ namespace SalveminiApp.iCringe
             appearedTimes++;
 
             //Detect firstTime
-            if (Preferences.Get("firstTimeCringe", true))
-                await Navigation.PushModalAsync(new WelcomePage());
+            //if (Preferences.Get("firstTimeCringe", true))
+            //    await Navigation.PushModalAsync(new WelcomePage());
 
             //Detect internet connection
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
@@ -72,7 +67,7 @@ namespace SalveminiApp.iCringe
             var posts_ = await App.Cringe.GetFeed(-1);
 
             //Error
-            if (Posts == null)
+            if (posts_ == null)
             {
                 Costants.showToast("Si è verificato un errore, riprova più tardi o contattaci se il problema persiste");
                 postsList.IsRefreshing = false;

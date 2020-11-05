@@ -87,11 +87,11 @@ namespace SalveminiApp.Droid
         //    return 0;
         //}
         //public void AnimateKeyboard(Xamarin.Forms.Frame frame, Syncfusion.ListView.XForms.SfListView list) { }
-        //public void SetTabBar(IconTabbedPage tabpage)
-        //{
-        //    tabpage.On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
-        //    tabpage.On<Xamarin.Forms.PlatformConfiguration.Android>().DisableSwipePaging();
-        //}
+        public void SetTabBar(Xamarin.Forms.TabbedPage tabpage)
+        {
+            tabpage.On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
+            tabpage.On<Xamarin.Forms.PlatformConfiguration.Android>().DisableSwipePaging();
+        }
 
         //public void AnimateKeyboard(Frame frame, SfListView list, Frame topFrame)
         //{

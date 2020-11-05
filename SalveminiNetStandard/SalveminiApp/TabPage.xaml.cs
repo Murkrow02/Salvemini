@@ -30,7 +30,7 @@ namespace SalveminiApp
         };
 
         //iCringe
-        public static Helpers.CustomNavigationPage Family = new Helpers.CustomNavigationPage(new iCringe.Home())
+        public static Helpers.CustomNavigationPage iCringe = new Helpers.CustomNavigationPage(new iCringe.Home())
         {
             BarTextColor = Styles.BGColor,
             BarBackgroundColor = Styles.SecretsPrimary,
@@ -39,15 +39,18 @@ namespace SalveminiApp
         };
 
 
-        public TabPage(int selectedPage = 0)
+        public TabPage(int selectedPage = 1)
         {
             InitializeComponent();
+
+            //Configure pages
+            DependencyService.Get<IPlatformSpecific>().SetTabBar(this);
 
             //Initialize Bar
             BarTextColor = Styles.TextColor;
 
             //Add Children
-            //Children.Add(Family);
+            Children.Add(iCringe);
             Children.Add(Home);
             Children.Add(Argo);
 
@@ -63,9 +66,7 @@ namespace SalveminiApp
                 SelectedTabColor = Styles.TextColor;
 
             }
-#warning do this
-            //On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
-            //On<Xamarin.Forms.PlatformConfiguration.Android>().DisableSwipePaging();
+
         }
 
         protected override void OnCurrentPageChanged()
@@ -78,8 +79,20 @@ namespace SalveminiApp
             {
                 switch (index)
                 {
-
                     case 0:
+                        //Home
+                        if (Device.RuntimePlatform == Device.iOS)
+                            MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar.jpg");
+                        else
+                        {
+                            //if(MainPage.appearedTimes > 0)
+                            //((Children[0] as Helpers.CustomNavigationPage).RootPage as MainPage).AndroidFix();
+                        }
+                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "iCringeFill.png";
+                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBar.png";
+                        (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
+                        break;
+                    case 1:
                         //Home
 if(Device.RuntimePlatform == Device.iOS)
                         MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar.jpg");
@@ -88,16 +101,17 @@ if(Device.RuntimePlatform == Device.iOS)
                             //if(MainPage.appearedTimes > 0)
                             //((Children[0] as Helpers.CustomNavigationPage).RootPage as MainPage).AndroidFix();
                         }
-                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
-                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
+                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "iCringe.png";
+                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
+                        (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
                         break;
-                    case 1:
+                    case 2:
                         //Argo
 if(Device.RuntimePlatform == Device.iOS)
                         MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar.jpg");
-
-                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
-                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarArgo.png";
+                        (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "iCringe.png";
+                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
+                        (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarArgo.png";
                         break;
 
 

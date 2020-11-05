@@ -15,9 +15,9 @@ namespace SalveminiApi.Controllers
         DatabaseString db = new DatabaseString();
 
 
-        [Route("postdomanda/{anonimo}")]
+        [Route("postdomanda")]
         [HttpPost]
-        public HttpResponseMessage postQuestion([FromBody] string domanda_,bool anonimo)
+        public HttpResponseMessage postQuestion([FromBody] string domanda_)
         {
             //Check Auth
             var authorize = new Helpers.Utility();
@@ -43,7 +43,7 @@ namespace SalveminiApi.Controllers
                 //Create domanda
                 var domanda = new Domande();
                 domanda.Domanda = domanda_;
-                domanda.Anonimo = anonimo;
+                domanda.Anonimo = false;
                 //domanda.Approvata = false;
                 domanda.Approvata = true;
                 domanda.Creazione = Helpers.Utility.italianTime();
@@ -239,7 +239,7 @@ namespace SalveminiApi.Controllers
             try
             {
                 //Get all posts
-                var posts = db.Domande.Where(x => x.Approvata).OrderByDescending(x => x.Creazione).Take(5000).ToList();
+                var posts = db.Domande.OrderByDescending(x => x.Creazione).Take(5000).ToList();
 
                 //Remove already viewed posts if needed
                 if(id != -1)
