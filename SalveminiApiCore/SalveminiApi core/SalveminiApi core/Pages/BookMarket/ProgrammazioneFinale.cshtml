@@ -1,0 +1,25 @@
+﻿@page
+@model SalveminiApi_core.Pages.BookMarket.Admin.ProgrammazioneFinaleModel
+@{
+}
+
+<div style="padding:20px;">
+    <h1>Ritiro soldi e libri</h1>
+    <ul>
+        @foreach (var user in Model.users)
+        {
+            <li>
+                <span>@user.Cognome @user.Nome</span>
+                <span>(@user.Id)</span>
+                <span>@user.AppuntamentoFinale.Value.ToString("dd alle HH:mm")</span>
+            </li>
+        }
+    </ul>
+</div>
+
+
+<style>
+    footer {
+        display: none;
+    }
+</style>

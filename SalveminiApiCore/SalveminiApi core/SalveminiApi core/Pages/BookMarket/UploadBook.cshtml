@@ -1,0 +1,285 @@
+﻿@page
+@model SalveminiApi_core.Pages.BookMarket.UploadBookModel
+@{
+}
+
+
+<!--Top Bar-->
+<header>
+    <div class="header-container">
+        <!--Back button-->
+        <a href="/bookmarket/dashboard">
+            <i class="fas fa-chevron-left header-backbutton"></i>
+        </a>
+        <!--Username-->
+        <span class="header-title-label">Carica libro</span>
+    </div>
+    <!--Separator-->
+    <div class="header-separator"></div>
+</header>
+
+<form method="post" id="upload-main-container">
+    <!--Form-->
+    <div id="upload-form-container">
+        <div id="upload-form-horizontalpositioning-container">
+            <div id="upload-form-verticalalignment-container">
+                <!--Book title-->
+                <div class="upload-form-element-container">
+                    <div class="upload-form-element-title-container">
+                        <span class="uk-badge upload-form-element-title-badge">1</span>
+                        <span class="upload-form-element-title">Nome del libro</span>
+                    </div>
+                    <div class="upload-form-element-input-container">
+                        <input maxlength="200" required type="text" class="upload-form-element-input" placeholder="Nome del libro" asp-for="@Model.newBook.Nome" />
+                    </div>
+                </div>
+                <!--Book code-->
+                <div style="margin-top:30px;" class="upload-form-element-container">
+                    <div class="upload-form-element-title-container">
+                        <span class="uk-badge upload-form-element-title-badge">2</span>
+                        <span class="upload-form-element-title">Codice del libro</span>
+                        <i onclick="isbnInfo()" id="isbnhelp" class="far fa-question-circle bookcode-questionbutton"></i>
+                        <script>
+                            function isbnInfo() {
+                                Swal.fire({
+                                    icon: 'info',
+                                    title: 'ISBN',
+                                    text: 'Il codice ISBN è il numero identificativo del libro che permetterà a chi vuole comprarlo di trovarlo più facilmente. Si trova solitamente sul retro del libro vicino il codice a barre ed è composto da 13 o 10 cifre',
+                                })
+                            }
+                           
+                        </script>
+                    </div>
+                    <div class="upload-form-element-input-container">
+                        <input maxlength="13" required type="text" class="upload-form-element-input" placeholder="XXXXXXXXXXXXX" asp-for="@Model.newBook.Codice" />
+                    </div>
+                </div>
+                <!--Subject-->
+                <div style="margin-top:30px;" class="upload-form-element-container">
+                    <div class="upload-form-element-title-container">
+                        <span class="uk-badge upload-form-element-title-badge">3</span>
+                        <span class="upload-form-element-title">Materia</span>
+                    </div>
+                    <div class="upload-form-element-input-container">
+                        <select required class="upload-form-element-input" asp-for="@Model.newBook.Materia">
+                            @foreach (var subject in Model.subjects)
+                            {
+                                <option>@subject</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <!--Upload Button-->
+                <button type="submit" id="upload-form-uploadbutton" class="ld-ext-right">
+                    <div class="ld ld-ring ld-spin"></div>
+                    <span id="upload-form-uploadbutton-label">Carica</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!--Post form-->
+    <script>
+        $(function () {
+            $('form').submit(function (e) {
+
+                //Override normal form submission
+                e.preventDefault()
+
+                //Post form with ajax
+                postForm($(this), "Il libro è stato caricato con successo", "/bookmarket/dashboard");
+            })
+        })</script>
+
+    <!--Form style-->
+    <style>
+        #upload-form-container {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        #upload-form-horizontalpositioning-container {
+            display: block;
+            width: 65%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #upload-form-verticalalignment-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .upload-form-element-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .upload-form-element-title-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .upload-form-element-title-badge {
+            background: #C6A0FC !important;
+            min-width: 30px !important;
+            font-size: 20px !important;
+            height: 30px !important;
+        }
+
+        .upload-form-element-title {
+            font-size: 30px;
+            color: #C6A0FC;
+            margin-left: 10px;
+            font-family: DefaultSB;
+        }
+
+        .upload-form-element-input-container {
+            background-color: #D1B2FC;
+            margin-top: 10px;
+            border-radius: 15px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .upload-form-element-input {
+            border: none;
+            width: 100%;
+            font-family: DefaultR;
+            margin-left: 10px;
+            outline: none;
+            background-color: transparent;
+            color: white;
+            font-size: 23px;
+        }
+
+        .bookcode-questionbutton {
+            font-size: 20px;
+            color: #5eabff;
+            margin-left: 10px;
+        }
+
+        #upload-form-uploadbutton {
+            background-color: #C6A0FC;
+            cursor: pointer;
+            border-radius: 10px;
+            padding: 7px;
+            width: 30%;
+            display: block;
+            margin-left: auto;
+            margin-top: 20px;
+            outline: none;
+            border: none;
+        }
+
+        #upload-form-uploadbutton-label {
+            color: white;
+            font-size: 20px;
+            font-family: DefaultSB;
+            width: 30%;
+        }
+    </style>
+
+
+
+
+
+
+    <div id="upload-image-container">
+        <img src="~/images/istruzioni.png" id="upload-image" />
+    </div>
+</form>
+
+
+<!--Main style-->
+<style>
+
+
+    #upload-main-container {
+        width: 100%;
+        /*height: 90vh;*/
+        display: flex;
+        flex-direction: row;
+    }
+
+    #upload-image-container {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    #upload-image {
+        display: block;
+        margin-left: auto;
+        width: 80%;
+        margin-right: auto;
+    }
+
+    ::placeholder {
+        color: white !important;
+        opacity: 0.8;
+    }
+
+    
+
+
+    @@media screen and (max-width:900px) {
+
+        .upload-form-element-title {
+            font-size: 25px !important;
+        }
+    }
+
+    @@media screen and (max-width:780px) {
+
+        .upload-form-element-title {
+            font-size: 20px !important;
+        }
+
+        .upload-form-element-title-badge {
+            min-width: 25px !important;
+            font-size: 15px !important;
+            height: 25px !important;
+        }
+
+        #upload-form-uploadbutton-label {
+            font-size: 17px !important;
+        }
+
+        #upload-form-horizontalpositioning-container {
+            width: 85% !important;
+        }
+    }
+
+    @@media screen and (max-width:650px) {
+
+        #upload-main-container {
+            flex-direction: column !important;
+            padding-top: 30px;
+        }
+
+        #upload-form-container {
+            width: 100% !important;
+        }
+
+        #upload-image-container {
+            width: 100% !important;
+        }
+
+        #upload-form-horizontalpositioning-container {
+            width: 80% !important;
+        }
+    }
+
+    footer {
+        display:none;
+    }
+</style>
+

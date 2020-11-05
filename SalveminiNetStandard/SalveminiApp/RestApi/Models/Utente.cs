@@ -3,7 +3,7 @@ namespace SalveminiApp.RestApi.Models
 {
     public class Utenti
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Cognome { get; set; }
         public string Sesso { get; set; }
@@ -12,9 +12,10 @@ namespace SalveminiApp.RestApi.Models
         public int Stato { get; set; }
         public string Creazione { get; set; }
         public string ArgoToken { get; set; }
-        public int sCoin { get; set; }
+        //public int sCoin { get; set; }
         public string Residenza { get; set; }
         public DateTime Compleanno { get; set; }
+
         public string Immagine { get; set; }
 
         public string nomeCognome
@@ -58,11 +59,11 @@ namespace SalveminiApp.RestApi.Models
                     case 0:
                         return "Plebeo";
                     case 1:
-                        return "Rappr.";
+                        return "Studente";
                     case 2:
-                        return "VIP";
+                        return "Rappresentante";
                     case 3:
-                        return "Super VIP";
+                        return "CEO";
                     case -1:
                         return "Disab.";
                     default:

@@ -68,11 +68,11 @@ namespace SalveminiApp.Controls
 			if (parentPage == null)
 				return;
 
-			if (Comment.Utenti != null)
+			if (Comment.IdUtenteNavigation != null)
 			{
 				iCringe.Commenti.Pushed = true;
 				//Create push
-				var modalPush = new SecondaryViews.ProfileView(Comment.Utenti);
+				var modalPush = new SecondaryViews.ProfileView(Comment.IdUtenteNavigation);
 
 				await parentPage.Navigation.PushModalAsync(modalPush);
 

@@ -1,0 +1,87 @@
+﻿@model List<Models.BookLibri>
+@if (Model.Count != 0)
+{
+    <!--Create list-->
+    @foreach (var book in Model)
+    {
+        <li class="search-list-element" onclick="showBuyPopup(@book.Id, '@book.Nome.Replace("'","")', '@book.Codice', '@book.Materia', '€ @String.Format("{0:0.00}", Costants.CalculateUserPrice(book.Prezzo.Value))')">
+            <div class="search-list-element-horizontalalign">
+                <div class="search-list-element-left-container">
+                    <div class="search-list-element-title-container">
+                        <!--Title-->
+                        <span class="search-list-element-title">@book.Nome</span>
+                        <!--Subject-->
+                        <span class="uk-badge search-list-element-subject">@book.Materia</span>
+                    </div>
+                    <!--Code-->
+                    <span class="search-list-element-code">@book.Codice</span>
+                </div>
+                <div class="search-list-element-right-container">
+                    <!--Price-->
+                    <span class="search-list-element-price">€ @String.Format("{0:0.00}", Costants.CalculateUserPrice(book.Prezzo.Value))</span>
+                    <i class="fas fa-chevron-right search-list-element-navigationarrow"></i>
+                </div>
+            </div>
+        </li>
+    }
+}
+else
+{
+    <script>
+        if (!searching) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Attenzione',
+                text: "Non ci sono risultati da mostrare",
+            })
+        }
+    </script>
+}
+
+<!--PopupScript-->
+<script>
+    function showBuyPopup(id, nome, codice, materia, prezzo) {
+        Swal.fire({
+            title: nome,
+            html:
+                '<span class="popup-desc desc-bold">Codice</span> <span class="popup-desc" >' + codice + '</span>' +
+                '<span class="popup-desc desc-bold">Materia</span> <span class="popup-desc" >' + materia + '</span>' +
+                '<span class="popup-desc desc-bold">Prezzo</span> <span class="popup-desc" >' + prezzo + '</span>',
+            showCancelButton: true,
+            confirmButtonText:
+                '<i class="fa fa-shopping-cart"></i> Aggiungi al carrello',
+            cancelButtonText:
+                'Annulla',
+            focusConfirm: true,
+            confirmButtonColor: '#C6A0FC',
+            reverseButtons: true,
+            footer:'Attenzione: mettere il libro nel carrello non ti assicura la prenotazione e altri utenti potranno comunque prenderlo prima di te, conferma la tua prenotazione al più presto per bloccare i libri che ti servono',
+             showLoaderOnConfirm: true
+        }).then(result => {
+            if (result.value) {
+                document.getElementById("toBuyBook").value = id;
+                $("form").submit();
+            }
+         
+        })
+    }
+
+    
+</script>
+<!--PopupStyle-->
+<style>
+    .popup-desc {
+        width: 100%;
+        display: block;
+        color: #8E8E8E;
+        text-align: start;
+    }
+    .desc-bold {
+        font-weight: bold;
+        margin-top:10px;
+    }
+    .swal2-popup {
+        border-radius: 30px !important;
+    }
+</style>
+

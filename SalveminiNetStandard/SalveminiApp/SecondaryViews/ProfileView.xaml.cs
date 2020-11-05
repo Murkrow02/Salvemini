@@ -21,16 +21,16 @@ namespace SalveminiApp.SecondaryViews
                 mainLayout.Padding = new Thickness(25, 20, 25, 0);
 
 
-            compleannoLbl.Text = utente.Compleanno.ToString("dd MMMM");
-            comuneLbl.Text = utente.Residenza;
+            //compleannoLbl.Text = utente.Compleanno.ToString("dd MMMM");
+            //comuneLbl.Text = utente.Residenza;
             if(utente.Stato > 0)
             {
                 roleLayout.IsVisible = true;
                 switch (utente.Stato)
                 {
-                    case 1:roleLbl.Text = "Rappresentante di classe";break;
-                    case 2:roleLbl.Text = "VIP";break;
-                    case 3:roleLbl.Text = "Creatore SalveminiApp"; break;
+                    case 1:roleLbl.Text = "Studente";break;
+                    case 2:roleLbl.Text = "Rappresentante d'istituto";break;
+                    case 3:roleLbl.Text = "CEO della SalveminiApp"; break;
                 }
             }
         }

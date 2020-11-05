@@ -19,23 +19,23 @@
                     <Label x:Name="roleLbl" FontSize="Large" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
                 </StackLayout>
 
-                <!--Copleanno-->
+                <!--Copleanno--><!--
                 <StackLayout Spacing="2">
                     <StackLayout Orientation="Horizontal">
                         <iconize:IconLabel Text="fas-birthday-cake" HorizontalOptions="Start" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}"/>
                         <Label Text="Compleanno" TextColor="{x:Static local:Styles.TextColor}" FontSize="Large" HorizontalOptions="FillAndExpand"/>
                     </StackLayout>
                     <Label x:Name="compleannoLbl" FontSize="Large" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
-                </StackLayout>
+                </StackLayout>-->
 
-                <!--Comune-->
+                <!--Comune--><!--
                 <StackLayout Spacing="2">
                     <StackLayout Orientation="Horizontal">
                         <iconize:IconLabel Text="fas-map-pin" HorizontalOptions="Start" FontSize="Large" TextColor="{x:Static local:Styles.TextColor}"/>
                         <Label Text="Comune" TextColor="{x:Static local:Styles.TextColor}" FontSize="Large" HorizontalOptions="FillAndExpand"/>
                     </StackLayout>
                     <Label x:Name="comuneLbl" FontSize="Large" TextColor="{x:Static local:Styles.TextGray}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
-                </StackLayout>
+                </StackLayout>-->
             </StackLayout>
         </StackLayout>
     </ScrollView>

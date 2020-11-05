@@ -1,0 +1,153 @@
+﻿@page
+@model SalveminiApi_core.Pages.BookMarket.MeetingCheckModel
+@{
+}
+
+<!--Top Bar-->
+<header>
+    <div class="header-container">
+        <!--Back button-->
+        <a href="/bookmarket/dashboard">
+            <i class="fas fa-chevron-left header-backbutton"></i>
+        </a>
+        <!--Username-->
+        <span onclick="window.location.href = '/bookmarket/dashboard'" style="cursor:pointer;" class="header-title-label">Torna alla dashboard</span>
+    </div>
+    <!--Separator-->
+    <div class="header-separator"></div>
+</header>
+
+<div id="check-main-container">
+    <div id="check-horizontalpositioning-container">
+        <div id="check-verticalpositioning-container">
+            <span id="check-youarethenumber-span">Sei il numero</span>
+            <span id="check-number-span">@Model.user.Id</span>
+            <span id="check-description-span">
+                Presenta questo numero quando andrai a  @if (Costants.Fase() == 1)
+                {<text>consegnare</text>}
+            else
+            {<text>ritirare</text>}
+                i libri
+            </span>
+            <span id="check-appointment-span">Appuntamento: @if (Costants.Fase() == 1)
+            {@Model.user.AppuntamentoRilascio.Value.ToString("dddd, dd MMMM alle HH:mm") }
+            else
+            {@Model.user.AppuntamentoRitiro.Value.ToString("dddd, dd MMMM alle HH:mm")}
+    </span>
+            <span>alla sede centrale del Liceo Scientifico Gaetano Salvemini</span>
+            <span style="color:#ff4040">RICORDA DI ESSERE PUNTUALE O RISCHIERAI DI PERDERE IL TUO TURNO</span>
+        </div>
+    </div>
+   @*<a href="/bookmarket/dashboard" style="text-align: center;margin-top: 20px;">Torna alla dashboard</a>*@
+</div>
+
+<div id="check-piture-absolute-container">
+    <!--Take a picture-->
+    <div id="check-picture-container">
+        <i class="fas fa-camera" id="check-picture-icon-i"></i>
+        <span id="check-picture-span">Scatta una foto o fai uno screenshot!</span>
+    </div>
+</div>
+
+<style>
+    #check-main-container {
+        width: 100%;
+        height: calc(100vh - 75px);
+        font-family: DefaultSB;
+        font-size: 25px;
+        color: #BABABA;
+        display: flex;
+        /* align-items: center; */
+        padding-top: 20px;
+        flex-direction: column;
+    }
+
+    #check-horizontalpositioning-container {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #check-verticalpositioning-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #check-youarethenumber-span {
+        font-size: 30px;
+    }
+
+    #check-number-span {
+        color: #C6A0FC;
+        font-size: 100px;
+        line-height: 100px;
+    }
+
+    #check-description-span {
+        font-family: DefaultR;
+    }
+
+    #check-appointment-span {
+        color: #C6A0FC;
+    }
+
+    #check-piture-absolute-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        bottom: 60px;
+        align-items: center;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #check-picture-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 25px;
+    }
+
+    #check-picture-icon-i {
+        color: #C6A0FC;
+    }
+
+    #check-picture-span {
+        color: #C6A0FC;
+        margin-left: 10px;
+        font-family: DefaultSB;
+    }
+
+    @@media screen and (max-width:500px) {
+        #check-youarethenumber-span {
+            font-size: 25px !important;
+        }
+
+        #check-number-span {
+            color: #C6A0FC !important;
+            font-size: 110px !important;
+            line-height: 110px !important;
+        }
+
+        #check-picture-container {
+            font-size: 20px !important;
+        }
+
+        #check-main-container {
+            font-size: 20px !important;
+        }
+    }
+
+    @@media screen and (max-width:450px) {
+        #check-picture-container {
+            font-size: 15px !important;
+        }
+
+        #check-piture-absolute-container {
+            bottom:80px !important;
+        }
+    }
+</style>

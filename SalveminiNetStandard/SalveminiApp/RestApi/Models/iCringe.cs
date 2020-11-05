@@ -10,7 +10,7 @@ namespace SalveminiApp.RestApi.Models
     {
         public int id { get; set; }
         public string Domanda { get; set; }
-        public TimeSpan Data { get; set; }
+        public string Data { get; set; }
         public int CommentiCount { get; set; }
         public Utenti Utente { get; set; }
         public List<Commenti> Commenti { get; set; }
@@ -31,7 +31,7 @@ namespace SalveminiApp.RestApi.Models
                     return true;
                 if (Utente == null)
                     return false;
-                return Utente.id == Preferences.Get("UserId", 0);
+                return Utente.Id == Preferences.Get("UserId", 0);
             }
         }
 
@@ -47,7 +47,7 @@ namespace SalveminiApp.RestApi.Models
         {
             get
             {
-                return Costants.SpanString(Data);
+                return Data;
             }
         }
 
@@ -136,14 +136,15 @@ namespace SalveminiApp.RestApi.Models
         public System.DateTime Creazione { get; set; }
         //public int idUtente { get; set; }
         public int idPost { get; set; }
-        public Utenti Utenti { get; set; }
+        public Utenti IdUtenteNavigation { get; set; }
+
         public bool Anonimo { get; set; }
 
         public string UserName
         {
             get
             {
-                return Utenti != null ? Utenti.nomeCognome : "Anonimo";
+                return IdUtenteNavigation != null ? IdUtenteNavigation.nomeCognome : "Anonimo";
             }
         }
 
@@ -151,7 +152,7 @@ namespace SalveminiApp.RestApi.Models
         {
             get
             {
-                return Utenti != null ? Utenti.fullImmagine : "Anonimo";
+                return IdUtenteNavigation != null ? IdUtenteNavigation.fullImmagine : "Anonimo";
             }
         }
 
@@ -169,9 +170,9 @@ namespace SalveminiApp.RestApi.Models
             {
                 if (SecondaryViews.Profile.superVip_)
                     return true;
-                if (Utenti == null)
+                if (IdUtenteNavigation == null)
                     return false;
-                return Utenti.id == Preferences.Get("UserId", 0);
+                return IdUtenteNavigation.Id == Preferences.Get("UserId", 0);
             }
         }
     }

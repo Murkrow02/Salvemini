@@ -230,7 +230,7 @@ namespace SalveminiApp.FirstAccess
             }
 
             //Save user data
-            Preferences.Set("UserId", UtentiLogin[id].id);
+            Preferences.Set("UserId", UtentiLogin[id].Id);
             Preferences.Set("Token", UtentiLogin[id].ArgoToken);
             Preferences.Set("Classe", UtentiLogin[id].Classe);
             Preferences.Set("Corso", UtentiLogin[id].Corso);

@@ -160,26 +160,22 @@ namespace SalveminiApp.SecondaryViews
                         switch (utente.Stato)
                         {
                             case 1: //Rappresentante
-                                rapprLayout.IsEnabled = true;
-                                rapprLayout.Opacity = 1;
+                            
                                 break;
                             case 2: //Vip
-                                rapprLayout.IsEnabled = true;
-                                rapprLayout.Opacity = 1;
+                              
                                 vipLayout.IsEnabled = true;
                                 vipLayout.Opacity = 1;
                                 break;
                             case 3: //Super vip
-                                rapprLayout.IsEnabled = true;
-                                rapprLayout.Opacity = 1;
+                               
                                 vipLayout.IsEnabled = true;
                                 vipLayout.Opacity = 1;
                                 superVip.IsVisible = true;
                                 superVip_ = true;
                                 break;
                             default: //Hide everything
-                                rapprLayout.IsEnabled = false;
-                                rapprLayout.Opacity = 0.6;
+                             
                                 vipLayout.IsEnabled = false;
                                 vipLayout.Opacity = 0.6;
                                 superVip.IsVisible = false;

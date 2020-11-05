@@ -89,7 +89,7 @@ namespace SalveminiApp
                             //((Children[0] as Helpers.CustomNavigationPage).RootPage as MainPage).AndroidFix();
                         }
                         (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "iCringeFill.png";
-                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBar.png";
+                        (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
                         (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
                         break;
                     case 1:

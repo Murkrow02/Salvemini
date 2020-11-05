@@ -96,7 +96,7 @@ namespace SalveminiApp.AreaVip
                     case "Rendi VIP":
 
                         //Vip user
-                        var response1 = await App.Utenti.ChangeStatus(data.id, 2);
+                        var response1 = await App.Utenti.ChangeStatus(data.Id, 2);
 
                         //Notify status of the request
                         await DisplayAlert(response1[0], response1[1], "Ok");
@@ -105,7 +105,7 @@ namespace SalveminiApp.AreaVip
                     case "Rendi rappresentante":
 
                         //Re-Enable user
-                        var response2 = await App.Utenti.ChangeStatus(data.id, 1);
+                        var response2 = await App.Utenti.ChangeStatus(data.Id, 1);
 
                         //Notify status of the request
                         await DisplayAlert(response2[0], response2[1], "Ok");
@@ -113,14 +113,14 @@ namespace SalveminiApp.AreaVip
                     case "Rendi plebeo":
 
                         //Re-Enable user
-                        var response3 = await App.Utenti.ChangeStatus(data.id, 0);
+                        var response3 = await App.Utenti.ChangeStatus(data.Id, 0);
 
                         //Notify status of the request
                         await DisplayAlert(response3[0], response3[1], "Ok");
                         break;
                     case "Accedi":
                         Costants.Logout(true);
-                        Preferences.Set("UserId", data.id);
+                        Preferences.Set("UserId", data.Id);
                         Preferences.Set("Token", data.ArgoToken);
                         Preferences.Set("Classe", data.Classe);
                         Preferences.Set("Corso", data.Corso);
@@ -147,7 +147,7 @@ namespace SalveminiApp.AreaVip
                         }
 
                         //Disable user
-                        var response1 = await App.Utenti.ChangeStatus(data.id, -1);
+                        var response1 = await App.Utenti.ChangeStatus(data.Id, -1);
 
                         //Notify status of the request
                         await DisplayAlert(response1[0], response1[1], "Ok");
@@ -156,7 +156,7 @@ namespace SalveminiApp.AreaVip
                     case "Abilita utente":
 
                         //Re-Enable user
-                        var response2 = await App.Utenti.ChangeStatus(data.id, 0);
+                        var response2 = await App.Utenti.ChangeStatus(data.Id, 0);
 
                         //Notify status of the request
                         await DisplayAlert(response2[0], response2[1], "Ok");

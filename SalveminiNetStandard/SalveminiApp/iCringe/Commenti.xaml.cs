@@ -120,7 +120,7 @@ namespace SalveminiApp.iCringe
             }
 
             //Create commento
-            var commento = new RestApi.Models.Commenti { Anonimo = anonimo.IsToggled, Commento = chatEntry.Text, idPost = idPost };
+            var commento = new RestApi.Models.Commenti { Anonimo = false, Commento = chatEntry.Text, idPost = idPost };
 
             //Post commento
             var response = await App.Cringe.PostCommento(commento);

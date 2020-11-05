@@ -1,0 +1,93 @@
+﻿@page
+@model SalveminiApi_core.Pages.LoginModel
+@{
+}
+
+    <div class="main-container">
+        <!--Side container-->
+        <div class="side-container">
+            <!--Title-->
+            <div class="side-title-container">
+                <img src="~/images/logoBianco.png" class="side-title-logo" />
+                <span class="side-title-label">BookMarket</span>
+            </div>
+            <!--Content-->
+            <div class="side-content-container">
+                <div class="side-content-horizontalpositioning-container">
+                    <span class="side-content-label">Non hai un account?</span>
+                    <a href="/bookmarket/registration">
+                        <div class="side-content-button-container">
+                            <span class="side-content-button-label">Registrati</span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+
+              
+                <!--Form Container-->
+
+                <form method="post" class="form-container">
+
+                    <div class="form-horizontalpositioning-container">
+
+                        <div class="form-verticalalignment-container">
+                            <span class="form-title">Accedi</span>
+                            <!--Mail-->
+                            <div class="form-input-container" style="margin-top:5px;">
+                                <i class="fas fa-envelope form-input-icon"></i>
+                                <input asp-for="@Model.credentials.Mail" type="email" class="form-input" placeholder="Mail" />
+                            </div>
+                            <!--Password-->
+                            <div class="form-input-container" style="margin-top:15px;">
+                                <i class="fas fa-lock form-input-icon"></i>
+                                <input asp-for="@Model.credentials.Password" type="password" class="form-input" placeholder="Password" />
+                            </div>
+                            <!--Login Button-->
+                            <button type="submit" class="form-button-container ld-ext-right">
+                                <div class="ld ld-ring ld-spin"></div>
+                                <span class="form-button-label">Accedi</span>
+                            </button>
+                        </div>
+                        @*<partial name="_Countdown" />*@
+                        <style>
+                            .countdown-container {
+                                margin-top: 20px;
+                            }
+
+                            #title {
+                                text-align: center;
+                                font-size: 30px;
+                            }
+
+                            #demo {
+                                text-align: center !important; 
+                                font-size: 20px;
+                            }
+                        </style>
+                    </div>
+                </form>
+            </div>
+<!--Post form-->
+<script>
+    $(function () {
+        $('form').submit(function (e) {
+
+            //Override normal form submission
+            e.preventDefault()
+
+            //Post form with ajax
+            postForm($(this), "Login effettuato con succssesso","/bookmarket/dashboard");
+        })
+    })
+</script>
+
+
+<style>
+    ::placeholder {
+        color: white;
+        opacity: 0.8;
+    }
+</style>

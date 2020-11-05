@@ -10,7 +10,7 @@
             <StackLayout>
              
                 <!--Domanda-->
-                <inputLayout:SfTextInputLayout UnfocusedColor="{x:Static local:Styles.BGColor}" ShowCharCount="true" CharMaxLength="2000" x:Name="compitiEntry" FocusedColor="{x:Static local:Styles.BGColor}" InputViewPadding="10, 5" OutlineCornerRadius="15" Hint="Tutto quello che vuoi" ContainerType="Outlined">
+                <inputLayout:SfTextInputLayout UnfocusedColor="{x:Static local:Styles.BGColor}" ShowCharCount="true" CharMaxLength="2000" x:Name="compitiEntry" FocusedColor="{x:Static local:Styles.BGColor}" InputViewPadding="10" OutlineCornerRadius="15" Hint="Scrivi quello che vuoi" ContainerType="Outlined">
                     <Editor AutoSize="TextChanges" TextColor="{x:Static local:Styles.BGColor}"  PlaceholderColor="Gray" x:Name="domanda"/>
                 </inputLayout:SfTextInputLayout>
             </StackLayout>
