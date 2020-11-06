@@ -6,7 +6,7 @@
             <!--Notifiche-->
             <iconize:IconButton BackgroundColor="Transparent"  x:Name="bell" Clicked="notifiche_Clicked" HorizontalOptions="StartAndExpand" Text="fal-bell" TextColor="{x:Static local:Styles.BGColor}" FontSize="26" WidthRequest="45"/>
             <!--Middle label-->
-            <Label Text="iCringe" x:Name="todayLbl" FontSize="Medium" TextColor="{x:Static local:Styles.BGColor}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontAttributes="Bold" />
+            <Label Text="Salvemini" x:Name="todayLbl" FontSize="Medium" TextColor="{x:Static local:Styles.BGColor}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontAttributes="Bold" />
             <!--Add post-->
             <iconize:IconButton BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" Text="fal-plus" TextColor="{x:Static local:Styles.BGColor}" FontSize="26" WidthRequest="45" Clicked="newPost_Clicked"/>
         </Grid>

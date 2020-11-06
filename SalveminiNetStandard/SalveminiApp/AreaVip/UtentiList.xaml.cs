@@ -156,7 +156,7 @@ namespace SalveminiApp.AreaVip
                     case "Abilita utente":
 
                         //Re-Enable user
-                        var response2 = await App.Utenti.ChangeStatus(data.Id, 0);
+                        var response2 = await App.Utenti.ChangeStatus(data.Id, 1);
 
                         //Notify status of the request
                         await DisplayAlert(response2[0], response2[1], "Ok");

@@ -46,14 +46,14 @@
         <AndroidLinkTool>r8</AndroidLinkTool>
         <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
         <BundleAssemblies>True</BundleAssemblies>
-        <!--<AotAssemblies>True</AotAssemblies>-->        
-      <AndroidEnableProfiledAot>true</AndroidEnableProfiledAot>  
+        <AotAssemblies>True</AotAssemblies>
         <AndroidUseDefaultAotProfile>false</AndroidUseDefaultAotProfile>
         <EnableLLVM>True</EnableLLVM>
         <AndroidPackageFormat>apk</AndroidPackageFormat>
         <AndroidEnableProguard>True</AndroidEnableProguard>
         <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
         <AndroidUseAapt2>true</AndroidUseAapt2>
+        <AndroidSupportedAbis>armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
         <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     </PropertyGroup>
   <ItemGroup>

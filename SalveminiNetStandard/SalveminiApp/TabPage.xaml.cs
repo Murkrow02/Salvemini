@@ -34,7 +34,7 @@ namespace SalveminiApp
         {
             BarTextColor = Styles.BGColor,
             BarBackgroundColor = Styles.SecretsPrimary,
-            Title = "iCringe",
+            Title = "Salvemini",
             IconImageSource = "iCringe.png"
         };
 
@@ -105,6 +105,7 @@ if(Device.RuntimePlatform == Device.iOS)
                         (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "fillTabBarHome.png";
                         (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";
                         break;
+
                     case 2:
                         //Argo
 if(Device.RuntimePlatform == Device.iOS)

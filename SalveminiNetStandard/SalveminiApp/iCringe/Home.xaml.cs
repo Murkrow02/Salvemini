@@ -9,6 +9,8 @@ using Forms9Patch;
 using System.Linq;
 using Plugin.Iconize;
 using System.Collections.ObjectModel;
+using Com.OneSignal;
+
 namespace SalveminiApp.iCringe
 {
     public partial class Home : ContentPage
@@ -46,9 +48,14 @@ namespace SalveminiApp.iCringe
 
             appearedTimes++;
 
-            //Detect firstTime
-            //if (Preferences.Get("firstTimeCringe", true))
-            //    await Navigation.PushModalAsync(new WelcomePage());
+            //Detect firstTime and subscribe to notifications
+            if (Preferences.Get("firstTimeCringe", true))
+            {
+                //    await Navigation.PushModalAsync(new WelcomePage());
+                Preferences.Set("firstTimeCringe", false);
+                OneSignal.Current.SendTag("Secrets", Preferences.Get("UserId", 0).ToString());
+            }
+
 
             //Detect internet connection
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)

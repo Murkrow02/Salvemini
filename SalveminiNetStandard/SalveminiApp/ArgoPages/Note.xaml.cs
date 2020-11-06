@@ -56,7 +56,7 @@ namespace SalveminiApp.ArgoPages
                     if (!string.IsNullOrEmpty(response.Message))
                     {
                         //Error occourred, notify the user
-                        Costants.showToast(response.Message);
+                       // Costants.showToast(response.Message);
                         //Stop loading list
                         noteList.IsRefreshing = false;
                         return;
