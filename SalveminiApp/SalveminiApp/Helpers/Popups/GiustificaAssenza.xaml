@@ -10,7 +10,7 @@
                     </StackLayout>
                     <Label FontSize="Small" TextColor="{x:Static local:Styles.TextGray}" x:Name="datAssenzaLabel" HorizontalOptions="Center" />
                 </StackLayout>
-                <inputLayout:SfTextInputLayout UnfocusedColor="#FFC33B" ShowCharCount="true" CharMaxLength="100" x:Name="giustificaEntry" FocusedColor="#FFC33b" InputViewPadding="10, 5" OutlineCornerRadius="15" Hint="Motivo (Facoltativo)" ContainerType="Outlined">
+                <inputLayout:SfTextInputLayout UnfocusedColor="#FFC33B" ShowCharCount="true" CharMaxLength="100" x:Name="giustificaEntry" FocusedColor="#FFC33b" InputViewPadding="10, 5" OutlineCornerRadius="15" Hint="Motivo" ContainerType="Outlined">
                     <Editor TextColor="Black" PlaceholderColor="Gray" x:Name="giustifica" />
                 </inputLayout:SfTextInputLayout>
             </StackLayout>
