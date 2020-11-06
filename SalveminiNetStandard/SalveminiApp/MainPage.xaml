@@ -3,14 +3,6 @@
     <!--Navigation Bar-->
     <NavigationPage.TitleView>
         <Grid HorizontalOptions="FillAndExpand" Padding="5">
-            <!--Coin-->
-            <StackLayout IsVisible="false" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-                <Image Source="SalveminiCoin.png" WidthRequest="35" x:Name="coinImage"/>
-                <Label x:Name="sCoinLbl" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center"  />
-                <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="sCoin_Tapped"/>
-                </StackLayout.GestureRecognizers>
-            </StackLayout>
             <!--Middle label-->
             <StackLayout Spacing="1" HorizontalOptions="CenterAndExpand">
                 <Label x:Name="todayLbl" FontSize="Medium" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontAttributes="Bold" />
@@ -32,6 +24,19 @@
             <!--Layout-->
             <StackLayout Padding="15,10,15,20" Spacing="15" x:Name="fullLayout">
                 <!--Orario-->
+                <Frame HasShadow="False" CornerRadius="20" Padding="5" HorizontalOptions="FillAndExpand">
+                    <Grid>
+                        <Image HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Source="https://www.salvemini.edu.it/orario/2020_21/p7/Classi/5F.jpg"/>
+                        <StackLayout Padding="10" Orientation="Horizontal">
+                            <Frame x:Name="TimetableDownloadButtonContainer" HorizontalOptions="Center" HasShadow="False" Padding="0" WidthRequest="40" CornerRadius="10" HeightRequest="40" VerticalOptions="End">
+                                <iconize:IconButton Text="fas-arrow-to-bottom" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="0" FontSize="20" TextColor="White" />
+                            </Frame>
+                            <Frame x:Name="TimetableExpandButtonContainer" HorizontalOptions="EndAndExpand" HasShadow="False" Padding="0" WidthRequest="40" CornerRadius="10" HeightRequest="40" VerticalOptions="End">
+                                <iconize:IconButton Text="fas-expand" Clicked="TimetableExpandButtonContainer_Clicked" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="0" FontSize="20" TextColor="White" />
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
                 <!--WidgetList-->
                 <StackLayout VerticalOptions="Start">
                     <!--Widgets-->
@@ -63,7 +68,7 @@
                         <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ad_Tapped" />
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
-                <Label Text="Questo progetto è completamente indipendente dal liceo scientifico Gaetano Salvemini" TextColor="{x:Static local:Styles.TextGray}" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+                <Label Text="Questo progetto è completamente indipendente dal liceo scientifico Gaetano Salvemini" TextColor="{x:Static local:Styles.TextGray}" VerticalOptions="EndAndExpand" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
             </StackLayout>
         </ScrollView>
     </RefreshView>

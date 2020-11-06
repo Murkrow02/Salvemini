@@ -101,6 +101,7 @@ namespace SalveminiApp
             else
             {
                 //Non abbastanza :(
+                ChartFrame.HeightRequest = App.ScreenHeight / 2.5;
                 chartA.IsVisible = false;
                 chartI.IsVisible = false;
                 noSubjectsLayout.IsVisible = true;
@@ -110,9 +111,6 @@ namespace SalveminiApp
         public ArgoPage()
         {
             InitializeComponent();
-
-
-
 
             //Hide Navigation Bar
             NavigationPage.SetHasNavigationBar(this, false);

@@ -27,7 +27,7 @@
             <!--Grafico Materie-->
             <StackLayout>
                 <Label Text="Grafico Materie"  FontAttributes="Bold" HorizontalTextAlignment="Center"  TextColor="{x:Static local:Styles.TextColor}" FontSize="30" />
-                <Frame BackgroundColor="White" HasShadow="False" CornerRadius="20" Padding="0">
+                <Frame x:Name="ChartFrame" BackgroundColor="White" HasShadow="False" CornerRadius="20" Padding="0">
                     <StackLayout>
                         <!--Switch polar chart on ios and android-->
                         <OnPlatform x:TypeArguments="View">
@@ -77,9 +77,11 @@
                         </OnPlatform>
 
                         <!--No data layout-->
-                        <StackLayout Padding="30" x:Name="noSubjectsLayout" IsVisible="false" Orientation="Vertical">
-                            <iconize:IconLabel HorizontalOptions="Center" FontSize="Title" TextColor="{x:Static local:Styles.TextGray}" Text="fas-chart-pie" />
-                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" Text="Prendi voti di almeno tre materie diverse per visualizzare il grafico" />
+                        <StackLayout Padding="30" VerticalOptions="FillAndExpand" x:Name="noSubjectsLayout" IsVisible="false" Orientation="Vertical">
+                            <StackLayout VerticalOptions="CenterAndExpand">
+                                <iconize:IconLabel HorizontalOptions="Center" FontSize="Title" TextColor="{x:Static local:Styles.TextGray}" Text="fas-chart-pie" />
+                                <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" Text="Prendi voti di almeno tre materie diverse per visualizzare il grafico" />
+                            </StackLayout>
                         </StackLayout>
                     </StackLayout>
                 </Frame>

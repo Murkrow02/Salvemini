@@ -41,8 +41,8 @@ namespace SalveminiApp
 
 
             //Set sizes
-            //userImg.WidthRequest = App.ScreenWidth / 8.8;
-            //coinImage.WidthRequest = App.ScreenWidth / 13;
+            TimetableExpandButtonContainer.BackgroundColor = Color.FromRgba(0, 0, 0, 120);
+            TimetableDownloadButtonContainer.BackgroundColor = Color.FromRgba(0, 0, 0, 120);
 
             //Subscribe to messaging center
             //Refresh image cache
@@ -60,17 +60,7 @@ namespace SalveminiApp
                 RemoveBadge(tipo);
             });
 
-            //Remove avvisi badge
-            MessagingCenter.Subscribe<App, int?>(this, "UpdateCoins", (sender, tipo) =>
-            {
-                sCoinLbl.Text = tipo.ToString();
-            });
-
-            //Get orario cached
-            //classeCorso = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
-
             loadIndexCache();
-
         }
 
         //Detect if onappearing must be triggered
@@ -91,7 +81,7 @@ namespace SalveminiApp
                 return;
 
             //Load navigation pages to be faster
-          //  await Task.Run((Action)loadNavigationPages);
+            //  await Task.Run((Action)loadNavigationPages);
 
             if (appearedTimes == 0)
                 (TabPage.Argo.RootPage as ArgoPage).initializeInterface();
@@ -141,7 +131,7 @@ namespace SalveminiApp
 
 
                 //Initialize list with first widgets
-                widgets.Add(registro); 
+                widgets.Add(registro);
                 OrderWidgets(false); //uncomment to fast load initial widgets
 
                 //Check Internet
@@ -203,9 +193,6 @@ namespace SalveminiApp
                         return;
                     }
                 }
-
-                //Save salveminiCoin value
-                sCoinLbl.Text = Index.sCoin.ToString();
 
                 //Get last sondaggio
                 if (Index.ultimoSondaggio != null) //New sondaggio detected
@@ -673,7 +660,7 @@ namespace SalveminiApp
                 {
                     //Redirect to store
                     if (Device.RuntimePlatform == Device.iOS)
-                       await Launcher.OpenAsync(new Uri("https://apps.apple.com/it/app/salvemini/id1438855517"));
+                        await Launcher.OpenAsync(new Uri("https://apps.apple.com/it/app/salvemini/id1438855517"));
                     else
                         await Launcher.OpenAsync(new Uri("https://play.google.com/store/apps/details?id=com.codex.salveminiapp&hl=it"));
                 }
@@ -747,9 +734,6 @@ namespace SalveminiApp
             if (IndexCache == null)
                 return;
 
-            //SalveminiCoin
-            sCoinLbl.Text = IndexCache.sCoin.ToString();
-
             //Get banner cache
             if (IndexCache.Ads != null && IndexCache.Ads.Count > 0)
             {
@@ -762,6 +746,7 @@ namespace SalveminiApp
                     adTitle.Text = Ad.Nome;
                     adImage.Source = Ad.FullImmagine;
                     adLayout.Opacity = 1;
+
                 }
             }
         }
@@ -771,6 +756,10 @@ namespace SalveminiApp
             DisplayAlert("Info Sponsor", "Il liceo Salvemini non lucra in alcun modo da questo progetto, tutto il guadagno è indirizzato agli sviluppatori dell'app", "Ok");
         }
 
+        void TimetableExpandButtonContainer_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new ContentPage { Title = "Orario", Content = new WebView { Source = new UrlWebViewSource { Url = "https://www.salvemini.edu.it/orario/2020_21/p7/Classi/5F.jpg" }, VerticalOptions = LayoutOptions.FillAndExpand } });
+        }
     }
 
 

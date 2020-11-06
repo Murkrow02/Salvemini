@@ -78,6 +78,7 @@
     <Compile Include="ToastIos\Ring.cs" />
     <Compile Include="ToastIos\NSObjectExtensions.cs" />
     <Compile Include="ToastIos\ProgressHUD.cs" />
+    <Compile Include="Renders.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

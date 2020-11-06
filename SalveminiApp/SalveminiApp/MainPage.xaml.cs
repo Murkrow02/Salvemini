@@ -51,11 +51,6 @@ namespace SalveminiApp
         {
             InitializeComponent();
 
-
-            //Set sizes
-            //userImg.WidthRequest = App.ScreenWidth / 8.8;
-            //coinImage.WidthRequest = App.ScreenWidth / 13;
-
             //Subscribe to messaging center
             //Refresh image cache
             MessagingCenter.Subscribe<App, string>(this, "ReloadUserPic", (sender, arg) =>

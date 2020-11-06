@@ -30,6 +30,7 @@ namespace SalveminiApp.ArgoPages
             shadowImage.WidthRequest = App.ScreenWidth * 1.5;
             shadowImage.HeightRequest = App.ScreenWidth * 1.5;
             assenzeList.HeightRequest = App.ScreenHeight * 0.5;
+
             //buttonFrame.WidthRequest = App.ScreenWidth / 6;
             //buttonFrame.HeightRequest = App.ScreenWidth / 6;
             //buttonFrame.CornerRadius = (float)(App.ScreenWidth / 6) / 2;
