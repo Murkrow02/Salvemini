@@ -38,7 +38,7 @@ namespace SalveminiApp.iCringe
             }
 
             //Switch toggled?
-            notificheSwitch.IsToggled = Preferences.Get("iCringePush", false);
+            notificheSwitch.IsToggled = Preferences.Get("iCringePush", true);
 
             //Refresh list
             notificheList.IsRefreshing = true;

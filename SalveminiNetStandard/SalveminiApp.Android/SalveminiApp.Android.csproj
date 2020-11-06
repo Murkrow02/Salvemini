@@ -33,16 +33,29 @@
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>portable</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AndroidManagedSymbols>true</AndroidManagedSymbols>
-    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-  </PropertyGroup>
+<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+        <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+        <AndroidDexTool>d8</AndroidDexTool>
+        <AndroidLinkTool>r8</AndroidLinkTool>
+        <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+        <BundleAssemblies>True</BundleAssemblies>
+        <AotAssemblies>True</AotAssemblies>
+        <AndroidUseDefaultAotProfile>false</AndroidUseDefaultAotProfile>
+        <EnableLLVM>True</EnableLLVM>
+        <AndroidPackageFormat>apk</AndroidPackageFormat>
+        <AndroidEnableProguard>True</AndroidEnableProguard>
+        <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
+        <AndroidUseAapt2>true</AndroidUseAapt2>
+        <AndroidSupportedAbis>armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
+        <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="System" />
@@ -61,6 +74,12 @@
     <PackageReference Include="PhotoBrowser.Forms">
       <Version>0.1.4</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.AndroidX.AppCompat.Resources">
+      <Version>1.1.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.AndroidX.AppCompat">
+      <Version>1.2.0.5</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -74,6 +93,7 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
+    <None Include="custom.aprof" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.xml" />
@@ -308,6 +328,12 @@
     <AndroidAsset Include="Assets\Lotties\Pulse.json" />
     <AndroidAsset Include="Assets\Lotties\redPulse.json" />
     <AndroidAsset Include="Assets\Lotties\rightArrow.json" />
+  </ItemGroup>
+    <ItemGroup>  
+ <AndroidAotProfile Include="$(MSBuildThisFileDirectory)custom.aprof" />
+</ItemGroup> 
+  <ItemGroup>
+    <ProguardConfiguration Include="ProGuard.cfg" />
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

@@ -124,9 +124,9 @@ namespace SalveminiApp.SecondaryViews
             //var iCringe = new Helpers.PushCell { Title = "iCringe", Separator = "si", Push = new AreaVip.ApprovaCringe() };
             //iCringe.GestureRecognizers.Add(tapGestureRecognizer);
             //superVipLayout.Children.Add(iCringe);
-            //var accediCon = new Helpers.PushCell { Title = "Controlla utenti", Separator = "no", Push = new AreaVip.UtentiList(true) };
-            //accediCon.GestureRecognizers.Add(tapGestureRecognizer);
-            //superVipLayout.Children.Add(accediCon);
+            var accediCon = new Helpers.PushCell { Title = "Controlla utenti", Separator = "no", Push = new AreaVip.UtentiList(true) };
+            accediCon.GestureRecognizers.Add(tapGestureRecognizer);
+            superVipLayout.Children.Add(accediCon);
 
         }
 
