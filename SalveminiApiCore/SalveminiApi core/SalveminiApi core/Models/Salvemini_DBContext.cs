@@ -470,6 +470,12 @@ namespace SalveminiApi_core.Models
                 entity.Property(e => e.Nome)
                     .IsRequired()
                     .HasMaxLength(150);
+
+                entity.HasOne(d => d.Utenti)
+                 .WithMany(p => p.Sondaggi)
+                 .HasForeignKey(d => d.Creatore)
+                 .OnDelete(DeleteBehavior.NoAction)
+                 .HasConstraintName("FK_Sondaggi_Utenti");
             });
 
             modelBuilder.Entity<Utenti>(entity =>

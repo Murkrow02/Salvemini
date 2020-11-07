@@ -40,5 +40,7 @@ namespace SalveminiApi_core.Models
         public virtual ICollection<CouponAttivi> CouponAttivi { internal get; set; }
         public virtual ICollection<Notifiche> Notifiche { internal get; set; }
         public virtual ICollection<VotiSondaggi> VotiSondaggi { internal get; set; }
+        public virtual ICollection<Sondaggi> Sondaggi { internal get; set; }
+
     }
 }
