@@ -10,8 +10,8 @@ namespace SalveminiApi_core.Models
         public int Utente { get; set; }
         public int Voto { get; set; }
 
-        public virtual Sondaggi IdSondaggioNavigation { get; set; }
-        public virtual Utenti UtenteNavigation { get; set; }
-        public virtual OggettiSondaggi VotoNavigation { get; set; }
+        public virtual Sondaggi IdSondaggioNavigation {internal get; set; }
+        public virtual Utenti UtenteNavigation {internal get; set; }
+        public virtual OggettiSondaggi VotoNavigation {internal get; set; }
     }
 }

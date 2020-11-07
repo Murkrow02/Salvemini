@@ -18,6 +18,6 @@ namespace SalveminiApi_core.Models
         public bool? Attivo { get; set; }
 
         public virtual ICollection<OggettiSondaggi> OggettiSondaggi { get; set; }
-        public virtual ICollection<VotiSondaggi> VotiSondaggi { get; set; }
+        public virtual ICollection<VotiSondaggi> VotiSondaggi {internal get; set; }
     }
 }
