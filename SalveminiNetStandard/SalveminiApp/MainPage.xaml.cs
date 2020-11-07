@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using System.Diagnostics;
 
 namespace SalveminiApp
 {
@@ -39,7 +40,6 @@ namespace SalveminiApp
         {
             InitializeComponent();
 
-
             //Set sizes
             TimetableExpandButtonContainer.BackgroundColor = Color.FromRgba(0, 0, 0, 120);
             TimetableDownloadButtonContainer.BackgroundColor = Color.FromRgba(0, 0, 0, 120);
@@ -61,6 +61,75 @@ namespace SalveminiApp
             });
 
             loadIndexCache();
+
+        }
+
+        string TimeTableUrl = "";
+        void getOrario()
+        {
+            //Get stored class
+            var classe = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
+
+            //Add final m for classes of 6 chars
+            if (classe.Substring(classe.Length - 2).ToLower() == "ca")
+            {
+                classe = classe.Remove(classe.Length - 2) + "cam";
+            }
+            //Low "cam" string due case sensitive website
+            if (classe.Contains("CAM"))
+            {
+                classe = classe.Remove(classe.Length - 3) + "cam";
+            }
+
+            //Bool for last timetable found
+            bool found = false;
+            for (int p = 6; p < 20; p++)
+            {
+                try
+                {
+                    //Try getting result from link
+                    System.Net.WebRequest request = System.Net.WebRequest.Create($"https://www.salvemini.edu.it/orario/2020_21/p{p}/Classi/{classe}.jpg");
+                    //Only get <Head> tag for low data request
+                    request.Method = "HEAD";
+                    request.GetResponse();
+                    //Reach this only if website is found
+                    found = true;
+                }
+                catch
+                {
+                    //First not found
+                    if (found)
+                    {
+                        //Set final url
+                        TimeTableUrl = $"https://www.salvemini.edu.it/orario/2020_21/p{p - 1}/Classi/{classe}.jpg";
+                        Preferences.Set("TimeTableUrl", TimeTableUrl);
+                        break;
+                    }
+                }
+            }
+
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                //Check if there is a timetable
+                if (string.IsNullOrEmpty(TimeTableUrl))
+                {
+                    //No => show placeholder
+                    NoTimetableLayout.IsVisible = true;
+                    TimetableImage.IsVisible = false;
+                    TimetableButtonsLayout.IsVisible = false;
+                    return;
+                }
+                else
+                {
+                    //Yes => Hide placeholder
+                    NoTimetableLayout.IsVisible = false;
+                    TimetableImage.IsVisible = true;
+                    TimetableButtonsLayout.IsVisible = true;
+                }
+
+                //Set timetable image source
+                TimetableImage.Source = TimeTableUrl;
+            });
         }
 
         //Detect if onappearing must be triggered
@@ -68,6 +137,8 @@ namespace SalveminiApp
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+            //Set tabbar image
+            MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar.jpg");
 
             //Push on notification page clicked
             if (NotificationPage != null)
@@ -102,9 +173,6 @@ namespace SalveminiApp
             {
                 //Set image profile url
                 userImg.Source = Costants.Uri("images/users/") + Preferences.Get("UserImage", "");
-
-                //Remove modals bug
-                ModalPush_Disappearing(null, null);
 
                 //Create static widgets
                 widgets.Clear();
@@ -152,11 +220,14 @@ namespace SalveminiApp
                 //Show loading
                 userRefreshed = false; homeLoading.IsRefreshing = true; userRefreshed = true;
 
+                //Timetable Cache
+                TimetableImage.Source = Preferences.Get("TimeTableUrl", "");
+
                 //Argo index in background
                 await Task.Run((Action)GetArgoIndex);
 
                 //Update orario in background
-                //await Task.Run((Action)updateOrario);
+                await Task.Run((Action)getOrario);
 
                 //Get index from api call
                 var tempIndex = await App.Index.GetIndex();
@@ -306,6 +377,8 @@ namespace SalveminiApp
 
         }
 
+
+
         public void refreshHome(object sender, EventArgs e)
         {
             //Fix bcause this event is triggered even if is refreshed by code
@@ -315,6 +388,8 @@ namespace SalveminiApp
             forceAppearing = true;
             OnAppearing();
         }
+
+
 
 
         //Handle widget redirections
@@ -472,26 +547,19 @@ namespace SalveminiApp
             profilePage.BarTextColor = Styles.TextColor;
             profilePage.BarBackgroundColor = Styles.BGColor;
 
-            //Add disappearing event
-            profilePage.Disappearing += ModalPush_Disappearing;
+            //Set formsheet
+            DependencyService.Get<IPlatformSpecific>().SetFormSheet(profilePage);
 
             //Add toolbaritem to close page
             var close = new ToolbarItem { Text = "Annulla" };
-            close.Clicked += ModalPush_Disappearing;
+            close.Clicked += (object innersender, EventArgs args) => { profilePage.Navigation.PopModalAsync(); };
             profilePage.ToolbarItems.Add(close);
 
             profilePage.BarTextColor = Styles.TextColor;
             Navigation.PushModalAsync(profilePage);
         }
 
-        //Fix bug on ios 13 that doesen t close modal automatically
-        private void ModalPush_Disappearing(object sender, EventArgs e)
-        {
-            if (!isSelectingImage)
-                Navigation.PopModalAsync();
-            else
-                isSelectingImage = false;
-        }
+
 
 
 
@@ -684,12 +752,12 @@ namespace SalveminiApp
             profilePage.BarTextColor = Styles.TextColor;
             profilePage.BarBackgroundColor = Styles.BGColor;
 
-            //Add disappearing event
-            profilePage.Disappearing += ModalPush_Disappearing;
+            //Set formsheet
+            DependencyService.Get<IPlatformSpecific>().SetFormSheet(profilePage);
 
             //Add toolbaritem to close page
             var close = new ToolbarItem { Text = "Annulla" };
-            close.Clicked += ModalPush_Disappearing;
+            close.Clicked += (object innersender, EventArgs args) => { profilePage.Navigation.PopModalAsync(); };
             profilePage.ToolbarItems.Add(close);
 
             profilePage.BarTextColor = Styles.TextColor;
@@ -700,8 +768,6 @@ namespace SalveminiApp
             scoinPage.BarTextColor = Styles.TextColor;
             scoinPage.BarBackgroundColor = Styles.BGColor;
 
-            //Add disappearing event
-            scoinPage.Disappearing += ModalPush_Disappearing;
 
             //Add toolbaritem to close page
             scoinPage.ToolbarItems.Add(close);
@@ -713,8 +779,6 @@ namespace SalveminiApp
             extraPage = new Xamarin.Forms.NavigationPage(new SecondaryViews.Extra());
             extraPage.BarTextColor = Styles.TextColor;
             extraPage.BarBackgroundColor = Styles.BGColor;
-            //Add disappearing event
-            extraPage.Disappearing += ModalPush_Disappearing;
 
             //Add toolbaritem to close page
             extraPage.ToolbarItems.Add(close);
@@ -758,7 +822,18 @@ namespace SalveminiApp
 
         void TimetableExpandButtonContainer_Clicked(System.Object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new ContentPage { Title = "Orario", Content = new WebView { Source = new UrlWebViewSource { Url = "https://www.salvemini.edu.it/orario/2020_21/p7/Classi/5F.jpg" }, VerticalOptions = LayoutOptions.FillAndExpand } });
+            //Create stormlion image list
+            var imageList = new List<PhotoBrowser.Photo>();
+            imageList.Add(new PhotoBrowser.Photo { Title = "Orario", URL = TimeTableUrl });
+            var imageViewer = new PhotoBrowser.PhotoBrowser();
+            imageViewer.Photos = imageList;
+            //Display timetable
+            imageViewer.Show();
+        }
+
+        void TimetableDownloadButtonContainer_Clicked(System.Object sender, System.EventArgs e)
+        {
+            DependencyService.Get<IPlatformSpecific>().SavePictureToDisk("Orario", TimetableImage.GetImageAsJpgAsync().Result);
         }
     }
 

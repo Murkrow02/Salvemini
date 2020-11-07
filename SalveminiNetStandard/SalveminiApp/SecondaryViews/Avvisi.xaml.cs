@@ -20,6 +20,9 @@ namespace SalveminiApp.SecondaryViews
             //Set Safearea
             DependencyService.Get<IPlatformSpecific>().SetSafeArea(this);
 
+            //Set formsheet
+            DependencyService.Get<IPlatformSpecific>().SetFormSheet(this);
+
             //Get avvisi from cache
             var cachedAvvisi = CacheHelper.GetCache<List<RestApi.Models.Avvisi>>("Avvisi");
             if (cachedAvvisi != null)

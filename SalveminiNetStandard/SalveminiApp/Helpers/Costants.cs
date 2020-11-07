@@ -228,41 +228,7 @@ namespace SalveminiApp
         {
             try
             {
-if(Device.RuntimePlatform == Device.Android)
-                {
-                    await Launcher.OpenAsync(new Uri("http://drive.google.com/viewer?url=" + url));
-                    return;
-                }
-                
-
-                //Create page with webview
-                var webView = new WebView() { Source = url }; webView.Navigating += WebView_Navigating; webView.Navigated += WebView_Navigated;
-                var contentPage = new ContentPage { Title = title };
-                contentPage.Content = webView;
-                //Add toolbaritems to the page
-                var barItem = new ToolbarItem { Text = "Chiudi", };
-                barItem.Clicked += (object mandatore, EventArgs f) =>
-                {
-                    Xamarin.Forms.Application.Current.MainPage.Navigation.PopModalAsync();
-                };
-                contentPage.ToolbarItems.Add(barItem);
-
-                //Make it navigable
-                var webPage = new Xamarin.Forms.NavigationPage(contentPage) { BarTextColor = Styles.TextColor };
-
-                //Show or hide loading page
-                void WebView_Navigating(object sender, WebNavigatingEventArgs e)
-                {
-                  UserDialogs.Instance.ShowLoading("Caricamento...", MaskType.Black);
-                
-                }
-                void WebView_Navigated(object sender, WebNavigatedEventArgs e)
-                {
-                    UserDialogs.Instance.HideLoading();
-                }
-
-
-                Xamarin.Forms.Application.Current.MainPage.Navigation.PushModalAsync(webPage);
+                await Launcher.OpenAsync(new Uri("http://drive.google.com/viewer?url=" + url));
             }
             catch
             {
@@ -383,7 +349,7 @@ if(Device.RuntimePlatform == Device.Android)
             return taskCompletionSource.Task;
         }
 
-       
+
 
         // Ex: collection.TakeLast(5);
         public static IEnumerable<T> TakeLast<T>(this IEnumerable<T> source, int N)
@@ -475,7 +441,7 @@ if(Device.RuntimePlatform == Device.Android)
             return Task.CompletedTask;
         }
 
-       
+
 
     }
 

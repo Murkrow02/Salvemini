@@ -27,6 +27,9 @@ namespace SalveminiApp.ArgoPages
         {
             InitializeComponent();
 
+            //Set formsheet
+            DependencyService.Get<IPlatformSpecific>().SetFormSheet(this);
+
             todayButton.Text = DateTime.Today.ToString("dd/MM/yyyy");
 
             getDayCache(DateTime.Today.ToString("yyyy-MM-dd"));

@@ -82,7 +82,7 @@ namespace SalveminiApp
                     case 0:
                         //Home
                         if (Device.RuntimePlatform == Device.iOS)
-                            MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar.jpg");
+                            MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar2.jpg");
                         else
                         {
                             //if(MainPage.appearedTimes > 0)

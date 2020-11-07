@@ -26,6 +26,8 @@ namespace SalveminiApp.SecondaryViews
         {
             InitializeComponent();
 
+            
+
             //Load info from cached
             userInfo.CachedUserId = Preferences.Get("UserId", 0);
 

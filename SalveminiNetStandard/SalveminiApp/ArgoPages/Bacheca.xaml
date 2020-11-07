@@ -13,14 +13,13 @@
                                     <ViewCell>
                                         <StackLayout Padding="{Binding CellPadding}" Spacing="30">
                                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                                <StackLayout HorizontalOptions="Start" Spacing="2">
+                                                <StackLayout HorizontalOptions="Start" Spacing="0">
                                                     <StackLayout Orientation="Horizontal" Spacing="5">
                                                         <Label HorizontalOptions="Start" VerticalOptions="Center" FontAttributes="Bold" Text="{Binding formattedTitle}" FontSize="Large" />
                                                         <iconize:IconLabel VerticalOptions="Center" IsVisible="{Binding presaVisione}" Text="fas-check" TextColor="#07EB2F" FontSize="Medium" HorizontalOptions="Start"/>
                                                     </StackLayout>
                                                     <Label Text="{Binding desMessaggio}" TextColor="{x:Static local:Styles.TextGray}" FontSize="12" HorizontalOptions="Start" />
                                                 </StackLayout>
-                                                <iconize:IconLabel TextColor="{x:Static local:Styles.TextColor}" Text="far-file" FontSize="30" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
                                             </StackLayout>
                                             <local:DashedBorderFrame IsVisible="{Binding SeparatorVisibility}" Padding="0" Margin="-10" HeightRequest="0.1" />
                                         </StackLayout>

@@ -19,6 +19,9 @@ namespace SalveminiApp.iCringe
             if (DependencyService.Get<IPlatformSpecific>().HasBottomBar())
                 mainLayout.Padding = new Thickness(0, 20, 0, 0);
 
+            //Set formsheet
+            DependencyService.Get<IPlatformSpecific>().SetFormSheet(this);
+
             //Get from cache
             var cachedNotifiche = CacheHelper.GetCache<List<RestApi.Models.Notifiche>>("cringenotifiche");
             if (cachedNotifiche != null)

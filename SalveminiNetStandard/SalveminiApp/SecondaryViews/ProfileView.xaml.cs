@@ -16,6 +16,9 @@ namespace SalveminiApp.SecondaryViews
             userInfo.User = utente_;
             utente = utente_;
 
+            //Set formsheet
+            DependencyService.Get<IPlatformSpecific>().SetFormSheet(this);
+
             DependencyService.Get<IPlatformSpecific>().SetSafeArea(this);
             if (DependencyService.Get<IPlatformSpecific>().HasBottomBar())
                 mainLayout.Padding = new Thickness(25, 20, 25, 0);

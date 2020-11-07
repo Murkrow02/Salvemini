@@ -22,7 +22,7 @@ namespace SalveminiApp.ArgoPages
             //Set Sizes
             shadowImage.WidthRequest = App.ScreenWidth * 1.5;
             shadowImage.HeightRequest = App.ScreenWidth * 1.5;
-            bachecaList.HeightRequest = App.ScreenHeight / 1.5;
+            bachecaList.HeightRequest = App.ScreenHeight / 1.8;
             //buttonFrame.WidthRequest = App.ScreenWidth / 6;
             //buttonFrame.HeightRequest = App.ScreenWidth / 6;
             //buttonFrame.CornerRadius = (float)(App.ScreenWidth / 6) / 2;
@@ -62,10 +62,15 @@ namespace SalveminiApp.ArgoPages
                 return;
             }
 
-                //Show weview
-                var title = (e.SelectedItem as RestApi.Models.Bacheca).formattedTitle;
-                var link = (e.SelectedItem as RestApi.Models.Bacheca).Allegati[0].fullUrl;
-                Costants.OpenPdf(link, title);
+            if ((e.SelectedItem as RestApi.Models.Bacheca).Allegati.Count == 0)
+            {
+                return;
+            }
+
+            //Openpdf
+            var title = (e.SelectedItem as RestApi.Models.Bacheca).formattedTitle;
+            var link = (e.SelectedItem as RestApi.Models.Bacheca).Allegati[0].fullUrl;
+            Costants.OpenPdf(link, title);
         }
 
         protected async override void OnAppearing()

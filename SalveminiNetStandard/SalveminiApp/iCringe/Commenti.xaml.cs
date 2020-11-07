@@ -23,6 +23,9 @@ namespace SalveminiApp.iCringe
 
             chatEntry.WidthRequest = App.ScreenWidth - 70;
 
+            //Set formsheet
+            DependencyService.Get<IPlatformSpecific>().SetFormSheet(this);
+
             idPost = idPost_;
 
             //Get from cache

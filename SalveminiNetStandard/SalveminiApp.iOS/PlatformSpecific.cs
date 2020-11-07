@@ -13,6 +13,27 @@ namespace SalveminiApp.iOS
     {
         public PlatformSpecific() { }
 
+        public void SavePictureToDisk(string filename, byte[] imageData)
+        {
+            var chartImage = new UIImage(NSData.FromArray(imageData));
+            chartImage.SaveToPhotosAlbum((image, error) =>
+            {
+                //you can retrieve the saved UI Image as well if needed using  
+                //var i = image as UIImage;  
+                if (error != null)
+                {
+                    Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Errore :(", null, "Ok");
+
+                    Console.WriteLine(error.ToString());
+                }
+                else
+                {
+                    Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Orario salvato!", null, "Ok");
+                }
+            });
+        }
+
+
         public void SendToast(string message)
         {
             //Show toast
@@ -65,11 +86,11 @@ namespace SalveminiApp.iOS
             page.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
         }
 
-        //    //Show page as a formsheet (ios >= 13 )
-        //    public void SetFormSheet(Xamarin.Forms.Page page)
-        //    {
-        //        page.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
-        //    }
+        //Show page as a formsheet (ios >= 13 )
+        public void SetFormSheet(Xamarin.Forms.Page page)
+        {
+            page.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
+        }
 
         //    //Used for frame over keyboard
         //    public void AnimateKeyboard(Frame frame, Syncfusion.ListView.XForms.SfListView list, Frame topFrame)
@@ -109,7 +130,7 @@ namespace SalveminiApp.iOS
         //        });
         //    }
 
-           public void SetTabBar(Xamarin.Forms.TabbedPage tabpage)
+        public void SetTabBar(Xamarin.Forms.TabbedPage tabpage)
            { }
 
         //    public float GetBottomSafeAreInset()

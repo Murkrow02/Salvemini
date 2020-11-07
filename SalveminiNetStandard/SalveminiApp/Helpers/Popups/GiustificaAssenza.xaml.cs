@@ -25,6 +25,12 @@ namespace SalveminiApp.Helpers.Popups
 
         async void Giustifica_Clicked(object sender, System.EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(giustifica.Text))
+            {
+                await DisplayAlert("Errore", "Devi motivare la tua assenza", "Ok");
+                return;
+            }
+
             loadingIndicator.IsRunning = true;
             loadingIndicator.IsVisible = true;
             sendBtn.IsEnabled = false;
