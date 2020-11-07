@@ -40,23 +40,8 @@ namespace SalveminiApp.iCringe
             if (!string.IsNullOrEmpty(cachedQuestion))
                 header.Text = cachedQuestion;
 
-            if (Device.RuntimePlatform == Device.iOS)
-            {
-                ////Handle keyboard animation
-                //UIKit.UIKeyboard.Notifications.ObserveWillShow((s, e) =>
-                //{
-                //    var r = UIKit.UIKeyboard.FrameEndFromNotification(e.Notification);
-                //    entryFrame.TranslateTo(0, -r.Height, (uint)(e.AnimationDuration * 1000));
-                //    //  list.ScaleHeightTo(list.Height - r.Height, (uint)(e.AnimationDuration * 1000));
-                //});
-
-                //UIKit.UIKeyboard.Notifications.ObserveWillHide((s, e) =>
-                //{
-                //    var r = UIKit.UIKeyboard.FrameBeginFromNotification(e.Notification);
-                //    entryFrame.TranslateTo(0, 0, (uint)(e.AnimationDuration * 1000));
-                //    // list.ScaleHeightTo(listHeight, (uint)(e.AnimationDuration * 1000));
-                //});
-            }
+            //Keyboard overlap on ios
+            DependencyService.Get<IPlatformSpecific>().AnimateKeyboard(entryFrame);
 
             MessagingCenter.Subscribe<App, RestApi.Models.Commenti>(this, "removeCommento", (sender, commento) =>
              {

@@ -96,7 +96,7 @@ namespace SalveminiApp.RestApi
                     case HttpStatusCode.OK:
                         var content = await response.Content.ReadAsStringAsync();
                         Note = JsonConvert.DeserializeObject<List<Models.Note>>(content);
-                        if (Note.Count > 0)
+                        if (Note != null && Note.Count > 0)
                         {
                             Note[Note.Count - 1].SeparatorVisibility = false;
                             if (Note.Count > 1)
@@ -104,9 +104,10 @@ namespace SalveminiApp.RestApi
                                 Note[Note.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
                                 Note[0].CellPadding = new Thickness(10, 20, 10, 10);
                             }
+
+                            Data.Data = Note;
+                            Barrel.Current.Add("Note", Note, TimeSpan.FromDays(7));
                         }
-                        Data.Data = Note;
-                        Barrel.Current.Add("Note", Note, TimeSpan.FromDays(7));
                         break;
                     case HttpStatusCode.Forbidden:
                         Data.Message = "Si è verificato un errore nella connessione ad ARGO";
@@ -168,7 +169,7 @@ namespace SalveminiApp.RestApi
                     case HttpStatusCode.OK:
                         var content = await response.Content.ReadAsStringAsync();
                         Promemoria = JsonConvert.DeserializeObject<List<Models.Promemoria>>(content);
-                        if (Promemoria.Count > 0)
+                        if (Promemoria != null && Promemoria.Count > 0)
                         {
                             Promemoria[Promemoria.Count - 1].SeparatorVisibility = false;
                             Promemoria[0].CellPadding = new Thickness(10, 20, 10, 10);
@@ -176,9 +177,10 @@ namespace SalveminiApp.RestApi
                             {
                                 Promemoria[Promemoria.Count - 1].CellPadding = new Thickness(10, 10, 10, 20);
                             }
+                            Data.Data = Promemoria;
+                            Barrel.Current.Add("Promemoria", Promemoria, TimeSpan.FromDays(7));
                         }
-                        Data.Data = Promemoria;
-                        Barrel.Current.Add("Promemoria", Promemoria, TimeSpan.FromDays(7));
+                      
                         break;
                     case HttpStatusCode.Forbidden:
                         Data.Message = "Si è verificato un errore nella connessione ad ARGO";

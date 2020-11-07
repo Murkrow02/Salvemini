@@ -13,7 +13,7 @@ namespace SalveminiApp
         //void HideKeyboard();
         void SetSafeArea(Xamarin.Forms.ContentPage page);
         void SetFormSheet(Xamarin.Forms.Page page);
-        //void AnimateKeyboard(Xamarin.Forms.Frame frame, Syncfusion.ListView.XForms.SfListView list, Xamarin.Forms.Frame topFrame);
+        void AnimateKeyboard(Xamarin.Forms.Frame frame);
         //void BlurLayout(Xamarin.Forms.StackLayout view);
         void SetTabBar(Xamarin.Forms.TabbedPage tabpage);
         //float GetBottomSafeAreInset();

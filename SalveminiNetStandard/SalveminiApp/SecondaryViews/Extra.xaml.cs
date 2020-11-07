@@ -18,7 +18,7 @@ namespace SalveminiApp.SecondaryViews
             widgetsLayout.Children.Add(new Controls.ExtraWidget("Estrai", "Sorteggia casualmente tra i tuoi compagni di classe, utile per programmare interrogazioni o assegnare dei posti per un compito", "dices", Color.FromHex("E91D27"), Color.FromHex("BF1113"), new RandomExtract()));
 
             //Flappy mimmo
-            widgetsLayout.Children.Add(new Controls.ExtraWidget("Flappy Mimmo", "Remake di flappy bird ma con un panino di Mimmo", "flappy", Color.FromHex("FEB100"), Color.FromHex("F98D00"), new FlappyMimmo.FlappyHome()));
+            //widgetsLayout.Children.Add(new Controls.ExtraWidget("Flappy Mimmo", "Remake di flappy bird ma con un panino di Mimmo", "flappy", Color.FromHex("FEB100"), Color.FromHex("F98D00"), new FlappyMimmo.FlappyHome()));
 
         }
 

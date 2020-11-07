@@ -15,7 +15,7 @@ namespace SalveminiApi_core.Models
         public string Immagine { get; set; }
         public int IdSondaggio { get; set; }
 
-        public virtual Sondaggi IdSondaggioNavigation { get; set; }
-        public virtual ICollection<VotiSondaggi> VotiSondaggi { get; set; }
+        public virtual Sondaggi IdSondaggioNavigation {internal get; set; }
+        public virtual ICollection<VotiSondaggi> VotiSondaggi {internal get; set; }
     }
 }

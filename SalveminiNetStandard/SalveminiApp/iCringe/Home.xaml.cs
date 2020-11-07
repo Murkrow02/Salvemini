@@ -36,6 +36,12 @@ namespace SalveminiApp.iCringe
                 postsList.RefreshControlColor = Styles.TextColor;
                 loading.Color = Styles.TextColor;
             }
+
+            //Messaging Centers
+            MessagingCenter.Subscribe<App>(this, "RefreshPosts", (sender) =>
+            {
+                OnAppearing();
+            });
         }
 
         int appearedTimes = 0;
@@ -43,8 +49,8 @@ namespace SalveminiApp.iCringe
         {
             base.OnAppearing();
 
-            if (((this.Parent as Helpers.CustomNavigationPage).Parent as TabbedPage).CurrentPage != this.Parent as Helpers.CustomNavigationPage)
-                return;
+            //if (((this.Parent as Helpers.CustomNavigationPage).Parent as TabbedPage).CurrentPage != this.Parent as Helpers.CustomNavigationPage)
+            //    return;
 
             appearedTimes++;
 

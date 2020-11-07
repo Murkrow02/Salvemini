@@ -78,6 +78,8 @@ namespace SalveminiApi_core.Controllers
             int id = Convert.ToInt32(Utility.getUserId(Request));
             string token = Utility.getToken(Request);
 
+
+
             //Prendi modello
             var argoUtils = new ArgoUtils();
             var argoClient = argoUtils.ArgoClient(id, token);

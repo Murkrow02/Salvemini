@@ -56,7 +56,7 @@ namespace SalveminiApp.ArgoPages
                     if (!string.IsNullOrEmpty(response.Message))
                     {
                         //Error occourred, notify the user
-                       // Costants.showToast(response.Message);
+                        Costants.showToast(response.Message);
                         //Stop loading list
                         noteList.IsRefreshing = false;
                         return;
@@ -66,9 +66,11 @@ namespace SalveminiApp.ArgoPages
                     Notes = response.Data as List<RestApi.Models.Note>;
 
                     //Fill List
-                    noteList.ItemsSource = Notes;
-                    emptyLayout.IsVisible = Notes.Count <= 0;
-
+                    if(Notes != null)
+                    {
+                        noteList.ItemsSource = Notes;
+                        emptyLayout.IsVisible = Notes.Count <= 0;
+                    }
                 }
                 catch //Random error
                 {

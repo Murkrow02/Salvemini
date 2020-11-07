@@ -18,8 +18,8 @@ namespace SalveminiApp
             base.OnAppearing();
 
             //Return if triggered from error
-            if (((Parent as Helpers.CustomNavigationPage).Parent as TabbedPage).CurrentPage != this.Parent as Helpers.CustomNavigationPage)
-                return;
+            //if (((Parent as Helpers.CustomNavigationPage).Parent as TabbedPage).CurrentPage != this.Parent as Helpers.CustomNavigationPage)
+            //    return;
 
             appearedTimes++;
 

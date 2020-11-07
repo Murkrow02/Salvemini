@@ -118,9 +118,9 @@ namespace SalveminiApp.Droid
             tabpage.On<Xamarin.Forms.PlatformConfiguration.Android>().DisableSwipePaging();
         }
 
-        //public void AnimateKeyboard(Frame frame, SfListView list, Frame topFrame)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public void AnimateKeyboard(Frame frame)
+        {
+
+        }
     }
 }

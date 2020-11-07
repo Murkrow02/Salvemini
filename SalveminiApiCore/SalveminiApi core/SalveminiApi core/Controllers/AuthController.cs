@@ -22,6 +22,7 @@ namespace SalveminiApi_core.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateUsers()
         {
+            return Ok();
             foreach (var user in db.Utenti.ToList())
             {
 

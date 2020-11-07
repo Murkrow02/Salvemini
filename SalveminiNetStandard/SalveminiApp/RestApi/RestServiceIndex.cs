@@ -45,6 +45,13 @@ namespace SalveminiApp.RestApi
                     //Save Cache
                     Barrel.Current.Add("Index", Index, TimeSpan.FromDays(10));
                 }
+                else if(response.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                   Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
+                    {
+                        Costants.Logout();
+                    });
+                }
                 else
                 {
                     return null;
@@ -99,6 +106,15 @@ namespace SalveminiApp.RestApi
 
                     //Save Cache
                     Barrel.Current.Add("indexargo" + DateTime.Today.ToString("yyyy-MM-dd"), IndexArgo, TimeSpan.FromDays(10));
+                }
+                //Disconnect if unauthorized
+                else if(response.StatusCode == HttpStatusCode.Forbidden || response.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    //Perform logout
+                    Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
+                    {
+                        Costants.Logout();
+                    });
                 }
                 else
                 {

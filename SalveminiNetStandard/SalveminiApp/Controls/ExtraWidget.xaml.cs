@@ -35,7 +35,6 @@ namespace SalveminiApp.Controls
                     if (TitleLbl.Text == "Flappy Mimmo")
                     {
                         MainPage.isSelectingImage = true;
-                        ExtraPage.Navigation.PushModalAsync(new FlappyMimmo.FlappyHome());
                         return;
                     }
 

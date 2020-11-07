@@ -40,6 +40,7 @@ namespace SalveminiApp.iCringe
             var response = await App.Cringe.PostDomanda(domanda.Text);
             if (response[0] == "Successo")
             {
+                MessagingCenter.Send((App)Application.Current, "RefreshPosts");
                 await DisplayAlert("Successo", response[1], "Ok");
                 await Navigation.PopPopupAsync();
 

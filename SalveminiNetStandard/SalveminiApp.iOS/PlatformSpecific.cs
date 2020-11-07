@@ -22,13 +22,13 @@ namespace SalveminiApp.iOS
                 //var i = image as UIImage;  
                 if (error != null)
                 {
-                    Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Errore :(", null, "Ok");
+                    Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Errore", "Non è stato possibile salvare l'orario", "Ok");
 
                     Console.WriteLine(error.ToString());
                 }
                 else
                 {
-                    Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Orario salvato!", null, "Ok");
+                    Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Successo!", "L'orario è stato salvato", "Ok");
                 }
             });
         }
@@ -92,43 +92,21 @@ namespace SalveminiApp.iOS
             page.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetModalPresentationStyle(Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIModalPresentationStyle.FormSheet);
         }
 
-        //    //Used for frame over keyboard
-        //    public void AnimateKeyboard(Frame frame, Syncfusion.ListView.XForms.SfListView list, Frame topFrame)
-        //    {
-        //        double storedHeight = 0;
-        //        bool keyboardDidShow = false; ;
-        //        UIKit.UIKeyboard.Notifications.ObserveWillShow((s, e) =>
-        //        {
-        //            //Check keyboard size
-        //            var r = UIKit.UIKeyboard.FrameEndFromNotification(e.Notification);
-        //            if (r.Height < 1 || keyboardDidShow)
-        //            {
-        //                return;
-        //            }
-        //            frame.TranslateTo(0, -r.Height, (uint)(e.AnimationDuration * 1000));
-        //            storedHeight = 0; storedHeight += list.Height;
-        //            var h = App.ScreenHeight - frame.Height - r.Height - topFrame.Height;
-        //            list.ScaleHeightTo(h / 10, (uint)(e.AnimationDuration * 1000));
-        //            Console.WriteLine(list.Height);
-        //        });
+        //Used for frame over keyboard
+        public void AnimateKeyboard(Frame frame)
+        {
+            UIKit.UIKeyboard.Notifications.ObserveWillShow((s, e) =>
+            {
+                var r = UIKit.UIKeyboard.FrameEndFromNotification(e.Notification);
+                frame.TranslateTo(0, -r.Height, (uint)(e.AnimationDuration * 1000));
+            });
 
-        //        UIKit.UIKeyboard.Notifications.ObserveDidShow((s, e) =>
-        //        {
-        //            keyboardDidShow = true;
-        //        });
-
-        //        UIKit.UIKeyboard.Notifications.ObserveWillHide((s, e) =>
-        //        {
-        //            var r = UIKit.UIKeyboard.FrameBeginFromNotification(e.Notification);
-        //            frame.TranslateTo(0, 0, (uint)(e.AnimationDuration * 1000));
-        //            list.ScaleHeightTo(storedHeight, (uint)(e.AnimationDuration * 1000));
-        //        });
-
-        //        UIKit.UIKeyboard.Notifications.ObserveDidHide((s, e) =>
-        //        {
-        //            keyboardDidShow = false;
-        //        });
-        //    }
+            UIKit.UIKeyboard.Notifications.ObserveWillHide((s, e) =>
+            {
+                var r = UIKit.UIKeyboard.FrameBeginFromNotification(e.Notification);
+                frame.TranslateTo(0, 0, (uint)(e.AnimationDuration * 1000));
+            });
+        }
 
         public void SetTabBar(Xamarin.Forms.TabbedPage tabpage)
            { }

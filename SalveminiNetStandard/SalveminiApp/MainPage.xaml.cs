@@ -148,8 +148,8 @@ namespace SalveminiApp
             }
 
             //Return if triggered from error
-            if (((Parent as Helpers.CustomNavigationPage).Parent as TabbedPage).CurrentPage != this.Parent as Helpers.CustomNavigationPage)
-                return;
+            //if (((Parent as Helpers.CustomNavigationPage).Parent as TabbedPage).CurrentPage != this.Parent as Helpers.CustomNavigationPage)
+            //    return;
 
             //Load navigation pages to be faster
             //  await Task.Run((Action)loadNavigationPages);
@@ -180,7 +180,7 @@ namespace SalveminiApp
                 tapGestureRecognizer.Tapped += widget_Tapped;
 
                 //Registro
-                var registro = new WidgetGradient { Title = "Registro", SubTitle = lastArgoString(), Icon = "far-calendar-alt", StartColor = "FACA6F", EndColor = "FF7272", Push = new ArgoPages.Registro(), Order = 1 };
+                var registro = new WidgetGradient { Title = "Registro", SubTitle = lastArgoString(), Icon = "far-calendar-alt", StartColor = "A872FF", EndColor = "6F8AFA", Push = new ArgoPages.Registro(), Order = 1 };
                 registro.GestureRecognizers.Add(tapGestureRecognizer);
 
                 //Trasporti
@@ -403,18 +403,7 @@ namespace SalveminiApp
                 //Push to selected page
                 if (widget.Push != null)
                 {
-                    if (widget.Title == "Trasporti")
-                    {
-                        if (!Costants.DownloadedOrariTrasporti() || Preferences.Get("firstTimeTrasporti", true))
-                            Navigation.PushModalAsync(new FirstAccess.OrariTrasporti());
-
-                        else
-                            Navigation.PushAsync(widget.Push); //Push to pullman, treni, ali
-                    }
-                    else
-                    {
                         Navigation.PushModalAsync(widget.Push); //Modal
-                    }
                 }
 
                 //Giornalino
@@ -764,9 +753,9 @@ namespace SalveminiApp
 
             //COIN
             //Create new navigation page
-            scoinPage = new Helpers.CustomNavigationPage(new SalveminiCoin.CoinMenu());
-            scoinPage.BarTextColor = Styles.TextColor;
-            scoinPage.BarBackgroundColor = Styles.BGColor;
+            //scoinPage = new Helpers.CustomNavigationPage(new SalveminiCoin.CoinMenu());
+            //scoinPage.BarTextColor = Styles.TextColor;
+            //scoinPage.BarBackgroundColor = Styles.BGColor;
 
 
             //Add toolbaritem to close page

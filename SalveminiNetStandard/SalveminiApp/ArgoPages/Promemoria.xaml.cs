@@ -67,8 +67,11 @@ namespace SalveminiApp.ArgoPages
                     Promemorias = response.Data as List<RestApi.Models.Promemoria>;
 
                     //Fill promemoria list
-                    promemoriaList.ItemsSource = Promemorias;
-                    emptyLayout.IsVisible = Promemorias.Count <= 0;
+                    if(Promemorias != null)
+                    {
+                        promemoriaList.ItemsSource = Promemorias;
+                        emptyLayout.IsVisible = Promemorias.Count <= 0;
+                    }
                 }
                 catch //Random error
                 {
