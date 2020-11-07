@@ -24,7 +24,11 @@ namespace SalveminiApp.iOS
         protected override void OnElementChanged(ElementChangedEventArgs<Editor> e)
         {
             base.OnElementChanged(e);
-            Control.InputAccessoryView = null;
+            try
+            {
+                Control.InputAccessoryView = null;
+            }
+            catch { }
         }
     }
 

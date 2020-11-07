@@ -226,9 +226,6 @@ namespace SalveminiApp
                 //Argo index in background
                 await Task.Run((Action)GetArgoIndex);
 
-                //Update orario in background
-                await Task.Run((Action)getOrario);
-
                 //Get index from api call
                 var tempIndex = await App.Index.GetIndex();
 
@@ -237,6 +234,13 @@ namespace SalveminiApp
                 {
                     //Save new index
                     Index = tempIndex;
+
+                    //Save class
+                    if (!string.IsNullOrEmpty(tempIndex.Classe) && !string.IsNullOrEmpty(tempIndex.Corso))
+                    {
+                        Preferences.Set("Classe", tempIndex.Classe);
+                        Preferences.Set("Corso", tempIndex.Corso);
+                    }
 
                     //Can use the app?
                     switch (Index.Authorized)
@@ -264,6 +268,9 @@ namespace SalveminiApp
                         return;
                     }
                 }
+
+                //Update orario in background
+                await Task.Run((Action)getOrario);
 
                 //Get last sondaggio
                 if (Index.ultimoSondaggio != null) //New sondaggio detected

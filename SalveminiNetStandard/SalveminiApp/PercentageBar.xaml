@@ -5,7 +5,7 @@
         <!--Option names and votes-->
         <patch:Label x:Name="TitleLbl" FontSize="20" TextColor="{x:Static local:Styles.TextColor}" Lines="1" AutoFit="Width" HorizontalTextAlignment="Start" VerticalOptions="Center" HorizontalOptions="Start" />
         <!--Frame-->
-        <Frame BorderColor="{x:Static local:Styles.ObjectGray}"  BackgroundColor="White" x:Name="parentFrame" VerticalOptions="StartAndExpand" Padding="0" IsClippedToBounds="True" CornerRadius="10" HorizontalOptions="CenterAndExpand" >
+        <Frame HasShadow="False" BorderColor="{x:Static local:Styles.ObjectGray}"  BackgroundColor="White" x:Name="parentFrame" VerticalOptions="StartAndExpand" Padding="0" IsClippedToBounds="True" CornerRadius="10" HorizontalOptions="CenterAndExpand" >
             <AbsoluteLayout>
                 <!--Percentage frame-->
                 <Frame x:Name="percentageFrame" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" HasShadow="False" BackgroundColor="OrangeRed" HorizontalOptions="Start" Padding="0" HeightRequest="40"/>

@@ -202,7 +202,7 @@ namespace SalveminiApp.SecondaryViews
                 return;
 
             //Show label
-            headerDesc.Text = "I risultati sono aggiornati in tempo reale";
+            headerDesc.Text = "I risultati sono aggiornati";
 
             //Remove previous results
             resultsLayout.Children.Clear();
@@ -241,7 +241,6 @@ namespace SalveminiApp.SecondaryViews
             {
                 if (!MainPage.isSelectingImage)
                 {
-                    Navigation.PopModalAsync();
                     MainPage.isSelectingImage = false;
                 }
             }

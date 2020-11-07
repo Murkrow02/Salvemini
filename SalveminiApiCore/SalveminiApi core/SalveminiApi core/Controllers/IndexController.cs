@@ -62,6 +62,10 @@ namespace SalveminiApi_core.Controllers
             //sCoin
             returnModel.sCoin = utente.SCoin;
 
+            //Classe
+            returnModel.Classe = utente.Classe.ToString();
+            returnModel.Corso = utente.Corso;
+
             //Prendi ultimo avviso
             try
             {

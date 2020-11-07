@@ -417,7 +417,6 @@ namespace SalveminiApp.ArgoPages
             {
                 todayButton.Text = DateTime.Today.ToString("dd/MM/yyyy");
                 widgetsLayout.Children.Clear();
-                Navigation.PopModalAsync();
             }
             catch
             {

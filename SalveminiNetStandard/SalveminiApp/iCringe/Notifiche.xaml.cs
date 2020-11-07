@@ -112,27 +112,6 @@ namespace SalveminiApp.iCringe
 
         }
 
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-
-            //Ios 13 bug
-            try
-            {
-
-                if (!Pushed)
-                {
-                    Navigation.PopModalAsync();
-                    Navigation.PopModalAsync();
-                }
-                else
-                    Pushed = false;
-            }
-            catch
-            {
-                //fa nient
-            }
-
-        }
+       
     }
 }

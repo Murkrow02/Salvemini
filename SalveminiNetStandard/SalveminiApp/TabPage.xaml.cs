@@ -55,7 +55,7 @@ namespace SalveminiApp
             Children.Add(Argo);
 
             CurrentPage = Children[selectedPage];
-            ColorSelected(selectedPage);
+            //ColorSelected(selectedPage);
 
             if (Device.RuntimePlatform == Device.iOS)
                 SelectedTabColor = Styles.TextColor;

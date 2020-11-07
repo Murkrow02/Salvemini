@@ -14,7 +14,7 @@ namespace SalveminiApp.Controls
             InitializeComponent();
 
             //Set dimensions
-            userImg.WidthRequest = App.ScreenWidth / 3.5;
+            userImg.WidthRequest = App.ScreenWidth / 3;
         }
 
         //User

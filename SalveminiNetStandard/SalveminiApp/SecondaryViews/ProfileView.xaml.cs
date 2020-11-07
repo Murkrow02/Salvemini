@@ -65,20 +65,6 @@ namespace SalveminiApp.SecondaryViews
             Navigation.PopModalAsync();
         }
 
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-
-            //Ios 13 bug
-            try
-            {
-                Navigation.PopModalAsync();
-            }
-            catch
-            {
-                //fa nient
-            }
-
-        }
+       
     }
 }

@@ -55,7 +55,6 @@ namespace SalveminiApp.Droid
             }
             catch (FeatureNotSupportedException ex)
             {
-                Console.WriteLine("Not supported");
                 //Costants.SendCrash(ex, "PlatformSpecific.cs", "SendToast");
             }
         }
