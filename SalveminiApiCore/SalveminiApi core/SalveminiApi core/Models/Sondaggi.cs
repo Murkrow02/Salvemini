@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SalveminiApi_core.Argo.Models;
+using System;
 using System.Collections.Generic;
 
 namespace SalveminiApi_core.Models
@@ -19,5 +20,7 @@ namespace SalveminiApi_core.Models
 
         public virtual ICollection<OggettiSondaggi> OggettiSondaggi { get; set; }
         public virtual ICollection<VotiSondaggi> VotiSondaggi {internal get; set; }
+
+        public virtual Utenti Utenti { get; set; }
     }
 }
