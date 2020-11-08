@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Foundation;
 using Plugin.Iconize;
 using SalveminiApp.iOS;
@@ -13,7 +14,7 @@ namespace SalveminiApp.iOS
     {
         public PlatformSpecific() { }
 
-        public void SavePictureToDisk(string filename, byte[] imageData)
+        public async Task SavePictureToDisk(string filename, byte[] imageData)
         {
             var chartImage = new UIImage(NSData.FromArray(imageData));
             chartImage.SaveToPhotosAlbum((image, error) =>
@@ -28,7 +29,7 @@ namespace SalveminiApp.iOS
                 }
                 else
                 {
-                    Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Successo!", "L'orario è stato salvato", "Ok");
+                     Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Successo!", "L'orario è stato salvato nelle tue foto", "Ok");
                 }
             });
         }

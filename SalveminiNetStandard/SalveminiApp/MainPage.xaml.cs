@@ -40,7 +40,7 @@ namespace SalveminiApp
         {
             InitializeComponent();
 
-            //Set sizes
+            //Set colors
             TimetableExpandButtonContainer.BackgroundColor = Color.FromRgba(0, 0, 0, 120);
             TimetableDownloadButtonContainer.BackgroundColor = Color.FromRgba(0, 0, 0, 120);
 

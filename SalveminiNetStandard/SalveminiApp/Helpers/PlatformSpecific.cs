@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Plugin.Iconize;
 
 namespace SalveminiApp
@@ -7,7 +8,7 @@ namespace SalveminiApp
     {
         void SendToast(string message);
         bool HasBottomBar();
-        void SavePictureToDisk(string filename, byte[] imageData);
+        Task SavePictureToDisk(string filename, byte[] imageData);
         //void OpenSettings();
         //void CanUnfocus(bool status);
         //void HideKeyboard();

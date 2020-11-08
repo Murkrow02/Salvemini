@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.Views.InputMethods;
@@ -18,8 +19,17 @@ namespace SalveminiApp.Droid
     {
         public PlatformSpecific() { }
 
-        public void SavePictureToDisk(string filename, byte[] imageData)  
-        {  
+        public async Task SavePictureToDisk(string filename, byte[] imageData)  
+        {
+            //Check permission
+            var status = await Permissions.RequestAsync<Permissions.StorageWrite>();
+            if (status != PermissionStatus.Granted)
+            {
+               await Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Attenzione", "Non ci hai permesso di accedere alla tua galleria, pertanto non è stato possibile salvare l'orario", "Ok");
+            }
+
+
+
             var dir = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDcim);  
             var pictures = dir.AbsolutePath;  
             //adding a time stamp time file name to allow saving more than one image... otherwise it overwrites the previous saved image of the same name  
@@ -33,9 +43,9 @@ namespace SalveminiApp.Droid
                 mediaScanIntent.SetData(Android.Net.Uri.FromFile(new File(filePath)));  
                 Xamarin.Forms.Forms.Context.SendBroadcast(mediaScanIntent);
 
-                Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Orario salvato!", null , "Ok");
-            }  
-            catch(System.Exception e)  
+                await Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Successo!", "L'orario è stato salvato nelle tue foto", "Ok");
+            }
+            catch (System.Exception e)  
             {  
                 System.Console.WriteLine(e.ToString());  
             }  
@@ -48,12 +58,12 @@ namespace SalveminiApp.Droid
 
             try
             {
-                Vibration.Vibrate();
+               Xamarin.Essentials.Vibration.Vibrate();
 
                 var duration = TimeSpan.FromMilliseconds(200);
-                Vibration.Vibrate(duration);
+                Xamarin.Essentials.Vibration.Vibrate(duration);
             }
-            catch (FeatureNotSupportedException ex)
+            catch
             {
                 //Costants.SendCrash(ex, "PlatformSpecific.cs", "SendToast");
             }
