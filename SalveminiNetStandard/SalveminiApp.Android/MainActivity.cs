@@ -89,7 +89,3 @@ namespace SalveminiApp.Droid
     }
 }
 
-
-//<AotAssemblies>true</AotAssemblies>
-//    <EnableLLVM>true</EnableLLVM>
-//    <AndroidAotAdditionalArguments>no-write-symbols,nodebug</AndroidAotAdditionalArguments>

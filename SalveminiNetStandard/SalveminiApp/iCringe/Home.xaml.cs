@@ -49,9 +49,6 @@ namespace SalveminiApp.iCringe
         {
             base.OnAppearing();
 
-            //if (((this.Parent as Helpers.CustomNavigationPage).Parent as TabbedPage).CurrentPage != this.Parent as Helpers.CustomNavigationPage)
-            //    return;
-
             appearedTimes++;
 
             //Detect firstTime and subscribe to notifications
@@ -74,6 +71,7 @@ namespace SalveminiApp.iCringe
             postsList.IsRefreshing = true;
 
             //Check new notifications in BG
+            if(Device.RuntimePlatform == Device.iOS)
             await Task.Run((Action)checkNotifications);
 
             //Download posts
@@ -93,9 +91,6 @@ namespace SalveminiApp.iCringe
             postsList.ItemsSource = Posts;
             postsList.IsRefreshing = false;
         }
-
-
-
 
         void Post_Selected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {

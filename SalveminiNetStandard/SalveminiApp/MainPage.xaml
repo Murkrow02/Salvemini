@@ -31,8 +31,8 @@
                             <Frame x:Name="TimetableDownloadButtonContainer" HorizontalOptions="Center" HasShadow="False" Padding="0" WidthRequest="40" CornerRadius="10" HeightRequest="40" VerticalOptions="End">
                                 <iconize:IconButton BackgroundColor="Transparent" Text="fas-arrow-to-bottom" Clicked="TimetableDownloadButtonContainer_Clicked" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="0" FontSize="20" TextColor="White" />
                             </Frame>
-                            <Frame BackgroundColor="Transparent" x:Name="TimetableExpandButtonContainer" HorizontalOptions="EndAndExpand" HasShadow="False" Padding="0" WidthRequest="40" CornerRadius="10" HeightRequest="40" VerticalOptions="End">
-                                <iconize:IconButton Text="fas-expand" Clicked="TimetableExpandButtonContainer_Clicked" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="0" FontSize="20" TextColor="White" />
+                            <Frame  x:Name="TimetableExpandButtonContainer" HorizontalOptions="EndAndExpand" HasShadow="False" Padding="0" WidthRequest="40" CornerRadius="10" HeightRequest="40" VerticalOptions="End">
+                                <iconize:IconButton BackgroundColor="Transparent" Text="fas-expand" Clicked="TimetableExpandButtonContainer_Clicked" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="0" FontSize="20" TextColor="White" />
                             </Frame>
                         </StackLayout>
                         <!--Placeholder-->

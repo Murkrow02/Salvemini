@@ -49,7 +49,7 @@
         <AotAssemblies>True</AotAssemblies>
         <AndroidUseDefaultAotProfile>false</AndroidUseDefaultAotProfile>
         <EnableLLVM>True</EnableLLVM>
-        <AndroidPackageFormat>apk</AndroidPackageFormat>
+        <AndroidPackageFormat>aab</AndroidPackageFormat>
         <AndroidEnableProguard>True</AndroidEnableProguard>
         <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
         <AndroidUseAapt2>true</AndroidUseAapt2>

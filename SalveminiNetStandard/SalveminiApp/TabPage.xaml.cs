@@ -11,6 +11,7 @@ namespace SalveminiApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TabPage : Xamarin.Forms.TabbedPage
     {
+
         //Home
         public Helpers.CustomNavigationPage Home = new Helpers.CustomNavigationPage(new MainPage())
         {

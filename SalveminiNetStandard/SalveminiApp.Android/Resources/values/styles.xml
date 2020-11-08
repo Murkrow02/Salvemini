@@ -16,6 +16,8 @@
         <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
         <item name="colorAccent">#4f4f4f</item>
+        <item name="android:actionMenuTextColor">#4f4f4f</item>
+
         <!-- You can also set colorControlNormal, colorControlActivated
          colorControlHighlight and colorSwitchThumbNormal. -->
         <item name="windowActionModeOverlay">true</item>

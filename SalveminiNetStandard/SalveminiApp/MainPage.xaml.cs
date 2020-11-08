@@ -68,7 +68,7 @@ namespace SalveminiApp
         void getOrario()
         {
             //Get stored class
-            var classe = Preferences.Get("Classe", 0) + Preferences.Get("Corso", "");
+            var classe = Preferences.Get("Classe", 0).ToString() + Preferences.Get("Corso", "");
 
             //Add final m for classes of 6 chars
             if (classe.Substring(classe.Length - 2).ToLower() == "ca")
@@ -238,8 +238,12 @@ namespace SalveminiApp
                     //Save class
                     if (!string.IsNullOrEmpty(tempIndex.Classe) && !string.IsNullOrEmpty(tempIndex.Corso))
                     {
-                        Preferences.Set("Classe", tempIndex.Classe);
-                        Preferences.Set("Corso", tempIndex.Corso);
+                        try
+                        {
+                            Preferences.Set("Classe", Convert.ToInt32(tempIndex.Classe));
+                            Preferences.Set("Corso", tempIndex.Corso);
+                        }
+                        catch { }
                     }
 
                     //Can use the app?
