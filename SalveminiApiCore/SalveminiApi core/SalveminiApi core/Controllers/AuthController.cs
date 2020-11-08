@@ -68,7 +68,7 @@ namespace SalveminiApi_core.Controllers
         [HttpPost]
         public async Task<IActionResult> Auth(AuthBlock authBlock)
         {
-            var returnList = new List<Utenti>();
+            var returnList = new List<AuthUser>();
 
             //Initialize login request
             var client = new HttpClient();
@@ -128,7 +128,7 @@ namespace SalveminiApi_core.Controllers
                         conflict.Classe = Convert.ToInt32(utente.desDenominazione);
                         conflict.Corso = utente.desCorso;
                         conflict.ArgoToken = Token;
-                        returnList.Add(conflict);
+                        returnList.Add(new AuthUser { ArgoToken = conflict.ArgoToken, Classe = conflict.Classe, Cognome = conflict.Cognome, Corso = conflict.Corso, Nome = conflict.Nome, Creazione = conflict.Creazione, Stato = conflict.Stato, Id = conflict.Id, AdsWatched = conflict.AdsWatched, Immagine = conflict.Immagine, Sesso = conflict.Sesso, SCoin = conflict.SCoin, LastAdWatched = conflict.LastAdWatched });
                         db.SaveChanges();
                         continue;
 
@@ -150,7 +150,7 @@ namespace SalveminiApi_core.Controllers
                     //newUser.Residenza = utente.alunno.desComuneResidenza != null ? Utility.FirstCharToUpper(utente.alunno.desComuneResidenza.ToLower()) : "";
                     db.Utenti.Add(newUser);
                     db.SaveChanges();
-                    returnList.Add(newUser);
+                    returnList.Add(new AuthUser { ArgoToken = newUser.ArgoToken, Classe = newUser.Classe, Cognome = newUser.Cognome, Corso = newUser.Corso, Nome = newUser.Nome, Creazione = newUser.Creazione, Stato = newUser.Stato, Id = newUser.Id, AdsWatched = newUser.AdsWatched, Immagine = newUser.Immagine, Sesso = newUser.Sesso, SCoin = newUser.SCoin, LastAdWatched = newUser.LastAdWatched });
 
                     //Add to console log new user created
                     Utility.saveEvent(Request, db, newUser.Nome + " " + newUser.Cognome + " (" + newUser.Id + ")" + " si è registrato all'app");

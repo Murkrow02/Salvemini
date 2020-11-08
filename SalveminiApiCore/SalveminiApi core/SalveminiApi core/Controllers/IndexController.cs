@@ -37,6 +37,9 @@ namespace SalveminiApi_core.Controllers
             //Authorized?
             var utente = db.Utenti.Find(id);
 
+            if (utente == null)
+                return Unauthorized();
+
             //Bannato
             if (utente.Stato < 0)
             {

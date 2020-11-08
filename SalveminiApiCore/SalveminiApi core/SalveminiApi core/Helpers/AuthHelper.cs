@@ -32,7 +32,7 @@ namespace SalveminiApi_core
 
                     //Check token with user
                     var utente = db.Utenti.Find(Convert.ToInt32(id));
-                    if (utente.ArgoToken != token)
+                    if (utente == null || utente.ArgoToken != token)
                         return false;
                     else
                     {
