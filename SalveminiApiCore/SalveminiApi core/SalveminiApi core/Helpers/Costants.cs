@@ -36,7 +36,13 @@ namespace SalveminiApi_core
             }
             else
             {
-                return Utility.FirstCharToUpper(subject.ToLower());
+                try
+                {
+                    return Utility.FirstCharToUpper(subject.ToLower());
+                }
+                catch {
+                    return "";
+                }
             }
         }
 
