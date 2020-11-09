@@ -29,7 +29,7 @@ namespace SalveminiApi_core.Models
         public int AdsWatched {internal get; set; }
         public DateTime? LastAdWatched {internal get; set; }
         public string Immagine { get; set; }
-        public string ArgoToken { get; set; }
+        public string ArgoToken {internal get; set; }
 
         public virtual FlappyClassifica FlappyClassifica { internal get; set; }
         public virtual ICollection<Avvisi> Avvisi { internal get; set; }
@@ -42,5 +42,23 @@ namespace SalveminiApi_core.Models
         public virtual ICollection<VotiSondaggi> VotiSondaggi { internal get; set; }
         public virtual ICollection<Sondaggi> Sondaggi { internal get; set; }
 
+    }
+
+
+    public class AuthUser
+    {
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Cognome { get; set; }
+        public string Sesso { get; set; }
+        public int Classe { get; set; }
+        public string Corso { get; set; }
+        public int Stato { get; set; }
+        public DateTime Creazione { internal get; set; }
+        public int SCoin { get; set; }
+        public int AdsWatched { internal get; set; }
+        public DateTime? LastAdWatched { internal get; set; }
+        public string Immagine { get; set; }
+        public string ArgoToken {  get; set; }
     }
 }

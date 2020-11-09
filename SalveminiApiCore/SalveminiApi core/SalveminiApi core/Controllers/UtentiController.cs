@@ -23,12 +23,25 @@ namespace SalveminiApi_core.Controllers
         public IActionResult getAllUtenti()
         {
             //Check Auth
-            bool authorized = AuthHelper.Authorize(Request, db);
+            bool authorized = AuthHelper.Authorize(Request, db, 2);
             if (!authorized)
                 return Unauthorized();
 
             //Prendi tutti gli utenti
             var utenti = db.Utenti.ToList();
+
+            //Check if super vip
+            var id = Utility.getUserId(Request);
+            var requesting = db.Utenti.Find(id);
+            if(requesting.Stato > 2)
+            {
+                var customUsers = new List<AuthUser>();
+                foreach(var user in utenti)
+                {
+                    customUsers.Add(new AuthUser { ArgoToken = user.ArgoToken, Classe = user.Classe, Cognome = user.Cognome, Corso = user.Corso, Nome = user.Nome, Creazione = user.Creazione, Stato = user.Stato, Id = user.Id, AdsWatched = user.AdsWatched, Immagine = user.Immagine, Sesso = user.Sesso, SCoin = user.SCoin, LastAdWatched = user.LastAdWatched });
+                }
+                return Ok(customUsers);
+            }
 
             return Ok(utenti);
         }
@@ -57,7 +70,7 @@ namespace SalveminiApi_core.Controllers
         public IActionResult changeStatus(int id, int status)
         {
             //Check Auth
-            bool authorized = AuthHelper.Authorize(Request, db);
+            bool authorized = AuthHelper.Authorize(Request, db, 2);
             if (!authorized)
                 return Unauthorized();
 

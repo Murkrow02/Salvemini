@@ -20,8 +20,8 @@ namespace SalveminiApi_core.Pages
 
         public async Task<IActionResult> OnGet()
         {
-            return RedirectToPage("/bookmarket/login");
-            //Users = db.Utenti.Count();
+            Users = db.Utenti.Count();
+            return Page();
         }
     }
 }
