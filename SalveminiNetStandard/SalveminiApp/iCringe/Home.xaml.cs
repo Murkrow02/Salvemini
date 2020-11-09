@@ -45,11 +45,17 @@ namespace SalveminiApp.iCringe
         }
 
         int appearedTimes = 0;
+        bool isAppearing;
         protected override async void OnAppearing()
         {
             base.OnAppearing();
 
+            if (Device.RuntimePlatform == Device.Android && (MainPage.appearedTimes  < 1|| isAppearing))
+                return;
+
+            isAppearing = true;
             appearedTimes++;
+
 
             //Detect firstTime and subscribe to notifications
             if (Preferences.Get("firstTimeCringe", true))
@@ -64,6 +70,7 @@ namespace SalveminiApp.iCringe
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
                 Costants.showToast("connection");
+                isAppearing = false;
                 return;
             }
 
@@ -82,6 +89,7 @@ namespace SalveminiApp.iCringe
             {
                 Costants.showToast("Si è verificato un errore, riprova più tardi o contattaci se il problema persiste");
                 postsList.IsRefreshing = false;
+                isAppearing = false;
                 return;
             }
 
@@ -90,6 +98,7 @@ namespace SalveminiApp.iCringe
             Posts = posts_.ToObservableCollection();
             postsList.ItemsSource = Posts;
             postsList.IsRefreshing = false;
+            isAppearing = false;
         }
 
         void Post_Selected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)

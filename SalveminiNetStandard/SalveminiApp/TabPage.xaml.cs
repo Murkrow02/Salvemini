@@ -85,10 +85,8 @@ namespace SalveminiApp
                         if (Device.RuntimePlatform == Device.iOS)
                             MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar2.jpg");
                         else
-                        {
-                            //if(MainPage.appearedTimes > 0)
-                            //((Children[0] as Helpers.CustomNavigationPage).RootPage as MainPage).AndroidFix();
-                        }
+                            MessagingCenter.Send((App)Application.Current, "RefreshPosts");
+
                         (Children[0] as Helpers.CustomNavigationPage).IconImageSource = "iCringeFill.png";
                         (Children[1] as Helpers.CustomNavigationPage).IconImageSource = "tabBarHome.png";
                         (Children[2] as Helpers.CustomNavigationPage).IconImageSource = "tabBarArgo.png";

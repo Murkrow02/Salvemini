@@ -21,12 +21,12 @@
                         <DataTemplate>
                             <StackLayout VerticalOptions="CenterAndExpand" Padding="12, 0" Spacing="15">
                                 <!--Creatore-->
-                                <Label Text="{Binding fullData}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" VerticalOptions="StartAndExpand"/>
+                                <Label Text="{Binding nomeCreatore}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" VerticalOptions="StartAndExpand"/>
                                 <!--Frame avviso-->
                                 <Frame CornerRadius="12" BackgroundColor="White" HasShadow="False" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="8,12">
                                     <StackLayout Spacing="3">
                                         <!--Titolo-->
-                                        <patch:Label Lines="1" AutoFit="Width" Text="{Binding Titolo}" TextColor="{x:Static local:Styles.TextColor}" FontSize="30" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" />
+                                        <patch:Label Margin="0,0,0,10" Lines="1" AutoFit="Width" Text="{Binding Titolo}" TextColor="{x:Static local:Styles.TextColor}" FontSize="30" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" />
                                         <!--Immagini-->
                                         <flv:FlowListView IsVisible="{Binding ListVisibility}" FlowItemTapped="ImageList_ItemSelected" FlowItemsSource="{Binding FullImmagini}" SeparatorColor="Black" BackgroundColor="Transparent"  FlowColumnExpand="ProportionalLast" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="false" RowHeight="100">
                                             <flv:FlowListView.FlowColumnTemplate>
@@ -51,7 +51,7 @@
                                     </StackLayout>
                                 </Frame>
                                 <!--Creatore-->
-                                <Label Text="{Binding nomeCreatore}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" VerticalOptions="EndAndExpand"/>
+                                <Label Text="{Binding fullData}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}" VerticalOptions="EndAndExpand"/>
                             </StackLayout>
                         </DataTemplate>
                     </cards:CarouselView.ItemTemplate>

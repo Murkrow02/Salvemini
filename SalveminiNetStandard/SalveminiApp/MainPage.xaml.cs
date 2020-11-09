@@ -40,10 +40,6 @@ namespace SalveminiApp
         {
             InitializeComponent();
 
-            //Set colors
-            TimetableExpandButtonContainer.BackgroundColor = Color.FromRgba(0, 0, 0, 120);
-            TimetableDownloadButtonContainer.BackgroundColor = Color.FromRgba(0, 0, 0, 120);
-
             //Subscribe to messaging center
             //Refresh image cache
             MessagingCenter.Subscribe<App, string>(this, "ReloadUserPic", (sender, arg) =>
@@ -64,81 +60,20 @@ namespace SalveminiApp
 
         }
 
-        string TimeTableUrl = "";
-        void getOrario()
-        {
-            //Get stored class
-            var classe = Preferences.Get("Classe", 0).ToString() + Preferences.Get("Corso", "");
-
-            //Add final m for classes of 6 chars
-            if (classe.Substring(classe.Length - 2).ToLower() == "ca")
-            {
-                classe = classe.Remove(classe.Length - 2) + "cam";
-            }
-            //Low "cam" string due case sensitive website
-            if (classe.Contains("CAM"))
-            {
-                classe = classe.Remove(classe.Length - 3) + "cam";
-            }
-
-            //Bool for last timetable found
-            bool found = false;
-            for (int p = 6; p < 20; p++)
-            {
-                try
-                {
-                    //Try getting result from link
-                    System.Net.WebRequest request = System.Net.WebRequest.Create($"https://www.salvemini.edu.it/orario/2020_21/p{p}/Classi/{classe}.jpg");
-                    //Only get <Head> tag for low data request
-                    request.Method = "HEAD";
-                    request.GetResponse();
-                    //Reach this only if website is found
-                    found = true;
-                }
-                catch
-                {
-                    //First not found
-                    if (found)
-                    {
-                        //Set final url
-                        TimeTableUrl = $"https://www.salvemini.edu.it/orario/2020_21/p{p - 1}/Classi/{classe}.jpg";
-                        Preferences.Set("TimeTableUrl", TimeTableUrl);
-                        break;
-                    }
-                }
-            }
-
-            Device.BeginInvokeOnMainThread(() =>
-            {
-                //Check if there is a timetable
-                if (string.IsNullOrEmpty(TimeTableUrl))
-                {
-                    //No => show placeholder
-                    NoTimetableLayout.IsVisible = true;
-                    TimetableImage.IsVisible = false;
-                    TimetableButtonsLayout.IsVisible = false;
-                    return;
-                }
-                else
-                {
-                    //Yes => Hide placeholder
-                    NoTimetableLayout.IsVisible = false;
-                    TimetableImage.IsVisible = true;
-                    TimetableButtonsLayout.IsVisible = true;
-                }
-
-                //Set timetable image source
-                TimetableImage.Source = TimeTableUrl;
-            });
-        }
+       
 
         //Detect if onappearing must be triggered
         public static bool forceAppearing; bool userRefreshed = true;
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+
             //Set tabbar image
-            MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar.jpg");
+            try
+            {
+                MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "changeBg", "bbar.jpg");
+            }
+            catch { }
 
             //Push on notification page clicked
             if (NotificationPage != null)
@@ -220,9 +155,6 @@ namespace SalveminiApp
                 //Show loading
                 userRefreshed = false; homeLoading.IsRefreshing = true; userRefreshed = true;
 
-                //Timetable Cache
-                TimetableImage.Source = Preferences.Get("TimeTableUrl", "");
-
                 //Argo index in background
                 await Task.Run((Action)GetArgoIndex);
 
@@ -274,7 +206,7 @@ namespace SalveminiApp
                 }
 
                 //Update orario in background
-                await Task.Run((Action)getOrario);
+                FotoOrario.ClasseCorso = Preferences.Get("Classe", 0).ToString() + Preferences.Get("Corso", "");
 
                 //Get last sondaggio
                 if (Index.ultimoSondaggio != null) //New sondaggio detected
@@ -820,21 +752,7 @@ namespace SalveminiApp
             DisplayAlert("Info Sponsor", "Il liceo Salvemini non lucra in alcun modo da questo progetto, tutto il guadagno è indirizzato agli sviluppatori dell'app", "Ok");
         }
 
-        void TimetableExpandButtonContainer_Clicked(System.Object sender, System.EventArgs e)
-        {
-            //Create stormlion image list
-            var imageList = new List<PhotoBrowser.Photo>();
-            imageList.Add(new PhotoBrowser.Photo { Title = "Orario", URL = TimeTableUrl });
-            var imageViewer = new PhotoBrowser.PhotoBrowser();
-            imageViewer.Photos = imageList;
-            //Display timetable
-            imageViewer.Show();
-        }
-
-        void TimetableDownloadButtonContainer_Clicked(System.Object sender, System.EventArgs e)
-        {
-            DependencyService.Get<IPlatformSpecific>().SavePictureToDisk("Orario", TimetableImage.GetImageAsJpgAsync().Result);
-        }
+       
     }
 
 

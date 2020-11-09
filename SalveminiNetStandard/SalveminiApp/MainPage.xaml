@@ -24,24 +24,7 @@
             <!--Layout-->
             <StackLayout Padding="15,10,15,20" Spacing="15" x:Name="fullLayout">
                 <!--Orario-->
-                <Frame IsClippedToBounds="True" HasShadow="False" CornerRadius="20" Padding="0" HorizontalOptions="FillAndExpand">
-                    <Grid>
-                        <ffimageloading:CachedImage Aspect="AspectFit" HorizontalOptions="FillAndExpand" HeightRequest="250" x:Name="TimetableImage"/>
-                        <StackLayout x:Name="TimetableButtonsLayout" Padding="10" Orientation="Horizontal">
-                            <Frame x:Name="TimetableDownloadButtonContainer" HorizontalOptions="Center" HasShadow="False" Padding="0" WidthRequest="40" CornerRadius="10" HeightRequest="40" VerticalOptions="End">
-                                <iconize:IconButton BackgroundColor="Transparent" Text="fas-arrow-to-bottom" Clicked="TimetableDownloadButtonContainer_Clicked" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="0" FontSize="20" TextColor="White" />
-                            </Frame>
-                            <Frame  x:Name="TimetableExpandButtonContainer" HorizontalOptions="EndAndExpand" HasShadow="False" Padding="0" WidthRequest="40" CornerRadius="10" HeightRequest="40" VerticalOptions="End">
-                                <iconize:IconButton BackgroundColor="Transparent" Text="fas-expand" Clicked="TimetableExpandButtonContainer_Clicked" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="0" FontSize="20" TextColor="White" />
-                            </Frame>
-                        </StackLayout>
-                        <!--Placeholder-->
-                        <StackLayout IsVisible="false" x:Name="NoTimetableLayout" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                            <iconize:IconLabel BackgroundColor="Transparent" Text="far-clock" HorizontalOptions="Center" FontSize="30" TextColor="{x:Static local:Styles.TextGray}"/>
-                            <Label Text="Non siamo riusciti a recuperare il tuo orario" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="{x:Static local:Styles.TextGray}"/>
-                        </StackLayout>
-                    </Grid>
-                </Frame>
+               <Controls:OrarioFoto x:Name="FotoOrario"/>
                 <!--WidgetList-->
                 <StackLayout VerticalOptions="Start">
                     <!--Widgets-->
