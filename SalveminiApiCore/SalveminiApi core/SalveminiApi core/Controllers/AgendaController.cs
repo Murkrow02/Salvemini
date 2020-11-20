@@ -49,7 +49,7 @@ namespace SalveminiApi_core.Controllers
                 var argoClient = argoUtils.ArgoClient(id, token);
                 var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/compiti");
                 if (!argoResponse.IsSuccessStatusCode)
-                    return Forbid();
+                    return StatusCode(500);
                 var argoContent = await argoResponse.Content.ReadAsStringAsync();
                 //Order by last date
                 var compiti = JsonConvert.DeserializeObject<compitiList>(argoContent).dati.OrderByDescending(x => DateTime.ParseExact(x.datGiorno, "yyyy-MM-dd", new CultureInfo("it-IT"))).ToList();

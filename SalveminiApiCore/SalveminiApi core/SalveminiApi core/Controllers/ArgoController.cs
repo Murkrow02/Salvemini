@@ -35,7 +35,7 @@ namespace SalveminiApi_core.Controllers
             var argoClient = argoUtils.ArgoClient(id, token);
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/compiti");
             if (!argoResponse.IsSuccessStatusCode)
-                return Forbid();
+                return StatusCode(500);
             var argoContent = await argoResponse.Content.ReadAsStringAsync();
             var returnModel = JsonConvert.DeserializeObject<compitiList>(argoContent);
             return Ok(returnModel.dati);
@@ -59,7 +59,7 @@ namespace SalveminiApi_core.Controllers
             var argoClient = argoUtils.ArgoClient(id, token);
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/argomenti");
             if (!argoResponse.IsSuccessStatusCode)
-                return Forbid();
+                return StatusCode(500);
             var argoContent = await argoResponse.Content.ReadAsStringAsync();
             var returnModel = JsonConvert.DeserializeObject<argomentiList>(argoContent);
             return Ok(returnModel.dati);
@@ -85,7 +85,7 @@ namespace SalveminiApi_core.Controllers
             var argoClient = argoUtils.ArgoClient(id, token);
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/promemoria");
             if (!argoResponse.IsSuccessStatusCode)
-                return Forbid();
+                return StatusCode(500);
             var argoContent = await argoResponse.Content.ReadAsStringAsync();
             var returnModel = JsonConvert.DeserializeObject<promemoriaList>(argoContent);
             return Ok(returnModel.dati);
@@ -109,7 +109,7 @@ namespace SalveminiApi_core.Controllers
             var argoClient = argoUtils.ArgoClient(id, token);
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/assenze");
             if (!argoResponse.IsSuccessStatusCode)
-                return Forbid();
+                return StatusCode(500);
             var argoContent = await argoResponse.Content.ReadAsStringAsync();
             var returnModel = JsonConvert.DeserializeObject<AssenzeList>(argoContent);
             var returnList = new List<Assenze>();
@@ -135,7 +135,7 @@ namespace SalveminiApi_core.Controllers
             var argoClient = argoUtils.ArgoClient(id, token);
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/assenze");
             if (!argoResponse.IsSuccessStatusCode)
-                return Forbid();
+                return StatusCode(500);
 
             var argoContent = await argoResponse.Content.ReadAsStringAsync();
             var returnModel = JsonConvert.DeserializeObject<AssenzeList>(argoContent);
@@ -170,7 +170,7 @@ namespace SalveminiApi_core.Controllers
             var argoClient = argoUtils.ArgoClient(id, token);
             var argoResponse = await argoClient.PostAsync("https://www.portaleargo.it/famiglia/api/rest/giustifica", content);
             if (!argoResponse.IsSuccessStatusCode)
-                return Forbid();
+                return StatusCode(500);
 
 
             return Ok();
@@ -194,7 +194,7 @@ namespace SalveminiApi_core.Controllers
             var argoClient = argoUtils.ArgoClient(id, token);
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/votigiornalieri");
             if (!argoResponse.IsSuccessStatusCode)
-                return Forbid();
+                return StatusCode(500);
 
             var votiList = new List<Voti>();
 
@@ -213,7 +213,7 @@ namespace SalveminiApi_core.Controllers
             }
             catch //ARGO offline
             {
-                return Forbid();
+                return StatusCode(403);
             }
 
 
@@ -243,7 +243,7 @@ namespace SalveminiApi_core.Controllers
             var argoClient = argoUtils.ArgoClient(id, token);
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/votigiornalieri");
             if (!argoResponse.IsSuccessStatusCode)
-                return Forbid();
+                return StatusCode(403);
             var argoContent = await argoResponse.Content.ReadAsStringAsync();
             var returnModel = JsonConvert.DeserializeObject<VotiList>(argoContent);
             var votiList = new List<Voti>();
@@ -321,7 +321,7 @@ namespace SalveminiApi_core.Controllers
             var argoClient = argoUtils.ArgoClient(id, token);
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/votiscrutinio");
             if (!argoResponse.IsSuccessStatusCode)
-                return Forbid();
+                return StatusCode(500);
             var argoContent = await argoResponse.Content.ReadAsStringAsync();
             var returnModel = JsonConvert.DeserializeObject<List<Scrutinio>>(argoContent);
 
@@ -357,7 +357,7 @@ namespace SalveminiApi_core.Controllers
             var argoClient = argoUtils.ArgoClient(id, token);
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/bachecanuova");
             if (!argoResponse.IsSuccessStatusCode)
-                return Forbid();
+                return StatusCode(500);;
             var argoContent = await argoResponse.Content.ReadAsStringAsync();
             var returnModel = JsonConvert.DeserializeObject<bachecaList>(argoContent);
             var returnList = new List<Bacheca>();
@@ -386,7 +386,7 @@ namespace SalveminiApi_core.Controllers
             //Post
             var argoResponse = await argoClient.PostAsync("https://www.portaleargo.it/famiglia/api/rest/presavisionebachecanuova", content);
             if (!argoResponse.IsSuccessStatusCode)
-                return Forbid();
+                return StatusCode(500);
 
 
             return Ok();
@@ -414,7 +414,7 @@ namespace SalveminiApi_core.Controllers
             //Post
             var argoResponse = await argoClient.PostAsync("https://www.portaleargo.it/famiglia/api/rest/cambiopassword", content);
             if (!argoResponse.IsSuccessStatusCode)
-                return Forbid();
+                return StatusCode(500);
 
 
             return Ok();
@@ -438,7 +438,7 @@ namespace SalveminiApi_core.Controllers
             var argoClient = argoUtils.ArgoClient(id, token);
             var argoResponse = await argoClient.GetAsync("https://www.portaleargo.it/famiglia/api/rest/notedisciplinari");
             if (!argoResponse.IsSuccessStatusCode)
-                return Forbid();
+                return StatusCode(500);
             var argoContent = await argoResponse.Content.ReadAsStringAsync();
             var returnModel = JsonConvert.DeserializeObject<noteList>(argoContent);
             var returnList = new List<Note>();
