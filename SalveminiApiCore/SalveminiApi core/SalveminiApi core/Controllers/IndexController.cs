@@ -193,7 +193,7 @@ namespace SalveminiApi_core.Controllers
 
                 //Token changed
                 if (response.StatusCode == HttpStatusCode.Unauthorized)
-                    return Forbid();
+                    return Unauthorized();
 
                 var oggi = new Oggi();
                 var content = await response.Content.ReadAsStringAsync();
@@ -252,7 +252,7 @@ namespace SalveminiApi_core.Controllers
             }
             catch (Exception ex)
             {
-                return Forbid();
+                return StatusCode(500);
             }
 
             return Ok(returnModel);
@@ -289,7 +289,7 @@ namespace SalveminiApi_core.Controllers
 
                 //Token changed
                 if (response.StatusCode == HttpStatusCode.Unauthorized)
-                    return Forbid();
+                    return Unauthorized();
 
                 var oggi = new Oggi();
                 var content = await response.Content.ReadAsStringAsync();
@@ -370,7 +370,7 @@ namespace SalveminiApi_core.Controllers
             }
             catch (Exception ex)
             {
-                return Forbid();
+                return StatusCode(500);
             }
 
         }

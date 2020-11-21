@@ -9,13 +9,27 @@ using System.Text;
 using System.Threading.Tasks;
 using MailKit.Net.Smtp;
 using MimeKit;
+using System.IO;
 
 namespace SalveminiApi_core
 {
     public class Utility
     {
+
         //Salva evento nei log
-        public static void saveEvent(HttpRequest re, Salvemini_DBContext db, string name)
+        public static void saveCrash(Microsoft.AspNetCore.Hosting.IWebHostEnvironment env, string name, string error)
+        {
+            try
+            {
+                var path = env.WebRootPath + $"/crashes/";
+                var fullPath = Path.Combine(path + name + ".txt");
+                System.IO.File.WriteAllText(fullPath, error);
+            }
+            catch { }
+        }
+
+            //Salva evento nei log
+            public static void saveEvent(HttpRequest re, Salvemini_DBContext db, string name)
         {
             int maxEvents = 5000;
 
