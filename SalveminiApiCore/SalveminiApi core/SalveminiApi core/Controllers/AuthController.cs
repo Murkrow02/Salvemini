@@ -52,8 +52,10 @@ namespace SalveminiApi_core.Controllers
 
                         newUser.Classe = Convert.ToInt32(utente.desDenominazione);
                         newUser.Corso = utente.desCorso;
+
                         //try { newUser.Compleanno = DateTime.ParseExact(utente.alunno.datNascita, "yyyy-MM-dd", new CultureInfo("it-IT")); } catch { newUser.Compleanno = new DateTime(2069,04,20); };
                         //newUser.Residenza = utente.alunno.desComuneResidenza != null ? Utility.FirstCharToUpper(utente.alunno.desComuneResidenza.ToLower()) : "";
+
                         db.SaveChanges();
                     }
                 }

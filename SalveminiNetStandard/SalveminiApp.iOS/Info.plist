@@ -74,12 +74,6 @@
 	<string>ca-app-pub-2688730930606353~1053541819</string>
 	<key>GADIsAdManagerApp</key>
 	<true/>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Salvemini ha bisogno di verificare la tua posizione per attivare il codice</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Salvemini ha bisogno di verificare la tua posizione per attivare il codice</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Salvemini ha bisogno di verificare la tua posizione per attivare il codice</string>
 	<key>CFBundleVersion</key>
 	<string>13</string>
 	<key>CFBundleShortVersionString</key>
