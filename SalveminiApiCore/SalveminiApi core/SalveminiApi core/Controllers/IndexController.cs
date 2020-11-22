@@ -60,10 +60,10 @@ namespace SalveminiApi_core.Controllers
                 returnModel.AppVersion = appInfo.AppVersion;
                 returnModel.OrarioTrasportiVersion = appInfo.OrariVersion;
             }
-           
+
 
             //sCoin
-            returnModel.sCoin = utente.SCoin;
+            returnModel.Fondo = CalcolaFondo();
 
             //Classe
             returnModel.Classe = utente.Classe.ToString();
@@ -375,6 +375,15 @@ namespace SalveminiApi_core.Controllers
 
         }
 
-      
+       public decimal CalcolaFondo()
+        {
+            var trans = db.FondoStudentesco.ToList();
+            decimal count = 0;
+            foreach(var transaction in trans)
+            {
+                count += transaction.Importo;
+            }
+            return count;
+        }
     }
 }

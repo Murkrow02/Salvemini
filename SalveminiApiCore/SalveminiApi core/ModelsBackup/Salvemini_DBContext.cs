@@ -32,7 +32,6 @@ namespace SalveminiApi_core.Models
         public virtual DbSet<FlappyClassifica> FlappyClassifica { get; set; }
         public virtual DbSet<FlappyMonete> FlappyMonete { get; set; }
         public virtual DbSet<FlappySkin> FlappySkin { get; set; }
-        public virtual DbSet<FondoStudentesco> FondoStudentesco { get; set; }
         public virtual DbSet<Giornalino> Giornalino { get; set; }
         public virtual DbSet<Materie> Materie { get; set; }
         public virtual DbSet<Notifiche> Notifiche { get; set; }
@@ -384,19 +383,6 @@ namespace SalveminiApi_core.Models
                     .HasMaxLength(150);
             });
 
-            modelBuilder.Entity<FondoStudentesco>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.Property(e => e.Causa).HasMaxLength(2000);
-
-                entity.Property(e => e.Data).HasColumnType("datetime");
-
-                entity.Property(e => e.Id).HasColumnName("id");
-
-                entity.Property(e => e.Importo).HasColumnType("money");
-            });
-
             modelBuilder.Entity<Giornalino>(entity =>
             {
                 entity.Property(e => e.Id).HasColumnName("id");
@@ -486,10 +472,10 @@ namespace SalveminiApi_core.Models
                     .HasMaxLength(150);
 
                 entity.HasOne(d => d.Utenti)
-                    .WithMany(p => p.Sondaggi)
-                    .HasForeignKey(d => d.Creatore)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Sondaggi_Utenti");
+                 .WithMany(p => p.Sondaggi)
+                 .HasForeignKey(d => d.Creatore)
+                 .OnDelete(DeleteBehavior.NoAction)
+                 .HasConstraintName("FK_Sondaggi_Utenti");
             });
 
             modelBuilder.Entity<Utenti>(entity =>
