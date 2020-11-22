@@ -41,6 +41,7 @@ namespace SalveminiApp.Droid
             //Register OneSignal License
             OneSignal.Current.StartInit("a85553ca-c1fe-4d93-a02f-d30bf30e2a2a").EndInit();
 
+            Xamarin.Forms.Forms.SetFlags(new string[] { "Shapes_Experimental" });
 
 
 

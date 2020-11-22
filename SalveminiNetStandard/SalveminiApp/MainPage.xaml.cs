@@ -33,7 +33,6 @@ namespace SalveminiApp
         public static Xamarin.Forms.Page NotificationPage = null;
         //Load navigation pages to be faster
         public Xamarin.Forms.NavigationPage profilePage = null;
-        public Helpers.CustomNavigationPage scoinPage = null;
         public Xamarin.Forms.NavigationPage extraPage = null;
 
         public MainPage()
@@ -60,7 +59,7 @@ namespace SalveminiApp
 
         }
 
-       
+
 
         //Detect if onappearing must be triggered
         public static bool forceAppearing; bool userRefreshed = true;
@@ -176,6 +175,28 @@ namespace SalveminiApp
                             Preferences.Set("Corso", tempIndex.Corso);
                         }
                         catch { }
+                    }
+
+                    //Get Students Money balance
+                    if (!string.IsNullOrEmpty(tempIndex.Fondo.ToString()))
+                    {
+                        BalanceLabel.Text = tempIndex.Fondo.ToString();
+
+                        if (Preferences.Get("FirstTimeBalance", true))
+                        {
+                            var BalancePopup = new Helpers.PopOvers().defaultPopOver;
+                            var PopupLayout = new StackLayout() { Spacing = 2 };
+                            PopupLayout.Children.Add(new Label { Text = "Novità", TextColor = Color.White, FontSize = 15, FontAttributes = FontAttributes.Bold });
+                            PopupLayout.Children.Add(new Label { Text = "Ora puoi monitorare in tempo reale tutte le transazioni" + Environment.NewLine + "che vengono effettuate dal fondo studentesco", FontSize = 12, TextColor = Color.White });
+                            BalancePopup.Content = PopupLayout;
+                            BalancePopup.PointerDirection = Forms9Patch.PointerDirection.Up;
+                            BalancePopup.PreferredPointerDirection = Forms9Patch.PointerDirection.Up;
+                            BalancePopup.Target = BalanceLabel;
+                            BalancePopup.BackgroundColor = Color.FromRgba(0, 0, 0, 180);
+
+                            //BalancePopup.IsVisible = true;
+                            //Preferences.Set("FirstTimeBalance", false);
+                        }
                     }
 
                     //Can use the app?
@@ -346,7 +367,7 @@ namespace SalveminiApp
                 //Push to selected page
                 if (widget.Push != null)
                 {
-                        Navigation.PushModalAsync(widget.Push); //Modal
+                    Navigation.PushModalAsync(widget.Push); //Modal
                 }
 
                 //Giornalino
@@ -669,13 +690,13 @@ namespace SalveminiApp
 
         public void sCoin_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(scoinPage);
+            Navigation.PushModalAsync(new SecondaryViews.MoneyTransactions(BalanceLabel.Text));
         }
 
         async void loadNavigationPages()
         {
 
-            if (extraPage != null && profilePage != null && scoinPage != null) //All loaded, nothing to do
+            if (extraPage != null && profilePage != null) //All loaded, nothing to do
                 return;
 
             //PROFILE
@@ -693,18 +714,6 @@ namespace SalveminiApp
             profilePage.ToolbarItems.Add(close);
 
             profilePage.BarTextColor = Styles.TextColor;
-
-            //COIN
-            //Create new navigation page
-            //scoinPage = new Helpers.CustomNavigationPage(new SalveminiCoin.CoinMenu());
-            //scoinPage.BarTextColor = Styles.TextColor;
-            //scoinPage.BarBackgroundColor = Styles.BGColor;
-
-
-            //Add toolbaritem to close page
-            scoinPage.ToolbarItems.Add(close);
-
-            scoinPage.BarTextColor = Styles.TextColor;
 
             //EXTRA
             //Create new navigation page
@@ -752,7 +761,7 @@ namespace SalveminiApp
             DisplayAlert("Info Sponsor", "Il liceo Salvemini non lucra in alcun modo da questo progetto, tutto il guadagno è indirizzato agli sviluppatori dell'app", "Ok");
         }
 
-       
+
     }
 
 

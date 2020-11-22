@@ -17,7 +17,7 @@ namespace SalveminiApp.RestApi.Models
         public int sCoin { get; set; }
         public string Classe { get; set; }
         public string Corso { get; set; }
-
+        public decimal Fondo { get; set; }
     }
 
     public class IndexArgo
