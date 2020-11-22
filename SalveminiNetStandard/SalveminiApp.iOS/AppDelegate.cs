@@ -29,6 +29,8 @@ namespace SalveminiApp.iOS
             Rg.Plugins.Popup.Popup.Init();
             new Syncfusion.XForms.iOS.ComboBox.SfComboBoxRenderer();
 
+            Xamarin.Forms.Forms.SetFlags(new string[] { "Shapes_Experimental"});
+
             global::Xamarin.Forms.Forms.Init();
 
             //Get Screen Size

@@ -34,8 +34,8 @@ namespace SalveminiApp
         public static RestApi.AdsManager Ads { get; private set; }
         public static RestApi.AgendaManager Agenda { get; private set; }
         public static RestApi.CringeManager Cringe { get; private set; }
-        public static RestApi.ItemManagerCoins Coins { get; private set; }
         public static RestApi.ItemManagerFlappy Flappy { get; private set; }
+        public static RestApi.FondoManager Fondo { get; private set; }
 
         public App()
         {
@@ -111,9 +111,9 @@ namespace SalveminiApp
             Sondaggi = new RestApi.SondaggiManager(new RestApi.RestServiceSondaggi());
             Ads = new RestApi.AdsManager(new RestApi.RestServiceAds());
             Agenda = new RestApi.AgendaManager(new RestApi.RestServiceAgenda());
-            Coins = new RestApi.ItemManagerCoins(new RestApi.RestServiceCoins());
             Cringe = new RestApi.CringeManager(new RestApi.RestServiceCringe());
             Flappy = new RestApi.ItemManagerFlappy(new RestApi.RestServiceFlappy());
+            Fondo = new RestApi.FondoManager(new RestApi.RestServiceFondo());
         }
 
         private static async void HandleNotificationReceived(OSNotification notification)

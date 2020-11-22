@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:local="clr-namespace:SalveminiApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SalveminiApp.SecondaryViews.MoneyTransactions">
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="20, 30, 20, 0">
+            <iconize:IconButton Clicked="IconButton_Clicked" HorizontalOptions="Start" Text="fas-chevron-left" TextColor="{x:Static local:Styles.TextGray}" FontSize="20" Margin="-10, -20, 0, -10"/>
+            <Label Text="Bilancio Fondo Studentesco" TextColor="{x:Static local:Styles.TextColor}" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="€" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}" FontSize="30"/>
+                <Label x:Name="BalanceLabel" Text="200" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextGray}" FontSize="30"/>
+            </StackLayout>
+            <Line Opacity="0.7" HorizontalOptions="FillAndExpand" BackgroundColor="Black" Margin="-20, 0" HeightRequest="0.5"/>
+            <Label Text="Transazioni" FontSize="20" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}"/>
+            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <ListView IsPullToRefreshEnabled="True" Refreshing="HistoryList_Refreshing" x:Name="HistoryList" HasUnevenRows="True" SelectionMode="None" SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ContentView Padding="0, 10">
+                                    <Frame HasShadow="False" CornerRadius="10" BackgroundColor="{x:Static local:Styles.ObjectGray}">
+                                        <Grid>
+                                            <StackLayout>
+                                                <Label Text="{Binding FullImporto}" TextColor="{Binding ColoreImporto}" FontSize="30" FontAttributes="Bold"/>
+                                                <Label Text="{Binding Causa}" FontSize="20" TextColor="{x:Static local:Styles.TextColor}"/>
+                                            </StackLayout>
+                                            <Label Margin="0, -5, -5, 0" FontSize="12" Text="{Binding FormattedDate}" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="End" VerticalOptions="Start"/>
+                                        </Grid>
+                                    </Frame>
+                                </ContentView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout IsVisible="false" x:Name="PlaceholderLayout" Spacing="20" VerticalOptions="Center" >
+                    <iconize:IconLabel Text="fas-list" FontSize="40" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    <Label Text="Non sono state ancora effettuate transazioni" FontSize="13" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

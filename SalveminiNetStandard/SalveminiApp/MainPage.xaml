@@ -2,7 +2,16 @@
 <ContentPage x:Name="page" BackgroundColor="{x:Static local:Styles.BGColor}" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SalveminiApp" xmlns:Controls="clr-namespace:SalveminiApp.Controls" x:Class="SalveminiApp.MainPage">
     <!--Navigation Bar-->
     <NavigationPage.TitleView>
-        <Grid HorizontalOptions="FillAndExpand" Padding="5">
+        <Grid HorizontalOptions="FillAndExpand" Padding="5"><!--Coin-->
+            <StackLayout Padding="5, 0, 0, 0" IsVisible="true" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                <iconize:IconLabel Text="fas-money-bill-wave" TextColor="#D4D4D4" FontSize="22" VerticalOptions="Center"/>
+                <!--Image Source="SalveminiCoin.png" WidthRequest="35" x:Name="coinImage"/>-->
+                <Label x:Name="BalanceLabel" Text="0" VerticalOptions="Center" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center"  />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="sCoin_Tapped"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+
             <!--Middle label-->
             <StackLayout Spacing="1" HorizontalOptions="CenterAndExpand">
                 <Label x:Name="todayLbl" FontSize="Medium" TextColor="{x:Static local:Styles.TextColor}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontAttributes="Bold" />
