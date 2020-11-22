@@ -20,7 +20,6 @@ namespace SalveminiApi_core.Models
 
         public virtual ICollection<OggettiSondaggi> OggettiSondaggi { get; set; }
         public virtual ICollection<VotiSondaggi> VotiSondaggi {internal get; set; }
-
         public virtual Utenti Utenti { get; set; }
     }
 }
