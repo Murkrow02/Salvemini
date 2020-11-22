@@ -22,7 +22,7 @@ namespace SalveminiApp.RestApi.Models
         {
             get
             {
-                return Importo > 0 ? "+" + Importo.ToString() : Importo.ToString();
+                return Importo > 0 ? "+" + Importo.ToString("#.##") : Importo.ToString("#.##");
             }
         }
 

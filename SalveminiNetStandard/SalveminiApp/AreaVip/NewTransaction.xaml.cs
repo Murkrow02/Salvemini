@@ -98,21 +98,24 @@ namespace SalveminiApp.SecondaryViews
                 {
                     try
                     {
-                        model.Importo = Convert.ToDecimal(ImportEntry.Text);
+                        model.Importo = Convert.ToDecimal(ImportEntry.Text.Replace(".",","));
                     }
                     catch
                     {
                         await DisplayAlert("Errore", "Inserisci un importo valido", "Ok");
+                        return;
                     }
                 }
                 else
                 {
                     await DisplayAlert("Errore", "Inserisci un importo valido", "Ok");
+                    return;
                 }
             }
             else
             {
                 await DisplayAlert("Errore", "Inserisci un importo valido", "Ok");
+                return;
             }
 
             if (!string.IsNullOrEmpty(ReasonEntry.Text))
@@ -122,6 +125,7 @@ namespace SalveminiApp.SecondaryViews
             else
             {
                 await DisplayAlert("Errore", "Inserisci un motivo valido per la transazione", "Ok");
+                return;
             }
 
             var success = await App.Fondo.PublishTransaction(model);
@@ -129,6 +133,7 @@ namespace SalveminiApp.SecondaryViews
             if (!success)
             {
                 await DisplayAlert("Errore", "Si è verificato un errore", "Ok");
+                return;
             }
             else
             {

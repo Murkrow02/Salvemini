@@ -180,23 +180,23 @@ namespace SalveminiApp
                     //Get Students Money balance
                     if (!string.IsNullOrEmpty(tempIndex.Fondo.ToString()))
                     {
-                        BalanceLabel.Text = tempIndex.Fondo.ToString();
+                        BalanceLabel.Text = tempIndex.Fondo.ToString("#.##"); ;
 
                         if (Preferences.Get("FirstTimeBalance", true))
                         {
                             var BalancePopup = new Helpers.PopOvers().defaultPopOver;
                             var PopupLayout = new StackLayout() { Spacing = 2 };
                             PopupLayout.Children.Add(new Label { Text = "Novità", TextColor = Color.White, FontSize = 15, FontAttributes = FontAttributes.Bold });
-                            PopupLayout.Children.Add(new Label { Text = "Ora puoi monitorare in tempo reale tutte le transazioni" + Environment.NewLine + "che vengono effettuate dal fondo studentesco", FontSize = 12, TextColor = Color.White });
+                            PopupLayout.Children.Add(new Label { Text = "Bilancio fondo studentesco", FontSize = 12, TextColor = Color.White });
                             BalancePopup.Content = PopupLayout;
                             BalancePopup.PointerDirection = Forms9Patch.PointerDirection.Up;
                             BalancePopup.PreferredPointerDirection = Forms9Patch.PointerDirection.Up;
                             BalancePopup.Target = BalanceLabel;
                             BalancePopup.BackgroundColor = Color.FromRgba(0, 0, 0, 180);
 
-                            //BalancePopup.IsVisible = true;
-                            //Preferences.Set("FirstTimeBalance", false);
-                        }
+                            BalancePopup.IsVisible = true;
+                            Preferences.Set("FirstTimeBalance", false);
+                       }
                     }
 
                     //Can use the app?
