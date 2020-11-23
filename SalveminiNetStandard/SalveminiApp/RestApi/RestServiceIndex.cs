@@ -128,6 +128,32 @@ namespace SalveminiApp.RestApi
             }
             return IndexArgo;
         }
+
+        public async Task<bool> PostLiveLink(string link)
+        {
+            var uri = Costants.Uri("live");
+
+            try
+            {
+                var json = JsonConvert.SerializeObject(link);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await client.PostAsync(uri, content);
+
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.OK:
+                        return true;
+                    default:
+                        return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Crea offerta", ex.Message);
+                return false;
+            }
+        }
     }
 
 
@@ -136,6 +162,7 @@ namespace SalveminiApp.RestApi
         Task<Models.Index> GetIndex();
         Task<Models.IndexArgo> GetIndexArgo();
         Task<List<Models.Giornalino>> GetGiornalini();
+        Task<bool> PostLiveLink(string link);
 
     }
 
@@ -163,6 +190,11 @@ namespace SalveminiApp.RestApi
         public Task<Models.IndexArgo> GetIndexArgo()
         {
             return restServiceIndex.GetIndexArgo();
+        }
+
+        public Task<bool> PostLiveLink(string link)
+        {
+            return restServiceIndex.PostLiveLink(link);
         }
 
     }

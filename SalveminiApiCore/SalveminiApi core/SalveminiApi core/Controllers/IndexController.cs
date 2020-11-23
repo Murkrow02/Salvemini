@@ -149,17 +149,16 @@ namespace SalveminiApi_core.Controllers
             return Ok(returnModel);
         }
 
-
-        [Route("giornalini")]
-        [HttpGet]
-        public IActionResult GetGiornalini()
+        [Route("live")]
+        [HttpPost]
+        public IActionResult PostLive()
         {
             //Check Auth
-            bool authorized = AuthHelper.Authorize(Request, db);
+            bool authorized = AuthHelper.Authorize(Request, db,3);
             if (!authorized)
                 return Unauthorized();
 
-            return Ok(db.Giornalino.OrderByDescending(x => x.Data).Take(30).ToList());
+            return Ok();
         }
 
         [Route("oggi/{giorno}")]

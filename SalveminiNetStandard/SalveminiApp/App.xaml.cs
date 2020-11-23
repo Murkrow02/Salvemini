@@ -31,7 +31,6 @@ namespace SalveminiApp
         public static RestApi.ItemManagerUtenti Utenti { get; private set; }
         public static RestApi.ItemManagerCard Card { get; private set; }
         public static RestApi.SondaggiManager Sondaggi { get; private set; }
-        public static RestApi.AdsManager Ads { get; private set; }
         public static RestApi.AgendaManager Agenda { get; private set; }
         public static RestApi.CringeManager Cringe { get; private set; }
         public static RestApi.ItemManagerFlappy Flappy { get; private set; }
@@ -109,7 +108,6 @@ namespace SalveminiApp
             Utenti = new RestApi.ItemManagerUtenti(new RestApi.RestServiceUtenti());
             Card = new RestApi.ItemManagerCard(new RestApi.RestServiceCard());
             Sondaggi = new RestApi.SondaggiManager(new RestApi.RestServiceSondaggi());
-            Ads = new RestApi.AdsManager(new RestApi.RestServiceAds());
             Agenda = new RestApi.AgendaManager(new RestApi.RestServiceAgenda());
             Cringe = new RestApi.CringeManager(new RestApi.RestServiceCringe());
             Flappy = new RestApi.ItemManagerFlappy(new RestApi.RestServiceFlappy());

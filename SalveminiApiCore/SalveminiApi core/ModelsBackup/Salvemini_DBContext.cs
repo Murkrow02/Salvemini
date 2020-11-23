@@ -386,13 +386,13 @@ namespace SalveminiApi_core.Models
 
             modelBuilder.Entity<FondoStudentesco>(entity =>
             {
-                entity.HasNoKey();
+                entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.Causa).HasMaxLength(2000);
+                entity.Property(e => e.Causa)
+                    .IsRequired()
+                    .HasMaxLength(2000);
 
                 entity.Property(e => e.Data).HasColumnType("datetime");
-
-                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Importo).HasColumnType("money");
             });

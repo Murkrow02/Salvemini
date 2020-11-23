@@ -25,7 +25,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchArch>x86_64</MtouchArch>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
@@ -65,6 +65,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>SalveminiAppStore</CodesignProvision>
     <MtouchUseLlvm>true</MtouchUseLlvm>
+    <MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -145,7 +146,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\SalveminiApp\SalveminiApp.csproj">
-      <Project>{7283F303-F900-4E5E-AC42-24FE61D2F793}</Project>
+      <Project>{A116E6AB-7F71-43CE-A764-6B120BCB9FF4}</Project>
       <Name>SalveminiApp</Name>
     </ProjectReference>
   </ItemGroup>
