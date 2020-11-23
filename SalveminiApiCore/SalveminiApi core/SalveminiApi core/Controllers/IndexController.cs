@@ -66,7 +66,7 @@ namespace SalveminiApi_core.Controllers
             returnModel.Fondo = CalcolaFondo();
 
             //Live stream link
-            var LastStream = db.LiveLink.Where(x => Utility.italianTime().AddHours(-2) < x.CreatedOn);
+            var LastStream = db.LiveLink.Where(x => Utility.italianTime().AddHours(-2) < x.CreatedOn).ToList();
             if(LastStream != null && LastStream.Count() > 0)
             {
                 returnModel.LiveLink = LastStream.FirstOrDefault().Link;
@@ -164,6 +164,7 @@ namespace SalveminiApi_core.Controllers
 
             //Create live link on db
             liveLink.CreatedOn = Utility.italianTime();
+            db.LiveLink.Add(liveLink);
             db.SaveChanges();
 
             //Send notification
