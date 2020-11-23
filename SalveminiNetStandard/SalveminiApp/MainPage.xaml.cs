@@ -199,6 +199,12 @@ namespace SalveminiApp
                        }
                     }
 
+                    //Detect live streaming
+                    if (!string.IsNullOrEmpty(Index.LiveLink))
+                    {
+                        liveAlert.IsVisible = true;
+                    }
+
                     //Can use the app?
                     switch (Index.Authorized)
                     {
@@ -341,7 +347,7 @@ namespace SalveminiApp
 
         }
 
-
+       
 
         public void refreshHome(object sender, EventArgs e)
         {
@@ -512,11 +518,11 @@ namespace SalveminiApp
             Navigation.PushModalAsync(profilePage);
         }
 
-
-
-
-
-
+        void live_Tapped(object sender, EventArgs e)
+        {
+             Launcher.OpenAsync(Index.LiveLink);
+            //Launcher.OpenAsync("https://www.youtube.com/watch?v=DWcJFNfaw9c");
+        }
 
 
         //Update widget list

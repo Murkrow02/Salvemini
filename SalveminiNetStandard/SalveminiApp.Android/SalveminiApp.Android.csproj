@@ -312,7 +312,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SalveminiApp\SalveminiApp.csproj">
-      <Project>{7283F303-F900-4E5E-AC42-24FE61D2F793}</Project>
+      <Project>{A116E6AB-7F71-43CE-A764-6B120BCB9FF4}</Project>
       <Name>SalveminiApp</Name>
     </ProjectReference>
   </ItemGroup>
