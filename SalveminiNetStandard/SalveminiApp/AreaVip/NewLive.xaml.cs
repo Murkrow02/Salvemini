@@ -24,7 +24,13 @@ namespace SalveminiApp.AreaVip
                 return;
             }
 
-            var success = await App.Index.PostLiveLink(liveLink.Text);
+            if(string.IsNullOrEmpty(liveName.Text) || liveName.Text.Length > 49)
+                {
+                await DisplayAlert("Errore", "Inserisci un titolo valido", "Ok");
+                return;
+            }
+
+            var success = await App.Index.PostLiveLink(new RestApi.Models.LiveLink { Link = liveLink.Text, Title = liveName.Text });
 
             if (!success)
             {

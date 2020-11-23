@@ -11,6 +11,7 @@ using System.IO;
 using System.Reflection;
 using System.Linq;
 using MonkeyCache.SQLite;
+using SalveminiApp.RestApi.Models;
 
 namespace SalveminiApp.RestApi
 {
@@ -129,7 +130,7 @@ namespace SalveminiApp.RestApi
             return IndexArgo;
         }
 
-        public async Task<bool> PostLiveLink(string link)
+        public async Task<bool> PostLiveLink(LiveLink link)
         {
             var uri = Costants.Uri("live");
 
@@ -162,7 +163,7 @@ namespace SalveminiApp.RestApi
         Task<Models.Index> GetIndex();
         Task<Models.IndexArgo> GetIndexArgo();
         Task<List<Models.Giornalino>> GetGiornalini();
-        Task<bool> PostLiveLink(string link);
+        Task<bool> PostLiveLink(LiveLink link);
 
     }
 
@@ -192,7 +193,7 @@ namespace SalveminiApp.RestApi
             return restServiceIndex.GetIndexArgo();
         }
 
-        public Task<bool> PostLiveLink(string link)
+        public Task<bool> PostLiveLink(LiveLink link)
         {
             return restServiceIndex.PostLiveLink(link);
         }
