@@ -113,7 +113,8 @@ namespace SalveminiApi_core.Controllers
                     var dettagli = new Localized { en = desc };
                     var filter = new Tags { field = "tag", key = "Secrets", relation = "=", value = post.IdUtente.ToString() };
                     var tags = new List<Tags>();
-                    var data = new AdditionalData { tipo = "push", id = "iCringe" }; tags.Add(filter);
+                    var data = new AdditionalData { tipo = "push", id = "iCringe" };
+                    tags.Add(filter);
                     notifica.headings = titolo;
                     notifica.contents = dettagli;
                     notifica.data = data;
