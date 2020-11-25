@@ -139,9 +139,10 @@ namespace SalveminiApi_core.Controllers
                 db.Ads.Find(interstitial[rInt]).Impressions++;
             }
 
-            //Save ad downloads
+            //Save access in analytics
             try
             {
+                try { db.Analytics.FirstOrDefault(x => x.Tipo == "Accessi").Valore = db.Analytics.FirstOrDefault(x => x.Tipo == "Accessi").Valore + 1; db.SaveChanges(); } catch { }
                 db.SaveChanges();
             }
             catch
@@ -173,11 +174,7 @@ namespace SalveminiApi_core.Controllers
                 var notifica = new NotificationModel();
                 var titolo = new Localized { en = "Siamo in diretta! 🔴" };
                 var dettagli = new Localized { en = $"{liveLink.Title}, apri l'app per entrare subito nella live (assicurati di avere l'ultimo aggiornamento)" };
-                var filter = new Tags { field = "tag", key = "Secrets", relation = "=", value = "2106" };
-                var tags = new List<Tags>();
-                tags.Add(filter);
                 notifica.headings = titolo;
-                notifica.filters = tags;
                 notifica.contents = dettagli;
                 NotificationService.sendNotification(notifica);
             }

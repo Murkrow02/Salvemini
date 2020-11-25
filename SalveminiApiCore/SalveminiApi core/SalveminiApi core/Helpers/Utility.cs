@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using MailKit.Net.Smtp;
 using MimeKit;
 using System.IO;
+using Microsoft.EntityFrameworkCore;
 
 namespace SalveminiApi_core
 {
@@ -214,6 +215,21 @@ namespace SalveminiApi_core
         private void ProcessImage(int width, int height, String filepath)
         {
            
+        }
+    }
+
+    public static class DataExtensions
+    {
+        public static void RemoveRangePredicate<TEntity>(
+          this DbSet<TEntity> entities,
+            System.Linq.Expressions.Expression<Func<TEntity, bool>> predicate)
+            where TEntity : class
+        {
+            var records = entities
+                .Where(predicate)
+                .ToList();
+            if (records.Count > 0)
+                entities.RemoveRange(records);
         }
     }
 }
