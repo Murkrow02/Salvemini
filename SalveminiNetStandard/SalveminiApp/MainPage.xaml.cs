@@ -204,6 +204,10 @@ namespace SalveminiApp
                     {
                         liveAlert.IsVisible = true;
                     }
+                    else
+                    {
+                        liveAlert.IsVisible = false;
+                    }
 
                     //Can use the app?
                     switch (Index.Authorized)

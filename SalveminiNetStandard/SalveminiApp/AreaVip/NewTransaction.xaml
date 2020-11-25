@@ -17,7 +17,7 @@
 
             <StackLayout>
                 <Label Text="Motivo" HorizontalOptions="Start" FontSize="20" FontAttributes="Bold" TextColor="{x:Static local:Styles.TextColor}"/>
-                <Entry x:Name="ReasonEntry" TextChanged="ImportEntry_TextChanged" Placeholder="Inserisci" HorizontalOptions="FillAndExpand" Keyboard="Numeric"/>
+                <Entry x:Name="ReasonEntry" TextChanged="ImportEntry_TextChanged" Placeholder="Inserisci" HorizontalOptions="FillAndExpand"/>
             </StackLayout>
 
             <Button Clicked="Publish_Clicked" Padding="20, 10" Text="Pubblica transazione" BackgroundColor="#007aff" CornerRadius="20" VerticalOptions="EndAndExpand" HorizontalOptions="Center" TextColor="White" FontSize="20"/>
