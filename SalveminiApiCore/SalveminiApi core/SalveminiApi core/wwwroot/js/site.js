@@ -4,6 +4,7 @@ function postForm(form, success, redirect = "") {
     //Show loading if button is present
     try {
         $(".ld-ext-right")[0].classList.toggle('running');
+        $('.ld-ext-right').prop('disabled', true);
     } catch{
         //Do nothing (popup request searchbook)
     }
@@ -48,6 +49,8 @@ function postForm(form, success, redirect = "") {
                 })
             }
             $(".ld-ext-right")[0].classList.toggle('running');
+            $('.ld-ext-right').prop('disabled', false);
+
         },
         fail: function () {
             Swal.fire({
@@ -56,6 +59,7 @@ function postForm(form, success, redirect = "") {
                 text: "Si è verificato un errore inaspettato, contattaci se il problema persiste",
             });
             $(".ld-ext-right")[0].classList.toggle('running');
+            $('.ld-ext-right').prop('disabled', false);
         }
     })
 }
