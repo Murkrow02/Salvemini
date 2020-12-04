@@ -24,10 +24,13 @@
     <PackageReference Include="RestSharp" Version="106.11.4" />
     <PackageReference Include="SixLabors.ImageSharp" Version="1.0.1" />
     <PackageReference Include="System.Runtime.Extensions" Version="4.3.1" />
+    <PackageReference Include="MediaToolkit.NetCore" Version="0.2.1-preview" />
+    <PackageReference Include="FFMpegCore" Version="3.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\favicon\" />
+    <Folder Include="FFMpeg\" />
   </ItemGroup>
 
 

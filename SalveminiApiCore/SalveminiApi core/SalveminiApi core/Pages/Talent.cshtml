@@ -1,0 +1,103 @@
+﻿@page
+@model SalveminiApi_core.Pages.TalentModel
+@{
+}
+
+
+<!--Card-->
+<div class="uk-align-center form-default">
+    <div class="uk-card uk-card-default uk-dark uk-card-body">
+        <form method="post" id="postForm" autocomplete="off">
+
+            <!--Title-->
+            <h1>Salvemini's got talent</h1>
+            <spa>Carica il tuo video per partecipare al talent esclusivo degli studenti del salvemini</spa>
+
+            <!--Nome e cognome-->
+            <div class="uk-inline uk-width-1-1 uk-margin">
+
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                <input placeholder="Nome e cognome" class="uk-input" asp-for="Name" required maxlength="50" />
+            </div>
+
+            <!--Cellulare-->
+            <div class="uk-inline uk-width-1-1 uk-margin">
+                <span class="uk-form-icon" uk-icon="icon: receiver"></span>
+                <input placeholder="Numero di telefono" class="uk-input" asp-for="Cellular" maxlength="20" required />
+            </div>
+
+            <!--Presentazione-->
+            <div class="uk-inline uk-width-1-1 uk-margin">
+                <textarea style="resize:vertical; min-height:250px" placeholder="Parlaci un po' di te e del tuo talento" class="uk-textarea" asp-for="Description" maxlength="3000"></textarea>
+            </div>
+
+            <!--Video-->
+            <span>La durata massima del video consentita è di 100 secondi</span>
+            <div class="uk-width-1-1">
+
+                <div class="js-upload" uk-form-custom>
+                    <input type="file" asp-for="Video" accept="video/*">
+                    <button class="uk-button uk-button-default" type="button" tabindex="-1">Clicca per allegare il video</button>
+                </div>
+            </div>
+
+            <!--Hidden ip-->
+            <input hidden id="ipInput" asp-for="IpAddress" />
+
+            <!--Loading button-->
+            <button class="uk-button uk-button-default ld-ext-right uk-margin" type="button" onclick="getIpAddress()">
+                Invia
+                <div class="ld ld-ring ld-spin"></div>
+            </button>
+            <br />
+            <span>Il caricamento potrebbe richiedere alcuni minuti in base alla lunghezza del video e alla tua connessione, non chiudere questa pagina durante il caricamento</span>
+        </form>
+    </div>
+</div>
+
+
+
+
+<!--Post form-->
+<script>
+    @*$(function () {
+        $('form').submit(function (e) {
+
+            //Override normal form submission
+            e.preventDefault()
+
+          
+        })
+})*@
+
+    function getIpAddress() {
+        $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
+            function (json) {
+
+                if (!json.ip) {
+                    //Ip not found
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Errore',
+                        text: "Non è stato possibile identificare il dispositivo, contattaci se il problema persiste",
+                    })
+                    return;
+                }
+
+                //Set ip address and submit form
+                $("#ipInput").val(json.ip);
+                @*document.getElementById("postForm").submit();*@
+
+                //Post form with ajax
+                postForm($("#postForm"), "Il tuo video è stato caricato con successo, ci vediamo venerdì per la prima puntata!", "");
+            }
+        );
+    }
+
+    </script>
+
+<style>
+    .ld {
+        color: #C6A0FC !important;
+    }
+</style>

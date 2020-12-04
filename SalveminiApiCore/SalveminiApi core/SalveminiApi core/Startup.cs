@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -16,7 +17,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SalveminiApi_core.Models;
-
 namespace SalveminiApi_core
 {
     public class Startup
@@ -24,6 +24,8 @@ namespace SalveminiApi_core
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+           
         }
 
         public IConfiguration Configuration { get; }
