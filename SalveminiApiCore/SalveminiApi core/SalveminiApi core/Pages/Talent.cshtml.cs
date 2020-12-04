@@ -68,6 +68,18 @@ namespace SalveminiApi_core.Pages
                 return new JsonResult(new { status = "Devi allegare un video per iscriverti " });
             }
 
+            if (!Cellular.IsValidPhoneNumhber())
+            {
+                return new JsonResult(new { status = "Inserisci un numero di telefono valido" });
+            }
+
+            if(Name.Length > 50)
+            {
+                return new JsonResult(new { status = "Inserisci un nome più corto" });
+            }
+
+            Cellular = Cellular.CleanPhoneNumber();
+
             try
             {
                 var VideoFolder = _env.WebRootPath + $"/talent/{IpAddress}";
@@ -77,7 +89,7 @@ namespace SalveminiApi_core.Pages
                 //Check if folder exists, return error
                 if (Directory.Exists(VideoFolder))
                 {
-                    return new JsonResult(new { status = "Hai già caricato un video, per motivi di sicurezza accettiamo una sola candidatura da ogni dispositivo. Contattaci se ritieni si tratti di un errore" });
+                    return new JsonResult(new { status = $"Hai già caricato un video, per motivi di sicurezza accettiamo una sola candidatura da ogni dispositivo. Contattaci se ritieni si tratti di un errore. Il tuo indirizzo ip è ({IpAddress})" });
                 }
 
                 //Create directory
@@ -92,40 +104,14 @@ namespace SalveminiApi_core.Pages
                     await Video.CopyToAsync(fileStream);
                 }
 
-                var startInfo = new ProcessStartInfo
-                {
-                    FileName = Path.Combine(_env.ContentRootPath, "FFMpeg", "ffmpeg.exe"),
-                    Arguments = $"-i -y {VideoPath}",
-                    CreateNoWindow = true,
-                    UseShellExecute = false,
-                     RedirectStandardInput = true // Must be set to true
-                };
-
-                Process p = Process.Start(startInfo);
-                
-
-                //Check video too long
-                //var mediaInfo = await FFmpeg.GetMediaInfo(VideoPath);
-                //var videoDuration = mediaInfo.Duration;
-                //if (videoDuration > TimeSpan.FromSeconds(100))
-                //    {
-                //        //Delete everything
-                //        Directory.Delete(VideoFolder, true);
-                //        return new JsonResult(new { status = "Il video selezionato supera il limite di 100 secondi, selezionane un altro" });
-                //    }
-
-
                 return new JsonResult(new { status = "success" });
             }
             catch(Exception ex)
             {
-                return new JsonResult(new { status = "Si è verificato un errore" });
+                return new JsonResult(new { status = $"Si è verificato un errore" });
             }
 
         }
-        public static double Convert100NanosecondsToMilliseconds(double nanoseconds)
-        {
-            return nanoseconds * 0.0001;
-        }
+
     }
 }

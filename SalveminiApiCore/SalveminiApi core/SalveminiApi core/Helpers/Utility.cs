@@ -11,6 +11,7 @@ using MailKit.Net.Smtp;
 using MimeKit;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
+using System.Text.RegularExpressions;
 
 namespace SalveminiApi_core
 {
@@ -230,6 +231,72 @@ namespace SalveminiApi_core
                 .ToList();
             if (records.Count > 0)
                 entities.RemoveRange(records);
+        }
+    }
+
+    public static class StringExtensions
+    {
+        /// <summary>
+        /// Cleans input string by removing spaces, dashes and other signs
+        /// </summary>
+        /// <param name="phone"></param>
+        /// <returns></returns>
+        public static string CleanPhoneNumber(this string phone)
+        {
+            //Check if string is empty
+            if (string.IsNullOrEmpty(phone))
+                return null;
+
+            //Check if string contains alpha
+            if (phone.ContainsAlpha())
+                return null;
+
+            //Clean string
+            var cleaned = phone.Replace("-", "").Replace(" ", "").Replace("+", "").Trim();
+
+            //Check length
+            if (cleaned.Length >= 10 && cleaned.Length <= 15)
+                return cleaned;
+            else
+                return null;
+        }
+
+        /// <summary>
+        /// Returns wether the string is a valid telephone number or not
+        /// </summary>
+        /// <param name="phone"></param>
+        /// <returns></returns>
+        public static bool IsValidPhoneNumhber(this string phone)
+        {
+            return phone.CleanPhoneNumber() != null;
+        }
+
+        /// <summary>
+        /// Removes all non numeric characters from a string
+        /// </summary>
+        /// <param name="strToCheck"></param>
+        /// <returns></returns>
+        public static string RemoveNonNumeric(this string strToCheck)
+        {
+            return Regex.Replace(strToCheck, @"[^0-9]", "");
+        }
+
+        //Check if string contains alhpa chars
+        public static Boolean ContainsAlpha(this string strToCheck)
+        {
+            Regex rg = new Regex(@"^[a-zA-Z\s,]*$");
+            return rg.IsMatch(strToCheck);
+        }
+
+
+        public static string RemoveNonAlpha(this string name)
+        {
+            char[] arr = name.ToCharArray();
+
+            arr = Array.FindAll<char>(arr, (c => (char.IsLetterOrDigit(c)
+                                              || char.IsWhiteSpace(c))));
+            name = new string(arr);
+            return name;
         }
     }
 }

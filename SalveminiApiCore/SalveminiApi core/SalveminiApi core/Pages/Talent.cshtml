@@ -32,12 +32,12 @@
             </div>
 
             <!--Video-->
-            <span>La durata massima del video consentita è di 100 secondi</span>
+            <span id="videoInfo">Assicurati che il tuo video duri meno di 100 secondi e che pesi meno di 300 megabyte</span>
             <div class="uk-width-1-1">
 
                 <div class="js-upload" uk-form-custom>
-                    <input type="file" asp-for="Video" accept="video/*">
-                    <button class="uk-button uk-button-default" type="button" tabindex="-1">Clicca per allegare il video</button>
+                    <input type="file" asp-for="Video" accept="video/*" id="videoUpload">
+                    <button id="videoButton" class="uk-button uk-button-default" type="button" tabindex="-1">Clicca per allegare il video</button>
                 </div>
             </div>
 
@@ -45,7 +45,7 @@
             <input hidden id="ipInput" asp-for="IpAddress" />
 
             <!--Loading button-->
-            <button class="uk-button uk-button-default ld-ext-right uk-margin" type="button" onclick="getIpAddress()">
+            <button id="saveButton" class="uk-button uk-button-default ld-ext-right uk-margin" type="button" onclick="getIpAddress()">
                 Invia
                 <div class="ld ld-ring ld-spin"></div>
             </button>
@@ -55,8 +55,42 @@
     </div>
 </div>
 
+<!--Check file size-->
+<script type="text/javascript">
+
+    var vid = document.createElement('video');
+
+    $('#videoUpload').bind('change', function () {
+        var fileSize = parseInt(this.files[0].size / 1024 / 1024);
 
 
+        // create url to use as the src of the video
+        var fileURL = URL.createObjectURL(this.files[0]);
+        vid.src = fileURL;
+        // wait for duration to change from NaN to the actual duration
+        vid.ondurationchange = function () {
+            if (parseInt(this.duration) > 101) {
+                $('.ld-ext-right').prop('disabled', true);
+                $("#videoInfo").show();
+                alert("Il video che hai selezionato è troppo lungo, ricorda che la durata deve essere meno di 100 secondi");
+                document.getElementById("videoInfo").innerText = "Il video che hai selezionato è troppo lungo, ricorda che la durata deve essere meno di 100 secondi";
+                return;
+            }
+        };
+
+
+        if (fileSize > 300) {
+            $('.ld-ext-right').prop('disabled', true);
+            $("#videoInfo").show();
+            alert("Il video che hai selezionato è troppo pesante, assicurati che la dimensione del file sia minore di 300 megabyte");
+            document.getElementById("videoInfo").innerText = "Il video che hai selezionato è troppo pesante, assicurati che la dimensione del file sia minore di 300 megabyte";
+        } else {
+            $('.ld-ext-right').prop('disabled', false);
+            $("#videoInfo").hide();
+            document.getElementById("videoButton").innerHTML = "Video allegato, clicca per cambiarlo";
+        }
+    });
+</script>
 
 <!--Post form-->
 <script>
@@ -66,7 +100,7 @@
             //Override normal form submission
             e.preventDefault()
 
-          
+
         })
 })*@
 
@@ -89,15 +123,19 @@
                 @*document.getElementById("postForm").submit();*@
 
                 //Post form with ajax
-                postForm($("#postForm"), "Il tuo video è stato caricato con successo, ci vediamo venerdì per la prima puntata!", "");
+                postForm($("#postForm"), "Il tuo video è stato caricato con successo, ci vediamo venerdì per la prima puntata!", "success");
             }
         );
     }
 
-    </script>
+</script>
 
 <style>
     .ld {
         color: #C6A0FC !important;
+    }
+
+    footer{
+        display:none;
     }
 </style>

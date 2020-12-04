@@ -30,7 +30,6 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\favicon\" />
-    <Folder Include="FFMpeg\" />
   </ItemGroup>
 
 
