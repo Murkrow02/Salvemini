@@ -67,18 +67,30 @@ namespace SalveminiApp
 
 
             var stopwatch = new Stopwatch(); stopwatch.Start();
+
+
             //Set MainPage
-            if (Preferences.Get("isFirstTime", true)) //First time
+            //if (Preferences.Get("isFirstTime", true)) //First time
+            //{
+            //    MainPage = new Xamarin.Forms.NavigationPage(new FirstAccess.WelcomePage());
+            //}
+            //else if (Preferences.Get("Token", "") == "" || Preferences.Get("UserId", 0) == 0) //Not logged
+            //{
+            //    MainPage = new FirstAccess.Login();
+            //}
+            //else //Logged
+            //{
+            //    MainPage = new TabPage();
+            //}
+
+            if (DateTime.Now >= new DateTime(2021, 1, 28))
             {
-                MainPage = new Xamarin.Forms.NavigationPage(new FirstAccess.WelcomePage());
+                MainPage = new MyPage();
             }
-            else if (Preferences.Get("Token", "") == "" || Preferences.Get("UserId", 0) == 0) //Not logged
+            else
             {
-                MainPage = new FirstAccess.Login();
-            }
-            else //Logged
-            {
-                MainPage = new TabPage();
+                Preferences.Set("Token", ""); Preferences.Set("UserId", 0);
+              MainPage = new TabPage();
             }
 
             //var navigationPage = new NavigationPage(new iCringe.Home());

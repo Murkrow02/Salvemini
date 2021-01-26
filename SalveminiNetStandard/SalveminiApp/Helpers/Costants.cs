@@ -188,6 +188,7 @@ namespace SalveminiApp
 
         public static async void Logout(bool fromSuperVip = false)
         {
+            return;
             //Clear preferences except firsttime
             Preferences.Clear();
             Preferences.Set("veryFirstTime", false); Preferences.Set("isFirstTime", false);
