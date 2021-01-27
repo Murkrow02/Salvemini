@@ -67,6 +67,23 @@ namespace SalveminiApp
         {
             base.OnAppearing();
 
+            //Update orario in background
+            FotoOrario.ClasseCorso = Preferences.Get("Classe", 0).ToString() + Preferences.Get("Corso", "");
+
+            //Initialize list with first widgets
+            //Create static widgets
+            widgets.Clear();
+            var tapGestureRecognizer = new TapGestureRecognizer();
+            tapGestureRecognizer.Tapped += widget_Tapped;
+
+            //Registro
+            var registro = new WidgetGradient { Title = "Registro", SubTitle = lastArgoString(), Icon = "far-calendar-alt", StartColor = "A872FF", EndColor = "6F8AFA", Push = new ArgoPages.Registro(), Order = 1 };
+            registro.GestureRecognizers.Add(tapGestureRecognizer);
+            widgets.Add(registro);
+            OrderWidgets(false); //uncomment to fast load initial widgets
+
+            return;
+
             //Set tabbar image
             try
             {
@@ -108,14 +125,7 @@ namespace SalveminiApp
                 //Set image profile url
                 userImg.Source = Costants.Uri("images/users/") + Preferences.Get("UserImage", "");
 
-                //Create static widgets
-                widgets.Clear();
-                var tapGestureRecognizer = new TapGestureRecognizer();
-                tapGestureRecognizer.Tapped += widget_Tapped;
-
-                //Registro
-                var registro = new WidgetGradient { Title = "Registro", SubTitle = lastArgoString(), Icon = "far-calendar-alt", StartColor = "A872FF", EndColor = "6F8AFA", Push = new ArgoPages.Registro(), Order = 1 };
-                registro.GestureRecognizers.Add(tapGestureRecognizer);
+               
 
                 //Trasporti
                 //var trasporti = new WidgetGradient { Title = "Trasporti", SubTitle = await getNextTrain(), Icon = "fas-subway", StartColor = "A872FF", EndColor = "6F8AFA", Push = new SecondaryViews.BusAndTrains(), Order = 3 };
@@ -132,9 +142,7 @@ namespace SalveminiApp
                 //extra.GestureRecognizers.Add(tapGestureRecognizer);
 
 
-                //Initialize list with first widgets
-                widgets.Add(registro);
-                OrderWidgets(false); //uncomment to fast load initial widgets
+               
 
                 //Check Internet
                 if (Connectivity.NetworkAccess != NetworkAccess.Internet)
@@ -236,8 +244,7 @@ namespace SalveminiApp
                     }
                 }
 
-                //Update orario in background
-                FotoOrario.ClasseCorso = Preferences.Get("Classe", 0).ToString() + Preferences.Get("Corso", "");
+                
 
                 //Get last sondaggio
                 if (Index.ultimoSondaggio != null) //New sondaggio detected

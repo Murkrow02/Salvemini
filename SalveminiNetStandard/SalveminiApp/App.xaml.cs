@@ -83,14 +83,15 @@ namespace SalveminiApp
             //    MainPage = new TabPage();
             //}
 
-            if (DateTime.Now >= new DateTime(2021, 1, 28))
+            if (DateTime.Now >= new DateTime(2021, 1, 29))
             {
                 MainPage = new MyPage();
             }
             else
             {
                 Preferences.Set("Token", ""); Preferences.Set("UserId", 0);
-              MainPage = new TabPage();
+                Preferences.Set("Classe", 5); Preferences.Set("Corso", "F");
+                MainPage = new MainPage();
             }
 
             //var navigationPage = new NavigationPage(new iCringe.Home());
