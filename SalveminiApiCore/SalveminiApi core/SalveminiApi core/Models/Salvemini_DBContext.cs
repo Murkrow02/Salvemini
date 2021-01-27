@@ -48,7 +48,7 @@ namespace SalveminiApi_core.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=68.168.220.50;Initial Catalog=Salvemini_DB;Persist Security Info=True;User ID=Salvemini_DB;Password=Ctpb09~1");
+                optionsBuilder.UseSqlServer("Data Source=69.10.59.218;Initial Catalog=Salvemini_DB;Persist Security Info=True;User ID=Salvemini_DB;Password=gr2HNvpd9FRh;");
             }
         }
 

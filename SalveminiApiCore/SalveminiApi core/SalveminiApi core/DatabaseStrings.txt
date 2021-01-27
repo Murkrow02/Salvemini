@@ -1,2 +1,2 @@
-﻿Server=68.168.220.50;Database=Salvemini_DB;User Id=Salvemini_DB;Password=Ctpb09~1
-Scaffold-DbContext "Data Source=68.168.220.50;Initial Catalog=Salvemini_DB;Persist Security Info=True;User ID=Salvemini_DB;Password=Ctpb09~1" Microsoft.EntityFrameworkCore.SqlServer -Verbose -OutputDir Models -force
+﻿Server=69.10.59.218;Database=Salvemini_DB;User Id=Salvemini_DB;Password=gr2HNvpd9FRh
+Scaffold-DbContext "Data Source=69.10.59.218;Initial Catalog=Salvemini_DB;Persist Security Info=True;User ID=Salvemini_DB;Password=gr2HNvpd9FRh" Microsoft.EntityFrameworkCore.SqlServer -Verbose -OutputDir Models -force

@@ -74,7 +74,7 @@ namespace SalveminiApi_core.Controllers
         }
 
 
-            [Route("login")]
+        [Route("login")]
         [HttpPost]
         public async Task<IActionResult> Auth(AuthBlock authBlock)
         {
@@ -85,8 +85,7 @@ namespace SalveminiApi_core.Controllers
             var client = new HttpClient();
             var response = new HttpResponseMessage();
             string content = "";
-            if (authBlock.username != "mariateresafiorentino")
-            {
+           
                 client.DefaultRequestHeaders.Add("x-app-code", "APF");
                 client.DefaultRequestHeaders.Add("x-cod-min", "SS16836");
                 client.DefaultRequestHeaders.Add("x-key-app", Costants.argoKey);
@@ -112,9 +111,10 @@ namespace SalveminiApi_core.Controllers
             if (!response.IsSuccessStatusCode)
                 return StatusCode(500);
 
-                content = await response.Content.ReadAsStringAsync();
-            }
-            string Token = authBlock.username == "mariateresafiorentino" ? "7e3d3f15-2c66-413f-a6b0-01534a2b4d94.11" : JsonConvert.DeserializeObject<AuthResponse>(content).token;
+           content = await response.Content.ReadAsStringAsync();
+            
+
+            string Token = JsonConvert.DeserializeObject<AuthResponse>(content).token;
 
             //Prendi schede
             var argoUtils = new ArgoUtils();

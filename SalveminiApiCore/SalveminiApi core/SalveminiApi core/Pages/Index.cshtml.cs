@@ -20,7 +20,6 @@ namespace SalveminiApi_core.Pages
 
         public async Task<IActionResult> OnGet()
         {
-            return RedirectToPage("talent");
             Users = db.Utenti.Count();
             return Page();
         }

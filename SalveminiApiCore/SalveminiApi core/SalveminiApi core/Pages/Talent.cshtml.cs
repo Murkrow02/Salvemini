@@ -39,13 +39,14 @@ namespace SalveminiApi_core.Pages
             _env = env;
         }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            //return RedirectToPage("index");
+            return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
-
 
             //Check values
             if (string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Cellular))
@@ -53,10 +54,10 @@ namespace SalveminiApi_core.Pages
                 return new JsonResult(new { status = "Inserisci nome e numero di telefono" });
             }
 
-            if(Description != null && Description.Length > 3000)
-            {
-                return new JsonResult(new { status = "Inserisci massimo 3000 caratteri per la tua presentazione" });
-            }
+            //if(Description != null && Description.Length > 3000)
+            //{
+            //    return new JsonResult(new { status = "Inserisci massimo 3000 caratteri per la tua presentazione" });
+            //}
 
             if (string.IsNullOrEmpty(IpAddress))
             {
@@ -96,7 +97,7 @@ namespace SalveminiApi_core.Pages
                 Directory.CreateDirectory(VideoFolder);
 
                 //Write text info
-                System.IO.File.WriteAllText(InfoPath, $"Numero di telefono: {Cellular}\n\nPresentazione: \n{Description}");
+                System.IO.File.WriteAllText(InfoPath, $"Numero di telefono: {Cellular}");
 
                 //Save video
                 using (var fileStream = new FileStream(VideoPath, FileMode.Create))
