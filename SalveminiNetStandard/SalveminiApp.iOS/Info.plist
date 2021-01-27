@@ -26,7 +26,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>10</string>
+	<string>10.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>Salvemini</string>
 	<key>CFBundleIdentifier</key>
@@ -75,8 +75,8 @@
 	<key>GADIsAdManagerApp</key>
 	<true/>
 	<key>CFBundleVersion</key>
-	<string>17</string>
+	<string>15</string>
 	<key>CFBundleShortVersionString</key>
-	<string>36</string>
+	<string>34</string>
 </dict>
 </plist>

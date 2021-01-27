@@ -18,7 +18,7 @@
                 <!--<Label Text="SalveminiApp internal beta v1" TextColor="#9c9c9c" FontSize="Small" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />-->
             </StackLayout>
             <!--Profile Image-->
-            <ffimageloading:CachedImage IsVisible="false" WidthRequest="40" Margin="0" CacheType="All" x:Name="userImg" LoadingPlaceholder="userPlaceholder" HorizontalOptions="EndAndExpand">
+            <ffimageloading:CachedImage WidthRequest="40" Margin="0" CacheType="All" x:Name="userImg" LoadingPlaceholder="userPlaceholder" HorizontalOptions="EndAndExpand">
                 <ffimageloading:CachedImage.Transformations>
                     <fftransformations:CircleTransformation />
                 </ffimageloading:CachedImage.Transformations>
@@ -39,7 +39,6 @@
                     </Frame.GestureRecognizers>
                 </Frame>
                 <!--Orario-->
-                <Label Text="Orario"/>
                <Controls:OrarioFoto x:Name="FotoOrario"/>
                 <!--WidgetList-->
                 <StackLayout VerticalOptions="Start">

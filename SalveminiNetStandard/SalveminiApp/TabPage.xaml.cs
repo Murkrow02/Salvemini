@@ -51,9 +51,9 @@ namespace SalveminiApp
             BarTextColor = Styles.TextColor;
 
             //Add Children
-            //Children.Add(iCringe);
+            Children.Add(iCringe);
             Children.Add(Home);
-            //Children.Add(Argo);
+            Children.Add(Argo);
 
             CurrentPage = Children[selectedPage];
             //ColorSelected(selectedPage);
