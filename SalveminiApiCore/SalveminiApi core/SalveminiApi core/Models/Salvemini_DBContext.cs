@@ -34,6 +34,7 @@ namespace SalveminiApi_core.Models
         public virtual DbSet<FlappySkin> FlappySkin { get; set; }
         public virtual DbSet<FondoStudentesco> FondoStudentesco { get; set; }
         public virtual DbSet<Giornalino> Giornalino { get; set; }
+        public virtual DbSet<LiveLink> LiveLink { get; set; }
         public virtual DbSet<Materie> Materie { get; set; }
         public virtual DbSet<Notifiche> Notifiche { get; set; }
         public virtual DbSet<OggettiSondaggi> OggettiSondaggi { get; set; }
@@ -47,7 +48,7 @@ namespace SalveminiApi_core.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=68.168.220.50;Initial Catalog=Salvemini_DB;Persist Security Info=True;User ID=Salvemini_DB;Password=Ctpb09~1");
+                optionsBuilder.UseSqlServer("Data Source=69.10.59.218;Initial Catalog=Salvemini_DB;Persist Security Info=True;User ID=Salvemini_DB;Password=gr2HNvpd9FRh;");
             }
         }
 
@@ -386,13 +387,13 @@ namespace SalveminiApi_core.Models
 
             modelBuilder.Entity<FondoStudentesco>(entity =>
             {
-                entity.HasNoKey();
+                entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.Causa).HasMaxLength(2000);
+                entity.Property(e => e.Causa)
+                    .IsRequired()
+                    .HasMaxLength(2000);
 
                 entity.Property(e => e.Data).HasColumnType("datetime");
-
-                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Importo).HasColumnType("money");
             });
@@ -402,6 +403,20 @@ namespace SalveminiApi_core.Models
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Data).HasColumnType("datetime");
+            });
+
+            modelBuilder.Entity<LiveLink>(entity =>
+            {
+                entity.HasKey(e => e.Link)
+                    .HasName("PK__LiveLink__B827DC682E0E8182");
+
+                entity.Property(e => e.Link).HasMaxLength(2500);
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasMaxLength(100);
             });
 
             modelBuilder.Entity<Materie>(entity =>

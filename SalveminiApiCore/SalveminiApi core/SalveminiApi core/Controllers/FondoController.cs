@@ -42,6 +42,7 @@ namespace SalveminiApi_core.Controllers
             //Add transaction in db
             transaction.Data = Utility.italianTime();
             db.FondoStudentesco.Add(transaction);
+            db.SaveChanges();
 
             //Success
             return Ok("Transazione aggiunta con successo");

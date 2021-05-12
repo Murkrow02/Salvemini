@@ -4,7 +4,7 @@
     <NavigationPage.TitleView>
         <Grid HorizontalOptions="FillAndExpand" Padding="5"><!--Coin-->
             <StackLayout Padding="5, 0, 0, 0" IsVisible="true" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-                <iconize:IconLabel Text="fas-money-bill-wave" TextColor="#D4D4D4" FontSize="22" VerticalOptions="Center"/>
+                <iconize:IconLabel Text="fas-money-bill-wave" TextColor="#D4D4D4" FontSize="18" VerticalOptions="Center"/>
                 <!--Image Source="SalveminiCoin.png" WidthRequest="35" x:Name="coinImage"/>-->
                 <Label x:Name="BalanceLabel" Text="0" VerticalOptions="Center" TextColor="{x:Static local:Styles.TextColor}" VerticalTextAlignment="Center"  />
                 <StackLayout.GestureRecognizers>
@@ -32,6 +32,12 @@
         <ScrollView>
             <!--Layout-->
             <StackLayout Padding="15,10,15,20" Spacing="15" x:Name="fullLayout">
+                <Frame HasShadow="False" CornerRadius="15" IsVisible="False" BackgroundColor="#FA6F6F" HorizontalOptions="FillAndExpand" Padding="5,10" x:Name="liveAlert">
+                    <Label InputTransparent="True" TextColor="White" Text="Siamo in live! Clicca qui per aprire la diretta" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="live_Tapped" NumberOfTapsRequired="1"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
                 <!--Orario-->
                <Controls:OrarioFoto x:Name="FotoOrario"/>
                 <!--WidgetList-->

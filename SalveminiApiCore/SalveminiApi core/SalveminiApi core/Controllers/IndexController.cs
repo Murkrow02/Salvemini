@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SalveminiApi_core.Argo.Models;
 using SalveminiApi_core.Models;
+using SalveminiApi_core.OneSignalApi;
 
 namespace SalveminiApi_core.Controllers
 {
@@ -61,9 +62,15 @@ namespace SalveminiApi_core.Controllers
                 returnModel.OrarioTrasportiVersion = appInfo.OrariVersion;
             }
 
-
-            //sCoin
+            //Fondo
             returnModel.Fondo = CalcolaFondo();
+
+            //Live stream link
+            var LastStream = db.LiveLink.Where(x => Utility.italianTime().AddHours(-2) < x.CreatedOn).ToList();
+            if(LastStream != null && LastStream.Count() > 0)
+            {
+                returnModel.LiveLink = LastStream.FirstOrDefault().Link;
+            }
 
             //Classe
             returnModel.Classe = utente.Classe.ToString();
@@ -107,10 +114,7 @@ namespace SalveminiApi_core.Controllers
                 returnModel.ultimoSondaggio = null;
             }
 
-
-
-
-            //ADS
+            //Ads
             var adsList = new List<Ads>();
             var interstitial = db.Ads.Where(x => x.Tipo == 1).ToList();
             var banner = db.Ads.Where(x => x.Tipo == 0).ToList();
@@ -135,9 +139,10 @@ namespace SalveminiApi_core.Controllers
                 db.Ads.Find(interstitial[rInt]).Impressions++;
             }
 
-            //Save ad downloads
+            //Save access in analytics
             try
             {
+                try { db.Analytics.FirstOrDefault(x => x.Tipo == "Accessi").Valore = db.Analytics.FirstOrDefault(x => x.Tipo == "Accessi").Valore + 1; db.SaveChanges(); } catch { }
                 db.SaveChanges();
             }
             catch
@@ -147,6 +152,39 @@ namespace SalveminiApi_core.Controllers
 
             returnModel.Ads = adsList;
             return Ok(returnModel);
+        }
+
+        [Route("live")]
+        [HttpPost]
+        public IActionResult PostLiveLink([FromBody] LiveLink liveLink)
+        {
+            //Check Auth
+            bool authorized = AuthHelper.Authorize(Request, db, 3);
+            if (!authorized)
+                return Unauthorized();
+
+            //Create live link on db
+            liveLink.CreatedOn = Utility.italianTime();
+            db.LiveLink.Add(liveLink);
+            db.SaveChanges();
+
+            //Send notification
+            try
+            {
+                var notifica = new NotificationModel();
+                var titolo = new Localized { en = "Siamo in diretta! 🔴" };
+                var dettagli = new Localized { en = $"{liveLink.Title}, apri l'app per entrare subito nella live (assicurati di avere l'ultimo aggiornamento)" };
+                notifica.headings = titolo;
+                notifica.contents = dettagli;
+                NotificationService.sendNotification(notifica);
+            }
+            catch
+            {
+                //Errore nell inviare la notifica, ma fa niente lol avviso creato con successo
+                return Ok();
+            }
+
+            return Ok();
         }
 
 

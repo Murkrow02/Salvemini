@@ -18,6 +18,7 @@ namespace SalveminiApp.RestApi.Models
         public string Classe { get; set; }
         public string Corso { get; set; }
         public decimal Fondo { get; set; }
+        public string LiveLink { get; set; }
     }
 
     public class IndexArgo

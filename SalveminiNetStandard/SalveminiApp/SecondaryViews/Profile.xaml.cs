@@ -75,6 +75,9 @@ namespace SalveminiApp.SecondaryViews
             var offerta = new Helpers.PushCell { Title = "Crea offerta", Separator = "si", Push = new AreaVip.CreaOfferta() };
             offerta.GestureRecognizers.Add(tapGestureRecognizer);
             superVipLayout.Children.Add(offerta);
+            var live = new Helpers.PushCell { Title = "Crea link live", Separator = "si", Push = new AreaVip.NewLive() };
+            live.GestureRecognizers.Add(tapGestureRecognizer);
+            superVipLayout.Children.Add(live);
             var console = new Helpers.PushCell { Title = "Console", Separator = "si", Push = new AreaVip.EventLogs() };
             console.GestureRecognizers.Add(tapGestureRecognizer);
             superVipLayout.Children.Add(console);

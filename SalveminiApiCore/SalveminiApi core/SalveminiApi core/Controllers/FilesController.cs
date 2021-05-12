@@ -26,14 +26,8 @@ namespace SalveminiApi_core.Controllers
 
             try
             {
-                var stream = System.IO.File.OpenRead(_env.WebRootPath + "/Giornalino/" + id + ".pdf");
-                var response = new HttpResponseMessage(HttpStatusCode.OK);
-                response.Content = new StreamContent(stream);
-
-                response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/pdf");
-                response.Content.Headers.ContentLength = stream.Length;
-
-                return Ok(response);
+                var stream = new FileStream(_env.WebRootPath + "/Giornalino/" + id + ".pdf", FileMode.Open);
+                return new FileStreamResult(stream, "application/pdf");
             }
             catch
             {

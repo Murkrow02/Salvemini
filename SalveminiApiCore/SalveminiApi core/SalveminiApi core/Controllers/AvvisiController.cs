@@ -35,6 +35,11 @@ namespace SalveminiApi_core.Controllers
                 var avvisi = db.Avvisi.OrderByDescending(x => x.Creazione).ToList();
 
                 //Aggiungi visualizzazione ad analytics
+                try { db.Analytics.FirstOrDefault(x => x.Tipo == "UltimoAvviso").Valore = db.Analytics.FirstOrDefault(x => x.Tipo == "UltimoAvviso").Valore + 1; db.SaveChanges(); } catch { }
+              
+
+
+
                 if (avvisi == null || avvisi.Count < 1)
                     return NotFound();
 
@@ -66,7 +71,7 @@ namespace SalveminiApi_core.Controllers
                 avviso.Creazione = Utility.italianTime();
                 db.Avvisi.Add(avviso);
                 //Remove previous avvisi visual
-                try { db.Analytics.ToList().RemoveAll(x => x.Tipo == "UltimoAvviso"); } catch { }
+                try { db.Analytics.FirstOrDefault(x => x.Tipo == "UltimoAvviso").Valore = 0; } catch { }
                 db.SaveChanges();
             }
             catch(Exception ex)

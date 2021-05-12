@@ -15,9 +15,10 @@ namespace SalveminiApi_core.Models
         public Giornalino Giornalino { get; set; }
         public int Authorized { get; set; }
         public bool VotedSondaggio { get; set; }
-        public int sCoin { get; set; }
+        public decimal Fondo { get; set; }
         public string Classe { get; set; }
         public string Corso { get; set; }
+        public string LiveLink { get; set; }
     }
 
     public class IndexArgo
