@@ -287,6 +287,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)EndView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -560,6 +564,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\AdsHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FlappyMimmo\Classifica.xaml.cs">
       <DependentUpon>Classifica.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)EndView.xaml.cs">
+      <DependentUpon>EndView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
