@@ -1,0 +1,36 @@
+﻿@page
+@model BookMarket.Pages.Admin.ProgrammazioneModel
+@{
+}
+
+
+
+<div style="padding:20px;">
+    <h1>Appuntamenti</h1>
+    <ul>
+        @foreach (var user in Model.users)
+        {
+        <li>
+            <span>@user.Nome @user.Cognome</span>
+            <span>(@user.Id)</span>
+            @if (BookMarket.Costants.Fase() == 3)
+            {
+                <span>@user.AppuntamentoFinale.Value.ToString("dd alle HH:mm")</span>
+                <a target="_blank" href="~/bookmarket/admin/consegnafinale?id=@user.Id">Vedi</a>
+            }
+            else
+            {
+                <span>@user.AppuntamentoRitiro.Value.ToString("dd alle HH:mm")</span>
+                <a target="_blank" href="~/bookmarket/admin/libricomprati?id=@user.Id">Vedi</a>
+            }
+        </li>
+        }
+    </ul>
+</div>
+
+
+<style>
+    footer {
+        display: none;
+    }
+</style>

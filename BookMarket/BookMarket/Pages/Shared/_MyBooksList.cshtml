@@ -1,0 +1,52 @@
+﻿@model List<BookMarket.Models.BookLibri>
+@if (Model.Count != 0)
+{
+    <!--Create list-->
+    @foreach (var book in Model)
+    {
+        <li class="search-list-element">
+            <div class="search-list-element-horizontalalign">
+                @if (book.IdAcquirente != null)
+                {
+                    <button style="color:#D9D9D9 !important" class="fas fa-times deleteButton" type="button"></button>
+                }
+                else
+                {
+                    <button class="fas fa-times deleteButton" type="button"></button>
+                }
+
+                <div class="search-list-element-left-container">
+                    <div class="search-list-element-title-container">
+                        <!--Title-->
+                        <span class="search-list-element-title">@book.Nome</span>
+                        <!--Subject-->
+                        <span class="uk-badge search-list-element-subject">@book.Materia</span>
+                    </div>
+                    <!--Code-->
+                    <span class="search-list-element-code">@book.Codice</span>
+                </div>
+                <div class="search-list-element-right-container">
+                    <!--Price-->
+                    <span class="search-list-element-price">€ @String.Format("{0:0.00}", book.Prezzo)</span>
+                    <i class="fas fa-chevron-right search-list-element-navigationarrow"></i>
+                </div>
+            </div>
+        </li>
+    }
+}
+else
+{
+    <script>if (!searching) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Attenzione',
+                text: "Non ci sono risultati da mostrare in questa sezione",
+            }).then(result => {
+                //Redirect to dashboard 
+                window.history.back();
+            })
+        }</script>
+}
+
+
+

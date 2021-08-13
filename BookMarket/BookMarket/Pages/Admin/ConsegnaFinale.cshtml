@@ -1,0 +1,28 @@
+﻿@page
+@model BookMarket.Pages.Admin.ConsegnaFinaleModel
+@{
+}
+
+<h1>Libri da ridare a @Model.User.Nome @Model.User.Cognome (@Model.User.Id)</h1>
+<ul>
+    @for (int i = 0; i < Model.Books.Count; i++)
+    {
+        <li>
+            <span>@Model.Books[i].Id</span> <br />
+            <input style="display:none" asp-for="@Model.Books[i].Id" />
+            <span>@Model.Books[i].Nome</span> <br />
+            <span>@Model.Books[i].Codice</span> <br />
+            <span>@Model.Books[i].Materia</span> <br />
+        </li>
+    }
+</ul>
+<h1>Soldi da dare</h1>
+<span>@Model.Resto</span>
+
+<style>
+    footer {
+        display: none;
+    }
+</style>
+
+

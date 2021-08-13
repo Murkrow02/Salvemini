@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="~/css/FontAwesome.css" />
+    <link rel="stylesheet" href="/css/LoadingSpinner.css"/>
+    <link rel="stylesheet" href="~/css/uikit.css" />
+    <script src="~/js/site.js"></script>
+    <script src="~/js/uikit.js"></script>
+    <script src="~/js/uikit-icons.js"></script>
+    <script src="~/js/SweetAlert.js"></script>
+    <!--Favicons-->
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body style="background-color:white; margin:0;">
+    <header>
+      
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer">
+      Portale sviluppato da Marco Coppola e Valerio de Nicola
+    </footer>
+    <style>
+        .footer {
+            background-color: #C6A0FC;
+            width: 100%;
+            text-align: center;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            padding: 12px 0;
+        }
+        .codexCredits{
+            text-decoration:underline;
+        }
+    </style>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <!--Disable autocomplete on inputs-->
+    <script>
+        $('form').attr('autocomplete', 'off');
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿@page
+@model BookMarket.Pages.Admin.LibriUtenteModel
+@{
+}
+
+<form style="padding:20px;" method="post">
+    <h1>Libri di @Model.User.Nome @Model.User.Cognome (@Model.User.Id)</h1>
+    <ul>
+        @for (int i = 0; i < Model.Books.Count; i++)
+        {
+        <li>
+            <span>@Model.Books[i].Id</span> <br />
+            <input style="display:none" asp-for="@Model.Books[i].Id" />
+            <span>@Model.Books[i].Nome</span> <br />
+            <span>@Model.Books[i].Codice</span> <br />
+            <span>@Model.Books[i].Materia</span> <br />
+            <input class="prezzo" placeholder="prezzo" asp-for="@Model.Books[i].Prezzo" value="@Model.Books[i].Prezzo" onkeyup="checkSpelling(this)" />
+        </li>
+        }
+    </ul>
+    <button type="submit">
+        Salva
+    </button>
+</form>
+
+<script>
+    function checkSpelling(el) {
+        //el.value.replace(",", ".");
+
+        //if (!isNumber(el.value))
+        //    el.value = "";
+
+        el.value = el.value.replace(".", ",");
+    }
+
+
+    function isNumber(n) {
+        return !isNaN(parseFloat(n)) && !isNaN(n - 0);
+    }
+</script>
+<!--Post form-->
+<script>
+    $(function () {
+        $('form').submit(function (e) {
+
+            //Override normal form submission
+            e.preventDefault()
+
+            //var all = document.getElementsByClassName("prezzo");
+            //debugger;
+            //for (var i = 0; i < all.length; i++) {
+            //    all[i].value.replace(".", ",");
+            //}
+
+            //Post form with ajax
+            postForm($(this), "Prezzi aggiornati con successo", "/BookMarket/Admin/Ritiro");
+        })
+    })</script>
+<style>
+    footer {
+        display: none;
+    }
+</style>
+

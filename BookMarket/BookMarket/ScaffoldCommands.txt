@@ -1,0 +1,1 @@
+﻿dotnet-sql-cache create "Data Source=.;Initial Catalog=Salvemini;Integrated Security=True;" dbo SessionCache

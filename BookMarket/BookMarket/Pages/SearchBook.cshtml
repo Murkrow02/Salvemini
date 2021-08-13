@@ -1,0 +1,171 @@
+﻿@page
+@model BookMarket.Pages.SearchBookModel
+@{
+}
+
+
+<!--Top Bar-->
+<header>
+    <div class="header-container">
+        <!--Back button-->
+        <a class="fas fa-chevron-left header-backbutton" href="/bookmarket/dashboard"></a>
+        <!--Title-->
+        <span class="header-title-label">Cerca libro</span>
+
+        <!--Cart-->
+        <a href="/bookmarket/basket" style="display: flex;flex-direction: row;cursor: pointer; align-items: center; margin-left:auto;">
+            <i class="fas fa-shopping-cart" style="color: #C6A0FC;font-size: 25px;"></i>
+            <span style="color: #C6A0FC;font-size: 25px;margin-left: 10px; font-family: DefaultSB;">Carrello</span>
+        </a>
+    </div>
+
+    <!--Separator-->
+    <div class="header-separator"></div>
+</header>
+
+<div style="padding:0 20px;box-sizing:border-box">
+    <!--Search section-->
+    <div id="search-search-container">
+        <!--SearchBar-->
+        <div id="search-search-searchbar-container">
+            <i class="fas fa-search" id="search-search-searchbar-searchicon"></i>
+            <input id="search-search-searchbar" placeholder="Cerca per titolo o codice del libro" onkeyup="backendSearch()" />
+        </div>
+        <span style="font-size:12px">I prezzi sono calcolati in base al prezzo originale del libro e non hanno a che vedere con le condizioni del volume</span>
+        <div style="width:200px; margin-left:20px; display:none">
+            <!--Dropdown-->
+            <select onchange="backendSearch()" style="border:none; font-family: DefaultR; width:100%; font-size:20px; color:#9FA6FF; background-color:transparent; outline:none;" id="subject-select">
+                <option>Tutto</option>
+                @foreach (var subject in Model.subjects)
+                {
+                    <option>@subject</option>
+                }
+            </select>
+
+        </div>
+       
+        <script>
+            function backendSearch() {
+                var searchBar = document.getElementById("search-search-searchbar");
+                var searchBarText = searchBar.value;
+                //var dropdown = document.getElementById("subject-select");
+                //var dropdownText = dropdown.options[dropdown.selectedIndex].text;
+                ajaxSearch(searchBarText, searchBar);
+            }
+        </script>
+    </div>
+
+    <!--SearchBar style-->
+    <style>
+        #search-search-container {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+            margin: 20px 0;
+        }
+
+        #search-search-searchbar-container {
+            background-color: #E3E3E3;
+            padding: 6px 10px;
+            width: 70%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border-radius: 15px;
+            /*flex: 1;*/
+        }
+
+        #search-search-searchbar-searchicon {
+            font-size: 25px;
+            color: #8B8B8B;
+        }
+
+        #search-search-searchbar {
+            font-size: 25px;
+            width: 100%;
+            margin-left: 10px;
+            font-family: DefaultR;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            color: #464646;
+        }
+
+        #search-search-dropdown-button {
+            border: none;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            outline: none;
+            text-transform: none;
+            font-family: DefaultSB;
+            color: #9FA6FF;
+            font-size: 18px;
+        }
+
+        #search-search-dropdown-arrow {
+            margin-left: 10px;
+            font-size: 15px;
+        }
+    </style>
+
+    <!--Arrows-->
+    <div class="list-arrows" data-page="1">
+        <i onclick="changePage('prev');" class="fa fa-chevron-left disabledBtn arrow-prev" style="text-align: start;"></i>
+        <span class="list-pagecount">Pagina 1</span>
+        <i onclick="changePage('next');" class="fa fa-chevron-right arrow-next" style="text-align: end;"></i>
+    </div>
+
+    <!--List-->
+    <ul id="list" style="padding:0px">
+        <partial name="_BooksList" model="Model.Books" itemid="list" />
+    </ul>
+
+    <!--Hidden post form-->
+    <form method="post" style="display:none">
+        <input id="toBuyBook" asp-for="@Model.ToBuyBook"/>
+    </form>
+
+    <!--Arrows-->
+    <div class="list-arrows" data-page="1">
+        <i onclick="changePage('prev');" class="fa fa-chevron-left disabledBtn arrow-prev" style="text-align: start;"></i>
+        <span class="list-pagecount">Pagina 1</span>
+        <i onclick="changePage('next');" class="fa fa-chevron-right arrow-next" style="text-align: end;"></i>
+    </div>
+</div>
+
+<!--Main style-->
+<style>
+
+    ::placeholder {
+        color: #2E2E2E;
+        opacity: 0.6;
+    }
+
+    select {
+        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='#9FA6FF'><polygon points='0,0 20,0 10,10'/></svg>") no-repeat;
+        background-position: initial;
+        background-position-x: calc(100% + 25px);
+        background-position-y: 8px;
+    }
+    body {
+        margin-bottom: 100px !important;
+    }
+</style>
+
+
+<script>
+    $(function () {
+        $('form').submit(function (e) {
+
+            //Override normal form submission
+            e.preventDefault()
+            debugger;
+
+            //Post form with ajax
+            postForm($(this), "Il libro è stato aggiunto al carrello con successo", "/bookmarket/searchbook");
+        })
+    })
+</script>

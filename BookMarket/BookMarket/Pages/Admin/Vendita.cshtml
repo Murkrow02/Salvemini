@@ -1,0 +1,28 @@
+﻿@page
+@model BookMarket.Pages.Admin.VenditaModel
+@{
+}
+
+    <form method="post">
+        <div style="padding:20px;">
+            <h1>Libri comprati</h1>
+            <ul>
+                @foreach (var book in Model.books)
+                {
+                    <li>
+                        <span>(@book.Id)</span>
+                        <span>@book.Nome</span>
+                    </li>
+                }
+            </ul>
+        </div>
+    </form>
+
+<style>
+    footer {
+        display: none;
+    }
+</style>
+
+
+

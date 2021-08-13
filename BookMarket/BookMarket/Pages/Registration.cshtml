@@ -1,0 +1,141 @@
+﻿@page
+@model BookMarket.Pages.RegistrationModel
+@{
+}
+
+
+<div class="main-container">
+    <!--Side container-->
+    <div class="side-container">
+        <!--Title-->
+        <div class="side-title-container">
+            <img src="~/images/logoBianco.png" class="side-title-logo" />
+            <span class="side-title-label">BookMarket</span>
+        </div>
+        <!--Content-->
+        <div class="side-content-container">
+            <div class="side-content-horizontalpositioning-container">
+                <span class="side-content-label">Hai già un account?</span>
+                <a href="/bookmarket/login">
+                    <div class="side-content-button-container">
+                        <span class="side-content-button-label">Accedi</span>
+                    </div>
+                  </a>
+            </div>
+        </div>
+      
+    </div>
+
+
+    <!--Form Container-->
+    <form method="post" class="form-container">
+        <div class="form-horizontalpositioning-container">
+
+            <div class="form-verticalalignment-container">
+                <!--Title-->
+                <span class="form-title">Registrati</span>
+                <!--Name-->
+                <div class="form-input-container" style="margin-top:5px;">
+                    <i class="fas fa-user form-input-icon"></i>
+                    <input required type="text" class="form-input" placeholder="Nome" maxlength="30" asp-for="@Model.user.Nome" />
+                </div>
+                <!--Surname-->
+                <div class="form-input-container" style="margin-top:15px;">
+                    <i class="fas fa-user form-input-icon"></i>
+                    <input required type="text" class="form-input" placeholder="Cognome" maxlength="50" asp-for="@Model.user.Cognome" />
+                </div>
+                <!--Email-->
+                <div class="form-input-container" style="margin-top:15px;">
+                    <i class="fas fa-envelope form-input-icon"></i>
+                    <input required type="email" class="form-input" placeholder="Email" asp-for="@Model.user.Mail" maxlength="200"/>
+                </div>
+                <!--Password-->
+                <div class="form-input-container" style="margin-top:15px;">
+                    <i class="fas fa-lock form-input-icon"></i>
+                    <input required type="password" class="form-input" placeholder="Password" asp-for="@Model.user.Password" id="pwd" maxlength="1000"/>
+                </div>
+                <!--Password-->
+                <div class="form-input-container" style="margin-top:15px;">
+                    <i class="fas fa-lock form-input-icon"></i>
+                    <input required type="password" class="form-input" placeholder="Conferma password" id="confirmpwd" maxlength="1000"/>
+                </div>
+
+                <!--Privacy-->
+                <span class="privacyLbl">
+                    Useremo questi dati solamente per identificarti al momento di consegna e ritiro dei libri.<br>I dati verranno eliminati al termine del Bookmarket
+                </span>
+
+                <!--Registration Button-->
+                <button type="submit" class="ld-ext-right form-button-container">
+                    <span class="form-button-label">Registrati</span>
+                    <div class="ld ld-ring ld-spin"></div>
+                </button>
+
+                <!--Hidden-->
+                <div style="display:none">
+                    <input asp-for="@Model.user.Token" />
+                    <input asp-for="@Model.user.Ip" />
+                </div>
+            </div>
+            @*<partial name="_Countdown" />*@
+            <style>
+                .countdown-container {
+                    margin-top: 20px;
+                }
+
+                #title {
+                    text-align: center;
+                    font-size: 30px;
+                }
+
+                #demo {
+                    text-align: center !important;
+                    font-size: 20px;
+                }
+            </style>
+        </div>
+    </form>
+</div>
+
+<!--Post form-->
+<script>
+    $(function () {
+        $('form').submit(function (e) {
+
+            //Override normal form submission
+            e.preventDefault()
+
+            //Check if password confirmation is equal to password field
+            if (document.getElementById("pwd").value != document.getElementById("confirmpwd").value) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Errore',
+                    text: 'Le due password inserite non combaciano',
+                })
+                return;
+            }
+
+            //Post form with ajax
+            postForm($(this), "Utente creato con successo, controlla la tua mail per attivare il tuo account ed iniziare a vendere e comprare i libri","/bookmarket/dashboard");
+        })
+    })
+</script>
+
+<style>
+    ::placeholder {
+        color: white;
+        opacity: 0.8;
+    }
+
+    .privacyLbl {
+        text-align: center;
+        max-width: 90%;
+        font-size: 10px;
+        color: lightgray;
+        font-weight: 100;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+    }
+</style>
