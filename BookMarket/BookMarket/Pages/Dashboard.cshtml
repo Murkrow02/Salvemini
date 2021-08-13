@@ -89,7 +89,7 @@
         @if (BookMarket.Costants.Fase() == 2 || BookMarket.Costants.Fase() == 3)
         {
             <!--Cart-->
-            <div class="home-option-container" onclick="window.location.href = '/bookmarket/basket'">
+            <div class="home-option-container" onclick="window.location.href = 'basket'">
                 <i class="fas fa-shopping-cart home-option-icon-label"></i>
                 <span class="home-option-label">Carrello</span>
             </div>
@@ -97,7 +97,7 @@
         else
         {
             <!--My books-->
-            <div class="home-option-container" onclick="window.location.href = '/bookmarket/mybooks'">
+            <div class="home-option-container" onclick="window.location.href = 'mybooks'">
                 <i class="fas fa-book home-option-icon-label"></i>
                 <span class="home-option-label">I miei libri</span>
             </div>
@@ -110,7 +110,7 @@
 
 @*<form method="post">
         <button id="home-logout-container" type="submit">
-            <div class="home-option-container" onclick="window.location.href = '/bookmarket/basket'">
+            <div class="home-option-container" onclick="window.location.href = 'basket'">
                 <i style="color:#FCA0AE !important;" class="fas fa-sign-out-alt home-option-icon-label"></i>
                 <span style="color:#FCA0AE !important;" class="home-option-label">Esci</span>
             </div>
@@ -140,17 +140,17 @@
                         text: 'Devi verificare il tuo indirizzo mail prima di poter caricare un libro',
                     }).then(result => {
                         //Reload page
-                        window.location.href = "/bookmarket/dashboard";
+                        window.location.href = "dashboard";
 
                     })
                     return;
                 </text>
                     }
-                    window.location.href = "/bookmarket/uploadbook";
+                    window.location.href = "uploadbook";
                 }
             </script>
             <!--Search book-->
-            <div class="home-widget-container" id="home-search-widget" onclick="window.location.href = '/bookmarket/searchbook'">
+            <div class="home-widget-container" id="home-search-widget" onclick="window.location.href = 'searchbook'">
                 <div class="home-widget">
                     <i class="fas fa-search home-widget-icon-label"></i>
                 </div>
@@ -333,7 +333,7 @@
             e.preventDefault()
 
             //Post form with ajax
-            postForm($(this), "Una nuova mail è stata inviata con successo a " + "@Model.user.Mail", "/bookmarket/dashboard");
+            postForm($(this), "Una nuova mail è stata inviata con successo a " + "@Model.user.Mail", "dashboard");
         })
     })
 </script>

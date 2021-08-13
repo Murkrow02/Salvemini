@@ -40,14 +40,14 @@ namespace BookMarket.Pages
 
             //Check auth
             if (!(await AuthHelper.AuthorizeWeb(HttpContext, db)))
-                return RedirectToPage("/bookmarket/login");
+                return RedirectToPage("login");
 
             //Get page number
             int page = pag == null ? 1 : pag.Value;
 
             //Get only not booked books
             var items_ = db.BookLibri.OrderByDescending(x => x.DataCaricamento).Where(x => x.Prezzo != null && x.IdAcquirente == null).Skip(100 * (page - 1)).Take(100).ToList();
-            var preferredItems = db.BookLibri.Where(x => x.IdUtente == 26 || x.IdUtente == 295).Where(x => x.Prezzo != null && x.IdAcquirente == null).ToList();
+            var preferredItems = db.BookLibri.Where(x => x.IdProprietario == 26 || x.IdProprietario == 295).Where(x => x.Prezzo != null && x.IdAcquirente == null).ToList();
             items_.InsertRange(0, preferredItems);
 
             //Error taking requests
@@ -140,8 +140,8 @@ namespace BookMarket.Pages
             //Only search
          
                 matching = db.BookLibri.Where(x => x.Prezzo != null && x.IdAcquirente == null).Where(x => x.Nome.ToLower().Contains(text.Trim().ToLower()) || x.Codice.ToLower().Contains(text.Trim().ToLower())).Take(100).ToList();
-                var preferredMatching = db.BookLibri.Where(x => x.Prezzo != null && x.IdAcquirente == null).Where(x => x.IdUtente == 26 || x.IdUtente == 295).Where(x => x.Nome.ToLower().Contains(text.Trim().ToLower()) || x.Codice.ToLower().Contains(text.Trim().ToLower())).Take(100).ToList();
-                matching.RemoveAll(x => x.IdUtente == 26 || x.Id == 295);
+                var preferredMatching = db.BookLibri.Where(x => x.Prezzo != null && x.IdAcquirente == null).Where(x => x.IdProprietario == 26 || x.IdProprietario == 295).Where(x => x.Nome.ToLower().Contains(text.Trim().ToLower()) || x.Codice.ToLower().Contains(text.Trim().ToLower())).Take(100).ToList();
+                matching.RemoveAll(x => x.IdProprietario == 26 || x.Id == 295);
                 matching.InsertRange(0, preferredMatching);
                 return Partial("_BooksList", matching);
             

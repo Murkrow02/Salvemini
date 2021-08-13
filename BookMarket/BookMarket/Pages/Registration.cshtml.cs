@@ -17,6 +17,9 @@ namespace BookMarket.Pages
         [BindProperty]
         public BookUtenti user { get; set; }
 
+        [BindProperty]
+        public string address { get; set; }
+
         private readonly BookMarket_DBContext db;
         private readonly IConfiguration configuration;
         public RegistrationModel(BookMarket_DBContext context, IConfiguration conf)
@@ -33,7 +36,7 @@ namespace BookMarket.Pages
         {
             try
             {
-                return new JsonResult(new { status = "Il bookmarket è terminato, non sono ammessi ulteriori accessi" });
+                //return new JsonResult(new { status = "Il bookmarket è terminato, non sono ammessi ulteriori accessi" });
 
                 //Check if all data is entered
                 if (string.IsNullOrEmpty(user.Nome) || string.IsNullOrEmpty(user.Cognome))
@@ -64,31 +67,16 @@ namespace BookMarket.Pages
                 user.Cognome = user.Cognome.NameFormat();
 
 
-                ////Generate session
-                //string address = "";
-                ////Get local address
-                //try
-                //{
-                //    //Get public ip
-                //    string pubIp = new System.Net.WebClient().DownloadString("https://api.ipify.org");
+                //Get local address
+                if (string.IsNullOrEmpty(address)) { 
+                    return new JsonResult(new { status = "Non è stato possibile reperire il tuo indirizzo ip, controlla la tua connessione ed il tuo browser" });
+                }
 
-
-                //    //No public ip
-                //    if (string.IsNullOrEmpty(pubIp))
-                //        throw new Exception();
-
-                //    address = pubIp;
-                //}
-                //catch
-                //{
-                //    return new JsonResult(new { status = "Non è stato possibile reperire il tuo indirizzo ip, controlla la tua connessione ed il tuo browser" });
-                //}
-
-                ////Check account created from this ip
-                //var accountWithThisIp = db.BookUtenti.Where(x => x.Ip == address);
-                //if (accountWithThisIp.Count() >= 3)
-                //    return new JsonResult(new { status = "Hai gia creato molti account da questo indirizzo, prova ad accedere con uno creato in precedenza" });
-                //user.Ip = address;
+                //Check account created from this ip
+                var accountWithThisIp = db.BookUtenti.Where(x => x.Ip == address);
+                if (accountWithThisIp.Count() >= 3)
+                    return new JsonResult(new { status = "Hai gia creato molti account da questo indirizzo, prova ad accedere con uno creato in precedenza" });
+                user.Ip = address;
 
                 //Encrypt password
                 user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
@@ -104,7 +92,9 @@ namespace BookMarket.Pages
 
 
                 //Send mail with verification code
-                var success = await Utility.sendMail(user.Mail,"Verifica mail BookMarket", configuration, "Ciao " + user.Nome + ", clicca su questo link per verificare il tuo account: " + "https://www.mysalvemini.me/bookmarket/verifymail?id=" + user.Id + "&token=" + user.MailToken);
+                var request = HttpContext.Request;
+                var _baseURL = $"{request.Scheme}://{request.Host}";
+                var success = await Utility.sendMail(user.Mail,"Verifica mail BookMarket", configuration, "Ciao " + user.Nome + ", clicca su questo link per verificare il tuo account: " + _baseURL + "/verifymail?id=" + user.Id + "&token=" + user.MailToken);
                 if(!success)
                 {
                     db.BookUtenti.Remove(user);

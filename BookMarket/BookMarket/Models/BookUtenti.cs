@@ -32,7 +32,7 @@ namespace BookMarket.Models
         public DateTime? AppuntamentoFinale { get; set; }
 
         public virtual IEnumerable<BookCarrello> BookCarrello { get; set; }
-        public virtual IEnumerable<BookLibri> BookLibriIdAcquirenteNavigation { get; set; }
-        public virtual IEnumerable<BookLibri> BookLibriIdUtenteNavigation { get; set; }
+        public virtual IEnumerable<BookLibri> LibriVenduti { get; set; }
+        public virtual IEnumerable<BookLibri> LibriRegistrati { get; set; }
     }
 }

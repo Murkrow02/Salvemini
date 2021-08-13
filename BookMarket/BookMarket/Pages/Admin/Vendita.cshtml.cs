@@ -25,7 +25,7 @@ namespace BookMarket.Pages.Admin
         {
             if (HttpContext.Session.GetString("admin") != "yes")
             {
-                return RedirectToPage("/bookmarket/login");
+                return RedirectToPage("login");
             }
 
             //Create final timetable

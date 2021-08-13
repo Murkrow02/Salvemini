@@ -34,10 +34,10 @@ namespace BookMarket.Pages.Admin
                 return RedirectToPage("/");
 
            //Get book rimasti
-            Books = db.BookLibri.Where(x => x.IdUtente == id && x.Venduto != true).ToList();
+            Books = db.BookLibri.Where(x => x.IdProprietario == id && x.Venduto != true).ToList();
 
             //Calculate money to give
-            var libriVenduti = db.BookLibri.Where(x => x.IdUtente == id && x.Venduto == true && x.Prezzo != null);
+            var libriVenduti = db.BookLibri.Where(x => x.IdProprietario == id && x.Venduto == true && x.Prezzo != null);
             foreach (var libro in libriVenduti)
             {
                 Resto += (libro.Prezzo.Value / 2);

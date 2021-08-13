@@ -11,7 +11,7 @@ namespace BookMarket.Pages
     {
         public void OnGet()
         {
-            Response.Redirect("BookMarket/Dashboard");
+            Response.Redirect("Dashboard");
         }
     }
 }

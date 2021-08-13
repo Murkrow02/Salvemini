@@ -25,11 +25,11 @@ namespace BookMarket.Pages
         {
             //Check auth
             if (!(await AuthHelper.AuthorizeWeb(HttpContext, db)) || Costants.Fase() != 1)
-                return RedirectToPage("/bookmarket/login");
+                return RedirectToPage("login");
 
             //Get saved books
             var userId = HttpContext.Session.GetInt32("id").Value;
-            var myBooks = db.BookLibri.Where(x => x.IdUtente == userId).ToList();
+            var myBooks = db.BookLibri.Where(x => x.IdProprietario == userId).ToList();
             Books = myBooks;
 
 
@@ -42,14 +42,14 @@ namespace BookMarket.Pages
         {
             //Authorize
             if (!(await AuthHelper.AuthorizeWeb(HttpContext, db)))
-                return RedirectToPage("/bookmarket/login");
+                return RedirectToPage("login");
 
             try
             {
                 //Remove book from basket
                 var userId = HttpContext.Session.GetInt32("id").Value;
                 var toRemoveBook = db.BookLibri.FirstOrDefault(x => x.Id == ToDeleteBook);
-                if(toRemoveBook.IdUtente == userId)
+                if(toRemoveBook.IdProprietario == userId)
                 {
                     db.BookLibri.Remove(toRemoveBook);
                     db.SaveChanges();
@@ -57,7 +57,7 @@ namespace BookMarket.Pages
                
 
                 //All good, redirect to dashboard
-                return RedirectToPage("/bookmarket/mybooks");
+                return RedirectToPage("mybooks");
             }
             catch (Exception ex)
             {

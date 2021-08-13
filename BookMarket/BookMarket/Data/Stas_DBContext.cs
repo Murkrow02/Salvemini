@@ -20,8 +20,19 @@ namespace BookMarket.Data
             //Set default schema to dbo
             modelBuilder.HasDefaultSchema("dbo");
 
-            //Set auto increment for GUID properties
-            modelBuilder.Entity<BookCarrello>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
+            modelBuilder.Entity<BookLibri>()
+               .HasOne(x => x.Proprietario)
+               .WithMany(m => m.LibriRegistrati)
+               .HasForeignKey(x => x.IdProprietario);
+
+            modelBuilder.Entity<BookLibri>()
+              .HasOne(x => x.Acquirente)
+              .WithMany(m => m.LibriVenduti)
+              .HasForeignKey(x => x.IdAcquirente);
+
+            modelBuilder.Entity<BookCarrello>().HasOne(o => o.Utente).WithMany(m => m.BookCarrello).OnDelete(DeleteBehavior.ClientSetNull);
+            modelBuilder.Entity<BookCarrello>().HasOne(o => o.Libro).WithMany(m => m.BookCarrello).OnDelete(DeleteBehavior.Cascade);
+
         }
     }
 }

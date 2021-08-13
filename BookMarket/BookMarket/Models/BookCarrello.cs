@@ -8,7 +8,9 @@ namespace BookMarket.Models
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public int IdUtente { get; set; }
+        public int? IdUtente { get; set; }
+        
+        [Required]
         public int IdLibro { get; set; }
 
         [ForeignKey("IdLibro")]

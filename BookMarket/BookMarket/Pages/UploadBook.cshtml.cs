@@ -25,7 +25,7 @@ namespace BookMarket.Pages
         {
             //Check auth
             if (!(await AuthHelper.AuthorizeWeb(HttpContext, db)))
-                return RedirectToPage("/bookmarket/login");
+                return RedirectToPage("login");
 
             subjects = Costants.MarketSubjects();
 
@@ -57,10 +57,10 @@ namespace BookMarket.Pages
                 }
 
                 //Get logged user
-                newBook.IdUtente = HttpContext.Session.GetInt32("id").Value;
+                newBook.IdProprietario = HttpContext.Session.GetInt32("id").Value;
 
                 //See if account is verified
-                var user = db.BookUtenti.Find(newBook.IdUtente);
+                var user = db.BookUtenti.Find(newBook.IdProprietario);
                 if (user.MailToken != null)
                 {
                     return new JsonResult(new { status = "Non puoi caricare un libro se prima non verifichi il tuo account, controlla la tua mail e riprova" });
@@ -74,7 +74,7 @@ namespace BookMarket.Pages
 
 
                 //Check max books not passed
-                var booksOfLoggedUser = db.BookLibri.Where(x => x.IdUtente == newBook.IdUtente).Count();
+                var booksOfLoggedUser = db.BookLibri.Where(x => x.IdProprietario == newBook.IdProprietario).Count();
                 if (booksOfLoggedUser >= 50)
                 {
                     return new JsonResult(new { status = "Hai raggiunto il numero massimo di libri caricabili per questo account, rimuovine qualcuno prima di caricarne di nuovi" });

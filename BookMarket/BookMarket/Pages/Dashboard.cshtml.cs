@@ -30,15 +30,15 @@ namespace BookMarket.Pages
 
             //Check auth
             if (!(await AuthHelper.AuthorizeWeb(HttpContext, db)))
-                return RedirectToPage("/bookmarket/login");
+                return RedirectToPage("login");
 
             //Get logged user
             user = db.BookUtenti.Find(HttpContext.Session.GetInt32("id"));
             if(user == null)
-                return RedirectToPage("/bookmarket/login");
+                return RedirectToPage("login");
 
             //Get books uploaded 
-          var userBooks = db.BookLibri.Where(x => x.IdUtente == user.Id);
+          var userBooks = db.BookLibri.Where(x => x.IdProprietario == user.Id);
 
             //Get balance
             foreach (var book in userBooks)
@@ -63,7 +63,7 @@ namespace BookMarket.Pages
             var user_ = db.BookUtenti.Find(HttpContext.Session.GetInt32("id"));
             if (!user_.LastMailSent.HasValue || user_.LastMailSent.Value.AddMinutes(5) < Utility.italianTime())
             {
-                var success = await Utility.sendMail(user_.Mail, "Verifica mail BookMarket", configuration, "Ciao " + user_.Nome + ", clicca su questo link per verificare il tuo account: " + "https://www.mysalvemini.me/bookmarket/verifymail?id=" + user_.Id + "&token=" + user_.MailToken);
+                var success = await Utility.sendMail(user_.Mail, "Verifica mail BookMarket", configuration, "Ciao " + user_.Nome + ", clicca su questo link per verificare il tuo account: " + "https://www.mysalvemini.meverifymail?id=" + user_.Id + "&token=" + user_.MailToken);
               if(!success)
                 {
                     return new JsonResult(new { status = "Non è stato possibile inviare una nuova mail, contattaci se il problema persiste" });

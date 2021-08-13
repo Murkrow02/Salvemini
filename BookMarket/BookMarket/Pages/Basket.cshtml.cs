@@ -28,7 +28,7 @@ namespace BookMarket.Pages
         {
             //Check auth
             if (!(await AuthHelper.AuthorizeWeb(HttpContext, db)))
-                return RedirectToPage("/bookmarket/login");
+                return RedirectToPage("login");
 
             //Get saved books
             var userId = HttpContext.Session.GetInt32("id").Value;

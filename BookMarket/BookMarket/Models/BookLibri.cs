@@ -17,8 +17,8 @@ namespace BookMarket.Models
         [Required]
         [MaxLength(100), MinLength(2)]
         public string Materia { get; set; }
-        public int IdUtente { get; set; }
-        [Required]
+        public int IdProprietario { get; set; }
+
         [Column(TypeName = "decimal(5,2)")]
         public decimal? Prezzo { get; set; }
         public int? IdAcquirente { get; set; }
@@ -26,10 +26,11 @@ namespace BookMarket.Models
         public DateTime DataCaricamento { get; set; }
         public bool? Venduto { get; set; }
 
-        [ForeignKey("IdAcquirente")]
+        [ForeignKey("IdProprietario")]
         public virtual BookUtenti Acquirente { get; set; }
+
         [ForeignKey("IdUtente")]
-        public virtual BookUtenti Utente { get; set; }
-        public virtual ICollection<BookCarrello> BookCarrello { get; set; }
+        public virtual BookUtenti Proprietario { get; set; }
+        public virtual IEnumerable<BookCarrello> BookCarrello { get; set; }
     }
 }

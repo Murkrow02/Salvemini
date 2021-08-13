@@ -29,14 +29,14 @@ namespace BookMarket.Pages.Admin
         {
             if (HttpContext.Session.GetString("admin") != "yes")
             {
-                return RedirectToPage("/bookmarket/login");
+                return RedirectToPage("login");
             }
 
             User = db.BookUtenti.Find(id);
             if(User == null)
-                return RedirectToPage("/bookmarket/login");
+                return RedirectToPage("login");
 
-            Books = db.BookLibri.Where(x => x.IdUtente == id).ToList();
+            Books = db.BookLibri.Where(x => x.IdProprietario == id).ToList();
 
             return Page();
         }

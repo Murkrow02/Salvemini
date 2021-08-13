@@ -176,7 +176,7 @@ namespace BookMarket
             //    return 2;
             //}
 
-            return 2;
+            return 1;
         }
 
         public static decimal CalculateUserPrice(decimal fullprice)

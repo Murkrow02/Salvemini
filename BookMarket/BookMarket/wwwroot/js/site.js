@@ -34,11 +34,11 @@ function postForm(form, success, redirect = "") {
             } else if (response.status === 'unauthorized') {
 
                 //UnAuthorized
-                window.location.href = '/bookmarket/login';
+                window.location.href = 'login';
             }
             else if (response.status === 'meetingcheck') {
                 //Meeting check
-                window.location.href = '/bookmarket/meetingcheck';
+                window.location.href = 'meetingcheck';
             }
             else {
                 //Error, display error message

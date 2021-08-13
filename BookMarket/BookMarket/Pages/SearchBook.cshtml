@@ -8,12 +8,12 @@
 <header>
     <div class="header-container">
         <!--Back button-->
-        <a class="fas fa-chevron-left header-backbutton" href="/bookmarket/dashboard"></a>
+        <a class="fas fa-chevron-left header-backbutton" href="dashboard"></a>
         <!--Title-->
         <span class="header-title-label">Cerca libro</span>
 
         <!--Cart-->
-        <a href="/bookmarket/basket" style="display: flex;flex-direction: row;cursor: pointer; align-items: center; margin-left:auto;">
+        <a href="basket" style="display: flex;flex-direction: row;cursor: pointer; align-items: center; margin-left:auto;">
             <i class="fas fa-shopping-cart" style="color: #C6A0FC;font-size: 25px;"></i>
             <span style="color: #C6A0FC;font-size: 25px;margin-left: 10px; font-family: DefaultSB;">Carrello</span>
         </a>
@@ -165,7 +165,7 @@
             debugger;
 
             //Post form with ajax
-            postForm($(this), "Il libro è stato aggiunto al carrello con successo", "/bookmarket/searchbook");
+            postForm($(this), "Il libro è stato aggiunto al carrello con successo", "searchbook");
         })
     })
 </script>

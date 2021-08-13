@@ -16,7 +16,7 @@
         <div class="side-content-container">
             <div class="side-content-horizontalpositioning-container">
                 <span class="side-content-label">Hai già un account?</span>
-                <a href="/bookmarket/login">
+                <a href="login">
                     <div class="side-content-button-container">
                         <span class="side-content-button-label">Accedi</span>
                     </div>
@@ -47,18 +47,21 @@
                 <!--Email-->
                 <div class="form-input-container" style="margin-top:15px;">
                     <i class="fas fa-envelope form-input-icon"></i>
-                    <input required type="email" class="form-input" placeholder="Email" asp-for="@Model.user.Mail" maxlength="200"/>
+                    <input required type="email" class="form-input" placeholder="Email" asp-for="@Model.user.Mail" maxlength="200" />
                 </div>
                 <!--Password-->
                 <div class="form-input-container" style="margin-top:15px;">
                     <i class="fas fa-lock form-input-icon"></i>
-                    <input required type="password" class="form-input" placeholder="Password" asp-for="@Model.user.Password" id="pwd" maxlength="1000"/>
+                    <input required type="password" class="form-input" placeholder="Password" asp-for="@Model.user.Password" id="pwd" maxlength="1000" />
                 </div>
                 <!--Password-->
                 <div class="form-input-container" style="margin-top:15px;">
                     <i class="fas fa-lock form-input-icon"></i>
-                    <input required type="password" class="form-input" placeholder="Conferma password" id="confirmpwd" maxlength="1000"/>
+                    <input required type="password" class="form-input" placeholder="Conferma password" id="confirmpwd" maxlength="1000" />
                 </div>
+
+                <!--Hidden ip-->
+                <input hidden id="ipInput" asp-for="address" />
 
                 <!--Privacy-->
                 <span class="privacyLbl">
@@ -66,7 +69,7 @@
                 </span>
 
                 <!--Registration Button-->
-                <button type="submit" class="ld-ext-right form-button-container">
+                <button type="button" onclick="getIpAddress()" class="ld-ext-right form-button-container">
                     <span class="form-button-label">Registrati</span>
                     <div class="ld ld-ring ld-spin"></div>
                 </button>
@@ -99,26 +102,51 @@
 
 <!--Post form-->
 <script>
-    $(function () {
-        $('form').submit(function (e) {
+    //$(function () {
+    //    $('form').submit(function (e) {
 
-            //Override normal form submission
-            e.preventDefault()
+    //        //Override normal form submission
+    //        e.preventDefault()
 
-            //Check if password confirmation is equal to password field
-            if (document.getElementById("pwd").value != document.getElementById("confirmpwd").value) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Errore',
-                    text: 'Le due password inserite non combaciano',
-                })
-                return;
+         
+    //    })
+    //})
+
+
+    function getIpAddress() {
+
+
+        //Check if password confirmation is equal to password field
+        if (document.getElementById("pwd").value != document.getElementById("confirmpwd").value) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Errore',
+                text: 'Le due password inserite non combaciano',
+            })
+            return;
+        }
+
+        $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
+            function (json) {
+
+                if (!json.ip) {
+                    //Ip not found
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Errore',
+                        text: "Non è stato possibile identificare il dispositivo, contattaci se il problema persiste",
+                    })
+                    return;
+                }
+
+                //Set ip address and submit form
+                $("#ipInput").val(json.ip);
+
+                //Post form with ajax
+                postForm($("form"), "Utente creato con successo, controlla la tua mail per attivare il tuo account ed iniziare a vendere e comprare i libri", "dashboard");
             }
-
-            //Post form with ajax
-            postForm($(this), "Utente creato con successo, controlla la tua mail per attivare il tuo account ed iniziare a vendere e comprare i libri","/bookmarket/dashboard");
-        })
-    })
+        );
+    }
 </script>
 
 <style>

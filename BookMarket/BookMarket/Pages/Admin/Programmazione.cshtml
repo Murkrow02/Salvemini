@@ -16,12 +16,12 @@
             @if (BookMarket.Costants.Fase() == 3)
             {
                 <span>@user.AppuntamentoFinale.Value.ToString("dd alle HH:mm")</span>
-                <a target="_blank" href="~/bookmarket/admin/consegnafinale?id=@user.Id">Vedi</a>
+                <a target="_blank" href="~admin/consegnafinale?id=@user.Id">Vedi</a>
             }
             else
             {
                 <span>@user.AppuntamentoRitiro.Value.ToString("dd alle HH:mm")</span>
-                <a target="_blank" href="~/bookmarket/admin/libricomprati?id=@user.Id">Vedi</a>
+                <a target="_blank" href="~admin/libricomprati?id=@user.Id">Vedi</a>
             }
         </li>
         }

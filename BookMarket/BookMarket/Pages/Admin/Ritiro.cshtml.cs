@@ -24,7 +24,7 @@ namespace BookMarket.Pages.Admin
         {
             if (HttpContext.Session.GetString("admin") != "yes")
             {
-                return RedirectToPage("/bookmarket/login");
+                return RedirectToPage("login");
             }
 
             Users = db.BookUtenti.ToList();
@@ -32,7 +32,7 @@ namespace BookMarket.Pages.Admin
             {
                 foreach(var user in Users.ToList())
                 {
-                    var usersBook = db.BookLibri.Where(x => x.IdUtente == user.Id);
+                    var usersBook = db.BookLibri.Where(x => x.IdProprietario == user.Id);
                     var notSoldBooks = usersBook.Where(x => x.Venduto != true).Count();
                     if (notSoldBooks == 0)
                         Users.Remove(user);
