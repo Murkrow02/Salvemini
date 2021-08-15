@@ -12,6 +12,9 @@ namespace BookMarket
 {
     public class Costants
     {
+
+        public static bool IsDebug;
+
         //Argo static cose
         public static string argoVersion = "2.1.0";
         public static string argoKey = "ax6542sdru3217t4eesd9";
@@ -176,7 +179,7 @@ namespace BookMarket
             //    return 2;
             //}
 
-            return 1;
+            return 3;
         }
 
         public static decimal CalculateUserPrice(decimal fullprice)

@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,6 +20,10 @@ namespace BookMarket
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            //Save if running in debug or release
+            Costants.IsDebug = Debugger.IsAttached;
+
         }
 
         public void ConfigureServices(IServiceCollection services)
