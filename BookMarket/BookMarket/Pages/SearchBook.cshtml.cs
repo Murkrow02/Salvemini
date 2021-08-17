@@ -47,7 +47,9 @@ namespace BookMarket.Pages
 
             //Get only not booked books
             var items_ = db.BookLibri.OrderByDescending(x => x.DataCaricamento).Where(x => x.Prezzo != null && x.IdAcquirente == null).Skip(100 * (page - 1)).Take(100).ToList();
-            var preferredItems = db.BookLibri.Where(x => x.IdProprietario == 26 || x.IdProprietario == 295).Where(x => x.Prezzo != null && x.IdAcquirente == null).ToList();
+
+            //LOL LMAO XD
+            var preferredItems = db.BookLibri.Where(x => x.IdProprietario == 0).Where(x => x.Prezzo != null && x.IdAcquirente == null).ToList();
             items_.InsertRange(0, preferredItems);
 
             //Error taking requests

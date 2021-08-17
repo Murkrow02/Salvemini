@@ -31,7 +31,7 @@ namespace BookMarket.Pages.Admin
         {
             User = db.BookUtenti.Find(id);
             if (User == null)
-                return RedirectToPage("/");
+                return RedirectToPage("/admin/login");
 
            //Get book rimasti
             Books = db.BookLibri.Where(x => x.IdProprietario == id && x.Venduto != true).ToList();
@@ -43,8 +43,9 @@ namespace BookMarket.Pages.Admin
                 Resto += (libro.Prezzo.Value / 2);
             }
 
-            if(Resto > 0)
-            Resto = Resto - 1.50M;
+            //Controlla se fare questo inciarmo
+            //if(Resto > 0)
+            //Resto = Resto - 1.50M;
 
             return Page();
         }

@@ -23,12 +23,12 @@ namespace BookMarket.Pages.Admin
             if (Password == "parapendiocaneritiro")
             {
                 HttpContext.Session.SetString("admin", "yes");
-                return RedirectToPage("admin/ritiro");
+                return RedirectToPage("/admin/ritiro");
             }
             else if (Password == "parapendiocanevendita")
             {
                 HttpContext.Session.SetString("admin", "yes");
-                return RedirectToPage("admin/programmazione");
+                return RedirectToPage("/admin/programmazione");
             }
 
             return RedirectToPage("login");

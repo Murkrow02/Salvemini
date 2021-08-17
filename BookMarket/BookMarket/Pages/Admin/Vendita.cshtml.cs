@@ -32,7 +32,7 @@ namespace BookMarket.Pages.Admin
             //var utenti = db.BookUtenti.ToList();
             //foreach (var user in utenti.ToList())
             //{
-            //    var uploaded = db.BookLibri.Where(x => x.IdUtente == user.Id);
+            //    var uploaded = db.BookLibri.Where(x => x.IdProprietario == user.Id);
             //    if (uploaded.Count() > 0)
             //    {
             //        var calculatedGap = Costants.FindFreeTimeGap(Costants.timeSpansRitiroFinale(), 3, db);

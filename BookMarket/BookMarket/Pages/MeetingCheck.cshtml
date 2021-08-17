@@ -36,6 +36,10 @@
     </span>
             <span>alla sede centrale del Liceo Scientifico Gaetano Salvemini</span>
             <span style="color:#ff4040">RICORDA DI ESSERE PUNTUALE O RISCHIERAI DI PERDERE IL TUO TURNO</span>
+            @if(BookMarket.Costants.Fase() == 1)
+            {
+                <a href="/UploadBook" style="margin-top:20px">Clicca qui per caricare un altro libro</a>
+            }
         </div>
     </div>
    @*<a href="dashboard" style="text-align: center;margin-top: 20px;">Torna alla dashboard</a>*@
