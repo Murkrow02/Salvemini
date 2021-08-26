@@ -1,6 +1,7 @@
 ﻿@page
 @model BookMarket.Pages.DashboardModel
 @{
+    ViewData["Title"] = "Bookmarket";
 }
 
 @if (Model.user.MailToken != null || Model.user.AppuntamentoRilascio != null || Model.user.AppuntamentoRitiro != null)

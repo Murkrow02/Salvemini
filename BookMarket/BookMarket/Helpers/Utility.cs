@@ -161,7 +161,7 @@ namespace BookMarket
             try
             {
                 var client = new SmtpClient();
-                client.Connect("smtp.gmail.com");
+                client.Connect("mysalvemini.me");
                 client.AuthenticationMechanisms.Remove("XOAUTH2");
                 client.Authenticate(configuration.GetValue<string>("MailAddress"), configuration.GetValue<string>("MailPassword"));
                 var message = new MimeMessage();

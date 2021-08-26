@@ -15,6 +15,7 @@
             <span>@Model.Books[i].Codice</span> <br />
             <span>@Model.Books[i].Materia</span> <br />
             <span>€ @Model.Books[i].Prezzo</span> <br />
+            <span>€ @Costants.CalculateUserPrice(@Model.Books[i].Prezzo.Value)</span> <br />
             <button type="button" onclick="setValue(@Model.Books[i].Id)">
                 @if (Model.Books[i].Venduto == true)
                 {<text>Già venduto</text>}

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using BookMarket.Data;
+using Microsoft.Extensions.Configuration;
 
 namespace BookMarket.Pages.Admin
 {
@@ -13,8 +14,20 @@ namespace BookMarket.Pages.Admin
     {
         [BindProperty]
         public string Password { get; set; }
-        public void OnGet()
+
+        [BindProperty]
+        public  string Message { get; set; }
+
+        private readonly IConfiguration configuration;
+        public LoginModel(BookMarket_DBContext context, IConfiguration conf)
         {
+            configuration = conf;
+        }
+
+        public async void OnGet()
+        {
+          
+          
         }
 
         public async Task<IActionResult> OnPostAsync()

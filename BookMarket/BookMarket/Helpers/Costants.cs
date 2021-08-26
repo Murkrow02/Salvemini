@@ -95,8 +95,8 @@ namespace BookMarket
             var spans = new List<DateTime>();
 
             //First day
-            var startingHour = new DateTime(2020, 8, 24, 9, 0, 0);
-            var endingHour = new DateTime(2020, 8, 24, 13, 0, 0);
+            var startingHour = new DateTime(2021, 8, 30, 9, 0, 0);
+            var endingHour = new DateTime(2021, 8, 30, 13, 0, 0);
             var minutesSpan = (endingHour - startingHour).TotalMinutes;
             for (int i = 0; i < minutesSpan; i += 15)
             {
@@ -104,8 +104,8 @@ namespace BookMarket
             }
 
             //Second day
-            var startingHour2 = new DateTime(2020, 8, 25, 9, 0, 0);
-            var endingHour2 = new DateTime(2020, 8, 25, 13, 0, 0);
+            var startingHour2 = new DateTime(2021, 8, 31, 9, 0, 0);
+            var endingHour2 = new DateTime(2021, 8, 31, 13, 0, 0);
             var minutesSpan2 = (endingHour2 - startingHour2).TotalMinutes;
             for (int i = 0; i < minutesSpan2; i += 15)
             {
@@ -120,8 +120,8 @@ namespace BookMarket
             var spans = new List<DateTime>();
 
             //First day
-            var startingHour = new DateTime(2020, 8, 28, 9, 0, 0);
-            var endingHour = new DateTime(2020, 8, 28, 13, 0, 0);
+            var startingHour = new DateTime(2021, 9, 2, 9, 0, 0);
+            var endingHour = new DateTime(2021, 9, 2, 13, 0, 0);
             var minutesSpan = (endingHour - startingHour).TotalMinutes;
             for (int i = 0; i < minutesSpan; i += 15)
             {
@@ -129,8 +129,8 @@ namespace BookMarket
             }
 
             //Second day
-            var startingHour2 = new DateTime(2020, 8, 31, 9, 0, 0);
-            var endingHour2 = new DateTime(2020, 8, 31, 13, 0, 0);
+            var startingHour2 = new DateTime(2021, 9, 3, 9, 0, 0);
+            var endingHour2 = new DateTime(2021, 9, 3, 13, 0, 0);
             var minutesSpan2 = (endingHour2 - startingHour2).TotalMinutes;
             for (int i = 0; i < minutesSpan2; i += 15)
             {
@@ -145,8 +145,8 @@ namespace BookMarket
             var spans = new List<DateTime>();
 
             //First day
-            var startingHour = new DateTime(2020, 9, 1, 9, 0, 0);
-            var endingHour = new DateTime(2020, 9, 1, 13, 0, 0);
+            var startingHour = new DateTime(2021, 9, 6, 9, 0, 0);
+            var endingHour = new DateTime(2021, 9, 6, 13, 0, 0);
             var minutesSpan = (endingHour - startingHour).TotalMinutes;
             for (int i = 0; i < minutesSpan; i += 15)
             {
@@ -154,8 +154,8 @@ namespace BookMarket
             }
 
             //Second day
-            var startingHour2 = new DateTime(2020, 9, 2, 9, 0, 0);
-            var endingHour2 = new DateTime(2020, 9, 2, 11, 30, 0);
+            var startingHour2 = new DateTime(2021, 9, 7, 9, 0, 0);
+            var endingHour2 = new DateTime(2021, 9, 7, 13, 0, 0);
             var minutesSpan2 = (endingHour2 - startingHour2).TotalMinutes;
             for (int i = 0; i < minutesSpan2; i += 15)
             {
@@ -165,19 +165,21 @@ namespace BookMarket
             return spans;
         }
 
-        static DateTime currentDate = Utility.italianTime();
 
         //1 = Solo bottone carica; 2 = Solo bottone cerca; 3 = Nessun bottone
         public static int Fase()
         {
-            //if (currentDate > new DateTime(2020, 8, 21, 0, 0, 0) &&  currentDate < new DateTime(2020, 8, 24, 0, 0, 0)) {
-            //    return 1;
-            //}
+            DateTime currentDate = Utility.italianTime();
 
-            //if (currentDate > new DateTime(2020, 8, 25, 14, 0 ,0) && currentDate < new DateTime(2020, 8, 31, 0, 0,0))
-            //{
-            //    return 2;
-            //}
+            if (currentDate > new DateTime(2021, 8, 26, 0, 0, 0) && currentDate < new DateTime(2021, 8, 30, 9, 0, 0))
+            {
+                return 1;
+            }
+
+            if (currentDate > new DateTime(2021, 8, 31, 14, 0, 0) && currentDate < new DateTime(2021, 9, 1, 10, 0, 0))
+            {
+                return 2;
+            }
 
             return 3;
         }

@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>19acd0a1-ed96-4b55-ae95-71cc29d90c92</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,7 +29,6 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
-    <Folder Include="Pages\BookMarket\" />
   </ItemGroup>
 
 </Project>

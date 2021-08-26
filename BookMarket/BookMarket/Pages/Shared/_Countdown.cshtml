@@ -11,33 +11,33 @@
     function getCountdownDate(currentDate) {
 
         //Caricamento libri
-        if (currentDate < new Date("Aug 24, 2020 00:00:00").getTime()) {
+        if (currentDate < new Date("Aug 30, 2021 09:00:00").getTime()) {
             document.getElementById("title").innerHTML = "Scadenza caricamento libri";
-            return new Date("Aug 24, 2020 00:00:00").getTime();
+            return new Date("Aug 30, 2021 09:00:00").getTime();
         }
 
         //Ritiro libri    
-        if (currentDate < new Date("Aug 25, 2020 13:00:00").getTime()) {
-            document.getElementById("title").innerHTML = "Scadenza ritiro libri";
-            return new Date("Aug 25, 2020 13:00:00").getTime();
-        }
-
-        //Prenotazione libri
-        if (currentDate < new Date("Aug 27, 2020 00:00:00").getTime()) {
-            document.getElementById("title").innerHTML = "Scadenza prenotazione libri";
-            return new Date("Aug 27, 2020 00:00:00").getTime();
-        }
-
-        //Vendita libri
         if (currentDate < new Date("Aug 31, 2020 13:00:00").getTime()) {
-            document.getElementById("title").innerHTML = "Scadenza vendita libri";
+            document.getElementById("title").innerHTML = "Scadenza ritiro libri";
             return new Date("Aug 31, 2020 13:00:00").getTime();
         }
 
+        //Prenotazione libri
+        if (currentDate < new Date("Sep 1, 2021 10:00:00").getTime()) {
+            document.getElementById("title").innerHTML = "Scadenza prenotazione libri";
+            return new Date("Sep 1, 2021 10:00:00").getTime();
+        }
+
+        //Vendita libri
+        if (currentDate < new Date("Sep 3, 2021 13:00:00").getTime()) {
+            document.getElementById("title").innerHTML = "Scadenza vendita libri";
+            return new Date("Sep 3, 2021 13:00:00").getTime();
+        }
+
         //Ritiro libri e soldi 
-        if (currentDate < new Date("Sep 2, 2020 13:00:00").getTime()) {
+        if (currentDate < new Date("Sep 7, 2021 13:00:00").getTime()) {
             document.getElementById("title").innerHTML = "Scadenza consegna soldi";
-            return new Date("Sep 2, 2020 13:00:00").getTime();
+            return new Date("Sep 7, 2021 13:00:00").getTime();
         }
     }
 
@@ -67,6 +67,6 @@
         // If the count down is finished, write some text
         if (distance < 0) {
             clearInterval(x);
-            document.getElementById("demo").innerHTML = "EXPIRED";
+            document.getElementById("demo").innerHTML = "";
         }
     }, 1000);</script>

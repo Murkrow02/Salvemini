@@ -29,7 +29,7 @@ namespace BookMarket
         public void ConfigureServices(IServiceCollection services)
         {
             //Add db connection string
-            string DbContext = Configuration.GetConnectionString("Default");
+            string DbContext = Configuration.GetConnectionString("Production");
 
             services.AddDbContext<BookMarket_DBContext>(options => options.UseLazyLoadingProxies().UseSqlServer(DbContext));
 

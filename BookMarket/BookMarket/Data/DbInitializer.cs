@@ -10,6 +10,7 @@ namespace BookMarket.Data
     {
         public static void Initialize(BookMarket_DBContext context)
         {
+            return;
             context.Database.EnsureCreated();
 
             //Look if db is already seeded or running in release mode

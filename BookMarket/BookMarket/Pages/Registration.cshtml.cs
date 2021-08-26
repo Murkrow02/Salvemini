@@ -36,7 +36,7 @@ namespace BookMarket.Pages
         {
             try
             {
-                //return new JsonResult(new { status = "Il bookmarket è terminato, non sono ammessi ulteriori accessi" });
+               // return new JsonResult(new { status = "Le registrazioni apriranno il 27 agosto" });
 
                 //Check if all data is entered
                 if (string.IsNullOrEmpty(user.Nome) || string.IsNullOrEmpty(user.Cognome))
