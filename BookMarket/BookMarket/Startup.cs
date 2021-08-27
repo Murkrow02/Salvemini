@@ -1,3 +1,4 @@
+using BookMarket.Api;
 using BookMarket.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -44,6 +45,10 @@ namespace BookMarket
                 options.SchemaName = "dbo";
                 options.TableName = "SessionCache";
             });
+
+            //Add mail configurations
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
+            services.AddTransient<IMailService, MailService>();
 
             services.AddMemoryCache();
             services.AddRazorPages().AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);

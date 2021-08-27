@@ -83,7 +83,7 @@ namespace BookMarket.Pages
 
                 //Generate token
                 user.Token = Utility.CreateToken(15);
-                user.MailToken = Utility.CreateToken(50);
+              //  user.MailToken = Utility.CreateToken(50);
                 user.Mail = user.Mail.Trim();
 
                 //Save user in db
@@ -92,15 +92,15 @@ namespace BookMarket.Pages
 
 
                 //Send mail with verification code
-                var request = HttpContext.Request;
-                var _baseURL = $"{request.Scheme}://{request.Host}";
-                var success = await Utility.sendMail(user.Mail,"Verifica mail BookMarket", configuration, "Ciao " + user.Nome + ", clicca su questo link per verificare il tuo account: " + _baseURL + "/verifymail?id=" + user.Id + "&token=" + user.MailToken);
-                if(!success)
-                {
-                    db.BookUtenti.Remove(user);
-                    db.SaveChanges();
-                    return new JsonResult(new { status = "Non è stato possibile inviare una mail di conferma al tuo account, riprova più tardi o contattaci se il problema persiste" });
-                }
+                //var request = HttpContext.Request;
+                //var _baseURL = $"{request.Scheme}://{request.Host}";
+                //var success = await Utility.sendMail(user.Mail,"Verifica mail BookMarket", configuration, "Ciao " + user.Nome + ", clicca su questo link per verificare il tuo account: " + _baseURL + "/verifymail?id=" + user.Id + "&token=" + user.MailToken);
+                //if(!success)
+                //{
+                //    db.BookUtenti.Remove(user);
+                //    db.SaveChanges();
+                //    return new JsonResult(new { status = "Non è stato possibile inviare una mail di conferma al tuo account, riprova più tardi o contattaci se il problema persiste" });
+                //}
 
                 //Save access info locally to create the session
                 HttpContext.Session.SetString("token", user.Token);
