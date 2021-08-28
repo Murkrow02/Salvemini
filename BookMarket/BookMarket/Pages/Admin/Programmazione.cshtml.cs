@@ -18,10 +18,12 @@ namespace BookMarket.Pages.Admin
 
         public void OnGet()
         {
-            if(Costants.Fase() == 3)
-               users = db.BookUtenti.Where(x => x.AppuntamentoFinale != null).OrderBy(x => x.AppuntamentoFinale).ToList();
-            else
-            users = db.BookUtenti.Where(x => x.AppuntamentoRitiro != null).OrderBy(x => x.AppuntamentoRitiro).ToList();
+            if (Costants.Fase() == 3)
+                users = db.BookUtenti.Where(x => x.AppuntamentoFinale != null).OrderBy(x => x.AppuntamentoFinale).ToList();
+            else if (Costants.Fase() == 1)
+                users = db.BookUtenti.Where(x => x.AppuntamentoRilascio != null).OrderBy(x => x.AppuntamentoRilascio).ToList();
+            else if (Costants.Fase() == 2)
+                users = db.BookUtenti.Where(x => x.AppuntamentoRitiro != null).OrderBy(x => x.AppuntamentoRitiro).ToList();
         }
     }
 }

@@ -89,7 +89,7 @@ namespace BookMarket
             {
                 timeZoneCET = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");
             }
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) || RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
                 timeZoneCET = TZConvert.GetTimeZoneInfo("Central European Standard Time");
             }

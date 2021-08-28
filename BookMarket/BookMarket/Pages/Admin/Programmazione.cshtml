@@ -18,7 +18,12 @@
                 <span>@user.AppuntamentoFinale.Value.ToString("dd alle HH:mm")</span>
                 <a target="_blank" href="/admin/consegnafinale?id=@user.Id">Vedi</a>
             }
-            else
+            else if (BookMarket.Costants.Fase() == 1)
+            {
+                <span>@user.AppuntamentoRilascio.Value.ToString("dd alle HH:mm")</span>
+                <a target="_blank" href="/admin/libriutente?id=@user.Id">Vedi</a>
+            }
+            else if (BookMarket.Costants.Fase() == 2)
             {
                 <span>@user.AppuntamentoRitiro.Value.ToString("dd alle HH:mm")</span>
                 <a target="_blank" href="/admin/libricomprati?id=@user.Id">Vedi</a>
