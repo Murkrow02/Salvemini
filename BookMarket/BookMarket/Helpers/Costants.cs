@@ -171,6 +171,7 @@ namespace BookMarket
         {
             DateTime currentDate = Utility.italianTime();
 
+
             if (currentDate > new DateTime(2021, 8, 26, 0, 0, 0) && currentDate < new DateTime(2021, 8, 30, 9, 0, 0))
             {
                 return 1;
