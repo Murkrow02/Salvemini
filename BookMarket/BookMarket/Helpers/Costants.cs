@@ -177,7 +177,7 @@ namespace BookMarket
                 return 1;
             }
 
-            if (currentDate > new DateTime(2021, 8, 31, 14, 0, 0) && currentDate < new DateTime(2021, 9, 1, 10, 0, 0))
+            if (currentDate > new DateTime(2021, 8, 31, 13, 0, 0) && currentDate < new DateTime(2021, 9, 2, 10, 0, 0))
             {
                 return 2;
             }
