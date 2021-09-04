@@ -4,7 +4,8 @@
     <!--Create list-->
     @foreach (var book in Model)
     {
-        <li class="search-list-element" onclick="showBuyPopup(@book.Id, '@book.Nome.Replace("'","")', '@book.Codice', '@book.Materia', '€ @String.Format("{0:0.00}", BookMarket.Costants.CalculateUserPrice(book.Prezzo.Value))')">
+        //DISABLED CLICK!!!!!!!!!!!!!!!!!!
+        <li class="search-list-element" onclick="return; showBuyPopup(@book.Id, '@book.Nome.Replace("'","")', '@book.Codice', '@book.Materia', '€ @String.Format("{0:0.00}", BookMarket.Costants.CalculateUserPrice(book.Prezzo.Value))')">
             <div class="search-list-element-horizontalalign">
                 <div class="search-list-element-left-container">
                     <div class="search-list-element-title-container">
