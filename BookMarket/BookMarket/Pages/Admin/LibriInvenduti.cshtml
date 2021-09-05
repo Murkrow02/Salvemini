@@ -1,0 +1,109 @@
+﻿@page
+@model BookMarket.Pages.Admin.LibriInvendutiModel
+@{
+}
+
+<h1>@Model.User.Nome @Model.User.Cognome (@Model.User.Id)</h1>
+<h2 style="color:#c6a0fc">Vendita: @Model.Vendita</h2>
+<form method="post">
+    <ul>
+        @for (int i = 0; i < Model.Books.Count; i++)
+        {
+            <li>
+                <span>@Model.Books[i].Id</span> <br />
+                <span>@Model.Books[i].Nome</span> <br />
+                <span>@Model.Books[i].Codice</span> <br />
+                <span>@Model.Books[i].Materia</span> <br />
+                <!--<span>€ @Model.Books[i].Prezzo</span> <br />-->
+                <span>€ @Model.HalfPrice(@Model.Books[i])</span> <br />
+                <button type="button" onclick="setValue(@Model.Books[i].Id)">
+                    @if (Model.Books[i].Prezzo != null)
+                    {<text>Restituisci</text>}
+                else
+                {
+                    <text></text>}
+
+                </button>
+            </li>
+        }
+    </ul>
+
+    <input style="display:none" id="bookCode" asp-for="@Model.BookCode" />
+</form>
+
+<script>function setValue(id) {
+    
+        document.getElementById("bookCode").value = id;
+        $('form').submit();
+    }</script>
+<style>
+    footer {
+        display: none;
+    }
+</style>
+
+<script>$(function () {
+        $('form').submit(function (e) {
+
+            //Override normal form submission
+            e.preventDefault()
+
+            //Post form with ajax
+            postForm2($(this));
+        })
+    })
+
+    //Form ajax submission
+    function postForm2(form) {
+
+        //Show loading if button is present
+        try {
+            //Get body
+            var body = document.getElementsByTagName("BODY")[0];
+
+            //Disable page while loading
+            body.classList.add("disabledBtn");
+        } catch {
+            //Do nothing (popup request searchbook)
+        }
+
+        //Create form data
+        var data = new FormData(form[0]);
+
+
+
+        //Perform Ajax call to backend
+        $.ajax({
+            url: form.attr('action'),
+            type: "POST",
+            data: data,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                if (response.status === 'success') {
+                    window.location.reload();
+                } else if (response.status === 'unauthorized') {
+
+                    //UnAuthorized
+                    window.location.href = 'login';
+                }
+                else {
+                    //Error, display error message
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Errore',
+                        text: response.status,
+                    })
+                }
+                body.classList.remove("disabledBtn");
+            },
+            fail: function () {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Errore',
+                    text: "Si è verificato un errore inaspettato, contattaci se il problema persiste",
+                });
+                body.classList.remove("disabledBtn");
+            }
+        })
+    }</script>

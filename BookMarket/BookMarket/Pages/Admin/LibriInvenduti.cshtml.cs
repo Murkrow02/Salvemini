@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,12 +10,17 @@ using BookMarket.Data;
 
 namespace BookMarket.Pages.Admin
 {
-    public class LibriCompratiModel : PageModel
+    public class LibriInvendutiModel : PageModel
     {
         private readonly BookMarket_DBContext db;
-        public LibriCompratiModel(BookMarket_DBContext context)
+        public LibriInvendutiModel(BookMarket_DBContext context)
         {
             db = context;
+        }
+
+        public int HalfPrice(BookLibri original)
+        {
+            return original.Prezzo != null ? Convert.ToInt32(original.Prezzo.Value / 2) : 0;
         }
 
         [BindProperty]
@@ -27,7 +32,9 @@ namespace BookMarket.Pages.Admin
         [BindProperty]
         public int BookCode { get; set; }
 
-        public IActionResult OnGet(int id, string filter)
+        public decimal? Vendita = 0;
+
+        public IActionResult OnGet(int id)
         {
             if (HttpContext.Session.GetString("admin") != "yes")
             {
@@ -38,15 +45,22 @@ namespace BookMarket.Pages.Admin
             if (User == null)
                 return RedirectToPage("login");
 
-            Books = db.BookLibri.Where(x => x.IdAcquirente == id).ToList();
-            if(!string.IsNullOrEmpty(filter))
-            {
-                Books.RemoveAll(x => x.Venduto == true);
 
+            Books = db.BookLibri.Where(x => x.IdProprietario == id && x.Venduto != true).ToList();
+
+
+            var SoldBooks = db.BookLibri.Where(x => x.IdProprietario == id && x.Venduto == true).ToList();
+            SoldBooks.RemoveAll(x => x.Prezzo == null);
+            foreach (var book in SoldBooks)
+            {
+                Vendita += book.Prezzo / 2;
             }
+
+
 
             return Page();
         }
+
 
 
         public async Task<IActionResult> OnPostAsync()
@@ -63,12 +77,8 @@ namespace BookMarket.Pages.Admin
                 if (book == null)
                     return new JsonResult(new { status = "not found" });
 
-                if (book.Venduto == true)
-                    book.Venduto = false;
-                else
-                    book.Venduto = true;
-
-
+                if (book.Prezzo != null)
+                    book.Prezzo = null;
                 db.SaveChanges();
                 return new JsonResult(new { status = "success" });
 
@@ -79,6 +89,5 @@ namespace BookMarket.Pages.Admin
             }
 
         }
-
     }
 }
