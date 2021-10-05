@@ -20,9 +20,7 @@ Back-end by Marco Coppola
 Front-end by Valerio de Nicola and Marco Coppola
 UI-UX design by Ilaria Pontecorvo and Valerio de Nicola
 
-![Schermata home](https://github.com/Murkrow02/Salvemini/blob/master/ScreenshotStore/x/1.png#left)
-![Registro elettronico](https://github.com/Murkrow02/Salvemini/blob/master/ScreenshotStore/x/2.png#right)
-![Grafici voti](https://github.com/Murkrow02/Salvemini/blob/master/ScreenshotStore/x/3.png#center)
+<img src="https://github.com/Murkrow02/Salvemini/blob/master/ScreenshotStore/x/1.png#left" width="23%"></img> <img src="https://github.com/Murkrow02/Salvemini/blob/master/ScreenshotStore/x/2.png#right" width="23%"></img> <img src="https://github.com/Murkrow02/Salvemini/blob/master/ScreenshotStore/x/3.png#center" width="23%"></img> 
 
 **Disclaimer**
 This application is discontinued so no links to the stores are provided
