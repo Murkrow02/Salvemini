@@ -1,0 +1,28 @@
+﻿@page
+@model BookMarket.Pages.Admin.RitiroModel
+@{
+}
+
+    <div style="padding:20px;">
+        <h1>Utenti registrati</h1>
+        <ul>
+            @foreach (var user in Model.Users)
+            {
+            <li>
+                <span>@user.Nome @user.Cognome</span>
+                <span>(@user.Id)</span>
+                <a target="_blank" href="/admin/libriutente?id=@user.Id">Vedi</a> /
+                <a target="_blank" href="/admin/libriinvenduti?id=@user.Id">Invenduti</a>
+            </li>
+            }
+        </ul>
+    </div>
+
+
+<style>
+    footer{
+        display:none;
+    }
+</style>
+
+
