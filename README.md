@@ -24,7 +24,7 @@ It's an iOS exclusive feature, you can ask Siri "Materie di domani" and she will
  - **Extra**\
 Extra features include a countdown for the school ending, a random person extractor from student's class and some games to spend the time with.
 
-## Acknowledgments
+## The team
 **Back-end** by Marco Coppola\
 **Front-end** by Valerio de Nicola and Marco Coppola\
 **UI-UX design** by Ilaria Pontecorvo and Valerio de Nicola
