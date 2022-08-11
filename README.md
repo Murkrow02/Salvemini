@@ -20,7 +20,7 @@ The students' opinion matters, for this reason representatives can send a poll t
  - **Exclusive social**\
 "MySalvemini" is a forum made exlusively for the students of Gaetano Salvemini. Everyone can submit a post with plain text or attaching images and everyone can reply with a comment.
  - **Siri Shortcuts**\
-It's an iOS exclusive feature, you can ask Siri "Materie di domani" and she will list the subjects for the next day, or "Prossimo treno per Sorrento" and she will display the next train to Sorrento.
+It's an iOS exclusive feature, you can ask Siri "Tomorrow schedule" and she will list the subjects for the next day, or "Next train to Sorrento".
  - **Extra**\
 Extra features include a countdown for the school ending, a random person extractor from student's class and some games to spend the time with.
 
